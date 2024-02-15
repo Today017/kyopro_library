@@ -86,7 +86,7 @@
 ## string
 
 - [Run Length Encoding](./string/rle.md)
-- [Rolling Hash]
+- [Rolling Hash](./string/rh.md)
 - [Z-Algorithm]
 - [Manacher]
 - [Suffix Array]
