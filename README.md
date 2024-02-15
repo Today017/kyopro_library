@@ -22,7 +22,7 @@
 
 ### other
 
-- [Disjoint Sparse Table]
+- [Disjoint Sparse Table](./data-structure/dst.md)
 - [Fenwick Tree](./data-structure/fen.md)
 - [Binary Trie](./data-structure/binary_trie.md)
 - [Wavelet Matrix](./data-structure/wave.md)

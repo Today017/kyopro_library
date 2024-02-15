@@ -1,4 +1,4 @@
-[top](../../lib.md)
+[top](../../README.md)
 
 # [Heavy-Light Decomposition](./hld.cpp)
 

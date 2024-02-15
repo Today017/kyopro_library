@@ -1,4 +1,4 @@
-[top](../../lib.md)
+[top](../../README.md)
 
 # [Lowest Common Ancestor](./lca.cpp)
 

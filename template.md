@@ -1,4 +1,4 @@
-[top](../lib.md)
+[top](../README.md)
 
 # [Name](./name.cpp)
 

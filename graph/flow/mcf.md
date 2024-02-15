@@ -1,4 +1,4 @@
-[top](../../lib.md)
+[top](../../README.md)
 
 # [Min Cost Flow](./mcf.cpp)
 

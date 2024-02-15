@@ -1,4 +1,4 @@
-[top](../lib.md)
+[top](../README.md)
 
 # [Inversion Number](./inversion.cpp)
 

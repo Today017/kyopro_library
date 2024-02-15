@@ -1,4 +1,4 @@
-[top](../lib.md)
+[top](../README.md)
 
 # [Cumulative Sum 2D](./cum2d.cpp)
 

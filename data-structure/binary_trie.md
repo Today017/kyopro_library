@@ -1,4 +1,4 @@
-[top](../lib.md)
+[top](../README.md)
 
 # [Binary Trie](./binary_trie.cpp)
 だいたい$O(LOG)$

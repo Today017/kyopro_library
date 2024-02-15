@@ -1,4 +1,4 @@
-[top](../lib.md)
+[top](../README.md)
 
 # [Matrix](./matrix.cpp)
 
