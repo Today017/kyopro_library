@@ -26,7 +26,7 @@
 - [Fenwick Tree](./data-structure/fen.md)
 - [Binary Trie](./data-structure/binary_trie.md)
 - [Wavelet Matrix](./data-structure/wave.md)
-- [Li Chao Tree]
+- [Li Chao Tree](./data-structure/dlct.md)
 - [Link-Cut Tree]
 - [Skew Heap]
 - [Splay Tree]
