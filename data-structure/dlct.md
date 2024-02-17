@@ -3,49 +3,55 @@
 # [Dynamic Li Chao Tree](./dlct.cpp)
 
 `dynamic_li_chao_tree<T, x_low, x_high, id>()`
-- $x$ の範囲が $x_low \le x \le x_high$ であるような Dynamic Li Chao Tree を構築する。
+- $x$ の範囲が $x_{low} \le x \le x_{high}$ 要素の最大値が $id$ であるような Dynamic Li Chao Tree を構築する。
 
 `void add_line(T a, T b)`
 - 直線 $y=ax+b$ を追加する。
+- $O(\log{n})$
 
 `void add_segment(T l, T r, T a, T b)`
 - 区間 $[l,r)$ に直線 $y=ax+b$ を追加する。
+- $O(\log^2{n})$
+
+`void query(T x)`
+- $ax+b$ の**最小値**を求める。
 
 ---
 
 ```cpp
-template <typename T, T x_low = 0, T x_high = INT_MAX, T id = 0>
+template <typename T>
 struct dynamic_li_chao_tree {
-    dynamic_li_chao_tree() {
-        root = nullptr;
+    dynamic_li_chao_tree(T x_low, T x_high, T id) {
+        this->root = nullptr;
+        this->x_low = x_low;
+        this->x_high = x_high;
+        this->id = id;
     }
     void add_line(const T &a, const T &b) {
         line x(a, b);
-        root = add_line(root, x, x_low, x_high, x.get(x_low), x.get(x_high));
+        this->root = add_line(this->root, x, x_low, x_high, x.get(x_low), x.get(x_high));
     }
     void add_segment(const T &l, const T &r, const T &a, const T &b) {
         line x(a, b);
-        root = add_segment(root, x, l, r - 1, x_low, x_high, x.get(x_low), x.get(x_high));
+        this->root = add_segment(this->root, x, l, r - 1, x_low, x_high, x.get(x_low), x.get(x_high));
     }
     T query(const T &x) const {
-        return query(root, x_low, x_high, x);
+        return query(this->root, x_low, x_high, x);
     }
 
 private:
-    node *root;
     struct line {
         T a, b;
-
         line(T a, T b) : a(a), b(b) {}
-
         inline T get(T x) const { return a * x + b; }
     };
     struct node {
         line x;
         node *l, *r;
-
         node(const line &x) : x{x}, l{nullptr}, r{nullptr} {}
     };
+    node *root;
+    T x_low, x_high, id;
     node *add_line(node *t, line &x, const T &l, const T &r, const T &x_l, const T &x_r) {
         if (!t) return new node(x);
         T t_l = t->x.get(l), t_r = t->x.get(r);
@@ -106,5 +112,6 @@ private:
         }
     }
 };
+
 
 ```
