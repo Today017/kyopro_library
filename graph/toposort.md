@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Topological Sort](./topo.cpp)
+# [Topological Sort](./toposort.cpp)
 
 `vector<int> topological_sort(const vector<vector<int>> &G)`
 - グラフ $G$ に対して、トポロジカルソートを行う。

@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Bezout Equation](./eq.cpp)
+# [Bezout Equation](./bezout_identity.cpp)
 
 `bezout_identity(ll a, ll b, ll c)`
 - 不定一次方程式 $ax + by = c$ を解く。

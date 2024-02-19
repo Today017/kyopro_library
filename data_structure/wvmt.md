@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Wavelet Matrix](./wave.cpp)
+# [Wavelet Matrix](./wvmt.cpp)
 
 全体集合のサイズ$\sigma$
 
