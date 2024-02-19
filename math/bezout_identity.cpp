@@ -1,7 +1,7 @@
-struct bezout_equation {
+struct bezout_identity {
     long long a, b, c, g;
     long long X, Y;
-    bezout_equation(long long a, long long b, long long c) {
+    bezout_identity(long long a, long long b, long long c) {
         this->a = a;
         this->b = b;
         this->c = c;

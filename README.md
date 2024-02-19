@@ -4,7 +4,7 @@
 
 - [Compress](./algorithm/compress.md)
 - [Cumulative Sum 2D](./algorithm/cum2d.md)
-- [Inversion Number](./algorithm/inversion.md)
+- [Inversion Number](./algorithm/inversion_number.md)
 - [Longest Increaseing Subsequence](./algorithm/lis.md)
 - [Doubling]
 - [Mo](./algorithm/mo.md)
@@ -25,8 +25,8 @@
 
 - [Disjoint Sparse Table](./data_structure/dst.md)
 - [Fenwick Tree](./data_structure/fen.md)
-- [Binary Trie](./data_structure/binary_trie.md)
-- [Wavelet Matrix](./data_structure/wave.md)
+- [Binary Trie](./data_structure/bintr.md)
+- [Wavelet Matrix](./data_structure/wvmt.md)
 - [Li Chao Tree](./data_structure/dlct.md)
 - [Link-Cut Tree]
 - [Skew Heap]
@@ -37,7 +37,7 @@
 
 - [Disjoint Set Union](./graph/dsu.md)
 - [SCC](./graph/scc.md)
-- [Topological Sort](./graph/topo.md)
+- [Topological Sort](./graph/toposort.md)
 - [Low Link]
 
 ### shortest path
@@ -68,7 +68,7 @@
 ## math
 
 - [ExtGCD, Mod Inversion](./math/extgcd.md)
-- [Bezout Equation](./math/eq.md)
+- [Bezout Equation](./math/bezout_identity.md)
 - [Matrix](./math/matrix.md)
 - [Geometory]
 - [FPS]

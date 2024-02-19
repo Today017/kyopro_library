@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Binary Trie](./binary_trie.cpp)
+# [Binary Trie](./bintr.cpp)
 だいたい$O(LOG)$
 
 `int size()`

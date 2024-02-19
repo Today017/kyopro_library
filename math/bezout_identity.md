@@ -2,7 +2,7 @@
 
 # [Bezout Equation](./eq.cpp)
 
-`bezout_equation(ll a, ll b, ll c)`
+`bezout_identity(ll a, ll b, ll c)`
 - 不定一次方程式 $ax + by = c$ を解く。
 
 `bool build()`
@@ -30,10 +30,10 @@ $ X=\frac{b}{g}\times t +x$ となる。
 ---
 
 ```cpp
-struct bezout_equation {
+struct bezout_identity {
     long long a, b, c, g;
     long long X, Y;
-    bezout_equation(long long a, long long b, long long c) {
+    bezout_identity(long long a, long long b, long long c) {
         this->a = a;
         this->b = b;
         this->c = c;
