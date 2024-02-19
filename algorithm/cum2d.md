@@ -15,8 +15,6 @@
 ```cpp
 template <typename U, typename T>
 struct cumsum2D {
-    int n, m;
-    vector<vector<T>> acc;
     cumsum2D(vector<vector<U>> &a) {
         n = a.size();
         m = a.front().size();
@@ -30,6 +28,10 @@ struct cumsum2D {
     T sum(int l, int r, int u, int d) {
         return acc[r][d] - acc[l][d] - acc[r][u] + acc[l][u];
     }
+
+private:
+    int n, m;
+    vector<vector<T>> acc;
 };
 
 ```

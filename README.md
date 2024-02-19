@@ -8,6 +8,7 @@
 - [Longest Increaseing Subsequence](./algorithm/lis.md)
 - [Doubling]
 - [Mo](./algorithm/mo.md)
+- [Convex Hull Trick](https://ei1333.github.io/luzhiled/snippets/structure/convex-hull-trick-add-monotone.html)
 
 ## data structure
 
