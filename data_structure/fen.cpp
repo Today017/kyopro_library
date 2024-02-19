@@ -1,3 +1,5 @@
+#pragma once
+
 template <typename T>
 struct fenwick_tree {
     fenwick_tree(int n) {

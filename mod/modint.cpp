@@ -1,3 +1,5 @@
+#pragma once
+
 template <long long MOD>
 struct modint {
     long long value;
