@@ -1,5 +1,5 @@
-// ================================== begin Wavelet Matrix ==================================
-// https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix
+/* ================================== begin Wavelet Matrix ================================== */
+/* https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix */
 
 enum {
     NOTFOUND = 0xFFFFFFFFFFFFFFFFLLU
@@ -310,11 +310,11 @@ public:
             const ull rank1_begin = begin - rank0_begin;
             const ull rank1_end = end - rank0_end;
             if (bit) {
-                rank_less_than += (rank0_end - rank0_begin);  // i番目のbitが0のものは除外される
+                rank_less_than += (rank0_end - rank0_begin);
                 begin = this->begin_one.at(i) + rank1_begin;
                 end = this->begin_one.at(i) + rank1_end;
             } else {
-                rank_more_than += (rank1_end - rank1_begin);  // i番目のbitが1のものは除外される
+                rank_more_than += (rank1_end - rank1_begin);
                 begin = rank0_begin;
                 end = rank0_end;
             }
@@ -493,4 +493,4 @@ private:
     }
 };
 
-// ================================== end Wavelet Matrix ==================================
+/* ================================== end Wavelet Matrix ================================== */
