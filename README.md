@@ -14,8 +14,8 @@
 
 ### segment tree
 
-- [Segment Tree](./data-structure/segt.md)
-- [Segment Tree Lazy](./data-structure/segtlz.md)
+- [Segment Tree](./data_structure/segt.md)
+- [Segment Tree Lazy](./data_structure/segtlz.md)
 - [Segment Tree Dual]
 - [Segment Tree 2D]
 - [Segment Tree Beats]
@@ -23,11 +23,11 @@
 
 ### other
 
-- [Disjoint Sparse Table](./data-structure/dst.md)
-- [Fenwick Tree](./data-structure/fen.md)
-- [Binary Trie](./data-structure/binary_trie.md)
-- [Wavelet Matrix](./data-structure/wave.md)
-- [Li Chao Tree](./data-structure/dlct.md)
+- [Disjoint Sparse Table](./data_structure/dst.md)
+- [Fenwick Tree](./data_structure/fen.md)
+- [Binary Trie](./data_structure/binary_trie.md)
+- [Wavelet Matrix](./data_structure/wave.md)
+- [Li Chao Tree](./data_structure/dlct.md)
 - [Link-Cut Tree]
 - [Skew Heap]
 - [Splay Tree]
