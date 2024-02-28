@@ -1,3 +1,5 @@
+#include "../../../kyopro_library/template.cpp"
+
 template <typename Cap>
 struct max_flow {
     max_flow(int n) {
@@ -12,11 +14,15 @@ struct max_flow {
         Cap ret = 0;
         while (true) {
             vector<int> dst = calculate_distance(start);
-            if (dst[goal] < 0) return ret;
+            if (dst[goal] < 0) {
+                return ret;
+            }
             vector<int> removed(n, 0);
             while (true) {
                 Cap add = flowing(start, goal, numeric_limits<Cap>::max(), removed, dst);
-                if (add == 0) break;
+                if (add == 0) {
+                    break;
+                }
                 ret += add;
             }
         }
@@ -44,7 +50,9 @@ private:
         return dst;
     }
     Cap flowing(int now, int goal, Cap limit, vector<int> &removed, vector<int> &dst) {
-        if (now == goal) return limit;
+        if (now == goal) {
+            return limit;
+        }
         while (removed[now] < (int)G[now].size()) {
             auto [nxt, rev, cap] = G[now][removed[now]];
             if (cap > 0 && dst[now] < dst[nxt]) {

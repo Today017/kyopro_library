@@ -1,9 +1,10 @@
 #pragma once
+#include "../../kyopro_library/template.cpp"
 
-template <long long MOD>
+template <ll MOD>
 struct modint {
-    long long value;
-    modint(long long x = 0) {
+    ll value;
+    modint(ll x = 0) {
         if (x >= 0) {
             value = x % MOD;
         } else {
@@ -18,12 +19,16 @@ struct modint {
     }
     modint &operator+=(const modint &other) {
         value += other.value;
-        if (value >= MOD) value -= MOD;
+        if (value >= MOD) {
+            value -= MOD;
+        }
         return *this;
     }
     modint &operator-=(const modint &other) {
         value += MOD - other.value;
-        if (value >= MOD) value -= MOD;
+        if (value >= MOD) {
+            value -= MOD;
+        }
         return *this;
     }
     modint &operator*=(const modint other) {
@@ -46,10 +51,12 @@ struct modint {
     modint operator/(const modint &other) const {
         return modint(*this) /= other;
     }
-    modint pow(long long x) const {
+    modint pow(ll x) const {
         modint ret(1), mul(value);
         while (x) {
-            if (x & 1) ret *= mul;
+            if (x & 1) {
+                ret *= mul;
+            }
             mul *= mul;
             x >>= 1;
         }
@@ -68,7 +75,7 @@ struct modint {
         return os << x.value;
     }
     friend istream &operator>>(istream &is, modint &x) {
-        long long v;
+        ll v;
         is >> v;
         x = modint<MOD>(v);
         return is;

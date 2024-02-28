@@ -42,7 +42,9 @@ struct binary_trie {
         root = nullptr;
     }
     int size() const {
-        if (root == nullptr) return 0;
+        if (root == nullptr) {
+            return 0;
+        }
         return root->size;
     }
     void insert(T x, int cnt = 1) {
@@ -50,11 +52,15 @@ struct binary_trie {
     }
     void erase(T x, int cnt = 1) {
         cnt = min(cnt, count(x));
-        if (cnt == 0) return;
+        if (cnt == 0) {
+            return;
+        }
         root = erase(root, x, LOG - 1, cnt);
     }
     void apply_xor(T x) {
-        if (root != nullptr) root->lazy ^= x;
+        if (root != nullptr) {
+            root->lazy ^= x;
+        }
     }
     T max_element(T bias = 0) {
         return get_min(root, ~bias, LOG - 1);
@@ -73,12 +79,16 @@ struct binary_trie {
         return count_lower(root, x + 1, LOG - 1);
     }
     int count(T x) {
-        if (root == nullptr) return 0;
+        if (root == nullptr) {
+            return 0;
+        }
         node* v = root;
         for (int i = LOG - 1; i >= 0; i--) {
             evaluate(v, i);
             v = v->next[(x >> i) & 1];
-            if (v == nullptr) return 0;
+            if (v == nullptr) {
+                return 0;
+            }
         }
         return v->size;
     }
@@ -96,15 +106,25 @@ private:
     };
     node* root;
     void evaluate(node* v, int bit) {
-        if ((v->lazy >> bit) & 1) swap(v->next[0], v->next[1]);
-        if (v->next[0] != nullptr) v->next[0]->lazy ^= v->lazy;
-        if (v->next[1] != nullptr) v->next[1]->lazy ^= v->lazy;
+        if ((v->lazy >> bit) & 1) {
+            swap(v->next[0], v->next[1]);
+        }
+        if (v->next[0] != nullptr) {
+            v->next[0]->lazy ^= v->lazy;
+        }
+        if (v->next[1] != nullptr) {
+            v->next[1]->lazy ^= v->lazy;
+        }
         v->lazy = 0;
     }
     node* insert(node* v, T x, int bit, int cnt) {
-        if (v == nullptr) v = new node;
+        if (v == nullptr) {
+            v = new node;
+        }
         v->size += cnt;
-        if (bit < 0) return v;
+        if (bit < 0) {
+            return v;
+        }
         evaluate(v, bit);
         int lr = (x >> bit) & 1;
         v->next[lr] = insert(v->next[lr], x, bit - 1, cnt);
@@ -113,22 +133,32 @@ private:
     node* erase(node* v, T x, int bit, int cnt) {
         assert(v != nullptr);
         v->size -= cnt;
-        if (v->size == 0) return nullptr;
-        if (bit < 0) return v;
+        if (v->size == 0) {
+            return nullptr;
+        }
+        if (bit < 0) {
+            return v;
+        }
         evaluate(v, bit);
         int lr = (x >> bit) & 1;
         v->next[lr] = erase(v->next[lr], x, bit - 1, cnt);
         return v;
     }
     T get_min(node* v, T x, int bit) {
-        if (bit < 0) return 0;
+        if (bit < 0) {
+            return 0;
+        }
         evaluate(v, bit);
         int lr = (x >> bit) & 1;
-        if (v->next[lr] == nullptr) lr = 1 - lr;
+        if (v->next[lr] == nullptr) {
+            lr = 1 - lr;
+        }
         return get_min(v->next[lr], x, bit - 1) | ((T)lr << bit);
     }
     T get(node* v, int k, int bit) {
-        if (bit < 0) return 0;
+        if (bit < 0) {
+            return 0;
+        }
         evaluate(v, bit);
         int m = v->next[0] != nullptr ? v->next[0]->size : 0;
         if (k < m) {
@@ -138,7 +168,9 @@ private:
         }
     }
     int count_lower(node* v, T x, int bit) {
-        if (v == nullptr || bit < 0) return 0;
+        if (v == nullptr || bit < 0) {
+            return 0;
+        }
         evaluate(v, bit);
         int lr = (x >> bit) & 1;
         int ret = lr && v->next[0] != nullptr ? v->next[0]->size : 0;

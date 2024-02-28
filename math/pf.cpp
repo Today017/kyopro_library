@@ -1,7 +1,11 @@
-vector<pair<long long, int>> prime_factorize(long long n) {
-    vector<pair<long long, int>> ret;
-    for (long long i = 2; i * i <= n; i++) {
-        if (n % i != 0) continue;
+#include "../../kyopro_library/template.cpp"
+
+vector<pair<ll, int>> prime_factorize(ll n) {
+    vector<pair<ll, int>> ret;
+    for (ll i = 2; i * i <= n; i++) {
+        if (n % i != 0) {
+            continue;
+        }
         int ex = 0;
         while (n % i == 0) {
             ex++;
@@ -9,6 +13,8 @@ vector<pair<long long, int>> prime_factorize(long long n) {
         }
         ret.push_back(make_pair(i, ex));
     }
-    if (n != 1) ret.push_back(make_pair(n, 1));
+    if (n != 1) {
+        ret.push_back(make_pair(n, 1));
+    }
     return ret;
 }

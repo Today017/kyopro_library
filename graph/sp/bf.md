@@ -23,7 +23,9 @@ bool bellman_ford(const vector<tuple<int, int, T>> &edge, int n, int start, vect
                 fin = false;
             }
         }
-        if (fin) break;
+        if (fin) {
+            break;
+        }
         cnt++;
     }
     return cnt == n;

@@ -13,25 +13,26 @@
 ---
 
 ```cpp
-template <typename U, typename T>
+template<typename T>
 struct cumsum2D {
+    template<typename U>
     cumsum2D(vector<vector<U>> &a) {
         n = a.size();
         m = a.front().size();
-        acc = vector<vector<T>>(n + 1, vector<T>(m + 1));
+        rui = vector<vector<T>>(n + 1, vector<T>(m + 1));
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                acc[i + 1][j + 1] = acc[i][j + 1] + acc[i + 1][j] - acc[i][j] + a[i][j];
+                rui[i + 1][j + 1] = rui[i][j + 1] + rui[i + 1][j] - rui[i][j] + a[i][j];
             }
         }
     }
     T sum(int l, int r, int u, int d) {
-        return acc[r][d] - acc[l][d] - acc[r][u] + acc[l][u];
+        return rui[r][d] - rui[l][d] - rui[r][u] + rui[l][u];
     }
 
 private:
     int n, m;
-    vector<vector<T>> acc;
+    vector<vector<T>> rui;
 };
 
 ```

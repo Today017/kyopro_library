@@ -1,3 +1,5 @@
+#include "../../../kyopro_library/template.cpp"
+
 template <typename T>
 bool bellman_ford(const vector<tuple<int, int, T>> &edge, int n, int start, vector<T> &dst) {
     dst = vector<T>(n, numeric_limits<T>::max());
@@ -11,7 +13,9 @@ bool bellman_ford(const vector<tuple<int, int, T>> &edge, int n, int start, vect
                 fin = false;
             }
         }
-        if (fin) break;
+        if (fin) {
+            break;
+        }
         cnt++;
     }
     return cnt == n;

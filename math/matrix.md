@@ -27,15 +27,18 @@ matrix<T> operator*(const matrix<T>& a, const matrix<T>& b) {
     return ret;
 }
 template <typename T>
-matrix<T> operator^(matrix<T> a, long long b) {
+matrix<T> operator^(matrix<T> a, ll b) {
     int n = a.size();
     matrix<T> ret(n, vector<T>(n));
     for (int i = 0; i < n; i++) ret[i][i] = 1;
     while (b) {
-        if (b & 1) ret = ret * a;
+        if (b & 1) {
+            ret = ret * a;
+        }
         a = a * a;
         b >>= 1;
     }
     return ret;
 }
+
 ```

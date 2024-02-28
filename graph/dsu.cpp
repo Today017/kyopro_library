@@ -1,3 +1,6 @@
+#pragma once
+#include "../../kyopro_library/template.cpp"
+
 struct disjoint_set_union {
     disjoint_set_union(int n) {
         par = vector<int>(n);
@@ -8,15 +11,21 @@ struct disjoint_set_union {
         }
     }
     int find(int x) {
-        if (par[x] == x) return x;
+        if (par[x] == x) {
+            return x;
+        }
         par[x] = find(par[x]);
         return par[x];
     }
     void unite(int x, int y) {
         x = find(x);
         y = find(y);
-        if (x == y) return;
-        if (sz[x] < sz[y]) swap(x, y);
+        if (x == y) {
+            return;
+        }
+        if (sz[x] < sz[y]) {
+            swap(x, y);
+        }
         par[y] = x;
         sz[x] += sz[y];
     }

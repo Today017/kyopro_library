@@ -28,6 +28,7 @@ ft.sum(i + 1);
 ```cpp
 template <typename T>
 struct fenwick_tree {
+    int n;
     fenwick_tree(int n) {
         this->n = n;
         dat = vector<T>(n);
@@ -39,25 +40,14 @@ struct fenwick_tree {
             i += i & -i;
         }
     }
-    T operator[](int i) {
-        return sum(i, i + 1);
-    }
     T sum(int l, int r) {
         return sum(r) - sum(l);
     }
-    friend ostream &operator<<(ostream &os, fenwick_tree A) {
-        int n = A.n;
-        os << "[ ";
-        for (int i = 0; i < n; i++) {
-            os << A[i];
-            if (i != n - 1) os << ", ";
-        }
-        os << " ]";
-        return os;
+    T operator[](int i) {
+        return sum(i, i + 1);
     }
 
 private:
-    int n;
     vector<T> dat;
     T sum(int r) {
         T ret = 0;

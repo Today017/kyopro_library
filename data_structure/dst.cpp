@@ -1,6 +1,8 @@
+#include "../../kyopro_library/template.cpp"
+
 template <typename T>
 struct disjoint_sparse_table {
-    template <typename F>
+    using F = function<T(T, T)>;
     disjoint_sparse_table(const vector<T>& a, F f, T e) {
         n = a.size();
         this->f = f;
@@ -19,15 +21,16 @@ struct disjoint_sparse_table {
             }
         }
     }
-    T query(int l, int r) const {
+    T query(int l, int r) {
         r--;
-        if (l == r) return dat[0][l];
+        if (l == r) {
+            return dat[0][l];
+        }
         int k = 31 - __builtin_clz(l ^ r);
         return f(dat[k][l], dat[k][r]);
     }
 
 private:
-    using F = function<T(T, T)>;
     F f;
     int n;
     vector<vector<T>> dat;

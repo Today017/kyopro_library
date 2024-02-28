@@ -1,6 +1,52 @@
-#include "../../kyopro_library/template.cpp"
-#include "../../kyopro_library/graph/dsu.cpp"
+[top](../README.md)
 
+# [Random Generator](./random.cpp)
+
+`namespace random_generator`
+- ランダムテストケース生成用ツール。
+
+`void init()`
+- シード値を設定する。
+
+`T randint(T x)`
+- $[0, x)$ の範囲でランダムな整数を生成する。
+
+`T randint(T l, T r)`
+- $[l, r)$ の範囲でランダムな整数を生成する。
+
+`T get_element(vector<T> a)`
+- $a$ の中でランダムな要素を取得し、削除する。
+
+`vector<T> random_array_int(int n, int lo, int hi, bool no_dup)`
+- 長さ $n$, 範囲 $[l, r)$ のランダムな数列を生成する。
+- `no_dup` を `true` とすると、重複のない数列となる。
+
+`string random_alphabet(int n, bool lower = true)`
+- 長さ $n$ のアルファベットからなるランダムな文字列を生成する。
+- `lower` を `false` とすると uppercase のみからなる文字列となる。
+
+`string random_string(int n, string s)`
+- 長さ $n$, 文字列 $s$ の要素からなるランダムな文字列を生成する。
+
+`vector<vector<T>> random_array_2D(int h, int w, T lo, T hi)`
+- 縦、横の長さ $h$, $w$, 範囲 $[lo, hi)$ のランダムな 2 次元の数列を生成する。
+
+`vector<string> random_alphabet_2D(int h, int w, bool lower)`
+- 縦、横の長さ $h$, $w$, のランダムな文字列列を生成する。
+- `lower` を `false` とすると uppercase のみからなる文字列となる。
+
+`vector<pair<int, int>> random_tree(int n)`
+- 頂点数 $n$ の木を生成する。`1-indexed` 。
+
+`vector<pair<int, int>> random_bintree(int n)`
+- 頂点数 $n$ の完全二分木を生成する。`1-indexed` 。
+
+`vector<pair<int, int>> random_undigraph(int n, int m, bool connected)`
+- 頂点数 $n$, 辺数 $m$ の無向グラフを生成する。`connected` を `false` とすると連結とは限らないグラフを生成する。
+
+---
+
+```cpp
 namespace random_generator {
     mt19937_64 generate;
     void init() {
@@ -167,3 +213,5 @@ namespace random_generator {
         }
     }
 };  // namespace random_generator
+
+```

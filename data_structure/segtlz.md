@@ -99,7 +99,9 @@ segment_tree_lazy<T, T> range_update_range_min(int n, T eu = numeric_limits<T>::
         return min(a, b);
     };
     auto g = [eu](T f, T x) {
-        if (f == eu) return x;
+        if (f == eu) {
+            return x;
+        }
         return f;
     };
     return segment_tree_lazy<T, T>(n, f, g, g, et, eu);
@@ -115,7 +117,9 @@ segment_tree_lazy<T, T> range_update_range_max(int n, T eu = numeric_limits<T>::
         return max(a, b);
     };
     auto g = [eu](T f, T x) {
-        if (f == eu) return x;
+        if (f == eu) {
+            return x;
+        }
         return f;
     };
     return segment_tree_lazy<T, T>(n, f, g, g, et, eu);
@@ -132,11 +136,15 @@ segment_tree_lazy<pair<T, int>, T> range_update_range_sum(int n, T eu = numeric_
         return make_pair(a.first + b.first, a.second + b.second);
     };
     auto g = [eu](T f, T2 x) {
-        if (f == eu) return x;
+        if (f == eu) {
+            return x;
+        }
         return make_pair(f * x.second, x.second);
     };
     auto h = [eu](T f, T g) {
-        if (f == eu) return g;
+        if (f == eu) {
+            return g;
+        }
         return f;
     };
     return segment_tree_lazy<T, T>(n, f, g, h, et, eu);
@@ -148,10 +156,15 @@ segment_tree_lazy<pair<T, int>, T> range_update_range_sum(int n, T eu = numeric_
 ```cpp
 template <typename T, typename U>
 struct segment_tree_lazy {
-    template <typename F, typename G, typename H>
+    using F = function<T(T, T)>;
+    using G = function<T(U, T)>;
+    using H = function<U(U, U)>;
     segment_tree_lazy(int n, F f, G g, H h, T et, U eu) {
         this->n = 1;
-        while (this->n < n) this->n *= 2;
+        while (this->n < n) {
+            this->n *= 2;
+        }
+        this->size = n;
         this->f = f;
         this->g = g;
         this->h = h;
@@ -161,8 +174,12 @@ struct segment_tree_lazy {
         lazy = vector<U>(this->n * 2 - 1, eu);
     }
     void build(const vector<T> &a) {
-        for (int i = 0; i < (int)a.size(); i++) dat[i + n - 1] = a[i];
-        for (int i = n - 2; i >= 0; i--) dat[i] = f(dat[i * 2 + 1], dat[i * 2 + 2]);
+        for (int i = 0; i < (int)a.size(); i++) {
+            dat[i + n - 1] = a[i];
+        }
+        for (int i = n - 2; i >= 0; i--) {
+            dat[i] = f(dat[i * 2 + 1], dat[i * 2 + 2]);
+        }
     }
     void set(int i, T x) {
         evaluate(i);
@@ -182,31 +199,21 @@ struct segment_tree_lazy {
     T operator[](int i) {
         return query(i, i + 1, 0, 0, n);
     }
-    friend ostream &operator<<(ostream &os, segment_tree_lazy a) {
-        int n = a.n;
-        os << "[ ";
-        for (int i = 0; i < n; i++) {
-            os << a[i];
-            if (i != n - 1) os << ", ";
-        }
-        os << " ]";
-        return os;
-    }
+    int size;
 
 private:
     int n;
     vector<T> dat;
     vector<U> lazy;
-    using F = function<T(T, T)>;
-    using G = function<T(U, T)>;
-    using H = function<U(U, U)>;
     F f;
     G g;
     H h;
     T et;
     U eu;
     void evaluate(int i) {
-        if (lazy[i] == eu) return;
+        if (lazy[i] == eu) {
+            return;
+        }
         if (i < n - 1) {
             lazy[i * 2 + 1] = h(lazy[i], lazy[i * 2 + 1]);
             lazy[i * 2 + 2] = h(lazy[i], lazy[i * 2 + 2]);

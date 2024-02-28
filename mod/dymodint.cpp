@@ -1,13 +1,15 @@
+#include "../../kyopro_library/template.cpp"
+
 struct dynamic_modint {
-    long long value;
-    static long long mod;
-    static void set_mod(long long x) {
+    ll value;
+    static ll mod;
+    static void set_mod(ll x) {
         mod = x;
     }
-    static long long get_mod() {
+    static ll get_mod() {
         return mod;
     }
-    dynamic_modint(long long x = 0) {
+    dynamic_modint(ll x = 0) {
         if (x >= 0) {
             value = x % mod;
         } else {
@@ -22,12 +24,16 @@ struct dynamic_modint {
     }
     dynamic_modint &operator+=(const dynamic_modint &other) {
         value += other.value;
-        if (value >= mod) value -= mod;
+        if (value >= mod) {
+            value -= mod;
+        }
         return *this;
     }
     dynamic_modint &operator-=(const dynamic_modint &other) {
         value += mod - other.value;
-        if (value >= mod) value -= mod;
+        if (value >= mod) {
+            value -= mod;
+        }
         return *this;
     }
     dynamic_modint &operator*=(const dynamic_modint other) {
@@ -50,10 +56,12 @@ struct dynamic_modint {
     dynamic_modint operator/(const dynamic_modint &other) const {
         return dynamic_modint(*this) /= other;
     }
-    dynamic_modint pow(long long x) const {
+    dynamic_modint pow(ll x) const {
         dynamic_modint ret(1), mul(value);
         while (x) {
-            if (x & 1) ret *= mul;
+            if (x & 1) {
+                ret *= mul;
+            }
             mul *= mul;
             x >>= 1;
         }
@@ -72,10 +80,10 @@ struct dynamic_modint {
         return os << x.value;
     }
     friend istream &operator>>(istream &is, dynamic_modint &x) {
-        long long v;
+        ll v;
         is >> v;
         x = dynamic_modint(v);
         return is;
     }
 };
-long long dynamic_modint::mod = 998244353;
+ll dynamic_modint::mod = 998244353;

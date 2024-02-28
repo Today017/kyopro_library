@@ -5,10 +5,10 @@
 ---
 
 ```cpp
-template <long long MOD>
+template <ll MOD>
 struct modint {
-    long long value;
-    modint(long long x = 0) {
+    ll value;
+    modint(ll x = 0) {
         if (x >= 0) {
             value = x % MOD;
         } else {
@@ -55,14 +55,14 @@ struct modint {
     modint operator/(const modint &other) const {
         return modint(*this) /= other;
     }
-    modint pow(long long x) const {
+    modint pow(ll x) const {
         modint ret(1), mul(value);
-        while (x > 0) {
-            if (x % 2 == 1) {
+        while (x) {
+            if (x & 1) {
                 ret *= mul;
             }
             mul *= mul;
-            x /= 2;
+            x >>= 1;
         }
         return ret;
     }
@@ -79,7 +79,7 @@ struct modint {
         return os << x.value;
     }
     friend istream &operator>>(istream &is, modint &x) {
-        long long v;
+        ll v;
         is >> v;
         x = modint<MOD>(v);
         return is;
@@ -87,4 +87,5 @@ struct modint {
 };
 using mod998 = modint<998244353>;
 using mod107 = modint<1000000007>;
+
 ```

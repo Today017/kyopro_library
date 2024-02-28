@@ -19,44 +19,52 @@
 
 ```cpp
 struct rolling_hash {
-    inline long long mul_mod(long long a, long long b, long long mod) {
+    inline ll mul_mod(ll a, ll b, ll mod) {
         return a * b % mod;
     }
-    inline long long add_mod(long long a, long long b, long long mod) {
-        long long ret = a + b;
-        if (ret >= mod) ret -= mod;
-        if (ret < 0) ret += mod;
+    inline ll add_mod(ll a, ll b, ll mod) {
+        ll ret = a + b;
+        if (ret >= mod) {
+            ret -= mod;
+        }
+        if (ret < 0) {
+            ret += mod;
+        }
         return ret;
     }
-    long long pow_mod(long long a, long long x, long long mod) {
-        long long ret = 1;
+    ll pow_mod(ll a, ll x, ll mod) {
+        ll ret = 1;
         while (x) {
-            if (x & 1) ret = mul_mod(ret, a, mod);
+            if (x & 1) {
+                ret = mul_mod(ret, a, mod);
+            }
             a = mul_mod(a, a, mod);
             x >>= 1;
         }
         return ret;
     }
-    vector<long long> mod = {998244353, 1000000007, 1000000009, 1000000021, 1000000033};
-    vector<long long> base;
-    vector<vector<long long>> power, hash_table, inv;
-    rolling_hash(const string &s, vector<long long> base = {}) {
+    vector<ll> mod = {998244353, 1000000007, 1000000009, 1000000021, 1000000033};
+    vector<ll> base;
+    vector<vector<ll>> power, hash_table, inv;
+    rolling_hash(const string &s, vector<ll> base = {}) {
         int n = s.size();
         mt19937 rng(time(0));
-        this->base = vector<long long>(5);
-        power = vector<vector<long long>>(5);
-        hash_table = vector<vector<long long>>(5);
-        inv = vector<vector<long long>>(5);
+        this->base = vector<ll>(5);
+        power = vector<vector<ll>>(5);
+        hash_table = vector<vector<ll>>(5);
+        inv = vector<vector<ll>>(5);
         if (base.size() != 5) {
-            for (int i = 0; i < 5; i++) this->base[i] = (rng() % mod[i] + 3000) % mod[i];
+            for (int i = 0; i < 5; i++) {
+                this->base[i] = (rng() % mod[i] + 3000) % mod[i];
+            }
         } else {
             this->base = base;
         }
         base = this->base;
         for (int i = 0; i < 5; i++) {
-            power[i] = vector<long long>(n + 1);
-            hash_table[i] = vector<long long>(n + 1);
-            inv[i] = vector<long long>(n + 1);
+            power[i] = vector<ll>(n + 1);
+            hash_table[i] = vector<ll>(n + 1);
+            inv[i] = vector<ll>(n + 1);
             power[i][0] = 1;
             inv[i][n] = pow_mod(pow_mod(base[i], n, mod[i]), mod[i] - 2, mod[i]);
         }
@@ -69,7 +77,7 @@ struct rolling_hash {
             }
         }
     }
-    using hash = array<long long, 5>;
+    using hash = array<ll, 5>;
     hash get(int l, int r) {
         hash ret;
         for (int i = 0; i < 5; i++) {

@@ -29,7 +29,9 @@ struct min_cost_flow {
         Cost ret = 0;
         while (flow > 0) {
             auto [dst, pre_vertex, pre_edge] = calculate_cost(start);
-            if (dst[goal] == numeric_limits<Cost>::max()) return numeric_limits<Cost>::max();
+            if (dst[goal] == numeric_limits<Cost>::max()) {
+                return numeric_limits<Cost>::max();
+            }
             Cap now_flow = flow;
             int now_vertex = goal;
             while (now_vertex != start) {
@@ -59,7 +61,9 @@ private:
         while (true) {
             bool update = false;
             for (int i = 0; i < n; i++) {
-                if (dst[i] == numeric_limits<Cost>::max()) continue;
+                if (dst[i] == numeric_limits<Cost>::max()) {
+                    continue;
+                }
                 for (int j = 0; j < (int)G[i].size(); j++) {
                     auto [nxt, cap, cost, _] = G[i][j];
                     if (cap > 0 && dst[nxt] > dst[i] + cost) {
@@ -70,7 +74,9 @@ private:
                     }
                 }
             }
-            if (!update) break;
+            if (!update) {
+                break;
+            }
         }
         return make_tuple(dst, pre_vertex, pre_edge);
     }

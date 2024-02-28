@@ -1,3 +1,5 @@
+#include "../../kyopro_library/template.cpp"
+
 /* ================================== begin Wavelet Matrix ================================== */
 /* https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix */
 

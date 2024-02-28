@@ -1,3 +1,5 @@
+#include "../../kyopro_library/template.cpp"
+
 template <typename T>
 struct dynamic_li_chao_tree {
     dynamic_li_chao_tree(T x_low, T x_high, T id) {

@@ -3,7 +3,6 @@
 ## algorithm
 
 - [Compress](./algorithm/compress.md)
-- [Cumulative Sum 2D](./algorithm/cum2d.md)
 - [Inversion Number](./algorithm/inversion_number.md)
 - [Longest Increaseing Subsequence](./algorithm/lis.md)
 - [Doubling]
@@ -23,6 +22,7 @@
 
 ### other
 
+- [Cumulative Sum 2D](./data_structure/cum2d.md)
 - [Disjoint Sparse Table](./data_structure/dst.md)
 - [Fenwick Tree](./data_structure/fen.md)
 - [Binary Trie](./data_structure/bintr.md)
@@ -68,7 +68,7 @@
 ## math
 
 - [ExtGCD, Mod Inversion](./math/extgcd.md)
-- [Bezout Equation](./math/bezout_identity.md)
+- [Bezout Identity](./math/bezout_identity.md)
 - [Matrix](./math/matrix.md)
 - [Geometory]
 - [FPS]
@@ -95,3 +95,6 @@
 - [KMP]
 - [Trie]
 - [Aho-Corasick]
+
+## others
+- [Random Generator](./others/random.md)

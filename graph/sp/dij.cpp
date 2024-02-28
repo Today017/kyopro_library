@@ -1,3 +1,5 @@
+#include "../../../kyopro_library/template.cpp"
+
 template <typename T>
 vector<T> dijkstra(const vector<vector<pair<int, T>>> &G, int start = 0) {
     int n = G.size();

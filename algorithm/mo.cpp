@@ -1,3 +1,5 @@
+#include "../../kyopro_library/template.cpp"
+
 struct mo_algorithm {
     mo_algorithm(int n, int q) {
         max_n = 1 << 25;
@@ -15,7 +17,7 @@ struct mo_algorithm {
         assert(q == query_count);
         vector<int> qi(q);
         iota(qi.begin(), qi.end(), 0);
-        vector<long long> eval(q);
+        vector<ll> eval(q);
         for (int i = 0; i < q; i++) {
             eval[i] = hilbertorder(ls[i], rs[i]);
         }
@@ -24,24 +26,34 @@ struct mo_algorithm {
         });
         int nl = 0, nr = 0;
         for (int &i : qi) {
-            while (nl > ls[i]) add_left(--nl);
-            while (nr < rs[i]) add_right(nr++);
-            while (nl < ls[i]) del_left(nl++);
-            while (nr > rs[i]) del_right(--nr);
+            while (nl > ls[i]) {
+                add_left(--nl);
+            }
+            while (nr < rs[i]) {
+                add_right(nr++);
+            }
+            while (nl < ls[i]) {
+                del_left(nl++);
+            }
+            while (nr > rs[i]) {
+                del_right(--nr);
+            }
             out(i);
         }
     }
 
 private:
     int n, q, query_count;
-    long long max_n;
+    ll max_n;
     vector<int> ls, rs;
-    long long hilbertorder(int x, int y) {
-        long long rx, ry, d = 0;
-        for (long long s = max_n >> 1ll; s; s >>= 1ll) {
+    ll hilbertorder(int x, int y) {
+        ll rx, ry, d = 0;
+        for (ll s = max_n >> 1ll; s; s >>= 1ll) {
             rx = (x & s) > 0, ry = (y & s) > 0;
             d += s * s * ((rx * 3) ^ ry);
-            if (ry) continue;
+            if (ry) {
+                continue;
+            }
             if (rx) {
                 x = max_n - 1 - x;
                 y = max_n - 1 - y;

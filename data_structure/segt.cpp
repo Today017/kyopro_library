@@ -1,16 +1,25 @@
+#include "../../kyopro_library/template.cpp"
+
 template <typename T>
 struct segment_tree {
     template <typename F>
     segment_tree(int n, F f, T e) {
         this->n = 1;
-        while (this->n < n) this->n *= 2;
+        while (this->n < n) {
+            this->n *= 2;
+        }
+        this->size = n;
         this->f = f;
         this->e = e;
         dat = vector<T>(this->n * 2 - 1, e);
     }
     void build(const vector<T> &a) {
-        for (int i = 0; i < (int)a.size(); i++) dat[i + n - 1] = a[i];
-        for (int i = n - 2; i >= 0; i--) dat[i] = f(dat[i * 2 + 1], dat[i * 2 + 2]);
+        for (int i = 0; i < (int)a.size(); i++) {
+            dat[i + n - 1] = a[i];
+        }
+        for (int i = n - 2; i >= 0; i--) {
+            dat[i] = f(dat[i * 2 + 1], dat[i * 2 + 2]);
+        }
     }
     void set(int i, T x) {
         i += n - 1;
@@ -26,21 +35,11 @@ struct segment_tree {
     T operator[](int i) {
         return dat[n - 1 + i];
     }
-    friend ostream &operator<<(ostream &os, segment_tree a) {
-        int n = a.n;
-        os << "[ ";
-        for (int i = 0; i < n; i++) {
-            os << a[i];
-            if (i != n - 1) os << ", ";
-        }
-        os << " ]";
-        return os;
-    }
+    int size;
 
 private:
     int n;
     vector<T> dat;
-    using F = function<T(T, T)>;
     F f;
     T e;
     T query(int left, int right, int i, int l, int r) {

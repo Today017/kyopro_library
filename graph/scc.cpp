@@ -1,3 +1,5 @@
+#include "../../kyopro_library/template.cpp"
+
 tuple<vector<vector<int>>, vector<vector<int>>, vector<int>> scc_decomposition(const vector<vector<int>> &G) {
     int n = G.size();
     vector<vector<int>> G2(n);
@@ -11,18 +13,24 @@ tuple<vector<vector<int>>, vector<vector<int>>, vector<int>> scc_decomposition(c
     auto F = [&](auto F, int now) -> void {
         vst[now] = true;
         for (int nxt : G[now]) {
-            if (!vst[nxt]) F(F, nxt);
+            if (!vst[nxt]) {
+                F(F, nxt);
+            }
         }
         order.push_back(now);
     };
     auto F2 = [&](auto F2, int now, int idx) -> void {
         component[now] = idx;
         for (int nxt : G2[now]) {
-            if (component[nxt] == -1) F2(F2, nxt, idx);
+            if (component[nxt] == -1) {
+                F2(F2, nxt, idx);
+            }
         }
     };
     for (int i = 0; i < n; i++) {
-        if (!vst[i]) F(F, i);
+        if (!vst[i]) {
+            F(F, i);
+        }
     }
     int idx = 0;
     reverse(order.begin(), order.end());
@@ -34,7 +42,9 @@ tuple<vector<vector<int>>, vector<vector<int>>, vector<int>> scc_decomposition(c
     }
     int n_n = *max_element(component.begin(), component.end()) + 1;
     vector<vector<int>> ret(n_n);
-    for (int i = 0; i < n; i++) ret[component[i]].push_back(i);
+    for (int i = 0; i < n; i++) {
+        ret[component[i]].push_back(i);
+    }
     vector<vector<int>> ret2(n_n);
     for (int i = 0; i < n; i++) {
         for (int j : G[i]) {
