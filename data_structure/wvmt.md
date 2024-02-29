@@ -2,7 +2,11 @@
 
 # [Wavelet Matrix](./wvmt.cpp)
 
-全体集合のサイズ$\sigma$
+[解説](https://miti-7.hatenablog.com/entry/2019/02/01/152131)
+
+[参考](https://github.com/MitI-7/WaveletMatrix/blob/master/WaveletMatrix/WaveletMatrix.hpp)
+
+全体集合のサイズ $\sigma$ とする。
 
 `wavelet_matrix(vector<ull> a)`
 
@@ -20,7 +24,7 @@
 `ull min_range(ull l, ull r)` 
 
 `ull quantile_range(ull l, ull r, ull k)`
-- $[l, r)$ で$k$ 番目に小さい数値のindexを返す。 $k$ は`0-indexed`。
+- $[l, r)$ で $k$ 番目に小さい数値のindexを返す。 $k$ は`0-indexed`。
 - $O(\log\sigma)$
 
 `ull rank(ull c, ull pos)`
@@ -38,11 +42,11 @@
 `ull rank_more_than(ull c, ull l, ull r)`
 
 `tuple<ull, ull, ull> rank_all(ull c, ull l, ull r)`
-- $[l, r)$ で $($$c$と同じ値の数、$c$より小さい値の数、$c$より大きい値の数$)$ 。
+- $[l, r)$ で $($ $c$ と同じ値の数、$c$より小さい値の数、$c$より大きい値の数 $)$ 。
 - $O(\log\sigma)$
 
 `pair<ull, ull> topk(ull l, ull r, ull k)`
-- $[l, r)$ で出現回数が多い順に $k$ 個の $($値, 頻度$)$ を返す。頻度が同じ場合は小さいものが優先。
+- $[l, r)$ で出現回数が多い順に $k$ 個の $($ 値, 頻度 $)$ を返す。頻度が同じ場合は小さいものが優先。
 - $O(k\log\sigma)$
 
 `ull range_sum(ull l, ull r, ull min, ull max)`
