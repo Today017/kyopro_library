@@ -1,5 +1,7 @@
 # library
 
+[Note](./note.md)
+
 ## algorithm
 
 - [Compress](./algorithm/compress.md)
