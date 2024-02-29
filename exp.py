@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# https://github.com/atcoder/ac-library/blob/master/expander.py のコードを元にしています。
+
 import re
 import sys
 import argparse
