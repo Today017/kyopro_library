@@ -22,8 +22,8 @@ $g=\gcd(a,b)$ とする。
 $c$ が $g$ で割り切れない場合、解は存在しない。
 
 $ax + by = c$ の辺々を $g$ で割ると $\frac{a}{g}x + \frac{b}{g}y = \frac{c}{g}$ である。方程式の一般解を $X,Y$ とおくと、
-$\frac{a}{g}(X-x) + \frac{b}{g}(Y-y) = 0$ を満たす。$\frac{a}{g}$ と $\frac{b}{g}$ は互いに素であるので $X-x$ は $\frac{b}{g}$ の倍数であり、
-$ X=\frac{b}{g}\times t +x$ となる。
+$\frac{a}{g}(X-x) + \frac{b}{g}(Y-y) = 0$ を満たす。 $\frac{a}{g}$ と $\frac{b}{g}$ は互いに素であるので $X-x$ は $\frac{b}{g}$ の倍数であり、
+$X=\frac{b}{g}\times t +x$ となる。
 
 これを再代入して $Y=\frac{-a}{g}\times t +y$ である。
 
