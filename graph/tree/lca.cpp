@@ -1,8 +1,12 @@
+#include "../../../kyopro_library/template.cpp"
+
 struct lowest_common_ancestor {
     lowest_common_ancestor(vector<vector<int>> &G, int root = 0) {
         int n = G.size();
         int k = 1;
-        while ((1 << k) < n) k++;
+        while ((1 << k) < n) {
+            k++;
+        }
         parent = vector<vector<int>>(k, vector<int>(n, -1));
         dst = vector<int>(n, -1);
         dfs(G, root, -1, 0);
@@ -20,9 +24,13 @@ struct lowest_common_ancestor {
         if (dst[u] < dst[v]) swap(u, v);
         int k = parent.size();
         for (int i = 0; i < k; i++) {
-            if ((dst[u] - dst[v]) >> i & 1) u = parent[i][u];
+            if ((dst[u] - dst[v]) >> i & 1) {
+                u = parent[i][u];
+            }
         }
-        if (u == v) return u;
+        if (u == v) {
+            return u;
+        }
         for (int i = k - 1; i >= 0; i--) {
             if (parent[i][u] != parent[i][v]) {
                 u = parent[i][u];
@@ -40,7 +48,9 @@ struct lowest_common_ancestor {
     int climb(int u, int d) {
         int k = parent.size();
         for (int i = k - 1; i >= 0; i--) {
-            if (d >> i & 1) u = parent[i][u];
+            if (d >> i & 1) {
+                u = parent[i][u];
+            }
         }
         return u;
     }
@@ -52,7 +62,9 @@ private:
         parent[0][now] = pre;
         dst[now] = tmp;
         for (int nxt : G[now]) {
-            if (nxt != pre) dfs(G, nxt, now, tmp + 1);
+            if (nxt != pre) {
+                dfs(G, nxt, now, tmp + 1);
+            }
         }
     }
 };

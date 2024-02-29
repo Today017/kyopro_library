@@ -61,7 +61,7 @@ segment_tree<T> range_sum_query(int n, T e = 0) {
 ```cpp
 template <typename T>
 struct segment_tree {
-    template <typename F>
+    using F = function<T(T, T)>;
     segment_tree(int n, F f, T e) {
         this->n = 1;
         while (this->n < n) {
