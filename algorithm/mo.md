@@ -2,6 +2,8 @@
 
 # [Mo](./mo.cpp)
 
+[参考](https://ei1333.hateblo.jp/entry/2017/09/11/211011)
+
 `mo_algorithm(int n, int q)`
 
 `void add_query(int l, int r)`

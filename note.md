@@ -1,3 +1,5 @@
+[top](./README.md)
+
 # Note
 
 ## 使い方

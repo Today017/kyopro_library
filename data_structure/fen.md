@@ -3,11 +3,11 @@
 # [Fenwick Tree](./fen.cpp)
 
 `T add(int i, T x)`
-- $0\le i\le n$
+- $0\le i < n$
 - $O(\log n)$
 
 `T sum(int l, int r)`
-- $0\le l<r\leq n$
+- $0\le l < r\leq n$
 - $O(\log n)$
 
 

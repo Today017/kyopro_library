@@ -1,7 +1,7 @@
 [top](../README.md)
 
 # [Binary Trie](./bintr.cpp)
-だいたい$O(LOG)$
+だいたいの操作が $O(LOG)$ で可能。
 
 `int size()`
 - サイズ取得。

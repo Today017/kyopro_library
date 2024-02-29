@@ -7,9 +7,9 @@
 - 以下の条件を要求する。
     - 集合 $T$, 演算 $f$, 単位元 $et$ が単位半群を成す。
     - 集合 $U$, 演算 $h$, 単位元 $eu$ が単位半群を為す。
-    - 演算 $g:U\times T \rightarrow T$ が $t,\, t_1,\, t_2 \in T,\, u,\, u_1,\, u_2 \in U$ について以下を満たす。
-        - $g(m_2,\, g(m_1,\, t)) = g(h(m_2,\, m_1),\, t)$
-        - $g(m,\, f(t_1,\, t_2)) = f(g(m,\, t_1),\, g(m,\, t_2))$
+    - 演算 $g:U\times T \rightarrow T$ が $t, t_1, t_2 \in T, u, u_1, u_2 \in U$ について以下を満たす。
+        - $g(m_2, g(m_1, t)) = g(h(m_2, m_1), t)$
+        - $g(m, f(t_1, t_2)) = f(g(m, t_1), g(m, t_2))$
 
 `void build(vector<T> a)`
 - 配列 $a$ から 遅延評価 Segment Tree を構築する。

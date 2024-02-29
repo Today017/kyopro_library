@@ -42,7 +42,7 @@
 `ull rank_more_than(ull c, ull l, ull r)`
 
 `tuple<ull, ull, ull> rank_all(ull c, ull l, ull r)`
-- $[l, r)$ で $($ $c$ と同じ値の数、$c$より小さい値の数、$c$より大きい値の数 $)$ 。
+- $[l, r)$ で $($ $c$ と同じ値の数、$c$ より小さい値の数、$c$ より大きい値の数 $)$ 。
 - $O(\log\sigma)$
 
 `pair<ull, ull> topk(ull l, ull r, ull k)`
