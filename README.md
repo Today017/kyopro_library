@@ -7,9 +7,9 @@
 - [Compress](./algorithm/compress.md)
 - [Inversion Number](./algorithm/inversion_number.md)
 - [Longest Increaseing Subsequence](./algorithm/lis.md)
-- [Doubling]
+<!-- - [Doubling] -->
 - [Mo](./algorithm/mo.md)
-- [Convex Hull Trick](https://ei1333.github.io/luzhiled/snippets/structure/convex-hull-trick-add-monotone.html)
+<!-- - [Convex Hull Trick](https://ei1333.github.io/luzhiled/snippets/structure/convex-hull-trick-add-monotone.html) -->
 
 ## data structure
 
@@ -17,10 +17,10 @@
 
 - [Segment Tree](./data_structure/segt.md)
 - [Segment Tree Lazy](./data_structure/segtlz.md)
-- [Segment Tree Dual]
-- [Segment Tree 2D]
-- [Segment Tree Beats]
-- [Persistent Segment Tree]
+<!-- - [Segment Tree Dual] -->
+<!-- - [Segment Tree 2D] -->
+<!-- - [Segment Tree Beats] -->
+<!-- - [Persistent Segment Tree] -->
 
 ### other
 
@@ -29,18 +29,18 @@
 - [Fenwick Tree](./data_structure/fen.md)
 - [Binary Trie](./data_structure/bintr.md)
 - [Wavelet Matrix](./data_structure/wvmt.md)
-- [Li Chao Tree](./data_structure/dlct.md)
-- [Link-Cut Tree]
-- [Skew Heap]
-- [Splay Tree]
-- [Persistent Array]
+<!-- - [Li Chao Tree](./data_structure/dlct.md) -->
+<!-- - [Link-Cut Tree] -->
+<!-- - [Skew Heap] -->
+<!-- - [Splay Tree] -->
+<!-- - [Persistent Array] -->
 
 ## graph
 
 - [Disjoint Set Union](./graph/dsu.md)
 - [SCC](./graph/scc.md)
 - [Topological Sort](./graph/toposort.md)
-- [Low Link]
+<!-- - [Low Link] -->
 
 ### shortest path
 
@@ -52,9 +52,9 @@
 
 - [Heavy-Light Decomposition](./graph/tree/hld.md)
 - [Lowest Common Ancestor](./graph/tree/lca.md)
-- [Rerooting]
-- [Diameter]
-- [Centroid Decomposition]
+<!-- - [Rerooting] -->
+<!-- - [Diameter] -->
+<!-- - [Centroid Decomposition] -->
 
 ### flow
 
@@ -72,31 +72,31 @@
 - [ExtGCD, Mod Inversion](./math/extgcd.md)
 - [Bezout Identity](./math/bezout_identity.md)
 - [Matrix](./math/matrix.md)
-- [Geometory]
-- [FPS]
-- [Lagrange Polynomial]
-- [Fast Fourier Transform]
-- [Convolution]
+<!-- - [Geometory] -->
+<!-- - [FPS] -->
+<!-- - [Lagrange Polynomial] -->
+<!-- - [Fast Fourier Transform] -->
+<!-- - [Convolution] -->
 
 ### number
 
 - [Divisors](./math/divisors.md)
 - [Prime Factorize](./math/pf.md)
 - [Eratosthenes](./math/primes.md)
-- [Fraction]
-- [Quotient Ranges]
+<!-- - [Fraction] -->
+<!-- - [Quotient Ranges] -->
 
 ## string
 
 - [Run Length Encoding](./string/rle.md)
 - [Rolling Hash](./string/rh.md)
-- [Z-Algorithm]
-- [Manacher]
-- [Suffix Array]
-- [LCP Array]
-- [KMP]
-- [Trie]
-- [Aho-Corasick]
+<!-- - [Z-Algorithm] -->
+<!-- - [Manacher] -->
+<!-- - [Suffix Array] -->
+<!-- - [LCP Array] -->
+<!-- - [KMP] -->
+<!-- - [Trie] -->
+<!-- - [Aho-Corasick] -->
 
 ## others
 - [Random Generator](./others/random.md)
