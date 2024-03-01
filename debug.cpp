@@ -42,7 +42,7 @@ ostream &operator<<(ostream &os, const vector<vector<T>> &A) {
         }
         os << "]\n";
     }
-    os << "]";
+    os << " ]";
     return os;
 }
 template <typename T>
@@ -55,7 +55,7 @@ ostream &operator<<(ostream &os, const vector<T> &A) {
             os << ", ";
         }
     }
-    os << "]";
+    os << " ]";
     return os;
 }
 template <typename T>
@@ -65,7 +65,7 @@ ostream &operator<<(ostream &os, const set<T> &A) {
     for (T x : A) {
         os << x << ", ";
     }
-    os << "]";
+    os << " ]";
     return os;
 }
 template <typename T>
@@ -75,7 +75,7 @@ ostream &operator<<(ostream &os, const multiset<T> &A) {
     for (T x : A) {
         os << x << ", ";
     }
-    os << "]";
+    os << " ]";
     return os;
 }
 template <typename T>
@@ -85,7 +85,7 @@ ostream &operator<<(ostream &os, const deque<T> &A) {
     for (T x : A) {
         os << x << ", ";
     }
-    os << "]";
+    os << " ]";
     return os;
 }
 template <typename T1, typename T2>
@@ -99,7 +99,7 @@ ostream &operator<<(ostream &os, const map<T1, T2> &A) {
     for (pair<T1, T2> x : A) {
         os << x << ", ";
     }
-    os << "]";
+    os << " ]";
     return os;
 }
 template <typename T>
@@ -110,7 +110,7 @@ ostream &operator<<(ostream &os, queue<T> A) {
         os << A.front() << ", ";
         A.pop();
     }
-    os << "]";
+    os << " ]";
     return os;
 }
 template <typename T>
@@ -121,7 +121,7 @@ ostream &operator<<(ostream &os, priority_queue<T> A) {
         os << A.top() << ", ";
         A.pop();
     }
-    os << "]";
+    os << " ]";
     return os;
 }
 template <typename T>
@@ -134,7 +134,7 @@ ostream &operator<<(ostream &os, atcoder::fenwick_tree<T> A) {
             os << ", ";
         }
     }
-    os << "]";
+    os << " ]";
     return os;
 }
 template <typename T>
@@ -147,7 +147,7 @@ ostream &operator<<(ostream &os, fenwick_tree<T> A) {
             os << ", ";
         }
     }
-    os << "]";
+    os << " ]";
     return os;
 }
 template <typename S, S (*op)(S, S), S (*e)()>
@@ -173,7 +173,7 @@ ostream &operator<<(ostream &os, segment_tree<T> a) {
             os << ", ";
         }
     }
-    os << "]";
+    os << " ]";
     return os;
 }
 template <typename T, typename U>
@@ -186,7 +186,7 @@ ostream &operator<<(ostream &os, segment_tree_lazy<T, U> a) {
             os << ", ";
         }
     }
-    os << "]";
+    os << " ]";
     return os;
 }
 ostream &operator<<(ostream &os, atcoder::dsu ds) {
