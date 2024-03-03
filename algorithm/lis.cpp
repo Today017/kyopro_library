@@ -2,7 +2,7 @@
 
 int longest_increasing_subsequence_length(vector<int> &a, bool strict = true) {
     int n = a.size();
-    vector<int> dp(n, INF);
+    vector<int> dp(n, INT_MAX);
     for (int i = 0; i < n; i++) {
         vector<int>::iterator itr;
         if (strict) {
@@ -12,5 +12,5 @@ int longest_increasing_subsequence_length(vector<int> &a, bool strict = true) {
         }
         *itr = a[i];
     }
-    return find(dp.begin(), dp.end(), INF) - dp.begin();
+    return find(dp.begin(), dp.end(), INT_MAX) - dp.begin();
 }

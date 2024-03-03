@@ -47,6 +47,9 @@
 ---
 
 ```cpp
+#include "../../kyopro_library/template.cpp"
+#include "../../kyopro_library/graph/dsu.cpp"
+
 namespace random_generator {
     mt19937_64 generate;
     void init() {
@@ -57,7 +60,6 @@ namespace random_generator {
     T randint(T x) {
         assert(x > 0);
         return generate() % x;
-        return ret % x;
     }
     template <typename T>
     T randint(T x, T y) {
@@ -84,7 +86,9 @@ namespace random_generator {
             set<T> st;
             for (int i = 0; i < n; i++) {
                 int r = randint(lo, hi);
-                while (st.count(r)) r = randint(lo, hi);
+                while (st.count(r)) {
+                    r = randint(lo, hi);
+                }
                 ret[i] = r;
                 st.insert(r);
             }
@@ -118,18 +122,26 @@ namespace random_generator {
     }
     vector<string> random_alphabet_2D(int h, int w, bool lower = true) {
         vector<string> ret(h);
-        for (int i = 0; i < h; i++) ret[i] = random_alphabet(w, lower);
+        for (int i = 0; i < h; i++) {
+            ret[i] = random_alphabet(w, lower);
+        }
         return ret;
     }
     vector<pair<int, int>> random_tree(int n) {
         vector<int> a = random_array_int<int>(n - 2, 1, n + 1);
         vector<int> d(n + 1);
-        for (int i = 0; i < n - 2; i++) d[a[i]]++;
-        for (int i = 1; i <= n; i++) d[i]++;
+        for (int i = 0; i < n - 2; i++) {
+            d[a[i]]++;
+        }
+        for (int i = 1; i <= n; i++) {
+            d[i]++;
+        }
         vector<pair<int, int>> ret;
         set<int> pq;
         for (int i = 1; i <= n; i++) {
-            if (d[i] == 1) pq.insert(i);
+            if (d[i] == 1) {
+                pq.insert(i);
+            }
         }
         for (int i = 0; i < n - 2; i++) {
             int v = (*pq.begin());
@@ -206,12 +218,13 @@ namespace random_generator {
                 }
                 bool ok = true;
                 for (int i = 0; i < n; i++) {
-                    ok &= ds.find(i) == ds.find(0);
+                    if (ds.is_united(i, 0)) {
+                        ok = false;
+                    }
                 }
                 if (ok) return ret;
             }
         }
     }
 };  // namespace random_generator
-
 ```

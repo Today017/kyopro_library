@@ -100,3 +100,4 @@
 
 ## others
 - [Random Generator](./others/random.md)
+- [Timer](./others/timer.md)
