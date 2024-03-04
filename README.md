@@ -18,7 +18,7 @@
 - [Segment Tree](./data_structure/segt.md)
 - [Segment Tree Lazy](./data_structure/segtlz.md)
 <!-- - [Segment Tree Dual] -->
-<!-- - [Segment Tree 2D] -->
+- [Segment Tree 2D](./data_structure/seg2d.md)
 <!-- - [Segment Tree Beats] -->
 <!-- - [Persistent Segment Tree] -->
 
