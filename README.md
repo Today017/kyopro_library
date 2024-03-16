@@ -90,7 +90,7 @@
 
 - [Run Length Encoding](./string/rle.md)
 - [Rolling Hash](./string/rh.md)
-<!-- - [Z-Algorithm] -->
+- [Z-Algorithm](./string/zalgo.md)
 <!-- - [Manacher] -->
 <!-- - [Suffix Array] -->
 <!-- - [LCP Array] -->
