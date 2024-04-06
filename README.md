@@ -24,6 +24,7 @@
 
 ### other
 
+- [Tree](./data_structure/tree.md)
 - [Cumulative Sum 2D](./data_structure/cum2d.md)
 - [Disjoint Sparse Table](./data_structure/dst.md)
 - [Sparse Table 2D](./data_structure/st2d.md)
