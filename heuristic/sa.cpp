@@ -14,11 +14,10 @@ struct simulated_annealing {
     double get_prob(double dE) {
         return exp(dE / temp);
     }
-    simulated_annealing(double start_temp, double end_temp, double time_limit, Data init) {
+    simulated_annealing(double start_temp, double end_temp, double time_limit) {
         this->start_temp = start_temp;
         this->end_temp = end_temp;
         this->time_limit = time_limit;
-        best = now = init;
         t = timer(time_limit);
         temp = start_temp;
     }
@@ -30,7 +29,7 @@ struct simulated_annealing {
                 dE *= -1;
             }
             double temp = get_temp();
-            double prob = get_prob();
+            double prob = get_prob(dE);
             if(1.0 * random_generator::randint(1000000) / 1000000 < prob) {
                 now = next;
                 if(now.get_score() > best.get_score()) {

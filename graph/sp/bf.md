@@ -2,32 +2,44 @@
 
 # [Bellman Ford](./bf.cpp)
 
-`bool bellman_ford<T>(vector<tuple<int, int, T>> edge, int n, int start, vector<T> dst, T inf)`
-- 辺集合 $edge$ に対して頂点 $start$ からの各頂点への最短距離を $dst$ に格納する。
-- 負のサイクルが存在する場合 `true` を返す。
+`pair<bool, vector<ll>> bellman_ford(vector<vector<int, ll>> G, int start)`
+- グラフ $G$ に対して頂点 $start$ からの各頂点への最短距離を格納した配列と、負のサイクルが存在するか否かを返す。
 - $O(VE)$
+
+## 負のサイクルが存在するときの注意点
+
+負のサイクルが存在する場合、 $start$ からある頂点に向かう際に $start$ -> 負のサイクル -> 頂点 なるパスが存在するなら最短距離は -inf 、そうでない場合は返り値の配列の値となる。
+
+よって、そのようなパスが存在するかの判定をする必要がある事に注意すること。
+
+これは、逆辺を張ったグラフに対し BFS を行って $start$ から到達可能であるかを調べ、到達可能な頂点のみで更新を行うようにすることで実現可能。
+
+[参考 1](https://yukicoder.me/submissions/967952)
+
+[参考 2](https://mhrb-minase.hatenablog.com/entry/2019/08/20/003915)
 
 ---
 
 ```cpp
-template <typename T>
-bool bellman_ford(const vector<tuple<int, int, T>> &edge, int n, int start, vector<T> &dst) {
-    dst = vector<T>(n, numeric_limits<T>::max());
+pair<bool, vector<ll>> bellman_ford(const vector<vector<pair<int, ll>>> &G, int start) {
+    int n = G.size();
+    vector<ll> dst(n, INFL);
     dst[start] = 0;
-    int cnt = 0;
-    while (cnt < n) {
-        bool fin = true;
-        for (auto [a, b, c] : edge) {
-            if (dst[a] != inf && dst[a] + c < dst[b]) {
-                dst[b] = dst[a] + c;
-                fin = false;
+    int i = 0;
+    for (; i < n; i++) {
+        bool update = false;
+        for (int j = 0; j < n; j++) {
+            for (auto [nxt, cost] : G[j]) {
+                if (dst[j] != INFL && dst[j] + cost < dst[nxt]) {
+                    dst[nxt] = dst[j] + cost;
+                    update = true;
+                }
             }
         }
-        if (fin) {
+        if (!update) {
             break;
         }
-        cnt++;
     }
-    return cnt == n;
+    return {i == n, dst};
 }
 ```

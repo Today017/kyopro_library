@@ -1,22 +1,23 @@
 #include "../../../kyopro_library/template.cpp"
 
-template <typename T>
-bool bellman_ford(const vector<tuple<int, int, T>> &edge, int n, int start, vector<T> &dst) {
-    dst = vector<T>(n, numeric_limits<T>::max());
+pair<bool, vector<ll>> bellman_ford(const vector<vector<pair<int, ll>>> &G, int start) {
+    int n = G.size();
+    vector<ll> dst(n, INFL);
     dst[start] = 0;
-    int cnt = 0;
-    while (cnt < n) {
-        bool fin = true;
-        for (auto [a, b, c] : edge) {
-            if (dst[a] != inf && dst[a] + c < dst[b]) {
-                dst[b] = dst[a] + c;
-                fin = false;
+    int i = 0;
+    for (; i < n; i++) {
+        bool update = false;
+        for (int j = 0; j < n; j++) {
+            for (auto [nxt, cost] : G[j]) {
+                if (dst[j] != INFL && dst[j] + cost < dst[nxt]) {
+                    dst[nxt] = dst[j] + cost;
+                    update = true;
+                }
             }
         }
-        if (fin) {
+        if (!update) {
             break;
         }
-        cnt++;
     }
-    return cnt == n;
+    return {i == n, dst};
 }

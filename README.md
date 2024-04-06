@@ -26,6 +26,7 @@
 
 - [Cumulative Sum 2D](./data_structure/cum2d.md)
 - [Disjoint Sparse Table](./data_structure/dst.md)
+- [Sparse Table 2D](./data_structure/st2d.md)
 - [Fenwick Tree](./data_structure/fen.md)
 - [Binary Trie](./data_structure/bintr.md)
 - [Wavelet Matrix](./data_structure/wvmt.md)
@@ -97,6 +98,9 @@
 <!-- - [KMP] -->
 <!-- - [Trie] -->
 <!-- - [Aho-Corasick] -->
+
+## Heuristc
+- [Simulated Annealing](./heuristic/sa.md)
 
 ## others
 - [Random Generator](./others/random.md)

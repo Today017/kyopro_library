@@ -35,6 +35,15 @@ struct disjoint_set_union {
     bool is_united(int x, int y) {
         return find(x) == find(y);
     }
+    vector<vector<int>> groups() {
+        int n = par.size();
+        vector<vector<int>> res(n);
+        for (int i = 0; i < n; i++) {
+            res[find(i)].push_back(i);
+        }
+        res.erase(remove_if(res.begin(), res.end(), [&](const vector<int>& v) { return v.empty(); }), res.end());
+        return res;
+    }
 
 private:
     vector<int> par, sz;

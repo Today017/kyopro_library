@@ -189,5 +189,5 @@ segment_tree_lazy<pair<T, int>, T> range_update_range_sum(int n, T eu = numeric_
         }
         return f;
     };
-    return segment_tree_lazy<T, T>(n, f, g, h, et, eu);
+    return segment_tree_lazy<pair<T, int>, T>(n, f, g, h, et, eu);
 }

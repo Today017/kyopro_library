@@ -93,6 +93,11 @@ ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
     os << "( " << p.first << ", " << p.second << " )";
     return os;
 }
+template<typename T1, typename T2, typename T3>
+ostream &operator<<(ostream &os, const tuple<T1, T2, T3> &t) {
+    os << "( " << get<0>(t) << ", " << get<1>(t) << ", " << get<2>(t) << " )";
+    return os;
+}
 template <typename T1, typename T2>
 ostream &operator<<(ostream &os, const map<T1, T2> &A) {
     os << "[ ";
