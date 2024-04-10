@@ -47,8 +47,8 @@
 ---
 
 ```cpp
+#pragma once
 #include "../../kyopro_library/template.cpp"
-#include "../../kyopro_library/graph/dsu.cpp"
 
 namespace random_generator {
     mt19937_64 generate;
@@ -57,19 +57,19 @@ namespace random_generator {
         generate = mt19937_64(seed_gen());
     }
     template <typename T>
-    T randint(T x) {
+    T random_int(T x) {
         assert(x > 0);
         return generate() % x;
     }
     template <typename T>
-    T randint(T x, T y) {
+    T random_int(T x, T y) {
         assert(x < y);
         return x + generate() % (y - x);
     }
     template <typename T>
     T get_elememt(vector<T>& a) {
         const int n = a.size();
-        int idx = randint(0, n);
+        int idx = random_int(0, n);
         swap(a[n - 1], a[idx]);
         int ret = a.back();
         a.pop_back();
@@ -80,14 +80,14 @@ namespace random_generator {
         vector<T> ret(n);
         if (!no_dup) {
             for (int i = 0; i < n; i++) {
-                ret[i] = randint(lo, hi);
+                ret[i] = random_int(lo, hi);
             }
         } else {
             set<T> st;
             for (int i = 0; i < n; i++) {
-                int r = randint(lo, hi);
+                int r = random_int(lo, hi);
                 while (st.count(r)) {
-                    r = randint(lo, hi);
+                    r = random_int(lo, hi);
                 }
                 ret[i] = r;
                 st.insert(r);
@@ -98,7 +98,7 @@ namespace random_generator {
     string random_alphabet(int n, bool lower = true) {
         string ret;
         for (int i = 0; i < n; i++) {
-            int idx = randint(26);
+            int idx = random_int(26);
             ret.push_back(char((lower ? 'a' : 'A') + idx));
         }
         return ret;
@@ -107,7 +107,7 @@ namespace random_generator {
         string ret;
         int m = s.size();
         for (int i = 0; i < n; i++) {
-            int idx = randint(m);
+            int idx = random_int(m);
             ret.push_back(s[idx]);
         }
         return ret;
@@ -170,7 +170,7 @@ namespace random_generator {
     }
     vector<pair<int, int>> random_bintree(int n) {
         vector<pair<int, int>> ret;
-        vector<ll> roots = {randint(1, n + 1)};
+        vector<ll> roots = {random_int(1, n + 1)};
         vector<ll> leaves;
         for (int i = 1; i <= n; i++) {
             if (i != roots.back()) {
@@ -210,21 +210,46 @@ namespace random_generator {
             while (true) {
                 ret.clear();
                 vector<int> idxs = random_array_int<int>(m, 0, ed, true);
-                disjoint_set_union ds(n);
+                vector<int> parent(n);
+                vector<vector<int>> sets(n);
+                for (int i = 0; i < n; i++) {
+                    parent[i] = i;
+                    sets[i].push_back(i);
+                }
                 for (int idx : idxs) {
                     ret.push_back(edges[idx]);
                     auto [a, b] = edges[idx];
-                    ds.unite(--a, --b);
+                    a--;
+                    b--;
+                    if (parent[a] != parent[b]) {
+                        if (sets[parent[a]].size() < sets[parent[b]].size()) {
+                            swap(a, b);
+                        }
+                        for (int x : sets[parent[b]]) {
+                            parent[x] = parent[a];
+                            sets[parent[a]].push_back(x);
+                        }
+                        sets[parent[b]].clear();
+                    }
                 }
                 bool ok = true;
                 for (int i = 0; i < n; i++) {
-                    if (ds.is_united(i, 0)) {
+                    if (parent[i] != parent[0]) {
                         ok = false;
+                        break;
                     }
                 }
-                if (ok) return ret;
+                if (ok) {
+                    return ret;
+                }
             }
         }
     }
 };  // namespace random_generator
+
+struct setup_random {
+    setup_random() {
+        random_generator::init();
+    }
+} setup_random_instance;
 ```

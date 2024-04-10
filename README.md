@@ -102,6 +102,7 @@
 
 ## Heuristc
 - [Simulated Annealing](./heuristic/sa.md)
+- [Climbing](./heuristic/cl.md)
 
 ## others
 - [Random Generator](./others/random.md)
