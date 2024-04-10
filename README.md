@@ -85,6 +85,7 @@
 - [Divisors](./math/divisors.md)
 - [Prime Factorize](./math/pf.md)
 - [Eratosthenes](./math/primes.md)
+- [Fast Prime Factorize](./math/osak.md)
 <!-- - [Fraction] -->
 <!-- - [Quotient Ranges] -->
 
