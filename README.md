@@ -7,8 +7,8 @@
 - [Compress](./algorithm/compress.md)
 - [Inversion Number](./algorithm/inversion_number.md)
 - [Longest Increaseing Subsequence](./algorithm/lis.md)
-<!-- - [Doubling] -->
 - [Mo](./algorithm/mo.md)
+<!-- - [Doubling] -->
 <!-- - [Convex Hull Trick](https://ei1333.github.io/luzhiled/snippets/structure/convex-hull-trick-add-monotone.html) -->
 
 ## data structure
@@ -85,7 +85,8 @@
 - [Divisors](./math/divisors.md)
 - [Prime Factorize](./math/pf.md)
 - [Eratosthenes](./math/primes.md)
-- [Fast Prime Factorize](./math/osak.md)
+- [Prime Factorization based on Eratosthenes](./math/osak.md)
+- [Prime Factorization based on Pollard's rho](./math/rho.md)
 <!-- - [Fraction] -->
 <!-- - [Quotient Ranges] -->
 

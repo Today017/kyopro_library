@@ -1,10 +1,10 @@
 [top](../README.md)
 
-# [Fast Prime Factorization](./name.cpp)
+# [Prime Factorization based on Eratosthenes](./osak.cpp)
 
 `factors(int n)`
 - $n$ 以下の整数について、高速に素因数分解・約数列挙を行う前計算をする。
-- $O(n \log n)$
+- $O(n \log {\log{n}})$
 
 `vector<pair<int, int>> get_prime_factors(int n)`
 - $n$ の素因数分解を行う。
