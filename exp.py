@@ -1,3 +1,6 @@
+HEAD = False
+CONST = True
+
 #!/usr/bin/env python3
 
 # https://github.com/atcoder/ac-library/blob/master/expander.py のコードを元にしています。
@@ -12,6 +15,7 @@ from typing import List, Set, Optional
 
 
 logger = getLogger(__name__)  # type: Logger
+
 
 
 class Expander:
@@ -31,7 +35,7 @@ class Expander:
 
     """
 
-    include = re.compile(r'#include\s*["<](kyopro_library/[a-z_/]*(|.cpp))[">]\s*')
+    include = re.compile(r'#include\s*["<](kyopro_library/[a-z0-9_/]*(|.cpp))[">]\s*')
 
     def is_ignored_line(self, line) -> bool:
         """
@@ -50,6 +54,14 @@ class Expander:
             return True
         if line.strip().startswith("using std::"):
             return True
+        if line.strip() in ["#ifdef LOCAL","#include \"./debug.cpp\"","#else","#define debug(...)","#define print_line","#endif"] and not HEAD:
+            return True
+        if line.strip() in ["const int INF=1e9+10;","const ll INFL=4e18;"] and not CONST:
+            return True
+
+        
+
+
         return False
 
     def __init__(self, lib_paths: List[Path]):
@@ -112,6 +124,12 @@ class Expander:
             line = line.replace("../../../../", "")
             line = line.replace("../../../", "")
             line = line.replace("../../", "")
+            # line = line.replace("../", "")
+
+            # if "debug" in line:
+            #     line = "//" + line
+            # if "print_line" in line:
+            #     line = "//" + line
 
             m = self.include.match(line)
             if m:
@@ -143,6 +161,12 @@ class Expander:
                 acl_path = self.find_library(m.group(1))
                 result.extend(self.expand_library(acl_path))
                 continue
+
+            if "debug" in line or "print_line" in line:
+                continue
+                
+            # if line.startswith("ll ") or " ll " in line or "(ll)" in line or "<ll>" in line or "ll," in line or ",ll" in line:
+            #     line=line.replace("ll","long long")
 
             result.append(line)
         return "\n".join(result)
@@ -177,3 +201,4 @@ if __name__ == "__main__":
     else:
         with open("combined.cpp", "w") as f:
             f.write(output)
+
