@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Name](./name.cpp)
+# [Name](./name.hpp)
 
 `T method()`
 - 制約など

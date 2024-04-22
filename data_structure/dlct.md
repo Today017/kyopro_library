@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Dynamic Li Chao Tree](./dlct.cpp)
+# [Dynamic Li Chao Tree](./dlct.hpp)
 
 `dynamic_li_chao_tree<T, x_low, x_high, id>()`
 - $x$ の範囲が $x_{low} \le x \le x_{high}$ 要素の最大値が $id$ であるような Dynamic Li Chao Tree を構築する。

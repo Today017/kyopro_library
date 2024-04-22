@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Cumulative Sum 2D](./cum2d.cpp)
+# [Cumulative Sum 2D](./cum2d.hpp)
 
 `cumsum2D<U, T>(vector<vector<U>> a)`
 - 行列 $a$ に対する2次元累積和を構築する。

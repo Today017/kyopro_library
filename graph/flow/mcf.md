@@ -1,6 +1,6 @@
 [top](../../README.md)
 
-# [Min Cost Flow](./mcf.cpp)
+# [Min Cost Flow](./mcf.hpp)
 
 `min_cost_flow<Cap, Cost>(int n)`
 

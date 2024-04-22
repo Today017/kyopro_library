@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Random Generator](./random.cpp)
+# [Random Generator](./random.hpp)
 
 `namespace random_generator`
 - ランダムテストケース生成用ツール。
@@ -48,7 +48,7 @@
 
 ```cpp
 #pragma once
-#include "../../kyopro_library/template.cpp"
+#include "../../kyopro_library/template.hpp"
 
 namespace random_generator {
     mt19937_64 generate;

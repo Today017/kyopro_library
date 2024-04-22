@@ -6,12 +6,12 @@
 
 1. このディレクトリを作業フォルダ内に clone する。
 2. [`exp.py`](./exp.py) を作業フォルダ内に移す。
-3. `cpp` ファイルを作成する。ライブラリを利用する際は、例えば次のように記述する。
+3. `hpp` ファイルを作成する。ライブラリを利用する際は、例えば次のように記述する。
 
 ```cpp
-#include "./kyopro_library/template.cpp"
-#include "./kyopro_library/graph/dsu.cpp"
-#include "./kyopro_library/mod/modint.cpp"
+#include "./kyopro_library/template.hpp"
+#include "./kyopro_library/graph/dsu.hpp"
+#include "./kyopro_library/mod/modint.hpp"
 
 int main() {
     // code
@@ -21,10 +21,10 @@ int main() {
 }
 ```
 
-4. 次のコマンドを実行する。すると、ライブラリが展開されたものが `combind.cpp` として生成される。
+4. 次のコマンドを実行する。すると、ライブラリが展開されたものが `combind.hpp` として生成される。
 
 ```bash
-python3 exp.py a.cpp
+python3 exp.py a.hpp
 ```
 
 ## 注意点

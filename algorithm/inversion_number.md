@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Inversion Number](./inversion_number.cpp)
+# [Inversion Number](./inversion_number.hpp)
 
 `ll inversion_number(vector<int> a)`
 - 数列 $a$ の転倒数を返す。

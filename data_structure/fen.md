@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Fenwick Tree](./fen.cpp)
+# [Fenwick Tree](./fen.hpp)
 
 `T add(int i, T x)`
 - $0\le i < n$

@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Mo](./mo.cpp)
+# [Mo](./mo.hpp)
 
 [参考](https://ei1333.hateblo.jp/entry/2017/09/11/211011)
 

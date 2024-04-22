@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Sparse Table 2D](./st2d.cpp)
+# [Sparse Table 2D](./st2d.hpp)
 
 `void sparse_table_init(vector<vector<ll>> a, bool is_min=true)`
 - 2 次元配列 `a` に対して 2 次元の Sparse Table を構築する。
@@ -13,7 +13,7 @@
 ---
 
 ```cpp
-#include "../../kyopro_library/template.cpp"
+#include "../../kyopro_library/template.hpp"
 
 struct {
     int h, w;

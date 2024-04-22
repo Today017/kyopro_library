@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Modint](./modint.cpp)
+# [Modint](./modint.hpp)
 
 ---
 

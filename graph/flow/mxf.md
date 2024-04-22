@@ -1,6 +1,6 @@
 [top](../../README.md)
 
-# [Max Flow](./mxf.cpp)
+# [Max Flow](./mxf.hpp)
 
 `max_flow<Cap>(int n)`
 

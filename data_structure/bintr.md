@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Binary Trie](./bintr.cpp)
+# [Binary Trie](./bintr.hpp)
 だいたいの操作が $O(LOG)$ で可能。
 
 `int size()`

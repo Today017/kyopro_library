@@ -1,6 +1,6 @@
 [top](../../README.md)
 
-# [Lowest Common Ancestor](./lca.cpp)
+# [Lowest Common Ancestor](./lca.hpp)
 
 `lowest_common_ancestor(vector<vector<int>> G, int root)`
 - $root$ を根として、lcaのための前計算を行う。

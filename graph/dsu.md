@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Disjoint Set Union](./dsu.cpp)
+# [Disjoint Set Union](./dsu.hpp)
 
 `disjoint_set_union(int n)`
 

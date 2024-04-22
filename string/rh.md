@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Rolling Hash](./rh.cpp)
+# [Rolling Hash](./rh.hpp)
 
 `rolling_hash(string s, vector<ll> base)`
 - 文字列 $s$ から $base$ を基数とした Rolling Hash を構築する。

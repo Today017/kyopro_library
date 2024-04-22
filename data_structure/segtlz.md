@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Segment Tree Lazy](./segtlz.cpp)
+# [Segment Tree Lazy](./segtlz.hpp)
 
 `segment_tree_lezy<T, U>(int n, F f, G g, H h, T et, U eu)`
 - 遅延評価 Segment Tree を構築する。

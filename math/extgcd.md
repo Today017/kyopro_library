@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [ExtGCD, Mod Inversion](./extgcd.cpp)
+# [ExtGCD, Mod Inversion](./extgcd.hpp)
 
 [解説](https://maspypy.com/%E6%95%B0%E5%AD%A6%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0-euclid%E3%81%AE%E4%BA%92%E9%99%A4%E6%B3%95)
 

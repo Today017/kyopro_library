@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Timer](./timer.cpp)
+# [Timer](./timer.hpp)
 
 `timer(ll tlm)`
 - `tlm` msec を制限時間とした timer を定義し、時間の計測を開始する。

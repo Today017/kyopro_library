@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Dynamic Modint](./dymodint.cpp)
+# [Dynamic Modint](./dymodint.hpp)
 
 ---
 

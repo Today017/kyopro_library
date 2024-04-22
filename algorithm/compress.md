@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Compress](./compress.cpp)
+# [Compress](./compress.hpp)
 
 `vector<T> compress(vector<T> a)`
 

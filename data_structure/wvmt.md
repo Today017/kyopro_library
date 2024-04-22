@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Wavelet Matrix](./wvmt.cpp)
+# [Wavelet Matrix](./wvmt.hpp)
 
 [解説](https://miti-7.hatenablog.com/entry/2019/02/01/152131)
 

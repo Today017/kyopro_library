@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Convex Hull Trick](./cht.cpp)
+# [Convex Hull Trick](./cht.hpp)
 
 `T method()`
 - 制約など

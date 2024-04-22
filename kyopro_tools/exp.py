@@ -35,7 +35,7 @@ class Expander:
 
     """
 
-    include = re.compile(r'#include\s*["<](kyopro_library/[a-z0-9_/]*(|.cpp))[">]\s*')
+    include = re.compile(r'#include\s*["<](kyopro_library/[a-z0-9_/]*(|.hpp))[">]\s*')
 
     def is_ignored_line(self, line) -> bool:
         """
@@ -54,7 +54,7 @@ class Expander:
             return True
         if line.strip().startswith("using std::"):
             return True
-        if line.strip() in ["#ifdef LOCAL","#include \"./debug.cpp\"","#else","#define debug(...)","#define print_line","#endif"] and not HEAD:
+        if line.strip() in ["#ifdef LOCAL","#include \"./debug.hpp\"","#else","#define debug(...)","#define print_line","#endif"] and not HEAD:
             return True
         if line.strip() in ["const int INF=1e9+10;","const ll INFL=4e18;"] and not CONST:
             return True
@@ -199,6 +199,6 @@ if __name__ == "__main__":
     if opts.console:
         print(output)
     else:
-        with open("combined.cpp", "w") as f:
+        with open("combined.hpp", "w") as f:
             f.write(output)
 

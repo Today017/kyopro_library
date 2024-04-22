@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Segment Tree](./segt.cpp)
+# [Segment Tree](./segt.hpp)
 
 `segment_tree<T>(int n, F f, T e)`
 - サイズ $n$ ,演算 $f$, 単位元 $e$ の Segment Tree を構築する。

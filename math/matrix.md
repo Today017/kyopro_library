@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Matrix](./matrix.cpp)
+# [Matrix](./matrix.hpp)
 
 
 ---

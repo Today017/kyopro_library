@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Tree](./tree.cpp)
+# [Tree](./tree.hpp)
 
 `tree<T>`
 - 順序付き集合を管理するデータ構造。

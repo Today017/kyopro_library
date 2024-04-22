@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Segment Tree 2D](./seg2d.cpp)
+# [Segment Tree 2D](./seg2d.hpp)
 
 `segment_tree_2D<T>(int h, int w, F f, T e)`
 - サイズ $h\times w$ ,演算 $f$, 単位元 $e$ の Segment Tree を構築する。

@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [Combination](./cmb.cpp)
+# [Combination](./cmb.hpp)
 
 `combination(int n)`
 - サイズ $n$ のテーブルを作成する。

@@ -1,6 +1,6 @@
 [top](../README.md)
 
-# [SCC Decomposition](./scc.cpp)
+# [SCC Decomposition](./scc.hpp)
 
 `auto scc_decomposition(const vector<vector<int>> G)`
 - グラフ $G$ に対して強連結成分分解をする。

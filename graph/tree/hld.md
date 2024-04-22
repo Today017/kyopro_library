@@ -1,6 +1,6 @@
 [top](../../README.md)
 
-# [Heavy-Light Decomposition](./hld.cpp)
+# [Heavy-Light Decomposition](./hld.hpp)
 
 [解説](https://hcpc-hokudai.github.io/archive/graph_tree_001.pdf)
 
