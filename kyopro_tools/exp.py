@@ -199,6 +199,6 @@ if __name__ == "__main__":
     if opts.console:
         print(output)
     else:
-        with open("combined.hpp", "w") as f:
+        with open("combined.cpp", "w") as f:
             f.write(output)
 
