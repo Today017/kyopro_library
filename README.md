@@ -87,6 +87,7 @@
 - [Eratosthenes](./math/primes.md)
 - [Prime Factorization based on Eratosthenes](./math/osak.md)
 - [Prime Factorization based on Pollard's rho](./math/rho.md)
+- [Primality Test](./math/ptest.md)
 <!-- - [Fraction] -->
 <!-- - [Quotient Ranges] -->
 
