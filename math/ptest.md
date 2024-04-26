@@ -1,79 +1,66 @@
 [top](../README.md)
 
-# [Primaliry Test based on Miller-Rabin](./ptest.hpp)
+# [Primality Test based on Miller-Rabin](./ptest.hpp)
 
-`bool primaliry_test(ll n)`
+`bool primality_test(ll n)`
 - Miller-Rabin の素数判定法に基づき、 $n$ の素数判定を行う。
 - $O(\log n)$
 
 ---
 
 ```cpp
-template<typename T>
-T pow_mod(T a, T n, T mod) {
-    T ret = 1;
-    while (n > 0) {
-        if (n & 1) {
-            ret = ret * a % mod;
-        }
-        a = a * a % mod;
-        n >>= 1;
-    }
-    return ret;
-}
+#include "../../kyopro_library/template.hpp"
 
-bool miller_rabin(ll N, vector<ll> A) {
-    if (N == 2) {
+bool primality_test(ll n) {
+    if (n == 2) {
         return true;
     }
-    if (N == 1 || N % 2 == 0) {
+    if (n <= 1 || n % 2 == 0) {
         return false;
     }
-
-    ll d = N - 1;
-    ll s = 0;
+    vector<ll> test;
+    if (n < 4759123141ll) {
+        test = {2, 7, 61};
+    } else {
+        test = {2, 325, 9375, 28178, 450775, 9780504, 1795265022};
+    }
+    auto pow_mod = [](__int128_t a, __int128_t n, __int128_t mod) {
+        __int128_t res = 1;
+        while (n > 0) {
+            if (n & 1) {
+                res = res * a % mod;
+            }
+            a = a * a % mod;
+            n >>= 1;
+        }
+        return res;
+    };
+    ll s = 0, d = n - 1;
     while (d % 2 == 0) {
-        d /= 2;
+        d >>= 1;
         s++;
     }
-    for (ll a : A) {
-        if (a >= N) {
+    for (ll a : test) {
+        if (a >= n) {
             break;
         }
-        ll x = pow_mod<__int128_t>(a, d, N);
-        if (x == 1 || x == N - 1) {
+        __int128_t x = pow_mod(a, d, n);
+        if (x == 1 || x == n - 1) {
             continue;
-        }
-        bool ok = false;
-        for (ll i = 0; i < s - 1; i++) {
-            x = __int128_t(x) * x % N;
-            if (x == N - 1) {
-                ok = true;
-                break;
+        } else {
+            for (ll r = 1; r < s; r++) {
+                x = x * x % n;
+                if (x == 1) {
+                    return false;
+                } else if (x == n - 1) {
+                    break;
+                }
             }
         }
-        if (!ok) {
+        if (x != n - 1) {
             return false;
         }
     }
     return true;
 }
-
-bool primaliry_test(ll n) {
-    if (n <= 1) {
-        return false;
-    }
-    if (n == 2) {
-        return true;
-    }
-    if (n % 2 == 0) {
-        return false;
-    }
-    if (n < 4759123141LL) {
-        return miller_rabin(n, {2, 7, 61});
-    } else {
-        return miller_rabin(n, {2, 325, 9375, 28178, 450775, 9780504, 1795265022});
-    }
-}
-
 ```
