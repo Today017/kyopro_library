@@ -93,6 +93,7 @@ private:
     }
 };
 
+// verified
 template <typename T, typename U>
 segment_tree_lazy<T, U> range_add_range_min(int n) {
     const T et = numeric_limits<T>::max();
@@ -125,6 +126,7 @@ segment_tree_lazy<T, U> range_add_range_max(int n) {
     return segment_tree_lazy<T, U>(n, f, g, h, et, eu);
 }
 
+// verified
 template <typename T, typename U>
 segment_tree_lazy<pair<T, int>, U> range_add_range_sum(int n) {
     using T2 = pair<T, int>;
@@ -142,6 +144,7 @@ segment_tree_lazy<pair<T, int>, U> range_add_range_sum(int n) {
     return segment_tree_lazy<T2, U>(n, f, g, h, et, eu);
 }
 
+// verified
 template <typename T>
 segment_tree_lazy<T, T> range_update_range_min(int n, T eu = numeric_limits<T>::max()) {
     const T et = numeric_limits<T>::max();

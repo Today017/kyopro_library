@@ -1,9 +1,9 @@
 #include "../../kyopro_library/template.hpp"
 
 template <typename T>
-vector<int> compress(vector<T> &a) {
+vector<ll> compress(vector<T> &a) {
     int n = a.size();
-    vector<int> ret(n);
+    vector<ll> ret(n);
     for (int i = 0; i < n; i++) {
         ret[i] = a[i];
     }
