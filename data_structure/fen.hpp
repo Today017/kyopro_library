@@ -3,7 +3,7 @@
 
 template <typename T>
 struct fenwick_tree {
-    int n;
+    fenwick_tree() = default;
     fenwick_tree(int n) {
         this->n = n;
         dat = vector<T>(n);
@@ -21,6 +21,7 @@ struct fenwick_tree {
     T sum(int l, int r) {
         return sum(r) - sum(l);
     }
+    int n;
 
 private:
     vector<T> dat;

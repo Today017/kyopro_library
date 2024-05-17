@@ -28,7 +28,7 @@ ft.sum(i + 1);
 ```cpp
 template <typename T>
 struct fenwick_tree {
-    int n;
+    fenwick_tree() = default;
     fenwick_tree(int n) {
         this->n = n;
         dat = vector<T>(n);
@@ -40,12 +40,13 @@ struct fenwick_tree {
             i += i & -i;
         }
     }
-    T sum(int l, int r) {
-        return sum(r) - sum(l);
-    }
     T operator[](int i) {
         return sum(i, i + 1);
     }
+    T sum(int l, int r) {
+        return sum(r) - sum(l);
+    }
+    int n;
 
 private:
     vector<T> dat;

@@ -2,106 +2,99 @@
 
 # [Convex Hull Trick](./cht.hpp)
 
-`T method()`
-- 制約など
+`convex_hull_trick<T, MIN>`
+- 直線を管理し、クエリに対して最小値、または最大値を求める。
+
+`add(T a, T b)`
+- 直線 $y = ax + b$ を追加する。
+- 直線集合のサイズを $N$ として $O(\log N)$
+
+`get(T x)`
+- $x$ における最小値、または最大値を求める。
+- $O(\log^2 N)$
 
 ---
 
 ```cpp
-template <typename T, bool MIN>
+template <typename T = ll, bool MIN = true>
 struct convex_hull_trick {
-    convex_hull_trick() {}
+    convex_hull_trick() = default;
     void add(T a, T b) {
         if (!MIN) {
-            a *= -1, b *= -1;
+            a *= -1;
+            b *= -1;
         }
-        pair<T, T> line(a, b);
-        if (empty()) {
-            dat.emplace_front(line);
+        if (lines.count(a)) {
+            if (lines[a] <= b) {
+                return;
+            }
+        }
+        lines[a] = b;
+        auto it = lines.find(a);
+        if (!need(it)) {
+            lines.erase(a);
             return;
         }
-        if (dat.front().first <= a) {
-            if (dat.front().first == a) {
-                if (dat.front().second <= b) {
-                    return;
+        if (it != lines.begin()) {
+            it = prev(it);
+            while (true) {
+                if (need(it)) {
+                    break;
                 }
-                dat.pop_front();
+                auto prv = prev(it);
+                lines.erase(it);
+                it = prv;
             }
-            while (dat.size() >= 2 && check(line, dat.front(), dat[1])) {
-                dat.pop_front();
+        }
+        it = next(lines.find(a));
+        while (true) {
+            if (need(it)) {
+                break;
             }
-            dat.emplace_front(line);
-        } else {
-            assert(a <= dat.back().first);
-            if (dat.back().first == a) {
-                if (dat.back().second <= b) {
-                    return;
-                }
-                dat.pop_back();
-            }
-            while (dat.size() >= 2 && check(dat[dat.size() - 2], dat.back(), line)) {
-                dat.pop_back();
-            }
-            dat.emplace_back(line);
+            auto nxt = next(it);
+            lines.erase(it);
+            it = nxt;
         }
     }
-    inline T get_y(const pair<T, T> &a, const T &x) {
-        return a.first * x + a.second;
-    }
-    T query(T x) {
-        assert(!empty());
-        int l = -1, r = dat.size() - 1;
-        while (l + 1 < r) {
-            int m = (l + r) >> 1;
-            if (get_y(dat[m], x) >= get_y(dat[m + 1], x)) {
-                l = m;
+    T get(T x) {
+        T lo = lines.begin()->first, hi = lines.rbegin()->first + 1;
+        while (hi - lo > 1) {
+            T mid = (lo + hi) / 2;
+            auto it = lines.lower_bound(mid);
+            if (it == lines.begin()) {
+                lo = mid;
+                continue;
+            }
+            if (it == lines.end()) {
+                hi = mid;
+                continue;
+            }
+            auto [a1, b1] = *prev(it);
+            auto [a2, b2] = *it;
+            if (a1 * x + b1 <= a2 * x + b2) {
+                hi = mid;
             } else {
-                r = m;
+                lo = mid;
             }
         }
-        if (MIN) {
-            return get_y(dat[r], x);
-        }
-        return -get_y(dat[r], x);
+        auto it = lines.lower_bound(lo);
+        auto [a, b] = *it;
+        return (a * x + b) * (MIN ? 1 : -1);
     }
-    T query_monotone_inc(T x) {
-        assert(!empty());
-        while (dat.size() >= 2 && get_y(dat.front(), x) >= get_y(dat[1], x)) {
-            dat.pop_front();
-        }
-        if (MIN) {
-            return get_y(dat.front(), x);
-        }
-        return -get_y(dat.front(), x);
-    }
-    T query_monotone_dec(T x) {
-        assert(!empty());
-        while (dat.size() >= 2 && get_y(dat.back(), x) >= get_y(dat[dat.size() - 2], x)) {
-            dat.pop_back();
-        }
-        if (MIN) {
-            return get_y(dat.back(), x);
-        }
-        return -get_y(dat.back(), x);
-    }
+
 private:
-    deque<pair<T, T>> dat;
-    inline int sgn(T x) {
-        return x == 0 ? 0 : (x < 0 ? -1 : 1);
-    }
-    bool empty() const {
-        return dat.empty();
-    }
-    void clear() {
-        dat.clear();
-    }
-    inline bool check(const pair<T, T> &a, const pair<T, T> &b, const pair<T, T> &c) {
-        if (b.second == a.second || c.second == b.second) {
-            return sgn(b.first - a.first) * sgn(c.second - b.second) >= sgn(c.first - b.first) * sgn(b.second - a.second);
+    map<T, T> lines;
+    bool need(const typename map<T, T>::iterator it) {
+        if (it == lines.begin() || it == prev(lines.end()) || it == lines.end()) {
+            return true;
         }
-        long double left = (long double)(b.first - a.first) * sgn(c.second - b.second) / (long double)(abs(b.second - a.second));
-        long double right = (long double)(c.first - b.first) * sgn(b.second - a.second) / (long double)(abs(c.second - b.second));
-        return left >= right;
+        auto prv = prev(it);
+        auto nxt = next(it);
+        auto [a, b] = *it;
+        auto [a1, b1] = *nxt;
+        auto [a2, b2] = *prv;
+        return (__int128)(a1 - a) * (b - b2) < (__int128)(a - a2) * (b1 - b);
     }
 };
+
 ```

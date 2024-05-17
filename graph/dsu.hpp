@@ -2,6 +2,7 @@
 #include "../../kyopro_library/template.hpp"
 
 struct disjoint_set_union {
+    disjoint_set_union() = default;
     disjoint_set_union(int n) {
         par = vector<int>(n);
         sz = vector<int>(n);
@@ -44,7 +45,14 @@ struct disjoint_set_union {
         res.erase(remove_if(res.begin(), res.end(), [&](const vector<int>& v) { return v.empty(); }), res.end());
         return res;
     }
+    int operator[] (int x) {
+        return find(x);
+    }
+    bool operator() (int x, int y) {
+        return is_united(x, y);
+    } 
 
 private:
     vector<int> par, sz;
+    int forest_count;
 };

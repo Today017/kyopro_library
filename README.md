@@ -8,8 +8,8 @@
 - [Inversion Number](./algorithm/inversion_number.md)
 - [Longest Increaseing Subsequence](./algorithm/lis.md)
 - [Mo](./algorithm/mo.md)
+- [Convex Hull Trick](./algorithm/cht.hpp)
 <!-- - [Doubling] -->
-<!-- - [Convex Hull Trick](https://ei1333.github.io/luzhiled/snippets/structure/convex-hull-trick-add-monotone.html) -->
 
 ## data structure
 
@@ -18,7 +18,7 @@
 - [Segment Tree](./data_structure/segt.md)
 - [Segment Tree Lazy](./data_structure/segtlz.md)
 - [Segment Tree 2D](./data_structure/seg2d.md)
-<!-- - [Segment Tree Dual] -->
+- [Segment Tree Dual](./data_structure/segtd.md)
 <!-- - [Segment Tree Beats] -->
 <!-- - [Persistent Segment Tree] -->
 
@@ -90,6 +90,8 @@
 - [Prime Factorization based on Pollard's rho](./math/rho.md)
 - [Primality Test based on Miller-Rabin](./math/ptest.md)
 - [Fraction](./math/frac.md)
+- [Convolution](./math/convolution.md)
+- [Convolution (NTT)](./math/ntt.md)
 <!-- - [Quotient Ranges] -->
 
 ## string
