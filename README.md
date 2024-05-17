@@ -8,7 +8,7 @@
 - [Inversion Number](./algorithm/inversion_number.md)
 - [Longest Increaseing Subsequence](./algorithm/lis.md)
 - [Mo](./algorithm/mo.md)
-- [Convex Hull Trick](./algorithm/cht.hpp)
+- [Convex Hull Trick](./algorithm/cht.md)
 <!-- - [Doubling] -->
 
 ## data structure
