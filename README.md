@@ -92,6 +92,7 @@
 - [Fraction](./math/frac.md)
 - [Convolution](./math/convolution.md)
 - [Convolution (NTT)](./math/ntt.md)
+- [Mod Log (Baby Step Giant Step)](./math/modlog.md)
 <!-- - [Quotient Ranges] -->
 
 ## string
