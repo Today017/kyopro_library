@@ -100,9 +100,9 @@
 - [Run Length Encoding](./string/rle.md)
 - [Rolling Hash](./string/rh.md)
 - [Z-Algorithm](./string/zalgo.md)
+- [Suffix Array](./string/sa.md)
+- [LCP Array](./string/lcp.md)
 <!-- - [Manacher] -->
-<!-- - [Suffix Array] -->
-<!-- - [LCP Array] -->
 <!-- - [KMP] -->
 <!-- - [Trie] -->
 <!-- - [Aho-Corasick] -->
