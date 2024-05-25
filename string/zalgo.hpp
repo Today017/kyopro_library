@@ -1,12 +1,17 @@
 #include "../../kyopro_library/template.hpp"
 
-vector<int> z_algorithm(const string &s) {
+template <typename T = string>
+vector<int> z_algorithm(const T &s) {
     int n = s.size();
+    vector<int> A(n);
+    for (int i = 0; i < n; ++i) {
+        A[i] = s[i];
+    }
     vector<int> ret(n);
     ret[0] = n;
     int i = 1, j = 0;
     while (i < n) {
-        while (i + j < n && s[j] == s[i + j]) {
+        while (i + j < n && A[j] == A[i + j]) {
             j++;
         }
         ret[i] = j;

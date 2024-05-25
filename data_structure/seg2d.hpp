@@ -24,23 +24,23 @@ struct segment_tree_2D {
             x >>= 1;
         }
     }
-    T query(int x1, int x2, int y1, int y2) {
+    T query(int l, int r, int u, int d) {
         T ret = fe;
-        x1 += h;
-        x2 += h;
-        y1 += w;
-        y2 += w;
-        while (x1 < x2) {
-            if (x1 & 1) {
-                ret = f(ret, query_sub(x1, y1, y2));
-                x1++;
+        l += h;
+        r += h;
+        u += w;
+        d += w;
+        while (l < r) {
+            if (l & 1) {
+                ret = f(ret, query_sub(l, u, d));
+                l++;
             }
-            if (x2 & 1) {
-                x2--;
-                ret = f(ret, query_sub(x2, y1, y2));
+            if (r & 1) {
+                r--;
+                ret = f(ret, query_sub(r, u, d));
             }
-            x1 >>= 1;
-            x2 >>= 1;
+            l >>= 1;
+            r >>= 1;
         }
         return ret;
     }
@@ -50,19 +50,19 @@ private:
     vector<vector<T>> dat;
     F f;
     T fe;
-    T query_sub(int x, int y1, int y2) {
+    T query_sub(int x, int u, int d) {
         T ret = fe;
-        while (y1 < y2) {
-            if (y1 & 1) {
-                ret = f(ret, dat[x][y1]);
-                y1++;
+        while (u < d) {
+            if (u & 1) {
+                ret = f(ret, dat[x][u]);
+                u++;
             }
-            if (y2 & 1) {
-                y2--;
-                ret = f(ret, dat[x][y2]);
+            if (d & 1) {
+                d--;
+                ret = f(ret, dat[x][d]);
             }
-            y1 >>= 1;
-            y2 >>= 1;
+            u >>= 1;
+            d >>= 1;
         }
         return ret;
     }

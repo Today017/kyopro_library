@@ -2,8 +2,9 @@
 
 template<typename T>
 struct cumulative_sum_2D {
+    cumulative_sum_2D() = default;
     template<typename U>
-    cumulative_sum_2D(vector<vector<U>> &a) {
+    cumulative_sum_2D(const vector<vector<U>> &a) {
         n = a.size();
         m = a.front().size();
         dat = vector<vector<T>>(n + 1, vector<T>(m + 1));
@@ -13,7 +14,7 @@ struct cumulative_sum_2D {
             }
         }
     }
-    T sum(int l, int r, int u, int d) {
+    T query(int l, int r, int u, int d) {
         return dat[r][d] - dat[l][d] - dat[r][u] + dat[l][u];
     }
 

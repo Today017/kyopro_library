@@ -39,8 +39,8 @@ void sparse_table_2D_init(const vector<vector<ll>>& a, bool is_min = true) {
     }
 }
 
-ll sparse_table_2D_query(int x1, int x2, int y1, int y2) {
-    int k = sparse_table_2D.log_table[x2 - x1];
-    int l = sparse_table_2D.log_table[y2 - y1];
-    return min({sparse_table_2D.dat[k][l][x1][y1], sparse_table_2D.dat[k][l][x2 - (1 << k)][y1], sparse_table_2D.dat[k][l][x1][y2 - (1 << l)], sparse_table_2D.dat[k][l][x2 - (1 << k)][y2 - (1 << l)]}) * sparse_table_2D.sign;
+ll sparse_table_2D_query(int l, int r, int u, int d) {
+    int i = sparse_table_2D.log_table[r - l];
+    int j = sparse_table_2D.log_table[d - u];
+    return min({sparse_table_2D.dat[i][j][l][u], sparse_table_2D.dat[i][j][r - (1 << i)][u], sparse_table_2D.dat[i][j][l][d - (1 << j)], sparse_table_2D.dat[i][j][r - (1 << i)][d - (1 << j)]}) * sparse_table_2D.sign;
 }
