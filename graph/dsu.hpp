@@ -10,6 +10,7 @@ struct disjoint_set_union {
             par[i] = i;
             sz[i] = 1;
         }
+        forest_count = n;
     }
     int find(int x) {
         if (par[x] == x) {
@@ -29,6 +30,7 @@ struct disjoint_set_union {
         }
         par[y] = x;
         sz[x] += sz[y];
+        forest_count--;
     }
     int size(int x) {
         return sz[find(x)];
