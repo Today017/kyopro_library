@@ -9,6 +9,7 @@
 - [Longest Increaseing Subsequence](./algorithm/lis.md)
 - [Mo](./algorithm/mo.md)
 - [Convex Hull Trick](./algorithm/cht.md)
+- [Binary Search](./algorithm/bins.md)
 <!-- - [Doubling] -->
 
 ## data structure
