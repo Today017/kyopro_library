@@ -26,6 +26,7 @@
 ### Other
 
 - [Sorted Tree](./data_structure/tree.md)
+- [Set Interface](./data_structure/set.md)
 - [Cumulative Sum 2D](./data_structure/cum2d.md)
 - [Sparse Table](./data_structure/spt.md)
 - [Sparse Table 2D](./data_structure/st2d.md)
@@ -76,6 +77,7 @@
 - [ExtGCD, Mod Inversion](./math/extgcd.md)
 - [Bezout Identity](./math/bezout_identity.md)
 - [Matrix](./math/matrix.md)
+- [Fraction](./math/frac.md)
 <!-- - [Geometory] -->
 <!-- - [FPS] -->
 <!-- - [Lagrange Polynomial] -->
@@ -90,7 +92,6 @@
 - [Prime Factorization based on Eratosthenes](./math/osak.md)
 - [Prime Factorization based on Pollard's rho](./math/rho.md)
 - [Primality Test based on Miller-Rabin](./math/ptest.md)
-- [Fraction](./math/frac.md)
 - [Convolution](./math/convolution.md)
 - [Convolution (NTT)](./math/ntt.md)
 - [Mod Log (Baby Step Giant Step)](./math/modlog.md)
