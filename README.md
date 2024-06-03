@@ -26,6 +26,7 @@
 ### Other
 
 - [Sorted Tree](./data_structure/tree.md)
+- [Sorted Array](./data_structure/sorted_array.md)
 - [Set Interface](./data_structure/set.md)
 - [Cumulative Sum 2D](./data_structure/cum2d.md)
 - [Sparse Table](./data_structure/spt.md)
