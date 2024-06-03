@@ -1,8 +1,8 @@
-# library
+# Library
 
 [Note](./note.md)
 
-## algorithm
+## Algorithm
 
 - [Compress](./algorithm/compress.md)
 - [Inversion Number](./algorithm/inversion_number.md)
@@ -12,18 +12,18 @@
 - [Binary Search](./algorithm/bins.md)
 <!-- - [Doubling] -->
 
-## data structure
+## Data Structure
 
-### segment tree
+### Segment Tree
 
 - [Segment Tree](./data_structure/segt.md)
 - [Segment Tree Lazy](./data_structure/segtlz.md)
 - [Segment Tree 2D](./data_structure/seg2d.md)
 - [Segment Tree Dual](./data_structure/segtd.md)
-<!-- - [Segment Tree Beats] -->
+- [Segment Tree Beats](./data_structure/beats.md)
 <!-- - [Persistent Segment Tree] -->
 
-### other
+### Other
 
 - [Sorted Tree](./data_structure/tree.md)
 - [Cumulative Sum 2D](./data_structure/cum2d.md)
@@ -39,20 +39,20 @@
 <!-- - [Splay Tree] -->
 <!-- - [Persistent Array] -->
 
-## graph
+## Graph
 
 - [Disjoint Set Union](./graph/dsu.md)
 - [SCC](./graph/scc.md)
 - [Topological Sort](./graph/toposort.md)
 <!-- - [Low Link] -->
 
-### shortest path
+### Shortest Path
 
 - [Dijkstra](./graph/sp/dij.md)
 - [Bellman Ford](./graph/sp/bf.md)
 - [Warshall Floyd](./graph/sp/wf.md)
 
-### tree
+### Tree
 
 - [Heavy-Light Decomposition](./graph/tree/hld.md)
 - [Lowest Common Ancestor](./graph/tree/lca.md)
@@ -60,18 +60,18 @@
 <!-- - [Diameter] -->
 <!-- - [Centroid Decomposition] -->
 
-### flow
+### Flow
 
 - [Max Flow](./graph/flow/mxf.md)
 - [Min Cost Flow](./graph/flow/mcf.md)
 
-## mod
+## Mod
 
 - [Modint](./mod/modint.md)
 - [Dynamic Modint](./mod/dymodint.md)
 - [Combination](./mod/cmb.md)
 
-## math
+## Math
 
 - [ExtGCD, Mod Inversion](./math/extgcd.md)
 - [Bezout Identity](./math/bezout_identity.md)
@@ -82,7 +82,7 @@
 <!-- - [Fast Fourier Transform] -->
 <!-- - [Convolution] -->
 
-### number
+### Number Theory
 
 - [Divisors](./math/divisors.md)
 - [Prime Factorize](./math/pf.md)
@@ -96,7 +96,7 @@
 - [Mod Log (Baby Step Giant Step)](./math/modlog.md)
 <!-- - [Quotient Ranges] -->
 
-## string
+## String
 
 - [Run Length Encoding](./string/rle.md)
 - [Rolling Hash](./string/rh.md)
@@ -112,6 +112,6 @@
 - [Simulated Annealing](./heuristic/sa.md)
 - [Climbing](./heuristic/cl.md)
 
-## others
+## Others
 - [Random Generator](./others/random.md)
 - [Timer](./others/timer.md)

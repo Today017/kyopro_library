@@ -1,9 +1,6 @@
 #include "../../kyopro_library/template.hpp"
 
-/**
- * Segment Tree Beats!
- * https://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp
-*/
+/* https://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp */
 
 struct AngelBeats {
     struct alignas(32) Node {
@@ -30,6 +27,7 @@ struct AngelBeats {
     ll range_min(int l, int r) { return inner_fold<1>(l, r); }
     ll range_max(int l, int r) { return inner_fold<2>(l, r); }
     ll range_sum(int l, int r) { return inner_fold<3>(l, r); }
+
 private:
     void update(int k) {
         Node& p = v[k];
