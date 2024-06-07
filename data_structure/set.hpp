@@ -3,10 +3,16 @@
 template <typename T>
 struct my_set : set<T> {
     using set<T>::set;
-    T not_found = INFL;
+    T not_found = -1;
     my_set() = default;
     my_set(T not_found) {
         this->not_found = not_found;
+    }
+    T min() {
+        if (this->empty()) {
+            return not_found;
+        }
+        return *this->begin();
     }
     T max() {
         if (this->empty()) {
@@ -14,11 +20,32 @@ struct my_set : set<T> {
         }
         return *this->rbegin();
     }
-    T min() {
+    T pop_min() {
         if (this->empty()) {
             return not_found;
         }
-        return *this->begin();
+        T ret = min();
+        this->erase(ret);
+        return ret;
+    }
+    T pop_max() {
+        if (this->empty()) {
+            return not_found;
+        }
+        T ret = max();
+        this->erase(ret);
+        return ret;
+    }   
+    bool contains(T x) {
+        return this->find(x) != this->end();
+    }
+    bool discard(T x) {
+        auto itr = this->find(x);
+        if (itr == this->end()) {
+            return false;
+        }
+        this->erase(itr);
+        return true;
     }
     T gt(T x) {
         auto itr = this->upper_bound(x);
@@ -47,16 +74,5 @@ struct my_set : set<T> {
             return not_found;
         }
         return *prev(itr);
-    }
-    bool discard(T x) {
-        auto itr = this->find(x);
-        if (itr == this->end()) {
-            return false;
-        }
-        this->erase(itr);
-        return true;
-    }
-    bool contains(T x) {
-        return this->find(x) != this->end();
     }
 };

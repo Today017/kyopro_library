@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-#include <atcoder/all>
 #include "../kyopro_library/data_structure/fen.hpp"
 #include "../kyopro_library/data_structure/segt.hpp"
 #include "../kyopro_library/data_structure/segtlz.hpp"
@@ -17,13 +16,13 @@ ostream &operator<<(ostream &os, const tuple<T1, T2, T3> &t) {
 template <typename T>
 ostream &operator<<(ostream &os, const vector<vector<vector<T>>> &A) {
     int I = A.size();
-    int J = A.front().size();
-    int K = A.front().front().size();
     os << "[\n";
     for (int i = 0; i < I; i++) {
         os << "   " << i << " :[\n";
+        int J = A[i].size();
         for (int j = 0; j < J; j++) {
             os << "      " << j << " :[ ";
+            int K = A[i][j].size();
             for (int k = 0; k < K; k++) {
                 os << A[i][j][k];
                 if (k != K - 1) {
@@ -41,9 +40,9 @@ template <typename T>
 ostream &operator<<(ostream &os, const vector<vector<T>> &A) {
     os << "[\n";
     int I = A.size();
-    int J = A.front().size();
     for (int i = 0; i < I; i++) {
         os << "   " << i << " :[";
+        int J = A[i].size();
         for (int j = 0; j < J; j++) {
             os << A[i][j];
             if (j != J - 1) {
@@ -130,37 +129,11 @@ ostream &operator<<(ostream &os, priority_queue<T> A) {
     return os;
 }
 template <typename T>
-ostream &operator<<(ostream &os, atcoder::fenwick_tree<T> A) {
-    int n = A._n;
+ostream &operator<<(ostream &os, fenwick_tree<T> a) {
+    int n = a.size();
     os << "[ ";
     for (int i = 0; i < n; i++) {
-        os << A.sum(i, i + 1);
-        if (i != n - 1) {
-            os << ", ";
-        }
-    }
-    os << " ]";
-    return os;
-}
-template <typename T>
-ostream &operator<<(ostream &os, fenwick_tree<T> A) {
-    int n = A.n;
-    os << "[ ";
-    for (int i = 0; i < n; i++) {
-        os << A.sum[i];
-        if (i != n - 1) {
-            os << ", ";
-        }
-    }
-    os << " ]";
-    return os;
-}
-template <typename S, S (*op)(S, S), S (*e)()>
-ostream &operator<<(ostream &os, atcoder::segtree<S, op, e> A) {
-    int n = A._n;
-    os << "[ ";
-    for (int i = 0; i < n; i++) {
-        os << A.prod(i, i + 1);
+        os << a[i];
         if (i != n - 1) {
             os << ", ";
         }
@@ -170,7 +143,7 @@ ostream &operator<<(ostream &os, atcoder::segtree<S, op, e> A) {
 }
 template <typename T>
 ostream &operator<<(ostream &os, segment_tree<T> a) {
-    int n = a.size;
+    int n = a.size();
     os << "[ ";
     for (int i = 0; i < n; i++) {
         os << a[i];
@@ -183,7 +156,7 @@ ostream &operator<<(ostream &os, segment_tree<T> a) {
 }
 template <typename T, typename U>
 ostream &operator<<(ostream &os, segment_tree_lazy<T, U> a) {
-    int n = a.size;
+    int n = a.size();
     os << "[ ";
     for (int i = 0; i < n; i++) {
         os << a[i];
@@ -192,19 +165,6 @@ ostream &operator<<(ostream &os, segment_tree_lazy<T, U> a) {
         }
     }
     os << " ]";
-    return os;
-}
-ostream &operator<<(ostream &os, atcoder::dsu ds) {
-    os << ds.groups();
-    return os;
-}
-ostream &operator<<(ostream &os, atcoder::modint998244353 x) {
-    os << x.val();
-
-    return os;
-}
-ostream &operator<<(ostream &os, atcoder::modint1000000007 x) {
-    os << x.val();
     return os;
 }
 

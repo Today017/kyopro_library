@@ -5,21 +5,48 @@
 using namespace __gnu_pbds;
 template <typename T>
 struct sorted_tree : tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update> {
+    using tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>::tree;
+    T not_found = -1;
+    sorted_tree() = default;
+    sorted_tree(T not_found) {
+        this->not_found = not_found;
+    }
+    T min() {
+        if (this->empty()) {
+            return not_found;
+        }
+        return *this->begin();
+    }
     T max() {
+        if (this->empty()) {
+            return not_found;
+        }
         return *this->rbegin();
     }
     T min() {
+        if (this->empty()) {
+            return not_found;
+        }
         return *this->begin();
     }
+    T pop_min() {
+        if (this->empty()) {
+            return not_found;
+        }
+        T ret = min();
+        this->erase(ret);
+        return ret;
+    }
     T pop_max() {
+        if (this->empty()) {
+            return not_found;
+        }
         T ret = max();
         this->erase(ret);
         return ret;
     }
-    T pop_min() {
-        T ret = min();
-        this->erase(ret);
-        return ret;
+    bool contains(T x) {
+        return this->find(x) != this->end();
     }
     bool discard(T x) {
         auto itr = this->find(x);
@@ -32,36 +59,30 @@ struct sorted_tree : tree<T, null_type, less<T>, rb_tree_tag, tree_order_statist
     T gt(T x) {
         auto itr = this->upper_bound(x);
         if (itr == this->end()) {
-            return NULL;
+            return not_found;
         }
         return *itr;
     }
     T ge(T x) {
         auto itr = this->lower_bound(x);
         if (itr == this->end()) {
-            return NULL;
+            return not_found;
         }
         return *itr;
     }
     T lt(T x) {
         auto itr = this->lower_bound(x);
         if (itr == this->begin()) {
-            return NULL;
+            return not_found;
         }
         return *--itr;
     }
     T le(T x) {
         auto itr = this->upper_bound(x);
         if (itr == this->begin()) {
-            return NULL;
+            return not_found;
         }
         return *--itr;
-    }
-    T kth_min(int k) {
-        return *this->find_by_order(k);
-    }
-    T kth_max(int k) {
-        return *this->find_by_order(this->size() - k - 1);
     }
     int count_lt(T x) {
         return this->order_of_key(x);
@@ -75,7 +96,10 @@ struct sorted_tree : tree<T, null_type, less<T>, rb_tree_tag, tree_order_statist
     int count_ge(T x) {
         return this->size() - this->order_of_key(x);
     }
-    bool contains(T x) {
-        return this->find(x) != this->end();
+    T kth_min(int k) {
+        return *this->find_by_order(k);
+    }
+    T kth_max(int k) {
+        return *this->find_by_order(this->size() - k - 1);
     }
 };
