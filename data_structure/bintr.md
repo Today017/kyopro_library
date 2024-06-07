@@ -21,7 +21,7 @@
 `T min_element(T bias = 0)`
 - 全部の要素に $bias$ をxorした状態で最小要素を取得する。
 
-`T operator[](int k)`
+`T kth_element(int k)`
 - $k$ 番目に小さい値を取得する。`0-indexed`。
 
 `int lower_bound(T x)`

@@ -1,9 +1,9 @@
 #include "../../kyopro_library/template.hpp"
 
-template<typename T>
+template <typename T>
 struct cumulative_sum_2D {
     cumulative_sum_2D() = default;
-    template<typename U>
+    template <typename U>
     cumulative_sum_2D(const vector<vector<U>> &a) {
         n = a.size();
         m = a.front().size();
@@ -14,7 +14,7 @@ struct cumulative_sum_2D {
             }
         }
     }
-    T query(int l, int r, int u, int d) {
+    T sum(int l, int r, int u, int d) {
         return dat[r][d] - dat[l][d] - dat[r][u] + dat[l][u];
     }
 

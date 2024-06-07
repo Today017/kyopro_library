@@ -16,7 +16,7 @@ struct segment_tree_dual {
             dat[i + n] = a[i];
         }
     }
-    T get(int i) {
+    T operator[](int i) {
         assert(0 <= i && i < n);
         i += n;
         T ret = e;

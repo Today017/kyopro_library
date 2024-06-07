@@ -7,5 +7,5 @@
 - $O(hw)$
 
 `T sum(int l, int r, int u, int d)`
-- 矩形領域 $[l, r) \times [u, d)$ における累積和。
+- 矩形領域 $[l, r) \times [u, d)$ における累積和を返す。
 - $O(1)$

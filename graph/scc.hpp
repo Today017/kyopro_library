@@ -1,6 +1,11 @@
 #include "../../kyopro_library/template.hpp"
 
-tuple<vector<vector<int>>, vector<vector<int>>, vector<int>> scc_decomposition(const vector<vector<int>> &G) {
+struct SCC {
+    vector<vector<int>> members, graph_decomposed;
+    vector<int> group;
+};
+
+SCC scc_decomposition(const vector<vector<int>> &G) {
     int n = G.size();
     vector<vector<int>> G2(n);
     for (int i = 0; i < n; i++) {
@@ -57,5 +62,5 @@ tuple<vector<vector<int>>, vector<vector<int>>, vector<int>> scc_decomposition(c
         sort(ret2[i].begin(), ret2[i].end());
         ret2[i].erase(unique(ret2[i].begin(), ret2[i].end()), ret2[i].end());
     }
-    return make_tuple(ret, ret2, component);
+    return {ret, ret2, component};
 }

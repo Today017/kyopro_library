@@ -10,7 +10,7 @@
 - 配列 $a$ から 双対 Segment Tree を構築する。
 - $O(n)$
 
-`void get(int i)`
+`T operator[](int i)`
 - 位置 $i$ の要素を返す。
 - $O(\log{n})$
 

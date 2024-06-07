@@ -10,7 +10,7 @@ struct min_cost_flow {
         G[u].push_back(make_tuple(v, cap, cost, (int)G[v].size()));
         G[v].push_back(make_tuple(u, 0, -cost, (int)G[u].size() - 1));
     }
-    Cost get_min_cost_flow(int start, int goal, Cap flow) {
+    Cost get(int start, int goal, Cap flow) {
         Cost ret = 0;
         while (flow > 0) {
             auto [dst, pre_vertex, pre_edge] = calculate_cost(start);
@@ -20,16 +20,16 @@ struct min_cost_flow {
             Cap now_flow = flow;
             int now_vertex = goal;
             while (now_vertex != start) {
-                now_flow = min(now_flow, get<1>(G[pre_vertex[now_vertex]][pre_edge[now_vertex]]));
+                now_flow = min(now_flow, std::get<1>(G[pre_vertex[now_vertex]][pre_edge[now_vertex]]));
                 now_vertex = pre_vertex[now_vertex];
             }
             ret += now_flow * dst[goal];
             flow -= now_flow;
             now_vertex = goal;
             while (now_vertex != start) {
-                get<1>(G[pre_vertex[now_vertex]][pre_edge[now_vertex]]) -= now_flow;
-                int rev = get<3>(G[pre_vertex[now_vertex]][pre_edge[now_vertex]]);
-                get<1>(G[now_vertex][rev]) += now_flow;
+                std::get<1>(G[pre_vertex[now_vertex]][pre_edge[now_vertex]]) -= now_flow;
+                int rev = std::get<3>(G[pre_vertex[now_vertex]][pre_edge[now_vertex]]);
+                std::get<1>(G[now_vertex][rev]) += now_flow;
                 now_vertex = pre_vertex[now_vertex];
             }
         }

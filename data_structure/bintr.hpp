@@ -32,7 +32,7 @@ struct binary_trie {
     T min_element(T bias = 0) {
         return get_min(root, bias, LOG - 1);
     }
-    T operator[](int k) {
+    T kth_element(int k) {
         assert(0 <= k && k < size());
         return get(root, k, LOG - 1);
     }

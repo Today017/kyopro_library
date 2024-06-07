@@ -7,7 +7,6 @@ struct segment_tree {
     segment_tree() = default;
     segment_tree(int n, F f, T e) {
         this->n = n;
-        this->size = n;
         this->f = f;
         this->e = e;
         dat = vector<T>(n << 1, e);
@@ -53,7 +52,9 @@ struct segment_tree {
         assert(0 <= i && i < n);
         return dat[n + i];
     }
-    int size;
+    int size() {
+        return n;
+    }
 
 private:
     int n;

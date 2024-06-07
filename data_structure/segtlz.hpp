@@ -6,12 +6,12 @@ struct segment_tree_lazy {
     using F = function<T(T, T)>;
     using G = function<T(U, T)>;
     using H = function<U(U, U)>;
+    segment_tree_lazy() = default;
     segment_tree_lazy(int n, F f, G g, H h, T et, U eu) {
         this->n = 1;
         while (this->n < n) {
             this->n *= 2;
         }
-        this->size = n;
         this->f = f;
         this->g = g;
         this->h = h;
@@ -51,7 +51,9 @@ struct segment_tree_lazy {
         assert(0 <= i && i < size);
         return query(i, i + 1, 0, 0, n);
     }
-    int size;
+    int size() {
+        return n;
+    }
 
 private:
     int n;

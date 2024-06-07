@@ -2,6 +2,7 @@
 
 template <typename Cap>
 struct max_flow {
+    max_flow() = default;
     max_flow(int n) {
         this->n = n;
         G = vector<vector<tuple<int, int, Cap>>>(n);
@@ -10,7 +11,7 @@ struct max_flow {
         G[u].push_back(make_tuple(v, G[v].size(), c));
         G[v].push_back(make_tuple(u, (int)G[u].size() - 1, 0));
     }
-    Cap get_max_flow(int start, int goal) {
+    Cap get(int start, int goal) {
         Cap ret = 0;
         while (true) {
             vector<int> dst = calculate_distance(start);

@@ -20,7 +20,11 @@
 - $O(\log{n})$
 
 `T operator[int i]`
-- 位置 $i$ の要素。
+- 位置 $i$ の要素を返す。
+- $O(1)$
+
+`int size()`
+- Segment Tree のサイズを返す。
 - $O(1)$
 
 ### 区間 min

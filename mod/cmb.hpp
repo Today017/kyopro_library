@@ -18,12 +18,15 @@ struct combination {
         if (n < 0 || r < 0 || n - r < 0) {
             return 0;
         }
-        return fact[n] * factinv[r] * factinv[n - r];
+       return fact[n] * factinv[r] * factinv[n - r];
     }
     T nPr(ll n, ll r) {
         if (n < 0 || r < 0 || n - r < 0) {
             return 0;
         }
         return fact[n] * factinv[n - r];
+    }
+    T operator()(ll n, ll r) {
+        return nCr(n, r);
     }
 };

@@ -220,7 +220,7 @@ public:
         ull c = 0;
         for (ull i = 0; i < bit_arrays.size(); ++i) {
             ull bit = bit_arrays.at(i).access(pos);
-            c = (c <<= 1) | bit;
+            c = ((c <<= 1) | bit);
             pos = bit_arrays.at(i).rank(bit, pos);
             if (bit) pos += this->begin_one.at(i);
         }
@@ -359,7 +359,6 @@ public:
     }
     ull prev_value(const ull begin_pos, const ull end_pos, const ull x, ull y) {
         assert(end_pos <= size);
-        const ull num = end_pos - begin_pos;
         if (x >= y or y == 0) return NOTFOUND;
         if (y > maximum_element) y = maximum_element;
         if (begin_pos >= end_pos) return NOTFOUND;
@@ -400,7 +399,6 @@ public:
     }
     ull next_value(const ull begin_pos, const ull end_pos, const ull x, const ull y) {
         assert(end_pos <= size);
-        const ull num = end_pos - begin_pos;
         if (x >= y or y == 0) return NOTFOUND;
         if (begin_pos >= end_pos) return NOTFOUND;
         if (x >= maximum_element || end_pos == 0) return NOTFOUND;
