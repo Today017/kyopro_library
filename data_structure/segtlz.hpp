@@ -21,7 +21,6 @@ struct segment_tree_lazy {
         lazy = vector<U>(this->n * 2 - 1, eu);
     }
     void build(const vector<T> &a) {
-        assert((int)a.size() == size);
         for (int i = 0; i < (int)a.size(); i++) {
             dat[i + n - 1] = a[i];
         }
@@ -30,7 +29,7 @@ struct segment_tree_lazy {
         }
     }
     void set(int i, T x) {
-        assert(0 <= i && i < size);
+        // assert(0 <= i && i < size);
         evaluate(i);
         i += n - 1;
         dat[i] = x;
@@ -40,15 +39,15 @@ struct segment_tree_lazy {
         }
     }
     void apply(int l, int r, U x) {
-        assert(0 <= l && l <= r && r <= size);
+        // assert(0 <= l && l <= r && r <= size);
         apply(l, r, 0, x, 0, n);
     }
     T query(int l, int r) {
-        assert(0 <= l && l <= r && r <= size);
+        // assert(0 <= l && l <= r && r <= size);
         return query(l, r, 0, 0, n);
     }
     T operator[](int i) {
-        assert(0 <= i && i < size);
+        // assert(0 <= i && i < size);
         return query(i, i + 1, 0, 0, n);
     }
     int size() {
