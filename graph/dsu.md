@@ -16,7 +16,7 @@
 - 頂点 $x$ を含む連結成分のサイズ。
 - $O(1)$
 
-`bool is_united(int x, int y)`
+`bool same(int x, int y)`
 - 頂点の組 $(x, y)$ が連結であるか否か。
 - $O(\alpha(n))$
 
