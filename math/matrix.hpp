@@ -3,11 +3,6 @@
 template <typename T>
 using matrix = vector<vector<T>>;
 template <typename T>
-matrix<T> make_matrix(int n) {
-    vector<vector<T>> ret(n, vector<T>(n));
-    return ret;
-}
-template <typename T>
 matrix<T> operator*(const matrix<T>& a, const matrix<T>& b) {
     int n = a.size();
     matrix<T> ret(n, vector<T>(n));
