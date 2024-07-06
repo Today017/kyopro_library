@@ -58,7 +58,14 @@ class Expander:
             return True
         if line.strip() in ["const int INF=1e9+10;","const ll INFL=4e18;"] and not CONST:
             return True
-        if line.strip().startswith("#include <") and not line.strip().startswith("#include <atcoder"):
+
+        lst = ["#include <ext/pb_ds/assoc_container.hpp>", "#include <ext/pb_ds/tree_policy.hpp>"]
+        lst2 = ["#include <bits/stdc++.h>", "#include<bits/stdc++.h>"]
+
+        if line.strip() in lst2:
+            return True
+
+        if line.strip().startswith("#include <") and not line.strip().startswith("#include <atcoder") and not line.strip() in lst:
             return True
 
         
@@ -111,10 +118,10 @@ class Expander:
 
         """
         if library_file_path in self.included:
-            logger.info("already included: {}".format(library_file_path.name))
+            #logger.info("already included: {}".format(library_file_path.name))
             return []
         self.included.add(library_file_path)
-        logger.info("include: {}".format(library_file_path.name))
+        #logger.info("include: {}".format(library_file_path.name))
 
         library_source = open(str(library_file_path)).read()
 
@@ -126,7 +133,7 @@ class Expander:
             line = line.replace("../../../../", "")
             line = line.replace("../../../", "")
             line = line.replace("../../", "")
-            # line = line.replace("../", "")
+            line = line.replace("../", "")
 
             # if "debug" in line:
             #     line = "//" + line
@@ -157,7 +164,7 @@ class Expander:
         """
         self.included = set()
         result = []  # type: List[str]
-        result.append("#include <bits/stdc++.h>")
+        result.append("#include<bits/stdc++.h>")
 
         for line in source.splitlines():
             m = self.include.match(line)
@@ -171,6 +178,7 @@ class Expander:
                 
 
             result.append(line)
+
         return "\n".join(result)
 
 
