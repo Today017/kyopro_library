@@ -63,11 +63,13 @@ private:
     vector<T> dat;
 };
 
-segment_tree<ll> range_max_query(int n, ll e = -INFL) {
-    return segment_tree<ll>(n, [](ll a, ll b) { return max(a, b); }, e);
+template <typename T>
+segment_tree<T> range_max_query(int n, T e) {
+    return segment_tree<T>(n, [](T a, T b) { return max(a, b); }, e);
 }
-segment_tree<ll> range_min_query(int n, ll e = INFL) {
-    return segment_tree<ll>(n, [](ll a, ll b) { return min(a, b); }, e);
+template <typename T>
+segment_tree<T> range_min_query(int n, T e) {
+    return segment_tree<T>(n, [](T a, T b) { return min(a, b); }, e);
 }
 segment_tree<ll> range_sum_query(int n) {
     return segment_tree<ll>(n, [](ll a, ll b) { return a + b; }, 0);
