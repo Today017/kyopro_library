@@ -129,6 +129,17 @@ ostream &operator<<(ostream &os, priority_queue<T> A) {
     return os;
 }
 template <typename T>
+ostream &operator<<(ostream &os, priority_queue<T, vector<T>, greater<>> A) {
+    int n = A.size();
+    os << "[ ";
+    while (!A.empty()) {
+        os << A.top() << ", ";
+        A.pop();
+    }
+    os << " ]";
+    return os;
+}
+template <typename T>
 ostream &operator<<(ostream &os, fenwick_tree<T> a) {
     int n = a.size();
     os << "[ ";
