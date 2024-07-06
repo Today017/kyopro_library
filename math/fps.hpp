@@ -70,7 +70,7 @@ template <typename mint>
 struct NTT {
     static constexpr uint32_t get_pr() {
         uint32_t _mod = mint::get_mod();
-        using u64 = ull;
+        using u64 = unsigned long long;
         u64 ds[32] = {};
         int idx = 0;
         u64 m = _mod - 1;
