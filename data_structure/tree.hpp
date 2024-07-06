@@ -6,7 +6,7 @@ using namespace __gnu_pbds;
 template <typename T>
 struct sorted_tree : tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update> {
     using tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>::tree;
-    T not_found = -1;
+    T not_found;
     sorted_tree() = default;
     sorted_tree(T not_found) {
         this->not_found = not_found;
@@ -22,12 +22,6 @@ struct sorted_tree : tree<T, null_type, less<T>, rb_tree_tag, tree_order_statist
             return not_found;
         }
         return *this->rbegin();
-    }
-    T min() {
-        if (this->empty()) {
-            return not_found;
-        }
-        return *this->begin();
     }
     T pop_min() {
         if (this->empty()) {
