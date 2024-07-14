@@ -59,6 +59,8 @@
 
 - [Heavy-Light Decomposition](./graph/tree/hld.md)
 - [Lowest Common Ancestor](./graph/tree/lca.md)
+- [Diameter](./graph/tree/diameter.md)
+- [Centroid](./graph/tree/centroid.md)
 <!-- - [Rerooting] -->
 <!-- - [Diameter] -->
 <!-- - [Centroid Decomposition] -->
