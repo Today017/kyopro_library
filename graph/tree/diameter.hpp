@@ -2,7 +2,6 @@
 #include "../../../kyopro_library/graph/sp/dij.hpp"
 
 pair<vector<int>, ll> tree_diameter_path(const vector<vector<pair<int, ll>>>& G) {
-    int N = G.size();
     vector<ll> dist = dijkstra(G);
     int s = max_element(dist.begin(), dist.end()) - dist.begin();
     dist = dijkstra(G, s);
@@ -24,9 +23,9 @@ pair<vector<int>, ll> tree_diameter_path(const vector<vector<pair<int, ll>>>& G)
 }
 
 pair<vector<int>, ll> tree_diameter_path(const vector<vector<int>>& G) {
-    int N = G.size();
-    vector<vector<pair<int, ll>>> H(N);
-    for (int i = 0; i < N; i++) {
+    int n = G.size();
+    vector<vector<pair<int, ll>>> H(n);
+    for (int i = 0; i < n; i++) {
         for (int j : G[i]) {
             H[i].push_back({j, 1});
         }
