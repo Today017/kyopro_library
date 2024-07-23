@@ -1,27 +1,38 @@
 [top](../README.md)
 
-# [Simulated Annealing](./sa.hpp)
 
-`simulated_annealing<Data, MAX>(double start_temp, double end_temp, ll time_limit)`
-- Data 型に対して、開始温度 `start_temp`, 終了温度 `end_temp`, 実行時間 `time_limit` ms の焼きなまし法を適用する。
+# 焼きなまし法のテンプレート
 
-`Data run()`
-- 焼きなまし法を実行し、最高スコアを出した状態の Data を返す。
+```cpp
+const double START_TEMP = 1e4;
+const double END_TEMP = 1e-4;
+const ll TIME_LIMIT = 5000;
 
-### Data 型への要求
-Data 型に対し、次の実装を要求する。
+Random rnd;
 
-`ll init()`
-- 状態を初期化する。
+void solve() {
+    Timer timer(TIME_LIMIT);
 
-`double get_score()`
-- 現在の状態のスコアを返す。
+    // 初期状態
+    State now = initialState();
+    State best = now;
 
-`double get_next_score()`
-- 状態は変えないままで、近傍状態を探索し、その状態のスコアを返す。
 
-`void modify()`
-- `get_next_score()` にて探索した状態に遷移する。
+    while (timer.check()) {
+        // 近傍
+        double next_score = now.get_next_score();
+        double diff = next_score - now.get_score();
+        double temp = START_TEMP + (END_TEMP - START_TEMP) * timer.get_time() / TIME_LIMIT;
+        double prob = exp(diff / temp);
 
-`void record(Data other)`
-- 他の状態とそのスコアを記録する。
+        if (rnd.prob() < prob) {
+            // 遷移
+            now.modify();
+            if (now.get_score() > best.get_score()) {
+                // 記録
+                best = now;
+            }
+        }
+    }
+}
+```
