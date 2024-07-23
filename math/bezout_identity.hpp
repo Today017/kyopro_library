@@ -1,9 +1,9 @@
 #include "../../kyopro_library/template.hpp"
 
-struct bezout_identity {
+struct BezoutIdentity {
     ll a, b, c, g;
     ll X, Y;
-    bezout_identity(ll a, ll b, ll c) {
+    BezoutIdentity(ll a, ll b, ll c) {
         this->a = a;
         this->b = b;
         this->c = c;

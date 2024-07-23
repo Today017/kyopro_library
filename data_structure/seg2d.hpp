@@ -1,9 +1,9 @@
 #include "../../kyopro_library/template.hpp"
 
 template <typename T>
-struct segment_tree_2D {
+struct SegmentTree2D {
     using F = function<T(T, T)>;
-    segment_tree_2D(int h, int w, F f, T fe) {
+    SegmentTree2D(int h, int w, F f, T fe) {
         this->f = f;
         this->fe = fe;
         this->h = h;

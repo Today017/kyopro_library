@@ -1,9 +1,9 @@
 #include "../../kyopro_library/template.hpp"
 
 template <typename T>
-struct disjoint_sparse_table {
+struct DisjointSparseTable {
     using F = function<T(T, T)>;
-    disjoint_sparse_table(const vector<T>& a, F f, T e) {
+    DisjointSparseTable(const vector<T>& a, F f, T e) {
         n = a.size();
         this->f = f;
         dat.push_back(a);

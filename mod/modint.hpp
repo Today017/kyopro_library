@@ -2,57 +2,57 @@
 #include "../../kyopro_library/template.hpp"
 
 template <ll MOD>
-struct modint {
+struct ModInt {
     ll value;
-    modint(ll x = 0) {
+    ModInt(ll x = 0) {
         if (x >= 0) {
             value = x % MOD;
         } else {
             value = MOD - (-x) % MOD;
         }
     }
-    modint operator-() const {
-        return modint(-value);
+    ModInt operator-() const {
+        return ModInt(-value);
     }
-    modint operator+() const {
-        return modint(*this);
+    ModInt operator+() const {
+        return ModInt(*this);
     }
-    modint &operator+=(const modint &other) {
+    ModInt &operator+=(const ModInt &other) {
         value += other.value;
         if (value >= MOD) {
             value -= MOD;
         }
         return *this;
     }
-    modint &operator-=(const modint &other) {
+    ModInt &operator-=(const ModInt &other) {
         value += MOD - other.value;
         if (value >= MOD) {
             value -= MOD;
         }
         return *this;
     }
-    modint &operator*=(const modint other) {
+    ModInt &operator*=(const ModInt other) {
         value = value * other.value % MOD;
         return *this;
     }
-    modint &operator/=(modint other) {
+    ModInt &operator/=(ModInt other) {
         (*this) *= other.inv();
         return *this;
     }
-    modint operator+(const modint &other) const {
-        return modint(*this) += other;
+    ModInt operator+(const ModInt &other) const {
+        return ModInt(*this) += other;
     }
-    modint operator-(const modint &other) const {
-        return modint(*this) -= other;
+    ModInt operator-(const ModInt &other) const {
+        return ModInt(*this) -= other;
     }
-    modint operator*(const modint &other) const {
-        return modint(*this) *= other;
+    ModInt operator*(const ModInt &other) const {
+        return ModInt(*this) *= other;
     }
-    modint operator/(const modint &other) const {
-        return modint(*this) /= other;
+    ModInt operator/(const ModInt &other) const {
+        return ModInt(*this) /= other;
     }
-    modint pow(ll x) const {
-        modint ret(1), mul(value);
+    ModInt pow(ll x) const {
+        ModInt ret(1), mul(value);
         while (x) {
             if (x & 1) {
                 ret *= mul;
@@ -62,24 +62,24 @@ struct modint {
         }
         return ret;
     }
-    modint inv() const {
+    ModInt inv() const {
         return pow(MOD - 2);
     }
-    bool operator==(const modint &other) const {
+    bool operator==(const ModInt &other) const {
         return value == other.value;
     }
-    bool operator!=(const modint &other) const {
+    bool operator!=(const ModInt &other) const {
         return value != other.value;
     }
-    friend ostream &operator<<(ostream &os, const modint &x) {
+    friend ostream &operator<<(ostream &os, const ModInt &x) {
         return os << x.value;
     }
-    friend istream &operator>>(istream &is, modint &x) {
+    friend istream &operator>>(istream &is, ModInt &x) {
         ll v;
         is >> v;
-        x = modint<MOD>(v);
+        x = ModInt<MOD>(v);
         return is;
     }
 };
-using mod998 = modint<998244353>;
-using mod107 = modint<1000000007>;
+using mod998 = ModInt<998244353>;
+using mod107 = ModInt<1000000007>;

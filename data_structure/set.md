@@ -2,8 +2,8 @@
 
 # [Set Interface](./set.hpp)
 
-`my_set<T>(T not_found)`
-- `not_found` は所望の値が見つからなかった場合に返す値として定義する。デフォルトは `INFL` 。
+`Set<T>(T not_found)`
+- `not_found` は所望の値が見つからなかった場合に返す値として定義する。
 
 `T min()`
 - 最小値を返す。

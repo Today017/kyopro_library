@@ -4,11 +4,11 @@
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
 template <typename T>
-struct sorted_tree : tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update> {
+struct SortedTree : tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update> {
     using tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>::tree;
     T not_found;
-    sorted_tree() = default;
-    sorted_tree(T not_found) {
+    SortedTree() = default;
+    SortedTree(T not_found) {
         this->not_found = not_found;
     }
     T min() {

@@ -2,7 +2,7 @@
 
 # [Cumulative Sum 2D](./cum2d.hpp)
 
-`cumulative_sum_2D<U, T>(vector<vector<U>> a)`
+`CumulativeSum2D<T>(vector<vector<U>> a)`
 - 行列 $a$ に対する2次元累積和を構築する。
 - $O(hw)$
 

@@ -2,6 +2,6 @@
 
 # [Centroid](./centroid.hpp)
 
-`vector<int> centroid(const vector<vector<int>> &G)`
-- 木 $G$ の重心を返す。
+`vector<int> treeCentroid(const vector<vector<int>> &g)`
+- 木 $g$ の重心を返す。
 - $O(V)$

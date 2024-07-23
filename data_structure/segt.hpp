@@ -2,10 +2,10 @@
 #include "../../kyopro_library/template.hpp"
 
 template <typename T>
-struct segment_tree {
+struct SegmentTree {
     using F = function<T(T, T)>;
-    segment_tree() = default;
-    segment_tree(int n, F f, T e) {
+    SegmentTree() = default;
+    SegmentTree(int n, F f, T e) {
         this->n = n;
         this->f = f;
         this->e = e;
@@ -64,13 +64,13 @@ private:
 };
 
 template <typename T>
-segment_tree<T> range_max_query(int n, T e) {
-    return segment_tree<T>(n, [](T a, T b) { return max(a, b); }, e);
+SegmentTree<T> RangeMaxQuery(int n, T e) {
+    return SegmentTree<T>(n, [](T a, T b) { return max(a, b); }, e);
 }
 template <typename T>
-segment_tree<T> range_min_query(int n, T e) {
-    return segment_tree<T>(n, [](T a, T b) { return min(a, b); }, e);
+SegmentTree<T> RangeMinQuery(int n, T e) {
+    return SegmentTree<T>(n, [](T a, T b) { return min(a, b); }, e);
 }
-segment_tree<ll> range_sum_query(int n) {
-    return segment_tree<ll>(n, [](ll a, ll b) { return a + b; }, 0);
+SegmentTree<ll> RangeSumQuery(int n) {
+    return SegmentTree<ll>(n, [](ll a, ll b) { return a + b; }, 0);
 }

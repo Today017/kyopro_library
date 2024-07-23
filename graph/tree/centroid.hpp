@@ -1,12 +1,12 @@
 #include "../../../kyopro_library/template.hpp"
 
-vector<int> tree_centroid(const vector<vector<int>> &G) {
-    int n = G.size();
+vector<int> treeCentroid(const vector<vector<int>> &g) {
+    int n = g.size();
     vector<int> ret, sz(n);
     auto dfs = [&](auto &&dfs, int now, int pre) -> void {
         sz[now] = 1;
         bool is_centroid = true;
-        for (int nxt : G[now]) {
+        for (int nxt : g[now]) {
             if (nxt == pre) {
                 continue;
             }

@@ -90,9 +90,7 @@
 
 ### Number Theory
 
-- [Divisors](./math/divisors.md)
-- [Prime Factorize](./math/pf.md)
-- [Eratosthenes](./math/primes.md)
+- [Euler's Totient Function](./math/phi.md)
 - [Prime Factorization based on Eratosthenes](./math/osak.md)
 - [Prime Factorization based on Pollard's rho](./math/rho.md)
 - [Primality Test based on Miller-Rabin](./math/ptest.md)

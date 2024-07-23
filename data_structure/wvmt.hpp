@@ -8,7 +8,7 @@ enum {
 };
 using ull = unsigned long long;
 
-struct succinct_bit_vector {
+struct SuccinctBitVector {
 private:
     const ull size;
     static const ull blockBitNum = 16;
@@ -20,7 +20,7 @@ private:
     ull numOne = 0;
 
 public:
-    explicit succinct_bit_vector(const ull n) : size(n) {
+    explicit SuccinctBitVector(const ull n) : size(n) {
         const ull s = (n + blockBitNum - 1) / blockBitNum + 1;
         this->B.assign(s, 0);
         this->L.assign(n / LEVEL_L + 1, 0);
@@ -161,9 +161,9 @@ private:
     }
 };
 
-struct wavelet_matrix {
+struct WaveletMatrix {
 private:
-    vector<succinct_bit_vector> bit_arrays;
+    vector<SuccinctBitVector> bit_arrays;
     vector<ull> begin_one;
     map<ull, ull> begin_alphabet;
     vector<vector<ull>> cumulative_sum;
@@ -172,14 +172,14 @@ private:
     ull bit_size;
 
 public:
-    wavelet_matrix(const vector<ull> &array) {
+    WaveletMatrix(const vector<ull> &array) {
         assert(array.size() > 0);
         size = array.size();
         maximum_element = *max_element(array.begin(), array.end()) + 1;
         bit_size = get_num_of_bit(maximum_element);
         if (bit_size == 0) bit_size = 1;
         for (ull i = 0; i < bit_size; ++i) {
-            succinct_bit_vector sv(size);
+            SuccinctBitVector sv(size);
             bit_arrays.push_back(sv);
         }
         this->begin_one.resize(bit_size);

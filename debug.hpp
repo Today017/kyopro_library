@@ -140,7 +140,7 @@ ostream &operator<<(ostream &os, priority_queue<T, vector<T>, greater<>> A) {
     return os;
 }
 template <typename T>
-ostream &operator<<(ostream &os, fenwick_tree<T> a) {
+ostream &operator<<(ostream &os, FenwickTree<T> a) {
     int n = a.size();
     os << "[ ";
     for (int i = 0; i < n; i++) {
@@ -153,7 +153,7 @@ ostream &operator<<(ostream &os, fenwick_tree<T> a) {
     return os;
 }
 template <typename T>
-ostream &operator<<(ostream &os, segment_tree<T> a) {
+ostream &operator<<(ostream &os, SegmentTree<T> a) {
     int n = a.size();
     os << "[ ";
     for (int i = 0; i < n; i++) {
@@ -166,7 +166,7 @@ ostream &operator<<(ostream &os, segment_tree<T> a) {
     return os;
 }
 template <typename T, typename U>
-ostream &operator<<(ostream &os, segment_tree_lazy<T, U> a) {
+ostream &operator<<(ostream &os, SegmentTreeLazy<T, U> a) {
     int n = a.size();
     os << "[ ";
     for (int i = 0; i < n; i++) {

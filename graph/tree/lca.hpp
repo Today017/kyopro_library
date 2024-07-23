@@ -1,15 +1,15 @@
 #include "../../../kyopro_library/template.hpp"
 
-struct lowest_common_ancestor {
-    lowest_common_ancestor(vector<vector<int>> &G, int root = 0) {
-        int n = G.size();
+struct LCA {
+    LCA(vector<vector<int>> &g, int root = 0) {
+        int n = g.size();
         int k = 1;
         while ((1 << k) < n) {
             k++;
         }
         parent = vector<vector<int>>(k, vector<int>(n, -1));
         dst = vector<int>(n, -1);
-        dfs(G, root, -1, 0);
+        dfs(g, root, -1, 0);
         for (int i = 0; i + 1 < k; i++) {
             for (int j = 0; j < n; j++) {
                 if (parent[i][j] < 0) {
@@ -58,12 +58,12 @@ struct lowest_common_ancestor {
 private:
     vector<vector<int>> parent;
     vector<int> dst;
-    void dfs(vector<vector<int>> &G, int now, int pre, int tmp) {
+    void dfs(vector<vector<int>> &g, int now, int pre, int tmp) {
         parent[0][now] = pre;
         dst[now] = tmp;
-        for (int nxt : G[now]) {
+        for (int nxt : g[now]) {
             if (nxt != pre) {
-                dfs(G, nxt, now, tmp + 1);
+                dfs(g, nxt, now, tmp + 1);
             }
         }
     }

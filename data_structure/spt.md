@@ -2,7 +2,7 @@
 
 # [Sparse Table](./spt.hpp)
 
-`sparse_table<T, MIN>`
+`SparseTable<T, MIN>`
 - 配列 $a$ から Sparse Table を構築する。
 - $O(n\log{n})$
 

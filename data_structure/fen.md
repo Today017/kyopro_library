@@ -2,6 +2,9 @@
 
 # [Fenwick Tree](./fen.hpp)
 
+`FenwickTree<T>(int n)`
+- サイズ $n$ の Fenwick Tree を構築する。
+
 `T add(int i, T x)`
 - 要素 $i$ に $x$ を加算する。
 - $O(\log n)$

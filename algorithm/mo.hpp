@@ -1,7 +1,7 @@
 #include "../../kyopro_library/template.hpp"
 
-struct mo_algorithm {
-    mo_algorithm(int n, int q) {
+struct Mo {
+    Mo(int n, int q) {
         max_n = 1 << 25;
         query_count = 0;
         this->n = n;

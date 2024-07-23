@@ -1,11 +1,11 @@
 #include "../../kyopro_library/template.hpp"
 
 template <typename T>
-struct my_set : set<T> {
+struct Set : set<T> {
     using set<T>::set;
     T not_found = -1;
-    my_set() = default;
-    my_set(T not_found) {
+    Set() = default;
+    Set(T not_found) {
         this->not_found = not_found;
     }
     T min() {

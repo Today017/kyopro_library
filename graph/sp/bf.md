@@ -2,8 +2,8 @@
 
 # [Bellman Ford](./bf.hpp)
 
-`pair<bool, vector<ll>> bellman_ford(vector<vector<int, ll>> G, int start)`
-- グラフ $G$ に対して頂点 $start$ からの各頂点への最短距離を格納した配列と、負のサイクルが存在するか否かを返す。
+`pair<bool, vector<ll>> bellmanFord(vector<vector<int, ll>> g, int start)`
+- グラフ $g$ に対して頂点 $start$ からの各頂点への最短距離を格納した配列と、負のサイクルが存在するか否かを返す。
 - $O(VE)$
 
 ## 負のサイクルが存在するときの注意点

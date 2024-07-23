@@ -2,9 +2,9 @@
 #include "../../kyopro_library/template.hpp"
 
 template <typename T>
-struct fenwick_tree {
-    fenwick_tree() = default;
-    fenwick_tree(int n) {
+struct FenwickTree {
+    FenwickTree() = default;
+    FenwickTree(int n) {
         this->n = n;
         dat = vector<T>(n);
     }

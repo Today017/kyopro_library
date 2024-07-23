@@ -1,6 +1,6 @@
 #include "../../kyopro_library/template.hpp"
 
-int longest_increasing_subsequence_length(vector<int> &a, bool strict = true) {
+int lisLength(vector<int> &a, bool strict = true) {
     int n = a.size();
     vector<int> dp(n, INF);
     for (int i = 0; i < n; i++) {

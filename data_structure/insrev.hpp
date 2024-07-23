@@ -1,6 +1,6 @@
 #include "../../kyopro_library/template.hpp"
 
-namespace insertable_reversible_array_impl {
+namespace InsertableReversibleArrayImpl {
     /* https://nyaannyaan.github.io/library/rbst/lazy-reversible-rbst.hpp.html */
     template <typename Node>
     struct RBSTBase {
@@ -147,32 +147,32 @@ namespace insertable_reversible_array_impl {
     T op(T a, T b) { return a + b; }
     template <typename T>
     T e(T a) { return a; }
-};  // namespace insertable_reversible_array_impl
+};  // namespace InsertableReversibleArrayImpl
 
 template <typename T>
-struct insertable_reversible_array {
-    using node = insertable_reversible_array_impl::LazyReversibleRBSTNode<T, T>;
+struct InsertableReversibleArray {
+    using node = InsertableReversibleArrayImpl::LazyReversibleRBSTNode<T, T>;
     using node_ptr = node *;
     node_ptr root;
-    insertable_reversible_array_impl::LazyReversibleRBST<
+    InsertableReversibleArrayImpl::LazyReversibleRBST<
         T,
         T,
-        insertable_reversible_array_impl::op<T>,
-        insertable_reversible_array_impl::op<T>,
-        insertable_reversible_array_impl::op<T>,
-        insertable_reversible_array_impl::e<T>>
+        InsertableReversibleArrayImpl::op<T>,
+        InsertableReversibleArrayImpl::op<T>,
+        InsertableReversibleArrayImpl::op<T>,
+        InsertableReversibleArrayImpl::e<T>>
         rbst;
     int _size = 0;
     int size() {
         return _size;
     }
-    insertable_reversible_array() = default;
-    insertable_reversible_array(int n) {
+    InsertableReversibleArray() = default;
+    InsertableReversibleArray(int n) {
         vector<T> init(n);
         root = rbst.build(init);
         _size = n;
     }
-    insertable_reversible_array(const vector<T> &init) {
+    InsertableReversibleArray(const vector<T> &init) {
         root = rbst.build(init);
         _size = init.size();
     }

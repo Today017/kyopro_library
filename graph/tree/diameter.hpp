@@ -1,16 +1,16 @@
 #include "../../../kyopro_library/template.hpp"
 #include "../../../kyopro_library/graph/sp/dij.hpp"
 
-pair<vector<int>, ll> tree_diameter_path(const vector<vector<pair<int, ll>>>& G) {
-    vector<ll> dist = dijkstra(G);
+pair<vector<int>, ll> treeDiameter(const vector<vector<pair<int, ll>>>& g) {
+    vector<ll> dist = dijkstra(g);
     int s = max_element(dist.begin(), dist.end()) - dist.begin();
-    dist = dijkstra(G, s);
+    dist = dijkstra(g, s);
     int t = max_element(dist.begin(), dist.end()) - dist.begin();
     vector<int> path;
     int now = t;
     while (now != s) {
         path.push_back(now);
-        for (auto [nxt, cost] : G[now]) {
+        for (auto [nxt, cost] : g[now]) {
             if (dist[now] == dist[nxt] + cost) {
                 now = nxt;
                 break;
@@ -22,13 +22,13 @@ pair<vector<int>, ll> tree_diameter_path(const vector<vector<pair<int, ll>>>& G)
     return {path, diameter};
 }
 
-pair<vector<int>, ll> tree_diameter_path(const vector<vector<int>>& G) {
-    int n = G.size();
-    vector<vector<pair<int, ll>>> H(n);
+pair<vector<int>, ll> treeDiameter(const vector<vector<int>>& g) {
+    int n = g.size();
+    vector<vector<pair<int, ll>>> h(n);
     for (int i = 0; i < n; i++) {
-        for (int j : G[i]) {
-            H[i].push_back({j, 1});
+        for (int j : g[i]) {
+            h[i].push_back({j, 1});
         }
     }
-    return tree_diameter_path(H);
+    return treeDiameter(h);
 }

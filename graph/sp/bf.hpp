@@ -1,14 +1,14 @@
 #include "../../../kyopro_library/template.hpp"
 
-pair<bool, vector<ll>> bellman_ford(const vector<vector<pair<int, ll>>> &G, int start) {
-    int n = G.size();
+pair<bool, vector<ll>> bellmanFord(const vector<vector<pair<int, ll>>> &g, int start) {
+    int n = g.size();
     vector<ll> dst(n, INFL);
     dst[start] = 0;
     int i = 0;
     for (; i < n; i++) {
         bool update = false;
         for (int j = 0; j < n; j++) {
-            for (auto [nxt, cost] : G[j]) {
+            for (auto [nxt, cost] : g[j]) {
                 if (dst[j] != INFL && dst[j] + cost < dst[nxt]) {
                     dst[nxt] = dst[j] + cost;
                     update = true;

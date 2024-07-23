@@ -1,6 +1,6 @@
 #include "../../kyopro_library/template.hpp"
 
-bool primality_test(ll n) {
+bool primalityTest(ll n) {
     if (n == 2) {
         return true;
     }

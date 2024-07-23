@@ -1,15 +1,14 @@
 #include "../../kyopro_library/template.hpp"
 
 template <typename T>
-struct sorted_array {
+struct SortedArray {
     vector<T> dat, dat_unique;
     T not_found;
-    sorted_array() = default;
-    sorted_array(const vector<T> &a, T not_found = -1) {
+    SortedArray() = default;
+    SortedArray(const vector<T> &a, T not_found = -1) {
         dat = a;
         dat_unique = a;
         sort(dat_unique.begin(), dat_unique.end());
-        dat = a;
         dat_unique.erase(unique(dat_unique.begin(), dat_unique.end()), dat_unique.end());
         this->not_found = not_found;
     }

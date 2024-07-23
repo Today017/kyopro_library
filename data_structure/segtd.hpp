@@ -1,10 +1,10 @@
 #include "../../kyopro_library/template.hpp"
 
 template <typename T>
-struct segment_tree_dual {
+struct SegmentTreeDual {
     using F = function<T(T, T)>;
-    segment_tree_dual() = default;
-    segment_tree_dual(int n, F f, T e) {
+    SegmentTreeDual() = default;
+    SegmentTreeDual(int n, F f, T e) {
         this->n = n;
         this->f = f;
         this->e = e;
@@ -51,13 +51,13 @@ private:
     T e;
 };
 
-segment_tree_dual<ll> range_add_query(int n) {
-    return segment_tree_dual<ll>(n, [](ll a, ll b) { return a + b; }, 0);
+SegmentTreeDual<ll> RangeAddQuery(int n) {
+    return SegmentTreeDual<ll>(n, [](ll a, ll b) { return a + b; }, 0);
 }
 template <typename T>
-segment_tree_dual<pair<T, int>> range_update_query(int n) {
+SegmentTreeDual<pair<T, int>> RangeUpdateQuery(int n) {
     auto f = [](pair<T, int> a, pair<T, int> b) {
         return a.second > b.second ? a : b;
     };
-    return segment_tree_dual<pair<T, int>>(n, f, {0, -1});
+    return SegmentTreeDual<pair<T, int>>(n, f, {0, -1});
 }

@@ -1,6 +1,6 @@
 #include "../../kyopro_library/template.hpp"
 
-vector<complex<double>> fft(vector<complex<double>> a, bool inv = false) {
+vector<complex<double>> FFT(vector<complex<double>> a, bool inv = false) {
     int n = a.size();
     int h = 0;
     while ((1 << h) < n) {
@@ -39,7 +39,7 @@ vector<complex<double>> fft(vector<complex<double>> a, bool inv = false) {
     return a;
 }
 
-vector<double> convolution(vector<double> a, vector<double> b) {
+vector<double> Convolution(vector<double> a, vector<double> b) {
     int n = 1;
     while (n < (int)a.size() + (int)b.size() - 1) {
         n <<= 1;
@@ -51,12 +51,12 @@ vector<double> convolution(vector<double> a, vector<double> b) {
     for (int i = 0; i < (int)b.size(); i++) {
         fb[i] = b[i];
     }
-    fa = fft(fa);
-    fb = fft(fb);
+    fa = FFT(fa);
+    fb = FFT(fb);
     for (int i = 0; i < n; i++) {
         fa[i] *= fb[i];
     }
-    fa = fft(fa, true);
+    fa = FFT(fa, true);
     vector<double> ret(n);
     for (int i = 0; i < n; i++) {
         ret[i] = fa[i].real();

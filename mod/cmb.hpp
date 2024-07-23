@@ -1,9 +1,9 @@
 #include "../../kyopro_library/mod/modint.hpp"
 
 template <typename T>
-struct combination {
+struct Combination {
     vector<T> fact, factinv;
-    combination(int n) {
+    Combination(int n) {
         fact = vector<T>(n + 1);
         factinv = vector<T>(n + 1);
         fact[0] = 1;

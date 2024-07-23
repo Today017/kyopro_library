@@ -1,8 +1,8 @@
 #include "../../kyopro_library/template.hpp"
 
-template <typename T = unsigned int, int LOG = 32>
-struct binary_trie {
-    binary_trie() {
+template <typename T = uint32_t, int Log = 32>
+struct BinaryTrie {
+    BinaryTrie() {
         root = nullptr;
     }
     int size() const {
@@ -12,14 +12,14 @@ struct binary_trie {
         return root->size;
     }
     void insert(T x, int cnt = 1) {
-        root = insert(root, x, LOG - 1, cnt);
+        root = insert(root, x, Log - 1, cnt);
     }
     void erase(T x, int cnt = 1) {
         cnt = min(cnt, count(x));
         if (cnt == 0) {
             return;
         }
-        root = erase(root, x, LOG - 1, cnt);
+        root = erase(root, x, Log - 1, cnt);
     }
     void apply_xor(T x) {
         if (root != nullptr) {
@@ -27,27 +27,27 @@ struct binary_trie {
         }
     }
     T max_element(T bias = 0) {
-        return get_min(root, ~bias, LOG - 1);
+        return get_min(root, ~bias, Log - 1);
     }
     T min_element(T bias = 0) {
-        return get_min(root, bias, LOG - 1);
+        return get_min(root, bias, Log - 1);
     }
     T kth_element(int k) {
         assert(0 <= k && k < size());
-        return get(root, k, LOG - 1);
+        return get(root, k, Log - 1);
     }
     int lower_bound(T x) {
-        return count_lower(root, x, LOG - 1);
+        return count_lower(root, x, Log - 1);
     }
     int upper_bound(T x) {
-        return count_lower(root, x + 1, LOG - 1);
+        return count_lower(root, x + 1, Log - 1);
     }
     int count(T x) {
         if (root == nullptr) {
             return 0;
         }
-        node* v = root;
-        for (int i = LOG - 1; i >= 0; i--) {
+        Node* v = root;
+        for (int i = Log - 1; i >= 0; i--) {
             evaluate(v, i);
             v = v->next[(x >> i) & 1];
             if (v == nullptr) {
@@ -58,18 +58,18 @@ struct binary_trie {
     }
 
 private:
-    struct node {
-        node* next[2];
+    struct Node {
+        Node* next[2];
         int size;
         T lazy;
-        node() {
+        Node() {
             size = 0;
             lazy = 0;
             next[0] = next[1] = nullptr;
         }
     };
-    node* root;
-    void evaluate(node* v, int bit) {
+    Node* root;
+    void evaluate(Node* v, int bit) {
         if ((v->lazy >> bit) & 1) {
             swap(v->next[0], v->next[1]);
         }
@@ -81,9 +81,9 @@ private:
         }
         v->lazy = 0;
     }
-    node* insert(node* v, T x, int bit, int cnt) {
+    Node* insert(Node* v, T x, int bit, int cnt) {
         if (v == nullptr) {
-            v = new node;
+            v = new Node;
         }
         v->size += cnt;
         if (bit < 0) {
@@ -94,7 +94,7 @@ private:
         v->next[lr] = insert(v->next[lr], x, bit - 1, cnt);
         return v;
     }
-    node* erase(node* v, T x, int bit, int cnt) {
+    Node* erase(Node* v, T x, int bit, int cnt) {
         assert(v != nullptr);
         v->size -= cnt;
         if (v->size == 0) {
@@ -108,7 +108,7 @@ private:
         v->next[lr] = erase(v->next[lr], x, bit - 1, cnt);
         return v;
     }
-    T get_min(node* v, T x, int bit) {
+    T get_min(Node* v, T x, int bit) {
         if (bit < 0) {
             return 0;
         }
@@ -119,7 +119,7 @@ private:
         }
         return get_min(v->next[lr], x, bit - 1) | ((T)lr << bit);
     }
-    T get(node* v, int k, int bit) {
+    T get(Node* v, int k, int bit) {
         if (bit < 0) {
             return 0;
         }
@@ -131,7 +131,7 @@ private:
             return get(v->next[1], k - m, bit - 1) | ((T)1 << bit);
         }
     }
-    int count_lower(node* v, T x, int bit) {
+    int count_lower(Node* v, T x, int bit) {
         if (v == nullptr || bit < 0) {
             return 0;
         }

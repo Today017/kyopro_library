@@ -1,27 +1,27 @@
 #include "../../kyopro_library/template.hpp"
 
-vector<int> topological_sort(const vector<vector<int>> &G) {
-    int n = G.size();
+vector<int> TopologicalSort(const vector<vector<int>> &g) {
+    int n = g.size();
     vector<int> indeg(n);
     for (int i = 0; i < n; i++) {
-        for (int nxt : G[i]) {
+        for (int nxt : g[i]) {
             indeg[nxt]++;
         }
     }
-    queue<int> Q;
+    queue<int> que;
     for (int i = 0; i < n; i++) {
         if (indeg[i] == 0) {
-            Q.push(i);
+            que.push(i);
         }
     }
     vector<int> ret;
-    while (!Q.empty()) {
-        int now = Q.front();
-        Q.pop();
-        for (int nxt : G[now]) {
+    while (!que.empty()) {
+        int now = que.front();
+        que.pop();
+        for (int nxt : g[now]) {
             indeg[nxt]--;
             if (indeg[nxt] == 0) {
-                Q.push(nxt);
+                que.push(nxt);
             }
         }
         ret.push_back(now);

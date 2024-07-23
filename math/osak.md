@@ -2,7 +2,7 @@
 
 # [Prime Factorization based on Eratosthenes](./osak.hpp)
 
-`factors(int n)`
+`Factors(int n)`
 - $n$ 以下の整数について、高速に素因数分解・約数列挙を行う前計算をする。
 - $O(n \log {\log{n}})$
 

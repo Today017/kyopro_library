@@ -2,12 +2,12 @@
 #include "../../kyopro_library/template.hpp"
 
 template <typename T, typename U>
-struct segment_tree_lazy {
+struct SegmentTreeLazy {
     using F = function<T(T, T)>;
     using G = function<T(U, T)>;
     using H = function<U(U, U)>;
-    segment_tree_lazy() = default;
-    segment_tree_lazy(int n, F f, G g, H h, T et, U eu) {
+    SegmentTreeLazy() = default;
+    SegmentTreeLazy(int n, F f, G g, H h, T et, U eu) {
         this->n = 1;
         while (this->n < n) {
             this->n *= 2;
@@ -29,7 +29,6 @@ struct segment_tree_lazy {
         }
     }
     void set(int i, T x) {
-        // assert(0 <= i && i < size);
         evaluate(i);
         i += n - 1;
         dat[i] = x;
@@ -39,15 +38,12 @@ struct segment_tree_lazy {
         }
     }
     void apply(int l, int r, U x) {
-        // assert(0 <= l && l <= r && r <= size);
         apply(l, r, 0, x, 0, n);
     }
     T query(int l, int r) {
-        // assert(0 <= l && l <= r && r <= size);
         return query(l, r, 0, 0, n);
     }
     T operator[](int i) {
-        // assert(0 <= i && i < size);
         return query(i, i + 1, 0, 0, n);
     }
     int size() {
@@ -101,8 +97,8 @@ private:
 
 // verified
 template <typename T, typename U>
-segment_tree_lazy<T, U> range_add_range_min(int n) {
-    const T et = numeric_limits<T>::max();
+SegmentTreeLazy<T, U> RangeAddRangeMin(int n, T max_value) {
+    const T et = max_value;
     const U eu = 0;
     auto f = [](T a, T b) {
         return min(a, b);
@@ -113,12 +109,12 @@ segment_tree_lazy<T, U> range_add_range_min(int n) {
     auto h = [](U f, U g) {
         return f + g;
     };
-    return segment_tree_lazy<T, U>(n, f, g, h, et, eu);
+    return SegmentTreeLazy<T, U>(n, f, g, h, et, eu);
 }
 
 template <typename T, typename U>
-segment_tree_lazy<T, U> range_add_range_max(int n) {
-    const T et = numeric_limits<T>::min();
+SegmentTreeLazy<T, U> RangeAddRangeMax(int n, T min_value) {
+    const T et = min_value;
     const U eu = 0;
     auto f = [](T a, T b) {
         return max(a, b);
@@ -129,12 +125,12 @@ segment_tree_lazy<T, U> range_add_range_max(int n) {
     auto h = [](U f, U g) {
         return f + g;
     };
-    return segment_tree_lazy<T, U>(n, f, g, h, et, eu);
+    return SegmentTreeLazy<T, U>(n, f, g, h, et, eu);
 }
 
 // verified
 template <typename T, typename U>
-segment_tree_lazy<pair<T, int>, U> range_add_range_sum(int n) {
+SegmentTreeLazy<pair<T, int>, U> RangeAddRangeSum(int n) {
     using T2 = pair<T, int>;
     const T2 et = make_pair(T(0), 0);
     const U eu = 0;
@@ -147,26 +143,30 @@ segment_tree_lazy<pair<T, int>, U> range_add_range_sum(int n) {
     auto h = [](U f, U g) {
         return f + g;
     };
-    return segment_tree_lazy<T2, U>(n, f, g, h, et, eu);
+    return SegmentTreeLazy<T2, U>(n, f, g, h, et, eu);
 }
 
 // verified
 template <typename T>
-segment_tree_lazy<T, T> range_update_range_min(int n, T eu = numeric_limits<T>::max()) {
-    const T et = numeric_limits<T>::max();
+SegmentTreeLazy<T, T> RangeUpdateRangeMin(int n, T max_value, T not_exist) {
+    const T et = max_value;
+    const T eu = not_exist;
     auto f = [](T a, T b) {
         return min(a, b);
     };
     auto g = [eu](T f, T x) {
-        if (f == eu) return x;
+        if (f == eu) {
+            return x;
+        }
         return f;
     };
-    return segment_tree_lazy<T, T>(n, f, g, g, et, eu);
+    return SegmentTreeLazy<T, T>(n, f, g, g, et, eu);
 }
 
 template <typename T>
-segment_tree_lazy<T, T> range_update_range_max(int n, T eu = numeric_limits<T>::max()) {
-    const T et = numeric_limits<T>::min();
+SegmentTreeLazy<T, T> RangeUpdateRangeMax(int n, T min_value, T not_exist) {
+    const T et = min_value;
+    const T eu = not_exist;
     auto f = [](T a, T b) {
         return max(a, b);
     };
@@ -176,13 +176,14 @@ segment_tree_lazy<T, T> range_update_range_max(int n, T eu = numeric_limits<T>::
         }
         return f;
     };
-    return segment_tree_lazy<T, T>(n, f, g, g, et, eu);
+    return SegmentTreeLazy<T, T>(n, f, g, g, et, eu);
 }
 
 template <typename T>
-segment_tree_lazy<pair<T, int>, T> range_update_range_sum(int n, T eu = numeric_limits<T>::max()) {
+SegmentTreeLazy<pair<T, int>, T> RangeUpdateRangeSum(int n, T not_found) {
     using T2 = pair<T, int>;
     const T2 et = make_pair(T(0), 0);
+    const T eu = not_found;
     auto f = [](T2 a, T2 b) {
         return make_pair(a.first + b.first, a.second + b.second);
     };
@@ -198,5 +199,5 @@ segment_tree_lazy<pair<T, int>, T> range_update_range_sum(int n, T eu = numeric_
         }
         return f;
     };
-    return segment_tree_lazy<pair<T, int>, T>(n, f, g, h, et, eu);
+    return SegmentTreeLazy<pair<T, int>, T>(n, f, g, h, et, eu);
 }

@@ -2,7 +2,7 @@
 
 # [Min Cost Flow](./mcf.hpp)
 
-`min_cost_flow<Cap, Cost>(int n)`
+`MinCostFlow<Cap, Cost>(int n)`
 
 `void add_edge(int u, int v, Cap cap, Cost cost)`
 - 頂点 $u$ から $v$ へ 容量 $cap$, コスト $cost$ の辺を追加する。

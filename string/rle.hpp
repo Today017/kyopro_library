@@ -1,6 +1,6 @@
 #include "../../kyopro_library/template.hpp"
 
-vector<pair<char, int>> run_length_encoding(string s) {
+vector<pair<char, int>> RunLengthEncoding(string s) {
     int n = s.size();
     vector<pair<char, int>> ret;
     for (int l = 0, r; l < n;) {

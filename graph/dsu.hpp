@@ -1,9 +1,9 @@
 #pragma once
 #include "../../kyopro_library/template.hpp"
 
-struct disjoint_set_union {
-    disjoint_set_union() = default;
-    disjoint_set_union(int n) {
+struct DisjointSetUnion {
+    DisjointSetUnion() = default;
+    DisjointSetUnion(int n) {
         par = vector<int>(n);
         sz = vector<int>(n);
         for (int i = 0; i < n; i++) {

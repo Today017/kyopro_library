@@ -1,14 +1,14 @@
 #include "../../../kyopro_library/template.hpp"
 
 template <typename Cap, typename Cost>
-struct min_cost_flow {
-    min_cost_flow(int n) {
+struct MinCostFlow {
+    MinCostFlow(int n) {
         this->n = n;
-        G = vector<vector<tuple<int, Cap, Cost, int>>>(n);
+        graph = vector<vector<tuple<int, Cap, Cost, int>>>(n);
     }
     void add_edge(int u, int v, Cap cap, Cost cost) {
-        G[u].push_back(make_tuple(v, cap, cost, (int)G[v].size()));
-        G[v].push_back(make_tuple(u, 0, -cost, (int)G[u].size() - 1));
+        graph[u].push_back(make_tuple(v, cap, cost, (int)graph[v].size()));
+        graph[v].push_back(make_tuple(u, 0, -cost, (int)graph[u].size() - 1));
     }
     Cost get(int start, int goal, Cap flow) {
         Cost ret = 0;
@@ -20,15 +20,15 @@ struct min_cost_flow {
             Cap now_flow = flow;
             int now_vertex = goal;
             while (now_vertex != start) {
-                now_flow = min(now_flow, std::get<1>(G[pre_vertex[now_vertex]][pre_edge[now_vertex]]));
+                now_flow = min(now_flow, std::get<1>(graph[pre_vertex[now_vertex]][pre_edge[now_vertex]]));
                 now_vertex = pre_vertex[now_vertex];
             }
             ret += now_flow * dst[goal];
             flow -= now_flow;
             now_vertex = goal;
             while (now_vertex != start) {
-                std::get<1>(G[pre_vertex[now_vertex]][pre_edge[now_vertex]]) -= now_flow;
-                int rev = std::get<3>(G[pre_vertex[now_vertex]][pre_edge[now_vertex]]);
+                std::get<1>(graph[pre_vertex[now_vertex]][pre_edge[now_vertex]]) -= now_flow;
+                int rev = std::get<3>(graph[pre_vertex[now_vertex]][pre_edge[now_vertex]]);
                 std::get<1>(G[now_vertex][rev]) += now_flow;
                 now_vertex = pre_vertex[now_vertex];
             }
@@ -38,7 +38,7 @@ struct min_cost_flow {
 
 private:
     int n;
-    vector<vector<tuple<int, Cap, Cost, int>>> G;
+    vector<vector<tuple<int, Cap, Cost, int>>> graph;
     tuple<vector<Cost>, vector<int>, vector<int>> calculate_cost(int start) {
         vector<Cost> dst(n, numeric_limits<Cost>::max());
         vector<int> pre_vertex(n, 0), pre_edge(n, 0);
@@ -49,8 +49,8 @@ private:
                 if (dst[i] == numeric_limits<Cost>::max()) {
                     continue;
                 }
-                for (int j = 0; j < (int)G[i].size(); j++) {
-                    auto [nxt, cap, cost, _] = G[i][j];
+                for (int j = 0; j < (int)graph[i].size(); j++) {
+                    auto [nxt, cap, cost, _] = graph[i][j];
                     if (cap > 0 && dst[nxt] > dst[i] + cost) {
                         dst[nxt] = dst[i] + cost;
                         update = true;

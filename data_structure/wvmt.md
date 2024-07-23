@@ -8,7 +8,7 @@
 
 全体集合のサイズ $\sigma$ とする。
 
-`wavelet_matrix(vector<ull> a)`
+`WaveletMatrix(vector<ull> a)`
 
 `ull access(ull i)`
 - $a_i$ を復元する。

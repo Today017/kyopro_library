@@ -1,6 +1,6 @@
 #include "../../kyopro_library/template.hpp"
 
-ll modlog(ll x, ll y, ll mod) {
+ll modLog(ll x, ll y, ll mod) {
     ll m = ceil(sqrt(mod)) + 1;
     ll now_y = y;
     map<ll, ll> mp;

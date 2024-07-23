@@ -1,8 +1,8 @@
 #include "../../../kyopro_library/template.hpp"
 
-struct heavy_light_decomposition {
-    heavy_light_decomposition(int n) {
-        G = vector<vector<int>>(n);
+struct HLD {
+    HLD(int n) {
+        graph = vector<vector<int>>(n);
         sz = vector<int>(n);
         parent = vector<int>(n);
         depth = vector<int>(n);
@@ -10,12 +10,12 @@ struct heavy_light_decomposition {
         head = vector<int>(n);
     }
     void add_edge(int a, int b) {
-        G[a].push_back(b);
-        G[b].push_back(a);
+        graph[a].push_back(b);
+        graph[b].push_back(a);
     }
-    heavy_light_decomposition(const vector<vector<int>>& G) {
-        int n = G.size();
-        this->G = G;
+    HLD(const vector<vector<int>>& g) {
+        int n = graph.size();
+        this->graph = g;
         sz = vector<int>(n);
         parent = vector<int>(n);
         depth = vector<int>(n);
@@ -60,7 +60,7 @@ struct heavy_light_decomposition {
     }
 
 private:
-    vector<vector<int>> G;
+    vector<vector<int>> graph;
     vector<int> sz, parent, depth, hld, pos, head;
     void dfs(int now, int a, int pre = -1) {
         pos[now] = hld.size();
@@ -71,7 +71,7 @@ private:
         }
         int mx = 0;
         int mx_idx = 0;
-        for (int nxt : G[now]) {
+        for (int nxt : graph[now]) {
             if (nxt == pre) {
                 continue;
             }
@@ -81,7 +81,7 @@ private:
             }
         }
         dfs(mx_idx, a, now);
-        for (int nxt : G[now]) {
+        for (int nxt : graph[now]) {
             if (nxt == pre || nxt == mx_idx) {
                 continue;
             }
@@ -90,7 +90,7 @@ private:
     }
     void dfs1(int now, int pre = -1) {
         int res = 1;
-        for (int nxt : G[now]) {
+        for (int nxt : graph[now]) {
             if (nxt == pre) {
                 continue;
             }
@@ -101,7 +101,7 @@ private:
     }
     void dfs2(int now, int pre = -1) {
         parent[now] = pre;
-        for (int nxt : G[now]) {
+        for (int nxt : graph[now]) {
             if (nxt == pre) {
                 continue;
             }

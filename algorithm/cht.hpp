@@ -1,10 +1,10 @@
 #include "../../kyopro_library/template.hpp"
 
-template <typename T = ll, bool MIN = true>
-struct convex_hull_trick {
-    convex_hull_trick() = default;
+template <typename T = ll, bool Min = true>
+struct ConvexHullTrick {
+    ConvexHullTrick() = default;
     void add(T a, T b) {
-        if (!MIN) {
+        if (!Min) {
             a *= -1;
             b *= -1;
         }
@@ -63,7 +63,7 @@ struct convex_hull_trick {
         }
         auto it = lines.lower_bound(lo);
         auto [a, b] = *it;
-        return (a * x + b) * (MIN ? 1 : -1);
+        return (a * x + b) * (Min ? 1 : -1);
     }
 
 private:

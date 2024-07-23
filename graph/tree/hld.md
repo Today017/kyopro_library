@@ -6,9 +6,9 @@
 
 [使用例](https://atcoder.jp/contests/abc294/submissions/46419196)
 
-`heavy_light_decomposition(int n)`
+`HLD(int n)`
 
-`heavy_light_decomposition(vector<vector<int>> G)`
+`HLD(vector<vector<int>> g)`
 
 
 `vector<int> start(int root)`

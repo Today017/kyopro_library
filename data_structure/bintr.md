@@ -3,6 +3,8 @@
 # [Binary Trie](./bintr.hpp)
 だいたいの操作が $O(LOG)$ で可能。
 
+`BinaryTrie<T>()`
+
 `int size()`
 - サイズ取得。
 

@@ -2,7 +2,7 @@
 
 # [Max Flow](./mxf.hpp)
 
-`max_flow<Cap>(int n)`
+`MaxFlow<Cap>(int n)`
 
 `void add_edge(int u, int v, Cap c)`
 - 頂点 $u$ から $v$ へ 容量 $c$ の辺を追加する。

@@ -1,15 +1,15 @@
 #include "../../../kyopro_library/template.hpp"
 
 template <typename Cap>
-struct max_flow {
-    max_flow() = default;
-    max_flow(int n) {
+struct MaxFlow {
+    MaxFlow() = default;
+    MaxFlow(int n) {
         this->n = n;
-        G = vector<vector<tuple<int, int, Cap>>>(n);
+        graph = vector<vector<tuple<int, int, Cap>>>(n);
     }
     void add_edge(int u, int v, Cap c) {
-        G[u].push_back(make_tuple(v, G[v].size(), c));
-        G[v].push_back(make_tuple(u, (int)G[u].size() - 1, 0));
+        graph[u].push_back(make_tuple(v, graph[v].size(), c));
+        graph[v].push_back(make_tuple(u, (int)graph[u].size() - 1, 0));
     }
     Cap get(int start, int goal) {
         Cap ret = 0;
@@ -32,7 +32,7 @@ struct max_flow {
 
 private:
     int n;
-    vector<vector<tuple<int, int, Cap>>> G;
+    vector<vector<tuple<int, int, Cap>>> graph;
     vector<int> calculate_distance(int start) {
         vector<int> dst(n, -1);
         dst[start] = 0;
@@ -41,7 +41,7 @@ private:
         while (!que.empty()) {
             int now = que.front();
             que.pop();
-            for (auto [nxt, _, cap] : G[now]) {
+            for (auto [nxt, _, cap] : graph[now]) {
                 if (cap > 0 && dst[nxt] == -1) {
                     dst[nxt] = dst[now] + 1;
                     que.push(nxt);
@@ -54,13 +54,13 @@ private:
         if (now == goal) {
             return limit;
         }
-        while (removed[now] < (int)G[now].size()) {
-            auto [nxt, rev, cap] = G[now][removed[now]];
+        while (removed[now] < (int)graph[now].size()) {
+            auto [nxt, rev, cap] = graph[now][removed[now]];
             if (cap > 0 && dst[now] < dst[nxt]) {
                 Cap flow = flowing(nxt, goal, min(limit, cap), removed, dst);
                 if (flow > 0) {
-                    get<2>(G[now][removed[now]]) -= flow;
-                    get<2>(G[nxt][rev]) += flow;
+                    get<2>(graph[now][removed[now]]) -= flow;
+                    get<2>(graph[nxt][rev]) += flow;
                     return flow;
                 }
             }

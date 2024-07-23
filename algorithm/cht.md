@@ -2,7 +2,7 @@
 
 # [Convex Hull Trick](./cht.hpp)
 
-`convex_hull_trick<T, MIN>`
+`ConvexHullTrick<T, Min>`
 - 直線を管理し、クエリに対して最小値、または最大値を求める。
 
 `void add(T a, T b)`

@@ -2,7 +2,7 @@
 
 # [Disjoint Set Union](./dsu.hpp)
 
-`disjoint_set_union(int n)`
+`DisjointSetUnion(int n)`
 
 `int find(int x)`
 - 頂点 $x$ を含む連結成分の代表元。

@@ -1,7 +1,7 @@
 #include "../../kyopro_library/template.hpp"    
 
-struct rolling_hash {
-    rolling_hash(const string &s, vector<ll> base = {}) {
+struct RollingHash {
+    RollingHash(const string &s, vector<ll> base = {}) {
         int n = s.size();
         mt19937 rng(time(0));
         this->base = vector<ll>(5);
@@ -83,4 +83,4 @@ private:
         return ret;
     }
 };
-const vector<ll> rolling_hash::mod = {1000000009, 1000000007, 1000000021, 1000000033, 1000000087};
+const vector<ll> RollingHash::mod = {1000000009, 1000000007, 1000000021, 1000000033, 1000000087};

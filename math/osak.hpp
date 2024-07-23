@@ -1,7 +1,7 @@
 #include "../../kyopro_library/template.hpp"
 
-struct factors {
-    factors(int n) {
+struct Factors {
+    Factors(int n) {
         mx = n;
         min_factor = vector<int>(mx + 1);
         is_prime = vector<bool>(mx + 1, true);

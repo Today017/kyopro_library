@@ -2,7 +2,7 @@
 
 # [Bezout Identity](./bezout_identity.hpp)
 
-`bezout_identity(ll a, ll b, ll c)`
+`BezoutIdentity(ll a, ll b, ll c)`
 - 不定一次方程式 $ax + by = c$ を解く。
 
 `bool build()`

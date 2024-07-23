@@ -1,6 +1,6 @@
 #include "../../kyopro_library/template.hpp"
 
-struct dynamic_modint {
+struct DynamicModInt {
     ll value;
     static ll mod;
     static void set_mod(ll x) {
@@ -9,55 +9,55 @@ struct dynamic_modint {
     static ll get_mod() {
         return mod;
     }
-    dynamic_modint(ll x = 0) {
+    DynamicModInt(ll x = 0) {
         if (x >= 0) {
             value = x % mod;
         } else {
             value = mod - (-x) % mod;
         }
     }
-    dynamic_modint operator-() const {
-        return dynamic_modint(-value);
+    DynamicModInt operator-() const {
+        return DynamicModInt(-value);
     }
-    dynamic_modint operator+() const {
-        return dynamic_modint(*this);
+    DynamicModInt operator+() const {
+        return DynamicModInt(*this);
     }
-    dynamic_modint &operator+=(const dynamic_modint &other) {
+    DynamicModInt &operator+=(const DynamicModInt &other) {
         value += other.value;
         if (value >= mod) {
             value -= mod;
         }
         return *this;
     }
-    dynamic_modint &operator-=(const dynamic_modint &other) {
+    DynamicModInt &operator-=(const DynamicModInt &other) {
         value += mod - other.value;
         if (value >= mod) {
             value -= mod;
         }
         return *this;
     }
-    dynamic_modint &operator*=(const dynamic_modint other) {
+    DynamicModInt &operator*=(const DynamicModInt other) {
         value = value * other.value % mod;
         return *this;
     }
-    dynamic_modint &operator/=(dynamic_modint other) {
+    DynamicModInt &operator/=(DynamicModInt other) {
         (*this) *= other.inv();
         return *this;
     }
-    dynamic_modint operator+(const dynamic_modint &other) const {
-        return dynamic_modint(*this) += other;
+    DynamicModInt operator+(const DynamicModInt &other) const {
+        return DynamicModInt(*this) += other;
     }
-    dynamic_modint operator-(const dynamic_modint &other) const {
-        return dynamic_modint(*this) -= other;
+    DynamicModInt operator-(const DynamicModInt &other) const {
+        return DynamicModInt(*this) -= other;
     }
-    dynamic_modint operator*(const dynamic_modint &other) const {
-        return dynamic_modint(*this) *= other;
+    DynamicModInt operator*(const DynamicModInt &other) const {
+        return DynamicModInt(*this) *= other;
     }
-    dynamic_modint operator/(const dynamic_modint &other) const {
-        return dynamic_modint(*this) /= other;
+    DynamicModInt operator/(const DynamicModInt &other) const {
+        return DynamicModInt(*this) /= other;
     }
-    dynamic_modint pow(ll x) const {
-        dynamic_modint ret(1), mul(value);
+    DynamicModInt pow(ll x) const {
+        DynamicModInt ret(1), mul(value);
         while (x) {
             if (x & 1) {
                 ret *= mul;
@@ -67,23 +67,23 @@ struct dynamic_modint {
         }
         return ret;
     }
-    dynamic_modint inv() const {
+    DynamicModInt inv() const {
         return pow(mod - 2);
     }
-    bool operator==(const dynamic_modint &other) const {
+    bool operator==(const DynamicModInt &other) const {
         return value == other.value;
     }
-    bool operator!=(const dynamic_modint &other) const {
+    bool operator!=(const DynamicModInt &other) const {
         return value != other.value;
     }
-    friend ostream &operator<<(ostream &os, const dynamic_modint &x) {
+    friend ostream &operator<<(ostream &os, const DynamicModInt &x) {
         return os << x.value;
     }
-    friend istream &operator>>(istream &is, dynamic_modint &x) {
+    friend istream &operator>>(istream &is, DynamicModInt &x) {
         ll v;
         is >> v;
-        x = dynamic_modint(v);
+        x = DynamicModInt(v);
         return is;
     }
 };
-ll dynamic_modint::mod = 998244353;
+ll DynamicModInt::mod = 998244353;

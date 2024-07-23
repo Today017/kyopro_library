@@ -9,45 +9,45 @@
 */
 
 template <int mod>
-struct modint {
+struct ModInt {
     int x;
-    modint() : x(0) {}
-    modint(ll y) : x(y >= 0 ? y % mod : (mod - (-y) % mod) % mod) {}
-    modint &operator+=(const modint &p) {
+    ModInt() : x(0) {}
+    ModInt(ll y) : x(y >= 0 ? y % mod : (mod - (-y) % mod) % mod) {}
+    ModInt &operator+=(const ModInt &p) {
         if ((x += p.x) >= mod) x -= mod;
         return *this;
     }
-    modint &operator-=(const modint &p) {
+    ModInt &operator-=(const ModInt &p) {
         if ((x += mod - p.x) >= mod) x -= mod;
         return *this;
     }
-    modint &operator*=(const modint &p) {
+    ModInt &operator*=(const ModInt &p) {
         x = (int)(1LL * x * p.x % mod);
         return *this;
     }
-    modint &operator/=(const modint &p) {
+    ModInt &operator/=(const ModInt &p) {
         *this *= p.inverse();
         return *this;
     }
-    modint operator-() const { return modint(-x); }
-    modint operator+() const { return modint(*this); }
-    modint operator+(const modint &p) const { return modint(*this) += p; }
-    modint operator-(const modint &p) const { return modint(*this) -= p; }
-    modint operator*(const modint &p) const { return modint(*this) *= p; }
-    modint operator/(const modint &p) const { return modint(*this) /= p; }
-    bool operator==(const modint &p) const { return x == p.x; }
-    bool operator!=(const modint &p) const { return x != p.x; }
-    modint inverse() const {
+    ModInt operator-() const { return ModInt(-x); }
+    ModInt operator+() const { return ModInt(*this); }
+    ModInt operator+(const ModInt &p) const { return ModInt(*this) += p; }
+    ModInt operator-(const ModInt &p) const { return ModInt(*this) -= p; }
+    ModInt operator*(const ModInt &p) const { return ModInt(*this) *= p; }
+    ModInt operator/(const ModInt &p) const { return ModInt(*this) /= p; }
+    bool operator==(const ModInt &p) const { return x == p.x; }
+    bool operator!=(const ModInt &p) const { return x != p.x; }
+    ModInt inverse() const {
         int a = x, b = mod, u = 1, v = 0, t;
         while (b > 0) {
             t = a / b;
             swap(a -= t * b, b);
             swap(u -= t * v, v);
         }
-        return modint(u);
+        return ModInt(u);
     }
-    modint pow(ll n) const {
-        modint ret(1), mul(x);
+    ModInt pow(ll n) const {
+        ModInt ret(1), mul(x);
         while (n > 0) {
             if (n & 1) ret *= mul;
             mul *= mul;
@@ -55,11 +55,11 @@ struct modint {
         }
         return ret;
     }
-    friend ostream &operator<<(ostream &os, const modint &p) { return os << p.x; }
-    friend istream &operator>>(istream &is, modint &a) {
+    friend ostream &operator<<(ostream &os, const ModInt &p) { return os << p.x; }
+    friend istream &operator>>(istream &is, ModInt &a) {
         ll t;
         is >> t;
-        a = modint<mod>(t);
+        a = ModInt<mod>(t);
         return (is);
     }
     int get() const { return x; }
@@ -280,9 +280,9 @@ struct NTT {
 };
 
 template <typename mint>
-struct formal_power_series : vector<mint> {
+struct FormalPowerSeries : vector<mint> {
     using vector<mint>::vector;
-    using FPS = formal_power_series;
+    using FPS = FormalPowerSeries;
     FPS &operator+=(const FPS &r) {
         if (r.size() > this->size()) this->resize(r.size());
         for (int i = 0; i < (int)r.size(); i++) (*this)[i] += r[i];
@@ -440,50 +440,50 @@ struct formal_power_series : vector<mint> {
     FPS exp(int deg = -1) const;
 };
 template <typename mint>
-void *formal_power_series<mint>::ntt_ptr = nullptr;
+void *FormalPowerSeries<mint>::ntt_ptr = nullptr;
 template <typename mint>
-void formal_power_series<mint>::set_fft() {
+void FormalPowerSeries<mint>::set_fft() {
     if (!ntt_ptr) ntt_ptr = new NTT<mint>;
 }
 template <typename mint>
-formal_power_series<mint>& formal_power_series<mint>::operator*=(
-        const formal_power_series<mint>& r) {
+FormalPowerSeries<mint>& FormalPowerSeries<mint>::operator*=(
+        const FormalPowerSeries<mint>& r) {
     if (this->empty() || r.empty()) {
         this->clear();
         return *this;
     }
     set_fft();
     auto ret = static_cast<NTT<mint>*>(ntt_ptr)->multiply(*this, r);
-    return *this = formal_power_series<mint>(ret.begin(), ret.end());
+    return *this = FormalPowerSeries<mint>(ret.begin(), ret.end());
 }
 template <typename mint>
-void formal_power_series<mint>::ntt() {
+void FormalPowerSeries<mint>::ntt() {
     set_fft();
     static_cast<NTT<mint>*>(ntt_ptr)->ntt(*this);
 }
 template <typename mint>
-void formal_power_series<mint>::intt() {
+void FormalPowerSeries<mint>::intt() {
     set_fft();
     static_cast<NTT<mint>*>(ntt_ptr)->intt(*this);
 }
 template <typename mint>
-void formal_power_series<mint>::ntt_doubling() {
+void FormalPowerSeries<mint>::ntt_doubling() {
     set_fft();
     static_cast<NTT<mint>*>(ntt_ptr)->ntt_doubling(*this);
 }
 template <typename mint>
-int formal_power_series<mint>::ntt_pr() {
+int FormalPowerSeries<mint>::ntt_pr() {
     set_fft();
     return static_cast<NTT<mint>*>(ntt_ptr)->pr;
 }
 template <typename mint>
-formal_power_series<mint> formal_power_series<mint>::inv(int deg) const {
+FormalPowerSeries<mint> FormalPowerSeries<mint>::inv(int deg) const {
     assert((*this)[0] != mint(0));
     if (deg == -1) deg = (int)this->size();
-    formal_power_series<mint> res(deg);
+    FormalPowerSeries<mint> res(deg);
     res[0] = {mint(1) / (*this)[0]};
     for (int d = 1; d < deg; d <<= 1) {
-        formal_power_series<mint> f(2 * d), g(2 * d);
+        FormalPowerSeries<mint> f(2 * d), g(2 * d);
         for (int j = 0; j < min((int)this->size(), 2 * d); j++) f[j] = (*this)[j];
         for (int j = 0; j < d; j++) g[j] = res[j];
         f.ntt();
@@ -499,8 +499,8 @@ formal_power_series<mint> formal_power_series<mint>::inv(int deg) const {
     return res.pre(deg);
 }
 template <typename mint>
-formal_power_series<mint> formal_power_series<mint>::exp(int deg) const {
-    using fps = formal_power_series<mint>;
+FormalPowerSeries<mint> FormalPowerSeries<mint>::exp(int deg) const {
+    using fps = FormalPowerSeries<mint>;
     assert((*this).size() == 0 || (*this)[0] == mint(0));
     if (deg == -1) deg = this->size();
 
@@ -571,4 +571,4 @@ formal_power_series<mint> formal_power_series<mint>::exp(int deg) const {
     }
     return fps{begin(b), begin(b) + deg};
 }
-using mint=modint<998244353>;
+using mint=ModInt<998244353>;

@@ -1,11 +1,11 @@
 #include "../../kyopro_library/template.hpp"
 
-template <typename T, bool MIN = true>
-struct sparse_table {
-    sparse_table(const vector<T> &a) {
+template <typename T, bool Min = true>
+struct SparseTable {
+    SparseTable(const vector<T> &a) {
         n = a.size();
         log_table = vector<int>(n + 1);
-        sign = MIN ? 1 : -1;
+        sign = Min ? 1 : -1;
         for (int i = 2; i <= n; i++) {
             log_table[i] = log_table[i >> 1] + 1;
         }

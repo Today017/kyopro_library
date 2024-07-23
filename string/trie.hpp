@@ -1,16 +1,16 @@
 #include "../../kyopro_library/template.hpp"
 
-struct trie {
-    struct node {
+struct Trie {
+    struct Node {
         array<int, 26> to;
         int count_of_end = 0, count_of_node = 0;
-        node() {
+        Node() {
             fill(to.begin(), to.end(), -1);
         }
     };
-    trie(int len) {
+    Trie(int len) {
         nodes.reserve(len);
-        node root;
+        Node root;
         nodes.push_back(root);
     }
     void insert(const string &s) {
@@ -19,7 +19,7 @@ struct trie {
             int &nxt = nodes[cur].to[c-'a'];
             if (nxt == -1) {
                 nxt = nodes.size();
-                nodes.push_back(node());
+                nodes.push_back(Node());
             }
             cur = nxt;
             nodes[cur].count_of_node++;
@@ -52,5 +52,5 @@ struct trie {
     }
 
 private:
-    vector<node> nodes;
+    vector<Node> nodes;
 };

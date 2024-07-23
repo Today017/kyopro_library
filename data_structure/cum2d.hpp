@@ -1,10 +1,10 @@
 #include "../../kyopro_library/template.hpp"
 
 template <typename T>
-struct cumulative_sum_2D {
-    cumulative_sum_2D() = default;
+struct CumulativeSum2D {
+    CumulativeSum2D() = default;
     template <typename U>
-    cumulative_sum_2D(const vector<vector<U>> &a) {
+    CumulativeSum2D(const vector<vector<U>> &a) {
         n = a.size();
         m = a.front().size();
         dat = vector<vector<T>>(n + 1, vector<T>(m + 1));

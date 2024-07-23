@@ -2,9 +2,9 @@
 
 # [Insertable Reversible Array](./insrev.hpp)
 
-`insertable_reversible_array<T>(int n)`
-`insertable_reversible_array<T>(vector<T> a)`
-- Insertable Reversible Array は挿入・削除・区間反転可能な配列である。
+`InsertableReversibleArray<T>(int n)`
+`InsertableReversibleArray<T>(vector<T> a)`
+- 挿入・削除・区間反転可能な配列。
 
 `void insert(int i, T x)`
 - $i$ 番目に $x$ を挿入する。

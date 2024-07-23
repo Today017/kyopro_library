@@ -1,13 +1,13 @@
 #include "../../kyopro_library/template.hpp"
 #include "../../kyopro_library/mod/modint.hpp"
 
-namespace ntt998 {
+namespace NTT998 {
     const int MOD = 998244353;
     const int PRIMITIVE_ROOT = 3;
     const int DIVIDE_MAX = 23;
     using mint = mod998;
     vector<mint> roots, inv_roots;
-    vector<mint> ntt(vector<mint> a, bool inv = false) {
+    vector<mint> NTT(vector<mint> a, bool inv = false) {
         int n = a.size();
         int h = 0;
         while ((1 << h) < n) {
@@ -42,7 +42,7 @@ namespace ntt998 {
         }
         return a;
     }
-    vector<mint> convolution(vector<mint> a, vector<mint> b) {
+    vector<mint> Convolution(vector<mint> a, vector<mint> b) {
         int n = 1;
         while (n < (int)a.size() + (int)b.size() - 1) {
             n <<= 1;
@@ -54,12 +54,12 @@ namespace ntt998 {
         for (int i = 0; i < (int)b.size(); i++) {
             fb[i] = b[i];
         }
-        fa = ntt(fa);
-        fb = ntt(fb);
+        fa = NTT(fa);
+        fb = NTT(fb);
         for (int i = 0; i < n; i++) {
             fa[i] *= fb[i];
         }
-        fa = ntt(fa, true);
+        fa = NTT(fa, true);
         vector<mint> ret(n);
         for (int i = 0; i < n; i++) {
             ret[i] = fa[i];
@@ -69,17 +69,17 @@ namespace ntt998 {
         }
         return ret;
     }
-}  // namespace ntt998
+}  // namespace NTT998
 
-struct setup_ntt {
-    setup_ntt() {
-        using mint = ntt998::mint;
-        ntt998::roots = vector<mint>(ntt998::DIVIDE_MAX + 1);
-        ntt998::inv_roots = vector<mint>(ntt998::DIVIDE_MAX + 1);
-        ntt998::roots[0] = ntt998::inv_roots[0] = mint(1);
-        for (ll i = 1; i <= ntt998::DIVIDE_MAX; i++) {
-            ntt998::roots[i] = mint(ntt998::PRIMITIVE_ROOT).pow((ntt998::MOD - 1) / (1 << i));
-            ntt998::inv_roots[i] = ntt998::roots[i].inv();
+struct SetupNTT {
+    SetupNTT() {
+        using mint = NTT998::mint;
+        NTT998::roots = vector<mint>(NTT998::DIVIDE_MAX + 1);
+        NTT998::inv_roots = vector<mint>(NTT998::DIVIDE_MAX + 1);
+        NTT998::roots[0] = NTT998::inv_roots[0] = mint(1);
+        for (ll i = 1; i <= NTT998::DIVIDE_MAX; i++) {
+            NTT998::roots[i] = mint(NTT998::PRIMITIVE_ROOT).pow((NTT998::MOD - 1) / (1 << i));
+            NTT998::inv_roots[i] = NTT998::roots[i].inv();
         }
     }
-} setup_ntt;
+} setup_ntt_instance;

@@ -2,8 +2,8 @@
 
 # [Segment Tree 2D](./seg2d.hpp)
 
-`segment_tree_2D<T>(int h, int w, F f, T e)`
-- サイズ $h\times w$ ,演算 $f$, 単位元 $e$ の Segment Tree を構築する。
+`SegmentTree2D<T>(int h, int w, F f, T e)`
+- サイズ $h\times w$ ,演算 $f$, 単位元 $e$ の 2 次元 Segment Tree を構築する。
 - 集合 $T$, 演算 $f$, 単位元 $e$ が単位半群を為すことを要求する。
 - $O(hw)$
 

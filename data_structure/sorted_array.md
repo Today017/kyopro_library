@@ -2,8 +2,8 @@
 
 # [Sorted Array](./sorted_array.hpp)
 
-`soted_array<T>(vector<T> a, T not_found = -1)`
-- $a$ を Sorted Array に変換する。 `not_found` は所望の値が見つからなかった場合に返す値として定義する。デフォルトは `INFL` 。
+`SortedArray<T>(vector<T> a, T not_found = -1)`
+- $a$ を Sorted Array に変換する。 `not_found` は所望の値が見つからなかった場合に返す値として定義する。
 
 `bool contains(T x)`
 - $x$ が含まれるか否かを返す。

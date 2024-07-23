@@ -1,9 +1,9 @@
 #include "../../kyopro_library/template.hpp"
 
 template <typename T = ll>
-struct fraction {
+struct Fraction {
     T upper, lower;
-    fraction(T a, T b) {
+    Fraction(T a, T b) {
         T g = gcd(a, b);
         upper = a / g;
         lower = b / g;
@@ -12,81 +12,81 @@ struct fraction {
             lower *= -1;
         }
     }
-    fraction operator+(const fraction& f) {
-        return fraction(upper * f.lower + f.upper * lower, lower * f.lower);
+    Fraction operator+(const Fraction& f) {
+        return Fraction(upper * f.lower + f.upper * lower, lower * f.lower);
     }
-    fraction operator-(const fraction& f) {
-        return fraction(upper * f.lower - f.upper * lower, lower * f.lower);
+    Fraction operator-(const Fraction& f) {
+        return Fraction(upper * f.lower - f.upper * lower, lower * f.lower);
     }
-    fraction operator*(const fraction& f) {
-        return fraction(upper * f.upper, lower * f.lower);
+    Fraction operator*(const Fraction& f) {
+        return Fraction(upper * f.upper, lower * f.lower);
     }
-    fraction operator/(const fraction& f) {
-        return fraction(upper * f.lower, lower * f.upper);
+    Fraction operator/(const Fraction& f) {
+        return Fraction(upper * f.lower, lower * f.upper);
     }
-    fraction operator+=(const fraction& f) {
+    Fraction operator+=(const Fraction& f) {
         *this = *this + f;
         return *this;
     }
-    fraction operator-=(const fraction& f) {
+    Fraction operator-=(const Fraction& f) {
         *this = *this - f;
         return *this;
     }
-    fraction operator*=(const fraction& f) {
+    Fraction operator*=(const Fraction& f) {
         *this = *this * f;
         return *this;
     }
-    fraction operator/=(const fraction& f) {
+    Fraction operator/=(const Fraction& f) {
         *this = *this / f;
         return *this;
     }
-    fraction operator+(const T& f) {
-        return fraction(upper + f * lower, lower);
+    Fraction operator+(const T& f) {
+        return Fraction(upper + f * lower, lower);
     }
-    fraction operator-(const T& f) {
-        return fraction(upper - f * lower, lower);
+    Fraction operator-(const T& f) {
+        return Fraction(upper - f * lower, lower);
     }
-    fraction operator*(const T& f) {
-        return fraction(upper * f, lower);
+    Fraction operator*(const T& f) {
+        return Fraction(upper * f, lower);
     }
-    fraction operator/(const T& f) {
-        return fraction(upper, lower * f);
+    Fraction operator/(const T& f) {
+        return Fraction(upper, lower * f);
     }
-    fraction operator+=(const T& f) {
+    Fraction operator+=(const T& f) {
         *this = *this + f;
         return *this;
     }
-    fraction operator-=(const T& f) {
+    Fraction operator-=(const T& f) {
         *this = *this - f;
         return *this;
     }
-    fraction operator*=(const T& f) {
+    Fraction operator*=(const T& f) {
         *this = *this * f;
         return *this;
     }
-    fraction operator/=(const T& f) {
+    Fraction operator/=(const T& f) {
         *this = *this / f;
         return *this;
     }
-    fraction operator-() {
-        return fraction(-upper, lower);
+    Fraction operator-() {
+        return Fraction(-upper, lower);
     }
-    bool operator==(const fraction& f) const {
+    bool operator==(const Fraction& f) const {
         return upper == f.upper && lower == f.lower;
     }
-    bool operator!=(const fraction& f) const {
+    bool operator!=(const Fraction& f) const {
         return upper != f.upper || lower != f.lower;
     }
-    bool operator<(const fraction& f) const {
+    bool operator<(const Fraction& f) const {
         return upper * f.lower < f.upper * lower;
     }
-    bool operator<=(const fraction& f) const {
+    bool operator<=(const Fraction& f) const {
         return upper * f.lower <= f.upper * lower;
     }
-    bool operator>(const fraction& f) const {
+    bool operator>(const Fraction& f) const {
         return upper * f.lower > f.upper * lower;
     }
-    bool operator>=(const fraction& f) const {
+    bool operator>=(const Fraction& f) const {
         return upper * f.lower >= f.upper * lower;
     }
     bool operator==(const T& f) const {
@@ -107,7 +107,7 @@ struct fraction {
     bool operator>=(const T& f) const {
         return upper >= f * lower;
     }
-    friend ostream& operator<<(ostream& os, const fraction& f) {
+    friend ostream& operator<<(ostream& os, const Fraction& f) {
         os << f.upper << "/" << f.lower;
         return os;
     }
