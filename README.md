@@ -118,3 +118,5 @@
 ## Others
 - [Random Generator](./others/random.md)
 - [Timer](./others/timer.md)
+- [Random](./others/xor128.md)
+- [Utils](./others/utils.md)
