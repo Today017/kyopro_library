@@ -2,7 +2,7 @@
 
 # [Rolling Hash](./rh.hpp)
 
-`rolling_hash(string s, vector<ll> base)`
+`RollingHash(string s, vector<ll> base)`
 - 文字列 $s$ から $base$ を基数とした Rolling Hash を構築する。
 - `base` に引数を渡さない場合、ランダムに選択される。複数の文字列の Rolling Hash を別々に構築して後で比較を行う場合は、 `base` を揃えるように注意すること。
 - $O(n)$

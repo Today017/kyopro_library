@@ -1,7 +1,7 @@
 #include "../../kyopro_library/template.hpp"
 
 template <typename T = string>
-vector<int> z_algorithm(const T &s) {
+vector<int> zAlgorithm(const T &s) {
     int n = s.size();
     vector<int> A(n);
     for (int i = 0; i < n; ++i) {
