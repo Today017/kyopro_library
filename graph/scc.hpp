@@ -5,7 +5,7 @@ struct SCC {
     vector<int> group;
 };
 
-SCC SccDecomposition(const vector<vector<int>> &g) {
+SCC sccDecomposition(const vector<vector<int>> &g) {
     int n = g.size();
     vector<vector<int>> g2(n);
     for (int i = 0; i < n; i++) {

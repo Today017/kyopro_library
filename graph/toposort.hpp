@@ -1,6 +1,6 @@
 #include "../../kyopro_library/template.hpp"
 
-vector<int> TopologicalSort(const vector<vector<int>> &g) {
+vector<int> topologicalSort(const vector<vector<int>> &g) {
     int n = g.size();
     vector<int> indeg(n);
     for (int i = 0; i < n; i++) {
