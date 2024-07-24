@@ -12,6 +12,10 @@ struct Fraction {
             lower *= -1;
         }
     }
+    Fraction(T a) {
+        upper = a;
+        lower = 1;
+    }
     Fraction operator+(const Fraction& f) {
         return Fraction(upper * f.lower + f.upper * lower, lower * f.lower);
     }

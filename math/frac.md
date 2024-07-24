@@ -4,3 +4,6 @@
 
 `Fraction<T>(T upper, T lower)`
 - $\frac{upper}{lower}$ を表す有理数構造体を宣言する。
+
+`Fraction<T>(T num)`
+- $num$ を表す有理数構造体を宣言する。
