@@ -13,5 +13,8 @@ touch test.sh
 cp kyopro_library/kyopro_tools/test.sh test.sh
 chmod 755 test.sh
 
+touch exp.py
+cp kyopro_library/kyopro_tools/exp.py exp.py
+
 mkdir test
 
