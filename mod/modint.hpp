@@ -81,5 +81,5 @@ struct ModInt {
         return is;
     }
 };
-using mod998 = ModInt<998244353>;
-using mod107 = ModInt<1000000007>;
+using Mod998 = ModInt<998244353>;
+using Mod107 = ModInt<1000000007>;

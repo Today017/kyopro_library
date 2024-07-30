@@ -5,7 +5,7 @@ namespace NTT998 {
     const int MOD = 998244353;
     const int PRIMITIVE_ROOT = 3;
     const int DIVIDE_MAX = 23;
-    using mint = mod998;
+    using mint = Mod998;
     vector<mint> roots, inv_roots;
     vector<mint> NTT(vector<mint> a, bool inv = false) {
         int n = a.size();
