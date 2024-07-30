@@ -3,6 +3,7 @@ using namespace std;
 #include "../kyopro_library/data_structure/fen.hpp"
 #include "../kyopro_library/data_structure/segt.hpp"
 #include "../kyopro_library/data_structure/segtlz.hpp"
+#include "../kyopro_library/data_structure/segtd.hpp"
 template <typename T1, typename T2>
 ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
     os << "( " << p.first << ", " << p.second << " )";
@@ -167,6 +168,19 @@ ostream &operator<<(ostream &os, SegmentTree<T> a) {
 }
 template <typename T, typename U>
 ostream &operator<<(ostream &os, SegmentTreeLazy<T, U> a) {
+    int n = a.size();
+    os << "[ ";
+    for (int i = 0; i < n; i++) {
+        os << a[i];
+        if (i != n - 1) {
+            os << ", ";
+        }
+    }
+    os << " ]";
+    return os;
+}
+template <typename T>
+ostream &operator<<(ostream &os, SegmentTreeDual<T> a) {
     int n = a.size();
     os << "[ ";
     for (int i = 0; i < n; i++) {

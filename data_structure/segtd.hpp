@@ -1,3 +1,4 @@
+#pragma once
 #include "../../kyopro_library/template.hpp"
 
 template <typename T>
@@ -43,6 +44,9 @@ struct SegmentTreeDual {
             r >>= 1;
         }
     }
+    int size() {
+        return n;
+    }
 
 private:
     int n;
@@ -51,8 +55,9 @@ private:
     T e;
 };
 
-SegmentTreeDual<ll> RangeAddQuery(int n) {
-    return SegmentTreeDual<ll>(n, [](ll a, ll b) { return a + b; }, 0);
+template <typename T>
+SegmentTreeDual<T> RangeAddQuery(int n) {
+    return SegmentTreeDual<ll>(n, [](T a, T b) { return a + b; }, 0);
 }
 template <typename T>
 SegmentTreeDual<pair<T, int>> RangeUpdateQuery(int n) {
