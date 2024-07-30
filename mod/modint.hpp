@@ -80,6 +80,9 @@ struct ModInt {
         x = ModInt<MOD>(v);
         return is;
     }
+    static constexpr ll get_mod() {
+        return MOD;
+    }
 };
 using Mod998 = ModInt<998244353>;
 using Mod107 = ModInt<1000000007>;
