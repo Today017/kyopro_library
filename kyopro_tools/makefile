@@ -84,53 +84,25 @@ th: h.cpp
 
 
 p: a.py
-	cp a.py combined.py 
-	black combined.py
 	python3 a.py
-	cat combined.py | pbcopy
+	cat a.py | pbcopy
 
 pa: a.py
-	cp a.py combined.py 
-	black combined.py
 	python3 a.py
-	cat combined.py | pbcopy
-
+	cat a.py | pbcopy
 
 pb: b.py
-	cp b.py combined.py 
-	black combined.py
 	python3 b.py
-	cat combined.py | pbcopy
+	cat b.py | pbcopy
 
 pc: c.py
-	cp c.py combined.py 
-	black combined.py
 	python3 c.py
-	cat combined.py | pbcopy
+	cat c.py | pbcopy
 
 pd: d.py
-	cp d.py combined.py 
-	black combined.py
 	python3 d.py
-	cat combined.py | pbcopy
+	cat d.py | pbcopy
 
 pe: e.py
-	cp e.py combined.py 
-	black combined.py
 	python3 e.py
-	cat combined.py | pbcopy
-
-pf: f.py
-	cp f.py combined.py 
-	black combined.py
-	python3 f.py
-	cat combined.py | pbcopy
-
-pg: g.py
-	cp g.py combined.py 
-	black combined.py
-	python3 g.py
-	cat combined.py | pbcopy
-
-
-
+	cat e.py | pbcopy
