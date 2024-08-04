@@ -36,6 +36,7 @@
 - [Binary Trie](./data_structure/bintr.md)
 - [Wavelet Matrix](./data_structure/wvmt.md)
 - [Insertable Reversible Array](./data_structure/insrev.md)
+- [Negative Vector](./data_structure/negative_vector.md)
 <!-- - [Li Chao Tree](./data_structure/dlct.md) -->
 <!-- - [Link-Cut Tree] -->
 <!-- - [Skew Heap] -->
