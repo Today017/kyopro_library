@@ -10,8 +10,9 @@ struct Combination {
         for (int i = 1; i <= n; i++) {
             fact[i] = fact[i - 1] * i;
         }
-        for (int i = 0; i <= n; i++) {
-            factinv[i] = fact[i].inv();
+        factinv[n] = fact[n].inv();
+        for (int i = n; i >= 1; i--) {
+            factinv[i - 1] = factinv[i] * i;
         }
     }
     T nCr(ll n, ll r) {
