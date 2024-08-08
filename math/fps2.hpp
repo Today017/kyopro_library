@@ -1,6 +1,7 @@
 /* from: https://potato167.github.io/po167_library */
 
 #include <atcoder/convolution>
+#include <atcoder/modint>
 
 template <typename T>
 vector<T> fpsMul(const vector<T> &a, const vector<T> &b) {
@@ -125,18 +126,18 @@ vector<T> fpsExp(vector<T> f, int len = -1) {
         // g' / g
         // A * B
         vector<T> A = g, B = g;
-        A = FPS_differential(A);
-        B = FPS_inv(B, 2 * s);
+        A = fpsDifferential(A);
+        B = fpsInv(B, 2 * s);
         A.resize(2 * s);
-        A = FPS_cyclic_convolution(A, B);
+        A = fpsCyclicConvolution(A, B);
         A.pop_back();
-        A = FPS_integral(A);
+        A = fpsIntegral(A);
         for (int i = 0; i < s; i++) A[i] = 0;
         for (int i = s; i < s * 2; i++) A[i] = (i < (int)f.size() ? f[i] : 0) - A[i];
         // g_hat = g (1 - g + f)
         // g += B = g * A
         g.resize(2 * s);
-        B = FPS_cyclic_convolution(A, g);
+        B = fpsCyclicConvolution(A, g);
         for (int i = s; i < s * 2; i++) g[i] = B[i];
         s *= 2;
     }
@@ -150,9 +151,9 @@ vector<T> fpsLog(vector<T> f, int len = -1) {
     if (len == 0) return {};
     if (len == 1) return {T(0)};
     assert(!f.empty() && f[0] == 1);
-    vector<T> res = atcoder::convolution(FPS_differential(f), FPS_inv(f, len));
+    vector<T> res = atcoder::convolution(fpsDifferential(f), fpsInv(f, len));
     res.resize(len - 1);
-    return FPS_integral(res);
+    return fpsIntegral(res);
 }
 
 template <class T>
@@ -173,9 +174,9 @@ vector<T> fpsPow(vector<T> f, long long M, int len = -1) {
         }
         long long zero = i * M;
         if (i) len -= i * M;
-        g = FPS_log(g, len);
+        g = fpsLog(g, len);
         for (T &x : g) x *= M;
-        g = FPS_exp(g, len);
+        g = fpsExp(g, len);
         v = (T)(1) / v;
         T c = 1;
         while (M) {
@@ -246,7 +247,6 @@ T bostanMori(long long k, vector<T> P, vector<T> Q) {
     Q.resize(z * 2, 0);
     atcoder::internal::butterfly(P);
     atcoder::internal::butterfly(Q);
-
     // fast
     while (k) {
         // Q(-x)
@@ -259,12 +259,12 @@ T bostanMori(long long k, vector<T> P, vector<T> Q) {
             P[i] *= Q_n[i];
             Q[i] *= Q_n[i];
         }
-        FPS_pick_even_odd(P, k & 1);
-        FPS_pick_even_odd(Q, 0);
+        fpsPickEvenOdd(P, k & 1);
+        fpsPickEvenOdd(Q, 0);
         k /= 2;
         if (k == 0) break;
-        FPS_extend(P);
-        FPS_extend(Q);
+        fpsExtend(P);
+        fpsExtend(Q);
     }
     T SP = 0, SQ = 0;
     for (int i = 0; i < z; i++) SP += P[i], SQ += Q[i];
@@ -281,5 +281,5 @@ T kthLinear(long long k, vector<T> a, vector<T> c) {
     assert(d + 1 == int(c.size()));
     vector<T> P = atcoder::convolution(a, c);
     P.resize(d);
-    return Boston_Mori(k, P, c);
+    return bostanMori(k, P, c);
 }
