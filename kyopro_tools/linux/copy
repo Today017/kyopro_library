@@ -1,0 +1,25 @@
+copy_cpp() {
+    local cpp_file=$1
+    python3 ./kyopro_library/kyopro_tools/exp.py $cpp_file
+    clang-format --style=file:./kyopro_library/kyopro_tools/.clang-format combined.cpp | pbcopy
+    cp $cpp_file esc/$cpp_file
+}
+
+case $1 in
+    a) copy_cpp "a.cpp" ;;
+    b) copy_cpp "b.cpp" ;;
+    c) copy_cpp "c.cpp" ;;
+    d) copy_cpp "d.cpp" ;;
+    e) copy_cpp "e.cpp" ;;
+    f) copy_cpp "f.cpp" ;;
+    g) copy_cpp "g.cpp" ;;
+    h) copy_cpp "h.cpp" ;;
+    *)
+        if [[ $1 == *.cpp ]]; then
+            copy_cpp "$1"
+        else
+            echo "Usage: $0 {a|b|c|d|e|f|g|h|<file.cpp>}"
+            exit 1
+        fi
+        ;;
+esac

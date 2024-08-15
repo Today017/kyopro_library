@@ -1,0 +1,39 @@
+# 環境側でやること
+# 1. GCCのインストール
+#   - C++20が使える
+#   - #include <bits/stdc++.h> が使える
+# 2. Python3のインストール
+# 3. ~/.vimrc を設定する
+
+# chmod +x build
+
+git clone https://github.com/Today017/kyopro_library.git
+
+touch test
+cp kyopro_library/kyopro_tools/linux/test test
+chmod +x test
+
+touch run
+cp kyopro_library/kyopro_tools/linux/run run
+chmod +x run
+
+touch copy
+cp kyopro_library/kyopro_tools/linux/copy copy
+chmod +x copy
+
+touch contest
+cp kyopro_library/kyopro_tools/linux/contest contest
+chmod +x contest
+
+mkdir random_test
+touch random_test/generate.cpp
+touch random_test/naive.cpp
+
+mkdir esc
+touch esc/a.cpp
+touch esc/b.cpp
+touch esc/c.cpp
+touch esc/d.cpp
+touch esc/e.cpp
+touch esc/f.cpp
+touch esc/g.cpp
