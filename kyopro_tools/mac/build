@@ -37,3 +37,8 @@ touch esc/d.cpp
 touch esc/e.cpp
 touch esc/f.cpp
 touch esc/g.cpp
+touch esc/h.cpp
+
+git clone https://github.com/atcoder/ac-library.git
+cp -r ac-library/atcoder .
+mv ac-library atcoder/

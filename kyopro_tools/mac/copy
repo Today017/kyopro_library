@@ -5,21 +5,36 @@ copy_cpp() {
     cp $cpp_file esc/$cpp_file
 }
 
+copy_acl() {
+    local cpp_file=$1
+    python3 ./kyopro_library/kyopro_tools/exp.py $cpp_file
+    python3 ./atcoder/ac-library/expander.py combined.cpp
+    clang-format --style=file:./kyopro_library/kyopro_tools/.clang-format combined.cpp | pbcopy
+    cp $cpp_file esc/$cpp_file
+}
+
+# メインロジック
+if [ -z "$1" ]; then
+    echo "Usage: $0 {a|b|c|d|e|f|g|h|<file.cpp>} [t]"
+    exit 1
+fi
+
+# コマンド省略用のファイルマッピング
 case $1 in
-    a) copy_cpp "a.cpp" ;;
-    b) copy_cpp "b.cpp" ;;
-    c) copy_cpp "c.cpp" ;;
-    d) copy_cpp "d.cpp" ;;
-    e) copy_cpp "e.cpp" ;;
-    f) copy_cpp "f.cpp" ;;
-    g) copy_cpp "g.cpp" ;;
-    h) copy_cpp "h.cpp" ;;
-    *)
-        if [[ $1 == *.cpp ]]; then
-            copy_cpp "$1"
-        else
-            echo "Usage: $0 {a|b|c|d|e|f|g|h|<file.cpp>}"
-            exit 1
-        fi
-        ;;
+    a) cpp_file="a.cpp" ;;
+    b) cpp_file="b.cpp" ;;
+    c) cpp_file="c.cpp" ;;
+    d) cpp_file="d.cpp" ;;
+    e) cpp_file="e.cpp" ;;
+    f) cpp_file="f.cpp" ;;
+    g) cpp_file="g.cpp" ;;
+    h) cpp_file="h.cpp" ;;
+    *) cpp_file=$1 ;;  # 任意のC++ファイルに対応
 esac
+
+# tオプションが指定された場合はcompile_cpp_local()を呼び出し、それ以外はcompile_cpp()を呼び出す
+if [ "$2" == "t" ]; then
+    copy_acl "$cpp_file"
+else
+    copy_cpp "$cpp_file"
+fi
