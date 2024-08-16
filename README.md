@@ -48,7 +48,7 @@
 - [Disjoint Set Union](./graph/dsu.md)
 - [SCC](./graph/scc.md)
 - [Topological Sort](./graph/toposort.md)
-<!-- - [Low Link] -->
+- [Low Link](./graph/lowlink.md)
 
 ### Shortest Path
 
