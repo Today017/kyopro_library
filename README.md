@@ -10,7 +10,7 @@
 - [Mo](./algorithm/mo.md)
 - [Convex Hull Trick](./algorithm/cht.md)
 - [Binary Search](./algorithm/bins.md)
-- [Doubling](./algorithm/dlb.md)
+- [Doubling](./algorithm/dbl.md)
 
 ## Data Structure
 
