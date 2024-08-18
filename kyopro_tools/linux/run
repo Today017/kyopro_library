@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # カラーテキスト用のANSIエスケープコード
 RED='\033[0;31m'
 NC='\033[0m' # 色をリセットするコード
@@ -16,8 +18,22 @@ compile_cpp() {
         exit 1
     fi
     python3 ./kyopro_library/kyopro_tools/exp.py $cpp_file
-    clang-format --style=file:./kyopro_library/kyopro_tools/.clang-format combined.cpp | pbcopy
-    cp $cpp_file esc/$cpp_file
+    clang-format --style=file:./kyopro_library/kyopro_tools/.clang-format combined.cpp | clip.exe
+    
+    # ベース名と拡張子を分ける
+    local basename="${cpp_file%.*}"
+    local extension="${cpp_file##*.}"
+    
+    # 同名ファイルのカウントを取得し、新しい連番を作成
+    local counter=$(ls esc/"$basename"*.$extension 2>/dev/null | wc -l)
+    counter=$((counter + 1))
+    
+    # 新しいファイル名を作成
+    local new_filename="$basename$(printf "%02d" "$counter").$extension"
+    
+    # ファイルをコピー
+    cp "$cpp_file" "esc/$new_filename"
+    echo "Copied $cpp_file to esc/$new_filename"
 }
 
 # C++ファイルをLOCALフラグでコンパイルして実行する関数

@@ -1,17 +1,12 @@
 rm *.cpp
+rm ./esc/*.cpp
 touch a.cpp
-echo "#include \"kyopro_library/template.hpp\"" > a.cpp
+echo "#include<kyopro_library/template.hpp>" > a.cpp
 touch b.cpp
 touch c.cpp
 touch d.cpp
 touch e.cpp
-touch f.cpp
-touch g.cpp
-touch h.cpp
 cp a.cpp b.cpp
 cp a.cpp c.cpp
 cp a.cpp d.cpp
 cp a.cpp e.cpp
-cp a.cpp f.cpp
-cp a.cpp g.cpp
-cp a.cpp h.cpp

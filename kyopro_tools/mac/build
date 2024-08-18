@@ -30,14 +30,6 @@ touch random_test/generate.cpp
 touch random_test/naive.cpp
 
 mkdir esc
-touch esc/a.cpp
-touch esc/b.cpp
-touch esc/c.cpp
-touch esc/d.cpp
-touch esc/e.cpp
-touch esc/f.cpp
-touch esc/g.cpp
-touch esc/h.cpp
 
 git clone https://github.com/atcoder/ac-library.git
 cp -r ac-library/atcoder .
