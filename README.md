@@ -76,6 +76,7 @@
 - [Modint](./mod/modint.md)
 - [Dynamic Modint](./mod/dymodint.md)
 - [Combination](./mod/cmb.md)
+- [Combination (Lucas)](./mod/lucas.md)
 
 ## Math
 
