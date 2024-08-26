@@ -1,4 +1,4 @@
-#include "../../kyopro_library/mod/modint.hpp"
+#include "../../kyopro_library/template.hpp"
 
 template <typename T>
 struct Combination {
