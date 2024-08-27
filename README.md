@@ -113,6 +113,9 @@
 <!-- - [Trie] -->
 <!-- - [Aho-Corasick] -->
 
+## Geometry
+- [Template](./geometry/geo.md)
+
 ## Heuristc
 - [Simulated Annealing](./heuristic/sa.md)
 - [Climbing](./heuristic/cl.md)
