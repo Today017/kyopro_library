@@ -1,9 +1,9 @@
 #pragma once
 #include "../../kyopro_library/template.hpp"
 
-struct DisjointSetUnion {
-    DisjointSetUnion() = default;
-    DisjointSetUnion(int n) {
+struct DSU {
+    DSU() = default;
+    DSU(int n) {
         par = vector<int>(n);
         sz = vector<int>(n);
         for (int i = 0; i < n; i++) {
@@ -37,6 +37,9 @@ struct DisjointSetUnion {
     }
     bool same(int x, int y) {
         return find(x) == find(y);
+    }
+    int count() {
+        return forest_count;
     }
     vector<vector<int>> groups() {
         int n = par.size();

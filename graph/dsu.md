@@ -2,10 +2,10 @@
 
 # [Disjoint Set Union](./dsu.hpp)
 
-`DisjointSetUnion(int n)`
+`DSU(int n)`
 
 `int find(int x)`
-- 頂点 $x$ を含む連結成分の代表元。
+- 頂点 $x$ を含む連結成分の代表元を返す。
 - $O(\alpha(n))$
 
 `void unite(int x, int y)`
@@ -13,12 +13,16 @@
 - $O(\alpha(n))$
 
 `int size(int x)`
-- 頂点 $x$ を含む連結成分のサイズ。
+- 頂点 $x$ を含む連結成分のサイズを返す。
 - $O(1)$
 
 `bool same(int x, int y)`
-- 頂点の組 $(x, y)$ が連結であるか否か。
+- 頂点の組 $(x, y)$ が連結であるか否かを返す。
 - $O(\alpha(n))$
+
+`int count()`
+- 連結成分の数を返す。
+- $O(1)$
 
 `vector<vector<int>> groups`
 - 連結成分ごとに所属する頂点を返す。
