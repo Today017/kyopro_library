@@ -1,10 +1,10 @@
 #include "../../kyopro_library/template.hpp"
 
 struct ArithmeticProgression {
-    ll start, goal, step, length;
-    ArithmeticProgression() {
-        start = goal = step = length = INFL;
-    }
+    ll start = INFL;
+    ll goal = INFL;
+    ll step = INFL;
+    ll length = INFL;
 };
 
 ll arithmeticSum(ArithmeticProgression ap) {
