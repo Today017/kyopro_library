@@ -5,24 +5,27 @@ struct ArithmeticProgression {
     ll goal = INFL;
     ll step = INFL;
     ll length = INFL;
+    void normalize() {
+        int undef_cnt = 0;
+        if (start == INFL) undef_cnt++;
+        if (goal == INFL) undef_cnt++;
+        if (step == INFL) undef_cnt++;
+        if (length == INFL) undef_cnt++;
+        assert(undef_cnt <= 1);
+        if (goal == INFL) {
+            goal = start + (length - 1) * step;
+        } else if (start == INFL) {
+            start = goal - (length - 1) * step;
+        } else if (step == INFL) {
+            step = (start == goal) ? 0 : (goal - start) / (length - 1);
+        } else if (length == INFL) {
+            assert(step != 0);
+            length = (goal - start) / step + 1;
+        }
+    }
 };
 
 ll arithmeticSum(ArithmeticProgression ap) {
-    int undef_cnt = 0;
-    if (ap.start == INFL) undef_cnt++;
-    if (ap.goal == INFL) undef_cnt++;
-    if (ap.step == INFL) undef_cnt++;
-    if (ap.length == INFL) undef_cnt++;
-    assert(undef_cnt <= 1);
-    if (ap.goal == INFL) {
-        ap.goal = ap.start + (ap.length - 1) * ap.step;
-    } else if (ap.start == INFL) {
-        ap.start = ap.goal - (ap.length - 1) * ap.step;
-    } else if (ap.step == INFL) {
-        ap.step = (ap.start == ap.goal) ? 0 : (ap.goal - ap.start) / (ap.length - 1);
-    } else if (ap.length == INFL) {
-        assert(ap.step != 0);
-        ap.length = (ap.goal - ap.start) / ap.step + 1;
-    }
+    ap.normalize();
     return (ap.start + ap.goal) * ap.length / 2;
 }
