@@ -18,3 +18,16 @@
 [`u64 kthRoot(u64 n, ll k = 2)`](./kth_root.hpp)
 - $\lfloor \sqrt[k]{n} \rfloor$ を返す。
 - $O(\log MAX(=10^{10}) \log k)$
+
+### `others/arith.hpp`
+
+[`ArithmeticProgression`](./arith.hpp)
+- 等差数列を表す構造体。
+- `start`: 初項
+- `goal`: 末項
+- `step`: 公差
+- `length()`: 長さ
+
+`ll arithmeticSum(ArithmeticProgression ap)`
+- 等差数列の和を返す。
+
