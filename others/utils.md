@@ -31,3 +31,8 @@
 `ll arithmeticSum(ArithmeticProgression ap)`
 - 等差数列の和を返す。
 
+### `others/intersect.hpp`
+
+[`bool haveIntersection(ll l1, ll r1, ll l2, ll r2)`](./intersect.hpp)
+- 区間 $[l_1, r_1]$ と区間 $[l_2, r_2]$ が共通部分を持つかどうかを返す。
+- $O(1)$
