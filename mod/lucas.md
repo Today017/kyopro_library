@@ -17,7 +17,7 @@
 ### Lucas の定理
 $p$ を素数とし、 $n, r$ を非負整数とする。
 
-また、 $n = n_k p^k + n_{k-1} p^{k-1} + \cdots + n_1 p + n_0$、$r = r_k p^k + r_{k-1} p^{k-1} + \cdots + r_1 p + r_0$ と表す。
+また、 $n = n_k p^k + n_{k-1} p^{k-1} + \cdots + n_1 p + n_0$、 $r = r_k p^k + r_{k-1} p^{k-1} + \cdots + r_1 p + r_0$ と表す。
 
 このとき、
 
