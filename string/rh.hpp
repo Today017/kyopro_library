@@ -1,6 +1,7 @@
 #include "../../kyopro_library/template.hpp"    
 
 struct RollingHash {
+    RollingHash() = default;
     RollingHash(const string &s, vector<ll> base = {}) {
         int n = s.size();
         mt19937 rng(time(0));
