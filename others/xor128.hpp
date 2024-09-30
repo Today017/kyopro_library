@@ -19,12 +19,8 @@ struct Random {
         uint64_t ret = (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));
         return ret % n;
     }
-    inline uint64_t operator()(uint64_t l, uint64_t r) {
-        return operator()(r - l) + l;
-    }
-    inline double prob() {
-        return (double)operator()(1LL << 32) / (1LL << 32);
-    }
+    inline uint64_t operator()(uint64_t l, uint64_t r) { return operator()(r - l) + l; }
+    inline double prob() { return (double)operator()(1LL << 32) / (1LL << 32); }
 
 private:
     uint64_t x, y, z, w;

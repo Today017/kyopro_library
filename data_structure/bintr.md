@@ -1,9 +1,9 @@
 [top](../README.md)
 
 # [Binary Trie](./bintr.hpp)
-だいたいの操作が $O(LOG)$ で可能。
+だいたいの操作が $O(Log)$ で可能。
 
-`BinaryTrie<T>()`
+`BinaryTrie<T, Log>()`
 
 `int size()`
 - サイズ取得。

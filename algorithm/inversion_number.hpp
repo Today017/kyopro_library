@@ -3,9 +3,7 @@
 
 ll inversionNumber(const vector<int> &a) {
     int n = a.size();
-    for (int i = 0; i < n; i++) {
-        assert(0 <= a[i] && a[i] < n);
-    }
+    for (int i = 0; i < n; i++) assert(0 <= a[i] && a[i] < n);
     FenwickTree<int> ft(n);
     ll ret = 0;
     for (int i = 0; i < n; i++) {

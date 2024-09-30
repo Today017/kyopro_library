@@ -15,15 +15,9 @@ struct FenwickTree {
             i += i & -i;
         }
     }
-    T sum(int l, int r) {
-        return sum(r) - sum(l);
-    }
-    T operator[](int i) {
-        return sum(i, i + 1);
-    }
-    int size() {
-        return n;
-    }
+    T sum(int l, int r) { return sum(r) - sum(l); }
+    T operator[](int i) { return sum(i, i + 1); }
+    int size() { return n; }
 
 private:
     int n;

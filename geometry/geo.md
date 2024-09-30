@@ -2,6 +2,8 @@
 
 # [Template](./geo.hpp)
 
+このライブラリのドキュメント・実装は ICPC のために、チーム HokkaidoDekkaido のメンバーによって verify の上、提供されました。
+
 ## Inequality
 
 `bool almostEqual(long double a, long double b)` 

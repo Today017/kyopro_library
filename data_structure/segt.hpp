@@ -13,12 +13,8 @@ struct SegmentTree {
     }
     void build(const vector<T> &a) {
         assert((int)a.size() == n);
-        for (int i = 0; i < (int)a.size(); i++) {
-            dat[i + n] = a[i];
-        }
-        for (int i = n - 1; i > 0; i--) {
-            dat[i] = f(dat[i << 1], dat[i << 1 | 1]);
-        }
+        for (int i = 0; i < (int)a.size(); i++) dat[i + n] = a[i];
+        for (int i = n - 1; i > 0; i--) dat[i] = f(dat[i << 1], dat[i << 1 | 1]);
     }
     void set(int i, T x) {
         assert(0 <= i && i < n);
@@ -35,14 +31,8 @@ struct SegmentTree {
         r += n;
         T ret = e;
         while (l < r) {
-            if (l & 1) {
-                ret = f(ret, dat[l]);
-                l++;
-            }
-            if (r & 1) {
-                r--;
-                ret = f(ret, dat[r]);
-            }
+            if (l & 1) ret = f(ret, dat[l]), l++;
+            if (r & 1) r--, ret = f(ret, dat[r]);
             l >>= 1;
             r >>= 1;
         }
@@ -52,9 +42,7 @@ struct SegmentTree {
         assert(0 <= i && i < n);
         return dat[n + i];
     }
-    int size() {
-        return n;
-    }
+    int size() { return n; }
 
 private:
     int n;

@@ -2,6 +2,8 @@
 
 # [Insertable Reversible Array](./insrev.hpp)
 
+[原典](https://nyaannyaan.github.io/library/rbst/lazy-reversible-rbst.hpp.html)
+
 `InsertableReversibleArray<T>(int n)`
 `InsertableReversibleArray<T>(vector<T> a)`
 - 挿入・削除・区間反転可能な配列。

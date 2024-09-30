@@ -2,7 +2,8 @@
 
 template <typename T>
 struct NegativeVector : vector<T> {
-    int offset;
+    int offset = 0;
+    NegativeVector() = default;
     NegativeVector(int lo, int hi, T init) {
         assert(lo <= hi);
         this->assign(hi - lo + 1, init);

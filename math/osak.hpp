@@ -1,5 +1,15 @@
 #include "../../kyopro_library/template.hpp"
 
+/*
+    エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法）
+    ref: https://osak.jp/diary/diary_201310.html#20131017
+    ref: https://qiita.com/drken/items/3beb679e54266f20ab63
+
+    Factors(int n): n までの数に対する素因数分解・約数列挙の前計算 / O(n log(log(n)))
+    vector<pair<int, int>> get_prime_factors(int n): n の素因数分解を返す / O(log(n))
+    vector<int> get_divisors(int n): n の約数列挙を返す / O(d(n)) (d(i):= i の約数の個数)
+*/
+
 struct Factors {
     Factors(int n) {
         mx = n;

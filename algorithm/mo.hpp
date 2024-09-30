@@ -18,26 +18,16 @@ struct Mo {
         vector<int> qi(q);
         iota(qi.begin(), qi.end(), 0);
         vector<ll> eval(q);
-        for (int i = 0; i < q; i++) {
-            eval[i] = hilbertorder(ls[i], rs[i]);
-        }
+        for (int i = 0; i < q; i++) eval[i] = hilbertorder(ls[i], rs[i]);
         sort(qi.begin(), qi.end(), [&](int i, int j) {
             return eval[i] < eval[j];
         });
         int nl = 0, nr = 0;
         for (int &i : qi) {
-            while (nl > ls[i]) {
-                add_left(--nl);
-            }
-            while (nr < rs[i]) {
-                add_right(nr++);
-            }
-            while (nl < ls[i]) {
-                del_left(nl++);
-            }
-            while (nr > rs[i]) {
-                del_right(--nr);
-            }
+            while (nl > ls[i]) add_left(--nl);
+            while (nr < rs[i]) add_right(nr++);
+            while (nl < ls[i]) del_left(nl++);
+            while (nr > rs[i]) del_right(--nr);
             out(i);
         }
     }
@@ -51,9 +41,7 @@ private:
         for (ll s = max_n >> 1ll; s; s >>= 1ll) {
             rx = (x & s) > 0, ry = (y & s) > 0;
             d += s * s * ((rx * 3) ^ ry);
-            if (ry) {
-                continue;
-            }
+            if (ry) continue;
             if (rx) {
                 x = max_n - 1 - x;
                 y = max_n - 1 - y;

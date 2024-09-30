@@ -15,9 +15,7 @@ ll modLog(ll x, ll y, ll mod) {
     }
     ll now_x = x_pow;
     for (ll i = 1; i <= m; i++) {
-        if (mp.find(now_x) != mp.end()) {
-            return i * m - mp[now_x];
-        }
+        if (mp.find(now_x) != mp.end()) return i * m - mp[now_x];
         now_x = now_x * x_pow % mod;
     }
     return -1;

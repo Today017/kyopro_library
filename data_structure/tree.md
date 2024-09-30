@@ -2,7 +2,7 @@
 
 # [Sorted Tree](./tree.hpp)
 
-`SortedTree<T>(T not_found)`
+`SortedTree<T>(T not_found = -1)`
 - 順序付き集合を管理するデータ構造。 `not_found` は所望の値が見つからなかった場合に返す値として定義する。
 
 `T min()`

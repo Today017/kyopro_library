@@ -3,6 +3,7 @@
 template <typename T>
 struct SegmentTree2D {
     using F = function<T(T, T)>;
+    SegmentTree2D() = default;
     SegmentTree2D(int h, int w, F f, T fe) {
         this->f = f;
         this->fe = fe;
@@ -14,13 +15,9 @@ struct SegmentTree2D {
         x += h;
         y += w;
         dat[x][y] = v;
-        for (int i = x >> 1; i > 0; i >>= 1) {
-            dat[i][y] = f(dat[i << 1][y], dat[i << 1 | 1][y]);
-        }
+        for (int i = x >> 1; i > 0; i >>= 1) dat[i][y] = f(dat[i << 1][y], dat[i << 1 | 1][y]);
         while (x > 0) {
-            for (int j = y >> 1; j > 0; j >>= 1) {
-                dat[x][j] = f(dat[x][j << 1], dat[x][j << 1 | 1]);
-            }
+            for (int j = y >> 1; j > 0; j >>= 1) dat[x][j] = f(dat[x][j << 1], dat[x][j << 1 | 1]);
             x >>= 1;
         }
     }
@@ -31,14 +28,8 @@ struct SegmentTree2D {
         u += w;
         d += w;
         while (l < r) {
-            if (l & 1) {
-                ret = f(ret, query_sub(l, u, d));
-                l++;
-            }
-            if (r & 1) {
-                r--;
-                ret = f(ret, query_sub(r, u, d));
-            }
+            if (l & 1) ret = f(ret, query_sub(l++, u, d));
+            if (r & 1) ret = f(ret, query_sub(--r, u, d));
             l >>= 1;
             r >>= 1;
         }
@@ -53,14 +44,8 @@ private:
     T query_sub(int x, int u, int d) {
         T ret = fe;
         while (u < d) {
-            if (u & 1) {
-                ret = f(ret, dat[x][u]);
-                u++;
-            }
-            if (d & 1) {
-                d--;
-                ret = f(ret, dat[x][d]);
-            }
+            if (u & 1) ret = f(ret, dat[x][u]), u++;
+            if (d & 1) d--, ret = f(ret, dat[x][d]);
             u >>= 1;
             d >>= 1;
         }

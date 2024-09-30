@@ -14,12 +14,8 @@ istream &operator>>(istream &is, LL &x) {
         is.get();
     }
     x = 0;
-    while (isdigit(is.peek())) {
-        x = x * 10 + is.get() - '0';
-    }
-    if (neg) {
-        x = -x;
-    }
+    while (isdigit(is.peek())) x = x * 10 + is.get() - '0';
+    if (neg) x = -x;
     return is;
 }
 
@@ -28,9 +24,7 @@ ostream &operator<<(ostream &os, LL x) {
         os << '-';
         x = -x;
     }
-    if (x == 0) {
-        return os << '0';
-    }
+    if (x == 0) return os << '0';
     string s;
     while (x > 0) {
         s += x % 10 + '0';

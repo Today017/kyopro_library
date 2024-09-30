@@ -2,7 +2,7 @@
 
 # [Set Interface](./set.hpp)
 
-`Set<T>(T not_found)`
+`Set<T>(T not_found = -1)`
 - `not_found` は所望の値が見つからなかった場合に返す値として定義する。
 
 `T min()`

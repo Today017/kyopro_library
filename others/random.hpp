@@ -30,16 +30,12 @@ namespace RandomGenerator {
     vector<T> randomArray(int n, T lo, T hi, bool no_dup = false) {
         vector<T> ret(n);
         if (!no_dup) {
-            for (int i = 0; i < n; i++) {
-                ret[i] = randomInt(lo, hi);
-            }
+            for (int i = 0; i < n; i++) ret[i] = randomInt(lo, hi);
         } else {
             set<T> st;
             for (int i = 0; i < n; i++) {
                 int r = randomInt(lo, hi);
-                while (st.count(r)) {
-                    r = randomInt(lo, hi);
-                }
+                while (st.count(r)) r = randomInt(lo, hi);
                 ret[i] = r;
                 st.insert(r);
             }
@@ -66,33 +62,23 @@ namespace RandomGenerator {
     template <typename T>
     vector<vector<T>> randomArray2D(int h, int w, T lo, T hi) {
         vector<vector<T>> ret(h, vector<T>(w));
-        for (int i = 0; i < h; i++) {
-            ret[i] = randomArray(w, lo, hi);
-        }
+        for (int i = 0; i < h; i++) ret[i] = randomArray(w, lo, hi);
         return ret;
     }
     vector<string> randomAlphabet2D(int h, int w, bool lower = true) {
         vector<string> ret(h);
-        for (int i = 0; i < h; i++) {
-            ret[i] = randomAlphabet(w, lower);
-        }
+        for (int i = 0; i < h; i++) ret[i] = randomAlphabet(w, lower);
         return ret;
     }
     vector<pair<int, int>> randomTree(int n) {
         vector<int> a = randomArray<int>(n - 2, 1, n + 1);
         vector<int> d(n + 1);
-        for (int i = 0; i < n - 2; i++) {
-            d[a[i]]++;
-        }
-        for (int i = 1; i <= n; i++) {
-            d[i]++;
-        }
+        for (int i = 0; i < n - 2; i++) d[a[i]]++;
+        for (int i = 1; i <= n; i++) d[i]++;
         vector<pair<int, int>> ret;
         set<int> pq;
         for (int i = 1; i <= n; i++) {
-            if (d[i] == 1) {
-                pq.insert(i);
-            }
+            if (d[i] == 1) pq.insert(i);
         }
         for (int i = 0; i < n - 2; i++) {
             int v = (*pq.begin());
@@ -124,9 +110,7 @@ namespace RandomGenerator {
         vector<ll> roots = {randomInt(1, n + 1)};
         vector<ll> leaves;
         for (int i = 1; i <= n; i++) {
-            if (i != roots.back()) {
-                leaves.push_back(i);
-            }
+            if (i != roots.back()) leaves.push_back(i);
         }
         while (!leaves.empty()) {
             int root = getElement(roots);
@@ -144,17 +128,13 @@ namespace RandomGenerator {
     vector<pair<int, int>> randomUndirectedGraph(int n, int m, bool connected = true) {
         vector<pair<int, int>> edges;
         for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                edges.push_back(make_pair(i + 1, j + 1));
-            }
+            for (int j = i + 1; j < n; j++) edges.push_back(make_pair(i + 1, j + 1));
         }
         int ed = edges.size();
         if (!connected) {
             vector<pair<int, int>> ret;
             vector<int> idxs = randomArray<int>(m, 0, ed, true);
-            for (int idx : idxs) {
-                ret.push_back(edges[idx]);
-            }
+            for (int idx : idxs) ret.push_back(edges[idx]);
             return ret;
         } else {
             vector<pair<int, int>> ret;
@@ -173,9 +153,7 @@ namespace RandomGenerator {
                     a--;
                     b--;
                     if (parent[a] != parent[b]) {
-                        if (sets[parent[a]].size() < sets[parent[b]].size()) {
-                            swap(a, b);
-                        }
+                        if (sets[parent[a]].size() < sets[parent[b]].size()) swap(a, b);
                         for (int x : sets[parent[b]]) {
                             parent[x] = parent[a];
                             sets[parent[a]].push_back(x);
@@ -190,9 +168,7 @@ namespace RandomGenerator {
                         break;
                     }
                 }
-                if (ok) {
-                    return ret;
-                }
+                if (ok) return ret;
             }
         }
     }

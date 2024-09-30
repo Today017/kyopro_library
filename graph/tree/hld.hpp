@@ -39,22 +39,16 @@ struct HLD {
         return depth[u] < depth[v] ? u : v;
     }
     template <typename U>
-    void update(int x, U& Update) {
-        Update(x, pos[x]);
-    }
+    void update(int x, U& Update) { Update(x, pos[x]); }
     template <typename Q, typename F, typename T>
     T query(int u, int v, Q& Query, F& f, T e) {
         T ret = e;
         while (head[u] != head[v]) {
-            if (depth[head[u]] < depth[head[v]]) {
-                swap(u, v);
-            }
+            if (depth[head[u]] < depth[head[v]]) swap(u, v);
             ret = f(ret, Query(pos[head[u]], pos[u] + 1));
             u = parent[head[u]];
         }
-        if (depth[u] > depth[v]) {
-            swap(u, v);
-        }
+        if (depth[u] > depth[v]) swap(u, v);
         ret = f(ret, Query(pos[u], pos[v] + 1));
         return ret;
     }
@@ -66,15 +60,11 @@ private:
         pos[now] = hld.size();
         hld.push_back(now);
         head[now] = a;
-        if (sz[now] == 1) {
-            return;
-        }
+        if (sz[now] == 1) return;
         int mx = 0;
         int mx_idx = 0;
         for (int nxt : graph[now]) {
-            if (nxt == pre) {
-                continue;
-            }
+            if (nxt == pre) continue;
             if (mx < sz[nxt]) {
                 mx = sz[nxt];
                 mx_idx = nxt;
@@ -82,18 +72,14 @@ private:
         }
         dfs(mx_idx, a, now);
         for (int nxt : graph[now]) {
-            if (nxt == pre || nxt == mx_idx) {
-                continue;
-            }
+            if (nxt == pre || nxt == mx_idx) continue;
             dfs(nxt, nxt, now);
         }
     }
     void dfs1(int now, int pre = -1) {
         int res = 1;
         for (int nxt : graph[now]) {
-            if (nxt == pre) {
-                continue;
-            }
+            if (nxt == pre) continue;
             dfs1(nxt, now);
             res += sz[nxt];
         }
@@ -102,9 +88,7 @@ private:
     void dfs2(int now, int pre = -1) {
         parent[now] = pre;
         for (int nxt : graph[now]) {
-            if (nxt == pre) {
-                continue;
-            }
+            if (nxt == pre) continue;
             depth[nxt] = depth[now] + 1;
             dfs2(nxt, now);
         }

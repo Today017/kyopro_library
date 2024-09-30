@@ -3,9 +3,7 @@
 ll modPow(ll x, ll n, ll mod) {
     ll ret = 1;
     while (n > 0) {
-        if (n & 1) {
-            ret = ret * x % mod;
-        }
+        if (n & 1) ret = ret * x % mod;
         x = x * x % mod;
         n >>= 1;
     }

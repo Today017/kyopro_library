@@ -50,8 +50,8 @@ class Expander:
         """
         if line.strip() == "#pragma once":
             return True
-        if line.strip().startswith("//"):
-            return True
+        #if line.strip().startswith("//"):
+        #   return True
         if line.strip().startswith("using std::"):
             return True
         if line.strip() in ["#ifdef LOCAL","#include \"./debug.hpp\"","#else","#define debug(...)","#define print_line","#endif"] and not HEAD:

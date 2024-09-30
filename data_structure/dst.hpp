@@ -3,6 +3,7 @@
 template <typename T>
 struct DisjointSparseTable {
     using F = function<T(T, T)>;
+    DisjointSparseTable() = default;
     DisjointSparseTable(const vector<T>& a, F f, T e) {
         n = a.size();
         this->f = f;
@@ -23,9 +24,7 @@ struct DisjointSparseTable {
     }
     T query(int l, int r) {
         r--;
-        if (l == r) {
-            return dat[0][l];
-        }
+        if (l == r) return dat[0][l];
         int k = 31 - __builtin_clz(l ^ r);
         return f(dat[k][l], dat[k][r]);
     }

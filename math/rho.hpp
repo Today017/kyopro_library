@@ -10,8 +10,6 @@ vector<ll> factors(ll x){
     s = s.substr(s.find(":") + 1);
     stringstream ss(s);
     ll f;
-    while(ss >> f){
-        fs.push_back(f);
-    }
+    while(ss >> f) fs.push_back(f);
     return fs;
 }

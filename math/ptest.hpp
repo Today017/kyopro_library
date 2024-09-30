@@ -16,9 +16,7 @@ bool primalityTest(ll n) {
     auto pow_mod = [](__int128_t a, __int128_t n, __int128_t mod) {
         __int128_t res = 1;
         while (n > 0) {
-            if (n & 1) {
-                res = res * a % mod;
-            }
+            if (n & 1) res = res * a % mod;
             a = a * a % mod;
             n >>= 1;
         }
@@ -30,9 +28,7 @@ bool primalityTest(ll n) {
         s++;
     }
     for (ll a : test) {
-        if (a >= n) {
-            break;
-        }
+        if (a >= n) break;
         __int128_t x = pow_mod(a, d, n);
         if (x == 1 || x == n - 1) {
             continue;
@@ -46,9 +42,7 @@ bool primalityTest(ll n) {
                 }
             }
         }
-        if (x != n - 1) {
-            return false;
-        }
+        if (x != n - 1) return false;
     }
     return true;
 }

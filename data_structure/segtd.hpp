@@ -13,9 +13,7 @@ struct SegmentTreeDual {
     }
     void build(const vector<T> &a) {
         assert((int)a.size() == n);
-        for (int i = 0; i < (int)a.size(); i++) {
-            dat[i + n] = a[i];
-        }
+        for (int i = 0; i < (int)a.size(); i++) dat[i + n] = a[i];
     }
     T operator[](int i) {
         assert(0 <= i && i < n);
@@ -32,21 +30,13 @@ struct SegmentTreeDual {
         l += n;
         r += n;
         while (l < r) {
-            if (l & 1) {
-                dat[l] = f(dat[l], x);
-                l++;
-            }
-            if (r & 1) {
-                r--;
-                dat[r] = f(dat[r], x);
-            }
+            if (l & 1) dat[l] = f(dat[l], x), l++;
+            if (r & 1) r--, dat[r] = f(dat[r], x);
             l >>= 1;
             r >>= 1;
         }
     }
-    int size() {
-        return n;
-    }
+    int size() { return n; }
 
 private:
     int n;

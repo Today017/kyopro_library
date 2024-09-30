@@ -35,9 +35,7 @@ struct RollingHash {
     static vector<ll> get_base() {
         vector<ll> base(5);
         mt19937 rng(time(0));
-        for (int i = 0; i < 5; i++) {
-            base[i] = (rng() % mod[i] + 3000) % mod[i];
-        }
+        for (int i = 0; i < 5; i++) base[i] = (rng() % mod[i] + 3000) % mod[i];
         return base;
     }
     using hash = array<ll, 5>;
@@ -59,25 +57,17 @@ struct RollingHash {
 private:
     vector<ll> base;
     vector<vector<ll>> power, hash_table, inv;
-    inline ll mul_mod(ll a, ll b, ll mod) {
-        return a * b % mod;
-    }
+    inline ll mul_mod(ll a, ll b, ll mod) { return a * b % mod; }
     inline ll add_mod(ll a, ll b, ll mod) {
         ll ret = a + b;
-        if (ret >= mod) {
-            ret -= mod;
-        }
-        if (ret < 0) {
-            ret += mod;
-        }
+        if (ret >= mod) ret -= mod;
+        if (ret < 0) ret += mod;
         return ret;
     }
     ll pow_mod(ll a, ll x, ll mod) {
         ll ret = 1;
         while (x) {
-            if (x & 1) {
-                ret = mul_mod(ret, a, mod);
-            }
+            if (x & 1) ret = mul_mod(ret, a, mod);
             a = mul_mod(a, a, mod);
             x >>= 1;
         }

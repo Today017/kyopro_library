@@ -31,9 +31,7 @@ struct Trie {
         int ret = 0;
         for (const char &c : s) {
             int &nxt = nodes[cur].to[c-'a'];
-            if (nxt == -1) {
-                return 0;
-            }
+            if (nxt == -1) return 0;
             cur = nxt;
             ret = nodes[cur].count_of_end;
         }
@@ -42,9 +40,7 @@ struct Trie {
         int cur = 0;
         for (const char &c : s) {
             int &nxt = nodes[cur].to[c-'a'];
-            if (nxt == -1) {
-                return;
-            }
+            if (nxt == -1) return;
             cur = nxt;
             nodes[cur].count_of_node--;
         }

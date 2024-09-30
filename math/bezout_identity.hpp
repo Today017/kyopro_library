@@ -9,9 +9,7 @@ struct BezoutIdentity {
         this->c = c;
     }
     tuple<ll, ll, ll> extgcd(ll a, ll b) {
-        if (b == 0) {
-            return make_tuple(a, 1, 0);
-        }
+        if (b == 0) return make_tuple(a, 1, 0);
         ll q = a / b, r = a % b;
         auto [g, s, t] = extgcd(b, r);
         ll x = t;
@@ -20,18 +18,12 @@ struct BezoutIdentity {
     }
     bool build() {
         auto [g, X, Y] = extgcd(abs(a), abs(b));
-        if (c % g != 0) {
-            return false;
-        }
+        if (c % g != 0) return false;
         this->g = g;
         this->X = X;
         this->Y = Y;
-        if (a < 0) {
-            this->X = -this->X;
-        }
-        if (b < 0) {
-            this->Y = -this->Y;
-        }
+        if (a < 0) this->X = -this->X;
+        if (b < 0) this->Y = -this->Y;
         this->X *= c / g;
         this->Y *= c / g;
         return true;

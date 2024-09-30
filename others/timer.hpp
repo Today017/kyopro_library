@@ -12,7 +12,5 @@ struct Timer {
         auto now = chrono::high_resolution_clock::now();
         return chrono::duration_cast<chrono::milliseconds>(now - start).count();
     }
-    inline bool check() const {
-        return chrono::high_resolution_clock::now() < time_limit;
-    }
+    inline bool check() const { return chrono::high_resolution_clock::now() < time_limit; }
 };

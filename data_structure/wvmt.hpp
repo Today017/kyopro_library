@@ -1,7 +1,9 @@
 #include "../../kyopro_library/template.hpp"
 
-/* ================================== begin Wavelet Matrix ================================== */
-/* https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix */
+/*
+    Wavelet Matrix
+    borrow from: https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix
+*/
 
 enum {
     NOTFOUND = 0xFFFFFFFFFFFFFFFFLLU
@@ -492,5 +494,3 @@ private:
                range_sum(this->begin_one.at(depth) + rank1_begin, this->begin_one[depth] + rank1_end, depth + 1, next_c, x, y);
     }
 };
-
-/* ================================== end Wavelet Matrix ================================== */

@@ -14,9 +14,7 @@ struct CumulativeSum2D {
             }
         }
     }
-    T sum(int l, int r, int u, int d) {
-        return dat[r][d] - dat[l][d] - dat[r][u] + dat[l][u];
-    }
+    T sum(int l, int r, int u, int d) { return dat[r][d] - dat[l][d] - dat[r][u] + dat[l][u]; }
 
 private:
     int n, m;

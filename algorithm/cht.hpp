@@ -1,17 +1,15 @@
 #include "../../kyopro_library/template.hpp"
 
 template <typename T = ll, bool Min = true>
-struct ConvexHullTrick {
-    ConvexHullTrick() = default;
+struct CHT {
+    CHT() = default;
     void add(T a, T b) {
         if (!Min) {
             a *= -1;
             b *= -1;
         }
         if (lines.count(a)) {
-            if (lines[a] <= b) {
-                return;
-            }
+            if (lines[a] <= b) return;
         }
         lines[a] = b;
         auto it = lines.find(a);
@@ -22,9 +20,7 @@ struct ConvexHullTrick {
         if (it != lines.begin()) {
             it = prev(it);
             while (true) {
-                if (need(it)) {
-                    break;
-                }
+                if (need(it)) break;
                 auto prv = prev(it);
                 lines.erase(it);
                 it = prv;
@@ -32,9 +28,7 @@ struct ConvexHullTrick {
         }
         it = next(lines.find(a));
         while (true) {
-            if (need(it)) {
-                break;
-            }
+            if (need(it)) break;
             auto nxt = next(it);
             lines.erase(it);
             it = nxt;
@@ -69,9 +63,7 @@ struct ConvexHullTrick {
 private:
     map<T, T> lines;
     bool need(const typename map<T, T>::iterator it) {
-        if (it == lines.begin() || it == prev(lines.end()) || it == lines.end()) {
-            return true;
-        }
+        if (it == lines.begin() || it == prev(lines.end()) || it == lines.end()) return true;
         auto prv = prev(it);
         auto nxt = next(it);
         auto [a, b] = *it;

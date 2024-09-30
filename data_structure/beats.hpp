@@ -1,6 +1,9 @@
 #include "../../kyopro_library/template.hpp"
 
-/* https://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp */
+/*
+    Segment Tree Beats!
+    borrowed from: https://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp
+*/
 
 struct AngelBeats {
     struct alignas(32) Node {

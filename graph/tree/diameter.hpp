@@ -26,9 +26,7 @@ pair<vector<int>, ll> treeDiameter(const vector<vector<int>>& g) {
     int n = g.size();
     vector<vector<pair<int, ll>>> h(n);
     for (int i = 0; i < n; i++) {
-        for (int j : g[i]) {
-            h[i].push_back({j, 1});
-        }
+        for (int j : g[i]) h[i].push_back({j, 1});
     }
     return treeDiameter(h);
 }

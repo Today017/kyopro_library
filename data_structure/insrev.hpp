@@ -1,7 +1,11 @@
 #include "../../kyopro_library/template.hpp"
 
+/*
+    挿入・削除・区間反転可能な配列
+    borrowed from: https://nyaannyaan.github.io/library/rbst/lazy-reversible-rbst.hpp.html
+*/
+
 namespace InsertableReversibleArrayImpl {
-    /* https://nyaannyaan.github.io/library/rbst/lazy-reversible-rbst.hpp.html */
     template <typename Node>
     struct RBSTBase {
         using Ptr = Node *;

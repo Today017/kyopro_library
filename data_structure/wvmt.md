@@ -6,7 +6,9 @@
 
 [参考](https://github.com/MitI-7/WaveletMatrix/blob/master/WaveletMatrix/WaveletMatrix.hpp)
 
-全体集合のサイズ $\sigma$ とする。
+[原典](https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix)
+
+全体集合のサイズを $\sigma$ とする。
 
 `WaveletMatrix(vector<ull> a)`
 

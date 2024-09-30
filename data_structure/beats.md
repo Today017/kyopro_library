@@ -2,6 +2,8 @@
 
 # [Segment Tree Beats!](./beats.hpp)
 
+[原典](https://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp)
+
 `AngelBeats(int n)`
 
 `AngelBeats(const vector<ll>& a)`
