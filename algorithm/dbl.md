@@ -10,6 +10,8 @@
 - 状態 $start$ から $k$ 回移動した状態を求める。
 - $O(\log{k})$
 
+---
+
 # [Doubling (Monoid Applied)](./dbl2.hpp)
 
 [参考](https://atcoder.jp/contests/ABC175/editorial/4722)

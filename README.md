@@ -84,8 +84,9 @@
 - [Bezout Identity](./math/bezout_identity.md)
 - [Matrix](./math/matrix.md)
 - [Fraction](./math/frac.md)
+- [Linear Equation](./math/linear_equation.md)
+- [Formal Power Series](./math/fps.md)
 <!-- - [Geometory] -->
-<!-- - [FPS] -->
 <!-- - [Lagrange Polynomial] -->
 <!-- - [Fast Fourier Transform] -->
 <!-- - [Convolution] -->

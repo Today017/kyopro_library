@@ -1,16 +1,3 @@
-/*
-    形式的冪級数
-    borrowed from: https://potato167.github.io/po167_library
-
-    fpsMul : 乗算 / O(n log(n))
-    fpsAdd, fpsSub : 加算・減算 / O(n)
-    fpsInv : 逆元 / O(n log(n))
-    fpsExp : exp(f)(mod x^n) / O(n log(n))
-    fpsLog : log(f)(mod x^n) ただし, f[0]=1 / O(n log(n))
-    fpsPow : f^M(mod x^n) / O(n log(n))
-    bostonMori(ll k, FPS P, FPS Q) : [x^k](P/Q) / O(|P| log(|P|) log(k))
-*/
-
 [top](../README.md)
 
 # [Formal Power Series](./fps.hpp)
