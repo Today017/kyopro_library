@@ -4,31 +4,35 @@ using namespace std;
 #include "../kyopro_library/data_structure/segt.hpp"
 #include "../kyopro_library/data_structure/segtlz.hpp"
 #include "../kyopro_library/data_structure/segtd.hpp"
+#include "../kyopro_library/graph/dsu.hpp"
 template <typename T1, typename T2>
 ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
     os << "( " << p.first << ", " << p.second << " )";
     return os;
 }
-template<typename T1, typename T2, typename T3>
+template <typename T1, typename T2, typename T3>
 ostream &operator<<(ostream &os, const tuple<T1, T2, T3> &t) {
     os << "( " << get<0>(t) << ", " << get<1>(t) << ", " << get<2>(t) << " )";
     return os;
 }
+template <typename T1, typename T2, typename T3, typename T4>
+ostream &operator<<(ostream &os, const tuple<T1, T2, T3, T4> &t) {
+    os << "( " << get<0>(t) << ", " << get<1>(t) << ", " << get<2>(t) << ", " << get<3>(t) << " )";
+    return os;
+}
 template <typename T>
-ostream &operator<<(ostream &os, const vector<vector<vector<T>>> &A) {
-    int I = A.size();
+ostream &operator<<(ostream &os, const vector<vector<vector<T>>> &a) {
+    int I = a.size();
     os << "[\n";
     for (int i = 0; i < I; i++) {
         os << "   " << i << " :[\n";
-        int J = A[i].size();
+        int J = a[i].size();
         for (int j = 0; j < J; j++) {
             os << "      " << j << " :[ ";
-            int K = A[i][j].size();
+            int K = a[i][j].size();
             for (int k = 0; k < K; k++) {
-                os << A[i][j][k];
-                if (k != K - 1) {
-                    os << ", ";
-                }
+                os << a[i][j][k];
+                if (k != K - 1) os << ", ";
             }
             os << "]\n";
         }
@@ -38,17 +42,15 @@ ostream &operator<<(ostream &os, const vector<vector<vector<T>>> &A) {
     return os;
 }
 template <typename T>
-ostream &operator<<(ostream &os, const vector<vector<T>> &A) {
+ostream &operator<<(ostream &os, const vector<vector<T>> &a) {
     os << "[\n";
-    int I = A.size();
+    int I = a.size();
     for (int i = 0; i < I; i++) {
         os << "   " << i << " :[";
-        int J = A[i].size();
+        int J = a[i].size();
         for (int j = 0; j < J; j++) {
-            os << A[i][j];
-            if (j != J - 1) {
-                os << ", ";
-            }
+            os << a[i][j];
+            if (j != J - 1) os << ", ";
         }
         os << "]\n";
     }
@@ -56,86 +58,76 @@ ostream &operator<<(ostream &os, const vector<vector<T>> &A) {
     return os;
 }
 template <typename T>
-ostream &operator<<(ostream &os, const vector<T> &A) {
-    int n = A.size();
+ostream &operator<<(ostream &os, const vector<T> &a) {
+    int n = a.size();
     os << "[ ";
     for (int i = 0; i < n; i++) {
-        os << A[i];
-        if (i != n - 1) {
-            os << ", ";
-        }
+        os << a[i];
+        if (i != n - 1) os << ", ";
     }
     os << " ]";
     return os;
 }
 template <typename T>
-ostream &operator<<(ostream &os, const set<T> &A) {
-    int n = A.size();
+ostream &operator<<(ostream &os, const set<T> &a) {
+    int n = a.size();
     os << "[ ";
-    for (T x : A) {
-        os << x << ", ";
-    }
+    for (T x : a) os << x << ", ";
     os << " ]";
     return os;
 }
 template <typename T>
-ostream &operator<<(ostream &os, const multiset<T> &A) {
-    int n = A.size();
+ostream &operator<<(ostream &os, const multiset<T> &a) {
+    int n = a.size();
     os << "[ ";
-    for (T x : A) {
-        os << x << ", ";
-    }
+    for (T x : a) os << x << ", ";
     os << " ]";
     return os;
 }
 template <typename T>
-ostream &operator<<(ostream &os, const deque<T> &A) {
-    int n = A.size();
+ostream &operator<<(ostream &os, const deque<T> &a) {
+    int n = a.size();
     os << "[ ";
-    for (T x : A) {
-        os << x << ", ";
-    }
+    for (T x : a) os << x << ", ";
     os << " ]";
     return os;
 }
 template <typename T1, typename T2>
-ostream &operator<<(ostream &os, const map<T1, T2> &A) {
+ostream &operator<<(ostream &os, const map<T1, T2> &a) {
     os << "[ ";
-    for (pair<T1, T2> x : A) {
-        os << x << ", ";
+    for (pair<T1, T2> x : a) os << x << ", ";
+    os << " ]";
+    return os;
+}
+template <typename T>
+ostream &operator<<(ostream &os, queue<T> a) {
+    int n = a.size();
+    os << "[ ";
+    while (!a.empty()) {
+        os << a.front() << ", ";
+        a.pop();
     }
     os << " ]";
     return os;
 }
 template <typename T>
-ostream &operator<<(ostream &os, queue<T> A) {
-    int n = A.size();
+ostream &operator<<(ostream &os, priority_queue<T> a) {
+    int n = a.size();
     os << "[ ";
-    while (!A.empty()) {
-        os << A.front() << ", ";
-        A.pop();
+    while (!a.empty()) {
+        os << a.top() << ", ";
+        a.pop();
     }
     os << " ]";
     return os;
 }
 template <typename T>
-ostream &operator<<(ostream &os, priority_queue<T> A) {
-    int n = A.size();
+ostream &operator<<(ostream &os, priority_queue<T, vector<T>, greater<>> a) {
+    int n = a.size();
     os << "[ ";
-    while (!A.empty()) {
-        os << A.top() << ", ";
-        A.pop();
-    }
-    os << " ]";
-    return os;
-}
-template <typename T>
-ostream &operator<<(ostream &os, priority_queue<T, vector<T>, greater<>> A) {
-    int n = A.size();
-    os << "[ ";
-    while (!A.empty()) {
-        os << A.top() << ", ";
-        A.pop();
+    while (!a.empty()) {
+        os << a.top() << ", ";
+        a.pop();
     }
     os << " ]";
     return os;
@@ -146,9 +138,7 @@ ostream &operator<<(ostream &os, FenwickTree<T> a) {
     os << "[ ";
     for (int i = 0; i < n; i++) {
         os << a[i];
-        if (i != n - 1) {
-            os << ", ";
-        }
+        if (i != n - 1) os << ", ";
     }
     os << " ]";
     return os;
@@ -159,9 +149,7 @@ ostream &operator<<(ostream &os, SegmentTree<T> a) {
     os << "[ ";
     for (int i = 0; i < n; i++) {
         os << a[i];
-        if (i != n - 1) {
-            os << ", ";
-        }
+        if (i != n - 1) os << ", ";
     }
     os << " ]";
     return os;
@@ -172,9 +160,7 @@ ostream &operator<<(ostream &os, SegmentTreeLazy<T, U> a) {
     os << "[ ";
     for (int i = 0; i < n; i++) {
         os << a[i];
-        if (i != n - 1) {
-            os << ", ";
-        }
+        if (i != n - 1) os << ", ";
     }
     os << " ]";
     return os;
@@ -185,11 +171,14 @@ ostream &operator<<(ostream &os, SegmentTreeDual<T> a) {
     os << "[ ";
     for (int i = 0; i < n; i++) {
         os << a[i];
-        if (i != n - 1) {
-            os << ", ";
-        }
+        if (i != n - 1) os << ", ";
     }
     os << " ]";
+    return os;
+}
+ostream &operator<<(ostream &os, DSU a) {
+    vector<vector<int>> group = a.groups();
+    os << group;
     return os;
 }
 
