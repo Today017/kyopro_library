@@ -1,3 +1,5 @@
+#include "../../kyopro_library/template.hpp"
+
 /*
     形式的冪級数
     borrowed from: https://potato167.github.io/po167_library
