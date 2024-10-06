@@ -11,5 +11,5 @@
 - $O(\alpha(n))$
 
 `Group diff(int x, int y)`
-- $W_x \cdot {W_y}^{-1}$ を返す。
+- ${W_y}^{-1} \cdot W_x$ を返す。
 - $O(1)$
