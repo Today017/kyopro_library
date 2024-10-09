@@ -46,6 +46,7 @@
 ## Graph
 
 - [Disjoint Set Union](./graph/dsu.md)
+- [Disjoint Set Union (Potentialized)](./graph/dsup.md)
 - [SCC](./graph/scc.md)
 - [Topological Sort](./graph/toposort.md)
 - [Low Link](./graph/lowlink.md)
@@ -62,6 +63,7 @@
 - [Lowest Common Ancestor](./graph/tree/lca.md)
 - [Diameter](./graph/tree/diameter.md)
 - [Centroid](./graph/tree/centroid.md)
+- [Centroid Decomposition](./graph/tree/cd.md)
 <!-- - [Rerooting] -->
 <!-- - [Diameter] -->
 <!-- - [Centroid Decomposition] -->
