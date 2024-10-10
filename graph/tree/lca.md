@@ -22,3 +22,7 @@
 - 頂点 $u$ から $d$ 回遡った祖先を返す。
 - $0\le u < n$
 - $O(\log{n})$
+
+## [Edge Weighted](./lca_edge.hpp)
+
+## [Vertex Weighted](./lca_vertex.hpp)
