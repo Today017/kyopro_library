@@ -36,3 +36,8 @@
 [`bool haveIntersection(ll l1, ll r1, ll l2, ll r2)`](./intersect.hpp)
 - 区間 $[l_1, r_1]$ と区間 $[l_2, r_2]$ が共通部分を持つかどうかを返す。
 - $O(1)$
+
+### `others/bet_ring.hpp`
+
+[`bool betweenOnRing(ll p1, ll p2, ll target)`](./bet_ring.hpp)
+- 点 $p_1$ と点 $p_2$ を通る円周上に点 $target$ があるかどうかを返す。
