@@ -34,10 +34,23 @@
 ### `others/intersect.hpp`
 
 [`bool haveIntersection(ll l1, ll r1, ll l2, ll r2)`](./intersect.hpp)
-- 区間 $[l_1, r_1]$ と区間 $[l_2, r_2]$ が共通部分を持つかどうかを返す。
+- 区間 $[l_1, r_1]$ と区間 $[l_2, r_2]$ が共通部分を持つか否かを返す。
 - $O(1)$
 
-### `others/bet_ring.hpp`
+### `others/ring.hpp`
+`namespace Ring` に定義されている。
 
-[`bool betweenOnRing(ll p1, ll p2, ll target)`](./bet_ring.hpp)
-- 点 $p_1$ と点 $p_2$ を通る円周上に点 $target$ があるかどうかを返す。
+`bool betweenIncrement(ll p1, ll p2, ll target)`
+- 円環上で $p1$ から $p2$ に + 方向に進むとき、 $target$ を通過するか否かを返す。
+
+`bool betweenDecrement(ll p1, ll p2, ll target)`
+- 円環上で $p1$ から $p2$ に - 方向に進むとき、 $target$ を通過するか否かを返す。
+
+`ll distanceRing(ll p1, ll p2, ll n)`
+- サイズ $n$ の円環上での $p1$ から $p2$ までの距離を返す。
+
+`ll distanceIncrement(ll p1, ll p2, ll n)`
+- サイズ $n$ の円環上での $p1$ から $p2$ に + 方向に進むときの距離を返す。
+
+`ll distanceDecrement(ll p1, ll p2, ll n)`
+- サイズ $n$ の円環上での $p1$ から $p2$ に - 方向に進むときの距離を返す。
