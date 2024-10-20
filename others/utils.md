@@ -42,6 +42,7 @@
 
 `bool betweenIncrement(ll p1, ll p2, ll target)`
 - 円環上で $p1$ から $p2$ に + 方向に進むとき、 $target$ を通過するか否かを返す。
+- 円環上の閉区間 $[p1, p2]$ に $target$ が含まれるか否かを判定する。
 
 `bool betweenDecrement(ll p1, ll p2, ll target)`
 - 円環上で $p1$ から $p2$ に - 方向に進むとき、 $target$ を通過するか否かを返す。
