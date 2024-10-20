@@ -31,6 +31,9 @@ touch random_test/naive.cpp
 
 mkdir esc
 
-git clone https://github.com/atcoder/ac-library.git
+touch .clang-format
+cp kyopro_library/kyopro_tools/.clang-format .clang-format
+
+git clone https://github.com/Today017/ac-library.git
 cp -r ac-library/atcoder .
 mv ac-library atcoder/

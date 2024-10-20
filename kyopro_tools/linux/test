@@ -8,17 +8,17 @@ SOLUTION_FILE=$1
 rm ./random_test/*.txt
 
 # コンパイル
-g++ ./random_test/generate.cpp -o ./random_test/generate_testcase -std=c++20 -O2
+g++ ./random_test/generate.cpp -o ./random_test/generate_testcase -std=c++17 -O2
 if [ $? -ne 0 ]; then
     echo -e "\033[31mCompile Error! (generate.cpp)\033[0m"
     exit 1
 fi
-g++ ./random_test/naive.cpp -o ./random_test/naive -std=c++20 -O2
+g++ ./random_test/naive.cpp -o ./random_test/naive -std=c++17 -O2
 if [ $? -ne 0 ]; then
     echo -e "\033[31mCompile Error! (naive.cpp)\033[0m"
     exit 1
 fi
-g++ $SOLUTION_FILE -std=c++20 -O2
+g++ $SOLUTION_FILE -std=c++17 -O2
 if [ $? -ne 0 ]; then
     echo -e "\033[31mCompile Error! ($SOLUTION_FILE)\033[0m"
     exit 1

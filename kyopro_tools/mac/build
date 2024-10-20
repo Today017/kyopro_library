@@ -31,6 +31,6 @@ touch random_test/naive.cpp
 
 mkdir esc
 
-git clone https://github.com/atcoder/ac-library.git
+git clone https://github.com/Today017/ac-library.git
 cp -r ac-library/atcoder .
 mv ac-library atcoder/

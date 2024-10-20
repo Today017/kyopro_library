@@ -4,7 +4,7 @@
 copy_cpp() {
     local cpp_file=$1
     python3 ./kyopro_library/kyopro_tools/exp.py $cpp_file
-    clang-format --style=file:./kyopro_library/kyopro_tools/.clang-format combined.cpp | clip.exe
+    clang-format combined.cpp | clip.exe
     
     # ベース名と拡張子を分ける
     local basename="${cpp_file%.*}"

@@ -5,6 +5,52 @@ using namespace std;
 #include "../kyopro_library/data_structure/segtlz.hpp"
 #include "../kyopro_library/data_structure/segtd.hpp"
 #include "../kyopro_library/graph/dsu.hpp"
+#include "../atcoder/modint"
+#include "../atcoder/segtree"
+#include "../atcoder/lazysegtree"
+#include "../atcoder/fenwicktree"
+#include "../atcoder/dsu"
+ostream &operator<<(ostream &os, atcoder::modint998244353 a) {
+    os << a.val();
+    return os;
+}
+ostream &operator<<(ostream &os, atcoder::modint1000000007 a) {
+    os << a.val();
+    return os;
+}
+template <typename T, T(*op)(T, T), T(*e)()>
+ostream &operator<<(ostream &os, atcoder::segtree<T, op, e> a) {
+    int n = a.get_size();
+    os << "[ ";
+    for (int i = 0; i < n; i++) {
+        os << a.prod(i, i + 1);
+        if (i != n - 1) os << ", ";
+    }
+    os << " ]";
+    return os;
+}
+template <typename T, T(*op)(T, T), T(*e)(), typename F, T(*mapping)(F, T), F(*composition)(F, F), F(*id)()>
+ostream &operator<<(ostream &os, atcoder::lazy_segtree<T, op, e, F, mapping, composition, id> a) {
+    int n = a.get_size();
+    os << "[ ";
+    for (int i = 0; i < n; i++) {
+        os << a.get(i);
+        if (i != n - 1) os << ", ";
+    }
+    os << " ]";
+    return os;
+}
+template <typename T>
+ostream &operator<<(ostream &os, atcoder::fenwick_tree<T> a) {
+    int n = a.size();
+    os << "[ ";
+    for (int i = 0; i < n; i++) {
+        os << a.sum(i, i + 1);
+        if (i != n - 1) os << ", ";
+    }
+    os << " ]";
+    return os;
+}
 template <typename T1, typename T2>
 ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
     os << "( " << p.first << ", " << p.second << " )";
@@ -187,6 +233,11 @@ ostream &operator<<(ostream &os, SegmentTreeDual<T> a) {
     return os;
 }
 ostream &operator<<(ostream &os, DSU a) {
+    vector<vector<int>> group = a.groups();
+    os << group;
+    return os;
+}
+ostream &operator<<(ostream &os, atcoder::dsu a) {
     vector<vector<int>> group = a.groups();
     os << group;
     return os;

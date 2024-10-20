@@ -7,7 +7,7 @@ NC='\033[0m' # 色をリセットするコード
 # C++ファイルをコンパイルして実行する関数
 compile_cpp() {
     local cpp_file=$1
-    g++ $cpp_file -std=c++20 -I . -O2
+    g++ $cpp_file -std=c++17 -I . -O2
     if [ $? -ne 0 ]; then
         echo -e "${RED}Compilation failed.${NC}"
         exit 1
@@ -18,7 +18,7 @@ compile_cpp() {
         exit 1
     fi
     python3 ./kyopro_library/kyopro_tools/exp.py $cpp_file
-    clang-format --style=file:./kyopro_library/kyopro_tools/.clang-format combined.cpp | clip.exe
+    clang-format combined.cpp | clip.exe
     
     # ベース名と拡張子を分ける
     local basename="${cpp_file%.*}"
@@ -39,7 +39,7 @@ compile_cpp() {
 # C++ファイルをLOCALフラグでコンパイルして実行する関数
 compile_cpp_local() {
     local cpp_file=$1
-    g++ $cpp_file -std=c++20 -D=LOCAL -I . -O2
+    g++ $cpp_file -std=c++17 -D=LOCAL -I . -O2
     if [ $? -ne 0 ];then
         echo -e "${RED}Compilation failed.${NC}"
         exit 1
