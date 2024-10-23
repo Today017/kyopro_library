@@ -90,8 +90,8 @@
 - [Linear Equation](./math/linear_equation.md)
 - [Formal Power Series](./math/fps.md)
 - [Linear Programming (2 valiables)](./math/lp2vars.md)
+- [Lagrange Interpolation](./math/lagrange.md)
 <!-- - [Geometory] -->
-<!-- - [Lagrange Polynomial] -->
 <!-- - [Fast Fourier Transform] -->
 <!-- - [Convolution] -->
 
