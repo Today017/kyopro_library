@@ -84,6 +84,7 @@
 ## Math
 
 - [ExtGCD, Mod Inversion](./math/extgcd.md)
+- [Primitive Root](./math/proot.md)
 - [Bezout Identity](./math/bezout_identity.md)
 - [Matrix](./math/matrix.md)
 - [Fraction](./math/frac.md)
