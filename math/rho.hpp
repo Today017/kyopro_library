@@ -2,6 +2,7 @@
 #include "../../kyopro_library/math/ptest.hpp"
 
 // ポラードのロー法による素因数分解
+// O(N^(1/4))
 // verify: https://algo-method.com/tasks/553
 vector<pair<ll, ll>> primeFactorize(ll n) {
     if (primalityTest(n)) return {{n, 1}};

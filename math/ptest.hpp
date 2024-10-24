@@ -1,6 +1,8 @@
 #include "../../kyopro_library/template.hpp"
+#include "../../kyopro_library/others/modcal.hpp"
 
 // ミラーラビン素数判定法
+// O(k log^3 n)
 // verify: https://judge.yosupo.jp/problem/primality_test
 bool primalityTest(ll n) {
     if (n == 2) return true;
@@ -11,15 +13,6 @@ bool primalityTest(ll n) {
     } else {
         test = {2, 325, 9375, 28178, 450775, 9780504, 1795265022};
     }
-    auto _powMod = [](__int128_t a, __int128_t n, __int128_t mod) {
-        __int128_t res = 1;
-        while (n > 0) {
-            if (n & 1) res = res * a % mod;
-            a = a * a % mod;
-            n >>= 1;
-        }
-        return res;
-    };
     ll s = 0, d = n - 1;
     while (d % 2 == 0) {
         d >>= 1;
@@ -27,7 +20,7 @@ bool primalityTest(ll n) {
     }
     for (ll a : test) {
         if (a >= n) break;
-        __int128_t x = _powMod(a, d, n);
+        __int128_t x = modPow<__int128_t>(a, d, n);
         if (x == 1 || x == n - 1) {
             continue;
         } else {
