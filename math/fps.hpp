@@ -3,26 +3,18 @@
 /*
     形式的冪級数
     borrowed from: https://potato167.github.io/po167_library
-
-    fpsMul : 乗算 / O(n log(n))
-    fpsAdd, fpsSub : 加算・減算 / O(n)
-    fpsInv : 逆元 / O(n log(n))
-    fpsExp : exp(f)(mod x^n) / O(n log(n))
-    fpsLog : log(f)(mod x^n) ただし, f[0]=1 / O(n log(n))
-    fpsPow : f^M(mod x^n) / O(n log(n))
-    bostonMori(ll k, FPS P, FPS Q) : [x^k](P/Q) / O(|P| log(|P|) log(k))
 */
 
 #include <atcoder/convolution>
 #include <atcoder/modint>
 
 template <typename T>
-vector<T> fpsMul(const vector<T> &a, const vector<T> &b) {
+vector<T> polyMul(const vector<T> &a, const vector<T> &b) {
     return atcoder::convolution(a, b);
 }
 
 template <typename T>
-vector<T> fpsAdd(const vector<T> &a, const vector<T> &b) {
+vector<T> polyAdd(const vector<T> &a, const vector<T> &b) {
     vector<T> res(max(a.size(), b.size()));
     for (int i = 0; i < res.size(); i++) {
         if (i < a.size()) res[i] += a[i];
@@ -32,7 +24,7 @@ vector<T> fpsAdd(const vector<T> &a, const vector<T> &b) {
 }
 
 template <typename T>
-vector<T> fpsSub(const vector<T> &a, const vector<T> &b) {
+vector<T> polySub(const vector<T> &a, const vector<T> &b) {
     vector<T> res(max(a.size(), b.size()));
     for (int i = 0; i < res.size(); i++) {
         if (i < a.size()) res[i] += a[i];
@@ -42,7 +34,7 @@ vector<T> fpsSub(const vector<T> &a, const vector<T> &b) {
 }
 
 template <typename T>
-vector<T> fpsInv(vector<T> f, int len = -1) {
+vector<T> polyInv(vector<T> f, int len = -1) {
     if (len == -1) len = f.size();
     assert(f[0] != 0);
     vector<T> g = {1 / f[0]};
@@ -77,7 +69,7 @@ vector<T> fpsInv(vector<T> f, int len = -1) {
 }
 
 template <typename T>
-vector<T> fpsCyclicConvolution(vector<T> f, vector<T> g) {
+vector<T> polyCyclicConvolution(vector<T> f, vector<T> g) {
     atcoder::internal::butterfly(f);
     atcoder::internal::butterfly(g);
     for (int i = 0; i < (int)f.size(); i++) f[i] *= g[i];
@@ -88,7 +80,7 @@ vector<T> fpsCyclicConvolution(vector<T> f, vector<T> g) {
 }
 
 template <typename T>
-vector<T> fpsIntegral(vector<T> f) {
+vector<T> polyIntegral(vector<T> f) {
     if (f.empty()) return f;
     vector<T> num_inv((int)f.size() + 1);
     num_inv[0] = 1;
@@ -103,7 +95,7 @@ vector<T> fpsIntegral(vector<T> f) {
 }
 
 template <typename T>
-vector<T> fpsDifferential(vector<T> f) {
+vector<T> polyDifferential(vector<T> f) {
     if (f.empty()) return f;
     for (int i = 0; i < (int)f.size() - 1; i++) f[i] = f[i + 1] * (T)(i + 1);
     f.pop_back();
@@ -111,7 +103,7 @@ vector<T> fpsDifferential(vector<T> f) {
 }
 
 template <typename T>
-vector<T> fpsExp(vector<T> f, int len = -1) {
+vector<T> polyExp(vector<T> f, int len = -1) {
     if (len == -1) len = f.size();
     if (len == 0) return {};
     if (len == 1) return {T(1)};
@@ -123,18 +115,18 @@ vector<T> fpsExp(vector<T> f, int len = -1) {
         // g' / g
         // A * B
         vector<T> A = g, B = g;
-        A = fpsDifferential(A);
-        B = fpsInv(B, 2 * s);
+        A = polyDifferential(A);
+        B = polyInv(B, 2 * s);
         A.resize(2 * s);
-        A = fpsCyclicConvolution(A, B);
+        A = polyCyclicConvolution(A, B);
         A.pop_back();
-        A = fpsIntegral(A);
+        A = polyIntegral(A);
         for (int i = 0; i < s; i++) A[i] = 0;
         for (int i = s; i < s * 2; i++) A[i] = (i < (int)f.size() ? f[i] : 0) - A[i];
         // g_hat = g (1 - g + f)
         // g += B = g * A
         g.resize(2 * s);
-        B = fpsCyclicConvolution(A, g);
+        B = polyCyclicConvolution(A, g);
         for (int i = s; i < s * 2; i++) g[i] = B[i];
         s *= 2;
     }
@@ -143,18 +135,18 @@ vector<T> fpsExp(vector<T> f, int len = -1) {
 }
 
 template <typename T>
-vector<T> fpsLog(vector<T> f, int len = -1) {
+vector<T> polyLog(vector<T> f, int len = -1) {
     if (len == -1) len = f.size();
     if (len == 0) return {};
     if (len == 1) return {T(0)};
     assert(!f.empty() && f[0] == 1);
-    vector<T> res = atcoder::convolution(fpsDifferential(f), fpsInv(f, len));
+    vector<T> res = atcoder::convolution(polyDifferential(f), polyInv(f, len));
     res.resize(len - 1);
-    return fpsIntegral(res);
+    return polyIntegral(res);
 }
 
 template <class T>
-vector<T> fpsPow(vector<T> f, long long M, int len = -1) {
+vector<T> polyPow(vector<T> f, long long M, int len = -1) {
     if (len == -1) len = f.size();
     vector<T> res(len, 0);
     if (M == 0) {
@@ -169,9 +161,9 @@ vector<T> fpsPow(vector<T> f, long long M, int len = -1) {
         for (int j = i; j < (int)f.size(); j++) g[j - i] = f[j] * v;
         long long zero = i * M;
         if (i) len -= i * M;
-        g = fpsLog(g, len);
+        g = polyLog(g, len);
         for (T &x : g) x *= M;
-        g = fpsExp(g, len);
+        g = polyExp(g, len);
         v = (T)(1) / v;
         T c = 1;
         while (M) {
@@ -188,7 +180,7 @@ vector<T> fpsPow(vector<T> f, long long M, int len = -1) {
 // in  : DFT(v) (len(v) = z)
 // out : DFT(v) (len(v) = 2 * z)
 template <typename T>
-void fpsExtend(vector<T> &v) {
+void polyExtend(vector<T> &v) {
     int z = v.size();
     T e = (T(atcoder::internal::primitive_root_constexpr(T::mod()))).pow(T::mod() / (2 * z));
     auto cp = v;
@@ -204,7 +196,7 @@ void fpsExtend(vector<T> &v) {
 
 // s.t |v| = 2 ^ s (no assert)
 template <typename T>
-void fpsPickEvenOdd(vector<T> &v, int odd) {
+void polyPickEvenOdd(vector<T> &v, int odd) {
     int z = v.size() / 2;
     T half = (T)(1) / (T)(2);
     if (odd == 0) {
@@ -226,6 +218,24 @@ void fpsPickEvenOdd(vector<T> &v, int odd) {
         for (int i = 0; i < z; i++) v[i] = (v[i * 2] - v[i * 2 + 1]) * es[i];
         v.resize(z);
     }
+}
+
+template <typename T>
+pair<vector<T>, vector<T>> polyDiv(vector<T> f, vector<T> g) {
+    int n = f.size(), m = g.size();
+    if (n < m) return {{}, f};
+    vector<T> r = f;
+    reverse(f.begin(), f.end());
+    reverse(g.begin(), g.end());
+    f.resize(n - m + 1);
+    vector<T> q = polyMul(f, polyInv(g, n - m + 1));
+    q.resize(n - m + 1);
+    reverse(q.begin(), q.end());
+    reverse(g.begin(), g.end());
+    r = polySub(r, polyMul(q, g));
+    while (!q.empty() && q.back() == 0) q.pop_back();
+    while (!r.empty() && r.back() == 0) r.pop_back();
+    return {q, r};
 }
 
 // return [x^k] P(x) / Q(x)
@@ -250,12 +260,12 @@ T bostonMori(long long k, vector<T> P, vector<T> Q) {
             P[i] *= Q_n[i];
             Q[i] *= Q_n[i];
         }
-        fpsPickEvenOdd(P, k & 1);
-        fpsPickEvenOdd(Q, 0);
+        polyPickEvenOdd(P, k & 1);
+        polyPickEvenOdd(Q, 0);
         k /= 2;
         if (k == 0) break;
-        fpsExtend(P);
-        fpsExtend(Q);
+        polyExtend(P);
+        polyExtend(Q);
     }
     T SP = 0, SQ = 0;
     for (int i = 0; i < z; i++) SP += P[i], SQ += Q[i];
@@ -273,4 +283,26 @@ T kthLinear(long long k, vector<T> a, vector<T> c) {
     vector<T> P = atcoder::convolution(a, c);
     P.resize(d);
     return bostanMori(k, P, c);
+}
+
+template <typename T>
+vector<T> multipointEvaluate(vector<T> f, vector<T> x) {
+    int n = x.size();
+    if (n == 0) return {};
+    if (n == 1) {
+        T ret = 0, tmp = 1;
+        for (T a : f) ret += a * tmp, tmp *= x[0];
+        return {ret};
+    }
+    int n2 = 1;
+    while (n2 < n) n2 <<= 1;
+    vector<vector<T>> g(n2 * 2, {1});
+    for (int i = 0; i < n; i++) g[n2 + i] = {-x[i], 1};
+    for (int i = n2 - 1; i > 0; i--) g[i] = polyMul(g[i << 1 | 0], g[i << 1 | 1]);
+
+    g[1] = polyDiv(f, g[1]).second;
+    for (int i = 2; i < n2 + n; i++) g[i] = polyDiv(g[i >> 1], g[i]).second;
+    vector<T> ret(n);
+    for (int i = 0; i < n; i++) ret[i] = g[n2 + i][0];
+    return ret;
 }
