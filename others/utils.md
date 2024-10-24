@@ -4,8 +4,9 @@
 
 ### `others/modcal.hpp`
 
-[`ll modPow(ll a, ll n, ll p)`](./modcal.hpp)
+[`T=ll modPow(T a, T n, T p)`](./modcal.hpp)
 - $a^n \mod p$ を返す。
+- 基本的には `ll` だが、 $p^2$ が `ll` の範囲を超える場合は `__int128_t` になる。
 - $O(\log n)$
 
 [`ll modInv(ll a, ll p)`](./modcal.hpp)
