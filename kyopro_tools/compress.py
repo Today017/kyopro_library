@@ -3,10 +3,11 @@ symbols=['!','#','$','%','&','*','+','-','/','<','=','>','?','@','^','_','~','|'
 code=''
 
 while True:
-    line=input()
-    if line=='':
+    try:
+        line=input()
+        code+=line+'\n'
+    except:
         break
-    code+=line+'\n'
 
 res=""
 
