@@ -1,40 +1,34 @@
 #include "../../kyopro_library/template.hpp"
+#include "../../kyopro_library/math/muleval.hpp"
 
 // ラグランジュ補間
-// n+1 個の点 (xi,yi) を通る n 次多項式の係数を返す / O(n^2)
+// n+1 個の点 (xi,yi) を通る n 次多項式の係数を返す / O(n log^2 n)
 template <typename T>
 vector<T> lagrangePolynomial(vector<T> x, vector<T> y) {
-    int n = x.size() - 1;
-    for (int i = 0; i <= n; i++) {
-        T t = 1;
-        for (int j = 0; j <= n; j++) {
-            if (i != j) t *= x[i] - x[j];
-        }
-        y[i] /= t;
-    }
-    // 前計算 dp[i]:=(x-x0)*...*(x-xn) の x^i の係数
-    vector<T> dp(n + 2);
-    dp[0] = 1;
-    for (T xi : x) {
-        for (int i = n + 1; i >= 0; i--) {
-            dp[i] *= -xi;
-            if (i > 0) dp[i] += dp[i - 1];
-        }
-    }
-    // 戻す DP
-    vector<T> ret(n + 1);
-    for (int i = 0; i <= n; i++) {
-        if (x[i] == T(0)) {
-            for (int j = 0; j <= n; j++) ret[j] += dp[j + 1] * y[i];
-        } else {
-            T inv = x[i].inv();
-            ret[0] += -dp[0] * inv * y[i];
-            T pre = -dp[0] * inv;
-            for (int j = 1; j <= n; j++) {
-                ret[j] += -(dp[j] - pre) * inv * y[i];
-                pre = -(dp[j] - pre) * inv;
-            }
-        }
-    }
+    int n = x.size();
+    int n2 = 1;
+    while (n2 < n) n2 <<= 1;
+
+    vector<vector<T>> g(n2 * 2, {1});
+    for (int i = 0; i < n; i++) g[n2 + i] = {-x[i], 1};
+    for (int i = n2 - 1; i > 0; i--) g[i] = polyMul(g[i << 1], g[i << 1 | 1]);
+
+    vector<T> prod = g[1];
+    vector<T> diff = polyDifferential(prod), eval = multipointEvaluate(diff, x);
+
+    using P = pair<vector<T>, vector<T>>;  // first/second
+    vector<P> g2(n2 * 2, {{0}, {1}});
+    for (int i = 0; i < n; i++) g2[n2 + i] = {{y[i]}, {-eval[i] * x[i], eval[i]}};
+    auto merge = [](P l, P r) -> P {
+        vector<T> tmp1 = polyMul(l.first, r.second), tmp2 = polyMul(l.second, r.first);
+        return {polyAdd(tmp1, tmp2), polyMul(l.second, r.second)};
+    };
+    for (int i = n2 - 1; i > 0; i--) g2[i] = merge(g2[i << 1], g2[i << 1 | 1]);
+
+    vector<T> ret = g2[1].first;
+    T p = 1;
+    for (int i = 0; i < n; i++) p *= eval[i];
+    p = p.inv();
+    for (int i = 0; i < n; i++) ret[i] *= p;
     return ret;
 }

@@ -44,7 +44,3 @@
 `bostonMori(ll k, poly P, poly Q)`
 - $[x^k](P/Q)$ を返す。
 - $O(|P| \log |P| \log k)$
-
-`multipointEvaluation(poly f, vector<mint> x)`
-- $f(x_i)$ を返す。
-- $O(n \log^2 n)$
