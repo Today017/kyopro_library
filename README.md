@@ -73,6 +73,7 @@
 
 - [Max Flow](./graph/flow/mxf.md)
 - [Min Cost Flow](./graph/flow/mcf.md)
+- [燃やす埋める](./graph/flow/bb.md)
 
 ## Mod
 
@@ -83,29 +84,31 @@
 
 ## Math
 
+### Number Theory
+
 - [ExtGCD, Mod Inversion](./math/extgcd.md)
-- [Primitive Root](./math/proot.md)
 - [Bezout Identity](./math/bezout_identity.md)
+- [Euler's Totient Function](./math/phi.md)
+- [Prime Factorization based on Eratosthenes](./math/osak.md)
+- [Primality Test](./math/ptest.md)
+- [Pollard's rho](./math/rho.md)
+- [Primitive Root](./math/proot.md)
+- [Mod Log (Baby Step Giant Step)](./math/modlog.md)
+- [Convolution](./math/convolution.md)
+
+### Polynomial
+- [Convolution (NTT)](./math/ntt.md)
+- [Formal Power Series](./math/fps.md)
+- [Multipoint Evaluation](./math/muleval.md)
+- [Lagrange Interpolation](./math/lagrange.md)
+
+### Other
 - [Matrix](./math/matrix.md)
 - [Fraction](./math/frac.md)
 - [Linear Equation](./math/linear_equation.md)
-- [Formal Power Series](./math/fps.md)
 - [Linear Programming (2 valiables)](./math/lp2vars.md)
-- [Lagrange Interpolation](./math/lagrange.md)
-<!-- - [Geometory] -->
-<!-- - [Fast Fourier Transform] -->
-<!-- - [Convolution] -->
-
-### Number Theory
-
-- [Euler's Totient Function](./math/phi.md)
-- [Prime Factorization based on Eratosthenes](./math/osak.md)
-- [Prime Factorization based on Pollard's rho](./math/rho.md)
-- [Primality Test based on Miller-Rabin](./math/ptest.md)
-- [Convolution](./math/convolution.md)
-- [Convolution (NTT)](./math/ntt.md)
-- [Mod Log (Baby Step Giant Step)](./math/modlog.md)
 <!-- - [Quotient Ranges] -->
+
 
 ## String
 
