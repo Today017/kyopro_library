@@ -1,14 +1,24 @@
 #include "../../kyopro_library/template.hpp"
-#include "../../kyopro_library/data_structure/fen.hpp"
 
 ll inversionNumber(const vector<int> &a) {
-    int n = a.size();
-    for (int i = 0; i < n; i++) assert(0 <= a[i] && a[i] < n);
-    FenwickTree<int> ft(n);
-    ll ret = 0;
-    for (int i = 0; i < n; i++) {
-        ret += i - ft.sum(0, a[i]);
-        ft.add(a[i], 1);
-    }
+    using T=vector<int>;
+    ll ret=0;
+    auto Merge=[&](const T &a,const T &b){
+        int n=a.size();
+        int r=0;
+        for(int l=0;l<n;l++){
+            while(r<n&&b[r]<a[l])r++;
+            ret+=r;
+        }
+        T c(2*n);
+        merge(a.begin(),a.end(),b.begin(),b.end(),c.begin());
+        return c;
+    };
+
+    int n=a.size(),n2=1;
+    while(n2<n)n2<<=1;
+    vector<T> node(n2<<1,T(1,INF));
+    for(int i=0;i<n;i++)node[i+n2][0]=a[i];
+    for(int i=n2-1;i>0;i--)node[i]=Merge(node[i<<1],node[i<<1|1]);
     return ret;
 }
