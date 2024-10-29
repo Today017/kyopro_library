@@ -1,6 +1,9 @@
 #include "../../kyopro_library/template.hpp"
 
 using LL = __int128_t;
+const LL LL0 = 0;
+const LL LL1 = 1;
+const LL INFLL = LL1 << 120;
 
 istream &operator>>(istream &is, LL &x) {
     int c = is.peek();
