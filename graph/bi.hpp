@@ -18,12 +18,16 @@ vector<pair<int,int>> bipartiteMatching(const vector<vector<int>>&g){
 		return false;
 	};
 
-	vector<pair<int,int>>ret;
 	for(int i=0;i<n;i++){
 		if(match[i]==-1){
 			fill(used.begin(),used.end(),false);
-			if(dfs(dfs,i))ret.push_back(minmax(i,match[i]));
+			dfs(dfs,i);
 		}
+	}
+
+	vector<pair<int,int>>ret;
+	for(int i=0;i<n;i++){
+		if(match[i]>i&&match[match[i]]==i)ret.push_back({i,match[i]});
 	}
 	return ret;
 }
