@@ -4,7 +4,7 @@
 #include<atcoder/maxflow>
 template<typename Cost>
 struct BurningBurying{
-	int n,start,goal;//start->0,goal->1
+	int n,start,goal;
 	Cost offset=0;
 	atcoder::mf_graph<Cost> mf;
 	BurningBurying(int n){
@@ -15,14 +15,14 @@ struct BurningBurying{
 	}
 	//0,1
 	void add_single(int i,Cost zero,Cost one){
-		if(zero>=one){
-			offset+=one;
-			//iを0とすると、i!=goalになるのでzero-oneだけかかる
-			mf.add_edge(i,goal,zero-one);
-		}else{
+		if(zero<=one){
+			//基本コストがzeroで、iを0から1に変えると+one-zeroされる
 			offset+=zero;
-			//iを1とすると、i!=startになるのでone-zeroだけかかる
 			mf.add_edge(start,i,one-zero);
+		}else{
+			//基本コストがoneで、iを1から0に変えると-one+zeroされる
+			offset+=one;
+			mf.add_edge(i,goal,zero-one);
 		}
 	}
 	//(0,0),(0,1),(1,0),(1,1)
@@ -31,8 +31,7 @@ struct BurningBurying{
 		offset+=a;
 		add_single(i,0,c-a);
 		add_single(j,0,d-c);
-		//(0,1)のときコストb+c-a-dかかる
-		mf.add_edge(j,i,b+c-a-d);
+		mf.add_edge(i,j,b+c-a-d);
 	}
 	Cost solve(){return mf.flow(start,goal)+offset;}
 };
