@@ -64,5 +64,5 @@ bool linearEquation(vector<vector<bool>>a,vector<bool>b,vector<bool>&x0,vector<v
 		ker.push_back(x);
 	}
 
-	return rank;
+	return true;
 }
