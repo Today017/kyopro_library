@@ -1,13 +1,13 @@
-#include "../../kyopro_library/template.hpp"
+#include"../../kyopro_library/template.hpp"
 
-ll totient(ll n) {
-    ll ret = n;
-    for (ll i = 2; i * i <= n; i++) {
-        if (n % i == 0) {
-            ret -= ret / i;
-            while (n % i == 0) n /= i;
-        }
-    }
-    if (n > 1) ret -= ret / n;
-    return ret;
+ll totient(ll n){
+	ll ret=n;
+	for(ll i=2;i*i<=n;i++){
+		if(n%i==0){
+			ret-=ret/i;
+			while(n%i==0)n/=i;
+		}
+	}
+	if(n>1)ret-=ret/n;
+	return ret;
 }

@@ -1,33 +1,36 @@
 #pragma once
 #include "../../kyopro_library/template.hpp"
 
-template <typename T>
-struct FenwickTree {
-    FenwickTree() = default;
-    FenwickTree(int n) {
-        this->n = n;
-        dat = vector<T>(n);
-    }
-    void add(int i, T x) {
-        i++;
-        while (i <= n) {
-            dat[i - 1] += x;
-            i += i & -i;
-        }
-    }
-    T sum(int l, int r) { return sum(r) - sum(l); }
-    T operator[](int i) { return sum(i, i + 1); }
-    int size() { return n; }
+#pragma once
+#include"../../kyopro_library/template.hpp"
+
+template<typename T>
+struct FenwickTree{
+	FenwickTree()=default;
+	FenwickTree(int n){
+		this->n=n;
+		dat=vector<T>(n);
+	}
+	void add(int i,T x){
+		i++;
+		while(i<=n){
+			dat[i-1]+=x;
+			i+=i&-i;
+		}
+	}
+	T sum(int l,int r){return sum(r)-sum(l);}
+	T operator[](int i){return sum(i,i+1);}
+	int size(){return n;}
 
 private:
-    int n;
-    vector<T> dat;
-    T sum(int r) {
-        T ret = 0;
-        while (r > 0) {
-            ret += dat[r - 1];
-            r -= r & -r;
-        }
-        return ret;
-    }
+	int n;
+	vector<T>dat;
+	T sum(int r){
+		T ret=0;
+		while(r>0){
+			ret+=dat[r-1];
+			r-=r&-r;
+		}
+		return ret;
+	}
 };

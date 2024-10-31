@@ -9,7 +9,7 @@
 - $\gcd(a, b), x, y$ の組を返す。
 - $O(\log{\min(a, b)})$
 
-`ll modInv(ll a, ll m)`
+`ll modInvGcd(ll a, ll m)`
 - $ax\equiv 1 \mod m$ なる $x$ を返す。
 - $\gcd(a, m) = 1$ でない場合、 $-1$ を返す。
 
