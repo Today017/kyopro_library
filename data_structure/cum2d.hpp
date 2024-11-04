@@ -1,22 +1,22 @@
-#include "../../kyopro_library/template.hpp"
+#include"../../kyopro_library/template.hpp"
 
-template <typename T>
-struct CumulativeSum2D {
-    CumulativeSum2D() = default;
-    template <typename U>
-    CumulativeSum2D(const vector<vector<U>> &a) {
-        n = a.size();
-        m = a.front().size();
-        dat = vector<vector<T>>(n + 1, vector<T>(m + 1));
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                dat[i + 1][j + 1] = dat[i][j + 1] + dat[i + 1][j] - dat[i][j] + a[i][j];
-            }
-        }
-    }
-    T sum(int l, int r, int u, int d) { return dat[r][d] - dat[l][d] - dat[r][u] + dat[l][u]; }
+template<typename T>
+struct CumulativeSum2D{
+	CumulativeSum2D()=default;
+	template<typename U>
+	CumulativeSum2D(const vector<vector<U>>&a){
+		n=a.size();
+		m=a.front().size();
+		dat=vector<vector<T>>(n+1,vector<T>(m+1));
+		for(int i=0;i<n;i++){
+			for(int j=0;j<m;j++){
+				dat[i+1][j+1]=dat[i][j+1]+dat[i+1][j]-dat[i][j]+a[i][j];
+			}
+		}
+	}
+	T sum(int l,int r,int u,int d){return dat[r][d]-dat[l][d]-dat[r][u]+dat[l][u];}
 
 private:
-    int n, m;
-    vector<vector<T>> dat;
+	int n,m;
+	vector<vector<T>>dat;
 };
