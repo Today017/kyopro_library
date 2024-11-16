@@ -19,7 +19,7 @@ struct DsuPotentialized {
         diff_weight[x] = op(diff_weight[x], diff_weight[par[x]]);
         return par[x] = root;
     }
-    bool unite(int x, int y, Group w) {
+    bool merge(int x, int y, Group w) {
         w = op(w, diff_weight[x]);
         w = op(inv(diff_weight[y]), w);
         x = find(x);

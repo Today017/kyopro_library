@@ -8,7 +8,7 @@
 - 頂点 $x$ を含む連結成分の代表元を返す。
 - $O(\alpha(n))$
 
-`void unite(int x, int y)`
+`void merge(int x, int y)`
 - 頂点 $x$, $y$ を連結する。
 - $O(\alpha(n))$
 

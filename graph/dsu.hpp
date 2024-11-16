@@ -16,7 +16,7 @@ struct DSU {
         if (par[x] == x) return x;
         return par[x] = find(par[x]);
     }
-    void unite(int x, int y) {
+    void merge(int x, int y) {
         x = find(x);
         y = find(y);
         if (x == y) return;
