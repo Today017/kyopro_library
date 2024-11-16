@@ -34,6 +34,7 @@
 - [Disjoint Sparse Table](./data_structure/dst.md)
 - [Fenwick Tree](./data_structure/fen.md)
 - [Binary Trie](./data_structure/bintr.md)
+- [Merge Sort Tree](./data_structure/mst.md)
 - [Wavelet Matrix](./data_structure/wvmt.md)
 - [Insertable Reversible Array](./data_structure/insrev.md)
 - [Negative Vector](./data_structure/negative_vector.md)
@@ -48,6 +49,7 @@
 
 - [Disjoint Set Union](./graph/dsu.md)
 - [Disjoint Set Union (Potentialized)](./graph/dsup.md)
+- [Disjoint Set Union (Merging)](./graph/dsum.md)
 - [SCC](./graph/scc.md)
 - [Topological Sort](./graph/toposort.md)
 - [Low Link](./graph/lowlink.md)
