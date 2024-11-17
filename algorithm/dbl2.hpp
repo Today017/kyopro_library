@@ -1,10 +1,10 @@
 #include"../../kyopro_library/template.hpp"
 
-template<typename T,T(*op)(T,T),T(*e)(),int Log>
+template<typename SemiGroup,SemiGroup(*op)(SemiGroup,SemiGroup),int Log>
 struct Doubling{
-	Doubling(const vector<int>&p,const vector<T>&v){
+	Doubling(const vector<int>&p,const vector<SemiGroup>&v){
 		int n=p.size();
-		dat=vector<vector<T>>(Log+1,vector<T>(n));
+		dat=vector<vector<SemiGroup>>(Log+1,vector<SemiGroup>(n));
 		nxt=vector<vector<int>>(Log+1,vector<int>(n));
 		for(int i=0;i<n;i++){
 			dat[0][i]=v[i];
@@ -17,8 +17,8 @@ struct Doubling{
 			}
 		}
 	}
-	T query(int start,ll k){
-		T ret=e();
+	SemiGroup query(int start,ll k){
+		SemiGroup ret=e();
 		for(int b=0;k>0;b++,k>>=1){
 			if(k&1){
 				ret=op(ret,dat[b][start]);
@@ -33,6 +33,6 @@ struct Doubling{
 	}
 
 private:
-	vector<vector<T>>dat;
+	vector<vector<SemiGroup>>dat;
 	vector<vector<int>>nxt;
 };
