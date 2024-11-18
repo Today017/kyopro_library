@@ -29,6 +29,10 @@ mkdir random_test
 touch random_test/generate.cpp
 touch random_test/naive.cpp
 
+touch compress
+cp kyopro_library/kyopro_tools/mac/compress compress
+chmod +x compress
+
 mkdir esc
 
 git clone https://github.com/Today017/ac-library.git
