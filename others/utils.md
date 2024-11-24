@@ -56,3 +56,29 @@
 
 `ll distanceDecrement(ll p1, ll p2, ll n)`
 - サイズ $n$ の円環上での $p1$ から $p2$ に - 方向に進むときの距離を返す。
+
+### `others/bit.hpp`
+`namespace Bit` に定義されている。
+
+`int popcount(T x)`
+- $x$ のビット表現に含まれる $1$ の数を返す。
+
+`int parity(T x)`
+- $x$ のビット表現に含まれる $1$ の数が偶数なら0、奇数なら $1$ を返す。
+
+`int topBit(T x)`
+- $x$ のビット表現で最上位の $1$ の位置を返す。
+- $x=0$ のときは -1 を返す。
+
+`int lowBit(T x)`
+- $x$ のビット表現で最下位の $1$ の位置を返す。
+- $x=0$ のときは -1 を返す。
+
+`bool isPowerOfTwo(T x)`
+- $x$ が $2$ の冪乗か否かを返す。
+
+`ll mask(int n)`
+- $n$ ビット目までが立っているビットマスクを返す。
+
+`ll hasBit(ll x, int i)`
+- $x$ の $i$ ビット目が立っているか否かを返す。
