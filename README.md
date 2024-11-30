@@ -48,6 +48,7 @@
 ## Graph
 
 - [Disjoint Set Union](./graph/dsu.md)
+- [Disjoint Set Union (Rollback)](./graph/dsur.md)
 - [Disjoint Set Union (Potentialized)](./graph/dsup.md)
 - [Disjoint Set Union (Merging)](./graph/dsum.md)
 - [SCC](./graph/scc.md)
