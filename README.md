@@ -54,6 +54,7 @@
 - [SCC](./graph/scc.md)
 - [Topological Sort](./graph/toposort.md)
 - [Low Link](./graph/lowlink.md)
+- [Offline Dynamic Connectivity](./graph/odc.md)
 
 ### Shortest Path
 
