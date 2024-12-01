@@ -1,34 +1,42 @@
 #pragma once
 #include "../../kyopro_library/template.hpp"
 
-#pragma once
-#include"../../kyopro_library/template.hpp"
+struct FenwickTreeBaseAbel{
+	using Type=ll;
+	static Type id(){return 0;}
+	static Type op(Type a,Type b){return a+b;}
+	static Type inv(Type a){return-a;}
+};
 
-template<typename T>
+template<typename Abel=FenwickTreeBaseAbel>
 struct FenwickTree{
+	using Type=typename Abel::Type;
+
 	FenwickTree()=default;
 	FenwickTree(int n){
 		this->n=n;
-		dat=vector<T>(n);
+		dat.assign(n,Abel::id());
 	}
-	void add(int i,T x){
+
+	void add(int i,Type x){
 		i++;
 		while(i<=n){
-			dat[i-1]+=x;
+			dat[i-1]=Abel::op(dat[i-1],x);
 			i+=i&-i;
 		}
 	}
-	T sum(int l,int r){return sum(r)-sum(l);}
-	T operator[](int i){return sum(i,i+1);}
+	Type sum(int l,int r){return Abel::op(Abel::inv(sum(l)),sum(r));}
+
+	Type operator[](int i){return sum(i,i+1);}
 	int size(){return n;}
 
 private:
 	int n;
-	vector<T>dat;
-	T sum(int r){
-		T ret=0;
+	vector<Type>dat;
+	Type sum(int r){
+		Type ret=Abel::id();
 		while(r>0){
-			ret+=dat[r-1];
+			ret=Abel::op(ret,dat[r-1]);
 			r-=r&-r;
 		}
 		return ret;
