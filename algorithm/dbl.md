@@ -2,23 +2,22 @@
 
 # [Doubling](./dbl.hpp)
 
-`Doubling<int Log>(vector<int> a)`
-- 各状態の 1 つ先の状態を記録した配列 $a$ からダブリングテーブルを構築する。
+`Doubling<int Log>(vector<int> v)`
+- 各状態の 1 つ先の状態を記録した配列 $v$ からダブリングテーブルを構築する。
 - 状態数を $n$ として、 $O(n Log)$
 
-`int transition(int start, ll k)`
+`int next(int start, ll k)`
 - 状態 $start$ から $k$ 回移動した状態を求める。
 - $O(\log{k})$
 
 ---
 
-# [Doubling (SemiGroup Applied)](./dbl2.hpp)
+# [Doubling (Monoid Applied)](./dbl2.hpp)
 
 [参考](https://atcoder.jp/contests/ABC175/editorial/4722)
 
-`Doubling<T, T(T, T) op, int Log>(vector<int> p, vector<T> v)`
-- 各状態の 1 つ先の状態を記録した配列 $p$ と、各状態の値を記録した配列 $v$ からダブリングテーブルを構築する。
-- 半群が載る。
+`Doubling<Monoid, int Log>(vector<int> p, vector<T> v)`
+- 各状態の 1 つ先の状態を記録した配列 $p$ と、各状態での値を記録した配列 $v$ からダブリングテーブルを構築する。
 
-`T query(int start, ll k)`
-- 状態 $start$ から $k$ 回移動した状態の値を求める。
+`Monoid::Type fold(int start, ll k)`
+- 状態 $start$ から $k$ 回移動したときのモノイド積を求める。
