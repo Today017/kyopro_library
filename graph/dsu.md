@@ -8,8 +8,9 @@
 - 頂点 $x$ を含む連結成分の代表元を返す。
 - $O(\alpha(n))$
 
-`void merge(int x, int y)`
-- 頂点 $x$, $y$ を連結する。
+`bool merge(int x, int y)`
+- 頂点 $x$, $y$ を連結し、`true` を返す。
+- 既に連結されている場合は `false` を返す。
 - $O(\alpha(n))$
 
 `int size(int x)`
