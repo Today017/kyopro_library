@@ -2,8 +2,8 @@
 
 # [Cumulative Sum 2D](./cum2d.hpp)
 
-`CumulativeSum2D<T>(vector<vector<U>> a)`
-- 行列 $a$ に対する2次元累積和を構築する。
+`CumulativeSum2D<T>(vector<vector<U>> v)`
+- 行列 $v$ に対する2次元累積和を構築する。
 - $O(hw)$
 
 `T sum(int l, int r, int u, int d)`

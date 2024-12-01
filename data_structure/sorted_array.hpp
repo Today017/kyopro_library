@@ -5,13 +5,14 @@ struct SortedArray{
 	vector<T>dat,dat_unique;
 	T not_found=-1;
 	SortedArray()=default;
-	SortedArray(const vector<T>&a,T not_found=-1){
-		dat=a;
-		dat_unique=a;
+	SortedArray(const vector<T>&v,T not_found=-1){
+		dat=v;
+		dat_unique=v;
 		sort(dat_unique.begin(),dat_unique.end());
 		dat_unique.erase(unique(dat_unique.begin(),dat_unique.end()),dat_unique.end());
 		this->not_found=not_found;
 	}
+
 	bool contains(T x){
 		return binary_search(dat.begin(),dat.end(),x)!=dat.end();
 	}

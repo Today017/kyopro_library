@@ -3,7 +3,7 @@
 # [Merge Sort Tree](./mst.hpp)
 
 `MergeSortTree<T>(vector<T> a)`
-- 配列 $a$ に対する Merge Sort Tree を構築する。
+- 配列 $v$ から Merge Sort Tree を構築する。
 
 `int count_lt(int l, int r, T x)`
 - $[l, r)$ に含まれる $x$ より小さい要素の個数を返す。
