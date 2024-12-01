@@ -4,6 +4,7 @@
 template<typename CommutativeOperator>
 struct SegTreeDual{
 	using Type=typename CommutativeOperator::Type;
+
 	SegTreeDual()=default;
 	SegTreeDual(int n){
 		this->n=n;
@@ -15,6 +16,7 @@ struct SegTreeDual{
 		for(int i=0;i<n;i++)dat[i+n]=v[i];
 		for(int i=n-1;i>0;i--)dat[i]=CommutativeOperator::op(dat[i<<1],dat[i<<1|1]);
 	}
+
 	void apply(int l,int r,Type x){
 		l+=n,r+=n;
 		while(l<r){
@@ -34,7 +36,7 @@ struct SegTreeDual{
 	}
 
 	int size(){return n;}
-	Type operator[](int i){return dat[i+n];}
+	Type operator[](int i){return get(i);}
 
 private:
 	int n;

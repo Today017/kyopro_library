@@ -2,15 +2,12 @@
 
 # [Segment Tree Dual](./segtd.hpp)
 
-`SegmentTreeDual<T>(int n, F f, T e)`
-- サイズ $n$ ,演算 $f$, 単位元 $e$ の 双対 Segment Tree を構築する。
+`SegTreeDual<CommutativeOperator>(int n)`
+- サイズ $n$ の 双対 Segment Tree を構築する。
+- 作用素は可換である必要がある。
 - $O(n)$
 
-`void build(vector<T> a)`
-- 配列 $a$ から 双対 Segment Tree を構築する。
-- $O(n)$
-
-`T operator[](int i)`
+`CommutativeOperator::Type get(int i)`
 - 位置 $i$ の要素を返す。
 - $O(\log{n})$
 
@@ -20,8 +17,6 @@
 
 ---
 
-`SegmentTreeDual<T> RangeAddQuery(int n, T e)`
-- Range Add Query 用の Segment Tree を返す。
+`RangeAdd<T>::Type`
 
-`SegmentTreeDual<T> RangeUpdateQuery(int n, T e)`
-- Range Update Query 用の Segment Tree を返す。
+`RangeUpdate<T>::Type`

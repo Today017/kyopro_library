@@ -5,6 +5,7 @@ template<typename Monoid,typename Operator,auto mapping>
 struct SegTreeLazy{
 	using MonoidType=typename Monoid::Type;
 	using OperatorType=typename Operator::Type;
+
 	SegTreeLazy()=default;
 	SegTreeLazy(int n){
 		this->n=n;
@@ -18,6 +19,7 @@ struct SegTreeLazy{
 		for(int i=0;i<n;i++)dat[i+n]=v[i];
 		for(int i=n-1;i>0;i--)dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
 	}
+
 	void set(int i,MonoidType x){
 		i+=n;
 		dat[i]=x;

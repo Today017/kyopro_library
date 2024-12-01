@@ -4,6 +4,7 @@
 template<typename Monoid>
 struct SegTree{
 	using Type=typename Monoid::Type;
+
 	SegTree()=default;
 	SegTree(int n){
 		this->n=n;
@@ -15,6 +16,7 @@ struct SegTree{
 		for(int i=0;i<n;i++)dat[i+n]=v[i];
 		for(int i=n-1;i>0;i--)dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
 	}
+
 	void set(int i,Type x){
 		i+=n;
 		dat[i]=x;
