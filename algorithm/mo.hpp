@@ -7,13 +7,14 @@ struct Mo{
 		this->n=n;
 		this->q=q;
 	}
-	void add_query(int l,int r){
+
+	void add(int l,int r){
 		query_count++;
 		ls.push_back(l);
 		rs.push_back(r);
 	}
 	template<typename F1,typename F2,typename F3,typename F4,typename F5>
-	void run(F1&&add_left,F2&&add_right,F3&&del_left,F4&&del_right,F5&&out){
+	void execute(F1&&add_left,F2&&add_right,F3&&del_left,F4&&del_right,F5&&out){
 		assert(q==query_count);
 		vector<int>qi(q);
 		iota(qi.begin(),qi.end(),0);

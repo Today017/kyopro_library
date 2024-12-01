@@ -6,6 +6,7 @@
 template<typename T=ll,bool Min=true>
 struct CHT{
 	CHT()=default;
+
 	void add(T a,T b){
 		if(!Min){
 			a*=-1;
