@@ -1,64 +1,51 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-template<typename T>
-struct SegmentTree{
-	using F=function<T(T,T)>;
-	SegmentTree()=default;
-	SegmentTree(int n,F f,T e){
+template<typename Monoid>
+struct SegTree{
+	using Type=typename Monoid::Type;
+	SegTree()=default;
+	SegTree(int n){
 		this->n=n;
-		this->f=f;
-		this->e=e;
-		dat=vector<T>(n<<1,e);
+		dat.assign(n<<1,Monoid::id());
 	}
-	void build(const vector<T>&a){
-		assert((int)a.size()==n);
-		for(int i=0;i<(int)a.size();i++)dat[i+n]=a[i];
-		for(int i=n-1;i>0;i--)dat[i]=f(dat[i<<1],dat[i<<1|1]);
+	SegTree(const vector<Type>&v){
+		this->n=v.size();
+		dat.assign(n<<1,Monoid::id());
+		for(int i=0;i<n;i++)dat[i+n]=v[i];
+		for(int i=n-1;i>0;i--)dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
 	}
-	void set(int i,T x){
-		assert(0<=i&&i<n);
+	void set(int i,Type x){
 		i+=n;
 		dat[i]=x;
-		while(i){
-			i>>=1;
-			dat[i]=f(dat[i<<1],dat[i<<1|1]);
-		}
+		while(i>>=1)dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
 	}
-	T query(int l,int r){
-		assert(0<=l&&l<=r&&r<=n);
-		l+=n;
-		r+=n;
-		T ret=e;
+	Type fold(int l,int r){
+		Type retl=Monoid::id(),retr=Monoid::id();
+		l+=n,r+=n;
 		while(l<r){
-			if(l&1)ret=f(ret,dat[l]),l++;
-			if(r&1)r--,ret=f(ret,dat[r]);
-			l>>=1;
-			r>>=1;
+			if(l&1)retl=Monoid::op(retl,dat[l++]);
+			if(r&1)retr=Monoid::op(dat[--r],retr);
+			l>>=1,r>>=1;
 		}
-		return ret;
+		return Monoid::op(retl,retr);
 	}
-	T operator[](int i){
-		assert(0<=i&&i<n);
-		return dat[n+i];
-	}
+
 	int size(){return n;}
+	Type operator[](int i){return dat[i+n];}
 
 private:
 	int n;
-	F f;
-	T e;
-	vector<T>dat;
+	vector<Type>dat;
 };
 
+#include"../../kyopro_library/others/monoid.hpp"
+
+template<typename T,T max_value=INF>
+struct RangeMin{using Type=struct SegTree<MinMonoid<T,max_value>>;};
+
+template<typename T,T min_value=-INF>
+struct RangeMax{using Type=struct SegTree<MaxMonoid<T,min_value>>;};
+
 template<typename T>
-SegmentTree<T>RangeMaxQuery(int n,T e){
-	return SegmentTree<T>(n,[](T a,T b){return max(a,b);},e);
-}
-template<typename T>
-SegmentTree<T>RangeMinQuery(int n,T e){
-	return SegmentTree<T>(n,[](T a,T b){return min(a,b);},e);
-}
-SegmentTree<ll>RangeSumQuery(int n){
-	return SegmentTree<ll>(n,[](ll a,ll b){return a+b;},0);
-}
+struct RangeSum{using Type=struct SegTree<SumMonoid<T>>;};

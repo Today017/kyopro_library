@@ -200,7 +200,7 @@ ostream &operator<<(ostream &os, FenwickTree<T> a) {
     return os;
 }
 template <typename T>
-ostream &operator<<(ostream &os, SegmentTree<T> a) {
+ostream &operator<<(ostream &os, SegTree<T> a) {
     int n = a.size();
     os << "[ ";
     for (int i = 0; i < n; i++) {
@@ -210,8 +210,8 @@ ostream &operator<<(ostream &os, SegmentTree<T> a) {
     os << " ]";
     return os;
 }
-template <typename T, typename U>
-ostream &operator<<(ostream &os, SegmentTreeLazy<T, U> a) {
+template <typename T, typename U, auto M>
+ostream &operator<<(ostream &os, SegTreeLazy<T, U, M> a) {
     int n = a.size();
     os << "[ ";
     for (int i = 0; i < n; i++) {

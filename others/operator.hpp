@@ -1,0 +1,15 @@
+#include"../../kyopro_library/template.hpp"
+
+template<typename T,T not_exist>
+struct UpdateOperator{
+	using Type=T;
+	static Type id(){return not_exist;}
+	static Type op(Type a,Type b){return b==id()?a:b;}
+};
+
+template<typename T>
+struct AddOperator{
+	using Type=T;
+	static Type id(){return 0;}
+	static Type op(Type a,Type b){return a+b;}
+};

@@ -1,155 +1,135 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-template<typename T,typename U>
-struct SegmentTreeLazy{
-	using F=function<T(T,T)>;
-	using G=function<T(U,T)>;
-	using H=function<U(U,U)>;
-	SegmentTreeLazy()=default;
-	SegmentTreeLazy(int n,F f,G g,H h,T et,U eu){
-		this->n=1;
-		while(this->n<n)this->n*=2;
-		this->f=f;
-		this->g=g;
-		this->h=h;
-		this->et=et;
-		this->eu=eu;
-		dat=vector<T>(this->n*2-1,et);
-		lazy=vector<U>(this->n*2-1,eu);
+template<typename Monoid,typename Operator,auto mapping>
+struct SegTreeLazy{
+	using MonoidType=typename Monoid::Type;
+	using OperatorType=typename Operator::Type;
+	SegTreeLazy()=default;
+	SegTreeLazy(int n){
+		this->n=n;
+		dat.assign(n<<1,Monoid::id());
+		lazy.assign(n<<1,Operator::id());
 	}
-	void build(const vector<T>&a){
-		for(int i=0;i<(int)a.size();i++)dat[i+n-1]=a[i];
-		for(int i=n-2;i>=0;i--)dat[i]=f(dat[i*2+1],dat[i*2+2]);
+	SegTreeLazy(const vector<MonoidType>&v){
+		this->n=v.size();
+		dat.assign(n<<1,Monoid::id());
+		lazy.assign(n<<1,Operator::id());
+		for(int i=0;i<n;i++)dat[i+n]=v[i];
+		for(int i=n-1;i>0;i--)dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
 	}
-	void set(int i,T x){
-		evaluate(i);
-		i+=n-1;
+	void set(int i,MonoidType x){
+		i+=n;
 		dat[i]=x;
-		while(i>0){
-			i=(i-1)/2;
-			dat[i]=f(dat[i*2+1],dat[i*2+2]);
+		while(i>>=1)dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
+	}
+	void apply(int l,int r,OperatorType x){
+		generate_indices(l,r);
+		propagate();
+		l+=n,r+=n;
+		while(l<r){
+			if(l&1){
+				lazy[l]=Operator::op(lazy[l],x);
+				dat[l]=mapping(dat[l],x);
+				l++;
+			}
+			if(r&1){
+				r--;
+				lazy[r]=Operator::op(lazy[r],x);
+				dat[r]=mapping(dat[r],x);
+			}
+			l>>=1,r>>=1;
+		}
+		for(int i:indices){
+			dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
 		}
 	}
-	void apply(int l,int r,U x){apply(l,r,0,x,0,n);}
-	T query(int l,int r){return query(l,r,0,0,n);}
-	T operator[](int i){return query(i,i+1,0,0,n);}
+	MonoidType fold(int l,int r){
+		generate_indices(l,r);
+		propagate();
+		MonoidType retl=Monoid::id(),retr=Monoid::id();
+		l+=n,r+=n;
+		while(l<r){
+			if(l&1)retl=Monoid::op(retl,dat[l++]);
+			if(r&1)retr=Monoid::op(dat[--r],retr);
+			l>>=1,r>>=1;
+		}
+		return Monoid::op(retl,retr);
+	}
+
 	int size(){return n;}
+	MonoidType operator[](int i){return fold(i,i+1);}
 
 private:
 	int n;
-	vector<T>dat;
-	vector<U>lazy;
-	F f;
-	G g;
-	H h;
-	T et;
-	U eu;
-	void evaluate(int i){
-		if(lazy[i]==eu)return;
-		if(i<n-1){
-			lazy[i*2+1]=h(lazy[i],lazy[i*2+1]);
-			lazy[i*2+2]=h(lazy[i],lazy[i*2+2]);
+	vector<MonoidType>dat;
+	vector<OperatorType>lazy;
+	vector<int>indices;
+	void generate_indices(int l,int r){
+		indices.clear();
+		l+=n,r+=n;
+		int lm=(l/(l&-l))>>1,rm=(r/(r&-r))>>1;
+		while(l<r){
+			if(l<=lm)indices.push_back(l);
+			if(r<=rm)indices.push_back(r);
+			l>>=1,r>>=1;
 		}
-		dat[i]=g(lazy[i],dat[i]);
-		lazy[i]=eu;
-	}
-	void apply(int left,int right,int i,U x,int l,int r){
-		evaluate(i);
-		if(left<=l&&r<=right){
-			lazy[i]=h(x,lazy[i]);
-			evaluate(i);
-		}else if(left<r&&l<right){
-			int mid=(l+r)/2;
-			apply(left,right,i*2+1,x,l,mid);
-			apply(left,right,i*2+2,x,mid,r);
-			dat[i]=f(dat[i*2+1],dat[i*2+2]);
+		while(l){
+			indices.push_back(l);
+			l>>=1;
 		}
 	}
-	T query(int left,int right,int i,int l,int r){
-		evaluate(i);
-		if(r<=left||right<=l){
-			return et;
-		}else if(left<=l&&r<=right){
-			return dat[i];
-		}else{
-			int mid=(l+r)/2;
-			return f(query(left,right,i*2+1,l,mid),query(left,right,i*2+2,mid,r));
+	void propagate(){
+		for(int j=(int)indices.size()-1;j>=0;j--){
+			int i=indices[j];
+			if(i<n){
+				lazy[i<<1]=Operator::op(lazy[i<<1],lazy[i]);
+				lazy[i<<1|1]=Operator::op(lazy[i<<1|1],lazy[i]);
+				dat[i<<1]=mapping(dat[i<<1],lazy[i]);
+				dat[i<<1|1]=mapping(dat[i<<1|1],lazy[i]);
+			}
+			lazy[i]=Operator::id();
 		}
 	}
 };
 
-//verified
-template<typename T,typename U>
-SegmentTreeLazy<T,U>RangeAddRangeMin(int n,T max_value){
-	const T et=max_value;
-	const U eu=0;
-	auto f=[](T a,T b){return min(a,b);};
-	auto g=[](U f,T x){return f+x;};
-	auto h=[](U f,U g){return f+g;};
-	return SegmentTreeLazy<T,U>(n,f,g,h,et,eu);
-}
+#include"../../kyopro_library/others/monoid.hpp"
+#include"../../kyopro_library/others/operator.hpp"
 
-template<typename T,typename U>
-SegmentTreeLazy<T,U>RangeAddRangeMax(int n,T min_value){
-	const T et=min_value;
-	const U eu=0;
-	auto f=[](T a,T b){return max(a,b);};
-	auto g=[](U f,T x){return f+x;};
-	auto h=[](U f,U g){return f+g;};
-	return SegmentTreeLazy<T,U>(n,f,g,h,et,eu);
-}
+template<typename T,T max_value,T not_exist>
+struct RangeUpdateRangeMin{
+	static T mapping(T a,T b){return b==not_exist?a:b;}
+	using Type=struct SegTreeLazy<MinMonoid<T,max_value>,UpdateOperator<T,not_exist>,mapping>;
+};
 
-//verified
-template<typename T,typename U>
-SegmentTreeLazy<pair<T,int>,U>RangeAddRangeSum(int n){
-	using T2=pair<T,int>;
-	const T2 et=make_pair(T(0),0);
-	const U eu=0;
-	auto f=[](T2 a,T2 b){return make_pair(a.first+b.first,a.second+b.second);};
-	auto g=[](U f,T2 x){return make_pair(x.first+(T)f*x.second,x.second);};
-	auto h=[](U f,U g){return f+g;};
-	return SegmentTreeLazy<T2,U>(n,f,g,h,et,eu);
-}
+template<typename T,T min_value,T not_exist>
+struct RangeUpdateRangeMax{
+	static T mapping(T a,T b){return b==not_exist?a:b;}
+	using Type=struct SegTreeLazy<MaxMonoid<T,min_value>,UpdateOperator<T,not_exist>,mapping>;
+};
 
-//verified
-template<typename T>
-SegmentTreeLazy<T,T>RangeUpdateRangeMin(int n,T max_value,T not_exist){
-	const T et=max_value;
-	const T eu=not_exist;
-	auto f=[](T a,T b){return min(a,b);};
-	auto g=[eu](T f,T x){
-		if(f==eu)return x;
-		return f;
-	};
-	return SegmentTreeLazy<T,T>(n,f,g,g,et,eu);
-}
+template<typename T,T not_exist>
+struct RangeUpdateRangeSum{
+	using S=typename PairSumMonoid<T>::Type;
+	static S mapping(S a,T b){return b==not_exist?a:S{b*a.second,a.second};}
+	using Type=struct SegTreeLazy<PairSumMonoid<T>,UpdateOperator<T,not_exist>,mapping>;
+};
+
+template<typename T,T max_value>
+struct RangeAddRangeMin{
+	static T mapping(T a,T b){return a+b;}
+	using Type=struct SegTreeLazy<MinMonoid<T,max_value>,AddOperator<T>,mapping>;
+};
+
+template<typename T,T min_value>
+struct RangeAddRangeMax{
+	static T mapping(T a,T b){return a+b;}
+	using Type=struct SegTreeLazy<MaxMonoid<T,min_value>,AddOperator<T>,mapping>;
+};
 
 template<typename T>
-SegmentTreeLazy<T,T>RangeUpdateRangeMax(int n,T min_value,T not_exist){
-	const T et=min_value;
-	const T eu=not_exist;
-	auto f=[](T a,T b){return max(a,b);};
-	auto g=[eu](T f,T x){
-		if(f==eu)return x;
-		return f;
-	};
-	return SegmentTreeLazy<T,T>(n,f,g,g,et,eu);
-}
-
-template<typename T>
-SegmentTreeLazy<pair<T,int>,T>RangeUpdateRangeSum(int n,T not_found){
-	using T2=pair<T,int>;
-	const T2 et=make_pair(T(0),0);
-	const T eu=not_found;
-	auto f=[](T2 a,T2 b){return make_pair(a.first+b.first,a.second+b.second);};
-	auto g=[eu](T f,T2 x){
-		if(f==eu)return x;
-		return make_pair(f*x.second,x.second);
-	};
-	auto h=[eu](T f,T g){
-		if(f==eu)return g;
-		return f;
-	};
-	return SegmentTreeLazy<pair<T,int>,T>(n,f,g,h,et,eu);
-}
+struct RangeAddRangeSum{
+	using S=typename PairSumMonoid<T>::Type;
+	static S mapping(S a,T b){return{a.first+b*a.second,a.second};}
+	using Type=struct SegTreeLazy<PairSumMonoid<T>,AddOperator<T>,mapping>;
+};
