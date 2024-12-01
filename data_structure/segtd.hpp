@@ -1,58 +1,50 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-template<typename T>
-struct SegmentTreeDual{
-	using F=function<T(T,T)>;
-	SegmentTreeDual()=default;
-	SegmentTreeDual(int n,F f,T e){
+template<typename Operator>
+struct SegTreeDual{
+	using Type=typename Operator::Type;
+	SegTreeDual()=default;
+	SegTreeDual(int n){
 		this->n=n;
-		this->f=f;
-		this->e=e;
-		dat=vector<T>(n<<1,e);
+		dat.assign(n<<1,Operator::id());
 	}
-	void build(const vector<T>&a){
-		assert((int)a.size()==n);
-		for(int i=0;i<(int)a.size();i++)dat[i+n]=a[i];
+	SegTreeDual(const vector<Type>&v){
+		this->n=v.size();
+		dat.assign(n<<1,Operator::id());
+		for(int i=0;i<n;i++)dat[i+n]=v[i];
+		for(int i=n-1;i>0;i--)dat[i]=Operator::op(dat[i<<1],dat[i<<1|1]);
 	}
-	T operator[](int i){
-		assert(0<=i&&i<n);
+	void apply(int l,int r,Type x){
+		l+=n,r+=n;
+		while(l<r){
+			if(l&1)dat[l]=Operator::op(dat[l],x),l++;
+			if(r&1)r--,dat[r]=Operator::op(dat[r],x);
+			l>>=1,r>>=1;
+		}
+	}
+	Type get(int i){
 		i+=n;
-		T ret=e;
+		Type ret=Operator::id();
 		while(i){
-			ret=f(ret,dat[i]);
+			ret=Operator::op(ret,dat[i]);
 			i>>=1;
 		}
 		return ret;
 	}
-	void apply(int l,int r,T x){
-		assert(0<=l&&l<=r&&r<=n);
-		l+=n;
-		r+=n;
-		while(l<r){
-			if(l&1)dat[l]=f(dat[l],x),l++;
-			if(r&1)r--,dat[r]=f(dat[r],x);
-			l>>=1;
-			r>>=1;
-		}
-	}
+
 	int size(){return n;}
+	Type operator[](int i){return dat[i+n];}
 
 private:
 	int n;
-	vector<T>dat;
-	F f;
-	T e;
+	vector<Type>dat;
 };
 
+#include"../../kyopro_library/others/operator.hpp"
+
 template<typename T>
-SegmentTreeDual<T>RangeAddQuery(int n){
-	return SegmentTreeDual<ll>(n,[](T a,T b){return a+b;},0);
-}
+struct RangeAdd{using Type=struct SegTreeDual<AddOperator<T>>;};
+
 template<typename T>
-SegmentTreeDual<pair<T,int>>RangeUpdateQuery(int n){
-	auto f=[](pair<T,int>a,pair<T,int>b){
-		return a.second>b.second?a:b;
-	};
-	return SegmentTreeDual<pair<T,int>>(n,f,{0,-1});
-}
+struct RangeUpdate{using Type=struct SegTreeDual<UpdateOperatorTimeStamp<T>>;};

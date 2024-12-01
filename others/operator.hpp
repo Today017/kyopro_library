@@ -13,3 +13,10 @@ struct AddOperator{
 	static Type id(){return 0;}
 	static Type op(Type a,Type b){return a+b;}
 };
+
+template<typename T>
+struct UpdateOperatorTimeStamp{
+	using Type=pair<T,int>;
+	static Type id(){return {0,-1};}
+	static Type op(Type a,Type b){return b.second>a.second?b:a;}
+};
