@@ -2,10 +2,11 @@
 
 # [Sparse Table](./spt.hpp)
 
-`SparseTable<T, MIN>`
-- 配列 $a$ から Sparse Table を構築する。
+`SparseTable<Band>(vector<T> v)`
+- 配列 $v$ から Sparse Table を構築する。
+- 冪等な半群が乗る。
 - $O(n\log{n})$
 
-`T query(int l, int r)`
-- $\min(a_l, a_{l+1}, ... , a_{r-1})$ を返す。
+`Band::Type fold(int l, int r)`
+- 区間 $[l, r)$ の半群積を返す。
 - $O(1)$

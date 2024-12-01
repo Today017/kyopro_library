@@ -1,38 +1,37 @@
 #include "../../kyopro_library/template.hpp"
 
-#include"../../kyopro_library/template.hpp"
-
-template<typename T>
+template<typename Semigroup>
 struct DisjointSparseTable{
-	using F=function<T(T,T)>;
+	using Type=typename Semigroup::Type;
+
 	DisjointSparseTable()=default;
-	DisjointSparseTable(const vector<T>&a,F f,T e){
-		n=a.size();
-		this->f=f;
-		dat.push_back(a);
-		for(int i=2;i<n;i<<=1){
-			dat.push_back(vector<T>(n,e));
-			for(int j=i;j<n;j+=i<<1){
-				dat.back()[j-1]=dat[0][j-1];
-				for(int k=2;k<=i;k++){
-					dat.back()[j-k]=f(dat[0][j-k],dat.back()[j-k+1]);
-				}
-				dat.back()[j]=dat[0][j];
-				for(int k=2;k<=i&&j+k<=n;k++){
-					dat.back()[j+k-1]=f(dat.back()[j+k-2],dat[0][j+k-1]);
-				}
+	DisjointSparseTable(const vector<Type>&v){
+		n=v.size();
+		dat.assign(__lg(n)+1,vector<Type>(n));
+		dat[0]=v;
+		for(int i=1;i<(int)dat.size();i++){
+			int w=1<<i;
+			for(int j=0;j<n;j+=w<<1){
+				int t=min(j+w,n);
+				dat[i][t-1]=v[t-1];
+				for(int k=t-2;k>=j;k--)dat[i][k]=Semigroup::op(v[k],dat[i][k+1]);
+				if(t>=n)break;
+				dat[i][t]=v[t];
+				for(int k=t+1;k<min(j+(w<<1),n);k++)dat[i][k]=Semigroup::op(dat[i][k-1],v[k]);
 			}
 		}
 	}
-	T query(int l,int r){
+	Type fold(int l,int r){
 		r--;
 		if(l==r)return dat[0][l];
-		int k=31-__builtin_clz(l^r);
-		return f(dat[k][l],dat[k][r]);
+		int i=__lg(l^r);
+		return Semigroup::op(dat[i][l],dat[i][r]);
 	}
 
+	int size(){return n;}
+	Type operator[](int i)const{return fold(i,i+1);}
+
 private:
-	F f;
 	int n;
-	vector<vector<T>>dat;
+	vector<vector<Type>>dat;
 };
