@@ -10,8 +10,8 @@ T binarySearch(T ok,T ng,Judge judge){
 }
 
 template<typename T,typename Judge>
-T binarySearchIteration(T ok,T ng,Judge judge,int count=100){
-	while(count--){
+T binarySearchIteration(T ok,T ng,Judge judge,int iter=100){
+	while(iter--){
 		T mid=(ok+ng)/2;
 		(judge(mid)?ok:ng)=mid;
 	}
