@@ -5,6 +5,7 @@ using namespace std;
 #include "../kyopro_library/data_structure/segtlz.hpp"
 #include "../kyopro_library/data_structure/segtd.hpp"
 #include "../kyopro_library/graph/dsu.hpp"
+#include "../kyopro_library/others/int128.hpp"
 #include "../atcoder/modint"
 #include "../atcoder/segtree"
 #include "../atcoder/lazysegtree"
@@ -221,8 +222,8 @@ ostream &operator<<(ostream &os, SegTreeLazy<T, U, M> a) {
     os << " ]";
     return os;
 }
-template <typename T>
-ostream &operator<<(ostream &os, SegmentTreeDual<T> a) {
+/*template <typename T>
+ostream &operator<<(ostream &os, SegTreeDual<T> a) {
     int n = a.size();
     os << "[ ";
     for (int i = 0; i < n; i++) {
@@ -231,7 +232,7 @@ ostream &operator<<(ostream &os, SegmentTreeDual<T> a) {
     }
     os << " ]";
     return os;
-}
+}*/
 ostream &operator<<(ostream &os, DSU a) {
     vector<vector<int>> group = a.groups();
     os << group;

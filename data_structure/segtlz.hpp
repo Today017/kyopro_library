@@ -20,9 +20,16 @@ struct SegTreeLazy{
 		for(int i=n-1;i>0;i--)dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
 	}
 
+	void set(int i,MonoidType x){
+		generate_indices(i,i+1);
+		pushdown();
+		i+=n;
+		dat[i]=x;
+		while(i>>=1)dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
+	}
 	void apply(int l,int r,OperatorType x){
 		generate_indices(l,r);
-		propagate();
+		pushdown();
 		l+=n,r+=n;
 		while(l<r){
 			if(l&1){
@@ -37,13 +44,11 @@ struct SegTreeLazy{
 			}
 			l>>=1,r>>=1;
 		}
-		for(int i:indices){
-			dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
-		}
+		pushup();
 	}
 	MonoidType fold(int l,int r){
 		generate_indices(l,r);
-		propagate();
+		pushdown();
 		MonoidType retl=Monoid::id(),retr=Monoid::id();
 		l+=n,r+=n;
 		while(l<r){
@@ -76,7 +81,7 @@ private:
 			l>>=1;
 		}
 	}
-	void propagate(){
+	void pushdown(){
 		for(int j=(int)indices.size()-1;j>=0;j--){
 			int i=indices[j];
 			if(i<n){
@@ -86,6 +91,12 @@ private:
 				dat[i<<1|1]=mapping(dat[i<<1|1],lazy[i]);
 			}
 			lazy[i]=Operator::id();
+		}
+	}
+	void pushup(){
+		for(int j=0;j<(int)indices.size();j++){
+			int i=indices[j];
+			dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
 		}
 	}
 };
