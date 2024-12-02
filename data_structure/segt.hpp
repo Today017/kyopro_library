@@ -36,6 +36,71 @@ struct SegTree{
 	int size(){return n;}
 	Type operator[](int i){return dat[i+n];}
 
+	template<typename F>
+	int find_rightest(int l,F f){
+		assert(f(Monoid::id()));
+		l+=n;
+		int r=n+n;
+		vector<int> cand_l,cand_r;
+		while(l<r){
+			if(l&1)cand_l.push_back(l++);
+			if(r&1)cand_r.push_back(--r);
+			l>>=1,r>>=1;
+		}
+		vector<int>cand=cand_l;
+		reverse(cand_r.begin(),cand_r.end());
+		cand.insert(cand.end(),cand_r.begin(),cand_r.end());
+		Type val=Monoid::id();
+		for(int i:cand){
+			if(f(Monoid::op(val,dat[i]))){
+				val=Monoid::op(val,dat[i]);
+			}else{
+				while(i<n){
+					i<<=1;
+					if(f(Monoid::op(val,dat[i]))){
+						val=Monoid::op(val,dat[i]);
+						i|=1;
+					}
+				}
+				return i-n;
+			}
+		}
+		return n;
+	}
+
+	template<typename F>
+	int find_leftest(int r,F f){
+		assert(f(Monoid::id()));
+        if(r==0)return 0;
+		r+=n;
+		int l=n;
+		vector<int> cand_l,cand_r;
+		while(l<r){
+			if(l&1)cand_l.push_back(l++);
+			if(r&1)cand_r.push_back(--r);
+			l>>=1,r>>=1;
+		}
+		vector<int>cand=cand_r;
+		reverse(cand_l.begin(),cand_l.end());
+		cand.insert(cand.end(),cand_l.begin(),cand_l.end());
+		Type val=Monoid::id();
+		for(int i:cand){
+			if(f(Monoid::op(dat[i],val))){
+				val=Monoid::op(dat[i],val);
+			}else{
+				while(i<n){
+					i=(i<<1)|1;
+					if(f(Monoid::op(dat[i],val))){
+						val=Monoid::op(dat[i],val);
+						i^=1;
+					}
+                }
+				return i-n+1;
+			}
+		}
+		return 0;
+	}
+
 private:
 	int n;
 	vector<Type>dat;
