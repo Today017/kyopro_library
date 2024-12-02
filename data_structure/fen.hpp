@@ -1,15 +1,8 @@
 #pragma once
 #include "../../kyopro_library/template.hpp"
+#include"../../kyopro_library/others/abel.hpp"
 
-template<typename T>
-struct FenwickTreeBaseAbel{
-	using Type=T;
-	static Type id(){return 0;}
-	static Type op(Type a,Type b){return a+b;}
-	static Type inv(Type a){return-a;}
-};
-
-template<typename Abel=FenwickTreeBaseAbel<ll>>
+template<typename Abel=AdditiveAbel<ll>>
 struct FenwickTree{
 	using Type=typename Abel::Type;
 

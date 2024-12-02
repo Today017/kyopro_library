@@ -20,11 +20,6 @@ struct SegTreeLazy{
 		for(int i=n-1;i>0;i--)dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
 	}
 
-	void set(int i,MonoidType x){
-		i+=n;
-		dat[i]=x;
-		while(i>>=1)dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
-	}
 	void apply(int l,int r,OperatorType x){
 		generate_indices(l,r);
 		propagate();
@@ -100,38 +95,38 @@ private:
 
 template<typename T,T max_value,T not_exist>
 struct RangeUpdateRangeMin{
-	static T mapping(T a,T b){return b==not_exist?a:b;}
+	static T mapping(const T&a,const T&b){return b==not_exist?a:b;}
 	using Type=struct SegTreeLazy<MinMonoid<T,max_value>,UpdateOperator<T,not_exist>,mapping>;
 };
 
 template<typename T,T min_value,T not_exist>
 struct RangeUpdateRangeMax{
-	static T mapping(T a,T b){return b==not_exist?a:b;}
+	static T mapping(const T&a,const T&b){return b==not_exist?a:b;}
 	using Type=struct SegTreeLazy<MaxMonoid<T,min_value>,UpdateOperator<T,not_exist>,mapping>;
 };
 
 template<typename T,T not_exist>
 struct RangeUpdateRangeSum{
 	using S=typename PairSumMonoid<T>::Type;
-	static S mapping(S a,T b){return b==not_exist?a:S{b*a.second,a.second};}
+	static S mapping(const S&a,const T&b){return b==not_exist?a:S{b*a.second,a.second};}
 	using Type=struct SegTreeLazy<PairSumMonoid<T>,UpdateOperator<T,not_exist>,mapping>;
 };
 
 template<typename T,T max_value>
 struct RangeAddRangeMin{
-	static T mapping(T a,T b){return a+b;}
+	static T mapping(const T&a,const T&b){return a+b;}
 	using Type=struct SegTreeLazy<MinMonoid<T,max_value>,AddOperator<T>,mapping>;
 };
 
 template<typename T,T min_value>
 struct RangeAddRangeMax{
-	static T mapping(T a,T b){return a+b;}
+	static T mapping(const T&a,const T&b){return a+b;}
 	using Type=struct SegTreeLazy<MaxMonoid<T,min_value>,AddOperator<T>,mapping>;
 };
 
 template<typename T>
 struct RangeAddRangeSum{
 	using S=typename PairSumMonoid<T>::Type;
-	static S mapping(S a,T b){return{a.first+b*a.second,a.second};}
+	static S mapping(const S&a,const T&b){return{a.first+b*a.second,a.second};}
 	using Type=struct SegTreeLazy<PairSumMonoid<T>,AddOperator<T>,mapping>;
 };
