@@ -38,7 +38,7 @@ struct SegTree{
 		if(l==n)return n;
 		l+=n;
 		int r=n+n;
-		vector<int> cand_l,cand_r;
+		vector<int>cand_l,cand_r;
 		while(l<r){
 			if(l&1)cand_l.push_back(l++);
 			if(r&1)cand_r.push_back(--r);
@@ -67,10 +67,10 @@ struct SegTree{
 	template<typename F>
 	int find_left(int r,F f){
 		assert(f(Monoid::id()));
-        if(r==0)return 0;
+		if(r==0)return 0;
 		r+=n;
 		int l=n;
-		vector<int> cand_l,cand_r;
+		vector<int>cand_l,cand_r;
 		while(l<r){
 			if(l&1)cand_l.push_back(l++);
 			if(r&1)cand_r.push_back(--r);
@@ -90,7 +90,7 @@ struct SegTree{
 						val=Monoid::op(dat[i],val);
 						i^=1;
 					}
-                }
+				}
 				return i-n+1;
 			}
 		}
@@ -115,3 +115,5 @@ struct RangeMax{using Type=struct SegTree<MaxMonoid<T,min_value>>;};
 
 template<typename T>
 struct RangeSum{using Type=struct SegTree<SumMonoid<T>>;};
+
+
