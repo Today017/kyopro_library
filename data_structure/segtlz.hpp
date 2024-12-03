@@ -28,6 +28,7 @@ struct SegTreeLazy{
 		while(i>>=1)dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
 	}
 	void apply(int l,int r,OperatorType x){
+		if(l==r)return;
 		generate_indices(l,r);
 		pushdown();
 		l+=n,r+=n;
@@ -47,6 +48,7 @@ struct SegTreeLazy{
 		pushup();
 	}
 	MonoidType fold(int l,int r){
+		if(l==r)return Monoid::id();
 		generate_indices(l,r);
 		pushdown();
 		MonoidType retl=Monoid::id(),retr=Monoid::id();
@@ -57,6 +59,76 @@ struct SegTreeLazy{
 			l>>=1,r>>=1;
 		}
 		return Monoid::op(retl,retr);
+	}
+	template<typename F>
+	int find_right(int l,F f){
+		assert(f(Monoid::id()));
+		if(l==n)return n;
+		generate_indices(l,n);
+		pushdown();
+		l+=n;
+		int r=n+n;
+		vector<int> cand_l,cand_r;
+		while(l<r){
+			if(l&1)cand_l.push_back(l++);
+			if(r&1)cand_r.push_back(--r);
+			l>>=1,r>>=1;
+		}
+		vector<int>cand=cand_l;
+		reverse(cand_r.begin(),cand_r.end());
+		cand.insert(cand.end(),cand_r.begin(),cand_r.end());
+		MonoidType val=Monoid::id();
+		for(int i:cand){
+			if(f(Monoid::op(val,dat[i]))){
+				val=Monoid::op(val,dat[i]);
+			}else{
+				while(i<n){
+					propagate(i);
+					i<<=1;
+					if(f(Monoid::op(val,dat[i]))){
+						val=Monoid::op(val,dat[i]);
+						i|=1;
+					}
+				}
+				return i-n;
+			}
+		}
+		return n;
+	}
+	template<typename F>
+	int find_left(int r,F f){
+		assert(f(Monoid::id()));
+		if(r==0)return 0;
+		generate_indices(0,r);
+		pushdown();
+		r+=n;
+		int l=n;
+		vector<int> cand_l,cand_r;
+		while(l<r){
+			if(l&1)cand_l.push_back(l++);
+			if(r&1)cand_r.push_back(--r);
+			l>>=1,r>>=1;
+		}
+		vector<int>cand=cand_r;
+		reverse(cand_l.begin(),cand_l.end());
+		cand.insert(cand.end(),cand_l.begin(),cand_l.end());
+		MonoidType val=Monoid::id();
+		for(int i:cand){
+			if(f(Monoid::op(dat[i],val))){
+				val=Monoid::op(dat[i],val);
+			}else{
+				while(i<n){
+					propagate(i);
+					i=(i<<1)|1;
+					if(f(Monoid::op(dat[i],val))){
+						val=Monoid::op(dat[i],val);
+						i^=1;
+					}
+				}
+				return i-n+1;
+			}
+		}
+		return 0;
 	}
 
 	int size(){return n;}
@@ -81,16 +153,19 @@ private:
 			l>>=1;
 		}
 	}
+	void propagate(int i){
+		if(i<n){
+			lazy[i<<1]=Operator::op(lazy[i<<1],lazy[i]);
+			lazy[i<<1|1]=Operator::op(lazy[i<<1|1],lazy[i]);
+			dat[i<<1]=mapping(dat[i<<1],lazy[i]);
+			dat[i<<1|1]=mapping(dat[i<<1|1],lazy[i]);
+		}
+		lazy[i]=Operator::id();
+	}
 	void pushdown(){
 		for(int j=(int)indices.size()-1;j>=0;j--){
 			int i=indices[j];
-			if(i<n){
-				lazy[i<<1]=Operator::op(lazy[i<<1],lazy[i]);
-				lazy[i<<1|1]=Operator::op(lazy[i<<1|1],lazy[i]);
-				dat[i<<1]=mapping(dat[i<<1],lazy[i]);
-				dat[i<<1|1]=mapping(dat[i<<1|1],lazy[i]);
-			}
-			lazy[i]=Operator::id();
+			propagate(i);
 		}
 	}
 	void pushup(){

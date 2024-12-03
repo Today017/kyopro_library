@@ -32,13 +32,10 @@ struct SegTree{
 		}
 		return Monoid::op(retl,retr);
 	}
-
-	int size(){return n;}
-	Type operator[](int i){return dat[i+n];}
-
 	template<typename F>
-	int find_rightest(int l,F f){
+	int find_right(int l,F f){
 		assert(f(Monoid::id()));
+		if(l==n)return n;
 		l+=n;
 		int r=n+n;
 		vector<int> cand_l,cand_r;
@@ -67,9 +64,8 @@ struct SegTree{
 		}
 		return n;
 	}
-
 	template<typename F>
-	int find_leftest(int r,F f){
+	int find_left(int r,F f){
 		assert(f(Monoid::id()));
         if(r==0)return 0;
 		r+=n;
@@ -100,6 +96,9 @@ struct SegTree{
 		}
 		return 0;
 	}
+
+	int size(){return n;}
+	Type operator[](int i){return dat[i+n];}
 
 private:
 	int n;
