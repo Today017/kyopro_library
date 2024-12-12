@@ -40,7 +40,7 @@ struct SegTree{
 		if(l==n)return n;
 		l+=n;
 		int r=n+n;
-		candl.clear(),candr.clear();
+		cand_l.clear(),cand_r.clear();
 		while(l<r){
 			if(l&1)cand_l.push_back(l++);
 			if(r&1)cand_r.push_back(--r);
@@ -72,7 +72,7 @@ struct SegTree{
 		if(r==0)return 0;
 		r+=n;
 		int l=n;
-		candl.clear(),candr.clear();
+		cand_l.clear(),cand_r.clear();
 		while(l<r){
 			if(l&1)cand_l.push_back(l++);
 			if(r&1)cand_r.push_back(--r);
