@@ -1,15 +1,15 @@
 [top](../README.md)
 
-# [Combination](./cmb.hpp)
+# [Combinatorics](./cmb.hpp)
 
-`combination(int n)`
+`Combinatorics(int n)`
 - サイズ $n$ のテーブルを作成する。
 - $O(n\log{n})$
 
-`T nCr(n, r)`
+`T comb(n, r)`
 - ${}_n C_r$ を返す。
 - $O(1)$
 
-`T nPr(n, r)`
+`T perm(n, r)`
 - ${}_n P_r$ を返す。
 - $O(1)$

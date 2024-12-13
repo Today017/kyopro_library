@@ -1,18 +1,18 @@
 [top](../README.md)
 
-# [Combination (Lucas)](./lucas.hpp)
+# [Combinatorics (Lucas)](./lucas.hpp)
 
 
-`CombinationLucas(int mod)`
+`CombLucas(int mod)`
 - Lucas の定理を用いて $_n C_r \pmod{mod}$ を求めるための前計算を行う。
 - $O(mod)$
 
-`ll nCr(ll n, ll r)`
+`ll comb(ll n, ll r)`
 - Lucas の定理を用いて $_n C_r \pmod{mod}$ を求める。
 - $O(\log_{p}{n})$
 
 
-`Combination` ライブラリでは、 $n\ge p$ に対して $_n C_r \pmod{p}$  を求める際に正しい計算ができないため、Lucas の定理を用いて計算を行う必要がある。
+`Combinatorics` ライブラリでは、 $n\ge p$ に対して $_n C_r \pmod{p}$  を求める際に正しい計算ができないため、Lucas の定理を用いて計算を行う必要がある。
 
 ### Lucas の定理
 $p$ を素数とし、 $n, r$ を非負整数とする。

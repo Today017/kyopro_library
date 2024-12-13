@@ -1,10 +1,10 @@
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/others/modcal.hpp"
 
-struct CombinationLucas{
+struct CombLucas{
 	vector<ll>fact,factinv;
 	int mod;
-	CombinationLucas(int mod){
+	CombLucas(int mod){
 		this->mod=mod;
 		fact=vector<ll>(mod);
 		factinv=vector<ll>(mod);
@@ -17,8 +17,8 @@ struct CombinationLucas{
 		if(n<r||r<0||n<0)return 0;
 		return fact[n]*factinv[r]%mod*factinv[n-r]%mod;
 	}
-	ll nCr(int n,int r){
+	ll comb(int n,int r){
 		if(r==0||r==n)return 1;
-		return calc(n%mod,r%mod)*nCr(n/mod,r/mod)%mod;
+		return calc(n%mod,r%mod)*comb(n/mod,r/mod)%mod;
 	}
 };
