@@ -9,12 +9,14 @@ struct SegTree{
 	SegTree(int n){
 		this->n=n;
 		dat.assign(n<<1,Monoid::id());
+		cand.reserve(100),cand_l.reserve(100),cand_r.reserve(100);
 	}
 	SegTree(const vector<Type>&v){
 		this->n=v.size();
 		dat.assign(n<<1,Monoid::id());
 		for(int i=0;i<n;i++)dat[i+n]=v[i];
 		for(int i=n-1;i>0;i--)dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
+		cand.reserve(100),cand_l.reserve(100),cand_r.reserve(100);
 	}
 
 	void set(int i,Type x){
@@ -38,13 +40,13 @@ struct SegTree{
 		if(l==n)return n;
 		l+=n;
 		int r=n+n;
-		vector<int>cand_l,cand_r;
+		cand_l.clear(),cand_r.clear();
 		while(l<r){
 			if(l&1)cand_l.push_back(l++);
 			if(r&1)cand_r.push_back(--r);
 			l>>=1,r>>=1;
 		}
-		vector<int>cand=cand_l;
+		cand=cand_l;
 		reverse(cand_r.begin(),cand_r.end());
 		cand.insert(cand.end(),cand_r.begin(),cand_r.end());
 		Type val=Monoid::id();
@@ -70,13 +72,13 @@ struct SegTree{
 		if(r==0)return 0;
 		r+=n;
 		int l=n;
-		vector<int>cand_l,cand_r;
+		cand_l.clear(),cand_r.clear();
 		while(l<r){
 			if(l&1)cand_l.push_back(l++);
 			if(r&1)cand_r.push_back(--r);
 			l>>=1,r>>=1;
 		}
-		vector<int>cand=cand_r;
+		cand=cand_r;
 		reverse(cand_l.begin(),cand_l.end());
 		cand.insert(cand.end(),cand_l.begin(),cand_l.end());
 		Type val=Monoid::id();
@@ -103,6 +105,7 @@ struct SegTree{
 private:
 	int n;
 	vector<Type>dat;
+	vector<int>cand,cand_l,cand_r;
 };
 
 #include"../../kyopro_library/others/monoid.hpp"
