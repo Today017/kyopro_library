@@ -222,7 +222,7 @@ ostream &operator<<(ostream &os, SegTreeLazy<T, U, M> a) {
     os << " ]";
     return os;
 }
-/*template <typename T>
+template <typename T>
 ostream &operator<<(ostream &os, SegTreeDual<T> a) {
     int n = a.size();
     os << "[ ";
@@ -232,7 +232,7 @@ ostream &operator<<(ostream &os, SegTreeDual<T> a) {
     }
     os << " ]";
     return os;
-}*/
+}
 ostream &operator<<(ostream &os, DSU a) {
     vector<vector<int>> group = a.groups();
     os << group;
