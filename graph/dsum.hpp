@@ -5,9 +5,9 @@ struct DsuBaseSemigroup{
 	static Type op(Type a,Type b){return a+b;}
 };
 
-template<typename CommutativeSemigroup=DsuBaseSemigroup>
+template<typename Semigroup=DsuBaseSemigroup>
 struct DsuMerging{
-	using Type=typename CommutativeSemigroup::Type;
+	using Type=typename Semigroup::Type;
 
 	DsuMerging()=default;
 	DsuMerging(int n,const vector<Type>&v){
@@ -25,17 +25,23 @@ struct DsuMerging{
 	bool merge(int x,int y){
 		x=find(x),y=find(y);
 		if(x==y)return false;
-		if(sz[x]<sz[y])swap(x,y);
-		par[y]=x;
-		sz[x]+=sz[y];
-		dat[x]=CommutativeSemigroup::op(dat[x],dat[y]);
+		if(sz[x]>=sz[y]){
+			par[y]=x;
+			sz[x]+=sz[y];
+			dat[x]=Semigroup::op(dat[x],dat[y]);
+		}else{
+			par[x]=y;
+			sz[y]+=sz[x];
+			dat[y]=Semigroup::op(dat[x],dat[y]);
+		}
 		forest_count--;
+		return true;
 	}
-	Type get(int x){return dat[find(x)];}
-	int size(int x){return sz[find(x)];}
-	bool same(int x,int y){return find(x)==find(y);}
-	int count(){return forest_count;}
-	vector<vector<int>>groups(){
+	const Type& get(int x){return dat[find(x)];}
+	int size(int x)const{return sz[find(x)];}
+	bool same(int x,int y)const{return find(x)==find(y);}
+	int count()const{return forest_count;}
+	vector<vector<int>>groups()const{
 		int n=par.size();
 		vector<vector<int>>ret(n);
 		for(int i=0;i<n;i++)ret[find(i)].push_back(i);
@@ -43,7 +49,7 @@ struct DsuMerging{
 		return ret;
 	}
 
-private:
+	private:
 	vector<int>par,sz;
 	vector<Type>dat;
 	int forest_count;
