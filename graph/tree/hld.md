@@ -11,36 +11,25 @@
 `HLD(vector<vector<int>> g)`
 
 
-`vector<int> start(int root)`
-- 頂点 $root$ を根として木を HL 分解する。分解後の木を返す。
-- $0\le root < n$
+`vector<int> build(int root)`
+- 頂点 $root$ を根として木を列に HL 分解する。分解後の木を返す。
 - $O(n)$
 
 
 `int lca(int u, int v)`
 - 頂点 $u$, $v$ の LCA を返す。
-- $0\le u, v < n$
 - $O(\log{n})$
 
-`void update(int x, U Update)`
-- 頂点 $x$ に対して、更新処理 `Update` を適用する。
-- $0\le x < n$
-- $O(\log{n}f(n))$
-- `Update(int x, int pos_x)`
-	- 頂点 $x$, HLD後の列における $x$ の位置を $pos_x$ として、列の位置 $pos_x$ に対して更新処理を行う。
-	- $O(f(n))$ とする。
+`int at(int v)`
+- 頂点 $v$ の HL 分解後の位置を返す。
+- $O(1)$
 
-`T query(int u, int v, Q Query, F f, T e)`
-- パス $u$, $v$ に対して、取得処理 `Query` を適用する。
-- $0\le u, v < n$
-- $O(\log{n}g(n))$
-- `Query(int x, int y)`
-	- HLD後の列の区間 $[x, y)$ に対して取得処理を行う。
-	- $O(g(n))$ とする。
-- `F(T a, T b)`
-	- `Query` による取得結果をまとめる演算を行う。 RSQ なら和、 RMQ なら Min/Max 演算を行う。
-- `e`
-	- 演算 `F` の単位元。
+`vector<tuple<bool, int, int>> path(int u, int v)`
+- 頂点 $u$, $v$ を結ぶパスを HL 分解後の辺の列にして返す。
+- `[flag, l, r]` として、以下を表す。
+	- `[l, r]` : HL 分解後の頂点列 ($[l, r]$)
+	- `flag = true` のとき、 $[l, r]$ は $u$ から $v$ への向き
+	- `flag = false` のとき、 $[l, r]$ は $v$ から $u$ への向き
 
 ---
 
