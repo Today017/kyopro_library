@@ -10,7 +10,7 @@ struct HLD{
 		build(root);
 	}
 
-	const vector<tuple<bool,int,int>>&path(int u,int v){
+	vector<tuple<bool,int,int>>path(int u,int v){
 		vector<tuple<bool,int,int>>ret;
 		while(head[u]!=head[v]){
 			if(dep[head[u]]>dep[head[v]]){
