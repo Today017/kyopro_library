@@ -12,4 +12,9 @@ namespace Bit{
 	bool isPowerOfTwo(int n){return n&&(n&-n)==n;}
 	ll mask(int n){return (1LL<<n)-1;}
 	bool hasBit(ll n,int i){return (n>>i&1);}
+	string toBinary(ll n,int len=32,bool rev=false){
+		string ret;
+		for(int i=0;i<len;i++)ret+=hasBit(n,rev?len-1-i:i)?'1':'0';
+		return ret;
+	}
 }
