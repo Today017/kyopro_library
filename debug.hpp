@@ -244,22 +244,18 @@ ostream &operator<<(ostream &os, atcoder::dsu a) {
     return os;
 }
 
-#define print_line cerr << "--------------------" << __LINE__ << "--------------------" \
-                        << "\n"
-#define debug(...) debug_print(0, #__VA_ARGS__, __VA_ARGS__)
-#define get_name(VariableName) #VariableName
+#define print_line cerr << "--------------------" << __LINE__ << "--------------------" << "\n"
+#define debug(...) debugPrint(0, #__VA_ARGS__, __VA_ARGS__)
+#define getName(VariableName) #VariableName
+
 template <typename T>
-void debug_print(int i, T name) {
-    cerr << endl;
-}
+void debugPrint(int i, T name) { cerr << endl; }
 template <typename T1, typename T2, typename... T3>
-void debug_print(int i, const T1 &name, const T2 &a, const T3 &...b) {
+void debugPrint(int i, const T1 &name, const T2 &a, const T3 &...b) {
     cerr << "\033[31m";
-    for (; name[i] != ',' && name[i] != '\0'; i++) {
-        cerr << name[i];
-    }
+    for (; name[i] != ',' && name[i] != '\0'; i++) cerr << name[i];
     cerr << "\033[32m";
     cerr << " : " << a << ", ";
     cerr << "\033[0m";
-    debug_print(i + 1, name, b...);
+    debugPrint(i + 1, name, b...);
 }

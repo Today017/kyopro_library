@@ -1,5 +1,17 @@
+#!/bin/bash
+
 rm *.cpp
 rm ./esc/*.cpp
+
+EXCLUDE=(".vscode" "atcoder" "esc" "kyopro_library" "random_test" "compress" "contest" "copy" "run" "test")
+HERE=$(pwd)
+
+for file in $(ls $HERE); do
+    if [[ ! " ${EXCLUDE[@]} " =~ " ${file} " ]]; then
+        rm -rf $file
+    fi
+done
+
 touch a.cpp
 echo "#include<kyopro_library/template.hpp>" > a.cpp
 touch b.cpp
