@@ -1,31 +1,29 @@
 #include"../../kyopro_library/template.hpp"
 
 namespace Geometry{
-	const long double EPS=1e-9;
+	using Real=long double;
+	const Real EPS=1e-9;
 
-	bool almostEqual(long double a,long double b){return abs(a-b)<EPS;}
-	bool lessThan(long double a,long double b){return a<b&&!almostEqual(a,b);}
-	bool greaterThan(long double a,long double b){return a>b&&!almostEqual(a,b);}
-	bool lessThanOrEqual(long double a,long double b){return a<b||almostEqual(a,b);}
-	bool greaterThanOrEqual(long double a,long double b){return a>b||almostEqual(a,b);}
+	bool almostEqual(Real a,Real b){return abs(a-b)<EPS;}
+	bool lessThan(Real a,Real b){return a<b&&!almostEqual(a,b);}
+	bool greaterThan(Real a,Real b){return a>b&&!almostEqual(a,b);}
+	bool lessThanOrEqual(Real a,Real b){return a<b||almostEqual(a,b);}
+	bool greaterThanOrEqual(Real a,Real b){return a>b||almostEqual(a,b);}
 
 	struct Point{
-		long double x,y;
+		Real x,y;
 		Point()=default;
-		Point(long double x,long double y):x(x),y(y){}
-
+		Point(Real x,Real y):x(x),y(y){}
 		Point operator+(const Point&p)const{return Point(x+p.x,y+p.y);}
 		Point operator-(const Point&p)const{return Point(x-p.x,y-p.y);}
-		Point operator*(long double k)const{return Point(x*k,y*k);}
-		Point operator/(long double k)const{return Point(x/k,y/k);}
-
-		long double dot(const Point&p)const{return x*p.x+y*p.y;}
-		long double cross(const Point&p)const{return x*p.y-y*p.x;}
-		long double cross(const Point&p1,const Point&p2)const{return(p1.x-x)*(p2.y-y)-(p1.y-y)*(p2.x-x);}
-		long double norm()const{return x*x+y*y;}
-		long double abs()const{return sqrt(norm());}
-		long double arg()const{return atan2(y,x);}
-
+		Point operator*(Real k)const{return Point(x*k,y*k);}
+		Point operator/(Real k)const{return Point(x/k,y/k);}
+		Real dot(const Point&p)const{return x*p.x+y*p.y;}
+		Real cross(const Point&p)const{return x*p.y-y*p.x;}
+		Real cross(const Point&p1,const Point&p2)const{return(p1.x-x)*(p2.y-y)-(p1.y-y)*(p2.x-x);}
+		Real norm()const{return x*x+y*y;}
+		Real abs()const{return sqrt(norm());}
+		Real arg()const{return atan2(y,x);}
 		bool operator==(const Point&p)const{return almostEqual(x,p.x)&&almostEqual(y,p.y);}
 		friend istream&operator>>(istream&is,Point&p){return is>>p.x>>p.y;}
 	};
@@ -34,9 +32,8 @@ namespace Geometry{
 		Point a,b;
 		Line()=default;
 		Line(const Point&_a,const Point&_b):a(_a),b(_b){}
-
 		//Ax+By=C
-		Line(const long double&A,const long double&B,const long double&C){
+		Line(const Real&A,const Real&B,const Real&C){
 			if(almostEqual(A,0)){
 				assert(!almostEqual(B,0));
 				a=Point(0,C/B);
@@ -63,11 +60,10 @@ namespace Geometry{
 
 	struct Circle{
 		Point center;
-		long double r;
+		Real r;
 		Circle()=default;
-		Circle(long double x,long double y,long double r):center(x,y),r(r){}
-		Circle(Point _center,long double r):center(_center),r(r){}
-
+		Circle(Real x,Real y,Real r):center(x,y),r(r){}
+		Circle(Point _center,Real r):center(_center),r(r){}
 		bool operator==(const Circle&C)const{return center==C.center&&r==C.r;}
 		friend istream&operator>>(istream&is,Circle&C){return is>>C.center>>C.r;}
 	};
@@ -81,18 +77,16 @@ namespace Geometry{
 		ONLINE_FRONT,
 		ON_SEGMENT
 	};
-
 	Orientation ccw(const Point&p0,const Point&p1,const Point&p2){
 		Point a=p1-p0;
 		Point b=p2-p0;
-		long double cross_product=a.cross(b);
+		Real cross_product=a.cross(b);
 		if(greaterThan(cross_product,0))return COUNTER_CLOCKWISE;
 		if(lessThan(cross_product,0))return CLOCKWISE;
 		if(lessThan(a.dot(b),0))return ONLINE_BACK;
 		if(lessThan(a.norm(),b.norm()))return ONLINE_FRONT;
 		return ON_SEGMENT;
 	}
-
 	string orientationToString(Orientation o){
 		switch(o){
 			case COUNTER_CLOCKWISE:
@@ -109,15 +103,14 @@ namespace Geometry{
 				return"UNKNOWN";
 		}
 	}
-
 	Point projection(const Point&p1,const Point&p2,const Point&p){
 		Point base=p2-p1;
-		long double r=(p-p1).dot(base)/base.norm();
+		Real r=(p-p1).dot(base)/base.norm();
 		return p1+base*r;
 	}
 	Point projection(const Line&l,const Point&p){
 		Point base=l.b-l.a;
-		long double r=(p-l.a).dot(base)/base.norm();
+		Real r=(p-l.a).dot(base)/base.norm();
 		return l.a+base*r;
 	}
 	Point reflection(const Point&p1,const Point&p2,const Point&p){
@@ -154,10 +147,10 @@ namespace Geometry{
 		Point p2p3=s2.b-s2.a;
 		Point p2p0=s1.a-s2.a;
 		Point p2p1=s1.b-s2.a;
-		long double d1=p0p1.cross(p0p2);
-		long double d2=p0p1.cross(p0p3);
-		long double d3=p2p3.cross(p2p0);
-		long double d4=p2p3.cross(p2p1);
+		Real d1=p0p1.cross(p0p2);
+		Real d2=p0p1.cross(p0p3);
+		Real d3=p2p3.cross(p2p0);
+		Real d4=p2p3.cross(p2p1);
 		if(lessThan(d1*d2,0)&&lessThan(d3*d4,0))return true;
 		if(almostEqual(d1,0.0)&&isPointOnSegment(s2.a,s1))return true;
 		if(almostEqual(d2,0.0)&&isPointOnSegment(s2.b,s1))return true;
@@ -169,12 +162,12 @@ namespace Geometry{
 		assert(isIntersecting(s1,s2));
 		auto cross=[](Point p,Point q){return p.x*q.y-p.y*q.x;};
 		Point base=s2.b-s2.a;
-		long double d1=abs(cross(base,s1.a-s2.a));
-		long double d2=abs(cross(base,s1.b-s2.a));
-		long double t=d1/(d1+d2);
+		Real d1=abs(cross(base,s1.a-s2.a));
+		Real d2=abs(cross(base,s1.b-s2.a));
+		Real t=d1/(d1+d2);
 		return s1.a+(s1.b-s1.a)*t;
 	}
-	long double distancePointToSegment(const Point&p,const Segment&s){
+	Real distancePointToSegment(const Point&p,const Segment&s){
 		Point proj=projection(s.a,s.b,p);
 		if(isPointOnSegment(proj,s)){
 			return(p-proj).abs();
@@ -182,7 +175,7 @@ namespace Geometry{
 			return min((p-s.a).abs(),(p-s.b).abs());
 		}
 	}
-	long double distanceSegmentToSegment(const Segment&s1,const Segment&s2){
+	Real distanceSegmentToSegment(const Segment&s1,const Segment&s2){
 		if(isIntersecting(s1,s2))return 0.0;
 		return min(
 			{distancePointToSegment(s1.a,s2),distancePointToSegment(s1.b,s2),
@@ -191,9 +184,9 @@ namespace Geometry{
 
 	//-----------------------------------------------------------
 
-	long double getPolygonArea(const vector<Point>&points){
+	Real getPolygonArea(const vector<Point>&points){
 		int n=points.size();
-		long double area=0.0;
+		Real area=0.0;
 		for(int i=0;i<n;++i){
 			int j=(i+1)%n;
 			area+=points[i].x*points[j].y;
@@ -209,7 +202,7 @@ namespace Geometry{
 			int k=(i+2)%n;
 			Point a=points[j]-points[i];
 			Point b=points[k]-points[j];
-			long double cross_product=a.cross(b);
+			Real cross_product=a.cross(b);
 			if(greaterThan(cross_product,0))has_positive=true;
 			if(lessThan(cross_product,0))has_negative=true;
 		}
@@ -266,11 +259,11 @@ namespace Geometry{
 		lower.insert(lower.end(),upper.begin(),upper.end());
 		return lower;
 	}
-	long double convexHullDiameter(const vector<Point>&hull){
+	Real convexHullDiameter(const vector<Point>&hull){
 		int n=hull.size();
 		if(n==1)return 0;
 		int k=1;
-		long double max_dist=0;
+		Real max_dist=0;
 		for(int i=0;i<n;++i){
 			while(true){
 				int j=(k+1)%n;
@@ -297,8 +290,8 @@ namespace Geometry{
 			const Point&next=g[(i+1)%n];
 			if(isLeft(l.a,l.b,cur))newPolygon.push_back(cur);
 			if((isLeft(l.a,l.b,cur)&&!isLeft(l.a,l.b,next))||(!isLeft(l.a,l.b,cur)&&isLeft(l.a,l.b,next))){
-				long double A1=(next-cur).cross(l.a-cur);
-				long double A2=(next-cur).cross(l.b-cur);
+				Real A1=(next-cur).cross(l.a-cur);
+				Real A2=(next-cur).cross(l.b-cur);
 				Point intersection=l.a+(l.b-l.a)*(A1/(A1-A2));
 				newPolygon.push_back(intersection);
 			}
@@ -308,16 +301,15 @@ namespace Geometry{
 
 	//-----------------------------------------------------------
 
-	long double closestPair(vector<Point>&points,int l,int r){
-		if(r-l<=1)return numeric_limits<long double>::max();
+	Real closestPair(vector<Point>&points,int l,int r){
+		if(r-l<=1)return numeric_limits<Real>::max();
 		int mid=(l+r)>>1;
-		long double x=points[mid].x;
-		long double d=min(closestPair(points,l,mid),closestPair(points,mid,r));
+		Real x=points[mid].x;
+		Real d=min(closestPair(points,l,mid),closestPair(points,mid,r));
 		auto iti=points.begin(),itl=iti+l,itm=iti+mid,itr=iti+r;
 		inplace_merge(itl,itm,itr,[](const Point&lhs,const Point&rhs)->bool{
 			return lessThan(lhs.y,rhs.y);
 		});
-
 		vector<Point>nearLine;
 		for(int i=l;i<r;++i){
 			if(greaterThanOrEqual(fabs(points[i].x-x),d))continue;
@@ -336,42 +328,37 @@ namespace Geometry{
 
 	int countIntersections(vector<Segment>segments){
 		struct Event{
-			long double x;
+			Real x;
 			int type;//0:horizontal start,1:vertical,2:horizontal end
-			long double y1,y2;
-
-			Event(long double x,int type,long double y1,long double y2):x(x),type(type),y1(y1),y2(y2){}
-
+			Real y1,y2;
+			Event(Real x,int type,Real y1,Real y2):x(x),type(type),y1(y1),y2(y2){}
 			bool operator<(const Event&other)const{
 				if(x==other.x)return type<other.type;
 				return x<other.x;
 			}
 		};
 		vector<Event>events;
-
 		sort(segments.begin(),segments.end(),[](const Segment&lhs,const Segment&rhs)->bool{
 			return lessThan(min(lhs.a.x,lhs.b.x),min(rhs.a.x,rhs.b.x));
 		});
-
 		for(const auto&seg:segments){
 			if(seg.a.y==seg.b.y){
 				//Horizontal segment
-				long double y=seg.a.y;
-				long double x1=min(seg.a.x,seg.b.x);
-				long double x2=max(seg.a.x,seg.b.x);
+				Real y=seg.a.y;
+				Real x1=min(seg.a.x,seg.b.x);
+				Real x2=max(seg.a.x,seg.b.x);
 				events.emplace_back(x1,0,y,y);
 				events.emplace_back(x2,2,y,y);
 			}else{
 				//Vertical segment
-				long double x=seg.a.x;
-				long double y1=min(seg.a.y,seg.b.y);
-				long double y2=max(seg.a.y,seg.b.y);
+				Real x=seg.a.x;
+				Real y1=min(seg.a.y,seg.b.y);
+				Real y2=max(seg.a.y,seg.b.y);
 				events.emplace_back(x,1,y1,y2);
 			}
 		}
-
 		sort(events.begin(),events.end());
-		set<long double>activeSegments;
+		set<Real>activeSegments;
 		int intersectionCount=0;
 		for(const auto&event:events){
 			if(event.type==0){
@@ -393,10 +380,9 @@ namespace Geometry{
 	//-----------------------------------------------------------
 
 	int countCirclesIntersection(const Circle&c1,const Circle&c2){
-		long double d=sqrt((c1.center.x-c2.center.x)*(c1.center.x-c2.center.x)+
+		Real d=sqrt((c1.center.x-c2.center.x)*(c1.center.x-c2.center.x)+
 				(c1.center.y-c2.center.y)*(c1.center.y-c2.center.y));
-		long double r1=c1.r,r2=c2.r;
-
+		Real r1=c1.r,r2=c2.r;
 		if(greaterThan(d,r1+r2)){
 			return 4;
 		}else if(almostEqual(d,r1+r2)){
@@ -409,55 +395,51 @@ namespace Geometry{
 			return 0;
 		}
 	}
-
 	Circle getInCircle(const Point&A,const Point&B,const Point&C){
-		long double a=(B-C).abs();
-		long double b=(A-C).abs();
-		long double c=(A-B).abs();
-		long double s=(a+b+c)/2;
-		long double area=sqrt(s*(s-a)*(s-b)*(s-c));
-		long double r=area/s;
-		long double cx=(a*A.x+b*B.x+c*C.x)/(a+b+c);
-		long double cy=(a*A.y+b*B.y+c*C.y)/(a+b+c);
+		Real a=(B-C).abs();
+		Real b=(A-C).abs();
+		Real c=(A-B).abs();
+		Real s=(a+b+c)/2;
+		Real area=sqrt(s*(s-a)*(s-b)*(s-c));
+		Real r=area/s;
+		Real cx=(a*A.x+b*B.x+c*C.x)/(a+b+c);
+		Real cy=(a*A.y+b*B.y+c*C.y)/(a+b+c);
 		return Circle{Point(cx,cy),r};
 	}
-
 	Circle getCircumCircle(const Point&A,const Point&B,const Point&C){
-		long double D=2*(A.x*(B.y-C.y)+B.x*(C.y-A.y)+C.x*(A.y-B.y));
-		long double Ux=((A.x*A.x+A.y*A.y)*(B.y-C.y)+(B.x*B.x+B.y*B.y)*(C.y-A.y)+(C.x*C.x+C.y*C.y)*(A.y-B.y))/D;
-		long double Uy=((A.x*A.x+A.y*A.y)*(C.x-B.x)+(B.x*B.x+B.y*B.y)*(A.x-C.x)+(C.x*C.x+C.y*C.y)*(B.x-A.x))/D;
+		Real D=2*(A.x*(B.y-C.y)+B.x*(C.y-A.y)+C.x*(A.y-B.y));
+		Real Ux=((A.x*A.x+A.y*A.y)*(B.y-C.y)+(B.x*B.x+B.y*B.y)*(C.y-A.y)+(C.x*C.x+C.y*C.y)*(A.y-B.y))/D;
+		Real Uy=((A.x*A.x+A.y*A.y)*(C.x-B.x)+(B.x*B.x+B.y*B.y)*(A.x-C.x)+(C.x*C.x+C.y*C.y)*(B.x-A.x))/D;
 		Point center(Ux,Uy);
-		long double radius=(center-A).abs();
+		Real radius=(center-A).abs();
 		return Circle{center,radius};
 	}
-
 	vector<Point>getCircleLineIntersection(const Circle&c,Point p1,Point p2){
-		long double cx=c.center.x,cy=c.center.y,r=c.r;
-		long double dx=p2.x-p1.x;
-		long double dy=p2.y-p1.y;
-		long double a=dx*dx+dy*dy;
-		long double b=2*(dx*(p1.x-cx)+dy*(p1.y-cy));
-		long double c_const=(p1.x-cx)*(p1.x-cx)+(p1.y-cy)*(p1.y-cy)-r*r;
-		long double discriminant=b*b-4*a*c_const;
+		Real cx=c.center.x,cy=c.center.y,r=c.r;
+		Real dx=p2.x-p1.x;
+		Real dy=p2.y-p1.y;
+		Real a=dx*dx+dy*dy;
+		Real b=2*(dx*(p1.x-cx)+dy*(p1.y-cy));
+		Real c_const=(p1.x-cx)*(p1.x-cx)+(p1.y-cy)*(p1.y-cy)-r*r;
+		Real discriminant=b*b-4*a*c_const;
 		vector<Point>intersections;
 		if(almostEqual(discriminant,0)){
-			long double t=-b/(2*a);
-			long double ix=p1.x+t*dx;
-			long double iy=p1.y+t*dy;
+			Real t=-b/(2*a);
+			Real ix=p1.x+t*dx;
+			Real iy=p1.y+t*dy;
 			intersections.emplace_back(ix,iy);
 			intersections.emplace_back(ix,iy);
 		}else if(discriminant>0){
-			long double sqrt_discriminant=sqrt(discriminant);
-			long double t1=(-b+sqrt_discriminant)/(2*a);
-			long double t2=(-b-sqrt_discriminant)/(2*a);
-			long double ix1=p1.x+t1*dx;
-			long double iy1=p1.y+t1*dy;
-			long double ix2=p1.x+t2*dx;
-			long double iy2=p1.y+t2*dy;
+			Real sqrt_discriminant=sqrt(discriminant);
+			Real t1=(-b+sqrt_discriminant)/(2*a);
+			Real t2=(-b-sqrt_discriminant)/(2*a);
+			Real ix1=p1.x+t1*dx;
+			Real iy1=p1.y+t1*dy;
+			Real ix2=p1.x+t2*dx;
+			Real iy2=p1.y+t2*dy;
 			intersections.emplace_back(ix1,iy1);
 			intersections.emplace_back(ix2,iy2);
 		}
-
 		if(almostEqual(intersections[0].x,intersections[1].x)){
 			if(greaterThan(intersections[0].y,intersections[1].y))swap(intersections[0],intersections[1]);
 		}else if(greaterThan(intersections[0].x,intersections[1].x)){
@@ -465,18 +447,17 @@ namespace Geometry{
 		}
 		return intersections;
 	}
-
 	vector<Point>getCirclesIntersect(const Circle&c1,const Circle&c2){
-		long double x1=c1.center.x,y1=c1.center.y,r1=c1.r;
-		long double x2=c2.center.x,y2=c2.center.y,r2=c2.r;
-		long double d=sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+		Real x1=c1.center.x,y1=c1.center.y,r1=c1.r;
+		Real x2=c2.center.x,y2=c2.center.y,r2=c2.r;
+		Real d=sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
 		if(d>r1+r2||d<abs(r1-r2))return{};//No intersection
-		long double a=(r1*r1-r2*r2+d*d)/(2*d);
-		long double h=sqrt(r1*r1-a*a);
-		long double x0=x1+a*(x2-x1)/d;
-		long double y0=y1+a*(y2-y1)/d;
-		long double rx=-(y2-y1)*(h/d);
-		long double ry=(x2-x1)*(h/d);
+		Real a=(r1*r1-r2*r2+d*d)/(2*d);
+		Real h=sqrt(r1*r1-a*a);
+		Real x0=x1+a*(x2-x1)/d;
+		Real y0=y1+a*(y2-y1)/d;
+		Real rx=-(y2-y1)*(h/d);
+		Real ry=(x2-x1)*(h/d);
 		Point p1(x0+rx,y0+ry);
 		Point p2(x0-rx,y0-ry);
 		vector<Point>intersections;
@@ -489,22 +470,21 @@ namespace Geometry{
 		}
 		return intersections;
 	}
-
 	vector<Point>getTangentLinesFromPoint(const Circle&c,const Point&p){
-		long double cx=c.center.x,cy=c.center.y,r=c.r;
-		long double px=p.x,py=p.y;
-		long double dx=px-cx;
-		long double dy=py-cy;
-		long double d=(p-c.center).abs();
+		Real cx=c.center.x,cy=c.center.y,r=c.r;
+		Real px=p.x,py=p.y;
+		Real dx=px-cx;
+		Real dy=py-cy;
+		Real d=(p-c.center).abs();
 		if(lessThan(d,r)){
 			return{};//No tangents if the point is inside the circle
 		}else if(almostEqual(d,r)){
 			return{p};
 		}
-		long double a=r*r/d;
-		long double h=sqrt(r*r-a*a);
-		long double cx1=cx+a*dx/d;
-		long double cy1=cy+a*dy/d;
+		Real a=r*r/d;
+		Real h=sqrt(r*r-a*a);
+		Real cx1=cx+a*dx/d;
+		Real cy1=cy+a*dy/d;
 		vector<Point>tangents;
 		tangents.emplace_back(cx1+h*dy/d,cy1-h*dx/d);
 		tangents.emplace_back(cx1-h*dy/d,cy1+h*dx/d);
@@ -515,39 +495,37 @@ namespace Geometry{
 		}
 		return tangents;
 	}
-
 	vector<Segment>getCommonTangentsLine(const Circle&c1,const Circle&c2){
-		long double x1=c1.center.x,y1=c1.center.y,r1=c1.r;
-		long double x2=c2.center.x,y2=c2.center.y,r2=c2.r;
-		long double dx=x2-x1;
-		long double dy=y2-y1;
-		long double d=sqrt(dx*dx+dy*dy);
+		Real x1=c1.center.x,y1=c1.center.y,r1=c1.r;
+		Real x2=c2.center.x,y2=c2.center.y,r2=c2.r;
+		Real dx=x2-x1;
+		Real dy=y2-y1;
+		Real d=sqrt(dx*dx+dy*dy);
 		vector<Segment>tangents;
 		//Coincident circles(infinite tangents)
 		if(almostEqual(d,0)&&almostEqual(r1,r2))return tangents;
-
 		//External tangents
 		if(greaterThanOrEqual(d,r1+r2)){
-			long double a=atan2(dy,dx);
+			Real a=atan2(dy,dx);
 			for(int sign:{-1,1}){
-				long double theta=acos((r1+r2)/d);
-				long double cx1=x1+r1*cos(a+sign*theta);
-				long double cy1=y1+r1*sin(a+sign*theta);
-				long double cx2=x2+r2*cos(a+sign*theta);
-				long double cy2=y2+r2*sin(a+sign*theta);
+				Real theta=acos((r1+r2)/d);
+				Real cx1=x1+r1*cos(a+sign*theta);
+				Real cy1=y1+r1*sin(a+sign*theta);
+				Real cx2=x2+r2*cos(a+sign*theta);
+				Real cy2=y2+r2*sin(a+sign*theta);
 				tangents.emplace_back(Segment{Point(cx1,cy1),Point(cx2,cy2)});
 				if(almostEqual(d,r1+r2))break;
 			}
 		}
 		//Internal tangents
 		if(greaterThanOrEqual(d,fabs(r1-r2))){
-			long double a=atan2(dy,dx);
+			Real a=atan2(dy,dx);
 			for(int sign:{-1,1}){
-				long double theta=acos((r1-r2)/d);
-				long double cx1=x1+r1*cos(a+sign*theta);
-				long double cy1=y1+r1*sin(a+sign*theta);
-				long double cx2=x2-r2*cos(a+sign*theta);
-				long double cy2=y2-r2*sin(a+sign*theta);
+				Real theta=acos((r1-r2)/d);
+				Real cx1=x1+r1*cos(a+sign*theta);
+				Real cy1=y1+r1*sin(a+sign*theta);
+				Real cx2=x2-r2*cos(a+sign*theta);
+				Real cy2=y2-r2*sin(a+sign*theta);
 				tangents.emplace_back(Segment{Point(cx1,cy1),Point(cx2,cy2)});
 				if(almostEqual(d,fabs(r1-r2)))
 					break;
