@@ -1,10 +1,10 @@
 #include"../../kyopro_library/template.hpp"
 
 template<typename T>
-struct NegativeVector:vector<T>{
+struct OffsetVector:vector<T>{
 	int offset=0;
-	NegativeVector()=default;
-	NegativeVector(int lo,int hi,T init){
+	OffsetVector()=default;
+	OffsetVector(int lo,int hi,T init){
 		assert(lo<=hi);
 		this->assign(hi-lo+1,init);
 		offset=-lo;
