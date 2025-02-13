@@ -97,3 +97,104 @@ private:
 		return ret+count_lower(v->next[lr],x,bit-1);
 	}
 };
+
+/*
+template<typename T,int L=40>
+struct BinaryTrie{
+    struct Node{
+        array<int,2>ch;
+        int cnt;
+        Node(){ch.fill(-1),cnt=0;}
+    };
+    vector<Node>nodes;
+
+    BinaryTrie(){nodes.push_back(Node());}
+
+    void insert(T x){
+        int now=0;
+        nodes[now].cnt++;
+        for(int i=L-1;i>=0;i--){
+            int bit=(x>>i)&1;
+            if(nodes[now].ch[bit]==-1){
+                nodes[now].ch[bit]=nodes.size();
+                nodes.push_back(Node());
+            }
+            now=nodes[now].ch[bit];
+            nodes[now].cnt++;
+        }
+    }
+
+    void erase(T x){
+        int now=0;
+        nodes[now].cnt--;
+        for(int i=L-1;i>=0;i--){
+            int bit=(x>>i)&1;
+            now=nodes[now].ch[bit];
+            nodes[now].cnt--;
+        }
+    }
+
+    int count(T x){
+        int now=0;
+        for(int i=L-1;i>=0;i--){
+            int bit=(x>>i)&1;
+            if(nodes[now].ch[bit]==-1)return 0;
+            now=nodes[now].ch[bit];
+        }
+        return nodes[now].cnt;
+    }
+
+    int size(){return nodes[0].cnt;}
+
+    int kth(int k){
+        if(k<=0||k>size())return -1;
+
+        int now=0;
+        T ret=0;
+        for(int i=L-1;i>=0;i--){
+            if(now==-1)break;
+            if(nodes[now].ch[0]==-1){
+                now=nodes[now].ch[1];
+                ret|=(1LL<<i);
+            }else if(nodes[nodes[now].ch[0]].cnt>=k){
+                now=nodes[now].ch[0];
+            }else{
+                k-=nodes[nodes[now].ch[0]].cnt;
+                now=nodes[now].ch[1];
+                ret|=(1LL<<i);
+            }
+        }
+        return ret;
+    }
+
+    int count_lt(T x){
+        int now=0,ret=0;
+        for(int i=L-1;i>=0;i--){
+            if(now==-1)break;
+            int bit=(x>>i)&1;
+
+            if(bit){
+                if(nodes[now].ch[0]!=-1)ret+=nodes[nodes[now].ch[0]].cnt;
+                now=nodes[now].ch[1];
+            }else{
+                now=nodes[now].ch[0];
+            }
+        }
+        return ret;
+    }
+
+    T ge(T x){//lower_bound
+        int c=count_lt(x);
+        return kth(c+1);
+    }
+
+    T gt(T x){return ge(x+1);}
+
+    T le(T x){
+        int c=count_lt(x+1);
+        return kth(c);
+    }
+
+    T lt(T x){return le(x-1);}
+};
+*/
