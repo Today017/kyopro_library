@@ -3,11 +3,9 @@
 template<typename T>
 struct Set:set<T>{
 	using set<T>::set;
-	T not_found=-1;
+	T not_found;
 	Set()=default;
-	Set(T not_found=-1){
-		this->not_found=not_found;
-	}
+	Set(T not_found=-1){this->not_found=not_found;}
 	T min(){
 		if(this->empty())return not_found;
 		return*this->begin();
@@ -28,9 +26,7 @@ struct Set:set<T>{
 		this->erase(ret);
 		return ret;
 	}  
-	bool contains(T x){
-		return this->find(x)!=this->end();
-	}
+	bool contains(T x){return this->find(x)!=this->end();}
 	bool discard(T x){
 		auto itr=this->find(x);
 		if(itr==this->end())return false;
