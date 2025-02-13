@@ -1,5 +1,7 @@
 #include"../../kyopro_library/template.hpp"
 
+//Suffix Array (O(NlogN))
+//sa[i]=j → s[j:] が辞書順i番目
 template<int C=256>
 vector<int> suffixArray(string s){
 	s.push_back('$');
@@ -20,14 +22,12 @@ vector<int> suffixArray(string s){
 		c[p[i]]=c[p[i-1]];
 		if(s[p[i]]!=s[p[i-1]])c[p[i]]++;
 	}
-	debug(p);
 
 	vector<int>np(n),nc(n);
 	for(int k=0;(1<<k)<n;k++){
 		//kを使って、(c[i],c[i+2^k])でソート、p[i]-=2^kでできる
 		//c[i+2^k]でソート
 		for(int i=0;i<n;i++)np[i]=p[i]-(1<<k),(np[i]+=n)%=n;
-		debug(np);
 		ranges::fill(cnt,0);
 		for(int i=0;i<n;i++)cnt[c[np[i]]]++;
 		for(int i=1;i<(int)cnt.size();i++)cnt[i]+=cnt[i-1];
