@@ -166,9 +166,9 @@ struct InsertableReversibleArray{
 		InsertableReversibleArrayImpl::op<T>,
 		InsertableReversibleArrayImpl::e<T>
     >rbst;
-	int_size=0;
+	int _size=0;
 	int size(){
-		return_size;
+		return _size;
 	}
 	InsertableReversibleArray()=default;
 	InsertableReversibleArray(int n){
