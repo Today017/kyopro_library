@@ -1,14 +1,16 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
-//Suffix Array (O(NlogN))
-//sa[i]=j → s[j:] が辞書順i番目
+// Suffix Array O(nlogn)
+// sa[i]=j <-> s[j:] が辞書順i番目
+// ref: https://wk1080id.hatenablog.com/entry/2018/12/25/005926
 template<int C=256>
 vector<int> suffixArray(string s){
 	s.push_back('$');
 	int n=s.size();
 	vector<int>p(n),c(n),cnt(max(n,C),0);
-	//p[i]:=辞書順i番目のインデックス
-	//c[i]:=インデックスiの部分文字列の同値類
+	//p[i] := 辞書順i番目のインデックス
+	//c[i] := インデックスiの部分文字列の同値類
 
 	//2^0,2^1,...,2^k,... をやる
 	//k=0
@@ -28,7 +30,7 @@ vector<int> suffixArray(string s){
 		//kを使って、(c[i],c[i+2^k])でソート、p[i]-=2^kでできる
 		//c[i+2^k]でソート
 		for(int i=0;i<n;i++)np[i]=p[i]-(1<<k),(np[i]+=n)%=n;
-		ranges::fill(cnt,0);
+		fill(cnt.begin(),cnt.end(),0);
 		for(int i=0;i<n;i++)cnt[c[np[i]]]++;
 		for(int i=1;i<(int)cnt.size();i++)cnt[i]+=cnt[i-1];
 		for(int i=n-1;i>=0;i--)p[--cnt[c[np[i]]]]=np[i];
