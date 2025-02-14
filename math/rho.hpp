@@ -3,7 +3,8 @@
 
 //ポラードのロー法による素因数分解
 //O(N^(1/4))
-//verify:https://algo-method.com/tasks/553
+//ref: https://qiita.com/t_fuki/items/7cd50de54d3c5d063b4a
+//verify: https://algo-method.com/tasks/553
 vector<pair<ll,ll>>primeFactorize(ll n){
 	if(primalityTest(n))return{{n,1}};
 	auto find_factor=[](auto&&find_factor,ll n)->ll{
