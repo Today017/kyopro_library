@@ -5,7 +5,8 @@
 #include"../../kyopro_library/others/xor128.hpp"
 
 //n の原始根を求める
-//verify:https://judge.yosupo.jp/problem/primitive_root
+//ref: https://37zigen.com/primitive-root/
+//verify: https://judge.yosupo.jp/problem/primitive_root
 ll primitiveRoot(ll n){
 	if(!primalityTest(n))return-1;
 	if(n==2)return 1;
