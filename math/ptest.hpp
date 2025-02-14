@@ -3,7 +3,8 @@
 
 //ミラーラビン素数判定法
 //O(k log^3 n)
-//verify:https://judge.yosupo.jp/problem/primality_test
+//ref: https://drken1215.hatenablog.com/entry/2023/05/23/233000
+//verify: https://judge.yosupo.jp/problem/primality_test
 bool primalityTest(ll n){
 	if(n==2)return true;
 	if(n<=1||n%2==0)return false;
