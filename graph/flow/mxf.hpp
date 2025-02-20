@@ -1,71 +1,68 @@
 #include "../../../kyopro_library/template.hpp"
 
-template <typename Cap>
-struct MaxFlow {
-    MaxFlow() = default;
-    MaxFlow(int n) {
-        this->n = n;
-        graph = vector<vector<tuple<int, int, Cap>>>(n);
-    }
-    void add_edge(int u, int v, Cap c) {
-        graph[u].push_back(make_tuple(v, graph[v].size(), c));
-        graph[v].push_back(make_tuple(u, (int)graph[u].size() - 1, 0));
-    }
-    Cap get(int start, int goal) {
-        Cap ret = 0;
-        while (true) {
-            vector<int> dst = calculate_distance(start);
-            if (dst[goal] < 0) {
-                return ret;
-            }
-            vector<int> removed(n, 0);
-            while (true) {
-                Cap add = flowing(start, goal, numeric_limits<Cap>::max(), removed, dst);
-                if (add == 0) {
-                    break;
-                }
-                ret += add;
-            }
-        }
-        return ret;
+struct MXF{
+    struct Edge{
+        int to,rev;
+        ll cap;
+        Edge(int to,ll cap,int rev){this->to=to;this->cap=cap;this->rev=rev;}
+    };
+
+    vector<Edge> es;
+    vector<vector<Edge>> graph;
+    vector<int> level,iter;
+
+    MXF(int n){graph.resize(n),level.resize(n),iter.resize(n);}
+
+    void add_edge(int from,int to,ll cap){
+        graph[from].push_back(Edge(to,cap,graph[to].size()));
+        graph[to].push_back(Edge(from,0,(int)graph[from].size()-1));
+        es.push_back(Edge(to,cap,graph[to].size()-1));
     }
 
-private:
-    int n;
-    vector<vector<tuple<int, int, Cap>>> graph;
-    vector<int> calculate_distance(int start) {
-        vector<int> dst(n, -1);
-        dst[start] = 0;
-        queue<int> que;
-        que.push(start);
-        while (!que.empty()) {
-            int now = que.front();
-            que.pop();
-            for (auto [nxt, _, cap] : graph[now]) {
-                if (cap > 0 && dst[nxt] == -1) {
-                    dst[nxt] = dst[now] + 1;
-                    que.push(nxt);
+    void bfs(int s){
+        fill(level.begin(),level.end(),-1);
+        queue<int> q;
+        level[s]=0;
+        q.push(s);
+        while(!q.empty()){
+            int now=q.front();
+            q.pop();
+            for(auto[to,rev,cap]:graph[now]){
+                if(cap>0&&level[to]<0){
+                    level[to]=level[now]+1;
+                    q.push(to);
                 }
             }
         }
-        return dst;
     }
-    Cap flowing(int now, int goal, Cap limit, vector<int> &removed, vector<int> &dst) {
-        if (now == goal) {
-            return limit;
-        }
-        while (removed[now] < (int)graph[now].size()) {
-            auto [nxt, rev, cap] = graph[now][removed[now]];
-            if (cap > 0 && dst[now] < dst[nxt]) {
-                Cap flow = flowing(nxt, goal, min(limit, cap), removed, dst);
-                if (flow > 0) {
-                    get<2>(graph[now][removed[now]]) -= flow;
-                    get<2>(graph[nxt][rev]) += flow;
-                    return flow;
+
+    ll dfs(int now,int t,ll f){
+        if(now==t) return f;
+        for(int &i=iter[now];i<(int)graph[now].size();i++){
+            auto[to,rev,cap]=graph[now][i];
+            if(cap>0&&level[now]<level[to]){
+                ll d=dfs(to,t,min(f,cap));
+                if(d>0){
+                    graph[now][i].cap-=d;
+                    graph[to][rev].cap+=d;
+                    return d;
                 }
             }
-            removed[now]++;
         }
         return 0;
     }
+
+    // s から t への最大流を求める O(V^2E)
+    ll flow(int s,int t){
+        ll ret=0;
+        while(true){
+            bfs(s);
+            if(level[t]<0) return ret;
+            fill(iter.begin(),iter.end(),0);
+            ll f;
+            while((f=dfs(s,t,INFL))>0) ret+=f;
+        }
+    }
+
+    vector<Edge> edges(){return es;}
 };
