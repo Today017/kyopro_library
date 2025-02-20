@@ -4,9 +4,10 @@
 // コスト負の辺を許容する。負の閉路はダメ。
 struct MCF{
 	struct Edge{
-		int to,rev;
+		int from,to,rev;
 		ll cap,cost;
-		Edge(int to,ll cap,ll cost,int rev){this->to=to;this->cap=cap;this->cost=cost;this->rev=rev;}
+		bool isrev;
+		Edge(int from,int to,ll cap,ll cost,int rev,bool isrev):from(from),to(to),cap(cap),cost(cost),rev(rev),isrev(isrev){}
 	};
 
 	vector<vector<Edge>> graph;
@@ -15,16 +16,25 @@ struct MCF{
 
 	MCF(int n){graph.resize(n),dist.resize(n),pot.resize(n),pv.resize(n),pe.resize(n);}
 
-	// add_edge(s, t, cap, cost) : s -> t に容量 cap, コスト cost の辺を追加する。
+	// add_edge(s, t, cap, cost) : s -> t に容量 cap, コスト cost の辺を追加する
 	// cost は負でも良い。
 	// 償却 O(1)
 	void add_edge(int from,int to,ll cap,ll cost){
-		graph[from].push_back(Edge(to,cap,cost,graph[to].size()));
-		graph[to].push_back(Edge(from,0,-cost,(int)graph[from].size()-1));
+		graph[from].push_back(Edge(from,to,cap,cost,graph[to].size(),false));
+		graph[to].push_back(Edge(to,from,0,-cost,(int)graph[from].size()-1,true));
 	}
 
-	// s から t へ流量 f の最小費用流のコストを求める。
-	// 流せない場合は -1 を返す
+	// get_edges() : 全ての辺を返す
+	// O(V+E)
+	// 直前に流した flow による残余であることに注意
+	vector<Edge> get_edges(){
+		vector<Edge> ret;
+		for(int i=0;i<(int)graph.size();i++)for(auto &e:graph[i]) if(!e.isrev) ret.push_back(e);
+		return ret;
+	}
+
+	// flow(s, t, f) : s から t へ流量 f の最小費用流のコストを求める
+	// 流せない場合は INFL を返す
 	// O(FE log V)
 	ll flow(int s,int t,ll f){
 		int n=graph.size();
@@ -41,7 +51,7 @@ struct MCF{
 				pq.pop();
 				if(dist[now]<tmp) continue;
 				for(int i=0;i<(int)graph[now].size();i++){
-					auto[to,rev,cap,cost]=graph[now][i];
+					auto[from,to,rev,cap,cost,isrev]=graph[now][i];
 					ll ncost=dist[now]+cost+pot[now]-pot[to];
 					if(cap>0&&dist[to]>ncost){
 						dist[to]=ncost,pv[to]=now,pe[to]=i;
@@ -49,7 +59,7 @@ struct MCF{
 					}
 				}
 			}
-			if(dist[t]==INFL) return -1;
+			if(dist[t]==INFL) return INFL;
 			for(int i=0;i<n;i++) pot[i]+=dist[i];
 			ll d=f;
 			for(int v=t;v!=s;v=pv[v]) d=min(d,graph[pv[v]][pe[v]].cap);
@@ -59,6 +69,7 @@ struct MCF{
 				e.cap-=d,graph[v][e.rev].cap+=d;
 			}
 		}
+
 		return ret;
 	}
 };
