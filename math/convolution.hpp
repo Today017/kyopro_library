@@ -1,6 +1,7 @@
 #include"../../kyopro_library/template.hpp"
 
-// 高速フーリエ変換 O(N log(N))
+// 高速フーリエ変換
+// O(N log(N))
 // f(x) = Σ a[i]x^i, w^N = 1 とすると、F(t) = Σ f(w^i)t^i の各係数を返す。
 vector<complex<double>>FFT(vector<complex<double>>a,bool inv=false){
 	int n=a.size(),h=0;
@@ -11,25 +12,27 @@ vector<complex<double>>FFT(vector<complex<double>>a,bool inv=false){
 		for(int k=0;k<h;k++)j|=(i>>k&1)<<(h-1-k);
 		if(i<j)swap(a[i],a[j]);
 	}
+
 	for(int b=1;b<n;b<<=1){
 		for(int j=0;j<b;j++){
-			//b=ブロックサイズの半分
-			//j,j+bを計算
-			//w=exp(-2pij/2b)=1のb乗根のj乗
+			//b = ブロックサイズの半分
+			//j, j+b を計算
+			//w = exp(-2πj / 2b) = 1 の b 乗根の j 乗
 			complex<double>w=polar(1.0,(2.0*M_PI)/(2.0*b)*j*(inv?1:-1));
-			//ブロックサイズ2bだけずらしながら計算
+			//ブロックサイズ 2b だけずらしながら計算
 			for(int k=0;k<n;k+=b*2){
 				complex<double>s=a[j+k],t=a[j+k+b]*w;
 				a[j+k]=s+t,a[j+k+b]=s-t;
 			}
 		}
 	}
-	if(inv){
-		for(int i=0;i<n;i++)a[i]/=n;
-	}
+
+	if(inv)for(int i=0;i<n;i++)a[i]/=n;
 	return a;
 }
 
+// 畳み込み
+// O(N log(N))
 vector<double>convolve(const vector<double>&a,const vector<double>&b){
 	int n=1;
 	while(n<(int)a.size()+(int)b.size()-1)n*=2;
@@ -47,6 +50,8 @@ vector<double>convolve(const vector<double>&a,const vector<double>&b){
 	return ret;
 }
 
+// 整数での畳み込み
+// 整数の積が 10^12 を超える場合や N >= 2^20 の場合は特に誤差に注意。大きい値での畳み込みは NTT + Garner のアルゴリズムを使う。
 vector<ll>convolve(const vector<ll>&a,const vector<ll>&b){
 	vector<double>da(a.size()),db(b.size());
 	for(int i=0;i<(int)a.size();i++)da[i]=a[i];
