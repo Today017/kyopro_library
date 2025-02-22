@@ -2,7 +2,7 @@
 #include "../../kyopro_library/template.hpp"
 #include"../../kyopro_library/others/abel.hpp"
 
-template<typename Abel=AdditiveAbel<ll>>
+template<typename Abel=Abel::AdditiveAbel<ll>>
 struct FenwickTree{
 	using Type=typename Abel::Type;
 
@@ -19,6 +19,7 @@ struct FenwickTree{
 			i+=i&-i;
 		}
 	}
+
 	Type sum(int l,int r){return Abel::op(Abel::inv(sum(l)),sum(r));}
 
 	Type operator[](int i){return sum(i,i+1);}

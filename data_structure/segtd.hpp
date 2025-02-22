@@ -45,8 +45,10 @@ private:
 
 #include"../../kyopro_library/others/operator.hpp"
 
-template<typename T>
-struct RangeAdd{using Type=struct SegTreeDual<AddOperator<T>>;};
+namespace RangeQuery{
+	template<typename T>
+	struct RangeAdd{using Type=struct SegTreeDual<Operator::AddOperator<T>>;};
 
-template<typename T>
-struct RangeUpdate{using Type=struct SegTreeDual<UpdateOperatorTimeStamp<T>>;};
+	template<typename T>
+	struct RangeUpdate{using Type=struct SegTreeDual<Operator::UpdateOperatorTimeStamp<T>>;};
+}

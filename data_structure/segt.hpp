@@ -110,13 +110,13 @@ private:
 
 #include"../../kyopro_library/others/monoid.hpp"
 
-template<typename T,T max_value=INF>
-struct RangeMin{using Type=struct SegTree<MinMonoid<T,max_value>>;};
+namespace RangeQuery{
+	template<typename T,T max_value=INF>
+	struct RangeMin{using Type=struct SegTree<Monoid::MinMonoid<T,max_value>>;};
 
-template<typename T,T min_value=-INF>
-struct RangeMax{using Type=struct SegTree<MaxMonoid<T,min_value>>;};
+	template<typename T,T min_value=-INF>
+	struct RangeMax{using Type=struct SegTree<Monoid::MaxMonoid<T,min_value>>;};
 
-template<typename T>
-struct RangeSum{using Type=struct SegTree<SumMonoid<T>>;};
-
-
+	template<typename T>
+	struct RangeSum{using Type=struct SegTree<Monoid::SumMonoid<T>>;};
+}

@@ -179,40 +179,42 @@ private:
 #include"../../kyopro_library/others/monoid.hpp"
 #include"../../kyopro_library/others/operator.hpp"
 
-template<typename T,T max_value,T not_exist>
-struct RangeUpdateRangeMin{
-	static T mapping(const T&a,const T&b){return b==not_exist?a:b;}
-	using Type=struct SegTreeLazy<MinMonoid<T,max_value>,UpdateOperator<T,not_exist>,mapping>;
-};
+namespace RangeQuery{
+	template<typename T,T max_value,T not_exist>
+	struct RangeUpdateRangeMin{
+		static T mapping(const T&a,const T&b){return b==not_exist?a:b;}
+		using Type=struct SegTreeLazy<Monoid::MinMonoid<T,max_value>,Operator::UpdateOperator<T,not_exist>,mapping>;
+	};
 
-template<typename T,T min_value,T not_exist>
-struct RangeUpdateRangeMax{
-	static T mapping(const T&a,const T&b){return b==not_exist?a:b;}
-	using Type=struct SegTreeLazy<MaxMonoid<T,min_value>,UpdateOperator<T,not_exist>,mapping>;
-};
+	template<typename T,T min_value,T not_exist>
+	struct RangeUpdateRangeMax{
+		static T mapping(const T&a,const T&b){return b==not_exist?a:b;}
+		using Type=struct SegTreeLazy<Monoid::MaxMonoid<T,min_value>,Operator::UpdateOperator<T,not_exist>,mapping>;
+	};
 
-template<typename T,T not_exist>
-struct RangeUpdateRangeSum{
-	using S=typename PairSumMonoid<T>::Type;
-	static S mapping(const S&a,const T&b){return b==not_exist?a:S{b*a.second,a.second};}
-	using Type=struct SegTreeLazy<PairSumMonoid<T>,UpdateOperator<T,not_exist>,mapping>;
-};
+	template<typename T,T not_exist>
+	struct RangeUpdateRangeSum{
+		using S=typename Monoid::PairSumMonoid<T>::Type;
+		static S mapping(const S&a,const T&b){return b==not_exist?a:S{b*a.second,a.second};}
+		using Type=struct SegTreeLazy<Monoid::PairSumMonoid<T>,Operator::UpdateOperator<T,not_exist>,mapping>;
+	};
 
-template<typename T,T max_value>
-struct RangeAddRangeMin{
-	static T mapping(const T&a,const T&b){return a+b;}
-	using Type=struct SegTreeLazy<MinMonoid<T,max_value>,AddOperator<T>,mapping>;
-};
+	template<typename T,T max_value>
+	struct RangeAddRangeMin{
+		static T mapping(const T&a,const T&b){return a+b;}
+		using Type=struct SegTreeLazy<Monoid::MinMonoid<T,max_value>,Operator::AddOperator<T>,mapping>;
+	};
 
-template<typename T,T min_value>
-struct RangeAddRangeMax{
-	static T mapping(const T&a,const T&b){return a+b;}
-	using Type=struct SegTreeLazy<MaxMonoid<T,min_value>,AddOperator<T>,mapping>;
-};
+	template<typename T,T min_value>
+	struct RangeAddRangeMax{
+		static T mapping(const T&a,const T&b){return a+b;}
+		using Type=struct SegTreeLazy<Monoid::MaxMonoid<T,min_value>,Operator::AddOperator<T>,mapping>;
+	};
 
-template<typename T>
-struct RangeAddRangeSum{
-	using S=typename PairSumMonoid<T>::Type;
-	static S mapping(const S&a,const T&b){return{a.first+b*a.second,a.second};}
-	using Type=struct SegTreeLazy<PairSumMonoid<T>,AddOperator<T>,mapping>;
-};
+	template<typename T>
+	struct RangeAddRangeSum{
+		using S=typename Monoid::PairSumMonoid<T>::Type;
+		static S mapping(const S&a,const T&b){return{a.first+b*a.second,a.second};}
+		using Type=struct SegTreeLazy<Monoid::PairSumMonoid<T>,Operator::AddOperator<T>,mapping>;
+	};
+}
