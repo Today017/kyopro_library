@@ -1,68 +1,87 @@
 #include "../../../kyopro_library/template.hpp"
 
+// 最大流 Dinic
 struct MXF{
-    struct Edge{
-        int to,rev;
-        ll cap;
-        Edge(int to,ll cap,int rev){this->to=to;this->cap=cap;this->rev=rev;}
-    };
+	struct Edge{
+		int to,rev;
+		ll cap;
+		Edge(int to,ll cap,int rev):to(to),cap(cap),rev(rev){}
+	};
 
-    vector<Edge> es;
-    vector<vector<Edge>> graph;
-    vector<int> level,iter;
+	vector<vector<Edge>> graph;
+	vector<int> level,iter;
 
-    MXF(int n){graph.resize(n),level.resize(n),iter.resize(n);}
+	MXF(int n):graph(n),level(n),iter(n){}
 
-    void add_edge(int from,int to,ll cap){
-        graph[from].push_back(Edge(to,cap,graph[to].size()));
-        graph[to].push_back(Edge(from,0,(int)graph[from].size()-1));
-        es.push_back(Edge(to,cap,graph[to].size()-1));
-    }
+	// add_edge(s, t, cap) : s -> t に容量 cap の辺を追加する
+	// 償却 O(1)
+	void add_edge(int from,int to,ll cap){
+		graph[from].emplace_back(to,cap,graph[to].size());
+		graph[to].emplace_back(from,0,(int)graph[from].size()-1);
+	}
 
-    void bfs(int s){
-        fill(level.begin(),level.end(),-1);
-        queue<int> q;
-        level[s]=0;
-        q.push(s);
-        while(!q.empty()){
-            int now=q.front();
-            q.pop();
-            for(auto[to,rev,cap]:graph[now]){
-                if(cap>0&&level[to]<0){
-                    level[to]=level[now]+1;
-                    q.push(to);
-                }
-            }
-        }
-    }
+	void bfs(int s){
+		fill(level.begin(),level.end(),-1);
+		queue<int> q;
+		level[s]=0;
+		q.push(s);
+		while(!q.empty()){
+			int v=q.front();
+			q.pop();
+			for(auto &e:graph[v]){
+				if(e.cap>0&&level[e.to]<0){
+					level[e.to]=level[v]+1;
+					q.push(e.to);
+				}
+			}
+		}
+	}
 
-    ll dfs(int now,int t,ll f){
-        if(now==t) return f;
-        for(int &i=iter[now];i<(int)graph[now].size();i++){
-            auto[to,rev,cap]=graph[now][i];
-            if(cap>0&&level[now]<level[to]){
-                ll d=dfs(to,t,min(f,cap));
-                if(d>0){
-                    graph[now][i].cap-=d;
-                    graph[to][rev].cap+=d;
-                    return d;
-                }
-            }
-        }
-        return 0;
-    }
+	ll dfs(int v,int t,ll f){
+		if(v==t) return f;
+		for(int &i=iter[v];i<(int)graph[v].size();i++){
+			auto &e=graph[v][i];
+			if(e.cap>0&&level[v]<level[e.to]){
+				ll d=dfs(e.to,t,min(f,e.cap));
+				if(d>0){
+					e.cap-=d;
+					graph[e.to][e.rev].cap+=d;
+					return d;
+				}
+			}
+		}
+		return 0;
+	}
 
-    // s から t への最大流を求める O(V^2E)
-    ll flow(int s,int t){
-        ll ret=0;
-        while(true){
-            bfs(s);
-            if(level[t]<0) return ret;
-            fill(iter.begin(),iter.end(),0);
-            ll f;
-            while((f=dfs(s,t,INFL))>0) ret+=f;
-        }
-    }
+	// flow(s, t) : s から t への最大流を求める
+	// O(V^2 E)
+	ll flow(int s,int t){
+		ll ret=0;
+		while(true){
+			bfs(s);
+			if(level[t]<0) return ret;
+			fill(iter.begin(),iter.end(),0);
+			ll f;
+			while((f=dfs(s,t,INFL))>0) ret+=f;
+		}
+	}
 
-    vector<Edge> edges(){return es;}
+	// mincut(v) : 直前に流したフローから最小カットを復元する
+	vector<bool> mincut(int v=0){
+		vector<bool> ret(graph.size());
+		queue<int> q;
+		q.push(v);
+		ret[v]=true;
+		while(!q.empty()){
+			int v=q.front();
+			q.pop();
+			for(auto &e:graph[v]){
+				if(e.cap>0&&!ret[e.to]){
+					ret[e.to]=true;
+					q.push(e.to);
+				}
+			}
+		}
+		return ret;
+	}
 };
