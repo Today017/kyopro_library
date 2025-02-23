@@ -3,9 +3,10 @@
 // 最大流 Dinic
 struct MXF{
 	struct Edge{
-		int to,rev;
-		ll cap;
-		Edge(int to,ll cap,int rev):to(to),cap(cap),rev(rev){}
+		int from,to,rev;
+		ll cap,flow;
+		bool isrev;
+		Edge(int from,int to,ll cap,int rev,bool isrev):from(from),to(to),rev(rev),cap(cap),flow(0),isrev(isrev){}
 	};
 
 	vector<vector<Edge>> graph;
@@ -16,22 +17,22 @@ struct MXF{
 	// add_edge(s, t, cap) : s -> t に容量 cap の辺を追加する
 	// 償却 O(1)
 	void add_edge(int from,int to,ll cap){
-		graph[from].emplace_back(to,cap,graph[to].size());
-		graph[to].emplace_back(from,0,(int)graph[from].size()-1);
+		graph[from].push_back(Edge(from,to,cap,graph[to].size(),false));
+		graph[to].push_back(Edge(to,from,0,graph[from].size()-1,true));
 	}
 
 	void bfs(int s){
 		fill(level.begin(),level.end(),-1);
-		queue<int> q;
+		queue<int> que;
 		level[s]=0;
-		q.push(s);
-		while(!q.empty()){
-			int v=q.front();
-			q.pop();
+		que.push(s);
+		while(!que.empty()){
+			int v=que.front();
+			que.pop();
 			for(auto &e:graph[v]){
 				if(e.cap>0&&level[e.to]<0){
 					level[e.to]=level[v]+1;
-					q.push(e.to);
+					que.push(e.to);
 				}
 			}
 		}
@@ -44,8 +45,8 @@ struct MXF{
 			if(e.cap>0&&level[v]<level[e.to]){
 				ll d=dfs(e.to,t,min(f,e.cap));
 				if(d>0){
-					e.cap-=d;
-					graph[e.to][e.rev].cap+=d;
+					e.cap-=d,graph[e.to][e.rev].cap+=d;
+					e.flow+=d,graph[e.to][e.rev].flow-=d;
 					return d;
 				}
 			}
@@ -59,7 +60,7 @@ struct MXF{
 		ll ret=0;
 		while(true){
 			bfs(s);
-			if(level[t]<0) return ret;
+			if(level[t]==-1) return ret;
 			fill(iter.begin(),iter.end(),0);
 			ll f;
 			while((f=dfs(s,t,INFL))>0) ret+=f;
@@ -69,19 +70,26 @@ struct MXF{
 	// mincut(v) : 直前に流したフローから最小カットを復元する
 	vector<bool> mincut(int v=0){
 		vector<bool> ret(graph.size());
-		queue<int> q;
-		q.push(v);
+		queue<int> que;
+		que.push(v);
 		ret[v]=true;
-		while(!q.empty()){
-			int v=q.front();
-			q.pop();
+		while(!que.empty()){
+			int v=que.front();
+			que.pop();
 			for(auto &e:graph[v]){
 				if(e.cap>0&&!ret[e.to]){
 					ret[e.to]=true;
-					q.push(e.to);
+					que.push(e.to);
 				}
 			}
 		}
+		return ret;
+	}
+
+	// get_edges() : 直前に流したフローの辺の情報を返す
+	vector<Edge> get_edges(){
+		vector<Edge> ret;
+		for(int i=0;i<(int)graph.size();i++)for(auto &e:graph[i]) if(!e.isrev) ret.push_back(e);
 		return ret;
 	}
 };
