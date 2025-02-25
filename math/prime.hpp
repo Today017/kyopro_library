@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 // 素数列挙

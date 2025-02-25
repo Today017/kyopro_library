@@ -3,6 +3,7 @@
 // 高速フーリエ変換
 // O(N log(N))
 // f(x) = Σ a[i]x^i, w^N = 1 とすると、F(t) = Σ f(w^i)t^i の各係数を返す。
+// a = (a[0], a[1], ..., a[n-1]) -> fa = (f(w^0), f(w^1), ..., f(w^(n-1)))
 vector<complex<double>>FFT(vector<complex<double>>a,bool inv=false){
 	int n=a.size(),h=0;
 	while((1<<h)<n)h++;
