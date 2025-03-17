@@ -2,18 +2,15 @@
 
 template<typename T>
 vector<T> FHT(vector<T> a,bool inv=false){
-	int n=a.size();
-	for(int b=1;b<n;b<<=1){
-		for(int j=0;j<n;j++){
-			if((j&b)==0){
-				T x=a[j],y=a[j|b];
-				a[j]=x+y;
-				a[j|b]=x-y;
+	int h=__lg(n);
+	for(int i=0;i<h;i++){
+		for(int j=0;j<1<<h;j++){
+			if(~j>>i){
+				T x=a[j],y=a[j|1<<i];
+				a[j]=x+y,a[j|1<<i]=x-y;
+				if(inv)a[j]>>=1,a[j|1<<i]>>=1;
 			}
 		}
-	}
-	if(inv){
-		for(int i=0;i<n;i++)a[i]/=n;
 	}
 	return a;
 }
