@@ -98,13 +98,17 @@
 - [Pollard's rho](./math/rho.md)
 - [Primitive Root](./math/proot.md)
 - [Mod Log (Baby Step Giant Step)](./math/modlog.md)
+
+### Convolutions
 - [Convolution](./math/convolution.md)
+- [Convolution (NTT)](./math/ntt.md)
+- [XOR Convolution](./math/xorconv.md)
 
 ### Polynomial
-- [Convolution (NTT)](./math/ntt.md)
 - [Formal Power Series](./math/fps.md)
 - [Multipoint Evaluation](./math/muleval.md)
 - [Lagrange Interpolation](./math/lagrange.md)
+
 
 ### Other
 - [Matrix](./math/matrix.md)
