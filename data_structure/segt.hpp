@@ -112,11 +112,11 @@ private:
 
 namespace RangeQuery{
 	template<typename T,T max_value=INF>
-	struct RangeMin{using Type=struct SegTree<Monoid::MinMonoid<T,max_value>>;};
+	struct Min{using Type=struct SegTree<Monoid::Min<T,max_value>>;};
 
 	template<typename T,T min_value=-INF>
-	struct RangeMax{using Type=struct SegTree<Monoid::MaxMonoid<T,min_value>>;};
+	struct Max{using Type=struct SegTree<Monoid::Max<T,min_value>>;};
 
 	template<typename T>
-	struct RangeSum{using Type=struct SegTree<Monoid::SumMonoid<T>>;};
+	struct Sum{using Type=struct SegTree<Monoid::Sum<T>>;};
 }

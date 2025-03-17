@@ -181,40 +181,40 @@ private:
 
 namespace RangeQuery{
 	template<typename T,T max_value,T not_exist>
-	struct RangeUpdateRangeMin{
+	struct Update_GetMin{
 		static T mapping(const T&a,const T&b){return b==not_exist?a:b;}
-		using Type=struct SegTreeLazy<Monoid::MinMonoid<T,max_value>,Operator::UpdateOperator<T,not_exist>,mapping>;
+		using Type=struct SegTreeLazy<Monoid::Min<T,max_value>,Operator::Update<T,not_exist>,mapping>;
 	};
 
 	template<typename T,T min_value,T not_exist>
-	struct RangeUpdateRangeMax{
+	struct Update_GetMax{
 		static T mapping(const T&a,const T&b){return b==not_exist?a:b;}
-		using Type=struct SegTreeLazy<Monoid::MaxMonoid<T,min_value>,Operator::UpdateOperator<T,not_exist>,mapping>;
+		using Type=struct SegTreeLazy<Monoid::Max<T,min_value>,Operator::Update<T,not_exist>,mapping>;
 	};
 
 	template<typename T,T not_exist>
-	struct RangeUpdateRangeSum{
-		using S=typename Monoid::PairSumMonoid<T>::Type;
+	struct Update_GetSum{
+		using S=typename Monoid::SumPair<T>::Type;
 		static S mapping(const S&a,const T&b){return b==not_exist?a:S{b*a.second,a.second};}
-		using Type=struct SegTreeLazy<Monoid::PairSumMonoid<T>,Operator::UpdateOperator<T,not_exist>,mapping>;
+		using Type=struct SegTreeLazy<Monoid::SumPair<T>,Operator::Update<T,not_exist>,mapping>;
 	};
 
 	template<typename T,T max_value>
-	struct RangeAddRangeMin{
+	struct Add_GetMin{
 		static T mapping(const T&a,const T&b){return a+b;}
-		using Type=struct SegTreeLazy<Monoid::MinMonoid<T,max_value>,Operator::AddOperator<T>,mapping>;
+		using Type=struct SegTreeLazy<Monoid::Min<T,max_value>,Operator::Add<T>,mapping>;
 	};
 
 	template<typename T,T min_value>
-	struct RangeAddRangeMax{
+	struct Add_GetMax{
 		static T mapping(const T&a,const T&b){return a+b;}
-		using Type=struct SegTreeLazy<Monoid::MaxMonoid<T,min_value>,Operator::AddOperator<T>,mapping>;
+		using Type=struct SegTreeLazy<Monoid::Max<T,min_value>,Operator::Add<T>,mapping>;
 	};
 
 	template<typename T>
-	struct RangeAddRangeSum{
-		using S=typename Monoid::PairSumMonoid<T>::Type;
+	struct Add_GetSum{
+		using S=typename Monoid::SumPair<T>::Type;
 		static S mapping(const S&a,const T&b){return{a.first+b*a.second,a.second};}
-		using Type=struct SegTreeLazy<Monoid::PairSumMonoid<T>,Operator::AddOperator<T>,mapping>;
+		using Type=struct SegTreeLazy<Monoid::SumPair<T>,Operator::Add<T>,mapping>;
 	};
 }

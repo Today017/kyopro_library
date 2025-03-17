@@ -2,7 +2,7 @@
 #include "../../kyopro_library/template.hpp"
 #include"../../kyopro_library/others/abel.hpp"
 
-template<typename Abel=Abel::AdditiveAbel<ll>>
+template<typename Abel=Abel::Additive<ll>>
 struct FenwickTree{
 	using Type=typename Abel::Type;
 
