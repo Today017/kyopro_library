@@ -9,7 +9,7 @@ namespace DivMulTransform{
 	// v'[k] = Σ_{k|d} v[d] なる v' を返す。
 	// O(|v| log(log(|v|)))
 	template<typename Monoid>
-	vector<typename Monoid::Type>multipleZeta(vector<typename Monoid::Type>v){
+	vector<typename Monoid::Type>MultipleZeta(vector<typename Monoid::Type>v){
 		int n=v.size()-1;
 		if((int)primes.size()<n)init(n);
 		for(int p:primes)for(int k=n/p;k>0;k--)v[k]=Monoid::op(v[k],v[k*p]);
@@ -20,7 +20,7 @@ namespace DivMulTransform{
 	// v'[k] = Σ_{d|k} v[d] なる v' を返す。
 	// O(|v| log(log(|v|)))
 	template<typename Monoid>
-	vector<typename Monoid::Type>divisorZeta(vector<typename Monoid::Type>v){
+	vector<typename Monoid::Type>DivisorZeta(vector<typename Monoid::Type>v){
 		int n=v.size()-1;
 		if((int)primes.size()<n)init(n);
 		for(int p:primes)for(int k=1;k*p<=n;k++)v[k*p]=Monoid::op(v[k*p],v[k]);
@@ -32,7 +32,7 @@ namespace DivMulTransform{
 	// 逆変換が必要なので、v は可換群の元である必要がある。
 	// O(|v| log(log(|v|)))
 	template<typename Abel>
-	vector<typename Abel::Type>multipleMobius(vector<typename Abel::Type>v){
+	vector<typename Abel::Type>MultipleMobius(vector<typename Abel::Type>v){
 		int n=v.size()-1;
 		if((int)primes.size()<n)init(n);
 		for(int p:primes)for(int k=1;k*p<=n;k++)v[k]=Abel::op(v[k],Abel::inv(v[k*p]));
@@ -44,7 +44,7 @@ namespace DivMulTransform{
 	// 逆変換が必要なので、v は可換群の元である必要がある。
 	// O(|v| log(log(|v|)))
 	template<typename Abel>
-	vector<typename Abel::Type>divisorMobius(vector<typename Abel::Type>v){
+	vector<typename Abel::Type>DivisorMobius(vector<typename Abel::Type>v){
 		int n=v.size()-1;
 		if((int)primes.size()<n)init(n);
 		for(int p:primes)for(int k=n/p;k>0;k--)v[k*p]=Abel::op(v[k*p],Abel::inv(v[k]));

@@ -3,7 +3,7 @@
 
 namespace Abel{
 	template<typename T>
-	struct Additive{
+	struct Sum{
 		using Type=T;
 		static Type id(){return T(0);}
 		static Type op(const Type&a,const Type&b){return a+b;}

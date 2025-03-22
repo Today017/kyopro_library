@@ -18,7 +18,7 @@ struct Combinatorics{
 		if(n<0||r<0||n-r<0)return 0;
 		return fac[n]*finv[n-r];
 	}
-	T fact(int n){return fac[n];}
+	T factrial(int n){return fac[n];}
 	T factinv(int n){return finv[n];}
 	T operator()(ll n,ll r){return comb(n,r);}
 
