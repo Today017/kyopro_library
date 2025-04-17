@@ -1,0 +1,768 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: SortedMultiTree&lt; T &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="struct_sorted_multi_tree-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">SortedMultiTree&lt; T &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="sorted__multitree_8hpp_source.html">sorted_multitree.hpp</a>&gt;</code></p>
+<div class="dynheader">
+SortedMultiTree&lt; T &gt; の継承関係図</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="struct_sorted_multi_tree.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a9add5e4ba3456a20a6e531f3b056b93f" id="r_a9add5e4ba3456a20a6e531f3b056b93f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9add5e4ba3456a20a6e531f3b056b93f">P</a> = pair&lt;T,int&gt;</td></tr>
+<tr class="separator:a9add5e4ba3456a20a6e531f3b056b93f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a5c802af68f298ac3e73e0dba0ad75e79" id="r_a5c802af68f298ac3e73e0dba0ad75e79"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c802af68f298ac3e73e0dba0ad75e79">SortedMultiTree</a> ()=default</td></tr>
+<tr class="separator:a5c802af68f298ac3e73e0dba0ad75e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8c36e4170f299dbe68b00cd2c9d2305" id="r_ab8c36e4170f299dbe68b00cd2c9d2305"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8c36e4170f299dbe68b00cd2c9d2305">SortedMultiTree</a> (T <a class="el" href="#a744d411af0375f528be6ad7f1ec21c9c">not_found</a>=-1)</td></tr>
+<tr class="memdesc:ab8c36e4170f299dbe68b00cd2c9d2305"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <br /></td></tr>
+<tr class="separator:ab8c36e4170f299dbe68b00cd2c9d2305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaeff7f2d03c7046a82a0971b1e52272" id="r_aeaeff7f2d03c7046a82a0971b1e52272"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeaeff7f2d03c7046a82a0971b1e52272">add</a> (T x)</td></tr>
+<tr class="memdesc:aeaeff7f2d03c7046a82a0971b1e52272"><td class="mdescLeft">&#160;</td><td class="mdescRight">x を追加する  <br /></td></tr>
+<tr class="separator:aeaeff7f2d03c7046a82a0971b1e52272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a002d58401bbd7c496de2a493225dc462" id="r_a002d58401bbd7c496de2a493225dc462"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a002d58401bbd7c496de2a493225dc462">min</a> ()</td></tr>
+<tr class="memdesc:a002d58401bbd7c496de2a493225dc462"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小値を返す  <br /></td></tr>
+<tr class="separator:a002d58401bbd7c496de2a493225dc462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34080f5436802049e526dbcfcdb4657c" id="r_a34080f5436802049e526dbcfcdb4657c"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34080f5436802049e526dbcfcdb4657c">max</a> ()</td></tr>
+<tr class="memdesc:a34080f5436802049e526dbcfcdb4657c"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大値を返す  <br /></td></tr>
+<tr class="separator:a34080f5436802049e526dbcfcdb4657c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57e225a43a6ffe8a2c40f792375d04bc" id="r_a57e225a43a6ffe8a2c40f792375d04bc"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57e225a43a6ffe8a2c40f792375d04bc">pop_min</a> ()</td></tr>
+<tr class="memdesc:a57e225a43a6ffe8a2c40f792375d04bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小値を削除する  <br /></td></tr>
+<tr class="separator:a57e225a43a6ffe8a2c40f792375d04bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c295dcfe5327e9219f013dc159ab1f0" id="r_a8c295dcfe5327e9219f013dc159ab1f0"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c295dcfe5327e9219f013dc159ab1f0">pop_max</a> ()</td></tr>
+<tr class="memdesc:a8c295dcfe5327e9219f013dc159ab1f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大値を削除する  <br /></td></tr>
+<tr class="separator:a8c295dcfe5327e9219f013dc159ab1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ed109943dfb52d97cc4c88f917abef7" id="r_a1ed109943dfb52d97cc4c88f917abef7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ed109943dfb52d97cc4c88f917abef7">contains</a> (T x)</td></tr>
+<tr class="memdesc:a1ed109943dfb52d97cc4c88f917abef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">x が含まれているか否かを返す  <br /></td></tr>
+<tr class="separator:a1ed109943dfb52d97cc4c88f917abef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eebce5fa541af30d00aa76bfd6fce25" id="r_a4eebce5fa541af30d00aa76bfd6fce25"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4eebce5fa541af30d00aa76bfd6fce25">count</a> (T x)</td></tr>
+<tr class="memdesc:a4eebce5fa541af30d00aa76bfd6fce25"><td class="mdescLeft">&#160;</td><td class="mdescRight">x の個数を返す  <br /></td></tr>
+<tr class="separator:a4eebce5fa541af30d00aa76bfd6fce25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0e3cfa5d92c2eaf249cac5db2653119" id="r_af0e3cfa5d92c2eaf249cac5db2653119"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0e3cfa5d92c2eaf249cac5db2653119">discard</a> (T x)</td></tr>
+<tr class="memdesc:af0e3cfa5d92c2eaf249cac5db2653119"><td class="mdescLeft">&#160;</td><td class="mdescRight">x を削除する  <br /></td></tr>
+<tr class="separator:af0e3cfa5d92c2eaf249cac5db2653119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20bc2b91712e2d3b78967ff278626c0f" id="r_a20bc2b91712e2d3b78967ff278626c0f"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20bc2b91712e2d3b78967ff278626c0f">gt</a> (T x)</td></tr>
+<tr class="memdesc:a20bc2b91712e2d3b78967ff278626c0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">x より大きい最小の値を返す  <br /></td></tr>
+<tr class="separator:a20bc2b91712e2d3b78967ff278626c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe622762de7d4549d60bfb03013c6f26" id="r_abe622762de7d4549d60bfb03013c6f26"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe622762de7d4549d60bfb03013c6f26">ge</a> (T x)</td></tr>
+<tr class="memdesc:abe622762de7d4549d60bfb03013c6f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">x 以上最小の値を返す  <br /></td></tr>
+<tr class="separator:abe622762de7d4549d60bfb03013c6f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a563ca712d94965facf1e69b881440a32" id="r_a563ca712d94965facf1e69b881440a32"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a563ca712d94965facf1e69b881440a32">lt</a> (T x)</td></tr>
+<tr class="memdesc:a563ca712d94965facf1e69b881440a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">x 未満最大の値を返す  <br /></td></tr>
+<tr class="separator:a563ca712d94965facf1e69b881440a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62f7b68b894a4a44ae4a0ae0c09cbc19" id="r_a62f7b68b894a4a44ae4a0ae0c09cbc19"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62f7b68b894a4a44ae4a0ae0c09cbc19">le</a> (T x)</td></tr>
+<tr class="memdesc:a62f7b68b894a4a44ae4a0ae0c09cbc19"><td class="mdescLeft">&#160;</td><td class="mdescRight">x 以下最大の値を返す  <br /></td></tr>
+<tr class="separator:a62f7b68b894a4a44ae4a0ae0c09cbc19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8320fbeb312ae3cb068401e6fab4b303" id="r_a8320fbeb312ae3cb068401e6fab4b303"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8320fbeb312ae3cb068401e6fab4b303">count_lt</a> (T x)</td></tr>
+<tr class="memdesc:a8320fbeb312ae3cb068401e6fab4b303"><td class="mdescLeft">&#160;</td><td class="mdescRight">x 未満の値の個数を返す  <br /></td></tr>
+<tr class="separator:a8320fbeb312ae3cb068401e6fab4b303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43a38d17a649bfb671db1c1372f2fbec" id="r_a43a38d17a649bfb671db1c1372f2fbec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43a38d17a649bfb671db1c1372f2fbec">count_le</a> (T x)</td></tr>
+<tr class="memdesc:a43a38d17a649bfb671db1c1372f2fbec"><td class="mdescLeft">&#160;</td><td class="mdescRight">x 以下の値の個数を返す  <br /></td></tr>
+<tr class="separator:a43a38d17a649bfb671db1c1372f2fbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa74800e39c3a6d6e04b4a56a881de478" id="r_aa74800e39c3a6d6e04b4a56a881de478"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa74800e39c3a6d6e04b4a56a881de478">count_gt</a> (T x)</td></tr>
+<tr class="memdesc:aa74800e39c3a6d6e04b4a56a881de478"><td class="mdescLeft">&#160;</td><td class="mdescRight">x より大きい値の個数を返す  <br /></td></tr>
+<tr class="separator:aa74800e39c3a6d6e04b4a56a881de478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa4ee14f9f701a9e8bd5d8b4e3c2d945" id="r_afa4ee14f9f701a9e8bd5d8b4e3c2d945"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa4ee14f9f701a9e8bd5d8b4e3c2d945">count_ge</a> (T x)</td></tr>
+<tr class="memdesc:afa4ee14f9f701a9e8bd5d8b4e3c2d945"><td class="mdescLeft">&#160;</td><td class="mdescRight">x 以上の値の個数を返す  <br /></td></tr>
+<tr class="separator:afa4ee14f9f701a9e8bd5d8b4e3c2d945"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2925d903b778ceea8042accb4b318f4a" id="r_a2925d903b778ceea8042accb4b318f4a"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2925d903b778ceea8042accb4b318f4a">kth_min</a> (int k)</td></tr>
+<tr class="memdesc:a2925d903b778ceea8042accb4b318f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">k(0-indexed) 番目に小さい値の個数を返す  <br /></td></tr>
+<tr class="separator:a2925d903b778ceea8042accb4b318f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73f728a83e21417917a9d35185322dcb" id="r_a73f728a83e21417917a9d35185322dcb"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73f728a83e21417917a9d35185322dcb">kth_max</a> (int k)</td></tr>
+<tr class="memdesc:a73f728a83e21417917a9d35185322dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">k(0-indexed) 番目に大きい値の個数を返す  <br /></td></tr>
+<tr class="separator:a73f728a83e21417917a9d35185322dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a744d411af0375f528be6ad7f1ec21c9c" id="r_a744d411af0375f528be6ad7f1ec21c9c"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a744d411af0375f528be6ad7f1ec21c9c">not_found</a> =-1</td></tr>
+<tr class="separator:a744d411af0375f528be6ad7f1ec21c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a9add5e4ba3456a20a6e531f3b056b93f" name="a9add5e4ba3456a20a6e531f3b056b93f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9add5e4ba3456a20a6e531f3b056b93f">&#9670;&#160;</a></span>P</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::P = pair&lt;T,int&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a5c802af68f298ac3e73e0dba0ad75e79" name="a5c802af68f298ac3e73e0dba0ad75e79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c802af68f298ac3e73e0dba0ad75e79">&#9670;&#160;</a></span>SortedMultiTree() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;<a class="el" href="struct_sorted_multi_tree.html">::SortedMultiTree</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab8c36e4170f299dbe68b00cd2c9d2305" name="ab8c36e4170f299dbe68b00cd2c9d2305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8c36e4170f299dbe68b00cd2c9d2305">&#9670;&#160;</a></span>SortedMultiTree() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;<a class="el" href="struct_sorted_multi_tree.html">::SortedMultiTree</a> </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>not_found</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">not_found</td><td>指定の値が見つからなかったときに返す値 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aeaeff7f2d03c7046a82a0971b1e52272" name="aeaeff7f2d03c7046a82a0971b1e52272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaeff7f2d03c7046a82a0971b1e52272">&#9670;&#160;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::add </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x を追加する </p>
+
+</div>
+</div>
+<a id="a1ed109943dfb52d97cc4c88f917abef7" name="a1ed109943dfb52d97cc4c88f917abef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ed109943dfb52d97cc4c88f917abef7">&#9670;&#160;</a></span>contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x が含まれているか否かを返す </p>
+
+</div>
+</div>
+<a id="a4eebce5fa541af30d00aa76bfd6fce25" name="a4eebce5fa541af30d00aa76bfd6fce25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eebce5fa541af30d00aa76bfd6fce25">&#9670;&#160;</a></span>count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::count </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x の個数を返す </p>
+
+</div>
+</div>
+<a id="afa4ee14f9f701a9e8bd5d8b4e3c2d945" name="afa4ee14f9f701a9e8bd5d8b4e3c2d945"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa4ee14f9f701a9e8bd5d8b4e3c2d945">&#9670;&#160;</a></span>count_ge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::count_ge </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x 以上の値の個数を返す </p>
+
+</div>
+</div>
+<a id="aa74800e39c3a6d6e04b4a56a881de478" name="aa74800e39c3a6d6e04b4a56a881de478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa74800e39c3a6d6e04b4a56a881de478">&#9670;&#160;</a></span>count_gt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::count_gt </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x より大きい値の個数を返す </p>
+
+</div>
+</div>
+<a id="a43a38d17a649bfb671db1c1372f2fbec" name="a43a38d17a649bfb671db1c1372f2fbec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43a38d17a649bfb671db1c1372f2fbec">&#9670;&#160;</a></span>count_le()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::count_le </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x 以下の値の個数を返す </p>
+
+</div>
+</div>
+<a id="a8320fbeb312ae3cb068401e6fab4b303" name="a8320fbeb312ae3cb068401e6fab4b303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8320fbeb312ae3cb068401e6fab4b303">&#9670;&#160;</a></span>count_lt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::count_lt </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x 未満の値の個数を返す </p>
+
+</div>
+</div>
+<a id="af0e3cfa5d92c2eaf249cac5db2653119" name="af0e3cfa5d92c2eaf249cac5db2653119"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0e3cfa5d92c2eaf249cac5db2653119">&#9670;&#160;</a></span>discard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::discard </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x を削除する </p>
+<p>x が含まれていたか否かを返す </p>
+
+</div>
+</div>
+<a id="abe622762de7d4549d60bfb03013c6f26" name="abe622762de7d4549d60bfb03013c6f26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe622762de7d4549d60bfb03013c6f26">&#9670;&#160;</a></span>ge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::ge </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x 以上最小の値を返す </p>
+
+</div>
+</div>
+<a id="a20bc2b91712e2d3b78967ff278626c0f" name="a20bc2b91712e2d3b78967ff278626c0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20bc2b91712e2d3b78967ff278626c0f">&#9670;&#160;</a></span>gt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::gt </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x より大きい最小の値を返す </p>
+
+</div>
+</div>
+<a id="a73f728a83e21417917a9d35185322dcb" name="a73f728a83e21417917a9d35185322dcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73f728a83e21417917a9d35185322dcb">&#9670;&#160;</a></span>kth_max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::kth_max </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>k</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>k(0-indexed) 番目に大きい値の個数を返す </p>
+
+</div>
+</div>
+<a id="a2925d903b778ceea8042accb4b318f4a" name="a2925d903b778ceea8042accb4b318f4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2925d903b778ceea8042accb4b318f4a">&#9670;&#160;</a></span>kth_min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::kth_min </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>k</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>k(0-indexed) 番目に小さい値の個数を返す </p>
+
+</div>
+</div>
+<a id="a62f7b68b894a4a44ae4a0ae0c09cbc19" name="a62f7b68b894a4a44ae4a0ae0c09cbc19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62f7b68b894a4a44ae4a0ae0c09cbc19">&#9670;&#160;</a></span>le()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::le </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x 以下最大の値を返す </p>
+
+</div>
+</div>
+<a id="a563ca712d94965facf1e69b881440a32" name="a563ca712d94965facf1e69b881440a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a563ca712d94965facf1e69b881440a32">&#9670;&#160;</a></span>lt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::lt </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x 未満最大の値を返す </p>
+
+</div>
+</div>
+<a id="a34080f5436802049e526dbcfcdb4657c" name="a34080f5436802049e526dbcfcdb4657c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34080f5436802049e526dbcfcdb4657c">&#9670;&#160;</a></span>max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::max </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最大値を返す </p>
+
+</div>
+</div>
+<a id="a002d58401bbd7c496de2a493225dc462" name="a002d58401bbd7c496de2a493225dc462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a002d58401bbd7c496de2a493225dc462">&#9670;&#160;</a></span>min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::min </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最小値を返す </p>
+
+</div>
+</div>
+<a id="a8c295dcfe5327e9219f013dc159ab1f0" name="a8c295dcfe5327e9219f013dc159ab1f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c295dcfe5327e9219f013dc159ab1f0">&#9670;&#160;</a></span>pop_max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::pop_max </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最大値を削除する </p>
+<p>最大値を削除する </p>
+
+</div>
+</div>
+<a id="a57e225a43a6ffe8a2c40f792375d04bc" name="a57e225a43a6ffe8a2c40f792375d04bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57e225a43a6ffe8a2c40f792375d04bc">&#9670;&#160;</a></span>pop_min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::pop_min </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最小値を削除する </p>
+<p>最小値を削除する </p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a744d411af0375f528be6ad7f1ec21c9c" name="a744d411af0375f528be6ad7f1ec21c9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a744d411af0375f528be6ad7f1ec21c9c">&#9670;&#160;</a></span>not_found</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_multi_tree.html">SortedMultiTree</a>&lt; T &gt;::not_found =-1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>data_structure/<a class="el" href="sorted__multitree_8hpp_source.html">sorted_multitree.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

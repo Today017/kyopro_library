@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: data_structure/fen.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b8d8e9e6d882cbdac7436f7026baf609.html">data_structure</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">fen.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="fen_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include&quot;<a class="code" href="abel_8hpp.html">../../kyopro_library/others/abel.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Abel=Abel::Sum&lt;ll&gt;&gt;</div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html">    9</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_fenwick_tree.html#a99f9f30f8d15ac791e39dbd6ff7c753f">FenwickTree</a>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#aa2b1ef3738b376e71753f4277f255656">   10</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="struct_fenwick_tree.html#aa2b1ef3738b376e71753f4277f255656">Type</a>=<span class="keyword">typename</span> Abel::Type;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#a99f9f30f8d15ac791e39dbd6ff7c753f">   12</a></span>    <a class="code hl_function" href="struct_fenwick_tree.html#a99f9f30f8d15ac791e39dbd6ff7c753f">FenwickTree</a>()=<span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#a4ab87239b75ef2870215eb29b50bcaaf">   15</a></span>    <a class="code hl_function" href="struct_fenwick_tree.html#a4ab87239b75ef2870215eb29b50bcaaf">FenwickTree</a>(<span class="keywordtype">int</span> n){</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        this-&gt;n=n;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        dat.assign(n,Abel::id());</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#adb288d923b27fe266f99021056a2785f">   22</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_fenwick_tree.html#adb288d923b27fe266f99021056a2785f">add</a>(<span class="keywordtype">int</span> i,<a class="code hl_typedef" href="struct_fenwick_tree.html#aa2b1ef3738b376e71753f4277f255656">Type</a> x){</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        i++;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">while</span>(i&lt;=n){</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            dat[i-1]=Abel::op(dat[i-1],x);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            i+=i&amp;-i;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#aa1d3e8b54fc3fcfeb21f5696566e10ac">   32</a></span>    <a class="code hl_typedef" href="struct_fenwick_tree.html#aa2b1ef3738b376e71753f4277f255656">Type</a> <a class="code hl_function" href="struct_fenwick_tree.html#aa1d3e8b54fc3fcfeb21f5696566e10ac">sum</a>(<span class="keywordtype">int</span> l,<span class="keywordtype">int</span> r){<span class="keywordflow">return</span> Abel::op(Abel::inv(<a class="code hl_function" href="struct_fenwick_tree.html#aa1d3e8b54fc3fcfeb21f5696566e10ac">sum</a>(l)),<a class="code hl_function" href="struct_fenwick_tree.html#aa1d3e8b54fc3fcfeb21f5696566e10ac">sum</a>(r));}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#a8a6c34d78e75ce893b48e82b0d9ba4cd">   36</a></span>    <a class="code hl_typedef" href="struct_fenwick_tree.html#aa2b1ef3738b376e71753f4277f255656">Type</a> <a class="code hl_function" href="struct_fenwick_tree.html#a8a6c34d78e75ce893b48e82b0d9ba4cd">operator[]</a>(<span class="keywordtype">int</span> i){<span class="keywordflow">return</span> <a class="code hl_function" href="struct_fenwick_tree.html#aa1d3e8b54fc3fcfeb21f5696566e10ac">sum</a>(i,i+1);}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#af4134f187d10ed8498b20a585ed5eb33">   39</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_fenwick_tree.html#af4134f187d10ed8498b20a585ed5eb33">size</a>(){<span class="keywordflow">return</span> n;}</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">int</span> n;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    vector&lt;Type&gt;<a class="code hl_variable" href="st2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb">dat</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_typedef" href="struct_fenwick_tree.html#aa2b1ef3738b376e71753f4277f255656">Type</a> <a class="code hl_function" href="struct_fenwick_tree.html#aa1d3e8b54fc3fcfeb21f5696566e10ac">sum</a>(<span class="keywordtype">int</span> r){</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <a class="code hl_typedef" href="struct_fenwick_tree.html#aa2b1ef3738b376e71753f4277f255656">Type</a> ret=Abel::id();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">while</span>(r&gt;0){</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            ret=Abel::op(ret,<a class="code hl_variable" href="st2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb">dat</a>[r-1]);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            r-=r&amp;-r;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
+</div>
+<div class="ttc" id="aabel_8hpp_html"><div class="ttname"><a href="abel_8hpp.html">abel.hpp</a></div><div class="ttdoc">可換群</div></div>
+<div class="ttc" id="ast2d_8hpp_html_ad4ffba731924575f47aa6d16920d0fbb"><div class="ttname"><a href="st2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb">dat</a></div><div class="ttdeci">ll dat[12][12][1010][1010]</div><div class="ttdef"><b>Definition</b> st2d.hpp:6</div></div>
+<div class="ttc" id="astruct_fenwick_tree_html_a4ab87239b75ef2870215eb29b50bcaaf"><div class="ttname"><a href="struct_fenwick_tree.html#a4ab87239b75ef2870215eb29b50bcaaf">FenwickTree::FenwickTree</a></div><div class="ttdeci">FenwickTree(int n)</div><div class="ttdoc">サイズ n のFenwick Treeを構築する</div><div class="ttdef"><b>Definition</b> fen.hpp:15</div></div>
+<div class="ttc" id="astruct_fenwick_tree_html_a8a6c34d78e75ce893b48e82b0d9ba4cd"><div class="ttname"><a href="struct_fenwick_tree.html#a8a6c34d78e75ce893b48e82b0d9ba4cd">FenwickTree::operator[]</a></div><div class="ttdeci">Type operator[](int i)</div><div class="ttdoc">i 番目の要素を返す</div><div class="ttdef"><b>Definition</b> fen.hpp:36</div></div>
+<div class="ttc" id="astruct_fenwick_tree_html_a99f9f30f8d15ac791e39dbd6ff7c753f"><div class="ttname"><a href="struct_fenwick_tree.html#a99f9f30f8d15ac791e39dbd6ff7c753f">FenwickTree::FenwickTree</a></div><div class="ttdeci">FenwickTree()=default</div></div>
+<div class="ttc" id="astruct_fenwick_tree_html_aa1d3e8b54fc3fcfeb21f5696566e10ac"><div class="ttname"><a href="struct_fenwick_tree.html#aa1d3e8b54fc3fcfeb21f5696566e10ac">FenwickTree::sum</a></div><div class="ttdeci">Type sum(int l, int r)</div><div class="ttdoc">区間 [l, r) の群積を返す</div><div class="ttdef"><b>Definition</b> fen.hpp:32</div></div>
+<div class="ttc" id="astruct_fenwick_tree_html_aa2b1ef3738b376e71753f4277f255656"><div class="ttname"><a href="struct_fenwick_tree.html#aa2b1ef3738b376e71753f4277f255656">FenwickTree::Type</a></div><div class="ttdeci">typename Abel::Type Type</div><div class="ttdef"><b>Definition</b> fen.hpp:10</div></div>
+<div class="ttc" id="astruct_fenwick_tree_html_adb288d923b27fe266f99021056a2785f"><div class="ttname"><a href="struct_fenwick_tree.html#adb288d923b27fe266f99021056a2785f">FenwickTree::add</a></div><div class="ttdeci">void add(int i, Type x)</div><div class="ttdoc">i 番目の要素に対し v[i] &lt;- op(v[i], x) と更新する</div><div class="ttdef"><b>Definition</b> fen.hpp:22</div></div>
+<div class="ttc" id="astruct_fenwick_tree_html_af4134f187d10ed8498b20a585ed5eb33"><div class="ttname"><a href="struct_fenwick_tree.html#af4134f187d10ed8498b20a585ed5eb33">FenwickTree::size</a></div><div class="ttdeci">int size()</div><div class="ttdoc">配列のサイズを返す</div><div class="ttdef"><b>Definition</b> fen.hpp:39</div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

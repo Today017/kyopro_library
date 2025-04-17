@@ -5,7 +5,7 @@ struct BridgeInfo {
     vector<int> articulation;
 };
 
-BridgeInfo lowLink(const vector<vector<int>>& g) {
+BridgeInfo LowLink(const vector<vector<int>>& g) {
     int n = g.size();
     vector<int> ord(n, -1), low(n, -1), articulation;
     vector<bool> seen(n, false);

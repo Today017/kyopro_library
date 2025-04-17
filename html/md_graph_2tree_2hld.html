@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: hld</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">hld</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="el" href="md__r_e_a_d_m_e.html">top</a></p>
+<h1><a class="anchor" id="autotoc_md75"></a>
+<a href="./hld.hpp">Heavy-Light Decomposition</a></h1>
+<p><a href="https://hcpc-hokudai.github.io/archive/graph_tree_001.pdf">解説</a></p>
+<p><a href="https://atcoder.jp/contests/abc294/submissions/46419196">使用例</a></p>
+<p><code><a class="el" href="struct_h_l_d.html">HLD(int n)</a></code></p>
+<p><code><a class="el" href="struct_h_l_d.html">HLD</a>(vector&lt;vector&lt;int&gt;&gt; g)</code></p>
+<p><code>vector&lt;int&gt; build(int root)</code></p><ul>
+<li>頂点 $root$ を根として木を列に HL 分解する。分解後の木を返す。</li>
+<li>$O(n)$</li>
+</ul>
+<p><code>int lca(int u, int v)</code></p><ul>
+<li>頂点 $u$, $v$ の <a class="el" href="struct_l_c_a.html">LCA</a> を返す。</li>
+<li>$O(\log{n})$</li>
+</ul>
+<p><code>int at(int v)</code></p><ul>
+<li>頂点 $v$ の HL 分解後の位置を返す。</li>
+<li>$O(1)$</li>
+</ul>
+<p><code>vector&lt;tuple&lt;bool, int, int&gt;&gt; path(int u, int v)</code></p><ul>
+<li>頂点 $u$, $v$ を結ぶパスを HL 分解後の辺の列にして返す。</li>
+<li><code>[flag, l, r]</code> として、以下を表す。<ul>
+<li><code>[l, r]</code> : HL 分解後の頂点列 ($[l, r]$)</li>
+<li><code>flag = true</code> のとき、 $[l, r]$ は $v$ から $u$ への向き</li>
+<li><code>flag = false</code> のとき、 $[l, r]$ は $u$ から $v$ への向き</li>
+</ul>
+</li>
+</ul>
+<hr  />
+<h4><a class="anchor" id="autotoc_md77"></a>
+メンバ</h4>
+<p><code>vector&lt;int&gt; sz</code></p><ul>
+<li>頂点の部分木の大きさ</li>
+</ul>
+<p><code>vector&lt;int&gt; parent</code></p><ul>
+<li>頂点の親</li>
+</ul>
+<p><code>vector&lt;int&gt; depth</code></p><ul>
+<li>頂点の深さ</li>
+</ul>
+<p><code>vector&lt;int&gt; hld</code></p><ul>
+<li>HLD結果としての配列</li>
+</ul>
+<p><code>vector&lt;int&gt; pos</code></p><ul>
+<li><code>hld</code>における頂点の位置</li>
+</ul>
+<p><code>vector&lt;int&gt; head</code></p><ul>
+<li>頂点の属する連結成分の最も浅い頂点 </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

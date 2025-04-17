@@ -5,8 +5,8 @@
 //O(N^(1/4))
 //ref: https://qiita.com/t_fuki/items/7cd50de54d3c5d063b4a
 //verify: https://algo-method.com/tasks/553
-vector<pair<ll,ll>>primeFactorize(ll n){
-	if(primalityTest(n))return{{n,1}};
+vector<pair<ll,ll>>PrimeFactorize(ll n){
+	if(PrimalityTest(n))return{{n,1}};
 	auto find_factor=[](auto&&find_factor,ll n)->ll{
 		__int128_t m=(ll)pow(n,0.125)+1;
 		auto _gcd=[](__int128_t a,__int128_t b){
@@ -32,8 +32,8 @@ vector<pair<ll,ll>>primeFactorize(ll n){
 				while(g==1)y=f(y),g=_gcd(_abs(x-y),n);
 			}
 			if(g<n){
-				if(primalityTest(g))return g;
-				if(primalityTest(n/g))return n/g;
+				if(PrimalityTest(g))return g;
+				if(PrimalityTest(n/g))return n/g;
 				return find_factor(find_factor,g);
 			}
 		}
@@ -48,7 +48,7 @@ vector<pair<ll,ll>>primeFactorize(ll n){
 		i+=i%2+1;
 		if(i==101&&n>=(1ll<<20)){
 			while(n>1){
-				if(primalityTest(n)){
+				if(PrimalityTest(n)){
 					mp[n]=1,n=1;
 				}else{
 					ll j=find_factor(find_factor,n);

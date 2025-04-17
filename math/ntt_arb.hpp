@@ -2,28 +2,12 @@
 #include"../../kyopro_library/mod/modint.hpp"
 #include"../../kyopro_library/math/proot.hpp"
 
+/// @brief NTT Friendly 素数用 NTT 構造体
 template<ll MOD>
-struct NTT{
+class NTT{
 	using mint=ModInt<MOD>;
 	int primitive_root,divide_max;
 	vector<ModInt<MOD>>roots,inv_roots;
-	NTT(){
-		assert(primalityTest(MOD));
-		primitive_root=primitiveRoot(MOD);
-		divide_max=0;
-		ll n=MOD-1;
-		while(n%2==0){
-			n>>=1;
-			divide_max++;
-		}
-		roots=vector<mint>(divide_max+1);
-		inv_roots=vector<mint>(divide_max+1);
-		roots[0]=inv_roots[0]=mint(1);
-		for(int i=1;i<=divide_max;i++){
-			roots[i]=mint(primitive_root).pow((MOD-1)/(1<<i));
-			inv_roots[i]=roots[i].inv();
-		}
-	}
 	vector<mint>ntt(vector<mint>a,bool inv=false){
 		int n=a.size();
 		int h=0;
@@ -51,6 +35,26 @@ struct NTT{
 		}
 		return a;
 	}
+
+public:
+	NTT(){
+		assert(primalityTest(MOD));
+		primitive_root=primitiveRoot(MOD);
+		divide_max=0;
+		ll n=MOD-1;
+		while(n%2==0){
+			n>>=1;
+			divide_max++;
+		}
+		roots=vector<mint>(divide_max+1);
+		inv_roots=vector<mint>(divide_max+1);
+		roots[0]=inv_roots[0]=mint(1);
+		for(int i=1;i<=divide_max;i++){
+			roots[i]=mint(primitive_root).pow((MOD-1)/(1<<i));
+			inv_roots[i]=roots[i].inv();
+		}
+	}
+	/// @brief a, b の畳み込みを求める
 	vector<mint>convolve(vector<mint>a,vector<mint>b){
 		int n=1;
 		while(n<(int)a.size()+(int)b.size()-1)n<<=1;

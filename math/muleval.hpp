@@ -2,7 +2,7 @@
 #include"../../kyopro_library/math/fps.hpp"
 
 template<typename T>
-vector<T>multipointEvaluate(vector<T>f,vector<T>x){
+vector<T>MultipointEvaluate(vector<T>f,vector<T>x){
 	int n=x.size();
 	if(n==0)return{};
 	if(n==1){

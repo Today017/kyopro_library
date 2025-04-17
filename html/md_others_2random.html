@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: random</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">random</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="el" href="md__r_e_a_d_m_e.html">top</a></p>
+<h1><a class="anchor" id="autotoc_md116"></a>
+<a href="./random.hpp">Random Generator</a></h1>
+<p><code>namespace <a class="el" href="namespace_random_generator.html" title="ランダムテストケース生成">RandomGenerator</a></code></p><ul>
+<li>ランダムテストケース生成用ツール。</li>
+</ul>
+<p><code>void init()</code></p><ul>
+<li>シード値を設定する。</li>
+</ul>
+<p><code>T randomInt(T x)</code></p><ul>
+<li>$[0, x)$ の範囲でランダムな整数を生成する。</li>
+</ul>
+<p><code>T randomInt(T l, T r)</code></p><ul>
+<li>$[l, r)$ の範囲でランダムな整数を生成する。</li>
+</ul>
+<p><code>T getElement(vector&lt;T&gt; a)</code></p><ul>
+<li>$a$ の中でランダムな要素を取得し、削除する。</li>
+</ul>
+<p><code>vector&lt;T&gt; randomArray(int n, int lo, int hi, bool no_dup)</code></p><ul>
+<li>長さ $n$, 範囲 $[l, r)$ のランダムな数列を生成する。</li>
+<li><code>no_dup</code> を <code>true</code> とすると、重複のない数列となる。</li>
+</ul>
+<p><code>string randomAlphabet(int n, bool lower = true)</code></p><ul>
+<li>長さ $n$ のアルファベットからなるランダムな文字列を生成する。</li>
+<li><code>lower</code> を <code>false</code> とすると uppercase のみからなる文字列となる。</li>
+</ul>
+<p><code>string randomString(int n, string s)</code></p><ul>
+<li>長さ $n$, 文字列 $s$ の要素からなるランダムな文字列を生成する。</li>
+</ul>
+<p><code>vector&lt;vector&lt;T&gt;&gt; randomArray2D(int h, int w, T lo, T hi)</code></p><ul>
+<li>縦、横の長さ $h$, $w$, 範囲 $[lo, hi)$ のランダムな 2 次元の数列を生成する。</li>
+</ul>
+<p><code>vector&lt;string&gt; randomAlphabet2D(int h, int w, bool lower)</code></p><ul>
+<li>縦、横の長さ $h$, $w$, のランダムな文字列列を生成する。</li>
+<li><code>lower</code> を <code>false</code> とすると uppercase のみからなる文字列となる。</li>
+</ul>
+<p><code>vector&lt;pair&lt;int, int&gt;&gt; randomTree(int n)</code></p><ul>
+<li>頂点数 $n$ の木を生成する。<code>1-indexed</code> 。</li>
+</ul>
+<p><code>vector&lt;pair&lt;int, int&gt;&gt; randomBinaryTree(int n)</code></p><ul>
+<li>頂点数 $n$ の完全二分木を生成する。<code>1-indexed</code> 。</li>
+</ul>
+<p><code>vector&lt;pair&lt;int, int&gt;&gt; randomUndirectedGraph(int n, int m, bool connected)</code></p><ul>
+<li>頂点数 $n$, 辺数 $m$ の無向グラフを生成する。<code>connected</code> を <code>false</code> とすると連結とは限らないグラフを生成する。 </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

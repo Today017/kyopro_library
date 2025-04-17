@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: RollingHash 構造体</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pub-static-attribs">静的公開変数類</a> &#124;
+<a href="struct_rolling_hash-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">RollingHash 構造体</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Rolling Hash  
+ <a href="#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="rh_8hpp_source.html">rh.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a7aee1ea046a7e777b4bd4ac700d82ac7" id="r_a7aee1ea046a7e777b4bd4ac700d82ac7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a> = array&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, 5&gt;</td></tr>
+<tr class="separator:a7aee1ea046a7e777b4bd4ac700d82ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a71020424af6022b96f96117961ac4bc2" id="r_a71020424af6022b96f96117961ac4bc2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71020424af6022b96f96117961ac4bc2">RollingHash</a> ()=default</td></tr>
+<tr class="separator:a71020424af6022b96f96117961ac4bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8326ec22bdbce2b4355354e1c714914f" id="r_a8326ec22bdbce2b4355354e1c714914f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8326ec22bdbce2b4355354e1c714914f">RollingHash</a> (const string &amp;s, vector&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; base={})</td></tr>
+<tr class="separator:a8326ec22bdbce2b4355354e1c714914f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a6d3669a567daaee732bb612c030527" id="r_a3a6d3669a567daaee732bb612c030527"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a6d3669a567daaee732bb612c030527">get</a> (int l, int r)</td></tr>
+<tr class="memdesc:a3a6d3669a567daaee732bb612c030527"><td class="mdescLeft">&#160;</td><td class="mdescRight">[l, r) のハッシュ値を取得する  <br /></td></tr>
+<tr class="separator:a3a6d3669a567daaee732bb612c030527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa38eced5a94e7ae8a7cd56d4071f3978" id="r_aa38eced5a94e7ae8a7cd56d4071f3978"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa38eced5a94e7ae8a7cd56d4071f3978">connect</a> (<a class="el" href="#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a> h1, <a class="el" href="#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a> h2, int len1)</td></tr>
+<tr class="memdesc:aa38eced5a94e7ae8a7cd56d4071f3978"><td class="mdescLeft">&#160;</td><td class="mdescRight">2つのハッシュ値を結合する  <br /></td></tr>
+<tr class="separator:aa38eced5a94e7ae8a7cd56d4071f3978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a454a790a384fe6f8d0b280f784fc7527" id="r_a454a790a384fe6f8d0b280f784fc7527"><td class="memItemLeft" align="right" valign="top">static vector&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a454a790a384fe6f8d0b280f784fc7527">get_base</a> ()</td></tr>
+<tr class="memdesc:a454a790a384fe6f8d0b280f784fc7527"><td class="mdescLeft">&#160;</td><td class="mdescRight">基数をランダムに生成する  <br /></td></tr>
+<tr class="separator:a454a790a384fe6f8d0b280f784fc7527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+静的公開変数類</h2></td></tr>
+<tr class="memitem:a0e66902a45a8cf6e956c3ce025e4289c" id="r_a0e66902a45a8cf6e956c3ce025e4289c"><td class="memItemLeft" align="right" valign="top">static const vector&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e66902a45a8cf6e956c3ce025e4289c">mod</a> = {1000000009, 1000000007, 1000000021, 1000000033, 1000000087}</td></tr>
+<tr class="separator:a0e66902a45a8cf6e956c3ce025e4289c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>Rolling Hash </p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a7aee1ea046a7e777b4bd4ac700d82ac7" name="a7aee1ea046a7e777b4bd4ac700d82ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aee1ea046a7e777b4bd4ac700d82ac7">&#9670;&#160;</a></span>hash</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a7aee1ea046a7e777b4bd4ac700d82ac7">RollingHash::hash</a> = array&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, 5&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a71020424af6022b96f96117961ac4bc2" name="a71020424af6022b96f96117961ac4bc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71020424af6022b96f96117961ac4bc2">&#9670;&#160;</a></span>RollingHash() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RollingHash::RollingHash </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8326ec22bdbce2b4355354e1c714914f" name="a8326ec22bdbce2b4355354e1c714914f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8326ec22bdbce2b4355354e1c714914f">&#9670;&#160;</a></span>RollingHash() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RollingHash::RollingHash </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>base</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>ハッシュ化する文字列 </td></tr>
+    <tr><td class="paramname">base</td><td>基数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section attention"><dt>注意</dt><dd>複数の文字列をハッシュ化する場合は同じ <code>base</code> を指定すること </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aa38eced5a94e7ae8a7cd56d4071f3978" name="aa38eced5a94e7ae8a7cd56d4071f3978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38eced5a94e7ae8a7cd56d4071f3978">&#9670;&#160;</a></span>connect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a> RollingHash::connect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a></td>          <td class="paramname"><span class="paramname"><em>h1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a></td>          <td class="paramname"><span class="paramname"><em>h2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>len1</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>2つのハッシュ値を結合する </p>
+
+</div>
+</div>
+<a id="a3a6d3669a567daaee732bb612c030527" name="a3a6d3669a567daaee732bb612c030527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a6d3669a567daaee732bb612c030527">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a> RollingHash::get </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>l</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>r</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>[l, r) のハッシュ値を取得する </p>
+
+</div>
+</div>
+<a id="a454a790a384fe6f8d0b280f784fc7527" name="a454a790a384fe6f8d0b280f784fc7527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454a790a384fe6f8d0b280f784fc7527">&#9670;&#160;</a></span>get_base()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static vector&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; RollingHash::get_base </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>基数をランダムに生成する </p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a0e66902a45a8cf6e956c3ce025e4289c" name="a0e66902a45a8cf6e956c3ce025e4289c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e66902a45a8cf6e956c3ce025e4289c">&#9670;&#160;</a></span>mod</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const vector&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; RollingHash::mod = {1000000009, 1000000007, 1000000021, 1000000033, 1000000087}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>string/<a class="el" href="rh_8hpp_source.html">rh.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

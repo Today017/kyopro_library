@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: string/rh.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_76cf5d2c64440c8b33b2b96569e4a2eb.html">string</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">rh.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rh_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span>    </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_rolling_hash.html">    7</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_rolling_hash.html#a71020424af6022b96f96117961ac4bc2">RollingHash</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_rolling_hash.html#a71020424af6022b96f96117961ac4bc2">    8</a></span>    <a class="code hl_function" href="struct_rolling_hash.html#a71020424af6022b96f96117961ac4bc2">RollingHash</a>() = <span class="keywordflow">default</span>;</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_rolling_hash.html#a8326ec22bdbce2b4355354e1c714914f">   12</a></span>    <a class="code hl_function" href="struct_rolling_hash.html#a8326ec22bdbce2b4355354e1c714914f">RollingHash</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;s, vector&lt;ll&gt; base = {}) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordtype">int</span> n = s.size();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        mt19937 rng(time(0));</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        this-&gt;base = vector&lt;ll&gt;(5);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        power = vector&lt;vector&lt;ll&gt;&gt;(5);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        hash_table = vector&lt;vector&lt;ll&gt;&gt;(5);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        inv = vector&lt;vector&lt;ll&gt;&gt;(5);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">if</span> (base.size() != 5) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            base = <a class="code hl_function" href="struct_rolling_hash.html#a454a790a384fe6f8d0b280f784fc7527">get_base</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            this-&gt;base = base;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        base = this-&gt;base;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; i++) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            power[i] = vector&lt;ll&gt;(n + 1);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            hash_table[i] = vector&lt;ll&gt;(n + 1);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            inv[i] = vector&lt;ll&gt;(n + 1);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            power[i][0] = 1;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            inv[i][n] = pow_mod(pow_mod(base[i], n, <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>[i]), <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>[i] - 2, <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>[i]);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordtype">int</span> num = s[i] - <span class="charliteral">&#39;A&#39;</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; 5; j++) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                power[j][i + 1] = mul_mod(power[j][i], base[j], <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>[j]);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                hash_table[j][i + 1] = add_mod(hash_table[j][i], mul_mod(power[j][i], num, <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>[j]), <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>[j]);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                inv[j][n - i - 1] = mul_mod(inv[j][n - i], base[j], <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>[j]);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">static</span> <span class="keyword">const</span> vector&lt;ll&gt; <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>;</div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_rolling_hash.html#a454a790a384fe6f8d0b280f784fc7527">   43</a></span>    <span class="keyword">static</span> vector&lt;ll&gt; <a class="code hl_function" href="struct_rolling_hash.html#a454a790a384fe6f8d0b280f784fc7527">get_base</a>() {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        vector&lt;ll&gt; base(5);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        mt19937 rng(time(0));</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; i++) base[i] = (rng() % <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>[i] + 3000) % <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>[i];</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span> base;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_rolling_hash.html#a7aee1ea046a7e777b4bd4ac700d82ac7">   49</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="struct_rolling_hash.html#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a> = array&lt;ll, 5&gt;;</div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_rolling_hash.html#a3a6d3669a567daaee732bb612c030527">   51</a></span>    <a class="code hl_typedef" href="struct_rolling_hash.html#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a> <a class="code hl_function" href="struct_rolling_hash.html#a3a6d3669a567daaee732bb612c030527">get</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_typedef" href="struct_rolling_hash.html#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a> ret;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; i++) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            ret[i] = mul_mod(add_mod(hash_table[i][r], -hash_table[i][l], <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>[i]), inv[i][l], <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>[i]);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="struct_rolling_hash.html#aa38eced5a94e7ae8a7cd56d4071f3978">   59</a></span>    <a class="code hl_typedef" href="struct_rolling_hash.html#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a> <a class="code hl_function" href="struct_rolling_hash.html#aa38eced5a94e7ae8a7cd56d4071f3978">connect</a>(<a class="code hl_typedef" href="struct_rolling_hash.html#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a> h1, <a class="code hl_typedef" href="struct_rolling_hash.html#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a> h2, <span class="keywordtype">int</span> len1) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <a class="code hl_typedef" href="struct_rolling_hash.html#a7aee1ea046a7e777b4bd4ac700d82ac7">hash</a> ret;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; i++) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            ret[i] = add_mod(h1[i], mul_mod(h2[i], power[i][len1], <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>[i]), <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>[i]);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    vector&lt;ll&gt; base;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    vector&lt;vector&lt;ll&gt;&gt; power, hash_table, inv;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">inline</span> <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> mul_mod(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>) { <span class="keywordflow">return</span> a * b % <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>; }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">inline</span> <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> add_mod(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ret = <a class="code hl_variable" href="namespacecompress.html#ab51c4d79a5d1f1a8a2d46f126ac20894">a</a> + b;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">if</span> (ret &gt;= <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>) ret -= <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">if</span> (ret &lt; 0) ret += <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> pow_mod(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> x, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ret = 1;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">while</span> (x) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordflow">if</span> (x &amp; 1) ret = mul_mod(ret, a, <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <a class="code hl_variable" href="namespacecompress.html#ab51c4d79a5d1f1a8a2d46f126ac20894">a</a> = mul_mod(a, a, <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">mod</a>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            x &gt;&gt;= 1;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>};</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">   87</a></span><span class="keyword">const</span> vector&lt;ll&gt; <a class="code hl_variable" href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">RollingHash::mod</a> = {1000000009, 1000000007, 1000000021, 1000000033, 1000000087};</div>
+<div class="ttc" id="anamespacecompress_html_ab51c4d79a5d1f1a8a2d46f126ac20894"><div class="ttname"><a href="namespacecompress.html#ab51c4d79a5d1f1a8a2d46f126ac20894">compress.a</a></div><div class="ttdeci">str a</div><div class="ttdef"><b>Definition</b> compress.py:17</div></div>
+<div class="ttc" id="astruct_rolling_hash_html_a0e66902a45a8cf6e956c3ce025e4289c"><div class="ttname"><a href="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c">RollingHash::mod</a></div><div class="ttdeci">static const vector&lt; ll &gt; mod</div><div class="ttdef"><b>Definition</b> rh.hpp:87</div></div>
+<div class="ttc" id="astruct_rolling_hash_html_a3a6d3669a567daaee732bb612c030527"><div class="ttname"><a href="struct_rolling_hash.html#a3a6d3669a567daaee732bb612c030527">RollingHash::get</a></div><div class="ttdeci">hash get(int l, int r)</div><div class="ttdoc">[l, r) のハッシュ値を取得する</div><div class="ttdef"><b>Definition</b> rh.hpp:51</div></div>
+<div class="ttc" id="astruct_rolling_hash_html_a454a790a384fe6f8d0b280f784fc7527"><div class="ttname"><a href="struct_rolling_hash.html#a454a790a384fe6f8d0b280f784fc7527">RollingHash::get_base</a></div><div class="ttdeci">static vector&lt; ll &gt; get_base()</div><div class="ttdoc">基数をランダムに生成する</div><div class="ttdef"><b>Definition</b> rh.hpp:43</div></div>
+<div class="ttc" id="astruct_rolling_hash_html_a71020424af6022b96f96117961ac4bc2"><div class="ttname"><a href="struct_rolling_hash.html#a71020424af6022b96f96117961ac4bc2">RollingHash::RollingHash</a></div><div class="ttdeci">RollingHash()=default</div></div>
+<div class="ttc" id="astruct_rolling_hash_html_a7aee1ea046a7e777b4bd4ac700d82ac7"><div class="ttname"><a href="struct_rolling_hash.html#a7aee1ea046a7e777b4bd4ac700d82ac7">RollingHash::hash</a></div><div class="ttdeci">array&lt; ll, 5 &gt; hash</div><div class="ttdef"><b>Definition</b> rh.hpp:49</div></div>
+<div class="ttc" id="astruct_rolling_hash_html_a8326ec22bdbce2b4355354e1c714914f"><div class="ttname"><a href="struct_rolling_hash.html#a8326ec22bdbce2b4355354e1c714914f">RollingHash::RollingHash</a></div><div class="ttdeci">RollingHash(const string &amp;s, vector&lt; ll &gt; base={})</div><div class="ttdef"><b>Definition</b> rh.hpp:12</div></div>
+<div class="ttc" id="astruct_rolling_hash_html_aa38eced5a94e7ae8a7cd56d4071f3978"><div class="ttname"><a href="struct_rolling_hash.html#aa38eced5a94e7ae8a7cd56d4071f3978">RollingHash::connect</a></div><div class="ttdeci">hash connect(hash h1, hash h2, int len1)</div><div class="ttdoc">2つのハッシュ値を結合する</div><div class="ttdef"><b>Definition</b> rh.hpp:59</div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

@@ -1,6 +1,6 @@
 #include"../../kyopro_library/template.hpp"
 
-// オイラーの totient 関数
+/// オイラーの totient 関数
 // totient(n) : n 以下で n と互いに素な自然数の個数を返す。
 // O(sqrt(N))
 ll totient(ll n){

@@ -4,9 +4,9 @@
 struct DSU{
 	DSU()=default;
 	DSU(int n){
-        par.resize(n);
-        iota(par.begin(),par.end(),0);
-        sz.assign(n,1);
+		par.resize(n);
+		iota(par.begin(),par.end(),0);
+		sz.assign(n,1);
 		forest_count=n;
 	}
 
@@ -21,7 +21,7 @@ struct DSU{
 		par[y]=x;
 		sz[x]+=sz[y];
 		forest_count--;
-        return true;
+		return true;
 	}
 	int size(int x){return sz[find(x)];}
 	bool same(int x,int y){return find(x)==find(y);}

@@ -1,10 +1,12 @@
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/math/muleval.hpp"
 
-//ラグランジュ補間
-//n+1個の点(xi,yi)を通るn次多項式の係数を返す/O(n log^2 n)
+/// @file lagrange.hpp
+/// @brief ラグランジュ補間
+/// @brief n+1個の点(xi,yi)を通るn次多項式の係数を返す
+/// @note O(n log^2 n)
 template<typename T>
-vector<T>lagrangePolynomial(vector<T>x,vector<T>y){
+vector<T>LagrangePolynomial(vector<T>x,vector<T>y){
 	int n=x.size();
 	int n2=1;
 	while(n2<n)n2<<=1;
@@ -14,7 +16,7 @@ vector<T>lagrangePolynomial(vector<T>x,vector<T>y){
 	for(int i=n2-1;i>0;i--)g[i]=polyMul(g[i<<1],g[i<<1|1]);
 
 	vector<T>prod=g[1];
-	vector<T>diff=polyDifferential(prod),eval=multipointEvaluate(diff,x);
+	vector<T>diff=polyDifferential(prod),eval=MultipointEvaluate(diff,x);
 
 	using P=pair<vector<T>,vector<T>>;//first/second
 	vector<P>g2(n2*2,{{0},{1}});

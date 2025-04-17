@@ -1,7 +1,7 @@
 #include"../../kyopro_library/template.hpp"
 
 //O(nm)
-vector<pair<int,int>> bipartiteMatching(const vector<vector<int>>&g){
+vector<pair<int,int>> BipartiteMatching(const vector<vector<int>>&g){
 	int n=g.size();
 	vector<int>match(n,-1);
 	vector<bool>used(n);
@@ -42,7 +42,7 @@ BiInfo biInfo(const vector<vector<int>>&g){
 	for(int i=0;i<n;i++)if((int)g[i].size()==0)isolation++;
 
 	BiInfo ret;
-	int m=bipartiteMatching(g).size();
+	int m=BipartiteMatching(g).size();
 	ret.max_matching=m;
 	ret.min_edge_cover=isolation==0?n-m:-1;
 	ret.min_vertex_cover=m;

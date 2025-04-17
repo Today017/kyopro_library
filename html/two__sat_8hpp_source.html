@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: graph/two_sat.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_12552d7fa429bf94a2e32e5cf39f7e69.html">graph</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">two_sat.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="two__sat_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&quot;<a class="code" href="scc_8hpp.html">../../kyopro_library/graph/scc.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//2-SAT</span></div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_two_sat.html">    5</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">TwoSat</a>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_two_sat.html#a924564c4a7834da87a69282174e9d29e">    6</a></span>    vector&lt;vector&lt;int&gt;&gt;<a class="code hl_variable" href="struct_two_sat.html#a924564c4a7834da87a69282174e9d29e">G</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">    7</a></span>    <a class="code hl_function" href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">TwoSat</a>(<span class="keywordtype">int</span> n){<a class="code hl_variable" href="struct_two_sat.html#a924564c4a7834da87a69282174e9d29e">G</a>.assign(2*n,vector&lt;int&gt;());}</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">//(i==fi || j==fj) を追加</span></div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_two_sat.html#a71d1b0cf574787c596fe87d26bd905df">   10</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_two_sat.html#a71d1b0cf574787c596fe87d26bd905df">add</a>(<span class="keywordtype">int</span> i,<span class="keywordtype">bool</span> fi,<span class="keywordtype">int</span> j,<span class="keywordtype">bool</span> fj){</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="comment">// 2i = i が true, 2i+1 = i が false</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        i=2*i+!fi,j=2*j+!fj;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="comment">// !i -&gt; j, !j -&gt; i</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_variable" href="struct_two_sat.html#a924564c4a7834da87a69282174e9d29e">G</a>[i^1].push_back(j),<a class="code hl_variable" href="struct_two_sat.html#a924564c4a7834da87a69282174e9d29e">G</a>[j^1].push_back(i);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
+</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">//unsatisfiable なら空の vector を返す</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_two_sat.html#a56351416679e5a93eef4c9ff1620cfec">   18</a></span>    vector&lt;bool&gt;<a class="code hl_function" href="struct_two_sat.html#a56351416679e5a93eef4c9ff1620cfec">solve</a>(){</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">auto</span>[mem,ng,gr]=<a class="code hl_function" href="scc_8hpp.html#a4387ab6491b0b1a8f1e6bc4a86ebe407">SccDecomposition</a>(<a class="code hl_variable" href="struct_two_sat.html#a924564c4a7834da87a69282174e9d29e">G</a>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordtype">int</span> n=<a class="code hl_variable" href="struct_two_sat.html#a924564c4a7834da87a69282174e9d29e">G</a>.size()/2;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        vector&lt;bool&gt;ret(n);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;n;i++){</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keywordflow">if</span>(gr[i*2]==gr[i*2+1])<span class="keywordflow">return</span> vector&lt;bool&gt;();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="comment">// 2i(true) が後ろなら i は true</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            ret[i]=gr[i*2]&gt;gr[i*2+1];</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+</div>
+<div class="ttc" id="ascc_8hpp_html"><div class="ttname"><a href="scc_8hpp.html">scc.hpp</a></div></div>
+<div class="ttc" id="ascc_8hpp_html_a4387ab6491b0b1a8f1e6bc4a86ebe407"><div class="ttname"><a href="scc_8hpp.html#a4387ab6491b0b1a8f1e6bc4a86ebe407">SccDecomposition</a></div><div class="ttdeci">SCC SccDecomposition(const vector&lt; vector&lt; int &gt; &gt; &amp;g)</div><div class="ttdef"><b>Definition</b> scc.hpp:9</div></div>
+<div class="ttc" id="astruct_two_sat_html_a4b6625d3218c6bd8dd83951f17e35ed4"><div class="ttname"><a href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">TwoSat::TwoSat</a></div><div class="ttdeci">TwoSat(int n)</div><div class="ttdef"><b>Definition</b> two_sat.hpp:7</div></div>
+<div class="ttc" id="astruct_two_sat_html_a56351416679e5a93eef4c9ff1620cfec"><div class="ttname"><a href="struct_two_sat.html#a56351416679e5a93eef4c9ff1620cfec">TwoSat::solve</a></div><div class="ttdeci">vector&lt; bool &gt; solve()</div><div class="ttdef"><b>Definition</b> two_sat.hpp:18</div></div>
+<div class="ttc" id="astruct_two_sat_html_a71d1b0cf574787c596fe87d26bd905df"><div class="ttname"><a href="struct_two_sat.html#a71d1b0cf574787c596fe87d26bd905df">TwoSat::add</a></div><div class="ttdeci">void add(int i, bool fi, int j, bool fj)</div><div class="ttdef"><b>Definition</b> two_sat.hpp:10</div></div>
+<div class="ttc" id="astruct_two_sat_html_a924564c4a7834da87a69282174e9d29e"><div class="ttname"><a href="struct_two_sat.html#a924564c4a7834da87a69282174e9d29e">TwoSat::G</a></div><div class="ttdeci">vector&lt; vector&lt; int &gt; &gt; G</div><div class="ttdef"><b>Definition</b> two_sat.hpp:6</div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

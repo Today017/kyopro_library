@@ -1,7 +1,14 @@
 #include "../../kyopro_library/template.hpp"    
 
+/// @file rh.hpp
+/// @brief Rolling Hash
+
+/// @brief Rolling Hash
 struct RollingHash {
     RollingHash() = default;
+    /// @param s ハッシュ化する文字列
+    /// @param base 基数
+	/// @attention 複数の文字列をハッシュ化する場合は同じ `base` を指定すること
     RollingHash(const string &s, vector<ll> base = {}) {
         int n = s.size();
         mt19937 rng(time(0));
@@ -32,6 +39,7 @@ struct RollingHash {
         }
     }
     static const vector<ll> mod;
+    /// @brief 基数をランダムに生成する
     static vector<ll> get_base() {
         vector<ll> base(5);
         mt19937 rng(time(0));
@@ -39,6 +47,7 @@ struct RollingHash {
         return base;
     }
     using hash = array<ll, 5>;
+    /// @brief [l, r) のハッシュ値を取得する
     hash get(int l, int r) {
         hash ret;
         for (int i = 0; i < 5; i++) {
@@ -46,6 +55,7 @@ struct RollingHash {
         }
         return ret;
     }
+	/// @brief 2つのハッシュ値を結合する
     hash connect(hash h1, hash h2, int len1) {
         hash ret;
         for (int i = 0; i < 5; i++) {

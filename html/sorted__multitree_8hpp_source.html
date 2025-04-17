@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: data_structure/sorted_multitree.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b8d8e9e6d882cbdac7436f7026baf609.html">data_structure</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">sorted_multitree.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="sorted__multitree_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include&lt;bits/extc++.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using namespace </span>__gnu_pbds;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html">    6</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_sorted_multi_tree.html#a5c802af68f298ac3e73e0dba0ad75e79">SortedMultiTree</a>:tree&lt;pair&lt;T,int&gt;,null_type,less&lt;pair&lt;T,int&gt;&gt;,rb_tree_tag,tree_order_statistics_node_update&gt;{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">using </span>tree&lt;pair&lt;T,int&gt;,null_type,less&lt;pair&lt;T,int&gt;&gt;,rb_tree_tag,tree_order_statistics_node_update&gt;::tree;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a9add5e4ba3456a20a6e531f3b056b93f">    8</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="struct_sorted_multi_tree.html#a9add5e4ba3456a20a6e531f3b056b93f">P</a>=pair&lt;T,int&gt;;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a744d411af0375f528be6ad7f1ec21c9c">    9</a></span>    T <a class="code hl_variable" href="struct_sorted_multi_tree.html#a744d411af0375f528be6ad7f1ec21c9c">not_found</a>=-1;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a5c802af68f298ac3e73e0dba0ad75e79">   10</a></span>    <a class="code hl_function" href="struct_sorted_multi_tree.html#a5c802af68f298ac3e73e0dba0ad75e79">SortedMultiTree</a>()=<span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#ab8c36e4170f299dbe68b00cd2c9d2305">   14</a></span>    <a class="code hl_function" href="struct_sorted_multi_tree.html#ab8c36e4170f299dbe68b00cd2c9d2305">SortedMultiTree</a>(T <a class="code hl_variable" href="struct_sorted_multi_tree.html#a744d411af0375f528be6ad7f1ec21c9c">not_found</a>=-1){this-&gt;not_found=<a class="code hl_variable" href="struct_sorted_multi_tree.html#a744d411af0375f528be6ad7f1ec21c9c">not_found</a>;}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#aeaeff7f2d03c7046a82a0971b1e52272">   17</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_sorted_multi_tree.html#aeaeff7f2d03c7046a82a0971b1e52272">add</a>(T x){</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">if</span>(this-&gt;size()==0){</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            this-&gt;insert(<a class="code hl_typedef" href="struct_sorted_multi_tree.html#a9add5e4ba3456a20a6e531f3b056b93f">P</a>{x,0});</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound(<a class="code hl_typedef" href="struct_sorted_multi_tree.html#a9add5e4ba3456a20a6e531f3b056b93f">P</a>{x+1,0});</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span>(itr==this-&gt;begin()){</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            this-&gt;insert(<a class="code hl_typedef" href="struct_sorted_multi_tree.html#a9add5e4ba3456a20a6e531f3b056b93f">P</a>{x,0});</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        itr--;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">if</span>(itr-&gt;first!=x){</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            this-&gt;insert(<a class="code hl_typedef" href="struct_sorted_multi_tree.html#a9add5e4ba3456a20a6e531f3b056b93f">P</a>{x,0});</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        this-&gt;insert(<a class="code hl_typedef" href="struct_sorted_multi_tree.html#a9add5e4ba3456a20a6e531f3b056b93f">P</a>{x,itr-&gt;second+1});</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a002d58401bbd7c496de2a493225dc462">   36</a></span>    T <a class="code hl_function" href="struct_sorted_multi_tree.html#a002d58401bbd7c496de2a493225dc462">min</a>(){</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">if</span>(this-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_multi_tree.html#a744d411af0375f528be6ad7f1ec21c9c">not_found</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span>*this-&gt;begin()-&gt;first;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a34080f5436802049e526dbcfcdb4657c">   42</a></span>    T <a class="code hl_function" href="struct_sorted_multi_tree.html#a34080f5436802049e526dbcfcdb4657c">max</a>(){</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span>(this-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_multi_tree.html#a744d411af0375f528be6ad7f1ec21c9c">not_found</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">return</span>*this-&gt;rbegin()-&gt;first;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a57e225a43a6ffe8a2c40f792375d04bc">   49</a></span>    T <a class="code hl_function" href="struct_sorted_multi_tree.html#a57e225a43a6ffe8a2c40f792375d04bc">pop_min</a>(){</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span>(this-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_multi_tree.html#a744d411af0375f528be6ad7f1ec21c9c">not_found</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keyword">auto</span> mn=*this-&gt;begin();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        T ret=mn.first;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        this-&gt;erase(mn);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a8c295dcfe5327e9219f013dc159ab1f0">   59</a></span>    T <a class="code hl_function" href="struct_sorted_multi_tree.html#a8c295dcfe5327e9219f013dc159ab1f0">pop_max</a>(){</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">if</span>(this-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_multi_tree.html#a744d411af0375f528be6ad7f1ec21c9c">not_found</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">auto</span> mx=*this-&gt;rbegin();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        T ret=mx.first;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        this-&gt;erase(mx);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a1ed109943dfb52d97cc4c88f917abef7">   68</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_sorted_multi_tree.html#a1ed109943dfb52d97cc4c88f917abef7">contains</a>(T x){</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound({x,0});</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">if</span>(itr==this-&gt;end())<span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">return</span> itr-&gt;first==x;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a4eebce5fa541af30d00aa76bfd6fce25">   75</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_sorted_multi_tree.html#a4eebce5fa541af30d00aa76bfd6fce25">count</a>(T x){</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">if</span>(!<a class="code hl_function" href="struct_sorted_multi_tree.html#a1ed109943dfb52d97cc4c88f917abef7">contains</a>(x))<span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound({x+1,0});</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        itr--;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">return</span> itr-&gt;second+1;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#af0e3cfa5d92c2eaf249cac5db2653119">   84</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_sorted_multi_tree.html#af0e3cfa5d92c2eaf249cac5db2653119">discard</a>(T x){</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">if</span>(!<a class="code hl_function" href="struct_sorted_multi_tree.html#a1ed109943dfb52d97cc4c88f917abef7">contains</a>(x))<span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keyword">auto</span> itr=prev(this-&gt;lower_bound({x+1,0}));</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">if</span>(itr==this-&gt;end())<span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        this-&gt;erase(itr);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
+</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a20bc2b91712e2d3b78967ff278626c0f">   93</a></span>    T <a class="code hl_function" href="struct_sorted_multi_tree.html#a20bc2b91712e2d3b78967ff278626c0f">gt</a>(T x){</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound({x+1,0});</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">if</span>(itr==this-&gt;end())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_multi_tree.html#a744d411af0375f528be6ad7f1ec21c9c">not_found</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span> itr-&gt;first;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#abe622762de7d4549d60bfb03013c6f26">  100</a></span>    T <a class="code hl_function" href="struct_sorted_multi_tree.html#abe622762de7d4549d60bfb03013c6f26">ge</a>(T x){</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound({x,0});</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">if</span>(itr==this-&gt;end())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_multi_tree.html#a744d411af0375f528be6ad7f1ec21c9c">not_found</a>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">return</span> itr-&gt;first;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a563ca712d94965facf1e69b881440a32">  107</a></span>    T <a class="code hl_function" href="struct_sorted_multi_tree.html#a563ca712d94965facf1e69b881440a32">lt</a>(T x){</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound({x,0});</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">if</span>(itr==this-&gt;begin())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_multi_tree.html#a744d411af0375f528be6ad7f1ec21c9c">not_found</a>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">return</span>(--itr)-&gt;first;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a62f7b68b894a4a44ae4a0ae0c09cbc19">  114</a></span>    T <a class="code hl_function" href="struct_sorted_multi_tree.html#a62f7b68b894a4a44ae4a0ae0c09cbc19">le</a>(T x){</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound({x+1,0});</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">if</span>(itr==this-&gt;begin())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_multi_tree.html#a744d411af0375f528be6ad7f1ec21c9c">not_found</a>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">return</span>(--itr)-&gt;first;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    }</div>
+</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a8320fbeb312ae3cb068401e6fab4b303">  121</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_sorted_multi_tree.html#a8320fbeb312ae3cb068401e6fab4b303">count_lt</a>(T x){<span class="keywordflow">return</span> this-&gt;order_of_key({x,0});}</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a43a38d17a649bfb671db1c1372f2fbec">  124</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_sorted_multi_tree.html#a43a38d17a649bfb671db1c1372f2fbec">count_le</a>(T x){<span class="keywordflow">return</span> this-&gt;order_of_key({x+1,0});}</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#aa74800e39c3a6d6e04b4a56a881de478">  127</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_sorted_multi_tree.html#aa74800e39c3a6d6e04b4a56a881de478">count_gt</a>(T x){<span class="keywordflow">return</span> this-&gt;size()-this-&gt;order_of_key({x+1,0});}</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#afa4ee14f9f701a9e8bd5d8b4e3c2d945">  130</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_sorted_multi_tree.html#afa4ee14f9f701a9e8bd5d8b4e3c2d945">count_ge</a>(T x){<span class="keywordflow">return</span> this-&gt;size()-this-&gt;order_of_key({x,0});}</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a2925d903b778ceea8042accb4b318f4a">  133</a></span>    T <a class="code hl_function" href="struct_sorted_multi_tree.html#a2925d903b778ceea8042accb4b318f4a">kth_min</a>(<span class="keywordtype">int</span> k){<span class="keywordflow">return</span> this-&gt;find_by_order(k)-&gt;first;}</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="struct_sorted_multi_tree.html#a73f728a83e21417917a9d35185322dcb">  136</a></span>    T <a class="code hl_function" href="struct_sorted_multi_tree.html#a73f728a83e21417917a9d35185322dcb">kth_max</a>(<span class="keywordtype">int</span> k){<span class="keywordflow">return</span> this-&gt;find_by_order(this-&gt;size()-k-1)-&gt;first;}</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>};</div>
+</div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a002d58401bbd7c496de2a493225dc462"><div class="ttname"><a href="struct_sorted_multi_tree.html#a002d58401bbd7c496de2a493225dc462">SortedMultiTree::min</a></div><div class="ttdeci">T min()</div><div class="ttdoc">最小値を返す</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:36</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a1ed109943dfb52d97cc4c88f917abef7"><div class="ttname"><a href="struct_sorted_multi_tree.html#a1ed109943dfb52d97cc4c88f917abef7">SortedMultiTree::contains</a></div><div class="ttdeci">bool contains(T x)</div><div class="ttdoc">x が含まれているか否かを返す</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:68</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a20bc2b91712e2d3b78967ff278626c0f"><div class="ttname"><a href="struct_sorted_multi_tree.html#a20bc2b91712e2d3b78967ff278626c0f">SortedMultiTree::gt</a></div><div class="ttdeci">T gt(T x)</div><div class="ttdoc">x より大きい最小の値を返す</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:93</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a2925d903b778ceea8042accb4b318f4a"><div class="ttname"><a href="struct_sorted_multi_tree.html#a2925d903b778ceea8042accb4b318f4a">SortedMultiTree::kth_min</a></div><div class="ttdeci">T kth_min(int k)</div><div class="ttdoc">k(0-indexed) 番目に小さい値の個数を返す</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:133</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a34080f5436802049e526dbcfcdb4657c"><div class="ttname"><a href="struct_sorted_multi_tree.html#a34080f5436802049e526dbcfcdb4657c">SortedMultiTree::max</a></div><div class="ttdeci">T max()</div><div class="ttdoc">最大値を返す</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:42</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a43a38d17a649bfb671db1c1372f2fbec"><div class="ttname"><a href="struct_sorted_multi_tree.html#a43a38d17a649bfb671db1c1372f2fbec">SortedMultiTree::count_le</a></div><div class="ttdeci">int count_le(T x)</div><div class="ttdoc">x 以下の値の個数を返す</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:124</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a4eebce5fa541af30d00aa76bfd6fce25"><div class="ttname"><a href="struct_sorted_multi_tree.html#a4eebce5fa541af30d00aa76bfd6fce25">SortedMultiTree::count</a></div><div class="ttdeci">int count(T x)</div><div class="ttdoc">x の個数を返す</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:75</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a563ca712d94965facf1e69b881440a32"><div class="ttname"><a href="struct_sorted_multi_tree.html#a563ca712d94965facf1e69b881440a32">SortedMultiTree::lt</a></div><div class="ttdeci">T lt(T x)</div><div class="ttdoc">x 未満最大の値を返す</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:107</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a57e225a43a6ffe8a2c40f792375d04bc"><div class="ttname"><a href="struct_sorted_multi_tree.html#a57e225a43a6ffe8a2c40f792375d04bc">SortedMultiTree::pop_min</a></div><div class="ttdeci">T pop_min()</div><div class="ttdoc">最小値を削除する</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:49</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a5c802af68f298ac3e73e0dba0ad75e79"><div class="ttname"><a href="struct_sorted_multi_tree.html#a5c802af68f298ac3e73e0dba0ad75e79">SortedMultiTree::SortedMultiTree</a></div><div class="ttdeci">SortedMultiTree()=default</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a62f7b68b894a4a44ae4a0ae0c09cbc19"><div class="ttname"><a href="struct_sorted_multi_tree.html#a62f7b68b894a4a44ae4a0ae0c09cbc19">SortedMultiTree::le</a></div><div class="ttdeci">T le(T x)</div><div class="ttdoc">x 以下最大の値を返す</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:114</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a73f728a83e21417917a9d35185322dcb"><div class="ttname"><a href="struct_sorted_multi_tree.html#a73f728a83e21417917a9d35185322dcb">SortedMultiTree::kth_max</a></div><div class="ttdeci">T kth_max(int k)</div><div class="ttdoc">k(0-indexed) 番目に大きい値の個数を返す</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:136</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a744d411af0375f528be6ad7f1ec21c9c"><div class="ttname"><a href="struct_sorted_multi_tree.html#a744d411af0375f528be6ad7f1ec21c9c">SortedMultiTree::not_found</a></div><div class="ttdeci">T not_found</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:9</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a8320fbeb312ae3cb068401e6fab4b303"><div class="ttname"><a href="struct_sorted_multi_tree.html#a8320fbeb312ae3cb068401e6fab4b303">SortedMultiTree::count_lt</a></div><div class="ttdeci">int count_lt(T x)</div><div class="ttdoc">x 未満の値の個数を返す</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:121</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a8c295dcfe5327e9219f013dc159ab1f0"><div class="ttname"><a href="struct_sorted_multi_tree.html#a8c295dcfe5327e9219f013dc159ab1f0">SortedMultiTree::pop_max</a></div><div class="ttdeci">T pop_max()</div><div class="ttdoc">最大値を削除する</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:59</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_a9add5e4ba3456a20a6e531f3b056b93f"><div class="ttname"><a href="struct_sorted_multi_tree.html#a9add5e4ba3456a20a6e531f3b056b93f">SortedMultiTree::P</a></div><div class="ttdeci">pair&lt; T, int &gt; P</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:8</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_aa74800e39c3a6d6e04b4a56a881de478"><div class="ttname"><a href="struct_sorted_multi_tree.html#aa74800e39c3a6d6e04b4a56a881de478">SortedMultiTree::count_gt</a></div><div class="ttdeci">int count_gt(T x)</div><div class="ttdoc">x より大きい値の個数を返す</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:127</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_ab8c36e4170f299dbe68b00cd2c9d2305"><div class="ttname"><a href="struct_sorted_multi_tree.html#ab8c36e4170f299dbe68b00cd2c9d2305">SortedMultiTree::SortedMultiTree</a></div><div class="ttdeci">SortedMultiTree(T not_found=-1)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:14</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_abe622762de7d4549d60bfb03013c6f26"><div class="ttname"><a href="struct_sorted_multi_tree.html#abe622762de7d4549d60bfb03013c6f26">SortedMultiTree::ge</a></div><div class="ttdeci">T ge(T x)</div><div class="ttdoc">x 以上最小の値を返す</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:100</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_aeaeff7f2d03c7046a82a0971b1e52272"><div class="ttname"><a href="struct_sorted_multi_tree.html#aeaeff7f2d03c7046a82a0971b1e52272">SortedMultiTree::add</a></div><div class="ttdeci">void add(T x)</div><div class="ttdoc">x を追加する</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:17</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_af0e3cfa5d92c2eaf249cac5db2653119"><div class="ttname"><a href="struct_sorted_multi_tree.html#af0e3cfa5d92c2eaf249cac5db2653119">SortedMultiTree::discard</a></div><div class="ttdeci">bool discard(T x)</div><div class="ttdoc">x を削除する</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:84</div></div>
+<div class="ttc" id="astruct_sorted_multi_tree_html_afa4ee14f9f701a9e8bd5d8b4e3c2d945"><div class="ttname"><a href="struct_sorted_multi_tree.html#afa4ee14f9f701a9e8bd5d8b4e3c2d945">SortedMultiTree::count_ge</a></div><div class="ttdeci">int count_ge(T x)</div><div class="ttdoc">x 以上の値の個数を返す</div><div class="ttdef"><b>Definition</b> sorted_multitree.hpp:130</div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

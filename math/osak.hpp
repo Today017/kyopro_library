@@ -1,16 +1,13 @@
 #include"../../kyopro_library/template.hpp"
 
-/*
-	エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法）
-	ref:https://osak.jp/diary/diary_201310.html#20131017
-	ref:https://qiita.com/drken/items/3beb679e54266f20ab63
-
-	Factors(int n): n までの数に対する素因数分解・約数列挙の前計算 /O(n log(log(n)))
-	vector<pair<int,int>>get_prime_factors(int x): x の素因数分解を返す /O(log(n))
-	vector<int>get_divisors(int n): n の約数列挙を返す /O(d(n))(d(i):=i の約数の個数)
+/**
+ * エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法）
+ * ref:https://osak.jp/diary/diary_201310.html#20131017
+ * ref:https://qiita.com/drken/items/3beb679e54266f20ab63
 */
-
 struct Factors{
+	/// @brief 前計算
+	/// @note O(n log(log(n)))
 	Factors(int n){
 		mx=n;
 		min_factor=vector<int>(mx+1);
@@ -30,6 +27,9 @@ struct Factors{
 			}
 		}
 	}
+
+	/// @brief n を素因数分解する
+	/// @note O(log(n))
 	vector<pair<int,int>>get_prime_factors(int n){
 		if(prime_factors[n].size()==0){
 			int x=n;
@@ -45,6 +45,9 @@ struct Factors{
 		}
 		return prime_factors[n];
 	}
+
+	/// @brief n の約数を返す
+	/// @note O(d(n))
 	vector<int>get_divisors(int n){
 		if(divisors[n].size()==0){
 			vector<pair<int,int>>pf=get_prime_factors(n);

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: lucas</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">lucas</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="el" href="md__r_e_a_d_m_e.html">top</a></p>
+<h1><a class="anchor" id="autotoc_md107"></a>
+<a href="./lucas.hpp">Combinatorics (Lucas)</a></h1>
+<p><code><a class="el" href="struct_comb_lucas.html">CombLucas(int mod)</a></code></p><ul>
+<li>Lucas の定理を用いて $_n C_r \pmod{mod}$ を求めるための前計算を行う。</li>
+<li>$O(mod)$</li>
+</ul>
+<p><code>ll comb(ll n, ll r)</code></p><ul>
+<li>Lucas の定理を用いて $_n C_r \pmod{mod}$ を求める。</li>
+<li>$O(\log_{p}{n})$</li>
+</ul>
+<p><code><a class="el" href="struct_combinatorics.html">Combinatorics</a></code> ライブラリでは、 $n\ge p$ に対して $_n C_r \pmod{p}$ を求める際に正しい計算ができないため、Lucas の定理を用いて計算を行う必要がある。</p>
+<h3><a class="anchor" id="autotoc_md108"></a>
+Lucas の定理</h3>
+<p>$p$ を素数とし、 $n, r$ を非負整数とする。</p>
+<p>また、 $n = n_k p^k + n_{k-1} p^{k-1} + \cdots + n_1 p + n_0$、 $r = r_k p^k + r_{k-1} p^{k-1} + \cdots + r_1 p + r_0$ と表す。</p>
+<p>このとき、</p>
+<p>$_n C_r \pmod{p}= \prod_{k=0}^{N}{_{n_k}C_{r_k}} \pmod{p}$ </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

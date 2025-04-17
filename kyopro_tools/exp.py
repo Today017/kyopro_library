@@ -162,8 +162,9 @@ class Expander:
                 result.extend(self.expand_library(acl_path))
                 continue
 
-            if "debug" in line or "print_line" in line:
-                continue
+            if not HEAD:
+                if "debug" in line or "print_line" in line:
+                    continue
                 
             # if line.startswith("ll ") or " ll " in line or "(ll)" in line or "<ll>" in line or "ll," in line or ",ll" in line:
             #     line=line.replace("ll","long long")

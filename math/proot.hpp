@@ -7,15 +7,15 @@
 //n の原始根を求める
 //ref: https://37zigen.com/primitive-root/
 //verify: https://judge.yosupo.jp/problem/primitive_root
-ll primitiveRoot(ll n){
-	if(!primalityTest(n))return-1;
+ll PrimitiveRoot(ll n){
+	if(!PrimalityTest(n))return-1;
 	if(n==2)return 1;
-	auto pf=primeFactorize(n-1);
+	auto pf=PrimeFactorize(n-1);
 	while(true){
-		ll i=xor128(2,n);
+		ll i=Xor128(2,n);
 		bool ok=true;
 		for(auto[p,_]:pf){
-			if(modPow(i,(n-1)/p,n)==1){
+			if(ModPow(i,(n-1)/p,n)==1){
 				ok=false;
 				break;
 			}

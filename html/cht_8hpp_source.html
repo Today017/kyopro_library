@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: algorithm/cht.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_692f640cc74363071c5c0e14282656e9.html">algorithm</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">cht.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="cht_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&quot;<a class="code" href="binary__search_8hpp.html">../../kyopro_library/algorithm/binary_search.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T=ll, <span class="keywordtype">bool</span> Min=true&gt;</div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_c_h_t.html">    9</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_c_h_t.html#a8ee3002f76dde43433f9aadf45cbf32c">CHT</a>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_c_h_t.html#a8ee3002f76dde43433f9aadf45cbf32c">   10</a></span>    <a class="code hl_function" href="struct_c_h_t.html#a8ee3002f76dde43433f9aadf45cbf32c">CHT</a>()=<span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_c_h_t.html#a98990faf0c0f436c501ce5bc94e8f555">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_c_h_t.html#a98990faf0c0f436c501ce5bc94e8f555">add</a>(T a, T b){</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span>(!Min) a*=-1,b*=-1;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">if</span>(lines.count(a)&amp;&amp;lines[a]&lt;=b) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        lines[a]=b;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">auto</span> it=lines.find(a);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">if</span>(!need(it)){</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            lines.erase(a);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span>(it!=lines.begin()){</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            it=prev(it);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                <span class="keywordflow">if</span>(need(it)) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <span class="keyword">auto</span> prv=prev(it);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                lines.erase(it);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                it=prv;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        it=next(lines.find(a));</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">if</span>(need(it)) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keyword">auto</span> nxt=next(it);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            lines.erase(it);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            it=nxt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_c_h_t.html#a652d63fa85df6b36fb09fdae60ebc6cf">   43</a></span>    T <a class="code hl_function" href="struct_c_h_t.html#a652d63fa85df6b36fb09fdae60ebc6cf">get</a>(T x){</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">auto</span> [a,b]=*(lines.lower_bound(</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <a class="code hl_function" href="binary__search_8hpp.html#ac51e21ede218b1fc3ce5beca36a6fc30">BinarySearch</a>(lines.begin()-&gt;first,lines.rbegin()-&gt;first+1,[&amp;](T x){</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                auto it=lines.lower_bound(mid);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                if(it==lines.begin()) return true;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                if(it==lines.end()) return false;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                auto [a1,b1]=*prev(it);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                auto [a2,b2]=*it;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                return a1*x+b1&gt;a2*x+b2;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            })</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        ));</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">return</span>(a*x+b)*(Min?1:-1);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    map&lt;T,T&gt; lines;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">bool</span> need(<span class="keyword">const</span> <span class="keyword">typename</span> map&lt;T,T&gt;::iterator it){</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">if</span>(it==lines.begin()||it==prev(lines.end())||it==lines.end()) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">auto</span> prv=prev(it);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keyword">auto</span> nxt=next(it);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">auto</span> [a,b]=*it;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">auto</span> [a1,b1]=*nxt;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">auto</span> [a2,b2]=*prv;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">return</span>(__int128_t)(a1-a)*(b-b2)&lt;(__int128_t)(a-a2)*(b1-b);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
+</div>
+<div class="ttc" id="abinary__search_8hpp_html"><div class="ttname"><a href="binary__search_8hpp.html">binary_search.hpp</a></div></div>
+<div class="ttc" id="abinary__search_8hpp_html_ac51e21ede218b1fc3ce5beca36a6fc30"><div class="ttname"><a href="binary__search_8hpp.html#ac51e21ede218b1fc3ce5beca36a6fc30">BinarySearch</a></div><div class="ttdeci">T BinarySearch(T ok, T ng, Judge judge)</div><div class="ttdoc">二分探索</div><div class="ttdef"><b>Definition</b> binary_search.hpp:7</div></div>
+<div class="ttc" id="astruct_c_h_t_html_a652d63fa85df6b36fb09fdae60ebc6cf"><div class="ttname"><a href="struct_c_h_t.html#a652d63fa85df6b36fb09fdae60ebc6cf">CHT::get</a></div><div class="ttdeci">T get(T x)</div><div class="ttdoc">x に対する直線群の最小値を求める</div><div class="ttdef"><b>Definition</b> cht.hpp:43</div></div>
+<div class="ttc" id="astruct_c_h_t_html_a8ee3002f76dde43433f9aadf45cbf32c"><div class="ttname"><a href="struct_c_h_t.html#a8ee3002f76dde43433f9aadf45cbf32c">CHT::CHT</a></div><div class="ttdeci">CHT()=default</div></div>
+<div class="ttc" id="astruct_c_h_t_html_a98990faf0c0f436c501ce5bc94e8f555"><div class="ttname"><a href="struct_c_h_t.html#a98990faf0c0f436c501ce5bc94e8f555">CHT::add</a></div><div class="ttdeci">void add(T a, T b)</div><div class="ttdoc">直線 ax + b を追加する</div><div class="ttdef"><b>Definition</b> cht.hpp:14</div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

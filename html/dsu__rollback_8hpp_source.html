@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: graph/dsu_rollback.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_12552d7fa429bf94a2e32e5cf39f7e69.html">graph</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">dsu_rollback.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="dsu__rollback_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="foldopen" id="foldopen00003" data-start="{" data-end="};">
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="struct_dsu_rollback.html">    3</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_dsu_rollback.html#a11aa0e4a2cd2660619a17e0dd828c22a">DsuRollback</a>{</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="struct_dsu_rollback.html#a11aa0e4a2cd2660619a17e0dd828c22a">    4</a></span>    <a class="code hl_function" href="struct_dsu_rollback.html#a11aa0e4a2cd2660619a17e0dd828c22a">DsuRollback</a>()=<span class="keywordflow">default</span>;</div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_dsu_rollback.html#ad42c892c309ec0aa491c70bec3d58779">    5</a></span>    <a class="code hl_function" href="struct_dsu_rollback.html#ad42c892c309ec0aa491c70bec3d58779">DsuRollback</a>(<span class="keywordtype">int</span> n){</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>        par.resize(n);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        iota(par.begin(),par.end(),0);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        sz.assign(n,1);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        forest_count=n;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    }</div>
+</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_dsu_rollback.html#ac2028d09c590bdde38b2669f19728452">   12</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_dsu_rollback.html#ac2028d09c590bdde38b2669f19728452">find</a>(<span class="keywordtype">int</span> x){</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">if</span>(par[x]==x)<span class="keywordflow">return</span> x;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_dsu_rollback.html#ac2028d09c590bdde38b2669f19728452">find</a>(par[x]);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_dsu_rollback.html#a103be2aa1ff86601ef80cf051c3d566f">   16</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_dsu_rollback.html#a103be2aa1ff86601ef80cf051c3d566f">merge</a>(<span class="keywordtype">int</span> x,<span class="keywordtype">int</span> y){</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        x=<a class="code hl_function" href="struct_dsu_rollback.html#ac2028d09c590bdde38b2669f19728452">find</a>(x),y=<a class="code hl_function" href="struct_dsu_rollback.html#ac2028d09c590bdde38b2669f19728452">find</a>(y);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">if</span>(x==y){</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            history.push_back({x,-1,-1,-1});</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">if</span>(sz[x]&lt;sz[y])swap(x,y);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        history.push_back({x,y,sz[x],sz[y]});</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        par[y]=x;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        sz[x]+=sz[y];</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        forest_count--;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_dsu_rollback.html#a576e5300d28f07244d0548cd2e98b052">   29</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dsu_rollback.html#a576e5300d28f07244d0548cd2e98b052">undo</a>(){</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">if</span>(history.empty())<span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keyword">auto</span>[x,y,szx,szy]=history.back();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        history.pop_back();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">if</span>(y==-1)<span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        par[y]=y;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        sz[x]=szx;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        sz[y]=szy;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_dsu_rollback.html#aa0ce04a8aaf999bda7719d681775505d">   38</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dsu_rollback.html#aa0ce04a8aaf999bda7719d681775505d">snapshot</a>(){history.clear();}</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_dsu_rollback.html#a7c33fb0f4e5b0f804b937ab4edb7a5ea">   39</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dsu_rollback.html#a7c33fb0f4e5b0f804b937ab4edb7a5ea">rollback</a>(){<span class="keywordflow">while</span>(!history.empty())<a class="code hl_function" href="struct_dsu_rollback.html#a576e5300d28f07244d0548cd2e98b052">undo</a>();}</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_dsu_rollback.html#ade29264c1fbd5b5bfdaefe918c9d6163">   40</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_dsu_rollback.html#ade29264c1fbd5b5bfdaefe918c9d6163">size</a>(<span class="keywordtype">int</span> x){<span class="keywordflow">return</span> sz[<a class="code hl_function" href="struct_dsu_rollback.html#ac2028d09c590bdde38b2669f19728452">find</a>(x)];}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_dsu_rollback.html#a954350180a0b6956d0661419b2f764f6">   41</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_dsu_rollback.html#a954350180a0b6956d0661419b2f764f6">same</a>(<span class="keywordtype">int</span> x,<span class="keywordtype">int</span> y){<span class="keywordflow">return</span> <a class="code hl_function" href="struct_dsu_rollback.html#ac2028d09c590bdde38b2669f19728452">find</a>(x)==<a class="code hl_function" href="struct_dsu_rollback.html#ac2028d09c590bdde38b2669f19728452">find</a>(y);}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_dsu_rollback.html#ada87b7194225ccb7dccb62080069bac6">   42</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_dsu_rollback.html#ada87b7194225ccb7dccb62080069bac6">count</a>(){<span class="keywordflow">return</span> forest_count;}</div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_dsu_rollback.html#a7955aef4830d3b5443d291e8933b6ed7">   43</a></span>    vector&lt;vector&lt;int&gt;&gt;<a class="code hl_function" href="struct_dsu_rollback.html#a7955aef4830d3b5443d291e8933b6ed7">groups</a>(){</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordtype">int</span> n=par.size();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        vector&lt;vector&lt;int&gt;&gt;ret(n);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;n;i++)ret[<a class="code hl_function" href="struct_dsu_rollback.html#ac2028d09c590bdde38b2669f19728452">find</a>(i)].push_back(i);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        ret.erase(remove_if(ret.begin(),ret.end(),[&amp;](<span class="keyword">const</span> vector&lt;int&gt;&amp;v){return v.empty();}),ret.end());</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    vector&lt;int&gt;par,sz;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    vector&lt;tuple&lt;int,int,int,int&gt;&gt;history;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">int</span> forest_count;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
+</div>
+<div class="ttc" id="astruct_dsu_rollback_html_a103be2aa1ff86601ef80cf051c3d566f"><div class="ttname"><a href="struct_dsu_rollback.html#a103be2aa1ff86601ef80cf051c3d566f">DsuRollback::merge</a></div><div class="ttdeci">bool merge(int x, int y)</div><div class="ttdef"><b>Definition</b> dsu_rollback.hpp:16</div></div>
+<div class="ttc" id="astruct_dsu_rollback_html_a11aa0e4a2cd2660619a17e0dd828c22a"><div class="ttname"><a href="struct_dsu_rollback.html#a11aa0e4a2cd2660619a17e0dd828c22a">DsuRollback::DsuRollback</a></div><div class="ttdeci">DsuRollback()=default</div></div>
+<div class="ttc" id="astruct_dsu_rollback_html_a576e5300d28f07244d0548cd2e98b052"><div class="ttname"><a href="struct_dsu_rollback.html#a576e5300d28f07244d0548cd2e98b052">DsuRollback::undo</a></div><div class="ttdeci">void undo()</div><div class="ttdef"><b>Definition</b> dsu_rollback.hpp:29</div></div>
+<div class="ttc" id="astruct_dsu_rollback_html_a7955aef4830d3b5443d291e8933b6ed7"><div class="ttname"><a href="struct_dsu_rollback.html#a7955aef4830d3b5443d291e8933b6ed7">DsuRollback::groups</a></div><div class="ttdeci">vector&lt; vector&lt; int &gt; &gt; groups()</div><div class="ttdef"><b>Definition</b> dsu_rollback.hpp:43</div></div>
+<div class="ttc" id="astruct_dsu_rollback_html_a7c33fb0f4e5b0f804b937ab4edb7a5ea"><div class="ttname"><a href="struct_dsu_rollback.html#a7c33fb0f4e5b0f804b937ab4edb7a5ea">DsuRollback::rollback</a></div><div class="ttdeci">void rollback()</div><div class="ttdef"><b>Definition</b> dsu_rollback.hpp:39</div></div>
+<div class="ttc" id="astruct_dsu_rollback_html_a954350180a0b6956d0661419b2f764f6"><div class="ttname"><a href="struct_dsu_rollback.html#a954350180a0b6956d0661419b2f764f6">DsuRollback::same</a></div><div class="ttdeci">bool same(int x, int y)</div><div class="ttdef"><b>Definition</b> dsu_rollback.hpp:41</div></div>
+<div class="ttc" id="astruct_dsu_rollback_html_aa0ce04a8aaf999bda7719d681775505d"><div class="ttname"><a href="struct_dsu_rollback.html#aa0ce04a8aaf999bda7719d681775505d">DsuRollback::snapshot</a></div><div class="ttdeci">void snapshot()</div><div class="ttdef"><b>Definition</b> dsu_rollback.hpp:38</div></div>
+<div class="ttc" id="astruct_dsu_rollback_html_ac2028d09c590bdde38b2669f19728452"><div class="ttname"><a href="struct_dsu_rollback.html#ac2028d09c590bdde38b2669f19728452">DsuRollback::find</a></div><div class="ttdeci">int find(int x)</div><div class="ttdef"><b>Definition</b> dsu_rollback.hpp:12</div></div>
+<div class="ttc" id="astruct_dsu_rollback_html_ad42c892c309ec0aa491c70bec3d58779"><div class="ttname"><a href="struct_dsu_rollback.html#ad42c892c309ec0aa491c70bec3d58779">DsuRollback::DsuRollback</a></div><div class="ttdeci">DsuRollback(int n)</div><div class="ttdef"><b>Definition</b> dsu_rollback.hpp:5</div></div>
+<div class="ttc" id="astruct_dsu_rollback_html_ada87b7194225ccb7dccb62080069bac6"><div class="ttname"><a href="struct_dsu_rollback.html#ada87b7194225ccb7dccb62080069bac6">DsuRollback::count</a></div><div class="ttdeci">int count()</div><div class="ttdef"><b>Definition</b> dsu_rollback.hpp:42</div></div>
+<div class="ttc" id="astruct_dsu_rollback_html_ade29264c1fbd5b5bfdaefe918c9d6163"><div class="ttname"><a href="struct_dsu_rollback.html#ade29264c1fbd5b5bfdaefe918c9d6163">DsuRollback::size</a></div><div class="ttdeci">int size(int x)</div><div class="ttdef"><b>Definition</b> dsu_rollback.hpp:40</div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: others/operator.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9510827d0b234b3cc54b29892f217477.html">others</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">operator.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="operator_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="namespace_operator.html">    4</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_operator.html">Operator</a>{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T,T not_exist&gt;</div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_operator_1_1_update.html">    6</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_operator_1_1_update.html">Update</a>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_operator_1_1_update.html#ab994d7d1f21b221ecd64cc2faf1153a4">    7</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="struct_operator_1_1_update.html#ab994d7d1f21b221ecd64cc2faf1153a4">Type</a>=T;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_operator_1_1_update.html#a8a95d2315dfc15130309f5d489097e32">    8</a></span>        <span class="keyword">static</span> <a class="code hl_typedef" href="struct_operator_1_1_update.html#ab994d7d1f21b221ecd64cc2faf1153a4">Type</a> <a class="code hl_function" href="struct_operator_1_1_update.html#a8a95d2315dfc15130309f5d489097e32">id</a>(){<span class="keywordflow">return</span> not_exist;}</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_operator_1_1_update.html#acbf905da416d481520f6ad187d889f17">    9</a></span>        <span class="keyword">static</span> <a class="code hl_typedef" href="struct_operator_1_1_update.html#ab994d7d1f21b221ecd64cc2faf1153a4">Type</a> <a class="code hl_function" href="struct_operator_1_1_update.html#acbf905da416d481520f6ad187d889f17">op</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="struct_operator_1_1_update.html#ab994d7d1f21b221ecd64cc2faf1153a4">Type</a>&amp;a,<span class="keyword">const</span> <a class="code hl_typedef" href="struct_operator_1_1_update.html#ab994d7d1f21b221ecd64cc2faf1153a4">Type</a>&amp;b){<span class="keywordflow">return</span> b==<a class="code hl_function" href="struct_operator_1_1_update.html#a8a95d2315dfc15130309f5d489097e32">id</a>()?a:b;}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    };</div>
+</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_operator_1_1_add.html">   13</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_operator_1_1_add.html">Add</a>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_operator_1_1_add.html#a438ff08e5d49914d7dc9af1b0b293231">   14</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="struct_operator_1_1_add.html#a438ff08e5d49914d7dc9af1b0b293231">Type</a>=T;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_operator_1_1_add.html#a8e0e087f00637c890ca8b50fa7e4e0fc">   15</a></span>        <span class="keyword">static</span> <a class="code hl_typedef" href="struct_operator_1_1_add.html#a438ff08e5d49914d7dc9af1b0b293231">Type</a> <a class="code hl_function" href="struct_operator_1_1_add.html#a8e0e087f00637c890ca8b50fa7e4e0fc">id</a>(){<span class="keywordflow">return</span> 0;}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_operator_1_1_add.html#a595b8d07233ca27c6932dc73264c0087">   16</a></span>        <span class="keyword">static</span> <a class="code hl_typedef" href="struct_operator_1_1_add.html#a438ff08e5d49914d7dc9af1b0b293231">Type</a> <a class="code hl_function" href="struct_operator_1_1_add.html#a595b8d07233ca27c6932dc73264c0087">op</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="struct_operator_1_1_add.html#a438ff08e5d49914d7dc9af1b0b293231">Type</a>&amp;a,<span class="keyword">const</span> <a class="code hl_typedef" href="struct_operator_1_1_add.html#a438ff08e5d49914d7dc9af1b0b293231">Type</a>&amp;b){<span class="keywordflow">return</span> a+b;}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    };</div>
+</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_operator_1_1_update_time_stamp.html">   20</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_operator_1_1_update_time_stamp.html">UpdateTimeStamp</a>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_operator_1_1_update_time_stamp.html#a74b6432ada2f8e8acfd35c70ccf9b819">   21</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="struct_operator_1_1_update_time_stamp.html#a74b6432ada2f8e8acfd35c70ccf9b819">Type</a>=pair&lt;T,int&gt;;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_operator_1_1_update_time_stamp.html#a16234d6362c308f826cff9cc3a2d31a0">   22</a></span>        <span class="keyword">static</span> <a class="code hl_typedef" href="struct_operator_1_1_update_time_stamp.html#a74b6432ada2f8e8acfd35c70ccf9b819">Type</a> <a class="code hl_function" href="struct_operator_1_1_update_time_stamp.html#a16234d6362c308f826cff9cc3a2d31a0">id</a>(){<span class="keywordflow">return</span> {0,-1};}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_operator_1_1_update_time_stamp.html#a8f5f47fb110c8ede5ba6d1e4efd1b3ed">   23</a></span>        <span class="keyword">static</span> <a class="code hl_typedef" href="struct_operator_1_1_update_time_stamp.html#a74b6432ada2f8e8acfd35c70ccf9b819">Type</a> <a class="code hl_function" href="struct_operator_1_1_update_time_stamp.html#a8f5f47fb110c8ede5ba6d1e4efd1b3ed">op</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="struct_operator_1_1_update_time_stamp.html#a74b6432ada2f8e8acfd35c70ccf9b819">Type</a>&amp;a,<span class="keyword">const</span> <a class="code hl_typedef" href="struct_operator_1_1_update_time_stamp.html#a74b6432ada2f8e8acfd35c70ccf9b819">Type</a>&amp;b){<span class="keywordflow">return</span> b.second&gt;a.second?b:a;}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    };</div>
+</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+</div>
+<div class="ttc" id="anamespace_operator_html"><div class="ttname"><a href="namespace_operator.html">Operator</a></div><div class="ttdef"><b>Definition</b> operator.hpp:4</div></div>
+<div class="ttc" id="astruct_operator_1_1_add_html"><div class="ttname"><a href="struct_operator_1_1_add.html">Operator::Add</a></div><div class="ttdef"><b>Definition</b> operator.hpp:13</div></div>
+<div class="ttc" id="astruct_operator_1_1_add_html_a438ff08e5d49914d7dc9af1b0b293231"><div class="ttname"><a href="struct_operator_1_1_add.html#a438ff08e5d49914d7dc9af1b0b293231">Operator::Add::Type</a></div><div class="ttdeci">T Type</div><div class="ttdef"><b>Definition</b> operator.hpp:14</div></div>
+<div class="ttc" id="astruct_operator_1_1_add_html_a595b8d07233ca27c6932dc73264c0087"><div class="ttname"><a href="struct_operator_1_1_add.html#a595b8d07233ca27c6932dc73264c0087">Operator::Add::op</a></div><div class="ttdeci">static Type op(const Type &amp;a, const Type &amp;b)</div><div class="ttdef"><b>Definition</b> operator.hpp:16</div></div>
+<div class="ttc" id="astruct_operator_1_1_add_html_a8e0e087f00637c890ca8b50fa7e4e0fc"><div class="ttname"><a href="struct_operator_1_1_add.html#a8e0e087f00637c890ca8b50fa7e4e0fc">Operator::Add::id</a></div><div class="ttdeci">static Type id()</div><div class="ttdef"><b>Definition</b> operator.hpp:15</div></div>
+<div class="ttc" id="astruct_operator_1_1_update_html"><div class="ttname"><a href="struct_operator_1_1_update.html">Operator::Update</a></div><div class="ttdef"><b>Definition</b> operator.hpp:6</div></div>
+<div class="ttc" id="astruct_operator_1_1_update_html_a8a95d2315dfc15130309f5d489097e32"><div class="ttname"><a href="struct_operator_1_1_update.html#a8a95d2315dfc15130309f5d489097e32">Operator::Update::id</a></div><div class="ttdeci">static Type id()</div><div class="ttdef"><b>Definition</b> operator.hpp:8</div></div>
+<div class="ttc" id="astruct_operator_1_1_update_html_ab994d7d1f21b221ecd64cc2faf1153a4"><div class="ttname"><a href="struct_operator_1_1_update.html#ab994d7d1f21b221ecd64cc2faf1153a4">Operator::Update::Type</a></div><div class="ttdeci">T Type</div><div class="ttdef"><b>Definition</b> operator.hpp:7</div></div>
+<div class="ttc" id="astruct_operator_1_1_update_html_acbf905da416d481520f6ad187d889f17"><div class="ttname"><a href="struct_operator_1_1_update.html#acbf905da416d481520f6ad187d889f17">Operator::Update::op</a></div><div class="ttdeci">static Type op(const Type &amp;a, const Type &amp;b)</div><div class="ttdef"><b>Definition</b> operator.hpp:9</div></div>
+<div class="ttc" id="astruct_operator_1_1_update_time_stamp_html"><div class="ttname"><a href="struct_operator_1_1_update_time_stamp.html">Operator::UpdateTimeStamp</a></div><div class="ttdef"><b>Definition</b> operator.hpp:20</div></div>
+<div class="ttc" id="astruct_operator_1_1_update_time_stamp_html_a16234d6362c308f826cff9cc3a2d31a0"><div class="ttname"><a href="struct_operator_1_1_update_time_stamp.html#a16234d6362c308f826cff9cc3a2d31a0">Operator::UpdateTimeStamp::id</a></div><div class="ttdeci">static Type id()</div><div class="ttdef"><b>Definition</b> operator.hpp:22</div></div>
+<div class="ttc" id="astruct_operator_1_1_update_time_stamp_html_a74b6432ada2f8e8acfd35c70ccf9b819"><div class="ttname"><a href="struct_operator_1_1_update_time_stamp.html#a74b6432ada2f8e8acfd35c70ccf9b819">Operator::UpdateTimeStamp::Type</a></div><div class="ttdeci">pair&lt; T, int &gt; Type</div><div class="ttdef"><b>Definition</b> operator.hpp:21</div></div>
+<div class="ttc" id="astruct_operator_1_1_update_time_stamp_html_a8f5f47fb110c8ede5ba6d1e4efd1b3ed"><div class="ttname"><a href="struct_operator_1_1_update_time_stamp.html#a8f5f47fb110c8ede5ba6d1e4efd1b3ed">Operator::UpdateTimeStamp::op</a></div><div class="ttdeci">static Type op(const Type &amp;a, const Type &amp;b)</div><div class="ttdef"><b>Definition</b> operator.hpp:23</div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

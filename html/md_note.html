@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: note</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">note</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="el" href="md__r_e_a_d_m_e.html">top</a></p>
+<h1><a class="anchor" id="autotoc_md110"></a>
+Note</h1>
+<h2><a class="anchor" id="autotoc_md111"></a>
+環境構築</h2>
+<ul>
+<li><a href="./kyopro_tools/mac/build">Mac</a></li>
+<li><a href="./kyopro_tools/linux/build">WSL</a></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md112"></a>
+環境側でやること</h3>
+<ol type="1">
+<li>GCC のインストール<ul>
+<li>C++20 が使える</li>
+<li><code>#include &lt;bits/stdc++.h&gt;</code> が使える</li>
+</ul>
+</li>
+<li>Python3 のインストール</li>
+<li><code>~/.vimrc</code> を設定する</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md113"></a>
+データ構造に載せる代数構造</h2>
+<h3><a class="anchor" id="autotoc_md114"></a>
+例) モノイド</h3>
+<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code hl_namespace" href="namespace_monoid.html">Monoid</a> {</div>
+<div class="line">    <span class="keyword">using </span>Type = hoge;</div>
+<div class="line">    <span class="keyword">static</span> Type id() { <span class="keywordflow">return</span> hoge; }</div>
+<div class="line">    <span class="keyword">static</span> Type op(<span class="keyword">const</span> Type&amp; l, <span class="keyword">const</span> Type&amp; r) { <span class="keywordflow">return</span> hoge; }</div>
+<div class="line">};</div>
+<div class="ttc" id="anamespace_monoid_html"><div class="ttname"><a href="namespace_monoid.html">Monoid</a></div><div class="ttdef"><b>Definition</b> monoid.hpp:6</div></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md115"></a>
+各構造の要件</h3>
+<ul>
+<li>モノイド<ul>
+<li><code>Type id()</code></li>
+<li><code>Type op(const Type&amp; l, const Type&amp; r)</code></li>
+</ul>
+</li>
+<li>半群<ul>
+<li><code>Type op(const Type&amp; l, const Type&amp; r)</code></li>
+</ul>
+</li>
+<li>群<ul>
+<li><code>Type inv(const Type&amp; x)</code></li>
+<li><code>Type op(const Type&amp; l, const Type&amp; r)</code></li>
+<li><code>Type id()</code></li>
+</ul>
+</li>
+<li>作用素<ul>
+<li><code>Type id()</code></li>
+<li><code>Type op(const Type&amp; l, const Type&amp; r)</code> </li>
+</ul>
+</li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

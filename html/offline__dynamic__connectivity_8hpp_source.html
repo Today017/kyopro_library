@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: graph/offline_dynamic_connectivity.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_12552d7fa429bf94a2e32e5cf39f7e69.html">graph</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">offline_dynamic_connectivity.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="offline__dynamic__connectivity_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&quot;<a class="code" href="dsu__rollback_8hpp.html">../../kyopro_library/graph/dsu_rollback.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="foldopen" id="foldopen00004" data-start="{" data-end="};">
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html">    4</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">DynamicConnectivity</a>{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#ab24b39a0b50b20580591d32c4fa9a80c">    5</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="struct_dynamic_connectivity.html#ab24b39a0b50b20580591d32c4fa9a80c">P</a>=pair&lt;int,int&gt;;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a0684437d8e7d867742b1b8232a1cfda6">    6</a></span>    <a class="code hl_struct" href="struct_dsu_rollback.html">DsuRollback</a> <a class="code hl_variable" href="struct_dynamic_connectivity.html#a0684437d8e7d867742b1b8232a1cfda6">dsu</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a6f651896a1d46854034f5b974ba5baee">    7</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_dynamic_connectivity.html#a6f651896a1d46854034f5b974ba5baee">n</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a9717006f779815ffd03758fd674fb5b8">    8</a></span>    vector&lt;vector&lt;P&gt;&gt;<a class="code hl_variable" href="struct_dynamic_connectivity.html#a9717006f779815ffd03758fd674fb5b8">edges</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a52d4530bbe8f9995238ec81ea564e6a3">    9</a></span>    vector&lt;pair&lt;P,P&gt;&gt;<a class="code hl_variable" href="struct_dynamic_connectivity.html#a52d4530bbe8f9995238ec81ea564e6a3">period</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a1f2111a3362a50c267eb4b797dacdf38">   10</a></span>    map&lt;P,int&gt;<a class="code hl_variable" href="struct_dynamic_connectivity.html#a03b09431a83c141cf97ead0e77b70e8a">count</a>,<a class="code hl_variable" href="struct_dynamic_connectivity.html#a1f2111a3362a50c267eb4b797dacdf38">appear</a>;</div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">   11</a></span>    <a class="code hl_function" href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">DynamicConnectivity</a>(<span class="keywordtype">int</span> v,<span class="keywordtype">int</span> q){</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <a class="code hl_variable" href="struct_dynamic_connectivity.html#a6f651896a1d46854034f5b974ba5baee">n</a>=q;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <a class="code hl_variable" href="struct_dynamic_connectivity.html#a9717006f779815ffd03758fd674fb5b8">edges</a>=vector&lt;vector&lt;P&gt;&gt;(2*<a class="code hl_variable" href="struct_dynamic_connectivity.html#a6f651896a1d46854034f5b974ba5baee">n</a>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_variable" href="struct_dynamic_connectivity.html#a0684437d8e7d867742b1b8232a1cfda6">dsu</a>=<a class="code hl_struct" href="struct_dsu_rollback.html">DsuRollback</a>(v);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a3b821a8d6b1245d56613a57eb0aa96a7">   16</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#a3b821a8d6b1245d56613a57eb0aa96a7">unite</a>(<span class="keywordtype">int</span> idx,<span class="keywordtype">int</span> u,<span class="keywordtype">int</span> v){</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_typedef" href="struct_dynamic_connectivity.html#ab24b39a0b50b20580591d32c4fa9a80c">P</a> e=minmax(u,v);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="struct_dynamic_connectivity.html#a03b09431a83c141cf97ead0e77b70e8a">count</a>[e]++==0)<a class="code hl_variable" href="struct_dynamic_connectivity.html#a1f2111a3362a50c267eb4b797dacdf38">appear</a>[e]=idx;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a5a23c1796837bca00e4ea191750cc6d8">   20</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#a5a23c1796837bca00e4ea191750cc6d8">cut</a>(<span class="keywordtype">int</span> idx,<span class="keywordtype">int</span> u,<span class="keywordtype">int</span> v){</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_typedef" href="struct_dynamic_connectivity.html#ab24b39a0b50b20580591d32c4fa9a80c">P</a> e=minmax(u,v);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">if</span>(--<a class="code hl_variable" href="struct_dynamic_connectivity.html#a03b09431a83c141cf97ead0e77b70e8a">count</a>[e]==0)<a class="code hl_variable" href="struct_dynamic_connectivity.html#a52d4530bbe8f9995238ec81ea564e6a3">period</a>.push_back({{<a class="code hl_variable" href="struct_dynamic_connectivity.html#a1f2111a3362a50c267eb4b797dacdf38">appear</a>[e],idx},e});</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#aef6dbb8a8163c1aa473f68d4986c5226">   24</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#aef6dbb8a8163c1aa473f68d4986c5226">build</a>(){</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span>[e,val]:<a class="code hl_variable" href="struct_dynamic_connectivity.html#a03b09431a83c141cf97ead0e77b70e8a">count</a>){</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">if</span>(val&gt;0)<a class="code hl_variable" href="struct_dynamic_connectivity.html#a52d4530bbe8f9995238ec81ea564e6a3">period</a>.push_back({{<a class="code hl_variable" href="struct_dynamic_connectivity.html#a1f2111a3362a50c267eb4b797dacdf38">appear</a>[e],<a class="code hl_variable" href="struct_dynamic_connectivity.html#a6f651896a1d46854034f5b974ba5baee">n</a>},e});</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span>[range,e]:<a class="code hl_variable" href="struct_dynamic_connectivity.html#a52d4530bbe8f9995238ec81ea564e6a3">period</a>){</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keyword">auto</span>[l,r]=range;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            l+=<a class="code hl_variable" href="struct_dynamic_connectivity.html#a6f651896a1d46854034f5b974ba5baee">n</a>,r+=<a class="code hl_variable" href="struct_dynamic_connectivity.html#a6f651896a1d46854034f5b974ba5baee">n</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keywordflow">while</span>(l&lt;r){</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                <span class="keywordflow">if</span>(l&amp;1) <a class="code hl_variable" href="struct_dynamic_connectivity.html#a9717006f779815ffd03758fd674fb5b8">edges</a>[l++].push_back(e);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                <span class="keywordflow">if</span>(r&amp;1) <a class="code hl_variable" href="struct_dynamic_connectivity.html#a9717006f779815ffd03758fd674fb5b8">edges</a>[--r].push_back(e);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                l/=2,r/=2;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">   38</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">execute</a>(<span class="keyword">auto</span> &amp;f, <span class="keywordtype">int</span> k=1){</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">if</span>(k&gt;=2*<a class="code hl_variable" href="struct_dynamic_connectivity.html#a6f651896a1d46854034f5b974ba5baee">n</a>)<span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span>[u,v]:<a class="code hl_variable" href="struct_dynamic_connectivity.html#a9717006f779815ffd03758fd674fb5b8">edges</a>[k])<a class="code hl_variable" href="struct_dynamic_connectivity.html#a0684437d8e7d867742b1b8232a1cfda6">dsu</a>.merge(u,v);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">if</span>(k&lt;<a class="code hl_variable" href="struct_dynamic_connectivity.html#a6f651896a1d46854034f5b974ba5baee">n</a>){</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <a class="code hl_function" href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">execute</a>(f,k&lt;&lt;1);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <a class="code hl_function" href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">execute</a>(f,k&lt;&lt;1|1);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(0&lt;=k-<a class="code hl_variable" href="struct_dynamic_connectivity.html#a6f651896a1d46854034f5b974ba5baee">n</a>&amp;&amp;k-<a class="code hl_variable" href="struct_dynamic_connectivity.html#a6f651896a1d46854034f5b974ba5baee">n</a>&lt;<a class="code hl_variable" href="struct_dynamic_connectivity.html#a6f651896a1d46854034f5b974ba5baee">n</a>){</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordtype">int</span> query_idx=k-<a class="code hl_variable" href="struct_dynamic_connectivity.html#a6f651896a1d46854034f5b974ba5baee">n</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            f(query_idx);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span>[u,v]:<a class="code hl_variable" href="struct_dynamic_connectivity.html#a9717006f779815ffd03758fd674fb5b8">edges</a>[k])<a class="code hl_variable" href="struct_dynamic_connectivity.html#a0684437d8e7d867742b1b8232a1cfda6">dsu</a>.undo();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+</div>
+<div class="ttc" id="adsu__rollback_8hpp_html"><div class="ttname"><a href="dsu__rollback_8hpp.html">dsu_rollback.hpp</a></div></div>
+<div class="ttc" id="astruct_dsu_rollback_html"><div class="ttname"><a href="struct_dsu_rollback.html">DsuRollback</a></div><div class="ttdef"><b>Definition</b> dsu_rollback.hpp:3</div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_a03b09431a83c141cf97ead0e77b70e8a"><div class="ttname"><a href="struct_dynamic_connectivity.html#a03b09431a83c141cf97ead0e77b70e8a">DynamicConnectivity::count</a></div><div class="ttdeci">map&lt; P, int &gt; count</div><div class="ttdef"><b>Definition</b> offline_dynamic_connectivity.hpp:10</div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_a0684437d8e7d867742b1b8232a1cfda6"><div class="ttname"><a href="struct_dynamic_connectivity.html#a0684437d8e7d867742b1b8232a1cfda6">DynamicConnectivity::dsu</a></div><div class="ttdeci">DsuRollback dsu</div><div class="ttdef"><b>Definition</b> offline_dynamic_connectivity.hpp:6</div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_a1693ebcaa78d8bf3058cda0160c1afe6"><div class="ttname"><a href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">DynamicConnectivity::execute</a></div><div class="ttdeci">void execute(auto &amp;f, int k=1)</div><div class="ttdef"><b>Definition</b> offline_dynamic_connectivity.hpp:38</div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_a1f2111a3362a50c267eb4b797dacdf38"><div class="ttname"><a href="struct_dynamic_connectivity.html#a1f2111a3362a50c267eb4b797dacdf38">DynamicConnectivity::appear</a></div><div class="ttdeci">map&lt; P, int &gt; appear</div><div class="ttdef"><b>Definition</b> offline_dynamic_connectivity.hpp:10</div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_a3b821a8d6b1245d56613a57eb0aa96a7"><div class="ttname"><a href="struct_dynamic_connectivity.html#a3b821a8d6b1245d56613a57eb0aa96a7">DynamicConnectivity::unite</a></div><div class="ttdeci">void unite(int idx, int u, int v)</div><div class="ttdef"><b>Definition</b> offline_dynamic_connectivity.hpp:16</div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_a52d4530bbe8f9995238ec81ea564e6a3"><div class="ttname"><a href="struct_dynamic_connectivity.html#a52d4530bbe8f9995238ec81ea564e6a3">DynamicConnectivity::period</a></div><div class="ttdeci">vector&lt; pair&lt; P, P &gt; &gt; period</div><div class="ttdef"><b>Definition</b> offline_dynamic_connectivity.hpp:9</div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_a5a23c1796837bca00e4ea191750cc6d8"><div class="ttname"><a href="struct_dynamic_connectivity.html#a5a23c1796837bca00e4ea191750cc6d8">DynamicConnectivity::cut</a></div><div class="ttdeci">void cut(int idx, int u, int v)</div><div class="ttdef"><b>Definition</b> offline_dynamic_connectivity.hpp:20</div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_a6f651896a1d46854034f5b974ba5baee"><div class="ttname"><a href="struct_dynamic_connectivity.html#a6f651896a1d46854034f5b974ba5baee">DynamicConnectivity::n</a></div><div class="ttdeci">int n</div><div class="ttdef"><b>Definition</b> offline_dynamic_connectivity.hpp:7</div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_a770dc53dd142ee82b63cee5dc0989ed4"><div class="ttname"><a href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">DynamicConnectivity::DynamicConnectivity</a></div><div class="ttdeci">DynamicConnectivity(int v, int q)</div><div class="ttdef"><b>Definition</b> offline_dynamic_connectivity.hpp:11</div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_a9717006f779815ffd03758fd674fb5b8"><div class="ttname"><a href="struct_dynamic_connectivity.html#a9717006f779815ffd03758fd674fb5b8">DynamicConnectivity::edges</a></div><div class="ttdeci">vector&lt; vector&lt; P &gt; &gt; edges</div><div class="ttdef"><b>Definition</b> offline_dynamic_connectivity.hpp:8</div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_ab24b39a0b50b20580591d32c4fa9a80c"><div class="ttname"><a href="struct_dynamic_connectivity.html#ab24b39a0b50b20580591d32c4fa9a80c">DynamicConnectivity::P</a></div><div class="ttdeci">pair&lt; int, int &gt; P</div><div class="ttdef"><b>Definition</b> offline_dynamic_connectivity.hpp:5</div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_aef6dbb8a8163c1aa473f68d4986c5226"><div class="ttname"><a href="struct_dynamic_connectivity.html#aef6dbb8a8163c1aa473f68d4986c5226">DynamicConnectivity::build</a></div><div class="ttdeci">void build()</div><div class="ttdef"><b>Definition</b> offline_dynamic_connectivity.hpp:24</div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

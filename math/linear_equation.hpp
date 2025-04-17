@@ -1,17 +1,16 @@
 #include"../../kyopro_library/template.hpp"
 
-/*
-	F_2 上の連立線形方程式
-	ref:https://mathlandscape.com/solution-sp/
-	ref:https://yukicoder.me/submissions/1011997
-	verify:https://yukicoder.me/problems/no/2895
-*/
+/// @file linear_equation.hpp
+/// @brief F_2 上の連立線形方程式
+/// @ref https://mathlandscape.com/solution-sp/
+/// @ref https://yukicoder.me/submissions/1011997
+/// @ref verify:https://yukicoder.me/problems/no/2895
 
-//掃き出し法
-//vector<vector<bool>>a:連立方程式 Ax=b の拡大係数行列
-//vector<int>where:ピボットとなる変数を記録するための配列
-//return:a のランク
-int rowReduction(vector<vector<bool>>&a,vector<int>&where){
+/// @brief 掃き出し法
+/// @param a 連立方程式 Ax=b の拡大係数行列
+/// @param where ピボットとなる変数を記録するための配列
+/// @return A のランク
+int RowReduction(vector<vector<bool>>&a,vector<int>&where){
 	int row=a.size(),col=a.front().size();
 	int rank=0;
 	for(int c=0;c<col-1;c++){
@@ -31,19 +30,19 @@ int rowReduction(vector<vector<bool>>&a,vector<int>&where){
 	return rank;
 }
 
-//連立線形方程式 Ax=b を解く
-//x0:特殊解(b=0 の場合は自明解になる)
-//ker:Ax=0 の解空間の基底
-//一般解は x0 と解空間の基底の任意の線形結合で表される
-//A のサイズによっては基底のサイズが巨大になるので注意すること
-bool linearEquation(vector<vector<bool>>a,vector<bool>b,vector<bool>&x0,vector<vector<bool>>&ker){
+/// @brief 連立線形方程式 Ax=b を解く
+/// @param x0 特殊解(b=0 の場合は自明解になる)
+/// @param ker Ax=0 の解空間の基底
+/// @note 一般解は x0 と解空間の基底の任意の線形結合で表される
+/// @attention A のサイズによっては基底のサイズが巨大になるので注意すること
+bool LinearEquation(vector<vector<bool>>a,vector<bool>b,vector<bool>&x0,vector<vector<bool>>&ker){
 	int row=a.size(),col=a.front().size();
 	assert(b.size()==row);
 	vector<vector<bool>>a2=a;
 	for(int i=0;i<row;i++)a2[i].push_back(b[i]);
 
 	vector<int>where;
-	int rank=rowReduction(a2,where);
+	int rank=RowReduction(a2,where);
 
 	for(int r=rank;r<row;r++){
 		if(a2[r].back())return false;

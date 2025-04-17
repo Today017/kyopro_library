@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: tree</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">tree</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="el" href="md__r_e_a_d_m_e.html">top</a></p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+<a href="./tree.hpp">Sorted Tree</a></h1>
+<p><code><a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt;T&gt;(T not_found = -1)</code></p><ul>
+<li>順序付き集合を管理するデータ構造。 <code>not_found</code> は所望の値が見つからなかった場合に返す値として定義する。</li>
+</ul>
+<p><code>T min()</code></p><ul>
+<li>最小値を返す。</li>
+<li>$O(1)$</li>
+</ul>
+<p><code>T max()</code></p><ul>
+<li>最大値を返す。</li>
+<li>$O(1)$</li>
+</ul>
+<p><code>T pop_min()</code></p><ul>
+<li>最小値を返し、削除する。</li>
+<li>$O(\log n)$</li>
+</ul>
+<p><code>T pop_max()</code></p><ul>
+<li>最大値を返し、削除する。</li>
+<li>$O(\log n)$</li>
+</ul>
+<p><code>bool contains(T x)</code></p><ul>
+<li>$x$ が含まれているか否かを返す。</li>
+<li>$O(\log n)$</li>
+</ul>
+<p><code>bool discard(T x)</code></p><ul>
+<li>$x$ を削除する。存在しない場合は <code>false</code> を返す。</li>
+<li>$O(\log n)$</li>
+</ul>
+<p><code>T gt(T x)</code></p><ul>
+<li>$x$ より大きい最小の値を返す。</li>
+<li>$O(\log n)$</li>
+</ul>
+<p><code>T ge(T x)</code></p><ul>
+<li>$x$ 以上で最小の値を返す。</li>
+</ul>
+<p><code>T lt(T x)</code></p><ul>
+<li>$x$ より小さい最大の値を返す。</li>
+</ul>
+<p><code>T le(T x)</code></p><ul>
+<li>$x$ 以下で最大の値を返す。</li>
+</ul>
+<p><code>int count_lt(T x)</code></p><ul>
+<li>$x$ 未満の要素の個数を返す。</li>
+</ul>
+<p><code>int count_le(T x)</code></p><ul>
+<li>$x$ 以下の要素の個数を返す。</li>
+</ul>
+<p><code>int count_gt(T x)</code></p><ul>
+<li>$x$ より大きい要素の個数を返す。</li>
+</ul>
+<p><code>int count_gt(T x)</code></p><ul>
+<li>$x$ 以上の要素の個数を返す。</li>
+</ul>
+<p><code>T kth_min(int k)</code></p><ul>
+<li>$k$ 番目に小さい値を返す。<code>0-indexed</code> であることに注意。</li>
+</ul>
+<p><code>T kth_max(int k)</code></p><ul>
+<li>$k$ 番目に大きい値を返す。 </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

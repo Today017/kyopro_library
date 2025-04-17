@@ -1,9 +1,10 @@
 #include"../../kyopro_library/template.hpp"
 
-// 高速フーリエ変換
-// O(N log(N))
-// f(x) = Σ a[i]x^i, w^N = 1 とすると、F(t) = Σ f(w^i)t^i の各係数を返す。
-// a = (a[0], a[1], ..., a[n-1]) -> fa = (f(w^0), f(w^1), ..., f(w^(n-1)))
+/// @file convolution.hpp
+/// @brief 高速フーリエ変換
+/// @note O(N log(N))
+/// @details f(x) = Σ a[i]x^i, w^N = 1 とすると、F(t) = Σ f(w^i)t^i の各係数を返す。
+/// @details a = (a[0], a[1], ..., a[n-1]) -> fa = (f(w^0), f(w^1), ..., f(w^(n-1)))
 vector<complex<double>>FFT(vector<complex<double>>a,bool inv=false){
 	int n=a.size(),h=0;
 	while((1<<h)<n)h++;
@@ -32,9 +33,9 @@ vector<complex<double>>FFT(vector<complex<double>>a,bool inv=false){
 	return a;
 }
 
-// 畳み込み
-// O(N log(N))
-vector<double>convolve(const vector<double>&a,const vector<double>&b){
+/// @brief 畳み込み
+/// @note O(N log(N))
+vector<double>Convolve(const vector<double>&a,const vector<double>&b){
 	int n=1;
 	while(n<(int)a.size()+(int)b.size()-1)n*=2;
 	vector<complex<double>>fa(n),fb(n);
@@ -51,13 +52,13 @@ vector<double>convolve(const vector<double>&a,const vector<double>&b){
 	return ret;
 }
 
-// 整数での畳み込み
-// 整数の積が 10^12 を超える場合や N >= 2^20 の場合は特に誤差に注意。大きい値での畳み込みは NTT + Garner のアルゴリズムを使う。
-vector<ll>convolve(const vector<ll>&a,const vector<ll>&b){
+/// @brief 整数での畳み込み
+/// @note 整数の積が 10^12 を超える場合や N >= 2^20 の場合は特に誤差に注意。大きい値での畳み込みは NTT + Garner のアルゴリズムを使う。
+vector<ll>Convolve(const vector<ll>&a,const vector<ll>&b){
 	vector<double>da(a.size()),db(b.size());
 	for(int i=0;i<(int)a.size();i++)da[i]=a[i];
 	for(int i=0;i<(int)b.size();i++)db[i]=b[i];
-	vector<double>ab=convolve(da,db);
+	vector<double>ab=Convolve(da,db);
 	vector<ll>ret(ab.size());
 	for(int i=0;i<(int)ret.size();i++)ret[i]=(ll)floor(ab[i]+0.5);
 	return ret;

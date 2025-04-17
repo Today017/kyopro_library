@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: algorithm/zeta_mobius.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_692f640cc74363071c5c0e14282656e9.html">algorithm</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">zeta_mobius.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../kyopro_library/template.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="monoid_8hpp_source.html">../../kyopro_library/others/monoid.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="abel_8hpp_source.html">../../kyopro_library/others/abel.hpp</a>&quot;</code><br />
+</div>
+<p><a href="zeta__mobius_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_zeta_mobius.html">ZetaMobius</a></td></tr>
+<tr class="memdesc:namespace_zeta_mobius"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゼータ変換・メビウス変換 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a96b8a2e447ea6c66bf33a8a0e39e4fcc" id="r_a96b8a2e447ea6c66bf33a8a0e39e4fcc"><td class="memTemplParams" colspan="2">template&lt;typename Monoid&gt; </td></tr>
+<tr class="memitem:a96b8a2e447ea6c66bf33a8a0e39e4fcc"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Monoid::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_zeta_mobius.html#a96b8a2e447ea6c66bf33a8a0e39e4fcc">ZetaMobius::SubsetZeta</a> (vector&lt; typename Monoid::Type &gt; v)</td></tr>
+<tr class="memdesc:a96b8a2e447ea6c66bf33a8a0e39e4fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">高速ゼータ変換（下位集合）  <br /></td></tr>
+<tr class="separator:a96b8a2e447ea6c66bf33a8a0e39e4fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a482f4f29cbbd38287bd6dfa4fa3752bc" id="r_a482f4f29cbbd38287bd6dfa4fa3752bc"><td class="memTemplParams" colspan="2">template&lt;typename Monoid&gt; </td></tr>
+<tr class="memitem:a482f4f29cbbd38287bd6dfa4fa3752bc"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Monoid::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_zeta_mobius.html#a482f4f29cbbd38287bd6dfa4fa3752bc">ZetaMobius::SupersetZeta</a> (vector&lt; typename Monoid::Type &gt; v)</td></tr>
+<tr class="memdesc:a482f4f29cbbd38287bd6dfa4fa3752bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">高速ゼータ変換（上位集合）  <br /></td></tr>
+<tr class="separator:a482f4f29cbbd38287bd6dfa4fa3752bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdbe2642fe5208a44eb861ad2e0666bf" id="r_acdbe2642fe5208a44eb861ad2e0666bf"><td class="memTemplParams" colspan="2">template&lt;typename Abel&gt; </td></tr>
+<tr class="memitem:acdbe2642fe5208a44eb861ad2e0666bf"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Abel::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_zeta_mobius.html#acdbe2642fe5208a44eb861ad2e0666bf">ZetaMobius::SubsetMobius</a> (vector&lt; typename Abel::Type &gt; v)</td></tr>
+<tr class="memdesc:acdbe2642fe5208a44eb861ad2e0666bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">高速メビウス変換（下位集合）  <br /></td></tr>
+<tr class="separator:acdbe2642fe5208a44eb861ad2e0666bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2411a0dca9b8ae8e8a4ce4e36683c98c" id="r_a2411a0dca9b8ae8e8a4ce4e36683c98c"><td class="memTemplParams" colspan="2">template&lt;typename Abel&gt; </td></tr>
+<tr class="memitem:a2411a0dca9b8ae8e8a4ce4e36683c98c"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Abel::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_zeta_mobius.html#a2411a0dca9b8ae8e8a4ce4e36683c98c">ZetaMobius::SupersetMobius</a> (vector&lt; typename Abel::Type &gt; v)</td></tr>
+<tr class="memdesc:a2411a0dca9b8ae8e8a4ce4e36683c98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">高速メビウス変換（上位集合）  <br /></td></tr>
+<tr class="separator:a2411a0dca9b8ae8e8a4ce4e36683c98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>
