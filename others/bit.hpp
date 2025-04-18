@@ -1,5 +1,6 @@
 #include "../../kyopro_library/template.hpp"
 
+/// @brief ビット演算
 namespace Bit{
 	int PopCount(int n){return __builtin_popcount(n);}
 	int PopCount(ll n){return __builtin_popcountll(n);}

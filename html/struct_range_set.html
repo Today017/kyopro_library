@@ -51,6 +51,9 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>区間を set で管理するデータ構造 verify:https://yukicoder.me/submissions/1021763  
+ <a href="#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="range__set_8hpp_source.html">range_set.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -66,16 +69,18 @@ $(function(){ initResizable(false); });
 <tr class="memitem:ae210a109dde6a0646562b2970f9c7447" id="r_ae210a109dde6a0646562b2970f9c7447"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae210a109dde6a0646562b2970f9c7447">is_covered</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> l, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> r)</td></tr>
 <tr class="memdesc:ae210a109dde6a0646562b2970f9c7447"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間 [l, r) が完全に被覆されているかどうかを判定する  <br /></td></tr>
 <tr class="separator:ae210a109dde6a0646562b2970f9c7447"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c12858463c77800b9b903a426e55e13" id="r_a1c12858463c77800b9b903a426e55e13"><td class="memItemLeft" align="right" valign="top">pair&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c12858463c77800b9b903a426e55e13">covering_range</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> x)</td></tr>
-<tr class="memdesc:a1c12858463c77800b9b903a426e55e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">点 x を含む区間を返す  <br /></td></tr>
-<tr class="separator:a1c12858463c77800b9b903a426e55e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd40a872558d702201c77783aa73889b" id="r_afd40a872558d702201c77783aa73889b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#a7f582aad13bf86402da717000515ca1c">PL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd40a872558d702201c77783aa73889b">covering_range</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> x)</td></tr>
+<tr class="memdesc:afd40a872558d702201c77783aa73889b"><td class="mdescLeft">&#160;</td><td class="mdescRight">点 x を含む区間を返す  <br /></td></tr>
+<tr class="separator:afd40a872558d702201c77783aa73889b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 公開変数類</h2></td></tr>
-<tr class="memitem:afd64d053f60f24ea602e0d98461f60ba" id="r_afd64d053f60f24ea602e0d98461f60ba"><td class="memItemLeft" align="right" valign="top">set&lt; pair&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd64d053f60f24ea602e0d98461f60ba">dat</a></td></tr>
-<tr class="separator:afd64d053f60f24ea602e0d98461f60ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f516de3fe3aafe273e7a6dc62f949ff" id="r_a5f516de3fe3aafe273e7a6dc62f949ff"><td class="memItemLeft" align="right" valign="top">set&lt; <a class="el" href="template_8hpp.html#a7f582aad13bf86402da717000515ca1c">PL</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f516de3fe3aafe273e7a6dc62f949ff">dat</a></td></tr>
+<tr class="separator:a5f516de3fe3aafe273e7a6dc62f949ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">構築子と解体子</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>区間を set で管理するデータ構造 verify:https://yukicoder.me/submissions/1021763 </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a92262ebd91d5cea9b4c43ffa491232d9" name="a92262ebd91d5cea9b4c43ffa491232d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a92262ebd91d5cea9b4c43ffa491232d9">&#9670;&#160;</a></span>RangeSet()</h2>
 
@@ -102,8 +107,8 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a1c12858463c77800b9b903a426e55e13" name="a1c12858463c77800b9b903a426e55e13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c12858463c77800b9b903a426e55e13">&#9670;&#160;</a></span>covering_range()</h2>
+<a id="afd40a872558d702201c77783aa73889b" name="afd40a872558d702201c77783aa73889b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd40a872558d702201c77783aa73889b">&#9670;&#160;</a></span>covering_range()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -112,7 +117,7 @@ $(function(){ initResizable(false); });
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">pair&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; RangeSet::covering_range </td>
+          <td class="memname"><a class="el" href="template_8hpp.html#a7f582aad13bf86402da717000515ca1c">PL</a> RangeSet::covering_range </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
           <td></td>
@@ -225,14 +230,14 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 <h2 class="groupheader">メンバ詳解</h2>
-<a id="afd64d053f60f24ea602e0d98461f60ba" name="afd64d053f60f24ea602e0d98461f60ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd64d053f60f24ea602e0d98461f60ba">&#9670;&#160;</a></span>dat</h2>
+<a id="a5f516de3fe3aafe273e7a6dc62f949ff" name="a5f516de3fe3aafe273e7a6dc62f949ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f516de3fe3aafe273e7a6dc62f949ff">&#9670;&#160;</a></span>dat</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">set&lt;pair&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>,<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&gt; &gt; RangeSet::dat</td>
+          <td class="memname">set&lt;<a class="el" href="template_8hpp.html#a7f582aad13bf86402da717000515ca1c">PL</a>&gt; RangeSet::dat</td>
         </tr>
       </table>
 </div><div class="memdoc">

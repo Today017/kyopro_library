@@ -52,30 +52,23 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">convolution.hpp ファイル</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>高速フーリエ変換  
-<a href="#details">[詳解]</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../kyopro_library/template.hpp</a>&quot;</code><br />
 </div>
 <p><a href="convolution_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:a4520e2ef0f91a956951eddb865caee5c" id="r_a4520e2ef0f91a956951eddb865caee5c"><td class="memItemLeft" align="right" valign="top">vector&lt; complex&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4520e2ef0f91a956951eddb865caee5c">FFT</a> (vector&lt; complex&lt; double &gt; &gt;a, bool inv=false)</td></tr>
-<tr class="separator:a4520e2ef0f91a956951eddb865caee5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a27829658ebde922fee66179fe05f3c" id="r_a6a27829658ebde922fee66179fe05f3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a27829658ebde922fee66179fe05f3c">FFT</a> (vector&lt; complex&lt; double &gt; &gt; &amp;a, bool inv=false)</td></tr>
+<tr class="memdesc:a6a27829658ebde922fee66179fe05f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">高速フーリエ変換  <br /></td></tr>
+<tr class="separator:a6a27829658ebde922fee66179fe05f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12143899ae24137944835fc0aaf1c397" id="r_a12143899ae24137944835fc0aaf1c397"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12143899ae24137944835fc0aaf1c397">Convolve</a> (const vector&lt; double &gt; &amp;a, const vector&lt; double &gt; &amp;b)</td></tr>
 <tr class="memdesc:a12143899ae24137944835fc0aaf1c397"><td class="mdescLeft">&#160;</td><td class="mdescRight">畳み込み  <br /></td></tr>
 <tr class="separator:a12143899ae24137944835fc0aaf1c397"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9dd2910ba72616fb4b590df9738d0cf" id="r_ae9dd2910ba72616fb4b590df9738d0cf"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9dd2910ba72616fb4b590df9738d0cf">Convolve</a> (const vector&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; &amp;a, const vector&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; &amp;b)</td></tr>
-<tr class="memdesc:ae9dd2910ba72616fb4b590df9738d0cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">整数での畳み込み  <br /></td></tr>
-<tr class="separator:ae9dd2910ba72616fb4b590df9738d0cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1991d17803a8f527aadc7de878d0c962" id="r_a1991d17803a8f527aadc7de878d0c962"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1991d17803a8f527aadc7de878d0c962">Convolve</a> (const <a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> &amp;a, const <a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> &amp;b)</td></tr>
+<tr class="memdesc:a1991d17803a8f527aadc7de878d0c962"><td class="mdescLeft">&#160;</td><td class="mdescRight">整数での畳み込み  <br /></td></tr>
+<tr class="separator:a1991d17803a8f527aadc7de878d0c962"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>高速フーリエ変換 </p>
-<dl class="section note"><dt>覚え書き</dt><dd>O(N log(N))</dd></dl>
-<p>f(x) = Σ a[i]x^i, w^N = 1 とすると、F(t) = Σ f(w^i)t^i の各係数を返す。</p>
-<p>a = (a[0], a[1], ..., a[n-1]) -&gt; fa = (f(w^0), f(w^1), ..., f(w^(n-1))) </p>
-</div><h2 class="groupheader">関数詳解</h2>
+<h2 class="groupheader">関数詳解</h2>
 <a id="a12143899ae24137944835fc0aaf1c397" name="a12143899ae24137944835fc0aaf1c397"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a12143899ae24137944835fc0aaf1c397">&#9670;&#160;</a></span>Convolve() <span class="overload">[1/2]</span></h2>
 
@@ -100,21 +93,21 @@ $(function(){ initResizable(false); });
 
 </div>
 </div>
-<a id="ae9dd2910ba72616fb4b590df9738d0cf" name="ae9dd2910ba72616fb4b590df9738d0cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9dd2910ba72616fb4b590df9738d0cf">&#9670;&#160;</a></span>Convolve() <span class="overload">[2/2]</span></h2>
+<a id="a1991d17803a8f527aadc7de878d0c962" name="a1991d17803a8f527aadc7de878d0c962"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1991d17803a8f527aadc7de878d0c962">&#9670;&#160;</a></span>Convolve() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; Convolve </td>
+          <td class="memname"><a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> Convolve </td>
           <td>(</td>
-          <td class="paramtype">const vector&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const vector&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -124,16 +117,16 @@ $(function(){ initResizable(false); });
 
 </div>
 </div>
-<a id="a4520e2ef0f91a956951eddb865caee5c" name="a4520e2ef0f91a956951eddb865caee5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4520e2ef0f91a956951eddb865caee5c">&#9670;&#160;</a></span>FFT()</h2>
+<a id="a6a27829658ebde922fee66179fe05f3c" name="a6a27829658ebde922fee66179fe05f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a27829658ebde922fee66179fe05f3c">&#9670;&#160;</a></span>FFT()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; complex&lt; double &gt; &gt; FFT </td>
+          <td class="memname">void FFT </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; complex&lt; double &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype">vector&lt; complex&lt; double &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -142,6 +135,11 @@ $(function(){ initResizable(false); });
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>高速フーリエ変換 </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(N log(N))</dd></dl>
+<p>f(x) = Σ a[i]x^i, w^N = 1 とすると、F(t) = Σ f(w^i)t^i の各係数を返す。</p>
+<p>a = (a[0], a[1], ..., a[n-1]) -&gt; fa = (f(w^0), f(w^1), ..., f(w^(n-1))) </p>
 
 </div>
 </div>

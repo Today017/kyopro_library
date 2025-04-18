@@ -52,9 +52,6 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">extgcd.hpp ファイル</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>拡張ユークリッドの互除法  
-<a href="#details">[詳解]</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../kyopro_library/template.hpp</a>&quot;</code><br />
 </div>
 <p><a href="extgcd_8hpp_source.html">[ソースコード]</a></p>
@@ -62,14 +59,13 @@ $(function(){ initResizable(false); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
 <tr class="memitem:a1bbcc665326a2e27d9817bcc3b8b1d91" id="r_a1bbcc665326a2e27d9817bcc3b8b1d91"><td class="memItemLeft" align="right" valign="top">tuple&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b)</td></tr>
+<tr class="memdesc:a1bbcc665326a2e27d9817bcc3b8b1d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">拡張ユークリッドの互除法  <br /></td></tr>
 <tr class="separator:a1bbcc665326a2e27d9817bcc3b8b1d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9971b6b2383ca7009a1de48b02b31350" id="r_a9971b6b2383ca7009a1de48b02b31350"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9971b6b2383ca7009a1de48b02b31350">ModInvGcd</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> m)</td></tr>
 <tr class="memdesc:a9971b6b2383ca7009a1de48b02b31350"><td class="mdescLeft">&#160;</td><td class="mdescRight">mod 逆元  <br /></td></tr>
 <tr class="separator:a9971b6b2383ca7009a1de48b02b31350"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>拡張ユークリッドの互除法 </p>
-</div><h2 class="groupheader">関数詳解</h2>
+<h2 class="groupheader">関数詳解</h2>
 <a id="a1bbcc665326a2e27d9817bcc3b8b1d91" name="a1bbcc665326a2e27d9817bcc3b8b1d91"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1bbcc665326a2e27d9817bcc3b8b1d91">&#9670;&#160;</a></span>ExtGcd()</h2>
 
@@ -88,6 +84,8 @@ $(function(){ initResizable(false); });
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>拡張ユークリッドの互除法 </p>
 <p>gcd(a,b) = gcd(ba,a), gcd(b,0) = b と ba + (b/a)*a = b を使う。 ax + by = g なる x,y を求めたい。 今、(ba)X + aY = g なる X, Y が分かっている。 (ba)X = bX - (b/a)*a*X より、これを代入して、 bX - (b/a)*a*X + aY = g a(Y-(b/a)*X) + bX = g </p>
 
 </div>

@@ -84,9 +84,11 @@ $(function(){ initResizable(false); });
 <tr class="separator:a7f424f5acb8639d9ec9f5b42005dd567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf01c743ea6b8648ab8fbb5590de0065" id="r_abf01c743ea6b8648ab8fbb5590de0065"><td class="memTemplParams" colspan="2">template&lt;typename F&gt; </td></tr>
 <tr class="memitem:abf01c743ea6b8648ab8fbb5590de0065"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#abf01c743ea6b8648ab8fbb5590de0065">find_right</a> (int l, F f)</td></tr>
+<tr class="memdesc:abf01c743ea6b8648ab8fbb5590de0065"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間 [l, x) のモノイド積が f を満たすような最大の x &gt;= l を返す  <br /></td></tr>
 <tr class="separator:abf01c743ea6b8648ab8fbb5590de0065"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96ee12dc05c4296b4176ea1a91564558" id="r_a96ee12dc05c4296b4176ea1a91564558"><td class="memTemplParams" colspan="2">template&lt;typename F&gt; </td></tr>
 <tr class="memitem:a96ee12dc05c4296b4176ea1a91564558"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a96ee12dc05c4296b4176ea1a91564558">find_left</a> (int r, F f)</td></tr>
+<tr class="memdesc:a96ee12dc05c4296b4176ea1a91564558"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間 [x, r) のモノイド積が f を満たすような最小の x&lt;=r を返す  <br /></td></tr>
 <tr class="separator:a96ee12dc05c4296b4176ea1a91564558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad04a20cae43ac18270ee7b1b509c51f9" id="r_ad04a20cae43ac18270ee7b1b509c51f9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad04a20cae43ac18270ee7b1b509c51f9">size</a> ()</td></tr>
 <tr class="separator:ad04a20cae43ac18270ee7b1b509c51f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -293,6 +295,10 @@ template&lt;typename F&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>区間 [x, r) のモノイド積が f を満たすような最小の x&lt;=r を返す </p>
+<dl class="section attention"><dt>注意</dt><dd><code>f(Monoid::id())=true</code> が成り立つ必要がある </dd></dl>
+<dl class="section note"><dt>覚え書き</dt><dd>O(log(N)) </dd></dl>
+
 </div>
 </div>
 <a id="abf01c743ea6b8648ab8fbb5590de0065" name="abf01c743ea6b8648ab8fbb5590de0065"></a>
@@ -325,6 +331,10 @@ template&lt;typename F&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>区間 [l, x) のモノイド積が f を満たすような最大の x &gt;= l を返す </p>
+<dl class="section attention"><dt>注意</dt><dd><code>f(Monoid::id())=true</code> が成り立つ必要がある </dd></dl>
+<dl class="section note"><dt>覚え書き</dt><dd>O(log(N)) </dd></dl>
 
 </div>
 </div>

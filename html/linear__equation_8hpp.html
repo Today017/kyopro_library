@@ -52,27 +52,22 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">linear_equation.hpp ファイル</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>F_2 上の連立線形方程式 <a href="https://mathlandscape.com/solution-sp/">https://mathlandscape.com/solution-sp/</a> <a href="https://yukicoder.me/submissions/1011997">https://yukicoder.me/submissions/1011997</a> verify:https://yukicoder.me/problems/no/2895  
-<a href="#details">[詳解]</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../kyopro_library/template.hpp</a>&quot;</code><br />
 </div>
 <p><a href="linear__equation_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:a5e5db525b2db932b4e07f9c0a2babddd" id="r_a5e5db525b2db932b4e07f9c0a2babddd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e5db525b2db932b4e07f9c0a2babddd">RowReduction</a> (vector&lt; vector&lt; bool &gt; &gt; &amp;a, vector&lt; int &gt; &amp;where)</td></tr>
-<tr class="memdesc:a5e5db525b2db932b4e07f9c0a2babddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">掃き出し法  <br /></td></tr>
-<tr class="separator:a5e5db525b2db932b4e07f9c0a2babddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65b85536c50474cc7d31ad5d9703902c" id="r_a65b85536c50474cc7d31ad5d9703902c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65b85536c50474cc7d31ad5d9703902c">LinearEquation</a> (vector&lt; vector&lt; bool &gt; &gt;a, vector&lt; bool &gt;b, vector&lt; bool &gt; &amp;x0, vector&lt; vector&lt; bool &gt; &gt; &amp;ker)</td></tr>
-<tr class="memdesc:a65b85536c50474cc7d31ad5d9703902c"><td class="mdescLeft">&#160;</td><td class="mdescRight">連立線形方程式 Ax=b を解く  <br /></td></tr>
-<tr class="separator:a65b85536c50474cc7d31ad5d9703902c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad783a386934fd2ebc14105b5babb4aec" id="r_ad783a386934fd2ebc14105b5babb4aec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad783a386934fd2ebc14105b5babb4aec">RowReduction</a> (vector&lt; vector&lt; bool &gt; &gt; &amp;a, <a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> &amp;where)</td></tr>
+<tr class="memdesc:ad783a386934fd2ebc14105b5babb4aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">F_2 上の連立線形方程式 <a href="https://mathlandscape.com/solution-sp/">https://mathlandscape.com/solution-sp/</a> <a href="https://yukicoder.me/submissions/1011997">https://yukicoder.me/submissions/1011997</a> verify:https://yukicoder.me/problems/no/2895  <br /></td></tr>
+<tr class="separator:ad783a386934fd2ebc14105b5babb4aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac91575eafd15cbdfc1da2ae7cf5bb964" id="r_ac91575eafd15cbdfc1da2ae7cf5bb964"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac91575eafd15cbdfc1da2ae7cf5bb964">LinearEquation</a> (vector&lt; vector&lt; bool &gt; &gt; a, vector&lt; bool &gt; b, vector&lt; bool &gt; &amp;x0, vector&lt; vector&lt; bool &gt; &gt; &amp;ker)</td></tr>
+<tr class="memdesc:ac91575eafd15cbdfc1da2ae7cf5bb964"><td class="mdescLeft">&#160;</td><td class="mdescRight">連立線形方程式 Ax=b を解く  <br /></td></tr>
+<tr class="separator:ac91575eafd15cbdfc1da2ae7cf5bb964"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>F_2 上の連立線形方程式 <a href="https://mathlandscape.com/solution-sp/">https://mathlandscape.com/solution-sp/</a> <a href="https://yukicoder.me/submissions/1011997">https://yukicoder.me/submissions/1011997</a> verify:https://yukicoder.me/problems/no/2895 </p>
-</div><h2 class="groupheader">関数詳解</h2>
-<a id="a65b85536c50474cc7d31ad5d9703902c" name="a65b85536c50474cc7d31ad5d9703902c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65b85536c50474cc7d31ad5d9703902c">&#9670;&#160;</a></span>LinearEquation()</h2>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ac91575eafd15cbdfc1da2ae7cf5bb964" name="ac91575eafd15cbdfc1da2ae7cf5bb964"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac91575eafd15cbdfc1da2ae7cf5bb964">&#9670;&#160;</a></span>LinearEquation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -113,8 +108,8 @@ $(function(){ initResizable(false); });
 
 </div>
 </div>
-<a id="a5e5db525b2db932b4e07f9c0a2babddd" name="a5e5db525b2db932b4e07f9c0a2babddd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e5db525b2db932b4e07f9c0a2babddd">&#9670;&#160;</a></span>RowReduction()</h2>
+<a id="ad783a386934fd2ebc14105b5babb4aec" name="ad783a386934fd2ebc14105b5babb4aec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad783a386934fd2ebc14105b5babb4aec">&#9670;&#160;</a></span>RowReduction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,13 +122,13 @@ $(function(){ initResizable(false); });
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">vector&lt; int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>where</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>where</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>掃き出し法 </p>
-<dl class="params"><dt>引数</dt><dd>
+<p>F_2 上の連立線形方程式 <a href="https://mathlandscape.com/solution-sp/">https://mathlandscape.com/solution-sp/</a> <a href="https://yukicoder.me/submissions/1011997">https://yukicoder.me/submissions/1011997</a> verify:https://yukicoder.me/problems/no/2895 </p>
+<p>掃き出し法 </p><dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>連立方程式 Ax=b の拡大係数行列 </td></tr>
     <tr><td class="paramname">where</td><td>ピボットとなる変数を記録するための配列 </td></tr>

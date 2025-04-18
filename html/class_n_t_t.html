@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Kyopro Library: NTT&lt; MOD &gt; クラステンプレート</title>
+<title>Kyopro Library: NTT&lt; MOD, primitive_root &gt; クラステンプレート</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,40 +46,40 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
 <a href="class_n_t_t-members.html">全メンバ一覧</a>  </div>
-  <div class="headertitle"><div class="title">NTT&lt; MOD &gt; クラステンプレート</div></div>
+  <div class="headertitle"><div class="title">NTT&lt; MOD, primitive_root &gt; クラステンプレート</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><a class="el" href="class_n_t_t.html" title="NTT Friendly 素数用 NTT 構造体">NTT</a> Friendly 素数用 <a class="el" href="class_n_t_t.html" title="NTT Friendly 素数用 NTT 構造体">NTT</a> 構造体  
  <a href="#details">[詳解]</a></p>
 
-<p><code>#include &lt;<a class="el" href="ntt__arb_8hpp_source.html">ntt_arb.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ntt_8hpp_source.html">ntt.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a18f98a19aeff1bc570db5cfa27affa8d" id="r_a18f98a19aeff1bc570db5cfa27affa8d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18f98a19aeff1bc570db5cfa27affa8d">NTT</a> ()</td></tr>
-<tr class="separator:a18f98a19aeff1bc570db5cfa27affa8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add96b9058f6ea14ae260d708c9ab9fbc" id="r_add96b9058f6ea14ae260d708c9ab9fbc"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="struct_mod_int.html">mint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add96b9058f6ea14ae260d708c9ab9fbc">convolve</a> (vector&lt; <a class="el" href="struct_mod_int.html">mint</a> &gt;a, vector&lt; <a class="el" href="struct_mod_int.html">mint</a> &gt;b)</td></tr>
-<tr class="memdesc:add96b9058f6ea14ae260d708c9ab9fbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">a, b の畳み込みを求める  <br /></td></tr>
-<tr class="separator:add96b9058f6ea14ae260d708c9ab9fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08f7a88ab5d843873769c894112766ec" id="r_a08f7a88ab5d843873769c894112766ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08f7a88ab5d843873769c894112766ec">NTT</a> ()</td></tr>
+<tr class="separator:a08f7a88ab5d843873769c894112766ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7d5dac5eee3af11ecf0c361f5fbe581" id="r_af7d5dac5eee3af11ecf0c361f5fbe581"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7d5dac5eee3af11ecf0c361f5fbe581">convolve</a> (<a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> a, <a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> b)</td></tr>
+<tr class="memdesc:af7d5dac5eee3af11ecf0c361f5fbe581"><td class="mdescLeft">&#160;</td><td class="mdescRight">a, b の畳み込みを求める  <br /></td></tr>
+<tr class="separator:af7d5dac5eee3af11ecf0c361f5fbe581"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> MOD&gt;<br />
-class NTT&lt; MOD &gt;</div><p><a class="el" href="class_n_t_t.html" title="NTT Friendly 素数用 NTT 構造体">NTT</a> Friendly 素数用 <a class="el" href="class_n_t_t.html" title="NTT Friendly 素数用 NTT 構造体">NTT</a> 構造体 </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> MOD, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> primitive_root&gt;<br />
+class NTT&lt; MOD, primitive_root &gt;</div><p><a class="el" href="class_n_t_t.html" title="NTT Friendly 素数用 NTT 構造体">NTT</a> Friendly 素数用 <a class="el" href="class_n_t_t.html" title="NTT Friendly 素数用 NTT 構造体">NTT</a> 構造体 </p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="a18f98a19aeff1bc570db5cfa27affa8d" name="a18f98a19aeff1bc570db5cfa27affa8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18f98a19aeff1bc570db5cfa27affa8d">&#9670;&#160;</a></span>NTT()</h2>
+<a id="a08f7a88ab5d843873769c894112766ec" name="a08f7a88ab5d843873769c894112766ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08f7a88ab5d843873769c894112766ec">&#9670;&#160;</a></span>NTT()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> MOD&gt; </div>
+template&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> MOD, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> primitive_root&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_n_t_t.html">NTT</a>&lt; MOD &gt;<a class="el" href="class_n_t_t.html">::NTT</a> </td>
+          <td class="memname"><a class="el" href="class_n_t_t.html">NTT</a>&lt; MOD, primitive_root &gt;<a class="el" href="class_n_t_t.html">::NTT</a> </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -95,26 +95,26 @@ template&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="add96b9058f6ea14ae260d708c9ab9fbc" name="add96b9058f6ea14ae260d708c9ab9fbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add96b9058f6ea14ae260d708c9ab9fbc">&#9670;&#160;</a></span>convolve()</h2>
+<a id="af7d5dac5eee3af11ecf0c361f5fbe581" name="af7d5dac5eee3af11ecf0c361f5fbe581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7d5dac5eee3af11ecf0c361f5fbe581">&#9670;&#160;</a></span>convolve()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> MOD&gt; </div>
+template&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> MOD, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> primitive_root&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="struct_mod_int.html">mint</a> &gt; <a class="el" href="class_n_t_t.html">NTT</a>&lt; MOD &gt;::convolve </td>
+          <td class="memname"><a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> <a class="el" href="class_n_t_t.html">NTT</a>&lt; MOD, primitive_root &gt;::convolve </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="struct_mod_int.html">mint</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">vector&lt; <a class="el" href="struct_mod_int.html">mint</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -129,7 +129,7 @@ template&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191
 </div>
 </div>
 <hr/>このクラス詳解は次のファイルから抽出されました:<ul>
-<li>math/<a class="el" href="ntt__arb_8hpp_source.html">ntt_arb.hpp</a></li>
+<li>math/<a class="el" href="ntt_8hpp_source.html">ntt.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

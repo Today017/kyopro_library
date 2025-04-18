@@ -51,6 +51,9 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>std::set ラッパー  
+ <a href="#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="set_8hpp_source.html">set.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Set&lt; T &gt; の継承関係図</div>
@@ -64,26 +67,37 @@ Set&lt; T &gt; の継承関係図</div>
 <tr class="memitem:ad50edd8c655871b6fbe7280b2d29e673" id="r_ad50edd8c655871b6fbe7280b2d29e673"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad50edd8c655871b6fbe7280b2d29e673">Set</a> ()=default</td></tr>
 <tr class="separator:ad50edd8c655871b6fbe7280b2d29e673"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58491814e28dcd2876bc6ce87f3cc809" id="r_a58491814e28dcd2876bc6ce87f3cc809"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58491814e28dcd2876bc6ce87f3cc809">Set</a> (T <a class="el" href="#a970a07f6923c83c2fa1195803edb6364">not_found</a>=-1)</td></tr>
+<tr class="memdesc:a58491814e28dcd2876bc6ce87f3cc809"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <br /></td></tr>
 <tr class="separator:a58491814e28dcd2876bc6ce87f3cc809"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9625ca33788f09648b240f98c0eb33a7" id="r_a9625ca33788f09648b240f98c0eb33a7"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9625ca33788f09648b240f98c0eb33a7">min</a> ()</td></tr>
+<tr class="memdesc:a9625ca33788f09648b240f98c0eb33a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小値を返す  <br /></td></tr>
 <tr class="separator:a9625ca33788f09648b240f98c0eb33a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1cbe6674e6ec706e07d03e13bf20dcd" id="r_ab1cbe6674e6ec706e07d03e13bf20dcd"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1cbe6674e6ec706e07d03e13bf20dcd">max</a> ()</td></tr>
+<tr class="memdesc:ab1cbe6674e6ec706e07d03e13bf20dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大値を返す  <br /></td></tr>
 <tr class="separator:ab1cbe6674e6ec706e07d03e13bf20dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77887906e2020e72f3d99af29e98db67" id="r_a77887906e2020e72f3d99af29e98db67"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77887906e2020e72f3d99af29e98db67">pop_min</a> ()</td></tr>
+<tr class="memdesc:a77887906e2020e72f3d99af29e98db67"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小値を返し、削除する  <br /></td></tr>
 <tr class="separator:a77887906e2020e72f3d99af29e98db67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a23b8d407841f11cff0d6a19f4a9faf" id="r_a5a23b8d407841f11cff0d6a19f4a9faf"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a23b8d407841f11cff0d6a19f4a9faf">pop_max</a> ()</td></tr>
+<tr class="memdesc:a5a23b8d407841f11cff0d6a19f4a9faf"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大値を返し、削除する  <br /></td></tr>
 <tr class="separator:a5a23b8d407841f11cff0d6a19f4a9faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab53c8f03bd84270af37c399351e085fa" id="r_ab53c8f03bd84270af37c399351e085fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab53c8f03bd84270af37c399351e085fa">contains</a> (T x)</td></tr>
+<tr class="memdesc:ab53c8f03bd84270af37c399351e085fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">x が含まれているか否かを返す  <br /></td></tr>
 <tr class="separator:ab53c8f03bd84270af37c399351e085fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1f6464e4c982ea6ec2846fc33ccd86e" id="r_ad1f6464e4c982ea6ec2846fc33ccd86e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1f6464e4c982ea6ec2846fc33ccd86e">discard</a> (T x)</td></tr>
+<tr class="memdesc:ad1f6464e4c982ea6ec2846fc33ccd86e"><td class="mdescLeft">&#160;</td><td class="mdescRight">x を削除する  <br /></td></tr>
 <tr class="separator:ad1f6464e4c982ea6ec2846fc33ccd86e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f67dcbc5701f7af323117f7473329a6" id="r_a5f67dcbc5701f7af323117f7473329a6"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f67dcbc5701f7af323117f7473329a6">gt</a> (T x)</td></tr>
+<tr class="memdesc:a5f67dcbc5701f7af323117f7473329a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">x より大きい最小の値を返す  <br /></td></tr>
 <tr class="separator:a5f67dcbc5701f7af323117f7473329a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e8d9363142571d7b1866bc9241c3b01" id="r_a7e8d9363142571d7b1866bc9241c3b01"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e8d9363142571d7b1866bc9241c3b01">ge</a> (T x)</td></tr>
+<tr class="memdesc:a7e8d9363142571d7b1866bc9241c3b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">x 以上の最小の値を返す  <br /></td></tr>
 <tr class="separator:a7e8d9363142571d7b1866bc9241c3b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dc583428486cda3dfc0b16beb4a2981" id="r_a9dc583428486cda3dfc0b16beb4a2981"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9dc583428486cda3dfc0b16beb4a2981">le</a> (T x)</td></tr>
+<tr class="memdesc:a9dc583428486cda3dfc0b16beb4a2981"><td class="mdescLeft">&#160;</td><td class="mdescRight">x 以下の最大の値を返す  <br /></td></tr>
 <tr class="separator:a9dc583428486cda3dfc0b16beb4a2981"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08ba7ca11b7433208e0c8ad341964542" id="r_a08ba7ca11b7433208e0c8ad341964542"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08ba7ca11b7433208e0c8ad341964542">lt</a> (T x)</td></tr>
+<tr class="memdesc:a08ba7ca11b7433208e0c8ad341964542"><td class="mdescLeft">&#160;</td><td class="mdescRight">x 未満の最大値の値を返す  <br /></td></tr>
 <tr class="separator:a08ba7ca11b7433208e0c8ad341964542"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -91,7 +105,10 @@ Set&lt; T &gt; の継承関係図</div>
 <tr class="memitem:a970a07f6923c83c2fa1195803edb6364" id="r_a970a07f6923c83c2fa1195803edb6364"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a970a07f6923c83c2fa1195803edb6364">not_found</a></td></tr>
 <tr class="separator:a970a07f6923c83c2fa1195803edb6364"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">構築子と解体子</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+struct Set&lt; T &gt;</div><p>std::set ラッパー </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
 <a id="ad50edd8c655871b6fbe7280b2d29e673" name="ad50edd8c655871b6fbe7280b2d29e673"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad50edd8c655871b6fbe7280b2d29e673">&#9670;&#160;</a></span>Set() <span class="overload">[1/2]</span></h2>
 
@@ -144,6 +161,14 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">not_found</td><td>指定の値が見つからなかったときに返す値 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
@@ -172,6 +197,8 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>x が含まれているか否かを返す </p>
+
 </div>
 </div>
 <a id="ad1f6464e4c982ea6ec2846fc33ccd86e" name="ad1f6464e4c982ea6ec2846fc33ccd86e"></a>
@@ -198,6 +225,9 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>x を削除する </p>
+<p>x が含まれていたか否かを返す </p>
 
 </div>
 </div>
@@ -226,6 +256,8 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>x 以上の最小の値を返す </p>
+
 </div>
 </div>
 <a id="a5f67dcbc5701f7af323117f7473329a6" name="a5f67dcbc5701f7af323117f7473329a6"></a>
@@ -252,6 +284,8 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>x より大きい最小の値を返す </p>
 
 </div>
 </div>
@@ -280,6 +314,8 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>x 以下の最大の値を返す </p>
+
 </div>
 </div>
 <a id="a08ba7ca11b7433208e0c8ad341964542" name="a08ba7ca11b7433208e0c8ad341964542"></a>
@@ -306,6 +342,8 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>x 未満の最大値の値を返す </p>
 
 </div>
 </div>
@@ -334,6 +372,8 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>最大値を返す </p>
+
 </div>
 </div>
 <a id="a9625ca33788f09648b240f98c0eb33a7" name="a9625ca33788f09648b240f98c0eb33a7"></a>
@@ -360,6 +400,8 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>最小値を返す </p>
 
 </div>
 </div>
@@ -388,6 +430,8 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>最大値を返し、削除する </p>
+
 </div>
 </div>
 <a id="a77887906e2020e72f3d99af29e98db67" name="a77887906e2020e72f3d99af29e98db67"></a>
@@ -414,6 +458,8 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>最小値を返し、削除する </p>
 
 </div>
 </div>

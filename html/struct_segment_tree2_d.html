@@ -63,10 +63,13 @@ $(function(){ initResizable(false); });
 <tr class="memitem:a1f340ff0fcceff8ca552fbc7c1610194" id="r_a1f340ff0fcceff8ca552fbc7c1610194"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f340ff0fcceff8ca552fbc7c1610194">SegmentTree2D</a> ()=default</td></tr>
 <tr class="separator:a1f340ff0fcceff8ca552fbc7c1610194"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7422bf53112a0d3df9b215a2c5293a26" id="r_a7422bf53112a0d3df9b215a2c5293a26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7422bf53112a0d3df9b215a2c5293a26">SegmentTree2D</a> (int h, int w)</td></tr>
+<tr class="memdesc:a7422bf53112a0d3df9b215a2c5293a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">サイズ h * w の２次元セグメント木を構築する  <br /></td></tr>
 <tr class="separator:a7422bf53112a0d3df9b215a2c5293a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd4e88f120683b23eda460fce60537ae" id="r_acd4e88f120683b23eda460fce60537ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd4e88f120683b23eda460fce60537ae">set</a> (int x, int y, <a class="el" href="#a7a98f071c3f67b1728edc6784a4dac62">Type</a> v)</td></tr>
+<tr class="memdesc:acd4e88f120683b23eda460fce60537ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置 (x, y) の要素を v に更新する  <br /></td></tr>
 <tr class="separator:acd4e88f120683b23eda460fce60537ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a746d58b6e0eb033030b54e67036b5798" id="r_a746d58b6e0eb033030b54e67036b5798"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a7a98f071c3f67b1728edc6784a4dac62">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a746d58b6e0eb033030b54e67036b5798">fold</a> (int l, int r, int u, int d)</td></tr>
+<tr class="memdesc:a746d58b6e0eb033030b54e67036b5798"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩形領域 [l, r) × [u, d) のモノイド積を返す  <br /></td></tr>
 <tr class="separator:a746d58b6e0eb033030b54e67036b5798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">型定義メンバ詳解</h2>
@@ -143,6 +146,8 @@ template&lt;typename Monoid&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>サイズ h * w の２次元セグメント木を構築する </p>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
@@ -185,6 +190,9 @@ template&lt;typename Monoid&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>矩形領域 [l, r) × [u, d) のモノイド積を返す </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(log(h) log(w)) </dd></dl>
+
 </div>
 </div>
 <a id="acd4e88f120683b23eda460fce60537ae" name="acd4e88f120683b23eda460fce60537ae"></a>
@@ -220,6 +228,9 @@ template&lt;typename Monoid&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>位置 (x, y) の要素を v に更新する </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(log(h) log(w)) </dd></dl>
 
 </div>
 </div>

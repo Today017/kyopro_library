@@ -45,11 +45,13 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
-<a href="#pub-attribs">公開変数類</a> &#124;
 <a href="struct_two_sat-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle"><div class="title">TwoSat 構造体</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>2-SAT  
+ <a href="#details">[詳解]</a></p>
 
 <p><code>#include &lt;<a class="el" href="two__sat_8hpp_source.html">two_sat.hpp</a>&gt;</code></p>
 <table class="memberdecls">
@@ -58,16 +60,15 @@ $(function(){ initResizable(false); });
 <tr class="memitem:a4b6625d3218c6bd8dd83951f17e35ed4" id="r_a4b6625d3218c6bd8dd83951f17e35ed4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b6625d3218c6bd8dd83951f17e35ed4">TwoSat</a> (int n)</td></tr>
 <tr class="separator:a4b6625d3218c6bd8dd83951f17e35ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71d1b0cf574787c596fe87d26bd905df" id="r_a71d1b0cf574787c596fe87d26bd905df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71d1b0cf574787c596fe87d26bd905df">add</a> (int i, bool fi, int j, bool fj)</td></tr>
+<tr class="memdesc:a71d1b0cf574787c596fe87d26bd905df"><td class="mdescLeft">&#160;</td><td class="mdescRight">条件 <code>i==fi || j==fj</code> を追加  <br /></td></tr>
 <tr class="separator:a71d1b0cf574787c596fe87d26bd905df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56351416679e5a93eef4c9ff1620cfec" id="r_a56351416679e5a93eef4c9ff1620cfec"><td class="memItemLeft" align="right" valign="top">vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56351416679e5a93eef4c9ff1620cfec">solve</a> ()</td></tr>
+<tr class="memdesc:a56351416679e5a93eef4c9ff1620cfec"><td class="mdescLeft">&#160;</td><td class="mdescRight">2-SATを解く  <br /></td></tr>
 <tr class="separator:a56351416679e5a93eef4c9ff1620cfec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-公開変数類</h2></td></tr>
-<tr class="memitem:a924564c4a7834da87a69282174e9d29e" id="r_a924564c4a7834da87a69282174e9d29e"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a924564c4a7834da87a69282174e9d29e">G</a></td></tr>
-<tr class="separator:a924564c4a7834da87a69282174e9d29e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">構築子と解体子</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>2-SAT </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a4b6625d3218c6bd8dd83951f17e35ed4" name="a4b6625d3218c6bd8dd83951f17e35ed4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b6625d3218c6bd8dd83951f17e35ed4">&#9670;&#160;</a></span>TwoSat()</h2>
 
@@ -131,6 +132,8 @@ $(function(){ initResizable(false); });
 </table>
 </div><div class="memdoc">
 
+<p>条件 <code>i==fi || j==fj</code> を追加 </p>
+
 </div>
 </div>
 <a id="a56351416679e5a93eef4c9ff1620cfec" name="a56351416679e5a93eef4c9ff1620cfec"></a>
@@ -156,20 +159,8 @@ $(function(){ initResizable(false); });
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">メンバ詳解</h2>
-<a id="a924564c4a7834da87a69282174e9d29e" name="a924564c4a7834da87a69282174e9d29e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a924564c4a7834da87a69282174e9d29e">&#9670;&#160;</a></span>G</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt;vector&lt;int&gt; &gt; TwoSat::G</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>2-SATを解く </p>
+<p>解が存在しないなら空のvectorを返す </p>
 
 </div>
 </div>

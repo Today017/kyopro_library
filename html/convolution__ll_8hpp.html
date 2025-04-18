@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: math/convolution_ll.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_296d53ceaeaa7e099814a6def439fe8a.html">math</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">convolution_ll.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../kyopro_library/template.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ntt_8hpp_source.html">../../kyopro_library/math/ntt.hpp</a>&quot;</code><br />
+<code>#include &lt;atcoder/convolution&gt;</code><br />
+</div>
+<p><a href="convolution__ll_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:affc5b1b0f894fcebcc3f620b342441a6" id="r_affc5b1b0f894fcebcc3f620b342441a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affc5b1b0f894fcebcc3f620b342441a6">Garner</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a1, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a2, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a3, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> m1, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> m2, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> m3, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> mod=<a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>+3)</td></tr>
+<tr class="memdesc:affc5b1b0f894fcebcc3f620b342441a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">x=ai mod mi を満たす x mod m を返す  <br /></td></tr>
+<tr class="separator:affc5b1b0f894fcebcc3f620b342441a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a067070d2dea1c2ab6abb1e6b3168a2a3" id="r_a067070d2dea1c2ab6abb1e6b3168a2a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a067070d2dea1c2ab6abb1e6b3168a2a3">ConvolveInt64</a> (<a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> a, <a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> b, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> mod=<a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>+3)</td></tr>
+<tr class="memdesc:a067070d2dea1c2ab6abb1e6b3168a2a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">a, b の自然数での畳み込みを返す  <br /></td></tr>
+<tr class="separator:a067070d2dea1c2ab6abb1e6b3168a2a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a067070d2dea1c2ab6abb1e6b3168a2a3" name="a067070d2dea1c2ab6abb1e6b3168a2a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a067070d2dea1c2ab6abb1e6b3168a2a3">&#9670;&#160;</a></span>ConvolveInt64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> ConvolveInt64 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>mod</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>+3</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>a, b の自然数での畳み込みを返す </p>
+
+</div>
+</div>
+<a id="affc5b1b0f894fcebcc3f620b342441a6" name="affc5b1b0f894fcebcc3f620b342441a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affc5b1b0f894fcebcc3f620b342441a6">&#9670;&#160;</a></span>Garner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> Garner </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>a1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>a2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>a3</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>m1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>m2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>m3</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>mod</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>+3</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>x=ai mod mi を満たす x mod m を返す </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

@@ -51,6 +51,9 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>値をマージする <a class="el" href="struct_d_s_u.html" title="Disjoint Set Union">DSU</a>  
+ <a href="#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -63,23 +66,40 @@ $(function(){ initResizable(false); });
 <tr class="memitem:a6e06d3c3b50471bd58ea808d9b63ad77" id="r_a6e06d3c3b50471bd58ea808d9b63ad77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e06d3c3b50471bd58ea808d9b63ad77">DsuMerging</a> ()=default</td></tr>
 <tr class="separator:a6e06d3c3b50471bd58ea808d9b63ad77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a176fb90f26e3696383392e94d7491cdb" id="r_a176fb90f26e3696383392e94d7491cdb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a176fb90f26e3696383392e94d7491cdb">DsuMerging</a> (int n, const vector&lt; <a class="el" href="#a31648bc93d4bc29960fe93fff7ca0914">Type</a> &gt; &amp;v)</td></tr>
+<tr class="memdesc:a176fb90f26e3696383392e94d7491cdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <br /></td></tr>
 <tr class="separator:a176fb90f26e3696383392e94d7491cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcf8fd363d1d2348869c0e43df04199d" id="r_afcf8fd363d1d2348869c0e43df04199d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcf8fd363d1d2348869c0e43df04199d">find</a> (int x)</td></tr>
+<tr class="memdesc:afcf8fd363d1d2348869c0e43df04199d"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 x を含む連結成分の代表元を返す  <br /></td></tr>
 <tr class="separator:afcf8fd363d1d2348869c0e43df04199d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcc3916018699b654242ea713b02adac" id="r_adcc3916018699b654242ea713b02adac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcc3916018699b654242ea713b02adac">merge</a> (int x, int y)</td></tr>
+<tr class="memdesc:adcc3916018699b654242ea713b02adac"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 x と y を連結し、true を返す  <br /></td></tr>
 <tr class="separator:adcc3916018699b654242ea713b02adac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae3ac2e8c0546029e540523cfb19d57f" id="r_aae3ac2e8c0546029e540523cfb19d57f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="#a31648bc93d4bc29960fe93fff7ca0914">Type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae3ac2e8c0546029e540523cfb19d57f">get</a> (int x)</td></tr>
+<tr class="memdesc:aae3ac2e8c0546029e540523cfb19d57f"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 x を含む連結成分の半群積を返す  <br /></td></tr>
 <tr class="separator:aae3ac2e8c0546029e540523cfb19d57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac70e527b5635c63da7c8923816d4e66e" id="r_ac70e527b5635c63da7c8923816d4e66e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac70e527b5635c63da7c8923816d4e66e">size</a> (int x) const</td></tr>
+<tr class="memdesc:ac70e527b5635c63da7c8923816d4e66e"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 x を含む連結成分のサイズを返す  <br /></td></tr>
 <tr class="separator:ac70e527b5635c63da7c8923816d4e66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c094054f83b0f6b1adeb6dea4f1b6e8" id="r_a2c094054f83b0f6b1adeb6dea4f1b6e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c094054f83b0f6b1adeb6dea4f1b6e8">same</a> (int x, int y) const</td></tr>
+<tr class="memdesc:a2c094054f83b0f6b1adeb6dea4f1b6e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 x と y が同じ連結成分に属するか否かを返す  <br /></td></tr>
 <tr class="separator:a2c094054f83b0f6b1adeb6dea4f1b6e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76200780dde72296276b892b74e6da98" id="r_a76200780dde72296276b892b74e6da98"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76200780dde72296276b892b74e6da98">count</a> () const</td></tr>
+<tr class="memdesc:a76200780dde72296276b892b74e6da98"><td class="mdescLeft">&#160;</td><td class="mdescRight">連結成分の個数を返す  <br /></td></tr>
 <tr class="separator:a76200780dde72296276b892b74e6da98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73a542ada89dfd4febc1766e43204834" id="r_a73a542ada89dfd4febc1766e43204834"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73a542ada89dfd4febc1766e43204834">groups</a> () const</td></tr>
-<tr class="separator:a73a542ada89dfd4febc1766e43204834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a500af4d11f058f17b499842d35181b01" id="r_a500af4d11f058f17b499842d35181b01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a500af4d11f058f17b499842d35181b01">groups</a> () const</td></tr>
+<tr class="memdesc:a500af4d11f058f17b499842d35181b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">各頂点を連結成分に分解する  <br /></td></tr>
+<tr class="separator:a500af4d11f058f17b499842d35181b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">型定義メンバ詳解</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Semigroup = DsuBaseSemigroup&gt;<br />
+struct DsuMerging&lt; Semigroup &gt;</div><p>値をマージする <a class="el" href="struct_d_s_u.html" title="Disjoint Set Union">DSU</a> </p>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Semigroup</td><td>半群 </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
 <a id="a31648bc93d4bc29960fe93fff7ca0914" name="a31648bc93d4bc29960fe93fff7ca0914"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a31648bc93d4bc29960fe93fff7ca0914">&#9670;&#160;</a></span>Type</h2>
 
@@ -153,6 +173,8 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>コンストラクタ </p>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
@@ -181,6 +203,8 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>連結成分の個数を返す </p>
+
 </div>
 </div>
 <a id="afcf8fd363d1d2348869c0e43df04199d" name="afcf8fd363d1d2348869c0e43df04199d"></a>
@@ -207,6 +231,9 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>頂点 x を含む連結成分の代表元を返す </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(α(N)) </dd></dl>
 
 </div>
 </div>
@@ -235,10 +262,12 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>頂点 x を含む連結成分の半群積を返す </p>
+
 </div>
 </div>
-<a id="a73a542ada89dfd4febc1766e43204834" name="a73a542ada89dfd4febc1766e43204834"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73a542ada89dfd4febc1766e43204834">&#9670;&#160;</a></span>groups()</h2>
+<a id="a500af4d11f058f17b499842d35181b01" name="a500af4d11f058f17b499842d35181b01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a500af4d11f058f17b499842d35181b01">&#9670;&#160;</a></span>groups()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +278,7 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; vector&lt; int &gt; &gt; <a class="el" href="struct_dsu_merging.html">DsuMerging</a>&lt; Semigroup &gt;::groups </td>
+          <td class="memname"><a class="el" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a> <a class="el" href="struct_dsu_merging.html">DsuMerging</a>&lt; Semigroup &gt;::groups </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -261,6 +290,8 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>各頂点を連結成分に分解する </p>
 
 </div>
 </div>
@@ -293,6 +324,9 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>頂点 x と y を連結し、true を返す </p>
+<p>既に連結されている場合は false を返す </p><dl class="section note"><dt>覚え書き</dt><dd>O(α(N)) </dd></dl>
+
 </div>
 </div>
 <a id="a2c094054f83b0f6b1adeb6dea4f1b6e8" name="a2c094054f83b0f6b1adeb6dea4f1b6e8"></a>
@@ -324,6 +358,8 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>頂点 x と y が同じ連結成分に属するか否かを返す </p>
+
 </div>
 </div>
 <a id="ac70e527b5635c63da7c8923816d4e66e" name="ac70e527b5635c63da7c8923816d4e66e"></a>
@@ -350,6 +386,8 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>頂点 x を含む連結成分のサイズを返す </p>
 
 </div>
 </div>

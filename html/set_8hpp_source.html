@@ -51,93 +51,108 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <a href="set_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00004" data-start="{" data-end="};">
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="struct_set.html">    4</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_set.html#ad50edd8c655871b6fbe7280b2d29e673">Set</a>:set&lt;T&gt;{</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="keyword">using </span>set&lt;T&gt;::set;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">    6</a></span>    T <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_set.html#ad50edd8c655871b6fbe7280b2d29e673">    7</a></span>    <a class="code hl_function" href="struct_set.html#ad50edd8c655871b6fbe7280b2d29e673">Set</a>()=<span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_set.html#a58491814e28dcd2876bc6ce87f3cc809">    8</a></span>    <a class="code hl_function" href="struct_set.html#a58491814e28dcd2876bc6ce87f3cc809">Set</a>(T <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>=-1){this-&gt;not_found=<a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;}</div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_set.html#a9625ca33788f09648b240f98c0eb33a7">    9</a></span>    T <a class="code hl_function" href="struct_set.html#a9625ca33788f09648b240f98c0eb33a7">min</a>(){</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">if</span>(this-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordflow">return</span>*this-&gt;begin();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    }</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_set.html">    5</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_set.html#ad50edd8c655871b6fbe7280b2d29e673">Set</a>:set&lt;T&gt;{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keyword">using </span>set&lt;T&gt;::set;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">    7</a></span>    T <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_set.html#ad50edd8c655871b6fbe7280b2d29e673">    8</a></span>    <a class="code hl_function" href="struct_set.html#ad50edd8c655871b6fbe7280b2d29e673">Set</a>()=<span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_set.html#a58491814e28dcd2876bc6ce87f3cc809">   12</a></span>    <a class="code hl_function" href="struct_set.html#a58491814e28dcd2876bc6ce87f3cc809">Set</a>(T <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>=-1){ this-&gt;not_found=<a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>; }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_set.html#a9625ca33788f09648b240f98c0eb33a7">   15</a></span>    T <a class="code hl_function" href="struct_set.html#a9625ca33788f09648b240f98c0eb33a7">min</a>(){</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">if</span>(this-&gt;empty()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">return</span>*this-&gt;begin();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
 </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_set.html#ab1cbe6674e6ec706e07d03e13bf20dcd">   13</a></span>    T <a class="code hl_function" href="struct_set.html#ab1cbe6674e6ec706e07d03e13bf20dcd">max</a>(){</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">if</span>(this-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">return</span>*this-&gt;rbegin();</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_set.html#ab1cbe6674e6ec706e07d03e13bf20dcd">   21</a></span>    T <a class="code hl_function" href="struct_set.html#ab1cbe6674e6ec706e07d03e13bf20dcd">max</a>(){</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">if</span>(this-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">return</span>*this-&gt;rbegin();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
 </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_set.html#a77887906e2020e72f3d99af29e98db67">   17</a></span>    T <a class="code hl_function" href="struct_set.html#a77887906e2020e72f3d99af29e98db67">pop_min</a>(){</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">if</span>(this-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        T ret=<a class="code hl_function" href="struct_set.html#a9625ca33788f09648b240f98c0eb33a7">min</a>();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        this-&gt;erase(ret);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_set.html#a77887906e2020e72f3d99af29e98db67">   27</a></span>    T <a class="code hl_function" href="struct_set.html#a77887906e2020e72f3d99af29e98db67">pop_min</a>(){</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">if</span>(this-&gt;empty()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        T ret=<a class="code hl_function" href="struct_set.html#a9625ca33788f09648b240f98c0eb33a7">min</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        this-&gt;erase(ret);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
 </div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_set.html#a5a23b8d407841f11cff0d6a19f4a9faf">   23</a></span>    T <a class="code hl_function" href="struct_set.html#a5a23b8d407841f11cff0d6a19f4a9faf">pop_max</a>(){</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(this-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        T ret=<a class="code hl_function" href="struct_set.html#ab1cbe6674e6ec706e07d03e13bf20dcd">max</a>();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        this-&gt;erase(ret);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }  </div>
-</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_set.html#ab53c8f03bd84270af37c399351e085fa">   29</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_set.html#ab53c8f03bd84270af37c399351e085fa">contains</a>(T x){<span class="keywordflow">return</span> this-&gt;find(x)!=this-&gt;end();}</div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_set.html#ad1f6464e4c982ea6ec2846fc33ccd86e">   30</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_set.html#ad1f6464e4c982ea6ec2846fc33ccd86e">discard</a>(T x){</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keyword">auto</span> itr=this-&gt;find(x);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">if</span>(itr==this-&gt;end())<span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        this-&gt;erase(itr);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
-</div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_set.html#a5f67dcbc5701f7af323117f7473329a6">   36</a></span>    T <a class="code hl_function" href="struct_set.html#a5f67dcbc5701f7af323117f7473329a6">gt</a>(T x){</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keyword">auto</span> itr=this-&gt;upper_bound(x);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">if</span>(itr==this-&gt;end())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span>*itr;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="struct_set.html#a5a23b8d407841f11cff0d6a19f4a9faf">   35</a></span>    T <a class="code hl_function" href="struct_set.html#a5a23b8d407841f11cff0d6a19f4a9faf">pop_max</a>(){</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">if</span>(this-&gt;empty()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        T ret=<a class="code hl_function" href="struct_set.html#ab1cbe6674e6ec706e07d03e13bf20dcd">max</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        this-&gt;erase(ret);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
 </div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_set.html#a7e8d9363142571d7b1866bc9241c3b01">   41</a></span>    T <a class="code hl_function" href="struct_set.html#a7e8d9363142571d7b1866bc9241c3b01">ge</a>(T x){</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound(x);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span>(itr==this-&gt;end())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">return</span>*itr;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_set.html#ab53c8f03bd84270af37c399351e085fa">   43</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_set.html#ab53c8f03bd84270af37c399351e085fa">contains</a>(T x){</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">return</span> this-&gt;find(x)!=this-&gt;end();</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
 </div>
-<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct_set.html#a9dc583428486cda3dfc0b16beb4a2981">   46</a></span>    T <a class="code hl_function" href="struct_set.html#a9dc583428486cda3dfc0b16beb4a2981">le</a>(T x){</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">auto</span> itr=this-&gt;upper_bound(x);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">if</span>(itr==this-&gt;begin())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span>*prev(itr);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_set.html#ad1f6464e4c982ea6ec2846fc33ccd86e">   49</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_set.html#ad1f6464e4c982ea6ec2846fc33ccd86e">discard</a>(T x){</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keyword">auto</span> itr=this-&gt;find(x);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">if</span>(itr==this-&gt;end()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        this-&gt;erase(itr);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
 </div>
-<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_set.html#a08ba7ca11b7433208e0c8ad341964542">   51</a></span>    T <a class="code hl_function" href="struct_set.html#a08ba7ca11b7433208e0c8ad341964542">lt</a>(T x){</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound(x);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span>(itr==this-&gt;begin())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">return</span>*prev(itr);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="struct_set.html#a5f67dcbc5701f7af323117f7473329a6">   57</a></span>    T <a class="code hl_function" href="struct_set.html#a5f67dcbc5701f7af323117f7473329a6">gt</a>(T x){</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keyword">auto</span> itr=this-&gt;upper_bound(x);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">if</span>(itr==this-&gt;end()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">return</span>*itr;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
 </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="struct_set.html#a7e8d9363142571d7b1866bc9241c3b01">   64</a></span>    T <a class="code hl_function" href="struct_set.html#a7e8d9363142571d7b1866bc9241c3b01">ge</a>(T x){</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound(x);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">if</span>(itr==this-&gt;end()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">return</span>*itr;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
 </div>
-<div class="ttc" id="astruct_set_html_a08ba7ca11b7433208e0c8ad341964542"><div class="ttname"><a href="struct_set.html#a08ba7ca11b7433208e0c8ad341964542">Set::lt</a></div><div class="ttdeci">T lt(T x)</div><div class="ttdef"><b>Definition</b> set.hpp:51</div></div>
-<div class="ttc" id="astruct_set_html_a58491814e28dcd2876bc6ce87f3cc809"><div class="ttname"><a href="struct_set.html#a58491814e28dcd2876bc6ce87f3cc809">Set::Set</a></div><div class="ttdeci">Set(T not_found=-1)</div><div class="ttdef"><b>Definition</b> set.hpp:8</div></div>
-<div class="ttc" id="astruct_set_html_a5a23b8d407841f11cff0d6a19f4a9faf"><div class="ttname"><a href="struct_set.html#a5a23b8d407841f11cff0d6a19f4a9faf">Set::pop_max</a></div><div class="ttdeci">T pop_max()</div><div class="ttdef"><b>Definition</b> set.hpp:23</div></div>
-<div class="ttc" id="astruct_set_html_a5f67dcbc5701f7af323117f7473329a6"><div class="ttname"><a href="struct_set.html#a5f67dcbc5701f7af323117f7473329a6">Set::gt</a></div><div class="ttdeci">T gt(T x)</div><div class="ttdef"><b>Definition</b> set.hpp:36</div></div>
-<div class="ttc" id="astruct_set_html_a77887906e2020e72f3d99af29e98db67"><div class="ttname"><a href="struct_set.html#a77887906e2020e72f3d99af29e98db67">Set::pop_min</a></div><div class="ttdeci">T pop_min()</div><div class="ttdef"><b>Definition</b> set.hpp:17</div></div>
-<div class="ttc" id="astruct_set_html_a7e8d9363142571d7b1866bc9241c3b01"><div class="ttname"><a href="struct_set.html#a7e8d9363142571d7b1866bc9241c3b01">Set::ge</a></div><div class="ttdeci">T ge(T x)</div><div class="ttdef"><b>Definition</b> set.hpp:41</div></div>
-<div class="ttc" id="astruct_set_html_a9625ca33788f09648b240f98c0eb33a7"><div class="ttname"><a href="struct_set.html#a9625ca33788f09648b240f98c0eb33a7">Set::min</a></div><div class="ttdeci">T min()</div><div class="ttdef"><b>Definition</b> set.hpp:9</div></div>
-<div class="ttc" id="astruct_set_html_a970a07f6923c83c2fa1195803edb6364"><div class="ttname"><a href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">Set::not_found</a></div><div class="ttdeci">T not_found</div><div class="ttdef"><b>Definition</b> set.hpp:6</div></div>
-<div class="ttc" id="astruct_set_html_a9dc583428486cda3dfc0b16beb4a2981"><div class="ttname"><a href="struct_set.html#a9dc583428486cda3dfc0b16beb4a2981">Set::le</a></div><div class="ttdeci">T le(T x)</div><div class="ttdef"><b>Definition</b> set.hpp:46</div></div>
-<div class="ttc" id="astruct_set_html_ab1cbe6674e6ec706e07d03e13bf20dcd"><div class="ttname"><a href="struct_set.html#ab1cbe6674e6ec706e07d03e13bf20dcd">Set::max</a></div><div class="ttdeci">T max()</div><div class="ttdef"><b>Definition</b> set.hpp:13</div></div>
-<div class="ttc" id="astruct_set_html_ab53c8f03bd84270af37c399351e085fa"><div class="ttname"><a href="struct_set.html#ab53c8f03bd84270af37c399351e085fa">Set::contains</a></div><div class="ttdeci">bool contains(T x)</div><div class="ttdef"><b>Definition</b> set.hpp:29</div></div>
-<div class="ttc" id="astruct_set_html_ad1f6464e4c982ea6ec2846fc33ccd86e"><div class="ttname"><a href="struct_set.html#ad1f6464e4c982ea6ec2846fc33ccd86e">Set::discard</a></div><div class="ttdeci">bool discard(T x)</div><div class="ttdef"><b>Definition</b> set.hpp:30</div></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="struct_set.html#a9dc583428486cda3dfc0b16beb4a2981">   71</a></span>    T <a class="code hl_function" href="struct_set.html#a9dc583428486cda3dfc0b16beb4a2981">le</a>(T x){</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keyword">auto</span> itr=this-&gt;upper_bound(x);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">if</span>(itr==this-&gt;begin()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">return</span>*prev(itr);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="struct_set.html#a08ba7ca11b7433208e0c8ad341964542">   78</a></span>    T <a class="code hl_function" href="struct_set.html#a08ba7ca11b7433208e0c8ad341964542">lt</a>(T x){</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound(x);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">if</span>(itr==this-&gt;begin()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">not_found</a>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">return</span>*prev(itr);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
+</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
+</div>
+<div class="ttc" id="astruct_set_html_a08ba7ca11b7433208e0c8ad341964542"><div class="ttname"><a href="struct_set.html#a08ba7ca11b7433208e0c8ad341964542">Set::lt</a></div><div class="ttdeci">T lt(T x)</div><div class="ttdoc">x 未満の最大値の値を返す</div><div class="ttdef"><b>Definition</b> set.hpp:78</div></div>
+<div class="ttc" id="astruct_set_html_a58491814e28dcd2876bc6ce87f3cc809"><div class="ttname"><a href="struct_set.html#a58491814e28dcd2876bc6ce87f3cc809">Set::Set</a></div><div class="ttdeci">Set(T not_found=-1)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition</b> set.hpp:12</div></div>
+<div class="ttc" id="astruct_set_html_a5a23b8d407841f11cff0d6a19f4a9faf"><div class="ttname"><a href="struct_set.html#a5a23b8d407841f11cff0d6a19f4a9faf">Set::pop_max</a></div><div class="ttdeci">T pop_max()</div><div class="ttdoc">最大値を返し、削除する</div><div class="ttdef"><b>Definition</b> set.hpp:35</div></div>
+<div class="ttc" id="astruct_set_html_a5f67dcbc5701f7af323117f7473329a6"><div class="ttname"><a href="struct_set.html#a5f67dcbc5701f7af323117f7473329a6">Set::gt</a></div><div class="ttdeci">T gt(T x)</div><div class="ttdoc">x より大きい最小の値を返す</div><div class="ttdef"><b>Definition</b> set.hpp:57</div></div>
+<div class="ttc" id="astruct_set_html_a77887906e2020e72f3d99af29e98db67"><div class="ttname"><a href="struct_set.html#a77887906e2020e72f3d99af29e98db67">Set::pop_min</a></div><div class="ttdeci">T pop_min()</div><div class="ttdoc">最小値を返し、削除する</div><div class="ttdef"><b>Definition</b> set.hpp:27</div></div>
+<div class="ttc" id="astruct_set_html_a7e8d9363142571d7b1866bc9241c3b01"><div class="ttname"><a href="struct_set.html#a7e8d9363142571d7b1866bc9241c3b01">Set::ge</a></div><div class="ttdeci">T ge(T x)</div><div class="ttdoc">x 以上の最小の値を返す</div><div class="ttdef"><b>Definition</b> set.hpp:64</div></div>
+<div class="ttc" id="astruct_set_html_a9625ca33788f09648b240f98c0eb33a7"><div class="ttname"><a href="struct_set.html#a9625ca33788f09648b240f98c0eb33a7">Set::min</a></div><div class="ttdeci">T min()</div><div class="ttdoc">最小値を返す</div><div class="ttdef"><b>Definition</b> set.hpp:15</div></div>
+<div class="ttc" id="astruct_set_html_a970a07f6923c83c2fa1195803edb6364"><div class="ttname"><a href="struct_set.html#a970a07f6923c83c2fa1195803edb6364">Set::not_found</a></div><div class="ttdeci">T not_found</div><div class="ttdef"><b>Definition</b> set.hpp:7</div></div>
+<div class="ttc" id="astruct_set_html_a9dc583428486cda3dfc0b16beb4a2981"><div class="ttname"><a href="struct_set.html#a9dc583428486cda3dfc0b16beb4a2981">Set::le</a></div><div class="ttdeci">T le(T x)</div><div class="ttdoc">x 以下の最大の値を返す</div><div class="ttdef"><b>Definition</b> set.hpp:71</div></div>
+<div class="ttc" id="astruct_set_html_ab1cbe6674e6ec706e07d03e13bf20dcd"><div class="ttname"><a href="struct_set.html#ab1cbe6674e6ec706e07d03e13bf20dcd">Set::max</a></div><div class="ttdeci">T max()</div><div class="ttdoc">最大値を返す</div><div class="ttdef"><b>Definition</b> set.hpp:21</div></div>
+<div class="ttc" id="astruct_set_html_ab53c8f03bd84270af37c399351e085fa"><div class="ttname"><a href="struct_set.html#ab53c8f03bd84270af37c399351e085fa">Set::contains</a></div><div class="ttdeci">bool contains(T x)</div><div class="ttdoc">x が含まれているか否かを返す</div><div class="ttdef"><b>Definition</b> set.hpp:43</div></div>
+<div class="ttc" id="astruct_set_html_ad1f6464e4c982ea6ec2846fc33ccd86e"><div class="ttname"><a href="struct_set.html#ad1f6464e4c982ea6ec2846fc33ccd86e">Set::discard</a></div><div class="ttdeci">bool discard(T x)</div><div class="ttdoc">x を削除する</div><div class="ttdef"><b>Definition</b> set.hpp:49</div></div>
 <div class="ttc" id="astruct_set_html_ad50edd8c655871b6fbe7280b2d29e673"><div class="ttname"><a href="struct_set.html#ad50edd8c655871b6fbe7280b2d29e673">Set::Set</a></div><div class="ttdeci">Set()=default</div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

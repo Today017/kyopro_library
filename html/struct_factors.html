@@ -50,7 +50,10 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="osak_8hpp_source.html">osak.hpp</a>&gt;</code></p>
+<p>エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法） <a href="https://osak.jp/diary/diary_201310.html#20131017">https://osak.jp/diary/diary_201310.html#20131017</a> <a href="https://qiita.com/drken/items/3beb679e54266f20ab63">https://qiita.com/drken/items/3beb679e54266f20ab63</a>  
+ <a href="#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="factors_8hpp_source.html">factors.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
@@ -60,12 +63,12 @@ $(function(){ initResizable(false); });
 <tr class="memitem:a9c62b3d154c3d164110ce5365d978732" id="r_a9c62b3d154c3d164110ce5365d978732"><td class="memItemLeft" align="right" valign="top">vector&lt; pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c62b3d154c3d164110ce5365d978732">get_prime_factors</a> (int n)</td></tr>
 <tr class="memdesc:a9c62b3d154c3d164110ce5365d978732"><td class="mdescLeft">&#160;</td><td class="mdescRight">n を素因数分解する  <br /></td></tr>
 <tr class="separator:a9c62b3d154c3d164110ce5365d978732"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a2919bdbde2dbbba26d1c94b5a917c1" id="r_a5a2919bdbde2dbbba26d1c94b5a917c1"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a2919bdbde2dbbba26d1c94b5a917c1">get_divisors</a> (int n)</td></tr>
-<tr class="memdesc:a5a2919bdbde2dbbba26d1c94b5a917c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">n の約数を返す  <br /></td></tr>
-<tr class="separator:a5a2919bdbde2dbbba26d1c94b5a917c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24bcfb630170a5aae2e2ae3c7ce3f656" id="r_a24bcfb630170a5aae2e2ae3c7ce3f656"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24bcfb630170a5aae2e2ae3c7ce3f656">get_divisors</a> (int n)</td></tr>
+<tr class="memdesc:a24bcfb630170a5aae2e2ae3c7ce3f656"><td class="mdescLeft">&#160;</td><td class="mdescRight">n の約数を返す  <br /></td></tr>
+<tr class="separator:a24bcfb630170a5aae2e2ae3c7ce3f656"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法） ref:https://osak.jp/diary/diary_201310.html#20131017 ref:https://qiita.com/drken/items/3beb679e54266f20ab63 </p>
+<div class="textblock"><p>エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法） <a href="https://osak.jp/diary/diary_201310.html#20131017">https://osak.jp/diary/diary_201310.html#20131017</a> <a href="https://qiita.com/drken/items/3beb679e54266f20ab63">https://qiita.com/drken/items/3beb679e54266f20ab63</a> </p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a219a3cb166153a020f2fc3d83b9a9e57" name="a219a3cb166153a020f2fc3d83b9a9e57"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a219a3cb166153a020f2fc3d83b9a9e57">&#9670;&#160;</a></span>Factors()</h2>
@@ -96,8 +99,8 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a5a2919bdbde2dbbba26d1c94b5a917c1" name="a5a2919bdbde2dbbba26d1c94b5a917c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a2919bdbde2dbbba26d1c94b5a917c1">&#9670;&#160;</a></span>get_divisors()</h2>
+<a id="a24bcfb630170a5aae2e2ae3c7ce3f656" name="a24bcfb630170a5aae2e2ae3c7ce3f656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24bcfb630170a5aae2e2ae3c7ce3f656">&#9670;&#160;</a></span>get_divisors()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -106,7 +109,7 @@ $(function(){ initResizable(false); });
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; int &gt; Factors::get_divisors </td>
+          <td class="memname"><a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> Factors::get_divisors </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
           <td></td>
@@ -153,7 +156,7 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 <hr/>この構造体詳解は次のファイルから抽出されました:<ul>
-<li>math/<a class="el" href="osak_8hpp_source.html">osak.hpp</a></li>
+<li>math/<a class="el" href="factors_8hpp_source.html">factors.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

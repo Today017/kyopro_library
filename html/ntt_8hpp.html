@@ -48,65 +48,21 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">関数</a>  </div>
+<a href="#nested-classes">クラス</a>  </div>
   <div class="headertitle"><div class="title">ntt.hpp ファイル</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../kyopro_library/template.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="modint_8hpp_source.html">../../kyopro_library/mod/modint.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="modcal_8hpp_source.html">../../kyopro_library/others/modcal.hpp</a>&quot;</code><br />
 </div>
 <p><a href="ntt_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-関数</h2></td></tr>
-<tr class="memitem:a4274ba1b0994fc9140634809d613639d" id="r_a4274ba1b0994fc9140634809d613639d"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4274ba1b0994fc9140634809d613639d">NTT998</a> (vector&lt; <a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a> &gt; a, bool inv=false)</td></tr>
-<tr class="separator:a4274ba1b0994fc9140634809d613639d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b8fd5b3ca2b4c5317eebb35816aed7f" id="r_a5b8fd5b3ca2b4c5317eebb35816aed7f"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b8fd5b3ca2b4c5317eebb35816aed7f">convolve998</a> (vector&lt; <a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a> &gt; a, vector&lt; <a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a> &gt; b)</td></tr>
-<tr class="separator:a5b8fd5b3ca2b4c5317eebb35816aed7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_t_t.html">NTT&lt; MOD, primitive_root &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_n_t_t.html" title="NTT Friendly 素数用 NTT 構造体">NTT</a> Friendly 素数用 <a class="el" href="class_n_t_t.html" title="NTT Friendly 素数用 NTT 構造体">NTT</a> 構造体  <a href="class_n_t_t.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">関数詳解</h2>
-<a id="a5b8fd5b3ca2b4c5317eebb35816aed7f" name="a5b8fd5b3ca2b4c5317eebb35816aed7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b8fd5b3ca2b4c5317eebb35816aed7f">&#9670;&#160;</a></span>convolve998()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt; <a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a> &gt; convolve998 </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">vector&lt; <a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4274ba1b0994fc9140634809d613639d" name="a4274ba1b0994fc9140634809d613639d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4274ba1b0994fc9140634809d613639d">&#9670;&#160;</a></span>NTT998()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt; <a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a> &gt; NTT998 </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>inv</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

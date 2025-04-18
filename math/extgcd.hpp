@@ -1,6 +1,5 @@
 #include"../../kyopro_library/template.hpp"
 
-/// @file extgcd.hpp
 /// @brief 拡張ユークリッドの互除法
 /**
  * @details
@@ -11,18 +10,18 @@
  * bX - (b/a)*a*X + aY = g
  * a(Y-(b/a)*X) + bX = g
  */
-tuple<ll,ll,ll>ExtGcd(ll a,ll b){
-	if(a==0)return {b,0,1};
-	auto[g,s,t]=ExtGcd(b%a,a);
-	return{g,t-(b/a)*s,s};
+tuple<ll,ll,ll> ExtGcd(ll a, ll b){
+    if(a==0) return {b,0,1};
+    auto [g,s,t]=ExtGcd(b%a,a);
+    return {g,t-(b/a)*s,s};
 }
 
 /// @brief mod 逆元
 /// @brief a^(-1) (mod m)
 /// @note gcd(a,m)=1 でない場合、-1 を返す。
-ll ModInvGcd(ll a,ll m){
-	// ax = 1 (mod m) <-> ax+my = 1 (mod m)
-	auto[g,x,y]=ExtGcd(a,m);
-	if(g!=1)return-1;
-	return (x+m)%m;
+ll ModInvGcd(ll a, ll m){
+    // ax = 1 (mod m) <-> ax+my = 1 (mod m)
+    auto [g,x,y]=ExtGcd(a,m);
+    if(g!=1) return-1;
+    return (x+m)%m;
 }

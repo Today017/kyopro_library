@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Kyopro Library: graph/sp/dijkstra.hpp ソースファイル</title>
+<title>Kyopro Library: graph/shortest_path/dijkstra.hpp ソースファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -42,7 +42,7 @@ $(function(){ initResizable(false); });
 </script>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_12552d7fa429bf94a2e32e5cf39f7e69.html">graph</a></li><li class="navelem"><a class="el" href="dir_df9843f1aab4043bef18256611bedf70.html">sp</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_12552d7fa429bf94a2e32e5cf39f7e69.html">graph</a></li><li class="navelem"><a class="el" href="dir_d0569a394d1bad71786d51186f895983.html">shortest_path</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -53,22 +53,19 @@ $(function(){ initResizable(false); });
 <a href="dijkstra_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../../kyopro_library/template.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="dijkstra_8hpp.html#acfdfb589a639d25a8d7ec3d0e9613925">    6</a></span><a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> <a class="code hl_function" href="dijkstra_8hpp.html#acfdfb589a639d25a8d7ec3d0e9613925">Dijkstra</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#a20b579988fc1098f6357cbd1f07dc5e8">WG</a>&amp; g,<span class="keywordtype">int</span> start=0){</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="dijkstra_8hpp.html#acfdfb589a639d25a8d7ec3d0e9613925">    6</a></span><a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> <a class="code hl_function" href="dijkstra_8hpp.html#acfdfb589a639d25a8d7ec3d0e9613925">Dijkstra</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#a20b579988fc1098f6357cbd1f07dc5e8">WG</a>&amp; g, <span class="keywordtype">int</span> start=0){</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordtype">int</span> n=g.size();</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> ret(n,<a class="code hl_variable" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    ret[start]=0;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_typedef" href="template_8hpp.html#ae5ef38025fe230c42996fedcb333507a">rpriority_queue&lt;pair&lt;ll,int&gt;</a>&gt;pq;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    pq.push({0,start});</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">while</span>(!pq.empty()){</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">auto</span>[ret_sum,now]=pq.top();pq.pop();</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span>(ret[now]&lt;ret_sum) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> ret(n,<a class="code hl_variable" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>); ret[start]=0;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_typedef" href="template_8hpp.html#ae5ef38025fe230c42996fedcb333507a">rpriority_queue&lt;pair&lt;ll,int&gt;</a>&gt; pq; pq.push({0,start});</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">while</span>(!pq.empty()){</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keyword">auto</span> [tmp,now]=pq.top();pq.pop();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">if</span>(ret[now]&lt;tmp) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [nxt,cost]:g[now])<span class="keywordflow">if</span>(<a class="code hl_define" href="template_8hpp.html#afab395ab2eac3679be924c315291bf58">chmin</a>(ret[nxt],ret[now]+cost)) pq.push({ret[nxt],nxt});</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span>[nxt,cost]:g[now])<span class="keywordflow">if</span>(<a class="code hl_define" href="template_8hpp.html#afab395ab2eac3679be924c315291bf58">chmin</a>(ret[nxt],ret[now]+cost)) pq.push({ret[nxt],nxt});</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
 </div>
 <div class="ttc" id="adijkstra_8hpp_html_acfdfb589a639d25a8d7ec3d0e9613925"><div class="ttname"><a href="dijkstra_8hpp.html#acfdfb589a639d25a8d7ec3d0e9613925">Dijkstra</a></div><div class="ttdeci">VL Dijkstra(const WG &amp;g, int start=0)</div><div class="ttdoc">ダイクストラ法</div><div class="ttdef"><b>Definition</b> dijkstra.hpp:6</div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>

@@ -47,7 +47,7 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="el" href="md__r_e_a_d_m_e.html">top</a></p>
-<h1><a class="anchor" id="autotoc_md84"></a>
+<h1><a class="anchor" id="autotoc_md64"></a>
 <a href="./bezout_identity.hpp">Bezout Identity</a></h1>
 <p><code><a class="el" href="struct_bezout_identity.html" title="一次不定方程式 ax+by=c を解く verify: https://atcoder.jp/contests/abc340/submissions/62495050">BezoutIdentity(ll a, ll b, ll c)</a></code></p><ul>
 <li>不定一次方程式 $ax + by = c$ を解く。</li>
@@ -58,7 +58,7 @@ $(function(){ initResizable(false); });
 <p><code>pair&lt;ll, ll&gt; general_solution(ll t)</code></p><ul>
 <li>$t$ に特徴づけられる解 $(x, y)$ を返す。</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md85"></a>
+<h3><a class="anchor" id="autotoc_md65"></a>
 解説</h3>
 <p>$g=\gcd(a,b)$ とする。 <code>extgcd</code> によって、 $ax' + by' = g$ を解く。</p>
 <p>辺々を $\frac{c}{g}$ 倍し、 $x=x'\times\frac{c}{g}, y=y'\times\frac{c}{g}$ とすると、 これらは元の方程式 $ax + by = c$ を満たしている。</p>

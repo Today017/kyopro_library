@@ -50,6 +50,9 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>Disjoint <a class="el" href="struct_set.html" title="std::set ラッパー">Set</a> Union  
+ <a href="#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="dsu_8hpp_source.html">dsu.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -57,21 +60,30 @@ $(function(){ initResizable(false); });
 <tr class="memitem:a2037e5dac19248a4e5f2f70133fdea12" id="r_a2037e5dac19248a4e5f2f70133fdea12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2037e5dac19248a4e5f2f70133fdea12">DSU</a> ()=default</td></tr>
 <tr class="separator:a2037e5dac19248a4e5f2f70133fdea12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbae2d8b88cba33b50386cbbf229685a" id="r_abbae2d8b88cba33b50386cbbf229685a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbae2d8b88cba33b50386cbbf229685a">DSU</a> (int n)</td></tr>
+<tr class="memdesc:abbae2d8b88cba33b50386cbbf229685a"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <br /></td></tr>
 <tr class="separator:abbae2d8b88cba33b50386cbbf229685a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70d8917e08a86dd49446ce8263f675a3" id="r_a70d8917e08a86dd49446ce8263f675a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70d8917e08a86dd49446ce8263f675a3">find</a> (int x)</td></tr>
+<tr class="memdesc:a70d8917e08a86dd49446ce8263f675a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 x を含む連結成分の代表元を返す  <br /></td></tr>
 <tr class="separator:a70d8917e08a86dd49446ce8263f675a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81af0a8861251cc70ae491c6249e672d" id="r_a81af0a8861251cc70ae491c6249e672d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81af0a8861251cc70ae491c6249e672d">merge</a> (int x, int y)</td></tr>
+<tr class="memdesc:a81af0a8861251cc70ae491c6249e672d"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 x と y を連結し、true を返す  <br /></td></tr>
 <tr class="separator:a81af0a8861251cc70ae491c6249e672d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae15ca5c12804826f13632d23443e36e8" id="r_ae15ca5c12804826f13632d23443e36e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae15ca5c12804826f13632d23443e36e8">size</a> (int x)</td></tr>
+<tr class="memdesc:ae15ca5c12804826f13632d23443e36e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 x を含む連結成分のサイズを返す  <br /></td></tr>
 <tr class="separator:ae15ca5c12804826f13632d23443e36e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3a04e676273604d56db0344795cd693" id="r_ad3a04e676273604d56db0344795cd693"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3a04e676273604d56db0344795cd693">same</a> (int x, int y)</td></tr>
+<tr class="memdesc:ad3a04e676273604d56db0344795cd693"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 x と y が同じ連結成分に属するか否かを返す  <br /></td></tr>
 <tr class="separator:ad3a04e676273604d56db0344795cd693"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a042d4bb179819d69d53f2b96e23b099e" id="r_a042d4bb179819d69d53f2b96e23b099e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a042d4bb179819d69d53f2b96e23b099e">count</a> ()</td></tr>
+<tr class="memdesc:a042d4bb179819d69d53f2b96e23b099e"><td class="mdescLeft">&#160;</td><td class="mdescRight">連結成分の個数を返す  <br /></td></tr>
 <tr class="separator:a042d4bb179819d69d53f2b96e23b099e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02f80e51a2682fc4465030afd4ae13f0" id="r_a02f80e51a2682fc4465030afd4ae13f0"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02f80e51a2682fc4465030afd4ae13f0">groups</a> ()</td></tr>
-<tr class="separator:a02f80e51a2682fc4465030afd4ae13f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c5c3d071acd50cbe58a86c38a6a3da7" id="r_a1c5c3d071acd50cbe58a86c38a6a3da7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c5c3d071acd50cbe58a86c38a6a3da7">groups</a> ()</td></tr>
+<tr class="memdesc:a1c5c3d071acd50cbe58a86c38a6a3da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">各頂点を連結成分に分解する  <br /></td></tr>
+<tr class="separator:a1c5c3d071acd50cbe58a86c38a6a3da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">構築子と解体子</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>Disjoint <a class="el" href="struct_set.html" title="std::set ラッパー">Set</a> Union </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a2037e5dac19248a4e5f2f70133fdea12" name="a2037e5dac19248a4e5f2f70133fdea12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2037e5dac19248a4e5f2f70133fdea12">&#9670;&#160;</a></span>DSU() <span class="overload">[1/2]</span></h2>
 
@@ -120,6 +132,8 @@ $(function(){ initResizable(false); });
 </table>
 </div><div class="memdoc">
 
+<p>コンストラクタ </p>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
@@ -146,6 +160,9 @@ $(function(){ initResizable(false); });
 </table>
 </div><div class="memdoc">
 
+<p>連結成分の個数を返す </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(1) </dd></dl>
+
 </div>
 </div>
 <a id="a70d8917e08a86dd49446ce8263f675a3" name="a70d8917e08a86dd49446ce8263f675a3"></a>
@@ -171,10 +188,13 @@ $(function(){ initResizable(false); });
 </table>
 </div><div class="memdoc">
 
+<p>頂点 x を含む連結成分の代表元を返す </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(α(N)) </dd></dl>
+
 </div>
 </div>
-<a id="a02f80e51a2682fc4465030afd4ae13f0" name="a02f80e51a2682fc4465030afd4ae13f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02f80e51a2682fc4465030afd4ae13f0">&#9670;&#160;</a></span>groups()</h2>
+<a id="a1c5c3d071acd50cbe58a86c38a6a3da7" name="a1c5c3d071acd50cbe58a86c38a6a3da7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c5c3d071acd50cbe58a86c38a6a3da7">&#9670;&#160;</a></span>groups()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,7 +203,7 @@ $(function(){ initResizable(false); });
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; vector&lt; int &gt; &gt; DSU::groups </td>
+          <td class="memname"><a class="el" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a> DSU::groups </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -195,6 +215,9 @@ $(function(){ initResizable(false); });
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>各頂点を連結成分に分解する </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(N) </dd></dl>
 
 </div>
 </div>
@@ -225,6 +248,9 @@ $(function(){ initResizable(false); });
 </table>
 </div><div class="memdoc">
 
+<p>頂点 x と y を連結し、true を返す </p>
+<p>既に連結されている場合は false を返す </p><dl class="section note"><dt>覚え書き</dt><dd>O(α(N)) </dd></dl>
+
 </div>
 </div>
 <a id="ad3a04e676273604d56db0344795cd693" name="ad3a04e676273604d56db0344795cd693"></a>
@@ -254,6 +280,9 @@ $(function(){ initResizable(false); });
 </table>
 </div><div class="memdoc">
 
+<p>頂点 x と y が同じ連結成分に属するか否かを返す </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(α(N)) </dd></dl>
+
 </div>
 </div>
 <a id="ae15ca5c12804826f13632d23443e36e8" name="ae15ca5c12804826f13632d23443e36e8"></a>
@@ -278,6 +307,9 @@ $(function(){ initResizable(false); });
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>頂点 x を含む連結成分のサイズを返す </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(α(N)) </dd></dl>
 
 </div>
 </div>

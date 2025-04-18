@@ -232,6 +232,7 @@ template&lt;typename F&gt; </div>
 </div><div class="memdoc">
 
 <p>区間 [x, r) のモノイド積が f を満たすような最小の x &lt;= r を返す </p>
+<dl class="section attention"><dt>注意</dt><dd><code>f(Monoid::id())=true</code> が成り立つ必要がある </dd></dl>
 <dl class="section note"><dt>覚え書き</dt><dd>O(log(N)) </dd></dl>
 
 </div>
@@ -268,6 +269,7 @@ template&lt;typename F&gt; </div>
 </div><div class="memdoc">
 
 <p>区間 [l, x) のモノイド積が f を満たすような最大の x &gt;= l を返す </p>
+<dl class="section attention"><dt>注意</dt><dd><code>f(Monoid::id())=true</code> が成り立つ必要がある </dd></dl>
 <dl class="section note"><dt>覚え書き</dt><dd>O(log(N)) </dd></dl>
 
 </div>

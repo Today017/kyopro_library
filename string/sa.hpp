@@ -1,8 +1,8 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-// Suffix Array
-// sa[i] = j <-> s[j:] が辞書順 i 番目
+/// @brief Suffix Array
+/// sa[i] = j <-> s[j:] が辞書順 i 番目
 // O(n log(n))
 // ref: https://wk1080id.hatenablog.com/entry/2018/12/25/005926
 template<int C=256>

@@ -52,71 +52,72 @@ $(function(){ initResizable(false); });
 <div class="contents">
 <a href="convolution_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="convolution_8hpp.html#a4520e2ef0f91a956951eddb865caee5c">    8</a></span>vector&lt;complex&lt;double&gt;&gt;<a class="code hl_function" href="convolution_8hpp.html#a4520e2ef0f91a956951eddb865caee5c">FFT</a>(vector&lt;complex&lt;double&gt;&gt;a,<span class="keywordtype">bool</span> inv=<span class="keyword">false</span>){</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">int</span> n=a.size(),<a class="code hl_variable" href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a>=0;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">while</span>((1&lt;&lt;<a class="code hl_variable" href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a>)&lt;n)<a class="code hl_variable" href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a>++;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;n;i++){</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">int</span> j=0;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="comment">//ビットを逆に</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0;k&lt;<a class="code hl_variable" href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a>;k++)j|=(i&gt;&gt;k&amp;1)&lt;&lt;(<a class="code hl_variable" href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a>-1-k);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span>(i&lt;j)swap(a[i],a[j]);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> b=1;b&lt;n;b&lt;&lt;=1){</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;b;j++){</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="comment">//b = ブロックサイズの半分</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="comment">//j, j+b を計算</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="comment">//w = exp(-2πj / 2b) = 1 の b 乗根の j 乗</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            complex&lt;double&gt;<a class="code hl_variable" href="sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2">w</a>=polar(1.0,(2.0*M_PI)/(2.0*b)*j*(inv?1:-1));</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="comment">//ブロックサイズ 2b だけずらしながら計算</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0;k&lt;n;k+=b*2){</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                complex&lt;double&gt;s=a[j+k],t=a[j+k+b]*<a class="code hl_variable" href="sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2">w</a>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                a[j+k]=s+t,a[j+k+b]=s-t;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span>(inv)<span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;n;i++)a[i]/=n;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">return</span> a;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="convolution_8hpp.html#a6a27829658ebde922fee66179fe05f3c">    7</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="convolution_8hpp.html#a6a27829658ebde922fee66179fe05f3c">FFT</a>(vector&lt;complex&lt;double&gt;&gt;&amp; a, <span class="keywordtype">bool</span> inv=<span class="keyword">false</span>){</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">int</span> n=a.size(),<a class="code hl_variable" href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a>=0;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">while</span>((1&lt;&lt;<a class="code hl_variable" href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a>)&lt;n) <a class="code hl_variable" href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a>++;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n){</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordtype">int</span> j=0;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="comment">//ビットを逆に</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(k,<a class="code hl_variable" href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a>) j|=(i&gt;&gt;k&amp;1)&lt;&lt;(<a class="code hl_variable" href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a>-1-k);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">if</span>(i&lt;j) swap(a[i],a[j]);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> b=1; b&lt;n; b&lt;&lt;=1){</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(j,b){</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <span class="comment">//b = ブロックサイズの半分</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="comment">//j, j+b を計算</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="comment">//w = exp(-2πj / 2b) = 1 の b 乗根の j 乗</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            complex&lt;double&gt; <a class="code hl_variable" href="sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2">w</a>=polar(1.0,(2.0*M_PI)/(2.0*b)*j*(inv?1:-1));</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="comment">//ブロックサイズ 2b だけずらしながら計算</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0; k&lt;n; k+=b*2){</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                complex&lt;double&gt; s=a[j+k],t=a[j+k+b]*<a class="code hl_variable" href="sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2">w</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                a[j+k]=s+t,a[j+k+b]=s-t;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span>(inv)<a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) a[i]/=n;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397">   38</a></span>vector&lt;double&gt;<a class="code hl_function" href="convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397">Convolve</a>(<span class="keyword">const</span> vector&lt;double&gt;&amp;a,<span class="keyword">const</span> vector&lt;double&gt;&amp;b){</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">int</span> n=1;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">while</span>(n&lt;(<span class="keywordtype">int</span>)a.size()+(<span class="keywordtype">int</span>)b.size()-1)n*=2;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    vector&lt;complex&lt;double&gt;&gt;fa(n),fb(n);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;(int)a.size();i++)fa[i]=a[i];</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;(int)b.size();i++)fb[i]=b[i];</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">// fa, fb を高速フーリエ変換</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    fa=<a class="code hl_function" href="convolution_8hpp.html#a4520e2ef0f91a956951eddb865caee5c">FFT</a>(fa),fb=<a class="code hl_function" href="convolution_8hpp.html#a4520e2ef0f91a956951eddb865caee5c">FFT</a>(fb);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">// fa&#39; * fb&#39; を計算</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;n;i++)fa[i]*=fb[i];</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">// fa&#39; * fb&#39; を逆高速フーリエ変換し、fa * fb の係数を得る</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    fa=<a class="code hl_function" href="convolution_8hpp.html#a4520e2ef0f91a956951eddb865caee5c">FFT</a>(fa,<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    vector&lt;double&gt;ret(n);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;n;i++)ret[i]=fa[i].real();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397">   36</a></span>vector&lt;double&gt;<a class="code hl_function" href="convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397">Convolve</a>(<span class="keyword">const</span> vector&lt;double&gt;&amp; a, <span class="keyword">const</span> vector&lt;double&gt;&amp; b){</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">int</span> n=1;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">while</span>(n+1&lt;a.size()+b.size()) n*=2;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    vector&lt;complex&lt;double&gt;&gt; fa(n),fb(n);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,a.size()) fa[i]=a[i]; <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,b.size()) fb[i]=b[i];</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">// fa, fb を高速フーリエ変換</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_function" href="convolution_8hpp.html#a6a27829658ebde922fee66179fe05f3c">FFT</a>(fa); <a class="code hl_function" href="convolution_8hpp.html#a6a27829658ebde922fee66179fe05f3c">FFT</a>(fb);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">// fa&#39; * fb&#39; を計算</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) fa[i]*=fb[i];</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">// fa&#39; * fb&#39; を逆高速フーリエ変換し、fa * fb の係数を得る</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_function" href="convolution_8hpp.html#a6a27829658ebde922fee66179fe05f3c">FFT</a>(fa,<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    vector&lt;double&gt; ret(n); <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) ret[i]=fa[i].real();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
 </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="convolution_8hpp.html#ae9dd2910ba72616fb4b590df9738d0cf">   57</a></span>vector&lt;ll&gt;<a class="code hl_function" href="convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397">Convolve</a>(<span class="keyword">const</span> vector&lt;ll&gt;&amp;a,<span class="keyword">const</span> vector&lt;ll&gt;&amp;b){</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    vector&lt;double&gt;da(a.size()),db(b.size());</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;(int)a.size();i++)da[i]=a[i];</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;(int)b.size();i++)db[i]=b[i];</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    vector&lt;double&gt;ab=<a class="code hl_function" href="convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397">Convolve</a>(da,db);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    vector&lt;ll&gt;ret(ab.size());</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;(int)ret.size();i++)ret[i]=(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>)floor(ab[i]+0.5);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="convolution_8hpp.html#a1991d17803a8f527aadc7de878d0c962">   55</a></span><a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> <a class="code hl_function" href="convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397">Convolve</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a>&amp; a, <span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a>&amp; b){</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    vector&lt;double&gt; da(a.size()),db(b.size());</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,a.size()) da[i]=a[i]; <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,b.size()) db[i]=b[i];</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    vector&lt;double&gt; ab=<a class="code hl_function" href="convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397">Convolve</a>(da,db);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> ret(ab.size());</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,ret.size()) ret[i]=(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>)floor(ab[i]+0.5);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
 </div>
-<div class="ttc" id="aconvolution_8hpp_html_a12143899ae24137944835fc0aaf1c397"><div class="ttname"><a href="convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397">Convolve</a></div><div class="ttdeci">vector&lt; double &gt; Convolve(const vector&lt; double &gt; &amp;a, const vector&lt; double &gt; &amp;b)</div><div class="ttdoc">畳み込み</div><div class="ttdef"><b>Definition</b> convolution.hpp:38</div></div>
-<div class="ttc" id="aconvolution_8hpp_html_a4520e2ef0f91a956951eddb865caee5c"><div class="ttname"><a href="convolution_8hpp.html#a4520e2ef0f91a956951eddb865caee5c">FFT</a></div><div class="ttdeci">vector&lt; complex&lt; double &gt; &gt; FFT(vector&lt; complex&lt; double &gt; &gt;a, bool inv=false)</div><div class="ttdef"><b>Definition</b> convolution.hpp:8</div></div>
+<div class="ttc" id="aconvolution_8hpp_html_a12143899ae24137944835fc0aaf1c397"><div class="ttname"><a href="convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397">Convolve</a></div><div class="ttdeci">vector&lt; double &gt; Convolve(const vector&lt; double &gt; &amp;a, const vector&lt; double &gt; &amp;b)</div><div class="ttdoc">畳み込み</div><div class="ttdef"><b>Definition</b> convolution.hpp:36</div></div>
+<div class="ttc" id="aconvolution_8hpp_html_a6a27829658ebde922fee66179fe05f3c"><div class="ttname"><a href="convolution_8hpp.html#a6a27829658ebde922fee66179fe05f3c">FFT</a></div><div class="ttdeci">void FFT(vector&lt; complex&lt; double &gt; &gt; &amp;a, bool inv=false)</div><div class="ttdoc">高速フーリエ変換</div><div class="ttdef"><b>Definition</b> convolution.hpp:7</div></div>
 <div class="ttc" id="asparse__table__2d_8hpp_html_a16611451551e3d15916bae723c3f59f7"><div class="ttname"><a href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a></div><div class="ttdeci">int h</div><div class="ttdef"><b>Definition</b> sparse_table_2d.hpp:4</div></div>
 <div class="ttc" id="asparse__table__2d_8hpp_html_aac374e320caaadeca4874add33b62af2"><div class="ttname"><a href="sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2">w</a></div><div class="ttdeci">int w</div><div class="ttdef"><b>Definition</b> sparse_table_2d.hpp:4</div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> template.hpp:9</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a5ee21b75b07f2ccf9eeb9e89922eb532"><div class="ttname"><a href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a></div><div class="ttdeci">vector&lt; ll &gt; VL</div><div class="ttdef"><b>Definition</b> template.hpp:16</div></div>
 <div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

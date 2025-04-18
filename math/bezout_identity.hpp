@@ -11,31 +11,31 @@
 *	これを再代入すると、Y=-(a/g)*t+y を得る。
 */
 struct BezoutIdentity{
-	// ax+by=c
-	BezoutIdentity(ll a,ll b,ll c){
-		this->a=a;
-		this->b=b;
-		this->c=c;
-	}
+    /// @brief ax+by=c
+    BezoutIdentity(ll a, ll b, ll c){
+        this->a=a;
+        this->b=b;
+        this->c=c;
+    }
 
-	/// @brief 解が存在するか否かを返す
-	bool build(){
-		auto[g,X,Y]=ExtGcd(abs(a),abs(b));
-		if(c%g!=0)return false;
-		this->g=g,this->X=X,this->Y=Y;
-		if(a<0)this->X=-this->X;
-		if(b<0)this->Y=-this->Y;
-		this->X*=c/g,this->Y*=c/g;
-		return true;
-	}
+    /// @brief 解が存在するか否かを返す
+    bool build(){
+        auto [g,X,Y]=ExtGcd(abs(a),abs(b));
+        if(c%g!=0) return false;
+        this->g=g,this->X=X,this->Y=Y;
+        if(a<0) this->X=-this->X;
+        if(b<0) this->Y=-this->Y;
+        this->X*=c/g,this->Y*=c/g;
+        return true;
+    }
 
-	/// @brief 一般解を返す
-	pair<ll,ll>general_solution(ll t=0){
-		ll x=b/g*t+X,y=-a/g*t+Y;
-		return {x,y};
-	}
+    /// @brief 一般解を返す
+    pair<ll,ll>general_solution(ll t=0){
+        ll x=b/g*t+X,y=-a/g*t+Y;
+        return {x,y};
+    }
 
 private:
-	ll a,b,c,g;
-	ll X,Y;
+    ll a,b,c,g;
+    ll X,Y;
 };

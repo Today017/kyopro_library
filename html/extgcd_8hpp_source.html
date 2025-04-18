@@ -52,25 +52,25 @@ $(function(){ initResizable(false); });
 <div class="contents">
 <a href="extgcd_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">   14</a></span>tuple&lt;ll,ll,ll&gt;<a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a,<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b){</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">if</span>(a==0)<span class="keywordflow">return</span> {b,0,1};</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">auto</span>[g,s,t]=<a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a>(b%a,a);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">return</span>{g,t-(b/a)*s,s};</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span></div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">   13</a></span>tuple&lt;ll,ll,ll&gt; <a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b){</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">if</span>(a==0) <span class="keywordflow">return</span> {b,0,1};</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">auto</span> [g,s,t]=<a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a>(b%a,a);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">return</span> {g,t-(b/a)*s,s};</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
 </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="extgcd_8hpp.html#a9971b6b2383ca7009a1de48b02b31350">   23</a></span><a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_function" href="extgcd_8hpp.html#a9971b6b2383ca7009a1de48b02b31350">ModInvGcd</a>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a,<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> m){</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// ax = 1 (mod m) &lt;-&gt; ax+my = 1 (mod m)</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">auto</span>[g,x,y]=<a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a>(a,m);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">if</span>(g!=1)<span class="keywordflow">return</span>-1;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> (x+m)%m;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="extgcd_8hpp.html#a9971b6b2383ca7009a1de48b02b31350">   22</a></span><a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_function" href="extgcd_8hpp.html#a9971b6b2383ca7009a1de48b02b31350">ModInvGcd</a>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> m){</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// ax = 1 (mod m) &lt;-&gt; ax+my = 1 (mod m)</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">auto</span> [g,x,y]=<a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a>(a,m);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span>(g!=1) <span class="keywordflow">return</span>-1;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> (x+m)%m;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
 </div>
-<div class="ttc" id="aextgcd_8hpp_html_a1bbcc665326a2e27d9817bcc3b8b1d91"><div class="ttname"><a href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a></div><div class="ttdeci">tuple&lt; ll, ll, ll &gt; ExtGcd(ll a, ll b)</div><div class="ttdef"><b>Definition</b> extgcd.hpp:14</div></div>
-<div class="ttc" id="aextgcd_8hpp_html_a9971b6b2383ca7009a1de48b02b31350"><div class="ttname"><a href="extgcd_8hpp.html#a9971b6b2383ca7009a1de48b02b31350">ModInvGcd</a></div><div class="ttdeci">ll ModInvGcd(ll a, ll m)</div><div class="ttdoc">mod 逆元</div><div class="ttdef"><b>Definition</b> extgcd.hpp:23</div></div>
+<div class="ttc" id="aextgcd_8hpp_html_a1bbcc665326a2e27d9817bcc3b8b1d91"><div class="ttname"><a href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a></div><div class="ttdeci">tuple&lt; ll, ll, ll &gt; ExtGcd(ll a, ll b)</div><div class="ttdoc">拡張ユークリッドの互除法</div><div class="ttdef"><b>Definition</b> extgcd.hpp:13</div></div>
+<div class="ttc" id="aextgcd_8hpp_html_a9971b6b2383ca7009a1de48b02b31350"><div class="ttname"><a href="extgcd_8hpp.html#a9971b6b2383ca7009a1de48b02b31350">ModInvGcd</a></div><div class="ttdeci">ll ModInvGcd(ll a, ll m)</div><div class="ttdoc">mod 逆元</div><div class="ttdef"><b>Definition</b> extgcd.hpp:22</div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->

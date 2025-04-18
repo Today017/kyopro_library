@@ -52,26 +52,21 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">lagrange.hpp ファイル</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>ラグランジュ補間  
-<a href="#details">[詳解]</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../kyopro_library/template.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="muleval_8hpp_source.html">../../kyopro_library/math/muleval.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="multipoint__evaluate_8hpp_source.html">../../kyopro_library/math/multipoint_evaluate.hpp</a>&quot;</code><br />
 </div>
 <p><a href="lagrange_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:a65d6ee9b0edd6cf184911e5655652868" id="r_a65d6ee9b0edd6cf184911e5655652868"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a65d6ee9b0edd6cf184911e5655652868"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a65d6ee9b0edd6cf184911e5655652868">LagrangePolynomial</a> (vector&lt; T &gt;x, vector&lt; T &gt;y)</td></tr>
-<tr class="separator:a65d6ee9b0edd6cf184911e5655652868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50261df3c197ae7a34013b771fd1ddb6" id="r_a50261df3c197ae7a34013b771fd1ddb6"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a50261df3c197ae7a34013b771fd1ddb6"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a50261df3c197ae7a34013b771fd1ddb6">LagrangePolynomial</a> (vector&lt; T &gt; x, vector&lt; T &gt; y)</td></tr>
+<tr class="memdesc:a50261df3c197ae7a34013b771fd1ddb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ラグランジュ補間  <br /></td></tr>
+<tr class="separator:a50261df3c197ae7a34013b771fd1ddb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>ラグランジュ補間 </p>
-<p>n+1個の点(xi,yi)を通るn次多項式の係数を返す </p><dl class="section note"><dt>覚え書き</dt><dd>O(n log^2 n) </dd></dl>
-</div><h2 class="groupheader">関数詳解</h2>
-<a id="a65d6ee9b0edd6cf184911e5655652868" name="a65d6ee9b0edd6cf184911e5655652868"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65d6ee9b0edd6cf184911e5655652868">&#9670;&#160;</a></span>LagrangePolynomial()</h2>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a50261df3c197ae7a34013b771fd1ddb6" name="a50261df3c197ae7a34013b771fd1ddb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50261df3c197ae7a34013b771fd1ddb6">&#9670;&#160;</a></span>LagrangePolynomial()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -90,6 +85,9 @@ template&lt;typename T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>ラグランジュ補間 </p>
+<p>n+1 個の点 (x[i], y[i]) を通る n 次多項式の係数を返す </p><dl class="section note"><dt>覚え書き</dt><dd>O(n (log(n))^2) </dd></dl>
 
 </div>
 </div>
