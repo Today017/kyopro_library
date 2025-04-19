@@ -53,33 +53,33 @@ $(function(){ initResizable(false); });
 <a href="modcal_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T=ll&gt;</div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="modcal_8hpp.html#a36972de598e8c5d9fe14db0be639c098">    7</a></span>T <a class="code hl_function" href="modcal_8hpp.html#a36972de598e8c5d9fe14db0be639c098">ModPow</a>(T x, T n, T mod){</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ret=1;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">if</span>(<span class="keyword">typeid</span>(T)==<span class="keyword">typeid</span>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>)&amp;&amp;mod&gt;<a class="code hl_variable" href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a>*2) <span class="keywordflow">return</span> <a class="code hl_function" href="modcal_8hpp.html#a36972de598e8c5d9fe14db0be639c098">ModPow&lt;__int128_t&gt;</a>(x,n,mod);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">while</span>(n&gt;0){</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordflow">if</span>(n&amp;1) (ret*=x)%=mod;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        (x*=x)%=mod;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        n&gt;&gt;=1;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T=ll&gt;</div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="modcal_8hpp.html#a36972de598e8c5d9fe14db0be639c098">    6</a></span>T <a class="code hl_function" href="modcal_8hpp.html#a36972de598e8c5d9fe14db0be639c098">ModPow</a>(T x, T n, T mod){</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ret=1;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">if</span>(<span class="keyword">typeid</span>(T)==<span class="keyword">typeid</span>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>)&amp;&amp;mod&gt;<a class="code hl_variable" href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a>*2) <span class="keywordflow">return</span> <a class="code hl_function" href="modcal_8hpp.html#a36972de598e8c5d9fe14db0be639c098">ModPow&lt;__int128_t&gt;</a>(x,n,mod);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">while</span>(n&gt;0){</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">if</span>(n&amp;1) (ret*=x)%=mod;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        (x*=x)%=mod;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        n&gt;&gt;=1;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
 </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">   19</a></span><a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_function" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">ModInv</a>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> m){</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b=m,u=1,v=0;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">while</span>(b){</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> t=a/b;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        a-=t*b; swap(a,b);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        u-=t*v; swap(u,v);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> (u+m)%m;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">   18</a></span><a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_function" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">ModInv</a>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> m){</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b=m,u=1,v=0;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">while</span>(b){</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> t=a/b;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        a-=t*b; swap(a,b);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        u-=t*v; swap(u,v);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> (u+m)%m;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 </div>
-<div class="ttc" id="amodcal_8hpp_html_a36972de598e8c5d9fe14db0be639c098"><div class="ttname"><a href="modcal_8hpp.html#a36972de598e8c5d9fe14db0be639c098">ModPow</a></div><div class="ttdeci">T ModPow(T x, T n, T mod)</div><div class="ttdoc">x^n (mod m) を返す</div><div class="ttdef"><b>Definition</b> modcal.hpp:7</div></div>
-<div class="ttc" id="amodcal_8hpp_html_a8fbaf043a7918c3ee026482c69f79bdc"><div class="ttname"><a href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">ModInv</a></div><div class="ttdeci">ll ModInv(ll a, ll m)</div><div class="ttdoc">x^(-1) (mod m) を返す</div><div class="ttdef"><b>Definition</b> modcal.hpp:19</div></div>
+<div class="ttc" id="amodcal_8hpp_html_a36972de598e8c5d9fe14db0be639c098"><div class="ttname"><a href="modcal_8hpp.html#a36972de598e8c5d9fe14db0be639c098">ModPow</a></div><div class="ttdeci">T ModPow(T x, T n, T mod)</div><div class="ttdoc">x^n (mod m) を返す</div><div class="ttdef"><b>Definition</b> modcal.hpp:6</div></div>
+<div class="ttc" id="amodcal_8hpp_html_a8fbaf043a7918c3ee026482c69f79bdc"><div class="ttname"><a href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">ModInv</a></div><div class="ttdeci">ll ModInv(ll a, ll m)</div><div class="ttdoc">x^(-1) (mod m) を返す</div><div class="ttdef"><b>Definition</b> modcal.hpp:18</div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_a14c9dbab105f1b8b8182a022d73e610c"><div class="ttname"><a href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a></div><div class="ttdeci">const int INF</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
 <div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>

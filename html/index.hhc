@@ -184,17 +184,9 @@
   <LI><OBJECT type="text/sitemap"><param name="Name" value="Heuristc"><param name="Local" value="md__r_e_a_d_m_e.html#autotoc_md98"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="Others"><param name="Local" value="md__r_e_a_d_m_e.html#autotoc_md99"><param name="ImageNumber" value="11"></OBJECT>
   </UL>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="rh"><param name="Local" value="md_string_2rh.html"><param name="ImageNumber" value="1"></OBJECT>
-  <UL>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="Rolling Hash"><param name="Local" value="md_string_2rh.html#autotoc_md100"><param name="ImageNumber" value="11"></OBJECT>
-  </UL>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="rle"><param name="Local" value="md_string_2rle.html"><param name="ImageNumber" value="1"></OBJECT>
-  <UL>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="Run Length Encoding"><param name="Local" value="md_string_2rle.html#autotoc_md101"><param name="ImageNumber" value="11"></OBJECT>
-  </UL>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="zalgo"><param name="Local" value="md_string_2zalgo.html"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="Z Algorithm"><param name="Local" value="md_string_2zalgo.html#autotoc_md102"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Z Algorithm"><param name="Local" value="md_string_2zalgo.html#autotoc_md100"><param name="ImageNumber" value="11"></OBJECT>
   </UL>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="名前空間"><param name="Local" value="namespaces.html"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
@@ -1046,6 +1038,24 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="lower"><param name="Local" value="struct_fraction.html#a03558e1b5e4a60bad8637df7d3b81296"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="upper"><param name="Local" value="struct_fraction.html#a4a5006a05f4675b7c5334ffbbd3136f4"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Hash"><param name="Local" value="struct_hash.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_hash.html#a21e94320d986c15f38f83c0a1bc92e52"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Hash"><param name="Local" value="struct_hash.html#a2bb49844b818de3146548f868777e87b"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Hash"><param name="Local" value="struct_hash.html#a0dabddca4882b6869a7cd3d130e9aad2"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Hash"><param name="Local" value="struct_hash.html#aa2704fbc0e9be14105f061e71b8c144a"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="init"><param name="Local" value="struct_hash.html#a525ce897ce585256fd241baf51c165b9"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator+"><param name="Local" value="struct_hash.html#a37354fe2736bdaca531b94e17c44b784"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator+="><param name="Local" value="struct_hash.html#ad788fc103417e8d81d2c140bb05c1447"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator-"><param name="Local" value="struct_hash.html#a6c2d1e0f276c921cfc4e46b001100c06"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator-="><param name="Local" value="struct_hash.html#ae8b7b557d9b0fdbd7709be1bfc4ca9f5"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator="><param name="Local" value="struct_hash.html#af4e61589fbc15d41e10e54abecb77d9c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator=="><param name="Local" value="struct_hash.html#a06b1d032944f2169544b27ddedfe9abc"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="shift"><param name="Local" value="struct_hash.html#ad96321a44bb502422139b5c06f484be3"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="C"><param name="Local" value="struct_hash.html#a866d5f414cdc05f9fdfddb9e87f8ffff"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MX"><param name="Local" value="struct_hash.html#a5e0b836a8e551a23bf840ffb8c1e034f"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="value"><param name="Local" value="struct_hash.html#a6a39c22a994feb6e341c48e1a9ac24cb"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="HLD"><param name="Local" value="struct_h_l_d.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="HLD"><param name="Local" value="struct_h_l_d.html#a4ded5ea491751676f93bb08121e85e7a"><param name="ImageNumber" value="11"></OBJECT>
@@ -1278,11 +1288,10 @@
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="RollingHash"><param name="Local" value="struct_rolling_hash.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="hash"><param name="Local" value="struct_rolling_hash.html#a7aee1ea046a7e777b4bd4ac700d82ac7"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="RollingHash"><param name="Local" value="struct_rolling_hash.html#a71020424af6022b96f96117961ac4bc2"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="RollingHash"><param name="Local" value="struct_rolling_hash.html#a8326ec22bdbce2b4355354e1c714914f"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="connect"><param name="Local" value="struct_rolling_hash.html#aa38eced5a94e7ae8a7cd56d4071f3978"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="get"><param name="Local" value="struct_rolling_hash.html#a3a6d3669a567daaee732bb612c030527"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="RollingHash"><param name="Local" value="struct_rolling_hash.html#aee33123a728c1df6d8c0b3550baa0c43"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="get"><param name="Local" value="struct_rolling_hash.html#a86240a7668f2836709c800ae2ba5e206"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="hash"><param name="Local" value="struct_rolling_hash.html#af6385ca8122334ec22fb8eb5819e320d"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="SccInfo"><param name="Local" value="struct_scc_info.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
@@ -1543,6 +1552,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Name" value="Factors"><param name="Local" value="struct_factors.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="FenwickTree&lt; Abel &gt;"><param name="Local" value="struct_fenwick_tree.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="Fraction&lt; T &gt;"><param name="Local" value="struct_fraction.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Hash"><param name="Local" value="struct_hash.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="HLD"><param name="Local" value="struct_h_l_d.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="InsertableReversibleArray&lt; T &gt;"><param name="Local" value="struct_insertable_reversible_array.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="InsertableReversibleArrayImpl::LazyReversibleRBSTNode&lt; T, E &gt;"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node.html"><param name="ImageNumber" value="11"></OBJECT>
@@ -2449,8 +2459,8 @@
           </UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="diameter.hpp"><param name="Local" value="diameter_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
           <UL>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="TreeDiameter"><param name="Local" value="diameter_8hpp.html#ab48f7c9e16352e15ee6bc98535b5d1d3"><param name="ImageNumber" value="11"></OBJECT>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="TreeDiameter"><param name="Local" value="diameter_8hpp.html#a42929a417093cc97ccf5875dbe804a75"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="TreeDiameter"><param name="Local" value="diameter_8hpp.html#a24ee70241e9b08a7a6f279c8c1e151ce"><param name="ImageNumber" value="11"></OBJECT>
           </UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="hld.hpp"><param name="Local" value="hld_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
           <UL>
@@ -2684,8 +2694,8 @@
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="convolution_ll.hpp"><param name="Local" value="convolution__ll_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="ConvolveInt64"><param name="Local" value="convolution__ll_8hpp.html#a067070d2dea1c2ab6abb1e6b3168a2a3"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="Garner"><param name="Local" value="convolution__ll_8hpp.html#affc5b1b0f894fcebcc3f620b342441a6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ConvolveInt64"><param name="Local" value="convolution__ll_8hpp.html#ae046307f7d332f472530fe7c34b118f6"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Garner"><param name="Local" value="convolution__ll_8hpp.html#ae7aab791c88b29ea69a9d13a610596f8"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="extgcd.hpp"><param name="Local" value="extgcd_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
@@ -3168,28 +3178,45 @@
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="string"><param name="Local" value="dir_76cf5d2c64440c8b33b2b96569e4a2eb.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="lcp.hpp"><param name="Local" value="lcp_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="lcp_array.hpp"><param name="Local" value="lcp__array_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="lcpArray"><param name="Local" value="lcp_8hpp.html#a8531b8d90e4aa4c28c2bd4db9623e8fc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="LcpArray"><param name="Local" value="lcp__array_8hpp.html#ae0ced2c7950382932078f20c8e118c5e"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="rh.hpp"><param name="Local" value="rh_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Hash"><param name="Local" value="struct_hash.html"><param name="ImageNumber" value="1"></OBJECT>
+          <UL>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_hash.html#a21e94320d986c15f38f83c0a1bc92e52"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="Hash"><param name="Local" value="struct_hash.html#a2bb49844b818de3146548f868777e87b"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="Hash"><param name="Local" value="struct_hash.html#a0dabddca4882b6869a7cd3d130e9aad2"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="Hash"><param name="Local" value="struct_hash.html#aa2704fbc0e9be14105f061e71b8c144a"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="init"><param name="Local" value="struct_hash.html#a525ce897ce585256fd241baf51c165b9"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="operator+"><param name="Local" value="struct_hash.html#a37354fe2736bdaca531b94e17c44b784"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="operator+="><param name="Local" value="struct_hash.html#ad788fc103417e8d81d2c140bb05c1447"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="operator-"><param name="Local" value="struct_hash.html#a6c2d1e0f276c921cfc4e46b001100c06"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="operator-="><param name="Local" value="struct_hash.html#ae8b7b557d9b0fdbd7709be1bfc4ca9f5"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="operator="><param name="Local" value="struct_hash.html#af4e61589fbc15d41e10e54abecb77d9c"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="operator=="><param name="Local" value="struct_hash.html#a06b1d032944f2169544b27ddedfe9abc"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="shift"><param name="Local" value="struct_hash.html#ad96321a44bb502422139b5c06f484be3"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="C"><param name="Local" value="struct_hash.html#a866d5f414cdc05f9fdfddb9e87f8ffff"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="MX"><param name="Local" value="struct_hash.html#a5e0b836a8e551a23bf840ffb8c1e034f"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="value"><param name="Local" value="struct_hash.html#a6a39c22a994feb6e341c48e1a9ac24cb"><param name="ImageNumber" value="11"></OBJECT>
+          </UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="RollingHash"><param name="Local" value="struct_rolling_hash.html"><param name="ImageNumber" value="1"></OBJECT>
           <UL>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="hash"><param name="Local" value="struct_rolling_hash.html#a7aee1ea046a7e777b4bd4ac700d82ac7"><param name="ImageNumber" value="11"></OBJECT>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="RollingHash"><param name="Local" value="struct_rolling_hash.html#a71020424af6022b96f96117961ac4bc2"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="RollingHash"><param name="Local" value="struct_rolling_hash.html#a8326ec22bdbce2b4355354e1c714914f"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="connect"><param name="Local" value="struct_rolling_hash.html#aa38eced5a94e7ae8a7cd56d4071f3978"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="get"><param name="Local" value="struct_rolling_hash.html#a3a6d3669a567daaee732bb612c030527"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="RollingHash"><param name="Local" value="struct_rolling_hash.html#aee33123a728c1df6d8c0b3550baa0c43"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="get"><param name="Local" value="struct_rolling_hash.html#a86240a7668f2836709c800ae2ba5e206"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="hash"><param name="Local" value="struct_rolling_hash.html#af6385ca8122334ec22fb8eb5819e320d"><param name="ImageNumber" value="11"></OBJECT>
           </UL>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="rle.hpp"><param name="Local" value="rle_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="RunLengthEncoding"><param name="Local" value="rle_8hpp.html#a7f01629c3961317d963a4666dbe7622b"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="sa.hpp"><param name="Local" value="sa_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="suffix_array.hpp"><param name="Local" value="suffix__array_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="suffixArray"><param name="Local" value="sa_8hpp.html#a379716b6c46b28fea88fd3178aa999eb"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="suffixArray"><param name="Local" value="suffix__array_8hpp.html#aa0232ea2a9d89c00f1bdd3f487dd8ba4"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="trie.hpp"><param name="Local" value="trie_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
@@ -3215,9 +3242,9 @@
           <LI><OBJECT type="text/sitemap"><param name="Name" value="to"><param name="Local" value="struct_trie_1_1_node.html#a6375c6ba29cb5a0efb1fcea18e68bc34"><param name="ImageNumber" value="11"></OBJECT>
           </UL>
         </UL>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="zalgo.hpp"><param name="Local" value="zalgo_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="z_algorithm.hpp"><param name="Local" value="z__algorithm_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="zAlgorithm"><param name="Local" value="zalgo_8hpp.html#ac016b5133ce019854fe02b7e8c77ff40"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ZAlgorithm"><param name="Local" value="z__algorithm_8hpp.html#af550579ff39c6ff9baa4b70854b23cf5"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="debug.hpp"><param name="Local" value="debug_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>

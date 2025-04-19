@@ -51,65 +51,67 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <a href="convolution__ll_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&quot;<a class="code" href="ntt_8hpp.html">../../kyopro_library/math/ntt.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="convolution__ll_8hpp.html#affc5b1b0f894fcebcc3f620b342441a6">    5</a></span><a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_function" href="convolution__ll_8hpp.html#affc5b1b0f894fcebcc3f620b342441a6">Garner</a>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a1, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a2, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a3, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> m1, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> m2, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> m3, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> mod=<a class="code hl_variable" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>+3){</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a[]={a1,a2,a3}, m[]={m1,m2,m3,mod};</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    vector&lt;ll&gt; kp(4), rm(4,1ll);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,3){</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> x=((a[i]-kp[i]+m[i])%m[i])*<a class="code hl_function" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">ModInv</a>(rm[i],m[i]);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        x%=m[i];</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <a class="code hl_define" href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(j,i+1,4){</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            (kp[j]+=rm[j]*x)%=m[j];</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            (rm[j]*=m[i])%=m[j];</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        }</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">return</span> kp[3];</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&quot;<a class="code" href="modcal_8hpp.html">../../kyopro_library/others/modcal.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include&quot;<a class="code" href="ntt_8hpp.html">../../kyopro_library/math/ntt.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span></div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="convolution__ll_8hpp.html#ae7aab791c88b29ea69a9d13a610596f8">    6</a></span><a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_function" href="convolution__ll_8hpp.html#ae7aab791c88b29ea69a9d13a610596f8">Garner</a>(<a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> a, <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> m, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> mod=<a class="code hl_variable" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>+3){</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    m.push_back(mod);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">int</span> n=a.size();</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> kp(n+1), rm(n+1,1ll);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n){</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> x=((a[i]-kp[i]+m[i])%m[i])*<a class="code hl_function" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">ModInv</a>(rm[i],m[i]);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        x%=m[i];</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <a class="code hl_define" href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(j,i+1,n+1){</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            (kp[j]+=rm[j]*x)%=m[j];</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            (rm[j]*=m[i])%=m[j];</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">return</span> kp[n];</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
 </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// /// @brief a, b の自然数での畳み込みを返す</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// VL ConvolveInt64(VL a, VL b, ll mod=INFL+3){</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">//     constexpr const ll MOD1=167772161,P1=3;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">//     constexpr const ll MOD2=469762049,P2=3;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">//     constexpr const ll MOD3=754974721,P3=11;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//     static NTT&lt;MOD1,P1&gt; ntt1;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">//     static NTT&lt;MOD2,P2&gt; ntt2;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">//     static NTT&lt;MOD3,P3&gt; ntt3;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//     auto c1=ntt1.convolve(a,b);</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">//     auto c2=ntt2.convolve(a,b);</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">//     auto c3=ntt3.convolve(a,b);</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">//     VL ret(c1.size());</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">//     REP(i,ret.size()) ret[i]=Garner(c1[i],c2[i],c3[i],MOD1,MOD2,MOD3,mod);</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">//     return ret;</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// }</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include&lt;atcoder/convolution&gt;</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="convolution__ll_8hpp.html#a067070d2dea1c2ab6abb1e6b3168a2a3">   42</a></span><a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> <a class="code hl_function" href="convolution__ll_8hpp.html#a067070d2dea1c2ab6abb1e6b3168a2a3">ConvolveInt64</a>(<a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> a, <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> b, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> mod=<a class="code hl_variable" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>+3){</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> MOD1=167772161,P1=3;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> MOD2=469762049,P2=3;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> MOD3=754974721,P3=11;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">auto</span> c1=atcoder::convolution&lt;MOD1&gt;(a,b);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">auto</span> c2=atcoder::convolution&lt;MOD1&gt;(a,b);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">auto</span> c3=atcoder::convolution&lt;MOD1&gt;(a,b);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">template</span>&lt;<span class="keywordtype">int</span> USE&gt;</div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="convolution__ll_8hpp.html#ae046307f7d332f472530fe7c34b118f6">   27</a></span><a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> <a class="code hl_function" href="convolution__ll_8hpp.html#ae046307f7d332f472530fe7c34b118f6">ConvolveInt64</a>(<a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> a, <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> b, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> mod=<a class="code hl_variable" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>+3){</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> MOD1=1224736769,P1=3;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> MOD2=469762049,P2=3;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> MOD3=167772161,P3=3;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_n_t_t.html">NTT&lt;MOD1,P1&gt;</a> ntt1;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_n_t_t.html">NTT&lt;MOD2,P2&gt;</a> ntt2;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_n_t_t.html">NTT&lt;MOD3,P3&gt;</a> ntt3;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">if</span>(USE==1){</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">auto</span> c=ntt1.<a class="code hl_function" href="class_n_t_t.html#af7d5dac5eee3af11ecf0c361f5fbe581">convolve</a>(a,b);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> ret(c.size());</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,ret.size()) ret[i]=c[i]%mod;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span>(USE==2){</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keyword">auto</span> c1=ntt1.<a class="code hl_function" href="class_n_t_t.html#af7d5dac5eee3af11ecf0c361f5fbe581">convolve</a>(a,b);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">auto</span> c2=ntt2.<a class="code hl_function" href="class_n_t_t.html#af7d5dac5eee3af11ecf0c361f5fbe581">convolve</a>(a,b);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> ret(c1.size());</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,ret.size()) ret[i]=<a class="code hl_function" href="convolution__ll_8hpp.html#ae7aab791c88b29ea69a9d13a610596f8">Garner</a>({c1[i],c2[i]}, {MOD1,MOD2}, mod);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> ret(c1.size());</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,ret.size()) ret[i]=<a class="code hl_function" href="convolution__ll_8hpp.html#affc5b1b0f894fcebcc3f620b342441a6">Garner</a>(c1[i],c2[i],c3[i],MOD1,MOD2,MOD3,mod);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">auto</span> c1=ntt1.<a class="code hl_function" href="class_n_t_t.html#af7d5dac5eee3af11ecf0c361f5fbe581">convolve</a>(a,b);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">auto</span> c2=ntt2.<a class="code hl_function" href="class_n_t_t.html#af7d5dac5eee3af11ecf0c361f5fbe581">convolve</a>(a,b);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">auto</span> c3=ntt3.<a class="code hl_function" href="class_n_t_t.html#af7d5dac5eee3af11ecf0c361f5fbe581">convolve</a>(a,b);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> ret(c1.size());</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,ret.size()) ret[i]=<a class="code hl_function" href="convolution__ll_8hpp.html#ae7aab791c88b29ea69a9d13a610596f8">Garner</a>({c1[i],c2[i],c3[i]}, {MOD1,MOD2,MOD3}, mod);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
 </div>
-<div class="ttc" id="aconvolution__ll_8hpp_html_a067070d2dea1c2ab6abb1e6b3168a2a3"><div class="ttname"><a href="convolution__ll_8hpp.html#a067070d2dea1c2ab6abb1e6b3168a2a3">ConvolveInt64</a></div><div class="ttdeci">VL ConvolveInt64(VL a, VL b, ll mod=INFL+3)</div><div class="ttdoc">a, b の自然数での畳み込みを返す</div><div class="ttdef"><b>Definition</b> convolution_ll.hpp:42</div></div>
-<div class="ttc" id="aconvolution__ll_8hpp_html_affc5b1b0f894fcebcc3f620b342441a6"><div class="ttname"><a href="convolution__ll_8hpp.html#affc5b1b0f894fcebcc3f620b342441a6">Garner</a></div><div class="ttdeci">ll Garner(ll a1, ll a2, ll a3, ll m1, ll m2, ll m3, ll mod=INFL+3)</div><div class="ttdoc">x=ai mod mi を満たす x mod m を返す</div><div class="ttdef"><b>Definition</b> convolution_ll.hpp:5</div></div>
-<div class="ttc" id="amodcal_8hpp_html_a8fbaf043a7918c3ee026482c69f79bdc"><div class="ttname"><a href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">ModInv</a></div><div class="ttdeci">ll ModInv(ll a, ll m)</div><div class="ttdoc">x^(-1) (mod m) を返す</div><div class="ttdef"><b>Definition</b> modcal.hpp:19</div></div>
+<div class="ttc" id="aclass_n_t_t_html"><div class="ttname"><a href="class_n_t_t.html">NTT</a></div><div class="ttdoc">NTT Friendly 素数用 NTT 構造体</div><div class="ttdef"><b>Definition</b> ntt.hpp:6</div></div>
+<div class="ttc" id="aclass_n_t_t_html_af7d5dac5eee3af11ecf0c361f5fbe581"><div class="ttname"><a href="class_n_t_t.html#af7d5dac5eee3af11ecf0c361f5fbe581">NTT::convolve</a></div><div class="ttdeci">VL convolve(VL a, VL b)</div><div class="ttdoc">a, b の畳み込み mod M を求める</div><div class="ttdef"><b>Definition</b> ntt.hpp:45</div></div>
+<div class="ttc" id="aconvolution__ll_8hpp_html_ae046307f7d332f472530fe7c34b118f6"><div class="ttname"><a href="convolution__ll_8hpp.html#ae046307f7d332f472530fe7c34b118f6">ConvolveInt64</a></div><div class="ttdeci">VL ConvolveInt64(VL a, VL b, ll mod=INFL+3)</div><div class="ttdoc">a, b の自然数での畳み込みを返す</div><div class="ttdef"><b>Definition</b> convolution_ll.hpp:27</div></div>
+<div class="ttc" id="aconvolution__ll_8hpp_html_ae7aab791c88b29ea69a9d13a610596f8"><div class="ttname"><a href="convolution__ll_8hpp.html#ae7aab791c88b29ea69a9d13a610596f8">Garner</a></div><div class="ttdeci">ll Garner(VL a, VL m, ll mod=INFL+3)</div><div class="ttdoc">x=ai mod mi を満たす x mod m を返す</div><div class="ttdef"><b>Definition</b> convolution_ll.hpp:6</div></div>
+<div class="ttc" id="amodcal_8hpp_html"><div class="ttname"><a href="modcal_8hpp.html">modcal.hpp</a></div></div>
+<div class="ttc" id="amodcal_8hpp_html_a8fbaf043a7918c3ee026482c69f79bdc"><div class="ttname"><a href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">ModInv</a></div><div class="ttdeci">ll ModInv(ll a, ll m)</div><div class="ttdoc">x^(-1) (mod m) を返す</div><div class="ttdef"><b>Definition</b> modcal.hpp:18</div></div>
 <div class="ttc" id="antt_8hpp_html"><div class="ttname"><a href="ntt_8hpp.html">ntt.hpp</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> template.hpp:9</div></div>

@@ -1,87 +1,108 @@
-#include "../../kyopro_library/template.hpp"    
+#include"../../kyopro_library/template.hpp"   
+#include"../../kyopro_library/others/xor128.hpp"
+#include"../../kyopro_library/others/modcal.hpp"
 
-/// @file rh.hpp
-/// @brief Rolling Hash
+struct Hash{
+    const int MX=1000000;
+    const int C=256;
 
-/// @brief Rolling Hash
-struct RollingHash {
-    RollingHash() = default;
-    /// @param s ハッシュ化する文字列
-    /// @param base 基数
-	/// @attention 複数の文字列をハッシュ化する場合は同じ `base` を指定すること
-    RollingHash(const string &s, vector<ll> base = {}) {
-        int n = s.size();
-        mt19937 rng(time(0));
-        this->base = vector<ll>(5);
-        power = vector<vector<ll>>(5);
-        hash_table = vector<vector<ll>>(5);
-        inv = vector<vector<ll>>(5);
-        if (base.size() != 5) {
-            base = get_base();
-        } else {
-            this->base = base;
-        }
-        base = this->base;
-        for (int i = 0; i < 5; i++) {
-            power[i] = vector<ll>(n + 1);
-            hash_table[i] = vector<ll>(n + 1);
-            inv[i] = vector<ll>(n + 1);
-            power[i][0] = 1;
-            inv[i][n] = pow_mod(pow_mod(base[i], n, mod[i]), mod[i] - 2, mod[i]);
-        }
-        for (int i = 0; i < n; i++) {
-            int num = s[i] - 'A';
-            for (int j = 0; j < 5; j++) {
-                power[j][i + 1] = mul_mod(power[j][i], base[j], mod[j]);
-                hash_table[j][i + 1] = add_mod(hash_table[j][i], mul_mod(power[j][i], num, mod[j]), mod[j]);
-                inv[j][n - i - 1] = mul_mod(inv[j][n - i], base[j], mod[j]);
+    using Type=array<ll,5>;
+    static VL base;
+    static VVL inv,pow;
+    static const VL mod;
+    static bool flag;
+    static array<array<ll,5>,256> num;
+
+    Type value;
+
+    void init(){
+        if(flag) return;
+        print_line;
+        flag=true;
+        base=VL(5); REP(i,5) base[i]=Xor128(3000,mod[i]);
+        inv=VVL(5); pow=VVL(5);
+        REP(i,5){
+            pow[i]=VL(MX+1); inv[i]=VL(MX+1);
+            pow[i][0]=1; inv[i][MX]=ModInv(ModPow<ll>(base[i],MX,mod[i]),mod[i]);
+            REP(j,MX){
+                pow[i][j+1]=(pow[i][j]*base[i])%mod[i];
+                inv[i][MX-j-1]=(inv[i][MX-j]*base[i])%mod[i];
             }
         }
-    }
-    static const vector<ll> mod;
-    /// @brief 基数をランダムに生成する
-    static vector<ll> get_base() {
-        vector<ll> base(5);
-        mt19937 rng(time(0));
-        for (int i = 0; i < 5; i++) base[i] = (rng() % mod[i] + 3000) % mod[i];
-        return base;
-    }
-    using hash = array<ll, 5>;
-    /// @brief [l, r) のハッシュ値を取得する
-    hash get(int l, int r) {
-        hash ret;
-        for (int i = 0; i < 5; i++) {
-            ret[i] = mul_mod(add_mod(hash_table[i][r], -hash_table[i][l], mod[i]), inv[i][l], mod[i]);
-        }
-        return ret;
-    }
-	/// @brief 2つのハッシュ値を結合する
-    hash connect(hash h1, hash h2, int len1) {
-        hash ret;
-        for (int i = 0; i < 5; i++) {
-            ret[i] = add_mod(h1[i], mul_mod(h2[i], power[i][len1], mod[i]), mod[i]);
-        }
-        return ret;
+        REP(i,C) REP(j,5) num[i][j]=Xor128(1,3000);
+        print_line;
     }
 
-private:
-    vector<ll> base;
-    vector<vector<ll>> power, hash_table, inv;
-    inline ll mul_mod(ll a, ll b, ll mod) { return a * b % mod; }
-    inline ll add_mod(ll a, ll b, ll mod) {
-        ll ret = a + b;
-        if (ret >= mod) ret -= mod;
-        if (ret < 0) ret += mod;
+    Hash()=default;
+    Hash(const Hash& other){
+        if(!flag) init();
+        value=other.value;
+    }
+    Hash(char c){
+        if(!flag) init();
+        value.fill(0);
+        REP(i,5) value[i]=num[c][i];
+    }
+
+    Hash& operator+=(const Hash& other){
+        REP(i,5) value[i]=(value[i]+other.value[i])%mod[i];
+        return *this;
+    }
+    Hash& operator-=(const Hash& other){
+        REP(i,5) value[i]=(value[i]-other.value[i]+mod[i])%mod[i];
+        return *this;
+    }
+    Hash operator+(const Hash& other) const {
+        Hash ret=*this;
+        ret+=other;
         return ret;
     }
-    ll pow_mod(ll a, ll x, ll mod) {
-        ll ret = 1;
-        while (x) {
-            if (x & 1) ret = mul_mod(ret, a, mod);
-            a = mul_mod(a, a, mod);
-            x >>= 1;
-        }
+    Hash operator-(const Hash& other) const {
+        Hash ret=*this;
+        ret-=other;
+        return ret;
+    }
+    Hash shift(int x) const {
+        Hash ret=*this;
+        if(x<0) REP(i,5) (ret.value[i]*=inv[i][-x])%=mod[i];
+        else REP(i,5) (ret.value[i]*=pow[i][x])%=mod[i];
+        return ret;
+    }
+    bool operator==(const Hash& other) const {
+        REP(i,5) if(value[i]!=other.value[i]) return false;
+        return true;
+    }
+    Hash& operator=(const Hash& other){
+        REP(i,5) value[i]=other.value[i];
+        return *this;
+    }
+};
+
+VL Hash::base;
+VVL Hash::inv;
+VVL Hash::pow;
+const VL Hash::mod={1000000007,1000000009,1000000021,1000000033,1000000087};
+bool Hash::flag=false;
+array<array<ll,5>,256> Hash::num={};
+
+
+///@brief Rolling Hash
+struct RollingHash{
+    RollingHash()=default;
+    vector<Hash> hash;
+
+    /// @brief 文字列 s の Rolling Hash を構築する
+    RollingHash(const string& s){
+        int n=s.size();
+        hash=vector<Hash>(n+1);
+        REP(i,n) hash[i+1]=hash[i]+Hash(s[i]).shift(i);
+    }
+
+    /// @brief 区間 [l, r) のハッシュ値を取得する
+    Hash get(int l, int r){
+        Hash ret;
+        ret=hash[r]-hash[l];
+        ret=ret.shift(-l);
         return ret;
     }
 };
-const vector<ll> RollingHash::mod = {1000000009, 1000000007, 1000000021, 1000000033, 1000000087};

@@ -230,6 +230,10 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_h_l_d.html#a57a2a1fce944ca4c9b4cfc4f497963e0"><param name="Name" value="at(int v)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_geometry_1_1_line.html#a84c6695c3de1f9dee943074a86889359"><param name="Name" value="b"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#a5e20cb7d8f74a511515d57990ae1b614"><param name="Name" value="back()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#add9e6e3f9a1816111f3d1b03c1174d49"><param name="Name" value="base"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#add9e6e3f9a1816111f3d1b03c1174d49"><param name="Name" value="Hash"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#ab7db3c0fa906d85207ff1443d0164612"><param name="Name" value="base"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#ab7db3c0fa906d85207ff1443d0164612"><param name="Name" value="InsertableReversibleArrayImpl::LazyReversibleRBST"></OBJECT>
@@ -439,6 +443,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_burning_burying.html#a90fd210c7fb2b5e0a929a3f2b973d543"><param name="Name" value="solve()"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a866d5f414cdc05f9fdfddb9e87f8ffff"><param name="Name" value="C"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#aad6fa681a69beb1984b59da03f2cf1e5"><param name="Name" value="c"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_max_flow_1_1_edge.html#aa487ab3fa5b70d6f8aaa0a4a0b946d40"><param name="Name" value="cap"></OBJECT>
   <UL>
@@ -549,7 +554,6 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespacecompress.html#a30b635f18c81637d3c1d613b8be0e223"><param name="Name" value="symbols"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#aa38eced5a94e7ae8a7cd56d4071f3978"><param name="Name" value="connect(hash h1, hash h2, int len1)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespaceexp.html#a608b7d478866fe325b1fc10a0d2f5d11"><param name="Name" value="CONST"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_multi_set.html#a203a2028c468bb813bd14c8d79a3b9ea"><param name="Name" value="contains(T x)"></OBJECT>
   <UL>
@@ -588,17 +592,17 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="convolution__ll_8hpp.html"><param name="Name" value="convolution_ll.hpp"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="convolution__ll_8hpp.html#a067070d2dea1c2ab6abb1e6b3168a2a3"><param name="Name" value="ConvolveInt64(VL a, VL b, ll mod=INFL+3)"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="convolution__ll_8hpp.html#ae046307f7d332f472530fe7c34b118f6"><param name="Name" value="ConvolveInt64(VL a, VL b, ll mod=INFL+3)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="convolution__ll_8hpp.html"><param name="Name" value="convolution_ll.hpp"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="convolution__ll_8hpp.html#affc5b1b0f894fcebcc3f620b342441a6"><param name="Name" value="Garner(ll a1, ll a2, ll a3, ll m1, ll m2, ll m3, ll mod=INFL+3)"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="convolution__ll_8hpp.html#ae7aab791c88b29ea69a9d13a610596f8"><param name="Name" value="Garner(VL a, VL m, ll mod=INFL+3)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397"><param name="Name" value="Convolve(const vector&lt; double &gt; &amp;a, const vector&lt; double &gt; &amp;b)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="convolution_8hpp.html#a1991d17803a8f527aadc7de878d0c962"><param name="Name" value="Convolve(const VL &amp;a, const VL &amp;b)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_n_t_t.html#af7d5dac5eee3af11ecf0c361f5fbe581"><param name="Name" value="convolve(VL a, VL b)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="ntt998_8hpp.html#a8a7e67d1f552a5092501af3910fa134e"><param name="Name" value="Convolve998(VM a, VM b)"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="convolution__ll_8hpp.html#a067070d2dea1c2ab6abb1e6b3168a2a3"><param name="Name" value="ConvolveInt64(VL a, VL b, ll mod=INFL+3)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="convolution__ll_8hpp.html#ae046307f7d332f472530fe7c34b118f6"><param name="Name" value="ConvolveInt64(VL a, VL b, ll mod=INFL+3)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_c_f_1_1_edge.html#a8dedc3a556216ab25ea4ebcef8073106"><param name="Name" value="cost"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_dsu_merging.html#a76200780dde72296276b892b74e6da98"><param name="Name" value="count() const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_d_s_u.html#a042d4bb179819d69d53f2b96e23b099e"><param name="Name" value="count()"></OBJECT>
@@ -876,11 +880,11 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="md_graph_2tree_2diameter.html"><param name="Name" value="diameter"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="diameter_8hpp.html"><param name="Name" value="diameter.hpp"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="diameter_8hpp.html#ab48f7c9e16352e15ee6bc98535b5d1d3"><param name="Name" value="TreeDiameter(const vector&lt; vector&lt; pair&lt; int, ll &gt; &gt; &gt; &amp;g)"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="diameter_8hpp.html#a42929a417093cc97ccf5875dbe804a75"><param name="Name" value="TreeDiameter(const vector&lt; VI &gt; &amp;g)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="diameter_8hpp.html"><param name="Name" value="diameter.hpp"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="diameter_8hpp.html#a42929a417093cc97ccf5875dbe804a75"><param name="Name" value="TreeDiameter(const vector&lt; VI &gt; &amp;g)"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="diameter_8hpp.html#a24ee70241e9b08a7a6f279c8c1e151ce"><param name="Name" value="TreeDiameter(const WG &amp;g)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_dsu_potentialized.html#ab9a92fc6174f8c4b5da8db55c060d1b6"><param name="Name" value="diff(int x, int y)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="dijkstra_8hpp.html#acfdfb589a639d25a8d7ec3d0e9613925"><param name="Name" value="Dijkstra(const WG &amp;g, int start=0)"></OBJECT>
@@ -1528,6 +1532,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_lazy.html#abf01c743ea6b8648ab8fbb5590de0065"><param name="Name" value="SegTreeLazy&lt; Monoid::SumPair&lt; T &gt;, Operator::Update&lt; T, not_exist &gt;, mapping &gt;"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a07623ca4117730eb67bce9817f146810"><param name="Name" value="flag"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_max_flow.html#a9ae6af96026a4568d4e0c01c003a753f"><param name="Name" value="flow(int s, int t)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_c_f.html#a5afea122415798cdf9f4cd13b7be616a"><param name="Name" value="flow(int s, int t, ll f)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_max_flow_1_1_edge.html#a75dc2e4b9d2fd2a9ebd2c14f1ad6f549"><param name="Name" value="flow"></OBJECT>
@@ -1971,7 +1976,7 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_angel_beats_1_1_node.html#ade719cc35abcc5af6424fa1d599e48a2"><param name="Name" value="g1"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_angel_beats_1_1_node.html#a7f13ab81ba13f72912b303ef84174ccd"><param name="Name" value="g2"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="convolution__ll_8hpp.html#affc5b1b0f894fcebcc3f620b342441a6"><param name="Name" value="Garner(ll a1, ll a2, ll a3, ll m1, ll m2, ll m3, ll mod=INFL+3)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="convolution__ll_8hpp.html#ae7aab791c88b29ea69a9d13a610596f8"><param name="Name" value="Garner(VL a, VL m, ll mod=INFL+3)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_angel_beats_1_1_node.html#a7c76fb2c5a8885ca554d01dd16c3d5ed"><param name="Name" value="gc"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_multi_set.html#af5f4fdc603110941a5ae08f4a067aa73"><param name="Name" value="ge(T x)"></OBJECT>
   <UL>
@@ -2346,10 +2351,9 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dual.html#a61bfbf2af340c5dc6e3b9785df156031"><param name="Name" value="SegTreeDual&lt; Operator::UpdateTimeStamp&lt; T &gt; &gt;"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array.html#a5e4dd28311e225c1e1f9ec9968139e2f"><param name="Name" value="get(int k)"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#a3a6d3669a567daaee732bb612c030527"><param name="Name" value="get(int l, int r)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#a86240a7668f2836709c800ae2ba5e206"><param name="Name" value="get(int l, int r)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_dsu_merging.html#aae3ac2e8c0546029e540523cfb19d57f"><param name="Name" value="get(int x)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_c_h_t.html#a652d63fa85df6b36fb09fdae60ebc6cf"><param name="Name" value="get(T x)"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#a454a790a384fe6f8d0b280f784fc7527"><param name="Name" value="get_base()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_factors.html#a24bcfb630170a5aae2e2ae3c7ce3f656"><param name="Name" value="get_divisors(int n)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_max_flow.html#abbe9c0d60ca3b0f31aec84b73bfeb059"><param name="Name" value="get_edges()"></OBJECT>
   <UL>
@@ -2428,7 +2432,95 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7"><param name="Name" value="h"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_bit.html#a0af6dce857ec8aa6cef9e6ac1d4410e6"><param name="Name" value="HasBit(ll n, int i)"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#a7aee1ea046a7e777b4bd4ac700d82ac7"><param name="Name" value="hash"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a2bb49844b818de3146548f868777e87b"><param name="Name" value="Hash()=default"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#aa2704fbc0e9be14105f061e71b8c144a"><param name="Name" value="Hash(char c)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a0dabddca4882b6869a7cd3d130e9aad2"><param name="Name" value="Hash(const Hash &amp;other)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#add9e6e3f9a1816111f3d1b03c1174d49"><param name="Name" value="base"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a866d5f414cdc05f9fdfddb9e87f8ffff"><param name="Name" value="C"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a07623ca4117730eb67bce9817f146810"><param name="Name" value="flag"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a2bb49844b818de3146548f868777e87b"><param name="Name" value="Hash()=default"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#aa2704fbc0e9be14105f061e71b8c144a"><param name="Name" value="Hash(char c)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a0dabddca4882b6869a7cd3d130e9aad2"><param name="Name" value="Hash(const Hash &amp;other)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a525ce897ce585256fd241baf51c165b9"><param name="Name" value="init()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a65e9a611ad519be5e54523e2845422dc"><param name="Name" value="inv"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a3bd24b140ac1c70ae98a01974b0c9980"><param name="Name" value="mod"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a5e0b836a8e551a23bf840ffb8c1e034f"><param name="Name" value="MX"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a34cd57f022892c37a37f3e4745798396"><param name="Name" value="num"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a37354fe2736bdaca531b94e17c44b784"><param name="Name" value="operator+(const Hash &amp;other) const"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#ad788fc103417e8d81d2c140bb05c1447"><param name="Name" value="operator+=(const Hash &amp;other)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a6c2d1e0f276c921cfc4e46b001100c06"><param name="Name" value="operator-(const Hash &amp;other) const"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#ae8b7b557d9b0fdbd7709be1bfc4ca9f5"><param name="Name" value="operator-=(const Hash &amp;other)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#af4e61589fbc15d41e10e54abecb77d9c"><param name="Name" value="operator=(const Hash &amp;other)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a06b1d032944f2169544b27ddedfe9abc"><param name="Name" value="operator==(const Hash &amp;other) const"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a40b806f7e170c9454766807a0340696b"><param name="Name" value="pow"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#af6385ca8122334ec22fb8eb5819e320d"><param name="Name" value="hash"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#ad96321a44bb502422139b5c06f484be3"><param name="Name" value="shift(int x) const"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a21e94320d986c15f38f83c0a1bc92e52"><param name="Name" value="Type"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html"><param name="Name" value="Hash"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a6a39c22a994feb6e341c48e1a9ac24cb"><param name="Name" value="value"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="intersect_8hpp.html#af09ae583267dd0bf22e9797959f917c1"><param name="Name" value="haveIntersection(const ll l1, const ll r1, const ll l2, const ll r2)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespaceexp.html#a6b6bffc9f575cd0e79d0b42f7ec5a3d5"><param name="Name" value="HEAD"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespaceexp.html#a202e10976c2a57e8aa3206c2097060ca"><param name="Name" value="help"></OBJECT>
@@ -2506,6 +2598,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c"><param name="Name" value="INF"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815"><param name="Name" value="INFL"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="int128_8hpp.html#a80504a3d3d20d5e7183f69f2ed027881"><param name="Name" value="INFLL"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a525ce897ce585256fd241baf51c165b9"><param name="Name" value="init()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_zeta_mobius_div_mul.html#a60c1e6ce641275a4ee75d229514c1691"><param name="Name" value="Init(int n=1e6)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_trie.html#abfe4a4f10e3662529a07c66f42c54405"><param name="Name" value="insert(const string &amp;s)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array.html#ab2b765916173504d440af42e3df58868"><param name="Name" value="insert(int k, T x)"></OBJECT>
@@ -3066,6 +3159,7 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#a42cff6d61be3ee36e00b8362580736da"><param name="Name" value="inv(int d) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_f_p_s.html#ae59769538acf39560082f742b4af5e7d"><param name="Name" value="inv(int d=-1) const"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a65e9a611ad519be5e54523e2845422dc"><param name="Name" value="inv"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="inversion__number_8hpp.html#a7973f38066e81579d126adfc53beb1ac"><param name="Name" value="inversion_number.hpp"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="inversion__number_8hpp.html#a7973f38066e81579d126adfc53beb1ac"><param name="Name" value="InversionNumber(const VI &amp;v)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="template_8hpp.html#affe9a1ffd6cd7b2e404200ef182fa18f"><param name="Name" value="IO"></OBJECT>
@@ -3230,8 +3324,8 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_lca_vtx.html#a78bc20c0556f9ab36b96d540ca3c8a8c"><param name="Name" value="Type"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="lcp_8hpp.html#a8531b8d90e4aa4c28c2bd4db9623e8fc"><param name="Name" value="lcp.hpp"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="lcp_8hpp.html#a8531b8d90e4aa4c28c2bd4db9623e8fc"><param name="Name" value="lcpArray(const string &amp;s, const vector&lt; int &gt; &amp;sa)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="lcp__array_8hpp.html#ae0ced2c7950382932078f20c8e118c5e"><param name="Name" value="lcp_array.hpp"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="lcp__array_8hpp.html#ae0ced2c7950382932078f20c8e118c5e"><param name="Name" value="LcpArray(const string &amp;s, const VI &amp;sa)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="template_8hpp.html#a41f1d17ffdc8a7500e7aadc2b7e05a63"><param name="Name" value="ld"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_multi_set.html#ae68cdae0ceec4d6cc7909270947e1380"><param name="Name" value="le(T x)"></OBJECT>
   <UL>
@@ -3932,9 +4026,9 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_dynamic_mod_int.html#a52987abdcc66bf203627b3d6bfcd0404"><param name="Name" value="DynamicModInt"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c"><param name="Name" value="mod"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a3bd24b140ac1c70ae98a01974b0c9980"><param name="Name" value="mod"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c"><param name="Name" value="RollingHash"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a3bd24b140ac1c70ae98a01974b0c9980"><param name="Name" value="Hash"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespacemod__reconstruct.html"><param name="Name" value="mod_reconstruct"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespacemod__reconstruct.html"><param name="Name" value="mod_reconstruct"></OBJECT>
@@ -4367,6 +4461,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_multi_set.html#aa815da7cdf344ceccb71ee35c9bf6410"><param name="Name" value="pop_min()"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a5e0b836a8e551a23bf840ffb8c1e034f"><param name="Name" value="MX"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#ad3073c30f3809a630a7a90ae2a877c74"><param name="Name" value="my_del(Ptr t)"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#ad3073c30f3809a630a7a90ae2a877c74"><param name="Name" value="InsertableReversibleArrayImpl::RBSTBase"></OBJECT>
@@ -4477,6 +4572,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_n_t_t.html#a08f7a88ab5d843873769c894112766ec"><param name="Name" value="NTT()"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a34cd57f022892c37a37f3e4745798396"><param name="Name" value="num"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_offset_vector.html#a54f1ad99055e7fc6a342fd43c0a32da1"><param name="Name" value="offset"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_offset_vector.html"><param name="Name" value="OffsetVector"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_offset_vector.html#a649368817cf7764111d85732f5c87d33"><param name="Name" value="OffsetVector()=default"></OBJECT>
@@ -4622,6 +4718,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_dynamic_mod_int.html#a2dc1e505873f8ce525f188a2a561c7c9"><param name="Name" value="operator+(const DynamicModInt &amp;other) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_f_p_s.html#a6cd79f81e5f5085be7a8735aa18bb868"><param name="Name" value="operator+(const FPS &amp;g) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_fraction.html#a67ab02dd8a29c567f3ce1e19e4aeb9e5"><param name="Name" value="operator+(const Fraction &amp;f)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a37354fe2736bdaca531b94e17c44b784"><param name="Name" value="operator+(const Hash &amp;other) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#adbfe48a55a28cc0c0f2a7ee0e63801a0"><param name="Name" value="operator+(const int &amp;sc) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#aa989f06e8e827f365e64faa7a95f7de0"><param name="Name" value="operator+(const int &amp;sc, const MFPS &amp;f)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#a5dbd60e6e52c8f1dae9400a1649b455e"><param name="Name" value="operator+(const MFPS &amp;g) const"></OBJECT>
@@ -4644,6 +4741,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_dynamic_mod_int.html#a5845fb8d068ce633af70c627b8e20393"><param name="Name" value="operator+=(const DynamicModInt &amp;other)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_f_p_s.html#adb282da74aae6666ad589d01b2a19663"><param name="Name" value="operator+=(const FPS &amp;g)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_fraction.html#a7b69aff97bc97bf660b69163272ad0c2"><param name="Name" value="operator+=(const Fraction &amp;f)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#ad788fc103417e8d81d2c140bb05c1447"><param name="Name" value="operator+=(const Hash &amp;other)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#a9610d7c7336ff1799a03005e0b3b2a8b"><param name="Name" value="operator+=(const int &amp;sc)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#aa68ba69999a61a2f4d28d1184d24e79d"><param name="Name" value="operator+=(const MFPS &amp;g)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#a4e4585e9efb13171320932d7673f200d"><param name="Name" value="operator+=(const mint &amp;sc)"></OBJECT>
@@ -4688,6 +4786,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_dynamic_mod_int.html#a0fc093eef2cf0e82ab1acecf8a6f4f01"><param name="Name" value="operator-(const DynamicModInt &amp;other) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_f_p_s.html#a61e1c99237eb93a6298efb936c851e9e"><param name="Name" value="operator-(const FPS &amp;g) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_fraction.html#ab09f30a15e9e1c56804029b7d44bf257"><param name="Name" value="operator-(const Fraction &amp;f)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a6c2d1e0f276c921cfc4e46b001100c06"><param name="Name" value="operator-(const Hash &amp;other) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#afa6b6081dae761e31f52379ee7c7f122"><param name="Name" value="operator-(const int &amp;sc) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#a0435d4ece77c727f4d025fbe623a9734"><param name="Name" value="operator-(const int &amp;sc, const MFPS &amp;f)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#a53c0a51f95769b1e3bec2bcac6352413"><param name="Name" value="operator-(const MFPS &amp;g) const"></OBJECT>
@@ -4710,6 +4809,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_dynamic_mod_int.html#af7e54b5ddfbce72723b8eb9882615479"><param name="Name" value="operator-=(const DynamicModInt &amp;other)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_f_p_s.html#a8054153cd66ddfbd8691e61b632b392d"><param name="Name" value="operator-=(const FPS &amp;g)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_fraction.html#a8dc1c9934b58360b22eee8aa8ceda7d9"><param name="Name" value="operator-=(const Fraction &amp;f)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#ae8b7b557d9b0fdbd7709be1bfc4ca9f5"><param name="Name" value="operator-=(const Hash &amp;other)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#aa219a01bacee3d4343ba24cca8aff446"><param name="Name" value="operator-=(const int &amp;sc)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#ab729a1b6539f3b73001c495f8c7034e8"><param name="Name" value="operator-=(const MFPS &amp;g)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#ab94474724130337249ec876e76f37535"><param name="Name" value="operator-=(const mint &amp;sc)"></OBJECT>
@@ -4854,11 +4954,13 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#a63e2019b62b061477d281f2c99f195e3"><param name="Name" value="operator&lt;&lt;=(int d)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_fraction.html#a44c4595909f7a9fa9d512a526d76b97b"><param name="Name" value="operator&lt;=(const Fraction &amp;f) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_fraction.html#af442a301fb30fdb7f79080d094ffbe21"><param name="Name" value="operator&lt;=(const T &amp;f) const"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#af4e61589fbc15d41e10e54abecb77d9c"><param name="Name" value="operator=(const Hash &amp;other)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#af8a7a6e4e3713311006bd8643895afc2"><param name="Name" value="operator=(const MFPS &amp;f)=default"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#aa9fc6c07d52cd1ac1fdad82a46aef319"><param name="Name" value="operator=(const mint &amp;c0)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_geometry_1_1_circle.html#a318ce8385f862858ea1c514f2e4072be"><param name="Name" value="operator==(const Circle &amp;C) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_dynamic_mod_int.html#a3866452df9aa2af7fe97e96621d6f666"><param name="Name" value="operator==(const DynamicModInt &amp;other) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_fraction.html#a04666e42dc296a7382ff66ac7d416e36"><param name="Name" value="operator==(const Fraction &amp;f) const"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a06b1d032944f2169544b27ddedfe9abc"><param name="Name" value="operator==(const Hash &amp;other) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_geometry_1_1_line.html#aea48a257bc3c9bed360894873e9ead59"><param name="Name" value="operator==(const Line &amp;l) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#a96c11557daa4224bf56588d7dfc517cb"><param name="Name" value="operator==(const MFPS &amp;g) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_mod_int.html#ac9890a4d36b28cad8ce1a31d27203150"><param name="Name" value="operator==(const Modint &amp;other) const"></OBJECT>
@@ -5090,6 +5192,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_mod_int.html#ad51ec271b27d8b4ffee3af3a25be2d5b"><param name="Name" value="ModInt&lt; 998244353 &gt;"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a40b806f7e170c9454766807a0340696b"><param name="Name" value="pow"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_f_p_s.html#a88dd7027ad1c72d42bf0aa78a8d200fd"><param name="Name" value="pow_inplace(const ll k, int d=-1)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_wavelet_matrix.html#aca169731a469969acb7685e9f338172a"><param name="Name" value="prev_value(const ull begin_pos, const ull end_pos, const ull x, ull y)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="primality__test_8hpp.html#a50c80146bd471b603303181ec724eaf9"><param name="Name" value="primality_test.hpp"></OBJECT>
@@ -5389,7 +5492,6 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a2ac842d27b458b66c5b113307dfe28ea"><param name="Name" value="InsertableReversibleArrayImpl::LazyReversibleRBST&lt; T, T, InsertableReversibleArrayImpl::op&lt; T &gt;, InsertableReversibleArrayImpl::op&lt; T &gt;, InsertableReversibleArrayImpl::op&lt; T &gt;, InsertableReversibleArrayImpl::e&lt; T &gt; &gt;"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="md_string_2rh.html"><param name="Name" value="rh"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_ring.html"><param name="Name" value="Ring"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_ring.html"><param name="Name" value="Ring"></OBJECT>
   <UL>
@@ -5411,7 +5513,6 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_ring.html#a23eb4666dc1bfab0429cc8c73f2fb07f"><param name="Name" value="distanceMin(ll p1, ll p2, ll n)"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="md_string_2rle.html"><param name="Name" value="rle"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="rle_8hpp.html#a7f01629c3961317d963a4666dbe7622b"><param name="Name" value="rle.hpp"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#af5b7726452c97a737444c3281ddc7749"><param name="Name" value="rng()"></OBJECT>
   <UL>
@@ -5432,26 +5533,14 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_dsu_rollback.html#a7c33fb0f4e5b0f804b937ab4edb7a5ea"><param name="Name" value="rollback()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html"><param name="Name" value="RollingHash"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#a71020424af6022b96f96117961ac4bc2"><param name="Name" value="RollingHash()=default"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#a8326ec22bdbce2b4355354e1c714914f"><param name="Name" value="RollingHash(const string &amp;s, vector&lt; ll &gt; base={})"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#aee33123a728c1df6d8c0b3550baa0c43"><param name="Name" value="RollingHash(const string &amp;s)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html"><param name="Name" value="RollingHash"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#aa38eced5a94e7ae8a7cd56d4071f3978"><param name="Name" value="connect(hash h1, hash h2, int len1)"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#a86240a7668f2836709c800ae2ba5e206"><param name="Name" value="get(int l, int r)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html"><param name="Name" value="RollingHash"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#a3a6d3669a567daaee732bb612c030527"><param name="Name" value="get(int l, int r)"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html"><param name="Name" value="RollingHash"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#a454a790a384fe6f8d0b280f784fc7527"><param name="Name" value="get_base()"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html"><param name="Name" value="RollingHash"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#a7aee1ea046a7e777b4bd4ac700d82ac7"><param name="Name" value="hash"></OBJECT>
-  </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html"><param name="Name" value="RollingHash"></OBJECT>
-  <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#a0e66902a45a8cf6e956c3ce025e4289c"><param name="Name" value="mod"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#af6385ca8122334ec22fb8eb5819e320d"><param name="Name" value="hash"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html"><param name="Name" value="RollingHash"></OBJECT>
   <UL>
@@ -5459,7 +5548,7 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html"><param name="Name" value="RollingHash"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#a8326ec22bdbce2b4355354e1c714914f"><param name="Name" value="RollingHash(const string &amp;s, vector&lt; ll &gt; base={})"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#aee33123a728c1df6d8c0b3550baa0c43"><param name="Name" value="RollingHash(const string &amp;s)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array.html#a2d03db862b342d40e310d96e3730f1c8"><param name="Name" value="root"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="linear__equation_8hpp.html#ad783a386934fd2ebc14105b5babb4aec"><param name="Name" value="RowReduction(vector&lt; vector&lt; bool &gt; &gt; &amp;a, VI &amp;where)"></OBJECT>
@@ -5474,7 +5563,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_range_query_1_1_apply_update___get_sum.html#ad30e2dbdaf90a38072462ad68f8db948"><param name="Name" value="RangeQuery::ApplyUpdate_GetSum"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="md_heuristic_2sa.html"><param name="Name" value="sa"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="sa_8hpp.html#a379716b6c46b28fea88fd3178aa999eb"><param name="Name" value="sa.hpp"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_dsu_merging.html#a2c094054f83b0f6b1adeb6dea4f1b6e8"><param name="Name" value="same(int x, int y) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_d_s_u.html#ad3a04e676273604d56db0344795cd693"><param name="Name" value="same(int x, int y)"></OBJECT>
   <UL>
@@ -6408,6 +6496,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_m_f_p_s.html#a5b58b73eaf99437e649e1ae639a36b08"><param name="Name" value="set_conv(vm(*CONV_)(const vm &amp;, const vm &amp;))"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_dynamic_mod_int.html#a46574c03555f1aca9840c5795aacf224"><param name="Name" value="set_mod(ll x)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_f_p_s.html#adca15fcd4a135071f71880b787a83f4c"><param name="Name" value="shift(const T c) const"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#ad96321a44bb502422139b5c06f484be3"><param name="Name" value="shift(int x) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_f_p_s.html#a24db808c507fcc8daf239ef80a95c605"><param name="Name" value="shift_inplace(const T c)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="sparse__table__2d_8hpp.html#ad1d1c7618c0f2e354e4a203dc0576280"><param name="Name" value="sign"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_binary_trie.html#a8894b19178488ed5a376fc2f62fe774e"><param name="Name" value="size() const"></OBJECT>
@@ -6980,7 +7069,8 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_succinct_bit_vector.html#a7e21d3fc0ad8a91418ba37a262c4f97f"><param name="Name" value="SuccinctBitVector(const ull n)"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="sa_8hpp.html#a379716b6c46b28fea88fd3178aa999eb"><param name="Name" value="suffixArray(string s)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="suffix__array_8hpp.html#aa0232ea2a9d89c00f1bdd3f487dd8ba4"><param name="Name" value="suffix_array.hpp"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="suffix__array_8hpp.html#aa0232ea2a9d89c00f1bdd3f487dd8ba4"><param name="Name" value="suffixArray(string s)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a857cf302508618d6944585d711f033d1"><param name="Name" value="sum(const Ptr t) const"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a857cf302508618d6944585d711f033d1"><param name="Name" value="InsertableReversibleArrayImpl::LazyReversibleRBST"></OBJECT>
@@ -7145,8 +7235,8 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="totient__table_8hpp.html#a0914bcd1a8e4f43787323795904e6d40"><param name="Name" value="totient_table.hpp"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="totient__table_8hpp.html#a0914bcd1a8e4f43787323795904e6d40"><param name="Name" value="TotientTable(ll n)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="centroid_8hpp.html#a982a5db931a030593f6704641571dd4b"><param name="Name" value="TreeCentroid(const vector&lt; vector&lt; int &gt; &gt; &amp;g, int root, vector&lt; bool &gt; &amp;seen, vector&lt; int &gt; &amp;sz)"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="diameter_8hpp.html#ab48f7c9e16352e15ee6bc98535b5d1d3"><param name="Name" value="TreeDiameter(const vector&lt; vector&lt; pair&lt; int, ll &gt; &gt; &gt; &amp;g)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="diameter_8hpp.html#a42929a417093cc97ccf5875dbe804a75"><param name="Name" value="TreeDiameter(const vector&lt; VI &gt; &amp;g)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="diameter_8hpp.html#a24ee70241e9b08a7a6f279c8c1e151ce"><param name="Name" value="TreeDiameter(const WG &amp;g)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_trie.html"><param name="Name" value="Trie"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_trie.html#a061fbd5e9f5453de8558c078c9d371e8"><param name="Name" value="Trie(int len)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_trie_1_1_node.html"><param name="Name" value="Trie::Node"></OBJECT>
@@ -7223,6 +7313,10 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_fenwick_tree.html#aa2b1ef3738b376e71753f4277f255656"><param name="Name" value="Type"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_fenwick_tree.html#aa2b1ef3738b376e71753f4277f255656"><param name="Name" value="FenwickTree"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a21e94320d986c15f38f83c0a1bc92e52"><param name="Name" value="Type"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a21e94320d986c15f38f83c0a1bc92e52"><param name="Name" value="Hash"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_lca_edge.html#a32af8badfd8c23118a37bc2ea669ff67"><param name="Name" value="Type"></OBJECT>
   <UL>
@@ -7388,6 +7482,13 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_mod_int.html#ac1b44a18ac974f3f34f7ec40edb97761"><param name="Name" value="ModInt&lt; 998244353 &gt;"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_dynamic_mod_int.html#ad6d9a01412a0ce079aff0300e59c6186"><param name="Name" value="value"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_dynamic_mod_int.html#ad6d9a01412a0ce079aff0300e59c6186"><param name="Name" value="DynamicModInt"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a6a39c22a994feb6e341c48e1a9ac24cb"><param name="Name" value="value"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a6a39c22a994feb6e341c48e1a9ac24cb"><param name="Name" value="Hash"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b"><param name="Name" value="VI"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532"><param name="Name" value="VL"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="modint_8hpp.html#a0eb658589b1f818b4f88deb2ae419aab"><param name="Name" value="VM"></OBJECT>
@@ -7502,9 +7603,9 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="xor__convolution_8hpp.html#a791b5a55ef2207220b3bf2ce44ff80bc"><param name="Name" value="XorConvolution(vector&lt; T &gt; a, vector&lt; T &gt; b)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_geometry_1_1_point.html#afeb9c1837554b44f9e87936aa17076f1"><param name="Name" value="y"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="z__algorithm_8hpp.html#af550579ff39c6ff9baa4b70854b23cf5"><param name="Name" value="z_algorithm.hpp"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="md_string_2zalgo.html"><param name="Name" value="zalgo"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="zalgo_8hpp.html#ac016b5133ce019854fe02b7e8c77ff40"><param name="Name" value="zalgo.hpp"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="zalgo_8hpp.html#ac016b5133ce019854fe02b7e8c77ff40"><param name="Name" value="zAlgorithm(const T &amp;s)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="z__algorithm_8hpp.html#af550579ff39c6ff9baa4b70854b23cf5"><param name="Name" value="ZAlgorithm(const T &amp;s)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_zeta_mobius.html"><param name="Name" value="ZetaMobius"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_zeta_mobius.html"><param name="Name" value="ZetaMobius"></OBJECT>
   <UL>

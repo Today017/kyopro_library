@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Kyopro Library: string/rh.hpp ファイル</title>
+<title>Kyopro Library: string/z_algorithm.hpp ファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -48,24 +48,44 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">クラス</a>  </div>
-  <div class="headertitle"><div class="title">rh.hpp ファイル</div></div>
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">z_algorithm.hpp ファイル</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../kyopro_library/template.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="xor128_8hpp_source.html">../../kyopro_library/others/xor128.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="modcal_8hpp_source.html">../../kyopro_library/others/modcal.hpp</a>&quot;</code><br />
 </div>
-<p><a href="rh_8hpp_source.html">[ソースコード]</a></p>
+<p><a href="z__algorithm_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-クラス</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hash.html">Hash</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_rolling_hash.html">RollingHash</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rolling <a class="el" href="struct_hash.html">Hash</a>  <a href="struct_rolling_hash.html#details">[詳解]</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:af550579ff39c6ff9baa4b70854b23cf5" id="r_af550579ff39c6ff9baa4b70854b23cf5"><td class="memTemplParams" colspan="2">template&lt;typename T = string&gt; </td></tr>
+<tr class="memitem:af550579ff39c6ff9baa4b70854b23cf5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af550579ff39c6ff9baa4b70854b23cf5">ZAlgorithm</a> (const T &amp;s)</td></tr>
+<tr class="memdesc:af550579ff39c6ff9baa4b70854b23cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Z Algorithm  <br /></td></tr>
+<tr class="separator:af550579ff39c6ff9baa4b70854b23cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="af550579ff39c6ff9baa4b70854b23cf5" name="af550579ff39c6ff9baa4b70854b23cf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af550579ff39c6ff9baa4b70854b23cf5">&#9670;&#160;</a></span>ZAlgorithm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = string&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> ZAlgorithm </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Z Algorithm </p>
+<p><code>ret[i] = [0, n) と [i, n) の最長共通接頭辞の長さ</code> </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
