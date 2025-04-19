@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: utils</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">utils</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="el" href="md__r_e_a_d_m_e.html">top</a></p>
+<h1><a class="anchor" id="autotoc_md73"></a>
+Utils</h1>
+<h3><a class="anchor" id="autotoc_md74"></a>
+<a href="./modcal.hpp"><code>others/modcal.hpp</code></a></h3>
+<p><code>T=ll modPow(T a, T n, T p)</code></p><ul>
+<li>$a^n \mod p$ を返す。</li>
+<li>基本的には <code>ll</code> だが、 $p^2$ が <code>ll</code> の範囲を超える場合は <code>__int128_t</code> になる。</li>
+<li>$O(\log n)$</li>
+</ul>
+<p><code>T modInv(T a, T p)</code></p><ul>
+<li>$a^{-1} \mod p$ を返す。</li>
+<li>$p$ は素数。</li>
+<li>$O(\log p)$</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md75"></a>
+<a href="./kth_root.hpp"><code>others/kth_root.hpp</code></a></h3>
+<p><code>u64 kthRoot(u64 n, ll k = 2)</code></p><ul>
+<li>$\lfloor \sqrt[k]{n} \rfloor$ を返す。</li>
+<li>$O(\log MAX(=10^{10}) \log k)$</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md76"></a>
+<a href="./arith.hpp"><code>others/arith.hpp</code></a></h3>
+<p><code><a class="el" href="struct_arithmetic_progression.html">ArithmeticProgression</a></code></p><ul>
+<li>等差数列を表す構造体。</li>
+<li><code>start</code>: 初項</li>
+<li><code>goal</code>: 末項</li>
+<li><code>step</code>: 公差</li>
+<li><code>length()</code>: 長さ</li>
+</ul>
+<p><code>ll arithmeticSum(ArithmeticProgression ap)</code></p><ul>
+<li>等差数列の和を返す。</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md77"></a>
+<a href="./intersect.hpp"><code>others/intersect.hpp</code></a></h3>
+<p><code>bool <a class="el" href="intersect_8hpp.html#af09ae583267dd0bf22e9797959f917c1">haveIntersection(ll l1, ll r1, ll l2, ll r2)</a></code></p><ul>
+<li>区間 $[l_1, r_1]$ と区間 $[l_2, r_2]$ が共通部分を持つか否かを返す。</li>
+<li>$O(1)$</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md78"></a>
+<a href="./ring.hpp"><code>others/ring.hpp</code></a></h3>
+<p><code>namespace <a class="el" href="namespace_ring.html">Ring</a></code> に定義されている。</p>
+<p><code>bool betweenIncrement(ll p1, ll p2, ll target)</code></p><ul>
+<li>円環上で $p1$ から $p2$ に + 方向に進むとき、 $target$ を通過するか否かを返す。</li>
+<li>円環上の閉区間 $[p1, p2]$ に $target$ が含まれるか否かを判定する。</li>
+</ul>
+<p><code>bool betweenDecrement(ll p1, ll p2, ll target)</code></p><ul>
+<li>円環上で $p1$ から $p2$ に - 方向に進むとき、 $target$ を通過するか否かを返す。</li>
+</ul>
+<p><code>ll distanceRing(ll p1, ll p2, ll n)</code></p><ul>
+<li>サイズ $n$ の円環上での $p1$ から $p2$ までの距離を返す。</li>
+</ul>
+<p><code>ll distanceIncrement(ll p1, ll p2, ll n)</code></p><ul>
+<li>サイズ $n$ の円環上での $p1$ から $p2$ に + 方向に進むときの距離を返す。</li>
+</ul>
+<p><code>ll distanceDecrement(ll p1, ll p2, ll n)</code></p><ul>
+<li>サイズ $n$ の円環上での $p1$ から $p2$ に - 方向に進むときの距離を返す。</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md79"></a>
+<a href="./bit.hpp"><code>others/bit.hpp</code></a></h3>
+<p><code>namespace <a class="el" href="namespace_bit.html" title="ビット演算">Bit</a></code> に定義されている。</p>
+<p><code>int popcount(T x)</code></p><ul>
+<li>$x$ のビット表現に含まれる $1$ の数を返す。</li>
+</ul>
+<p><code>int parity(T x)</code></p><ul>
+<li>$x$ のビット表現に含まれる $1$ の数が偶数なら0、奇数なら $1$ を返す。</li>
+</ul>
+<p><code>int topBit(T x)</code></p><ul>
+<li>$x$ のビット表現で最上位の $1$ の位置を返す。</li>
+<li>$x=0$ のときは -1 を返す。</li>
+</ul>
+<p><code>int lowBit(T x)</code></p><ul>
+<li>$x$ のビット表現で最下位の $1$ の位置を返す。</li>
+<li>$x=0$ のときは -1 を返す。</li>
+</ul>
+<p><code>bool isPowerOfTwo(T x)</code></p><ul>
+<li>$x$ が $2$ の冪乗か否かを返す。</li>
+</ul>
+<p><code>ll mask(int n)</code></p><ul>
+<li>$n$ ビット目までが立っているビットマスクを返す。</li>
+</ul>
+<p><code>ll hasBit(ll x, int i)</code></p><ul>
+<li>$x$ の $i$ ビット目が立っているか否かを返す。</li>
+</ul>
+<p><code>string toBinary(ll x, int len = 32, bool rev = false)</code></p><ul>
+<li>$x$ のビット表現を文字列で返す。</li>
+<li><code>len</code>: ビット数</li>
+<li><code>rev</code>: 値の小さいビットから出力するか否か </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

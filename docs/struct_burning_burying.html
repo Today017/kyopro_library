@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: BurningBurying&lt; Cost &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="struct_burning_burying-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">BurningBurying&lt; Cost &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>燃やす埋める  
+ <a href="#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="moyasu__umeru_8hpp_source.html">moyasu_umeru.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a2f4140e564a37c264619079966077ee6" id="r_a2f4140e564a37c264619079966077ee6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f4140e564a37c264619079966077ee6">BurningBurying</a> (int n)</td></tr>
+<tr class="separator:a2f4140e564a37c264619079966077ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af68f6edc148d7bbdb20c3e3eca21a55b" id="r_af68f6edc148d7bbdb20c3e3eca21a55b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af68f6edc148d7bbdb20c3e3eca21a55b">add_single</a> (int i, Cost zero, Cost one)</td></tr>
+<tr class="memdesc:af68f6edc148d7bbdb20c3e3eca21a55b"><td class="mdescLeft">&#160;</td><td class="mdescRight">x[i] = 0 のときコスト zero, x[i] = 1 のときコスト one がかかるという条件を追加する  <br /></td></tr>
+<tr class="separator:af68f6edc148d7bbdb20c3e3eca21a55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44ab45cb039360509bab62a01f384d28" id="r_a44ab45cb039360509bab62a01f384d28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44ab45cb039360509bab62a01f384d28">add_double</a> (int i, int j, Cost a, Cost b, Cost c, Cost d)</td></tr>
+<tr class="memdesc:a44ab45cb039360509bab62a01f384d28"><td class="mdescLeft">&#160;</td><td class="mdescRight">x[ i ], x[ j ] の組み合わせについて、以下のコストかかるという条件を追加する  <br /></td></tr>
+<tr class="separator:a44ab45cb039360509bab62a01f384d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90fd210c7fb2b5e0a929a3f2b973d543" id="r_a90fd210c7fb2b5e0a929a3f2b973d543"><td class="memItemLeft" align="right" valign="top">Cost&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90fd210c7fb2b5e0a929a3f2b973d543">solve</a> ()</td></tr>
+<tr class="memdesc:a90fd210c7fb2b5e0a929a3f2b973d543"><td class="mdescLeft">&#160;</td><td class="mdescRight">コスト最小値を求める  <br /></td></tr>
+<tr class="separator:a90fd210c7fb2b5e0a929a3f2b973d543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Cost&gt;<br />
+struct BurningBurying&lt; Cost &gt;</div><p>燃やす埋める </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a2f4140e564a37c264619079966077ee6" name="a2f4140e564a37c264619079966077ee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f4140e564a37c264619079966077ee6">&#9670;&#160;</a></span>BurningBurying()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Cost&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_burning_burying.html">BurningBurying</a>&lt; Cost &gt;<a class="el" href="struct_burning_burying.html">::BurningBurying</a> </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a44ab45cb039360509bab62a01f384d28" name="a44ab45cb039360509bab62a01f384d28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44ab45cb039360509bab62a01f384d28">&#9670;&#160;</a></span>add_double()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Cost&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_burning_burying.html">BurningBurying</a>&lt; Cost &gt;::add_double </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cost</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cost</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cost</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cost</td>          <td class="paramname"><span class="paramname"><em>d</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x[ i ], x[ j ] の組み合わせについて、以下のコストかかるという条件を追加する </p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone"></th><th class="markdownTableHeadNone">x[j] = 0   </th><th class="markdownTableHeadNone">x[j] = 1    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">x[i] = 0   </td><td class="markdownTableBodyNone">a   </td><td class="markdownTableBodyNone">b    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">x[i] = 1   </td><td class="markdownTableBodyNone">c   </td><td class="markdownTableBodyNone">d   </td></tr>
+</table>
+<dl class="section attention"><dt>注意</dt><dd>b + c &gt;= a + d を要求する </dd></dl>
+
+</div>
+</div>
+<a id="af68f6edc148d7bbdb20c3e3eca21a55b" name="af68f6edc148d7bbdb20c3e3eca21a55b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af68f6edc148d7bbdb20c3e3eca21a55b">&#9670;&#160;</a></span>add_single()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Cost&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_burning_burying.html">BurningBurying</a>&lt; Cost &gt;::add_single </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cost</td>          <td class="paramname"><span class="paramname"><em>zero</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cost</td>          <td class="paramname"><span class="paramname"><em>one</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x[i] = 0 のときコスト zero, x[i] = 1 のときコスト one がかかるという条件を追加する </p>
+
+</div>
+</div>
+<a id="a90fd210c7fb2b5e0a929a3f2b973d543" name="a90fd210c7fb2b5e0a929a3f2b973d543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90fd210c7fb2b5e0a929a3f2b973d543">&#9670;&#160;</a></span>solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Cost&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Cost <a class="el" href="struct_burning_burying.html">BurningBurying</a>&lt; Cost &gt;::solve </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コスト最小値を求める </p>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>graph/flow/<a class="el" href="moyasu__umeru_8hpp_source.html">moyasu_umeru.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

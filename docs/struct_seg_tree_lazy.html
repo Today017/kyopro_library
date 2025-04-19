@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: SegTreeLazy&lt; Monoid, Operator, mapping &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="struct_seg_tree_lazy-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">SegTreeLazy&lt; Monoid, Operator, mapping &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>遅延評価セグメント木  
+ <a href="#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="segtree__lazy_8hpp_source.html">segtree_lazy.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:ab20ca57d57ff4a47c60f50ef5a1265e4" id="r_ab20ca57d57ff4a47c60f50ef5a1265e4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab20ca57d57ff4a47c60f50ef5a1265e4">MonoidType</a> = typename Monoid::Type</td></tr>
+<tr class="separator:ab20ca57d57ff4a47c60f50ef5a1265e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85ccbd9400631857c24066af7f230c18" id="r_a85ccbd9400631857c24066af7f230c18"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85ccbd9400631857c24066af7f230c18">OperatorType</a> = typename Operator::Type</td></tr>
+<tr class="separator:a85ccbd9400631857c24066af7f230c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ad7fdb9653e028ff01ed90da72d1570dd" id="r_ad7fdb9653e028ff01ed90da72d1570dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7fdb9653e028ff01ed90da72d1570dd">SegTreeLazy</a> ()=default</td></tr>
+<tr class="separator:ad7fdb9653e028ff01ed90da72d1570dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae01e57c4f628819bbf6f08691e4b77e7" id="r_ae01e57c4f628819bbf6f08691e4b77e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae01e57c4f628819bbf6f08691e4b77e7">SegTreeLazy</a> (int n)</td></tr>
+<tr class="memdesc:ae01e57c4f628819bbf6f08691e4b77e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">要素数 n の遅延セグ木を構築する  <br /></td></tr>
+<tr class="separator:ae01e57c4f628819bbf6f08691e4b77e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d23d454ba4728c7c0ba4b1a67bc01b7" id="r_a2d23d454ba4728c7c0ba4b1a67bc01b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d23d454ba4728c7c0ba4b1a67bc01b7">SegTreeLazy</a> (const vector&lt; <a class="el" href="#ab20ca57d57ff4a47c60f50ef5a1265e4">MonoidType</a> &gt; &amp;v)</td></tr>
+<tr class="memdesc:a2d23d454ba4728c7c0ba4b1a67bc01b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">配列 v から遅延セグ木を構築する  <br /></td></tr>
+<tr class="separator:a2d23d454ba4728c7c0ba4b1a67bc01b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0b49b3ff4b8c6b57c733449ffdf5b85" id="r_ad0b49b3ff4b8c6b57c733449ffdf5b85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0b49b3ff4b8c6b57c733449ffdf5b85">set</a> (int i, <a class="el" href="#ab20ca57d57ff4a47c60f50ef5a1265e4">MonoidType</a> x)</td></tr>
+<tr class="memdesc:ad0b49b3ff4b8c6b57c733449ffdf5b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">i 番目の要素を x に更新する  <br /></td></tr>
+<tr class="separator:ad0b49b3ff4b8c6b57c733449ffdf5b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d2684a4b4fbc1995a2d1790eba427a3" id="r_a3d2684a4b4fbc1995a2d1790eba427a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d2684a4b4fbc1995a2d1790eba427a3">apply</a> (int l, int r, <a class="el" href="#a85ccbd9400631857c24066af7f230c18">OperatorType</a> x)</td></tr>
+<tr class="memdesc:a3d2684a4b4fbc1995a2d1790eba427a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間 [l, r) に x を作用させる  <br /></td></tr>
+<tr class="separator:a3d2684a4b4fbc1995a2d1790eba427a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f424f5acb8639d9ec9f5b42005dd567" id="r_a7f424f5acb8639d9ec9f5b42005dd567"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ab20ca57d57ff4a47c60f50ef5a1265e4">MonoidType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f424f5acb8639d9ec9f5b42005dd567">fold</a> (int l, int r)</td></tr>
+<tr class="memdesc:a7f424f5acb8639d9ec9f5b42005dd567"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間 [l, r) のモノイド積を返す  <br /></td></tr>
+<tr class="separator:a7f424f5acb8639d9ec9f5b42005dd567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf01c743ea6b8648ab8fbb5590de0065" id="r_abf01c743ea6b8648ab8fbb5590de0065"><td class="memTemplParams" colspan="2">template&lt;typename F&gt; </td></tr>
+<tr class="memitem:abf01c743ea6b8648ab8fbb5590de0065"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#abf01c743ea6b8648ab8fbb5590de0065">find_right</a> (int l, F f)</td></tr>
+<tr class="memdesc:abf01c743ea6b8648ab8fbb5590de0065"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間 [l, x) のモノイド積が f を満たすような最大の x &gt;= l を返す  <br /></td></tr>
+<tr class="separator:abf01c743ea6b8648ab8fbb5590de0065"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96ee12dc05c4296b4176ea1a91564558" id="r_a96ee12dc05c4296b4176ea1a91564558"><td class="memTemplParams" colspan="2">template&lt;typename F&gt; </td></tr>
+<tr class="memitem:a96ee12dc05c4296b4176ea1a91564558"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a96ee12dc05c4296b4176ea1a91564558">find_left</a> (int r, F f)</td></tr>
+<tr class="memdesc:a96ee12dc05c4296b4176ea1a91564558"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間 [x, r) のモノイド積が f を満たすような最小の x&lt;=r を返す  <br /></td></tr>
+<tr class="separator:a96ee12dc05c4296b4176ea1a91564558"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad04a20cae43ac18270ee7b1b509c51f9" id="r_ad04a20cae43ac18270ee7b1b509c51f9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad04a20cae43ac18270ee7b1b509c51f9">size</a> ()</td></tr>
+<tr class="separator:ad04a20cae43ac18270ee7b1b509c51f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc1293d5bcbb6b175fc749044e0c2c52" id="r_abc1293d5bcbb6b175fc749044e0c2c52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ab20ca57d57ff4a47c60f50ef5a1265e4">MonoidType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc1293d5bcbb6b175fc749044e0c2c52">operator[]</a> (int i)</td></tr>
+<tr class="separator:abc1293d5bcbb6b175fc749044e0c2c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Monoid, typename Operator, auto mapping&gt;<br />
+struct SegTreeLazy&lt; Monoid, Operator, mapping &gt;</div><p>遅延評価セグメント木 </p>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname"><a class="el" href="namespace_monoid.html">Monoid</a></td><td>モノイド </td></tr>
+    <tr><td class="paramname"><a class="el" href="namespace_operator.html">Operator</a></td><td>作用素 </td></tr>
+    <tr><td class="paramname">mapping</td><td>（モノイドの元，作用素の元）→モノイドの元を返す関数 </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="ab20ca57d57ff4a47c60f50ef5a1265e4" name="ab20ca57d57ff4a47c60f50ef5a1265e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab20ca57d57ff4a47c60f50ef5a1265e4">&#9670;&#160;</a></span>MonoidType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid, typename Operator, auto mapping&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; Monoid, Operator, mapping &gt;::MonoidType = typename Monoid::Type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85ccbd9400631857c24066af7f230c18" name="a85ccbd9400631857c24066af7f230c18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85ccbd9400631857c24066af7f230c18">&#9670;&#160;</a></span>OperatorType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid, typename Operator, auto mapping&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; Monoid, Operator, mapping &gt;::OperatorType = typename Operator::Type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="ad7fdb9653e028ff01ed90da72d1570dd" name="ad7fdb9653e028ff01ed90da72d1570dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7fdb9653e028ff01ed90da72d1570dd">&#9670;&#160;</a></span>SegTreeLazy() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid, typename Operator, auto mapping&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; Monoid, Operator, mapping &gt;<a class="el" href="struct_seg_tree_lazy.html">::SegTreeLazy</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae01e57c4f628819bbf6f08691e4b77e7" name="ae01e57c4f628819bbf6f08691e4b77e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae01e57c4f628819bbf6f08691e4b77e7">&#9670;&#160;</a></span>SegTreeLazy() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid, typename Operator, auto mapping&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; Monoid, Operator, mapping &gt;<a class="el" href="struct_seg_tree_lazy.html">::SegTreeLazy</a> </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>要素数 n の遅延セグ木を構築する </p>
+
+</div>
+</div>
+<a id="a2d23d454ba4728c7c0ba4b1a67bc01b7" name="a2d23d454ba4728c7c0ba4b1a67bc01b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d23d454ba4728c7c0ba4b1a67bc01b7">&#9670;&#160;</a></span>SegTreeLazy() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid, typename Operator, auto mapping&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; Monoid, Operator, mapping &gt;<a class="el" href="struct_seg_tree_lazy.html">::SegTreeLazy</a> </td>
+          <td>(</td>
+          <td class="paramtype">const vector&lt; <a class="el" href="#ab20ca57d57ff4a47c60f50ef5a1265e4">MonoidType</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>配列 v から遅延セグ木を構築する </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a3d2684a4b4fbc1995a2d1790eba427a3" name="a3d2684a4b4fbc1995a2d1790eba427a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d2684a4b4fbc1995a2d1790eba427a3">&#9670;&#160;</a></span>apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid, typename Operator, auto mapping&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; Monoid, Operator, mapping &gt;::apply </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>l</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a85ccbd9400631857c24066af7f230c18">OperatorType</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>区間 [l, r) に x を作用させる </p>
+
+</div>
+</div>
+<a id="a96ee12dc05c4296b4176ea1a91564558" name="a96ee12dc05c4296b4176ea1a91564558"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96ee12dc05c4296b4176ea1a91564558">&#9670;&#160;</a></span>find_left()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid, typename Operator, auto mapping&gt; </div>
+<div class="memtemplate">
+template&lt;typename F&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; Monoid, Operator, mapping &gt;::find_left </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F</td>          <td class="paramname"><span class="paramname"><em>f</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>区間 [x, r) のモノイド積が f を満たすような最小の x&lt;=r を返す </p>
+<dl class="section attention"><dt>注意</dt><dd><code>f(Monoid::id())=true</code> が成り立つ必要がある </dd></dl>
+<dl class="section note"><dt>覚え書き</dt><dd>O(log(N)) </dd></dl>
+
+</div>
+</div>
+<a id="abf01c743ea6b8648ab8fbb5590de0065" name="abf01c743ea6b8648ab8fbb5590de0065"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf01c743ea6b8648ab8fbb5590de0065">&#9670;&#160;</a></span>find_right()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid, typename Operator, auto mapping&gt; </div>
+<div class="memtemplate">
+template&lt;typename F&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; Monoid, Operator, mapping &gt;::find_right </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>l</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F</td>          <td class="paramname"><span class="paramname"><em>f</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>区間 [l, x) のモノイド積が f を満たすような最大の x &gt;= l を返す </p>
+<dl class="section attention"><dt>注意</dt><dd><code>f(Monoid::id())=true</code> が成り立つ必要がある </dd></dl>
+<dl class="section note"><dt>覚え書き</dt><dd>O(log(N)) </dd></dl>
+
+</div>
+</div>
+<a id="a7f424f5acb8639d9ec9f5b42005dd567" name="a7f424f5acb8639d9ec9f5b42005dd567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f424f5acb8639d9ec9f5b42005dd567">&#9670;&#160;</a></span>fold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid, typename Operator, auto mapping&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ab20ca57d57ff4a47c60f50ef5a1265e4">MonoidType</a> <a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; Monoid, Operator, mapping &gt;::fold </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>l</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>r</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>区間 [l, r) のモノイド積を返す </p>
+
+</div>
+</div>
+<a id="abc1293d5bcbb6b175fc749044e0c2c52" name="abc1293d5bcbb6b175fc749044e0c2c52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc1293d5bcbb6b175fc749044e0c2c52">&#9670;&#160;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid, typename Operator, auto mapping&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ab20ca57d57ff4a47c60f50ef5a1265e4">MonoidType</a> <a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; Monoid, Operator, mapping &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad0b49b3ff4b8c6b57c733449ffdf5b85" name="ad0b49b3ff4b8c6b57c733449ffdf5b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0b49b3ff4b8c6b57c733449ffdf5b85">&#9670;&#160;</a></span>set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid, typename Operator, auto mapping&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; Monoid, Operator, mapping &gt;::set </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ab20ca57d57ff4a47c60f50ef5a1265e4">MonoidType</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>i 番目の要素を x に更新する </p>
+
+</div>
+</div>
+<a id="ad04a20cae43ac18270ee7b1b509c51f9" name="ad04a20cae43ac18270ee7b1b509c51f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad04a20cae43ac18270ee7b1b509c51f9">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid, typename Operator, auto mapping&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; Monoid, Operator, mapping &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>data_structure/<a class="el" href="segtree__lazy_8hpp_source.html">segtree_lazy.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

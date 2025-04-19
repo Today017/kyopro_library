@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: others/abel.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_9510827d0b234b3cc54b29892f217477.html">others</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">abel.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="abel_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespace_abel.html">    6</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_abel.html">Abel</a>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_abel_1_1_sum.html">    9</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_abel_1_1_sum.html">Sum</a>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_abel_1_1_sum.html#a4ed8ba11a72b72fdf8f0f269fcd0970b">   10</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="struct_abel_1_1_sum.html#a4ed8ba11a72b72fdf8f0f269fcd0970b">Type</a>=T;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_abel_1_1_sum.html#a3adf3ea50f0f359934a70b29bb7bb308">   11</a></span>        <span class="keyword">static</span> <a class="code hl_typedef" href="struct_abel_1_1_sum.html#a4ed8ba11a72b72fdf8f0f269fcd0970b">Type</a> <a class="code hl_function" href="struct_abel_1_1_sum.html#a3adf3ea50f0f359934a70b29bb7bb308">id</a>(){<span class="keywordflow">return</span> T(0);}</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_abel_1_1_sum.html#a4d621d28d591f425dd4b77e366cc6832">   12</a></span>        <span class="keyword">static</span> <a class="code hl_typedef" href="struct_abel_1_1_sum.html#a4ed8ba11a72b72fdf8f0f269fcd0970b">Type</a> <a class="code hl_function" href="struct_abel_1_1_sum.html#a4d621d28d591f425dd4b77e366cc6832">op</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="struct_abel_1_1_sum.html#a4ed8ba11a72b72fdf8f0f269fcd0970b">Type</a>&amp;a,<span class="keyword">const</span> <a class="code hl_typedef" href="struct_abel_1_1_sum.html#a4ed8ba11a72b72fdf8f0f269fcd0970b">Type</a>&amp;b){<span class="keywordflow">return</span> a+b;}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_abel_1_1_sum.html#af923d298d1515593755bf20697cc0252">   13</a></span>        <span class="keyword">static</span> <a class="code hl_typedef" href="struct_abel_1_1_sum.html#a4ed8ba11a72b72fdf8f0f269fcd0970b">Type</a> <a class="code hl_function" href="struct_abel_1_1_sum.html#af923d298d1515593755bf20697cc0252">inv</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="struct_abel_1_1_sum.html#a4ed8ba11a72b72fdf8f0f269fcd0970b">Type</a>&amp;x){<span class="keywordflow">return</span> -x;}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    };</div>
+</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_abel_1_1_xor.html">   18</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_abel_1_1_xor.html">Xor</a>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_abel_1_1_xor.html#a06e18c99932d5d4bf2442f05d5a5688e">   19</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="struct_abel_1_1_xor.html#a06e18c99932d5d4bf2442f05d5a5688e">Type</a>=T;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_abel_1_1_xor.html#ab5e6fe608d99cbb7fbefb8f413ba9509">   20</a></span>        <span class="keyword">static</span> <a class="code hl_typedef" href="struct_abel_1_1_xor.html#a06e18c99932d5d4bf2442f05d5a5688e">Type</a> <a class="code hl_function" href="struct_abel_1_1_xor.html#ab5e6fe608d99cbb7fbefb8f413ba9509">id</a>(){<span class="keywordflow">return</span> T(0);}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_abel_1_1_xor.html#a1b96ec871eac5d18d549f42605501d63">   21</a></span>        <span class="keyword">static</span> <a class="code hl_typedef" href="struct_abel_1_1_xor.html#a06e18c99932d5d4bf2442f05d5a5688e">Type</a> <a class="code hl_function" href="struct_abel_1_1_xor.html#a1b96ec871eac5d18d549f42605501d63">op</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="struct_abel_1_1_xor.html#a06e18c99932d5d4bf2442f05d5a5688e">Type</a>&amp;a,<span class="keyword">const</span> <a class="code hl_typedef" href="struct_abel_1_1_xor.html#a06e18c99932d5d4bf2442f05d5a5688e">Type</a>&amp;b){<span class="keywordflow">return</span> a^b;}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_abel_1_1_xor.html#a139adead748ebb2dd62ca58569ce355f">   22</a></span>        <span class="keyword">static</span> <a class="code hl_typedef" href="struct_abel_1_1_xor.html#a06e18c99932d5d4bf2442f05d5a5688e">Type</a> <a class="code hl_function" href="struct_abel_1_1_xor.html#a139adead748ebb2dd62ca58569ce355f">inv</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="struct_abel_1_1_xor.html#a06e18c99932d5d4bf2442f05d5a5688e">Type</a>&amp;x){<span class="keywordflow">return</span> x;}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    };</div>
+</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+</div>
+<div class="ttc" id="anamespace_abel_html"><div class="ttname"><a href="namespace_abel.html">Abel</a></div><div class="ttdef"><b>Definition</b> abel.hpp:6</div></div>
+<div class="ttc" id="astruct_abel_1_1_sum_html"><div class="ttname"><a href="struct_abel_1_1_sum.html">Abel::Sum</a></div><div class="ttdoc">和</div><div class="ttdef"><b>Definition</b> abel.hpp:9</div></div>
+<div class="ttc" id="astruct_abel_1_1_sum_html_a3adf3ea50f0f359934a70b29bb7bb308"><div class="ttname"><a href="struct_abel_1_1_sum.html#a3adf3ea50f0f359934a70b29bb7bb308">Abel::Sum::id</a></div><div class="ttdeci">static Type id()</div><div class="ttdef"><b>Definition</b> abel.hpp:11</div></div>
+<div class="ttc" id="astruct_abel_1_1_sum_html_a4d621d28d591f425dd4b77e366cc6832"><div class="ttname"><a href="struct_abel_1_1_sum.html#a4d621d28d591f425dd4b77e366cc6832">Abel::Sum::op</a></div><div class="ttdeci">static Type op(const Type &amp;a, const Type &amp;b)</div><div class="ttdef"><b>Definition</b> abel.hpp:12</div></div>
+<div class="ttc" id="astruct_abel_1_1_sum_html_a4ed8ba11a72b72fdf8f0f269fcd0970b"><div class="ttname"><a href="struct_abel_1_1_sum.html#a4ed8ba11a72b72fdf8f0f269fcd0970b">Abel::Sum::Type</a></div><div class="ttdeci">T Type</div><div class="ttdef"><b>Definition</b> abel.hpp:10</div></div>
+<div class="ttc" id="astruct_abel_1_1_sum_html_af923d298d1515593755bf20697cc0252"><div class="ttname"><a href="struct_abel_1_1_sum.html#af923d298d1515593755bf20697cc0252">Abel::Sum::inv</a></div><div class="ttdeci">static Type inv(const Type &amp;x)</div><div class="ttdef"><b>Definition</b> abel.hpp:13</div></div>
+<div class="ttc" id="astruct_abel_1_1_xor_html"><div class="ttname"><a href="struct_abel_1_1_xor.html">Abel::Xor</a></div><div class="ttdoc">XOR</div><div class="ttdef"><b>Definition</b> abel.hpp:18</div></div>
+<div class="ttc" id="astruct_abel_1_1_xor_html_a06e18c99932d5d4bf2442f05d5a5688e"><div class="ttname"><a href="struct_abel_1_1_xor.html#a06e18c99932d5d4bf2442f05d5a5688e">Abel::Xor::Type</a></div><div class="ttdeci">T Type</div><div class="ttdef"><b>Definition</b> abel.hpp:19</div></div>
+<div class="ttc" id="astruct_abel_1_1_xor_html_a139adead748ebb2dd62ca58569ce355f"><div class="ttname"><a href="struct_abel_1_1_xor.html#a139adead748ebb2dd62ca58569ce355f">Abel::Xor::inv</a></div><div class="ttdeci">static Type inv(const Type &amp;x)</div><div class="ttdef"><b>Definition</b> abel.hpp:22</div></div>
+<div class="ttc" id="astruct_abel_1_1_xor_html_a1b96ec871eac5d18d549f42605501d63"><div class="ttname"><a href="struct_abel_1_1_xor.html#a1b96ec871eac5d18d549f42605501d63">Abel::Xor::op</a></div><div class="ttdeci">static Type op(const Type &amp;a, const Type &amp;b)</div><div class="ttdef"><b>Definition</b> abel.hpp:21</div></div>
+<div class="ttc" id="astruct_abel_1_1_xor_html_ab5e6fe608d99cbb7fbefb8f413ba9509"><div class="ttname"><a href="struct_abel_1_1_xor.html#ab5e6fe608d99cbb7fbefb8f413ba9509">Abel::Xor::id</a></div><div class="ttdeci">static Type id()</div><div class="ttdef"><b>Definition</b> abel.hpp:20</div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

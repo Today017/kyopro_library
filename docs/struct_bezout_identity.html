@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: BezoutIdentity 構造体</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="struct_bezout_identity-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">BezoutIdentity 構造体</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>一次不定方程式 ax+by=c を解く verify: <a href="https://atcoder.jp/contests/abc340/submissions/62495050">https://atcoder.jp/contests/abc340/submissions/62495050</a>  
+ <a href="#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="bezout__identity_8hpp_source.html">bezout_identity.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ae6269715a6bae60bc5ce0b4bfae2618e" id="r_ae6269715a6bae60bc5ce0b4bfae2618e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6269715a6bae60bc5ce0b4bfae2618e">BezoutIdentity</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> c)</td></tr>
+<tr class="memdesc:ae6269715a6bae60bc5ce0b4bfae2618e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ax+by=c  <br /></td></tr>
+<tr class="separator:ae6269715a6bae60bc5ce0b4bfae2618e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cf086366016d944941e8100fec64191" id="r_a2cf086366016d944941e8100fec64191"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cf086366016d944941e8100fec64191">build</a> ()</td></tr>
+<tr class="memdesc:a2cf086366016d944941e8100fec64191"><td class="mdescLeft">&#160;</td><td class="mdescRight">解が存在するか否かを返す  <br /></td></tr>
+<tr class="separator:a2cf086366016d944941e8100fec64191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca29bd9549c45e4419bda0b842f02c6" id="r_a2ca29bd9549c45e4419bda0b842f02c6"><td class="memItemLeft" align="right" valign="top">pair&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ca29bd9549c45e4419bda0b842f02c6">general_solution</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> t=0)</td></tr>
+<tr class="memdesc:a2ca29bd9549c45e4419bda0b842f02c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">一般解を返す  <br /></td></tr>
+<tr class="separator:a2ca29bd9549c45e4419bda0b842f02c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>一次不定方程式 ax+by=c を解く verify: <a href="https://atcoder.jp/contests/abc340/submissions/62495050">https://atcoder.jp/contests/abc340/submissions/62495050</a> </p>
+<p>g=gcd(a,b) とする。extGCD(a,b) によって、ax'+by'=g を解く。 両辺を c/g 倍し x=x'<em>(c/g),y=y'</em>(c/g) とすると、ax+by=c を満たす。c が g で割り切れない場合、解は存在しない。 ax+by=c の両辺を g で割ると、(a/g)*x + (b/g)*y = c/g となる。方程式の一般解を X,Y とおくと、(a/g)*(X-x) + (b/g)*(Y-y) = 0 を満たす。 a/g と b/g は互いに素なので X-x は b/g の倍数であり、X=(b/g)*t+x となる。 これを再代入すると、Y=-(a/g)*t+y を得る。 </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="ae6269715a6bae60bc5ce0b4bfae2618e" name="ae6269715a6bae60bc5ce0b4bfae2618e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6269715a6bae60bc5ce0b4bfae2618e">&#9670;&#160;</a></span>BezoutIdentity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BezoutIdentity::BezoutIdentity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ax+by=c </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a2cf086366016d944941e8100fec64191" name="a2cf086366016d944941e8100fec64191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cf086366016d944941e8100fec64191">&#9670;&#160;</a></span>build()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BezoutIdentity::build </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>解が存在するか否かを返す </p>
+
+</div>
+</div>
+<a id="a2ca29bd9549c45e4419bda0b842f02c6" name="a2ca29bd9549c45e4419bda0b842f02c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca29bd9549c45e4419bda0b842f02c6">&#9670;&#160;</a></span>general_solution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pair&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; BezoutIdentity::general_solution </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>t</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>一般解を返す </p>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>math/<a class="el" href="bezout__identity_8hpp_source.html">bezout_identity.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>
