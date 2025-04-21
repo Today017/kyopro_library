@@ -14,7 +14,8 @@ cd kyopro_library
 git checkout env
 cd ..
 
-cp -r ./folder/hoge/* .
+cp ./kyopro_library/kyopro_tools/scripts/* .
+cp -r ./kyopro_library/kyopro_tools/settings/* .
 
 chmod +x test
 chmod +x cmp
