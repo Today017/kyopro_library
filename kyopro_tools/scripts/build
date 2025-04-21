@@ -10,7 +10,9 @@
 # chmod +x build
 
 git clone https://github.com/Today017/kyopro_library.git
+cd kyopro_library
 git checkout env
+cd ..
 
 cp -r ./folder/hoge/* .
 
