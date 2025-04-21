@@ -8,15 +8,11 @@ struct MergeSortTree{
     /// @brief 配列 v からマージソート木を構築する
     MergeSortTree(const vector<T>& v){
         n=v.size();
-        mx=*max_element(v.begin(),v.end()),mn=*min_element(v.begin(),v.end());
+        mx=*max_element(ALL(v)),mn=*min_element(ALL(v));
         dat=vector<vector<T>>(n<<1);
         REP(i,n) dat[n+i]={v[i]};
         for(int i=n-1; i>0; i--){
-            merge(
-                dat[i<<1].begin(),dat[i<<1].end(),
-                dat[i<<1|1].begin(),dat[i<<1|1].end(),
-                back_inserter(dat[i])
-            );
+            merge(ALL(dat[i<<1]),ALL(dat[i<<1|1]),back_inserter(dat[i]));
         }
     }
 

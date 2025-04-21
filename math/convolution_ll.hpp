@@ -25,9 +25,9 @@ ll Garner(VL a, VL m, ll mod=INFL+3){
 /// @brief `USE=3` 最終的な配列の値が `X < 2^86`
 template<int USE>
 VL ConvolveInt64(VL a, VL b, ll mod=INFL+3){
-    constexpr const ll MOD1=1224736769,P1=3;
-    constexpr const ll MOD2=469762049,P2=3;
-    constexpr const ll MOD3=167772161,P3=3;
+    constexpr const ll MOD1=1224736769, P1=3;
+    constexpr const ll MOD2=469762049, P2=3;
+    constexpr const ll MOD3=167772161, P3=3;
     static NTT<MOD1,P1> ntt1;
     static NTT<MOD2,P2> ntt2;
     static NTT<MOD3,P3> ntt3;

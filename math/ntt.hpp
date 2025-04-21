@@ -47,7 +47,7 @@ public:
         while(n+1<a.size()+b.size()) n<<=1;
         tmp=VL(n); 
 
-        VL fa(n),fb(n);
+        VL fa(n), fb(n);
         REP(i,a.size()) fa[i]=a[i]; REP(i,b.size()) fb[i]=b[i];
         ntt(fa); ntt(fb);
         REP(i,n) (fa[i]*=fb[i])%=MOD;
