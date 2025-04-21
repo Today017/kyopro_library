@@ -3,10 +3,10 @@
 # 関数: 指定されたファイルを圧縮
 compress_cpp() {
     local cpp_file=$1
-	touch compress.cpp
+    touch compress.cpp
     python3 ./kyopro_library/kyopro_tools/compress.py < "$cpp_file" > compress.cpp
-	cp compress.cpp "$cpp_file"
-	rm compress.cpp
+    cp compress.cpp "$cpp_file"
+    rm compress.cpp
 }
 
 # メインロジック
@@ -29,4 +29,3 @@ case $1 in
 esac
 
 compress_cpp "$cpp_file"
-

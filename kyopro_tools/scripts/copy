@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# 関数: 指定されたファイルを連番付きでコピー
 copy_cpp() {
     local cpp_file=$1
     python3 ./kyopro_library/kyopro_tools/exp.py $cpp_file
-    clang-format combined.cpp | clip.exe
-    
+
+    if [ $2 == "true" ]; then
+        python3 ./atcoder/ac-library/expander.py combined.cpp
+    fi
+
     # ベース名と拡張子を分ける
     local basename="${cpp_file%.*}"
     local extension="${cpp_file##*.}"
@@ -16,28 +18,6 @@ copy_cpp() {
     
     # 新しいファイル名を作成
     local new_filename="$basename$(printf "%02d" "$counter").$extension"
-    
-    # ファイルをコピー
-    cp "$cpp_file" "esc/$new_filename"
-    echo "Copied $cpp_file to esc/$new_filename"
-}
-
-copy_acl() {
-    local cpp_file=$1
-    python3 ./kyopro_library/kyopro_tools/exp.py $cpp_file
-    python3 ./atcoder/ac-library/expander.py combined.cpp
-    clang-format --style=file:./kyopro_library/kyopro_tools/.clang-format combined.cpp | clip.exe
-    
-    # ベース名と拡張子を分ける
-    local basename="${cpp_file%.*}"
-    local extension="${cpp_file##*.}"
-    
-    # 同名ファイルのカウントを取得し、新しい連番を作成
-    local counter=$(ls esc/"$basename"-*.$extension 2>/dev/null | wc -l)
-    counter=$((counter + 1))
-    
-    # 新しいファイル名を作成
-    local new_filename="$basename-$(printf "%02d" "$counter").$extension"
     
     # ファイルをコピー
     cp "$cpp_file" "esc/$new_filename"
@@ -62,11 +42,14 @@ case $1 in
     h) cpp_file="h.cpp" ;;
     *) cpp_file=$1 ;;  # 任意のC++ファイルに対応
 esac
+shift
 
-# tオプションが指定された場合はcopy_acl()を呼び出し、それ以外はcopy_cpp()を呼び出す
-if [ "$2" == "t" ]; then
-    copy_acl "$cpp_file"
-else
-    copy_cpp "$cpp_file"
-fi
+acl_flag="false"
 
+while getopts "t" opt; do
+    case "$opt" in
+        t) acl_flag="true" ;;
+    esac
+done
+
+copy_cpp $cpp_file $acl_flag

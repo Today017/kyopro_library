@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # 環境側でやること
 # 1. GCCのインストール
 #   - C++20が使える
@@ -8,30 +10,19 @@
 # chmod +x build
 
 git clone https://github.com/Today017/kyopro_library.git
+git checkout env
 
-touch test
-cp kyopro_library/kyopro_tools/mac/test test
+cp -r ./folder/hoge/* .
+
 chmod +x test
-
-touch run
-cp kyopro_library/kyopro_tools/mac/run run
-chmod +x run
-
-touch copy
-cp kyopro_library/kyopro_tools/mac/copy copy
+chmod +x cmp
 chmod +x copy
-
-touch contest
-cp kyopro_library/kyopro_tools/mac/contest contest
 chmod +x contest
+chmod +x test
 
 mkdir random_test
 touch random_test/generate.cpp
 touch random_test/naive.cpp
-
-touch compress
-cp kyopro_library/kyopro_tools/mac/compress compress
-chmod +x compress
 
 mkdir esc
 
