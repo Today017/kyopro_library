@@ -1,0 +1,28 @@
+#!/bin/bash
+
+git clone https://github.com/Today017/kyopro_library.git
+
+# ↓はenvをmainにマージしたら消す
+# cd kyopro_library
+# git checkout env
+# cd ..
+
+cp ./kyopro_library/kyopro_tools/scripts/* .
+cp ./kyopro_library/kyopro_tools/settings/* .
+cp -r ./kyopro_library/kyopro_tools/settings/* .
+
+chmod +x test
+chmod +x cmp
+chmod +x copy
+chmod +x contest
+chmod +x test
+
+mkdir random_test
+touch random_test/generate.cpp
+touch random_test/naive.cpp
+
+mkdir esc
+
+git clone https://github.com/Today017/ac-library.git
+cp -r ac-library/atcoder .
+mv ac-library atcoder/

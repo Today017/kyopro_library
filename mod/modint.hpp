@@ -9,32 +9,32 @@ struct ModInt{
 
     ModInt operator-() const { return ModInt(-value); }
     ModInt operator+() const { return ModInt(*this); }
-    Modint& operator+=(const Modint& other){
+    ModInt& operator+=(const ModInt& other){
         value+=other.value;
         if(value>=MOD) value-=MOD;
         return*this;
     }
-    Modint& operator-=(const Modint& other){
+    ModInt& operator-=(const ModInt& other){
         value+=MOD-other.value;
         if(value>=MOD) value-=MOD;
         return*this;
     }
-    Modint& operator*=(const ModInt other){
+    ModInt& operator*=(const ModInt other){
         value=value*other.value%MOD;
         return*this;
     }
-    Modint& operator/=(ModInt other){
+    ModInt& operator/=(ModInt other){
         (*this)*=other.inv();
         return*this;
     }
-    ModInt operator+(const Modint& other) const { return ModInt(*this)+=other; }
-    ModInt operator-(const Modint& other) const { return ModInt(*this)-=other; }
-    ModInt operator*(const Modint& other) const { return ModInt(*this)*=other; }
-    ModInt operator/(const Modint& other) const { return ModInt(*this)/=other; }
-    bool operator==(const Modint& other) const { return value==other.value; }
-    bool operator!=(const Modint& other) const { return value!=other.value; }
-    friend ostream& operator<<(ostream& os, const Modint& x){ return os<<x.value; }
-    friend istream& operator>>(istream& is, Modint& x){
+    ModInt operator+(const ModInt& other) const { return ModInt(*this)+=other; }
+    ModInt operator-(const ModInt& other) const { return ModInt(*this)-=other; }
+    ModInt operator*(const ModInt& other) const { return ModInt(*this)*=other; }
+    ModInt operator/(const ModInt& other) const { return ModInt(*this)/=other; }
+    bool operator==(const ModInt& other) const { return value==other.value; }
+    bool operator!=(const ModInt& other) const { return value!=other.value; }
+    friend ostream& operator<<(ostream& os, const ModInt& x){ return os<<x.value; }
+    friend istream& operator>>(istream& is, ModInt& x){
         ll v;
         is>>v;
         x=ModInt<MOD>(v);

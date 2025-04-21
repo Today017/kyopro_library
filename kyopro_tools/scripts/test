@@ -1,0 +1,121 @@
+#!/bin/bash
+
+if [ $# -lt 3 ]; then
+    echo "Usage: $0 <solution_file.cpp> [generate.cpp] [naive.cpp] [testcase_count]"
+    exit 1
+fi
+
+# コマンド省略用のファイルマッピング
+case $1 in
+    a) SOLUTION_FILE="a.cpp" ;;
+    b) SOLUTION_FILE="b.cpp" ;;
+    c) SOLUTION_FILE="c.cpp" ;;
+    d) SOLUTION_FILE="d.cpp" ;;
+    e) SOLUTION_FILE="e.cpp" ;;
+    f) SOLUTION_FILE="f.cpp" ;;
+    g) SOLUTION_FILE="g.cpp" ;;
+    h) SOLUTION_FILE="h.cpp" ;;
+    *) SOLUTION_FILE=$1 ;;  # 任意のC++ファイルに対応
+esac
+
+case $2 in
+    a) GENERATE_FILE="a.cpp" ;;
+    b) GENERATE_FILE="b.cpp" ;;
+    c) GENERATE_FILE="c.cpp" ;;
+    d) GENERATE_FILE="d.cpp" ;;
+    e) GENERATE_FILE="e.cpp" ;;
+    f) GENERATE_FILE="f.cpp" ;;
+    g) GENERATE_FILE="g.cpp" ;;
+    h) GENERATE_FILE="h.cpp" ;;
+    *) GENERATE_FILE=$2 ;;  # 任意のC++ファイルに対応
+esac
+
+case $3 in
+    a) NAIVE_FILE="a.cpp" ;;
+    b) NAIVE_FILE="b.cpp" ;;
+    c) NAIVE_FILE="c.cpp" ;;
+    d) NAIVE_FILE="d.cpp" ;;
+    e) NAIVE_FILE="e.cpp" ;;
+    f) NAIVE_FILE="f.cpp" ;;
+    g) NAIVE_FILE="g.cpp" ;;
+    h) NAIVE_FILE="h.cpp" ;;
+    *) NAIVE_FILE=$3 ;;  # 任意のC++ファイルに対応
+esac
+
+L=100
+# 第4引数が指定されている場合はテストケース数を設定
+if [ $# -ge 4 ]; then
+    L=$4
+fi
+
+T=$L
+
+
+
+
+# コンパイル 
+if [ $L -gt 0 ]; then
+    rm ./random_test/*.txt
+    g++ "$GENERATE_FILE" -o ./random_test/generate_testcase -std=c++20 -O2 -I.
+    if [ $? -ne 0 ]; then
+        echo -e "\033[31mCompilation failed ($GENERATE_FILE)\033[0m"
+        exit 1
+    fi
+    g++ "$NAIVE_FILE" -o ./random_test/naive -std=c++20 -O2 -I.
+    if [ $? -ne 0 ]; then
+        echo -e "\033[31mCompilation failed ($NAIVE_FILE)\033[0m"
+        exit 1
+    fi
+fi
+
+g++ "$SOLUTION_FILE" -o ./random_test/solution -std=c++20 -O2 -I.
+if [ $? -ne 0 ]; then
+    echo -e "\033[31mCompilation failed ($SOLUTION_FILE)\033[0m"
+    exit 1
+fi
+
+echo -e "\033[32mCompilation succeeded.\033[0m"
+
+if [ $L -gt 0 ]; then
+    # テストケースの生成
+    for i in $(seq 0 $((T-1))); do
+        ./random_test/generate_testcase > "./random_test/input${i}.txt"
+    done
+    echo -e "\033[32mGenerated testcases!\033[0m"
+
+    # ナイーブ解法の出力生成
+    for i in $(seq 0 $((T-1))); do
+        echo -ne "Generating naive outputs... $(($i+1))/$L\r"
+        ./random_test/naive < "./random_test/input${i}.txt" > "./random_test/output${i}.txt"
+    done
+    echo -e "\033[32mGenerated naive outputs!\033[0m"
+fi
+
+# 解答コードの出力生成
+for i in $(seq 0 $((T-1))); do
+    echo -ne "Generating solve outputs... $(($i+1))/$L\r"
+    ./random_test/solution < "./random_test/input${i}.txt" > "./random_test/solve${i}.txt"
+done
+echo -e "\033[32mGenerated solve outputs!\033[0m"
+
+# 結果の比較
+OK=0
+for i in $(seq 0 $((T-1))); do
+    if ! diff "./random_test/solve${i}.txt" "./random_test/output${i}.txt" > /dev/null; then
+        echo -e "\033[31mTestcase $i Failed!\033[0m"
+        cat "./random_test/input${i}.txt"
+        echo -e "\033[32mCorrect Output:\033[0m"
+        cat "./random_test/output${i}.txt"
+        echo -e "\033[31mYour Output:\033[0m"
+        cat "./random_test/solve${i}.txt"
+        echo "----------------------------------------"
+    else
+        OK=$((OK+1))
+    fi
+done
+
+if [ $OK -eq $T ]; then
+    echo -e "\033[32mAll testcases passed!\033[0m"
+else
+    echo -e "\033[31m$((L-OK))/$L testcases failed!\033[0m"
+fi
