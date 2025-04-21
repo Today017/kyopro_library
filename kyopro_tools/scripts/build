@@ -1,20 +1,14 @@
 #!/bin/bash
 
-# 環境側でやること
-# 1. GCCのインストール
-#   - C++20が使える
-#   - #include <bits/stdc++.h> が使える
-# 2. Python3のインストール
-# 3. ~/.vimrc を設定する
-
-# chmod +x build
-
 git clone https://github.com/Today017/kyopro_library.git
-cd kyopro_library
-git checkout env
-cd ..
+
+# ↓はenvをmainにマージしたら消す
+# cd kyopro_library
+# git checkout env
+# cd ..
 
 cp ./kyopro_library/kyopro_tools/scripts/* .
+cp ./kyopro_library/kyopro_tools/settings/* .
 cp -r ./kyopro_library/kyopro_tools/settings/* .
 
 chmod +x test

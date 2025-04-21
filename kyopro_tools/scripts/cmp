@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# カラーテキスト用のANSIエスケープコード
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # 色をリセットするコード
+
+# C++ファイルをコンパイルして実行する関数
+compile_cpp() {
+    local cpp_file=$1
+    g++ $cpp_file -std=c++20 -I. -O2 -D_GLIBCXX_DEBUG -Wall -Wextra -DTDY
+    if [ $? -ne 0 ]; then
+        echo -e "${RED}Compilation failed.${NC}"
+        exit 1
+    fi
+    echo -e "${GREEN}Compilation succeeded.${NC}"
+}
+
+# C++ファイルをLOCALフラグでコンパイルして実行する関数
+compile_cpp_local() {
+    local cpp_file=$1
+    g++ $cpp_file -std=c++20 -DLOCAL -I. -O2 -D_GLIBCXX_DEBUG -Wall -Wextra -DTDY
+    if [ $? -ne 0 ];then
+        echo -e "${RED}Compilation failed.${NC}"
+        exit 1
+    fi
+    echo -e "${GREEN}Compilation succeeded.${NC}"
+}
+
+# メインロジック
+if [ -z "$1" ]; then
+    echo "Usage: $0 {a|b|c|d|e|f|g|h|<file.cpp>} [t]"
+    exit 1
+fi
+
+# コマンド省略用のファイルマッピング
+case $1 in
+    a) cpp_file="a.cpp" ;;
+    b) cpp_file="b.cpp" ;;
+    c) cpp_file="c.cpp" ;;
+    d) cpp_file="d.cpp" ;;
+    e) cpp_file="e.cpp" ;;
+    f) cpp_file="f.cpp" ;;
+    g) cpp_file="g.cpp" ;;
+    h) cpp_file="h.cpp" ;;
+    *) cpp_file=$1 ;;  # 任意のC++ファイルに対応
+esac
+
+# tオプションが指定された場合はcompile_cpp_local()を呼び出し、それ以外はcompile_cpp()を呼び出す
+if [ "$2" == "t" ]; then
+    compile_cpp_local "$cpp_file"
+else
+    compile_cpp "$cpp_file"
+fi
