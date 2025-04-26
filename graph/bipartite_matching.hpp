@@ -4,11 +4,11 @@
 /// @brief 二部グラフの最大マッチングを返す
 /// @note O(E*sqrt(V))
 /// @attention G は二部グラフであること
-vector<pair<int,int>> BipartiteMatching(const VVI& g){
+vector<pair<int,int>> BipartiteMatching(const VVI& g) {
     int n=g.size();
     MaxFlow mxf(n+2);
     int s=n,t=n+1;
-    REP(i,n){
+    REP(i,n) {
         for(int j:g[i]) mxf.add_edge(i,j,1);
         mxf.add_edge(s,i,1);
         mxf.add_edge(i,t,1);
@@ -18,7 +18,7 @@ vector<pair<int,int>> BipartiteMatching(const VVI& g){
 
     vector<pair<int,int>> ret;
     auto edges=mxf.get_edges();
-    for(auto& e:edges){
+    for(auto& e:edges) {
         if(e.from==s) continue;
         if(e.to==t) continue;
         if(e.flow==1) ret.push_back({e.from,e.to});
@@ -28,7 +28,7 @@ vector<pair<int,int>> BipartiteMatching(const VVI& g){
 }
 
 /// @brief 二部グラフのパラメータ
-struct BiInfo{
+struct BiInfo {
     int max_matching; ///< 最大マッチング
     int min_edge_cover; ///< 最小辺被覆
     int max_independent_set; ///< 最大独立集合
@@ -39,10 +39,10 @@ struct BiInfo{
 /// @brief 二部グラフのパラメータを求める
 /// @note O(E*sqrt(V))
 /// @attention G は二部グラフであること
-BiInfo GetBiInfo(const VVI& g){
+BiInfo GetBiInfo(const VVI& g) {
     int n=g.size();
     int isolation=0;
-    REP(i,n)if(g[i].size()==0) isolation++;
+    REP(i,n) if(g[i].size()==0) isolation++;
 
     BiInfo ret;
     int m=BipartiteMatching(g).size();
@@ -53,4 +53,3 @@ BiInfo GetBiInfo(const VVI& g){
 
     return ret;
 }
-

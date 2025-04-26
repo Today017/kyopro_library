@@ -1,27 +1,27 @@
 #include"../../kyopro_library/template.hpp"
 
 /// @brief ロールバック可能DSU
-struct DsuRollback{
+struct DsuRollback {
     DsuRollback()=default;
 
     /// @brief コンストラクタ
-    DsuRollback(int n){
+    DsuRollback(int n) {
         par=VI(n); iota(ALL(par),0);
         sz=VI(n,1);
         forest_count=n;
     }
 
     /// @brief 頂点 x を含む連結成分の代表元を返す
-    int find(int x){
+    int find(int x) {
         if(par[x]==x) return x;
         return find(par[x]);
     }
 
     /// @brief 頂点 x と y を連結し、true を返す
     /// @brief 既に連結されている場合は false を返す
-    bool merge(int x, int y){
+    bool merge(int x, int y) {
         x=find(x); y=find(y);
-        if(x==y){
+        if(x==y) {
             history.push_back({x,-1,-1,-1});
             return false;
         }
@@ -33,7 +33,7 @@ struct DsuRollback{
     }
 
     /// @brief 最後に行った連結操作を取り消す
-    void undo(){
+    void undo() {
         if(history.empty()) return;
         auto[x,y,szx,szy]=history.back();
         history.pop_back();
@@ -42,26 +42,26 @@ struct DsuRollback{
     }
 
     /// @brief DSUの状態を上書き保存する
-    void snapshot(){ history.clear(); }
+    void snapshot() { history.clear(); }
 
     /// @brief 最後に snapshot した時点まで巻き戻す
-    void rollback(){ while(!history.empty()) undo(); }
+    void rollback() { while(!history.empty()) undo(); }
 
     /// @brief 頂点 x を含む連結成分のサイズを返す
-    int size(int x){ return sz[find(x)]; }
+    int size(int x) { return sz[find(x)]; }
 
     /// @brief 頂点 x と y が同じ連結成分に属するか否かを返す
-    bool same(int x, int y){ return find(x)==find(y); }
+    bool same(int x, int y) { return find(x)==find(y); }
 
     /// @brief 連結成分の個数を返す
-    int count(){ return forest_count; }
+    int count() { return forest_count; }
 
     /// @brief 各頂点を連結成分に分解する
-    VVI groups(){
+    VVI groups() {
         int n=par.size();
         VVI ret(n);
         REP(i,n) ret[find(i)].push_back(i);
-        ret.erase(remove_if(ALL(ret),[&](const VI& v){ return v.empty(); }),ret.end());
+        ret.erase(remove_if(ALL(ret),[&](const VI& v) { return v.empty(); }),ret.end());
         return ret;
     }
 

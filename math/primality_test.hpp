@@ -5,7 +5,7 @@
 /// @note O(k log^3 n)
 /// @ref https://drken1215.hatenablog.com/entry/2023/05/23/233000
 /// @ref verify: https://judge.yosupo.jp/problem/primality_test
-bool PrimalityTest(ll n){
+bool PrimalityTest(ll n) {
     if(n==2) return true;
     if(n<=1||n%2==0) return false;
 
@@ -16,19 +16,19 @@ bool PrimalityTest(ll n){
     ll s=0,d=n-1;
     while(d%2==0) d>>=1,s++;
 
-    for(ll a:test){
+    for(ll a:test) {
         if(a>=n) break;
-        __int128_t x=ModPow<__int128_t>(a,d,n);
+        LL x=ModPow<LL>(a,d,n);
 
         if(x==1||x==n-1) continue;
-        else{
-            for(ll r=1; r<s; r++){
+        else {
+            for(ll r=1; r<s; r++) {
                 x=x*x%n;
                 if(x==1) return false;
                 else if(x==n-1) break;
             }
         }
-        if(x!=n-1)return false;
+        if(x!=n-1) return false;
     }
 
     return true;

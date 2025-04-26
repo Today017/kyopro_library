@@ -7,16 +7,16 @@
 /// @brief n の原始根を求める
 /// @ref https://37zigen.com/primitive-root/
 /// @ref verify: https://judge.yosupo.jp/problem/primitive_root
-ll PrimitiveRoot(ll n){
+ll PrimitiveRoot(ll n) {
     if(!PrimalityTest(n)) return -1;
     if(n==2) return 1;
 
     auto pf=PrimeFactorize(n-1);
-    while(true){
+    while(true) {
         ll i=Xor128(2,n);
         bool ok=true;
-        for(auto [p,_]:pf){
-            if(ModPow(i,(n-1)/p,n)==1){
+        for(auto [p,_]:pf) {
+            if(ModPow(i,(n-1)/p,n)==1) {
                 ok=false;
                 break;
             }

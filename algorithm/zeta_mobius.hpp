@@ -1,14 +1,14 @@
 #include"../../kyopro_library/template.hpp"
 
 /// @brief ゼータ変換・メビウス変換
-namespace ZetaMobius{
+namespace ZetaMobius {
     /// @brief 高速ゼータ変換（下位集合）
     /// @details v'[s] = Σ_{t⊆s} v[t] なる v' を返す
     /// @note |v| = 2^N として O(N 2^N)
     template<typename Monoid>
-    vector<typename Monoid::Type> SubsetZeta(vector<typename Monoid::Type> v){
+    vector<typename Monoid::Type> SubsetZeta(vector<typename Monoid::Type> v) {
         int n=__lg(v.size());
-        REP(i,n)REP(j,1<<n)if(j>>i&1) v[j]=Monoid::op(v[j],v[j^(1<<i)]);
+        REP(i,n) REP(j,1<<n)if(j>>i&1) v[j]=Monoid::op(v[j],v[j^(1<<i)]);
         return v;
     }
 
@@ -16,9 +16,9 @@ namespace ZetaMobius{
     /// @details v'[s] = Σ_{t⊇s} v[t] なる v' を返す
     /// @note |v| = 2^N として O(N 2^N)
     template<typename Monoid>
-    vector<typename Monoid::Type> SupersetZeta(vector<typename Monoid::Type> v){
+    vector<typename Monoid::Type> SupersetZeta(vector<typename Monoid::Type> v) {
         int n=__lg(v.size());
-        REP(i,n)REP(j,1<<n)if(~j>>i&1) v[j]=Monoid::op(v[j],v[j^(1<<i)]);
+        REP(i,n) REP(j,1<<n) if(~j>>i&1) v[j]=Monoid::op(v[j],v[j^(1<<i)]);
         return v;
     }
 
@@ -27,9 +27,9 @@ namespace ZetaMobius{
     /// @note 逆変換が必要なので、v は可換群の元である必要がある
     /// @note |v| = 2^N として O(N 2^N)
     template<typename Abel>
-    vector<typename Abel::Type> SubsetMobius(vector<typename Abel::Type> v){
+    vector<typename Abel::Type> SubsetMobius(vector<typename Abel::Type> v) {
         int n=__lg(v.size());
-        REP(i,n)REP(j,1<<n)if(j>>i&1) v[j]=Abel::op(v[j],Abel::inv(v[j^(1<<i)]));
+        REP(i,n) REP(j,1<<n) if(j>>i&1) v[j]=Abel::op(v[j],Abel::inv(v[j^(1<<i)]));
         return v;
     }
 
@@ -38,9 +38,9 @@ namespace ZetaMobius{
     /// @note 逆変換が必要なので、v は可換群の元である必要がある
     /// @note |v| = 2^N として O(N 2^N)
     template<typename Abel>
-    vector<typename Abel::Type> SupersetMobius(vector<typename Abel::Type> v){
+    vector<typename Abel::Type> SupersetMobius(vector<typename Abel::Type> v) {
         int n=__lg(v.size());
-        REP(i,n)REP(j,1<<n)if(~j>>i&1) v[j]=Abel::op(v[j],Abel::inv(v[j^(1<<i)]));
+        REP(i,n) REP(j,1<<n) if(~j>>i&1) v[j]=Abel::op(v[j],Abel::inv(v[j^(1<<i)]));
         return v;
     }
 }

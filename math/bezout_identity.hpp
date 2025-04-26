@@ -10,16 +10,16 @@
 *	a/g と b/g は互いに素なので X-x は b/g の倍数であり、X=(b/g)*t+x となる。
 *	これを再代入すると、Y=-(a/g)*t+y を得る。
 */
-struct BezoutIdentity{
+struct BezoutIdentity {
     /// @brief ax+by=c
-    BezoutIdentity(ll a, ll b, ll c){
+    BezoutIdentity(ll a, ll b, ll c) {
         this->a=a;
         this->b=b;
         this->c=c;
     }
 
     /// @brief 解が存在するか否かを返す
-    bool build(){
+    bool build() {
         auto [g,X,Y]=ExtGcd(abs(a),abs(b));
         if(c%g!=0) return false;
         this->g=g,this->X=X,this->Y=Y;
@@ -30,7 +30,7 @@ struct BezoutIdentity{
     }
 
     /// @brief 一般解を返す
-    pair<ll,ll>general_solution(ll t=0){
+    PL general_solution(ll t=0) {
         ll x=b/g*t+X,y=-a/g*t+Y;
         return {x,y};
     }

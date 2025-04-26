@@ -2,9 +2,9 @@
 #include"../../kyopro_library/others/xor128.hpp"
 #include"../../kyopro_library/others/modcal.hpp"
 
-struct Hash{
-    const int MX=1000000;
-    const int C=256;
+constexpr const int HASH_MAX=1000000;
+constexpr const int HASH_C=256;
+struct Hash {
 
     using Type=array<ll,5>;
     static VL base;
@@ -15,40 +15,38 @@ struct Hash{
 
     Type value;
 
-    void init(){
+    void init() {
         if(flag) return;
-        print_line;
         flag=true;
         base=VL(5); REP(i,5) base[i]=Xor128(3000,mod[i]);
         inv=VVL(5); pow=VVL(5);
-        REP(i,5){
-            pow[i]=VL(MX+1); inv[i]=VL(MX+1);
-            pow[i][0]=1; inv[i][MX]=ModInv(ModPow<ll>(base[i],MX,mod[i]),mod[i]);
-            REP(j,MX){
+        REP(i,5) {
+            pow[i]=VL(HASH_MAX+1); inv[i]=VL(HASH_MAX+1);
+            pow[i][0]=1; inv[i][HASH_MAX]=ModInv(ModPow<ll>(base[i],HASH_MAX,mod[i]),mod[i]);
+            REP(j,HASH_MAX) {
                 pow[i][j+1]=(pow[i][j]*base[i])%mod[i];
-                inv[i][MX-j-1]=(inv[i][MX-j]*base[i])%mod[i];
+                inv[i][HASH_MAX-j-1]=(inv[i][HASH_MAX-j]*base[i])%mod[i];
             }
         }
-        REP(i,C) REP(j,5) num[i][j]=Xor128(1,3000);
-        print_line;
+        REP(i,HASH_C) REP(j,5) num[i][j]=Xor128(1,3000);
     }
 
     Hash()=default;
-    Hash(const Hash& other){
+    Hash(const Hash& other) {
         if(!flag) init();
         value=other.value;
     }
-    Hash(char c){
+    Hash(char c) {
         if(!flag) init();
         value.fill(0);
         REP(i,5) value[i]=num[c][i];
     }
 
-    Hash& operator+=(const Hash& other){
+    Hash& operator+=(const Hash& other) {
         REP(i,5) value[i]=(value[i]+other.value[i])%mod[i];
         return *this;
     }
-    Hash& operator-=(const Hash& other){
+    Hash& operator-=(const Hash& other) {
         REP(i,5) value[i]=(value[i]-other.value[i]+mod[i])%mod[i];
         return *this;
     }
@@ -72,7 +70,7 @@ struct Hash{
         REP(i,5) if(value[i]!=other.value[i]) return false;
         return true;
     }
-    Hash& operator=(const Hash& other){
+    Hash& operator=(const Hash& other) {
         REP(i,5) value[i]=other.value[i];
         return *this;
     }
@@ -83,7 +81,7 @@ VVL Hash::inv;
 VVL Hash::pow;
 const VL Hash::mod={1000000007,1000000009,1000000021,1000000033,1000000087};
 bool Hash::flag=false;
-array<array<ll,5>,256> Hash::num={};
+array<array<ll,5>,HASH_C> Hash::num={};
 
 
 ///@brief Rolling Hash
@@ -92,14 +90,14 @@ struct RollingHash{
     vector<Hash> hash;
 
     /// @brief 文字列 s の Rolling Hash を構築する
-    RollingHash(const string& s){
+    RollingHash(const string& s) {
         int n=s.size();
         hash=vector<Hash>(n+1);
         REP(i,n) hash[i+1]=hash[i]+Hash(s[i]).shift(i);
     }
 
     /// @brief 区間 [l, r) のハッシュ値を取得する
-    Hash get(int l, int r){
+    Hash get(int l, int r) {
         Hash ret;
         ret=hash[r]-hash[l];
         ret=ret.shift(-l);

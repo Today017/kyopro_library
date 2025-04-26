@@ -9,17 +9,17 @@
 /// @param a 連立方程式 Ax=b の拡大係数行列
 /// @param where ピボットとなる変数を記録するための配列
 /// @return A のランク
-int RowReduction(vector<vector<bool>>& a, VI& where){
+int RowReduction(vector<vector<bool>>& a, VI& where) {
     int row=a.size(),col=a.front().size();
     int rank=0;
-    REP(c,col-1){
+    REP(c,col-1) {
         int pivot=rank;
         while(pivot<row&&!a[pivot][c]) pivot++;
         if(pivot==row) continue;
         swap(a[pivot],a[rank]);
         where.push_back(c);
-        REP(r,row){
-            if(r!=rank&&a[r][c]){
+        REP(r,row) {
+            if(r!=rank&&a[r][c]) {
                 //A[r]^=A[c]
                 REP(i,col) a[r][i]=a[r][i]^a[rank][i];
             }
@@ -34,7 +34,7 @@ int RowReduction(vector<vector<bool>>& a, VI& where){
 /// @param ker Ax=0 の解空間の基底
 /// @note 一般解は x0 と解空間の基底の任意の線形結合で表される
 /// @attention A のサイズによっては基底のサイズが巨大になるので注意すること
-bool LinearEquation(vector<vector<bool>> a, vector<bool> b, vector<bool>& x0, vector<vector<bool>>& ker){
+bool LinearEquation(vector<vector<bool>> a, vector<bool> b, vector<bool>& x0, vector<vector<bool>>& ker) {
     int row=a.size(),col=a.front().size();
     assert(b.size()==row);
     vector<vector<bool>> a2=a;
@@ -43,14 +43,14 @@ bool LinearEquation(vector<vector<bool>> a, vector<bool> b, vector<bool>& x0, ve
     VI where;
     int rank=RowReduction(a2,where);
 
-    for(int r=rank; r<row; r++)if(a2[r].back()) return false;
+    for(int r=rank; r<row; r++) if(a2[r].back()) return false;
 
     x0=vector<bool>(col,false);
     REP(i,rank) x0[where[i]]=a2[i].back();
 
     int r=0;
-    REP(c,col){
-        if(r<rank&&c==where[r]){
+    REP(c,col) {
+        if(r<rank&&c==where[r]) {
             r++;
             continue;
         }
