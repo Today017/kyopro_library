@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: DSU 構造体</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="struct_d_s_u-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">DSU 構造体</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Disjoint <a class="el" href="struct_set.html" title="std::set ラッパー">Set</a> Union  
+ <a href="#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="dsu_8hpp_source.html">dsu.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a2037e5dac19248a4e5f2f70133fdea12" id="r_a2037e5dac19248a4e5f2f70133fdea12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2037e5dac19248a4e5f2f70133fdea12">DSU</a> ()=default</td></tr>
+<tr class="separator:a2037e5dac19248a4e5f2f70133fdea12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbae2d8b88cba33b50386cbbf229685a" id="r_abbae2d8b88cba33b50386cbbf229685a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbae2d8b88cba33b50386cbbf229685a">DSU</a> (int n)</td></tr>
+<tr class="memdesc:abbae2d8b88cba33b50386cbbf229685a"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <br /></td></tr>
+<tr class="separator:abbae2d8b88cba33b50386cbbf229685a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70d8917e08a86dd49446ce8263f675a3" id="r_a70d8917e08a86dd49446ce8263f675a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70d8917e08a86dd49446ce8263f675a3">find</a> (int x)</td></tr>
+<tr class="memdesc:a70d8917e08a86dd49446ce8263f675a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 x を含む連結成分の代表元を返す  <br /></td></tr>
+<tr class="separator:a70d8917e08a86dd49446ce8263f675a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81af0a8861251cc70ae491c6249e672d" id="r_a81af0a8861251cc70ae491c6249e672d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81af0a8861251cc70ae491c6249e672d">merge</a> (int x, int y)</td></tr>
+<tr class="memdesc:a81af0a8861251cc70ae491c6249e672d"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 x と y を連結し、true を返す  <br /></td></tr>
+<tr class="separator:a81af0a8861251cc70ae491c6249e672d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae15ca5c12804826f13632d23443e36e8" id="r_ae15ca5c12804826f13632d23443e36e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae15ca5c12804826f13632d23443e36e8">size</a> (int x)</td></tr>
+<tr class="memdesc:ae15ca5c12804826f13632d23443e36e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 x を含む連結成分のサイズを返す  <br /></td></tr>
+<tr class="separator:ae15ca5c12804826f13632d23443e36e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3a04e676273604d56db0344795cd693" id="r_ad3a04e676273604d56db0344795cd693"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3a04e676273604d56db0344795cd693">same</a> (int x, int y)</td></tr>
+<tr class="memdesc:ad3a04e676273604d56db0344795cd693"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 x と y が同じ連結成分に属するか否かを返す  <br /></td></tr>
+<tr class="separator:ad3a04e676273604d56db0344795cd693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a042d4bb179819d69d53f2b96e23b099e" id="r_a042d4bb179819d69d53f2b96e23b099e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a042d4bb179819d69d53f2b96e23b099e">count</a> ()</td></tr>
+<tr class="memdesc:a042d4bb179819d69d53f2b96e23b099e"><td class="mdescLeft">&#160;</td><td class="mdescRight">連結成分の個数を返す  <br /></td></tr>
+<tr class="separator:a042d4bb179819d69d53f2b96e23b099e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c5c3d071acd50cbe58a86c38a6a3da7" id="r_a1c5c3d071acd50cbe58a86c38a6a3da7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c5c3d071acd50cbe58a86c38a6a3da7">groups</a> ()</td></tr>
+<tr class="memdesc:a1c5c3d071acd50cbe58a86c38a6a3da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">各頂点を連結成分に分解する  <br /></td></tr>
+<tr class="separator:a1c5c3d071acd50cbe58a86c38a6a3da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>Disjoint <a class="el" href="struct_set.html" title="std::set ラッパー">Set</a> Union </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a2037e5dac19248a4e5f2f70133fdea12" name="a2037e5dac19248a4e5f2f70133fdea12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2037e5dac19248a4e5f2f70133fdea12">&#9670;&#160;</a></span>DSU() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DSU::DSU </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abbae2d8b88cba33b50386cbbf229685a" name="abbae2d8b88cba33b50386cbbf229685a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbae2d8b88cba33b50386cbbf229685a">&#9670;&#160;</a></span>DSU() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DSU::DSU </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a042d4bb179819d69d53f2b96e23b099e" name="a042d4bb179819d69d53f2b96e23b099e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a042d4bb179819d69d53f2b96e23b099e">&#9670;&#160;</a></span>count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DSU::count </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>連結成分の個数を返す </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(1) </dd></dl>
+
+</div>
+</div>
+<a id="a70d8917e08a86dd49446ce8263f675a3" name="a70d8917e08a86dd49446ce8263f675a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70d8917e08a86dd49446ce8263f675a3">&#9670;&#160;</a></span>find()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DSU::find </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>頂点 x を含む連結成分の代表元を返す </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(α(N)) </dd></dl>
+
+</div>
+</div>
+<a id="a1c5c3d071acd50cbe58a86c38a6a3da7" name="a1c5c3d071acd50cbe58a86c38a6a3da7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c5c3d071acd50cbe58a86c38a6a3da7">&#9670;&#160;</a></span>groups()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a> DSU::groups </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>各頂点を連結成分に分解する </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(N) </dd></dl>
+
+</div>
+</div>
+<a id="a81af0a8861251cc70ae491c6249e672d" name="a81af0a8861251cc70ae491c6249e672d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81af0a8861251cc70ae491c6249e672d">&#9670;&#160;</a></span>merge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DSU::merge </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>頂点 x と y を連結し、true を返す </p>
+<p>既に連結されている場合は false を返す </p><dl class="section note"><dt>覚え書き</dt><dd>O(α(N)) </dd></dl>
+
+</div>
+</div>
+<a id="ad3a04e676273604d56db0344795cd693" name="ad3a04e676273604d56db0344795cd693"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3a04e676273604d56db0344795cd693">&#9670;&#160;</a></span>same()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DSU::same </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>頂点 x と y が同じ連結成分に属するか否かを返す </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(α(N)) </dd></dl>
+
+</div>
+</div>
+<a id="ae15ca5c12804826f13632d23443e36e8" name="ae15ca5c12804826f13632d23443e36e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae15ca5c12804826f13632d23443e36e8">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DSU::size </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>頂点 x を含む連結成分のサイズを返す </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(α(N)) </dd></dl>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>graph/<a class="el" href="dsu_8hpp_source.html">dsu.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: data_structure/tree.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b8d8e9e6d882cbdac7436f7026baf609.html">data_structure</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">tree.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="tree_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include&lt;ext/pb_ds/assoc_container.hpp&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include&lt;ext/pb_ds/tree_policy.hpp&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using namespace </span>__gnu_pbds;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html">    7</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_sorted_tree.html#ae25c608f82e11136a7100240756e7917">SortedTree</a>:tree&lt;T,null_type,less&lt;T&gt;,rb_tree_tag,tree_order_statistics_node_update&gt;{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">using </span>tree&lt;T,null_type,less&lt;T&gt;,rb_tree_tag,tree_order_statistics_node_update&gt;::tree;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#ad0ac9da95e030715e44bae8f0eae18b3">    9</a></span>    T <a class="code hl_variable" href="struct_sorted_tree.html#ad0ac9da95e030715e44bae8f0eae18b3">not_found</a>=-1;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#ae25c608f82e11136a7100240756e7917">   10</a></span>    <a class="code hl_function" href="struct_sorted_tree.html#ae25c608f82e11136a7100240756e7917">SortedTree</a>()=<span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#a693ab7137ad14e3e989246c0944680ec">   11</a></span>    <a class="code hl_function" href="struct_sorted_tree.html#a693ab7137ad14e3e989246c0944680ec">SortedTree</a>(T <a class="code hl_variable" href="struct_sorted_tree.html#ad0ac9da95e030715e44bae8f0eae18b3">not_found</a>=-1){this-&gt;not_found=<a class="code hl_variable" href="struct_sorted_tree.html#ad0ac9da95e030715e44bae8f0eae18b3">not_found</a>;}</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#aa83c587261288d7a4fa3a7dec02b88c4">   12</a></span>    T <a class="code hl_function" href="struct_sorted_tree.html#aa83c587261288d7a4fa3a7dec02b88c4">min</a>(){</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">if</span>(this-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_tree.html#ad0ac9da95e030715e44bae8f0eae18b3">not_found</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">return</span>*this-&gt;begin();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#a6a608768ca3556fdfbb31764b4e48a09">   16</a></span>    T <a class="code hl_function" href="struct_sorted_tree.html#a6a608768ca3556fdfbb31764b4e48a09">max</a>(){</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">if</span>(this-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_tree.html#ad0ac9da95e030715e44bae8f0eae18b3">not_found</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">return</span>*this-&gt;rbegin();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#a84629459ef11cd98378fd7b231c331a4">   20</a></span>    T <a class="code hl_function" href="struct_sorted_tree.html#a84629459ef11cd98378fd7b231c331a4">pop_min</a>(){</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">if</span>(this-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_tree.html#ad0ac9da95e030715e44bae8f0eae18b3">not_found</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        T ret=<a class="code hl_function" href="struct_sorted_tree.html#aa83c587261288d7a4fa3a7dec02b88c4">min</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        this-&gt;erase(ret);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#a01cb57e4a4d3ff57cdb82b3e59950d70">   26</a></span>    T <a class="code hl_function" href="struct_sorted_tree.html#a01cb57e4a4d3ff57cdb82b3e59950d70">pop_max</a>(){</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">if</span>(this-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_tree.html#ad0ac9da95e030715e44bae8f0eae18b3">not_found</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        T ret=<a class="code hl_function" href="struct_sorted_tree.html#a6a608768ca3556fdfbb31764b4e48a09">max</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        this-&gt;erase(ret);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#a22ba2a1a35c4fdc1cb315ebd5e4bc706">   32</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_sorted_tree.html#a22ba2a1a35c4fdc1cb315ebd5e4bc706">contains</a>(T x){<span class="keywordflow">return</span> this-&gt;find(x)!=this-&gt;end();}</div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#a539a29d1002e2a08e63710b14ad525ac">   33</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_sorted_tree.html#a539a29d1002e2a08e63710b14ad525ac">discard</a>(T x){</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">auto</span> itr=this-&gt;find(x);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">if</span>(itr==this-&gt;end())<span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        this-&gt;erase(itr);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#ae44e1431526826a9c500aa73b5d9487f">   39</a></span>    T <a class="code hl_function" href="struct_sorted_tree.html#ae44e1431526826a9c500aa73b5d9487f">gt</a>(T x){</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">auto</span> itr=this-&gt;upper_bound(x);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">if</span>(itr==this-&gt;end())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_tree.html#ad0ac9da95e030715e44bae8f0eae18b3">not_found</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">return</span>*itr;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#a38abcf6fa627dc1206e69a42839803e0">   44</a></span>    T <a class="code hl_function" href="struct_sorted_tree.html#a38abcf6fa627dc1206e69a42839803e0">ge</a>(T x){</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound(x);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span>(itr==this-&gt;end())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_tree.html#ad0ac9da95e030715e44bae8f0eae18b3">not_found</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span>*itr;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#ae7d73da4b7b5193f42825117545f1840">   49</a></span>    T <a class="code hl_function" href="struct_sorted_tree.html#ae7d73da4b7b5193f42825117545f1840">lt</a>(T x){</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound(x);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">if</span>(itr==this-&gt;begin())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_tree.html#ad0ac9da95e030715e44bae8f0eae18b3">not_found</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">return</span>*--itr;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#a40539a867331e318cd63c48e9ad48cbc">   54</a></span>    T <a class="code hl_function" href="struct_sorted_tree.html#a40539a867331e318cd63c48e9ad48cbc">le</a>(T x){</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keyword">auto</span> itr=this-&gt;upper_bound(x);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">if</span>(itr==this-&gt;begin())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_sorted_tree.html#ad0ac9da95e030715e44bae8f0eae18b3">not_found</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">return</span>*--itr;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#ab4507da023c738af9a977d4683907cd8">   59</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_sorted_tree.html#ab4507da023c738af9a977d4683907cd8">count_lt</a>(T x){<span class="keywordflow">return</span> this-&gt;order_of_key(x);}</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#a29e4ad08805e847324ea1bc7e072fc96">   60</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_sorted_tree.html#a29e4ad08805e847324ea1bc7e072fc96">count_le</a>(T x){<span class="keywordflow">return</span> this-&gt;order_of_key(x+1);}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#a94b30d673b9916934458ccb5c26da60a">   61</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_sorted_tree.html#a94b30d673b9916934458ccb5c26da60a">count_gt</a>(T x){<span class="keywordflow">return</span> this-&gt;size()-this-&gt;order_of_key(x+1);}</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#ab0257382ca5e817703f0d9127b976a41">   62</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_sorted_tree.html#ab0257382ca5e817703f0d9127b976a41">count_ge</a>(T x){<span class="keywordflow">return</span> this-&gt;size()-this-&gt;order_of_key(x);}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#a96cd2a474df338aa89296a62ea09c025">   63</a></span>    T <a class="code hl_function" href="struct_sorted_tree.html#a96cd2a474df338aa89296a62ea09c025">kth_min</a>(<span class="keywordtype">int</span> k){<span class="keywordflow">return</span>*this-&gt;find_by_order(k);}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="struct_sorted_tree.html#a839cafb83a5b205c87ee456ccdf768f3">   64</a></span>    T <a class="code hl_function" href="struct_sorted_tree.html#a839cafb83a5b205c87ee456ccdf768f3">kth_max</a>(<span class="keywordtype">int</span> k){<span class="keywordflow">return</span>*this-&gt;find_by_order(this-&gt;size()-k-1);}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+</div>
+<div class="ttc" id="astruct_sorted_tree_html_a01cb57e4a4d3ff57cdb82b3e59950d70"><div class="ttname"><a href="struct_sorted_tree.html#a01cb57e4a4d3ff57cdb82b3e59950d70">SortedTree::pop_max</a></div><div class="ttdeci">T pop_max()</div><div class="ttdef"><b>Definition</b> tree.hpp:26</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_a22ba2a1a35c4fdc1cb315ebd5e4bc706"><div class="ttname"><a href="struct_sorted_tree.html#a22ba2a1a35c4fdc1cb315ebd5e4bc706">SortedTree::contains</a></div><div class="ttdeci">bool contains(T x)</div><div class="ttdef"><b>Definition</b> tree.hpp:32</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_a29e4ad08805e847324ea1bc7e072fc96"><div class="ttname"><a href="struct_sorted_tree.html#a29e4ad08805e847324ea1bc7e072fc96">SortedTree::count_le</a></div><div class="ttdeci">int count_le(T x)</div><div class="ttdef"><b>Definition</b> tree.hpp:60</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_a38abcf6fa627dc1206e69a42839803e0"><div class="ttname"><a href="struct_sorted_tree.html#a38abcf6fa627dc1206e69a42839803e0">SortedTree::ge</a></div><div class="ttdeci">T ge(T x)</div><div class="ttdef"><b>Definition</b> tree.hpp:44</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_a40539a867331e318cd63c48e9ad48cbc"><div class="ttname"><a href="struct_sorted_tree.html#a40539a867331e318cd63c48e9ad48cbc">SortedTree::le</a></div><div class="ttdeci">T le(T x)</div><div class="ttdef"><b>Definition</b> tree.hpp:54</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_a539a29d1002e2a08e63710b14ad525ac"><div class="ttname"><a href="struct_sorted_tree.html#a539a29d1002e2a08e63710b14ad525ac">SortedTree::discard</a></div><div class="ttdeci">bool discard(T x)</div><div class="ttdef"><b>Definition</b> tree.hpp:33</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_a693ab7137ad14e3e989246c0944680ec"><div class="ttname"><a href="struct_sorted_tree.html#a693ab7137ad14e3e989246c0944680ec">SortedTree::SortedTree</a></div><div class="ttdeci">SortedTree(T not_found=-1)</div><div class="ttdef"><b>Definition</b> tree.hpp:11</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_a6a608768ca3556fdfbb31764b4e48a09"><div class="ttname"><a href="struct_sorted_tree.html#a6a608768ca3556fdfbb31764b4e48a09">SortedTree::max</a></div><div class="ttdeci">T max()</div><div class="ttdef"><b>Definition</b> tree.hpp:16</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_a839cafb83a5b205c87ee456ccdf768f3"><div class="ttname"><a href="struct_sorted_tree.html#a839cafb83a5b205c87ee456ccdf768f3">SortedTree::kth_max</a></div><div class="ttdeci">T kth_max(int k)</div><div class="ttdef"><b>Definition</b> tree.hpp:64</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_a84629459ef11cd98378fd7b231c331a4"><div class="ttname"><a href="struct_sorted_tree.html#a84629459ef11cd98378fd7b231c331a4">SortedTree::pop_min</a></div><div class="ttdeci">T pop_min()</div><div class="ttdef"><b>Definition</b> tree.hpp:20</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_a94b30d673b9916934458ccb5c26da60a"><div class="ttname"><a href="struct_sorted_tree.html#a94b30d673b9916934458ccb5c26da60a">SortedTree::count_gt</a></div><div class="ttdeci">int count_gt(T x)</div><div class="ttdef"><b>Definition</b> tree.hpp:61</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_a96cd2a474df338aa89296a62ea09c025"><div class="ttname"><a href="struct_sorted_tree.html#a96cd2a474df338aa89296a62ea09c025">SortedTree::kth_min</a></div><div class="ttdeci">T kth_min(int k)</div><div class="ttdef"><b>Definition</b> tree.hpp:63</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_aa83c587261288d7a4fa3a7dec02b88c4"><div class="ttname"><a href="struct_sorted_tree.html#aa83c587261288d7a4fa3a7dec02b88c4">SortedTree::min</a></div><div class="ttdeci">T min()</div><div class="ttdef"><b>Definition</b> tree.hpp:12</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_ab0257382ca5e817703f0d9127b976a41"><div class="ttname"><a href="struct_sorted_tree.html#ab0257382ca5e817703f0d9127b976a41">SortedTree::count_ge</a></div><div class="ttdeci">int count_ge(T x)</div><div class="ttdef"><b>Definition</b> tree.hpp:62</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_ab4507da023c738af9a977d4683907cd8"><div class="ttname"><a href="struct_sorted_tree.html#ab4507da023c738af9a977d4683907cd8">SortedTree::count_lt</a></div><div class="ttdeci">int count_lt(T x)</div><div class="ttdef"><b>Definition</b> tree.hpp:59</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_ad0ac9da95e030715e44bae8f0eae18b3"><div class="ttname"><a href="struct_sorted_tree.html#ad0ac9da95e030715e44bae8f0eae18b3">SortedTree::not_found</a></div><div class="ttdeci">T not_found</div><div class="ttdef"><b>Definition</b> tree.hpp:9</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_ae25c608f82e11136a7100240756e7917"><div class="ttname"><a href="struct_sorted_tree.html#ae25c608f82e11136a7100240756e7917">SortedTree::SortedTree</a></div><div class="ttdeci">SortedTree()=default</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_ae44e1431526826a9c500aa73b5d9487f"><div class="ttname"><a href="struct_sorted_tree.html#ae44e1431526826a9c500aa73b5d9487f">SortedTree::gt</a></div><div class="ttdeci">T gt(T x)</div><div class="ttdef"><b>Definition</b> tree.hpp:39</div></div>
+<div class="ttc" id="astruct_sorted_tree_html_ae7d73da4b7b5193f42825117545f1840"><div class="ttname"><a href="struct_sorted_tree.html#ae7d73da4b7b5193f42825117545f1840">SortedTree::lt</a></div><div class="ttdeci">T lt(T x)</div><div class="ttdef"><b>Definition</b> tree.hpp:49</div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

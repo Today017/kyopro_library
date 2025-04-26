@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# 関数: 指定されたファイルを圧縮
+compress_cpp() {
+    local cpp_file=$1
+    touch compress.cpp
+    python3 ./kyopro_library/kyopro_tools/compress.py < "$cpp_file" > compress.cpp
+    cp compress.cpp "$cpp_file"
+    rm compress.cpp
+}
+
+# メインロジック
+if [ -z "$1" ]; then
+    echo "Usage: $0 {a|b|c|d|e|f|g|h|<file.cpp>} [t]"
+    exit 1
+fi
+
+# コマンド省略用のファイルマッピング
+case $1 in
+    a) cpp_file="a.cpp" ;;
+    b) cpp_file="b.cpp" ;;
+    c) cpp_file="c.cpp" ;;
+    d) cpp_file="d.cpp" ;;
+    e) cpp_file="e.cpp" ;;
+    f) cpp_file="f.cpp" ;;
+    g) cpp_file="g.cpp" ;;
+    h) cpp_file="h.cpp" ;;
+    *) cpp_file=$1 ;;  # 任意のC++ファイルに対応
+esac
+
+compress_cpp "$cpp_file"

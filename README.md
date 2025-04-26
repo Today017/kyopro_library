@@ -1,144 +1,56 @@
-# Library
+# Kyopro Library
 
-[Note](./note.md)
+[Today03](https://atcoder.jp/users/Today03) が競技プログラミングで使用しているライブラリ・スクリプト集です。
 
-## Algorithm
+ライブラリのドキュメントは[ここ](https://today017.github.io/kyopro_library/index.html)。
 
-- [Compress](./algorithm/compress.md)
-- [Inversion Number](./algorithm/inversion_number.md)
-- [Longest Increaseing Subsequence](./algorithm/lis.md)
-- [Mo](./algorithm/mo.md)
-- [Convex Hull Trick](./algorithm/cht.md)
-- [Binary Search](./algorithm/bins.md)
-- [Doubling](./algorithm/dbl.md)
+## 環境構築
+1. Docker, Git, make のインストール
+3. [./kyopro_tools/scripts/build] をコピペ、実行
+4. `make build` でDockerイメージをビルドする（初回のみ）
+5. `make run` でコンテナを起動して入る
 
-## Data Structure
+## スクリプト
+- `./cmp <file>` `<file>` をコンパイルする。
+- `./copy <file>` `<file>` にincludeしたライブラリを展開し、`./combinded.cpp` に保存する。
+- `./test <solve> <generate> <naive>` ランダムテスト用スクリプト。`<solve>` を実行し、`<generate>` で生成した入力を与え、`<naive>` で生成した出力と比較する。
+- `./contest` カレントディレクトリで作成したファイルを削除する。スクリプトやライブラリは削除しない。コンテスト前に実行する。
 
-### Segment Tree
+## 使い方
+1. `vim a.cpp`
+    ```cpp
+    #include<kyopro_library/template.hpp>
+    #include<kyopro_library/graph/dsu.hpp> // 使うライブラリをincludeする
 
-- [Segment Tree](./data_structure/segt.md)
-- [Segment Tree Lazy](./data_structure/segtlz.md)
-- [Segment Tree 2D](./data_structure/seg2d.md)
-- [Segment Tree Dual](./data_structure/segtd.md)
-- [Segment Tree Beats](./data_structure/beats.md)
-<!-- - [Persistent Segment Tree] -->
+    int main(){
+        // ここにコードを実装する
+    }
+    ```
+2. `./cmp a`
+3. `./a.out`
+4. `./copy a`
 
-### Other
+## データ構造に載せる代数構造
 
-- [Sorted Tree](./data_structure/tree.md)
-- [Sorted Array](./data_structure/sorted_array.md)
-- [Set Interface](./data_structure/set.md)
-- [Cumulative Sum 2D](./data_structure/cum2d.md)
-- [Sparse Table](./data_structure/spt.md)
-- [Sparse Table 2D](./data_structure/st2d.md)
-- [Disjoint Sparse Table](./data_structure/dst.md)
-- [Fenwick Tree](./data_structure/fen.md)
-- [Binary Trie](./data_structure/bintr.md)
-- [Merge Sort Tree](./data_structure/mst.md)
-- [Wavelet Matrix](./data_structure/wvmt.md)
-- [Insertable Reversible Array](./data_structure/insrev.md)
-- [Negative Vector](./data_structure/negative_vector.md)
-- [Range Set](./data_structure/range_set.md)
-<!-- - [Li Chao Tree](./data_structure/dlct.md) -->
-<!-- - [Link-Cut Tree] -->
-<!-- - [Skew Heap] -->
-<!-- - [Splay Tree] -->
-<!-- - [Persistent Array] -->
+### 例) モノイド
+```cpp
+struct Monoid {
+    using Type = hoge;
+    static Type id() { return hoge; }
+    static Type op(const Type& l, const Type& r) { return hoge; }
+};
+```
 
-## Graph
-
-- [Disjoint Set Union](./graph/dsu.md)
-- [Disjoint Set Union (Rollback)](./graph/dsur.md)
-- [Disjoint Set Union (Potentialized)](./graph/dsup.md)
-- [Disjoint Set Union (Merging)](./graph/dsum.md)
-- [SCC](./graph/scc.md)
-- [Topological Sort](./graph/toposort.md)
-- [Low Link](./graph/lowlink.md)
-- [Offline Dynamic Connectivity](./graph/odc.md)
-
-### Shortest Path
-
-- [Dijkstra](./graph/sp/dij.md)
-- [Bellman Ford](./graph/sp/bf.md)
-- [Warshall Floyd](./graph/sp/wf.md)
-
-### Tree
-
-- [Heavy-Light Decomposition](./graph/tree/hld.md)
-- [Lowest Common Ancestor](./graph/tree/lca.md)
-- [Diameter](./graph/tree/diameter.md)
-- [Centroid](./graph/tree/centroid.md)
-- [Centroid Decomposition](./graph/tree/cd.md)
-<!-- - [Rerooting] -->
-<!-- - [Diameter] -->
-<!-- - [Centroid Decomposition] -->
-
-### Flow
-
-- [Max Flow](./graph/flow/mxf.md)
-- [Min Cost Flow](./graph/flow/mcf.md)
-- [燃やす埋める](./graph/flow/bb.md)
-
-## Mod
-
-- [Modint](./mod/modint.md)
-- [Dynamic Modint](./mod/dymodint.md)
-- [Combinatorics](./mod/cmb.md)
-- [Combinatorics (Lucas)](./mod/lucas.md)
-
-## Math
-
-### Number Theory
-
-- [ExtGCD, Mod Inversion](./math/extgcd.md)
-- [Bezout Identity](./math/bezout_identity.md)
-- [Euler's Totient Function](./math/phi.md)
-- [Prime Factorization based on Eratosthenes](./math/osak.md)
-- [Primality Test](./math/ptest.md)
-- [Pollard's rho](./math/rho.md)
-- [Primitive Root](./math/proot.md)
-- [Mod Log (Baby Step Giant Step)](./math/modlog.md)
-
-### Convolutions
-- [Convolution](./math/convolution.md)
-- [Convolution (NTT)](./math/ntt.md)
-- [XOR Convolution](./math/xorconv.md)
-
-### Polynomial
-- [Formal Power Series](./math/fps.md)
-- [Multipoint Evaluation](./math/muleval.md)
-- [Lagrange Interpolation](./math/lagrange.md)
-
-
-### Other
-- [Matrix](./math/matrix.md)
-- [Fraction](./math/frac.md)
-- [Linear Equation](./math/linear_equation.md)
-- [Linear Programming (2 valiables)](./math/lp2vars.md)
-<!-- - [Quotient Ranges] -->
-
-
-## String
-
-- [Run Length Encoding](./string/rle.md)
-- [Rolling Hash](./string/rh.md)
-- [Z-Algorithm](./string/zalgo.md)
-- [Suffix Array](./string/sa.md)
-- [LCP Array](./string/lcp.md)
-<!-- - [Manacher] -->
-<!-- - [KMP] -->
-<!-- - [Trie] -->
-<!-- - [Aho-Corasick] -->
-
-## Geometry
-- [Template](./geometry/geo.md)
-
-## Heuristc
-- [Simulated Annealing](./heuristic/sa.md)
-- [Climbing](./heuristic/cl.md)
-
-## Others
-- [Random Generator](./others/random.md)
-- [Timer](./others/timer.md)
-- [Random](./others/xor128.md)
-- [Utils](./others/utils.md)
+### 各構造の要件
+- モノイド
+  - `Type id()`
+  - `Type op(const Type& l, const Type& r)`
+- 半群
+  - `Type op(const Type& l, const Type& r)`
+- 群
+  - `Type inv(const Type& x)`
+  - `Type op(const Type& l, const Type& r)`
+  - `Type id()`
+- 作用素
+  - `Type id()`
+  - `Type op(const Type& l, const Type& r)`

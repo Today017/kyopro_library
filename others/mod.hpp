@@ -1,1 +1,0 @@
-template<typename T>inline T Mod(T a,T m){return(a%m+m)%m;}

@@ -1,0 +1,621 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: SortedTree&lt; T &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="struct_sorted_tree-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">SortedTree&lt; T &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="sorted__tree_8hpp_source.html">sorted_tree.hpp</a>&gt;</code></p>
+<div class="dynheader">
+SortedTree&lt; T &gt; の継承関係図</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="struct_sorted_tree.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ae25c608f82e11136a7100240756e7917" id="r_ae25c608f82e11136a7100240756e7917"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae25c608f82e11136a7100240756e7917">SortedTree</a> ()=default</td></tr>
+<tr class="separator:ae25c608f82e11136a7100240756e7917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a693ab7137ad14e3e989246c0944680ec" id="r_a693ab7137ad14e3e989246c0944680ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a693ab7137ad14e3e989246c0944680ec">SortedTree</a> (T <a class="el" href="#ad0ac9da95e030715e44bae8f0eae18b3">not_found</a>=-1)</td></tr>
+<tr class="separator:a693ab7137ad14e3e989246c0944680ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa83c587261288d7a4fa3a7dec02b88c4" id="r_aa83c587261288d7a4fa3a7dec02b88c4"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa83c587261288d7a4fa3a7dec02b88c4">min</a> ()</td></tr>
+<tr class="separator:aa83c587261288d7a4fa3a7dec02b88c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a608768ca3556fdfbb31764b4e48a09" id="r_a6a608768ca3556fdfbb31764b4e48a09"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a608768ca3556fdfbb31764b4e48a09">max</a> ()</td></tr>
+<tr class="separator:a6a608768ca3556fdfbb31764b4e48a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84629459ef11cd98378fd7b231c331a4" id="r_a84629459ef11cd98378fd7b231c331a4"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84629459ef11cd98378fd7b231c331a4">pop_min</a> ()</td></tr>
+<tr class="separator:a84629459ef11cd98378fd7b231c331a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01cb57e4a4d3ff57cdb82b3e59950d70" id="r_a01cb57e4a4d3ff57cdb82b3e59950d70"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01cb57e4a4d3ff57cdb82b3e59950d70">pop_max</a> ()</td></tr>
+<tr class="separator:a01cb57e4a4d3ff57cdb82b3e59950d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22ba2a1a35c4fdc1cb315ebd5e4bc706" id="r_a22ba2a1a35c4fdc1cb315ebd5e4bc706"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22ba2a1a35c4fdc1cb315ebd5e4bc706">contains</a> (T x)</td></tr>
+<tr class="separator:a22ba2a1a35c4fdc1cb315ebd5e4bc706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a539a29d1002e2a08e63710b14ad525ac" id="r_a539a29d1002e2a08e63710b14ad525ac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a539a29d1002e2a08e63710b14ad525ac">discard</a> (T x)</td></tr>
+<tr class="separator:a539a29d1002e2a08e63710b14ad525ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae44e1431526826a9c500aa73b5d9487f" id="r_ae44e1431526826a9c500aa73b5d9487f"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae44e1431526826a9c500aa73b5d9487f">gt</a> (T x)</td></tr>
+<tr class="separator:ae44e1431526826a9c500aa73b5d9487f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38abcf6fa627dc1206e69a42839803e0" id="r_a38abcf6fa627dc1206e69a42839803e0"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38abcf6fa627dc1206e69a42839803e0">ge</a> (T x)</td></tr>
+<tr class="separator:a38abcf6fa627dc1206e69a42839803e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7d73da4b7b5193f42825117545f1840" id="r_ae7d73da4b7b5193f42825117545f1840"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7d73da4b7b5193f42825117545f1840">lt</a> (T x)</td></tr>
+<tr class="separator:ae7d73da4b7b5193f42825117545f1840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40539a867331e318cd63c48e9ad48cbc" id="r_a40539a867331e318cd63c48e9ad48cbc"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40539a867331e318cd63c48e9ad48cbc">le</a> (T x)</td></tr>
+<tr class="separator:a40539a867331e318cd63c48e9ad48cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4507da023c738af9a977d4683907cd8" id="r_ab4507da023c738af9a977d4683907cd8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4507da023c738af9a977d4683907cd8">count_lt</a> (T x)</td></tr>
+<tr class="separator:ab4507da023c738af9a977d4683907cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29e4ad08805e847324ea1bc7e072fc96" id="r_a29e4ad08805e847324ea1bc7e072fc96"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29e4ad08805e847324ea1bc7e072fc96">count_le</a> (T x)</td></tr>
+<tr class="separator:a29e4ad08805e847324ea1bc7e072fc96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94b30d673b9916934458ccb5c26da60a" id="r_a94b30d673b9916934458ccb5c26da60a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94b30d673b9916934458ccb5c26da60a">count_gt</a> (T x)</td></tr>
+<tr class="separator:a94b30d673b9916934458ccb5c26da60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0257382ca5e817703f0d9127b976a41" id="r_ab0257382ca5e817703f0d9127b976a41"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0257382ca5e817703f0d9127b976a41">count_ge</a> (T x)</td></tr>
+<tr class="separator:ab0257382ca5e817703f0d9127b976a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96cd2a474df338aa89296a62ea09c025" id="r_a96cd2a474df338aa89296a62ea09c025"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96cd2a474df338aa89296a62ea09c025">kth_min</a> (int k)</td></tr>
+<tr class="separator:a96cd2a474df338aa89296a62ea09c025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a839cafb83a5b205c87ee456ccdf768f3" id="r_a839cafb83a5b205c87ee456ccdf768f3"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a839cafb83a5b205c87ee456ccdf768f3">kth_max</a> (int k)</td></tr>
+<tr class="separator:a839cafb83a5b205c87ee456ccdf768f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:ad0ac9da95e030715e44bae8f0eae18b3" id="r_ad0ac9da95e030715e44bae8f0eae18b3"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0ac9da95e030715e44bae8f0eae18b3">not_found</a> =-1</td></tr>
+<tr class="separator:ad0ac9da95e030715e44bae8f0eae18b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="ae25c608f82e11136a7100240756e7917" name="ae25c608f82e11136a7100240756e7917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae25c608f82e11136a7100240756e7917">&#9670;&#160;</a></span>SortedTree() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;<a class="el" href="struct_sorted_tree.html">::SortedTree</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a693ab7137ad14e3e989246c0944680ec" name="a693ab7137ad14e3e989246c0944680ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a693ab7137ad14e3e989246c0944680ec">&#9670;&#160;</a></span>SortedTree() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;<a class="el" href="struct_sorted_tree.html">::SortedTree</a> </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>not_found</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a22ba2a1a35c4fdc1cb315ebd5e4bc706" name="a22ba2a1a35c4fdc1cb315ebd5e4bc706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22ba2a1a35c4fdc1cb315ebd5e4bc706">&#9670;&#160;</a></span>contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab0257382ca5e817703f0d9127b976a41" name="ab0257382ca5e817703f0d9127b976a41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0257382ca5e817703f0d9127b976a41">&#9670;&#160;</a></span>count_ge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::count_ge </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a94b30d673b9916934458ccb5c26da60a" name="a94b30d673b9916934458ccb5c26da60a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94b30d673b9916934458ccb5c26da60a">&#9670;&#160;</a></span>count_gt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::count_gt </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a29e4ad08805e847324ea1bc7e072fc96" name="a29e4ad08805e847324ea1bc7e072fc96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29e4ad08805e847324ea1bc7e072fc96">&#9670;&#160;</a></span>count_le()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::count_le </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab4507da023c738af9a977d4683907cd8" name="ab4507da023c738af9a977d4683907cd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4507da023c738af9a977d4683907cd8">&#9670;&#160;</a></span>count_lt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::count_lt </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a539a29d1002e2a08e63710b14ad525ac" name="a539a29d1002e2a08e63710b14ad525ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a539a29d1002e2a08e63710b14ad525ac">&#9670;&#160;</a></span>discard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::discard </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38abcf6fa627dc1206e69a42839803e0" name="a38abcf6fa627dc1206e69a42839803e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38abcf6fa627dc1206e69a42839803e0">&#9670;&#160;</a></span>ge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::ge </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae44e1431526826a9c500aa73b5d9487f" name="ae44e1431526826a9c500aa73b5d9487f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae44e1431526826a9c500aa73b5d9487f">&#9670;&#160;</a></span>gt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::gt </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a839cafb83a5b205c87ee456ccdf768f3" name="a839cafb83a5b205c87ee456ccdf768f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a839cafb83a5b205c87ee456ccdf768f3">&#9670;&#160;</a></span>kth_max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::kth_max </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>k</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a96cd2a474df338aa89296a62ea09c025" name="a96cd2a474df338aa89296a62ea09c025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96cd2a474df338aa89296a62ea09c025">&#9670;&#160;</a></span>kth_min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::kth_min </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>k</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a40539a867331e318cd63c48e9ad48cbc" name="a40539a867331e318cd63c48e9ad48cbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40539a867331e318cd63c48e9ad48cbc">&#9670;&#160;</a></span>le()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::le </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae7d73da4b7b5193f42825117545f1840" name="ae7d73da4b7b5193f42825117545f1840"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7d73da4b7b5193f42825117545f1840">&#9670;&#160;</a></span>lt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::lt </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6a608768ca3556fdfbb31764b4e48a09" name="a6a608768ca3556fdfbb31764b4e48a09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a608768ca3556fdfbb31764b4e48a09">&#9670;&#160;</a></span>max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::max </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa83c587261288d7a4fa3a7dec02b88c4" name="aa83c587261288d7a4fa3a7dec02b88c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa83c587261288d7a4fa3a7dec02b88c4">&#9670;&#160;</a></span>min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::min </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a01cb57e4a4d3ff57cdb82b3e59950d70" name="a01cb57e4a4d3ff57cdb82b3e59950d70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01cb57e4a4d3ff57cdb82b3e59950d70">&#9670;&#160;</a></span>pop_max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::pop_max </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a84629459ef11cd98378fd7b231c331a4" name="a84629459ef11cd98378fd7b231c331a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84629459ef11cd98378fd7b231c331a4">&#9670;&#160;</a></span>pop_min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::pop_min </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ad0ac9da95e030715e44bae8f0eae18b3" name="ad0ac9da95e030715e44bae8f0eae18b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ac9da95e030715e44bae8f0eae18b3">&#9670;&#160;</a></span>not_found</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_sorted_tree.html">SortedTree</a>&lt; T &gt;::not_found =-1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>data_structure/<a class="el" href="sorted__tree_8hpp_source.html">sorted_tree.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

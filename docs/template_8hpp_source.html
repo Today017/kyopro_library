@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: template.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div class="header">
+  <div class="headertitle"><div class="title">template.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="template_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;bits/stdc++.h&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">    5</a></span><span class="preprocessor">#define ALL(x) (x).begin(),(x).end()</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="template_8hpp.html#affe9a1ffd6cd7b2e404200ef182fa18f">    6</a></span><span class="preprocessor">#define IO ios::sync_with_stdio(false),cin.tie(nullptr);</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="template_8hpp.html#ab6b1ca645104fc8e3678f999ebe71f41">    7</a></span><span class="preprocessor">#define LB(v, x) (ll)(lower_bound(ALL(v),x)-(v).begin())</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="template_8hpp.html#a6cf4a0f2f552bf0356a95bf621d4a15d">    8</a></span><span class="preprocessor">#define UQ(v) sort(ALL(v)),(v).erase(unique(ALL(v)),v.end())</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">    9</a></span><span class="preprocessor">#define REP(i, n) for(ll i=0; i&lt;(ll)(n); i++)</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">   10</a></span><span class="preprocessor">#define FOR(i, a, b) for(ll i=(ll)(a); (a)&lt;(b) ? i&lt;(b) : i&gt;(b); i+=((a)&lt;(b) ? 1 : -1))</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="template_8hpp.html#a4c27eb89ff96e0ad6fda2ea4040816d4">   11</a></span><span class="preprocessor">#define chmax(a, b) ((a)&lt;(b) ? ((a)=(b), 1) : 0)</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="template_8hpp.html#afab395ab2eac3679be924c315291bf58">   12</a></span><span class="preprocessor">#define chmin(a, b) ((a)&gt;(b) ? ((a)=(b), 1) : 0)</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="template_8hpp.html#ae5ef38025fe230c42996fedcb333507a">   14</a></span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">using </span><a class="code hl_typedef" href="template_8hpp.html#ae5ef38025fe230c42996fedcb333507a">rpriority_queue</a>=priority_queue&lt;T,vector&lt;T&gt;,greater&lt;T&gt;&gt;;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">   15</a></span><span class="keyword">using </span><a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>=<span class="keywordtype">long</span> long; <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a>=1e9+10; <span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_variable" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>=4e18; <span class="keyword">using </span><a class="code hl_typedef" href="template_8hpp.html#a41f1d17ffdc8a7500e7aadc2b7e05a63">ld</a>=<span class="keywordtype">long</span> double; <span class="keyword">using </span><a class="code hl_typedef" href="template_8hpp.html#a3999f2d770e5e4c008caf3d8977c7ef0">ull</a>=uint64_t;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">   16</a></span><span class="keyword">using </span><a class="code hl_typedef" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a>=vector&lt;int&gt;; <span class="keyword">using </span><a class="code hl_typedef" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a>=vector&lt;VI&gt;; <span class="keyword">using </span><a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a>=vector&lt;ll&gt;; <span class="keyword">using </span><a class="code hl_typedef" href="template_8hpp.html#a11a9e4e46b8b410aee9374e030feb3de">VVL</a>=vector&lt;VL&gt;;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="template_8hpp.html#a7f582aad13bf86402da717000515ca1c">   17</a></span><span class="keyword">using </span><a class="code hl_typedef" href="template_8hpp.html#a7f582aad13bf86402da717000515ca1c">PL</a>=pair&lt;ll,ll&gt;; <span class="keyword">using </span><a class="code hl_typedef" href="template_8hpp.html#a2c3a5a109d6d21e6f64ab05472266de4">VP</a>=vector&lt;PL&gt;; <span class="keyword">using </span><a class="code hl_typedef" href="template_8hpp.html#a20b579988fc1098f6357cbd1f07dc5e8">WG</a>=vector&lt;vector&lt;pair&lt;int,ll&gt;&gt;&gt;;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifdef LOCAL</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="debug_8hpp.html">./debug.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="template_8hpp.html#a86ee3ff44c537d94ccbabf941a613688">   22</a></span><span class="preprocessor">#define debug(...)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="template_8hpp.html#a03e896b87233163e2dc3399c65cdfc2d">   23</a></span><span class="preprocessor">#define print_line</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="adebug_8hpp_html"><div class="ttname"><a href="debug_8hpp.html">debug.hpp</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a11a9e4e46b8b410aee9374e030feb3de"><div class="ttname"><a href="template_8hpp.html#a11a9e4e46b8b410aee9374e030feb3de">VVL</a></div><div class="ttdeci">vector&lt; VL &gt; VVL</div><div class="ttdef"><b>Definition</b> template.hpp:16</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a14c9dbab105f1b8b8182a022d73e610c"><div class="ttname"><a href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a></div><div class="ttdeci">const int INF</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a1f713edb7a826e3710159658d6ef9815"><div class="ttname"><a href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></div><div class="ttdeci">const ll INFL</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a20b579988fc1098f6357cbd1f07dc5e8"><div class="ttname"><a href="template_8hpp.html#a20b579988fc1098f6357cbd1f07dc5e8">WG</a></div><div class="ttdeci">vector&lt; vector&lt; pair&lt; int, ll &gt; &gt; &gt; WG</div><div class="ttdef"><b>Definition</b> template.hpp:17</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a2c3a5a109d6d21e6f64ab05472266de4"><div class="ttname"><a href="template_8hpp.html#a2c3a5a109d6d21e6f64ab05472266de4">VP</a></div><div class="ttdeci">vector&lt; PL &gt; VP</div><div class="ttdef"><b>Definition</b> template.hpp:17</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a3999f2d770e5e4c008caf3d8977c7ef0"><div class="ttname"><a href="template_8hpp.html#a3999f2d770e5e4c008caf3d8977c7ef0">ull</a></div><div class="ttdeci">uint64_t ull</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a41f1d17ffdc8a7500e7aadc2b7e05a63"><div class="ttname"><a href="template_8hpp.html#a41f1d17ffdc8a7500e7aadc2b7e05a63">ld</a></div><div class="ttdeci">long double ld</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a5ee21b75b07f2ccf9eeb9e89922eb532"><div class="ttname"><a href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a></div><div class="ttdeci">vector&lt; ll &gt; VL</div><div class="ttdef"><b>Definition</b> template.hpp:16</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a6a675649b5da3f6454b83fa37d00cc2b"><div class="ttname"><a href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a></div><div class="ttdeci">vector&lt; int &gt; VI</div><div class="ttdef"><b>Definition</b> template.hpp:16</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a7f582aad13bf86402da717000515ca1c"><div class="ttname"><a href="template_8hpp.html#a7f582aad13bf86402da717000515ca1c">PL</a></div><div class="ttdeci">pair&lt; ll, ll &gt; PL</div><div class="ttdef"><b>Definition</b> template.hpp:17</div></div>
+<div class="ttc" id="atemplate_8hpp_html_aa04f4352ca552897b0c9d791a7bdfa85"><div class="ttname"><a href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a></div><div class="ttdeci">vector&lt; VI &gt; VVI</div><div class="ttdef"><b>Definition</b> template.hpp:16</div></div>
+<div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
+<div class="ttc" id="atemplate_8hpp_html_ae5ef38025fe230c42996fedcb333507a"><div class="ttname"><a href="template_8hpp.html#ae5ef38025fe230c42996fedcb333507a">rpriority_queue</a></div><div class="ttdeci">priority_queue&lt; T, vector&lt; T &gt;, greater&lt; T &gt; &gt; rpriority_queue</div><div class="ttdef"><b>Definition</b> template.hpp:14</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

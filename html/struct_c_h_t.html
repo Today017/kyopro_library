@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: CHT&lt; T, Min &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="struct_c_h_t-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">CHT&lt; T, Min &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Convex Hull Trick verify : <a href="https://judge.yosupo.jp/problem/line_add_get_min">https://judge.yosupo.jp/problem/line_add_get_min</a> <a href="https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf">https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf</a>  
+ <a href="#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="cht_8hpp_source.html">cht.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a8ee3002f76dde43433f9aadf45cbf32c" id="r_a8ee3002f76dde43433f9aadf45cbf32c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ee3002f76dde43433f9aadf45cbf32c">CHT</a> ()=default</td></tr>
+<tr class="separator:a8ee3002f76dde43433f9aadf45cbf32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98990faf0c0f436c501ce5bc94e8f555" id="r_a98990faf0c0f436c501ce5bc94e8f555"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98990faf0c0f436c501ce5bc94e8f555">add</a> (T a, T b)</td></tr>
+<tr class="memdesc:a98990faf0c0f436c501ce5bc94e8f555"><td class="mdescLeft">&#160;</td><td class="mdescRight">直線 ax + b を追加する  <br /></td></tr>
+<tr class="separator:a98990faf0c0f436c501ce5bc94e8f555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a652d63fa85df6b36fb09fdae60ebc6cf" id="r_a652d63fa85df6b36fb09fdae60ebc6cf"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a652d63fa85df6b36fb09fdae60ebc6cf">get</a> (T x)</td></tr>
+<tr class="memdesc:a652d63fa85df6b36fb09fdae60ebc6cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">x に対する直線群の最小値を求める  <br /></td></tr>
+<tr class="separator:a652d63fa85df6b36fb09fdae60ebc6cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T = ll, bool Min = true&gt;<br />
+struct CHT&lt; T, Min &gt;</div><p>Convex Hull Trick verify : <a href="https://judge.yosupo.jp/problem/line_add_get_min">https://judge.yosupo.jp/problem/line_add_get_min</a> <a href="https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf">https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf</a> </p>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Min</td><td>true のとき最小値を管理する </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a8ee3002f76dde43433f9aadf45cbf32c" name="a8ee3002f76dde43433f9aadf45cbf32c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ee3002f76dde43433f9aadf45cbf32c">&#9670;&#160;</a></span>CHT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll, bool Min = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_c_h_t.html">CHT</a>&lt; T, Min &gt;<a class="el" href="struct_c_h_t.html">::CHT</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a98990faf0c0f436c501ce5bc94e8f555" name="a98990faf0c0f436c501ce5bc94e8f555"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98990faf0c0f436c501ce5bc94e8f555">&#9670;&#160;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll, bool Min = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_c_h_t.html">CHT</a>&lt; T, Min &gt;::add </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>直線 ax + b を追加する </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(log(N)) </dd></dl>
+
+</div>
+</div>
+<a id="a652d63fa85df6b36fb09fdae60ebc6cf" name="a652d63fa85df6b36fb09fdae60ebc6cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a652d63fa85df6b36fb09fdae60ebc6cf">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll, bool Min = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_c_h_t.html">CHT</a>&lt; T, Min &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x に対する直線群の最小値を求める </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O((log(N))^2) </dd></dl>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>algorithm/<a class="el" href="cht_8hpp_source.html">cht.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

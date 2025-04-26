@@ -1,0 +1,838 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: debug.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">debug.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="fenwick__tree_8hpp_source.html">../kyopro_library/data_structure/fenwick_tree.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="segtree_8hpp_source.html">../kyopro_library/data_structure/segtree.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="segtree__lazy_8hpp_source.html">../kyopro_library/data_structure/segtree_lazy.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="segtree__dual_8hpp_source.html">../kyopro_library/data_structure/segtree_dual.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="dsu_8hpp_source.html">../kyopro_library/graph/dsu.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="int128_8hpp_source.html">../kyopro_library/others/int128.hpp</a>&quot;</code><br />
+<code>#include &quot;../atcoder/modint&quot;</code><br />
+<code>#include &quot;../atcoder/segtree&quot;</code><br />
+<code>#include &quot;../atcoder/lazysegtree&quot;</code><br />
+<code>#include &quot;../atcoder/fenwicktree&quot;</code><br />
+<code>#include &quot;../atcoder/dsu&quot;</code><br />
+</div>
+<p><a href="debug_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a03e896b87233163e2dc3399c65cdfc2d" id="r_a03e896b87233163e2dc3399c65cdfc2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03e896b87233163e2dc3399c65cdfc2d">print_line</a>&#160;&#160;&#160;cerr&lt;&lt;&quot;--------------------&quot;&lt;&lt;__LINE__&lt;&lt;&quot;--------------------&quot;&lt;&lt;&quot;\n&quot;</td></tr>
+<tr class="separator:a03e896b87233163e2dc3399c65cdfc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86ee3ff44c537d94ccbabf941a613688" id="r_a86ee3ff44c537d94ccbabf941a613688"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86ee3ff44c537d94ccbabf941a613688">debug</a>(...)</td></tr>
+<tr class="separator:a86ee3ff44c537d94ccbabf941a613688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b69c2a8630e2df66d8ae1a807bb71e" id="r_a65b69c2a8630e2df66d8ae1a807bb71e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65b69c2a8630e2df66d8ae1a807bb71e">getName</a>(VariableName)</td></tr>
+<tr class="separator:a65b69c2a8630e2df66d8ae1a807bb71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a88f2ebecce988a8545a35ec721a452b3" id="r_a88f2ebecce988a8545a35ec721a452b3"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88f2ebecce988a8545a35ec721a452b3">operator&lt;&lt;</a> (ostream &amp;os, atcoder::modint998244353 a)</td></tr>
+<tr class="separator:a88f2ebecce988a8545a35ec721a452b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1f6cc1e46e1d7ca58e0bf60b205b0ec" id="r_ae1f6cc1e46e1d7ca58e0bf60b205b0ec"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1f6cc1e46e1d7ca58e0bf60b205b0ec">operator&lt;&lt;</a> (ostream &amp;os, atcoder::modint1000000007 a)</td></tr>
+<tr class="separator:ae1f6cc1e46e1d7ca58e0bf60b205b0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e4d606e7f9635ca065bc829d5284773" id="r_a5e4d606e7f9635ca065bc829d5284773"><td class="memTemplParams" colspan="2">template&lt;typename T, T(*)(T, T) op, T(*)() e&gt; </td></tr>
+<tr class="memitem:a5e4d606e7f9635ca065bc829d5284773"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5e4d606e7f9635ca065bc829d5284773">operator&lt;&lt;</a> (ostream &amp;os, atcoder::segtree&lt; T, op, e &gt; a)</td></tr>
+<tr class="separator:a5e4d606e7f9635ca065bc829d5284773"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa121af4594dd2f7c24ff086347b822d5" id="r_aa121af4594dd2f7c24ff086347b822d5"><td class="memTemplParams" colspan="2">template&lt;typename T, T(*)(T, T) op, T(*)() e, typename F, T(*)(F, T) mapping, F(*)(F, F) composition, F(*)() id&gt; </td></tr>
+<tr class="memitem:aa121af4594dd2f7c24ff086347b822d5"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa121af4594dd2f7c24ff086347b822d5">operator&lt;&lt;</a> (ostream &amp;os, atcoder::lazy_segtree&lt; T, op, e, F, mapping, composition, id &gt; a)</td></tr>
+<tr class="separator:aa121af4594dd2f7c24ff086347b822d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7dd0ae54f6004956fe578695f1fc52" id="r_aba7dd0ae54f6004956fe578695f1fc52"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:aba7dd0ae54f6004956fe578695f1fc52"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aba7dd0ae54f6004956fe578695f1fc52">operator&lt;&lt;</a> (ostream &amp;os, atcoder::fenwick_tree&lt; T &gt; a)</td></tr>
+<tr class="separator:aba7dd0ae54f6004956fe578695f1fc52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64933e45419bfa3a837931d86ef85c11" id="r_a64933e45419bfa3a837931d86ef85c11"><td class="memTemplParams" colspan="2">template&lt;typename T1, typename T2&gt; </td></tr>
+<tr class="memitem:a64933e45419bfa3a837931d86ef85c11"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a64933e45419bfa3a837931d86ef85c11">operator&lt;&lt;</a> (ostream &amp;os, const pair&lt; T1, T2 &gt; &amp;p)</td></tr>
+<tr class="separator:a64933e45419bfa3a837931d86ef85c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8cd22b64cf2ebd061652b1708c88915" id="r_aa8cd22b64cf2ebd061652b1708c88915"><td class="memTemplParams" colspan="2">template&lt;typename T1, typename T2, typename T3&gt; </td></tr>
+<tr class="memitem:aa8cd22b64cf2ebd061652b1708c88915"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa8cd22b64cf2ebd061652b1708c88915">operator&lt;&lt;</a> (ostream &amp;os, const tuple&lt; T1, T2, T3 &gt; &amp;t)</td></tr>
+<tr class="separator:aa8cd22b64cf2ebd061652b1708c88915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81d634ffdfdbbaab51c2d28a2fbcdf3c" id="r_a81d634ffdfdbbaab51c2d28a2fbcdf3c"><td class="memTemplParams" colspan="2">template&lt;typename T1, typename T2, typename T3, typename T4&gt; </td></tr>
+<tr class="memitem:a81d634ffdfdbbaab51c2d28a2fbcdf3c"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a81d634ffdfdbbaab51c2d28a2fbcdf3c">operator&lt;&lt;</a> (ostream &amp;os, const tuple&lt; T1, T2, T3, T4 &gt; &amp;t)</td></tr>
+<tr class="separator:a81d634ffdfdbbaab51c2d28a2fbcdf3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae05ad88af9fd92b106b2d09af76b3b2b" id="r_ae05ad88af9fd92b106b2d09af76b3b2b"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:ae05ad88af9fd92b106b2d09af76b3b2b"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae05ad88af9fd92b106b2d09af76b3b2b">operator&lt;&lt;</a> (ostream &amp;os, const vector&lt; vector&lt; vector&lt; T &gt; &gt; &gt; &amp;a)</td></tr>
+<tr class="separator:ae05ad88af9fd92b106b2d09af76b3b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac23a3c4ae599ff6567870c096d21ec84" id="r_ac23a3c4ae599ff6567870c096d21ec84"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:ac23a3c4ae599ff6567870c096d21ec84"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac23a3c4ae599ff6567870c096d21ec84">operator&lt;&lt;</a> (ostream &amp;os, const vector&lt; vector&lt; T &gt; &gt; &amp;a)</td></tr>
+<tr class="separator:ac23a3c4ae599ff6567870c096d21ec84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86c4a70ae315392e6ed1b5bcb17bf438" id="r_a86c4a70ae315392e6ed1b5bcb17bf438"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a86c4a70ae315392e6ed1b5bcb17bf438"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a86c4a70ae315392e6ed1b5bcb17bf438">operator&lt;&lt;</a> (ostream &amp;os, const vector&lt; T &gt; &amp;a)</td></tr>
+<tr class="separator:a86c4a70ae315392e6ed1b5bcb17bf438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f3aed69a6aa7f064d75c6998d30712" id="r_a22f3aed69a6aa7f064d75c6998d30712"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a22f3aed69a6aa7f064d75c6998d30712"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a22f3aed69a6aa7f064d75c6998d30712">operator&lt;&lt;</a> (ostream &amp;os, const set&lt; T &gt; &amp;a)</td></tr>
+<tr class="separator:a22f3aed69a6aa7f064d75c6998d30712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba2f7360fff717ea7c272b4b635c7bd3" id="r_aba2f7360fff717ea7c272b4b635c7bd3"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:aba2f7360fff717ea7c272b4b635c7bd3"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aba2f7360fff717ea7c272b4b635c7bd3">operator&lt;&lt;</a> (ostream &amp;os, const multiset&lt; T &gt; &amp;a)</td></tr>
+<tr class="separator:aba2f7360fff717ea7c272b4b635c7bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256f2cc52289c188512b417acf7ae980" id="r_a256f2cc52289c188512b417acf7ae980"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a256f2cc52289c188512b417acf7ae980"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a256f2cc52289c188512b417acf7ae980">operator&lt;&lt;</a> (ostream &amp;os, const deque&lt; T &gt; &amp;a)</td></tr>
+<tr class="separator:a256f2cc52289c188512b417acf7ae980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7732900ab0701fc3db4be35e776008fc" id="r_a7732900ab0701fc3db4be35e776008fc"><td class="memTemplParams" colspan="2">template&lt;typename T1, typename T2&gt; </td></tr>
+<tr class="memitem:a7732900ab0701fc3db4be35e776008fc"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7732900ab0701fc3db4be35e776008fc">operator&lt;&lt;</a> (ostream &amp;os, const map&lt; T1, T2 &gt; &amp;a)</td></tr>
+<tr class="separator:a7732900ab0701fc3db4be35e776008fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cc54be4453c597e063ede2a7e6e49ec" id="r_a4cc54be4453c597e063ede2a7e6e49ec"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a4cc54be4453c597e063ede2a7e6e49ec"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4cc54be4453c597e063ede2a7e6e49ec">operator&lt;&lt;</a> (ostream &amp;os, queue&lt; T &gt; a)</td></tr>
+<tr class="separator:a4cc54be4453c597e063ede2a7e6e49ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c5af95a818637d08e5650b9f88c1576" id="r_a9c5af95a818637d08e5650b9f88c1576"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a9c5af95a818637d08e5650b9f88c1576"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9c5af95a818637d08e5650b9f88c1576">operator&lt;&lt;</a> (ostream &amp;os, priority_queue&lt; T &gt; a)</td></tr>
+<tr class="separator:a9c5af95a818637d08e5650b9f88c1576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f45a34236ffe3f89befdc0b5a46834d" id="r_a5f45a34236ffe3f89befdc0b5a46834d"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a5f45a34236ffe3f89befdc0b5a46834d"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5f45a34236ffe3f89befdc0b5a46834d">operator&lt;&lt;</a> (ostream &amp;os, <a class="el" href="template_8hpp.html#ae5ef38025fe230c42996fedcb333507a">rpriority_queue</a>&lt; T &gt; a)</td></tr>
+<tr class="separator:a5f45a34236ffe3f89befdc0b5a46834d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91e2cdb2969c33672890cabe9e9d4192" id="r_a91e2cdb2969c33672890cabe9e9d4192"><td class="memTemplParams" colspan="2">template&lt;typename T, auto N&gt; </td></tr>
+<tr class="memitem:a91e2cdb2969c33672890cabe9e9d4192"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a91e2cdb2969c33672890cabe9e9d4192">operator&lt;&lt;</a> (ostream &amp;os, array&lt; T, N &gt; a)</td></tr>
+<tr class="separator:a91e2cdb2969c33672890cabe9e9d4192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a800eb09dba42a30a8db83c30d98a66" id="r_a8a800eb09dba42a30a8db83c30d98a66"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a8a800eb09dba42a30a8db83c30d98a66"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8a800eb09dba42a30a8db83c30d98a66">operator&lt;&lt;</a> (ostream &amp;os, <a class="el" href="struct_fenwick_tree.html">FenwickTree</a>&lt; T &gt; a)</td></tr>
+<tr class="separator:a8a800eb09dba42a30a8db83c30d98a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17bb956047d9039736f87ea02be1bf26" id="r_a17bb956047d9039736f87ea02be1bf26"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a17bb956047d9039736f87ea02be1bf26"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a17bb956047d9039736f87ea02be1bf26">operator&lt;&lt;</a> (ostream &amp;os, <a class="el" href="struct_seg_tree.html">SegTree</a>&lt; T &gt; a)</td></tr>
+<tr class="separator:a17bb956047d9039736f87ea02be1bf26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c9344bef51278c280248a1a4e2de2a7" id="r_a6c9344bef51278c280248a1a4e2de2a7"><td class="memTemplParams" colspan="2">template&lt;typename T, typename U, auto M&gt; </td></tr>
+<tr class="memitem:a6c9344bef51278c280248a1a4e2de2a7"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a6c9344bef51278c280248a1a4e2de2a7">operator&lt;&lt;</a> (ostream &amp;os, <a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; T, U, M &gt; a)</td></tr>
+<tr class="separator:a6c9344bef51278c280248a1a4e2de2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5954642203d9ea8e5b467819d0cf678f" id="r_a5954642203d9ea8e5b467819d0cf678f"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a5954642203d9ea8e5b467819d0cf678f"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5954642203d9ea8e5b467819d0cf678f">operator&lt;&lt;</a> (ostream &amp;os, <a class="el" href="struct_seg_tree_dual.html">SegTreeDual</a>&lt; T &gt; a)</td></tr>
+<tr class="separator:a5954642203d9ea8e5b467819d0cf678f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac60a8c6e6839c4d4cd97e87241e7ad5" id="r_aac60a8c6e6839c4d4cd97e87241e7ad5"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac60a8c6e6839c4d4cd97e87241e7ad5">operator&lt;&lt;</a> (ostream &amp;os, <a class="el" href="struct_d_s_u.html">DSU</a> a)</td></tr>
+<tr class="separator:aac60a8c6e6839c4d4cd97e87241e7ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2fcdc6b38da4dbf782c94d651461112" id="r_ac2fcdc6b38da4dbf782c94d651461112"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2fcdc6b38da4dbf782c94d651461112">operator&lt;&lt;</a> (ostream &amp;os, atcoder::dsu a)</td></tr>
+<tr class="separator:ac2fcdc6b38da4dbf782c94d651461112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a472c0dac0f04ba76b0d866780b6c26fa" id="r_a472c0dac0f04ba76b0d866780b6c26fa"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a472c0dac0f04ba76b0d866780b6c26fa"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a472c0dac0f04ba76b0d866780b6c26fa">debugPrint</a> (int i, T name)</td></tr>
+<tr class="separator:a472c0dac0f04ba76b0d866780b6c26fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a936d99c1f4b69e56a14d2aaf190f9d99" id="r_a936d99c1f4b69e56a14d2aaf190f9d99"><td class="memTemplParams" colspan="2">template&lt;typename T1, typename T2, typename... T3&gt; </td></tr>
+<tr class="memitem:a936d99c1f4b69e56a14d2aaf190f9d99"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a936d99c1f4b69e56a14d2aaf190f9d99">debugPrint</a> (int i, const T1 &amp;name, const T2 &amp;a, const T3 &amp;...b)</td></tr>
+<tr class="separator:a936d99c1f4b69e56a14d2aaf190f9d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a86ee3ff44c537d94ccbabf941a613688" name="a86ee3ff44c537d94ccbabf941a613688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86ee3ff44c537d94ccbabf941a613688">&#9670;&#160;</a></span>debug</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define debug</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a472c0dac0f04ba76b0d866780b6c26fa">debugPrint</a>(0,#__VA_ARGS__,__VA_ARGS__)</div>
+<div class="ttc" id="adebug_8hpp_html_a472c0dac0f04ba76b0d866780b6c26fa"><div class="ttname"><a href="#a472c0dac0f04ba76b0d866780b6c26fa">debugPrint</a></div><div class="ttdeci">void debugPrint(int i, T name)</div><div class="ttdef"><b>Definition</b> debug.hpp:251</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a65b69c2a8630e2df66d8ae1a807bb71e" name="a65b69c2a8630e2df66d8ae1a807bb71e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65b69c2a8630e2df66d8ae1a807bb71e">&#9670;&#160;</a></span>getName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getName</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>VariableName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line"><span class="preprocessor">#VariableName</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a03e896b87233163e2dc3399c65cdfc2d" name="a03e896b87233163e2dc3399c65cdfc2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03e896b87233163e2dc3399c65cdfc2d">&#9670;&#160;</a></span>print_line</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define print_line&#160;&#160;&#160;cerr&lt;&lt;&quot;--------------------&quot;&lt;&lt;__LINE__&lt;&lt;&quot;--------------------&quot;&lt;&lt;&quot;\n&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a936d99c1f4b69e56a14d2aaf190f9d99" name="a936d99c1f4b69e56a14d2aaf190f9d99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a936d99c1f4b69e56a14d2aaf190f9d99">&#9670;&#160;</a></span>debugPrint() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1, typename T2, typename... T3&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void debugPrint </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T1 &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T2 &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T3 &amp;...</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a472c0dac0f04ba76b0d866780b6c26fa" name="a472c0dac0f04ba76b0d866780b6c26fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a472c0dac0f04ba76b0d866780b6c26fa">&#9670;&#160;</a></span>debugPrint() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void debugPrint </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a91e2cdb2969c33672890cabe9e9d4192" name="a91e2cdb2969c33672890cabe9e9d4192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91e2cdb2969c33672890cabe9e9d4192">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[1/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, auto N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">array&lt; T, N &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2fcdc6b38da4dbf782c94d651461112" name="ac2fcdc6b38da4dbf782c94d651461112"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2fcdc6b38da4dbf782c94d651461112">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[2/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">atcoder::dsu</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aba7dd0ae54f6004956fe578695f1fc52" name="aba7dd0ae54f6004956fe578695f1fc52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba7dd0ae54f6004956fe578695f1fc52">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[3/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">atcoder::fenwick_tree&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa121af4594dd2f7c24ff086347b822d5" name="aa121af4594dd2f7c24ff086347b822d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa121af4594dd2f7c24ff086347b822d5">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[4/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, T(*)(T, T) op, T(*)() e, typename F, T(*)(F, T) mapping, F(*)(F, F) composition, F(*)() id&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">atcoder::lazy_segtree&lt; T, op, e, F, mapping, composition, id &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1f6cc1e46e1d7ca58e0bf60b205b0ec" name="ae1f6cc1e46e1d7ca58e0bf60b205b0ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1f6cc1e46e1d7ca58e0bf60b205b0ec">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[5/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">atcoder::modint1000000007</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a88f2ebecce988a8545a35ec721a452b3" name="a88f2ebecce988a8545a35ec721a452b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88f2ebecce988a8545a35ec721a452b3">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[6/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">atcoder::modint998244353</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e4d606e7f9635ca065bc829d5284773" name="a5e4d606e7f9635ca065bc829d5284773"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e4d606e7f9635ca065bc829d5284773">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[7/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, T(*)(T, T) op, T(*)() e&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">atcoder::segtree&lt; T, op, e &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a256f2cc52289c188512b417acf7ae980" name="a256f2cc52289c188512b417acf7ae980"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a256f2cc52289c188512b417acf7ae980">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[8/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const deque&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7732900ab0701fc3db4be35e776008fc" name="a7732900ab0701fc3db4be35e776008fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7732900ab0701fc3db4be35e776008fc">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[9/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1, typename T2&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const map&lt; T1, T2 &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aba2f7360fff717ea7c272b4b635c7bd3" name="aba2f7360fff717ea7c272b4b635c7bd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba2f7360fff717ea7c272b4b635c7bd3">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[10/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const multiset&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a64933e45419bfa3a837931d86ef85c11" name="a64933e45419bfa3a837931d86ef85c11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64933e45419bfa3a837931d86ef85c11">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[11/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1, typename T2&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const pair&lt; T1, T2 &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22f3aed69a6aa7f064d75c6998d30712" name="a22f3aed69a6aa7f064d75c6998d30712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f3aed69a6aa7f064d75c6998d30712">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[12/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const set&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8cd22b64cf2ebd061652b1708c88915" name="aa8cd22b64cf2ebd061652b1708c88915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8cd22b64cf2ebd061652b1708c88915">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[13/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1, typename T2, typename T3&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const tuple&lt; T1, T2, T3 &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>t</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81d634ffdfdbbaab51c2d28a2fbcdf3c" name="a81d634ffdfdbbaab51c2d28a2fbcdf3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81d634ffdfdbbaab51c2d28a2fbcdf3c">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[14/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1, typename T2, typename T3, typename T4&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const tuple&lt; T1, T2, T3, T4 &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>t</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86c4a70ae315392e6ed1b5bcb17bf438" name="a86c4a70ae315392e6ed1b5bcb17bf438"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86c4a70ae315392e6ed1b5bcb17bf438">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[15/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const vector&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac23a3c4ae599ff6567870c096d21ec84" name="ac23a3c4ae599ff6567870c096d21ec84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac23a3c4ae599ff6567870c096d21ec84">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[16/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const vector&lt; vector&lt; T &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae05ad88af9fd92b106b2d09af76b3b2b" name="ae05ad88af9fd92b106b2d09af76b3b2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae05ad88af9fd92b106b2d09af76b3b2b">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[17/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const vector&lt; vector&lt; vector&lt; T &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aac60a8c6e6839c4d4cd97e87241e7ad5" name="aac60a8c6e6839c4d4cd97e87241e7ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac60a8c6e6839c4d4cd97e87241e7ad5">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[18/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_d_s_u.html">DSU</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8a800eb09dba42a30a8db83c30d98a66" name="a8a800eb09dba42a30a8db83c30d98a66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a800eb09dba42a30a8db83c30d98a66">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[19/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_fenwick_tree.html">FenwickTree</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c5af95a818637d08e5650b9f88c1576" name="a9c5af95a818637d08e5650b9f88c1576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c5af95a818637d08e5650b9f88c1576">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[20/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">priority_queue&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4cc54be4453c597e063ede2a7e6e49ec" name="a4cc54be4453c597e063ede2a7e6e49ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cc54be4453c597e063ede2a7e6e49ec">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[21/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">queue&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5f45a34236ffe3f89befdc0b5a46834d" name="a5f45a34236ffe3f89befdc0b5a46834d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f45a34236ffe3f89befdc0b5a46834d">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[22/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#ae5ef38025fe230c42996fedcb333507a">rpriority_queue</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a17bb956047d9039736f87ea02be1bf26" name="a17bb956047d9039736f87ea02be1bf26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17bb956047d9039736f87ea02be1bf26">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[23/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_seg_tree.html">SegTree</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5954642203d9ea8e5b467819d0cf678f" name="a5954642203d9ea8e5b467819d0cf678f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5954642203d9ea8e5b467819d0cf678f">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[24/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_seg_tree_dual.html">SegTreeDual</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c9344bef51278c280248a1a4e2de2a7" name="a6c9344bef51278c280248a1a4e2de2a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c9344bef51278c280248a1a4e2de2a7">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[25/25]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U, auto M&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; T, U, M &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

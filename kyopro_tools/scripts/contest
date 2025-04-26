@@ -1,0 +1,39 @@
+#!/bin/bash
+
+rm *.cpp
+rm ./esc/*.cpp
+
+EXCLUDE=(
+    ".devcontainer"
+    ".vscode"
+    "kyopro_library"
+    "atcoder"
+    "esc"
+    "random_test"
+    "contest"
+    "cmp"
+    "copy"
+    "test"
+    "compress"
+    "makefile"
+)
+
+HERE=$(pwd)
+
+for file in $(ls $HERE); do
+    if [[ ! " ${EXCLUDE[@]} " =~ " ${file} " ]]; then
+        rm -rf $file
+    fi
+done
+
+touch a.cpp
+echo "#include<kyopro_library/template.hpp>
+//----------------------------------------------------------" > a.cpp
+touch b.cpp
+touch c.cpp
+touch d.cpp
+touch e.cpp
+cp a.cpp b.cpp
+cp a.cpp c.cpp
+cp a.cpp d.cpp
+cp a.cpp e.cpp

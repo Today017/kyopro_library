@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: ZetaMobiusDivMul 名前空間</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">ZetaMobiusDivMul 名前空間</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>倍数・約数ゼータ・メビウス変換  
+<a href="#details">[詳解]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a60c1e6ce641275a4ee75d229514c1691" id="r_a60c1e6ce641275a4ee75d229514c1691"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60c1e6ce641275a4ee75d229514c1691">Init</a> (int n=1e6)</td></tr>
+<tr class="separator:a60c1e6ce641275a4ee75d229514c1691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3464457ced48ed60b5726ff223b31af4" id="r_a3464457ced48ed60b5726ff223b31af4"><td class="memTemplParams" colspan="2">template&lt;typename Monoid&gt; </td></tr>
+<tr class="memitem:a3464457ced48ed60b5726ff223b31af4"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Monoid::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a3464457ced48ed60b5726ff223b31af4">MultipleZeta</a> (vector&lt; typename Monoid::Type &gt; v)</td></tr>
+<tr class="memdesc:a3464457ced48ed60b5726ff223b31af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">倍数高速ゼータ変換  <br /></td></tr>
+<tr class="separator:a3464457ced48ed60b5726ff223b31af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eb786dcdc175107ad43dfdb12461c51" id="r_a0eb786dcdc175107ad43dfdb12461c51"><td class="memTemplParams" colspan="2">template&lt;typename Monoid&gt; </td></tr>
+<tr class="memitem:a0eb786dcdc175107ad43dfdb12461c51"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Monoid::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0eb786dcdc175107ad43dfdb12461c51">DivisorZeta</a> (vector&lt; typename Monoid::Type &gt; v)</td></tr>
+<tr class="memdesc:a0eb786dcdc175107ad43dfdb12461c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">約数高速ゼータ変換  <br /></td></tr>
+<tr class="separator:a0eb786dcdc175107ad43dfdb12461c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17972686c127951d7816aef375120758" id="r_a17972686c127951d7816aef375120758"><td class="memTemplParams" colspan="2">template&lt;typename Abel&gt; </td></tr>
+<tr class="memitem:a17972686c127951d7816aef375120758"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Abel::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a17972686c127951d7816aef375120758">MultipleMobius</a> (vector&lt; typename Abel::Type &gt; v)</td></tr>
+<tr class="memdesc:a17972686c127951d7816aef375120758"><td class="mdescLeft">&#160;</td><td class="mdescRight">倍数高速メビウス変換  <br /></td></tr>
+<tr class="separator:a17972686c127951d7816aef375120758"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe1e6c2c7d8180ade6e65334eec8368f" id="r_afe1e6c2c7d8180ade6e65334eec8368f"><td class="memTemplParams" colspan="2">template&lt;typename Abel&gt; </td></tr>
+<tr class="memitem:afe1e6c2c7d8180ade6e65334eec8368f"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Abel::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#afe1e6c2c7d8180ade6e65334eec8368f">DivisorMobius</a> (vector&lt; typename Abel::Type &gt; v)</td></tr>
+<tr class="memdesc:afe1e6c2c7d8180ade6e65334eec8368f"><td class="mdescLeft">&#160;</td><td class="mdescRight">約数高速メビウス変換  <br /></td></tr>
+<tr class="separator:afe1e6c2c7d8180ade6e65334eec8368f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a0a1025ad27bd1edb07d16fbcf56cb471" id="r_a0a1025ad27bd1edb07d16fbcf56cb471"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a1025ad27bd1edb07d16fbcf56cb471">primes</a></td></tr>
+<tr class="separator:a0a1025ad27bd1edb07d16fbcf56cb471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>倍数・約数ゼータ・メビウス変換 </p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="afe1e6c2c7d8180ade6e65334eec8368f" name="afe1e6c2c7d8180ade6e65334eec8368f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe1e6c2c7d8180ade6e65334eec8368f">&#9670;&#160;</a></span>DivisorMobius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Abel&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; typename Abel::Type &gt; ZetaMobiusDivMul::DivisorMobius </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; typename Abel::Type &gt;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>約数高速メビウス変換 </p>
+<p>v'[k] = Σ_{d|k} μ(d) v[k/d] なる v' を返す </p><dl class="section note"><dt>覚え書き</dt><dd>逆変換が必要なので、v は可換群の元である必要がある </dd>
+<dd>
+O(N log(log(N))) </dd></dl>
+
+</div>
+</div>
+<a id="a0eb786dcdc175107ad43dfdb12461c51" name="a0eb786dcdc175107ad43dfdb12461c51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eb786dcdc175107ad43dfdb12461c51">&#9670;&#160;</a></span>DivisorZeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; typename Monoid::Type &gt; ZetaMobiusDivMul::DivisorZeta </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; typename Monoid::Type &gt;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>約数高速ゼータ変換 </p>
+<p>v'[k] = Σ_{d|k} v[d] なる v' を返す </p><dl class="section note"><dt>覚え書き</dt><dd>O(N log(log(N))) </dd></dl>
+
+</div>
+</div>
+<a id="a60c1e6ce641275a4ee75d229514c1691" name="a60c1e6ce641275a4ee75d229514c1691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60c1e6ce641275a4ee75d229514c1691">&#9670;&#160;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ZetaMobiusDivMul::Init </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e6</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a17972686c127951d7816aef375120758" name="a17972686c127951d7816aef375120758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17972686c127951d7816aef375120758">&#9670;&#160;</a></span>MultipleMobius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Abel&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; typename Abel::Type &gt; ZetaMobiusDivMul::MultipleMobius </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; typename Abel::Type &gt;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>倍数高速メビウス変換 </p>
+<p>v'[k] = Σ_{k|d} μ(d) v[d] なる v' を返す </p><dl class="section note"><dt>覚え書き</dt><dd>逆変換が必要なので、v は可換群の元である必要がある </dd>
+<dd>
+O(N log(log(N))) </dd></dl>
+
+</div>
+</div>
+<a id="a3464457ced48ed60b5726ff223b31af4" name="a3464457ced48ed60b5726ff223b31af4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3464457ced48ed60b5726ff223b31af4">&#9670;&#160;</a></span>MultipleZeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; typename Monoid::Type &gt; ZetaMobiusDivMul::MultipleZeta </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; typename Monoid::Type &gt;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>倍数高速ゼータ変換 </p>
+<p>v'[k] = Σ_{k|d} v[d] なる v' を返す </p><dl class="section note"><dt>覚え書き</dt><dd>O(N log(log(N))) </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">変数詳解</h2>
+<a id="a0a1025ad27bd1edb07d16fbcf56cb471" name="a0a1025ad27bd1edb07d16fbcf56cb471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a1025ad27bd1edb07d16fbcf56cb471">&#9670;&#160;</a></span>primes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> ZetaMobiusDivMul::primes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

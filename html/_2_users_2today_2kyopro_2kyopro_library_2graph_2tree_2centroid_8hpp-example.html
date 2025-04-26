@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: /Users/today/kyopro/kyopro_library/graph/tree/centroid.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div class="header">
+  <div class="headertitle"><div class="title">/Users/today/kyopro/kyopro_library/graph/tree/centroid.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<p>重心分解</p>
+<p>重心分解</p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seen</td><td>探索済みフラグ </td></tr>
+    <tr><td class="paramname">sz</td><td>各頂点の部分木のサイズ</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">vector&lt;int&gt; sz(N);</div>
+<div class="line">vector&lt;bool&gt; seen(N);</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> centroid_decomposition = [&amp;](<span class="keyword">auto</span> self, <span class="keywordtype">int</span> root) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">    <span class="keywordtype">int</span> centroid = <a id="a0" name="a0"></a><a class="code hl_function" href="centroid_8hpp.html#a8681723f48417f9ab0757bd7d753c50c">GetCentroid</a>(g, root, seen, sz);</div>
+<div class="line">    seen[centroid] = <span class="keyword">true</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// ここに処理を書く</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nxt : g[centroid]) {</div>
+<div class="line">        <span class="keywordflow">if</span> (seen[nxt]) <span class="keywordflow">continue</span>;</div>
+<div class="line">        self(self, nxt);</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line">centroid_decomposition(centroid_decomposition, 0);</div>
+<div class="ttc" id="acentroid_8hpp_html_a8681723f48417f9ab0757bd7d753c50c"><div class="ttname"><a href="centroid_8hpp.html#a8681723f48417f9ab0757bd7d753c50c">GetCentroid</a></div><div class="ttdeci">int GetCentroid(const vector&lt; vector&lt; int &gt; &gt; &amp;g, int root, vector&lt; bool &gt; &amp;seen, vector&lt; int &gt; &amp;sz)</div><div class="ttdef"><b>Definition</b> centroid.hpp:26</div></div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="preprocessor">#include&quot;../../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="centroid_8hpp.html#a8681723f48417f9ab0757bd7d753c50c">GetCentroid</a>(<span class="keyword">const</span> vector&lt;vector&lt;int&gt;&gt;&amp;g,<span class="keywordtype">int</span> root,vector&lt;bool&gt;&amp;seen,vector&lt;int&gt;&amp;sz){</div>
+<div class="line">    <span class="keywordtype">int</span> n=g.size();</div>
+<div class="line">    <span class="keywordflow">if</span>(sz.empty())sz=vector&lt;int&gt;(n);</div>
+<div class="line">    <span class="keywordflow">if</span>(seen.empty())seen=vector&lt;bool&gt;(n,<span class="keyword">false</span>);</div>
+<div class="line">    <span class="keyword">auto</span> dfs=[&amp;](<span class="keyword">auto</span> dfs,<span class="keywordtype">int</span> now,<span class="keywordtype">int</span> pre)-&gt;<span class="keywordtype">int</span>{</div>
+<div class="line">        sz[now]=1;</div>
+<div class="line">        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:g[now]){</div>
+<div class="line">            <span class="keywordflow">if</span>(nxt==pre||seen[nxt])<span class="keywordflow">continue</span>;</div>
+<div class="line">            sz[now]+=dfs(dfs,nxt,now);</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">return</span> sz[now];</div>
+<div class="line">    };</div>
+<div class="line">    <span class="keywordtype">int</span> total=dfs(dfs,root,-1);</div>
+<div class="line">    <span class="keywordtype">int</span> centroid=root;</div>
+<div class="line">    <span class="keyword">auto</span> dfs2=[&amp;](<span class="keyword">auto</span> dfs2,<span class="keywordtype">int</span> now,<span class="keywordtype">int</span> pre)-&gt;<span class="keywordtype">void</span>{</div>
+<div class="line">        <span class="keywordtype">bool</span> ok=(total-sz[now])*2&lt;=total;</div>
+<div class="line">        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:g[now]){</div>
+<div class="line">            <span class="keywordflow">if</span>(nxt==pre||seen[nxt])<span class="keywordflow">continue</span>;</div>
+<div class="line">            dfs2(dfs2,nxt,now);</div>
+<div class="line">            <span class="keywordflow">if</span>(sz[nxt]*2&gt;total)ok=<span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span>(ok)centroid=now;</div>
+<div class="line">    };</div>
+<div class="line">    dfs2(dfs2,root,-1);</div>
+<div class="line">    <span class="keywordflow">return</span> centroid;</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

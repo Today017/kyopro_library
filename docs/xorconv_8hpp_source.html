@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: math/xorconv.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_296d53ceaeaa7e099814a6def439fe8a.html">math</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">xorconv.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="xorconv_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// 高速アダマール変換</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="xorconv_8hpp.html#ac1b9b5db97b082425c68d16ae09e8aa8">    5</a></span>vector&lt;T&gt; <a class="code hl_function" href="xorconv_8hpp.html#ac1b9b5db97b082425c68d16ae09e8aa8">FHT</a>(vector&lt;T&gt; a,<span class="keywordtype">bool</span> inv=<span class="keyword">false</span>){</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a>=__lg(a.size());</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;<a class="code hl_variable" href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a>;i++){</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;1&lt;&lt;<a class="code hl_variable" href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a>;j++){</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>            <span class="keywordflow">if</span>(~j&gt;&gt;i&amp;1){</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>                T x=a[j],y=a[j|1&lt;&lt;i];</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>                a[j]=x+y,a[j|1&lt;&lt;i]=x-y;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>                <span class="keywordflow">if</span>(inv)a[j]/=2,a[j|1&lt;&lt;i]/=2;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">return</span> a;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
+</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//XOR Convolution</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">//C[k] = Σ(i^j = k) A[i]B[j] なる C を返す</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="xorconv_8hpp.html#a276ec3ccb2c93aae65b125a99774cacf">   22</a></span>vector&lt;T&gt; <a class="code hl_function" href="xorconv_8hpp.html#a276ec3ccb2c93aae65b125a99774cacf">xorConvolution</a>(vector&lt;T&gt;a,vector&lt;T&gt;b){</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    a=<a class="code hl_function" href="xorconv_8hpp.html#ac1b9b5db97b082425c68d16ae09e8aa8">FHT</a>(a),b=<a class="code hl_function" href="xorconv_8hpp.html#ac1b9b5db97b082425c68d16ae09e8aa8">FHT</a>(b);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;(int)a.size();i++)a[i]*=b[i];</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    a=<a class="code hl_function" href="xorconv_8hpp.html#ac1b9b5db97b082425c68d16ae09e8aa8">FHT</a>(a,<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> a;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+</div>
+<div class="ttc" id="asparse__table__2d_8hpp_html_a16611451551e3d15916bae723c3f59f7"><div class="ttname"><a href="sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a></div><div class="ttdeci">int h</div><div class="ttdef"><b>Definition</b> sparse_table_2d.hpp:4</div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+<div class="ttc" id="axorconv_8hpp_html_a276ec3ccb2c93aae65b125a99774cacf"><div class="ttname"><a href="xorconv_8hpp.html#a276ec3ccb2c93aae65b125a99774cacf">xorConvolution</a></div><div class="ttdeci">vector&lt; T &gt; xorConvolution(vector&lt; T &gt;a, vector&lt; T &gt;b)</div><div class="ttdef"><b>Definition</b> xorconv.hpp:22</div></div>
+<div class="ttc" id="axorconv_8hpp_html_ac1b9b5db97b082425c68d16ae09e8aa8"><div class="ttname"><a href="xorconv_8hpp.html#ac1b9b5db97b082425c68d16ae09e8aa8">FHT</a></div><div class="ttdeci">vector&lt; T &gt; FHT(vector&lt; T &gt; a, bool inv=false)</div><div class="ttdef"><b>Definition</b> xorconv.hpp:5</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

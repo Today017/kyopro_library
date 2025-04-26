@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: cd</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">cd</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="el" href="md__r_e_a_d_m_e.html">top</a></p>
+<h1><a class="anchor" id="autotoc_md102"></a>
+<a href="./cd.hpp">Centroid Decomposition</a></h1>
+<p><code><a class="el" href="struct_centroid_decomposition.html">CentroidDecomposition</a>(vector&lt;vector&lt;int&gt;&gt; g, int root = 0)</code></p><ul>
+<li>木 $g$ に対し、 $root$ を根として重心分解を行う。</li>
+</ul>
+<p><code>pair&lt;int, vector&lt;vector&lt;int&gt;&gt;&gt; decompose()</code></p><ul>
+<li>重心分解後の木を返す。</li>
+<li>$($ 重心, 分解木（ある部分木の重心があり、その子に重心の部分木の重心が入っているような木） $)$ を返す。</li>
+</ul>
+<p><code>vector&lt;int&gt; get_parent()</code></p><ul>
+<li>重心分解後の木の親を返す。</li>
+</ul>
+<hr  />
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;../../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="struct_centroid_decomposition.html">CentroidDecomposition</a> {</div>
+<div class="line">    <a class="code hl_function" href="struct_centroid_decomposition.html#ac987b4c052cccfca16d8c780fe232f41">CentroidDecomposition</a>(<span class="keyword">const</span> vector&lt;vector&lt;int&gt;&gt; &amp;g, <span class="keywordtype">int</span> root = 0) {</div>
+<div class="line">        n = g.size();</div>
+<div class="line">        graph = g;</div>
+<div class="line">        subtree_size = vector&lt;int&gt;(n);</div>
+<div class="line">        parent = vector&lt;int&gt;(n, -1);</div>
+<div class="line">        seen = vector&lt;bool&gt;(n, <span class="keyword">false</span>);</div>
+<div class="line">        build(root, -1);</div>
+<div class="line">    }</div>
+<div class="line">    pair&lt;int, vector&lt;vector&lt;int&gt;&gt;&gt; <a class="code hl_function" href="struct_centroid_decomposition.html#a3e9ec1a9ac87ed1ef94634e8409a50cb">decompose</a>() {</div>
+<div class="line">        vector&lt;vector&lt;int&gt;&gt; new_graph(n);</div>
+<div class="line">        <span class="keywordtype">int</span> root = -1;</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++) {</div>
+<div class="line">            <span class="keywordflow">if</span> (parent[i] != -1) {</div>
+<div class="line">                new_graph[i].push_back(parent[i]);</div>
+<div class="line">                new_graph[parent[i]].push_back(i);</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">                root = i;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">return</span> {root, new_graph};</div>
+<div class="line">    }</div>
+<div class="line">    vector&lt;int&gt; <a class="code hl_function" href="struct_centroid_decomposition.html#a876e2f70ca606ee843c56717b53298ba">get_parent</a>() {</div>
+<div class="line">        <span class="keywordflow">return</span> parent;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    <span class="keywordtype">int</span> n;</div>
+<div class="line">    vector&lt;vector&lt;int&gt;&gt; graph;</div>
+<div class="line">    vector&lt;int&gt; subtree_size, parent;</div>
+<div class="line">    vector&lt;bool&gt; seen;</div>
+<div class="line">    <span class="keywordtype">void</span> build(<span class="keywordtype">int</span> root, <span class="keywordtype">int</span> pre) {</div>
+<div class="line">        <span class="keywordtype">int</span> total = compute_subtree_size(root, pre);</div>
+<div class="line">        <span class="keywordtype">int</span> centroid = find_centroid(root, pre, total);</div>
+<div class="line">        parent[centroid] = pre;</div>
+<div class="line">        seen[centroid] = <span class="keyword">true</span>;</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> child : graph[centroid]) {</div>
+<div class="line">            <span class="keywordflow">if</span> (!seen[child]) {</div>
+<div class="line">                build(child, centroid);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordtype">int</span> compute_subtree_size(<span class="keywordtype">int</span> now, <span class="keywordtype">int</span> pre) {</div>
+<div class="line">        subtree_size[now] = 1;</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nxt : graph[now]) {</div>
+<div class="line">            <span class="keywordflow">if</span> (nxt == pre || seen[nxt]) <span class="keywordflow">continue</span>;</div>
+<div class="line">            subtree_size[now] += compute_subtree_size(nxt, now);</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">return</span> subtree_size[now];</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordtype">int</span> find_centroid(<span class="keywordtype">int</span> now, <span class="keywordtype">int</span> pre, <span class="keywordtype">int</span> total) {</div>
+<div class="line">        <span class="keywordtype">int</span> heaviest_child = -1;</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nxt : graph[now]) {</div>
+<div class="line">            <span class="keywordflow">if</span> (nxt == pre || seen[nxt]) <span class="keywordflow">continue</span>;</div>
+<div class="line">            <span class="keywordflow">if</span> (heaviest_child == -1 || subtree_size[nxt] &gt; subtree_size[heaviest_child]) {</div>
+<div class="line">                heaviest_child = nxt;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span> (heaviest_child != -1 &amp;&amp; subtree_size[heaviest_child] * 2 &gt; total) {</div>
+<div class="line">            <span class="keywordflow">return</span> find_centroid(heaviest_child, now, total);</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">return</span> now;</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="ttc" id="astruct_centroid_decomposition_html"><div class="ttname"><a href="struct_centroid_decomposition.html">CentroidDecomposition</a></div><div class="ttdef"><b>Definition</b> cd.hpp:3</div></div>
+<div class="ttc" id="astruct_centroid_decomposition_html_a3e9ec1a9ac87ed1ef94634e8409a50cb"><div class="ttname"><a href="struct_centroid_decomposition.html#a3e9ec1a9ac87ed1ef94634e8409a50cb">CentroidDecomposition::decompose</a></div><div class="ttdeci">pair&lt; int, vector&lt; vector&lt; int &gt; &gt; &gt; decompose()</div><div class="ttdef"><b>Definition</b> cd.hpp:12</div></div>
+<div class="ttc" id="astruct_centroid_decomposition_html_a876e2f70ca606ee843c56717b53298ba"><div class="ttname"><a href="struct_centroid_decomposition.html#a876e2f70ca606ee843c56717b53298ba">CentroidDecomposition::get_parent</a></div><div class="ttdeci">vector&lt; int &gt; get_parent()</div><div class="ttdef"><b>Definition</b> cd.hpp:25</div></div>
+<div class="ttc" id="astruct_centroid_decomposition_html_ac987b4c052cccfca16d8c780fe232f41"><div class="ttname"><a href="struct_centroid_decomposition.html#ac987b4c052cccfca16d8c780fe232f41">CentroidDecomposition::CentroidDecomposition</a></div><div class="ttdeci">CentroidDecomposition(const vector&lt; vector&lt; int &gt; &gt; &amp;g, int root=0)</div><div class="ttdef"><b>Definition</b> cd.hpp:4</div></div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: algorithm/div_mul_zeta_mobius.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_692f640cc74363071c5c0e14282656e9.html">algorithm</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">div_mul_zeta_mobius.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="div__mul__zeta__mobius_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&quot;<a class="code" href="prime_8hpp.html">../../kyopro_library/math/prime.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespace_zeta_mobius_div_mul.html">    5</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_zeta_mobius_div_mul.html">ZetaMobiusDivMul</a>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9">    6</a></span>    vector&lt;int&gt;<a class="code hl_variable" href="namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9">primes</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespace_zeta_mobius_div_mul.html#a5cbf405257adf7e0c22f2f270cac194b">    7</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespace_zeta_mobius_div_mul.html#a5cbf405257adf7e0c22f2f270cac194b">init</a>(<span class="keywordtype">int</span> n=1e6){ <a class="code hl_variable" href="namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9">primes</a>=<a class="code hl_function" href="prime_8hpp.html#a2c48898d8efb7bb62a7b53012fa72c8e">PrimeEnumerate</a>(n); }</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Mono<span class="keywordtype">id</span>&gt;</div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespace_zeta_mobius_div_mul.html#a46b471dd66b3f88e8972a393ca074147">   13</a></span>    vector&lt;typename Monoid::Type&gt;<a class="code hl_function" href="namespace_zeta_mobius_div_mul.html#a46b471dd66b3f88e8972a393ca074147">MultipleZeta</a>(vector&lt;typename Monoid::Type&gt;v){</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordtype">int</span> n=v.size()-1;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)<a class="code hl_variable" href="namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9">primes</a>.size()&lt;n)<a class="code hl_function" href="namespace_zeta_mobius_div_mul.html#a5cbf405257adf7e0c22f2f270cac194b">init</a>(n);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> p:<a class="code hl_variable" href="namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9">primes</a>)<span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=n/p;k&gt;0;k--)v[k]=Monoid::op(v[k],v[k*p]);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">return</span> v;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Mono<span class="keywordtype">id</span>&gt;</div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespace_zeta_mobius_div_mul.html#ae202890540b469143d977fe092944bcf">   24</a></span>    vector&lt;typename Monoid::Type&gt;<a class="code hl_function" href="namespace_zeta_mobius_div_mul.html#ae202890540b469143d977fe092944bcf">DivisorZeta</a>(vector&lt;typename Monoid::Type&gt;v){</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">int</span> n=v.size()-1;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)<a class="code hl_variable" href="namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9">primes</a>.size()&lt;n)<a class="code hl_function" href="namespace_zeta_mobius_div_mul.html#a5cbf405257adf7e0c22f2f270cac194b">init</a>(n);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> p:<a class="code hl_variable" href="namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9">primes</a>)<span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=1;k*p&lt;=n;k++)v[k*p]=Monoid::op(v[k*p],v[k]);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">return</span> v;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Abel&gt;</div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="namespace_zeta_mobius_div_mul.html#a62b5d80f691d3db24e64cf37a3e62847">   36</a></span>    vector&lt;typename Abel::Type&gt;<a class="code hl_function" href="namespace_zeta_mobius_div_mul.html#a62b5d80f691d3db24e64cf37a3e62847">MultipleMobius</a>(vector&lt;typename Abel::Type&gt;v){</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">int</span> n=v.size()-1;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)<a class="code hl_variable" href="namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9">primes</a>.size()&lt;n)<a class="code hl_function" href="namespace_zeta_mobius_div_mul.html#a5cbf405257adf7e0c22f2f270cac194b">init</a>(n);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> p:<a class="code hl_variable" href="namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9">primes</a>)<span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=1;k*p&lt;=n;k++)v[k]=Abel::op(v[k],Abel::inv(v[k*p]));</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">return</span> v;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Abel&gt;</div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespace_zeta_mobius_div_mul.html#a7cd8317437322cc62ea0e925908c6a7e">   48</a></span>    vector&lt;typename Abel::Type&gt;<a class="code hl_function" href="namespace_zeta_mobius_div_mul.html#a7cd8317437322cc62ea0e925908c6a7e">DivisorMobius</a>(vector&lt;typename Abel::Type&gt;v){</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">int</span> n=v.size()-1;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span>((<span class="keywordtype">int</span>)<a class="code hl_variable" href="namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9">primes</a>.size()&lt;n)<a class="code hl_function" href="namespace_zeta_mobius_div_mul.html#a5cbf405257adf7e0c22f2f270cac194b">init</a>(n);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> p:<a class="code hl_variable" href="namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9">primes</a>)<span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=n/p;k&gt;0;k--)v[k*p]=Abel::op(v[k*p],Abel::inv(v[k]));</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">return</span> v;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+</div>
+<div class="ttc" id="anamespace_zeta_mobius_div_mul_html"><div class="ttname"><a href="namespace_zeta_mobius_div_mul.html">ZetaMobiusDivMul</a></div><div class="ttdoc">倍数・約数ゼータ・メビウス変換</div><div class="ttdef"><b>Definition</b> div_mul_zeta_mobius.hpp:5</div></div>
+<div class="ttc" id="anamespace_zeta_mobius_div_mul_html_a46b471dd66b3f88e8972a393ca074147"><div class="ttname"><a href="namespace_zeta_mobius_div_mul.html#a46b471dd66b3f88e8972a393ca074147">ZetaMobiusDivMul::MultipleZeta</a></div><div class="ttdeci">vector&lt; typename Monoid::Type &gt; MultipleZeta(vector&lt; typename Monoid::Type &gt;v)</div><div class="ttdoc">倍数高速ゼータ変換</div><div class="ttdef"><b>Definition</b> div_mul_zeta_mobius.hpp:13</div></div>
+<div class="ttc" id="anamespace_zeta_mobius_div_mul_html_a4e3a46951ed6bd40efca93711dc3b6a9"><div class="ttname"><a href="namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9">ZetaMobiusDivMul::primes</a></div><div class="ttdeci">vector&lt; int &gt; primes</div><div class="ttdef"><b>Definition</b> div_mul_zeta_mobius.hpp:6</div></div>
+<div class="ttc" id="anamespace_zeta_mobius_div_mul_html_a5cbf405257adf7e0c22f2f270cac194b"><div class="ttname"><a href="namespace_zeta_mobius_div_mul.html#a5cbf405257adf7e0c22f2f270cac194b">ZetaMobiusDivMul::init</a></div><div class="ttdeci">void init(int n=1e6)</div><div class="ttdef"><b>Definition</b> div_mul_zeta_mobius.hpp:7</div></div>
+<div class="ttc" id="anamespace_zeta_mobius_div_mul_html_a62b5d80f691d3db24e64cf37a3e62847"><div class="ttname"><a href="namespace_zeta_mobius_div_mul.html#a62b5d80f691d3db24e64cf37a3e62847">ZetaMobiusDivMul::MultipleMobius</a></div><div class="ttdeci">vector&lt; typename Abel::Type &gt; MultipleMobius(vector&lt; typename Abel::Type &gt;v)</div><div class="ttdoc">倍数高速メビウス変換</div><div class="ttdef"><b>Definition</b> div_mul_zeta_mobius.hpp:36</div></div>
+<div class="ttc" id="anamespace_zeta_mobius_div_mul_html_a7cd8317437322cc62ea0e925908c6a7e"><div class="ttname"><a href="namespace_zeta_mobius_div_mul.html#a7cd8317437322cc62ea0e925908c6a7e">ZetaMobiusDivMul::DivisorMobius</a></div><div class="ttdeci">vector&lt; typename Abel::Type &gt; DivisorMobius(vector&lt; typename Abel::Type &gt;v)</div><div class="ttdoc">約数高速メビウス変換</div><div class="ttdef"><b>Definition</b> div_mul_zeta_mobius.hpp:48</div></div>
+<div class="ttc" id="anamespace_zeta_mobius_div_mul_html_ae202890540b469143d977fe092944bcf"><div class="ttname"><a href="namespace_zeta_mobius_div_mul.html#ae202890540b469143d977fe092944bcf">ZetaMobiusDivMul::DivisorZeta</a></div><div class="ttdeci">vector&lt; typename Monoid::Type &gt; DivisorZeta(vector&lt; typename Monoid::Type &gt;v)</div><div class="ttdoc">約数高速ゼータ変換</div><div class="ttdef"><b>Definition</b> div_mul_zeta_mobius.hpp:24</div></div>
+<div class="ttc" id="aprime_8hpp_html"><div class="ttname"><a href="prime_8hpp.html">prime.hpp</a></div><div class="ttdoc">素数列挙</div></div>
+<div class="ttc" id="aprime_8hpp_html_a2c48898d8efb7bb62a7b53012fa72c8e"><div class="ttname"><a href="prime_8hpp.html#a2c48898d8efb7bb62a7b53012fa72c8e">PrimeEnumerate</a></div><div class="ttdeci">vector&lt; int &gt; PrimeEnumerate(int n)</div><div class="ttdef"><b>Definition</b> prime.hpp:8</div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

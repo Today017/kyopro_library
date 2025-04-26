@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: math/extgcd.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_296d53ceaeaa7e099814a6def439fe8a.html">math</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">extgcd.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../kyopro_library/template.hpp</a>&quot;</code><br />
+</div>
+<p><a href="extgcd_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a1bbcc665326a2e27d9817bcc3b8b1d91" id="r_a1bbcc665326a2e27d9817bcc3b8b1d91"><td class="memItemLeft" align="right" valign="top">tuple&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b)</td></tr>
+<tr class="memdesc:a1bbcc665326a2e27d9817bcc3b8b1d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">拡張ユークリッドの互除法  <br /></td></tr>
+<tr class="separator:a1bbcc665326a2e27d9817bcc3b8b1d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9971b6b2383ca7009a1de48b02b31350" id="r_a9971b6b2383ca7009a1de48b02b31350"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9971b6b2383ca7009a1de48b02b31350">ModInvGcd</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> m)</td></tr>
+<tr class="memdesc:a9971b6b2383ca7009a1de48b02b31350"><td class="mdescLeft">&#160;</td><td class="mdescRight">mod 逆元  <br /></td></tr>
+<tr class="separator:a9971b6b2383ca7009a1de48b02b31350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a1bbcc665326a2e27d9817bcc3b8b1d91" name="a1bbcc665326a2e27d9817bcc3b8b1d91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bbcc665326a2e27d9817bcc3b8b1d91">&#9670;&#160;</a></span>ExtGcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; ExtGcd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>拡張ユークリッドの互除法 </p>
+<p>gcd(a,b) = gcd(ba,a), gcd(b,0) = b と ba + (b/a)*a = b を使う。 ax + by = g なる x,y を求めたい。 今、(ba)X + aY = g なる X, Y が分かっている。 (ba)X = bX - (b/a)*a*X より、これを代入して、 bX - (b/a)*a*X + aY = g a(Y-(b/a)*X) + bX = g </p>
+
+</div>
+</div>
+<a id="a9971b6b2383ca7009a1de48b02b31350" name="a9971b6b2383ca7009a1de48b02b31350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9971b6b2383ca7009a1de48b02b31350">&#9670;&#160;</a></span>ModInvGcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ModInvGcd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>m</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>mod 逆元 </p>
+<p>a^(-1) (mod m) </p><dl class="section note"><dt>覚え書き</dt><dd>gcd(a,m)=1 でない場合、-1 を返す。 </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

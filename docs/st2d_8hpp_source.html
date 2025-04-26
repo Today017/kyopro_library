@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: data_structure/st2d.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b8d8e9e6d882cbdac7436f7026baf609.html">data_structure</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">st2d.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="st2d_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">struct</span>{</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="st2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">    4</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="st2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a>,<a class="code hl_variable" href="st2d_8hpp.html#aac374e320caaadeca4874add33b62af2">w</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="st2d_8hpp.html#ad1d1c7618c0f2e354e4a203dc0576280">    5</a></span>    <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_variable" href="st2d_8hpp.html#ad1d1c7618c0f2e354e4a203dc0576280">sign</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="st2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb">    6</a></span>    <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_variable" href="st2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb">dat</a>[12][12][1010][1010];</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="st2d_8hpp.html#aedc43c40341829d5e6ddc350c177219c">    7</a></span>    <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_variable" href="st2d_8hpp.html#aedc43c40341829d5e6ddc350c177219c">log_table</a>[5050];</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">    8</a></span>}<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="st2d_8hpp.html#a312865747de304850e6d28e8cfaa8a5b">   10</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="st2d_8hpp.html#a312865747de304850e6d28e8cfaa8a5b">SparseTable2DInit</a>(<span class="keyword">const</span> vector&lt;vector&lt;ll&gt;&gt;&amp;a,<span class="keywordtype">bool</span> is_min=<span class="keyword">true</span>){</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">if</span>(!is_min){</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.sign=-1;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.h=a.size();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.w=a[0].size();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.h;i++){</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.w;j++){</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.dat[0][0][i][j]=<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.sign*a[i][j];</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=2;i&lt;=max(<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.h,<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.w);i++){</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.log_table[i]=<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.log_table[i/2]+1;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=1;(1&lt;&lt;k)&lt;=<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.h;k++){</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i+(1&lt;&lt;k)&lt;=<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.h;i++){</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.w;j++){</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.dat[k][0][i][j]=min(<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.dat[k-1][0][i][j],<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.dat[k-1][0][i+(1&lt;&lt;(k-1))][j]);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0;(1&lt;&lt;k)&lt;=<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.h;k++){</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> l=1;(1&lt;&lt;l)&lt;=<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.w;l++){</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i+(1&lt;&lt;k)&lt;=<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.h;i++){</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j+(1&lt;&lt;l)&lt;=<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.w;j++){</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                    <a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.dat[k][l][i][j]=min(<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.dat[k][l-1][i][j],<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.dat[k][l-1][i][j+(1&lt;&lt;(l-1))]);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="st2d_8hpp.html#af83ef7ffc2023be283fff7be7b6f3064">   42</a></span><a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_function" href="st2d_8hpp.html#af83ef7ffc2023be283fff7be7b6f3064">SparseTable2DQuery</a>(<span class="keywordtype">int</span> l,<span class="keywordtype">int</span> r,<span class="keywordtype">int</span> u,<span class="keywordtype">int</span> d){</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">int</span> i=<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.log_table[r-l];</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> j=<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.log_table[d-u];</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">return</span> min({<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.dat[i][j][l][u],<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.dat[i][j][r-(1&lt;&lt;i)][u],<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.dat[i][j][l][d-(1&lt;&lt;j)],<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.dat[i][j][r-(1&lt;&lt;i)][d-(1&lt;&lt;j)]})*<a class="code hl_variable" href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a>.sign;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+</div>
+<div class="ttc" id="ast2d_8hpp_html_a16611451551e3d15916bae723c3f59f7"><div class="ttname"><a href="st2d_8hpp.html#a16611451551e3d15916bae723c3f59f7">h</a></div><div class="ttdeci">int h</div><div class="ttdef"><b>Definition</b> st2d.hpp:4</div></div>
+<div class="ttc" id="ast2d_8hpp_html_a312865747de304850e6d28e8cfaa8a5b"><div class="ttname"><a href="st2d_8hpp.html#a312865747de304850e6d28e8cfaa8a5b">SparseTable2DInit</a></div><div class="ttdeci">void SparseTable2DInit(const vector&lt; vector&lt; ll &gt; &gt; &amp;a, bool is_min=true)</div><div class="ttdef"><b>Definition</b> st2d.hpp:10</div></div>
+<div class="ttc" id="ast2d_8hpp_html_aa1534196fc10ec37396cb6b1f41b1b1c"><div class="ttname"><a href="st2d_8hpp.html#aa1534196fc10ec37396cb6b1f41b1b1c">SparseTable2D</a></div><div class="ttdeci">struct @360272123072241077104172251222061162277252153246 SparseTable2D</div></div>
+<div class="ttc" id="ast2d_8hpp_html_aac374e320caaadeca4874add33b62af2"><div class="ttname"><a href="st2d_8hpp.html#aac374e320caaadeca4874add33b62af2">w</a></div><div class="ttdeci">int w</div><div class="ttdef"><b>Definition</b> st2d.hpp:4</div></div>
+<div class="ttc" id="ast2d_8hpp_html_ad1d1c7618c0f2e354e4a203dc0576280"><div class="ttname"><a href="st2d_8hpp.html#ad1d1c7618c0f2e354e4a203dc0576280">sign</a></div><div class="ttdeci">ll sign</div><div class="ttdef"><b>Definition</b> st2d.hpp:5</div></div>
+<div class="ttc" id="ast2d_8hpp_html_ad4ffba731924575f47aa6d16920d0fbb"><div class="ttname"><a href="st2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb">dat</a></div><div class="ttdeci">ll dat[12][12][1010][1010]</div><div class="ttdef"><b>Definition</b> st2d.hpp:6</div></div>
+<div class="ttc" id="ast2d_8hpp_html_aedc43c40341829d5e6ddc350c177219c"><div class="ttname"><a href="st2d_8hpp.html#aedc43c40341829d5e6ddc350c177219c">log_table</a></div><div class="ttdeci">ll log_table[5050]</div><div class="ttdef"><b>Definition</b> st2d.hpp:7</div></div>
+<div class="ttc" id="ast2d_8hpp_html_af83ef7ffc2023be283fff7be7b6f3064"><div class="ttname"><a href="st2d_8hpp.html#af83ef7ffc2023be283fff7be7b6f3064">SparseTable2DQuery</a></div><div class="ttdeci">ll SparseTable2DQuery(int l, int r, int u, int d)</div><div class="ttdef"><b>Definition</b> st2d.hpp:42</div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: mod/com.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d41ce877eb409a4791b288730010abe2.html">mod</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">com.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="com_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include&quot;<a class="code" href="template_8hpp.html">../../kyopro_library/template.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_combinatorics.html">    6</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_combinatorics.html#a03267b012345ac4ca4b3282ca937f355">Combinatorics</a>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_combinatorics.html#a03267b012345ac4ca4b3282ca937f355">    7</a></span>    <a class="code hl_function" href="struct_combinatorics.html#a03267b012345ac4ca4b3282ca937f355">Combinatorics</a>()=<span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_combinatorics.html#ace51d39e7e21969b25e4a7b10a4bada3">   11</a></span>    <a class="code hl_function" href="struct_combinatorics.html#ace51d39e7e21969b25e4a7b10a4bada3">Combinatorics</a>(<span class="keywordtype">int</span> n){</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        fac=vector&lt;T&gt;(n+1);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        finv=vector&lt;T&gt;(n+1);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        fac[0]=1;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1;i&lt;=n;i++)fac[i]=fac[i-1]*i;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        finv[n]=fac[n].inv();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=n;i&gt;=1;i--)finv[i-1]=finv[i]*i;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_combinatorics.html#a977b699b6416d19473239931fca6f2f7">   22</a></span>    T <a class="code hl_function" href="struct_combinatorics.html#a977b699b6416d19473239931fca6f2f7">comb</a>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> n,<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> r){</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span>(n&lt;0||r&lt;0||n-r&lt;0)<span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span> fac[n]*finv[r]*finv[n-r];</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_combinatorics.html#ac07d10087e698b320be57919234f569b">   29</a></span>    T <a class="code hl_function" href="struct_combinatorics.html#ac07d10087e698b320be57919234f569b">perm</a>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> n,<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> r){</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">if</span>(n&lt;0||r&lt;0||n-r&lt;0)<span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">return</span> fac[n]*finv[n-r];</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
+</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="struct_combinatorics.html#a612688ccbc9653abc8098403fced48b3">   35</a></span>    T <a class="code hl_function" href="struct_combinatorics.html#a612688ccbc9653abc8098403fced48b3">factrial</a>(<span class="keywordtype">int</span> n){<span class="keywordflow">return</span> fac[n];}</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_combinatorics.html#abf0b71d9a682af871adc550a8091b05d">   38</a></span>    T <a class="code hl_function" href="struct_combinatorics.html#abf0b71d9a682af871adc550a8091b05d">factinv</a>(<span class="keywordtype">int</span> n){<span class="keywordflow">return</span> finv[n];}</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_combinatorics.html#a9e27460393170091fbf3429fdbb3925a">   41</a></span>    T <a class="code hl_function" href="struct_combinatorics.html#a9e27460393170091fbf3429fdbb3925a">operator()</a>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> n,<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> r){<span class="keywordflow">return</span> <a class="code hl_function" href="struct_combinatorics.html#a977b699b6416d19473239931fca6f2f7">comb</a>(n,r);}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    vector&lt;T&gt;fac,finv;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="ttc" id="astruct_combinatorics_html_a03267b012345ac4ca4b3282ca937f355"><div class="ttname"><a href="struct_combinatorics.html#a03267b012345ac4ca4b3282ca937f355">Combinatorics::Combinatorics</a></div><div class="ttdeci">Combinatorics()=default</div></div>
+<div class="ttc" id="astruct_combinatorics_html_a612688ccbc9653abc8098403fced48b3"><div class="ttname"><a href="struct_combinatorics.html#a612688ccbc9653abc8098403fced48b3">Combinatorics::factrial</a></div><div class="ttdeci">T factrial(int n)</div><div class="ttdoc">n! を返す</div><div class="ttdef"><b>Definition</b> com.hpp:35</div></div>
+<div class="ttc" id="astruct_combinatorics_html_a977b699b6416d19473239931fca6f2f7"><div class="ttname"><a href="struct_combinatorics.html#a977b699b6416d19473239931fca6f2f7">Combinatorics::comb</a></div><div class="ttdeci">T comb(ll n, ll r)</div><div class="ttdoc">nCr を返す</div><div class="ttdef"><b>Definition</b> com.hpp:22</div></div>
+<div class="ttc" id="astruct_combinatorics_html_a9e27460393170091fbf3429fdbb3925a"><div class="ttname"><a href="struct_combinatorics.html#a9e27460393170091fbf3429fdbb3925a">Combinatorics::operator()</a></div><div class="ttdeci">T operator()(ll n, ll r)</div><div class="ttdoc">nCr を返す</div><div class="ttdef"><b>Definition</b> com.hpp:41</div></div>
+<div class="ttc" id="astruct_combinatorics_html_abf0b71d9a682af871adc550a8091b05d"><div class="ttname"><a href="struct_combinatorics.html#abf0b71d9a682af871adc550a8091b05d">Combinatorics::factinv</a></div><div class="ttdeci">T factinv(int n)</div><div class="ttdoc">(n!)^-1 を返す</div><div class="ttdef"><b>Definition</b> com.hpp:38</div></div>
+<div class="ttc" id="astruct_combinatorics_html_ac07d10087e698b320be57919234f569b"><div class="ttname"><a href="struct_combinatorics.html#ac07d10087e698b320be57919234f569b">Combinatorics::perm</a></div><div class="ttdeci">T perm(ll n, ll r)</div><div class="ttdoc">nPr を返す</div><div class="ttdef"><b>Definition</b> com.hpp:29</div></div>
+<div class="ttc" id="astruct_combinatorics_html_ace51d39e7e21969b25e4a7b10a4bada3"><div class="ttname"><a href="struct_combinatorics.html#ace51d39e7e21969b25e4a7b10a4bada3">Combinatorics::Combinatorics</a></div><div class="ttdeci">Combinatorics(int n)</div><div class="ttdoc">二項係数の前計算</div><div class="ttdef"><b>Definition</b> com.hpp:11</div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

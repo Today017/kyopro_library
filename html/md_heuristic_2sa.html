@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: sa</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">sa</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="el" href="md__r_e_a_d_m_e.html">top</a></p>
+<h1><a class="anchor" id="autotoc_md61"></a>
+焼きなまし法のテンプレート</h1>
+<div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">double</span> START_TEMP = 1e4;</div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">double</span> END_TEMP = 1e-4;</div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> TIME_LIMIT = 5000;</div>
+<div class="line"> </div>
+<div class="line">Random rnd;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> solve() {</div>
+<div class="line">    <a class="code hl_struct" href="struct_timer.html">Timer</a> timer(TIME_LIMIT);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 初期状態</span></div>
+<div class="line">    State now = initialState();</div>
+<div class="line">    State best = now;</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">while</span> (timer.check()) {</div>
+<div class="line">        <span class="comment">// 近傍</span></div>
+<div class="line">        <span class="keywordtype">double</span> next_score = now.get_next_score();</div>
+<div class="line">        <span class="keywordtype">double</span> diff = next_score - now.get_score();</div>
+<div class="line">        <span class="keywordtype">double</span> temp = START_TEMP + (END_TEMP - START_TEMP) * timer.get_time() / TIME_LIMIT;</div>
+<div class="line">        <span class="keywordtype">double</span> prob = <a class="code hl_namespace" href="namespaceexp.html">exp</a>(diff / temp);</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span> (rnd.prob() &lt; prob) {</div>
+<div class="line">            <span class="comment">// 遷移</span></div>
+<div class="line">            now.modify();</div>
+<div class="line">            <span class="keywordflow">if</span> (now.get_score() &gt; best.get_score()) {</div>
+<div class="line">                <span class="comment">// 記録</span></div>
+<div class="line">                best = now;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespaceexp_html"><div class="ttname"><a href="namespaceexp.html">exp</a></div><div class="ttdef"><b>Definition</b> exp.py:1</div></div>
+<div class="ttc" id="astruct_timer_html"><div class="ttname"><a href="struct_timer.html">Timer</a></div><div class="ttdef"><b>Definition</b> timer.hpp:4</div></div>
+<div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

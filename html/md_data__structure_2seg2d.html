@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: seg2d</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">seg2d</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="el" href="md__r_e_a_d_m_e.html">top</a></p>
+<h1><a class="anchor" id="autotoc_md6"></a>
+<a href="./seg2d.hpp">Segment Tree 2D</a></h1>
+<p><code><a class="el" href="struct_segment_tree2_d.html">SegmentTree2D</a>&lt;T&gt;(int h, int w, F f, T e)</code></p><ul>
+<li>サイズ $h\times w$ ,演算 $f$, 単位元 $e$ の 2 次元 Segment Tree を構築する。</li>
+<li>集合 $T$, 演算 $f$, 単位元 $e$ が単位半群を為すことを要求する。</li>
+<li>$O(hw)$</li>
+</ul>
+<p><code>void set(int x, int y, T v)</code></p><ul>
+<li>位置 $(x, y)$ の要素を $v$ に変える。</li>
+<li>$O(\log{h}\log{w})$</li>
+</ul>
+<p><code>T query(int l, int r, int u, int d)</code></p><ul>
+<li>矩形領域 $[l, r) \times [u, d)$ に対しての演算結果を返す。</li>
+<li>$O(\log{h}\log{w})$ </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

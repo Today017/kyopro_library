@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: insrev</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">insrev</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="el" href="md__r_e_a_d_m_e.html">top</a></p>
+<h1><a class="anchor" id="autotoc_md0"></a>
+<a href="./insrev.hpp">Insertable Reversible Array</a></h1>
+<p><a href="https://nyaannyaan.github.io/library/rbst/lazy-reversible-rbst.hpp.html">原典</a></p>
+<p><code><a class="el" href="struct_insertable_reversible_array.html">InsertableReversibleArray</a>&lt;T&gt;(int n)</code> <code><a class="el" href="struct_insertable_reversible_array.html">InsertableReversibleArray</a>&lt;T&gt;(vector&lt;T&gt; a)</code></p><ul>
+<li>挿入・削除・区間反転可能な配列。</li>
+</ul>
+<p><code>void insert(int i, T x)</code></p><ul>
+<li>$i$ 番目に $x$ を挿入する。</li>
+<li>$O(\log n)$</li>
+</ul>
+<p><code>void erase(int i)</code></p><ul>
+<li>$i$ 番目の要素を削除する。</li>
+<li>$O(\log n)$</li>
+</ul>
+<p><code>void reverse(int i, int j)</code></p><ul>
+<li>区間 $[i, j)$ の要素を反転する。</li>
+<li>$O(\log n)$</li>
+</ul>
+<p><code>T get(i)</code></p><ul>
+<li>$i$ 番目の要素を取得する。</li>
+<li>$O(\log n)$</li>
+</ul>
+<p><code>void set(int i, T x)</code></p><ul>
+<li>$i$ 番目の要素を $x$ に変更する。</li>
+<li>$O(\log n)$</li>
+</ul>
+<p><code>int size()</code></p><ul>
+<li>配列のサイズを取得する。</li>
+<li>$O(1)$ </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

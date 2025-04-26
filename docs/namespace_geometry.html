@@ -1,0 +1,1111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: Geometry 名前空間</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#typedef-members">型定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">Geometry 名前空間</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_geometry_1_1_circle.html">Circle</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_geometry_1_1_line.html">Line</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_geometry_1_1_point.html">Point</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_geometry_1_1_segment.html">Segment</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:aa4fd942614eba4a1561c5a22278a1bcc" id="r_aa4fd942614eba4a1561c5a22278a1bcc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> = long double</td></tr>
+<tr class="separator:aa4fd942614eba4a1561c5a22278a1bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:ac6833944045520a63bc44de0c261aa7a" id="r_ac6833944045520a63bc44de0c261aa7a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6833944045520a63bc44de0c261aa7a">Orientation</a> { <br />
+&#160;&#160;<a class="el" href="#ac6833944045520a63bc44de0c261aa7aa9ee68053af2b51d26deccd98f7581852">COUNTER_CLOCKWISE</a>
+, <a class="el" href="#ac6833944045520a63bc44de0c261aa7aafeb0cf07471b0c303bf376921b7ee74d">CLOCKWISE</a>
+, <a class="el" href="#ac6833944045520a63bc44de0c261aa7aaaf694be04cbb5099b3ec9e09452b7f40">ONLINE_BACK</a>
+, <a class="el" href="#ac6833944045520a63bc44de0c261aa7aab31051d17a91a5f0c8f85661108de6ad">ONLINE_FRONT</a>
+, <br />
+&#160;&#160;<a class="el" href="#ac6833944045520a63bc44de0c261aa7aa7a0770b341c8bab4860005af2e32db19">ON_SEGMENT</a>
+<br />
+ }</td></tr>
+<tr class="separator:ac6833944045520a63bc44de0c261aa7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a8c9fd2ca3dafa5ee2835f88a02667eb5" id="r_a8c9fd2ca3dafa5ee2835f88a02667eb5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c9fd2ca3dafa5ee2835f88a02667eb5">almostEqual</a> (<a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> a, <a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> b)</td></tr>
+<tr class="separator:a8c9fd2ca3dafa5ee2835f88a02667eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace43f4cd28f78a9fa79439ee8416b2e4" id="r_ace43f4cd28f78a9fa79439ee8416b2e4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace43f4cd28f78a9fa79439ee8416b2e4">lessThan</a> (<a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> a, <a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> b)</td></tr>
+<tr class="separator:ace43f4cd28f78a9fa79439ee8416b2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85801ae240703892e050e65ebc1f97eb" id="r_a85801ae240703892e050e65ebc1f97eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85801ae240703892e050e65ebc1f97eb">greaterThan</a> (<a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> a, <a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> b)</td></tr>
+<tr class="separator:a85801ae240703892e050e65ebc1f97eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa93b6715f377d2ef8ba44c79d98641c" id="r_aaa93b6715f377d2ef8ba44c79d98641c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa93b6715f377d2ef8ba44c79d98641c">lessThanOrEqual</a> (<a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> a, <a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> b)</td></tr>
+<tr class="separator:aaa93b6715f377d2ef8ba44c79d98641c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48301418052e96f2270cbc235c91e9c7" id="r_a48301418052e96f2270cbc235c91e9c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48301418052e96f2270cbc235c91e9c7">greaterThanOrEqual</a> (<a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> a, <a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> b)</td></tr>
+<tr class="separator:a48301418052e96f2270cbc235c91e9c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68f1a8a27e6074ca5dae6b151a765cb3" id="r_a68f1a8a27e6074ca5dae6b151a765cb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac6833944045520a63bc44de0c261aa7a">Orientation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68f1a8a27e6074ca5dae6b151a765cb3">ccw</a> (const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p0, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p1, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p2)</td></tr>
+<tr class="separator:a68f1a8a27e6074ca5dae6b151a765cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb98900b14f9cd763b7c5e958a868c8" id="r_a9bb98900b14f9cd763b7c5e958a868c8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bb98900b14f9cd763b7c5e958a868c8">orientationToString</a> (<a class="el" href="#ac6833944045520a63bc44de0c261aa7a">Orientation</a> o)</td></tr>
+<tr class="separator:a9bb98900b14f9cd763b7c5e958a868c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a350e7c66a3052218fb10273521646a5a" id="r_a350e7c66a3052218fb10273521646a5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_geometry_1_1_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a350e7c66a3052218fb10273521646a5a">projection</a> (const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p1, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p2, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p)</td></tr>
+<tr class="separator:a350e7c66a3052218fb10273521646a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6459f2465325d059e045db0c357253a0" id="r_a6459f2465325d059e045db0c357253a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_geometry_1_1_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6459f2465325d059e045db0c357253a0">projection</a> (const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;l, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p)</td></tr>
+<tr class="separator:a6459f2465325d059e045db0c357253a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a401f2efd71755a4e3dc7cc4b3a60762e" id="r_a401f2efd71755a4e3dc7cc4b3a60762e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_geometry_1_1_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a401f2efd71755a4e3dc7cc4b3a60762e">reflection</a> (const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p1, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p2, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p)</td></tr>
+<tr class="separator:a401f2efd71755a4e3dc7cc4b3a60762e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cdefdb1ec92d44cf07f06dfdd4f4be8" id="r_a3cdefdb1ec92d44cf07f06dfdd4f4be8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_geometry_1_1_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cdefdb1ec92d44cf07f06dfdd4f4be8">reflection</a> (const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;l, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p)</td></tr>
+<tr class="separator:a3cdefdb1ec92d44cf07f06dfdd4f4be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5905c3b472de2209f9fa39119da309d0" id="r_a5905c3b472de2209f9fa39119da309d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5905c3b472de2209f9fa39119da309d0">isParallel</a> (const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;l1, const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;l2)</td></tr>
+<tr class="separator:a5905c3b472de2209f9fa39119da309d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfda3f3ff79f9b2f8d6a9d7052ecb770" id="r_abfda3f3ff79f9b2f8d6a9d7052ecb770"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfda3f3ff79f9b2f8d6a9d7052ecb770">isOrthogonal</a> (const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;l1, const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;l2)</td></tr>
+<tr class="separator:abfda3f3ff79f9b2f8d6a9d7052ecb770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab794a4baaf90b7e2308f67ef18c8aaef" id="r_ab794a4baaf90b7e2308f67ef18c8aaef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab794a4baaf90b7e2308f67ef18c8aaef">isParallel</a> (const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;l1, const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;l2)</td></tr>
+<tr class="separator:ab794a4baaf90b7e2308f67ef18c8aaef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529832026f1ac3e2b14cfb6b41e9c1af" id="r_a529832026f1ac3e2b14cfb6b41e9c1af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a529832026f1ac3e2b14cfb6b41e9c1af">isOrthogonal</a> (const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;l1, const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;l2)</td></tr>
+<tr class="separator:a529832026f1ac3e2b14cfb6b41e9c1af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a205dd318a5b496f3a02afc0b026003e1" id="r_a205dd318a5b496f3a02afc0b026003e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a205dd318a5b496f3a02afc0b026003e1">isParallel</a> (const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;l1, const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;l2)</td></tr>
+<tr class="separator:a205dd318a5b496f3a02afc0b026003e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ad29186e135cf0fe0f6e80e526882f5" id="r_a1ad29186e135cf0fe0f6e80e526882f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ad29186e135cf0fe0f6e80e526882f5">isOrthogonal</a> (const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;l1, const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;l2)</td></tr>
+<tr class="separator:a1ad29186e135cf0fe0f6e80e526882f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0791c792e98411c4960aa26e165c8f21" id="r_a0791c792e98411c4960aa26e165c8f21"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0791c792e98411c4960aa26e165c8f21">isParallel</a> (const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;l1, const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;l2)</td></tr>
+<tr class="separator:a0791c792e98411c4960aa26e165c8f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03322a671b1a773f7de3971fdb222bd4" id="r_a03322a671b1a773f7de3971fdb222bd4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03322a671b1a773f7de3971fdb222bd4">isOrthogonal</a> (const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;l1, const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;l2)</td></tr>
+<tr class="separator:a03322a671b1a773f7de3971fdb222bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8613d484a8c0b5d6d603592a11190c67" id="r_a8613d484a8c0b5d6d603592a11190c67"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8613d484a8c0b5d6d603592a11190c67">isPointOnLine</a> (const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p, const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;l)</td></tr>
+<tr class="separator:a8613d484a8c0b5d6d603592a11190c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcf022a48d43025f1b3f91dda172ca2b" id="r_abcf022a48d43025f1b3f91dda172ca2b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcf022a48d43025f1b3f91dda172ca2b">isPointOnSegment</a> (const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p, const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;s)</td></tr>
+<tr class="separator:abcf022a48d43025f1b3f91dda172ca2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd1aee161954f89e741e6873568fd1d8" id="r_afd1aee161954f89e741e6873568fd1d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd1aee161954f89e741e6873568fd1d8">isIntersecting</a> (const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;s1, const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;s2)</td></tr>
+<tr class="separator:afd1aee161954f89e741e6873568fd1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774399dc2bebae37aabf1a46750ee6c7" id="r_a774399dc2bebae37aabf1a46750ee6c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_geometry_1_1_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a774399dc2bebae37aabf1a46750ee6c7">getIntersection</a> (const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;s1, const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;s2)</td></tr>
+<tr class="separator:a774399dc2bebae37aabf1a46750ee6c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a8de96e1f3bf3f804c773c80c2f3a25" id="r_a4a8de96e1f3bf3f804c773c80c2f3a25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a8de96e1f3bf3f804c773c80c2f3a25">distancePointToSegment</a> (const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p, const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;s)</td></tr>
+<tr class="separator:a4a8de96e1f3bf3f804c773c80c2f3a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a255834d9deeba16697273e0471248c87" id="r_a255834d9deeba16697273e0471248c87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a255834d9deeba16697273e0471248c87">distanceSegmentToSegment</a> (const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;s1, const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;s2)</td></tr>
+<tr class="separator:a255834d9deeba16697273e0471248c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c5e5ffd70ed15d3ce03c6f5b69524df" id="r_a9c5e5ffd70ed15d3ce03c6f5b69524df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c5e5ffd70ed15d3ce03c6f5b69524df">getPolygonArea</a> (const vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;points)</td></tr>
+<tr class="separator:a9c5e5ffd70ed15d3ce03c6f5b69524df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9bf3d0fb49fb3cccd08e2905e1ffce6" id="r_ab9bf3d0fb49fb3cccd08e2905e1ffce6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9bf3d0fb49fb3cccd08e2905e1ffce6">isConvex</a> (const vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;points)</td></tr>
+<tr class="separator:ab9bf3d0fb49fb3cccd08e2905e1ffce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8a7fbcb1e7ddafa0ec0d42800d90164" id="r_ad8a7fbcb1e7ddafa0ec0d42800d90164"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8a7fbcb1e7ddafa0ec0d42800d90164">isPointOnPolygon</a> (const vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;polygon, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p)</td></tr>
+<tr class="separator:ad8a7fbcb1e7ddafa0ec0d42800d90164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48aa32d46955c3cf80e1c37676edf4a6" id="r_a48aa32d46955c3cf80e1c37676edf4a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48aa32d46955c3cf80e1c37676edf4a6">isPointInsidePolygon</a> (const vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;polygon, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p)</td></tr>
+<tr class="separator:a48aa32d46955c3cf80e1c37676edf4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7466d8b7624193a11c59f8e0558d8ad" id="r_af7466d8b7624193a11c59f8e0558d8ad"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7466d8b7624193a11c59f8e0558d8ad">convexHull</a> (vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;points, bool include_collinear=false)</td></tr>
+<tr class="separator:af7466d8b7624193a11c59f8e0558d8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a737b89d779a2c60bc146439342e24769" id="r_a737b89d779a2c60bc146439342e24769"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a737b89d779a2c60bc146439342e24769">convexHullDiameter</a> (const vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;hull)</td></tr>
+<tr class="separator:a737b89d779a2c60bc146439342e24769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a200dbcd1585ae4b59217590a4f86c135" id="r_a200dbcd1585ae4b59217590a4f86c135"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a200dbcd1585ae4b59217590a4f86c135">cutPolygon</a> (const vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;g, const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;l)</td></tr>
+<tr class="separator:a200dbcd1585ae4b59217590a4f86c135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b1e16827da06a6b3f3ce3875b3f216d" id="r_a5b1e16827da06a6b3f3ce3875b3f216d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b1e16827da06a6b3f3ce3875b3f216d">closestPair</a> (vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;points, int l, int r)</td></tr>
+<tr class="separator:a5b1e16827da06a6b3f3ce3875b3f216d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25c84d2aafb07dd03188112b3c9b69e5" id="r_a25c84d2aafb07dd03188112b3c9b69e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25c84d2aafb07dd03188112b3c9b69e5">countIntersections</a> (vector&lt; <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &gt;segments)</td></tr>
+<tr class="separator:a25c84d2aafb07dd03188112b3c9b69e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a160a3cda4bb1f308ae9166489d7b2f2d" id="r_a160a3cda4bb1f308ae9166489d7b2f2d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a160a3cda4bb1f308ae9166489d7b2f2d">countCirclesIntersection</a> (const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;c1, const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;c2)</td></tr>
+<tr class="separator:a160a3cda4bb1f308ae9166489d7b2f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e29a04c787ae3404a41b0782b06b436" id="r_a6e29a04c787ae3404a41b0782b06b436"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_geometry_1_1_circle.html">Circle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e29a04c787ae3404a41b0782b06b436">getInCircle</a> (const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;A, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;B, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;C)</td></tr>
+<tr class="separator:a6e29a04c787ae3404a41b0782b06b436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f10ad69ef666ea0a18e57b09dfc1aca" id="r_a5f10ad69ef666ea0a18e57b09dfc1aca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_geometry_1_1_circle.html">Circle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f10ad69ef666ea0a18e57b09dfc1aca">getCircumCircle</a> (const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;A, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;B, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;C)</td></tr>
+<tr class="separator:a5f10ad69ef666ea0a18e57b09dfc1aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea8002cf252acca8ca329b77f17d4e5c" id="r_aea8002cf252acca8ca329b77f17d4e5c"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea8002cf252acca8ca329b77f17d4e5c">getCircleLineIntersection</a> (const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;c, <a class="el" href="struct_geometry_1_1_point.html">Point</a> p1, <a class="el" href="struct_geometry_1_1_point.html">Point</a> p2)</td></tr>
+<tr class="separator:aea8002cf252acca8ca329b77f17d4e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa467fced21597c91d88160aa368dde0" id="r_afa467fced21597c91d88160aa368dde0"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa467fced21597c91d88160aa368dde0">getCirclesIntersect</a> (const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;c1, const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;c2)</td></tr>
+<tr class="separator:afa467fced21597c91d88160aa368dde0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd43c52385e0185f55de795b049426b" id="r_affd43c52385e0185f55de795b049426b"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affd43c52385e0185f55de795b049426b">getTangentLinesFromPoint</a> (const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;c, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;p)</td></tr>
+<tr class="separator:affd43c52385e0185f55de795b049426b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a624725fa83089bed00ea1d0fa8fc4c1e" id="r_a624725fa83089bed00ea1d0fa8fc4c1e"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a624725fa83089bed00ea1d0fa8fc4c1e">getCommonTangentsLine</a> (const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;c1, const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;c2)</td></tr>
+<tr class="separator:a624725fa83089bed00ea1d0fa8fc4c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a5494489f2d60001b10aca658fedef5c5" id="r_a5494489f2d60001b10aca658fedef5c5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5494489f2d60001b10aca658fedef5c5">EPS</a> =1e-9</td></tr>
+<tr class="separator:a5494489f2d60001b10aca658fedef5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">型定義詳解</h2>
+<a id="aa4fd942614eba4a1561c5a22278a1bcc" name="aa4fd942614eba4a1561c5a22278a1bcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4fd942614eba4a1561c5a22278a1bcc">&#9670;&#160;</a></span>Real</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Geometry::Real</a> = long double</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">列挙型詳解</h2>
+<a id="ac6833944045520a63bc44de0c261aa7a" name="ac6833944045520a63bc44de0c261aa7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6833944045520a63bc44de0c261aa7a">&#9670;&#160;</a></span>Orientation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ac6833944045520a63bc44de0c261aa7a">Geometry::Orientation</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="ac6833944045520a63bc44de0c261aa7aa9ee68053af2b51d26deccd98f7581852" name="ac6833944045520a63bc44de0c261aa7aa9ee68053af2b51d26deccd98f7581852"></a>COUNTER_CLOCKWISE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac6833944045520a63bc44de0c261aa7aafeb0cf07471b0c303bf376921b7ee74d" name="ac6833944045520a63bc44de0c261aa7aafeb0cf07471b0c303bf376921b7ee74d"></a>CLOCKWISE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac6833944045520a63bc44de0c261aa7aaaf694be04cbb5099b3ec9e09452b7f40" name="ac6833944045520a63bc44de0c261aa7aaaf694be04cbb5099b3ec9e09452b7f40"></a>ONLINE_BACK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac6833944045520a63bc44de0c261aa7aab31051d17a91a5f0c8f85661108de6ad" name="ac6833944045520a63bc44de0c261aa7aab31051d17a91a5f0c8f85661108de6ad"></a>ONLINE_FRONT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac6833944045520a63bc44de0c261aa7aa7a0770b341c8bab4860005af2e32db19" name="ac6833944045520a63bc44de0c261aa7aa7a0770b341c8bab4860005af2e32db19"></a>ON_SEGMENT&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a8c9fd2ca3dafa5ee2835f88a02667eb5" name="a8c9fd2ca3dafa5ee2835f88a02667eb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c9fd2ca3dafa5ee2835f88a02667eb5">&#9670;&#160;</a></span>almostEqual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::almostEqual </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68f1a8a27e6074ca5dae6b151a765cb3" name="a68f1a8a27e6074ca5dae6b151a765cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68f1a8a27e6074ca5dae6b151a765cb3">&#9670;&#160;</a></span>ccw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ac6833944045520a63bc44de0c261aa7a">Orientation</a> Geometry::ccw </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p0</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b1e16827da06a6b3f3ce3875b3f216d" name="a5b1e16827da06a6b3f3ce3875b3f216d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b1e16827da06a6b3f3ce3875b3f216d">&#9670;&#160;</a></span>closestPair()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> Geometry::closestPair </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>points</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>l</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>r</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af7466d8b7624193a11c59f8e0558d8ad" name="af7466d8b7624193a11c59f8e0558d8ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7466d8b7624193a11c59f8e0558d8ad">&#9670;&#160;</a></span>convexHull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; Geometry::convexHull </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>points</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>include_collinear</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a737b89d779a2c60bc146439342e24769" name="a737b89d779a2c60bc146439342e24769"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a737b89d779a2c60bc146439342e24769">&#9670;&#160;</a></span>convexHullDiameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> Geometry::convexHullDiameter </td>
+          <td>(</td>
+          <td class="paramtype">const vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>hull</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a160a3cda4bb1f308ae9166489d7b2f2d" name="a160a3cda4bb1f308ae9166489d7b2f2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a160a3cda4bb1f308ae9166489d7b2f2d">&#9670;&#160;</a></span>countCirclesIntersection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Geometry::countCirclesIntersection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a25c84d2aafb07dd03188112b3c9b69e5" name="a25c84d2aafb07dd03188112b3c9b69e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25c84d2aafb07dd03188112b3c9b69e5">&#9670;&#160;</a></span>countIntersections()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Geometry::countIntersections </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>segments</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a200dbcd1585ae4b59217590a4f86c135" name="a200dbcd1585ae4b59217590a4f86c135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a200dbcd1585ae4b59217590a4f86c135">&#9670;&#160;</a></span>cutPolygon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; Geometry::cutPolygon </td>
+          <td>(</td>
+          <td class="paramtype">const vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a8de96e1f3bf3f804c773c80c2f3a25" name="a4a8de96e1f3bf3f804c773c80c2f3a25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a8de96e1f3bf3f804c773c80c2f3a25">&#9670;&#160;</a></span>distancePointToSegment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> Geometry::distancePointToSegment </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a255834d9deeba16697273e0471248c87" name="a255834d9deeba16697273e0471248c87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a255834d9deeba16697273e0471248c87">&#9670;&#160;</a></span>distanceSegmentToSegment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> Geometry::distanceSegmentToSegment </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea8002cf252acca8ca329b77f17d4e5c" name="aea8002cf252acca8ca329b77f17d4e5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea8002cf252acca8ca329b77f17d4e5c">&#9670;&#160;</a></span>getCircleLineIntersection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; Geometry::getCircleLineIntersection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_geometry_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>p1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_geometry_1_1_point.html">Point</a></td>          <td class="paramname"><span class="paramname"><em>p2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afa467fced21597c91d88160aa368dde0" name="afa467fced21597c91d88160aa368dde0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa467fced21597c91d88160aa368dde0">&#9670;&#160;</a></span>getCirclesIntersect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; Geometry::getCirclesIntersect </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5f10ad69ef666ea0a18e57b09dfc1aca" name="a5f10ad69ef666ea0a18e57b09dfc1aca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f10ad69ef666ea0a18e57b09dfc1aca">&#9670;&#160;</a></span>getCircumCircle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_geometry_1_1_circle.html">Circle</a> Geometry::getCircumCircle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>B</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>C</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a624725fa83089bed00ea1d0fa8fc4c1e" name="a624725fa83089bed00ea1d0fa8fc4c1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a624725fa83089bed00ea1d0fa8fc4c1e">&#9670;&#160;</a></span>getCommonTangentsLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &gt; Geometry::getCommonTangentsLine </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e29a04c787ae3404a41b0782b06b436" name="a6e29a04c787ae3404a41b0782b06b436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e29a04c787ae3404a41b0782b06b436">&#9670;&#160;</a></span>getInCircle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_geometry_1_1_circle.html">Circle</a> Geometry::getInCircle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>B</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>C</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a774399dc2bebae37aabf1a46750ee6c7" name="a774399dc2bebae37aabf1a46750ee6c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a774399dc2bebae37aabf1a46750ee6c7">&#9670;&#160;</a></span>getIntersection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_geometry_1_1_point.html">Point</a> Geometry::getIntersection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c5e5ffd70ed15d3ce03c6f5b69524df" name="a9c5e5ffd70ed15d3ce03c6f5b69524df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c5e5ffd70ed15d3ce03c6f5b69524df">&#9670;&#160;</a></span>getPolygonArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> Geometry::getPolygonArea </td>
+          <td>(</td>
+          <td class="paramtype">const vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>points</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="affd43c52385e0185f55de795b049426b" name="affd43c52385e0185f55de795b049426b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affd43c52385e0185f55de795b049426b">&#9670;&#160;</a></span>getTangentLinesFromPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; Geometry::getTangentLinesFromPoint </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_circle.html">Circle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85801ae240703892e050e65ebc1f97eb" name="a85801ae240703892e050e65ebc1f97eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85801ae240703892e050e65ebc1f97eb">&#9670;&#160;</a></span>greaterThan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::greaterThan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48301418052e96f2270cbc235c91e9c7" name="a48301418052e96f2270cbc235c91e9c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48301418052e96f2270cbc235c91e9c7">&#9670;&#160;</a></span>greaterThanOrEqual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::greaterThanOrEqual </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab9bf3d0fb49fb3cccd08e2905e1ffce6" name="ab9bf3d0fb49fb3cccd08e2905e1ffce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9bf3d0fb49fb3cccd08e2905e1ffce6">&#9670;&#160;</a></span>isConvex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::isConvex </td>
+          <td>(</td>
+          <td class="paramtype">const vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>points</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd1aee161954f89e741e6873568fd1d8" name="afd1aee161954f89e741e6873568fd1d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd1aee161954f89e741e6873568fd1d8">&#9670;&#160;</a></span>isIntersecting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::isIntersecting </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abfda3f3ff79f9b2f8d6a9d7052ecb770" name="abfda3f3ff79f9b2f8d6a9d7052ecb770"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfda3f3ff79f9b2f8d6a9d7052ecb770">&#9670;&#160;</a></span>isOrthogonal() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::isOrthogonal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ad29186e135cf0fe0f6e80e526882f5" name="a1ad29186e135cf0fe0f6e80e526882f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ad29186e135cf0fe0f6e80e526882f5">&#9670;&#160;</a></span>isOrthogonal() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::isOrthogonal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03322a671b1a773f7de3971fdb222bd4" name="a03322a671b1a773f7de3971fdb222bd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03322a671b1a773f7de3971fdb222bd4">&#9670;&#160;</a></span>isOrthogonal() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::isOrthogonal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a529832026f1ac3e2b14cfb6b41e9c1af" name="a529832026f1ac3e2b14cfb6b41e9c1af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529832026f1ac3e2b14cfb6b41e9c1af">&#9670;&#160;</a></span>isOrthogonal() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::isOrthogonal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5905c3b472de2209f9fa39119da309d0" name="a5905c3b472de2209f9fa39119da309d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5905c3b472de2209f9fa39119da309d0">&#9670;&#160;</a></span>isParallel() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::isParallel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a205dd318a5b496f3a02afc0b026003e1" name="a205dd318a5b496f3a02afc0b026003e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a205dd318a5b496f3a02afc0b026003e1">&#9670;&#160;</a></span>isParallel() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::isParallel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0791c792e98411c4960aa26e165c8f21" name="a0791c792e98411c4960aa26e165c8f21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0791c792e98411c4960aa26e165c8f21">&#9670;&#160;</a></span>isParallel() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::isParallel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab794a4baaf90b7e2308f67ef18c8aaef" name="ab794a4baaf90b7e2308f67ef18c8aaef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab794a4baaf90b7e2308f67ef18c8aaef">&#9670;&#160;</a></span>isParallel() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::isParallel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48aa32d46955c3cf80e1c37676edf4a6" name="a48aa32d46955c3cf80e1c37676edf4a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48aa32d46955c3cf80e1c37676edf4a6">&#9670;&#160;</a></span>isPointInsidePolygon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::isPointInsidePolygon </td>
+          <td>(</td>
+          <td class="paramtype">const vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>polygon</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8613d484a8c0b5d6d603592a11190c67" name="a8613d484a8c0b5d6d603592a11190c67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8613d484a8c0b5d6d603592a11190c67">&#9670;&#160;</a></span>isPointOnLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::isPointOnLine </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8a7fbcb1e7ddafa0ec0d42800d90164" name="ad8a7fbcb1e7ddafa0ec0d42800d90164"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a7fbcb1e7ddafa0ec0d42800d90164">&#9670;&#160;</a></span>isPointOnPolygon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::isPointOnPolygon </td>
+          <td>(</td>
+          <td class="paramtype">const vector&lt; <a class="el" href="struct_geometry_1_1_point.html">Point</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>polygon</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abcf022a48d43025f1b3f91dda172ca2b" name="abcf022a48d43025f1b3f91dda172ca2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcf022a48d43025f1b3f91dda172ca2b">&#9670;&#160;</a></span>isPointOnSegment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::isPointOnSegment </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_segment.html">Segment</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace43f4cd28f78a9fa79439ee8416b2e4" name="ace43f4cd28f78a9fa79439ee8416b2e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace43f4cd28f78a9fa79439ee8416b2e4">&#9670;&#160;</a></span>lessThan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::lessThan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaa93b6715f377d2ef8ba44c79d98641c" name="aaa93b6715f377d2ef8ba44c79d98641c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa93b6715f377d2ef8ba44c79d98641c">&#9670;&#160;</a></span>lessThanOrEqual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Geometry::lessThanOrEqual </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9bb98900b14f9cd763b7c5e958a868c8" name="a9bb98900b14f9cd763b7c5e958a868c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb98900b14f9cd763b7c5e958a868c8">&#9670;&#160;</a></span>orientationToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Geometry::orientationToString </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac6833944045520a63bc44de0c261aa7a">Orientation</a></td>          <td class="paramname"><span class="paramname"><em>o</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6459f2465325d059e045db0c357253a0" name="a6459f2465325d059e045db0c357253a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6459f2465325d059e045db0c357253a0">&#9670;&#160;</a></span>projection() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_geometry_1_1_point.html">Point</a> Geometry::projection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a350e7c66a3052218fb10273521646a5a" name="a350e7c66a3052218fb10273521646a5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a350e7c66a3052218fb10273521646a5a">&#9670;&#160;</a></span>projection() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_geometry_1_1_point.html">Point</a> Geometry::projection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3cdefdb1ec92d44cf07f06dfdd4f4be8" name="a3cdefdb1ec92d44cf07f06dfdd4f4be8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cdefdb1ec92d44cf07f06dfdd4f4be8">&#9670;&#160;</a></span>reflection() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_geometry_1_1_point.html">Point</a> Geometry::reflection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>l</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a401f2efd71755a4e3dc7cc4b3a60762e" name="a401f2efd71755a4e3dc7cc4b3a60762e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a401f2efd71755a4e3dc7cc4b3a60762e">&#9670;&#160;</a></span>reflection() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_geometry_1_1_point.html">Point</a> Geometry::reflection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">変数詳解</h2>
+<a id="a5494489f2d60001b10aca658fedef5c5" name="a5494489f2d60001b10aca658fedef5c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5494489f2d60001b10aca658fedef5c5">&#9670;&#160;</a></span>EPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> Geometry::EPS =1e-9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

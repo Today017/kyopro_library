@@ -1,32 +1,45 @@
-#include "../../../kyopro_library/template.hpp"
-#include "../../../kyopro_library/graph/sp/dij.hpp"
+#include"../../../kyopro_library/template.hpp"
+#include"../../../kyopro_library/graph/shortest_path/dijkstra.hpp"
+#include"../../../kyopro_library/graph/shortest_path/bfs.hpp"
 
-pair<vector<int>, ll> treeDiameter(const vector<vector<pair<int, ll>>>& g) {
-    vector<ll> dist = dijkstra(g);
-    int s = max_element(dist.begin(), dist.end()) - dist.begin();
-    dist = dijkstra(g, s);
-    int t = max_element(dist.begin(), dist.end()) - dist.begin();
-    vector<int> path;
-    int now = t;
-    while (now != s) {
+pair<VI,ll> TreeDiameter(const WG& g) {
+    VL dist=Dijkstra(g);
+    int s=max_element(ALL(dist))-dist.begin();
+    dist=Dijkstra(g,s);
+    int t=max_element(ALL(dist))-dist.begin();
+    VI path;
+    int now=t;
+    while(now!=s) {
         path.push_back(now);
-        for (auto [nxt, cost] : g[now]) {
-            if (dist[now] == dist[nxt] + cost) {
-                now = nxt;
+        for(auto[nxt,cost]:g[now]) {
+            if(dist[now]==dist[nxt]+cost) {
+                now=nxt;
                 break;
             }
         }
     }
     path.push_back(s);
-    ll diameter = dist[t];
-    return {path, diameter};
+    ll diameter=dist[t];
+    return {path,diameter};
 }
 
-pair<vector<int>, ll> treeDiameter(const vector<vector<int>>& g) {
-    int n = g.size();
-    vector<vector<pair<int, ll>>> h(n);
-    for (int i = 0; i < n; i++) {
-        for (int j : g[i]) h[i].push_back({j, 1});
+pair<VI,ll>TreeDiameter(const VVI& g) {
+    VL dist=BFS(g);
+    int s=max_element(ALL(dist))-dist.begin();
+    dist=BFS(g,s);
+    int t=max_element(ALL(dist))-dist.begin();
+    VI path;
+    int now=t;
+    while(now!=s) {
+        path.push_back(now);
+        for(int nxt:g[now]) {
+            if(dist[now]==dist[nxt]+1) {
+                now=nxt;
+                break;
+            }
+        }
     }
-    return treeDiameter(h);
+    path.push_back(s);
+    ll diameter=dist[t];
+    return {path,diameter};
 }
