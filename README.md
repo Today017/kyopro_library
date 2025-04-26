@@ -1,12 +1,13 @@
-# Kyopro Library
+## Today03
+- [AtCoder](https://atcoder.jp/users/Today03)
+- [Codeforces](https://codeforces.com/profile/Today03)
+- [yukicoder](https://yukicoder.me/users/15224)
 
-[Today03](https://atcoder.jp/users/Today03) が競技プログラミングで使用しているライブラリ・スクリプト集です。
-
-ライブラリのドキュメントは[ここ](https://today017.github.io/kyopro_library/index.html)。
+ライブラリのドキュメント：[ここ](https://today017.github.io/kyopro_library/index.html)。
 
 ## 環境構築
 1. Docker, Git, make のインストール
-3. [./kyopro_tools/scripts/build] をコピペ、実行
+3. [build](./kyopro_tools/scripts/build) をコピペ、実行
 4. `make build` でDockerイメージをビルドする（初回のみ）
 5. `make run` でコンテナを起動して入る
 
