@@ -3,11 +3,11 @@
 - [Codeforces](https://codeforces.com/profile/Today03)
 - [yukicoder](https://yukicoder.me/users/15224)
 
-ライブラリのドキュメント：[ここ](https://today017.github.io/kyopro_library/index.html)。
+ライブラリのドキュメント：https://today017.github.io/kyopro_library/index.html
 
 ## 環境構築
 1. Docker, Git, make のインストール
-3. [build](./kyopro_tools/scripts/build) をコピペ、実行
+3. [build](https://github.com/Today017/kyopro_library/blob/main/kyopro_tools/scripts/build) をコピペ、実行
 4. `make build` でDockerイメージをビルドする（初回のみ）
 5. `make run` でコンテナを起動して入る
 
@@ -31,7 +31,7 @@
 3. `./a.out`
 4. `./copy a`
 
-## データ構造に載せる代数構造
+## データ構造に載せる代数構造の定義の仕方
 
 ### 例) モノイド
 ```cpp
