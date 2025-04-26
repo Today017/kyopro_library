@@ -54,33 +54,33 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_multi_set.html">    5</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_multi_set.html#ae1683508411d44c542872827503b2881">MultiSet</a>:multiset&lt;T&gt;{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_multi_set.html">    5</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_multi_set.html#ae1683508411d44c542872827503b2881">MultiSet</a>:multiset&lt;T&gt; {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keyword">using </span>multiset&lt;T&gt;::multiset;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">    7</a></span>    T <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_multi_set.html#ae1683508411d44c542872827503b2881">    8</a></span>    <a class="code hl_function" href="struct_multi_set.html#ae1683508411d44c542872827503b2881">MultiSet</a>()=<span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
 <div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a99a83ecab866565566687d8aae71d018">   12</a></span>    <a class="code hl_function" href="struct_multi_set.html#a99a83ecab866565566687d8aae71d018">MultiSet</a>(T <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>=-1){</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a99a83ecab866565566687d8aae71d018">   12</a></span>    <a class="code hl_function" href="struct_multi_set.html#a99a83ecab866565566687d8aae71d018">MultiSet</a>(T <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>=-1) {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        this-&gt;not_found=<a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
 </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a588b67e05193fb2068526aa9d07a2145">   17</a></span>    T <a class="code hl_function" href="struct_multi_set.html#a588b67e05193fb2068526aa9d07a2145">min</a>(){</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a588b67e05193fb2068526aa9d07a2145">   17</a></span>    T <a class="code hl_function" href="struct_multi_set.html#a588b67e05193fb2068526aa9d07a2145">min</a>() {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">if</span>(this-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">return</span>*this-&gt;begin();</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
 </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_multi_set.html#ad78f6fac05a65bd05a34586b51a9eaee">   23</a></span>    T <a class="code hl_function" href="struct_multi_set.html#ad78f6fac05a65bd05a34586b51a9eaee">max</a>(){</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_multi_set.html#ad78f6fac05a65bd05a34586b51a9eaee">   23</a></span>    T <a class="code hl_function" href="struct_multi_set.html#ad78f6fac05a65bd05a34586b51a9eaee">max</a>() {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(this-&gt;empty()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span>*this-&gt;rbegin();</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
 </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
 <div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_multi_set.html#aa815da7cdf344ceccb71ee35c9bf6410">   29</a></span>    T <a class="code hl_function" href="struct_multi_set.html#aa815da7cdf344ceccb71ee35c9bf6410">pop_min</a>(){</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_multi_set.html#aa815da7cdf344ceccb71ee35c9bf6410">   29</a></span>    T <a class="code hl_function" href="struct_multi_set.html#aa815da7cdf344ceccb71ee35c9bf6410">pop_min</a>() {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">if</span>(this-&gt;empty()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        T ret=<a class="code hl_function" href="struct_multi_set.html#a588b67e05193fb2068526aa9d07a2145">min</a>();</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        cnt[ret]--;</div>
@@ -90,7 +90,7 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
 <div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a5cce4f369b39c156138ed1ef9b736d35">   38</a></span>    T <a class="code hl_function" href="struct_multi_set.html#a5cce4f369b39c156138ed1ef9b736d35">pop_max</a>(){</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a5cce4f369b39c156138ed1ef9b736d35">   38</a></span>    T <a class="code hl_function" href="struct_multi_set.html#a5cce4f369b39c156138ed1ef9b736d35">pop_max</a>() {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">if</span>(this-&gt;empty()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        T ret=<a class="code hl_function" href="struct_multi_set.html#ad78f6fac05a65bd05a34586b51a9eaee">max</a>();</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        cnt[ret]--;</div>
@@ -100,13 +100,13 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
 <div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a203a2028c468bb813bd14c8d79a3b9ea">   47</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_multi_set.html#a203a2028c468bb813bd14c8d79a3b9ea">contains</a>(T x){</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a203a2028c468bb813bd14c8d79a3b9ea">   47</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_multi_set.html#a203a2028c468bb813bd14c8d79a3b9ea">contains</a>(T x) {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span> this-&gt;find(x)!=this-&gt;end();</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
 </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
 <div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a0fd57998bffa9ea644ed55c5681df35b">   53</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_multi_set.html#a0fd57998bffa9ea644ed55c5681df35b">discard</a>(T x){</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a0fd57998bffa9ea644ed55c5681df35b">   53</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_multi_set.html#a0fd57998bffa9ea644ed55c5681df35b">discard</a>(T x) {</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">auto</span> itr=this-&gt;find(x);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">if</span>(itr==this-&gt;end()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        cnt[*itr]--;</div>
@@ -116,7 +116,7 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
 <div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="struct_multi_set.html#ac5ea12f9b549bf8c218976e440e3dcba">   62</a></span>    T <a class="code hl_function" href="struct_multi_set.html#ac5ea12f9b549bf8c218976e440e3dcba">gt</a>(T x){</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="struct_multi_set.html#ac5ea12f9b549bf8c218976e440e3dcba">   62</a></span>    T <a class="code hl_function" href="struct_multi_set.html#ac5ea12f9b549bf8c218976e440e3dcba">gt</a>(T x) {</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">auto</span> itr=this-&gt;upper_bound(x);</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">if</span>(itr==this-&gt;end()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">return</span>*itr;</div>
@@ -124,7 +124,7 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
 <div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="struct_multi_set.html#af5f4fdc603110941a5ae08f4a067aa73">   69</a></span>    T <a class="code hl_function" href="struct_multi_set.html#af5f4fdc603110941a5ae08f4a067aa73">ge</a>(T x){</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="struct_multi_set.html#af5f4fdc603110941a5ae08f4a067aa73">   69</a></span>    T <a class="code hl_function" href="struct_multi_set.html#af5f4fdc603110941a5ae08f4a067aa73">ge</a>(T x) {</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound(x);</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">if</span>(itr==this-&gt;end()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">return</span>*itr;</div>
@@ -132,7 +132,7 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
 <div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="struct_multi_set.html#ae68cdae0ceec4d6cc7909270947e1380">   76</a></span>    T <a class="code hl_function" href="struct_multi_set.html#ae68cdae0ceec4d6cc7909270947e1380">le</a>(T x){</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="struct_multi_set.html#ae68cdae0ceec4d6cc7909270947e1380">   76</a></span>    T <a class="code hl_function" href="struct_multi_set.html#ae68cdae0ceec4d6cc7909270947e1380">le</a>(T x) {</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keyword">auto</span> itr=this-&gt;upper_bound(x);</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">if</span>(itr==this-&gt;begin()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">return</span>*prev(itr);</div>
@@ -140,7 +140,7 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
 <div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a04ddcfd58ef65bb94b814f8f8e6afa0a">   83</a></span>    T <a class="code hl_function" href="struct_multi_set.html#a04ddcfd58ef65bb94b814f8f8e6afa0a">lt</a>(T x){</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a04ddcfd58ef65bb94b814f8f8e6afa0a">   83</a></span>    T <a class="code hl_function" href="struct_multi_set.html#a04ddcfd58ef65bb94b814f8f8e6afa0a">lt</a>(T x) {</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keyword">auto</span> itr=this-&gt;lower_bound(x);</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">if</span>(itr==this-&gt;begin()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">return</span>*prev(itr);</div>
@@ -148,7 +148,7 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
 <div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="struct_multi_set.html#aec0db35536a9fcd9da1d1e35273f0337">   90</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_multi_set.html#aec0db35536a9fcd9da1d1e35273f0337">count</a>(T x){</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="struct_multi_set.html#aec0db35536a9fcd9da1d1e35273f0337">   90</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_multi_set.html#aec0db35536a9fcd9da1d1e35273f0337">count</a>(T x) {</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">return</span> cnt[x];</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
 </div>

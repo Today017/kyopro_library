@@ -56,9 +56,9 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Cost&gt;</div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_burning_burying.html">    7</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_burning_burying.html#a2f4140e564a37c264619079966077ee6">BurningBurying</a>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_burning_burying.html">    7</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_burning_burying.html#a2f4140e564a37c264619079966077ee6">BurningBurying</a> {</div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_burning_burying.html#a2f4140e564a37c264619079966077ee6">    8</a></span>    <a class="code hl_function" href="struct_burning_burying.html#a2f4140e564a37c264619079966077ee6">BurningBurying</a>(<span class="keywordtype">int</span> n){</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_burning_burying.html#a2f4140e564a37c264619079966077ee6">    8</a></span>    <a class="code hl_function" href="struct_burning_burying.html#a2f4140e564a37c264619079966077ee6">BurningBurying</a>(<span class="keywordtype">int</span> n) {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        this-&gt;n=n;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        start=n;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        goal=n+1;</div>
@@ -67,12 +67,12 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
 <div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">   16</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">add_single</a>(<span class="keywordtype">int</span> i,Cost zero,Cost one){</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">if</span>(zero&lt;=one){</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">   16</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">add_single</a>(<span class="keywordtype">int</span> i, Cost zero, Cost one) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">if</span>(zero&lt;=one) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="comment">//基本コストがzeroで、iを0から1に変えると+one-zeroされる</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            offset+=zero;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            mf.add_edge(start,i,one-zero);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="comment">//基本コストがoneで、iを1から0に変えると-one+zeroされる</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            offset+=one;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            mf.add_edge(i,goal,zero-one);</div>
@@ -81,7 +81,7 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
 <div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_burning_burying.html#a44ab45cb039360509bab62a01f384d28">   38</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_burning_burying.html#a44ab45cb039360509bab62a01f384d28">add_double</a>(<span class="keywordtype">int</span> i,<span class="keywordtype">int</span> j,Cost a,Cost b,Cost c,Cost d){</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_burning_burying.html#a44ab45cb039360509bab62a01f384d28">   38</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_burning_burying.html#a44ab45cb039360509bab62a01f384d28">add_double</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, Cost a, Cost b, Cost c, Cost d) {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        assert(b+c&gt;=a+d);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        offset+=a;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_function" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">add_single</a>(i,0,c-a);</div>
@@ -90,7 +90,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
 </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_burning_burying.html#a90fd210c7fb2b5e0a929a3f2b973d543">   47</a></span>    Cost <a class="code hl_function" href="struct_burning_burying.html#a90fd210c7fb2b5e0a929a3f2b973d543">solve</a>(){<span class="keywordflow">return</span> mf.flow(start,goal)+offset;}</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_burning_burying.html#a90fd210c7fb2b5e0a929a3f2b973d543">   47</a></span>    Cost <a class="code hl_function" href="struct_burning_burying.html#a90fd210c7fb2b5e0a929a3f2b973d543">solve</a>() { <span class="keywordflow">return</span> mf.flow(start,goal)+offset; }</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">int</span> n,start,goal;</div>

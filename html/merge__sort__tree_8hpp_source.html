@@ -54,84 +54,81 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html">    5</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_merge_sort_tree.html#a127958ecca67593f3cb1fcbb8051506b">MergeSortTree</a>{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html">    5</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_merge_sort_tree.html#a127958ecca67593f3cb1fcbb8051506b">MergeSortTree</a> {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html#a127958ecca67593f3cb1fcbb8051506b">    6</a></span>    <a class="code hl_function" href="struct_merge_sort_tree.html#a127958ecca67593f3cb1fcbb8051506b">MergeSortTree</a>()=<span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html#ac8235ab846d13f418b4ba8783ff461d9">    9</a></span>    <a class="code hl_function" href="struct_merge_sort_tree.html#ac8235ab846d13f418b4ba8783ff461d9">MergeSortTree</a>(<span class="keyword">const</span> vector&lt;T&gt;&amp; v){</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html#ac8235ab846d13f418b4ba8783ff461d9">    9</a></span>    <a class="code hl_function" href="struct_merge_sort_tree.html#ac8235ab846d13f418b4ba8783ff461d9">MergeSortTree</a>(<span class="keyword">const</span> vector&lt;T&gt;&amp; v) {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        n=v.size();</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        mx=*max_element(v.begin(),v.end()),mn=*min_element(v.begin(),v.end());</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        mx=*max_element(<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(v)),mn=*min_element(<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(v));</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        dat=vector&lt;vector&lt;T&gt;&gt;(n&lt;&lt;1);</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) dat[n+i]={v[i]};</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=n-1; i&gt;0; i--){</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            merge(</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                dat[i&lt;&lt;1].begin(),dat[i&lt;&lt;1].end(),</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                dat[i&lt;&lt;1|1].begin(),dat[i&lt;&lt;1|1].end(),</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                back_inserter(dat[i])</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            );</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        }</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=n-1; i&gt;0; i--) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            merge(<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(dat[i&lt;&lt;1]),<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(dat[i&lt;&lt;1|1]),back_inserter(dat[i]));</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html#a647f9a3816a3718bd40e38f8a4f04974">   25</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_merge_sort_tree.html#a647f9a3816a3718bd40e38f8a4f04974">count_lt</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, T val){</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        l+=n,r+=n;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">int</span> ret=0;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">while</span>(l&lt;r){</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keywordflow">if</span>(l&amp;1) ret+=<a class="code hl_define" href="template_8hpp.html#ab6b1ca645104fc8e3678f999ebe71f41">LB</a>(dat[l],val),l++;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keywordflow">if</span>(r&amp;1) --r,ret+=<a class="code hl_define" href="template_8hpp.html#ab6b1ca645104fc8e3678f999ebe71f41">LB</a>(dat[r],val);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            l&gt;&gt;=1,r&gt;&gt;=1;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html#a647f9a3816a3718bd40e38f8a4f04974">   21</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_merge_sort_tree.html#a647f9a3816a3718bd40e38f8a4f04974">count_lt</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, T val) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        l+=n,r+=n;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">int</span> ret=0;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">while</span>(l&lt;r) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordflow">if</span>(l&amp;1) ret+=<a class="code hl_define" href="template_8hpp.html#ab6b1ca645104fc8e3678f999ebe71f41">LB</a>(dat[l],val),l++;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">if</span>(r&amp;1) --r,ret+=<a class="code hl_define" href="template_8hpp.html#ab6b1ca645104fc8e3678f999ebe71f41">LB</a>(dat[r],val);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            l&gt;&gt;=1,r&gt;&gt;=1;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html#a881a344a374c02cdd93379fe14a4ecdf">   38</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_merge_sort_tree.html#a881a344a374c02cdd93379fe14a4ecdf">count_le</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, T val){</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_merge_sort_tree.html#a647f9a3816a3718bd40e38f8a4f04974">count_lt</a>(l,r,val+1);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html#a881a344a374c02cdd93379fe14a4ecdf">   34</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_merge_sort_tree.html#a881a344a374c02cdd93379fe14a4ecdf">count_le</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, T val) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_merge_sort_tree.html#a647f9a3816a3718bd40e38f8a4f04974">count_lt</a>(l,r,val+1);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
 </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html#a90c47e319006d8204e2f43ea18a68a45">   44</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_merge_sort_tree.html#a90c47e319006d8204e2f43ea18a68a45">count_gt</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, T val){</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">return</span> n-l-<a class="code hl_function" href="struct_merge_sort_tree.html#a881a344a374c02cdd93379fe14a4ecdf">count_le</a>(l,r,val);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html#a90c47e319006d8204e2f43ea18a68a45">   40</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_merge_sort_tree.html#a90c47e319006d8204e2f43ea18a68a45">count_gt</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, T val) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">return</span> r-l-<a class="code hl_function" href="struct_merge_sort_tree.html#a881a344a374c02cdd93379fe14a4ecdf">count_le</a>(l,r,val);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
 </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
-<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html#ab7f899451891ab52b795867471bb1ba2">   50</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_merge_sort_tree.html#ab7f899451891ab52b795867471bb1ba2">count_ge</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, T val){</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">return</span> n-l-<a class="code hl_function" href="struct_merge_sort_tree.html#a647f9a3816a3718bd40e38f8a4f04974">count_lt</a>(l,r,val);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html#ab7f899451891ab52b795867471bb1ba2">   46</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_merge_sort_tree.html#ab7f899451891ab52b795867471bb1ba2">count_ge</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, T val) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span> r-l-<a class="code hl_function" href="struct_merge_sort_tree.html#a647f9a3816a3718bd40e38f8a4f04974">count_lt</a>(l,r,val);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
 </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html#aac1f911fbf3ef224cfa6c1ef79f59973">   56</a></span>    T <a class="code hl_function" href="struct_merge_sort_tree.html#aac1f911fbf3ef224cfa6c1ef79f59973">kth</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, <span class="keywordtype">int</span> k){</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        T lo=mn-1,hi=mx+1;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">while</span>(hi-lo&gt;1){</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            T mid=(hi+lo)/2;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">if</span>(<a class="code hl_function" href="struct_merge_sort_tree.html#a647f9a3816a3718bd40e38f8a4f04974">count_lt</a>(l,r,mid)&gt;=k) hi=mid;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">else</span> lo=mid;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">return</span> lo;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="struct_merge_sort_tree.html#aac1f911fbf3ef224cfa6c1ef79f59973">   52</a></span>    T <a class="code hl_function" href="struct_merge_sort_tree.html#aac1f911fbf3ef224cfa6c1ef79f59973">kth</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        T lo=mn-1,hi=mx+1;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">while</span>(hi-lo&gt;1) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            T mid=(hi+lo)/2;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">if</span>(<a class="code hl_function" href="struct_merge_sort_tree.html#a647f9a3816a3718bd40e38f8a4f04974">count_lt</a>(l,r,mid)&gt;=k) hi=mid;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">else</span> lo=mid;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">return</span> lo;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
 </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">int</span> n;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    vector&lt;vector&lt;T&gt;&gt; <a class="code hl_variable" href="sparse__table__2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb">dat</a>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    T mx,mn;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">int</span> n;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    vector&lt;vector&lt;T&gt;&gt; <a class="code hl_variable" href="sparse__table__2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb">dat</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    T mx,mn;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
 </div>
 <div class="ttc" id="asparse__table__2d_8hpp_html_ad4ffba731924575f47aa6d16920d0fbb"><div class="ttname"><a href="sparse__table__2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb">dat</a></div><div class="ttdeci">ll dat[12][12][1010][1010]</div><div class="ttdef"><b>Definition</b> sparse_table_2d.hpp:6</div></div>
 <div class="ttc" id="astruct_merge_sort_tree_html_a127958ecca67593f3cb1fcbb8051506b"><div class="ttname"><a href="struct_merge_sort_tree.html#a127958ecca67593f3cb1fcbb8051506b">MergeSortTree::MergeSortTree</a></div><div class="ttdeci">MergeSortTree()=default</div></div>
-<div class="ttc" id="astruct_merge_sort_tree_html_a647f9a3816a3718bd40e38f8a4f04974"><div class="ttname"><a href="struct_merge_sort_tree.html#a647f9a3816a3718bd40e38f8a4f04974">MergeSortTree::count_lt</a></div><div class="ttdeci">int count_lt(int l, int r, T val)</div><div class="ttdoc">区間 [l, r) に存在する val 未満の値の個数を返す</div><div class="ttdef"><b>Definition</b> merge_sort_tree.hpp:25</div></div>
-<div class="ttc" id="astruct_merge_sort_tree_html_a881a344a374c02cdd93379fe14a4ecdf"><div class="ttname"><a href="struct_merge_sort_tree.html#a881a344a374c02cdd93379fe14a4ecdf">MergeSortTree::count_le</a></div><div class="ttdeci">int count_le(int l, int r, T val)</div><div class="ttdoc">区間 [l, r) に存在する val 以下の値の個数を返す</div><div class="ttdef"><b>Definition</b> merge_sort_tree.hpp:38</div></div>
-<div class="ttc" id="astruct_merge_sort_tree_html_a90c47e319006d8204e2f43ea18a68a45"><div class="ttname"><a href="struct_merge_sort_tree.html#a90c47e319006d8204e2f43ea18a68a45">MergeSortTree::count_gt</a></div><div class="ttdeci">int count_gt(int l, int r, T val)</div><div class="ttdoc">区間 [l, r) に存在する val より大きい値の個数を返す</div><div class="ttdef"><b>Definition</b> merge_sort_tree.hpp:44</div></div>
-<div class="ttc" id="astruct_merge_sort_tree_html_aac1f911fbf3ef224cfa6c1ef79f59973"><div class="ttname"><a href="struct_merge_sort_tree.html#aac1f911fbf3ef224cfa6c1ef79f59973">MergeSortTree::kth</a></div><div class="ttdeci">T kth(int l, int r, int k)</div><div class="ttdoc">区間 [l, r) の小さい方から k(1-indexed) 番目の値を返す</div><div class="ttdef"><b>Definition</b> merge_sort_tree.hpp:56</div></div>
-<div class="ttc" id="astruct_merge_sort_tree_html_ab7f899451891ab52b795867471bb1ba2"><div class="ttname"><a href="struct_merge_sort_tree.html#ab7f899451891ab52b795867471bb1ba2">MergeSortTree::count_ge</a></div><div class="ttdeci">int count_ge(int l, int r, T val)</div><div class="ttdoc">区間 [l, r) に存在する val 以上の値の個数を返す</div><div class="ttdef"><b>Definition</b> merge_sort_tree.hpp:50</div></div>
+<div class="ttc" id="astruct_merge_sort_tree_html_a647f9a3816a3718bd40e38f8a4f04974"><div class="ttname"><a href="struct_merge_sort_tree.html#a647f9a3816a3718bd40e38f8a4f04974">MergeSortTree::count_lt</a></div><div class="ttdeci">int count_lt(int l, int r, T val)</div><div class="ttdoc">区間 [l, r) に存在する val 未満の値の個数を返す</div><div class="ttdef"><b>Definition</b> merge_sort_tree.hpp:21</div></div>
+<div class="ttc" id="astruct_merge_sort_tree_html_a881a344a374c02cdd93379fe14a4ecdf"><div class="ttname"><a href="struct_merge_sort_tree.html#a881a344a374c02cdd93379fe14a4ecdf">MergeSortTree::count_le</a></div><div class="ttdeci">int count_le(int l, int r, T val)</div><div class="ttdoc">区間 [l, r) に存在する val 以下の値の個数を返す</div><div class="ttdef"><b>Definition</b> merge_sort_tree.hpp:34</div></div>
+<div class="ttc" id="astruct_merge_sort_tree_html_a90c47e319006d8204e2f43ea18a68a45"><div class="ttname"><a href="struct_merge_sort_tree.html#a90c47e319006d8204e2f43ea18a68a45">MergeSortTree::count_gt</a></div><div class="ttdeci">int count_gt(int l, int r, T val)</div><div class="ttdoc">区間 [l, r) に存在する val より大きい値の個数を返す</div><div class="ttdef"><b>Definition</b> merge_sort_tree.hpp:40</div></div>
+<div class="ttc" id="astruct_merge_sort_tree_html_aac1f911fbf3ef224cfa6c1ef79f59973"><div class="ttname"><a href="struct_merge_sort_tree.html#aac1f911fbf3ef224cfa6c1ef79f59973">MergeSortTree::kth</a></div><div class="ttdeci">T kth(int l, int r, int k)</div><div class="ttdoc">区間 [l, r) の小さい方から k(1-indexed) 番目の値を返す</div><div class="ttdef"><b>Definition</b> merge_sort_tree.hpp:52</div></div>
+<div class="ttc" id="astruct_merge_sort_tree_html_ab7f899451891ab52b795867471bb1ba2"><div class="ttname"><a href="struct_merge_sort_tree.html#ab7f899451891ab52b795867471bb1ba2">MergeSortTree::count_ge</a></div><div class="ttdeci">int count_ge(int l, int r, T val)</div><div class="ttdoc">区間 [l, r) に存在する val 以上の値の個数を返す</div><div class="ttdef"><b>Definition</b> merge_sort_tree.hpp:46</div></div>
 <div class="ttc" id="astruct_merge_sort_tree_html_ac8235ab846d13f418b4ba8783ff461d9"><div class="ttname"><a href="struct_merge_sort_tree.html#ac8235ab846d13f418b4ba8783ff461d9">MergeSortTree::MergeSortTree</a></div><div class="ttdeci">MergeSortTree(const vector&lt; T &gt; &amp;v)</div><div class="ttdoc">配列 v からマージソート木を構築する</div><div class="ttdef"><b>Definition</b> merge_sort_tree.hpp:9</div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> template.hpp:9</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a7ab29d3bd6e8d66e320f4224e75f6cea"><div class="ttname"><a href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a></div><div class="ttdeci">#define ALL(x)</div><div class="ttdef"><b>Definition</b> template.hpp:5</div></div>
 <div class="ttc" id="atemplate_8hpp_html_ab6b1ca645104fc8e3678f999ebe71f41"><div class="ttname"><a href="template_8hpp.html#ab6b1ca645104fc8e3678f999ebe71f41">LB</a></div><div class="ttdeci">#define LB(v, x)</div><div class="ttdef"><b>Definition</b> template.hpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

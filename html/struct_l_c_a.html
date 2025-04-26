@@ -50,24 +50,34 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="struct_l_c_a.html" title="LCA">LCA</a>  
+ <a href="#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="lca_8hpp_source.html">lca.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:aaedfb4d7581a38e75566bc38a720dcde" id="r_aaedfb4d7581a38e75566bc38a720dcde"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaedfb4d7581a38e75566bc38a720dcde">LCA</a> (vector&lt; vector&lt; int &gt; &gt; &amp;g, int root=0)</td></tr>
-<tr class="separator:aaedfb4d7581a38e75566bc38a720dcde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6d23a47705e2f854117d680168155c2" id="r_af6d23a47705e2f854117d680168155c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6d23a47705e2f854117d680168155c2">LCA</a> (const <a class="el" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a> &amp;g, int root=0)</td></tr>
+<tr class="memdesc:af6d23a47705e2f854117d680168155c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <br /></td></tr>
+<tr class="separator:af6d23a47705e2f854117d680168155c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a487d1c6c968cd4282e6e0cae4e28fe66" id="r_a487d1c6c968cd4282e6e0cae4e28fe66"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a487d1c6c968cd4282e6e0cae4e28fe66">lca</a> (int u, int v)</td></tr>
+<tr class="memdesc:a487d1c6c968cd4282e6e0cae4e28fe66"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 u, v のLCAを返す  <br /></td></tr>
 <tr class="separator:a487d1c6c968cd4282e6e0cae4e28fe66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73fba08794ae4d796df5308c57e1a237" id="r_a73fba08794ae4d796df5308c57e1a237"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73fba08794ae4d796df5308c57e1a237">distance</a> (int u, int v)</td></tr>
+<tr class="memdesc:a73fba08794ae4d796df5308c57e1a237"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 u, v の距離を返す  <br /></td></tr>
 <tr class="separator:a73fba08794ae4d796df5308c57e1a237"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5fecd6ac33048d9665470774370e3e5" id="r_ad5fecd6ac33048d9665470774370e3e5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5fecd6ac33048d9665470774370e3e5">is_on_path</a> (int u, int v, int x)</td></tr>
+<tr class="memdesc:ad5fecd6ac33048d9665470774370e3e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 x が u-v のパス上にあるか否かを返す  <br /></td></tr>
 <tr class="separator:ad5fecd6ac33048d9665470774370e3e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdc1eaf704f9531b0d3703e547261f8b" id="r_acdc1eaf704f9531b0d3703e547261f8b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdc1eaf704f9531b0d3703e547261f8b">climb</a> (int u, int d)</td></tr>
+<tr class="memdesc:acdc1eaf704f9531b0d3703e547261f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 u から d 回遡った位置にある頂点を返す  <br /></td></tr>
 <tr class="separator:acdc1eaf704f9531b0d3703e547261f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">構築子と解体子</h2>
-<a id="aaedfb4d7581a38e75566bc38a720dcde" name="aaedfb4d7581a38e75566bc38a720dcde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaedfb4d7581a38e75566bc38a720dcde">&#9670;&#160;</a></span>LCA()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p><a class="el" href="struct_l_c_a.html" title="LCA">LCA</a> </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="af6d23a47705e2f854117d680168155c2" name="af6d23a47705e2f854117d680168155c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6d23a47705e2f854117d680168155c2">&#9670;&#160;</a></span>LCA()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -78,7 +88,7 @@ $(function(){ initResizable(false); });
         <tr>
           <td class="memname">LCA::LCA </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; vector&lt; int &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -92,6 +102,8 @@ $(function(){ initResizable(false); });
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>コンストラクタ </p>
 
 </div>
 </div>
@@ -123,6 +135,8 @@ $(function(){ initResizable(false); });
 </table>
 </div><div class="memdoc">
 
+<p>頂点 u から d 回遡った位置にある頂点を返す </p>
+
 </div>
 </div>
 <a id="a73fba08794ae4d796df5308c57e1a237" name="a73fba08794ae4d796df5308c57e1a237"></a>
@@ -151,6 +165,8 @@ $(function(){ initResizable(false); });
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>頂点 u, v の距離を返す </p>
 
 </div>
 </div>
@@ -186,6 +202,8 @@ $(function(){ initResizable(false); });
 </table>
 </div><div class="memdoc">
 
+<p>頂点 x が u-v のパス上にあるか否かを返す </p>
+
 </div>
 </div>
 <a id="a487d1c6c968cd4282e6e0cae4e28fe66" name="a487d1c6c968cd4282e6e0cae4e28fe66"></a>
@@ -214,6 +232,8 @@ $(function(){ initResizable(false); });
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>頂点 u, v のLCAを返す </p>
 
 </div>
 </div>

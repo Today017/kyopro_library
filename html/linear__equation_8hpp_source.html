@@ -54,17 +54,17 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
 <div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="linear__equation_8hpp.html#ad783a386934fd2ebc14105b5babb4aec">   12</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="linear__equation_8hpp.html#ad783a386934fd2ebc14105b5babb4aec">RowReduction</a>(vector&lt;vector&lt;bool&gt;&gt;&amp; a, <a class="code hl_typedef" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a>&amp; where){</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="linear__equation_8hpp.html#ad783a386934fd2ebc14105b5babb4aec">   12</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="linear__equation_8hpp.html#ad783a386934fd2ebc14105b5babb4aec">RowReduction</a>(vector&lt;vector&lt;bool&gt;&gt;&amp; a, <a class="code hl_typedef" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a>&amp; where) {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> row=a.size(),col=a.front().size();</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">int</span> rank=0;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(c,col-1){</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(c,col-1) {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">int</span> pivot=rank;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">while</span>(pivot&lt;row&amp;&amp;!a[pivot][c]) pivot++;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">if</span>(pivot==row) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        swap(a[pivot],a[rank]);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        where.push_back(c);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(r,row){</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordflow">if</span>(r!=rank&amp;&amp;a[r][c]){</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(r,row) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordflow">if</span>(r!=rank&amp;&amp;a[r][c]) {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                <span class="comment">//A[r]^=A[c]</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,col) a[r][i]=a[r][i]^a[rank][i];</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            }</div>
@@ -76,7 +76,7 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
 <div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="linear__equation_8hpp.html#ac91575eafd15cbdfc1da2ae7cf5bb964">   37</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="linear__equation_8hpp.html#ac91575eafd15cbdfc1da2ae7cf5bb964">LinearEquation</a>(vector&lt;vector&lt;bool&gt;&gt; a, vector&lt;bool&gt; b, vector&lt;bool&gt;&amp; x0, vector&lt;vector&lt;bool&gt;&gt;&amp; ker){</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="linear__equation_8hpp.html#ac91575eafd15cbdfc1da2ae7cf5bb964">   37</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="linear__equation_8hpp.html#ac91575eafd15cbdfc1da2ae7cf5bb964">LinearEquation</a>(vector&lt;vector&lt;bool&gt;&gt; a, vector&lt;bool&gt; b, vector&lt;bool&gt;&amp; x0, vector&lt;vector&lt;bool&gt;&gt;&amp; ker) {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">int</span> row=a.size(),col=a.front().size();</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    assert(b.size()==row);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    vector&lt;vector&lt;bool&gt;&gt; a2=a;</div>
@@ -85,14 +85,14 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_typedef" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> where;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> rank=<a class="code hl_function" href="linear__equation_8hpp.html#ad783a386934fd2ebc14105b5babb4aec">RowReduction</a>(a2,where);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r=rank; r&lt;row; r++)<span class="keywordflow">if</span>(a2[r].back()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r=rank; r&lt;row; r++) <span class="keywordflow">if</span>(a2[r].back()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    x0=vector&lt;bool&gt;(col,<span class="keyword">false</span>);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,rank) x0[where[i]]=a2[i].back();</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">int</span> r=0;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(c,col){</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span>(r&lt;rank&amp;&amp;c==where[r]){</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(c,col) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span>(r&lt;rank&amp;&amp;c==where[r]) {</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            r++;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
@@ -109,7 +109,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="alinear__equation_8hpp_html_ad783a386934fd2ebc14105b5babb4aec"><div class="ttname"><a href="linear__equation_8hpp.html#ad783a386934fd2ebc14105b5babb4aec">RowReduction</a></div><div class="ttdeci">int RowReduction(vector&lt; vector&lt; bool &gt; &gt; &amp;a, VI &amp;where)</div><div class="ttdoc">F_2 上の連立線形方程式 https://mathlandscape.com/solution-sp/ https://yukicoder.me/submissions/1011997 verify:...</div><div class="ttdef"><b>Definition</b> linear_equation.hpp:12</div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> template.hpp:9</div></div>
-<div class="ttc" id="atemplate_8hpp_html_a6a675649b5da3f6454b83fa37d00cc2b"><div class="ttname"><a href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a></div><div class="ttdeci">vector&lt; int &gt; VI</div><div class="ttdef"><b>Definition</b> template.hpp:16</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a6a675649b5da3f6454b83fa37d00cc2b"><div class="ttname"><a href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a></div><div class="ttdeci">vector&lt; int &gt; VI</div><div class="ttdef"><b>Definition</b> template.hpp:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

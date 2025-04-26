@@ -51,6 +51,9 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>辺属性LCA  
+ <a href="#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="lca__edge_8hpp_source.html">lca_edge.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -61,11 +64,16 @@ $(function(){ initResizable(false); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:a4ea24fb4a2054bd7b21d40e3c66226e5" id="r_a4ea24fb4a2054bd7b21d40e3c66226e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ea24fb4a2054bd7b21d40e3c66226e5">LcaEdge</a> (const vector&lt; vector&lt; pair&lt; int, <a class="el" href="#a32af8badfd8c23118a37bc2ea669ff67">Type</a> &gt; &gt; &gt; &amp;g, int root=0)</td></tr>
+<tr class="memdesc:a4ea24fb4a2054bd7b21d40e3c66226e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <br /></td></tr>
 <tr class="separator:a4ea24fb4a2054bd7b21d40e3c66226e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af292e8187eca836629b2e6d9a10daf08" id="r_af292e8187eca836629b2e6d9a10daf08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a32af8badfd8c23118a37bc2ea669ff67">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af292e8187eca836629b2e6d9a10daf08">fold</a> (int u, int v)</td></tr>
+<tr class="memdesc:af292e8187eca836629b2e6d9a10daf08"><td class="mdescLeft">&#160;</td><td class="mdescRight">パス u-v のモノイド積を返す  <br /></td></tr>
 <tr class="separator:af292e8187eca836629b2e6d9a10daf08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">型定義メンバ詳解</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Monoid&gt;<br />
+struct LcaEdge&lt; Monoid &gt;</div><p>辺属性LCA </p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
 <a id="a32af8badfd8c23118a37bc2ea669ff67" name="a32af8badfd8c23118a37bc2ea669ff67"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a32af8badfd8c23118a37bc2ea669ff67">&#9670;&#160;</a></span>Type</h2>
 
@@ -112,6 +120,14 @@ template&lt;typename Monoid&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>重み付き木 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
@@ -143,6 +159,8 @@ template&lt;typename Monoid&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>パス u-v のモノイド積を返す </p>
 
 </div>
 </div>

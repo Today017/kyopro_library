@@ -54,8 +54,8 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Judge&gt;</div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="binary__search_8hpp.html#ac51e21ede218b1fc3ce5beca36a6fc30">    7</a></span>T <a class="code hl_function" href="binary__search_8hpp.html#ac51e21ede218b1fc3ce5beca36a6fc30">BinarySearch</a>(T ok, T ng, Judge judge){</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">while</span>(abs(ok-ng)&gt;1){</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="binary__search_8hpp.html#ac51e21ede218b1fc3ce5beca36a6fc30">    7</a></span>T <a class="code hl_function" href="binary__search_8hpp.html#ac51e21ede218b1fc3ce5beca36a6fc30">BinarySearch</a>(T ok, T ng, Judge judge) {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">while</span>(abs(ok-ng)&gt;1) {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        T mid=(ok+ng)/2;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">if</span>(judge(mid)) ok=mid;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordflow">else</span> ng=mid;</div>
@@ -66,8 +66,8 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Judge&gt;</div>
 <div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="binary__search_8hpp.html#aa10292c755723d3eca2daec700f835dd">   20</a></span>T <a class="code hl_function" href="binary__search_8hpp.html#aa10292c755723d3eca2daec700f835dd">BinarySearchIteration</a>(T ok, T ng, Judge judge, <span class="keywordtype">int</span> iter=100){</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">while</span>(iter--){</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="binary__search_8hpp.html#aa10292c755723d3eca2daec700f835dd">   20</a></span>T <a class="code hl_function" href="binary__search_8hpp.html#aa10292c755723d3eca2daec700f835dd">BinarySearchIteration</a>(T ok, T ng, Judge judge, <span class="keywordtype">int</span> iter=100) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">while</span>(iter--) {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        T mid=(ok+ng)/2;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span>(judge(mid)) ok=mid;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">else</span> ng=mid;</div>
@@ -78,11 +78,11 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Judge&gt;</div>
 <div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="binary__search_8hpp.html#ad882a3759569b5eac90be8983df7bd54">   35</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="binary__search_8hpp.html#ad882a3759569b5eac90be8983df7bd54">CheckMonotonicity</a>(T start, T step, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> iter, Judge judge){</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="binary__search_8hpp.html#ad882a3759569b5eac90be8983df7bd54">   35</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="binary__search_8hpp.html#ad882a3759569b5eac90be8983df7bd54">CheckMonotonicity</a>(T start, T step, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> iter, Judge judge) {</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    cerr&lt;&lt;<span class="stringliteral">&quot;[ &quot;</span>;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">bool</span> pre=<span class="keyword">false</span>;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> cnt=0;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">for</span>(T i=start; iter&gt;0; iter--, i+=step){</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">for</span>(T i=start; iter&gt;0; iter--, i+=step) {</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">bool</span> tmp=judge(i);</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        cerr&lt;&lt;<span class="stringliteral">&quot;{ &quot;</span>&lt;&lt;i&lt;&lt;<span class="stringliteral">&quot; : &quot;</span>&lt;&lt;(tmp ? <span class="stringliteral">&quot;OK&quot;</span> : <span class="stringliteral">&quot;NG&quot;</span>)&lt;&lt;<span class="stringliteral">&quot; }, &quot;</span>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">if</span>(i!=start&amp;&amp;tmp!=pre) cnt++;</div>

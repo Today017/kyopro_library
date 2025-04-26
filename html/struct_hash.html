@@ -53,7 +53,7 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="rh_8hpp_source.html">rh.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 公開型</h2></td></tr>
@@ -87,10 +87,6 @@ $(function(){ initResizable(false); });
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 公開変数類</h2></td></tr>
-<tr class="memitem:a5e0b836a8e551a23bf840ffb8c1e034f" id="r_a5e0b836a8e551a23bf840ffb8c1e034f"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e0b836a8e551a23bf840ffb8c1e034f">MX</a> =1000000</td></tr>
-<tr class="separator:a5e0b836a8e551a23bf840ffb8c1e034f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a866d5f414cdc05f9fdfddb9e87f8ffff" id="r_a866d5f414cdc05f9fdfddb9e87f8ffff"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a866d5f414cdc05f9fdfddb9e87f8ffff">C</a> =256</td></tr>
-<tr class="separator:a866d5f414cdc05f9fdfddb9e87f8ffff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a39c22a994feb6e341c48e1a9ac24cb" id="r_a6a39c22a994feb6e341c48e1a9ac24cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a21e94320d986c15f38f83c0a1bc92e52">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a39c22a994feb6e341c48e1a9ac24cb">value</a></td></tr>
 <tr class="separator:a6a39c22a994feb6e341c48e1a9ac24cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -106,8 +102,8 @@ $(function(){ initResizable(false); });
 <tr class="separator:a3bd24b140ac1c70ae98a01974b0c9980"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07623ca4117730eb67bce9817f146810" id="r_a07623ca4117730eb67bce9817f146810"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07623ca4117730eb67bce9817f146810">flag</a> =false</td></tr>
 <tr class="separator:a07623ca4117730eb67bce9817f146810"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34cd57f022892c37a37f3e4745798396" id="r_a34cd57f022892c37a37f3e4745798396"><td class="memItemLeft" align="right" valign="top">static array&lt; array&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, 5 &gt;, 256 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34cd57f022892c37a37f3e4745798396">num</a> ={}</td></tr>
-<tr class="separator:a34cd57f022892c37a37f3e4745798396"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0265ebdf193428764f0b21cc2a9d324a" id="r_a0265ebdf193428764f0b21cc2a9d324a"><td class="memItemLeft" align="right" valign="top">static array&lt; array&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, 5 &gt;, 256 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0265ebdf193428764f0b21cc2a9d324a">num</a> ={}</td></tr>
+<tr class="separator:a0265ebdf193428764f0b21cc2a9d324a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">型定義メンバ詳解</h2>
 <a id="a21e94320d986c15f38f83c0a1bc92e52" name="a21e94320d986c15f38f83c0a1bc92e52"></a>
@@ -424,20 +420,6 @@ $(function(){ initResizable(false); });
 
 </div>
 </div>
-<a id="a866d5f414cdc05f9fdfddb9e87f8ffff" name="a866d5f414cdc05f9fdfddb9e87f8ffff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a866d5f414cdc05f9fdfddb9e87f8ffff">&#9670;&#160;</a></span>C</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int Hash::C =256</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a07623ca4117730eb67bce9817f146810" name="a07623ca4117730eb67bce9817f146810"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a07623ca4117730eb67bce9817f146810">&#9670;&#160;</a></span>flag</h2>
 
@@ -504,22 +486,8 @@ $(function(){ initResizable(false); });
 
 </div>
 </div>
-<a id="a5e0b836a8e551a23bf840ffb8c1e034f" name="a5e0b836a8e551a23bf840ffb8c1e034f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e0b836a8e551a23bf840ffb8c1e034f">&#9670;&#160;</a></span>MX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int Hash::MX =1000000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a34cd57f022892c37a37f3e4745798396" name="a34cd57f022892c37a37f3e4745798396"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34cd57f022892c37a37f3e4745798396">&#9670;&#160;</a></span>num</h2>
+<a id="a0265ebdf193428764f0b21cc2a9d324a" name="a0265ebdf193428764f0b21cc2a9d324a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0265ebdf193428764f0b21cc2a9d324a">&#9670;&#160;</a></span>num</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -528,7 +496,7 @@ $(function(){ initResizable(false); });
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">array&lt; array&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, 5 &gt;, 256 &gt; Hash::num ={}</td>
+          <td class="memname">array&lt; array&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, 5 &gt;, <a class="el" href="rolling__hash_8hpp.html#a404ac35e6b35b40321967f29d9f2c783">HASH_C</a> &gt; Hash::num ={}</td>
         </tr>
       </table>
   </td>
@@ -577,7 +545,7 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 <hr/>この構造体詳解は次のファイルから抽出されました:<ul>
-<li>string/<a class="el" href="rh_8hpp_source.html">rh.hpp</a></li>
+<li>string/<a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

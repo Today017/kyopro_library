@@ -52,20 +52,47 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">centroid.hpp ファイル</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>重心分解  
-<a href="#details">[詳解]</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../../kyopro_library/template.hpp</a>&quot;</code><br />
 </div>
 <p><a href="centroid_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:a982a5db931a030593f6704641571dd4b" id="r_a982a5db931a030593f6704641571dd4b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a982a5db931a030593f6704641571dd4b">TreeCentroid</a> (const vector&lt; vector&lt; int &gt; &gt; &amp;g, int root, vector&lt; bool &gt; &amp;seen, vector&lt; int &gt; &amp;sz)</td></tr>
-<tr class="separator:a982a5db931a030593f6704641571dd4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a225d81ea785b9462e73f73b117911b7c" id="r_a225d81ea785b9462e73f73b117911b7c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a225d81ea785b9462e73f73b117911b7c">TreeCentroid</a> (const <a class="el" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a> &amp;g, int root, <a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> &amp;seen, <a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> &amp;sz)</td></tr>
+<tr class="memdesc:a225d81ea785b9462e73f73b117911b7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">重心分解  <br /></td></tr>
+<tr class="separator:a225d81ea785b9462e73f73b117911b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>重心分解 </p>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a225d81ea785b9462e73f73b117911b7c" name="a225d81ea785b9462e73f73b117911b7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a225d81ea785b9462e73f73b117911b7c">&#9670;&#160;</a></span>TreeCentroid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TreeCentroid </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>root</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>seen</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>sz</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重心分解 </p>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramname">seen</td><td>探索済みフラグ </td></tr>
@@ -77,7 +104,7 @@ $(function(){ initResizable(false); });
 <div class="line">vector&lt;bool&gt; seen(N);</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> centroid_decomposition = [&amp;](<span class="keyword">auto</span> self, <span class="keywordtype">int</span> root) -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line">    <span class="keywordtype">int</span> centroid = <a class="code hl_function" href="#a982a5db931a030593f6704641571dd4b">TreeCentroid</a>(g, root, seen, sz);</div>
+<div class="line">    <span class="keywordtype">int</span> centroid = <a class="code hl_function" href="#a225d81ea785b9462e73f73b117911b7c">TreeCentroid</a>(g, root, seen, sz);</div>
 <div class="line">    seen[centroid] = <span class="keyword">true</span>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// ここに処理を書く</span></div>
@@ -88,37 +115,8 @@ $(function(){ initResizable(false); });
 <div class="line">    }</div>
 <div class="line">};</div>
 <div class="line">centroid_decomposition(centroid_decomposition, 0);</div>
-<div class="ttc" id="acentroid_8hpp_html_a982a5db931a030593f6704641571dd4b"><div class="ttname"><a href="#a982a5db931a030593f6704641571dd4b">TreeCentroid</a></div><div class="ttdeci">int TreeCentroid(const vector&lt; vector&lt; int &gt; &gt; &amp;g, int root, vector&lt; bool &gt; &amp;seen, vector&lt; int &gt; &amp;sz)</div><div class="ttdef"><b>Definition</b> centroid.hpp:28</div></div>
-</div><!-- fragment --> </div><h2 class="groupheader">関数詳解</h2>
-<a id="a982a5db931a030593f6704641571dd4b" name="a982a5db931a030593f6704641571dd4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a982a5db931a030593f6704641571dd4b">&#9670;&#160;</a></span>TreeCentroid()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int TreeCentroid </td>
-          <td>(</td>
-          <td class="paramtype">const vector&lt; vector&lt; int &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>root</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">vector&lt; bool &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>seen</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">vector&lt; int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>sz</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
+<div class="ttc" id="acentroid_8hpp_html_a225d81ea785b9462e73f73b117911b7c"><div class="ttname"><a href="#a225d81ea785b9462e73f73b117911b7c">TreeCentroid</a></div><div class="ttdeci">int TreeCentroid(const VVI &amp;g, int root, VI &amp;seen, VI &amp;sz)</div><div class="ttdoc">重心分解</div><div class="ttdef"><b>Definition</b> centroid.hpp:27</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 </div><!-- contents -->

@@ -51,70 +51,70 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <a href="lca__vertex_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="template_8hpp.html">../../../kyopro_library/template.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//頂点属性 LCA</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Mono<span class="keywordtype">id</span>&gt;</div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_lca_vtx.html">    5</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_lca_vtx.html#a373655d37d56e9be4a8476cd913cb628">LcaVtx</a>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_lca_vtx.html#a78bc20c0556f9ab36b96d540ca3c8a8c">    6</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="struct_lca_vtx.html#a78bc20c0556f9ab36b96d540ca3c8a8c">Type</a>=<span class="keyword">typename</span> Monoid::Type;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_lca_vtx.html#a373655d37d56e9be4a8476cd913cb628">    8</a></span>    <a class="code hl_function" href="struct_lca_vtx.html#a373655d37d56e9be4a8476cd913cb628">LcaVtx</a>(<span class="keyword">const</span> vector&lt;vector&lt;int&gt;&gt;&amp;g,<span class="keyword">const</span> vector&lt;Type&gt;&amp;v,<span class="keywordtype">int</span> root){</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keywordtype">int</span> n=g.size();</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordtype">int</span> k=1;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordflow">while</span>((1&lt;&lt;k)&lt;n)k++;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        parent.assign(k,vector&lt;int&gt;(n,-1)),dep.assign(n,0),dat.assign(k,vector&lt;Type&gt;(n,Monoid::id()));</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        dfs(g,v,root,-1,0);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i+1&lt;k;i++){</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;n;j++){</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                parent[i+1][j]=parent[i][j]==-1?-1:parent[i][parent[i][j]];</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                dat[i+1][j]=parent[i][j]==-1?Monoid::id():Monoid::op(dat[i][j],dat[i][parent[i][j]]);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            }</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_lca_vertex.html">    5</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_lca_vertex.html#a519080bd91834e1379757d832cad8ce2">LcaVertex</a> {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_lca_vertex.html#a125d5a6d04529671f85be9326630ae0e">    6</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="struct_lca_vertex.html#a125d5a6d04529671f85be9326630ae0e">Type</a>=<span class="keyword">typename</span> Monoid::Type;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_lca_vertex.html#a519080bd91834e1379757d832cad8ce2">   10</a></span>    <a class="code hl_function" href="struct_lca_vertex.html#a519080bd91834e1379757d832cad8ce2">LcaVertex</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a>&amp; g, <span class="keyword">const</span> vector&lt;Type&gt;&amp; v, <span class="keywordtype">int</span> root=0) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordtype">int</span> n=g.size();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">int</span> k=1;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">while</span>((1&lt;&lt;k)&lt;n) k++;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        par=<a class="code hl_typedef" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a>(k,<a class="code hl_typedef" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a>(n,-1)),dep=<a class="code hl_typedef" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a>(n),dat=vector&lt;vector&lt;Type&gt;&gt;(k,vector&lt;Type&gt;(n,Monoid::id()));</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        dfs(g,v,root,-1,0);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,k-1) <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(j,n) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            par[i+1][j]=par[i][j]==-1?-1:par[i][par[i][j]];</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            dat[i+1][j]=par[i][j]==-1?Monoid::id():Monoid::op(dat[i][j],dat[i][par[i][j]]);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        }</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
 </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_lca_vtx.html#a2acd8fa0a33d37d9e748602750bc2340">   22</a></span>    <a class="code hl_typedef" href="struct_lca_vtx.html#a78bc20c0556f9ab36b96d540ca3c8a8c">Type</a> <a class="code hl_function" href="struct_lca_vtx.html#a2acd8fa0a33d37d9e748602750bc2340">fold</a>(<span class="keywordtype">int</span> u,<span class="keywordtype">int</span> v){</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span>(dep[u]&gt;dep[v])swap(u,v);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_typedef" href="struct_lca_vtx.html#a78bc20c0556f9ab36b96d540ca3c8a8c">Type</a> ret=Monoid::id();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">while</span>(dep[u]&lt;dep[v]){</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordtype">int</span> k=0;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordflow">while</span>(dep[v]-dep[u]&gt;=(1&lt;&lt;(k+1)))k++;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            ret=Monoid::op(ret,dat[k][v]),v=parent[k][v];</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">while</span>(u!=v){</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keywordtype">int</span> k=0;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keywordflow">while</span>(parent[k+1][u]!=parent[k+1][v])k++;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            ret=Monoid::op(ret,dat[k][u]),ret=Monoid::op(ret,dat[k][v]);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            u=parent[k][u],v=parent[k][v];</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        ret=Monoid::op(ret,dat[0][u]);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_lca_vertex.html#a0e4f860220eedd9b1bc9eee332e033ca">   23</a></span>    <a class="code hl_typedef" href="struct_lca_vertex.html#a125d5a6d04529671f85be9326630ae0e">Type</a> <a class="code hl_function" href="struct_lca_vertex.html#a0e4f860220eedd9b1bc9eee332e033ca">fold</a>(<span class="keywordtype">int</span> u, <span class="keywordtype">int</span> v) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(dep[u]&gt;dep[v]) swap(u,v);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_typedef" href="struct_lca_vertex.html#a125d5a6d04529671f85be9326630ae0e">Type</a> ret=Monoid::id();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">while</span>(dep[u]&lt;dep[v]) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordtype">int</span> k=0;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <span class="keywordflow">while</span>(dep[v]-dep[u]&gt;=(1&lt;&lt;(k+1))) k++;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            ret=Monoid::op(ret,dat[k][v]),v=par[k][v];</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">while</span>(u!=v) {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keywordtype">int</span> k=0;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">while</span>(par[k+1][u]!=par[k+1][v]) k++;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            ret=Monoid::op(ret,dat[k][u]),ret=Monoid::op(ret,dat[k][v]);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            u=par[k][u],v=par[k][v];</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        ret=Monoid::op(ret,dat[0][u]);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
 </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    vector&lt;vector&lt;int&gt;&gt;parent;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    vector&lt;int&gt;dep;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    vector&lt;vector&lt;Type&gt;&gt;<a class="code hl_variable" href="sparse__table__2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb">dat</a>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> dfs(<span class="keyword">const</span> vector&lt;vector&lt;int&gt;&gt;&amp;g,<span class="keyword">const</span> vector&lt;Type&gt;&amp;v,<span class="keywordtype">int</span> now,<span class="keywordtype">int</span> par,<span class="keywordtype">int</span> d){</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <a class="code hl_variable" href="sparse__table__2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb">dat</a>[0][now]=v[now],parent[0][now]=par,dep[now]=d;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:g[now]){</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">if</span>(nxt==par)<span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            dfs(g,v,nxt,now,d+1);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_typedef" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a> par;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_typedef" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> dep;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    vector&lt;vector&lt;Type&gt;&gt; <a class="code hl_variable" href="sparse__table__2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb">dat</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> dfs(<span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a>&amp; g, <span class="keyword">const</span> vector&lt;Type&gt;&amp; v, <span class="keywordtype">int</span> now, <span class="keywordtype">int</span> pre) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        par[0][now]=pre,dep[now]=pre==-1?0:dep[pre]+1;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:g[now]) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">if</span>(nxt==pre) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            dfs(g,v,nxt,now);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
 </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#include&quot;<a class="code" href="monoid_8hpp.html">../../../kyopro_library/others/monoid.hpp</a>&quot;</span></div>
-<div class="ttc" id="amonoid_8hpp_html"><div class="ttname"><a href="monoid_8hpp.html">monoid.hpp</a></div><div class="ttdoc">モノイド</div></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#include&quot;<a class="code" href="monoid_8hpp.html">../../../kyopro_library/others/monoid.hpp</a>&quot;</span></div>
+<div class="ttc" id="amonoid_8hpp_html"><div class="ttname"><a href="monoid_8hpp.html">monoid.hpp</a></div></div>
 <div class="ttc" id="asparse__table__2d_8hpp_html_ad4ffba731924575f47aa6d16920d0fbb"><div class="ttname"><a href="sparse__table__2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb">dat</a></div><div class="ttdeci">ll dat[12][12][1010][1010]</div><div class="ttdef"><b>Definition</b> sparse_table_2d.hpp:6</div></div>
-<div class="ttc" id="astruct_lca_vtx_html_a2acd8fa0a33d37d9e748602750bc2340"><div class="ttname"><a href="struct_lca_vtx.html#a2acd8fa0a33d37d9e748602750bc2340">LcaVtx::fold</a></div><div class="ttdeci">Type fold(int u, int v)</div><div class="ttdef"><b>Definition</b> lca_vertex.hpp:22</div></div>
-<div class="ttc" id="astruct_lca_vtx_html_a373655d37d56e9be4a8476cd913cb628"><div class="ttname"><a href="struct_lca_vtx.html#a373655d37d56e9be4a8476cd913cb628">LcaVtx::LcaVtx</a></div><div class="ttdeci">LcaVtx(const vector&lt; vector&lt; int &gt; &gt; &amp;g, const vector&lt; Type &gt; &amp;v, int root)</div><div class="ttdef"><b>Definition</b> lca_vertex.hpp:8</div></div>
-<div class="ttc" id="astruct_lca_vtx_html_a78bc20c0556f9ab36b96d540ca3c8a8c"><div class="ttname"><a href="struct_lca_vtx.html#a78bc20c0556f9ab36b96d540ca3c8a8c">LcaVtx::Type</a></div><div class="ttdeci">typename Monoid::Type Type</div><div class="ttdef"><b>Definition</b> lca_vertex.hpp:6</div></div>
+<div class="ttc" id="astruct_lca_vertex_html_a0e4f860220eedd9b1bc9eee332e033ca"><div class="ttname"><a href="struct_lca_vertex.html#a0e4f860220eedd9b1bc9eee332e033ca">LcaVertex::fold</a></div><div class="ttdeci">Type fold(int u, int v)</div><div class="ttdoc">パス u-v のモノイド積を返す</div><div class="ttdef"><b>Definition</b> lca_vertex.hpp:23</div></div>
+<div class="ttc" id="astruct_lca_vertex_html_a125d5a6d04529671f85be9326630ae0e"><div class="ttname"><a href="struct_lca_vertex.html#a125d5a6d04529671f85be9326630ae0e">LcaVertex::Type</a></div><div class="ttdeci">typename Monoid::Type Type</div><div class="ttdef"><b>Definition</b> lca_vertex.hpp:6</div></div>
+<div class="ttc" id="astruct_lca_vertex_html_a519080bd91834e1379757d832cad8ce2"><div class="ttname"><a href="struct_lca_vertex.html#a519080bd91834e1379757d832cad8ce2">LcaVertex::LcaVertex</a></div><div class="ttdeci">LcaVertex(const VVI &amp;g, const vector&lt; Type &gt; &amp;v, int root=0)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition</b> lca_vertex.hpp:10</div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> template.hpp:9</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a6a675649b5da3f6454b83fa37d00cc2b"><div class="ttname"><a href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a></div><div class="ttdeci">vector&lt; int &gt; VI</div><div class="ttdef"><b>Definition</b> template.hpp:17</div></div>
+<div class="ttc" id="atemplate_8hpp_html_aa04f4352ca552897b0c9d791a7bdfa85"><div class="ttname"><a href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a></div><div class="ttdeci">vector&lt; VI &gt; VVI</div><div class="ttdef"><b>Definition</b> template.hpp:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

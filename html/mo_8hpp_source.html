@@ -54,16 +54,16 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span>&lt;ll L=20&gt;</div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_mo.html">    6</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_mo.html#a12c0e52820513d400e3ebabb498c68f3">Mo</a>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_mo.html">    6</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_mo.html#a12c0e52820513d400e3ebabb498c68f3">Mo</a> {</div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_mo.html#a12c0e52820513d400e3ebabb498c68f3">    8</a></span>    <a class="code hl_function" href="struct_mo.html#a12c0e52820513d400e3ebabb498c68f3">Mo</a>(<span class="keywordtype">int</span> n){</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_mo.html#a12c0e52820513d400e3ebabb498c68f3">    8</a></span>    <a class="code hl_function" href="struct_mo.html#a12c0e52820513d400e3ebabb498c68f3">Mo</a>(<span class="keywordtype">int</span> n) {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        this-&gt;n=n;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        max_n=1&lt;&lt;L;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
 </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_mo.html#a39bea8915a24a54030b29c834637342b">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_mo.html#a39bea8915a24a54030b29c834637342b">add</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r){</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_mo.html#a39bea8915a24a54030b29c834637342b">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_mo.html#a39bea8915a24a54030b29c834637342b">add</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r) {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        q++;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        ls.push_back(l);</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        rs.push_back(r);</div>
@@ -72,7 +72,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> F1, <span class="keyword">typename</span> F2, <span class="keyword">typename</span> F3, <span class="keyword">typename</span> F4, <span class="keyword">typename</span> F5&gt;</div>
 <div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_mo.html#a487fe96e3907bd2d23fb9569b98500d3">   28</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_mo.html#a487fe96e3907bd2d23fb9569b98500d3">execute</a>(F1&amp;&amp; add_left, F2&amp;&amp; add_right, F3&amp;&amp; del_left, F4&amp;&amp; del_right, F5&amp;&amp; out){</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_mo.html#a487fe96e3907bd2d23fb9569b98500d3">   28</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_mo.html#a487fe96e3907bd2d23fb9569b98500d3">execute</a>(F1&amp;&amp; add_left, F2&amp;&amp; add_right, F3&amp;&amp; del_left, F4&amp;&amp; del_right, F5&amp;&amp; out) {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_typedef" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> qi(q); iota(<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(qi),0);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> eval(q);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,q) eval[i]=hilbertorder(ls[i],rs[i]);</div>
@@ -92,9 +92,9 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> n,q;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> max_n;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_typedef" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> ls,rs;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> hilbertorder(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y){</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> hilbertorder(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> rx,ry,d=0;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">for</span>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> s=max_n&gt;&gt;1ll; s; s&gt;&gt;=1ll){</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">for</span>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> s=max_n&gt;&gt;1ll; s; s&gt;&gt;=1ll) {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            rx=(x&amp;s)&gt;0,ry=(y&amp;s)&gt;0;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            d+=s*s*((rx*3)^ry);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keywordflow">if</span>(ry) <span class="keywordflow">continue</span>;</div>
@@ -110,8 +110,8 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="astruct_mo_html_a487fe96e3907bd2d23fb9569b98500d3"><div class="ttname"><a href="struct_mo.html#a487fe96e3907bd2d23fb9569b98500d3">Mo::execute</a></div><div class="ttdeci">void execute(F1 &amp;&amp;add_left, F2 &amp;&amp;add_right, F3 &amp;&amp;del_left, F4 &amp;&amp;del_right, F5 &amp;&amp;out)</div><div class="ttdoc">クエリを実行する</div><div class="ttdef"><b>Definition</b> mo.hpp:28</div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> template.hpp:9</div></div>
-<div class="ttc" id="atemplate_8hpp_html_a5ee21b75b07f2ccf9eeb9e89922eb532"><div class="ttname"><a href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a></div><div class="ttdeci">vector&lt; ll &gt; VL</div><div class="ttdef"><b>Definition</b> template.hpp:16</div></div>
-<div class="ttc" id="atemplate_8hpp_html_a6a675649b5da3f6454b83fa37d00cc2b"><div class="ttname"><a href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a></div><div class="ttdeci">vector&lt; int &gt; VI</div><div class="ttdef"><b>Definition</b> template.hpp:16</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a5ee21b75b07f2ccf9eeb9e89922eb532"><div class="ttname"><a href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a></div><div class="ttdeci">vector&lt; ll &gt; VL</div><div class="ttdef"><b>Definition</b> template.hpp:17</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a6a675649b5da3f6454b83fa37d00cc2b"><div class="ttname"><a href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a></div><div class="ttdeci">vector&lt; int &gt; VI</div><div class="ttdef"><b>Definition</b> template.hpp:17</div></div>
 <div class="ttc" id="atemplate_8hpp_html_a7ab29d3bd6e8d66e320f4224e75f6cea"><div class="ttname"><a href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a></div><div class="ttdeci">#define ALL(x)</div><div class="ttdef"><b>Definition</b> template.hpp:5</div></div>
 <div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->

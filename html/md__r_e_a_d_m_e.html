@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Kyopro Library: Library</title>
+<title>Kyopro Library: Today03</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -43,157 +43,81 @@ $(function(){ initResizable(false); });
 </div><!-- top -->
 <div id="doc-content">
 <div><div class="header">
-  <div class="headertitle"><div class="title">Library</div></div>
+  <div class="headertitle"><div class="title">Today03</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md81"></a></p>
-<p><a class="el" href="md_note.html">Note</a></p>
-<h1><a class="anchor" id="autotoc_md82"></a>
-Algorithm</h1>
+<div class="textblock"><p><a class="anchor" id="autotoc_md52"></a></p>
 <ul>
-<li>Compress</li>
-<li>Inversion Number</li>
-<li>Longest Increaseing Subsequence</li>
-<li>Mo</li>
-<li>Convex Hull Trick</li>
-<li>Binary Search</li>
-<li>Doubling</li>
+<li><a href="https://atcoder.jp/users/Today03">AtCoder</a></li>
+<li><a href="https://codeforces.com/profile/Today03">Codeforces</a></li>
+<li><a href="https://yukicoder.me/users/15224">yukicoder</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md83"></a>
-Data Structure</h1>
-<h2><a class="anchor" id="autotoc_md84"></a>
-Segment Tree</h2>
+<p><a href="https://today017.github.io/kyopro_library/html/index.html">ライブラリのドキュメント</a></p>
+<h1><a class="anchor" id="autotoc_md53"></a>
+環境構築</h1>
+<ol type="1">
+<li>Docker, Git, make のインストール</li>
+<li><a href="https://github.com/Today017/kyopro_library/blob/main/kyopro_tools/scripts/build">build</a> をコピペ、実行</li>
+<li><code>make build</code> でDockerイメージをビルドする（初回のみ）</li>
+<li><code>make run</code> でコンテナを起動して入る</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md54"></a>
+スクリプト</h1>
 <ul>
-<li>Segment Tree</li>
-<li>Segment Tree Lazy</li>
-<li>Segment Tree 2D</li>
-<li>Segment Tree Dual</li>
-<li>Segment Tree Beats</li>
+<li><code>./cmp &lt;file&gt;</code> <code>&lt;file&gt;</code> をコンパイルする。</li>
+<li><code>./copy &lt;file&gt;</code> <code>&lt;file&gt;</code> にincludeしたライブラリを展開し、<code>./combinded.cpp</code> に保存する。</li>
+<li><code>./test &lt;solve&gt; &lt;generate&gt; &lt;naive&gt;</code> ランダムテスト用スクリプト。<code>&lt;solve&gt;</code> を実行し、<code>&lt;generate&gt;</code> で生成した入力を与え、<code>&lt;naive&gt;</code> で生成した出力と比較する。</li>
+<li><code>./contest</code> カレントディレクトリで作成したファイルを削除する。スクリプトやライブラリは削除しない。コンテスト前に実行する。</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md85"></a>
-Other</h2>
+<h1><a class="anchor" id="autotoc_md55"></a>
+使い方</h1>
+<ol type="1">
+<li><code>vim a.cpp</code> <div class="fragment"><div class="line"><span class="preprocessor">#include&lt;<a class="code" href="template_8hpp.html">kyopro_library/template.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include&lt;<a class="code" href="dsu_8hpp.html">kyopro_library/graph/dsu.hpp</a>&gt;</span> <span class="comment">// 使うライブラリをincludeする</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(){</div>
+<div class="line">    <span class="comment">// ここにコードを実装する</span></div>
+<div class="line">}</div>
+<div class="ttc" id="adsu_8hpp_html"><div class="ttname"><a href="dsu_8hpp.html">dsu.hpp</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+</div><!-- fragment --></li>
+<li><code>./cmp a</code></li>
+<li><code>./a.out</code></li>
+<li><code>./copy a</code></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md56"></a>
+データ構造に載せる代数構造の定義の仕方</h1>
+<h2><a class="anchor" id="autotoc_md57"></a>
+例) モノイド</h2>
+<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code hl_namespace" href="namespace_monoid.html">Monoid</a> {</div>
+<div class="line">    <span class="keyword">using </span>Type = hoge;</div>
+<div class="line">    <span class="keyword">static</span> Type id() { <span class="keywordflow">return</span> hoge; }</div>
+<div class="line">    <span class="keyword">static</span> Type op(<span class="keyword">const</span> Type&amp; l, <span class="keyword">const</span> Type&amp; r) { <span class="keywordflow">return</span> hoge; }</div>
+<div class="line">};</div>
+<div class="ttc" id="anamespace_monoid_html"><div class="ttname"><a href="namespace_monoid.html">Monoid</a></div><div class="ttdoc">モノイド</div><div class="ttdef"><b>Definition</b> monoid.hpp:5</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md58"></a>
+各構造の要件</h2>
 <ul>
-<li>Sorted Tree</li>
-<li><a class="el" href="md_data__structure_2sorted__array.html">Sorted Array</a></li>
-<li>Set Interface</li>
-<li>Cumulative Sum 2D</li>
-<li>Sparse Table</li>
-<li>Sparse Table 2D</li>
-<li>Disjoint Sparse Table</li>
-<li>Fenwick Tree</li>
-<li>Binary Trie</li>
-<li>Merge Sort Tree</li>
-<li><a class="el" href="md_data__structure_2wvmt.html">Wavelet Matrix</a></li>
-<li>Insertable Reversible Array</li>
-<li>Negative Vector</li>
-<li>Range Set</li>
+<li>モノイド<ul>
+<li><code>Type id()</code></li>
+<li><code>Type op(const Type&amp; l, const Type&amp; r)</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md86"></a>
-Graph</h1>
-<ul>
-<li>Disjoint Set Union</li>
-<li>Disjoint Set Union (Rollback)</li>
-<li>Disjoint Set Union (Potentialized)</li>
-<li>Disjoint Set Union (Merging)</li>
-<li>SCC</li>
-<li>Topological Sort</li>
-<li>Low Link</li>
-<li>Offline Dynamic Connectivity</li>
+</li>
+<li>半群<ul>
+<li><code>Type op(const Type&amp; l, const Type&amp; r)</code></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md87"></a>
-Shortest Path</h2>
-<ul>
-<li>Dijkstra</li>
-<li>Bellman Ford</li>
-<li>Warshall Floyd</li>
+</li>
+<li>群<ul>
+<li><code>Type inv(const Type&amp; x)</code></li>
+<li><code>Type op(const Type&amp; l, const Type&amp; r)</code></li>
+<li><code>Type id()</code></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md88"></a>
-Tree</h2>
-<ul>
-<li><a class="el" href="md_graph_2tree_2hld.html">Heavy-Light Decomposition</a></li>
-<li><a class="el" href="md_graph_2tree_2lca.html">Lowest Common Ancestor</a></li>
-<li><a class="el" href="md_graph_2tree_2diameter.html">Diameter</a></li>
-<li><a class="el" href="md_graph_2tree_2centroid.html">Centroid</a></li>
-<li>Centroid Decomposition</li>
+</li>
+<li>作用素<ul>
+<li><code>Type id()</code></li>
+<li><code>Type op(const Type&amp; l, const Type&amp; r)</code> </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md89"></a>
-Flow</h2>
-<ul>
-<li>Max Flow</li>
-<li>Min Cost Flow</li>
-<li>燃やす埋める</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md90"></a>
-Mod</h1>
-<ul>
-<li>Modint</li>
-<li>Dynamic Modint</li>
-<li>Combinatorics</li>
-<li>Combinatorics (Lucas)</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md91"></a>
-Math</h1>
-<h2><a class="anchor" id="autotoc_md92"></a>
-Number Theory</h2>
-<ul>
-<li>ExtGCD, Mod Inversion</li>
-<li>Bezout Identity</li>
-<li>Euler's Totient Function</li>
-<li>Prime Factorization based on Eratosthenes</li>
-<li>Primality Test</li>
-<li>Pollard's rho</li>
-<li>Primitive Root</li>
-<li>Mod Log (Baby Step Giant Step)</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md93"></a>
-Convolutions</h2>
-<ul>
-<li>Convolution</li>
-<li>Convolution (NTT)</li>
-<li>XOR Convolution</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md94"></a>
-Polynomial</h2>
-<ul>
-<li><a class="el" href="md_math_2fps.html">Formal Power Series</a></li>
-<li>Multipoint Evaluation</li>
-<li>Lagrange Interpolation</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md95"></a>
-Other</h2>
-<ul>
-<li>Matrix</li>
-<li>Fraction</li>
-<li>Linear Equation</li>
-<li>Linear Programming (2 valiables)</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md96"></a>
-String</h1>
-<ul>
-<li>Run Length Encoding</li>
-<li>Rolling Hash</li>
-<li><a class="el" href="md_string_2zalgo.html">Z-Algorithm</a></li>
-<li>Suffix Array</li>
-<li>LCP Array</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md97"></a>
-Geometry</h1>
-<ul>
-<li><a class="el" href="md_geometry_2geo.html">Template</a></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md98"></a>
-Heuristc</h1>
-<ul>
-<li><a class="el" href="md_heuristic_2sa.html">Simulated Annealing</a></li>
-<li>Climbing</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md99"></a>
-Others</h1>
-<ul>
-<li><a class="el" href="md_others_2random.html">Random Generator</a></li>
-<li><a class="el" href="md_others_2timer.html">Timer</a></li>
-<li><a class="el" href="md_others_2xor128.html">Random</a></li>
-<li><a class="el" href="md_others_2utils.html">Utils</a> </li>
+</li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

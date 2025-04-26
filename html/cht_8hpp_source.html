@@ -55,22 +55,22 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T=ll, <span class="keywordtype">bool</span> Min=true&gt;</div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_c_h_t.html">    9</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_c_h_t.html#a8ee3002f76dde43433f9aadf45cbf32c">CHT</a>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_c_h_t.html">    9</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_c_h_t.html#a8ee3002f76dde43433f9aadf45cbf32c">CHT</a> {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_c_h_t.html#a8ee3002f76dde43433f9aadf45cbf32c">   10</a></span>    <a class="code hl_function" href="struct_c_h_t.html#a8ee3002f76dde43433f9aadf45cbf32c">CHT</a>()=<span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_c_h_t.html#a98990faf0c0f436c501ce5bc94e8f555">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_c_h_t.html#a98990faf0c0f436c501ce5bc94e8f555">add</a>(T a, T b){</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_c_h_t.html#a98990faf0c0f436c501ce5bc94e8f555">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_c_h_t.html#a98990faf0c0f436c501ce5bc94e8f555">add</a>(T a, T b) {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span>(!Min) a*=-1,b*=-1;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">if</span>(lines.count(a)&amp;&amp;lines[a]&lt;=b) <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        lines[a]=b;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">auto</span> it=lines.find(a);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">if</span>(!need(it)){</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">if</span>(!need(it)) {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            lines.erase(a);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span>(it!=lines.begin()){</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span>(it!=lines.begin()) {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            it=prev(it);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordflow">while</span>(<span class="keyword">true</span>) {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                <span class="keywordflow">if</span>(need(it)) <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <span class="keyword">auto</span> prv=prev(it);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                lines.erase(it);</div>
@@ -78,7 +78,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            }</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        }</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        it=next(lines.find(a));</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">while</span>(<span class="keyword">true</span>) {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">if</span>(need(it)) <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keyword">auto</span> nxt=next(it);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            lines.erase(it);</div>
@@ -90,7 +90,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_c_h_t.html#a652d63fa85df6b36fb09fdae60ebc6cf">   43</a></span>    T <a class="code hl_function" href="struct_c_h_t.html#a652d63fa85df6b36fb09fdae60ebc6cf">get</a>(T x){</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">auto</span> [a,b]=*(lines.lower_bound(</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <a class="code hl_function" href="binary__search_8hpp.html#ac51e21ede218b1fc3ce5beca36a6fc30">BinarySearch</a>(lines.begin()-&gt;first,lines.rbegin()-&gt;first+1,[&amp;](T x){</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <a class="code hl_function" href="binary__search_8hpp.html#ac51e21ede218b1fc3ce5beca36a6fc30">BinarySearch</a>(lines.begin()-&gt;first,lines.rbegin()-&gt;first+1,[&amp;](T x) {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                auto it=lines.lower_bound(mid);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                if(it==lines.begin()) return true;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                if(it==lines.end()) return false;</div>
@@ -105,7 +105,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    map&lt;T,T&gt; lines;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">bool</span> need(<span class="keyword">const</span> <span class="keyword">typename</span> map&lt;T,T&gt;::iterator it){</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">bool</span> need(<span class="keyword">const</span> <span class="keyword">typename</span> map&lt;T,T&gt;::iterator it) {</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">if</span>(it==lines.begin()||it==prev(lines.end())||it==lines.end()) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">auto</span> prv=prev(it);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keyword">auto</span> nxt=next(it);</div>

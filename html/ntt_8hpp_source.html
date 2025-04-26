@@ -55,25 +55,25 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span>&lt;ll MOD, ll primitive_root&gt;</div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_n_t_t.html">    6</a></span><span class="keyword">class </span><a class="code hl_function" href="class_n_t_t.html#a08f7a88ab5d843873769c894112766ec">NTT</a>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_n_t_t.html">    6</a></span><span class="keyword">class </span><a class="code hl_function" href="class_n_t_t.html#a08f7a88ab5d843873769c894112766ec">NTT</a> {</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordtype">int</span> divide_max,n;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> roots,inv_roots,tmp;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">void</span> ntt(<a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a>&amp; a, <span class="keywordtype">bool</span> inv=<span class="keyword">false</span>){</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">void</span> ntt(<a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a>&amp; a, <span class="keywordtype">bool</span> inv=<span class="keyword">false</span>) {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordtype">int</span> mask=n-1,p=0;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=n&gt;&gt;1; i&gt;=1; i&gt;&gt;=1){</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=n&gt;&gt;1; i&gt;=1; i&gt;&gt;=1) {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keyword">auto</span>&amp; cur=(p&amp;1)?tmp:a;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <span class="keyword">auto</span>&amp; nxt=(p&amp;1)?a:tmp;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> e=inv?roots[p+1]:inv_roots[p+1];</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_variable" href="sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2">w</a>=1;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; j+=i){</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; j+=i) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(k,i) nxt[j+k]=(cur[((j&lt;&lt;1)&amp;mask)+k]+<a class="code hl_variable" href="sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2">w</a>*cur[(((j&lt;&lt;1)+i)&amp;mask)+k])%MOD;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                (<a class="code hl_variable" href="sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2">w</a>*=e)%=MOD;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            }</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            p++;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        }</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span>(p&amp;1) swap(a,tmp);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(inv){</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(inv) {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordtype">int</span> inv_sz=<a class="code hl_function" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">ModInv</a>(n,MOD);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) (a[i]*=inv_sz)%=MOD;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        }</div>
@@ -81,14 +81,14 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_n_t_t.html#a08f7a88ab5d843873769c894112766ec">   31</a></span>    <a class="code hl_function" href="class_n_t_t.html#a08f7a88ab5d843873769c894112766ec">NTT</a>(){</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_n_t_t.html#a08f7a88ab5d843873769c894112766ec">   31</a></span>    <a class="code hl_function" href="class_n_t_t.html#a08f7a88ab5d843873769c894112766ec">NTT</a>() {</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        divide_max=1;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> n=MOD-1;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">while</span>(n%2==0) n&gt;&gt;=1,divide_max++;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        roots=<a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a>(divide_max+1);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        inv_roots=<a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a>(divide_max+1);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        roots[0]=inv_roots[0]=1;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_define" href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(i,1,divide_max+1){</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_define" href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(i,1,divide_max+1) {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            roots[i]=<a class="code hl_function" href="modcal_8hpp.html#a36972de598e8c5d9fe14db0be639c098">ModPow</a>(primitive_root,(MOD-1)/(1&lt;&lt;i),MOD);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            inv_roots[i]=<a class="code hl_function" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">ModInv</a>(roots[i],MOD);</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        }</div>
@@ -96,12 +96,12 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
 <div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_n_t_t.html#af7d5dac5eee3af11ecf0c361f5fbe581">   45</a></span>    <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> <a class="code hl_function" href="class_n_t_t.html#af7d5dac5eee3af11ecf0c361f5fbe581">convolve</a>(<a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> a, <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> b){</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_n_t_t.html#af7d5dac5eee3af11ecf0c361f5fbe581">   45</a></span>    <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> <a class="code hl_function" href="class_n_t_t.html#af7d5dac5eee3af11ecf0c361f5fbe581">convolve</a>(<a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> a, <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> b) {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        n=1;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">while</span>(n+1&lt;a.size()+b.size()) n&lt;&lt;=1;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        tmp=<a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a>(n); </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> fa(n),fb(n);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_typedef" href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a> fa(n), fb(n);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,a.size()) fa[i]=a[i]; <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,b.size()) fb[i]=b[i];</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        ntt(fa); ntt(fb);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) (fa[i]*=fb[i])%=MOD;</div>
@@ -121,7 +121,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="asparse__table__2d_8hpp_html_aac374e320caaadeca4874add33b62af2"><div class="ttname"><a href="sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2">w</a></div><div class="ttdeci">int w</div><div class="ttdef"><b>Definition</b> sparse_table_2d.hpp:4</div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> template.hpp:9</div></div>
-<div class="ttc" id="atemplate_8hpp_html_a5ee21b75b07f2ccf9eeb9e89922eb532"><div class="ttname"><a href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a></div><div class="ttdeci">vector&lt; ll &gt; VL</div><div class="ttdef"><b>Definition</b> template.hpp:16</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a5ee21b75b07f2ccf9eeb9e89922eb532"><div class="ttname"><a href="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532">VL</a></div><div class="ttdeci">vector&lt; ll &gt; VL</div><div class="ttdef"><b>Definition</b> template.hpp:17</div></div>
 <div class="ttc" id="atemplate_8hpp_html_a9af2de86c4be813e9c60ede438bb4cd7"><div class="ttname"><a href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a></div><div class="ttdeci">#define FOR(i, a, b)</div><div class="ttdef"><b>Definition</b> template.hpp:10</div></div>
 <div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -51,100 +51,100 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <a href="hld_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="template_8hpp.html">../../../kyopro_library/template.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="foldopen" id="foldopen00003" data-start="{" data-end="};">
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="struct_h_l_d.html">    3</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_h_l_d.html#a4ded5ea491751676f93bb08121e85e7a">HLD</a>{</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a4ded5ea491751676f93bb08121e85e7a">    4</a></span>    <a class="code hl_function" href="struct_h_l_d.html#a4ded5ea491751676f93bb08121e85e7a">HLD</a>(<span class="keywordtype">int</span> n){resize(n);}</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a256387d5bc67a34fc8feb4a64555d05a">    5</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_h_l_d.html#a256387d5bc67a34fc8feb4a64555d05a">add_edge</a>(<span class="keywordtype">int</span> a,<span class="keywordtype">int</span> b){graph[a].push_back(b),graph[b].push_back(a);}</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb">    6</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb">build</a>(<span class="keywordtype">int</span> root=0){dfs1(root),dfs2(root,root);}</div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a841236b6384bbab50fed3174075e469d">    7</a></span>    <a class="code hl_function" href="struct_h_l_d.html#a841236b6384bbab50fed3174075e469d">HLD</a>(<span class="keyword">const</span> vector&lt;vector&lt;int&gt;&gt;&amp;g,<span class="keywordtype">int</span> root=0){</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        resize(g.size());</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        this-&gt;graph=g;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_function" href="struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb">build</a>(root);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_h_l_d.html">    5</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_h_l_d.html#a4ded5ea491751676f93bb08121e85e7a">HLD</a> {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a4ded5ea491751676f93bb08121e85e7a">    6</a></span>    <a class="code hl_function" href="struct_h_l_d.html#a4ded5ea491751676f93bb08121e85e7a">HLD</a>(<span class="keywordtype">int</span> n) { resize(n); }</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a256387d5bc67a34fc8feb4a64555d05a">    7</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_h_l_d.html#a256387d5bc67a34fc8feb4a64555d05a">add_edge</a>(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b) { graph[a].push_back(b),graph[b].push_back(a); }</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb">    8</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb">build</a>(<span class="keywordtype">int</span> root=0) { dfs1(root),dfs2(root,root); }</div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#aad507c09947cd50bafe0fd839eb3ebbf">    9</a></span>    <a class="code hl_function" href="struct_h_l_d.html#aad507c09947cd50bafe0fd839eb3ebbf">HLD</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a>&amp; g, <span class="keywordtype">int</span> root=0) {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        resize(g.size());</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        this-&gt;graph=g;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <a class="code hl_function" href="struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb">build</a>(root);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
 </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#af5c1751760a5d34be274c54acd9f60c3">   13</a></span>    vector&lt;tuple&lt;bool,int,int&gt;&gt;<a class="code hl_function" href="struct_h_l_d.html#af5c1751760a5d34be274c54acd9f60c3">path</a>(<span class="keywordtype">int</span> u,<span class="keywordtype">int</span> v){</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        vector&lt;tuple&lt;bool,int,int&gt;&gt;ret;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">while</span>(head[u]!=head[v]){</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keywordflow">if</span>(dep[head[u]]&gt;dep[head[v]]){</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                ret.push_back({<span class="keyword">true</span>,pos[head[u]],pos[u]});</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                u=par[head[u]];</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            }<span class="keywordflow">else</span>{</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                ret.push_back({<span class="keyword">false</span>,pos[head[v]],pos[v]});</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                v=par[head[v]];</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(dep[u]&gt;dep[v]){</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            ret.push_back({<span class="keyword">true</span>,pos[v],pos[u]});</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            ret.push_back({<span class="keyword">false</span>,pos[u],pos[v]});</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#af5c1751760a5d34be274c54acd9f60c3">   23</a></span>    vector&lt;tuple&lt;bool,int,int&gt;&gt; <a class="code hl_function" href="struct_h_l_d.html#af5c1751760a5d34be274c54acd9f60c3">path</a>(<span class="keywordtype">int</span> u, <span class="keywordtype">int</span> v) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        vector&lt;tuple&lt;bool,int,int&gt;&gt; ret;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">while</span>(head[u]!=head[v]) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">if</span>(dep[head[u]]&gt;dep[head[v]]) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                ret.push_back({<span class="keyword">true</span>,pos[head[u]],pos[u]});</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                u=par[head[u]];</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                ret.push_back({<span class="keyword">false</span>,pos[head[v]],pos[v]});</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                v=par[head[v]];</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">if</span>(dep[u]&gt;dep[v]) ret.push_back({<span class="keyword">true</span>,pos[v],pos[u]});</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">else</span> ret.push_back({<span class="keyword">false</span>,pos[u],pos[v]});</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
 </div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#ae95bc5be0f704bafb0ab667d1dffb0cc">   31</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_h_l_d.html#ae95bc5be0f704bafb0ab667d1dffb0cc">lca</a>(<span class="keywordtype">int</span> u,<span class="keywordtype">int</span> v){</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">while</span>(head[u]!=head[v]){</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">if</span>(dep[head[u]]&gt;dep[head[v]]){</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                u=par[head[u]];</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            }<span class="keywordflow">else</span>{</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                v=par[head[v]];</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> dep[u]&lt;dep[v]?u:v;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#ae95bc5be0f704bafb0ab667d1dffb0cc">   40</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_h_l_d.html#ae95bc5be0f704bafb0ab667d1dffb0cc">lca</a>(<span class="keywordtype">int</span> u, <span class="keywordtype">int</span> v) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">while</span>(head[u]!=head[v]) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">if</span>(dep[head[u]]&gt;dep[head[v]]) u=par[head[u]];</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">else</span> v=par[head[v]];</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">return</span> dep[u]&lt;dep[v] ? u:v;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
 </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a57a2a1fce944ca4c9b4cfc4f497963e0">   41</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_h_l_d.html#a57a2a1fce944ca4c9b4cfc4f497963e0">at</a>(<span class="keywordtype">int</span> v){<span class="keywordflow">return</span> pos[v];}</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    vector&lt;vector&lt;int&gt;&gt;graph;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    vector&lt;int&gt;sz,par,dep,hld,pos,head;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> resize(<span class="keywordtype">int</span> n){graph.resize(n),sz.resize(n),par.resize(n),dep.resize(n),pos.resize(n),head.resize(n);}</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> dfs1(<span class="keywordtype">int</span> now,<span class="keywordtype">int</span> pre=-1){</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        par[now]=pre;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="namespacecompress.html#a54ac03d8200b90f0df7eaef116a6634d">res</a>=1;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:graph[now]){</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordflow">if</span>(nxt==pre)<span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            dep[nxt]=dep[now]+1;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            dfs1(nxt,now);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <a class="code hl_variable" href="namespacecompress.html#a54ac03d8200b90f0df7eaef116a6634d">res</a>+=sz[nxt];</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        sz[now]=<a class="code hl_variable" href="namespacecompress.html#a54ac03d8200b90f0df7eaef116a6634d">res</a>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> dfs2(<span class="keywordtype">int</span> now,<span class="keywordtype">int</span> a,<span class="keywordtype">int</span> pre=-1){</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        pos[now]=hld.size();</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        hld.push_back(now);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        head[now]=<a class="code hl_variable" href="namespacecompress.html#ab51c4d79a5d1f1a8a2d46f126ac20894">a</a>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">if</span>(sz[now]==1)<span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordtype">int</span> mx=0,idx=0;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:graph[now]){</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">if</span>(nxt==pre)<span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">if</span>(mx&lt;sz[nxt]){</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                mx=sz[nxt];</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                idx=nxt;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            }</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        dfs2(idx,a,now);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:graph[now]){</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">if</span>(nxt==pre||nxt==idx)<span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            dfs2(nxt,nxt,now);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>};</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a57a2a1fce944ca4c9b4cfc4f497963e0">   47</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_h_l_d.html#a57a2a1fce944ca4c9b4cfc4f497963e0">at</a>(<span class="keywordtype">int</span> v) { <span class="keywordflow">return</span> pos[v]; }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_typedef" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a> graph;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_typedef" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> sz,par,dep,head;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_typedef" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> hld; </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_typedef" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> pos; </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> resize(<span class="keywordtype">int</span> n) { graph.resize(n),sz.resize(n),par.resize(n),dep.resize(n),pos.resize(n),head.resize(n); }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> dfs1(<span class="keywordtype">int</span> now, <span class="keywordtype">int</span> pre=-1) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        par[now]=pre;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="namespacecompress.html#a54ac03d8200b90f0df7eaef116a6634d">res</a>=1;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:graph[now]) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordflow">if</span>(nxt==pre)<span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            dep[nxt]=dep[now]+1;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            dfs1(nxt,now);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <a class="code hl_variable" href="namespacecompress.html#a54ac03d8200b90f0df7eaef116a6634d">res</a>+=sz[nxt];</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        sz[now]=<a class="code hl_variable" href="namespacecompress.html#a54ac03d8200b90f0df7eaef116a6634d">res</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> dfs2(<span class="keywordtype">int</span> now, <span class="keywordtype">int</span> a, <span class="keywordtype">int</span> pre=-1) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        pos[now]=hld.size();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        hld.push_back(now);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        head[now]=<a class="code hl_variable" href="namespacecompress.html#ab51c4d79a5d1f1a8a2d46f126ac20894">a</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">if</span>(sz[now]==1) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordtype">int</span> mx=0,idx=0;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:graph[now]) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">if</span>(nxt==pre) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keywordflow">if</span>(mx&lt;sz[nxt]) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                mx=sz[nxt];</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                idx=nxt;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        dfs2(idx,a,now);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:graph[now]) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keywordflow">if</span>(nxt==pre||nxt==idx) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            dfs2(nxt,nxt,now);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
 </div>
 <div class="ttc" id="anamespacecompress_html_a54ac03d8200b90f0df7eaef116a6634d"><div class="ttname"><a href="namespacecompress.html#a54ac03d8200b90f0df7eaef116a6634d">compress.res</a></div><div class="ttdeci">str res</div><div class="ttdef"><b>Definition</b> compress.py:12</div></div>
 <div class="ttc" id="anamespacecompress_html_ab51c4d79a5d1f1a8a2d46f126ac20894"><div class="ttname"><a href="namespacecompress.html#ab51c4d79a5d1f1a8a2d46f126ac20894">compress.a</a></div><div class="ttdeci">str a</div><div class="ttdef"><b>Definition</b> compress.py:17</div></div>
-<div class="ttc" id="astruct_h_l_d_html_a256387d5bc67a34fc8feb4a64555d05a"><div class="ttname"><a href="struct_h_l_d.html#a256387d5bc67a34fc8feb4a64555d05a">HLD::add_edge</a></div><div class="ttdeci">void add_edge(int a, int b)</div><div class="ttdef"><b>Definition</b> hld.hpp:5</div></div>
-<div class="ttc" id="astruct_h_l_d_html_a4ded5ea491751676f93bb08121e85e7a"><div class="ttname"><a href="struct_h_l_d.html#a4ded5ea491751676f93bb08121e85e7a">HLD::HLD</a></div><div class="ttdeci">HLD(int n)</div><div class="ttdef"><b>Definition</b> hld.hpp:4</div></div>
-<div class="ttc" id="astruct_h_l_d_html_a57a2a1fce944ca4c9b4cfc4f497963e0"><div class="ttname"><a href="struct_h_l_d.html#a57a2a1fce944ca4c9b4cfc4f497963e0">HLD::at</a></div><div class="ttdeci">int at(int v)</div><div class="ttdef"><b>Definition</b> hld.hpp:41</div></div>
-<div class="ttc" id="astruct_h_l_d_html_a771bcfbb8251c5a9c62a08da8d149deb"><div class="ttname"><a href="struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb">HLD::build</a></div><div class="ttdeci">void build(int root=0)</div><div class="ttdef"><b>Definition</b> hld.hpp:6</div></div>
-<div class="ttc" id="astruct_h_l_d_html_a841236b6384bbab50fed3174075e469d"><div class="ttname"><a href="struct_h_l_d.html#a841236b6384bbab50fed3174075e469d">HLD::HLD</a></div><div class="ttdeci">HLD(const vector&lt; vector&lt; int &gt; &gt; &amp;g, int root=0)</div><div class="ttdef"><b>Definition</b> hld.hpp:7</div></div>
-<div class="ttc" id="astruct_h_l_d_html_ae95bc5be0f704bafb0ab667d1dffb0cc"><div class="ttname"><a href="struct_h_l_d.html#ae95bc5be0f704bafb0ab667d1dffb0cc">HLD::lca</a></div><div class="ttdeci">int lca(int u, int v)</div><div class="ttdef"><b>Definition</b> hld.hpp:31</div></div>
-<div class="ttc" id="astruct_h_l_d_html_af5c1751760a5d34be274c54acd9f60c3"><div class="ttname"><a href="struct_h_l_d.html#af5c1751760a5d34be274c54acd9f60c3">HLD::path</a></div><div class="ttdeci">vector&lt; tuple&lt; bool, int, int &gt; &gt; path(int u, int v)</div><div class="ttdef"><b>Definition</b> hld.hpp:13</div></div>
+<div class="ttc" id="astruct_h_l_d_html_a256387d5bc67a34fc8feb4a64555d05a"><div class="ttname"><a href="struct_h_l_d.html#a256387d5bc67a34fc8feb4a64555d05a">HLD::add_edge</a></div><div class="ttdeci">void add_edge(int a, int b)</div><div class="ttdef"><b>Definition</b> hld.hpp:7</div></div>
+<div class="ttc" id="astruct_h_l_d_html_a4ded5ea491751676f93bb08121e85e7a"><div class="ttname"><a href="struct_h_l_d.html#a4ded5ea491751676f93bb08121e85e7a">HLD::HLD</a></div><div class="ttdeci">HLD(int n)</div><div class="ttdef"><b>Definition</b> hld.hpp:6</div></div>
+<div class="ttc" id="astruct_h_l_d_html_a57a2a1fce944ca4c9b4cfc4f497963e0"><div class="ttname"><a href="struct_h_l_d.html#a57a2a1fce944ca4c9b4cfc4f497963e0">HLD::at</a></div><div class="ttdeci">int at(int v)</div><div class="ttdef"><b>Definition</b> hld.hpp:47</div></div>
+<div class="ttc" id="astruct_h_l_d_html_a771bcfbb8251c5a9c62a08da8d149deb"><div class="ttname"><a href="struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb">HLD::build</a></div><div class="ttdeci">void build(int root=0)</div><div class="ttdef"><b>Definition</b> hld.hpp:8</div></div>
+<div class="ttc" id="astruct_h_l_d_html_aad507c09947cd50bafe0fd839eb3ebbf"><div class="ttname"><a href="struct_h_l_d.html#aad507c09947cd50bafe0fd839eb3ebbf">HLD::HLD</a></div><div class="ttdeci">HLD(const VVI &amp;g, int root=0)</div><div class="ttdef"><b>Definition</b> hld.hpp:9</div></div>
+<div class="ttc" id="astruct_h_l_d_html_ae95bc5be0f704bafb0ab667d1dffb0cc"><div class="ttname"><a href="struct_h_l_d.html#ae95bc5be0f704bafb0ab667d1dffb0cc">HLD::lca</a></div><div class="ttdeci">int lca(int u, int v)</div><div class="ttdoc">頂点 u, v のLCAを返す</div><div class="ttdef"><b>Definition</b> hld.hpp:40</div></div>
+<div class="ttc" id="astruct_h_l_d_html_af5c1751760a5d34be274c54acd9f60c3"><div class="ttname"><a href="struct_h_l_d.html#af5c1751760a5d34be274c54acd9f60c3">HLD::path</a></div><div class="ttdeci">vector&lt; tuple&lt; bool, int, int &gt; &gt; path(int u, int v)</div><div class="ttdoc">頂点 u, v を結ぶパスをHL分解後の辺の列にして返す</div><div class="ttdef"><b>Definition</b> hld.hpp:23</div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a6a675649b5da3f6454b83fa37d00cc2b"><div class="ttname"><a href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a></div><div class="ttdeci">vector&lt; int &gt; VI</div><div class="ttdef"><b>Definition</b> template.hpp:17</div></div>
+<div class="ttc" id="atemplate_8hpp_html_aa04f4352ca552897b0c9d791a7bdfa85"><div class="ttname"><a href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a></div><div class="ttdeci">vector&lt; VI &gt; VVI</div><div class="ttdef"><b>Definition</b> template.hpp:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

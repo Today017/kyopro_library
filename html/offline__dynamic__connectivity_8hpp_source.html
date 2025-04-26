@@ -56,7 +56,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html">    5</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">DynamicConnectivity</a>{</div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">    9</a></span>    <a class="code hl_function" href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">DynamicConnectivity</a>(<span class="keywordtype">int</span> v, <span class="keywordtype">int</span> q){</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">    9</a></span>    <a class="code hl_function" href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">DynamicConnectivity</a>(<span class="keywordtype">int</span> v, <span class="keywordtype">int</span> q) {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        n=q;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        edges=vector&lt;vector&lt;P&gt;&gt;(2*n);</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        dsu=<a class="code hl_struct" href="struct_dsu_rollback.html">DsuRollback</a>(v);</div>
@@ -64,26 +64,26 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
 <div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a4c2531481116b0b378a98c6ca907d78c">   16</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#a4c2531481116b0b378a98c6ca907d78c">unite</a>(<span class="keywordtype">int</span> time, <span class="keywordtype">int</span> u, <span class="keywordtype">int</span> v){</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a4c2531481116b0b378a98c6ca907d78c">   16</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#a4c2531481116b0b378a98c6ca907d78c">unite</a>(<span class="keywordtype">int</span> time, <span class="keywordtype">int</span> u, <span class="keywordtype">int</span> v) {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        P e=minmax(u,v);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">if</span>(count[e]++==0) appear[e]=time;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
 </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
 <div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#aa4b9840215ff5517d9433b4dbf97272f">   22</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#aa4b9840215ff5517d9433b4dbf97272f">cut</a>(<span class="keywordtype">int</span> time, <span class="keywordtype">int</span> u, <span class="keywordtype">int</span> v){</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#aa4b9840215ff5517d9433b4dbf97272f">   22</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#aa4b9840215ff5517d9433b4dbf97272f">cut</a>(<span class="keywordtype">int</span> time, <span class="keywordtype">int</span> u, <span class="keywordtype">int</span> v) {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        P e=minmax(u,v);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(--count[e]==0) period.push_back({{appear[e],time},e});</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
 </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
 <div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#aef6dbb8a8163c1aa473f68d4986c5226">   28</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#aef6dbb8a8163c1aa473f68d4986c5226">build</a>(){</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [e,val]:count)<span class="keywordflow">if</span>(val&gt;0) period.push_back({{appear[e],n},e});</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [range,e]:period){</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#aef6dbb8a8163c1aa473f68d4986c5226">   28</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#aef6dbb8a8163c1aa473f68d4986c5226">build</a>() {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [e,val]:count) <span class="keywordflow">if</span>(val&gt;0) period.push_back({{appear[e],n},e});</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [range,e]:period) {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keyword">auto</span> [l,r]=range;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            l+=n,r+=n;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">while</span>(l&lt;r){</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">while</span>(l&lt;r) {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <span class="keywordflow">if</span>(l&amp;1) edges[l++].push_back(e);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                <span class="keywordflow">if</span>(r&amp;1) edges[--r].push_back(e);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                l&gt;&gt;=1,r&gt;&gt;=1;</div>
@@ -93,13 +93,13 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
 <div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">   42</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">execute</a>(<span class="keyword">auto</span>&amp; f, <span class="keywordtype">int</span> k=1){</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">   42</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">execute</a>(<span class="keyword">auto</span>&amp; f, <span class="keywordtype">int</span> k=1) {</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span>(k&gt;=2*n) <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [u,v]:edges[k]) dsu.merge(u,v);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">if</span>(k&lt;n){</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">if</span>(k&lt;n) {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <a class="code hl_function" href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">execute</a>(f,k&lt;&lt;1);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <a class="code hl_function" href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">execute</a>(f,k&lt;&lt;1|1);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(0&lt;=k-n&amp;&amp;k-n&lt;n){</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(0&lt;=k-n&amp;&amp;k-n&lt;n) {</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordtype">int</span> query_idx=k-n;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            f(query_idx);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>

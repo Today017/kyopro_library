@@ -54,11 +54,11 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&quot;<a class="code" href="scc_8hpp.html">../../kyopro_library/graph/scc.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_two_sat.html">    5</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">TwoSat</a>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">    6</a></span>    <a class="code hl_function" href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">TwoSat</a>(<span class="keywordtype">int</span> n){ g=<a class="code hl_typedef" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a>(2*n); }</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_two_sat.html">    5</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">TwoSat</a> {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">    6</a></span>    <a class="code hl_function" href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">TwoSat</a>(<span class="keywordtype">int</span> n) { g=<a class="code hl_typedef" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a>(2*n); }</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_two_sat.html#a71d1b0cf574787c596fe87d26bd905df">    9</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_two_sat.html#a71d1b0cf574787c596fe87d26bd905df">add</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">bool</span> fi, <span class="keywordtype">int</span> j, <span class="keywordtype">bool</span> fj){</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_two_sat.html#a71d1b0cf574787c596fe87d26bd905df">    9</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_two_sat.html#a71d1b0cf574787c596fe87d26bd905df">add</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">bool</span> fi, <span class="keywordtype">int</span> j, <span class="keywordtype">bool</span> fj) {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="comment">// 2i = i が true, 2i+1 = i が false</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        i=2*i+!fi,j=2*j+!fj;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="comment">// !i -&gt; j, !j -&gt; i</span></div>
@@ -67,12 +67,12 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_two_sat.html#a56351416679e5a93eef4c9ff1620cfec">   18</a></span>    vector&lt;bool&gt; <a class="code hl_function" href="struct_two_sat.html#a56351416679e5a93eef4c9ff1620cfec">solve</a>(){</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_two_sat.html#a56351416679e5a93eef4c9ff1620cfec">   18</a></span>    vector&lt;bool&gt; <a class="code hl_function" href="struct_two_sat.html#a56351416679e5a93eef4c9ff1620cfec">solve</a>() {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">auto</span> [mem,ng,gr]=<a class="code hl_function" href="scc_8hpp.html#a75fd07fc8345ee4382b75738f61eeeba">SccDecomposition</a>(g);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordtype">int</span> n=g.size()/2;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        vector&lt;bool&gt; ret(n);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n){</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">if</span>(gr[i*2]==gr[i*2+1]) <span class="keywordflow">return</span> vector&lt;bool&gt;();</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="comment">// 2i(true) が後ろなら i は true</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            ret[i]=gr[i*2]&gt;gr[i*2+1];</div>
@@ -93,7 +93,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="astruct_two_sat_html_a71d1b0cf574787c596fe87d26bd905df"><div class="ttname"><a href="struct_two_sat.html#a71d1b0cf574787c596fe87d26bd905df">TwoSat::add</a></div><div class="ttdeci">void add(int i, bool fi, int j, bool fj)</div><div class="ttdoc">条件 i==fi || j==fj を追加</div><div class="ttdef"><b>Definition</b> two_sat.hpp:9</div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> template.hpp:9</div></div>
-<div class="ttc" id="atemplate_8hpp_html_aa04f4352ca552897b0c9d791a7bdfa85"><div class="ttname"><a href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a></div><div class="ttdeci">vector&lt; VI &gt; VVI</div><div class="ttdef"><b>Definition</b> template.hpp:16</div></div>
+<div class="ttc" id="atemplate_8hpp_html_aa04f4352ca552897b0c9d791a7bdfa85"><div class="ttname"><a href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a></div><div class="ttdeci">vector&lt; VI &gt; VVI</div><div class="ttdef"><b>Definition</b> template.hpp:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

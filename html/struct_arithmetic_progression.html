@@ -51,25 +51,31 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>等差数列  
+ <a href="#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="arithmetic__sum_8hpp_source.html">arithmetic_sum.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:a6723b8759541579ceaadce1af254f2fb" id="r_a6723b8759541579ceaadce1af254f2fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6723b8759541579ceaadce1af254f2fb">normalize</a> ()</td></tr>
+<tr class="memdesc:a6723b8759541579ceaadce1af254f2fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">初項、公差、末項、項数のうち、足りない情報を計算する  <br /></td></tr>
 <tr class="separator:a6723b8759541579ceaadce1af254f2fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 公開変数類</h2></td></tr>
-<tr class="memitem:a11989c11fe03b3043b66aa42a6186f02" id="r_a11989c11fe03b3043b66aa42a6186f02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11989c11fe03b3043b66aa42a6186f02">start</a> = <a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td></tr>
+<tr class="memitem:a11989c11fe03b3043b66aa42a6186f02" id="r_a11989c11fe03b3043b66aa42a6186f02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11989c11fe03b3043b66aa42a6186f02">start</a> =<a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td></tr>
 <tr class="separator:a11989c11fe03b3043b66aa42a6186f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc195b71cb16a2c02740eb8f0e3bedb7" id="r_abc195b71cb16a2c02740eb8f0e3bedb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc195b71cb16a2c02740eb8f0e3bedb7">goal</a> = <a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td></tr>
+<tr class="memitem:abc195b71cb16a2c02740eb8f0e3bedb7" id="r_abc195b71cb16a2c02740eb8f0e3bedb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc195b71cb16a2c02740eb8f0e3bedb7">goal</a> =<a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td></tr>
 <tr class="separator:abc195b71cb16a2c02740eb8f0e3bedb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f43fabcce1fd4d75762729df498b4ea" id="r_a9f43fabcce1fd4d75762729df498b4ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f43fabcce1fd4d75762729df498b4ea">step</a> = <a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td></tr>
+<tr class="memitem:a9f43fabcce1fd4d75762729df498b4ea" id="r_a9f43fabcce1fd4d75762729df498b4ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f43fabcce1fd4d75762729df498b4ea">step</a> =<a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td></tr>
 <tr class="separator:a9f43fabcce1fd4d75762729df498b4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4ea3b508dff881c66a8bfa076f2478c" id="r_af4ea3b508dff881c66a8bfa076f2478c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4ea3b508dff881c66a8bfa076f2478c">length</a> = <a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td></tr>
+<tr class="memitem:af4ea3b508dff881c66a8bfa076f2478c" id="r_af4ea3b508dff881c66a8bfa076f2478c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4ea3b508dff881c66a8bfa076f2478c">length</a> =<a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td></tr>
 <tr class="separator:af4ea3b508dff881c66a8bfa076f2478c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">関数詳解</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>等差数列 </p>
+</div><h2 class="groupheader">関数詳解</h2>
 <a id="a6723b8759541579ceaadce1af254f2fb" name="a6723b8759541579ceaadce1af254f2fb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6723b8759541579ceaadce1af254f2fb">&#9670;&#160;</a></span>normalize()</h2>
 
@@ -93,6 +99,8 @@ $(function(){ initResizable(false); });
 </table>
 </div><div class="memdoc">
 
+<p>初項、公差、末項、項数のうち、足りない情報を計算する </p>
+
 </div>
 </div>
 <h2 class="groupheader">メンバ詳解</h2>
@@ -103,7 +111,7 @@ $(function(){ initResizable(false); });
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ArithmeticProgression::goal = <a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ArithmeticProgression::goal =<a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -117,7 +125,7 @@ $(function(){ initResizable(false); });
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ArithmeticProgression::length = <a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ArithmeticProgression::length =<a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -131,7 +139,7 @@ $(function(){ initResizable(false); });
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ArithmeticProgression::start = <a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ArithmeticProgression::start =<a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -145,7 +153,7 @@ $(function(){ initResizable(false); });
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ArithmeticProgression::step = <a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ArithmeticProgression::step =<a class="el" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

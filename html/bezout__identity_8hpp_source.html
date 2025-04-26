@@ -55,9 +55,9 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html">   13</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_bezout_identity.html#ae6269715a6bae60bc5ce0b4bfae2618e">BezoutIdentity</a>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html">   13</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_bezout_identity.html#ae6269715a6bae60bc5ce0b4bfae2618e">BezoutIdentity</a> {</div>
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html#ae6269715a6bae60bc5ce0b4bfae2618e">   15</a></span>    <a class="code hl_function" href="struct_bezout_identity.html#ae6269715a6bae60bc5ce0b4bfae2618e">BezoutIdentity</a>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> c){</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html#ae6269715a6bae60bc5ce0b4bfae2618e">   15</a></span>    <a class="code hl_function" href="struct_bezout_identity.html#ae6269715a6bae60bc5ce0b4bfae2618e">BezoutIdentity</a>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b, <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> c) {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        this-&gt;a=a;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        this-&gt;b=b;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        this-&gt;c=c;</div>
@@ -65,7 +65,7 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
 <div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html#a2cf086366016d944941e8100fec64191">   22</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_bezout_identity.html#a2cf086366016d944941e8100fec64191">build</a>(){</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html#a2cf086366016d944941e8100fec64191">   22</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_bezout_identity.html#a2cf086366016d944941e8100fec64191">build</a>() {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">auto</span> [g,X,Y]=<a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a>(abs(a),abs(b));</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(c%g!=0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        this-&gt;g=g,this-&gt;X=X,this-&gt;Y=Y;</div>
@@ -77,7 +77,7 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
 <div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">   33</a></span>    pair&lt;ll,ll&gt;<a class="code hl_function" href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">general_solution</a>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> t=0){</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html#ad6b2e3225c8c8d920b9287459fda8b52">   33</a></span>    <a class="code hl_typedef" href="template_8hpp.html#a7f582aad13bf86402da717000515ca1c">PL</a> <a class="code hl_function" href="struct_bezout_identity.html#ad6b2e3225c8c8d920b9287459fda8b52">general_solution</a>(<a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> t=0) {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> x=b/g*t+X,y=-a/g*t+Y;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">return</span> {x,y};</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
@@ -90,10 +90,11 @@ $(function(){ initResizable(false); });
 </div>
 <div class="ttc" id="aextgcd_8hpp_html"><div class="ttname"><a href="extgcd_8hpp.html">extgcd.hpp</a></div></div>
 <div class="ttc" id="aextgcd_8hpp_html_a1bbcc665326a2e27d9817bcc3b8b1d91"><div class="ttname"><a href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a></div><div class="ttdeci">tuple&lt; ll, ll, ll &gt; ExtGcd(ll a, ll b)</div><div class="ttdoc">拡張ユークリッドの互除法</div><div class="ttdef"><b>Definition</b> extgcd.hpp:13</div></div>
-<div class="ttc" id="astruct_bezout_identity_html_a2ca29bd9549c45e4419bda0b842f02c6"><div class="ttname"><a href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">BezoutIdentity::general_solution</a></div><div class="ttdeci">pair&lt; ll, ll &gt; general_solution(ll t=0)</div><div class="ttdoc">一般解を返す</div><div class="ttdef"><b>Definition</b> bezout_identity.hpp:33</div></div>
 <div class="ttc" id="astruct_bezout_identity_html_a2cf086366016d944941e8100fec64191"><div class="ttname"><a href="struct_bezout_identity.html#a2cf086366016d944941e8100fec64191">BezoutIdentity::build</a></div><div class="ttdeci">bool build()</div><div class="ttdoc">解が存在するか否かを返す</div><div class="ttdef"><b>Definition</b> bezout_identity.hpp:22</div></div>
+<div class="ttc" id="astruct_bezout_identity_html_ad6b2e3225c8c8d920b9287459fda8b52"><div class="ttname"><a href="struct_bezout_identity.html#ad6b2e3225c8c8d920b9287459fda8b52">BezoutIdentity::general_solution</a></div><div class="ttdeci">PL general_solution(ll t=0)</div><div class="ttdoc">一般解を返す</div><div class="ttdef"><b>Definition</b> bezout_identity.hpp:33</div></div>
 <div class="ttc" id="astruct_bezout_identity_html_ae6269715a6bae60bc5ce0b4bfae2618e"><div class="ttname"><a href="struct_bezout_identity.html#ae6269715a6bae60bc5ce0b4bfae2618e">BezoutIdentity::BezoutIdentity</a></div><div class="ttdeci">BezoutIdentity(ll a, ll b, ll c)</div><div class="ttdoc">ax+by=c</div><div class="ttdef"><b>Definition</b> bezout_identity.hpp:15</div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a7f582aad13bf86402da717000515ca1c"><div class="ttname"><a href="template_8hpp.html#a7f582aad13bf86402da717000515ca1c">PL</a></div><div class="ttdeci">pair&lt; ll, ll &gt; PL</div><div class="ttdef"><b>Definition</b> template.hpp:18</div></div>
 <div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
