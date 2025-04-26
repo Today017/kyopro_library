@@ -3,7 +3,7 @@
 - [Codeforces](https://codeforces.com/profile/Today03)
 - [yukicoder](https://yukicoder.me/users/15224)
 
-[ライブラリのドキュメント](https://today017.github.io/kyopro_library/index.html)
+[ライブラリのドキュメント](https://today017.github.io/kyopro_library/html/index.html)
 
 ## 環境構築
 1. Docker, Git, make のインストール
