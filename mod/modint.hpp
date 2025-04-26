@@ -1,7 +1,6 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-/// @file modint.hpp
 /// @brief ModInt
 template<ll MOD>
 struct ModInt{
@@ -9,21 +8,21 @@ struct ModInt{
 
     ModInt operator-() const { return ModInt(-value); }
     ModInt operator+() const { return ModInt(*this); }
-    ModInt& operator+=(const ModInt& other){
+    ModInt& operator+=(const ModInt& other) {
         value+=other.value;
         if(value>=MOD) value-=MOD;
         return*this;
     }
-    ModInt& operator-=(const ModInt& other){
+    ModInt& operator-=(const ModInt& other) {
         value+=MOD-other.value;
         if(value>=MOD) value-=MOD;
         return*this;
     }
-    ModInt& operator*=(const ModInt other){
+    ModInt& operator*=(const ModInt other) {
         value=value*other.value%MOD;
         return*this;
     }
-    ModInt& operator/=(ModInt other){
+    ModInt& operator/=(ModInt other) {
         (*this)*=other.inv();
         return*this;
     }
@@ -33,8 +32,8 @@ struct ModInt{
     ModInt operator/(const ModInt& other) const { return ModInt(*this)/=other; }
     bool operator==(const ModInt& other) const { return value==other.value; }
     bool operator!=(const ModInt& other) const { return value!=other.value; }
-    friend ostream& operator<<(ostream& os, const ModInt& x){ return os<<x.value; }
-    friend istream& operator>>(istream& is, ModInt& x){
+    friend ostream& operator<<(ostream& os, const ModInt& x) { return os<<x.value; }
+    friend istream& operator>>(istream& is, ModInt& x) {
         ll v;
         is>>v;
         x=ModInt<MOD>(v);
@@ -43,7 +42,7 @@ struct ModInt{
 
     ModInt pow(ll x) const { 
         ModInt ret(1),mul(value);
-        while(x){
+        while(x) {
             if(x&1) ret*=mul;
             mul*=mul;
             x>>=1;
@@ -51,8 +50,8 @@ struct ModInt{
         return ret;
     }
     ModInt inv() const { return pow(MOD-2); }
-    ll val(){return value; }
-    static constexpr ll get_mod(){ return MOD; }
+    ll val() {return value; }
+    static constexpr ll get_mod() { return MOD; }
 
 private:
     ll value;

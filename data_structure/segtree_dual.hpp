@@ -5,44 +5,44 @@
 /// @tparam CommutativeOperator 作用素
 /// @attention 作用素は果敢である必要がある
 template<typename CommutativeOperator>
-struct SegTreeDual{
+struct SegTreeDual {
     using Type=typename CommutativeOperator::Type;
     SegTreeDual()=default;
 
     /// @brief 要素数 n の双対セグ木を構築する
-    SegTreeDual(int n){
+    SegTreeDual(int n) {
         this->n=n;
         dat.assign(n<<1,CommutativeOperator::id());
     }
 
     /// @brief 配列 v から双対セグ木を構築する
-    SegTreeDual(const vector<Type>& v){
+    SegTreeDual(const vector<Type>& v) {
         this->n=v.size();
         dat.assign(n<<1,CommutativeOperator::id());
         for(int i=0; i<n; i++) dat[i+n]=v[i];
         for(int i=n-1; i>0; i--) dat[i]=CommutativeOperator::op(dat[i<<1],dat[i<<1|1]);
     }
 
-    void apply(int l, int r, Type x){
+    void apply(int l, int r, Type x) {
         l+=n,r+=n;
-        while(l<r){
+        while(l<r) {
             if(l&1) dat[l]=CommutativeOperator::op(dat[l],x),l++;
             if(r&1) r--,dat[r]=CommutativeOperator::op(dat[r],x);
             l>>=1,r>>=1;
         }
     }
-    Type get(int i){
+    Type get(int i) {
         i+=n;
         Type ret=CommutativeOperator::id();
-        while(i){
+        while(i) {
             ret=CommutativeOperator::op(ret,dat[i]);
             i>>=1;
         }
         return ret;
     }
 
-    int size(){ return n; }
-    Type operator[](int i){ return get(i); }
+    int size() { return n; }
+    Type operator[](int i) { return get(i); }
 
 private:
     int n;
@@ -51,10 +51,10 @@ private:
 
 #include"../../kyopro_library/others/operator.hpp"
 
-namespace RangeQuery{
+namespace RangeQuery {
     template<typename T>
-    struct RangeAdd{ using Type=struct SegTreeDual<Operator::Add<T>>; };
+    struct RangeAdd { using Type=struct SegTreeDual<Operator::Add<T>>; };
 
     template<typename T>
-    struct RangeUpdate{ using Type=struct SegTreeDual<Operator::UpdateTimeStamp<T>>; };
+    struct RangeUpdate { using Type=struct SegTreeDual<Operator::UpdateTimeStamp<T>>; };
 }

@@ -6,23 +6,23 @@
 /// @ref https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf
 /// @tparam Min true のとき最小値を管理する
 template<typename T=ll, bool Min=true>
-struct CHT{
+struct CHT {
     CHT()=default;
 
     /// @brief 直線 ax + b を追加する
     /// @note O(log(N))
-    void add(T a, T b){
+    void add(T a, T b) {
         if(!Min) a*=-1,b*=-1;
         if(lines.count(a)&&lines[a]<=b) return;
         lines[a]=b;
         auto it=lines.find(a);
-        if(!need(it)){
+        if(!need(it)) {
             lines.erase(a);
             return;
         }
-        if(it!=lines.begin()){
+        if(it!=lines.begin()) {
             it=prev(it);
-            while(true){
+            while(true) {
                 if(need(it)) break;
                 auto prv=prev(it);
                 lines.erase(it);
@@ -30,7 +30,7 @@ struct CHT{
             }
         }
         it=next(lines.find(a));
-        while(true){
+        while(true) {
             if(need(it)) break;
             auto nxt=next(it);
             lines.erase(it);
@@ -42,7 +42,7 @@ struct CHT{
     /// @note O((log(N))^2)
     T get(T x){
         auto [a,b]=*(lines.lower_bound(
-            BinarySearch(lines.begin()->first,lines.rbegin()->first+1,[&](T x){
+            BinarySearch(lines.begin()->first,lines.rbegin()->first+1,[&](T x) {
                 auto it=lines.lower_bound(mid);
                 if(it==lines.begin()) return true;
                 if(it==lines.end()) return false;
@@ -56,7 +56,7 @@ struct CHT{
 
 private:
     map<T,T> lines;
-    bool need(const typename map<T,T>::iterator it){
+    bool need(const typename map<T,T>::iterator it) {
         if(it==lines.begin()||it==prev(lines.end())||it==lines.end()) return true;
         auto prv=prev(it);
         auto nxt=next(it);

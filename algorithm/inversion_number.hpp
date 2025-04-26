@@ -5,7 +5,7 @@
 /// @note O(N log(N))
 ll InversionNumber(const VI& v) {
     ll ret=0;
-    auto Merge=[&](const VI& a, const VI& b){
+    auto Merge=[&](const VI& a, const VI& b) {
         int n=a.size();
         int r=0;
         REP(l,n){

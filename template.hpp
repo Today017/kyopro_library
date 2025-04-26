@@ -12,7 +12,8 @@ using namespace std;
 #define chmin(a, b) ((a)>(b) ? ((a)=(b), 1) : 0)
 
 template<typename T> using rpriority_queue=priority_queue<T,vector<T>,greater<T>>;
-using ll=long long; const int INF=1e9+10; const ll INFL=4e18; using ld=long double; using ull=uint64_t;
+using ll=long long; const int INF=1e9+10; const ll INFL=4e18;
+using ld=long double; using ull=uint64_t; using LL=__int128_t;
 using VI=vector<int>; using VVI=vector<VI>; using VL=vector<ll>; using VVL=vector<VL>;
 using PL=pair<ll,ll>; using VP=vector<PL>; using WG=vector<vector<pair<int,ll>>>;
 
