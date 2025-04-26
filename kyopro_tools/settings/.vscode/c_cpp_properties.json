@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "linux-x64-gcc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "compilerArgs": [
+                "-std=c++20",
+                "-Wall",
+                "-Wextra",
+                "-Wpedantic",
+                "-Wshadow",
+                "-Wconversion",
+                "-Wsign-conversion",
+                "-Wnull-dereference",
+                "-Wdouble-promotion",
+                "-Wformat=2",
+                "-Werror",
+                "-DTDY",
+                "-I ."
+            ]
+        }
+    ],
+    "version": 4,
+    "currentConfiguration": "Linux"
+}

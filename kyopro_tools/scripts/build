@@ -2,14 +2,8 @@
 
 git clone https://github.com/Today017/kyopro_library.git
 
-# ↓はenvをmainにマージしたら消す
-# cd kyopro_library
-# git checkout env
-# cd ..
-
 cp ./kyopro_library/kyopro_tools/scripts/* .
-cp ./kyopro_library/kyopro_tools/settings/* .
-cp -r ./kyopro_library/kyopro_tools/settings/* .
+cp -r ./kyopro_library/kyopro_tools/settings/. .
 
 chmod +x test
 chmod +x cmp

@@ -1,0 +1,23 @@
+{
+    "files.associations": {
+        "*.tcc": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "forward_list": "cpp",
+        "rope": "cpp",
+        "slist": "cpp",
+        "iostream": "cpp",
+        "random": "cpp",
+        "modint": "cpp"
+    },
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": "true",
+        "scminput": false
+    }
+}
