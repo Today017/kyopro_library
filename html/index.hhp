@@ -287,6 +287,8 @@ segtree__beats_8hpp.html
 segtree__beats_8hpp_source.html
 segtree__dual_8hpp.html
 segtree__dual_8hpp_source.html
+segtree__dynamic_8hpp.html
+segtree__dynamic_8hpp_source.html
 segtree__lazy_8hpp.html
 segtree__lazy_8hpp_source.html
 set_8hpp.html
@@ -443,6 +445,10 @@ struct_seg_tree-members.html
 struct_seg_tree.html
 struct_seg_tree_dual-members.html
 struct_seg_tree_dual.html
+struct_seg_tree_dyanamic-members.html
+struct_seg_tree_dyanamic.html
+struct_seg_tree_dyanamic_1_1_node-members.html
+struct_seg_tree_dyanamic_1_1_node.html
 struct_seg_tree_lazy-members.html
 struct_seg_tree_lazy.html
 struct_segment_tree2_d-members.html
