@@ -1,5 +1,3 @@
-#include"../../kyopro_library/template.hpp"
-
 struct Trie {
     struct Node{
         array<int,26> to;
