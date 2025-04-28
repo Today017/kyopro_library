@@ -19,7 +19,7 @@ compile_cpp() {
 # C++ファイルをLOCALフラグでコンパイルして実行する関数
 compile_cpp_local() {
     local cpp_file=$1
-    g++ $cpp_file -std=c++20 -DLOCAL -I. -O2 -D_GLIBCXX_DEBUG -Wall -Wextra -DTDY
+    g++ $cpp_file -std=c++20 -DLOCAL -I. -O2 -D_GLIBCXX_DEBUG -DTDY
     if [ $? -ne 0 ];then
         echo -e "${RED}Compilation failed.${NC}"
         exit 1
