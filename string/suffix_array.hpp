@@ -6,7 +6,7 @@
 /// @brief O(n log(n))
 /// @ref https://wk1080id.hatenablog.com/entry/2018/12/25/005926
 template<int C=256>
-VI suffixArray(string s) {
+VI SuffixArray(string s) {
     s.push_back('$');
     int n=s.size();
     VI p(n), c(n), cnt(max(n,C),0);
