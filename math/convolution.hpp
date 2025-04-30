@@ -33,7 +33,7 @@ void FFT(vector<complex<double>>& a, bool inv=false) {
 
 /// @brief 畳み込み
 /// @note O(N log(N))
-vector<double>Convolve(const vector<double>& a, const vector<double>& b) {
+vector<double> Convolve(const vector<double>& a, const vector<double>& b) {
     int n=1;
     while(n+1<a.size()+b.size()) n*=2;
     vector<complex<double>> fa(n),fb(n);
