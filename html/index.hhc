@@ -1134,23 +1134,23 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="operator[]"><param name="Local" value="struct_seg_tree_dual.html#a9196f5976be9aa2cd4f25e1e38177646"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="size"><param name="Local" value="struct_seg_tree_dual.html#a127fdf2679469328fd1a4c451e88412e"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
-    <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDyanamic"><param name="Local" value="struct_seg_tree_dyanamic.html"><param name="ImageNumber" value="1"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDynamic"><param name="Local" value="struct_seg_tree_dynamic.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="Node"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html"><param name="ImageNumber" value="1"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Node"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="Node"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#acaaaa0840bf19bed4e8e87df63ec4bf6"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="left"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a143270c029290cdf47d94d6162c7e072"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="right"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a16ac3d9e48510a473a1c34812305516c"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="to"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a2e925bafb984a7287915d3cff4b0881c"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="value"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a481dd16af86c691f935118a3271239ce"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Node"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a748b85797d95f6df43c8e5b6acd46900"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="left"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a21084953c5c967a88f3850702a81d9c1"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="right"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a58f60b6c23afbe3578321b809a045602"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="to"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#aa0985c92d95f9616e6f6ed8eb0b139ee"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="value"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#ac7d6cfcac693ae3e2b7b5b9b715d9f6d"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_seg_tree_dyanamic.html#a76e65b544646af85e7846b286a8b5ce9"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDyanamic"><param name="Local" value="struct_seg_tree_dyanamic.html#ab07e0b01af88a98d321788c5c323614b"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="fold"><param name="Local" value="struct_seg_tree_dyanamic.html#a0371d0496eec496f7ffc774fe983eb94"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="set"><param name="Local" value="struct_seg_tree_dyanamic.html#a3d2610a16fe01c1f9080358bbb1ba7be"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="mx"><param name="Local" value="struct_seg_tree_dyanamic.html#a124bc75345a3a48ebd3f86f7677238de"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="node"><param name="Local" value="struct_seg_tree_dyanamic.html#a3cd7d4d55ba7c4debf85476609eae8cd"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="route"><param name="Local" value="struct_seg_tree_dyanamic.html#a187624802cf5a8a2617767186b97c325"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_seg_tree_dynamic.html#a227357d02ccd09e86117b2bdae1b70e3"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDynamic"><param name="Local" value="struct_seg_tree_dynamic.html#a59a06ec2a8d6964629a6a789a6d50c6e"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="fold"><param name="Local" value="struct_seg_tree_dynamic.html#a6e16bce9f61c2d4199054c72fb063ba2"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="set"><param name="Local" value="struct_seg_tree_dynamic.html#aabe5d1774f4bd10f1d1d23de51c14969"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="mx"><param name="Local" value="struct_seg_tree_dynamic.html#a4b665cea167c726d364e045eb2943f00"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="node"><param name="Local" value="struct_seg_tree_dynamic.html#ac3c641dd98da348fee0d3bea19ccb708"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="route"><param name="Local" value="struct_seg_tree_dynamic.html#a64fcf4dcb58a2d8b17592d72110e8e91"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeLazy"><param name="Local" value="struct_seg_tree_lazy.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
@@ -1365,7 +1365,7 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="MultiSet&lt; T &gt;"><param name="Local" value="struct_multi_set.html"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="AngelBeats::Node"><param name="Local" value="struct_angel_beats_1_1_node.html"><param name="ImageNumber" value="11"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDyanamic&lt; Monoid &gt;::Node"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDynamic&lt; Monoid &gt;::Node"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="Trie::Node"><param name="Local" value="struct_trie_1_1_node.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="NTT&lt; MOD, primitive_root &gt;"><param name="Local" value="class_n_t_t.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="Geometry::Point"><param name="Local" value="struct_geometry_1_1_point.html"><param name="ImageNumber" value="11"></OBJECT>
@@ -1386,7 +1386,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Name" value="SegmentTree2D&lt; Monoid &gt;"><param name="Local" value="struct_segment_tree2_d.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTree&lt; Monoid &gt;"><param name="Local" value="struct_seg_tree.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDual&lt; CommutativeOperator &gt;"><param name="Local" value="struct_seg_tree_dual.html"><param name="ImageNumber" value="11"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDyanamic&lt; Monoid &gt;"><param name="Local" value="struct_seg_tree_dyanamic.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDynamic&lt; Monoid &gt;"><param name="Local" value="struct_seg_tree_dynamic.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeLazy&lt; Monoid, Operator, mapping &gt;"><param name="Local" value="struct_seg_tree_lazy.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="set"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
@@ -1818,31 +1818,31 @@
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="segtree_dynamic.hpp"><param name="Local" value="segtree__dynamic_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDyanamic&lt; Monoid &gt;"><param name="Local" value="struct_seg_tree_dyanamic.html"><param name="ImageNumber" value="1"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDynamic&lt; Monoid &gt;"><param name="Local" value="struct_seg_tree_dynamic.html"><param name="ImageNumber" value="1"></OBJECT>
           <UL>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="Node"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html"><param name="ImageNumber" value="1"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="Node"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html"><param name="ImageNumber" value="1"></OBJECT>
             <UL>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="Node"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#acaaaa0840bf19bed4e8e87df63ec4bf6"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="left"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a143270c029290cdf47d94d6162c7e072"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="right"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a16ac3d9e48510a473a1c34812305516c"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="to"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a2e925bafb984a7287915d3cff4b0881c"><param name="ImageNumber" value="11"></OBJECT>
-            <LI><OBJECT type="text/sitemap"><param name="Name" value="value"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a481dd16af86c691f935118a3271239ce"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="Node"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a748b85797d95f6df43c8e5b6acd46900"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="left"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a21084953c5c967a88f3850702a81d9c1"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="right"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a58f60b6c23afbe3578321b809a045602"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="to"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#aa0985c92d95f9616e6f6ed8eb0b139ee"><param name="ImageNumber" value="11"></OBJECT>
+            <LI><OBJECT type="text/sitemap"><param name="Name" value="value"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#ac7d6cfcac693ae3e2b7b5b9b715d9f6d"><param name="ImageNumber" value="11"></OBJECT>
             </UL>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_seg_tree_dyanamic.html#a76e65b544646af85e7846b286a8b5ce9"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDyanamic"><param name="Local" value="struct_seg_tree_dyanamic.html#ab07e0b01af88a98d321788c5c323614b"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="fold"><param name="Local" value="struct_seg_tree_dyanamic.html#a0371d0496eec496f7ffc774fe983eb94"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="set"><param name="Local" value="struct_seg_tree_dyanamic.html#a3d2610a16fe01c1f9080358bbb1ba7be"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="mx"><param name="Local" value="struct_seg_tree_dyanamic.html#a124bc75345a3a48ebd3f86f7677238de"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="node"><param name="Local" value="struct_seg_tree_dyanamic.html#a3cd7d4d55ba7c4debf85476609eae8cd"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="route"><param name="Local" value="struct_seg_tree_dyanamic.html#a187624802cf5a8a2617767186b97c325"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_seg_tree_dynamic.html#a227357d02ccd09e86117b2bdae1b70e3"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDynamic"><param name="Local" value="struct_seg_tree_dynamic.html#a59a06ec2a8d6964629a6a789a6d50c6e"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="fold"><param name="Local" value="struct_seg_tree_dynamic.html#a6e16bce9f61c2d4199054c72fb063ba2"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="set"><param name="Local" value="struct_seg_tree_dynamic.html#aabe5d1774f4bd10f1d1d23de51c14969"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="mx"><param name="Local" value="struct_seg_tree_dynamic.html#a4b665cea167c726d364e045eb2943f00"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="node"><param name="Local" value="struct_seg_tree_dynamic.html#ac3c641dd98da348fee0d3bea19ccb708"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="route"><param name="Local" value="struct_seg_tree_dynamic.html#a64fcf4dcb58a2d8b17592d72110e8e91"><param name="ImageNumber" value="11"></OBJECT>
           </UL>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDyanamic&lt; Monoid &gt;::Node"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html"><param name="ImageNumber" value="1"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDynamic&lt; Monoid &gt;::Node"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html"><param name="ImageNumber" value="1"></OBJECT>
           <UL>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="Node"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#acaaaa0840bf19bed4e8e87df63ec4bf6"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="left"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a143270c029290cdf47d94d6162c7e072"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="right"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a16ac3d9e48510a473a1c34812305516c"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="to"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a2e925bafb984a7287915d3cff4b0881c"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="value"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a481dd16af86c691f935118a3271239ce"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="Node"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a748b85797d95f6df43c8e5b6acd46900"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="left"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a21084953c5c967a88f3850702a81d9c1"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="right"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a58f60b6c23afbe3578321b809a045602"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="to"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#aa0985c92d95f9616e6f6ed8eb0b139ee"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="value"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#ac7d6cfcac693ae3e2b7b5b9b715d9f6d"><param name="ImageNumber" value="11"></OBJECT>
           </UL>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="segtree_lazy.hpp"><param name="Local" value="segtree__lazy_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
@@ -2875,7 +2875,7 @@
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="suffix_array.hpp"><param name="Local" value="suffix__array_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="suffixArray"><param name="Local" value="suffix__array_8hpp.html#aa0232ea2a9d89c00f1bdd3f487dd8ba4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SuffixArray"><param name="Local" value="suffix__array_8hpp.html#ac1be72293193624f6db6b85912e49462"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="trie.hpp"><param name="Local" value="trie_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>

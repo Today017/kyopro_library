@@ -1552,7 +1552,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_lca_vertex.html#a0e4f860220eedd9b1bc9eee332e033ca"><param name="Name" value="LcaVertex"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#a0371d0496eec496f7ffc774fe983eb94"><param name="Name" value="fold(ll l, ll r)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#a6e16bce9f61c2d4199054c72fb063ba2"><param name="Name" value="fold(ll l, ll r, int idx=0, ll left=0, ll right=mx)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#ae69875869036c22d87735c9e5b433bb5"><param name="Name" value="fold(Ptr &amp;t, int a, int b)"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#ae69875869036c22d87735c9e5b433bb5"><param name="Name" value="InsertableReversibleArrayImpl::LazyReversibleRBST"></OBJECT>
@@ -3116,7 +3116,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_sorted_tree.html#a40539a867331e318cd63c48e9ad48cbc"><param name="Name" value="SortedTree"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a143270c029290cdf47d94d6162c7e072"><param name="Name" value="left"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a21084953c5c967a88f3850702a81d9c1"><param name="Name" value="left"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_arithmetic_progression.html#af4ea3b508dff881c66a8bfa076f2478c"><param name="Name" value="length"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_geometry.html#ace43f4cd28f78a9fa79439ee8416b2e4"><param name="Name" value="lessThan(Real a, Real b)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_geometry.html#aaa93b6715f377d2ef8ba44c79d98641c"><param name="Name" value="lessThanOrEqual(Real a, Real b)"></OBJECT>
@@ -3913,7 +3913,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_multi_set.html#aa815da7cdf344ceccb71ee35c9bf6410"><param name="Name" value="pop_min()"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#a124bc75345a3a48ebd3f86f7677238de"><param name="Name" value="mx"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#a4b665cea167c726d364e045eb2943f00"><param name="Name" value="mx"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#ad3073c30f3809a630a7a90ae2a877c74"><param name="Name" value="my_del(Ptr t)"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#ad3073c30f3809a630a7a90ae2a877c74"><param name="Name" value="InsertableReversibleArrayImpl::RBSTBase"></OBJECT>
@@ -3957,7 +3957,7 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_wavelet_matrix.html#a50331fad103e7d41e3183888cf89c0c9"><param name="Name" value="next_value(const ull begin_pos, const ull end_pos, const ull x, const ull y)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_trie_1_1_node.html#aeb43ae0f05e236bdaac77ea555fe280c"><param name="Name" value="Node()"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#acaaaa0840bf19bed4e8e87df63ec4bf6"><param name="Name" value="Node(ll l, ll r)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a748b85797d95f6df43c8e5b6acd46900"><param name="Name" value="Node(ll l, ll r)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array.html#ac4f64c428a0301ab54e833b321c09534"><param name="Name" value="node"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a2cc0713f1bac2dc605fe22990c2ee1bd"><param name="Name" value="Node"></OBJECT>
   <UL>
@@ -3967,7 +3967,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a2cc0713f1bac2dc605fe22990c2ee1bd"><param name="Name" value="InsertableReversibleArrayImpl::LazyReversibleRBST&lt; T, T, InsertableReversibleArrayImpl::op&lt; T &gt;, InsertableReversibleArrayImpl::op&lt; T &gt;, InsertableReversibleArrayImpl::op&lt; T &gt;, InsertableReversibleArrayImpl::e&lt; T &gt; &gt;"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#a3cd7d4d55ba7c4debf85476609eae8cd"><param name="Name" value="node"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#ac3c641dd98da348fee0d3bea19ccb708"><param name="Name" value="node"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array.html#a5d95b6579130721eb3575f2a8452d834"><param name="Name" value="node_ptr"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_geometry_1_1_point.html#a81f8b8ce71c902bb0207d058920e6ef3"><param name="Name" value="norm() const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_arithmetic_progression.html#a6723b8759541579ceaadce1af254f2fb"><param name="Name" value="normalize()"></OBJECT>
@@ -4842,7 +4842,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a2ac842d27b458b66c5b113307dfe28ea"><param name="Name" value="InsertableReversibleArrayImpl::LazyReversibleRBST&lt; T, T, InsertableReversibleArrayImpl::op&lt; T &gt;, InsertableReversibleArrayImpl::op&lt; T &gt;, InsertableReversibleArrayImpl::op&lt; T &gt;, InsertableReversibleArrayImpl::e&lt; T &gt; &gt;"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a16ac3d9e48510a473a1c34812305516c"><param name="Name" value="right"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a58f60b6c23afbe3578321b809a045602"><param name="Name" value="right"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_ring.html"><param name="Name" value="Ring"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_ring.html"><param name="Name" value="Ring"></OBJECT>
   <UL>
@@ -4909,7 +4909,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_rolling_hash.html#aee33123a728c1df6d8c0b3550baa0c43"><param name="Name" value="RollingHash(const string &amp;s)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array.html#a2d03db862b342d40e310d96e3730f1c8"><param name="Name" value="root"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#a187624802cf5a8a2617767186b97c325"><param name="Name" value="route"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#a64fcf4dcb58a2d8b17592d72110e8e91"><param name="Name" value="route"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="linear__equation_8hpp.html#ad783a386934fd2ebc14105b5babb4aec"><param name="Name" value="RowReduction(vector&lt; vector&lt; bool &gt; &gt; &amp;a, VI &amp;where)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="template_8hpp.html#ae5ef38025fe230c42996fedcb333507a"><param name="Name" value="rpriority_queue"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="run__length__encoding_8hpp.html#a7f01629c3961317d963a4666dbe7622b"><param name="Name" value="run_length_encoding.hpp"></OBJECT>
@@ -5322,56 +5322,56 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dual.html#a00bd09b2b812bf51b0bc2e724fbfd5a7"><param name="Name" value="Type"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html"><param name="Name" value="SegTreeDyanamic"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#ab07e0b01af88a98d321788c5c323614b"><param name="Name" value="SegTreeDyanamic(ll mx=1e9, int q=5e5)"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html"><param name="Name" value="SegTreeDyanamic::Node"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html"><param name="Name" value="SegTreeDyanamic::Node"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html"><param name="Name" value="SegTreeDynamic"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#a59a06ec2a8d6964629a6a789a6d50c6e"><param name="Name" value="SegTreeDynamic(ll mx=1e9, int q=5e5)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html"><param name="Name" value="SegTreeDynamic::Node"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html"><param name="Name" value="SegTreeDynamic::Node"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a143270c029290cdf47d94d6162c7e072"><param name="Name" value="left"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a21084953c5c967a88f3850702a81d9c1"><param name="Name" value="left"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html"><param name="Name" value="SegTreeDyanamic::Node"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html"><param name="Name" value="SegTreeDynamic::Node"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#acaaaa0840bf19bed4e8e87df63ec4bf6"><param name="Name" value="Node(ll l, ll r)"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a748b85797d95f6df43c8e5b6acd46900"><param name="Name" value="Node(ll l, ll r)"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html"><param name="Name" value="SegTreeDyanamic::Node"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html"><param name="Name" value="SegTreeDynamic::Node"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a16ac3d9e48510a473a1c34812305516c"><param name="Name" value="right"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a58f60b6c23afbe3578321b809a045602"><param name="Name" value="right"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html"><param name="Name" value="SegTreeDyanamic::Node"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html"><param name="Name" value="SegTreeDynamic::Node"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a2e925bafb984a7287915d3cff4b0881c"><param name="Name" value="to"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#aa0985c92d95f9616e6f6ed8eb0b139ee"><param name="Name" value="to"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html"><param name="Name" value="SegTreeDyanamic::Node"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html"><param name="Name" value="SegTreeDynamic::Node"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a481dd16af86c691f935118a3271239ce"><param name="Name" value="value"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#ac7d6cfcac693ae3e2b7b5b9b715d9f6d"><param name="Name" value="value"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html"><param name="Name" value="SegTreeDyanamic"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html"><param name="Name" value="SegTreeDynamic"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#a0371d0496eec496f7ffc774fe983eb94"><param name="Name" value="fold(ll l, ll r)"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#a6e16bce9f61c2d4199054c72fb063ba2"><param name="Name" value="fold(ll l, ll r, int idx=0, ll left=0, ll right=mx)"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html"><param name="Name" value="SegTreeDyanamic"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html"><param name="Name" value="SegTreeDynamic"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#a124bc75345a3a48ebd3f86f7677238de"><param name="Name" value="mx"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#a4b665cea167c726d364e045eb2943f00"><param name="Name" value="mx"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html"><param name="Name" value="SegTreeDyanamic"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html"><param name="Name" value="SegTreeDynamic"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#a3cd7d4d55ba7c4debf85476609eae8cd"><param name="Name" value="node"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#ac3c641dd98da348fee0d3bea19ccb708"><param name="Name" value="node"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html"><param name="Name" value="SegTreeDyanamic"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html"><param name="Name" value="SegTreeDynamic"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#a187624802cf5a8a2617767186b97c325"><param name="Name" value="route"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#a64fcf4dcb58a2d8b17592d72110e8e91"><param name="Name" value="route"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html"><param name="Name" value="SegTreeDyanamic"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html"><param name="Name" value="SegTreeDynamic"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#ab07e0b01af88a98d321788c5c323614b"><param name="Name" value="SegTreeDyanamic(ll mx=1e9, int q=5e5)"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#a59a06ec2a8d6964629a6a789a6d50c6e"><param name="Name" value="SegTreeDynamic(ll mx=1e9, int q=5e5)"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html"><param name="Name" value="SegTreeDyanamic"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html"><param name="Name" value="SegTreeDynamic"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#a3d2610a16fe01c1f9080358bbb1ba7be"><param name="Name" value="set(ll i, Type v)"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#aabe5d1774f4bd10f1d1d23de51c14969"><param name="Name" value="set(ll i, Type v)"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html"><param name="Name" value="SegTreeDyanamic"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html"><param name="Name" value="SegTreeDynamic"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#a76e65b544646af85e7846b286a8b5ce9"><param name="Name" value="Type"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#a227357d02ccd09e86117b2bdae1b70e3"><param name="Name" value="Type"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_lazy.html"><param name="Name" value="SegTreeLazy"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_lazy.html#ad7fdb9653e028ff01ed90da72d1570dd"><param name="Name" value="SegTreeLazy()=default"></OBJECT>
@@ -5850,7 +5850,7 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array.html#a41d2ed956f4a37eaac47a015597e2948"><param name="Name" value="set(int k, T x)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_segment_tree2_d.html#acd4e88f120683b23eda460fce60537ae"><param name="Name" value="set(int x, int y, Type v)"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#a3d2610a16fe01c1f9080358bbb1ba7be"><param name="Name" value="set(ll i, Type v)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#aabe5d1774f4bd10f1d1d23de51c14969"><param name="Name" value="set(ll i, Type v)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_set.html#a58491814e28dcd2876bc6ce87f3cc809"><param name="Name" value="Set(T not_found=-1)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_set.html"><param name="Name" value="Set"></OBJECT>
   <UL>
@@ -6342,8 +6342,8 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_succinct_bit_vector.html#a7e21d3fc0ad8a91418ba37a262c4f97f"><param name="Name" value="SuccinctBitVector(const ull n)"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="suffix__array_8hpp.html#aa0232ea2a9d89c00f1bdd3f487dd8ba4"><param name="Name" value="suffix_array.hpp"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="suffix__array_8hpp.html#aa0232ea2a9d89c00f1bdd3f487dd8ba4"><param name="Name" value="suffixArray(string s)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="suffix__array_8hpp.html#ac1be72293193624f6db6b85912e49462"><param name="Name" value="suffix_array.hpp"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="suffix__array_8hpp.html#ac1be72293193624f6db6b85912e49462"><param name="Name" value="SuffixArray(string s)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a857cf302508618d6944585d711f033d1"><param name="Name" value="sum(const Ptr t) const"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a857cf302508618d6944585d711f033d1"><param name="Name" value="InsertableReversibleArrayImpl::LazyReversibleRBST"></OBJECT>
@@ -6483,9 +6483,9 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_min_cost_flow_1_1_edge.html#a7cedccd94c97295705d0e852bae7dd7a"><param name="Name" value="MinCostFlow::Edge"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a2e925bafb984a7287915d3cff4b0881c"><param name="Name" value="to"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#aa0985c92d95f9616e6f6ed8eb0b139ee"><param name="Name" value="to"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a2e925bafb984a7287915d3cff4b0881c"><param name="Name" value="SegTreeDyanamic::Node"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#aa0985c92d95f9616e6f6ed8eb0b139ee"><param name="Name" value="SegTreeDynamic::Node"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_trie_1_1_node.html#a16b96d3f7a49d34a7259a5ec4e30d60c"><param name="Name" value="to"></OBJECT>
   <UL>
@@ -6706,9 +6706,9 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dual.html#a00bd09b2b812bf51b0bc2e724fbfd5a7"><param name="Name" value="SegTreeDual&lt; Operator::UpdateTimeStamp&lt; T &gt; &gt;"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#a76e65b544646af85e7846b286a8b5ce9"><param name="Name" value="Type"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#a227357d02ccd09e86117b2bdae1b70e3"><param name="Name" value="Type"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic.html#a76e65b544646af85e7846b286a8b5ce9"><param name="Name" value="SegTreeDyanamic"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic.html#a227357d02ccd09e86117b2bdae1b70e3"><param name="Name" value="SegTreeDynamic"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_sparse_table.html#adcdeb84f6d3751a8ab27afcf73d9efbb"><param name="Name" value="Type"></OBJECT>
   <UL>
@@ -6768,9 +6768,9 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_hash.html#a6a39c22a994feb6e341c48e1a9ac24cb"><param name="Name" value="Hash"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a481dd16af86c691f935118a3271239ce"><param name="Name" value="value"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#ac7d6cfcac693ae3e2b7b5b9b715d9f6d"><param name="Name" value="value"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dyanamic_1_1_node.html#a481dd16af86c691f935118a3271239ce"><param name="Name" value="SegTreeDyanamic::Node"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#ac7d6cfcac693ae3e2b7b5b9b715d9f6d"><param name="Name" value="SegTreeDynamic::Node"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b"><param name="Name" value="VI"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532"><param name="Name" value="VL"></OBJECT>
