@@ -1,7 +1,6 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-using LL=__int128_t;
 constexpr const LL LL0=0;
 constexpr const LL LL1=1;
 constexpr const LL INFLL=LL1<<120;
