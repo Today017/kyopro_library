@@ -64,7 +64,7 @@ struct SegTreeDynamic {
     }
 
     /// @brief 区間 [l, r) のモノイド積を返す
-    Type fold(ll l, ll r, int idx=0, ll left=0, ll right=mx) {
+    Type fold(ll l, ll r, int idx, ll left, ll right) {
         if(right<l||left>r) return Monoid::id();
         if(l<=left&&right<=r) return node[idx].value;
 
@@ -79,4 +79,24 @@ struct SegTreeDynamic {
 
         return Monoid::op(leftv,rightv);
     }
+    Type fold(ll l, ll r) { return fold(l,r,0,0,mx); }
+
+    Type operator[](ll i) { return fold(i,i+1); }
 };
+
+#include"../../kyopro_library/others/monoid.hpp"
+
+/// @brief 区間クエリ
+namespace RangeQuery {
+    /// @brief 1点変更 / 区間 min
+    template<typename T, T max_value=INF>
+    struct MinDynamic { using Type=struct SegTreeDynamic<Monoid::Min<T,max_value>>; };
+
+    /// @brief 1点変更 / 区間 max
+    template<typename T, T min_value=-INF>
+    struct MaxDynamic { using Type=struct SegTreeDynamic<Monoid::Max<T,min_value>>; };
+
+    /// @brief 1点変更 / 区間和
+    template<typename T>
+    struct SumDynamic { using Type=struct SegTreeDynamic<Monoid::Sum<T>>; };
+}
