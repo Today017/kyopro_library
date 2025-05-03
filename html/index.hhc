@@ -404,9 +404,17 @@
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_max.html#a4bf723142edc7447e6f0053f6683130e"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MaxDynamic"><param name="Local" value="struct_range_query_1_1_max_dynamic.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_max_dynamic.html#a3e636d48607365b24b60234a1fb32a34"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="Min"><param name="Local" value="struct_range_query_1_1_min.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_min.html#a9793be26578865309e936bc0da46dfc4"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MinDynamic"><param name="Local" value="struct_range_query_1_1_min_dynamic.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_min_dynamic.html#a33a90e5acb47e9f3ff9a86d3a0c0089f"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="RangeAdd"><param name="Local" value="struct_range_query_1_1_range_add.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
@@ -419,6 +427,10 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="Sum"><param name="Local" value="struct_range_query_1_1_sum.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_sum.html#a0a173a347359d87514e8a186fb4db0c5"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SumDynamic"><param name="Local" value="struct_range_query_1_1_sum_dynamic.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_sum_dynamic.html#af67269cbfabefd01a04c8322da8aac8c"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="Ring"><param name="Local" value="namespace_ring.html"><param name="ImageNumber" value="1"></OBJECT>
@@ -645,9 +657,17 @@
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_max.html#a4bf723142edc7447e6f0053f6683130e"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MaxDynamic"><param name="Local" value="struct_range_query_1_1_max_dynamic.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_max_dynamic.html#a3e636d48607365b24b60234a1fb32a34"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="Min"><param name="Local" value="struct_range_query_1_1_min.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_min.html#a9793be26578865309e936bc0da46dfc4"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MinDynamic"><param name="Local" value="struct_range_query_1_1_min_dynamic.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_min_dynamic.html#a33a90e5acb47e9f3ff9a86d3a0c0089f"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="RangeAdd"><param name="Local" value="struct_range_query_1_1_range_add.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
@@ -660,6 +680,10 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="Sum"><param name="Local" value="struct_range_query_1_1_sum.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_sum.html#a0a173a347359d87514e8a186fb4db0c5"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="SumDynamic"><param name="Local" value="struct_range_query_1_1_sum_dynamic.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_sum_dynamic.html#af67269cbfabefd01a04c8322da8aac8c"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="AngelBeats"><param name="Local" value="struct_angel_beats.html"><param name="ImageNumber" value="1"></OBJECT>
@@ -1146,7 +1170,9 @@
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_seg_tree_dynamic.html#a227357d02ccd09e86117b2bdae1b70e3"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDynamic"><param name="Local" value="struct_seg_tree_dynamic.html#a59a06ec2a8d6964629a6a789a6d50c6e"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="fold"><param name="Local" value="struct_seg_tree_dynamic.html#a6e16bce9f61c2d4199054c72fb063ba2"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="fold"><param name="Local" value="struct_seg_tree_dynamic.html#aae80e1181ba66952873e2cfa9b0865f9"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="fold"><param name="Local" value="struct_seg_tree_dynamic.html#a94bcb75b9656636184cf16e39aad8a51"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="operator[]"><param name="Local" value="struct_seg_tree_dynamic.html#aa257624ddaf92d127067a1d950c2c65c"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="set"><param name="Local" value="struct_seg_tree_dynamic.html#aabe5d1774f4bd10f1d1d23de51c14969"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="mx"><param name="Local" value="struct_seg_tree_dynamic.html#a4b665cea167c726d364e045eb2943f00"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="node"><param name="Local" value="struct_seg_tree_dynamic.html#ac3c641dd98da348fee0d3bea19ccb708"><param name="ImageNumber" value="11"></OBJECT>
@@ -1353,11 +1379,13 @@
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="Monoid::Max&lt; T, min_value &gt;"><param name="Local" value="struct_monoid_1_1_max.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="RangeQuery::Max&lt; T, min_value &gt;"><param name="Local" value="struct_range_query_1_1_max.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="RangeQuery::MaxDynamic&lt; T, min_value &gt;"><param name="Local" value="struct_range_query_1_1_max_dynamic.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="MaxFlow"><param name="Local" value="struct_max_flow.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="MergeSortTree&lt; T &gt;"><param name="Local" value="struct_merge_sort_tree.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="Monoid::Min&lt; T, max_value &gt;"><param name="Local" value="struct_monoid_1_1_min.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="RangeQuery::Min&lt; T, max_value &gt;"><param name="Local" value="struct_range_query_1_1_min.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="MinCostFlow"><param name="Local" value="struct_min_cost_flow.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="RangeQuery::MinDynamic&lt; T, max_value &gt;"><param name="Local" value="struct_range_query_1_1_min_dynamic.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="Mo&lt; L &gt;"><param name="Local" value="struct_mo.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="ModInt&lt; MOD &gt;"><param name="Local" value="struct_mod_int.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="multiset"><param name="ImageNumber" value="1"></OBJECT>
@@ -1398,6 +1426,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Name" value="Abel::Sum&lt; T &gt;"><param name="Local" value="struct_abel_1_1_sum.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="Monoid::Sum&lt; T &gt;"><param name="Local" value="struct_monoid_1_1_sum.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="RangeQuery::Sum&lt; T &gt;"><param name="Local" value="struct_range_query_1_1_sum.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="RangeQuery::SumDynamic&lt; T &gt;"><param name="Local" value="struct_range_query_1_1_sum_dynamic.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="Monoid::SumPair&lt; T &gt;"><param name="Local" value="struct_monoid_1_1_sum_pair.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="Timer"><param name="Local" value="struct_timer.html"><param name="ImageNumber" value="11"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="tree"><param name="ImageNumber" value="1"></OBJECT>
@@ -1830,7 +1859,9 @@
             </UL>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_seg_tree_dynamic.html#a227357d02ccd09e86117b2bdae1b70e3"><param name="ImageNumber" value="11"></OBJECT>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="SegTreeDynamic"><param name="Local" value="struct_seg_tree_dynamic.html#a59a06ec2a8d6964629a6a789a6d50c6e"><param name="ImageNumber" value="11"></OBJECT>
-          <LI><OBJECT type="text/sitemap"><param name="Name" value="fold"><param name="Local" value="struct_seg_tree_dynamic.html#a6e16bce9f61c2d4199054c72fb063ba2"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="fold"><param name="Local" value="struct_seg_tree_dynamic.html#aae80e1181ba66952873e2cfa9b0865f9"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="fold"><param name="Local" value="struct_seg_tree_dynamic.html#a94bcb75b9656636184cf16e39aad8a51"><param name="ImageNumber" value="11"></OBJECT>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="operator[]"><param name="Local" value="struct_seg_tree_dynamic.html#aa257624ddaf92d127067a1d950c2c65c"><param name="ImageNumber" value="11"></OBJECT>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="set"><param name="Local" value="struct_seg_tree_dynamic.html#aabe5d1774f4bd10f1d1d23de51c14969"><param name="ImageNumber" value="11"></OBJECT>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="mx"><param name="Local" value="struct_seg_tree_dynamic.html#a4b665cea167c726d364e045eb2943f00"><param name="ImageNumber" value="11"></OBJECT>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="node"><param name="Local" value="struct_seg_tree_dynamic.html#ac3c641dd98da348fee0d3bea19ccb708"><param name="ImageNumber" value="11"></OBJECT>
@@ -1843,6 +1874,18 @@
           <LI><OBJECT type="text/sitemap"><param name="Name" value="right"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#a58f60b6c23afbe3578321b809a045602"><param name="ImageNumber" value="11"></OBJECT>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="to"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#aa0985c92d95f9616e6f6ed8eb0b139ee"><param name="ImageNumber" value="11"></OBJECT>
           <LI><OBJECT type="text/sitemap"><param name="Name" value="value"><param name="Local" value="struct_seg_tree_dynamic_1_1_node.html#ac7d6cfcac693ae3e2b7b5b9b715d9f6d"><param name="ImageNumber" value="11"></OBJECT>
+          </UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="RangeQuery::MinDynamic&lt; T, max_value &gt;"><param name="Local" value="struct_range_query_1_1_min_dynamic.html"><param name="ImageNumber" value="1"></OBJECT>
+          <UL>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_min_dynamic.html#a33a90e5acb47e9f3ff9a86d3a0c0089f"><param name="ImageNumber" value="11"></OBJECT>
+          </UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="RangeQuery::MaxDynamic&lt; T, min_value &gt;"><param name="Local" value="struct_range_query_1_1_max_dynamic.html"><param name="ImageNumber" value="1"></OBJECT>
+          <UL>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_max_dynamic.html#a3e636d48607365b24b60234a1fb32a34"><param name="ImageNumber" value="11"></OBJECT>
+          </UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="RangeQuery::SumDynamic&lt; T &gt;"><param name="Local" value="struct_range_query_1_1_sum_dynamic.html"><param name="ImageNumber" value="1"></OBJECT>
+          <UL>
+          <LI><OBJECT type="text/sitemap"><param name="Name" value="Type"><param name="Local" value="struct_range_query_1_1_sum_dynamic.html#af67269cbfabefd01a04c8322da8aac8c"><param name="ImageNumber" value="11"></OBJECT>
           </UL>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="segtree_lazy.hpp"><param name="Local" value="segtree__lazy_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
@@ -2742,7 +2785,6 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="fast.hpp"><param name="Local" value="fast_8hpp.html"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="int128.hpp"><param name="Local" value="int128_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="LL"><param name="Local" value="int128_8hpp.html#a5a2f15aa320f7c30bb71984af5985e73"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="operator&lt;&lt;"><param name="Local" value="int128_8hpp.html#a56890b3e847143795c33bd443ba3e67e"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="operator&gt;&gt;"><param name="Local" value="int128_8hpp.html#a181461e991948abd22f27b8ef05b5678"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="INFLL"><param name="Local" value="int128_8hpp.html#a80504a3d3d20d5e7183f69f2ed027881"><param name="ImageNumber" value="11"></OBJECT>
@@ -2901,6 +2943,12 @@
           <LI><OBJECT type="text/sitemap"><param name="Name" value="to"><param name="Local" value="struct_trie_1_1_node.html#a16b96d3f7a49d34a7259a5ec4e30d60c"><param name="ImageNumber" value="11"></OBJECT>
           </UL>
         </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="util.hpp"><param name="Local" value="util_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ReadString"><param name="Local" value="util_8hpp.html#aab43ef1e519912f613b571d595905948"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="StringToVi"><param name="Local" value="util_8hpp.html#a8335b97f00ea079309901befee2792cc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="ViToString"><param name="Local" value="util_8hpp.html#ac8e46191ceee43d4c8626bdf6133fc6c"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="z_algorithm.hpp"><param name="Local" value="z__algorithm_8hpp.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="ZAlgorithm"><param name="Local" value="z__algorithm_8hpp.html#af550579ff39c6ff9baa4b70854b23cf5"><param name="ImageNumber" value="11"></OBJECT>
@@ -2952,6 +3000,7 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="REP"><param name="Local" value="template_8hpp.html#a17daffa35db12daabc89c90df168e706"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="UQ"><param name="Local" value="template_8hpp.html#a6cf4a0f2f552bf0356a95bf621d4a15d"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="ld"><param name="Local" value="template_8hpp.html#a41f1d17ffdc8a7500e7aadc2b7e05a63"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="LL"><param name="Local" value="template_8hpp.html#a5a2f15aa320f7c30bb71984af5985e73"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="ll"><param name="Local" value="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="PL"><param name="Local" value="template_8hpp.html#a7f582aad13bf86402da717000515ca1c"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="rpriority_queue"><param name="Local" value="template_8hpp.html#ae5ef38025fe230c42996fedcb333507a"><param name="ImageNumber" value="11"></OBJECT>
