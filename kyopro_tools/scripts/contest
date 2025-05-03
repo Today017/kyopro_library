@@ -16,6 +16,7 @@ EXCLUDE=(
     "test"
     "compress"
     "makefile"
+    "Dockerfile"
 )
 
 HERE=$(pwd)
