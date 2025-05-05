@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_multipoint__evaluate_8hpp" xml:lang="ja">
+<title>math/multipoint_evaluate.hpp ファイル</title>
+<indexterm><primary>math/multipoint_evaluate.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/math/fps.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; T &gt; <link linkend="_multipoint__evaluate_8hpp_1abb2c277f4d822368ce7159e49b2c7fd0">MultipointEvaluate</link> (vector&lt; T &gt; f, vector&lt; T &gt; x)</para>
+
+<para>n 次多項式 f について、n 個の点 x[i] における f(x[i]) を返す </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_multipoint__evaluate_8hpp_1abb2c277f4d822368ce7159e49b2c7fd0"/><section>
+    <title>MultipointEvaluate()</title>
+<indexterm><primary>MultipointEvaluate</primary><secondary>multipoint_evaluate.hpp</secondary></indexterm>
+<indexterm><primary>multipoint_evaluate.hpp</primary><secondary>MultipointEvaluate</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; T &gt; MultipointEvaluate (vector&lt; T &gt; f, vector&lt; T &gt; x)</computeroutput></para><para>
+
+<para>n 次多項式 f について、n 個の点 x[i] における f(x[i]) を返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(n (log(n))^2) </para>
+</note>
+</para>
+<para>
+ <link linkend="_multipoint__evaluate_8hpp_source">multipoint_evaluate.hpp</link> の <link linkend="_multipoint__evaluate_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

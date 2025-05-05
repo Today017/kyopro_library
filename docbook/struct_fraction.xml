@@ -1,0 +1,418 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_fraction" xml:lang="ja">
+<title>Fraction&lt; T &gt; 構造体テンプレート</title>
+<indexterm><primary>Fraction&lt; T &gt;</primary></indexterm>
+<para>
+
+<para>有理数構造体 </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;fraction.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_fraction_1a55ebf786ffa0532ac299c78c0511e8f9">Fraction</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction_1a42f7ffc10b3eb9cb2185656d6ce63162">Fraction</link> (T a, T b)</para>
+
+<para>有理数 a/b を宣言する </para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction_1ae6cdaacb37d8687ef6e250b509051af7">Fraction</link> (T a=0)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1a67ab02dd8a29c567f3ce1e19e4aeb9e5">operator+</link> (const <link linkend="_struct_fraction">Fraction</link> &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1ab09f30a15e9e1c56804029b7d44bf257">operator-</link> (const <link linkend="_struct_fraction">Fraction</link> &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1ad0b4f3504d259e321101a165782b537c">operator*</link> (const <link linkend="_struct_fraction">Fraction</link> &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1a089e4c7e0237561227b5c6cfe460f3b1">operator/</link> (const <link linkend="_struct_fraction">Fraction</link> &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1a7b69aff97bc97bf660b69163272ad0c2">operator+=</link> (const <link linkend="_struct_fraction">Fraction</link> &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1a8dc1c9934b58360b22eee8aa8ceda7d9">operator-=</link> (const <link linkend="_struct_fraction">Fraction</link> &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1a34a4acbbfda68d2b9ace931d8929b82d">operator*=</link> (const <link linkend="_struct_fraction">Fraction</link> &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1a3121feb6bc85bb4b1a928ab534f48a59">operator/=</link> (const <link linkend="_struct_fraction">Fraction</link> &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1ab498583d05845941e74aeec3b80b7c50">operator+</link> (const T &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1abba419d8fe2ed3979ae13f53fb40d281">operator-</link> (const T &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1a1104ef7f107be7ea8e42bc4707fe5ae0">operator*</link> (const T &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1ac07fedd8441da2c23cc9a209e97a98f9">operator/</link> (const T &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1a2526eec3b0d973fadb78a43c6b98bce1">operator+=</link> (const T &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1a29b0895f6b50c3e6afe706670ce0fe08">operator-=</link> (const T &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1a9a6c2c5afe723aa4087b141cd4925d80">operator*=</link> (const T &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1a3dd7aa44bd607822fac614eafcdceac9">operator/=</link> (const T &amp;f)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction_1a2efced7219f8fc65d0ff86ba6f4d1884">operator-</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_fraction_1a04666e42dc296a7382ff66ac7d416e36">operator==</link> (const <link linkend="_struct_fraction">Fraction</link> &amp;f) const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_fraction_1a252ef1166e1a142441424e0b980b244d">operator!=</link> (const <link linkend="_struct_fraction">Fraction</link> &amp;f) const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_fraction_1a27eb2240cad0e70e1ac3a216ae0d5f9a">operator&lt;</link> (const <link linkend="_struct_fraction">Fraction</link> &amp;f) const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_fraction_1a44c4595909f7a9fa9d512a526d76b97b">operator&lt;=</link> (const <link linkend="_struct_fraction">Fraction</link> &amp;f) const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_fraction_1a908fce3d5f0b9c2f2f2da718f799d668">operator&gt;</link> (const <link linkend="_struct_fraction">Fraction</link> &amp;f) const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_fraction_1aaf36831fda57777a601af6f65b8f7696">operator&gt;=</link> (const <link linkend="_struct_fraction">Fraction</link> &amp;f) const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_fraction_1abfad8fde2c82e6359405e836c2548945">operator==</link> (const T &amp;f) const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_fraction_1ae7fdddf778121bad8504ba9bd3c07b4d">operator!=</link> (const T &amp;f) const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_fraction_1afb4ba176e109027ed852976bb307dcac">operator&lt;</link> (const T &amp;f) const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_fraction_1af442a301fb30fdb7f79080d094ffbe21">operator&lt;=</link> (const T &amp;f) const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_fraction_1af7ba641fc8a66be5fbf3fc59d31fe38e">operator&gt;</link> (const T &amp;f) const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_fraction_1a5d4033da488a62150f64cd341f9d4faf">operator&gt;=</link> (const T &amp;f) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>公開変数類    </title>
+        <itemizedlist>
+            <listitem><para>T <link linkend="_struct_fraction_1a4a5006a05f4675b7c5334ffbbd3136f4">upper</link></para>
+</listitem>
+            <listitem><para>T <link linkend="_struct_fraction_1a03558e1b5e4a60bad8637df7d3b81296">lower</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>フレンド    </title>
+        <itemizedlist>
+            <listitem><para>ostream &amp; <link linkend="_struct_fraction_1a3628104fe3e7fee887ea01784f1f358a">operator&lt;&lt;</link> (ostream &amp;os, const <link linkend="_struct_fraction">Fraction</link> &amp;f)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<simplesect><title>template&lt;typename T = ll&gt;<?linebreak?>struct Fraction&lt; T &gt;</title></simplesect>
+
+<para>有理数構造体 </para>
+<para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_fraction_1a55ebf786ffa0532ac299c78c0511e8f9"/><section>
+    <title>Fraction()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>Fraction</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>Fraction</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link>&lt; T &gt;<link linkend="_struct_fraction">::Fraction</link> ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_fraction_1a42f7ffc10b3eb9cb2185656d6ce63162"/><section>
+    <title>Fraction()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>Fraction</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>Fraction</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link>&lt; T &gt;<link linkend="_struct_fraction">::Fraction</link> (T a, T b)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>有理数 a/b を宣言する </para>
+</para>
+<para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00010">10</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1ae6cdaacb37d8687ef6e250b509051af7"/><section>
+    <title>Fraction()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>Fraction</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>Fraction</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link>&lt; T &gt;<link linkend="_struct_fraction">::Fraction</link> (T a = <computeroutput>0</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_fraction_1a67ab02dd8a29c567f3ce1e19e4aeb9e5"/><section>
+    <title>operator+()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator+</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator+</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator+ (const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1ab09f30a15e9e1c56804029b7d44bf257"/><section>
+    <title>operator-()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>operator-</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator-</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator- (const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1ad0b4f3504d259e321101a165782b537c"/><section>
+    <title>operator*()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator*</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator*</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator* (const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00020">20</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1a089e4c7e0237561227b5c6cfe460f3b1"/><section>
+    <title>operator/()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator/</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator/</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator/ (const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00021">21</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1a7b69aff97bc97bf660b69163272ad0c2"/><section>
+    <title>operator+=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator+=</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator+=</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator+= (const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00023">23</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_fraction_1a8dc1c9934b58360b22eee8aa8ceda7d9"/><section>
+    <title>operator-=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator-=</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator-=</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator-= (const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00024">24</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_fraction_1a34a4acbbfda68d2b9ace931d8929b82d"/><section>
+    <title>operator*=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator*=</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator*=</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator*= (const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00025">25</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_fraction_1a3121feb6bc85bb4b1a928ab534f48a59"/><section>
+    <title>operator/=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator/=</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator/=</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator/= (const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00026">26</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_fraction_1ab498583d05845941e74aeec3b80b7c50"/><section>
+    <title>operator+()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator+</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator+</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator+ (const T &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00028">28</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1abba419d8fe2ed3979ae13f53fb40d281"/><section>
+    <title>operator-()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>operator-</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator-</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator- (const T &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00029">29</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1a1104ef7f107be7ea8e42bc4707fe5ae0"/><section>
+    <title>operator*()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator*</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator*</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator* (const T &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00030">30</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1ac07fedd8441da2c23cc9a209e97a98f9"/><section>
+    <title>operator/()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator/</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator/</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator/ (const T &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00031">31</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1a2526eec3b0d973fadb78a43c6b98bce1"/><section>
+    <title>operator+=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator+=</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator+=</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator+= (const T &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00033">33</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_fraction_1a29b0895f6b50c3e6afe706670ce0fe08"/><section>
+    <title>operator-=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator-=</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator-=</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator-= (const T &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00034">34</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_fraction_1a9a6c2c5afe723aa4087b141cd4925d80"/><section>
+    <title>operator*=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator*=</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator*=</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator*= (const T &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00035">35</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_fraction_1a3dd7aa44bd607822fac614eafcdceac9"/><section>
+    <title>operator/=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator/=</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator/=</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator/= (const T &amp; f)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00036">36</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_fraction_1a2efced7219f8fc65d0ff86ba6f4d1884"/><section>
+    <title>operator-()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>operator-</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator-</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput><link linkend="_struct_fraction">Fraction</link> <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator- ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00038">38</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1a04666e42dc296a7382ff66ac7d416e36"/><section>
+    <title>operator==()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator==</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator==</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator== (const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00040">40</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1a252ef1166e1a142441424e0b980b244d"/><section>
+    <title>operator!=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator!=</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator!=</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator!= (const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00041">41</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1a27eb2240cad0e70e1ac3a216ae0d5f9a"/><section>
+    <title>operator&lt;()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator&lt;</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator&lt;</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator&lt; (const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00042">42</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1a44c4595909f7a9fa9d512a526d76b97b"/><section>
+    <title>operator&lt;=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator&lt;=</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator&lt;=</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator&lt;= (const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00043">43</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1a908fce3d5f0b9c2f2f2da718f799d668"/><section>
+    <title>operator&gt;()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator&gt;</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator&gt;</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator&gt; (const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00044">44</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1aaf36831fda57777a601af6f65b8f7696"/><section>
+    <title>operator&gt;=()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator&gt;=</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator&gt;=</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator&gt;= (const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00045">45</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1abfad8fde2c82e6359405e836c2548945"/><section>
+    <title>operator==()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator==</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator==</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator== (const T &amp; f) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00046">46</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1ae7fdddf778121bad8504ba9bd3c07b4d"/><section>
+    <title>operator!=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator!=</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator!=</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator!= (const T &amp; f) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00047">47</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1afb4ba176e109027ed852976bb307dcac"/><section>
+    <title>operator&lt;()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator&lt;</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator&lt;</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator&lt; (const T &amp; f) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00048">48</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1af442a301fb30fdb7f79080d094ffbe21"/><section>
+    <title>operator&lt;=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator&lt;=</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator&lt;=</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator&lt;= (const T &amp; f) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00049">49</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1af7ba641fc8a66be5fbf3fc59d31fe38e"/><section>
+    <title>operator&gt;()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator&gt;</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator&gt;</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator&gt; (const T &amp; f) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00050">50</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+<anchor xml:id="_struct_fraction_1a5d4033da488a62150f64cd341f9d4faf"/><section>
+    <title>operator&gt;=()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator&gt;=</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator&gt;=</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::operator&gt;= (const T &amp; f) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00051">51</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+</section>
+<section>
+<title>フレンドと関連関数の詳解</title>
+<anchor xml:id="_struct_fraction_1a3628104fe3e7fee887ea01784f1f358a"/><section>
+    <title>operator&lt;&lt;</title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>ostream &amp; operator&lt;&lt; (ostream &amp; os, const <link linkend="_struct_fraction">Fraction</link>&lt; T &gt; &amp; f)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00053">53</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_fraction_8hpp_source_1l00006">lower</link>, <link linkend="_fraction_8hpp_source_1l00006">upper</link>.</para>
+</section>
+</section>
+<section>
+<title>メンバ詳解</title>
+<anchor xml:id="_struct_fraction_1a4a5006a05f4675b7c5334ffbbd3136f4"/><section>
+    <title>upper</title>
+<indexterm><primary>upper</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>upper</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>T <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::upper</computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00006">6</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_fraction_1a03558e1b5e4a60bad8637df7d3b81296"/><section>
+    <title>lower</title>
+<indexterm><primary>lower</primary><secondary>Fraction&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Fraction&lt; T &gt;</primary><secondary>lower</secondary></indexterm>
+<computeroutput>template&lt;typename T = ll&gt; </computeroutput><para><computeroutput>T <link linkend="_struct_fraction">Fraction</link>&lt; T &gt;::lower</computeroutput></para><para>
+ <link linkend="_fraction_8hpp_source">fraction.hpp</link> の <link linkend="_fraction_8hpp_source_1l00006">6</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+math/<link linkend="_fraction_8hpp">fraction.hpp</link></section>
+</section>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_xor128_8hpp" xml:lang="ja">
+<title>others/xor128.hpp ファイル</title>
+<indexterm><primary>others/xor128.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_xor128_8hpp_1ae5f1abc0605f565940993209877af05d">Xor128</link> ()</para>
+
+<para>疑似乱数生成 </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_xor128_8hpp_1af918dca70549f657c3e1117950ac6dd1">Xor128</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> n)</para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_xor128_8hpp_1a1769a3e4e9794ae293252dc65f5c2425">Xor128</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> l, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> r)</para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a41f1d17ffdc8a7500e7aadc2b7e05a63">ld</link> <link linkend="_xor128_8hpp_1ac4a18f1be8c5784c150a143e3900f248">Xor128Prob</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_xor128_8hpp_1ae5f1abc0605f565940993209877af05d"/><section>
+    <title>Xor128()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>Xor128</primary><secondary>xor128.hpp</secondary></indexterm>
+<indexterm><primary>xor128.hpp</primary><secondary>Xor128</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> Xor128 ( )</computeroutput></para><para>
+
+<para>疑似乱数生成 </para>
+</para>
+<para>
+ <link linkend="_xor128_8hpp_source">xor128.hpp</link> の <link linkend="_xor128_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_xor128_8hpp_1af918dca70549f657c3e1117950ac6dd1"/><section>
+    <title>Xor128()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>Xor128</primary><secondary>xor128.hpp</secondary></indexterm>
+<indexterm><primary>xor128.hpp</primary><secondary>Xor128</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> Xor128 (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> n)</computeroutput></para><para>
+ <link linkend="_xor128_8hpp_source">xor128.hpp</link> の <link linkend="_xor128_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_xor128_8hpp_1a1769a3e4e9794ae293252dc65f5c2425"/><section>
+    <title>Xor128()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>Xor128</primary><secondary>xor128.hpp</secondary></indexterm>
+<indexterm><primary>xor128.hpp</primary><secondary>Xor128</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> Xor128 (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> l, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> r)</computeroutput></para><para>
+ <link linkend="_xor128_8hpp_source">xor128.hpp</link> の <link linkend="_xor128_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_xor128_8hpp_source_1l00017">Xor128()</link>.</para>
+</section>
+<anchor xml:id="_xor128_8hpp_1ac4a18f1be8c5784c150a143e3900f248"/><section>
+    <title>Xor128Prob()</title>
+<indexterm><primary>Xor128Prob</primary><secondary>xor128.hpp</secondary></indexterm>
+<indexterm><primary>xor128.hpp</primary><secondary>Xor128Prob</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a41f1d17ffdc8a7500e7aadc2b7e05a63">ld</link> Xor128Prob ( )</computeroutput></para><para>
+ <link linkend="_xor128_8hpp_source">xor128.hpp</link> の <link linkend="_xor128_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,49 @@
+.TH "math/totient_table.hpp" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+math/totient_table.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include '\&.\&./\&.\&./kyopro_library/template\&.hpp'\fP
+.br
+
+.SS "関数"
+
+.in +1c
+.ti -1c
+.RI "\fBVL\fP \fBTotientTable\fP (\fBll\fP n)"
+.br
+.RI "オイラーのtotient関数を前計算する "
+.in -1c
+.SH "関数詳解"
+.PP 
+.SS "\fBVL\fP TotientTable (\fBll\fP n)"
+
+.PP
+オイラーのtotient関数を前計算する totient(0) \&.\&.\&. totient(n) を前計算する 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(n log(log(n))) \fBhttps://qiita.com/drken/items/3beb679e54266f20ab63\fP \fBhttps://manabitimes.jp/math/667\fP
+.RE
+.PP
+totient(i) = i 以下であって、i と互いに素な数の個数
+
+.PP
+公式: totient(n) = n * Π(1 - 1/p) (p は n の素因数)
+
+.PP
+公式: totient(n)totient(m) = totient(nm) (n と m が互いに素)
+
+.PP
+公式: Σ(d | n) totient(d) = n
+
+.PP
+公式: a^totient(m) ≡ 1 (mod m) (a と m が互いに素) 
+.PP
+ \fBtotient_table\&.hpp\fP の \fB13\fP 行目に定義があります。
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

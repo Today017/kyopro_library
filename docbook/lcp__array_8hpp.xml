@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lcp__array_8hpp" xml:lang="ja">
+<title>string/lcp_array.hpp ファイル</title>
+<indexterm><primary>string/lcp_array.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/string/suffix_array.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> <link linkend="_lcp__array_8hpp_1ae0ced2c7950382932078f20c8e118c5e">LcpArray</link> (const string &amp;s, const <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> &amp;sa)</para>
+
+<para>LCP Array </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_lcp__array_8hpp_1ae0ced2c7950382932078f20c8e118c5e"/><section>
+    <title>LcpArray()</title>
+<indexterm><primary>LcpArray</primary><secondary>lcp_array.hpp</secondary></indexterm>
+<indexterm><primary>lcp_array.hpp</primary><secondary>LcpArray</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> LcpArray (const string &amp; s, const <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> &amp; sa)</computeroutput></para><para>
+
+<para>LCP Array </para>
+</para>
+
+<para><computeroutput>lcp[i] := sa[i] と sa[i-1] の lcp の長さ</computeroutput> <link xlink:href="https://qiita.com/kgoto/items/9e28e37b8a4b15ea7230">https://qiita.com/kgoto/items/9e28e37b8a4b15ea7230</link> </para>
+<para>
+ <link linkend="_lcp__array_8hpp_source">lcp_array.hpp</link> の <link linkend="_lcp__array_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

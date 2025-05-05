@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_util_8hpp_source" xml:lang="ja">
+<title>util.hpp</title>
+<indexterm><primary>string/util.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_util_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">pragma</emphasis>&#32;<emphasis role="preprocessor">once</emphasis>
+<anchor xml:id="_util_8hpp_source_1l00002"/>00002 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_util_8hpp_source_1l00003"/>00003 
+<anchor xml:id="_util_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;文字列を数列に変換する</emphasis>
+<anchor xml:id="_util_8hpp_source_1l00005"/><link linkend="_util_8hpp_1a8335b97f00ea079309901befee2792cc">00005</link> <link linkend="_util_8hpp_1a8335b97f00ea079309901befee2792cc">VI</link>&#32;<link linkend="_util_8hpp_1a8335b97f00ea079309901befee2792cc">StringToVi</link>(<emphasis role="keyword">const</emphasis>&#32;string&amp;&#32;s,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;lower=<emphasis role="keyword">true</emphasis>)&#32;{
+<anchor xml:id="_util_8hpp_source_1l00006"/>00006 &#32;&#32;&#32;&#32;VI&#32;ret(s.size());
+<anchor xml:id="_util_8hpp_source_1l00007"/>00007 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,s.size())&#32;ret[i]=(lower?s[i]-<emphasis role="stringliteral">&apos;a&apos;</emphasis>:s[i]-<emphasis role="stringliteral">&apos;A&apos;</emphasis>);
+<anchor xml:id="_util_8hpp_source_1l00008"/>00008 }
+<anchor xml:id="_util_8hpp_source_1l00009"/>00009 
+<anchor xml:id="_util_8hpp_source_1l00010"/>00010 <emphasis role="comment">///&#32;@brief&#32;入力から文字列を受け取って数列に変換する</emphasis>
+<anchor xml:id="_util_8hpp_source_1l00011"/><link linkend="_util_8hpp_1aab43ef1e519912f613b571d595905948">00011</link> <link linkend="_util_8hpp_1aab43ef1e519912f613b571d595905948">VI</link>&#32;<link linkend="_util_8hpp_1aab43ef1e519912f613b571d595905948">ReadString</link>(<emphasis role="keywordtype">bool</emphasis>&#32;lower=<emphasis role="keyword">true</emphasis>)&#32;{
+<anchor xml:id="_util_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;string&#32;s;&#32;cin&gt;&gt;s;
+<anchor xml:id="_util_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;StringToVi(s);
+<anchor xml:id="_util_8hpp_source_1l00014"/>00014 }
+<anchor xml:id="_util_8hpp_source_1l00015"/>00015 
+<anchor xml:id="_util_8hpp_source_1l00016"/>00016 <emphasis role="comment">///&#32;@brief&#32;数列を文字列に変換する</emphasis>
+<anchor xml:id="_util_8hpp_source_1l00017"/><link linkend="_util_8hpp_1ac8e46191ceee43d4c8626bdf6133fc6c">00017</link> <link linkend="_util_8hpp_1ac8e46191ceee43d4c8626bdf6133fc6c">string</link>&#32;<link linkend="_util_8hpp_1ac8e46191ceee43d4c8626bdf6133fc6c">ViToString</link>(<emphasis role="keyword">const</emphasis>&#32;VI&amp;&#32;a,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;lower=<emphasis role="keyword">true</emphasis>)&#32;{
+<anchor xml:id="_util_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;string&#32;ret;
+<anchor xml:id="_util_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,a.size())&#32;ret.push_back(lower?<emphasis role="keywordtype">char</emphasis>(<emphasis role="stringliteral">&apos;a&apos;</emphasis>+a[i]):<emphasis role="keywordtype">char</emphasis>(<emphasis role="stringliteral">&apos;A&apos;</emphasis>+a[i]));
+<anchor xml:id="_util_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_util_8hpp_source_1l00021"/>00021 }
+</programlisting></section>

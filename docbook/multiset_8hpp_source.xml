@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_multiset_8hpp_source" xml:lang="ja">
+<title>multiset.hpp</title>
+<indexterm><primary>data_structure/multiset.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_multiset_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_multiset_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;std::multiset&#32;ラッパー</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00004"/>00004 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_multiset_8hpp_source_1l00005"/><link linkend="_struct_multi_set">00005</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_multi_set">MultiSet</link>:<link linkend="_struct_multi_set">multiset</link>&lt;<link linkend="_struct_multi_set">T</link>&gt;&#32;{
+<anchor xml:id="_multiset_8hpp_source_1l00006"/>00006 &#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;<link linkend="_struct_multi_set">multiset</link>&lt;<link linkend="_struct_multi_set">T</link>&gt;::<link linkend="_struct_multi_set">multiset</link>;
+<anchor xml:id="_multiset_8hpp_source_1l00007"/><link linkend="_struct_multi_set_1a2eacbed44c86db543002092ebc3bea36">00007</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_multi_set_1a2eacbed44c86db543002092ebc3bea36">not_found</link>;
+<anchor xml:id="_multiset_8hpp_source_1l00008"/><link linkend="_struct_multi_set_1ae1683508411d44c542872827503b2881">00008</link> &#32;&#32;&#32;&#32;<link linkend="_struct_multi_set_1ae1683508411d44c542872827503b2881">MultiSet</link>()=<emphasis role="keywordflow">default</emphasis>;
+<anchor xml:id="_multiset_8hpp_source_1l00009"/>00009 
+<anchor xml:id="_multiset_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;コンストラクタ</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@param&#32;not_found&#32;指定の値が見つからなかったときに返す値</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00012"/><link linkend="_struct_multi_set_1a99a83ecab866565566687d8aae71d018">00012</link> &#32;&#32;&#32;&#32;<link linkend="_struct_multi_set_1a99a83ecab866565566687d8aae71d018">MultiSet</link>(T&#32;not_found=-1)&#32;{
+<anchor xml:id="_multiset_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis><link linkend="_struct_multi_set_1a2eacbed44c86db543002092ebc3bea36">-&gt;</link><link linkend="_struct_multi_set_1a2eacbed44c86db543002092ebc3bea36">not_found</link>=not_found;
+<anchor xml:id="_multiset_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_multiset_8hpp_source_1l00015"/>00015 
+<anchor xml:id="_multiset_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;最小値を返す</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00017"/><link linkend="_struct_multi_set_1a588b67e05193fb2068526aa9d07a2145">00017</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_multi_set_1a588b67e05193fb2068526aa9d07a2145">min</link>()&#32;{
+<anchor xml:id="_multiset_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">this</emphasis>-&gt;empty())<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_multi_set_1a2eacbed44c86db543002092ebc3bea36">not_found</link>;
+<anchor xml:id="_multiset_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>*<emphasis role="keyword">this</emphasis>-&gt;begin();
+<anchor xml:id="_multiset_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_multiset_8hpp_source_1l00021"/>00021 
+<anchor xml:id="_multiset_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;最大値を返す</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00023"/><link linkend="_struct_multi_set_1ad78f6fac05a65bd05a34586b51a9eaee">00023</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_multi_set_1ad78f6fac05a65bd05a34586b51a9eaee">max</link>()&#32;{
+<anchor xml:id="_multiset_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">this</emphasis>-&gt;empty())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_multi_set_1a2eacbed44c86db543002092ebc3bea36">not_found</link>;
+<anchor xml:id="_multiset_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>*<emphasis role="keyword">this</emphasis>-&gt;rbegin();
+<anchor xml:id="_multiset_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_multiset_8hpp_source_1l00027"/>00027 
+<anchor xml:id="_multiset_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;最小値を返し、削除する</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00029"/><link linkend="_struct_multi_set_1aa815da7cdf344ceccb71ee35c9bf6410">00029</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_multi_set_1aa815da7cdf344ceccb71ee35c9bf6410">pop_min</link>()&#32;{
+<anchor xml:id="_multiset_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">this</emphasis>-&gt;empty())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_multi_set_1a2eacbed44c86db543002092ebc3bea36">not_found</link>;
+<anchor xml:id="_multiset_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;ret=<link linkend="_struct_multi_set_1a588b67e05193fb2068526aa9d07a2145">min</link><link linkend="_struct_multi_set_1a588b67e05193fb2068526aa9d07a2145">(</link><link linkend="_struct_multi_set_1a588b67e05193fb2068526aa9d07a2145">)</link>;
+<anchor xml:id="_multiset_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cnt[ret]--;
+<anchor xml:id="_multiset_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;erase(<emphasis role="keyword">this</emphasis>-&gt;begin());
+<anchor xml:id="_multiset_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_multiset_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_multiset_8hpp_source_1l00036"/>00036 
+<anchor xml:id="_multiset_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;最大値を返し、削除する</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00038"/><link linkend="_struct_multi_set_1a5cce4f369b39c156138ed1ef9b736d35">00038</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_multi_set_1a5cce4f369b39c156138ed1ef9b736d35">pop_max</link>()&#32;{
+<anchor xml:id="_multiset_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">this</emphasis>-&gt;empty())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_multi_set_1a2eacbed44c86db543002092ebc3bea36">not_found</link>;
+<anchor xml:id="_multiset_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;ret=<link linkend="_struct_multi_set_1ad78f6fac05a65bd05a34586b51a9eaee">max</link><link linkend="_struct_multi_set_1ad78f6fac05a65bd05a34586b51a9eaee">(</link><link linkend="_struct_multi_set_1ad78f6fac05a65bd05a34586b51a9eaee">)</link>;
+<anchor xml:id="_multiset_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cnt[ret]--;
+<anchor xml:id="_multiset_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;erase(prev(<emphasis role="keyword">this</emphasis>-&gt;end()));
+<anchor xml:id="_multiset_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_multiset_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_multiset_8hpp_source_1l00045"/>00045 
+<anchor xml:id="_multiset_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;が含まれているか否かを返す</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00047"/><link linkend="_struct_multi_set_1a203a2028c468bb813bd14c8d79a3b9ea">00047</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_multi_set_1a203a2028c468bb813bd14c8d79a3b9ea">contains</link>(T&#32;x)&#32;{
+<anchor xml:id="_multiset_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">this</emphasis>-&gt;find(x)!=<emphasis role="keyword">this</emphasis>-&gt;end();
+<anchor xml:id="_multiset_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_multiset_8hpp_source_1l00050"/>00050 
+<anchor xml:id="_multiset_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;を削除する</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;が含まれていたか否かを返す</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00053"/><link linkend="_struct_multi_set_1a0fd57998bffa9ea644ed55c5681df35b">00053</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_multi_set_1a0fd57998bffa9ea644ed55c5681df35b">discard</link>(T&#32;x)&#32;{
+<anchor xml:id="_multiset_8hpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;itr=<emphasis role="keyword">this</emphasis>-&gt;find(x);
+<anchor xml:id="_multiset_8hpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(itr==<emphasis role="keyword">this</emphasis>-&gt;end())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_multiset_8hpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cnt[*itr]--;
+<anchor xml:id="_multiset_8hpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;erase(itr);
+<anchor xml:id="_multiset_8hpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_multiset_8hpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_multiset_8hpp_source_1l00060"/>00060 
+<anchor xml:id="_multiset_8hpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;より大きい最小の値を返す</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00062"/><link linkend="_struct_multi_set_1ac5ea12f9b549bf8c218976e440e3dcba">00062</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_multi_set_1ac5ea12f9b549bf8c218976e440e3dcba">gt</link>(T&#32;x)&#32;{
+<anchor xml:id="_multiset_8hpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;itr=<emphasis role="keyword">this</emphasis>-&gt;upper_bound(x);
+<anchor xml:id="_multiset_8hpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(itr==<emphasis role="keyword">this</emphasis>-&gt;end())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_multi_set_1a2eacbed44c86db543002092ebc3bea36">not_found</link>;
+<anchor xml:id="_multiset_8hpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>*itr;
+<anchor xml:id="_multiset_8hpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_multiset_8hpp_source_1l00067"/>00067 
+<anchor xml:id="_multiset_8hpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;以上の最小の値を返す</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00069"/><link linkend="_struct_multi_set_1af5f4fdc603110941a5ae08f4a067aa73">00069</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_multi_set_1af5f4fdc603110941a5ae08f4a067aa73">ge</link>(T&#32;x)&#32;{
+<anchor xml:id="_multiset_8hpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;itr=<emphasis role="keyword">this</emphasis>-&gt;lower_bound(x);
+<anchor xml:id="_multiset_8hpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(itr==<emphasis role="keyword">this</emphasis>-&gt;end())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_multi_set_1a2eacbed44c86db543002092ebc3bea36">not_found</link>;
+<anchor xml:id="_multiset_8hpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>*itr;
+<anchor xml:id="_multiset_8hpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_multiset_8hpp_source_1l00074"/>00074 
+<anchor xml:id="_multiset_8hpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;以下の最大の値を返す</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00076"/><link linkend="_struct_multi_set_1ae68cdae0ceec4d6cc7909270947e1380">00076</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_multi_set_1ae68cdae0ceec4d6cc7909270947e1380">le</link>(T&#32;x)&#32;{
+<anchor xml:id="_multiset_8hpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;itr=<emphasis role="keyword">this</emphasis>-&gt;upper_bound(x);
+<anchor xml:id="_multiset_8hpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(itr==<emphasis role="keyword">this</emphasis>-&gt;begin())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_multi_set_1a2eacbed44c86db543002092ebc3bea36">not_found</link>;
+<anchor xml:id="_multiset_8hpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>*prev(itr);
+<anchor xml:id="_multiset_8hpp_source_1l00080"/>00080 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_multiset_8hpp_source_1l00081"/>00081 
+<anchor xml:id="_multiset_8hpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;未満最大の値を返す</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00083"/><link linkend="_struct_multi_set_1a04ddcfd58ef65bb94b814f8f8e6afa0a">00083</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_multi_set_1a04ddcfd58ef65bb94b814f8f8e6afa0a">lt</link>(T&#32;x)&#32;{
+<anchor xml:id="_multiset_8hpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;itr=<emphasis role="keyword">this</emphasis>-&gt;lower_bound(x);
+<anchor xml:id="_multiset_8hpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(itr==<emphasis role="keyword">this</emphasis>-&gt;begin())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_multi_set_1a2eacbed44c86db543002092ebc3bea36">not_found</link>;
+<anchor xml:id="_multiset_8hpp_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>*prev(itr);
+<anchor xml:id="_multiset_8hpp_source_1l00087"/>00087 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_multiset_8hpp_source_1l00088"/>00088 
+<anchor xml:id="_multiset_8hpp_source_1l00089"/>00089 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;の個数を返す</emphasis>
+<anchor xml:id="_multiset_8hpp_source_1l00090"/><link linkend="_struct_multi_set_1aec0db35536a9fcd9da1d1e35273f0337">00090</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_multi_set_1aec0db35536a9fcd9da1d1e35273f0337">count</link>(T&#32;x)&#32;{
+<anchor xml:id="_multiset_8hpp_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;cnt[x];
+<anchor xml:id="_multiset_8hpp_source_1l00092"/>00092 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_multiset_8hpp_source_1l00093"/>00093 
+<anchor xml:id="_multiset_8hpp_source_1l00094"/>00094 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_multiset_8hpp_source_1l00095"/>00095 &#32;&#32;&#32;&#32;map&lt;T,<emphasis role="keywordtype">int</emphasis>&gt;&#32;cnt;
+<anchor xml:id="_multiset_8hpp_source_1l00096"/>00096 };
+</programlisting></section>

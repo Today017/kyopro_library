@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ntt998_8hpp" xml:lang="ja">
+<title>math/ntt998.hpp ファイル</title>
+<indexterm><primary>math/ntt998.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/mod/modint.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_ntt998_8hpp_1a133aaf5782761e1866cfd3fd40e784d3">NTT998</link> (<link linkend="_modint_8hpp_1a0eb658589b1f818b4f88deb2ae419aab">VM</link> &amp;a, bool inv=false)</para>
+
+<para>数論変換 </para>
+</listitem>
+            <listitem><para><link linkend="_modint_8hpp_1a0eb658589b1f818b4f88deb2ae419aab">VM</link> <link linkend="_ntt998_8hpp_1a8a7e67d1f552a5092501af3910fa134e">Convolve998</link> (<link linkend="_modint_8hpp_1a0eb658589b1f818b4f88deb2ae419aab">VM</link> a, <link linkend="_modint_8hpp_1a0eb658589b1f818b4f88deb2ae419aab">VM</link> b)</para>
+
+<para>AとBの畳み込み C[i] = Σ A[j]B[i-j] mod 998244353 を返す </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_ntt998_8hpp_1a133aaf5782761e1866cfd3fd40e784d3"/><section>
+    <title>NTT998()</title>
+<indexterm><primary>NTT998</primary><secondary>ntt998.hpp</secondary></indexterm>
+<indexterm><primary>ntt998.hpp</primary><secondary>NTT998</secondary></indexterm>
+<para><computeroutput>void NTT998 (<link linkend="_modint_8hpp_1a0eb658589b1f818b4f88deb2ae419aab">VM</link> &amp; a, bool inv = <computeroutput>false</computeroutput>
+)</computeroutput></para><para>
+
+<para>数論変換 </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(N log(N))</para>
+</note>
+f(x) = Σ a[i]x^i, w^N = 1 とすると、F(t) = Σ f(w^i)t^i の各係数 mod 998244353 に変換する </para>
+<para>
+ <link linkend="_ntt998_8hpp_source">ntt998.hpp</link> の <link linkend="_ntt998_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_ntt998_8hpp_1a8a7e67d1f552a5092501af3910fa134e"/><section>
+    <title>Convolve998()</title>
+<indexterm><primary>Convolve998</primary><secondary>ntt998.hpp</secondary></indexterm>
+<indexterm><primary>ntt998.hpp</primary><secondary>Convolve998</secondary></indexterm>
+<para><computeroutput><link linkend="_modint_8hpp_1a0eb658589b1f818b4f88deb2ae419aab">VM</link> Convolve998 (<link linkend="_modint_8hpp_1a0eb658589b1f818b4f88deb2ae419aab">VM</link> a, <link linkend="_modint_8hpp_1a0eb658589b1f818b4f88deb2ae419aab">VM</link> b)</computeroutput></para><para>
+
+<para>AとBの畳み込み C[i] = Σ A[j]B[i-j] mod 998244353 を返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(N log(N)) </para>
+</note>
+<caution><title>注意</title>
+
+<para>|a|+|b| &lt;= 2^23 が必要 </para>
+</caution>
+</para>
+<para>
+ <link linkend="_ntt998_8hpp_source">ntt998.hpp</link> の <link linkend="_ntt998_8hpp_source_1l00041">41</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

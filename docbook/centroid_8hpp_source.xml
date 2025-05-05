@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_centroid_8hpp_source" xml:lang="ja">
+<title>centroid.hpp</title>
+<indexterm><primary>graph/tree/centroid.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_centroid_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_centroid_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_centroid_8hpp_source_1l00003"/>00003 
+<anchor xml:id="_centroid_8hpp_source_1l00004"/>00004 <emphasis role="comment">/**</emphasis>
+00005 <emphasis role="comment">&#32;*&#32;@brief&#32;重心分解</emphasis>
+00006 <emphasis role="comment">&#32;*&#32;@param&#32;seen&#32;探索済みフラグ</emphasis>
+00007 <emphasis role="comment">&#32;*&#32;@param&#32;sz&#32;各頂点の部分木のサイズ</emphasis>
+00008 <emphasis role="comment">&#32;*&#32;</emphasis>
+00009 <emphasis role="comment">&#32;*&#32;```cpp</emphasis>
+00010 <emphasis role="comment">&#32;*&#32;vector&lt;int&gt;&#32;sz(N);</emphasis>
+00011 <emphasis role="comment">&#32;*&#32;vector&lt;bool&gt;&#32;seen(N);</emphasis>
+00012 <emphasis role="comment">&#32;*&#32;</emphasis>
+00013 <emphasis role="comment">&#32;*&#32;auto&#32;centroid_decomposition&#32;=&#32;[&amp;](auto&#32;self,&#32;int&#32;root)&#32;-&gt;&#32;void&#32;{</emphasis>
+00014 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;int&#32;centroid&#32;=&#32;TreeCentroid(g,&#32;root,&#32;seen,&#32;sz);</emphasis>
+00015 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;seen[centroid]&#32;=&#32;true;</emphasis>
+00016 <emphasis role="comment">&#32;*</emphasis>
+00017 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;//&#32;ここに処理を書く</emphasis>
+00018 <emphasis role="comment">&#32;*&#32;</emphasis>
+00019 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;for&#32;(int&#32;nxt&#32;:&#32;g[centroid])&#32;{</emphasis>
+00020 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;if&#32;(seen[nxt])&#32;continue;</emphasis>
+00021 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self(self,&#32;nxt);</emphasis>
+00022 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;}</emphasis>
+00023 <emphasis role="comment">&#32;*&#32;};</emphasis>
+00024 <emphasis role="comment">&#32;*&#32;centroid_decomposition(centroid_decomposition,&#32;0);</emphasis>
+00025 <emphasis role="comment">&#32;*&#32;```</emphasis>
+00026 <emphasis role="comment">&#32;*/</emphasis>
+<anchor xml:id="_centroid_8hpp_source_1l00027"/><link linkend="_centroid_8hpp_1a225d81ea785b9462e73f73b117911b7c">00027</link> <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_centroid_8hpp_1a225d81ea785b9462e73f73b117911b7c">TreeCentroid</link>(<emphasis role="keyword">const</emphasis>&#32;VVI&amp;&#32;g,&#32;<emphasis role="keywordtype">int</emphasis>&#32;root,&#32;VI&amp;&#32;seen,&#32;VI&amp;&#32;sz)&#32;{
+<anchor xml:id="_centroid_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n=g.size();
+<anchor xml:id="_centroid_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(sz.empty())&#32;sz=VI(n);
+<anchor xml:id="_centroid_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(seen.empty())&#32;seen=VI(n,<emphasis role="keyword">false</emphasis>);
+<anchor xml:id="_centroid_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;dfs=[&amp;](<emphasis role="keyword">auto</emphasis>&#32;dfs,<emphasis role="keywordtype">int</emphasis>&#32;now,<emphasis role="keywordtype">int</emphasis>&#32;pre)-&gt;&#32;<emphasis role="keywordtype">int</emphasis>&#32;{
+<anchor xml:id="_centroid_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sz[now]=1;
+<anchor xml:id="_centroid_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;nxt:g[now])&#32;{
+<anchor xml:id="_centroid_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(nxt==pre||seen[nxt])&#32;<emphasis role="keywordflow">continue</emphasis>;
+<anchor xml:id="_centroid_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sz[now]+=dfs(dfs,nxt,now);
+<anchor xml:id="_centroid_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_centroid_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;sz[now];
+<anchor xml:id="_centroid_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_centroid_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;total=dfs(dfs,root,-1);
+<anchor xml:id="_centroid_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;centroid=root;
+<anchor xml:id="_centroid_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;dfs2=[&amp;](<emphasis role="keyword">auto</emphasis>&#32;dfs2,<emphasis role="keywordtype">int</emphasis>&#32;now,<emphasis role="keywordtype">int</emphasis>&#32;pre)-&gt;&#32;<emphasis role="keywordtype">void</emphasis>&#32;{
+<anchor xml:id="_centroid_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;ok=(total-sz[now])*2&lt;=total;
+<anchor xml:id="_centroid_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;nxt:g[now])&#32;{
+<anchor xml:id="_centroid_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(nxt==pre||seen[nxt])&#32;<emphasis role="keywordflow">continue</emphasis>;
+<anchor xml:id="_centroid_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dfs2(dfs2,nxt,now);
+<anchor xml:id="_centroid_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(sz[nxt]*2&gt;total)&#32;ok=<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_centroid_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_centroid_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(ok)&#32;centroid=now;
+<anchor xml:id="_centroid_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_centroid_8hpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;dfs2(dfs2,root,-1);
+<anchor xml:id="_centroid_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;centroid;
+<anchor xml:id="_centroid_8hpp_source_1l00052"/>00052 }
+</programlisting></section>

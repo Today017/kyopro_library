@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_xor__convolution_8hpp_source" xml:lang="ja">
+<title>xor_convolution.hpp</title>
+<indexterm><primary>math/xor_convolution.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_xor__convolution_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_xor__convolution_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_xor__convolution_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;高速アダマール変換</emphasis>
+<anchor xml:id="_xor__convolution_8hpp_source_1l00004"/>00004 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_xor__convolution_8hpp_source_1l00005"/><link linkend="_xor__convolution_8hpp_1a2172face1088ecec4509579a02feedd9">00005</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_xor__convolution_8hpp_1a2172face1088ecec4509579a02feedd9">FHT</link>(vector&lt;T&gt;&amp;&#32;a,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;inv=<emphasis role="keyword">false</emphasis>)&#32;{
+<anchor xml:id="_xor__convolution_8hpp_source_1l00006"/>00006 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;h=__lg(a.size());
+<anchor xml:id="_xor__convolution_8hpp_source_1l00007"/>00007 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,h)&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(j,1&lt;&lt;h)&#32;<emphasis role="keywordflow">if</emphasis>(~j&gt;&gt;i&amp;1)&#32;{
+<anchor xml:id="_xor__convolution_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;x=a[j],y=a[j|1&lt;&lt;i];
+<anchor xml:id="_xor__convolution_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;a[j]=x+y,a[j|1&lt;&lt;i]=x-y;
+<anchor xml:id="_xor__convolution_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(inv)&#32;a[j]/=2,a[j|1&lt;&lt;i]/=2;
+<anchor xml:id="_xor__convolution_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_xor__convolution_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;a;
+<anchor xml:id="_xor__convolution_8hpp_source_1l00013"/>00013 }
+<anchor xml:id="_xor__convolution_8hpp_source_1l00014"/>00014 
+<anchor xml:id="_xor__convolution_8hpp_source_1l00015"/>00015 <emphasis role="comment">///&#32;@brief&#32;XOR&#32;Convolution</emphasis>
+<anchor xml:id="_xor__convolution_8hpp_source_1l00016"/>00016 <emphasis role="comment">///&#32;@brief&#32;C[k]&#32;=&#32;Σ(i^j&#32;=&#32;k)&#32;A[i]B[j]&#32;なる&#32;C&#32;を返す</emphasis>
+<anchor xml:id="_xor__convolution_8hpp_source_1l00017"/>00017 <emphasis role="comment">///&#32;@note&#32;O(n&#32;log(n))</emphasis>
+<anchor xml:id="_xor__convolution_8hpp_source_1l00018"/>00018 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_xor__convolution_8hpp_source_1l00019"/><link linkend="_xor__convolution_8hpp_1a791b5a55ef2207220b3bf2ce44ff80bc">00019</link> <link linkend="_xor__convolution_8hpp_1a791b5a55ef2207220b3bf2ce44ff80bc">vector</link>&lt;<link linkend="_xor__convolution_8hpp_1a791b5a55ef2207220b3bf2ce44ff80bc">T</link>&gt;&#32;<link linkend="_xor__convolution_8hpp_1a791b5a55ef2207220b3bf2ce44ff80bc">XorConvolution</link>(vector&lt;T&gt;&#32;a,&#32;vector&lt;T&gt;&#32;b)&#32;{
+<anchor xml:id="_xor__convolution_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;FHT(a);&#32;FHT(b);
+<anchor xml:id="_xor__convolution_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,a.size())&#32;a[i]*=b[i];
+<anchor xml:id="_xor__convolution_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;FHT(a,<emphasis role="keyword">true</emphasis>);
+<anchor xml:id="_xor__convolution_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;a;
+<anchor xml:id="_xor__convolution_8hpp_source_1l00024"/>00024 }
+</programlisting></section>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_z__algorithm_8hpp" xml:lang="ja">
+<title>string/z_algorithm.hpp ファイル</title>
+<indexterm><primary>string/z_algorithm.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename T = string&gt; </para><para><link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> <link linkend="_z__algorithm_8hpp_1af550579ff39c6ff9baa4b70854b23cf5">ZAlgorithm</link> (const T &amp;s)</para>
+
+<para>Z Algorithm </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_z__algorithm_8hpp_1af550579ff39c6ff9baa4b70854b23cf5"/><section>
+    <title>ZAlgorithm()</title>
+<indexterm><primary>ZAlgorithm</primary><secondary>z_algorithm.hpp</secondary></indexterm>
+<indexterm><primary>z_algorithm.hpp</primary><secondary>ZAlgorithm</secondary></indexterm>
+<computeroutput>template&lt;typename T = string&gt; </computeroutput><para><computeroutput><link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> ZAlgorithm (const T &amp; s)</computeroutput></para><para>
+
+<para>Z Algorithm </para>
+</para>
+
+<para><computeroutput>ret[i] = [0, n) と [i, n) の最長共通接頭辞の長さ</computeroutput> </para>
+<para>
+ <link linkend="_z__algorithm_8hpp_source">z_algorithm.hpp</link> の <link linkend="_z__algorithm_8hpp_source_1l00006">6</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

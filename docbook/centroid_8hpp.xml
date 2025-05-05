@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_centroid_8hpp" xml:lang="ja">
+<title>graph/tree/centroid.hpp ファイル</title>
+<indexterm><primary>graph/tree/centroid.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_centroid_8hpp_1a225d81ea785b9462e73f73b117911b7c">TreeCentroid</link> (const <link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> &amp;g, int root, <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> &amp;seen, <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> &amp;sz)</para>
+
+<para>重心分解 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_centroid_8hpp_1a225d81ea785b9462e73f73b117911b7c"/><section>
+    <title>TreeCentroid()</title>
+<indexterm><primary>TreeCentroid</primary><secondary>centroid.hpp</secondary></indexterm>
+<indexterm><primary>centroid.hpp</primary><secondary>TreeCentroid</secondary></indexterm>
+<para><computeroutput>int TreeCentroid (const <link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> &amp; g, int root, <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> &amp; seen, <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> &amp; sz)</computeroutput></para><para>
+
+<para>重心分解 </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+引数</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>seen</entry><entry>
+<para>探索済みフラグ </para>
+</entry>
+                            </row>
+                            <row>
+<entry>sz</entry><entry>
+<para>各頂点の部分木のサイズ</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <literallayout><computeroutput>vector&lt;int&gt;&#32;sz(N);
+vector&lt;bool&gt;&#32;seen(N);
+
+<emphasis role="keyword">auto</emphasis>&#32;centroid_decomposition&#32;=&#32;[&amp;](<emphasis role="keyword">auto</emphasis>&#32;self,&#32;<emphasis role="keywordtype">int</emphasis>&#32;root)&#32;-&gt;&#32;<emphasis role="keywordtype">void</emphasis>&#32;{
+&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;centroid&#32;=&#32;<link linkend="_centroid_8hpp_1a225d81ea785b9462e73f73b117911b7c">TreeCentroid</link>(g,&#32;root,&#32;seen,&#32;sz);
+&#32;&#32;&#32;&#32;seen[centroid]&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+
+&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;ここに処理を書く</emphasis>
+
+&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;nxt&#32;:&#32;g[centroid])&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(seen[nxt])&#32;<emphasis role="keywordflow">continue</emphasis>;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;self(self,&#32;nxt);
+&#32;&#32;&#32;&#32;}
+};
+centroid_decomposition(centroid_decomposition,&#32;0);
+</computeroutput></literallayout> </para>
+<para>
+ <link linkend="_centroid_8hpp_source">centroid.hpp</link> の <link linkend="_centroid_8hpp_source_1l00027">27</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

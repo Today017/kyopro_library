@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lagrange_8hpp" xml:lang="ja">
+<title>math/lagrange.hpp ファイル</title>
+<indexterm><primary>math/lagrange.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/math/multipoint_evaluate.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; T &gt; <link linkend="_lagrange_8hpp_1a50261df3c197ae7a34013b771fd1ddb6">LagrangePolynomial</link> (vector&lt; T &gt; x, vector&lt; T &gt; y)</para>
+
+<para>ラグランジュ補間 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_lagrange_8hpp_1a50261df3c197ae7a34013b771fd1ddb6"/><section>
+    <title>LagrangePolynomial()</title>
+<indexterm><primary>LagrangePolynomial</primary><secondary>lagrange.hpp</secondary></indexterm>
+<indexterm><primary>lagrange.hpp</primary><secondary>LagrangePolynomial</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; T &gt; LagrangePolynomial (vector&lt; T &gt; x, vector&lt; T &gt; y)</computeroutput></para><para>
+
+<para>ラグランジュ補間 </para>
+</para>
+
+<para>n+1 個の点 (x[i], y[i]) を通る n 次多項式の係数を返す <note><title>覚え書き</title>
+
+<para>O(n (log(n))^2) </para>
+</note>
+</para>
+<para>
+ <link linkend="_lagrange_8hpp_source">lagrange.hpp</link> の <link linkend="_lagrange_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

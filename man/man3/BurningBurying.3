@@ -1,0 +1,78 @@
+.TH "BurningBurying< Cost >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BurningBurying< Cost > \- 燃やす埋める  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'moyasu_umeru\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBBurningBurying\fP (int n)"
+.br
+.ti -1c
+.RI "void \fBadd_single\fP (int i, Cost zero, Cost one)"
+.br
+.RI "x[i] = 0 のときコスト zero, x[i] = 1 のときコスト one がかかるという条件を追加する "
+.ti -1c
+.RI "void \fBadd_double\fP (int i, int j, Cost a, Cost b, Cost c, Cost d)"
+.br
+.RI "x[ i ], x[ j ] の組み合わせについて、以下のコストかかるという条件を追加する "
+.ti -1c
+.RI "Cost \fBsolve\fP ()"
+.br
+.RI "コスト最小値を求める "
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename Cost>
+.br
+struct BurningBurying< Cost >"燃やす埋める 
+.PP
+ \fBmoyasu_umeru\&.hpp\fP の \fB7\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename Cost> \fBBurningBurying\fP< Cost >\fB::BurningBurying\fP (int n)\fR [inline]\fP"
+
+.PP
+ \fBmoyasu_umeru\&.hpp\fP の \fB8\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "template<typename Cost> void \fBBurningBurying\fP< Cost >::add_single (int i, Cost zero, Cost one)\fR [inline]\fP"
+
+.PP
+x[i] = 0 のときコスト zero, x[i] = 1 のときコスト one がかかるという条件を追加する 
+.PP
+ \fBmoyasu_umeru\&.hpp\fP の \fB16\fP 行目に定義があります。
+.SS "template<typename Cost> void \fBBurningBurying\fP< Cost >::add_double (int i, int j, Cost a, Cost b, Cost c, Cost d)\fR [inline]\fP"
+
+.PP
+x[ i ], x[ j ] の組み合わせについて、以下のコストかかるという条件を追加する x[j] = 0   x[j] = 1    x[i] = 0   a   b    x[i] = 1   c   d   
+
+.PP
+\fB注意\fP
+.RS 4
+b + c >= a + d を要求する 
+.RE
+.PP
+
+.PP
+ \fBmoyasu_umeru\&.hpp\fP の \fB38\fP 行目に定義があります。
+.PP
+参照先 \fBadd_single()\fP\&.
+.SS "template<typename Cost> Cost \fBBurningBurying\fP< Cost >::solve ()\fR [inline]\fP"
+
+.PP
+コスト最小値を求める 
+.PP
+ \fBmoyasu_umeru\&.hpp\fP の \fB47\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

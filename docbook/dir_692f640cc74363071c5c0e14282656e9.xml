@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_692f640cc74363071c5c0e14282656e9" xml:lang="ja">
+<title>algorithm ディレクトリリファレンス</title>
+<indexterm><primary>algorithm ディレクトリリファレンス</primary></indexterm>
+<simplesect>
+    <title>ファイル    </title>
+        <itemizedlist>
+            <listitem><para>ファイル <link linkend="_binary__search_8hpp">binary_search.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_cht_8hpp">cht.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_doubling_8hpp">doubling.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_doubling__fold_8hpp">doubling_fold.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_inversion__number_8hpp">inversion_number.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_lis_8hpp">lis.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_mo_8hpp">mo.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_zeta__mobius_8hpp">zeta_mobius.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_zeta__mobius__div__mul_8hpp">zeta_mobius_div_mul.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

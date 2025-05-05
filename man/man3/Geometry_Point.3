@@ -1,0 +1,173 @@
+.TH "Geometry::Point" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Geometry::Point
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'geo\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBPoint\fP ()=default"
+.br
+.ti -1c
+.RI "\fBPoint\fP (\fBReal\fP \fBx\fP, \fBReal\fP \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBPoint\fP \fBoperator+\fP (const \fBPoint\fP &p) const"
+.br
+.ti -1c
+.RI "\fBPoint\fP \fBoperator\-\fP (const \fBPoint\fP &p) const"
+.br
+.ti -1c
+.RI "\fBPoint\fP \fBoperator*\fP (\fBReal\fP k) const"
+.br
+.ti -1c
+.RI "\fBPoint\fP \fBoperator/\fP (\fBReal\fP k) const"
+.br
+.ti -1c
+.RI "\fBReal\fP \fBdot\fP (const \fBPoint\fP &p) const"
+.br
+.ti -1c
+.RI "\fBReal\fP \fBcross\fP (const \fBPoint\fP &p) const"
+.br
+.ti -1c
+.RI "\fBReal\fP \fBcross\fP (const \fBPoint\fP &p1, const \fBPoint\fP &p2) const"
+.br
+.ti -1c
+.RI "\fBReal\fP \fBnorm\fP () const"
+.br
+.ti -1c
+.RI "\fBReal\fP \fBabs\fP () const"
+.br
+.ti -1c
+.RI "\fBReal\fP \fBarg\fP () const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBPoint\fP &p) const"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBReal\fP \fBx\fP"
+.br
+.ti -1c
+.RI "\fBReal\fP \fBy\fP"
+.br
+.in -1c
+.SS "フレンド"
+
+.in +1c
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, \fBPoint\fP &p)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+ \fBgeo\&.hpp\fP の \fB13\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "Geometry::Point::Point ()\fR [default]\fP"
+
+.SS "Geometry::Point::Point (\fBReal\fP x, \fBReal\fP y)\fR [inline]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB16\fP 行目に定義があります。
+.PP
+参照先 \fBx\fP, \fBy\fP\&.
+.SH "関数詳解"
+.PP 
+.SS "\fBPoint\fP Geometry::Point::operator+ (const \fBPoint\fP & p) const\fR [inline]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB17\fP 行目に定義があります。
+.PP
+参照先 \fBPoint()\fP, \fBx\fP, \fBy\fP\&.
+.SS "\fBPoint\fP Geometry::Point::operator\- (const \fBPoint\fP & p) const\fR [inline]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB18\fP 行目に定義があります。
+.PP
+参照先 \fBPoint()\fP, \fBx\fP, \fBy\fP\&.
+.SS "\fBPoint\fP Geometry::Point::operator* (\fBReal\fP k) const\fR [inline]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB19\fP 行目に定義があります。
+.PP
+参照先 \fBPoint()\fP, \fBx\fP, \fBy\fP\&.
+.SS "\fBPoint\fP Geometry::Point::operator/ (\fBReal\fP k) const\fR [inline]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB20\fP 行目に定義があります。
+.PP
+参照先 \fBPoint()\fP, \fBx\fP, \fBy\fP\&.
+.SS "\fBReal\fP Geometry::Point::dot (const \fBPoint\fP & p) const\fR [inline]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB21\fP 行目に定義があります。
+.PP
+参照先 \fBx\fP, \fBy\fP\&.
+.SS "\fBReal\fP Geometry::Point::cross (const \fBPoint\fP & p) const\fR [inline]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB22\fP 行目に定義があります。
+.PP
+参照先 \fBx\fP, \fBy\fP\&.
+.SS "\fBReal\fP Geometry::Point::cross (const \fBPoint\fP & p1, const \fBPoint\fP & p2) const\fR [inline]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB23\fP 行目に定義があります。
+.PP
+参照先 \fBx\fP, \fBy\fP\&.
+.SS "\fBReal\fP Geometry::Point::norm () const\fR [inline]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB24\fP 行目に定義があります。
+.PP
+参照先 \fBx\fP, \fBy\fP\&.
+.SS "\fBReal\fP Geometry::Point::abs () const\fR [inline]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB25\fP 行目に定義があります。
+.PP
+参照先 \fBnorm()\fP\&.
+.SS "\fBReal\fP Geometry::Point::arg () const\fR [inline]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB26\fP 行目に定義があります。
+.PP
+参照先 \fBx\fP, \fBy\fP\&.
+.SS "bool Geometry::Point::operator== (const \fBPoint\fP & p) const\fR [inline]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB27\fP 行目に定義があります。
+.PP
+参照先 \fBGeometry::almostEqual()\fP, \fBx\fP, \fBy\fP\&.
+.SH "フレンドと関連関数の詳解"
+.PP 
+.SS "istream & operator>> (istream & is, \fBPoint\fP & p)\fR [friend]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB28\fP 行目に定義があります。
+.PP
+参照先 \fBx\fP, \fBy\fP\&.
+.SH "メンバ詳解"
+.PP 
+.SS "\fBReal\fP Geometry::Point::x"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB14\fP 行目に定義があります。
+.SS "\fBReal\fP Geometry::Point::y"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB14\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

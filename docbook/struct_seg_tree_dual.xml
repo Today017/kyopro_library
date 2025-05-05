@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_seg_tree_dual" xml:lang="ja">
+<title>SegTreeDual&lt; CommutativeOperator &gt; 構造体テンプレート</title>
+<indexterm><primary>SegTreeDual&lt; CommutativeOperator &gt;</primary></indexterm>
+<para>
+
+<para>双対セグメント木 </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;segtree_dual.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開型    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_struct_seg_tree_dual_1a00bd09b2b812bf51b0bc2e724fbfd5a7">Type</link> = typename CommutativeOperator::Type</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_seg_tree_dual_1ac48a638afbe35ca9251883c2673498a0">SegTreeDual</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_struct_seg_tree_dual_1a18acc9ec63cfe99180c12419e9308975">SegTreeDual</link> (int n)</para>
+
+<para>要素数 n の双対セグ木を構築する </para>
+</listitem>
+            <listitem><para><link linkend="_struct_seg_tree_dual_1a4b660b709846d909a0c7918f5187fe3f">SegTreeDual</link> (const vector&lt; <link linkend="_struct_seg_tree_dual_1a00bd09b2b812bf51b0bc2e724fbfd5a7">Type</link> &gt; &amp;v)</para>
+
+<para>配列 v から双対セグ木を構築する </para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_seg_tree_dual_1a1a1257683cef6cd97451518b480c2a9a">apply</link> (int l, int r, <link linkend="_struct_seg_tree_dual_1a00bd09b2b812bf51b0bc2e724fbfd5a7">Type</link> x)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_seg_tree_dual_1a00bd09b2b812bf51b0bc2e724fbfd5a7">Type</link> <link linkend="_struct_seg_tree_dual_1a61bfbf2af340c5dc6e3b9785df156031">get</link> (int i)</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_seg_tree_dual_1a127fdf2679469328fd1a4c451e88412e">size</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_struct_seg_tree_dual_1a00bd09b2b812bf51b0bc2e724fbfd5a7">Type</link> <link linkend="_struct_seg_tree_dual_1a9196f5976be9aa2cd4f25e1e38177646">operator[]</link> (int i)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<simplesect><title>template&lt;typename CommutativeOperator&gt;<?linebreak?>struct SegTreeDual&lt; CommutativeOperator &gt;</title></simplesect>
+
+<para>双対セグメント木 </para>
+
+
+
+<para>
+                <formalpara>
+                    <title>
+テンプレート引数</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>CommutativeOperator</entry><entry>
+<para>作用素 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <caution><title>注意</title>
+
+<para>作用素は果敢である必要がある </para>
+</caution>
+</para>
+<para>
+ <link linkend="_segtree__dual_8hpp_source">segtree_dual.hpp</link> の <link linkend="_segtree__dual_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>型定義メンバ詳解</title>
+<anchor xml:id="_struct_seg_tree_dual_1a00bd09b2b812bf51b0bc2e724fbfd5a7"/><section>
+    <title>Type</title>
+<indexterm><primary>Type</primary><secondary>SegTreeDual&lt; CommutativeOperator &gt;</secondary></indexterm>
+<indexterm><primary>SegTreeDual&lt; CommutativeOperator &gt;</primary><secondary>Type</secondary></indexterm>
+<computeroutput>template&lt;typename CommutativeOperator&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_seg_tree_dual">SegTreeDual</link>&lt; CommutativeOperator &gt;::Type = typename CommutativeOperator::Type</computeroutput></para><para>
+ <link linkend="_segtree__dual_8hpp_source">segtree_dual.hpp</link> の <link linkend="_segtree__dual_8hpp_source_1l00009">9</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_seg_tree_dual_1ac48a638afbe35ca9251883c2673498a0"/><section>
+    <title>SegTreeDual()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>SegTreeDual</primary><secondary>SegTreeDual&lt; CommutativeOperator &gt;</secondary></indexterm>
+<indexterm><primary>SegTreeDual&lt; CommutativeOperator &gt;</primary><secondary>SegTreeDual</secondary></indexterm>
+<computeroutput>template&lt;typename CommutativeOperator&gt; </computeroutput><para><computeroutput><link linkend="_struct_seg_tree_dual">SegTreeDual</link>&lt; CommutativeOperator &gt;<link linkend="_struct_seg_tree_dual">::SegTreeDual</link> ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_seg_tree_dual_1a18acc9ec63cfe99180c12419e9308975"/><section>
+    <title>SegTreeDual()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>SegTreeDual</primary><secondary>SegTreeDual&lt; CommutativeOperator &gt;</secondary></indexterm>
+<indexterm><primary>SegTreeDual&lt; CommutativeOperator &gt;</primary><secondary>SegTreeDual</secondary></indexterm>
+<computeroutput>template&lt;typename CommutativeOperator&gt; </computeroutput><para><computeroutput><link linkend="_struct_seg_tree_dual">SegTreeDual</link>&lt; CommutativeOperator &gt;<link linkend="_struct_seg_tree_dual">::SegTreeDual</link> (int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>要素数 n の双対セグ木を構築する </para>
+</para>
+<para>
+ <link linkend="_segtree__dual_8hpp_source">segtree_dual.hpp</link> の <link linkend="_segtree__dual_8hpp_source_1l00013">13</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_seg_tree_dual_1a4b660b709846d909a0c7918f5187fe3f"/><section>
+    <title>SegTreeDual()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>SegTreeDual</primary><secondary>SegTreeDual&lt; CommutativeOperator &gt;</secondary></indexterm>
+<indexterm><primary>SegTreeDual&lt; CommutativeOperator &gt;</primary><secondary>SegTreeDual</secondary></indexterm>
+<computeroutput>template&lt;typename CommutativeOperator&gt; </computeroutput><para><computeroutput><link linkend="_struct_seg_tree_dual">SegTreeDual</link>&lt; CommutativeOperator &gt;<link linkend="_struct_seg_tree_dual">::SegTreeDual</link> (const vector&lt; <link linkend="_struct_seg_tree_dual_1a00bd09b2b812bf51b0bc2e724fbfd5a7">Type</link> &gt; &amp; v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>配列 v から双対セグ木を構築する </para>
+</para>
+<para>
+ <link linkend="_segtree__dual_8hpp_source">segtree_dual.hpp</link> の <link linkend="_segtree__dual_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_seg_tree_dual_1a1a1257683cef6cd97451518b480c2a9a"/><section>
+    <title>apply()</title>
+<indexterm><primary>apply</primary><secondary>SegTreeDual&lt; CommutativeOperator &gt;</secondary></indexterm>
+<indexterm><primary>SegTreeDual&lt; CommutativeOperator &gt;</primary><secondary>apply</secondary></indexterm>
+<computeroutput>template&lt;typename CommutativeOperator&gt; </computeroutput><para><computeroutput>void <link linkend="_struct_seg_tree_dual">SegTreeDual</link>&lt; CommutativeOperator &gt;::apply (int l, int r, <link linkend="_struct_seg_tree_dual_1a00bd09b2b812bf51b0bc2e724fbfd5a7">Type</link> x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_segtree__dual_8hpp_source">segtree_dual.hpp</link> の <link linkend="_segtree__dual_8hpp_source_1l00026">26</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_seg_tree_dual_1a61bfbf2af340c5dc6e3b9785df156031"/><section>
+    <title>get()</title>
+<indexterm><primary>get</primary><secondary>SegTreeDual&lt; CommutativeOperator &gt;</secondary></indexterm>
+<indexterm><primary>SegTreeDual&lt; CommutativeOperator &gt;</primary><secondary>get</secondary></indexterm>
+<computeroutput>template&lt;typename CommutativeOperator&gt; </computeroutput><para><computeroutput><link linkend="_struct_seg_tree_dual_1a00bd09b2b812bf51b0bc2e724fbfd5a7">Type</link> <link linkend="_struct_seg_tree_dual">SegTreeDual</link>&lt; CommutativeOperator &gt;::get (int i)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_segtree__dual_8hpp_source">segtree_dual.hpp</link> の <link linkend="_segtree__dual_8hpp_source_1l00034">34</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_seg_tree_dual_1a127fdf2679469328fd1a4c451e88412e"/><section>
+    <title>size()</title>
+<indexterm><primary>size</primary><secondary>SegTreeDual&lt; CommutativeOperator &gt;</secondary></indexterm>
+<indexterm><primary>SegTreeDual&lt; CommutativeOperator &gt;</primary><secondary>size</secondary></indexterm>
+<computeroutput>template&lt;typename CommutativeOperator&gt; </computeroutput><para><computeroutput>int <link linkend="_struct_seg_tree_dual">SegTreeDual</link>&lt; CommutativeOperator &gt;::size ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_segtree__dual_8hpp_source">segtree_dual.hpp</link> の <link linkend="_segtree__dual_8hpp_source_1l00044">44</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_seg_tree_dual_1a9196f5976be9aa2cd4f25e1e38177646"/><section>
+    <title>operator[]()</title>
+<indexterm><primary>operator[]</primary><secondary>SegTreeDual&lt; CommutativeOperator &gt;</secondary></indexterm>
+<indexterm><primary>SegTreeDual&lt; CommutativeOperator &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;typename CommutativeOperator&gt; </computeroutput><para><computeroutput><link linkend="_struct_seg_tree_dual_1a00bd09b2b812bf51b0bc2e724fbfd5a7">Type</link> <link linkend="_struct_seg_tree_dual">SegTreeDual</link>&lt; CommutativeOperator &gt;::operator[] (int i)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_segtree__dual_8hpp_source">segtree_dual.hpp</link> の <link linkend="_segtree__dual_8hpp_source_1l00045">45</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+data_structure/<link linkend="_segtree__dual_8hpp">segtree_dual.hpp</link></section>
+</section>

@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_doubling_fold" xml:lang="ja">
+<title>DoublingFold&lt; Monoid, Log &gt; 構造体テンプレート</title>
+<indexterm><primary>DoublingFold&lt; Monoid, Log &gt;</primary></indexterm>
+<para>
+
+<para>ダブリング（モノイド合成） </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;doubling_fold.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開型    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_struct_doubling_fold_1a2fac53adf611f062e7c40d5f28a398b8">Type</link> = typename Monoid::Type</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_doubling_fold_1a04df85dc1028af6ecca7e1d00d60b4ed">DoublingFold</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_struct_doubling_fold_1a7326be1879b679c77c45571fef4d4083">DoublingFold</link> (const <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> &amp;p, const vector&lt; <link linkend="_struct_doubling_fold_1a2fac53adf611f062e7c40d5f28a398b8">Type</link> &gt; &amp;v)</para>
+
+<para>コンストラクタ </para>
+</listitem>
+            <listitem><para><link linkend="_struct_doubling_fold_1a2fac53adf611f062e7c40d5f28a398b8">Type</link> <link linkend="_struct_doubling_fold_1a8351c3419c2041117f47e80436506010">fold</link> (int start, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> k)</para>
+
+<para>モノイド積 </para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_doubling_fold_1afd50a59ab1f2ab56d585b7896e444e65">next</link> (int start, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> k)</para>
+
+<para>頂点 start から k 回遷移した先の頂点を返す </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<simplesect><title>template&lt;typename Monoid, int Log&gt;<?linebreak?>struct DoublingFold&lt; Monoid, Log &gt;</title></simplesect>
+
+<para>ダブリング（モノイド合成） </para>
+
+
+
+<para>
+                <formalpara>
+                    <title>
+テンプレート引数</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry><link linkend="_namespace_monoid">Monoid</link></entry><entry>
+<para>合成するモノイド </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Log</entry><entry>
+<para>ダブリングの深さ </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+ <link linkend="_doubling__fold_8hpp_source">doubling_fold.hpp</link> の <link linkend="_doubling__fold_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>型定義メンバ詳解</title>
+<anchor xml:id="_struct_doubling_fold_1a2fac53adf611f062e7c40d5f28a398b8"/><section>
+    <title>Type</title>
+<indexterm><primary>Type</primary><secondary>DoublingFold&lt; Monoid, Log &gt;</secondary></indexterm>
+<indexterm><primary>DoublingFold&lt; Monoid, Log &gt;</primary><secondary>Type</secondary></indexterm>
+<computeroutput>template&lt;typename Monoid, int Log&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_doubling_fold">DoublingFold</link>&lt; Monoid, Log &gt;::Type = typename Monoid::Type</computeroutput></para><para>
+ <link linkend="_doubling__fold_8hpp_source">doubling_fold.hpp</link> の <link linkend="_doubling__fold_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_doubling_fold_1a04df85dc1028af6ecca7e1d00d60b4ed"/><section>
+    <title>DoublingFold()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>DoublingFold</primary><secondary>DoublingFold&lt; Monoid, Log &gt;</secondary></indexterm>
+<indexterm><primary>DoublingFold&lt; Monoid, Log &gt;</primary><secondary>DoublingFold</secondary></indexterm>
+<computeroutput>template&lt;typename Monoid, int Log&gt; </computeroutput><para><computeroutput><link linkend="_struct_doubling_fold">DoublingFold</link>&lt; Monoid, Log &gt;<link linkend="_struct_doubling_fold">::DoublingFold</link> ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_doubling_fold_1a7326be1879b679c77c45571fef4d4083"/><section>
+    <title>DoublingFold()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>DoublingFold</primary><secondary>DoublingFold&lt; Monoid, Log &gt;</secondary></indexterm>
+<indexterm><primary>DoublingFold&lt; Monoid, Log &gt;</primary><secondary>DoublingFold</secondary></indexterm>
+<computeroutput>template&lt;typename Monoid, int Log&gt; </computeroutput><para><computeroutput><link linkend="_struct_doubling_fold">DoublingFold</link>&lt; Monoid, Log &gt;<link linkend="_struct_doubling_fold">::DoublingFold</link> (const <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> &amp; p, const vector&lt; <link linkend="_struct_doubling_fold_1a2fac53adf611f062e7c40d5f28a398b8">Type</link> &gt; &amp; v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>コンストラクタ </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+引数</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>p</entry><entry>
+<para>各頂点の遷移先 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>v</entry><entry>
+<para>各頂点の値 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <note><title>覚え書き</title>
+
+<para>O(N Log) </para>
+</note>
+</para>
+<para>
+ <link linkend="_doubling__fold_8hpp_source">doubling_fold.hpp</link> の <link linkend="_doubling__fold_8hpp_source_1l00015">15</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_doubling_fold_1a8351c3419c2041117f47e80436506010"/><section>
+    <title>fold()</title>
+<indexterm><primary>fold</primary><secondary>DoublingFold&lt; Monoid, Log &gt;</secondary></indexterm>
+<indexterm><primary>DoublingFold&lt; Monoid, Log &gt;</primary><secondary>fold</secondary></indexterm>
+<computeroutput>template&lt;typename Monoid, int Log&gt; </computeroutput><para><computeroutput><link linkend="_struct_doubling_fold_1a2fac53adf611f062e7c40d5f28a398b8">Type</link> <link linkend="_struct_doubling_fold">DoublingFold</link>&lt; Monoid, Log &gt;::fold (int start, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> k)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>モノイド積 </para>
+</para>
+
+<para>頂点 start から k 回遷移したときのモノイド積を返す <note><title>覚え書き</title>
+
+<para>O(Log) </para>
+</note>
+</para>
+<para>
+ <link linkend="_doubling__fold_8hpp_source">doubling_fold.hpp</link> の <link linkend="_doubling__fold_8hpp_source_1l00029">29</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_doubling_fold_1afd50a59ab1f2ab56d585b7896e444e65"/><section>
+    <title>next()</title>
+<indexterm><primary>next</primary><secondary>DoublingFold&lt; Monoid, Log &gt;</secondary></indexterm>
+<indexterm><primary>DoublingFold&lt; Monoid, Log &gt;</primary><secondary>next</secondary></indexterm>
+<computeroutput>template&lt;typename Monoid, int Log&gt; </computeroutput><para><computeroutput>int <link linkend="_struct_doubling_fold">DoublingFold</link>&lt; Monoid, Log &gt;::next (int start, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> k)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>頂点 start から k 回遷移した先の頂点を返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(Log) </para>
+</note>
+</para>
+<para>
+ <link linkend="_doubling__fold_8hpp_source">doubling_fold.hpp</link> の <link linkend="_doubling__fold_8hpp_source_1l00040">40</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+algorithm/<link linkend="_doubling__fold_8hpp">doubling_fold.hpp</link></section>
+</section>

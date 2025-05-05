@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_insertable_reversible_array" xml:lang="ja">
+<title>InsertableReversibleArray&lt; T &gt; 構造体テンプレート</title>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &quot;insert_reverse_array.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開型    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_struct_insertable_reversible_array_1ac4f64c428a0301ab54e833b321c09534">node</link> = <link linkend="_struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node">InsertableReversibleArrayImpl::LazyReversibleRBSTNode</link>&lt;T,T&gt;</para>
+</listitem>
+            <listitem><para>using <link linkend="_struct_insertable_reversible_array_1a5d95b6579130721eb3575f2a8452d834">node_ptr</link> = <link linkend="_struct_insertable_reversible_array_1ac4f64c428a0301ab54e833b321c09534">node</link>*</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_struct_insertable_reversible_array_1a977a1f5a620ffec62755a1ca3b0f328b">size</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_struct_insertable_reversible_array_1aa2087eb079b25efc16b6c5a6356a9299">InsertableReversibleArray</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_struct_insertable_reversible_array_1a8b180eeb6d7a237eb7abedb5975c42ab">InsertableReversibleArray</link> (int n)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_insertable_reversible_array_1a2411bea8ef1cf9692bbaf7df9b83a210">InsertableReversibleArray</link> (const vector&lt; T &gt; &amp;init)</para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_insertable_reversible_array_1ab2b765916173504d440af42e3df58868">insert</link> (int k, T x)</para>
+
+<para>i 番目に x を挿入する </para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_insertable_reversible_array_1a9a9bb97370a02d5d5d63a4aa29d648d7">erase</link> (int k)</para>
+
+<para>i 番目を削除する </para>
+</listitem>
+            <listitem><para>T <link linkend="_struct_insertable_reversible_array_1a5e4dd28311e225c1e1f9ec9968139e2f">get</link> (int k)</para>
+
+<para>i 番目の要素を取得する </para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_insertable_reversible_array_1a41d2ed956f4a37eaac47a015597e2948">set</link> (int k, T x)</para>
+
+<para>i 番目の要素を x に変更する </para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_insertable_reversible_array_1af25d43b4b88fd782a8c45c3616d50054">reverse</link> (int l, int r)</para>
+
+<para>区間 [l, r) の要素を反転する </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>公開変数類    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_insertable_reversible_array_1a5d95b6579130721eb3575f2a8452d834">node_ptr</link> <link linkend="_struct_insertable_reversible_array_1a2d03db862b342d40e310d96e3730f1c8">root</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t">InsertableReversibleArrayImpl::LazyReversibleRBST</link>&lt; T, T, <link linkend="_namespace_insertable_reversible_array_impl_1aa04c6fd66fb319b047a77d6fa3dd81fb">InsertableReversibleArrayImpl::op</link>&lt; T &gt;, <link linkend="_namespace_insertable_reversible_array_impl_1aa04c6fd66fb319b047a77d6fa3dd81fb">InsertableReversibleArrayImpl::op</link>&lt; T &gt;, <link linkend="_namespace_insertable_reversible_array_impl_1aa04c6fd66fb319b047a77d6fa3dd81fb">InsertableReversibleArrayImpl::op</link>&lt; T &gt;, <link linkend="_namespace_insertable_reversible_array_impl_1a37fafc5a9cb6ce08b2dbc5e775fbf79f">InsertableReversibleArrayImpl::e</link>&lt; T &gt; &gt; <link linkend="_struct_insertable_reversible_array_1a99106d441b1b34f3aa108ebcf0c4f3ea">rbst</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_insertable_reversible_array_1a693dd53064f16c54821043eb12258c95">_size</link> =0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<simplesect><title>template&lt;typename T&gt;<?linebreak?>struct InsertableReversibleArray&lt; T &gt;</title></simplesect>
+<para>
+ <link linkend="_insert__reverse__array_8hpp_source">insert_reverse_array.hpp</link> の <link linkend="_insert__reverse__array_8hpp_source_1l00152">152</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>型定義メンバ詳解</title>
+<anchor xml:id="_struct_insertable_reversible_array_1ac4f64c428a0301ab54e833b321c09534"/><section>
+    <title>node</title>
+<indexterm><primary>node</primary><secondary>InsertableReversibleArray&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary><secondary>node</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_insertable_reversible_array">InsertableReversibleArray</link>&lt; T &gt;::node = <link linkend="_struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node">InsertableReversibleArrayImpl::LazyReversibleRBSTNode</link>&lt;T,T&gt;</computeroutput></para><para>
+ <link linkend="_insert__reverse__array_8hpp_source">insert_reverse_array.hpp</link> の <link linkend="_insert__reverse__array_8hpp_source_1l00153">153</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_insertable_reversible_array_1a5d95b6579130721eb3575f2a8452d834"/><section>
+    <title>node_ptr</title>
+<indexterm><primary>node_ptr</primary><secondary>InsertableReversibleArray&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary><secondary>node_ptr</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_insertable_reversible_array">InsertableReversibleArray</link>&lt; T &gt;::node_ptr = <link linkend="_struct_insertable_reversible_array_1ac4f64c428a0301ab54e833b321c09534">node</link>*</computeroutput></para><para>
+ <link linkend="_insert__reverse__array_8hpp_source">insert_reverse_array.hpp</link> の <link linkend="_insert__reverse__array_8hpp_source_1l00154">154</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_insertable_reversible_array_1aa2087eb079b25efc16b6c5a6356a9299"/><section>
+    <title>InsertableReversibleArray()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>InsertableReversibleArray</primary><secondary>InsertableReversibleArray&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary><secondary>InsertableReversibleArray</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput><link linkend="_struct_insertable_reversible_array">InsertableReversibleArray</link>&lt; T &gt;<link linkend="_struct_insertable_reversible_array">::InsertableReversibleArray</link> ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_insertable_reversible_array_1a8b180eeb6d7a237eb7abedb5975c42ab"/><section>
+    <title>InsertableReversibleArray()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>InsertableReversibleArray</primary><secondary>InsertableReversibleArray&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary><secondary>InsertableReversibleArray</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput><link linkend="_struct_insertable_reversible_array">InsertableReversibleArray</link>&lt; T &gt;<link linkend="_struct_insertable_reversible_array">::InsertableReversibleArray</link> (int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_insert__reverse__array_8hpp_source">insert_reverse_array.hpp</link> の <link linkend="_insert__reverse__array_8hpp_source_1l00172">172</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_insert__reverse__array_8hpp_source_1l00164">_size</link>.</para>
+</section>
+<anchor xml:id="_struct_insertable_reversible_array_1a2411bea8ef1cf9692bbaf7df9b83a210"/><section>
+    <title>InsertableReversibleArray()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>InsertableReversibleArray</primary><secondary>InsertableReversibleArray&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary><secondary>InsertableReversibleArray</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput><link linkend="_struct_insertable_reversible_array">InsertableReversibleArray</link>&lt; T &gt;<link linkend="_struct_insertable_reversible_array">::InsertableReversibleArray</link> (const vector&lt; T &gt; &amp; init)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_insert__reverse__array_8hpp_source">insert_reverse_array.hpp</link> の <link linkend="_insert__reverse__array_8hpp_source_1l00178">178</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_insert__reverse__array_8hpp_source_1l00164">_size</link>.</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_insertable_reversible_array_1a977a1f5a620ffec62755a1ca3b0f328b"/><section>
+    <title>size()</title>
+<indexterm><primary>size</primary><secondary>InsertableReversibleArray&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary><secondary>size</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>int <link linkend="_struct_insertable_reversible_array">InsertableReversibleArray</link>&lt; T &gt;::size ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_insert__reverse__array_8hpp_source">insert_reverse_array.hpp</link> の <link linkend="_insert__reverse__array_8hpp_source_1l00166">166</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_insert__reverse__array_8hpp_source_1l00164">_size</link>.</para>
+</section>
+<anchor xml:id="_struct_insertable_reversible_array_1ab2b765916173504d440af42e3df58868"/><section>
+    <title>insert()</title>
+<indexterm><primary>insert</primary><secondary>InsertableReversibleArray&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary><secondary>insert</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>void <link linkend="_struct_insertable_reversible_array">InsertableReversibleArray</link>&lt; T &gt;::insert (int k, T x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>i 番目に x を挿入する </para>
+</para>
+<para>
+ <link linkend="_insert__reverse__array_8hpp_source">insert_reverse_array.hpp</link> の <link linkend="_insert__reverse__array_8hpp_source_1l00184">184</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_insert__reverse__array_8hpp_source_1l00164">_size</link>.</para>
+</section>
+<anchor xml:id="_struct_insertable_reversible_array_1a9a9bb97370a02d5d5d63a4aa29d648d7"/><section>
+    <title>erase()</title>
+<indexterm><primary>erase</primary><secondary>InsertableReversibleArray&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary><secondary>erase</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>void <link linkend="_struct_insertable_reversible_array">InsertableReversibleArray</link>&lt; T &gt;::erase (int k)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>i 番目を削除する </para>
+</para>
+<para>
+ <link linkend="_insert__reverse__array_8hpp_source">insert_reverse_array.hpp</link> の <link linkend="_insert__reverse__array_8hpp_source_1l00191">191</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_insert__reverse__array_8hpp_source_1l00164">_size</link>.</para>
+</section>
+<anchor xml:id="_struct_insertable_reversible_array_1a5e4dd28311e225c1e1f9ec9968139e2f"/><section>
+    <title>get()</title>
+<indexterm><primary>get</primary><secondary>InsertableReversibleArray&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary><secondary>get</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T <link linkend="_struct_insertable_reversible_array">InsertableReversibleArray</link>&lt; T &gt;::get (int k)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>i 番目の要素を取得する </para>
+</para>
+<para>
+ <link linkend="_insert__reverse__array_8hpp_source">insert_reverse_array.hpp</link> の <link linkend="_insert__reverse__array_8hpp_source_1l00198">198</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_insert__reverse__array_8hpp_source_1l00164">_size</link>.</para>
+</section>
+<anchor xml:id="_struct_insertable_reversible_array_1a41d2ed956f4a37eaac47a015597e2948"/><section>
+    <title>set()</title>
+<indexterm><primary>set</primary><secondary>InsertableReversibleArray&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary><secondary>set</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>void <link linkend="_struct_insertable_reversible_array">InsertableReversibleArray</link>&lt; T &gt;::set (int k, T x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>i 番目の要素を x に変更する </para>
+</para>
+<para>
+ <link linkend="_insert__reverse__array_8hpp_source">insert_reverse_array.hpp</link> の <link linkend="_insert__reverse__array_8hpp_source_1l00204">204</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_insert__reverse__array_8hpp_source_1l00164">_size</link>, <link linkend="_insert__reverse__array_8hpp_source_1l00191">erase()</link>, <link linkend="_insert__reverse__array_8hpp_source_1l00184">insert()</link>.</para>
+</section>
+<anchor xml:id="_struct_insertable_reversible_array_1af25d43b4b88fd782a8c45c3616d50054"/><section>
+    <title>reverse()</title>
+<indexterm><primary>reverse</primary><secondary>InsertableReversibleArray&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary><secondary>reverse</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>void <link linkend="_struct_insertable_reversible_array">InsertableReversibleArray</link>&lt; T &gt;::reverse (int l, int r)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) の要素を反転する </para>
+</para>
+<para>
+ <link linkend="_insert__reverse__array_8hpp_source">insert_reverse_array.hpp</link> の <link linkend="_insert__reverse__array_8hpp_source_1l00211">211</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_insert__reverse__array_8hpp_source_1l00164">_size</link>.</para>
+</section>
+</section>
+<section>
+<title>メンバ詳解</title>
+<anchor xml:id="_struct_insertable_reversible_array_1a2d03db862b342d40e310d96e3730f1c8"/><section>
+    <title>root</title>
+<indexterm><primary>root</primary><secondary>InsertableReversibleArray&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary><secondary>root</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput><link linkend="_struct_insertable_reversible_array_1a5d95b6579130721eb3575f2a8452d834">node_ptr</link> <link linkend="_struct_insertable_reversible_array">InsertableReversibleArray</link>&lt; T &gt;::root</computeroutput></para><para>
+ <link linkend="_insert__reverse__array_8hpp_source">insert_reverse_array.hpp</link> の <link linkend="_insert__reverse__array_8hpp_source_1l00155">155</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_insertable_reversible_array_1a99106d441b1b34f3aa108ebcf0c4f3ea"/><section>
+    <title>rbst</title>
+<indexterm><primary>rbst</primary><secondary>InsertableReversibleArray&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary><secondary>rbst</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput><link linkend="_struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t">InsertableReversibleArrayImpl::LazyReversibleRBST</link>&lt; T, T, <link linkend="_namespace_insertable_reversible_array_impl_1aa04c6fd66fb319b047a77d6fa3dd81fb">InsertableReversibleArrayImpl::op</link>&lt;T&gt;, <link linkend="_namespace_insertable_reversible_array_impl_1aa04c6fd66fb319b047a77d6fa3dd81fb">InsertableReversibleArrayImpl::op</link>&lt;T&gt;, <link linkend="_namespace_insertable_reversible_array_impl_1aa04c6fd66fb319b047a77d6fa3dd81fb">InsertableReversibleArrayImpl::op</link>&lt;T&gt;, <link linkend="_namespace_insertable_reversible_array_impl_1a37fafc5a9cb6ce08b2dbc5e775fbf79f">InsertableReversibleArrayImpl::e</link>&lt;T&gt; &gt; <link linkend="_struct_insertable_reversible_array">InsertableReversibleArray</link>&lt; T &gt;::rbst</computeroutput></para><para>
+ <link linkend="_insert__reverse__array_8hpp_source">insert_reverse_array.hpp</link> の <link linkend="_insert__reverse__array_8hpp_source_1l00163">163</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_insertable_reversible_array_1a693dd53064f16c54821043eb12258c95"/><section>
+    <title>_size</title>
+<indexterm><primary>_size</primary><secondary>InsertableReversibleArray&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>InsertableReversibleArray&lt; T &gt;</primary><secondary>_size</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>int <link linkend="_struct_insertable_reversible_array">InsertableReversibleArray</link>&lt; T &gt;::_size =0</computeroutput></para><para>
+ <link linkend="_insert__reverse__array_8hpp_source">insert_reverse_array.hpp</link> の <link linkend="_insert__reverse__array_8hpp_source_1l00164">164</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+data_structure/<link linkend="_insert__reverse__array_8hpp">insert_reverse_array.hpp</link></section>
+</section>

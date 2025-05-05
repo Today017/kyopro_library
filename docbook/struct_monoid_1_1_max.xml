@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_monoid_1_1_max" xml:lang="ja">
+<title>Monoid::Max&lt; T, min_value &gt; 構造体テンプレート</title>
+<indexterm><primary>Monoid::Max&lt; T, min_value &gt;</primary></indexterm>
+<para>
+
+<para>Maxモノイド </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;monoid.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開型    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_struct_monoid_1_1_max_1a14108b8557485a8c7daf0ebcbe4f09cf">Type</link> = T</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>静的公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_struct_monoid_1_1_max_1a14108b8557485a8c7daf0ebcbe4f09cf">Type</link> <link linkend="_struct_monoid_1_1_max_1a5137dcf5aacd39b21f6ae23605136831">id</link> ()</para>
+</listitem>
+            <listitem><para>static <link linkend="_struct_monoid_1_1_max_1a14108b8557485a8c7daf0ebcbe4f09cf">Type</link> <link linkend="_struct_monoid_1_1_max_1ae4461f8a7ccddd3063cc6e250d1d0dfe">op</link> (const <link linkend="_struct_monoid_1_1_max_1a14108b8557485a8c7daf0ebcbe4f09cf">Type</link> &amp;a, const <link linkend="_struct_monoid_1_1_max_1a14108b8557485a8c7daf0ebcbe4f09cf">Type</link> &amp;b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<simplesect><title>template&lt;typename T, T min_value = -INF&gt;<?linebreak?>struct Monoid::Max&lt; T, min_value &gt;</title></simplesect>
+
+<para>Maxモノイド </para>
+
+
+
+<para>
+                <formalpara>
+                    <title>
+テンプレート引数</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>min_value</entry><entry>
+<para>単位元 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+ <link linkend="_monoid_8hpp_source">monoid.hpp</link> の <link linkend="_monoid_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>型定義メンバ詳解</title>
+<anchor xml:id="_struct_monoid_1_1_max_1a14108b8557485a8c7daf0ebcbe4f09cf"/><section>
+    <title>Type</title>
+<indexterm><primary>Type</primary><secondary>Monoid::Max&lt; T, min_value &gt;</secondary></indexterm>
+<indexterm><primary>Monoid::Max&lt; T, min_value &gt;</primary><secondary>Type</secondary></indexterm>
+<computeroutput>template&lt;typename T, T min_value = -INF&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_monoid_1_1_max">Monoid::Max</link>&lt; T, min_value &gt;::Type = T</computeroutput></para><para>
+ <link linkend="_monoid_8hpp_source">monoid.hpp</link> の <link linkend="_monoid_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_monoid_1_1_max_1a5137dcf5aacd39b21f6ae23605136831"/><section>
+    <title>id()</title>
+<indexterm><primary>id</primary><secondary>Monoid::Max&lt; T, min_value &gt;</secondary></indexterm>
+<indexterm><primary>Monoid::Max&lt; T, min_value &gt;</primary><secondary>id</secondary></indexterm>
+<computeroutput>template&lt;typename T, T min_value = -INF&gt; </computeroutput><para><computeroutput>static <link linkend="_struct_monoid_1_1_max_1a14108b8557485a8c7daf0ebcbe4f09cf">Type</link> <link linkend="_struct_monoid_1_1_max">Monoid::Max</link>&lt; T, min_value &gt;::id ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+ <link linkend="_monoid_8hpp_source">monoid.hpp</link> の <link linkend="_monoid_8hpp_source_1l00020">20</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_monoid_1_1_max_1ae4461f8a7ccddd3063cc6e250d1d0dfe"/><section>
+    <title>op()</title>
+<indexterm><primary>op</primary><secondary>Monoid::Max&lt; T, min_value &gt;</secondary></indexterm>
+<indexterm><primary>Monoid::Max&lt; T, min_value &gt;</primary><secondary>op</secondary></indexterm>
+<computeroutput>template&lt;typename T, T min_value = -INF&gt; </computeroutput><para><computeroutput>static <link linkend="_struct_monoid_1_1_max_1a14108b8557485a8c7daf0ebcbe4f09cf">Type</link> <link linkend="_struct_monoid_1_1_max">Monoid::Max</link>&lt; T, min_value &gt;::op (const <link linkend="_struct_monoid_1_1_max_1a14108b8557485a8c7daf0ebcbe4f09cf">Type</link> &amp; a, const <link linkend="_struct_monoid_1_1_max_1a14108b8557485a8c7daf0ebcbe4f09cf">Type</link> &amp; b)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+ <link linkend="_monoid_8hpp_source">monoid.hpp</link> の <link linkend="_monoid_8hpp_source_1l00021">21</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+others/<link linkend="_monoid_8hpp">monoid.hpp</link></section>
+</section>

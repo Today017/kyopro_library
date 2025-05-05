@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_cht_8hpp_source" xml:lang="ja">
+<title>cht.hpp</title>
+<indexterm><primary>algorithm/cht.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_cht_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_cht_8hpp_source_1l00002"/>00002 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/algorithm/binary_search.hpp&quot;</emphasis>
+<anchor xml:id="_cht_8hpp_source_1l00003"/>00003 
+<anchor xml:id="_cht_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;Convex&#32;Hull&#32;Trick</emphasis>
+<anchor xml:id="_cht_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@ref&#32;verify&#32;:&#32;https://judge.yosupo.jp/problem/line_add_get_min</emphasis>
+<anchor xml:id="_cht_8hpp_source_1l00006"/>00006 <emphasis role="comment">///&#32;@ref&#32;https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf</emphasis>
+<anchor xml:id="_cht_8hpp_source_1l00007"/>00007 <emphasis role="comment">///&#32;@tparam&#32;Min&#32;true&#32;のとき最小値を管理する</emphasis>
+<anchor xml:id="_cht_8hpp_source_1l00008"/>00008 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T=ll,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;Min=<emphasis role="keyword">true</emphasis>&gt;
+<anchor xml:id="_cht_8hpp_source_1l00009"/><link linkend="_struct_c_h_t">00009</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_c_h_t">CHT</link>&#32;{
+<anchor xml:id="_cht_8hpp_source_1l00010"/><link linkend="_struct_c_h_t_1a8ee3002f76dde43433f9aadf45cbf32c">00010</link> &#32;&#32;&#32;&#32;<link linkend="_struct_c_h_t_1a8ee3002f76dde43433f9aadf45cbf32c">CHT</link>()=<emphasis role="keywordflow">default</emphasis>;
+<anchor xml:id="_cht_8hpp_source_1l00011"/>00011 
+<anchor xml:id="_cht_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;直線&#32;ax&#32;+&#32;b&#32;を追加する</emphasis>
+<anchor xml:id="_cht_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log(N))</emphasis>
+<anchor xml:id="_cht_8hpp_source_1l00014"/><link linkend="_struct_c_h_t_1a98990faf0c0f436c501ce5bc94e8f555">00014</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_c_h_t_1a98990faf0c0f436c501ce5bc94e8f555">add</link>(T&#32;a,&#32;T&#32;b)&#32;{
+<anchor xml:id="_cht_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!Min)&#32;a*=-1,b*=-1;
+<anchor xml:id="_cht_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(lines.count(a)&amp;&amp;lines[a]&lt;=b)&#32;<emphasis role="keywordflow">return</emphasis>;
+<anchor xml:id="_cht_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lines[a]=b;
+<anchor xml:id="_cht_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;it=lines.find(a);
+<anchor xml:id="_cht_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!need(it))&#32;{
+<anchor xml:id="_cht_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lines.erase(a);
+<anchor xml:id="_cht_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+<anchor xml:id="_cht_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_cht_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(it!=lines.begin())&#32;{
+<anchor xml:id="_cht_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;it=prev(it);
+<anchor xml:id="_cht_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(<emphasis role="keyword">true</emphasis>)&#32;{
+<anchor xml:id="_cht_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(need(it))&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_cht_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;prv=prev(it);
+<anchor xml:id="_cht_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lines.erase(it);
+<anchor xml:id="_cht_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;it=prv;
+<anchor xml:id="_cht_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_cht_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_cht_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;it=next(lines.find(a));
+<anchor xml:id="_cht_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(<emphasis role="keyword">true</emphasis>)&#32;{
+<anchor xml:id="_cht_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(need(it))&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_cht_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;nxt=next(it);
+<anchor xml:id="_cht_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lines.erase(it);
+<anchor xml:id="_cht_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;it=nxt;
+<anchor xml:id="_cht_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_cht_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_cht_8hpp_source_1l00040"/>00040 
+<anchor xml:id="_cht_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;に対する直線群の最小値を求める</emphasis>
+<anchor xml:id="_cht_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O((log(N))^2)</emphasis>
+<anchor xml:id="_cht_8hpp_source_1l00043"/><link linkend="_struct_c_h_t_1a652d63fa85df6b36fb09fdae60ebc6cf">00043</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_c_h_t_1a652d63fa85df6b36fb09fdae60ebc6cf">get</link>(T&#32;x){
+<anchor xml:id="_cht_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;[a,b]=*(lines.lower_bound(
+<anchor xml:id="_cht_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;BinarySearch(lines.begin()-&gt;first,lines.rbegin()-&gt;first+1,[&amp;](T&#32;x)&#32;{
+<anchor xml:id="_cht_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;it=lines.lower_bound(mid);
+<anchor xml:id="_cht_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(it==lines.begin())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_cht_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(it==lines.end())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_cht_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;[a1,b1]=*prev(it);
+<anchor xml:id="_cht_8hpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;[a2,b2]=*it;
+<anchor xml:id="_cht_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;a1*x+b1&gt;a2*x+b2;
+<anchor xml:id="_cht_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;})
+<anchor xml:id="_cht_8hpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;));
+<anchor xml:id="_cht_8hpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>(a*x+b)*(Min?1:-1);
+<anchor xml:id="_cht_8hpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_cht_8hpp_source_1l00056"/>00056 
+<anchor xml:id="_cht_8hpp_source_1l00057"/>00057 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_cht_8hpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;map&lt;T,T&gt;&#32;lines;
+<anchor xml:id="_cht_8hpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;need(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">typename</emphasis>&#32;map&lt;T,T&gt;::iterator&#32;it)&#32;{
+<anchor xml:id="_cht_8hpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(it==lines.begin()||it==prev(lines.end())||it==lines.end())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_cht_8hpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;prv=prev(it);
+<anchor xml:id="_cht_8hpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;nxt=next(it);
+<anchor xml:id="_cht_8hpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;[a,b]=*it;
+<anchor xml:id="_cht_8hpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;[a1,b1]=*nxt;
+<anchor xml:id="_cht_8hpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;[a2,b2]=*prv;
+<anchor xml:id="_cht_8hpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>(__int128_t)(a1-a)*(b-b2)&lt;(__int128_t)(a-a2)*(b1-b);
+<anchor xml:id="_cht_8hpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_cht_8hpp_source_1l00068"/>00068 };
+</programlisting></section>

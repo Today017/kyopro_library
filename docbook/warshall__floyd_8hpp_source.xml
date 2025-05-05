@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_warshall__floyd_8hpp_source" xml:lang="ja">
+<title>warshall_floyd.hpp</title>
+<indexterm><primary>graph/shortest_path/warshall_floyd.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_warshall__floyd_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_warshall__floyd_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_warshall__floyd_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;ワーシャルフロイド法</emphasis>
+<anchor xml:id="_warshall__floyd_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;全頂点間の最短距離を求める</emphasis>
+<anchor xml:id="_warshall__floyd_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@note&#32;O(V^3)</emphasis>
+<anchor xml:id="_warshall__floyd_8hpp_source_1l00006"/><link linkend="_warshall__floyd_8hpp_1ae8e081c321ba2ef64df99e26d6a84a16">00006</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_warshall__floyd_8hpp_1ae8e081c321ba2ef64df99e26d6a84a16">WarshallFloyd</link>(VVL&amp;&#32;g)&#32;{
+<anchor xml:id="_warshall__floyd_8hpp_source_1l00007"/>00007 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n=g.size();
+<anchor xml:id="_warshall__floyd_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(k,n)&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(j,n)&#32;<link linkend="_template_8hpp_1afab395ab2eac3679be924c315291bf58">chmin</link>(g[i][j],g[i][k]+g[k][j]);
+<anchor xml:id="_warshall__floyd_8hpp_source_1l00009"/>00009 }
+</programlisting></section>

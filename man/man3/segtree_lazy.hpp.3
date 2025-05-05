@@ -1,0 +1,58 @@
+.TH "data_structure/segtree_lazy.hpp" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+data_structure/segtree_lazy.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include '\&.\&./\&.\&./kyopro_library/template\&.hpp'\fP
+.br
+\fR#include '\&.\&./\&.\&./kyopro_library/others/monoid\&.hpp'\fP
+.br
+\fR#include '\&.\&./\&.\&./kyopro_library/others/operator\&.hpp'\fP
+.br
+
+.SS "クラス"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSegTreeLazy< Monoid, Operator, mapping >\fP"
+.br
+.RI "遅延評価セグメント木 "
+.ti -1c
+.RI "struct \fBRangeQuery::ApplyUpdate_GetMin< T, max_value, not_exist >\fP"
+.br
+.RI "区間更新 / 区間min "
+.ti -1c
+.RI "struct \fBRangeQuery::ApplyUpdate_GetMax< T, min_value, not_exist >\fP"
+.br
+.RI "区間更新 / 区間max "
+.ti -1c
+.RI "struct \fBRangeQuery::ApplyUpdate_GetSum< T, not_exist >\fP"
+.br
+.RI "区間更新 / 区間和 "
+.ti -1c
+.RI "struct \fBRangeQuery::ApplyAdd_GetMin< T, max_value >\fP"
+.br
+.RI "区間加算 / 区間min "
+.ti -1c
+.RI "struct \fBRangeQuery::ApplyAdd_GetMax< T, min_value >\fP"
+.br
+.RI "区間加算 / 区間max "
+.ti -1c
+.RI "struct \fBRangeQuery::ApplyAdd_GetSum< T >\fP"
+.br
+.RI "区間加算 / 区間和 "
+.in -1c
+.SS "名前空間"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBRangeQuery\fP"
+.br
+.RI "区間クエリ "
+.in -1c
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

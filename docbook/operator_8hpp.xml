@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_operator_8hpp" xml:lang="ja">
+<title>others/operator.hpp ファイル</title>
+<indexterm><primary>others/operator.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_operator_1_1_update">Operator::Update&lt; T, not_exist &gt;</link></para>
+
+<para>更新 </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_operator_1_1_add">Operator::Add&lt; T &gt;</link></para>
+
+<para>加算 </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_operator_1_1_update_time_stamp">Operator::UpdateTimeStamp&lt; T &gt;</link></para>
+
+<para>可換な更新（タイムスタンプ） </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>名前空間    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_operator">Operator</link></para>
+
+<para>作用素 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

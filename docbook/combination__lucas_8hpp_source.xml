@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_combination__lucas_8hpp_source" xml:lang="ja">
+<title>combination_lucas.hpp</title>
+<indexterm><primary>mod/combination_lucas.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_combination__lucas_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_combination__lucas_8hpp_source_1l00002"/>00002 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/others/modcal.hpp&quot;</emphasis>
+<anchor xml:id="_combination__lucas_8hpp_source_1l00003"/>00003 
+<anchor xml:id="_combination__lucas_8hpp_source_1l00004"/>00004 <emphasis role="comment">/**</emphasis>
+00005 <emphasis role="comment">&#32;*&#32;@brief&#32;Lucas&#32;の定理を用いた二項係数計算用ライブラリ</emphasis>
+00006 <emphasis role="comment">&#32;*&#32;@details</emphasis>
+00007 <emphasis role="comment">&#32;*&#32;Lucas&#32;の定理</emphasis>
+00008 <emphasis role="comment">&#32;*&#32;p&#32;を素数とし、n,&#32;r&#32;を非負整数とする。</emphasis>
+00009 <emphasis role="comment">&#32;*&#32;また、n&#32;=&#32;n[k]p^k&#32;+&#32;n[k-1]p^(k-1)&#32;+&#32;...&#32;+&#32;n[1]p&#32;+&#32;n[0],</emphasis>
+00010 <emphasis role="comment">&#32;*&#32;r&#32;=&#32;r[k]p^k&#32;+&#32;r[k-1]p^(k-1)&#32;+&#32;...&#32;+&#32;r[1]p&#32;+&#32;r[0]&#32;とする。</emphasis>
+00011 <emphasis role="comment">&#32;*&#32;</emphasis>
+00012 <emphasis role="comment">&#32;*&#32;このとき、nCr(mod&#32;p)&#32;=&#32;Π[k=0~N]n[k]Cr[k]</emphasis>
+00013 <emphasis role="comment">&#32;*/</emphasis>
+<anchor xml:id="_combination__lucas_8hpp_source_1l00014"/><link linkend="_struct_combination_lucas">00014</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_combination_lucas">CombinationLucas</link>&#32;{
+<anchor xml:id="_combination__lucas_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;Lucas&#32;の定理を用いて二項係数を計算するための前計算をする</emphasis>
+<anchor xml:id="_combination__lucas_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(mod)</emphasis>
+<anchor xml:id="_combination__lucas_8hpp_source_1l00017"/><link linkend="_struct_combination_lucas_1a0c46e2850894c0d5690bffc81047ddd8">00017</link> &#32;&#32;&#32;&#32;<link linkend="_struct_combination_lucas_1a0c46e2850894c0d5690bffc81047ddd8">CombinationLucas</link>(<emphasis role="keywordtype">int</emphasis>&#32;mod)&#32;{
+<anchor xml:id="_combination__lucas_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;mod=mod;
+<anchor xml:id="_combination__lucas_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fact=VL(mod);&#32;fact[0]=1;
+<anchor xml:id="_combination__lucas_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;factinv=VL(mod);
+<anchor xml:id="_combination__lucas_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=1;&#32;i&lt;mod;&#32;i++)&#32;fact[i]=fact[i-1]*i%mod;
+<anchor xml:id="_combination__lucas_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;factinv[mod-1]=ModInv(fact[mod-1],mod);
+<anchor xml:id="_combination__lucas_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=mod-2;&#32;i&gt;=0;&#32;i--)&#32;factinv[i]=factinv[i+1]*(i+1)%mod;
+<anchor xml:id="_combination__lucas_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_combination__lucas_8hpp_source_1l00025"/>00025 
+<anchor xml:id="_combination__lucas_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;nCr&#32;mod&#32;を返す</emphasis>
+<anchor xml:id="_combination__lucas_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log(n))</emphasis>
+<anchor xml:id="_combination__lucas_8hpp_source_1l00028"/><link linkend="_struct_combination_lucas_1a5f1804272f10fc0e69792ea54e172e2b">00028</link> &#32;&#32;&#32;&#32;ll&#32;<link linkend="_struct_combination_lucas_1a5f1804272f10fc0e69792ea54e172e2b">comb</link>(<emphasis role="keywordtype">int</emphasis>&#32;n,&#32;<emphasis role="keywordtype">int</emphasis>&#32;r)&#32;{
+<anchor xml:id="_combination__lucas_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(r==0||r==n)&#32;<emphasis role="keywordflow">return</emphasis>&#32;1;
+<anchor xml:id="_combination__lucas_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;calc(n%mod,r%mod)*<link linkend="_struct_combination_lucas_1a5f1804272f10fc0e69792ea54e172e2b">comb</link><link linkend="_struct_combination_lucas_1a5f1804272f10fc0e69792ea54e172e2b">(</link>n/mod<link linkend="_struct_combination_lucas_1a5f1804272f10fc0e69792ea54e172e2b">,</link>r/mod<link linkend="_struct_combination_lucas_1a5f1804272f10fc0e69792ea54e172e2b">)</link>%mod;
+<anchor xml:id="_combination__lucas_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_combination__lucas_8hpp_source_1l00032"/>00032 
+<anchor xml:id="_combination__lucas_8hpp_source_1l00033"/>00033 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_combination__lucas_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;VL&#32;fact,factinv;
+<anchor xml:id="_combination__lucas_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;mod;
+<anchor xml:id="_combination__lucas_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;ll&#32;calc(<emphasis role="keywordtype">int</emphasis>&#32;n,&#32;<emphasis role="keywordtype">int</emphasis>&#32;r)&#32;{
+<anchor xml:id="_combination__lucas_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(n&lt;r||r&lt;0||n&lt;0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_combination__lucas_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;fact[n]*factinv[r]%mod*factinv[n-r]%mod;
+<anchor xml:id="_combination__lucas_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_combination__lucas_8hpp_source_1l00040"/>00040 };
+</programlisting></section>

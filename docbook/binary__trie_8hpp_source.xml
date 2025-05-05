@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_binary__trie_8hpp_source" xml:lang="ja">
+<title>binary_trie.hpp</title>
+<indexterm><primary>data_structure/binary_trie.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_binary__trie_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_binary__trie_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_binary__trie_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;Binary&#32;Trie</emphasis>
+<anchor xml:id="_binary__trie_8hpp_source_1l00004"/>00004 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T=<link linkend="_struct_binary_trie">uint32_t</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;Log=32&gt;
+<anchor xml:id="_binary__trie_8hpp_source_1l00005"/><link linkend="_struct_binary_trie">00005</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_binary_trie">BinaryTrie</link>&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00006"/><link linkend="_struct_binary_trie_1a6d72a8971d396ba065b3aaac8ec97f88">00006</link> &#32;&#32;&#32;&#32;<link linkend="_struct_binary_trie_1a6d72a8971d396ba065b3aaac8ec97f88">BinaryTrie</link>()&#32;{&#32;root=<emphasis role="keywordtype">nullptr</emphasis>;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00007"/>00007 
+<anchor xml:id="_binary__trie_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;BinaryTrie&#32;のサイズを返す</emphasis>
+<anchor xml:id="_binary__trie_8hpp_source_1l00009"/><link linkend="_struct_binary_trie_1a8894b19178488ed5a376fc2f62fe774e">00009</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_binary_trie_1a8894b19178488ed5a376fc2f62fe774e">size</link>()&#32;<emphasis role="keyword">const</emphasis>&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(root==<emphasis role="keywordtype">nullptr</emphasis>)&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_binary__trie_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;root-&gt;size;
+<anchor xml:id="_binary__trie_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00013"/>00013 
+<anchor xml:id="_binary__trie_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;を&#32;t&#32;個挿入する</emphasis>
+<anchor xml:id="_binary__trie_8hpp_source_1l00015"/><link linkend="_struct_binary_trie_1a74c72898c1aa1970a149a895b50d533a">00015</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_binary_trie_1a74c72898c1aa1970a149a895b50d533a">insert</link>(T&#32;x,&#32;<emphasis role="keywordtype">int</emphasis>&#32;t=1)&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;root=insert(root,x,Log-1,t);
+<anchor xml:id="_binary__trie_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00018"/>00018 
+<anchor xml:id="_binary__trie_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;を&#32;min(count(x),&#32;t)&#32;個削除する</emphasis>
+<anchor xml:id="_binary__trie_8hpp_source_1l00020"/><link linkend="_struct_binary_trie_1ab383a881f8c83b83bd3b2c2978c543ad">00020</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_binary_trie_1ab383a881f8c83b83bd3b2c2978c543ad">erase</link>(T&#32;x,&#32;<emphasis role="keywordtype">int</emphasis>&#32;t=1)&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1afab395ab2eac3679be924c315291bf58">chmin</link>(t,<link linkend="_struct_binary_trie_1a8414d307e624d792b9e7cf1d498e499d">count</link><link linkend="_struct_binary_trie_1a8414d307e624d792b9e7cf1d498e499d">(</link>x<link linkend="_struct_binary_trie_1a8414d307e624d792b9e7cf1d498e499d">)</link>);
+<anchor xml:id="_binary__trie_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(t==0)&#32;<emphasis role="keywordflow">return</emphasis>;
+<anchor xml:id="_binary__trie_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;root=erase(root,x,Log-1,t);
+<anchor xml:id="_binary__trie_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00025"/>00025 
+<anchor xml:id="_binary__trie_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;要素全体に&#32;x&#32;を&#32;xor&#32;する</emphasis>
+<anchor xml:id="_binary__trie_8hpp_source_1l00027"/><link linkend="_struct_binary_trie_1a206bee98568661600b0148bfc0f9a902">00027</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_binary_trie_1a206bee98568661600b0148bfc0f9a902">apply_xor</link>(T&#32;x)&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(root!=<emphasis role="keywordtype">nullptr</emphasis>)&#32;root-&gt;lazy^=x;
+<anchor xml:id="_binary__trie_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00030"/>00030 
+<anchor xml:id="_binary__trie_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;最大値を返す</emphasis>
+<anchor xml:id="_binary__trie_8hpp_source_1l00032"/><link linkend="_struct_binary_trie_1a574e1542d7930e058e8ac8949424063f">00032</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_binary_trie_1a574e1542d7930e058e8ac8949424063f">max</link>()&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;get_min(root,~0,Log-1);
+<anchor xml:id="_binary__trie_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00035"/>00035 
+<anchor xml:id="_binary__trie_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;最小値を返す</emphasis>
+<anchor xml:id="_binary__trie_8hpp_source_1l00037"/><link linkend="_struct_binary_trie_1aa535fa5b5a9c4a43be753790348b940d">00037</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_binary_trie_1aa535fa5b5a9c4a43be753790348b940d">min</link>()&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;get_min(root,0,Log-1);
+<anchor xml:id="_binary__trie_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00040"/>00040 
+<anchor xml:id="_binary__trie_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;k(0-indexed)&#32;番目に小さい要素を返す</emphasis>
+<anchor xml:id="_binary__trie_8hpp_source_1l00042"/><link linkend="_struct_binary_trie_1a2580a67854d4e8fe057c0e2bfcd173bc">00042</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_binary_trie_1a2580a67854d4e8fe057c0e2bfcd173bc">kth_min</link>(<emphasis role="keywordtype">int</emphasis>&#32;k)&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(0&lt;=k&amp;&amp;k&lt;<link linkend="_struct_binary_trie_1a8894b19178488ed5a376fc2f62fe774e">size</link><link linkend="_struct_binary_trie_1a8894b19178488ed5a376fc2f62fe774e">(</link><link linkend="_struct_binary_trie_1a8894b19178488ed5a376fc2f62fe774e">)</link>);
+<anchor xml:id="_binary__trie_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;get(root,k,Log-1);
+<anchor xml:id="_binary__trie_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00046"/>00046 
+<anchor xml:id="_binary__trie_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;以上の最小の要素が何番目に小さいかを返す</emphasis>
+<anchor xml:id="_binary__trie_8hpp_source_1l00048"/><link linkend="_struct_binary_trie_1a89a91b195e0f2f46ecf75b0e40745189">00048</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_binary_trie_1a89a91b195e0f2f46ecf75b0e40745189">lower_bound</link>(T&#32;x)&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;count_lower(root,x,Log-1);
+<anchor xml:id="_binary__trie_8hpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00051"/>00051 
+<anchor xml:id="_binary__trie_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;がいくつ含まれているかを返す</emphasis>
+<anchor xml:id="_binary__trie_8hpp_source_1l00053"/><link linkend="_struct_binary_trie_1a8414d307e624d792b9e7cf1d498e499d">00053</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_binary_trie_1a8414d307e624d792b9e7cf1d498e499d">count</link>(T&#32;x)&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(root==<emphasis role="keywordtype">nullptr</emphasis>)<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_binary__trie_8hpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Node*v=root;
+<anchor xml:id="_binary__trie_8hpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=Log-1;&#32;i&gt;=0;&#32;i--)&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;evaluate(v,i);
+<anchor xml:id="_binary__trie_8hpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v=v-&gt;next[(x&gt;&gt;i)&amp;1];
+<anchor xml:id="_binary__trie_8hpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(v==<emphasis role="keywordtype">nullptr</emphasis>)<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_binary__trie_8hpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;v-&gt;size;
+<anchor xml:id="_binary__trie_8hpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00063"/>00063 
+<anchor xml:id="_binary__trie_8hpp_source_1l00064"/>00064 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_binary__trie_8hpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>&#32;Node&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Node*next[2];
+<anchor xml:id="_binary__trie_8hpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;size;
+<anchor xml:id="_binary__trie_8hpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;lazy;
+<anchor xml:id="_binary__trie_8hpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Node()&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;size=0;
+<anchor xml:id="_binary__trie_8hpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lazy=0;
+<anchor xml:id="_binary__trie_8hpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;next[0]=next[1]=<emphasis role="keywordtype">nullptr</emphasis>;
+<anchor xml:id="_binary__trie_8hpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_binary__trie_8hpp_source_1l00075"/>00075 
+<anchor xml:id="_binary__trie_8hpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;Node*root;
+<anchor xml:id="_binary__trie_8hpp_source_1l00077"/>00077 
+<anchor xml:id="_binary__trie_8hpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;evaluate(Node*v,&#32;<emphasis role="keywordtype">int</emphasis>&#32;bit)&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>((v-&gt;lazy&gt;&gt;bit)&amp;1)&#32;swap(v-&gt;next[0],v-&gt;next[1]);
+<anchor xml:id="_binary__trie_8hpp_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(v-&gt;next[0]!=<emphasis role="keywordtype">nullptr</emphasis>)&#32;v-&gt;next[0]-&gt;lazy^=v-&gt;lazy;
+<anchor xml:id="_binary__trie_8hpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(v-&gt;next[1]!=<emphasis role="keywordtype">nullptr</emphasis>)&#32;v-&gt;next[1]-&gt;lazy^=v-&gt;lazy;
+<anchor xml:id="_binary__trie_8hpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v-&gt;lazy=0;
+<anchor xml:id="_binary__trie_8hpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00084"/>00084 
+<anchor xml:id="_binary__trie_8hpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;Node*insert(Node*v,&#32;T&#32;x,&#32;<emphasis role="keywordtype">int</emphasis>&#32;bit,&#32;<emphasis role="keywordtype">int</emphasis>&#32;cnt)&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(v==<emphasis role="keywordtype">nullptr</emphasis>)&#32;v=<emphasis role="keyword">new</emphasis>&#32;Node;
+<anchor xml:id="_binary__trie_8hpp_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v-&gt;size+=cnt;
+<anchor xml:id="_binary__trie_8hpp_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit&lt;0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;v;
+<anchor xml:id="_binary__trie_8hpp_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;evaluate(v,bit);
+<anchor xml:id="_binary__trie_8hpp_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;lr=(x&gt;&gt;bit)&amp;1;
+<anchor xml:id="_binary__trie_8hpp_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v-&gt;next[lr]=insert(v-&gt;next[lr],x,bit-1,cnt);
+<anchor xml:id="_binary__trie_8hpp_source_1l00092"/>00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;v;
+<anchor xml:id="_binary__trie_8hpp_source_1l00093"/>00093 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00094"/>00094 
+<anchor xml:id="_binary__trie_8hpp_source_1l00095"/>00095 &#32;&#32;&#32;&#32;Node*erase(Node*v,&#32;T&#32;x,&#32;<emphasis role="keywordtype">int</emphasis>&#32;bit,&#32;<emphasis role="keywordtype">int</emphasis>&#32;cnt)&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00096"/>00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(v!=<emphasis role="keywordtype">nullptr</emphasis>);
+<anchor xml:id="_binary__trie_8hpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v-&gt;size-=cnt;
+<anchor xml:id="_binary__trie_8hpp_source_1l00098"/>00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(v-&gt;size==0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keywordtype">nullptr</emphasis>;
+<anchor xml:id="_binary__trie_8hpp_source_1l00099"/>00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit&lt;0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;v;
+<anchor xml:id="_binary__trie_8hpp_source_1l00100"/>00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;evaluate(v,bit);
+<anchor xml:id="_binary__trie_8hpp_source_1l00101"/>00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;lr=(x&gt;&gt;bit)&amp;1;
+<anchor xml:id="_binary__trie_8hpp_source_1l00102"/>00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v-&gt;next[lr]=erase(v-&gt;next[lr],x,bit-1,cnt);
+<anchor xml:id="_binary__trie_8hpp_source_1l00103"/>00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;v;
+<anchor xml:id="_binary__trie_8hpp_source_1l00104"/>00104 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00105"/>00105 
+<anchor xml:id="_binary__trie_8hpp_source_1l00106"/>00106 &#32;&#32;&#32;&#32;T&#32;get_min(Node*v,&#32;T&#32;x,&#32;<emphasis role="keywordtype">int</emphasis>&#32;bit)&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00107"/>00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit&lt;0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_binary__trie_8hpp_source_1l00108"/>00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;evaluate(v,bit);
+<anchor xml:id="_binary__trie_8hpp_source_1l00109"/>00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;lr=(x&gt;&gt;bit)&amp;1;
+<anchor xml:id="_binary__trie_8hpp_source_1l00110"/>00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(v-&gt;next[lr]==<emphasis role="keywordtype">nullptr</emphasis>)&#32;lr=1-lr;
+<anchor xml:id="_binary__trie_8hpp_source_1l00111"/>00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;get_min(v-&gt;next[lr],x,bit-1)|((T)lr&lt;&lt;bit);
+<anchor xml:id="_binary__trie_8hpp_source_1l00112"/>00112 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00113"/>00113 
+<anchor xml:id="_binary__trie_8hpp_source_1l00114"/>00114 &#32;&#32;&#32;&#32;T&#32;get(Node*v,&#32;<emphasis role="keywordtype">int</emphasis>&#32;k,&#32;<emphasis role="keywordtype">int</emphasis>&#32;bit)&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00115"/>00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit&lt;0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_binary__trie_8hpp_source_1l00116"/>00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;evaluate(v,bit);
+<anchor xml:id="_binary__trie_8hpp_source_1l00117"/>00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;m=v-&gt;next[0]!=<emphasis role="keywordtype">nullptr</emphasis>?v-&gt;next[0]-&gt;size:0;
+<anchor xml:id="_binary__trie_8hpp_source_1l00118"/>00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(k&lt;m)&#32;<emphasis role="keywordflow">return</emphasis>&#32;get(v-&gt;next[0],k,bit-1);
+<anchor xml:id="_binary__trie_8hpp_source_1l00119"/>00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">return</emphasis>&#32;get(v-&gt;next[1],k-m,bit-1)|((T)1&lt;&lt;bit);
+<anchor xml:id="_binary__trie_8hpp_source_1l00120"/>00120 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00121"/>00121 
+<anchor xml:id="_binary__trie_8hpp_source_1l00122"/>00122 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;count_lower(Node*v,T&#32;x,<emphasis role="keywordtype">int</emphasis>&#32;bit)&#32;{
+<anchor xml:id="_binary__trie_8hpp_source_1l00123"/>00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(v==<emphasis role="keywordtype">nullptr</emphasis>||bit&lt;0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_binary__trie_8hpp_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;evaluate(v,bit);
+<anchor xml:id="_binary__trie_8hpp_source_1l00125"/>00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;lr=(x&gt;&gt;bit)&amp;1;
+<anchor xml:id="_binary__trie_8hpp_source_1l00126"/>00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;ret=lr&amp;&amp;v-&gt;next[0]!=<emphasis role="keywordtype">nullptr</emphasis>?v-&gt;next[0]-&gt;size:0;
+<anchor xml:id="_binary__trie_8hpp_source_1l00127"/>00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret+count_lower(v-&gt;next[lr],x,bit-1);
+<anchor xml:id="_binary__trie_8hpp_source_1l00128"/>00128 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__trie_8hpp_source_1l00129"/>00129 };
+</programlisting></section>

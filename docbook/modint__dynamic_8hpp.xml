@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_modint__dynamic_8hpp" xml:lang="ja">
+<title>mod/modint_dynamic.hpp ファイル</title>
+<indexterm><primary>mod/modint_dynamic.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_dynamic_mod_int">DynamicModInt</link></para>
+
+<para>実行時に mod を変更できる <link linkend="_struct_mod_int">ModInt</link> </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

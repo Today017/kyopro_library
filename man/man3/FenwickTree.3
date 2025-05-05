@@ -1,0 +1,129 @@
+.TH "FenwickTree< Abel >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FenwickTree< Abel > \- Fenwick Tree  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'fenwick_tree\&.hpp'\fP
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "using \fBType\fP = typename Abel::Type"
+.br
+.in -1c
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBFenwickTree\fP ()=default"
+.br
+.ti -1c
+.RI "\fBFenwickTree\fP (int n)"
+.br
+.RI "サイズ n のFenwick Treeを構築する "
+.ti -1c
+.RI "void \fBadd\fP (int i, \fBType\fP x)"
+.br
+.RI "i 番目の要素に対し v[i] <- op(v[i], x) と更新する "
+.ti -1c
+.RI "\fBType\fP \fBsum\fP (int l, int r)"
+.br
+.RI "区間 [l, r) の群積を返す "
+.ti -1c
+.RI "\fBType\fP \fBoperator[]\fP (int i)"
+.br
+.RI "i 番目の要素を返す "
+.ti -1c
+.RI "int \fBsize\fP ()"
+.br
+.RI "配列のサイズを返す "
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename Abel = Abel::Sum<ll>>
+.br
+struct FenwickTree< Abel >"Fenwick Tree 
+
+
+.PP
+\fBテンプレート引数\fP
+.RS 4
+\fI\fBAbel\fP\fP 可換群 
+.RE
+.PP
+
+.PP
+ \fBfenwick_tree\&.hpp\fP の \fB8\fP 行目に定義があります。
+.SH "型定義メンバ詳解"
+.PP 
+.SS "template<typename Abel = Abel::Sum<ll>> using \fBFenwickTree\fP< Abel >::Type = typename Abel::Type"
+
+.PP
+ \fBfenwick_tree\&.hpp\fP の \fB9\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename Abel = Abel::Sum<ll>> \fBFenwickTree\fP< Abel >\fB::FenwickTree\fP ()\fR [default]\fP"
+
+.SS "template<typename Abel = Abel::Sum<ll>> \fBFenwickTree\fP< Abel >\fB::FenwickTree\fP (int n)\fR [inline]\fP"
+
+.PP
+サイズ n のFenwick Treeを構築する 
+.PP
+ \fBfenwick_tree\&.hpp\fP の \fB14\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "template<typename Abel = Abel::Sum<ll>> void \fBFenwickTree\fP< Abel >::add (int i, \fBType\fP x)\fR [inline]\fP"
+
+.PP
+i 番目の要素に対し v[i] <- op(v[i], x) と更新する 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log(N)) 
+.RE
+.PP
+
+.PP
+ \fBfenwick_tree\&.hpp\fP の \fB21\fP 行目に定義があります。
+.SS "template<typename Abel = Abel::Sum<ll>> \fBType\fP \fBFenwickTree\fP< Abel >::sum (int l, int r)\fR [inline]\fP"
+
+.PP
+区間 [l, r) の群積を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log(N)) 
+.RE
+.PP
+
+.PP
+ \fBfenwick_tree\&.hpp\fP の \fB31\fP 行目に定義があります。
+.SS "template<typename Abel = Abel::Sum<ll>> \fBType\fP \fBFenwickTree\fP< Abel >::operator[] (int i)\fR [inline]\fP"
+
+.PP
+i 番目の要素を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log(N)) 
+.RE
+.PP
+
+.PP
+ \fBfenwick_tree\&.hpp\fP の \fB37\fP 行目に定義があります。
+.SS "template<typename Abel = Abel::Sum<ll>> int \fBFenwickTree\fP< Abel >::size ()\fR [inline]\fP"
+
+.PP
+配列のサイズを返す 
+.PP
+ \fBfenwick_tree\&.hpp\fP の \fB40\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

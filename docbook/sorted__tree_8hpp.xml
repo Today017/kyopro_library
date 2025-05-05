@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_sorted__tree_8hpp" xml:lang="ja">
+<title>data_structure/sorted_tree.hpp ファイル</title>
+<indexterm><primary>data_structure/sorted_tree.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?>#include &lt;bits/extc++.h&gt;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_sorted_tree">SortedTree&lt; T &gt;</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

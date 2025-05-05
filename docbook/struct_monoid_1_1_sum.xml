@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_monoid_1_1_sum" xml:lang="ja">
+<title>Monoid::Sum&lt; T &gt; 構造体テンプレート</title>
+<indexterm><primary>Monoid::Sum&lt; T &gt;</primary></indexterm>
+<para>
+
+<para>和 </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;monoid.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開型    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_struct_monoid_1_1_sum_1a90fa95e8ff9c566c69a9f047e0c94ff6">Type</link> = T</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>静的公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_struct_monoid_1_1_sum_1a90fa95e8ff9c566c69a9f047e0c94ff6">Type</link> <link linkend="_struct_monoid_1_1_sum_1a23a7ab3898ae4b224d00d724b9cb09d1">id</link> ()</para>
+</listitem>
+            <listitem><para>static <link linkend="_struct_monoid_1_1_sum_1a90fa95e8ff9c566c69a9f047e0c94ff6">Type</link> <link linkend="_struct_monoid_1_1_sum_1a30038b90764b16f6f2c3438e915e759f">op</link> (const <link linkend="_struct_monoid_1_1_sum_1a90fa95e8ff9c566c69a9f047e0c94ff6">Type</link> &amp;a, const <link linkend="_struct_monoid_1_1_sum_1a90fa95e8ff9c566c69a9f047e0c94ff6">Type</link> &amp;b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<simplesect><title>template&lt;typename T&gt;<?linebreak?>struct Monoid::Sum&lt; T &gt;</title></simplesect>
+
+<para>和 </para>
+<para>
+ <link linkend="_monoid_8hpp_source">monoid.hpp</link> の <link linkend="_monoid_8hpp_source_1l00026">26</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>型定義メンバ詳解</title>
+<anchor xml:id="_struct_monoid_1_1_sum_1a90fa95e8ff9c566c69a9f047e0c94ff6"/><section>
+    <title>Type</title>
+<indexterm><primary>Type</primary><secondary>Monoid::Sum&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Monoid::Sum&lt; T &gt;</primary><secondary>Type</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_monoid_1_1_sum">Monoid::Sum</link>&lt; T &gt;::Type = T</computeroutput></para><para>
+ <link linkend="_monoid_8hpp_source">monoid.hpp</link> の <link linkend="_monoid_8hpp_source_1l00027">27</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_monoid_1_1_sum_1a23a7ab3898ae4b224d00d724b9cb09d1"/><section>
+    <title>id()</title>
+<indexterm><primary>id</primary><secondary>Monoid::Sum&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Monoid::Sum&lt; T &gt;</primary><secondary>id</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>static <link linkend="_struct_monoid_1_1_sum_1a90fa95e8ff9c566c69a9f047e0c94ff6">Type</link> <link linkend="_struct_monoid_1_1_sum">Monoid::Sum</link>&lt; T &gt;::id ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+ <link linkend="_monoid_8hpp_source">monoid.hpp</link> の <link linkend="_monoid_8hpp_source_1l00028">28</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_monoid_1_1_sum_1a30038b90764b16f6f2c3438e915e759f"/><section>
+    <title>op()</title>
+<indexterm><primary>op</primary><secondary>Monoid::Sum&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Monoid::Sum&lt; T &gt;</primary><secondary>op</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>static <link linkend="_struct_monoid_1_1_sum_1a90fa95e8ff9c566c69a9f047e0c94ff6">Type</link> <link linkend="_struct_monoid_1_1_sum">Monoid::Sum</link>&lt; T &gt;::op (const <link linkend="_struct_monoid_1_1_sum_1a90fa95e8ff9c566c69a9f047e0c94ff6">Type</link> &amp; a, const <link linkend="_struct_monoid_1_1_sum_1a90fa95e8ff9c566c69a9f047e0c94ff6">Type</link> &amp; b)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+ <link linkend="_monoid_8hpp_source">monoid.hpp</link> の <link linkend="_monoid_8hpp_source_1l00029">29</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+others/<link linkend="_monoid_8hpp">monoid.hpp</link></section>
+</section>

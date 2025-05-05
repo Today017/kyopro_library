@@ -1,0 +1,158 @@
+.TH "DsuMerging< Semigroup >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DsuMerging< Semigroup > \- 値をマージする \fBDSU\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'dsu_merging\&.hpp'\fP
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "using \fBType\fP = typename Semigroup::Type"
+.br
+.in -1c
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBDsuMerging\fP ()=default"
+.br
+.ti -1c
+.RI "\fBDsuMerging\fP (int n, const vector< \fBType\fP > &v)"
+.br
+.RI "コンストラクタ "
+.ti -1c
+.RI "int \fBfind\fP (int x)"
+.br
+.RI "頂点 x を含む連結成分の代表元を返す "
+.ti -1c
+.RI "bool \fBmerge\fP (int x, int y)"
+.br
+.RI "頂点 x と y を連結し、true を返す "
+.ti -1c
+.RI "const \fBType\fP & \fBget\fP (int x)"
+.br
+.RI "頂点 x を含む連結成分の半群積を返す "
+.ti -1c
+.RI "int \fBsize\fP (int x) const"
+.br
+.RI "頂点 x を含む連結成分のサイズを返す "
+.ti -1c
+.RI "bool \fBsame\fP (int x, int y) const"
+.br
+.RI "頂点 x と y が同じ連結成分に属するか否かを返す "
+.ti -1c
+.RI "int \fBcount\fP () const"
+.br
+.RI "連結成分の個数を返す "
+.ti -1c
+.RI "\fBVVI\fP \fBgroups\fP () const"
+.br
+.RI "各頂点を連結成分に分解する "
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename Semigroup = DsuBaseSemigroup>
+.br
+struct DsuMerging< Semigroup >"値をマージする \fBDSU\fP 
+
+
+.PP
+\fBテンプレート引数\fP
+.RS 4
+\fISemigroup\fP 半群 
+.RE
+.PP
+
+.PP
+ \fBdsu_merging\&.hpp\fP の \fB11\fP 行目に定義があります。
+.SH "型定義メンバ詳解"
+.PP 
+.SS "template<typename Semigroup = DsuBaseSemigroup> using \fBDsuMerging\fP< Semigroup >::Type = typename Semigroup::Type"
+
+.PP
+ \fBdsu_merging\&.hpp\fP の \fB12\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename Semigroup = DsuBaseSemigroup> \fBDsuMerging\fP< Semigroup >\fB::DsuMerging\fP ()\fR [default]\fP"
+
+.SS "template<typename Semigroup = DsuBaseSemigroup> \fBDsuMerging\fP< Semigroup >\fB::DsuMerging\fP (int n, const vector< \fBType\fP > & v)\fR [inline]\fP"
+
+.PP
+コンストラクタ 
+.PP
+ \fBdsu_merging\&.hpp\fP の \fB16\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "template<typename Semigroup = DsuBaseSemigroup> int \fBDsuMerging\fP< Semigroup >::find (int x)\fR [inline]\fP"
+
+.PP
+頂点 x を含む連結成分の代表元を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(α(N)) 
+.RE
+.PP
+
+.PP
+ \fBdsu_merging\&.hpp\fP の \fB25\fP 行目に定義があります。
+.SS "template<typename Semigroup = DsuBaseSemigroup> bool \fBDsuMerging\fP< Semigroup >::merge (int x, int y)\fR [inline]\fP"
+
+.PP
+頂点 x と y を連結し、true を返す 既に連結されている場合は false を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(α(N)) 
+.RE
+.PP
+
+.PP
+ \fBdsu_merging\&.hpp\fP の \fB33\fP 行目に定義があります。
+.PP
+参照先 \fBfind()\fP\&.
+.SS "template<typename Semigroup = DsuBaseSemigroup> const \fBType\fP & \fBDsuMerging\fP< Semigroup >::get (int x)\fR [inline]\fP"
+
+.PP
+頂点 x を含む連結成分の半群積を返す 
+.PP
+ \fBdsu_merging\&.hpp\fP の \fB48\fP 行目に定義があります。
+.SS "template<typename Semigroup = DsuBaseSemigroup> int \fBDsuMerging\fP< Semigroup >::size (int x) const\fR [inline]\fP"
+
+.PP
+頂点 x を含む連結成分のサイズを返す 
+.PP
+ \fBdsu_merging\&.hpp\fP の \fB51\fP 行目に定義があります。
+.SS "template<typename Semigroup = DsuBaseSemigroup> bool \fBDsuMerging\fP< Semigroup >::same (int x, int y) const\fR [inline]\fP"
+
+.PP
+頂点 x と y が同じ連結成分に属するか否かを返す 
+.PP
+ \fBdsu_merging\&.hpp\fP の \fB54\fP 行目に定義があります。
+.PP
+参照先 \fBfind()\fP\&.
+.SS "template<typename Semigroup = DsuBaseSemigroup> int \fBDsuMerging\fP< Semigroup >::count () const\fR [inline]\fP"
+
+.PP
+連結成分の個数を返す 
+.PP
+ \fBdsu_merging\&.hpp\fP の \fB57\fP 行目に定義があります。
+.SS "template<typename Semigroup = DsuBaseSemigroup> \fBVVI\fP \fBDsuMerging\fP< Semigroup >::groups () const\fR [inline]\fP"
+
+.PP
+各頂点を連結成分に分解する 
+.PP
+ \fBdsu_merging\&.hpp\fP の \fB60\fP 行目に定義があります。
+.PP
+参照先 \fBfind()\fP\&.
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

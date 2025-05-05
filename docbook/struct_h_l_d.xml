@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_h_l_d" xml:lang="ja">
+<title>HLD 構造体</title>
+<indexterm><primary>HLD</primary></indexterm>
+<para>
+
+<para>HL分解 解説:https://hcpc-hokudai.github.io/archive/graph_tree_001.pdf </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;hld.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_h_l_d_1a4ded5ea491751676f93bb08121e85e7a">HLD</link> (int n)</para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_h_l_d_1a256387d5bc67a34fc8feb4a64555d05a">add_edge</link> (int a, int b)</para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_h_l_d_1a771bcfbb8251c5a9c62a08da8d149deb">build</link> (int root=0)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_h_l_d_1aad507c09947cd50bafe0fd839eb3ebbf">HLD</link> (const <link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> &amp;g, int root=0)</para>
+</listitem>
+            <listitem><para>vector&lt; tuple&lt; bool, int, int &gt; &gt; <link linkend="_struct_h_l_d_1af5c1751760a5d34be274c54acd9f60c3">path</link> (int u, int v)</para>
+
+<para>頂点 u, v を結ぶパスをHL分解後の辺の列にして返す </para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_h_l_d_1ae95bc5be0f704bafb0ab667d1dffb0cc">lca</link> (int u, int v)</para>
+
+<para>頂点 u, v のLCAを返す </para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_h_l_d_1a57a2a1fce944ca4c9b4cfc4f497963e0">at</link> (int v)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+
+<para>HL分解 解説:https://hcpc-hokudai.github.io/archive/graph_tree_001.pdf </para>
+<para>
+ <link linkend="_hld_8hpp_source">hld.hpp</link> の <link linkend="_hld_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_h_l_d_1a4ded5ea491751676f93bb08121e85e7a"/><section>
+    <title>HLD()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>HLD</primary><secondary>HLD</secondary></indexterm>
+<indexterm><primary>HLD</primary><secondary>HLD</secondary></indexterm>
+<para><computeroutput>HLD::HLD (int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_hld_8hpp_source">hld.hpp</link> の <link linkend="_hld_8hpp_source_1l00006">6</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_h_l_d_1aad507c09947cd50bafe0fd839eb3ebbf"/><section>
+    <title>HLD()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>HLD</primary><secondary>HLD</secondary></indexterm>
+<indexterm><primary>HLD</primary><secondary>HLD</secondary></indexterm>
+<para><computeroutput>HLD::HLD (const <link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> &amp; g, int root = <computeroutput>0</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_hld_8hpp_source">hld.hpp</link> の <link linkend="_hld_8hpp_source_1l00009">9</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_hld_8hpp_source_1l00008">build()</link>.</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_h_l_d_1a256387d5bc67a34fc8feb4a64555d05a"/><section>
+    <title>add_edge()</title>
+<indexterm><primary>add_edge</primary><secondary>HLD</secondary></indexterm>
+<indexterm><primary>HLD</primary><secondary>add_edge</secondary></indexterm>
+<para><computeroutput>void HLD::add_edge (int a, int b)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_hld_8hpp_source">hld.hpp</link> の <link linkend="_hld_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_h_l_d_1a771bcfbb8251c5a9c62a08da8d149deb"/><section>
+    <title>build()</title>
+<indexterm><primary>build</primary><secondary>HLD</secondary></indexterm>
+<indexterm><primary>HLD</primary><secondary>build</secondary></indexterm>
+<para><computeroutput>void HLD::build (int root = <computeroutput>0</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_hld_8hpp_source">hld.hpp</link> の <link linkend="_hld_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_h_l_d_1af5c1751760a5d34be274c54acd9f60c3"/><section>
+    <title>path()</title>
+<indexterm><primary>path</primary><secondary>HLD</secondary></indexterm>
+<indexterm><primary>HLD</primary><secondary>path</secondary></indexterm>
+<para><computeroutput>vector&lt; tuple&lt; bool, int, int &gt; &gt; HLD::path (int u, int v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>頂点 u, v を結ぶパスをHL分解後の辺の列にして返す </para>
+</para>
+
+<para><computeroutput>[f, l, r]</computeroutput> として、次を表す。<itemizedlist>
+<listitem>
+<para><computeroutput>[l, r]</computeroutput>: HL分解後の頂点列</para>
+</listitem><listitem>
+<para><computeroutput>f = true</computeroutput> のとき、<computeroutput>[l, r]</computeroutput> はvからuへの向き</para>
+</listitem><listitem>
+<para>そうでないとき、逆向き </para>
+</listitem></itemizedlist>
+</para>
+<para>
+ <link linkend="_hld_8hpp_source">hld.hpp</link> の <link linkend="_hld_8hpp_source_1l00023">23</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_h_l_d_1ae95bc5be0f704bafb0ab667d1dffb0cc"/><section>
+    <title>lca()</title>
+<indexterm><primary>lca</primary><secondary>HLD</secondary></indexterm>
+<indexterm><primary>HLD</primary><secondary>lca</secondary></indexterm>
+<para><computeroutput>int HLD::lca (int u, int v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>頂点 u, v のLCAを返す </para>
+</para>
+<para>
+ <link linkend="_hld_8hpp_source">hld.hpp</link> の <link linkend="_hld_8hpp_source_1l00040">40</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_h_l_d_1a57a2a1fce944ca4c9b4cfc4f497963e0"/><section>
+    <title>at()</title>
+<indexterm><primary>at</primary><secondary>HLD</secondary></indexterm>
+<indexterm><primary>HLD</primary><secondary>at</secondary></indexterm>
+<para><computeroutput>int HLD::at (int v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_hld_8hpp_source">hld.hpp</link> の <link linkend="_hld_8hpp_source_1l00047">47</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+graph/tree/<link linkend="_hld_8hpp">hld.hpp</link></section>
+</section>

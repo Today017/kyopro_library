@@ -1,0 +1,122 @@
+.TH "SegTreeDynamic< Monoid >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SegTreeDynamic< Monoid > \- 動的セグ木  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'segtree_dynamic\&.hpp'\fP
+.SS "クラス"
+
+.in +1c
+.ti -1c
+.RI "struct \fBNode\fP"
+.br
+.in -1c
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "using \fBType\fP = typename Monoid::Type"
+.br
+.in -1c
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBSegTreeDynamic\fP (\fBll\fP \fBmx\fP=1e9, int q=5e5)"
+.br
+.RI "サイズ mx の動的セグ木を宣言する "
+.ti -1c
+.RI "void \fBset\fP (\fBll\fP i, \fBType\fP v)"
+.br
+.RI "i 番目の要素を v に変える "
+.ti -1c
+.RI "\fBType\fP \fBfold\fP (\fBll\fP l, \fBll\fP r, int idx, \fBll\fP left, \fBll\fP right)"
+.br
+.RI "区間 [l, r) のモノイド積を返す "
+.ti -1c
+.RI "\fBType\fP \fBfold\fP (\fBll\fP l, \fBll\fP r)"
+.br
+.ti -1c
+.RI "\fBType\fP \fBoperator[]\fP (\fBll\fP i)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "vector< \fBNode\fP > \fBnode\fP"
+.br
+.ti -1c
+.RI "\fBll\fP \fBmx\fP =1e9"
+.br
+.ti -1c
+.RI "vector< int > \fBroute\fP"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename Monoid>
+.br
+struct SegTreeDynamic< Monoid >"動的セグ木 
+.PP
+ \fBsegtree_dynamic\&.hpp\fP の \fB5\fP 行目に定義があります。
+.SH "型定義メンバ詳解"
+.PP 
+.SS "template<typename Monoid> using \fBSegTreeDynamic\fP< Monoid >::Type = typename Monoid::Type"
+
+.PP
+ \fBsegtree_dynamic\&.hpp\fP の \fB6\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename Monoid> \fBSegTreeDynamic\fP< Monoid >\fB::SegTreeDynamic\fP (\fBll\fP mx = \fR1e9\fP, int q = \fR5e5\fP)\fR [inline]\fP"
+
+.PP
+サイズ mx の動的セグ木を宣言する 
+.PP
+ \fBsegtree_dynamic\&.hpp\fP の \fB23\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "template<typename Monoid> void \fBSegTreeDynamic\fP< Monoid >::set (\fBll\fP i, \fBType\fP v)\fR [inline]\fP"
+
+.PP
+i 番目の要素を v に変える 
+.PP
+ \fBsegtree_dynamic\&.hpp\fP の \fB31\fP 行目に定義があります。
+.SS "template<typename Monoid> \fBType\fP \fBSegTreeDynamic\fP< Monoid >::fold (\fBll\fP l, \fBll\fP r, int idx, \fBll\fP left, \fBll\fP right)\fR [inline]\fP"
+
+.PP
+区間 [l, r) のモノイド積を返す 
+.PP
+ \fBsegtree_dynamic\&.hpp\fP の \fB67\fP 行目に定義があります。
+.SS "template<typename Monoid> \fBType\fP \fBSegTreeDynamic\fP< Monoid >::fold (\fBll\fP l, \fBll\fP r)\fR [inline]\fP"
+
+.PP
+ \fBsegtree_dynamic\&.hpp\fP の \fB82\fP 行目に定義があります。
+.SS "template<typename Monoid> \fBType\fP \fBSegTreeDynamic\fP< Monoid >::operator[] (\fBll\fP i)\fR [inline]\fP"
+
+.PP
+ \fBsegtree_dynamic\&.hpp\fP の \fB84\fP 行目に定義があります。
+.SH "メンバ詳解"
+.PP 
+.SS "template<typename Monoid> vector<\fBNode\fP> \fBSegTreeDynamic\fP< Monoid >::node"
+
+.PP
+ \fBsegtree_dynamic\&.hpp\fP の \fB17\fP 行目に定義があります。
+.SS "template<typename Monoid> \fBll\fP \fBSegTreeDynamic\fP< Monoid >::mx =1e9"
+
+.PP
+ \fBsegtree_dynamic\&.hpp\fP の \fB19\fP 行目に定義があります。
+.SS "template<typename Monoid> vector<int> \fBSegTreeDynamic\fP< Monoid >::route"
+
+.PP
+ \fBsegtree_dynamic\&.hpp\fP の \fB20\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

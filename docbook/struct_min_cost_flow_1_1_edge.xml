@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_min_cost_flow_1_1_edge" xml:lang="ja">
+<title>MinCostFlow::Edge 構造体</title>
+<indexterm><primary>MinCostFlow::Edge</primary></indexterm>
+<para>
+
+<para>辺構造体 </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;min_cost_flow.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_min_cost_flow_1_1_edge_1a70fad7fec6240ed0b6b4fa9e3128f96b">Edge</link> (int <link linkend="_struct_min_cost_flow_1_1_edge_1a547696eaaa79241ef48244ef50ef8f11">from</link>, int <link linkend="_struct_min_cost_flow_1_1_edge_1a7cedccd94c97295705d0e852bae7dd7a">to</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_struct_min_cost_flow_1_1_edge_1a7a5666a6fbaaca1cc1feaca729b509c6">cap</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_struct_min_cost_flow_1_1_edge_1acecbbadab9200139d6fca7ff17fd92ca">cost</link>, int <link linkend="_struct_min_cost_flow_1_1_edge_1aa0302cff92809184f4660b0302a7e554">rev</link>, bool <link linkend="_struct_min_cost_flow_1_1_edge_1a414f6d0a7ad40f94dfe6eea0e2f1eddb">isrev</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>公開変数類    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_struct_min_cost_flow_1_1_edge_1a547696eaaa79241ef48244ef50ef8f11">from</link></para>
+
+<para>始点 </para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_min_cost_flow_1_1_edge_1a7cedccd94c97295705d0e852bae7dd7a">to</link></para>
+
+<para>終点 </para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_min_cost_flow_1_1_edge_1aa0302cff92809184f4660b0302a7e554">rev</link></para>
+
+<para>逆辺のインデックス </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_struct_min_cost_flow_1_1_edge_1a7a5666a6fbaaca1cc1feaca729b509c6">cap</link></para>
+
+<para>容量 </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_struct_min_cost_flow_1_1_edge_1acecbbadab9200139d6fca7ff17fd92ca">cost</link></para>
+
+<para>コスト </para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_min_cost_flow_1_1_edge_1a414f6d0a7ad40f94dfe6eea0e2f1eddb">isrev</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+
+<para>辺構造体 </para>
+<para>
+ <link linkend="_min__cost__flow_8hpp_source">min_cost_flow.hpp</link> の <link linkend="_min__cost__flow_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_min_cost_flow_1_1_edge_1a70fad7fec6240ed0b6b4fa9e3128f96b"/><section>
+    <title>Edge()</title>
+<indexterm><primary>Edge</primary><secondary>MinCostFlow::Edge</secondary></indexterm>
+<indexterm><primary>MinCostFlow::Edge</primary><secondary>Edge</secondary></indexterm>
+<para><computeroutput>MinCostFlow::Edge::Edge (int from, int to, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> cap, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> cost, int rev, bool isrev)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_min__cost__flow_8hpp_source">min_cost_flow.hpp</link> の <link linkend="_min__cost__flow_8hpp_source_1l00014">14</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_min__cost__flow_8hpp_source_1l00011">cap</link>, <link linkend="_min__cost__flow_8hpp_source_1l00012">cost</link>, <link linkend="_min__cost__flow_8hpp_source_1l00008">from</link>, <link linkend="_min__cost__flow_8hpp_source_1l00013">isrev</link>, <link linkend="_min__cost__flow_8hpp_source_1l00010">rev</link>, <link linkend="_min__cost__flow_8hpp_source_1l00009">to</link>.</para>
+</section>
+</section>
+<section>
+<title>メンバ詳解</title>
+<anchor xml:id="_struct_min_cost_flow_1_1_edge_1a547696eaaa79241ef48244ef50ef8f11"/><section>
+    <title>from</title>
+<indexterm><primary>from</primary><secondary>MinCostFlow::Edge</secondary></indexterm>
+<indexterm><primary>MinCostFlow::Edge</primary><secondary>from</secondary></indexterm>
+<para><computeroutput>int MinCostFlow::Edge::from</computeroutput></para><para>
+
+<para>始点 </para>
+</para>
+<para>
+ <link linkend="_min__cost__flow_8hpp_source">min_cost_flow.hpp</link> の <link linkend="_min__cost__flow_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_min_cost_flow_1_1_edge_1a7cedccd94c97295705d0e852bae7dd7a"/><section>
+    <title>to</title>
+<indexterm><primary>to</primary><secondary>MinCostFlow::Edge</secondary></indexterm>
+<indexterm><primary>MinCostFlow::Edge</primary><secondary>to</secondary></indexterm>
+<para><computeroutput>int MinCostFlow::Edge::to</computeroutput></para><para>
+
+<para>終点 </para>
+</para>
+<para>
+ <link linkend="_min__cost__flow_8hpp_source">min_cost_flow.hpp</link> の <link linkend="_min__cost__flow_8hpp_source_1l00009">9</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_min_cost_flow_1_1_edge_1aa0302cff92809184f4660b0302a7e554"/><section>
+    <title>rev</title>
+<indexterm><primary>rev</primary><secondary>MinCostFlow::Edge</secondary></indexterm>
+<indexterm><primary>MinCostFlow::Edge</primary><secondary>rev</secondary></indexterm>
+<para><computeroutput>int MinCostFlow::Edge::rev</computeroutput></para><para>
+
+<para>逆辺のインデックス </para>
+</para>
+<para>
+ <link linkend="_min__cost__flow_8hpp_source">min_cost_flow.hpp</link> の <link linkend="_min__cost__flow_8hpp_source_1l00010">10</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_min_cost_flow_1_1_edge_1a7a5666a6fbaaca1cc1feaca729b509c6"/><section>
+    <title>cap</title>
+<indexterm><primary>cap</primary><secondary>MinCostFlow::Edge</secondary></indexterm>
+<indexterm><primary>MinCostFlow::Edge</primary><secondary>cap</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> MinCostFlow::Edge::cap</computeroutput></para><para>
+
+<para>容量 </para>
+</para>
+<para>
+ <link linkend="_min__cost__flow_8hpp_source">min_cost_flow.hpp</link> の <link linkend="_min__cost__flow_8hpp_source_1l00011">11</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_min_cost_flow_1_1_edge_1acecbbadab9200139d6fca7ff17fd92ca"/><section>
+    <title>cost</title>
+<indexterm><primary>cost</primary><secondary>MinCostFlow::Edge</secondary></indexterm>
+<indexterm><primary>MinCostFlow::Edge</primary><secondary>cost</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> MinCostFlow::Edge::cost</computeroutput></para><para>
+
+<para>コスト </para>
+</para>
+<para>
+ <link linkend="_min__cost__flow_8hpp_source">min_cost_flow.hpp</link> の <link linkend="_min__cost__flow_8hpp_source_1l00012">12</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_min_cost_flow_1_1_edge_1a414f6d0a7ad40f94dfe6eea0e2f1eddb"/><section>
+    <title>isrev</title>
+<indexterm><primary>isrev</primary><secondary>MinCostFlow::Edge</secondary></indexterm>
+<indexterm><primary>MinCostFlow::Edge</primary><secondary>isrev</secondary></indexterm>
+<para><computeroutput>bool MinCostFlow::Edge::isrev</computeroutput></para><para>
+ <link linkend="_min__cost__flow_8hpp_source">min_cost_flow.hpp</link> の <link linkend="_min__cost__flow_8hpp_source_1l00013">13</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+graph/flow/<link linkend="_min__cost__flow_8hpp">min_cost_flow.hpp</link></section>
+</section>

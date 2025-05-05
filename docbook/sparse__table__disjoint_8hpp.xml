@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_sparse__table__disjoint_8hpp" xml:lang="ja">
+<title>data_structure/sparse_table_disjoint.hpp ファイル</title>
+<indexterm><primary>data_structure/sparse_table_disjoint.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_sparse_table_disjoint">SparseTableDisjoint&lt; Semigroup &gt;</link></para>
+
+<para>スパーステーブル（Disjoint） </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

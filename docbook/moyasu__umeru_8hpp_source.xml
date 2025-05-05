@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_moyasu__umeru_8hpp_source" xml:lang="ja">
+<title>moyasu_umeru.hpp</title>
+<indexterm><primary>graph/flow/moyasu_umeru.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_moyasu__umeru_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00003"/>00003 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">atcoder</emphasis><emphasis role="preprocessor">/</emphasis><emphasis role="preprocessor">maxflow</emphasis><emphasis role="preprocessor">&gt;</emphasis>
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00004"/>00004 
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@brief&#32;燃やす埋める</emphasis>
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00006"/>00006 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;Cost&gt;
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00007"/><link linkend="_struct_burning_burying">00007</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_burning_burying">BurningBurying</link>&#32;{
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00008"/><link linkend="_struct_burning_burying_1a2f4140e564a37c264619079966077ee6">00008</link> &#32;&#32;&#32;&#32;<link linkend="_struct_burning_burying_1a2f4140e564a37c264619079966077ee6">BurningBurying</link>(<emphasis role="keywordtype">int</emphasis>&#32;n)&#32;{
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;n=n;
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;start=n;
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;goal=n+1;
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mf=atcoder::mf_graph&lt;Cost&gt;(n+2);
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00014"/>00014 
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x[i]&#32;=&#32;0&#32;のときコスト&#32;zero,&#32;x[i]&#32;=&#32;1&#32;のときコスト&#32;one&#32;がかかるという条件を追加する</emphasis>
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00016"/><link linkend="_struct_burning_burying_1af68f6edc148d7bbdb20c3e3eca21a55b">00016</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_burning_burying_1af68f6edc148d7bbdb20c3e3eca21a55b">add_single</link>(<emphasis role="keywordtype">int</emphasis>&#32;i,&#32;Cost&#32;zero,&#32;Cost&#32;one)&#32;{
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(zero&lt;=one)&#32;{
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//基本コストがzeroで、iを0から1に変えると+one-zeroされる</emphasis>
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;offset+=zero;
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mf.add_edge(start,i,one-zero);
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//基本コストがoneで、iを1から0に変えると-one+zeroされる</emphasis>
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;offset+=one;
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mf.add_edge(i,goal,zero-one);
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00027"/>00027 
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;<emphasis role="comment">/**</emphasis>
+00029 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;@brief</emphasis>
+00030 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;x[&#32;i&#32;],&#32;x[&#32;j&#32;]&#32;の組み合わせについて、以下のコストかかるという条件を追加する</emphasis>
+00031 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;|&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;|&#32;x[j]&#32;=&#32;0&#32;|&#32;x[j]&#32;=&#32;1&#32;|</emphasis>
+00032 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;|&#32;---&#32;&#32;&#32;&#32;&#32;&#32;|&#32;---&#32;&#32;&#32;&#32;&#32;&#32;|&#32;---&#32;&#32;&#32;&#32;&#32;&#32;|</emphasis>
+00033 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;|&#32;x[i]&#32;=&#32;0&#32;|&#32;a&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;|&#32;b&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;|</emphasis>
+00034 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;|&#32;x[i]&#32;=&#32;1&#32;|&#32;c&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;|&#32;d&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;|</emphasis>
+00035 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;</emphasis>
+00036 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;@attention&#32;b&#32;+&#32;c&#32;&gt;=&#32;a&#32;+&#32;d&#32;を要求する</emphasis>
+00037 <emphasis role="comment">&#32;&#32;&#32;&#32;*/</emphasis>
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00038"/><link linkend="_struct_burning_burying_1a44ab45cb039360509bab62a01f384d28">00038</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_burning_burying_1a44ab45cb039360509bab62a01f384d28">add_double</link>(<emphasis role="keywordtype">int</emphasis>&#32;i,&#32;<emphasis role="keywordtype">int</emphasis>&#32;j,&#32;Cost&#32;a,&#32;Cost&#32;b,&#32;Cost&#32;c,&#32;Cost&#32;d)&#32;{
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(b+c&gt;=a+d);
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;offset+=a;
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_burning_burying_1af68f6edc148d7bbdb20c3e3eca21a55b">add_single</link><link linkend="_struct_burning_burying_1af68f6edc148d7bbdb20c3e3eca21a55b">(</link>i<link linkend="_struct_burning_burying_1af68f6edc148d7bbdb20c3e3eca21a55b">,</link>0<link linkend="_struct_burning_burying_1af68f6edc148d7bbdb20c3e3eca21a55b">,</link>c-a<link linkend="_struct_burning_burying_1af68f6edc148d7bbdb20c3e3eca21a55b">)</link>;
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_burning_burying_1af68f6edc148d7bbdb20c3e3eca21a55b">add_single</link><link linkend="_struct_burning_burying_1af68f6edc148d7bbdb20c3e3eca21a55b">(</link>j<link linkend="_struct_burning_burying_1af68f6edc148d7bbdb20c3e3eca21a55b">,</link>0<link linkend="_struct_burning_burying_1af68f6edc148d7bbdb20c3e3eca21a55b">,</link>d-c<link linkend="_struct_burning_burying_1af68f6edc148d7bbdb20c3e3eca21a55b">)</link>;
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mf.add_edge(i,j,b+c-a-d);
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00045"/>00045 
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;コスト最小値を求める</emphasis>
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00047"/><link linkend="_struct_burning_burying_1a90fd210c7fb2b5e0a929a3f2b973d543">00047</link> &#32;&#32;&#32;&#32;Cost&#32;<link linkend="_struct_burning_burying_1a90fd210c7fb2b5e0a929a3f2b973d543">solve</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;mf.flow(start,goal)+offset;&#32;}
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00048"/>00048 
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00049"/>00049 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n,start,goal;
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;Cost&#32;offset=0;
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;atcoder::mf_graph&lt;Cost&gt;&#32;mf;
+<anchor xml:id="_moyasu__umeru_8hpp_source_1l00053"/>00053 };
+</programlisting></section>

@@ -1,0 +1,337 @@
+.TH "Fraction< T >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Fraction< T > \- 有理数構造体  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'fraction\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBFraction\fP ()=default"
+.br
+.ti -1c
+.RI "\fBFraction\fP (T a, T b)"
+.br
+.RI "有理数 a/b を宣言する "
+.ti -1c
+.RI "\fBFraction\fP (T a=0)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator+\fP (const \fBFraction\fP &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator\-\fP (const \fBFraction\fP &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator*\fP (const \fBFraction\fP &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator/\fP (const \fBFraction\fP &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator+=\fP (const \fBFraction\fP &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator\-=\fP (const \fBFraction\fP &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator*=\fP (const \fBFraction\fP &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator/=\fP (const \fBFraction\fP &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator+\fP (const T &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator\-\fP (const T &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator*\fP (const T &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator/\fP (const T &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator+=\fP (const T &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator\-=\fP (const T &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator*=\fP (const T &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator/=\fP (const T &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBoperator\-\fP ()"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBFraction\fP &f) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBFraction\fP &f) const"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBFraction\fP &f) const"
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBFraction\fP &f) const"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBFraction\fP &f) const"
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBFraction\fP &f) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const T &f) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const T &f) const"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const T &f) const"
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const T &f) const"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const T &f) const"
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const T &f) const"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "T \fBupper\fP"
+.br
+.ti -1c
+.RI "T \fBlower\fP"
+.br
+.in -1c
+.SS "フレンド"
+
+.in +1c
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBFraction\fP &f)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename T = ll>
+.br
+struct Fraction< T >"有理数構造体 
+.PP
+ \fBfraction\&.hpp\fP の \fB5\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename T = ll> \fBFraction\fP< T >\fB::Fraction\fP ()\fR [default]\fP"
+
+.SS "template<typename T = ll> \fBFraction\fP< T >\fB::Fraction\fP (T a, T b)\fR [inline]\fP"
+
+.PP
+有理数 a/b を宣言する 
+.PP
+ \fBfraction\&.hpp\fP の \fB10\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> \fBFraction\fP< T >\fB::Fraction\fP (T a = \fR0\fP)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB16\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SH "関数詳解"
+.PP 
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator+ (const \fBFraction\fP< T > & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB18\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator\- (const \fBFraction\fP< T > & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB19\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator* (const \fBFraction\fP< T > & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB20\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator/ (const \fBFraction\fP< T > & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB21\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator+= (const \fBFraction\fP< T > & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB23\fP 行目に定義があります。
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator\-= (const \fBFraction\fP< T > & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB24\fP 行目に定義があります。
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator*= (const \fBFraction\fP< T > & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB25\fP 行目に定義があります。
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator/= (const \fBFraction\fP< T > & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB26\fP 行目に定義があります。
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator+ (const T & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB28\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator\- (const T & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB29\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator* (const T & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB30\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator/ (const T & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB31\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator+= (const T & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB33\fP 行目に定義があります。
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator\-= (const T & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB34\fP 行目に定義があります。
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator*= (const T & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB35\fP 行目に定義があります。
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator/= (const T & f)\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB36\fP 行目に定義があります。
+.SS "template<typename T = ll> \fBFraction\fP \fBFraction\fP< T >::operator\- ()\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB38\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> bool \fBFraction\fP< T >::operator== (const \fBFraction\fP< T > & f) const\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB40\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> bool \fBFraction\fP< T >::operator!= (const \fBFraction\fP< T > & f) const\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB41\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> bool \fBFraction\fP< T >::operator< (const \fBFraction\fP< T > & f) const\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB42\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> bool \fBFraction\fP< T >::operator<= (const \fBFraction\fP< T > & f) const\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB43\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> bool \fBFraction\fP< T >::operator> (const \fBFraction\fP< T > & f) const\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB44\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> bool \fBFraction\fP< T >::operator>= (const \fBFraction\fP< T > & f) const\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB45\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> bool \fBFraction\fP< T >::operator== (const T & f) const\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB46\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> bool \fBFraction\fP< T >::operator!= (const T & f) const\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB47\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> bool \fBFraction\fP< T >::operator< (const T & f) const\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB48\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> bool \fBFraction\fP< T >::operator<= (const T & f) const\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB49\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> bool \fBFraction\fP< T >::operator> (const T & f) const\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB50\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SS "template<typename T = ll> bool \fBFraction\fP< T >::operator>= (const T & f) const\fR [inline]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB51\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SH "フレンドと関連関数の詳解"
+.PP 
+.SS "template<typename T = ll> ostream & operator<< (ostream & os, const \fBFraction\fP< T > & f)\fR [friend]\fP"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB53\fP 行目に定義があります。
+.PP
+参照先 \fBlower\fP, \fBupper\fP\&.
+.SH "メンバ詳解"
+.PP 
+.SS "template<typename T = ll> T \fBFraction\fP< T >::upper"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB6\fP 行目に定義があります。
+.SS "template<typename T = ll> T \fBFraction\fP< T >::lower"
+
+.PP
+ \fBfraction\&.hpp\fP の \fB6\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

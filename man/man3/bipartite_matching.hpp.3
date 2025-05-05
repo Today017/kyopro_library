@@ -1,0 +1,78 @@
+.TH "graph/bipartite_matching.hpp" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+graph/bipartite_matching.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include '\&.\&./\&.\&./kyopro_library/template\&.hpp'\fP
+.br
+\fR#include '\&.\&./\&.\&./kyopro_library/graph/flow/max_flow\&.hpp'\fP
+.br
+
+.SS "クラス"
+
+.in +1c
+.ti -1c
+.RI "struct \fBBiInfo\fP"
+.br
+.RI "二部グラフのパラメータ "
+.in -1c
+.SS "関数"
+
+.in +1c
+.ti -1c
+.RI "vector< pair< int, int > > \fBBipartiteMatching\fP (const \fBVVI\fP &g)"
+.br
+.RI "二部グラフの最大マッチングを返す "
+.ti -1c
+.RI "\fBBiInfo\fP \fBGetBiInfo\fP (const \fBVVI\fP &g)"
+.br
+.RI "二部グラフのパラメータを求める "
+.in -1c
+.SH "関数詳解"
+.PP 
+.SS "vector< pair< int, int > > BipartiteMatching (const \fBVVI\fP & g)"
+
+.PP
+二部グラフの最大マッチングを返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(E*sqrt(V)) 
+.RE
+.PP
+\fB注意\fP
+.RS 4
+G は二部グラフであること 
+.RE
+.PP
+
+.PP
+ \fBbipartite_matching\&.hpp\fP の \fB7\fP 行目に定義があります。
+.PP
+参照先 \fBMaxFlow::add_edge()\fP, \fBMaxFlow::flow()\fP, \fBMaxFlow::MaxFlow()\fP\&.
+.SS "\fBBiInfo\fP GetBiInfo (const \fBVVI\fP & g)"
+
+.PP
+二部グラフのパラメータを求める 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(E*sqrt(V)) 
+.RE
+.PP
+\fB注意\fP
+.RS 4
+G は二部グラフであること 
+.RE
+.PP
+
+.PP
+ \fBbipartite_matching\&.hpp\fP の \fB42\fP 行目に定義があります。
+.PP
+参照先 \fBBiInfo::max_independent_set\fP, \fBBiInfo::max_matching\fP, \fBBiInfo::min_edge_cover\fP, \fBBiInfo::min_vertex_cover\fP\&.
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

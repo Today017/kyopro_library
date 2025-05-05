@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_mo" xml:lang="ja">
+<title>Mo&lt; L &gt; 構造体テンプレート</title>
+<indexterm><primary>Mo&lt; L &gt;</primary></indexterm>
+<para>
+
+<para><link linkend="_struct_mo">Mo</link>&apos;s Algorithm <link xlink:href="https://ei1333.hateblo.jp/entry/2017/09/11/211011">https://ei1333.hateblo.jp/entry/2017/09/11/211011</link> </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;mo.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_mo_1a12c0e52820513d400e3ebabb498c68f3">Mo</link> (int n)</para>
+
+<para>コンストラクタ </para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_mo_1a39bea8915a24a54030b29c834637342b">add</link> (int l, int r)</para>
+
+<para>クエリ [l, r) を追加する </para>
+</listitem>
+            <listitem><para>template&lt;typename F1, typename F2, typename F3, typename F4, typename F5&gt; </para><para>void <link linkend="_struct_mo_1a487fe96e3907bd2d23fb9569b98500d3">execute</link> (F1 &amp;&amp;add_left, F2 &amp;&amp;add_right, F3 &amp;&amp;del_left, F4 &amp;&amp;del_right, F5 &amp;&amp;out)</para>
+
+<para>クエリを実行する </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<simplesect><title>template&lt;<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> L = 20&gt;<?linebreak?>struct Mo&lt; L &gt;</title></simplesect>
+
+<para><link linkend="_struct_mo">Mo</link>&apos;s Algorithm <link xlink:href="https://ei1333.hateblo.jp/entry/2017/09/11/211011">https://ei1333.hateblo.jp/entry/2017/09/11/211011</link> </para>
+<para>
+ <link linkend="_mo_8hpp_source">mo.hpp</link> の <link linkend="_mo_8hpp_source_1l00006">6</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_mo_1a12c0e52820513d400e3ebabb498c68f3"/><section>
+    <title>Mo()</title>
+<indexterm><primary>Mo</primary><secondary>Mo&lt; L &gt;</secondary></indexterm>
+<indexterm><primary>Mo&lt; L &gt;</primary><secondary>Mo</secondary></indexterm>
+<computeroutput>template&lt;<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> L = 20&gt; </computeroutput><para><computeroutput><link linkend="_struct_mo">Mo</link>&lt; L &gt;<link linkend="_struct_mo">::Mo</link> (int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>コンストラクタ </para>
+</para>
+<para>
+ <link linkend="_mo_8hpp_source">mo.hpp</link> の <link linkend="_mo_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_mo_1a39bea8915a24a54030b29c834637342b"/><section>
+    <title>add()</title>
+<indexterm><primary>add</primary><secondary>Mo&lt; L &gt;</secondary></indexterm>
+<indexterm><primary>Mo&lt; L &gt;</primary><secondary>add</secondary></indexterm>
+<computeroutput>template&lt;<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> L = 20&gt; </computeroutput><para><computeroutput>void <link linkend="_struct_mo">Mo</link>&lt; L &gt;::add (int l, int r)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>クエリ [l, r) を追加する </para>
+</para>
+<para>
+ <link linkend="_mo_8hpp_source">mo.hpp</link> の <link linkend="_mo_8hpp_source_1l00014">14</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_mo_1a487fe96e3907bd2d23fb9569b98500d3"/><section>
+    <title>execute()</title>
+<indexterm><primary>execute</primary><secondary>Mo&lt; L &gt;</secondary></indexterm>
+<indexterm><primary>Mo&lt; L &gt;</primary><secondary>execute</secondary></indexterm>
+<computeroutput>template&lt;<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> L = 20&gt; </computeroutput><computeroutput>template&lt;typename F1, typename F2, typename F3, typename F4, typename F5&gt; </computeroutput><para><computeroutput>void <link linkend="_struct_mo">Mo</link>&lt; L &gt;::execute (F1 &amp;&amp; add_left, F2 &amp;&amp; add_right, F3 &amp;&amp; del_left, F4 &amp;&amp; del_right, F5 &amp;&amp; out)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>クエリを実行する </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+引数</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>add_left</entry><entry>
+<para><computeroutput>add_left(i)</computeroutput> i 番目の要素が左から加わるときの処理 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>add_right</entry><entry>
+<para><computeroutput>add_right(i)</computeroutput> i 番目の要素が右から加わるときの処理 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>del_left</entry><entry>
+<para><computeroutput>del_left(i)</computeroutput> i 番目の要素が左から抜けるときの処理 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>del_right</entry><entry>
+<para><computeroutput>del_right(i)</computeroutput> i 番目の要素が右から抜けるときの処理 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>out</entry><entry>
+<para><computeroutput>out(i)</computeroutput> i 番目のクエリの答えを求めたときの処理 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <note><title>覚え書き</title>
+
+<para>O(N sqrt(Q)) </para>
+</note>
+</para>
+<para>
+ <link linkend="_mo_8hpp_source">mo.hpp</link> の <link linkend="_mo_8hpp_source_1l00028">28</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+algorithm/<link linkend="_mo_8hpp">mo.hpp</link></section>
+</section>

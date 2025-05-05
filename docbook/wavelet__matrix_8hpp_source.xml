@@ -1,0 +1,537 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_wavelet__matrix_8hpp_source" xml:lang="ja">
+<title>wavelet_matrix.hpp</title>
+<indexterm><primary>data_structure/wavelet_matrix.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_wavelet__matrix_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00003"/><link linkend="_struct_succinct_bit_vector">00003</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_succinct_bit_vector">SuccinctBitVector</link>&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00004"/><link linkend="_struct_succinct_bit_vector_1a8d705cf2ab85758d338e6fd0977274b2">00004</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_succinct_bit_vector_1a8d705cf2ab85758d338e6fd0977274b2">ull</link>&#32;<link linkend="_struct_succinct_bit_vector_1a8d705cf2ab85758d338e6fd0977274b2">NOTFOUND</link>=0xFFFFFFFFFFFFFFFFLLU;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00005"/>00005 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00006"/>00006 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00007"/>00007 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;size;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;blockBitNum=16;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;LEVEL_L=512;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;LEVEL_S=16;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;vector&lt;ull&gt;L;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;vector&lt;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&gt;S;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;vector&lt;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&gt;B;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;ull&#32;numOne=0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00015"/>00015 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00016"/>00016 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00017"/><link linkend="_struct_succinct_bit_vector_1a7e21d3fc0ad8a91418ba37a262c4f97f">00017</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">explicit</emphasis>&#32;<link linkend="_struct_succinct_bit_vector_1a7e21d3fc0ad8a91418ba37a262c4f97f">SuccinctBitVector</link>(<emphasis role="keyword">const</emphasis>&#32;ull&#32;n):<link linkend="_struct_succinct_bit_vector_1a7e21d3fc0ad8a91418ba37a262c4f97f">size</link>(<link linkend="_struct_succinct_bit_vector_1a7e21d3fc0ad8a91418ba37a262c4f97f">n</link>)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;s=(n+blockBitNum-1)/blockBitNum+1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;B.assign(s,0);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;L.assign(n/LEVEL_L+1,0);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;S.assign(n/LEVEL_S+1,0);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00023"/><link linkend="_struct_succinct_bit_vector_1a3144d46c2b97e2bf0c536ce786d88c22">00023</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_succinct_bit_vector_1a3144d46c2b97e2bf0c536ce786d88c22">set_bit</link>(<emphasis role="keyword">const</emphasis>&#32;ull&#32;bit,<emphasis role="keyword">const</emphasis>&#32;ull&#32;pos)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(bit==0&#32;<emphasis role="keyword">or</emphasis>&#32;bit==1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(pos&lt;<emphasis role="keyword">this</emphasis>-&gt;size);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;blockPos=pos/blockBitNum;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;offset=pos%blockBitNum;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit==1)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;B.at(blockPos)|=(1LLU&lt;&lt;offset);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;B.at(blockPos)&amp;=(~(1LLU&lt;&lt;offset));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00034"/><link linkend="_struct_succinct_bit_vector_1ac384d026ac86d26b1607148cf4efcba7">00034</link> &#32;&#32;&#32;&#32;<link linkend="_struct_succinct_bit_vector_1ac384d026ac86d26b1607148cf4efcba7">ull</link>&#32;<link linkend="_struct_succinct_bit_vector_1ac384d026ac86d26b1607148cf4efcba7">access</link>(<emphasis role="keyword">const</emphasis>&#32;ull&#32;pos)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(pos&lt;<emphasis role="keyword">this</emphasis>-&gt;size);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;blockPos=pos/blockBitNum;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;offset=pos%blockBitNum;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>((B.at(blockPos)&gt;&gt;offset)&amp;1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00040"/><link linkend="_struct_succinct_bit_vector_1aafee3472a9c2b616aeddccbceafe455b">00040</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_succinct_bit_vector_1aafee3472a9c2b616aeddccbceafe455b">build</link>()&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;num=0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ull&#32;i=0;i&lt;=size;i++)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(i%LEVEL_L==0)L.at(i/LEVEL_L)=num;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(i%LEVEL_S==0)S.at(i/LEVEL_S)=num-L.at(i/LEVEL_L);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(i!=size&#32;<emphasis role="keyword">and</emphasis>&#32;i%blockBitNum==0)num+=<emphasis role="keyword">this</emphasis>-&gt;pop_count(<emphasis role="keyword">this</emphasis>-&gt;B.at(i/blockBitNum));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;numOne=num;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00049"/><link linkend="_struct_succinct_bit_vector_1a48146af946417824ba1079eca73670c7">00049</link> &#32;&#32;&#32;&#32;<link linkend="_struct_succinct_bit_vector_1a48146af946417824ba1079eca73670c7">ull</link>&#32;<link linkend="_struct_succinct_bit_vector_1a48146af946417824ba1079eca73670c7">rank</link>(<emphasis role="keyword">const</emphasis>&#32;ull&#32;bit,<emphasis role="keyword">const</emphasis>&#32;ull&#32;pos)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(bit==0&#32;<emphasis role="keyword">or</emphasis>&#32;bit==1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(pos&lt;=<emphasis role="keyword">this</emphasis>-&gt;size);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;L[pos/LEVEL_L]+S[pos/LEVEL_S]+pop_count(B[pos/blockBitNum]&amp;((1&lt;&lt;(pos%blockBitNum))-1));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;pos-rank(1,pos);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00058"/><link linkend="_struct_succinct_bit_vector_1ac8f4deffcbc0e8635ec3e8a6a145c1a3">00058</link> &#32;&#32;&#32;&#32;<link linkend="_struct_succinct_bit_vector_1ac8f4deffcbc0e8635ec3e8a6a145c1a3">ull</link>&#32;<link linkend="_struct_succinct_bit_vector_1ac8f4deffcbc0e8635ec3e8a6a145c1a3">select</link>(<emphasis role="keyword">const</emphasis>&#32;ull&#32;bit,<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(bit==0&#32;<emphasis role="keyword">or</emphasis>&#32;bit==1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(rank&gt;0);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit==0&#32;<emphasis role="keyword">and</emphasis>&#32;rank&gt;<emphasis role="keyword">this</emphasis>-&gt;size-<emphasis role="keyword">this</emphasis>-&gt;numOne)<emphasis role="keywordflow">return</emphasis>&#32;NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit==1&#32;<emphasis role="keyword">and</emphasis>&#32;rank&gt;<emphasis role="keyword">this</emphasis>-&gt;numOne)<emphasis role="keywordflow">return</emphasis>&#32;NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;large_idx=0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;left=0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;right=L.size();
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(right-left&gt;1)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;mid=(left+right)/2;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;r=L.at(mid);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;r=(bit)?r:mid*LEVEL_L-L.at(mid);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(r&lt;rank)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;left=mid;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;large_idx=mid;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;right=mid;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;small_idx=(large_idx*LEVEL_L)/LEVEL_S;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;left=(large_idx*LEVEL_L)/LEVEL_S;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;right=min(((large_idx+1)*LEVEL_L)/LEVEL_S,(ull)S.size());
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(right-left&gt;1)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;mid=(left+right)/2;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;r=L.at(large_idx)+S.at(mid);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;r=(bit)?r:mid*LEVEL_S-r;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(r&lt;rank)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;left=mid;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;small_idx=mid;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;right=mid;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00092"/>00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00094"/>00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00095"/>00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;rank_pos=0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00096"/>00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;begin_block_idx=(small_idx*LEVEL_S)/blockBitNum;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00098"/>00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;total_bit=L.at(large_idx)+S.at(small_idx);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00099"/>00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit==0)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00100"/>00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;total_bit=small_idx*LEVEL_S-total_bit;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00101"/>00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00102"/>00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ull&#32;i=0;;++i)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00103"/>00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;b=pop_count(B.at(begin_block_idx+i));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00104"/>00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit==0)b=blockBitNum-b;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00105"/>00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(total_bit+b&gt;=rank)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00106"/>00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;block=(bit)?B.at(begin_block_idx+i):~B.at(begin_block_idx+i);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00107"/>00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rank_pos=(begin_block_idx+i)*blockBitNum+select_in_block(block,rank-total_bit);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00108"/>00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00109"/>00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00110"/>00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;total_bit+=b;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00111"/>00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00112"/>00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00113"/>00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;rank_pos+1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00114"/>00114 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00115"/><link linkend="_struct_succinct_bit_vector_1aa697420b9abc14fb4e6bb8e06517d5bb">00115</link> &#32;&#32;&#32;&#32;<link linkend="_struct_succinct_bit_vector_1aa697420b9abc14fb4e6bb8e06517d5bb">ull</link>&#32;<link linkend="_struct_succinct_bit_vector_1aa697420b9abc14fb4e6bb8e06517d5bb">get_num_one</link>()<emphasis role="keyword">const</emphasis>{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00116"/>00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;numOne;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00117"/>00117 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00118"/>00118 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00119"/>00119 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00120"/>00120 &#32;&#32;&#32;&#32;ull&#32;pop_count(ull&#32;x)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00121"/>00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x=(x&amp;0x5555555555555555ULL)+((x&gt;&gt;1)&amp;0x5555555555555555ULL);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00122"/>00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x=(x&amp;0x3333333333333333ULL)+((x&gt;&gt;2)&amp;0x3333333333333333ULL);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00123"/>00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x=(x+(x&gt;&gt;4))&amp;0x0f0f0f0f0f0f0f0fULL;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x=x+(x&gt;&gt;8);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00125"/>00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x=x+(x&gt;&gt;16);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00126"/>00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x=x+(x&gt;&gt;32);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00127"/>00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;x&amp;0x7FLLU;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00128"/>00128 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00129"/>00129 &#32;&#32;&#32;&#32;ull&#32;select_in_block(ull&#32;x,ull&#32;rank)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00130"/>00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;x1=x-((x&amp;0xAAAAAAAAAAAAAAAALLU)&gt;&gt;1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;x2=(x1&amp;0x3333333333333333LLU)+((x1&gt;&gt;2)&amp;0x3333333333333333LLU);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00132"/>00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;x3=(x2+(x2&gt;&gt;4))&amp;0x0F0F0F0F0F0F0F0FLLU;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00133"/>00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;pos=0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00134"/>00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(;;pos+=8)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00135"/>00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;rank_next=(x3&gt;&gt;pos)&amp;0xFFLLU;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00136"/>00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(rank&lt;=rank_next)<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00137"/>00137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rank-=rank_next;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00138"/>00138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00139"/>00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;v2=(x2&gt;&gt;pos)&amp;0xFLLU;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00140"/>00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(rank&gt;v2)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00141"/>00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rank-=v2;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00142"/>00142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pos+=4;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00143"/>00143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00144"/>00144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;v1=(x1&gt;&gt;pos)&amp;0x3LLU;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00145"/>00145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(rank&gt;v1)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00146"/>00146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rank-=v1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00147"/>00147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pos+=2;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00148"/>00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00149"/>00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;v0=(x&gt;&gt;pos)&amp;0x1LLU;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00150"/>00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(v0&lt;rank)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00151"/>00151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rank-=v0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00152"/>00152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pos+=1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00153"/>00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00154"/>00154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;pos;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00155"/>00155 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00156"/>00156 };
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00157"/>00157 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00158"/>00158 <emphasis role="comment">///&#32;@brief&#32;Wavelet&#32;Matrix</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00159"/>00159 <emphasis role="comment">///&#32;@ref&#32;https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00160"/>00160 <emphasis role="comment">///&#32;@ref&#32;https://miti-7.hatenablog.com/entry/2019/02/01/152131</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00161"/><link linkend="_struct_wavelet_matrix">00161</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_wavelet_matrix">WaveletMatrix</link>{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00162"/><link linkend="_struct_wavelet_matrix_1ad09fa0edc4214cc70e466ceb92e3de90">00162</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_wavelet_matrix_1ad09fa0edc4214cc70e466ceb92e3de90">ull</link>&#32;<link linkend="_struct_wavelet_matrix_1ad09fa0edc4214cc70e466ceb92e3de90">NOTFOUND</link>=<link linkend="_struct_wavelet_matrix_1ad09fa0edc4214cc70e466ceb92e3de90">SuccinctBitVector</link>::NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00163"/>00163 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00164"/>00164 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00165"/>00165 &#32;&#32;&#32;&#32;vector&lt;SuccinctBitVector&gt;bit_arrays;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00166"/>00166 &#32;&#32;&#32;&#32;vector&lt;ull&gt;begin_one;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00167"/>00167 &#32;&#32;&#32;&#32;map&lt;ull,ull&gt;begin_alphabet;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00168"/>00168 &#32;&#32;&#32;&#32;vector&lt;vector&lt;ull&gt;&gt;cumulative_sum;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00169"/>00169 &#32;&#32;&#32;&#32;ull&#32;size;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00170"/>00170 &#32;&#32;&#32;&#32;ull&#32;maximum_element;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00171"/>00171 &#32;&#32;&#32;&#32;ull&#32;bit_size;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00172"/>00172 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00173"/>00173 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00174"/>00174 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;コンストラクタ</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00175"/>00175 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;a&#32;から&#32;Wavelet&#32;Matrix&#32;を構築する</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00176"/><link linkend="_struct_wavelet_matrix_1a3509863e3953b3e85960f176483ea314">00176</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1a3509863e3953b3e85960f176483ea314">WaveletMatrix</link>(<emphasis role="keyword">const</emphasis>&#32;vector&lt;ull&gt;&amp;a)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00177"/>00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(a.size()&gt;0);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00178"/>00178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;size=a.size();
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00179"/>00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;maximum_element=*max_element(a.begin(),a.end())+1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00180"/>00180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bit_size=get_num_of_bit(maximum_element);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00181"/>00181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit_size==0)bit_size=1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00182"/>00182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ull&#32;i=0;i&lt;bit_size;++i)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00183"/>00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_succinct_bit_vector">SuccinctBitVector</link>&#32;sv(size);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00184"/>00184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bit_arrays.push_back(sv);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00185"/>00185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00186"/>00186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;begin_one.resize(bit_size);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00187"/>00187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;cumulative_sum.resize(bit_size+1,vector&lt;ull&gt;(size+1,0));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00188"/>00188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ull&#32;j=0;j&lt;a.size();++j)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00189"/>00189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;cumulative_sum.at(0).at(j+1)=<emphasis role="keyword">this</emphasis>-&gt;cumulative_sum.at(0).at(j)+a[j];
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00190"/>00190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00191"/>00191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;ull&gt;v(a);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00192"/>00192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ull&#32;i=0;i&lt;bit_size;++i)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00193"/>00193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;ull&gt;temp;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00194"/>00194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ull&#32;j=0;j&lt;v.size();++j)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00195"/>00195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;c=v.at(j);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00196"/>00196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;bit=(c&gt;&gt;(bit_size-i-1))&amp;1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00197"/>00197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit==0)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00198"/>00198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;temp.push_back(c);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00199"/>00199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bit_arrays.at(i).set_bit(0,j);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00200"/>00200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00201"/>00201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00202"/>00202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(i)=temp.size();
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00203"/>00203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ull&#32;j=0;j&lt;v.size();++j)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00204"/>00204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;c=v.at(j);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00205"/>00205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;bit=(c&gt;&gt;(bit_size-i-1))&amp;1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00206"/>00206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit==1)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00207"/>00207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;temp.push_back(c);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00208"/>00208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bit_arrays.at(i).set_bit(1,j);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00209"/>00209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00210"/>00210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00211"/>00211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ull&#32;j=0;j&lt;temp.size();++j)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00212"/>00212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;cumulative_sum.at(i+1).at(j+1)=<emphasis role="keyword">this</emphasis>-&gt;cumulative_sum.at(i+1).at(j)+temp.at(j);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00213"/>00213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00214"/>00214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bit_arrays.at(i).build();
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00215"/>00215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v=temp;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00216"/>00216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00217"/>00217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=v.size()-1;i&gt;=0;--i)<emphasis role="keyword">this</emphasis>-&gt;begin_alphabet[v.at(i)]=i;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00218"/>00218 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00219"/>00219 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00220"/>00220 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;a[pos]&#32;を返す</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00221"/>00221 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log&#32;σ)</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00222"/><link linkend="_struct_wavelet_matrix_1a3a1eefb0414102aeeac72a1f31fc5b8d">00222</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1a3a1eefb0414102aeeac72a1f31fc5b8d">ull</link>&#32;<link linkend="_struct_wavelet_matrix_1a3a1eefb0414102aeeac72a1f31fc5b8d">access</link>(ull&#32;pos)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00223"/>00223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(pos&gt;=<emphasis role="keyword">this</emphasis>-&gt;size)<emphasis role="keywordflow">return</emphasis>&#32;NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00224"/>00224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;c=0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00225"/>00225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ull&#32;i=0;i&lt;bit_arrays.size();++i)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00226"/>00226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;bit=bit_arrays.at(i).access(pos);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00227"/>00227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;c=((c&lt;&lt;=1)|bit);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00228"/>00228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pos=bit_arrays.at(i).rank(bit,pos);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00229"/>00229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit)pos+=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(i);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00230"/>00230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00231"/>00231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;c;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00232"/>00232 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00233"/>00233 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00234"/>00234 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;rank&#32;番目の&#32;c&#32;の位置&#32;+1&#32;を返す</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00235"/>00235 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;rank&#32;は&#32;1-indexed</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00236"/>00236 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log&#32;σ)</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00237"/><link linkend="_struct_wavelet_matrix_1a2b4d0a49f7e6ff7439359beab3ec5c49">00237</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1a2b4d0a49f7e6ff7439359beab3ec5c49">ull</link>&#32;<link linkend="_struct_wavelet_matrix_1a2b4d0a49f7e6ff7439359beab3ec5c49">select</link>(ull&#32;c,ull&#32;rank)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00238"/>00238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(rank&gt;0);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00239"/>00239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(c&gt;=maximum_element)<emphasis role="keywordflow">return</emphasis>&#32;NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00240"/>00240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">this</emphasis>-&gt;begin_alphabet.find(c)==<emphasis role="keyword">this</emphasis>-&gt;begin_alphabet.end())<emphasis role="keywordflow">return</emphasis>&#32;NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00241"/>00241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;index=<emphasis role="keyword">this</emphasis>-&gt;begin_alphabet.at(c)+rank;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00242"/>00242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ull&#32;i=0;i&lt;bit_arrays.size();++i)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00243"/>00243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;bit=((c&gt;&gt;i)&amp;1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00244"/>00244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit==1)index-=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(bit_size-i-1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00245"/>00245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;index=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(bit_size-i-1).select(bit,index);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00246"/>00246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00247"/>00247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;index;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00248"/>00248 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00249"/>00249 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00250"/>00250 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;で最大のインデックスを返す</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00251"/>00251 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log&#32;σ)</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00252"/><link linkend="_struct_wavelet_matrix_1a6bc748ebdfcaecf9b5c8659287989390">00252</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1a6bc748ebdfcaecf9b5c8659287989390">ull</link>&#32;<link linkend="_struct_wavelet_matrix_1a6bc748ebdfcaecf9b5c8659287989390">max_range</link>(ull&#32;begin_pos,ull&#32;end_pos)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00253"/>00253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;quantile_range(begin_pos,end_pos,end_pos-begin_pos-1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00254"/>00254 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00255"/>00255 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00256"/>00256 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;で最小のインデックスを返す</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00257"/>00257 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log&#32;σ)</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00258"/><link linkend="_struct_wavelet_matrix_1a928a5cdef4bbb6e505ccc3cd868bb00a">00258</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1a928a5cdef4bbb6e505ccc3cd868bb00a">ull</link>&#32;<link linkend="_struct_wavelet_matrix_1a928a5cdef4bbb6e505ccc3cd868bb00a">min_range</link>(ull&#32;begin_pos,ull&#32;end_pos)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00259"/>00259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;quantile_range(begin_pos,end_pos,0);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00260"/>00260 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00261"/>00261 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00262"/>00262 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;で&#32;k&#32;番目に小さい値のインデックスを返す</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00263"/>00263 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;k&#32;は&#32;0-indexed</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00264"/>00264 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log&#32;σ)</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00265"/><link linkend="_struct_wavelet_matrix_1a32c9df866b15491fe51cbbda0378b614">00265</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1a32c9df866b15491fe51cbbda0378b614">ull</link>&#32;<link linkend="_struct_wavelet_matrix_1a32c9df866b15491fe51cbbda0378b614">quantile_range</link>(ull&#32;begin_pos,ull&#32;end_pos,ull&#32;k)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00266"/>00266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>((end_pos&gt;size||begin_pos&gt;=end_pos)||(k&gt;=end_pos-begin_pos))<emphasis role="keywordflow">return</emphasis>&#32;NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00267"/>00267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;val=0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00268"/>00268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ull&#32;i=0;i&lt;bit_size;++i)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00269"/>00269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;num_of_zero_begin=bit_arrays.at(i).rank(0,begin_pos);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00270"/>00270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;num_of_zero_end=bit_arrays.at(i).rank(0,end_pos);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00271"/>00271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;num_of_zero=num_of_zero_end-num_of_zero_begin;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00272"/>00272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;bit=(k&lt;num_of_zero)?0:1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00273"/>00273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00274"/>00274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;k-=num_of_zero;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00275"/>00275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;begin_pos=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(i)+begin_pos-num_of_zero_begin;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00276"/>00276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;end_pos=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(i)+end_pos-num_of_zero_end;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00277"/>00277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00278"/>00278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;begin_pos=num_of_zero_begin;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00279"/>00279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;end_pos=num_of_zero_begin+num_of_zero;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00280"/>00280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00281"/>00281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;val=((val&lt;&lt;1)|bit);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00282"/>00282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00283"/>00283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;left=0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00284"/>00284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ull&#32;i=0;i&lt;bit_size;++i)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00285"/>00285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;bit=(val&gt;&gt;(bit_size-i-1))&amp;1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00286"/>00286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;left=bit_arrays.at(i).rank(bit,left);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00287"/>00287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit)left+=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(i);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00288"/>00288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00289"/>00289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank=begin_pos+k-left+1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00290"/>00290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;select(val,rank)-1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00291"/>00291 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00292"/>00292 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00293"/>00293 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[0,&#32;pos)&#32;の&#32;c&#32;の数&#32;&#32;&#32;</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00294"/>00294 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log&#32;σ)</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00295"/><link linkend="_struct_wavelet_matrix_1ab6da004ddc73ce3283c091c306832688">00295</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1ab6da004ddc73ce3283c091c306832688">ull</link>&#32;<link linkend="_struct_wavelet_matrix_1ab6da004ddc73ce3283c091c306832688">rank</link>(ull&#32;c,ull&#32;pos)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00296"/>00296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(pos&lt;size);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00297"/>00297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(c&gt;=maximum_element)<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00298"/>00298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">this</emphasis>-&gt;begin_alphabet.find(c)==<emphasis role="keyword">this</emphasis>-&gt;begin_alphabet.end())<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00299"/>00299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ull&#32;i=0;i&lt;bit_size;++i)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00300"/>00300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;bit=(c&gt;&gt;(bit_size-i-1))&amp;1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00301"/>00301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pos=bit_arrays.at(i).rank(bit,pos);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00302"/>00302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit)pos+=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(i);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00303"/>00303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00304"/>00304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;begin_pos=<emphasis role="keyword">this</emphasis>-&gt;begin_alphabet.at(c);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00305"/>00305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;pos-begin_pos;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00306"/>00306 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00307"/>00307 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00308"/>00308 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;の&#32;[min_c,&#32;max_c)&#32;に入る値の個数</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00309"/>00309 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log&#32;σ)</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00310"/><link linkend="_struct_wavelet_matrix_1a13f19575cd1606bc3f4bb631276a4c4f">00310</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1a13f19575cd1606bc3f4bb631276a4c4f">ull</link>&#32;<link linkend="_struct_wavelet_matrix_1a13f19575cd1606bc3f4bb631276a4c4f">range_freq</link>(ull&#32;begin_pos,ull&#32;end_pos,ull&#32;min_c,ull&#32;max_c)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00311"/>00311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>((end_pos&gt;size||begin_pos&gt;=end_pos)||(min_c&gt;=max_c)||min_c&gt;=maximum_element)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00312"/>00312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00313"/>00313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00314"/>00314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;maxi_t=rank_all(max_c,begin_pos,end_pos);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00315"/>00315 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;mini_t=rank_all(min_c,begin_pos,end_pos);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00316"/>00316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;get&lt;1&gt;(maxi_t)-get&lt;1&gt;(mini_t);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00317"/>00317 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00318"/>00318 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00319"/>00319 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;の&#32;c&#32;より小さい値の数</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00320"/>00320 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log&#32;σ)</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00321"/><link linkend="_struct_wavelet_matrix_1ac307c703867bfbc709256f78167484b3">00321</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1ac307c703867bfbc709256f78167484b3">ull</link>&#32;<link linkend="_struct_wavelet_matrix_1ac307c703867bfbc709256f78167484b3">rank_less_than</link>(ull&#32;c,ull&#32;begin,ull&#32;end)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00322"/>00322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;t=rank_all(c,begin,end);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00323"/>00323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;get&lt;1&gt;(t);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00324"/>00324 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00325"/>00325 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00326"/>00326 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;の&#32;c&#32;より大きい値の数</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00327"/>00327 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log&#32;σ)</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00328"/><link linkend="_struct_wavelet_matrix_1a139b3097b57944221f74b2e76748df10">00328</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1a139b3097b57944221f74b2e76748df10">ull</link>&#32;<link linkend="_struct_wavelet_matrix_1a139b3097b57944221f74b2e76748df10">rank_more_than</link>(ull&#32;c,ull&#32;begin,ull&#32;end)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00329"/>00329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;t=rank_all(c,begin,end);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00330"/>00330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;get&lt;2&gt;(t);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00331"/>00331 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00332"/>00332 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00333"/>00333 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;の&#32;(c&#32;と同じ値の数,&#32;c&#32;より小さい値の数,&#32;c&#32;より大きい値の数)</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00334"/>00334 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log&#32;σ)</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00335"/><link linkend="_struct_wavelet_matrix_1aa4e70eeb91a042f7bd8cb723f46c5bbe">00335</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1aa4e70eeb91a042f7bd8cb723f46c5bbe">tuple</link>&lt;<link linkend="_struct_wavelet_matrix_1aa4e70eeb91a042f7bd8cb723f46c5bbe">ull</link>,<link linkend="_struct_wavelet_matrix_1aa4e70eeb91a042f7bd8cb723f46c5bbe">ull</link>,<link linkend="_struct_wavelet_matrix_1aa4e70eeb91a042f7bd8cb723f46c5bbe">ull</link>&gt;<link linkend="_struct_wavelet_matrix_1aa4e70eeb91a042f7bd8cb723f46c5bbe">rank_all</link>(<emphasis role="keyword">const</emphasis>&#32;ull&#32;c,ull&#32;begin,ull&#32;end)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00336"/>00336 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(end&lt;=size);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00337"/>00337 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;num=end-begin;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00338"/>00338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(begin&gt;=end)<emphasis role="keywordflow">return</emphasis>&#32;make_tuple(0,0,0);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00339"/>00339 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(c&gt;=maximum_element||end==0)<emphasis role="keywordflow">return</emphasis>&#32;make_tuple(0,num,0);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00340"/>00340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;rank_less_than=0,rank_more_than=0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00341"/>00341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(size_t&#32;i=0;i&lt;bit_size&amp;&amp;begin&lt;end;++i)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00342"/>00342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;bit=(c&gt;&gt;(bit_size-i-1))&amp;1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00343"/>00343 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank0_begin=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(i).rank(0,begin);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00344"/>00344 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank0_end=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(i).rank(0,end);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00345"/>00345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank1_begin=begin-rank0_begin;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00346"/>00346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank1_end=end-rank0_end;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00347"/>00347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(bit)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00348"/>00348 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rank_less_than+=(rank0_end-rank0_begin);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00349"/>00349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;begin=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(i)+rank1_begin;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00350"/>00350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;end=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(i)+rank1_end;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00351"/>00351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00352"/>00352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rank_more_than+=(rank1_end-rank1_begin);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00353"/>00353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;begin=rank0_begin;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00354"/>00354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;end=rank0_end;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00355"/>00355 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00356"/>00356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00357"/>00357 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank=num-rank_less_than-rank_more_than;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00358"/>00358 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;make_tuple(rank,rank_less_than,rank_more_than);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00359"/>00359 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00360"/>00360 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00361"/>00361 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;で出現回数が多い順に&#32;k&#32;個の&#32;(値,&#32;頻度)&#32;を返す</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00362"/>00362 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log&#32;σ)</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00363"/><link linkend="_struct_wavelet_matrix_1a384b3825c4706d9979fa468ae6fc81d8">00363</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1a384b3825c4706d9979fa468ae6fc81d8">vector</link>&lt;<link linkend="_struct_wavelet_matrix_1a384b3825c4706d9979fa468ae6fc81d8">pair</link>&lt;<link linkend="_struct_wavelet_matrix_1a384b3825c4706d9979fa468ae6fc81d8">ull</link>,<link linkend="_struct_wavelet_matrix_1a384b3825c4706d9979fa468ae6fc81d8">ull</link>&gt;&gt;<link linkend="_struct_wavelet_matrix_1a384b3825c4706d9979fa468ae6fc81d8">topk</link>(ull&#32;begin,ull&#32;end,ull&#32;k)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00364"/>00364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;s=begin,e=end;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00365"/>00365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(s&lt;e);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00366"/>00366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;pair&lt;ull,ull&gt;&gt;result;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00367"/>00367 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;c=[](<emphasis role="keyword">const</emphasis>&#32;tuple&lt;ull,ull,ull,ull,ull&gt;&amp;l,<emphasis role="keyword">const</emphasis>&#32;tuple&lt;ull,ull,ull,ull,ull&gt;&amp;r)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00368"/>00368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(get&lt;0&gt;(l)!=get&lt;0&gt;(r))<emphasis role="keywordflow">return</emphasis>&#32;get&lt;0&gt;(l)&lt;get&lt;0&gt;(r);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00369"/>00369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(get&lt;3&gt;(l)!=get&lt;3&gt;(r))<emphasis role="keywordflow">return</emphasis>&#32;get&lt;3&gt;(l)&gt;get&lt;3&gt;(r);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00370"/>00370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(get&lt;4&gt;(l)!=get&lt;4&gt;(r))<emphasis role="keywordflow">return</emphasis>&#32;get&lt;4&gt;(l)&gt;get&lt;4&gt;(r);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00371"/>00371 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00372"/>00372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00373"/>00373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;priority_queue&lt;tuple&lt;ull,ull,ull,ull,ull&gt;,vector&lt;tuple&lt;ull,ull,ull,ull,ull&gt;&gt;,<emphasis role="keyword">decltype</emphasis>(c)&gt;que(c);<emphasis role="comment">//width,left,right,depth,value</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00374"/>00374 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;que.push(make_tuple(e-s,s,e,0,0));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00375"/>00375 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(<emphasis role="keyword">not</emphasis>&#32;que.empty())&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00376"/>00376 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;element=que.top();
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00377"/>00377 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;que.pop();
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00378"/>00378 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;width,left,right,depth,value;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00379"/>00379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tie(width,left,right,depth,value)=element;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00380"/>00380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(depth&gt;=<emphasis role="keyword">this</emphasis>-&gt;bit_size)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00381"/>00381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result.emplace_back(make_pair(value,right-left));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00382"/>00382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(result.size()&gt;=k)<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00383"/>00383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">continue</emphasis>;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00384"/>00384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00385"/>00385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;left0=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(0,left);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00386"/>00386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;right0=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(0,right);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00387"/>00387 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(left0&lt;right0)que.push(make_tuple(right0-left0,left0,right0,depth+1,value));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00388"/>00388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;left1=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(depth)+<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(1,left);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00389"/>00389 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;right1=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(depth)+<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(1,right);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00390"/>00390 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(left1&lt;right1)que.push(make_tuple(right1-left1,left1,right1,depth+1,value|(1&lt;&lt;(bit_size-depth-1))));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00391"/>00391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00392"/>00392 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;result;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00393"/>00393 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00394"/>00394 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00395"/>00395 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;で&#32;[x,&#32;y)&#32;に入る値の総和</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00396"/>00396 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log&#32;σ)</emphasis>
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00397"/><link linkend="_struct_wavelet_matrix_1a1e85b0b321d873479991f2f2bfee863f">00397</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1a1e85b0b321d873479991f2f2bfee863f">ull</link>&#32;<link linkend="_struct_wavelet_matrix_1a1e85b0b321d873479991f2f2bfee863f">range_sum</link>(<emphasis role="keyword">const</emphasis>&#32;ull&#32;begin,<emphasis role="keyword">const</emphasis>&#32;ull&#32;end,<emphasis role="keyword">const</emphasis>&#32;ull&#32;x,<emphasis role="keyword">const</emphasis>&#32;ull&#32;y)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00398"/>00398 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;range_sum(begin,end,0,0,x,y);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00399"/>00399 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00400"/>00400 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00401"/><link linkend="_struct_wavelet_matrix_1aca169731a469969acb7685e9f338172a">00401</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1aca169731a469969acb7685e9f338172a">ull</link>&#32;<link linkend="_struct_wavelet_matrix_1aca169731a469969acb7685e9f338172a">prev_value</link>(<emphasis role="keyword">const</emphasis>&#32;ull&#32;begin_pos,<emphasis role="keyword">const</emphasis>&#32;ull&#32;end_pos,<emphasis role="keyword">const</emphasis>&#32;ull&#32;x,ull&#32;y)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00402"/>00402 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(end_pos&lt;=size);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00403"/>00403 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(x&gt;=y&#32;<emphasis role="keyword">or</emphasis>&#32;y==0)<emphasis role="keywordflow">return</emphasis>&#32;NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00404"/>00404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(y&gt;maximum_element)y=maximum_element;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00405"/>00405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(begin_pos&gt;=end_pos)<emphasis role="keywordflow">return</emphasis>&#32;NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00406"/>00406 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(x&gt;=maximum_element||end_pos==0)<emphasis role="keywordflow">return</emphasis>&#32;NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00407"/>00407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y--;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00408"/>00408 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;stack&lt;tuple&lt;ull,ull,ull,ull,<emphasis role="keywordtype">bool</emphasis>&gt;&gt;s;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00409"/>00409 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s.emplace(make_tuple(begin_pos,end_pos,0,0,<emphasis role="keyword">true</emphasis>));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00410"/>00410 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(<emphasis role="keyword">not</emphasis>&#32;s.empty())&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00411"/>00411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;b,e,depth,c;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00412"/>00412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;tight;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00413"/>00413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tie(b,e,depth,c,tight)=s.top();
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00414"/>00414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s.pop();
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00415"/>00415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(depth==bit_size)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00416"/>00416 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(c&gt;=x)<emphasis role="keywordflow">return</emphasis>&#32;c;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00417"/>00417 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">continue</emphasis>;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00418"/>00418 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00419"/>00419 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;bit=(y&gt;&gt;(bit_size-depth-1))&amp;1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00420"/>00420 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank0_begin=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(0,b);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00421"/>00421 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank0_end=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(0,e);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00422"/>00422 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank1_begin=b-rank0_begin;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00423"/>00423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank1_end=e-rank0_end;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00424"/>00424 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;b0=rank0_begin;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00425"/>00425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;e0=rank0_end;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00426"/>00426 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(b0!=e0)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00427"/>00427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;c0=((c&lt;&lt;1)|0);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00428"/>00428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s.emplace(make_tuple(b0,e0,depth+1,c0,tight&#32;<emphasis role="keyword">and</emphasis>&#32;bit==0));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00429"/>00429 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00430"/>00430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;b1=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(depth)+rank1_begin;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00431"/>00431 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;e1=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(depth)+rank1_end;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00432"/>00432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(b1!=e1)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00433"/>00433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">not</emphasis>&#32;tight&#32;<emphasis role="keyword">or</emphasis>&#32;bit==1)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00434"/>00434 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;c1=((c&lt;&lt;1)|1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00435"/>00435 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s.emplace(make_tuple(b1,e1,depth+1,c1,tight));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00436"/>00436 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00437"/>00437 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00438"/>00438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00439"/>00439 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00440"/>00440 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00441"/><link linkend="_struct_wavelet_matrix_1a50331fad103e7d41e3183888cf89c0c9">00441</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1a50331fad103e7d41e3183888cf89c0c9">ull</link>&#32;<link linkend="_struct_wavelet_matrix_1a50331fad103e7d41e3183888cf89c0c9">next_value</link>(<emphasis role="keyword">const</emphasis>&#32;ull&#32;begin_pos,<emphasis role="keyword">const</emphasis>&#32;ull&#32;end_pos,<emphasis role="keyword">const</emphasis>&#32;ull&#32;x,<emphasis role="keyword">const</emphasis>&#32;ull&#32;y)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00442"/>00442 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(end_pos&lt;=size);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00443"/>00443 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(x&gt;=y&#32;<emphasis role="keyword">or</emphasis>&#32;y==0)<emphasis role="keywordflow">return</emphasis>&#32;NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00444"/>00444 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(begin_pos&gt;=end_pos)<emphasis role="keywordflow">return</emphasis>&#32;NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00445"/>00445 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(x&gt;=maximum_element||end_pos==0)<emphasis role="keywordflow">return</emphasis>&#32;NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00446"/>00446 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;stack&lt;tuple&lt;ull,ull,ull,ull,<emphasis role="keywordtype">bool</emphasis>&gt;&gt;s;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00447"/>00447 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s.emplace(make_tuple(begin_pos,end_pos,0,0,<emphasis role="keyword">true</emphasis>));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00448"/>00448 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(<emphasis role="keyword">not</emphasis>&#32;s.empty())&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00449"/>00449 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;b,e,depth,c;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00450"/>00450 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;tight;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00451"/>00451 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tie(b,e,depth,c,tight)=s.top();
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00452"/>00452 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s.pop();
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00453"/>00453 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(depth==bit_size)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00454"/>00454 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(c&lt;y)<emphasis role="keywordflow">return</emphasis>&#32;c;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00455"/>00455 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">continue</emphasis>;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00456"/>00456 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00457"/>00457 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;bit=(x&gt;&gt;(bit_size-depth-1))&amp;1;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00458"/>00458 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank0_begin=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(0,b);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00459"/>00459 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank0_end=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(0,e);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00460"/>00460 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank1_begin=b-rank0_begin;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00461"/>00461 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank1_end=e-rank0_end;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00462"/>00462 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;b1=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(depth)+rank1_begin;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00463"/>00463 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;e1=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(depth)+rank1_end;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00464"/>00464 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(b1!=e1)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00465"/>00465 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;c1=((c&lt;&lt;1)|1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00466"/>00466 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s.emplace(make_tuple(b1,e1,depth+1,c1,tight&#32;<emphasis role="keyword">and</emphasis>&#32;bit==1));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00467"/>00467 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00468"/>00468 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;b0=rank0_begin;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00469"/>00469 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;e0=rank0_end;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00470"/>00470 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(b0!=e0)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00471"/>00471 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">not</emphasis>&#32;tight&#32;<emphasis role="keyword">or</emphasis>&#32;bit==0)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00472"/>00472 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;c0=((c&lt;&lt;1)|0);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00473"/>00473 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s.emplace(make_tuple(b0,e0,depth+1,c0,tight));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00474"/>00474 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00475"/>00475 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00476"/>00476 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00477"/>00477 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;NOTFOUND;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00478"/>00478 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00479"/><link linkend="_struct_wavelet_matrix_1a0aa4dc733c0b2ddaaae4fa274fc739a9">00479</link> &#32;&#32;&#32;&#32;<link linkend="_struct_wavelet_matrix_1a0aa4dc733c0b2ddaaae4fa274fc739a9">vector</link>&lt;<link linkend="_struct_wavelet_matrix_1a0aa4dc733c0b2ddaaae4fa274fc739a9">tuple</link>&lt;<link linkend="_struct_wavelet_matrix_1a0aa4dc733c0b2ddaaae4fa274fc739a9">ull</link>,<link linkend="_struct_wavelet_matrix_1a0aa4dc733c0b2ddaaae4fa274fc739a9">ull</link>,<link linkend="_struct_wavelet_matrix_1a0aa4dc733c0b2ddaaae4fa274fc739a9">ull</link>&gt;&gt;<link linkend="_struct_wavelet_matrix_1a0aa4dc733c0b2ddaaae4fa274fc739a9">intersect</link>(ull&#32;_s1,ull&#32;_e1,ull&#32;_s2,ull&#32;_e2)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00480"/>00480 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(_s1&lt;_e1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00481"/>00481 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(_s2&lt;_e2);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00482"/>00482 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;tuple&lt;ull,ull,ull&gt;&gt;intersection;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00483"/>00483 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queue&lt;tuple&lt;ull,ull,ull,ull,ull,ull&gt;&gt;que;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00484"/>00484 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;que.push(make_tuple(_s1,_e1,_s2,_e2,0,0));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00485"/>00485 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(<emphasis role="keyword">not</emphasis>&#32;que.empty())&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00486"/>00486 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;e=que.front();
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00487"/>00487 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;que.pop();
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00488"/>00488 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;s1,e1,s2,e2,depth,value;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00489"/>00489 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tie(s1,e1,s2,e2,depth,value)=e;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00490"/>00490 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(depth&gt;=<emphasis role="keyword">this</emphasis>-&gt;bit_size)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00491"/>00491 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;intersection.emplace_back(make_tuple(value,e1-s1,e2-s2));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00492"/>00492 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">continue</emphasis>;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00493"/>00493 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00494"/>00494 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;s1_0=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(0,s1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00495"/>00495 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;e1_0=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(0,e1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00496"/>00496 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;s2_0=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(0,s2);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00497"/>00497 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;e2_0=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(0,e2);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00498"/>00498 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(s1_0!=e1_0&#32;<emphasis role="keyword">and</emphasis>&#32;s2_0!=e2_0)que.push(make_tuple(s1_0,e1_0,s2_0,e2_0,depth+1,value));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00499"/>00499 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;s1_1=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(depth)+<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(1,s1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00500"/>00500 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;e1_1=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(depth)+<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(1,e1);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00501"/>00501 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;s2_1=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(depth)+<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(1,s2);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00502"/>00502 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;e2_1=<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(depth)+<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(1,e2);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00503"/>00503 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(s1_1!=e1_1&#32;<emphasis role="keyword">and</emphasis>&#32;s2_1!=e2_1)que.push(make_tuple(s1_1,e1_1,s2_1,e2_1,depth+1,value|(1&lt;&lt;(bit_size-depth-1))));
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00504"/>00504 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00505"/>00505 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;intersection;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00506"/>00506 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00507"/>00507 
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00508"/>00508 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00509"/>00509 &#32;&#32;&#32;&#32;ull&#32;get_num_of_bit(ull&#32;x)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00510"/>00510 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(x==0)<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00511"/>00511 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x--;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00512"/>00512 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ull&#32;bit_num=0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00513"/>00513 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(x&gt;&gt;bit_num)++bit_num;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00514"/>00514 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;bit_num;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00515"/>00515 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00516"/>00516 &#32;&#32;&#32;&#32;ull&#32;range_sum(<emphasis role="keyword">const</emphasis>&#32;ull&#32;begin,&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;end,&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;depth,&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;c,&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;x,&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;y)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00517"/>00517 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(begin==end)<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00518"/>00518 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(depth==bit_size)&#32;{
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00519"/>00519 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(x&lt;=c&#32;<emphasis role="keyword">and</emphasis>&#32;c&lt;y)&#32;<emphasis role="keywordflow">return</emphasis>&#32;c*(end-begin);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00520"/>00520 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00521"/>00521 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00522"/>00522 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;next_c=((ull)1&lt;&lt;(bit_size-depth-1))|c;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00523"/>00523 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;all_one_c=(((ull)1&lt;&lt;(bit_size-depth-1))-1)|next_c;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00524"/>00524 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(all_one_c&lt;x&#32;<emphasis role="keyword">or</emphasis>&#32;y&lt;=c)<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00525"/>00525 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(x&lt;=c&#32;<emphasis role="keyword">and</emphasis>&#32;all_one_c&lt;y)&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">this</emphasis>-&gt;cumulative_sum.at(depth).at(end)-<emphasis role="keyword">this</emphasis>-&gt;cumulative_sum.at(depth).at(begin);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00526"/>00526 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank0_begin=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(0,begin);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00527"/>00527 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank0_end=<emphasis role="keyword">this</emphasis>-&gt;bit_arrays.at(depth).rank(0,end);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00528"/>00528 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank1_begin=begin-rank0_begin;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00529"/>00529 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;ull&#32;rank1_end=end-rank0_end;
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00530"/>00530 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;range_sum(rank0_begin,rank0_end,depth+1,c,x,y)+range_sum(<emphasis role="keyword">this</emphasis>-&gt;begin_one.at(depth)+rank1_begin,<emphasis role="keyword">this</emphasis>-&gt;begin_one[depth]+rank1_end,depth+1,next_c,x,y);
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00531"/>00531 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_wavelet__matrix_8hpp_source_1l00532"/>00532 };
+</programlisting></section>

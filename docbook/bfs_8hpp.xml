@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_bfs_8hpp" xml:lang="ja">
+<title>graph/shortest_path/bfs.hpp ファイル</title>
+<indexterm><primary>graph/shortest_path/bfs.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> <link linkend="_bfs_8hpp_1a640c64414ac3359a9bfee2d11d83962a">BFS</link> (const <link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> &amp;g, int start=0)</para>
+
+<para>重みなしグラフ g の頂点 start からの最短距離を求める </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_bfs_8hpp_1a640c64414ac3359a9bfee2d11d83962a"/><section>
+    <title>BFS()</title>
+<indexterm><primary>BFS</primary><secondary>bfs.hpp</secondary></indexterm>
+<indexterm><primary>bfs.hpp</primary><secondary>BFS</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> BFS (const <link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> &amp; g, int start = <computeroutput>0</computeroutput>
+)</computeroutput></para><para>
+
+<para>重みなしグラフ g の頂点 start からの最短距離を求める </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(E+V) </para>
+</note>
+</para>
+<para>
+ <link linkend="_bfs_8hpp_source">bfs.hpp</link> の <link linkend="_bfs_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_template_8hpp_source_1l00015">INF</link>.</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_segtree__dynamic_8hpp" xml:lang="ja">
+<title>data_structure/segtree_dynamic.hpp ファイル</title>
+<indexterm><primary>data_structure/segtree_dynamic.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/others/monoid.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_seg_tree_dynamic">SegTreeDynamic&lt; Monoid &gt;</link></para>
+
+<para>動的セグ木 </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_seg_tree_dynamic_1_1_node">SegTreeDynamic&lt; Monoid &gt;::Node</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_range_query_1_1_min_dynamic">RangeQuery::MinDynamic&lt; T, max_value &gt;</link></para>
+
+<para>1点変更 / 区間 min </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_range_query_1_1_max_dynamic">RangeQuery::MaxDynamic&lt; T, min_value &gt;</link></para>
+
+<para>1点変更 / 区間 max </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_range_query_1_1_sum_dynamic">RangeQuery::SumDynamic&lt; T &gt;</link></para>
+
+<para>1点変更 / 区間和 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>名前空間    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_range_query">RangeQuery</link></para>
+
+<para>区間クエリ </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

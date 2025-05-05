@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_xor__convolution_8hpp" xml:lang="ja">
+<title>math/xor_convolution.hpp ファイル</title>
+<indexterm><primary>math/xor_convolution.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename T&gt; </para><para>void <link linkend="_xor__convolution_8hpp_1a2172face1088ecec4509579a02feedd9">FHT</link> (vector&lt; T &gt; &amp;a, bool inv=false)</para>
+
+<para>高速アダマール変換 </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; T &gt; <link linkend="_xor__convolution_8hpp_1a791b5a55ef2207220b3bf2ce44ff80bc">XorConvolution</link> (vector&lt; T &gt; a, vector&lt; T &gt; b)</para>
+
+<para>XOR Convolution </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_xor__convolution_8hpp_1a2172face1088ecec4509579a02feedd9"/><section>
+    <title>FHT()</title>
+<indexterm><primary>FHT</primary><secondary>xor_convolution.hpp</secondary></indexterm>
+<indexterm><primary>xor_convolution.hpp</primary><secondary>FHT</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>void FHT (vector&lt; T &gt; &amp; a, bool inv = <computeroutput>false</computeroutput>
+)</computeroutput></para><para>
+
+<para>高速アダマール変換 </para>
+</para>
+<para>
+ <link linkend="_xor__convolution_8hpp_source">xor_convolution.hpp</link> の <link linkend="_xor__convolution_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_xor__convolution_8hpp_1a791b5a55ef2207220b3bf2ce44ff80bc"/><section>
+    <title>XorConvolution()</title>
+<indexterm><primary>XorConvolution</primary><secondary>xor_convolution.hpp</secondary></indexterm>
+<indexterm><primary>xor_convolution.hpp</primary><secondary>XorConvolution</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; T &gt; XorConvolution (vector&lt; T &gt; a, vector&lt; T &gt; b)</computeroutput></para><para>
+
+<para>XOR Convolution </para>
+</para>
+
+<para>C[k] = Σ(i^j = k) A[i]B[j] なる C を返す <note><title>覚え書き</title>
+
+<para>O(n log(n)) </para>
+</note>
+</para>
+<para>
+ <link linkend="_xor__convolution_8hpp_source">xor_convolution.hpp</link> の <link linkend="_xor__convolution_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

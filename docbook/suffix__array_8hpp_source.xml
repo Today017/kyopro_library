@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_suffix__array_8hpp_source" xml:lang="ja">
+<title>suffix_array.hpp</title>
+<indexterm><primary>string/suffix_array.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_suffix__array_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">pragma</emphasis>&#32;<emphasis role="preprocessor">once</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00002"/>00002 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00003"/>00003 
+<anchor xml:id="_suffix__array_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;Suffix&#32;Array</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@brief&#32;`sa[i]&#32;=&#32;j&#32;&lt;-&gt;&#32;s[j:]&#32;が辞書順&#32;i&#32;番目`</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00006"/>00006 <emphasis role="comment">///&#32;@brief&#32;O(n&#32;log(n))</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00007"/>00007 <emphasis role="comment">///&#32;@ref&#32;https://wk1080id.hatenablog.com/entry/2018/12/25/005926</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00008"/>00008 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keywordtype">int</emphasis>&#32;C=256&gt;
+<anchor xml:id="_suffix__array_8hpp_source_1l00009"/><link linkend="_suffix__array_8hpp_1ac1be72293193624f6db6b85912e49462">00009</link> <link linkend="_suffix__array_8hpp_1ac1be72293193624f6db6b85912e49462">VI</link>&#32;<link linkend="_suffix__array_8hpp_1ac1be72293193624f6db6b85912e49462">SuffixArray</link>(string&#32;s)&#32;{
+<anchor xml:id="_suffix__array_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;s.push_back(<emphasis role="stringliteral">&apos;$&apos;</emphasis>);
+<anchor xml:id="_suffix__array_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n=s.size();
+<anchor xml:id="_suffix__array_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;VI&#32;p(n),&#32;c(n),&#32;cnt(max(n,C),0);
+<anchor xml:id="_suffix__array_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;<emphasis role="comment">//p[i]&#32;:=&#32;辞書順&#32;i&#32;番目のインデックス</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<emphasis role="comment">//c[i]&#32;:=&#32;インデックス&#32;i&#32;の部分文字列の同値類</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00015"/>00015 
+<anchor xml:id="_suffix__array_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<emphasis role="comment">//2^0,2^1,...,2^k,...&#32;をやる</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="comment">//k=0</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;cnt[s[i]]++;
+<anchor xml:id="_suffix__array_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7">FOR</link>(i,1,cnt.size())&#32;cnt[i]+=cnt[i-1];
+<anchor xml:id="_suffix__array_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="comment">//辞書順&#32;=&#32;累積和の小さい順&#32;になる</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;p[--cnt[s[i]]]=i;
+<anchor xml:id="_suffix__array_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;<emphasis role="comment">//同値類を計算する</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;c[p[0]]=0;
+<anchor xml:id="_suffix__array_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7">FOR</link>(i,1,n)&#32;{
+<anchor xml:id="_suffix__array_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;c[p[i]]=c[p[i-1]];
+<anchor xml:id="_suffix__array_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(s[p[i]]!=s[p[i-1]])&#32;c[p[i]]++;
+<anchor xml:id="_suffix__array_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_suffix__array_8hpp_source_1l00028"/>00028 
+<anchor xml:id="_suffix__array_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;VI&#32;np(n),nc(n);
+<anchor xml:id="_suffix__array_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;k=0;&#32;(1&lt;&lt;k)&lt;n;&#32;k++)&#32;{
+<anchor xml:id="_suffix__array_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//k&#32;を使って、(c[i],c[i+2^k])&#32;でソート、&#32;p[i]-=2^k&#32;でできる</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//c[i+2^k]&#32;でソート</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;np[i]=p[i]-(1&lt;&lt;k),(np[i]+=n)%=n;
+<anchor xml:id="_suffix__array_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fill(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(cnt),0);
+<anchor xml:id="_suffix__array_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;cnt[c[np[i]]]++;
+<anchor xml:id="_suffix__array_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7">FOR</link>(i,1,cnt.size())&#32;cnt[i]+=cnt[i-1];
+<anchor xml:id="_suffix__array_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7">FOR</link>(i,n-1,-1)&#32;p[--cnt[c[np[i]]]]=np[i];
+<anchor xml:id="_suffix__array_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//同値類</emphasis>
+<anchor xml:id="_suffix__array_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;nc[p[0]]=0;
+<anchor xml:id="_suffix__array_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7">FOR</link>(i,1,n)&#32;{
+<anchor xml:id="_suffix__array_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;nc[p[i]]=nc[p[i-1]];
+<anchor xml:id="_suffix__array_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(c[p[i]]!=c[p[i-1]]&#32;||&#32;c[(p[i]+(1&lt;&lt;k))%n]!=c[(p[i-1]+(1&lt;&lt;k))%n])&#32;nc[p[i]]++;
+<anchor xml:id="_suffix__array_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_suffix__array_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;swap(c,nc);
+<anchor xml:id="_suffix__array_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_suffix__array_8hpp_source_1l00046"/>00046 
+<anchor xml:id="_suffix__array_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;p.erase(p.begin());
+<anchor xml:id="_suffix__array_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;p;
+<anchor xml:id="_suffix__array_8hpp_source_1l00049"/>00049 }
+</programlisting></section>

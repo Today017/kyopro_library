@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_timer_8hpp_source" xml:lang="ja">
+<title>timer.hpp</title>
+<indexterm><primary>others/timer.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_timer_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">pragma</emphasis>&#32;<emphasis role="preprocessor">once</emphasis>
+<anchor xml:id="_timer_8hpp_source_1l00002"/>00002 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_timer_8hpp_source_1l00003"/>00003 
+<anchor xml:id="_timer_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;タイマー</emphasis>
+<anchor xml:id="_timer_8hpp_source_1l00005"/><link linkend="_struct_timer">00005</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_timer">Timer</link>&#32;{
+<anchor xml:id="_timer_8hpp_source_1l00006"/><link linkend="_struct_timer_1a5e945928273aa26d4d1f86f01337e510">00006</link> &#32;&#32;&#32;&#32;<link linkend="_struct_timer_1a5e945928273aa26d4d1f86f01337e510">Timer</link>(ll&#32;time_limit_msec=5000)&#32;{
+<anchor xml:id="_timer_8hpp_source_1l00007"/>00007 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;start=chrono::high_resolution_clock::now();
+<anchor xml:id="_timer_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;time_limit=start+chrono::milliseconds(time_limit_msec);
+<anchor xml:id="_timer_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_timer_8hpp_source_1l00010"/>00010 
+<anchor xml:id="_timer_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;今の時間&#32;msec&#32;を返す</emphasis>
+<anchor xml:id="_timer_8hpp_source_1l00012"/><link linkend="_struct_timer_1a5c3f4e738e89aa4731317ecd41211cec">00012</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;ll&#32;<link linkend="_struct_timer_1a5c3f4e738e89aa4731317ecd41211cec">get</link>()&#32;<emphasis role="keyword">const</emphasis>&#32;{
+<anchor xml:id="_timer_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;now=chrono::high_resolution_clock::now();
+<anchor xml:id="_timer_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;chrono::duration_cast&lt;chrono::milliseconds&gt;(now-start).count();
+<anchor xml:id="_timer_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_timer_8hpp_source_1l00016"/>00016 
+<anchor xml:id="_timer_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;今が制限時間内であるかを返す</emphasis>
+<anchor xml:id="_timer_8hpp_source_1l00018"/><link linkend="_struct_timer_1a6cacc7853a92453b3c0d2814f6122cc5">00018</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_timer_1a6cacc7853a92453b3c0d2814f6122cc5">check</link>()&#32;<emphasis role="keyword">const</emphasis>&#32;{
+<anchor xml:id="_timer_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;chrono::high_resolution_clock::now()&lt;time_limit;
+<anchor xml:id="_timer_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_timer_8hpp_source_1l00021"/>00021 
+<anchor xml:id="_timer_8hpp_source_1l00022"/>00022 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_timer_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;chrono::high_resolution_clock::time_point&#32;start;
+<anchor xml:id="_timer_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;chrono::high_resolution_clock::time_point&#32;time_limit;
+<anchor xml:id="_timer_8hpp_source_1l00025"/>00025 };
+</programlisting></section>

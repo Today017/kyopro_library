@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_doubling_8hpp_source" xml:lang="ja">
+<title>doubling.hpp</title>
+<indexterm><primary>algorithm/doubling.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_doubling_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_doubling_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_doubling_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;ダブリング</emphasis>
+<anchor xml:id="_doubling_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@param&#32;Log&#32;ダブリングの深さ</emphasis>
+<anchor xml:id="_doubling_8hpp_source_1l00005"/>00005 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keywordtype">int</emphasis>&#32;Log&gt;
+<anchor xml:id="_doubling_8hpp_source_1l00006"/><link linkend="_struct_doubling">00006</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_doubling">Doubling</link>&#32;{
+<anchor xml:id="_doubling_8hpp_source_1l00007"/><link linkend="_struct_doubling_1aad11ee1d4c52c049dd5d984df8a81136">00007</link> &#32;&#32;&#32;&#32;<link linkend="_struct_doubling_1aad11ee1d4c52c049dd5d984df8a81136">Doubling</link>()=<emphasis role="keywordflow">default</emphasis>;
+<anchor xml:id="_doubling_8hpp_source_1l00008"/>00008 
+<anchor xml:id="_doubling_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;コンストラクタ</emphasis>
+<anchor xml:id="_doubling_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@param&#32;v&#32;各頂点からの遷移先</emphasis>
+<anchor xml:id="_doubling_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(N&#32;Log)</emphasis>
+<anchor xml:id="_doubling_8hpp_source_1l00012"/><link linkend="_struct_doubling_1a3f383d5ff3d6047d5f7de54db42596de">00012</link> &#32;&#32;&#32;&#32;<link linkend="_struct_doubling_1a3f383d5ff3d6047d5f7de54db42596de">Doubling</link>(<emphasis role="keyword">const</emphasis>&#32;VI&amp;&#32;v)&#32;{
+<anchor xml:id="_doubling_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n=v.size();
+<anchor xml:id="_doubling_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;nxt.assign(Log+1,VI(n));
+<anchor xml:id="_doubling_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;nxt[0][i]=v[i];
+<anchor xml:id="_doubling_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;nxt[0][i]=v[i];
+<anchor xml:id="_doubling_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,Log)&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(j,n)&#32;nxt[i+1][j]=nxt[i][nxt[i][j]];
+<anchor xml:id="_doubling_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_doubling_8hpp_source_1l00019"/>00019 
+<anchor xml:id="_doubling_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;頂点&#32;start&#32;から&#32;k&#32;回遷移した先の頂点を返す</emphasis>
+<anchor xml:id="_doubling_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(Log)</emphasis>
+<anchor xml:id="_doubling_8hpp_source_1l00022"/><link linkend="_struct_doubling_1a0ba294fda4333aa6d26311da82eae634">00022</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_doubling_1a0ba294fda4333aa6d26311da82eae634">next</link>(<emphasis role="keywordtype">int</emphasis>&#32;start,&#32;ll&#32;k)&#32;{
+<anchor xml:id="_doubling_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;b=0;&#32;k&gt;0;&#32;b++,k&gt;&gt;=1)&#32;<emphasis role="keywordflow">if</emphasis>(k&amp;1)&#32;start=nxt[b][start];
+<anchor xml:id="_doubling_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;start;
+<anchor xml:id="_doubling_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_doubling_8hpp_source_1l00026"/>00026 
+<anchor xml:id="_doubling_8hpp_source_1l00027"/>00027 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_doubling_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;VVI&#32;nxt;
+<anchor xml:id="_doubling_8hpp_source_1l00029"/>00029 };
+</programlisting></section>

@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_offline__dynamic__connectivity_8hpp_source" xml:lang="ja">
+<title>offline_dynamic_connectivity.hpp</title>
+<indexterm><primary>graph/offline_dynamic_connectivity.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00002"/>00002 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/graph/dsu_rollback.hpp&quot;</emphasis>
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00003"/>00003 
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;オフラインのDinamic&#32;Connectivity</emphasis>
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00005"/><link linkend="_struct_dynamic_connectivity">00005</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_dynamic_connectivity">DynamicConnectivity</link>{
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00006"/>00006 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;コンストラクタ</emphasis>
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00007"/>00007 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@param&#32;v&#32;頂点数</emphasis>
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@param&#32;q&#32;クエリ数</emphasis>
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00009"/><link linkend="_struct_dynamic_connectivity_1a770dc53dd142ee82b63cee5dc0989ed4">00009</link> &#32;&#32;&#32;&#32;<link linkend="_struct_dynamic_connectivity_1a770dc53dd142ee82b63cee5dc0989ed4">DynamicConnectivity</link>(<emphasis role="keywordtype">int</emphasis>&#32;v,&#32;<emphasis role="keywordtype">int</emphasis>&#32;q)&#32;{
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;n=q;
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;edges=vector&lt;vector&lt;P&gt;&gt;(2*n);
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dsu=DsuRollback(v);
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00014"/>00014 
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;時間&#32;time&#32;に頂点&#32;u,&#32;v&#32;を連結する</emphasis>
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00016"/><link linkend="_struct_dynamic_connectivity_1a4c2531481116b0b378a98c6ca907d78c">00016</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_dynamic_connectivity_1a4c2531481116b0b378a98c6ca907d78c">unite</link>(<emphasis role="keywordtype">int</emphasis>&#32;time,&#32;<emphasis role="keywordtype">int</emphasis>&#32;u,&#32;<emphasis role="keywordtype">int</emphasis>&#32;v)&#32;{
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;P&#32;e=minmax(u,v);
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(count[e]++==0)&#32;appear[e]=time;
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00020"/>00020 
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;時間&#32;time&#32;に頂点&#32;u,&#32;v&#32;を切断する</emphasis>
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00022"/><link linkend="_struct_dynamic_connectivity_1aa4b9840215ff5517d9433b4dbf97272f">00022</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_dynamic_connectivity_1aa4b9840215ff5517d9433b4dbf97272f">cut</link>(<emphasis role="keywordtype">int</emphasis>&#32;time,&#32;<emphasis role="keywordtype">int</emphasis>&#32;u,&#32;<emphasis role="keywordtype">int</emphasis>&#32;v)&#32;{
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;P&#32;e=minmax(u,v);
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(--count[e]==0)&#32;period.push_back({{appear[e],time},e});
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00026"/>00026 
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;クエリ処理の前計算を行う</emphasis>
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00028"/><link linkend="_struct_dynamic_connectivity_1aef6dbb8a8163c1aa473f68d4986c5226">00028</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_dynamic_connectivity_1aef6dbb8a8163c1aa473f68d4986c5226">build</link>()&#32;{
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">auto</emphasis>&#32;[e,val]:count)&#32;<emphasis role="keywordflow">if</emphasis>(val&gt;0)&#32;period.push_back({{appear[e],n},e});
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">auto</emphasis>&#32;[range,e]:period)&#32;{
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;[l,r]=range;
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l+=n,r+=n;
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(l&lt;r)&#32;{
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(l&amp;1)&#32;edges[l++].push_back(e);
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(r&amp;1)&#32;edges[--r].push_back(e);
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l&gt;&gt;=1,r&gt;&gt;=1;
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00040"/>00040 
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;クエリ関数&#32;f&#32;を処理する</emphasis>
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00042"/><link linkend="_struct_dynamic_connectivity_1a1693ebcaa78d8bf3058cda0160c1afe6">00042</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_dynamic_connectivity_1a1693ebcaa78d8bf3058cda0160c1afe6">execute</link>(<emphasis role="keyword">auto</emphasis>&amp;&#32;f,&#32;<emphasis role="keywordtype">int</emphasis>&#32;k=1)&#32;{
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(k&gt;=2*n)&#32;<emphasis role="keywordflow">return</emphasis>;
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">auto</emphasis>&#32;[u,v]:edges[k])&#32;dsu.merge(u,v);
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(k&lt;n)&#32;{
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;execute(f,k&lt;&lt;1);
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;execute(f,k&lt;&lt;1|1);
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(0&lt;=k-n&amp;&amp;k-n&lt;n)&#32;{
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;query_idx=k-n;
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f(query_idx);
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">auto</emphasis>&#32;[u,v]:edges[k])&#32;dsu.undo();
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00054"/>00054 
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00055"/>00055 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;<link linkend="_struct_dynamic_connectivity">P</link>=<link linkend="_struct_dynamic_connectivity">pair</link>&lt;<emphasis role="keywordtype">int</emphasis>,<emphasis role="keywordtype">int</emphasis>&gt;;
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;<link linkend="_struct_dsu_rollback">DsuRollback</link>&#32;dsu;
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n;
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;vector&lt;vector&lt;P&gt;&gt;&#32;edges;
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;vector&lt;pair&lt;P,P&gt;&gt;&#32;period;
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;map&lt;P,<emphasis role="keywordtype">int</emphasis>&gt;&#32;count,appear;
+<anchor xml:id="_offline__dynamic__connectivity_8hpp_source_1l00062"/>00062 };
+</programlisting></section>

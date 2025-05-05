@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_max__flow_8hpp" xml:lang="ja">
+<title>graph/flow/max_flow.hpp ファイル</title>
+<indexterm><primary>graph/flow/max_flow.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_max_flow">MaxFlow</link></para>
+
+<para>最大流 </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_max_flow_1_1_edge">MaxFlow::Edge</link></para>
+
+<para>辺構造体 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

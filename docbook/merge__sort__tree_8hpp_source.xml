@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_merge__sort__tree_8hpp_source" xml:lang="ja">
+<title>merge_sort_tree.hpp</title>
+<indexterm><primary>data_structure/merge_sort_tree.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_merge__sort__tree_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;マージソート木</emphasis>
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00004"/>00004 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00005"/><link linkend="_struct_merge_sort_tree">00005</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_merge_sort_tree">MergeSortTree</link>&#32;{
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00006"/><link linkend="_struct_merge_sort_tree_1a127958ecca67593f3cb1fcbb8051506b">00006</link> &#32;&#32;&#32;&#32;<link linkend="_struct_merge_sort_tree_1a127958ecca67593f3cb1fcbb8051506b">MergeSortTree</link>()=<emphasis role="keywordflow">default</emphasis>;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00007"/>00007 
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;配列&#32;v&#32;からマージソート木を構築する</emphasis>
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00009"/><link linkend="_struct_merge_sort_tree_1ac8235ab846d13f418b4ba8783ff461d9">00009</link> &#32;&#32;&#32;&#32;<link linkend="_struct_merge_sort_tree_1ac8235ab846d13f418b4ba8783ff461d9">MergeSortTree</link>(<emphasis role="keyword">const</emphasis>&#32;vector&lt;T&gt;&amp;&#32;v)&#32;{
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;n=v.size();
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mx=*max_element(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(v)),mn=*min_element(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(v));
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat=vector&lt;vector&lt;T&gt;&gt;(n&lt;&lt;1);
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;dat[n+i]={v[i]};
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=n-1;&#32;i&gt;0;&#32;i--)&#32;{
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;merge(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(dat[i&lt;&lt;1]),<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(dat[i&lt;&lt;1|1]),back_inserter(dat[i]));
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00018"/>00018 
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;に存在する&#32;val&#32;未満の値の個数を返す</emphasis>
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log(N)^2)</emphasis>
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00021"/><link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">00021</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">count_lt</link>(<emphasis role="keywordtype">int</emphasis>&#32;l,&#32;<emphasis role="keywordtype">int</emphasis>&#32;r,&#32;T&#32;val)&#32;{
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l+=n,r+=n;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;ret=0;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(l&lt;r)&#32;{
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(l&amp;1)&#32;ret+=<link linkend="_template_8hpp_1ab6b1ca645104fc8e3678f999ebe71f41">LB</link>(dat[l],val),l++;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(r&amp;1)&#32;--r,ret+=<link linkend="_template_8hpp_1ab6b1ca645104fc8e3678f999ebe71f41">LB</link>(dat[r],val);
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l&gt;&gt;=1,r&gt;&gt;=1;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00031"/>00031 
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;に存在する&#32;val&#32;以下の値の個数を返す</emphasis>
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log(N)^2)</emphasis>
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00034"/><link linkend="_struct_merge_sort_tree_1a881a344a374c02cdd93379fe14a4ecdf">00034</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_merge_sort_tree_1a881a344a374c02cdd93379fe14a4ecdf">count_le</link>(<emphasis role="keywordtype">int</emphasis>&#32;l,&#32;<emphasis role="keywordtype">int</emphasis>&#32;r,&#32;T&#32;val)&#32;{
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">count_lt</link><link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">(</link>l<link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">,</link>r<link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">,</link>val+1<link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">)</link>;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00037"/>00037 
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;に存在する&#32;val&#32;より大きい値の個数を返す</emphasis>
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log(N)^2)</emphasis>
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00040"/><link linkend="_struct_merge_sort_tree_1a90c47e319006d8204e2f43ea18a68a45">00040</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_merge_sort_tree_1a90c47e319006d8204e2f43ea18a68a45">count_gt</link>(<emphasis role="keywordtype">int</emphasis>&#32;l,&#32;<emphasis role="keywordtype">int</emphasis>&#32;r,&#32;T&#32;val)&#32;{
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;r-l-<link linkend="_struct_merge_sort_tree_1a881a344a374c02cdd93379fe14a4ecdf">count_le</link><link linkend="_struct_merge_sort_tree_1a881a344a374c02cdd93379fe14a4ecdf">(</link>l<link linkend="_struct_merge_sort_tree_1a881a344a374c02cdd93379fe14a4ecdf">,</link>r<link linkend="_struct_merge_sort_tree_1a881a344a374c02cdd93379fe14a4ecdf">,</link>val<link linkend="_struct_merge_sort_tree_1a881a344a374c02cdd93379fe14a4ecdf">)</link>;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00043"/>00043 
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;に存在する&#32;val&#32;以上の値の個数を返す</emphasis>
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log(N)^2)</emphasis>
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00046"/><link linkend="_struct_merge_sort_tree_1ab7f899451891ab52b795867471bb1ba2">00046</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_merge_sort_tree_1ab7f899451891ab52b795867471bb1ba2">count_ge</link>(<emphasis role="keywordtype">int</emphasis>&#32;l,&#32;<emphasis role="keywordtype">int</emphasis>&#32;r,&#32;T&#32;val)&#32;{
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;r-l-<link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">count_lt</link><link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">(</link>l<link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">,</link>r<link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">,</link>val<link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">)</link>;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00049"/>00049 
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;の小さい方から&#32;k(1-indexed)&#32;番目の値を返す</emphasis>
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log(N)^3)</emphasis>
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00052"/><link linkend="_struct_merge_sort_tree_1aac1f911fbf3ef224cfa6c1ef79f59973">00052</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_merge_sort_tree_1aac1f911fbf3ef224cfa6c1ef79f59973">kth</link>(<emphasis role="keywordtype">int</emphasis>&#32;l,&#32;<emphasis role="keywordtype">int</emphasis>&#32;r,&#32;<emphasis role="keywordtype">int</emphasis>&#32;k)&#32;{
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;lo=mn-1,hi=mx+1;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(hi-lo&gt;1)&#32;{
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;mid=(hi+lo)/2;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">count_lt</link><link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">(</link>l<link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">,</link>r<link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">,</link>mid<link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">)</link>&gt;=k)&#32;hi=mid;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;lo=mid;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;lo;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00061"/>00061 
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00062"/>00062 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;vector&lt;vector&lt;T&gt;&gt;&#32;dat;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;T&#32;mx,mn;
+<anchor xml:id="_merge__sort__tree_8hpp_source_1l00066"/>00066 };
+</programlisting></section>

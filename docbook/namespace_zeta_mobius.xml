@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_zeta_mobius" xml:lang="ja">
+<title>ZetaMobius 名前空間</title>
+<indexterm><primary>ZetaMobius</primary></indexterm>
+<para>
+
+<para>ゼータ変換・メビウス変換 </para>
+ 
+</para>
+<simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename Monoid&gt; </para><para>vector&lt; typename Monoid::Type &gt; <link linkend="_namespace_zeta_mobius_1a96b8a2e447ea6c66bf33a8a0e39e4fcc">SubsetZeta</link> (vector&lt; typename Monoid::Type &gt; v)</para>
+
+<para>高速ゼータ変換（下位集合） </para>
+</listitem>
+            <listitem><para>template&lt;typename Monoid&gt; </para><para>vector&lt; typename Monoid::Type &gt; <link linkend="_namespace_zeta_mobius_1a482f4f29cbbd38287bd6dfa4fa3752bc">SupersetZeta</link> (vector&lt; typename Monoid::Type &gt; v)</para>
+
+<para>高速ゼータ変換（上位集合） </para>
+</listitem>
+            <listitem><para>template&lt;typename Abel&gt; </para><para>vector&lt; typename Abel::Type &gt; <link linkend="_namespace_zeta_mobius_1acdbe2642fe5208a44eb861ad2e0666bf">SubsetMobius</link> (vector&lt; typename Abel::Type &gt; v)</para>
+
+<para>高速メビウス変換（下位集合） </para>
+</listitem>
+            <listitem><para>template&lt;typename Abel&gt; </para><para>vector&lt; typename Abel::Type &gt; <link linkend="_namespace_zeta_mobius_1a2411a0dca9b8ae8e8a4ce4e36683c98c">SupersetMobius</link> (vector&lt; typename Abel::Type &gt; v)</para>
+
+<para>高速メビウス変換（上位集合） </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+
+<para>ゼータ変換・メビウス変換 </para>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_namespace_zeta_mobius_1a96b8a2e447ea6c66bf33a8a0e39e4fcc"/><section>
+    <title>SubsetZeta()</title>
+<indexterm><primary>SubsetZeta</primary><secondary>ZetaMobius</secondary></indexterm>
+<indexterm><primary>ZetaMobius</primary><secondary>SubsetZeta</secondary></indexterm>
+<computeroutput>template&lt;typename Monoid&gt; </computeroutput><para><computeroutput>vector&lt; typename Monoid::Type &gt; ZetaMobius::SubsetZeta (vector&lt; typename Monoid::Type &gt; v)</computeroutput></para><para>
+
+<para>高速ゼータ変換（下位集合） </para>
+</para>
+
+<para>v&apos;[s] = Σ_{t⊆s} v[t] なる v&apos; を返す <note><title>覚え書き</title>
+
+<para>|v| = 2^N として O(N 2^N) </para>
+</note>
+</para>
+<para>
+ <link linkend="_zeta__mobius_8hpp_source">zeta_mobius.hpp</link> の <link linkend="_zeta__mobius_8hpp_source_1l00009">9</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_zeta_mobius_1a482f4f29cbbd38287bd6dfa4fa3752bc"/><section>
+    <title>SupersetZeta()</title>
+<indexterm><primary>SupersetZeta</primary><secondary>ZetaMobius</secondary></indexterm>
+<indexterm><primary>ZetaMobius</primary><secondary>SupersetZeta</secondary></indexterm>
+<computeroutput>template&lt;typename Monoid&gt; </computeroutput><para><computeroutput>vector&lt; typename Monoid::Type &gt; ZetaMobius::SupersetZeta (vector&lt; typename Monoid::Type &gt; v)</computeroutput></para><para>
+
+<para>高速ゼータ変換（上位集合） </para>
+</para>
+
+<para>v&apos;[s] = Σ_{t⊇s} v[t] なる v&apos; を返す <note><title>覚え書き</title>
+
+<para>|v| = 2^N として O(N 2^N) </para>
+</note>
+</para>
+<para>
+ <link linkend="_zeta__mobius_8hpp_source">zeta_mobius.hpp</link> の <link linkend="_zeta__mobius_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_zeta_mobius_1acdbe2642fe5208a44eb861ad2e0666bf"/><section>
+    <title>SubsetMobius()</title>
+<indexterm><primary>SubsetMobius</primary><secondary>ZetaMobius</secondary></indexterm>
+<indexterm><primary>ZetaMobius</primary><secondary>SubsetMobius</secondary></indexterm>
+<computeroutput>template&lt;typename Abel&gt; </computeroutput><para><computeroutput>vector&lt; typename Abel::Type &gt; ZetaMobius::SubsetMobius (vector&lt; typename Abel::Type &gt; v)</computeroutput></para><para>
+
+<para>高速メビウス変換（下位集合） </para>
+</para>
+
+<para>v[s] = Σ_{t⊆s} v&apos;[t] なる v&apos; を返す <note><title>覚え書き</title>
+
+<para>逆変換が必要なので、v は可換群の元である必要がある </para>
+
+<para>|v| = 2^N として O(N 2^N) </para>
+</note>
+</para>
+<para>
+ <link linkend="_zeta__mobius_8hpp_source">zeta_mobius.hpp</link> の <link linkend="_zeta__mobius_8hpp_source_1l00030">30</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_zeta_mobius_1a2411a0dca9b8ae8e8a4ce4e36683c98c"/><section>
+    <title>SupersetMobius()</title>
+<indexterm><primary>SupersetMobius</primary><secondary>ZetaMobius</secondary></indexterm>
+<indexterm><primary>ZetaMobius</primary><secondary>SupersetMobius</secondary></indexterm>
+<computeroutput>template&lt;typename Abel&gt; </computeroutput><para><computeroutput>vector&lt; typename Abel::Type &gt; ZetaMobius::SupersetMobius (vector&lt; typename Abel::Type &gt; v)</computeroutput></para><para>
+
+<para>高速メビウス変換（上位集合） </para>
+</para>
+
+<para>v[s] = Σ_{t⊇s} v&apos;[t] なる v&apos; を返す <note><title>覚え書き</title>
+
+<para>逆変換が必要なので、v は可換群の元である必要がある </para>
+
+<para>|v| = 2^N として O(N 2^N) </para>
+</note>
+</para>
+<para>
+ <link linkend="_zeta__mobius_8hpp_source">zeta_mobius.hpp</link> の <link linkend="_zeta__mobius_8hpp_source_1l00041">41</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

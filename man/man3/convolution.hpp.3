@@ -1,0 +1,57 @@
+.TH "math/convolution.hpp" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+math/convolution.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include '\&.\&./\&.\&./kyopro_library/template\&.hpp'\fP
+.br
+
+.SS "関数"
+
+.in +1c
+.ti -1c
+.RI "void \fBFFT\fP (vector< complex< double > > &a, bool inv=false)"
+.br
+.RI "高速フーリエ変換 "
+.ti -1c
+.RI "vector< double > \fBConvolve\fP (const vector< double > &a, const vector< double > &b)"
+.br
+.RI "畳み込み "
+.in -1c
+.SH "関数詳解"
+.PP 
+.SS "void FFT (vector< complex< double > > & a, bool inv = \fRfalse\fP)"
+
+.PP
+高速フーリエ変換 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(N log(N))
+.RE
+.PP
+f(x) = Σ a[i]x^i, w^N = 1 とすると、F(t) = Σ f(w^i)t^i の各係数を返す。
+
+.PP
+a = (a[0], a[1], \&.\&.\&., a[n-1]) -> fa = (f(w^0), f(w^1), \&.\&.\&., f(w^(n-1))) 
+.PP
+ \fBconvolution\&.hpp\fP の \fB7\fP 行目に定義があります。
+.SS "vector< double > Convolve (const vector< double > & a, const vector< double > & b)"
+
+.PP
+畳み込み 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(N log(N)) 
+.RE
+.PP
+
+.PP
+ \fBconvolution\&.hpp\fP の \fB36\fP 行目に定義があります。
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_sparse_table" xml:lang="ja">
+<title>SparseTable&lt; Band &gt; 構造体テンプレート</title>
+<indexterm><primary>SparseTable&lt; Band &gt;</primary></indexterm>
+<para>
+
+<para>スパーステーブル </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;sparse_table.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開型    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_struct_sparse_table_1adcdeb84f6d3751a8ab27afcf73d9efbb">Type</link> = typename Band::Type</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_sparse_table_1ae42eef700b062684842b48fe3dd694ae">SparseTable</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_struct_sparse_table_1a21a0384979486679924c67a94fbf3a0c">SparseTable</link> (const vector&lt; <link linkend="_struct_sparse_table_1adcdeb84f6d3751a8ab27afcf73d9efbb">Type</link> &gt; &amp;v)</para>
+
+<para>配列 v からスパーステーブルを構築する </para>
+</listitem>
+            <listitem><para><link linkend="_struct_sparse_table_1adcdeb84f6d3751a8ab27afcf73d9efbb">Type</link> <link linkend="_struct_sparse_table_1a58ddfa937ff083999c2847f66305da96">fold</link> (int l, int r)</para>
+
+<para>区間 [l, r) の半群積を返す </para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_sparse_table_1ab42c36160305467fb3977ffdfb1b4851">size</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_struct_sparse_table_1adcdeb84f6d3751a8ab27afcf73d9efbb">Type</link> <link linkend="_struct_sparse_table_1a208fad6a2149037792c14b1acfcf45bc">operator[]</link> (int i) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<simplesect><title>template&lt;typename Band&gt;<?linebreak?>struct SparseTable&lt; Band &gt;</title></simplesect>
+
+<para>スパーステーブル </para>
+
+
+
+<para>
+                <formalpara>
+                    <title>
+テンプレート引数</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Band</entry><entry>
+<para>冪等な半群 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+ <link linkend="_sparse__table_8hpp_source">sparse_table.hpp</link> の <link linkend="_sparse__table_8hpp_source_1l00006">6</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>型定義メンバ詳解</title>
+<anchor xml:id="_struct_sparse_table_1adcdeb84f6d3751a8ab27afcf73d9efbb"/><section>
+    <title>Type</title>
+<indexterm><primary>Type</primary><secondary>SparseTable&lt; Band &gt;</secondary></indexterm>
+<indexterm><primary>SparseTable&lt; Band &gt;</primary><secondary>Type</secondary></indexterm>
+<computeroutput>template&lt;typename Band&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_sparse_table">SparseTable</link>&lt; Band &gt;::Type = typename Band::Type</computeroutput></para><para>
+ <link linkend="_sparse__table_8hpp_source">sparse_table.hpp</link> の <link linkend="_sparse__table_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_sparse_table_1ae42eef700b062684842b48fe3dd694ae"/><section>
+    <title>SparseTable()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>SparseTable</primary><secondary>SparseTable&lt; Band &gt;</secondary></indexterm>
+<indexterm><primary>SparseTable&lt; Band &gt;</primary><secondary>SparseTable</secondary></indexterm>
+<computeroutput>template&lt;typename Band&gt; </computeroutput><para><computeroutput><link linkend="_struct_sparse_table">SparseTable</link>&lt; Band &gt;<link linkend="_struct_sparse_table">::SparseTable</link> ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_sparse_table_1a21a0384979486679924c67a94fbf3a0c"/><section>
+    <title>SparseTable()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>SparseTable</primary><secondary>SparseTable&lt; Band &gt;</secondary></indexterm>
+<indexterm><primary>SparseTable&lt; Band &gt;</primary><secondary>SparseTable</secondary></indexterm>
+<computeroutput>template&lt;typename Band&gt; </computeroutput><para><computeroutput><link linkend="_struct_sparse_table">SparseTable</link>&lt; Band &gt;<link linkend="_struct_sparse_table">::SparseTable</link> (const vector&lt; <link linkend="_struct_sparse_table_1adcdeb84f6d3751a8ab27afcf73d9efbb">Type</link> &gt; &amp; v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>配列 v からスパーステーブルを構築する </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(N log(N)) </para>
+</note>
+</para>
+<para>
+ <link linkend="_sparse__table_8hpp_source">sparse_table.hpp</link> の <link linkend="_sparse__table_8hpp_source_1l00012">12</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_sparse_table_1a58ddfa937ff083999c2847f66305da96"/><section>
+    <title>fold()</title>
+<indexterm><primary>fold</primary><secondary>SparseTable&lt; Band &gt;</secondary></indexterm>
+<indexterm><primary>SparseTable&lt; Band &gt;</primary><secondary>fold</secondary></indexterm>
+<computeroutput>template&lt;typename Band&gt; </computeroutput><para><computeroutput><link linkend="_struct_sparse_table_1adcdeb84f6d3751a8ab27afcf73d9efbb">Type</link> <link linkend="_struct_sparse_table">SparseTable</link>&lt; Band &gt;::fold (int l, int r)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) の半群積を返す </para>
+</para>
+<para>
+ <link linkend="_sparse__table_8hpp_source">sparse_table.hpp</link> の <link linkend="_sparse__table_8hpp_source_1l00024">24</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_sparse_table_1ab42c36160305467fb3977ffdfb1b4851"/><section>
+    <title>size()</title>
+<indexterm><primary>size</primary><secondary>SparseTable&lt; Band &gt;</secondary></indexterm>
+<indexterm><primary>SparseTable&lt; Band &gt;</primary><secondary>size</secondary></indexterm>
+<computeroutput>template&lt;typename Band&gt; </computeroutput><para><computeroutput>int <link linkend="_struct_sparse_table">SparseTable</link>&lt; Band &gt;::size ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_sparse__table_8hpp_source">sparse_table.hpp</link> の <link linkend="_sparse__table_8hpp_source_1l00030">30</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_sparse_table_1a208fad6a2149037792c14b1acfcf45bc"/><section>
+    <title>operator[]()</title>
+<indexterm><primary>operator[]</primary><secondary>SparseTable&lt; Band &gt;</secondary></indexterm>
+<indexterm><primary>SparseTable&lt; Band &gt;</primary><secondary>operator[]</secondary></indexterm>
+<computeroutput>template&lt;typename Band&gt; </computeroutput><para><computeroutput><link linkend="_struct_sparse_table_1adcdeb84f6d3751a8ab27afcf73d9efbb">Type</link> <link linkend="_struct_sparse_table">SparseTable</link>&lt; Band &gt;::operator[] (int i) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_sparse__table_8hpp_source">sparse_table.hpp</link> の <link linkend="_sparse__table_8hpp_source_1l00031">31</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_sparse__table_8hpp_source_1l00024">fold()</link>.</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+data_structure/<link linkend="_sparse__table_8hpp">sparse_table.hpp</link></section>
+</section>

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dsu__potentialized_8hpp_source" xml:lang="ja">
+<title>dsu_potentialized.hpp</title>
+<indexterm><primary>graph/dsu_potentialized.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_dsu__potentialized_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;ポテンシャル付き&#32;DSU</emphasis>
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@tparam&#32;Group&#32;群</emphasis>
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00005"/>00005 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;Group&gt;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00006"/><link linkend="_struct_dsu_potentialized">00006</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_dsu_potentialized">DsuPotentialized</link>&#32;{
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00007"/><link linkend="_struct_dsu_potentialized_1a6a50de8f7bc8099eeeff22de2e98a3bb">00007</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;Type=<emphasis role="keyword">typename</emphasis>&#32;Group::Type;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00008"/><link linkend="_struct_dsu_potentialized_1a2e7c6c09a18844667a4f0f7c0ddebe1d">00008</link> &#32;&#32;&#32;&#32;<link linkend="_struct_dsu_potentialized_1a2e7c6c09a18844667a4f0f7c0ddebe1d">DsuPotentialized</link>()=<emphasis role="keywordflow">default</emphasis>;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00009"/>00009 
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;コンストラクタ</emphasis>
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00011"/><link linkend="_struct_dsu_potentialized_1a8c36a02bd95351413d537dabdcdd40b1">00011</link> &#32;&#32;&#32;&#32;<link linkend="_struct_dsu_potentialized_1a8c36a02bd95351413d537dabdcdd40b1">DsuPotentialized</link>(<emphasis role="keywordtype">int</emphasis>&#32;n)&#32;{
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;par=VI(n);&#32;iota(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(par),0);
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sz=VI(n,1);
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;diff_weight=vector&lt;Type&gt;(n,Group::id());
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;forest_count=n;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00017"/>00017 
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;頂点&#32;x&#32;を含む連結成分の代表元を返す</emphasis>
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00019"/><link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">00019</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">find</link>(<emphasis role="keywordtype">int</emphasis>&#32;x)&#32;{
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(par[x]==x)&#32;<emphasis role="keywordflow">return</emphasis>&#32;x;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;root=find(par[x]);
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;diff_weight[x]=Group::op(diff_weight[x],diff_weight[par[x]]);
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;par[x]=root;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00025"/>00025 
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;頂点　x&#32;と&#32;y&#32;を連結し、weight(x)&#32;=&#32;op(weight(y),&#32;w)&#32;とする</emphasis>
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00027"/><link linkend="_struct_dsu_potentialized_1af5810896e43c6ea1254cee6cbc6230af">00027</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_dsu_potentialized_1af5810896e43c6ea1254cee6cbc6230af">merge</link>(<emphasis role="keywordtype">int</emphasis>&#32;x,&#32;<emphasis role="keywordtype">int</emphasis>&#32;y,&#32;Type&#32;w)&#32;{
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;w=Group::op(Group::inv(<link linkend="_struct_dsu_potentialized_1a338b6c5662ba80ae991ca456020b2012">weight</link><link linkend="_struct_dsu_potentialized_1a338b6c5662ba80ae991ca456020b2012">(</link>y<link linkend="_struct_dsu_potentialized_1a338b6c5662ba80ae991ca456020b2012">)</link>),Group::op(w,<link linkend="_struct_dsu_potentialized_1a338b6c5662ba80ae991ca456020b2012">weight</link><link linkend="_struct_dsu_potentialized_1a338b6c5662ba80ae991ca456020b2012">(</link>x<link linkend="_struct_dsu_potentialized_1a338b6c5662ba80ae991ca456020b2012">)</link>));
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x=<link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">find</link><link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">(</link>x<link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">)</link>;&#32;y=<link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">find</link><link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">(</link>y<link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">)</link>;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(x==y)&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(sz[x]&lt;sz[y])&#32;{
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;swap(x,y);
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;w=Group::inv(w);
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;par[y]=x;&#32;sz[x]+=sz[y];&#32;diff_weight[y]=w;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;forest_count--;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00039"/>00039 
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;頂点&#32;x&#32;のポテンシャルを返す</emphasis>
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00041"/><link linkend="_struct_dsu_potentialized_1a338b6c5662ba80ae991ca456020b2012">00041</link> &#32;&#32;&#32;&#32;Type&#32;<link linkend="_struct_dsu_potentialized_1a338b6c5662ba80ae991ca456020b2012">weight</link>(<emphasis role="keywordtype">int</emphasis>&#32;x)&#32;{
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">find</link><link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">(</link>x<link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">)</link>;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;diff_weight[x];
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00045"/>00045 
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;op(inv(weight(y)),&#32;weight(x))&#32;(x&#32;と&#32;y&#32;の間のポテンシャル差)を返す</emphasis>
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00047"/><link linkend="_struct_dsu_potentialized_1ab9a92fc6174f8c4b5da8db55c060d1b6">00047</link> &#32;&#32;&#32;&#32;Type&#32;<link linkend="_struct_dsu_potentialized_1ab9a92fc6174f8c4b5da8db55c060d1b6">diff</link>(<emphasis role="keywordtype">int</emphasis>&#32;x,&#32;<emphasis role="keywordtype">int</emphasis>&#32;y)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;Group::op(diff_weight[y],Group::inv(diff_weight[x]));&#32;}
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00048"/>00048 
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;頂点&#32;x&#32;を含む連結成分のサイズを返す</emphasis>
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00050"/><link linkend="_struct_dsu_potentialized_1a072746a958e60659bf1b46a0535de056">00050</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_dsu_potentialized_1a072746a958e60659bf1b46a0535de056">size</link>(<emphasis role="keywordtype">int</emphasis>&#32;x)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;sz[find(x)];&#32;}
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00051"/>00051 
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;頂点&#32;x&#32;と&#32;y&#32;が同じ連結成分に属するか否かを返す</emphasis>
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00053"/><link linkend="_struct_dsu_potentialized_1aabb23fd0efc64b1a349acd65504fb774">00053</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_dsu_potentialized_1aabb23fd0efc64b1a349acd65504fb774">same</link>(<emphasis role="keywordtype">int</emphasis>&#32;x,&#32;<emphasis role="keywordtype">int</emphasis>&#32;y)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">find</link><link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">(</link>x<link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">)</link>==<link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">find</link><link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">(</link>y<link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">)</link>;&#32;}
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00054"/>00054 
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;連結成分の個数を返す</emphasis>
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00056"/><link linkend="_struct_dsu_potentialized_1a407010411f5318c6a00c00508f277e3d">00056</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_dsu_potentialized_1a407010411f5318c6a00c00508f277e3d">count</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;forest_count;&#32;}
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00057"/>00057 
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;各頂点を連結成分に分解する</emphasis>
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00059"/><link linkend="_struct_dsu_potentialized_1a5b4d569d8849d49bf9cda0776c67fe30">00059</link> &#32;&#32;&#32;&#32;<link linkend="_struct_dsu_potentialized_1a5b4d569d8849d49bf9cda0776c67fe30">VVI</link>&#32;<link linkend="_struct_dsu_potentialized_1a5b4d569d8849d49bf9cda0776c67fe30">groups</link>()&#32;{
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n=par.size();
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;VVI&#32;ret(n);
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;ret[<link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">find</link><link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">(</link>i<link linkend="_struct_dsu_potentialized_1a8c3159f334ce50adad836e3cdbc996f9">)</link>].push_back(i);
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret.erase(remove_if(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(ret),[&amp;](<emphasis role="keyword">const</emphasis>&#32;VI&amp;&#32;v)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;v.empty();&#32;}),ret.end());
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00066"/>00066 
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00067"/>00067 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;VI&#32;par,sz;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;vector&lt;Type&gt;&#32;diff_weight;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;forest_count;
+<anchor xml:id="_dsu__potentialized_8hpp_source_1l00071"/>00071 };
+</programlisting></section>

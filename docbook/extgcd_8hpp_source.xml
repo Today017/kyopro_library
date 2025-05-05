@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_extgcd_8hpp_source" xml:lang="ja">
+<title>extgcd.hpp</title>
+<indexterm><primary>math/extgcd.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_extgcd_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_extgcd_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_extgcd_8hpp_source_1l00003"/>00003 <emphasis role="comment">/**</emphasis>
+00004 <emphasis role="comment">&#32;*&#32;@brief&#32;拡張ユークリッドの互除法</emphasis>
+00005 <emphasis role="comment">&#32;*&#32;@details</emphasis>
+00006 <emphasis role="comment">&#32;*&#32;gcd(a,b)&#32;=&#32;gcd(b%a,a),&#32;gcd(b,0)&#32;=&#32;b&#32;と&#32;b%a&#32;+&#32;(b/a)*a&#32;=&#32;b&#32;を使う。</emphasis>
+00007 <emphasis role="comment">&#32;*&#32;ax&#32;+&#32;by&#32;=&#32;g&#32;なる&#32;x,y&#32;を求めたい。</emphasis>
+00008 <emphasis role="comment">&#32;*&#32;今、(b%a)X&#32;+&#32;aY&#32;=&#32;g&#32;なる&#32;X,&#32;Y&#32;が分かっている。</emphasis>
+00009 <emphasis role="comment">&#32;*&#32;(b%a)X&#32;=&#32;bX&#32;-&#32;(b/a)*a*X&#32;より、これを代入して、</emphasis>
+00010 <emphasis role="comment">&#32;*&#32;bX&#32;-&#32;(b/a)*a*X&#32;+&#32;aY&#32;=&#32;g</emphasis>
+00011 <emphasis role="comment">&#32;*&#32;a(Y-(b/a)*X)&#32;+&#32;bX&#32;=&#32;g</emphasis>
+00012 <emphasis role="comment">&#32;*/</emphasis>
+<anchor xml:id="_extgcd_8hpp_source_1l00013"/><link linkend="_extgcd_8hpp_1a1bbcc665326a2e27d9817bcc3b8b1d91">00013</link> <link linkend="_extgcd_8hpp_1a1bbcc665326a2e27d9817bcc3b8b1d91">tuple</link>&lt;<link linkend="_extgcd_8hpp_1a1bbcc665326a2e27d9817bcc3b8b1d91">ll</link>,<link linkend="_extgcd_8hpp_1a1bbcc665326a2e27d9817bcc3b8b1d91">ll</link>,<link linkend="_extgcd_8hpp_1a1bbcc665326a2e27d9817bcc3b8b1d91">ll</link>&gt;&#32;<link linkend="_extgcd_8hpp_1a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</link>(ll&#32;a,&#32;ll&#32;b)&#32;{
+<anchor xml:id="_extgcd_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(a==0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;{b,0,1};
+<anchor xml:id="_extgcd_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;[g,s,t]=ExtGcd(b%a,a);
+<anchor xml:id="_extgcd_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;{g,t-(b/a)*s,s};
+<anchor xml:id="_extgcd_8hpp_source_1l00017"/>00017 }
+<anchor xml:id="_extgcd_8hpp_source_1l00018"/>00018 
+<anchor xml:id="_extgcd_8hpp_source_1l00019"/>00019 <emphasis role="comment">///&#32;@brief&#32;mod&#32;逆元</emphasis>
+<anchor xml:id="_extgcd_8hpp_source_1l00020"/>00020 <emphasis role="comment">///&#32;@brief&#32;a^(-1)&#32;(mod&#32;m)</emphasis>
+<anchor xml:id="_extgcd_8hpp_source_1l00021"/>00021 <emphasis role="comment">///&#32;@note&#32;gcd(a,m)=1&#32;でない場合、-1&#32;を返す。</emphasis>
+<anchor xml:id="_extgcd_8hpp_source_1l00022"/><link linkend="_extgcd_8hpp_1a9971b6b2383ca7009a1de48b02b31350">00022</link> ll&#32;<link linkend="_extgcd_8hpp_1a9971b6b2383ca7009a1de48b02b31350">ModInvGcd</link>(ll&#32;a,&#32;ll&#32;m)&#32;{
+<anchor xml:id="_extgcd_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;ax&#32;=&#32;1&#32;(mod&#32;m)&#32;&lt;-&gt;&#32;ax+my&#32;=&#32;1&#32;(mod&#32;m)</emphasis>
+<anchor xml:id="_extgcd_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;[g,x,y]=ExtGcd(a,m);
+<anchor xml:id="_extgcd_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(g!=1)&#32;<emphasis role="keywordflow">return</emphasis>-1;
+<anchor xml:id="_extgcd_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(x+m)%m;
+<anchor xml:id="_extgcd_8hpp_source_1l00027"/>00027 }
+</programlisting></section>

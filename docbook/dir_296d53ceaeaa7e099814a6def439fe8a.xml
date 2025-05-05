@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_296d53ceaeaa7e099814a6def439fe8a" xml:lang="ja">
+<title>math ディレクトリリファレンス</title>
+<indexterm><primary>math ディレクトリリファレンス</primary></indexterm>
+<simplesect>
+    <title>ファイル    </title>
+        <itemizedlist>
+            <listitem><para>ファイル <link linkend="_bezout__identity_8hpp">bezout_identity.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_convolution_8hpp">convolution.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_convolution__ll_8hpp">convolution_ll.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_extgcd_8hpp">extgcd.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_factors_8hpp">factors.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_fps_8hpp">fps.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_fraction_8hpp">fraction.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_lagrange_8hpp">lagrange.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_lagrange2_8hpp">lagrange2.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_linear__equation_8hpp">linear_equation.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_linear__programming__2vars_8hpp">linear_programming_2vars.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_matrix_8hpp">matrix.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_modlog_8hpp">modlog.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_multipoint__evaluate_8hpp">multipoint_evaluate.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_ntt_8hpp">ntt.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_ntt998_8hpp">ntt998.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_primality__test_8hpp">primality_test.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_prime__enumerate_8hpp">prime_enumerate.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_prime__factorize_8hpp">prime_factorize.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_primitive__root_8hpp">primitive_root.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_totient_8hpp">totient.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_totient__table_8hpp">totient_table.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_xor__convolution_8hpp">xor_convolution.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

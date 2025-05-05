@@ -1,0 +1,130 @@
+.TH "RandomGenerator" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RandomGenerator \- ランダムテストケース生成  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "関数"
+
+.in +1c
+.ti -1c
+.RI "template<typename T> T \fBRandomInt\fP (T n)"
+.br
+.RI "0 以上 n 未満のランダムな整数を返す "
+.ti -1c
+.RI "template<typename T> T \fBRandomInt\fP (T l, T r)"
+.br
+.RI "[l, r) の範囲からランダムな整数を返す "
+.ti -1c
+.RI "template<typename T> T \fBGetRandomElement\fP (vector< T > &a)"
+.br
+.RI "配列 a からランダムな要素を取得し、削除する "
+.ti -1c
+.RI "template<typename T> vector< T > \fBRandomArray\fP (int n, T lo, T hi, bool no_dup=false)"
+.br
+.RI "長さ n の [lo, hi) の要素からなるランダムな数列を返す "
+.ti -1c
+.RI "string \fBRandomAlphabet\fP (int n, bool lower=true)"
+.br
+.RI "ランダムなアルファベット文字列を返す "
+.ti -1c
+.RI "string \fBRandomString\fP (int n, string s)"
+.br
+.RI "文字列 s の要素からなるランダムな文字列を返す "
+.ti -1c
+.RI "template<typename T> vector< vector< T > > \fBRandomArray2D\fP (int \fBh\fP, int \fBw\fP, T lo, T hi)"
+.br
+.ti -1c
+.RI "vector< string > \fBRandomAlphabet2D\fP (int \fBh\fP, int \fBw\fP, bool lower=true)"
+.br
+.ti -1c
+.RI "vector< pair< int, int > > \fBRandomTree\fP (int n)"
+.br
+.ti -1c
+.RI "vector< pair< int, int > > \fBRandomBinaryTree\fP (int n)"
+.br
+.ti -1c
+.RI "vector< pair< int, int > > \fBRandomUndirectedGraph\fP (int n, int m, bool connected=true)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+ランダムテストケース生成 
+.SH "関数詳解"
+.PP 
+.SS "template<typename T> T RandomGenerator::RandomInt (T n)"
+
+.PP
+0 以上 n 未満のランダムな整数を返す 
+.PP
+ \fBrandom\&.hpp\fP の \fB9\fP 行目に定義があります。
+.SS "template<typename T> T RandomGenerator::RandomInt (T l, T r)"
+
+.PP
+[l, r) の範囲からランダムな整数を返す 
+.PP
+ \fBrandom\&.hpp\fP の \fB13\fP 行目に定義があります。
+.SS "template<typename T> T RandomGenerator::GetRandomElement (vector< T > & a)"
+
+.PP
+配列 a からランダムな要素を取得し、削除する 
+.PP
+ \fBrandom\&.hpp\fP の \fB17\fP 行目に定義があります。
+.SS "template<typename T> vector< T > RandomGenerator::RandomArray (int n, T lo, T hi, bool no_dup = \fRfalse\fP)"
+
+.PP
+長さ n の [lo, hi) の要素からなるランダムな数列を返す 
+.PP
+\fB引数\fP
+.RS 4
+\fIno_dup\fP false の場合、重複要素を許容する 
+.RE
+.PP
+
+.PP
+ \fBrandom\&.hpp\fP の \fB29\fP 行目に定義があります。
+.SS "string RandomGenerator::RandomAlphabet (int n, bool lower = \fRtrue\fP)"
+
+.PP
+ランダムなアルファベット文字列を返す 
+.PP
+\fB引数\fP
+.RS 4
+\fIlower\fP 小文字 
+.RE
+.PP
+
+.PP
+ \fBrandom\&.hpp\fP の \fB46\fP 行目に定義があります。
+.SS "string RandomGenerator::RandomString (int n, string s)"
+
+.PP
+文字列 s の要素からなるランダムな文字列を返す 
+.PP
+ \fBrandom\&.hpp\fP の \fB56\fP 行目に定義があります。
+.SS "template<typename T> vector< vector< T > > RandomGenerator::RandomArray2D (int h, int w, T lo, T hi)"
+
+.PP
+ \fBrandom\&.hpp\fP の \fB67\fP 行目に定義があります。
+.SS "vector< string > RandomGenerator::RandomAlphabet2D (int h, int w, bool lower = \fRtrue\fP)"
+
+.PP
+ \fBrandom\&.hpp\fP の \fB73\fP 行目に定義があります。
+.SS "vector< pair< int, int > > RandomGenerator::RandomTree (int n)"
+
+.PP
+ \fBrandom\&.hpp\fP の \fB79\fP 行目に定義があります。
+.SS "vector< pair< int, int > > RandomGenerator::RandomBinaryTree (int n)"
+
+.PP
+ \fBrandom\&.hpp\fP の \fB105\fP 行目に定義があります。
+.SS "vector< pair< int, int > > RandomGenerator::RandomUndirectedGraph (int n, int m, bool connected = \fRtrue\fP)"
+
+.PP
+ \fBrandom\&.hpp\fP の \fB123\fP 行目に定義があります。
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

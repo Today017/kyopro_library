@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_matrix_8hpp" xml:lang="ja">
+<title>math/matrix.hpp ファイル</title>
+<indexterm><primary>math/matrix.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; vector&lt; T &gt; &gt; <link linkend="_matrix_8hpp_1a1e820ec4e269e7cf0c6335efe8851469">MatMul</link> (const vector&lt; vector&lt; T &gt; &gt; &amp;A, const vector&lt; vector&lt; T &gt; &gt; &amp;B)</para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; vector&lt; T &gt; &gt; <link linkend="_matrix_8hpp_1a67bc9347d04f3e91eaedc7b89a629712">MatPow</link> (vector&lt; vector&lt; T &gt; &gt; A, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_matrix_8hpp_1a1e820ec4e269e7cf0c6335efe8851469"/><section>
+    <title>MatMul()</title>
+<indexterm><primary>MatMul</primary><secondary>matrix.hpp</secondary></indexterm>
+<indexterm><primary>matrix.hpp</primary><secondary>MatMul</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; vector&lt; T &gt; &gt; MatMul (const vector&lt; vector&lt; T &gt; &gt; &amp; A, const vector&lt; vector&lt; T &gt; &gt; &amp; B)</computeroutput></para><para>
+ <link linkend="_matrix_8hpp_source">matrix.hpp</link> の <link linkend="_matrix_8hpp_source_1l00004">4</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_matrix_8hpp_1a67bc9347d04f3e91eaedc7b89a629712"/><section>
+    <title>MatPow()</title>
+<indexterm><primary>MatPow</primary><secondary>matrix.hpp</secondary></indexterm>
+<indexterm><primary>matrix.hpp</primary><secondary>MatPow</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; vector&lt; T &gt; &gt; MatPow (vector&lt; vector&lt; T &gt; &gt; A, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> b)</computeroutput></para><para>
+ <link linkend="_matrix_8hpp_source">matrix.hpp</link> の <link linkend="_matrix_8hpp_source_1l00012">12</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

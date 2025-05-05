@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_totient__table_8hpp" xml:lang="ja">
+<title>math/totient_table.hpp ファイル</title>
+<indexterm><primary>math/totient_table.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> <link linkend="_totient__table_8hpp_1a0914bcd1a8e4f43787323795904e6d40">TotientTable</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> n)</para>
+
+<para>オイラーのtotient関数を前計算する </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_totient__table_8hpp_1a0914bcd1a8e4f43787323795904e6d40"/><section>
+    <title>TotientTable()</title>
+<indexterm><primary>TotientTable</primary><secondary>totient_table.hpp</secondary></indexterm>
+<indexterm><primary>totient_table.hpp</primary><secondary>TotientTable</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> TotientTable (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> n)</computeroutput></para><para>
+
+<para>オイラーのtotient関数を前計算する </para>
+</para>
+
+<para>totient(0) ... totient(n) を前計算する <note><title>覚え書き</title>
+
+<para>O(n log(log(n))) <link xlink:href="https://qiita.com/drken/items/3beb679e54266f20ab63">https://qiita.com/drken/items/3beb679e54266f20ab63</link> <link xlink:href="https://manabitimes.jp/math/667">https://manabitimes.jp/math/667</link></para>
+</note>
+totient(i) = i 以下であって、i と互いに素な数の個数</para>
+
+<para>公式: totient(n) = n * Π(1 - 1/p) (p は n の素因数)</para>
+
+<para>公式: totient(n)totient(m) = totient(nm) (n と m が互いに素)</para>
+
+<para>公式: Σ(d | n) totient(d) = n</para>
+
+<para>公式: a^totient(m) ≡ 1 (mod m) (a と m が互いに素) </para>
+<para>
+ <link linkend="_totient__table_8hpp_source">totient_table.hpp</link> の <link linkend="_totient__table_8hpp_source_1l00013">13</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

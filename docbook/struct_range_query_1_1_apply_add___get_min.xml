@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_range_query_1_1_apply_add___get_min" xml:lang="ja">
+<title>RangeQuery::ApplyAdd_GetMin&lt; T, max_value &gt; 構造体テンプレート</title>
+<indexterm><primary>RangeQuery::ApplyAdd_GetMin&lt; T, max_value &gt;</primary></indexterm>
+<para>
+
+<para>区間加算 / 区間min </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;segtree_lazy.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開型    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_struct_range_query_1_1_apply_add___get_min_1a3b525a16b3466cfe2a4a3732bd016112">Type</link> = struct <link linkend="_struct_seg_tree_lazy">SegTreeLazy</link>&lt;<link linkend="_struct_monoid_1_1_min">Monoid::Min</link>&lt;T,max_value&gt;,<link linkend="_struct_operator_1_1_add">Operator::Add</link>&lt;T&gt;,<link linkend="_struct_range_query_1_1_apply_add___get_min_1a26153f047d6377259bb442cbebf27fae">mapping</link>&gt;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>静的公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para>static T <link linkend="_struct_range_query_1_1_apply_add___get_min_1a26153f047d6377259bb442cbebf27fae">mapping</link> (const T &amp;a, const T &amp;b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<simplesect><title>template&lt;typename T, T max_value&gt;<?linebreak?>struct RangeQuery::ApplyAdd_GetMin&lt; T, max_value &gt;</title></simplesect>
+
+<para>区間加算 / 区間min </para>
+<para>
+ <link linkend="_segtree__lazy_8hpp_source">segtree_lazy.hpp</link> の <link linkend="_segtree__lazy_8hpp_source_1l00232">232</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>型定義メンバ詳解</title>
+<anchor xml:id="_struct_range_query_1_1_apply_add___get_min_1a3b525a16b3466cfe2a4a3732bd016112"/><section>
+    <title>Type</title>
+<indexterm><primary>Type</primary><secondary>RangeQuery::ApplyAdd_GetMin&lt; T, max_value &gt;</secondary></indexterm>
+<indexterm><primary>RangeQuery::ApplyAdd_GetMin&lt; T, max_value &gt;</primary><secondary>Type</secondary></indexterm>
+<computeroutput>template&lt;typename T, T max_value&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_range_query_1_1_apply_add___get_min">RangeQuery::ApplyAdd_GetMin</link>&lt; T, max_value &gt;::Type = struct <link linkend="_struct_seg_tree_lazy">SegTreeLazy</link>&lt;<link linkend="_struct_monoid_1_1_min">Monoid::Min</link>&lt;T,max_value&gt;,<link linkend="_struct_operator_1_1_add">Operator::Add</link>&lt;T&gt;,<link linkend="_struct_range_query_1_1_apply_add___get_min_1a26153f047d6377259bb442cbebf27fae">mapping</link>&gt;</computeroutput></para><para>
+ <link linkend="_segtree__lazy_8hpp_source">segtree_lazy.hpp</link> の <link linkend="_segtree__lazy_8hpp_source_1l00234">234</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_range_query_1_1_apply_add___get_min_1a26153f047d6377259bb442cbebf27fae"/><section>
+    <title>mapping()</title>
+<indexterm><primary>mapping</primary><secondary>RangeQuery::ApplyAdd_GetMin&lt; T, max_value &gt;</secondary></indexterm>
+<indexterm><primary>RangeQuery::ApplyAdd_GetMin&lt; T, max_value &gt;</primary><secondary>mapping</secondary></indexterm>
+<computeroutput>template&lt;typename T, T max_value&gt; </computeroutput><para><computeroutput>static T <link linkend="_struct_range_query_1_1_apply_add___get_min">RangeQuery::ApplyAdd_GetMin</link>&lt; T, max_value &gt;::mapping (const T &amp; a, const T &amp; b)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+ <link linkend="_segtree__lazy_8hpp_source">segtree_lazy.hpp</link> の <link linkend="_segtree__lazy_8hpp_source_1l00233">233</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+data_structure/<link linkend="_segtree__lazy_8hpp">segtree_lazy.hpp</link></section>
+</section>

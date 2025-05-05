@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lcp__array_8hpp_source" xml:lang="ja">
+<title>lcp_array.hpp</title>
+<indexterm><primary>string/lcp_array.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_lcp__array_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">pragma</emphasis>&#32;<emphasis role="preprocessor">once</emphasis>
+<anchor xml:id="_lcp__array_8hpp_source_1l00002"/>00002 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_lcp__array_8hpp_source_1l00003"/>00003 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/string/suffix_array.hpp&quot;</emphasis>
+<anchor xml:id="_lcp__array_8hpp_source_1l00004"/>00004 
+<anchor xml:id="_lcp__array_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@brief&#32;LCP&#32;Array</emphasis>
+<anchor xml:id="_lcp__array_8hpp_source_1l00006"/>00006 <emphasis role="comment">///&#32;@brief&#32;`lcp[i]&#32;:=&#32;sa[i]&#32;と&#32;sa[i-1]&#32;の&#32;lcp&#32;の長さ`</emphasis>
+<anchor xml:id="_lcp__array_8hpp_source_1l00007"/>00007 <emphasis role="comment">///&#32;@ref&#32;https://qiita.com/kgoto/items/9e28e37b8a4b15ea7230</emphasis>
+<anchor xml:id="_lcp__array_8hpp_source_1l00008"/><link linkend="_lcp__array_8hpp_1ae0ced2c7950382932078f20c8e118c5e">00008</link> <link linkend="_lcp__array_8hpp_1ae0ced2c7950382932078f20c8e118c5e">VI</link>&#32;<link linkend="_lcp__array_8hpp_1ae0ced2c7950382932078f20c8e118c5e">LcpArray</link>(<emphasis role="keyword">const</emphasis>&#32;string&#32;&amp;s,&#32;<emphasis role="keyword">const</emphasis>&#32;VI&amp;&#32;sa)&#32;{
+<anchor xml:id="_lcp__array_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n=s.size();
+<anchor xml:id="_lcp__array_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;VI&#32;lcp(n-1),rank(n);
+<anchor xml:id="_lcp__array_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;rank[sa[i]]=i;
+<anchor xml:id="_lcp__array_8hpp_source_1l00012"/>00012 
+<anchor xml:id="_lcp__array_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;len=0;<emphasis role="comment">//lcp&#32;の長さ</emphasis>
+<anchor xml:id="_lcp__array_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;{
+<anchor xml:id="_lcp__array_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(rank[i]==0)&#32;<emphasis role="keywordflow">continue</emphasis>;
+<anchor xml:id="_lcp__array_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;j=sa[rank[i]-1];
+<anchor xml:id="_lcp__array_8hpp_source_1l00017"/>00017 
+<anchor xml:id="_lcp__array_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(i+len&lt;n&#32;&amp;&amp;&#32;j+len&lt;n&#32;&amp;&amp;&#32;s[i+len]==s[j+len])&#32;len++;
+<anchor xml:id="_lcp__array_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lcp[rank[i]-1]=len;
+<anchor xml:id="_lcp__array_8hpp_source_1l00020"/>00020 
+<anchor xml:id="_lcp__array_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(len&gt;0)&#32;len--;
+<anchor xml:id="_lcp__array_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_lcp__array_8hpp_source_1l00023"/>00023 
+<anchor xml:id="_lcp__array_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;lcp;
+<anchor xml:id="_lcp__array_8hpp_source_1l00025"/>00025 }
+</programlisting></section>

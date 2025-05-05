@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_n_t_t" xml:lang="ja">
+<title>NTT&lt; MOD, primitive_root &gt; クラステンプレート</title>
+<indexterm><primary>NTT&lt; MOD, primitive_root &gt;</primary></indexterm>
+<para>
+
+<para><link linkend="_class_n_t_t">NTT</link> Friendly 素数用 <link linkend="_class_n_t_t">NTT</link> 構造体 </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;ntt.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_n_t_t_1a08f7a88ab5d843873769c894112766ec">NTT</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> <link linkend="_class_n_t_t_1af7d5dac5eee3af11ecf0c361f5fbe581">convolve</link> (<link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> a, <link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> b)</para>
+
+<para>a, b の畳み込み mod M を求める </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<simplesect><title>template&lt;<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> MOD, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> primitive_root&gt;<?linebreak?>class NTT&lt; MOD, primitive_root &gt;</title></simplesect>
+
+<para><link linkend="_class_n_t_t">NTT</link> Friendly 素数用 <link linkend="_class_n_t_t">NTT</link> 構造体 </para>
+<para>
+ <link linkend="_ntt_8hpp_source">ntt.hpp</link> の <link linkend="_ntt_8hpp_source_1l00006">6</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_class_n_t_t_1a08f7a88ab5d843873769c894112766ec"/><section>
+    <title>NTT()</title>
+<indexterm><primary>NTT</primary><secondary>NTT&lt; MOD, primitive_root &gt;</secondary></indexterm>
+<indexterm><primary>NTT&lt; MOD, primitive_root &gt;</primary><secondary>NTT</secondary></indexterm>
+<computeroutput>template&lt;<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> MOD, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> primitive_root&gt; </computeroutput><para><computeroutput><link linkend="_class_n_t_t">NTT</link>&lt; MOD, primitive_root &gt;<link linkend="_class_n_t_t">::NTT</link> ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_ntt_8hpp_source">ntt.hpp</link> の <link linkend="_ntt_8hpp_source_1l00031">31</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_class_n_t_t_1af7d5dac5eee3af11ecf0c361f5fbe581"/><section>
+    <title>convolve()</title>
+<indexterm><primary>convolve</primary><secondary>NTT&lt; MOD, primitive_root &gt;</secondary></indexterm>
+<indexterm><primary>NTT&lt; MOD, primitive_root &gt;</primary><secondary>convolve</secondary></indexterm>
+<computeroutput>template&lt;<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> MOD, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> primitive_root&gt; </computeroutput><para><computeroutput><link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> <link linkend="_class_n_t_t">NTT</link>&lt; MOD, primitive_root &gt;::convolve (<link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> a, <link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> b)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>a, b の畳み込み mod M を求める </para>
+</para>
+<para>
+ <link linkend="_ntt_8hpp_source">ntt.hpp</link> の <link linkend="_ntt_8hpp_source_1l00045">45</link> 行目に定義があります。</para>
+</section>
+<para>
+このクラス詳解は次のファイルから抽出されました:</para>
+math/<link linkend="_ntt_8hpp">ntt.hpp</link></section>
+</section>

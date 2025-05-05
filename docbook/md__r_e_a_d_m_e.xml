@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_md__r_e_a_d_m_e" xml:lang="ja">
+<title>Today03</title>
+<indexterm><primary>Today03</primary></indexterm>
+
+<para><anchor xml:id="_md__r_e_a_d_m_e_1autotoc_md52"/></para>
+
+<para><itemizedlist>
+<listitem>
+<para><link xlink:href="https://atcoder.jp/users/Today03">AtCoder</link></para>
+</listitem><listitem>
+<para><link xlink:href="https://codeforces.com/profile/Today03">Codeforces</link></para>
+</listitem><listitem>
+<para><link xlink:href="https://yukicoder.me/users/15224">yukicoder</link></para>
+</listitem></itemizedlist>
+</para>
+
+<para><link xlink:href="https://today017.github.io/kyopro_library/html/index.html">ライブラリのドキュメント</link></para>
+<section xml:id="_md__r_e_a_d_m_e_1autotoc_md53">
+<title>環境構築</title>
+<para><orderedlist>
+<listitem>
+<para>Docker, Git, make のインストール</para>
+</listitem><listitem>
+<para><link xlink:href="https://github.com/Today017/kyopro_library/blob/main/kyopro_tools/scripts/build">build</link> をコピペ、実行</para>
+</listitem><listitem>
+<para><computeroutput>make build</computeroutput> でDockerイメージをビルドする（初回のみ）</para>
+</listitem><listitem>
+<para><computeroutput>make run</computeroutput> でコンテナを起動して入る</para>
+</listitem></orderedlist>
+</para>
+</section>
+<section xml:id="_md__r_e_a_d_m_e_1autotoc_md54">
+<title>スクリプト</title>
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>./cmp &lt;file&gt;</computeroutput> <computeroutput>&lt;file&gt;</computeroutput> をコンパイルする。</para>
+</listitem><listitem>
+<para><computeroutput>./copy &lt;file&gt;</computeroutput> <computeroutput>&lt;file&gt;</computeroutput> にincludeしたライブラリを展開し、<computeroutput>./combinded.cpp</computeroutput> に保存する。</para>
+</listitem><listitem>
+<para><computeroutput>./test &lt;solve&gt; &lt;generate&gt; &lt;naive&gt;</computeroutput> ランダムテスト用スクリプト。<computeroutput>&lt;solve&gt;</computeroutput> を実行し、<computeroutput>&lt;generate&gt;</computeroutput> で生成した入力を与え、<computeroutput>&lt;naive&gt;</computeroutput> で生成した出力と比較する。</para>
+</listitem><listitem>
+<para><computeroutput>./contest</computeroutput> カレントディレクトリで作成したファイルを削除する。スクリプトやライブラリは削除しない。コンテスト前に実行する。</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md__r_e_a_d_m_e_1autotoc_md55">
+<title>使い方</title>
+<para><orderedlist>
+<listitem>
+<para><computeroutput>vim a.cpp</computeroutput> <literallayout><computeroutput>#include&lt;kyopro_library/template.hpp&gt;
+#include&lt;kyopro_library/graph/dsu.hpp&gt;&#32;//&#32;使うライブラリをincludeする
+
+int&#32;main(){
+&#32;&#32;&#32;&#32;//&#32;ここにコードを実装する
+}
+</computeroutput></literallayout></para>
+</listitem><listitem>
+<para><computeroutput>./cmp a</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>./a.out</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>./copy a</computeroutput></para>
+</listitem></orderedlist>
+</para>
+</section>
+<section xml:id="_md__r_e_a_d_m_e_1autotoc_md56">
+<title>データ構造に載せる代数構造の定義の仕方</title><section xml:id="_md__r_e_a_d_m_e_1autotoc_md57">
+<title>例) モノイド</title>
+<para><literallayout><computeroutput>struct&#32;Monoid&#32;{
+&#32;&#32;&#32;&#32;using&#32;Type&#32;=&#32;hoge;
+&#32;&#32;&#32;&#32;static&#32;Type&#32;id()&#32;{&#32;return&#32;hoge;&#32;}
+&#32;&#32;&#32;&#32;static&#32;Type&#32;op(const&#32;Type&amp;&#32;l,&#32;const&#32;Type&amp;&#32;r)&#32;{&#32;return&#32;hoge;&#32;}
+};
+</computeroutput></literallayout></para>
+</section>
+<section xml:id="_md__r_e_a_d_m_e_1autotoc_md58">
+<title>各構造の要件</title>
+<para><itemizedlist>
+<listitem>
+<para>モノイド<itemizedlist>
+<listitem>
+<para><computeroutput>Type id()</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>Type op(const Type&amp; l, const Type&amp; r)</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para>半群<itemizedlist>
+<listitem>
+<para><computeroutput>Type op(const Type&amp; l, const Type&amp; r)</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para>群<itemizedlist>
+<listitem>
+<para><computeroutput>Type inv(const Type&amp; x)</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>Type op(const Type&amp; l, const Type&amp; r)</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>Type id()</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para>作用素<itemizedlist>
+<listitem>
+<para><computeroutput>Type id()</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>Type op(const Type&amp; l, const Type&amp; r)</computeroutput> </para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,238 @@
+.TH "InsertableReversibleArrayImpl::LazyReversibleRBST< T, E, f, g, h, ts >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InsertableReversibleArrayImpl::LazyReversibleRBST< T, E, f, g, h, ts >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'insert_reverse_array\&.hpp'\fP
+.PP
+\fBInsertableReversibleArrayImpl::RBSTBase< LazyReversibleRBSTNode< T, E > >\fPを継承しています。
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "using \fBNode\fP = \fBLazyReversibleRBSTNode\fP<T,E>"
+.br
+.ti -1c
+.RI "using \fBbase\fP = \fBRBSTBase\fP<\fBLazyReversibleRBSTNode\fP<T,E>>"
+.br
+.in -1c
+
+基底クラス \fBInsertableReversibleArrayImpl::RBSTBase< LazyReversibleRBSTNode< T, E > >\fP に属する継承公開型
+.in +1c
+.ti -1c
+.RI "using \fBPtr\fP"
+.br
+.in -1c
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBLazyReversibleRBST\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBtoggle\fP (\fBPtr\fP t)"
+.br
+.ti -1c
+.RI "T \fBfold\fP (\fBPtr\fP &t, int a, int b)"
+.br
+.ti -1c
+.RI "void \fBreverse\fP (\fBPtr\fP &t, int a, int b)"
+.br
+.ti -1c
+.RI "void \fBapply\fP (\fBPtr\fP &t, int a, int b, const E &\fBe\fP)"
+.br
+.ti -1c
+.RI "\fBPtr\fP \fBmerge\fP (\fBPtr\fP l, \fBPtr\fP r)"
+.br
+.ti -1c
+.RI "pair< \fBPtr\fP, \fBPtr\fP > \fBsplit\fP (\fBPtr\fP t, int k)"
+.br
+.in -1c
+
+基底クラス \fBInsertableReversibleArrayImpl::RBSTBase< LazyReversibleRBSTNode< T, E > >\fP に属する継承公開メンバ関数
+.in +1c
+.ti -1c
+.RI "\fBPtr\fP \fBmy_new\fP (Args\&.\&.\&.args)"
+.br
+.ti -1c
+.RI "void \fBmy_del\fP (\fBPtr\fP t)"
+.br
+.ti -1c
+.RI "\fBPtr\fP \fBmake_tree\fP () const"
+.br
+.ti -1c
+.RI "int \fBsize\fP (\fBPtr\fP t) const"
+.br
+.ti -1c
+.RI "\fBPtr\fP \fBmerge\fP (\fBPtr\fP l, \fBPtr\fP r)"
+.br
+.ti -1c
+.RI "pair< \fBPtr\fP, \fBPtr\fP > \fBsplit\fP (\fBPtr\fP t, int k)"
+.br
+.ti -1c
+.RI "\fBPtr\fP \fBbuild\fP (int l, int r, const vector< decltype(\fBLazyReversibleRBSTNode\fP< T, E >::key)> &v)"
+.br
+.ti -1c
+.RI "\fBPtr\fP \fBbuild\fP (const vector< decltype(\fBLazyReversibleRBSTNode\fP< T, E >::key)> &v)"
+.br
+.ti -1c
+.RI "void \fBinsert\fP (\fBPtr\fP &t, int k, const Args &\&.\&.\&.args)"
+.br
+.ti -1c
+.RI "void \fBerase\fP (\fBPtr\fP &t, int k)"
+.br
+.ti -1c
+.RI "\fBPtr\fP \fBmy_new\fP (Args\&.\&.\&.args)"
+.br
+.ti -1c
+.RI "void \fBmy_del\fP (\fBPtr\fP t)"
+.br
+.ti -1c
+.RI "\fBPtr\fP \fBmake_tree\fP () const"
+.br
+.ti -1c
+.RI "int \fBsize\fP (\fBPtr\fP t) const"
+.br
+.ti -1c
+.RI "\fBPtr\fP \fBmerge\fP (\fBPtr\fP l, \fBPtr\fP r)"
+.br
+.ti -1c
+.RI "pair< \fBPtr\fP, \fBPtr\fP > \fBsplit\fP (\fBPtr\fP t, int k)"
+.br
+.ti -1c
+.RI "\fBPtr\fP \fBbuild\fP (int l, int r, const vector< decltype(\fBLazyReversibleRBSTNode\fP< T, E >::key)> &v)"
+.br
+.ti -1c
+.RI "\fBPtr\fP \fBbuild\fP (const vector< decltype(\fBLazyReversibleRBSTNode\fP< T, E >::key)> &v)"
+.br
+.ti -1c
+.RI "void \fBinsert\fP (\fBPtr\fP &t, int k, const Args &\&.\&.\&.args)"
+.br
+.ti -1c
+.RI "void \fBerase\fP (\fBPtr\fP &t, int k)"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "T \fBsum\fP (const \fBPtr\fP t) const"
+.br
+.ti -1c
+.RI "\fBPtr\fP \fBupdate\fP (\fBPtr\fP t) override"
+.br
+.ti -1c
+.RI "void \fBpush\fP (\fBPtr\fP t) override"
+.br
+.ti -1c
+.RI "void \fBpropagate\fP (\fBPtr\fP t, const E &x)"
+.br
+.in -1c
+
+基底クラス \fBInsertableReversibleArrayImpl::RBSTBase< LazyReversibleRBSTNode< T, E > >\fP に属する継承限定公開メンバ関数
+.in +1c
+.ti -1c
+.RI "int \fBcount\fP (const \fBPtr\fP t) const"
+.br
+.ti -1c
+.RI "int \fBcount\fP (const \fBPtr\fP t) const"
+.br
+.in -1c
+.SS "その他の継承メンバ"
+
+
+基底クラス \fBInsertableReversibleArrayImpl::RBSTBase< LazyReversibleRBSTNode< T, E > >\fP に属する継承静的限定公開メンバ関数
+.in +1c
+.ti -1c
+.RI "static uint64_t \fBrng\fP ()"
+.br
+.ti -1c
+.RI "static uint64_t \fBrng\fP ()"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename T, typename E, T(*)(T, T) f, T(*)(T, E) g, E(*)(E, E) h, T(*)(T) ts>
+.br
+struct InsertableReversibleArrayImpl::LazyReversibleRBST< T, E, f, g, h, ts >"
+.PP
+ \fBinsert_reverse_array\&.hpp\fP の \fB81\fP 行目に定義があります。
+.SH "型定義メンバ詳解"
+.PP 
+.SS "template<typename T, typename E, T(*)(T, T) f, T(*)(T, E) g, E(*)(E, E) h, T(*)(T) ts> using \fBInsertableReversibleArrayImpl::LazyReversibleRBST\fP< T, E, f, g, \fBh\fP, ts >::Node = \fBLazyReversibleRBSTNode\fP<T,E>"
+
+.PP
+ \fBinsert_reverse_array\&.hpp\fP の \fB82\fP 行目に定義があります。
+.SS "template<typename T, typename E, T(*)(T, T) f, T(*)(T, E) g, E(*)(E, E) h, T(*)(T) ts> using \fBInsertableReversibleArrayImpl::LazyReversibleRBST\fP< T, E, f, g, \fBh\fP, ts >::base = \fBRBSTBase\fP<\fBLazyReversibleRBSTNode\fP<T,E>>"
+
+.PP
+ \fBinsert_reverse_array\&.hpp\fP の \fB83\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename T, typename E, T(*)(T, T) f, T(*)(T, E) g, E(*)(E, E) h, T(*)(T) ts> \fBInsertableReversibleArrayImpl::LazyReversibleRBST\fP< T, E, f, g, \fBh\fP, ts >::LazyReversibleRBST ()\fR [default]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "template<typename T, typename E, T(*)(T, T) f, T(*)(T, E) g, E(*)(E, E) h, T(*)(T) ts> void \fBInsertableReversibleArrayImpl::LazyReversibleRBST\fP< T, E, f, g, \fBh\fP, ts >::toggle (\fBPtr\fP t)\fR [inline]\fP"
+
+.PP
+ \fBinsert_reverse_array\&.hpp\fP の \fB88\fP 行目に定義があります。
+.SS "template<typename T, typename E, T(*)(T, T) f, T(*)(T, E) g, E(*)(E, E) h, T(*)(T) ts> T \fBInsertableReversibleArrayImpl::LazyReversibleRBST\fP< T, E, f, g, \fBh\fP, ts >::fold (\fBPtr\fP & t, int a, int b)\fR [inline]\fP"
+
+.PP
+ \fBinsert_reverse_array\&.hpp\fP の \fB94\fP 行目に定義があります。
+.PP
+参照先 \fBsum()\fP\&.
+.SS "template<typename T, typename E, T(*)(T, T) f, T(*)(T, E) g, E(*)(E, E) h, T(*)(T) ts> void \fBInsertableReversibleArrayImpl::LazyReversibleRBST\fP< T, E, f, g, \fBh\fP, ts >::reverse (\fBPtr\fP & t, int a, int b)\fR [inline]\fP"
+
+.PP
+ \fBinsert_reverse_array\&.hpp\fP の \fB101\fP 行目に定義があります。
+.PP
+参照先 \fBtoggle()\fP\&.
+.SS "template<typename T, typename E, T(*)(T, T) f, T(*)(T, E) g, E(*)(E, E) h, T(*)(T) ts> void \fBInsertableReversibleArrayImpl::LazyReversibleRBST\fP< T, E, f, g, \fBh\fP, ts >::apply (\fBPtr\fP & t, int a, int b, const E & e)\fR [inline]\fP"
+
+.PP
+ \fBinsert_reverse_array\&.hpp\fP の \fB107\fP 行目に定義があります。
+.PP
+参照先 \fBpropagate()\fP\&.
+.SS "template<typename T, typename E, T(*)(T, T) f, T(*)(T, E) g, E(*)(E, E) h, T(*)(T) ts> T \fBInsertableReversibleArrayImpl::LazyReversibleRBST\fP< T, E, f, g, \fBh\fP, ts >::sum (const \fBPtr\fP t) const\fR [inline]\fP, \fR [protected]\fP"
+
+.PP
+ \fBinsert_reverse_array\&.hpp\fP の \fB115\fP 行目に定義があります。
+.SS "template<typename T, typename E, T(*)(T, T) f, T(*)(T, E) g, E(*)(E, E) h, T(*)(T) ts> \fBPtr\fP \fBInsertableReversibleArrayImpl::LazyReversibleRBST\fP< T, E, f, g, \fBh\fP, ts >::update (\fBPtr\fP t)\fR [inline]\fP, \fR [override]\fP, \fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+\fBInsertableReversibleArrayImpl::RBSTBase< LazyReversibleRBSTNode< T, E > >\fPを実装しています。
+.PP
+ \fBinsert_reverse_array\&.hpp\fP の \fB116\fP 行目に定義があります。
+.PP
+参照先 \fBpush()\fP\&.
+.SS "template<typename T, typename E, T(*)(T, T) f, T(*)(T, E) g, E(*)(E, E) h, T(*)(T) ts> void \fBInsertableReversibleArrayImpl::LazyReversibleRBST\fP< T, E, f, g, \fBh\fP, ts >::push (\fBPtr\fP t)\fR [inline]\fP, \fR [override]\fP, \fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+\fBInsertableReversibleArrayImpl::RBSTBase< LazyReversibleRBSTNode< T, E > >\fPを実装しています。
+.PP
+ \fBinsert_reverse_array\&.hpp\fP の \fB124\fP 行目に定義があります。
+.PP
+参照先 \fBpropagate()\fP, \fBtoggle()\fP\&.
+.SS "template<typename T, typename E, T(*)(T, T) f, T(*)(T, E) g, E(*)(E, E) h, T(*)(T) ts> void \fBInsertableReversibleArrayImpl::LazyReversibleRBST\fP< T, E, f, g, \fBh\fP, ts >::propagate (\fBPtr\fP t, const E & x)\fR [inline]\fP, \fR [protected]\fP"
+
+.PP
+ \fBinsert_reverse_array\&.hpp\fP の \fB136\fP 行目に定義があります。
+.SS "template<typename T, typename E, T(*)(T, T) f, T(*)(T, E) g, E(*)(E, E) h, T(*)(T) ts> \fBPtr\fP \fBInsertableReversibleArrayImpl::RBSTBase\fP< \fBLazyReversibleRBSTNode\fP< T, E > >::merge (\fBPtr\fP l, \fBPtr\fP r)\fR [inline]\fP"
+
+.PP
+ \fBinsert_reverse_array\&.hpp\fP の \fB12\fP 行目に定義があります。
+.SS "template<typename T, typename E, T(*)(T, T) f, T(*)(T, E) g, E(*)(E, E) h, T(*)(T) ts> pair< \fBPtr\fP, \fBPtr\fP > \fBInsertableReversibleArrayImpl::RBSTBase\fP< \fBLazyReversibleRBSTNode\fP< T, E > >::split (\fBPtr\fP t, int k)\fR [inline]\fP"
+
+.PP
+ \fBinsert_reverse_array\&.hpp\fP の \fB24\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

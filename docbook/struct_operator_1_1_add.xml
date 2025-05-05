@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_operator_1_1_add" xml:lang="ja">
+<title>Operator::Add&lt; T &gt; 構造体テンプレート</title>
+<indexterm><primary>Operator::Add&lt; T &gt;</primary></indexterm>
+<para>
+
+<para>加算 </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;operator.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開型    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_struct_operator_1_1_add_1a438ff08e5d49914d7dc9af1b0b293231">Type</link> = T</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>静的公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_struct_operator_1_1_add_1a438ff08e5d49914d7dc9af1b0b293231">Type</link> <link linkend="_struct_operator_1_1_add_1a8e0e087f00637c890ca8b50fa7e4e0fc">id</link> ()</para>
+</listitem>
+            <listitem><para>static <link linkend="_struct_operator_1_1_add_1a438ff08e5d49914d7dc9af1b0b293231">Type</link> <link linkend="_struct_operator_1_1_add_1a595b8d07233ca27c6932dc73264c0087">op</link> (const <link linkend="_struct_operator_1_1_add_1a438ff08e5d49914d7dc9af1b0b293231">Type</link> &amp;a, const <link linkend="_struct_operator_1_1_add_1a438ff08e5d49914d7dc9af1b0b293231">Type</link> &amp;b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<simplesect><title>template&lt;typename T&gt;<?linebreak?>struct Operator::Add&lt; T &gt;</title></simplesect>
+
+<para>加算 </para>
+<para>
+ <link linkend="_operator_8hpp_source">operator.hpp</link> の <link linkend="_operator_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>型定義メンバ詳解</title>
+<anchor xml:id="_struct_operator_1_1_add_1a438ff08e5d49914d7dc9af1b0b293231"/><section>
+    <title>Type</title>
+<indexterm><primary>Type</primary><secondary>Operator::Add&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Operator::Add&lt; T &gt;</primary><secondary>Type</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_operator_1_1_add">Operator::Add</link>&lt; T &gt;::Type = T</computeroutput></para><para>
+ <link linkend="_operator_8hpp_source">operator.hpp</link> の <link linkend="_operator_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_operator_1_1_add_1a8e0e087f00637c890ca8b50fa7e4e0fc"/><section>
+    <title>id()</title>
+<indexterm><primary>id</primary><secondary>Operator::Add&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Operator::Add&lt; T &gt;</primary><secondary>id</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>static <link linkend="_struct_operator_1_1_add_1a438ff08e5d49914d7dc9af1b0b293231">Type</link> <link linkend="_struct_operator_1_1_add">Operator::Add</link>&lt; T &gt;::id ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+ <link linkend="_operator_8hpp_source">operator.hpp</link> の <link linkend="_operator_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_operator_1_1_add_1a595b8d07233ca27c6932dc73264c0087"/><section>
+    <title>op()</title>
+<indexterm><primary>op</primary><secondary>Operator::Add&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Operator::Add&lt; T &gt;</primary><secondary>op</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>static <link linkend="_struct_operator_1_1_add_1a438ff08e5d49914d7dc9af1b0b293231">Type</link> <link linkend="_struct_operator_1_1_add">Operator::Add</link>&lt; T &gt;::op (const <link linkend="_struct_operator_1_1_add_1a438ff08e5d49914d7dc9af1b0b293231">Type</link> &amp; a, const <link linkend="_struct_operator_1_1_add_1a438ff08e5d49914d7dc9af1b0b293231">Type</link> &amp; b)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+ <link linkend="_operator_8hpp_source">operator.hpp</link> の <link linkend="_operator_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+others/<link linkend="_operator_8hpp">operator.hpp</link></section>
+</section>

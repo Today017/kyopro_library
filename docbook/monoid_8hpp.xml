@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_monoid_8hpp" xml:lang="ja">
+<title>others/monoid.hpp ファイル</title>
+<indexterm><primary>others/monoid.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_monoid_1_1_min">Monoid::Min&lt; T, max_value &gt;</link></para>
+
+<para>Minモノイド </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_monoid_1_1_max">Monoid::Max&lt; T, min_value &gt;</link></para>
+
+<para>Maxモノイド </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_monoid_1_1_sum">Monoid::Sum&lt; T &gt;</link></para>
+
+<para>和 </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_monoid_1_1_sum_pair">Monoid::SumPair&lt; T &gt;</link></para>
+
+<para>（和，区間の長さ） </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>名前空間    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_monoid">Monoid</link></para>
+
+<para>モノイド </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_bezout__identity_8hpp_source" xml:lang="ja">
+<title>bezout_identity.hpp</title>
+<indexterm><primary>math/bezout_identity.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_bezout__identity_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_bezout__identity_8hpp_source_1l00002"/>00002 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/math/extgcd.hpp&quot;</emphasis>
+<anchor xml:id="_bezout__identity_8hpp_source_1l00003"/>00003 
+<anchor xml:id="_bezout__identity_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;一次不定方程式&#32;ax+by=c&#32;を解く</emphasis>
+<anchor xml:id="_bezout__identity_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@ref&#32;verify:&#32;https://atcoder.jp/contests/abc340/submissions/62495050</emphasis>
+<anchor xml:id="_bezout__identity_8hpp_source_1l00006"/>00006 <emphasis role="comment">/**</emphasis>
+00007 <emphasis role="comment">*&#32;&#32;&#32;g=gcd(a,b)&#32;とする。extGCD(a,b)&#32;によって、ax&apos;+by&apos;=g&#32;を解く。</emphasis>
+00008 <emphasis role="comment">*&#32;&#32;&#32;両辺を&#32;c/g&#32;倍し&#32;x=x&apos;*(c/g),y=y&apos;*(c/g)&#32;とすると、ax+by=c&#32;を満たす。c&#32;が&#32;g&#32;で割り切れない場合、解は存在しない。</emphasis>
+00009 <emphasis role="comment">*&#32;&#32;&#32;ax+by=c&#32;の両辺を&#32;g&#32;で割ると、(a/g)*x&#32;+&#32;(b/g)*y&#32;=&#32;c/g&#32;となる。方程式の一般解を&#32;X,Y&#32;とおくと、(a/g)*(X-x)&#32;+&#32;(b/g)*(Y-y)&#32;=&#32;0&#32;を満たす。</emphasis>
+00010 <emphasis role="comment">*&#32;&#32;&#32;a/g&#32;と&#32;b/g&#32;は互いに素なので&#32;X-x&#32;は&#32;b/g&#32;の倍数であり、X=(b/g)*t+x&#32;となる。</emphasis>
+00011 <emphasis role="comment">*&#32;&#32;&#32;これを再代入すると、Y=-(a/g)*t+y&#32;を得る。</emphasis>
+00012 <emphasis role="comment">*/</emphasis>
+<anchor xml:id="_bezout__identity_8hpp_source_1l00013"/><link linkend="_struct_bezout_identity">00013</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_bezout_identity">BezoutIdentity</link>&#32;{
+<anchor xml:id="_bezout__identity_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;ax+by=c</emphasis>
+<anchor xml:id="_bezout__identity_8hpp_source_1l00015"/><link linkend="_struct_bezout_identity_1ae6269715a6bae60bc5ce0b4bfae2618e">00015</link> &#32;&#32;&#32;&#32;<link linkend="_struct_bezout_identity_1ae6269715a6bae60bc5ce0b4bfae2618e">BezoutIdentity</link>(ll&#32;a,&#32;ll&#32;b,&#32;ll&#32;c)&#32;{
+<anchor xml:id="_bezout__identity_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;a=a;
+<anchor xml:id="_bezout__identity_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;b=b;
+<anchor xml:id="_bezout__identity_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;c=c;
+<anchor xml:id="_bezout__identity_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_bezout__identity_8hpp_source_1l00020"/>00020 
+<anchor xml:id="_bezout__identity_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;解が存在するか否かを返す</emphasis>
+<anchor xml:id="_bezout__identity_8hpp_source_1l00022"/><link linkend="_struct_bezout_identity_1a2cf086366016d944941e8100fec64191">00022</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_bezout_identity_1a2cf086366016d944941e8100fec64191">build</link>()&#32;{
+<anchor xml:id="_bezout__identity_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;[g,X,Y]=ExtGcd(abs(a),abs(b));
+<anchor xml:id="_bezout__identity_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(c%g!=0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_bezout__identity_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;g=g,<emphasis role="keyword">this</emphasis>-&gt;X=X,<emphasis role="keyword">this</emphasis>-&gt;Y=Y;
+<anchor xml:id="_bezout__identity_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(a&lt;0)&#32;<emphasis role="keyword">this</emphasis>-&gt;X=-<emphasis role="keyword">this</emphasis>-&gt;X;
+<anchor xml:id="_bezout__identity_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(b&lt;0)&#32;<emphasis role="keyword">this</emphasis>-&gt;Y=-<emphasis role="keyword">this</emphasis>-&gt;Y;
+<anchor xml:id="_bezout__identity_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;X*=c/g,<emphasis role="keyword">this</emphasis>-&gt;Y*=c/g;
+<anchor xml:id="_bezout__identity_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_bezout__identity_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_bezout__identity_8hpp_source_1l00031"/>00031 
+<anchor xml:id="_bezout__identity_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;一般解を返す</emphasis>
+<anchor xml:id="_bezout__identity_8hpp_source_1l00033"/><link linkend="_struct_bezout_identity_1ad6b2e3225c8c8d920b9287459fda8b52">00033</link> &#32;&#32;&#32;&#32;<link linkend="_struct_bezout_identity_1ad6b2e3225c8c8d920b9287459fda8b52">PL</link>&#32;<link linkend="_struct_bezout_identity_1ad6b2e3225c8c8d920b9287459fda8b52">general_solution</link>(ll&#32;t=0)&#32;{
+<anchor xml:id="_bezout__identity_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ll&#32;x=b/g*t+X,y=-a/g*t+Y;
+<anchor xml:id="_bezout__identity_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;{x,y};
+<anchor xml:id="_bezout__identity_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_bezout__identity_8hpp_source_1l00037"/>00037 
+<anchor xml:id="_bezout__identity_8hpp_source_1l00038"/>00038 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_bezout__identity_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;ll&#32;a,b,c,g;
+<anchor xml:id="_bezout__identity_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;ll&#32;X,Y;
+<anchor xml:id="_bezout__identity_8hpp_source_1l00041"/>00041 };
+</programlisting></section>

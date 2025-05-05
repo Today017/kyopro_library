@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_util_8hpp" xml:lang="ja">
+<title>string/util.hpp ファイル</title>
+<indexterm><primary>string/util.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> <link linkend="_util_8hpp_1a8335b97f00ea079309901befee2792cc">StringToVi</link> (const string &amp;s, bool lower=true)</para>
+
+<para>文字列を数列に変換する </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> <link linkend="_util_8hpp_1aab43ef1e519912f613b571d595905948">ReadString</link> (bool lower=true)</para>
+
+<para>入力から文字列を受け取って数列に変換する </para>
+</listitem>
+            <listitem><para>string <link linkend="_util_8hpp_1ac8e46191ceee43d4c8626bdf6133fc6c">ViToString</link> (const <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> &amp;a, bool lower=true)</para>
+
+<para>数列を文字列に変換する </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_util_8hpp_1a8335b97f00ea079309901befee2792cc"/><section>
+    <title>StringToVi()</title>
+<indexterm><primary>StringToVi</primary><secondary>util.hpp</secondary></indexterm>
+<indexterm><primary>util.hpp</primary><secondary>StringToVi</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> StringToVi (const string &amp; s, bool lower = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+
+<para>文字列を数列に変換する </para>
+</para>
+<para>
+ <link linkend="_util_8hpp_source">util.hpp</link> の <link linkend="_util_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_util_8hpp_1aab43ef1e519912f613b571d595905948"/><section>
+    <title>ReadString()</title>
+<indexterm><primary>ReadString</primary><secondary>util.hpp</secondary></indexterm>
+<indexterm><primary>util.hpp</primary><secondary>ReadString</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> ReadString (bool lower = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+
+<para>入力から文字列を受け取って数列に変換する </para>
+</para>
+<para>
+ <link linkend="_util_8hpp_source">util.hpp</link> の <link linkend="_util_8hpp_source_1l00011">11</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_util_8hpp_1ac8e46191ceee43d4c8626bdf6133fc6c"/><section>
+    <title>ViToString()</title>
+<indexterm><primary>ViToString</primary><secondary>util.hpp</secondary></indexterm>
+<indexterm><primary>util.hpp</primary><secondary>ViToString</secondary></indexterm>
+<para><computeroutput>string ViToString (const <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> &amp; a, bool lower = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+
+<para>数列を文字列に変換する </para>
+</para>
+<para>
+ <link linkend="_util_8hpp_source">util.hpp</link> の <link linkend="_util_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

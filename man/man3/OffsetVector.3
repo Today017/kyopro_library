@@ -1,0 +1,87 @@
+.TH "OffsetVector< T >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+OffsetVector< T >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'offset_vector\&.hpp'\fP
+.PP
+vector< T >を継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBOffsetVector\fP ()=default"
+.br
+.ti -1c
+.RI "\fBOffsetVector\fP (int lo, int hi, T init)"
+.br
+.RI "添字として区間 [lo, hi] の値を取れる配列を宣言する "
+.ti -1c
+.RI "T & \fBoperator[]\fP (int i)"
+.br
+.ti -1c
+.RI "T \fBoperator[]\fP (int i) const"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "int \fBoffset\fP =0"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename T>
+.br
+struct OffsetVector< T >"
+.PP
+ \fBoffset_vector\&.hpp\fP の \fB6\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename T> \fBOffsetVector\fP< T >\fB::OffsetVector\fP ()\fR [default]\fP"
+
+.SS "template<typename T> \fBOffsetVector\fP< T >\fB::OffsetVector\fP (int lo, int hi, T init)\fR [inline]\fP"
+
+.PP
+添字として区間 [lo, hi] の値を取れる配列を宣言する 
+.PP
+\fB引数\fP
+.RS 4
+\fIinit\fP 初期値 
+.RE
+.PP
+
+.PP
+ \fBoffset_vector\&.hpp\fP の \fB12\fP 行目に定義があります。
+.PP
+参照先 \fBoffset\fP\&.
+.SH "関数詳解"
+.PP 
+.SS "template<typename T> T & \fBOffsetVector\fP< T >::operator[] (int i)\fR [inline]\fP"
+
+.PP
+ \fBoffset_vector\&.hpp\fP の \fB18\fP 行目に定義があります。
+.PP
+参照先 \fBoffset\fP\&.
+.SS "template<typename T> T \fBOffsetVector\fP< T >::operator[] (int i) const\fR [inline]\fP"
+
+.PP
+ \fBoffset_vector\&.hpp\fP の \fB23\fP 行目に定義があります。
+.PP
+参照先 \fBoffset\fP\&.
+.SH "メンバ詳解"
+.PP 
+.SS "template<typename T> int \fBOffsetVector\fP< T >::offset =0"
+
+.PP
+ \fBoffset_vector\&.hpp\fP の \fB7\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

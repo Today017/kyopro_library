@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_fps_8hpp_source" xml:lang="ja">
+<title>fps.hpp</title>
+<indexterm><primary>math/fps.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_fps_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_fps_8hpp_source_1l00003"/>00003 
+<anchor xml:id="_fps_8hpp_source_1l00004"/>00004 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">atcoder</emphasis><emphasis role="preprocessor">/</emphasis><emphasis role="preprocessor">convolution</emphasis><emphasis role="preprocessor">&gt;</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00005"/>00005 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">atcoder</emphasis><emphasis role="preprocessor">/</emphasis><emphasis role="preprocessor">modint</emphasis><emphasis role="preprocessor">&gt;</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00006"/>00006 
+<anchor xml:id="_fps_8hpp_source_1l00007"/>00007 <emphasis role="comment">///&#32;@brief&#32;形式的冪級数</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00008"/>00008 <emphasis role="comment">///&#32;@ref&#32;borrowed&#32;from:https://potato167.github.io/po167_library</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00009"/><link linkend="_namespace_f_p_s">00009</link> <emphasis role="keyword">namespace</emphasis>&#32;<link linkend="_namespace_f_p_s">FPS</link>&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;多項式&#32;f,&#32;g&#32;の積を返す</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_fps_8hpp_source_1l00012"/><link linkend="_namespace_f_p_s_1ab8e16e5c05f00c85e0a2d8ed9650a75a">00012</link> &#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s_1ab8e16e5c05f00c85e0a2d8ed9650a75a">vector</link>&lt;<link linkend="_namespace_f_p_s_1ab8e16e5c05f00c85e0a2d8ed9650a75a">T</link>&gt;&#32;<link linkend="_namespace_f_p_s_1ab8e16e5c05f00c85e0a2d8ed9650a75a">Mul</link>(<emphasis role="keyword">const</emphasis>&#32;vector&lt;T&gt;&amp;&#32;a,<emphasis role="keyword">const</emphasis>&#32;vector&lt;T&gt;&amp;&#32;b)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;atcoder::convolution(a,b);
+<anchor xml:id="_fps_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00015"/>00015 
+<anchor xml:id="_fps_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;多項式&#32;f,&#32;g&#32;の和を返す</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_fps_8hpp_source_1l00018"/><link linkend="_namespace_f_p_s_1acab6f12f41b871e31d16cb02a9a7c77d">00018</link> &#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s_1acab6f12f41b871e31d16cb02a9a7c77d">vector</link>&lt;<link linkend="_namespace_f_p_s_1acab6f12f41b871e31d16cb02a9a7c77d">T</link>&gt;&#32;<link linkend="_namespace_f_p_s_1acab6f12f41b871e31d16cb02a9a7c77d">Add</link>(<emphasis role="keyword">const</emphasis>&#32;vector&lt;T&gt;&amp;&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;vector&lt;T&gt;&amp;&#32;b)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;res(max(a.size(),b.size()));
+<anchor xml:id="_fps_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;res.size();&#32;i++)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(i&lt;a.size())&#32;res[i]+=a[i];
+<anchor xml:id="_fps_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(i&lt;b.size())&#32;res[i]+=b[i];
+<anchor xml:id="_fps_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;res;
+<anchor xml:id="_fps_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00026"/>00026 
+<anchor xml:id="_fps_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;多項式&#32;f,&#32;g&#32;の差を返す</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_fps_8hpp_source_1l00029"/><link linkend="_namespace_f_p_s_1a3f18c8b1d6f03a0255b86f501cbff66a">00029</link> &#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s_1a3f18c8b1d6f03a0255b86f501cbff66a">vector</link>&lt;<link linkend="_namespace_f_p_s_1a3f18c8b1d6f03a0255b86f501cbff66a">T</link>&gt;&#32;<link linkend="_namespace_f_p_s_1a3f18c8b1d6f03a0255b86f501cbff66a">Sub</link>(<emphasis role="keyword">const</emphasis>&#32;vector&lt;T&gt;&amp;&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;vector&lt;T&gt;&amp;&#32;b)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;res(max(a.size(),b.size()));
+<anchor xml:id="_fps_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;res.size();&#32;i++)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(i&lt;a.size())&#32;res[i]+=a[i];
+<anchor xml:id="_fps_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(i&lt;b.size())&#32;res[i]-=b[i];
+<anchor xml:id="_fps_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;res;
+<anchor xml:id="_fps_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00037"/>00037 
+<anchor xml:id="_fps_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;多項式&#32;f&#32;に対し、f*g&#32;=&#32;1&#32;なる&#32;g&#32;を返す</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_fps_8hpp_source_1l00040"/><link linkend="_namespace_f_p_s_1a8eef2a11b10be52cddfd0c9288c4457b">00040</link> &#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s_1a8eef2a11b10be52cddfd0c9288c4457b">vector</link>&lt;<link linkend="_namespace_f_p_s_1a8eef2a11b10be52cddfd0c9288c4457b">T</link>&gt;&#32;<link linkend="_namespace_f_p_s_1a8eef2a11b10be52cddfd0c9288c4457b">Inv</link>(vector&lt;T&gt;&#32;f,&#32;<emphasis role="keywordtype">int</emphasis>&#32;len=-1)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(len==-1)&#32;len=f.size();
+<anchor xml:id="_fps_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(f[0]!=0);
+<anchor xml:id="_fps_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;g={1/f[0]};
+<anchor xml:id="_fps_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;s=1;
+<anchor xml:id="_fps_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(s&lt;len)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//g=2g_s-f(g_s)^2(mod&#32;x^(2*s))</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//g=g-(fg-1)g</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//(fg-1)=0(mod&#32;x^(s))</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;n_g(s*2,0),f_s(s*2,0);
+<anchor xml:id="_fps_8hpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;g.resize(s*2);
+<anchor xml:id="_fps_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;s*2;&#32;i++)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keywordtype">int</emphasis>(f.size())&gt;i)&#32;f_s[i]=f[i];
+<anchor xml:id="_fps_8hpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;n_g[i]=g[i];
+<anchor xml:id="_fps_8hpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;atcoder::internal::butterfly(g);
+<anchor xml:id="_fps_8hpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;atcoder::internal::butterfly(f_s);
+<anchor xml:id="_fps_8hpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;s*2;&#32;i++)&#32;f_s[i]*=g[i];
+<anchor xml:id="_fps_8hpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;atcoder::internal::butterfly_inv(f_s);
+<anchor xml:id="_fps_8hpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;iz=1/(T)(s*2);
+<anchor xml:id="_fps_8hpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=s;&#32;i&lt;s*2;&#32;i++)&#32;f_s[i]*=iz;
+<anchor xml:id="_fps_8hpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;s;&#32;i++)&#32;f_s[i]=0;
+<anchor xml:id="_fps_8hpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;atcoder::internal::butterfly(f_s);
+<anchor xml:id="_fps_8hpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;s*2;&#32;i++)&#32;f_s[i]*=g[i];
+<anchor xml:id="_fps_8hpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;atcoder::internal::butterfly_inv(f_s);
+<anchor xml:id="_fps_8hpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=s;&#32;i&lt;s*2;&#32;i++)&#32;n_g[i]-=f_s[i]*iz;
+<anchor xml:id="_fps_8hpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;swap(n_g,g);
+<anchor xml:id="_fps_8hpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s*=2;
+<anchor xml:id="_fps_8hpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;g.resize(len);
+<anchor xml:id="_fps_8hpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;g;
+<anchor xml:id="_fps_8hpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00072"/>00072 
+<anchor xml:id="_fps_8hpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_fps_8hpp_source_1l00074"/><link linkend="_namespace_f_p_s_1a1c7e8ea5e82c17b70c163bda72b5c85d">00074</link> &#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s_1a1c7e8ea5e82c17b70c163bda72b5c85d">vector</link>&lt;<link linkend="_namespace_f_p_s_1a1c7e8ea5e82c17b70c163bda72b5c85d">T</link>&gt;&#32;<link linkend="_namespace_f_p_s_1a1c7e8ea5e82c17b70c163bda72b5c85d">CyclicConvolution</link>(vector&lt;T&gt;&#32;f,&#32;vector&lt;T&gt;&#32;g)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;atcoder::internal::butterfly(f);
+<anchor xml:id="_fps_8hpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;atcoder::internal::butterfly(g);
+<anchor xml:id="_fps_8hpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;(<emphasis role="keywordtype">int</emphasis>)f.size();&#32;i++)&#32;f[i]*=g[i];
+<anchor xml:id="_fps_8hpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;atcoder::internal::butterfly_inv(f);
+<anchor xml:id="_fps_8hpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;iz=(T)(1)/(T)(f.size());
+<anchor xml:id="_fps_8hpp_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;(<emphasis role="keywordtype">int</emphasis>)f.size();&#32;i++)&#32;f[i]*=iz;
+<anchor xml:id="_fps_8hpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;f;
+<anchor xml:id="_fps_8hpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00083"/>00083 
+<anchor xml:id="_fps_8hpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;多項式&#32;f&#32;の積分を返す</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_fps_8hpp_source_1l00086"/><link linkend="_namespace_f_p_s_1aac4a1224c61c85667cd96f74e138405b">00086</link> &#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s_1aac4a1224c61c85667cd96f74e138405b">vector</link>&lt;<link linkend="_namespace_f_p_s_1aac4a1224c61c85667cd96f74e138405b">T</link>&gt;&#32;<link linkend="_namespace_f_p_s_1aac4a1224c61c85667cd96f74e138405b">Integral</link>(vector&lt;T&gt;&#32;f)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(f.empty())&#32;<emphasis role="keywordflow">return</emphasis>&#32;f;
+<anchor xml:id="_fps_8hpp_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;num_inv((<emphasis role="keywordtype">int</emphasis>)f.size()+1);
+<anchor xml:id="_fps_8hpp_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;num_inv[0]=1;&#32;num_inv[1]=1;
+<anchor xml:id="_fps_8hpp_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;m=T::mod();
+<anchor xml:id="_fps_8hpp_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=2;&#32;i&lt;=(<emphasis role="keywordtype">int</emphasis>)f.size();&#32;i++)&#32;num_inv[i]=(0-num_inv[m%i])*(T)(m/i);
+<anchor xml:id="_fps_8hpp_source_1l00092"/>00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f.reserve((<emphasis role="keywordtype">int</emphasis>)f.size()+1);
+<anchor xml:id="_fps_8hpp_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f.push_back(0);
+<anchor xml:id="_fps_8hpp_source_1l00094"/>00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=(<emphasis role="keywordtype">int</emphasis>)f.size()-1;&#32;i&gt;0;&#32;i--)&#32;f[i]=f[i-1]*num_inv[i];
+<anchor xml:id="_fps_8hpp_source_1l00095"/>00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f[0]=0;
+<anchor xml:id="_fps_8hpp_source_1l00096"/>00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;f;
+<anchor xml:id="_fps_8hpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00098"/>00098 
+<anchor xml:id="_fps_8hpp_source_1l00099"/>00099 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;多項式&#32;f&#32;の微分を返す</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00100"/>00100 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_fps_8hpp_source_1l00101"/><link linkend="_namespace_f_p_s_1a18d3a03cb678d29deefc254e2fcb1b50">00101</link> &#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s_1a18d3a03cb678d29deefc254e2fcb1b50">vector</link>&lt;<link linkend="_namespace_f_p_s_1a18d3a03cb678d29deefc254e2fcb1b50">T</link>&gt;&#32;<link linkend="_namespace_f_p_s_1a18d3a03cb678d29deefc254e2fcb1b50">Differential</link>(vector&lt;T&gt;&#32;f)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00102"/>00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(f.empty())&#32;<emphasis role="keywordflow">return</emphasis>&#32;f;
+<anchor xml:id="_fps_8hpp_source_1l00103"/>00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;(<emphasis role="keywordtype">int</emphasis>)f.size()-1;&#32;i++)&#32;f[i]=f[i+1]*(T)(i+1);
+<anchor xml:id="_fps_8hpp_source_1l00104"/>00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f.pop_back();
+<anchor xml:id="_fps_8hpp_source_1l00105"/>00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;f;
+<anchor xml:id="_fps_8hpp_source_1l00106"/>00106 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00107"/>00107 
+<anchor xml:id="_fps_8hpp_source_1l00108"/>00108 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;多項式&#32;f&#32;について、e^f&#32;を返す</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00109"/>00109 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_fps_8hpp_source_1l00110"/><link linkend="_namespace_f_p_s_1a513c11c4e1a5a02c0e665f8c8d0d71d9">00110</link> &#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s_1a513c11c4e1a5a02c0e665f8c8d0d71d9">vector</link>&lt;<link linkend="_namespace_f_p_s_1a513c11c4e1a5a02c0e665f8c8d0d71d9">T</link>&gt;&#32;<link linkend="_namespace_f_p_s_1a513c11c4e1a5a02c0e665f8c8d0d71d9">Exp</link>(vector&lt;T&gt;&#32;f,&#32;<emphasis role="keywordtype">int</emphasis>&#32;len=-1)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00111"/>00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(len==-1)&#32;len=f.size();
+<anchor xml:id="_fps_8hpp_source_1l00112"/>00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(len==0)&#32;<emphasis role="keywordflow">return</emphasis>{};
+<anchor xml:id="_fps_8hpp_source_1l00113"/>00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(len==1)&#32;<emphasis role="keywordflow">return</emphasis>{T(1)};
+<anchor xml:id="_fps_8hpp_source_1l00114"/>00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(!f.empty()&amp;&amp;f[0]==0);
+<anchor xml:id="_fps_8hpp_source_1l00115"/>00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;s=1;
+<anchor xml:id="_fps_8hpp_source_1l00116"/>00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//simple</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00117"/>00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;g={T(1)};
+<anchor xml:id="_fps_8hpp_source_1l00118"/>00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(s&lt;len)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00119"/>00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//g&apos;/g</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00120"/>00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//A*B</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00121"/>00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;A=g,B=g;
+<anchor xml:id="_fps_8hpp_source_1l00122"/>00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;A=Differential(A);
+<anchor xml:id="_fps_8hpp_source_1l00123"/>00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;B=Inv(B,2*s);
+<anchor xml:id="_fps_8hpp_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;A.resize(2*s);
+<anchor xml:id="_fps_8hpp_source_1l00125"/>00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;A=CyclicConvolution(A,B);
+<anchor xml:id="_fps_8hpp_source_1l00126"/>00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;A.pop_back();
+<anchor xml:id="_fps_8hpp_source_1l00127"/>00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;A=Integral(A);
+<anchor xml:id="_fps_8hpp_source_1l00128"/>00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;s;&#32;i++)&#32;A[i]=0;
+<anchor xml:id="_fps_8hpp_source_1l00129"/>00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=s;&#32;i&lt;s*2;&#32;i++)&#32;A[i]=(i&lt;(<emphasis role="keywordtype">int</emphasis>)f.size()?f[i]:0)-A[i];
+<anchor xml:id="_fps_8hpp_source_1l00130"/>00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//g_hat=g(1-g+f)</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//g+=B=g*A</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00132"/>00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;g.resize(2*s);
+<anchor xml:id="_fps_8hpp_source_1l00133"/>00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;B=CyclicConvolution(A,g);
+<anchor xml:id="_fps_8hpp_source_1l00134"/>00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=s;&#32;i&lt;s*2;&#32;i++)&#32;g[i]=B[i];
+<anchor xml:id="_fps_8hpp_source_1l00135"/>00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;s*=2;
+<anchor xml:id="_fps_8hpp_source_1l00136"/>00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00137"/>00137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;g.resize(len);
+<anchor xml:id="_fps_8hpp_source_1l00138"/>00138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;g;
+<anchor xml:id="_fps_8hpp_source_1l00139"/>00139 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00140"/>00140 
+<anchor xml:id="_fps_8hpp_source_1l00141"/>00141 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;多項式&#32;f&#32;について、log(f)&#32;を返す</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00142"/>00142 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_fps_8hpp_source_1l00143"/><link linkend="_namespace_f_p_s_1a1464585355625594be0a83eb118fa2de">00143</link> &#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s_1a1464585355625594be0a83eb118fa2de">vector</link>&lt;<link linkend="_namespace_f_p_s_1a1464585355625594be0a83eb118fa2de">T</link>&gt;&#32;<link linkend="_namespace_f_p_s_1a1464585355625594be0a83eb118fa2de">Log</link>(vector&lt;T&gt;&#32;f,&#32;<emphasis role="keywordtype">int</emphasis>&#32;len=-1)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00144"/>00144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(len==-1)&#32;len=f.size();
+<anchor xml:id="_fps_8hpp_source_1l00145"/>00145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(len==0)&#32;<emphasis role="keywordflow">return</emphasis>{};
+<anchor xml:id="_fps_8hpp_source_1l00146"/>00146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(len==1)&#32;<emphasis role="keywordflow">return</emphasis>{T(0)};
+<anchor xml:id="_fps_8hpp_source_1l00147"/>00147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(!f.empty()&amp;&amp;f[0]==1);
+<anchor xml:id="_fps_8hpp_source_1l00148"/>00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;res=atcoder::convolution(Differential(f),Inv(f,len));
+<anchor xml:id="_fps_8hpp_source_1l00149"/>00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;res.resize(len-1);
+<anchor xml:id="_fps_8hpp_source_1l00150"/>00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Integral(res);
+<anchor xml:id="_fps_8hpp_source_1l00151"/>00151 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00152"/>00152 
+<anchor xml:id="_fps_8hpp_source_1l00153"/>00153 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;多項式&#32;f^M&#32;を返す</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00154"/>00154 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+<anchor xml:id="_fps_8hpp_source_1l00155"/><link linkend="_namespace_f_p_s_1ad880a20b5da1f7ba2f05aa95429ee08d">00155</link> &#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s_1ad880a20b5da1f7ba2f05aa95429ee08d">vector</link>&lt;<link linkend="_namespace_f_p_s_1ad880a20b5da1f7ba2f05aa95429ee08d">T</link>&gt;&#32;<link linkend="_namespace_f_p_s_1ad880a20b5da1f7ba2f05aa95429ee08d">Pow</link>(vector&lt;T&gt;&#32;f,&#32;ll&#32;M,&#32;<emphasis role="keywordtype">int</emphasis>&#32;len=-1)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00156"/>00156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(len==-1)&#32;len=f.size();
+<anchor xml:id="_fps_8hpp_source_1l00157"/>00157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;res(len,0);
+<anchor xml:id="_fps_8hpp_source_1l00158"/>00158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(M==0)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00159"/>00159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;res[0]=1;
+<anchor xml:id="_fps_8hpp_source_1l00160"/>00160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;res;
+<anchor xml:id="_fps_8hpp_source_1l00161"/>00161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00162"/>00162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;(<emphasis role="keywordtype">int</emphasis>)f.size();&#32;i++)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00163"/>00163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(f[i]==0)&#32;<emphasis role="keywordflow">continue</emphasis>;
+<anchor xml:id="_fps_8hpp_source_1l00164"/>00164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(i&gt;(len-1)/M)&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_fps_8hpp_source_1l00165"/>00165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;g((<emphasis role="keywordtype">int</emphasis>)f.size()-i);
+<anchor xml:id="_fps_8hpp_source_1l00166"/>00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;v=(T)(1)/(T)(f[i]);
+<anchor xml:id="_fps_8hpp_source_1l00167"/>00167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;j=i;&#32;j&lt;(<emphasis role="keywordtype">int</emphasis>)f.size();&#32;j++)&#32;g[j-i]=f[j]*v;
+<anchor xml:id="_fps_8hpp_source_1l00168"/>00168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ll&#32;zero=i*M;
+<anchor xml:id="_fps_8hpp_source_1l00169"/>00169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(i)&#32;len-=i*M;
+<anchor xml:id="_fps_8hpp_source_1l00170"/>00170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;g=Log(g,len);
+<anchor xml:id="_fps_8hpp_source_1l00171"/>00171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(T&amp;&#32;x:g)&#32;x*=M;
+<anchor xml:id="_fps_8hpp_source_1l00172"/>00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;g=Exp(g,len);
+<anchor xml:id="_fps_8hpp_source_1l00173"/>00173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v=(T)(1)/v;
+<anchor xml:id="_fps_8hpp_source_1l00174"/>00174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;c=1;
+<anchor xml:id="_fps_8hpp_source_1l00175"/>00175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(M)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00176"/>00176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(M&amp;1)&#32;c=c*v;
+<anchor xml:id="_fps_8hpp_source_1l00177"/>00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v=v*v;
+<anchor xml:id="_fps_8hpp_source_1l00178"/>00178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;M&gt;&gt;=1;
+<anchor xml:id="_fps_8hpp_source_1l00179"/>00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00180"/>00180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;len;&#32;i++)&#32;res[i+zero]=g[i]*c;
+<anchor xml:id="_fps_8hpp_source_1l00181"/>00181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;res;
+<anchor xml:id="_fps_8hpp_source_1l00182"/>00182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00183"/>00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;res;
+<anchor xml:id="_fps_8hpp_source_1l00184"/>00184 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00185"/>00185 
+<anchor xml:id="_fps_8hpp_source_1l00186"/>00186 &#32;&#32;&#32;&#32;<emphasis role="comment">//in&#32;:DFT(v)(len(v)=z)</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00187"/>00187 &#32;&#32;&#32;&#32;<emphasis role="comment">//out:DFT(v)(len(v)=2*z)</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00188"/>00188 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_fps_8hpp_source_1l00189"/><link linkend="_namespace_f_p_s_1a19f83b0936d8aa5255d060101ecd8fad">00189</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_namespace_f_p_s_1a19f83b0936d8aa5255d060101ecd8fad">Extend</link>(vector&lt;T&gt;&amp;&#32;v)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00190"/>00190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;z=v.size();
+<anchor xml:id="_fps_8hpp_source_1l00191"/>00191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;e=(T(atcoder::internal::primitive_root_constexpr(T::mod()))).pow(T::mod()/(2*z));
+<anchor xml:id="_fps_8hpp_source_1l00192"/>00192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;cp=v;
+<anchor xml:id="_fps_8hpp_source_1l00193"/>00193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;atcoder::internal::butterfly_inv(cp);
+<anchor xml:id="_fps_8hpp_source_1l00194"/>00194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;tmp=(T)(1)/(T)(z);
+<anchor xml:id="_fps_8hpp_source_1l00195"/>00195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;z;&#32;i++)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00196"/>00196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cp[i]*=tmp;
+<anchor xml:id="_fps_8hpp_source_1l00197"/>00197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp*=e;
+<anchor xml:id="_fps_8hpp_source_1l00198"/>00198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00199"/>00199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;atcoder::internal::butterfly(cp);
+<anchor xml:id="_fps_8hpp_source_1l00200"/>00200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;z;&#32;i++)&#32;v.push_back(cp[i]);
+<anchor xml:id="_fps_8hpp_source_1l00201"/>00201 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00202"/>00202 
+<anchor xml:id="_fps_8hpp_source_1l00203"/>00203 &#32;&#32;&#32;&#32;<emphasis role="comment">//s.t|v|=2^s(no&#32;assert)</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00204"/>00204 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_fps_8hpp_source_1l00205"/><link linkend="_namespace_f_p_s_1aa2f295d3c015c1b90c03b895507e2961">00205</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_namespace_f_p_s_1aa2f295d3c015c1b90c03b895507e2961">PickEvenOdd</link>(vector&lt;T&gt;&amp;&#32;v,&#32;<emphasis role="keywordtype">int</emphasis>&#32;odd)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00206"/>00206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;z=v.size()/2;
+<anchor xml:id="_fps_8hpp_source_1l00207"/>00207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;half=(T)(1)/(T)(2);
+<anchor xml:id="_fps_8hpp_source_1l00208"/>00208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(odd==0)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00209"/>00209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;z;&#32;i++)&#32;v[i]=(v[i*2]+v[i*2+1])*half;
+<anchor xml:id="_fps_8hpp_source_1l00210"/>00210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v.resize(z);
+<anchor xml:id="_fps_8hpp_source_1l00211"/>00211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_fps_8hpp_source_1l00212"/>00212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;e=(T(atcoder::internal::primitive_root_constexpr(T::mod()))).pow(T::mod()/(2*z));
+<anchor xml:id="_fps_8hpp_source_1l00213"/>00213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;ie=T(1)/e;
+<anchor xml:id="_fps_8hpp_source_1l00214"/>00214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;es={half};
+<anchor xml:id="_fps_8hpp_source_1l00215"/>00215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>((<emphasis role="keywordtype">int</emphasis>)es.size()!=z)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00216"/>00216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;n_es((<emphasis role="keywordtype">int</emphasis>)es.size()*2);
+<anchor xml:id="_fps_8hpp_source_1l00217"/>00217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;(<emphasis role="keywordtype">int</emphasis>)es.size();&#32;i++)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00218"/>00218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;n_es[i*2]=(es[i]);
+<anchor xml:id="_fps_8hpp_source_1l00219"/>00219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;n_es[i*2+1]=(es[i]*ie);
+<anchor xml:id="_fps_8hpp_source_1l00220"/>00220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00221"/>00221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ie*=ie;
+<anchor xml:id="_fps_8hpp_source_1l00222"/>00222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;swap(n_es,es);
+<anchor xml:id="_fps_8hpp_source_1l00223"/>00223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00224"/>00224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;z;&#32;i++)&#32;v[i]=(v[i*2]-v[i*2+1])*es[i];
+<anchor xml:id="_fps_8hpp_source_1l00225"/>00225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v.resize(z);
+<anchor xml:id="_fps_8hpp_source_1l00226"/>00226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00227"/>00227 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00228"/>00228 
+<anchor xml:id="_fps_8hpp_source_1l00229"/>00229 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;多項式&#32;f,&#32;g&#32;について、`f&#32;=&#32;gq&#32;+&#32;r`&#32;なる&#32;q,&#32;r&#32;を返す</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00230"/>00230 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;<link linkend="_namespace_f_p_s">T</link>&gt;
+<anchor xml:id="_fps_8hpp_source_1l00231"/><link linkend="_namespace_f_p_s_1a50424cf32ca2c09b2a9ad454915e84c9">00231</link> &#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s">pair</link>&lt;<link linkend="_namespace_f_p_s">vector</link>&lt;<link linkend="_namespace_f_p_s">T</link>&gt;,<link linkend="_namespace_f_p_s">vector</link>&lt;<link linkend="_namespace_f_p_s">T</link>&gt;&gt;&#32;<link linkend="_namespace_f_p_s">Div</link>(<link linkend="_namespace_f_p_s">vector</link>&lt;<link linkend="_namespace_f_p_s">T</link>&gt;&#32;<link linkend="_namespace_f_p_s">f</link>,&#32;<link linkend="_namespace_f_p_s">vector</link>&lt;<link linkend="_namespace_f_p_s">T</link>&gt;&#32;<link linkend="_namespace_f_p_s">g</link>)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00232"/>00232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_namespace_f_p_s">n</link>=<link linkend="_namespace_f_p_s">f</link>.<link linkend="_namespace_f_p_s">size</link>(),<link linkend="_namespace_f_p_s">m</link>=<link linkend="_namespace_f_p_s">g</link>.<link linkend="_namespace_f_p_s">size</link>();
+<anchor xml:id="_fps_8hpp_source_1l00233"/>00233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_namespace_f_p_s">n</link>&lt;<link linkend="_namespace_f_p_s">m</link>)&#32;<emphasis role="keywordflow">return</emphasis>{{},<link linkend="_namespace_f_p_s">f</link>};
+<anchor xml:id="_fps_8hpp_source_1l00234"/>00234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s">vector</link>&lt;<link linkend="_namespace_f_p_s">T</link>&gt;&#32;<link linkend="_namespace_f_p_s">r</link>=<link linkend="_namespace_f_p_s">f</link>;
+<anchor xml:id="_fps_8hpp_source_1l00235"/>00235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s">reverse</link>(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(<link linkend="_namespace_f_p_s">f</link>));&#32;<link linkend="_namespace_f_p_s">reverse</link>(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(<link linkend="_namespace_f_p_s">g</link>));
+<anchor xml:id="_fps_8hpp_source_1l00236"/>00236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s">f</link>.<link linkend="_namespace_f_p_s">resize</link>(<link linkend="_namespace_f_p_s">n</link>-<link linkend="_namespace_f_p_s">m</link>+1);
+<anchor xml:id="_fps_8hpp_source_1l00237"/>00237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s">vector</link>&lt;<link linkend="_namespace_f_p_s">T</link>&gt;&#32;<link linkend="_namespace_f_p_s">q</link>=<link linkend="_namespace_f_p_s">Mul</link>(<link linkend="_namespace_f_p_s">f</link>,<link linkend="_namespace_f_p_s">Inv</link>(<link linkend="_namespace_f_p_s">g</link>,<link linkend="_namespace_f_p_s">n</link>-<link linkend="_namespace_f_p_s">m</link>+1));
+<anchor xml:id="_fps_8hpp_source_1l00238"/>00238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s">q</link>.<link linkend="_namespace_f_p_s">resize</link>(<link linkend="_namespace_f_p_s">n</link>-<link linkend="_namespace_f_p_s">m</link>+1);
+<anchor xml:id="_fps_8hpp_source_1l00239"/>00239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s">reverse</link>(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(<link linkend="_namespace_f_p_s">q</link>));&#32;<link linkend="_namespace_f_p_s">reverse</link>(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(<link linkend="_namespace_f_p_s">g</link>));
+<anchor xml:id="_fps_8hpp_source_1l00240"/>00240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_namespace_f_p_s">r</link>=<link linkend="_namespace_f_p_s">Sub</link>(<link linkend="_namespace_f_p_s">r</link>,<link linkend="_namespace_f_p_s">Mul</link>(<link linkend="_namespace_f_p_s">q</link>,<link linkend="_namespace_f_p_s">g</link>));
+<anchor xml:id="_fps_8hpp_source_1l00241"/>00241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(!<link linkend="_namespace_f_p_s">q</link>.<link linkend="_namespace_f_p_s">empty</link>()&amp;&amp;<link linkend="_namespace_f_p_s">q</link>.<link linkend="_namespace_f_p_s">back</link>()==0)&#32;<link linkend="_namespace_f_p_s">q</link>.<link linkend="_namespace_f_p_s">pop_back</link>();
+<anchor xml:id="_fps_8hpp_source_1l00242"/>00242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(!<link linkend="_namespace_f_p_s">r</link>.<link linkend="_namespace_f_p_s">empty</link>()&amp;&amp;<link linkend="_namespace_f_p_s">r</link>.<link linkend="_namespace_f_p_s">back</link>()==0)&#32;<link linkend="_namespace_f_p_s">r</link>.<link linkend="_namespace_f_p_s">pop_back</link>();
+<anchor xml:id="_fps_8hpp_source_1l00243"/>00243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;{<link linkend="_namespace_f_p_s">q</link>,<link linkend="_namespace_f_p_s">r</link>};
+<anchor xml:id="_fps_8hpp_source_1l00244"/>00244 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00245"/>00245 
+<anchor xml:id="_fps_8hpp_source_1l00246"/>00246 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;`[x^k](P/Q)`&#32;を返す</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00247"/>00247 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_fps_8hpp_source_1l00248"/><link linkend="_namespace_f_p_s_1ad5a7c86fb5d29d85a778514cbc31647e">00248</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_namespace_f_p_s_1ad5a7c86fb5d29d85a778514cbc31647e">BostonMori</link>(ll&#32;k,&#32;vector&lt;T&gt;&#32;P,&#32;vector&lt;T&gt;&#32;Q)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00249"/>00249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(!Q.empty()&amp;&amp;Q[0]!=0);
+<anchor xml:id="_fps_8hpp_source_1l00250"/>00250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;z=1;
+<anchor xml:id="_fps_8hpp_source_1l00251"/>00251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(z&lt;(<emphasis role="keywordtype">int</emphasis>)max(P.size(),Q.size()))&#32;z*=2;
+<anchor xml:id="_fps_8hpp_source_1l00252"/>00252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;P.resize(z*2,0);&#32;Q.resize(z*2,0);
+<anchor xml:id="_fps_8hpp_source_1l00253"/>00253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;atcoder::internal::butterfly(P);&#32;atcoder::internal::butterfly(Q);
+<anchor xml:id="_fps_8hpp_source_1l00254"/>00254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fast</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00255"/>00255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(k)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00256"/>00256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Q(-x)</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00257"/>00257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;Q_n(z*2);
+<anchor xml:id="_fps_8hpp_source_1l00258"/>00258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;z;&#32;i++)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00259"/>00259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Q_n[i*2]=Q[i*2+1];
+<anchor xml:id="_fps_8hpp_source_1l00260"/>00260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Q_n[i*2+1]=Q[i*2];
+<anchor xml:id="_fps_8hpp_source_1l00261"/>00261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00262"/>00262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;z*2;&#32;i++)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00263"/>00263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;P[i]*=Q_n[i];
+<anchor xml:id="_fps_8hpp_source_1l00264"/>00264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Q[i]*=Q_n[i];
+<anchor xml:id="_fps_8hpp_source_1l00265"/>00265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00266"/>00266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PickEvenOdd(P,k&amp;1);
+<anchor xml:id="_fps_8hpp_source_1l00267"/>00267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PickEvenOdd(Q,0);
+<anchor xml:id="_fps_8hpp_source_1l00268"/>00268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;k/=2;
+<anchor xml:id="_fps_8hpp_source_1l00269"/>00269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(k==0)&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="_fps_8hpp_source_1l00270"/>00270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Extend(P);
+<anchor xml:id="_fps_8hpp_source_1l00271"/>00271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Extend(Q);
+<anchor xml:id="_fps_8hpp_source_1l00272"/>00272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00273"/>00273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;SP=0,SQ=0;
+<anchor xml:id="_fps_8hpp_source_1l00274"/>00274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;z;&#32;i++)&#32;SP+=P[i],SQ+=Q[i];
+<anchor xml:id="_fps_8hpp_source_1l00275"/>00275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;SP/SQ;
+<anchor xml:id="_fps_8hpp_source_1l00276"/>00276 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00277"/>00277 
+<anchor xml:id="_fps_8hpp_source_1l00278"/>00278 &#32;&#32;&#32;&#32;<emphasis role="comment">//0=a[i]*c[0]+a[i-1]*c[1]+a[i-2]*c[2]+...+a[i-d]*c[d]</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00279"/>00279 &#32;&#32;&#32;&#32;<emphasis role="comment">//a.size()+1==c.size()</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00280"/>00280 &#32;&#32;&#32;&#32;<emphasis role="comment">//c[0]=-1?</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00281"/>00281 &#32;&#32;&#32;&#32;<emphasis role="comment">//return&#32;a[k]</emphasis>
+<anchor xml:id="_fps_8hpp_source_1l00282"/>00282 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_fps_8hpp_source_1l00283"/><link linkend="_namespace_f_p_s_1ad80ebbb0f03f81108e94e432272b9cfe">00283</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_namespace_f_p_s_1ad80ebbb0f03f81108e94e432272b9cfe">KthLinear</link>(ll&#32;k,&#32;vector&lt;T&gt;&#32;a,&#32;vector&lt;T&gt;&#32;c)&#32;{
+<anchor xml:id="_fps_8hpp_source_1l00284"/>00284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;d=a.size();
+<anchor xml:id="_fps_8hpp_source_1l00285"/>00285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(d+1==<emphasis role="keywordtype">int</emphasis>(c.size()));
+<anchor xml:id="_fps_8hpp_source_1l00286"/>00286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;P=atcoder::convolution(a,c);
+<anchor xml:id="_fps_8hpp_source_1l00287"/>00287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;P.resize(d);
+<anchor xml:id="_fps_8hpp_source_1l00288"/>00288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;BostanMori(k,P,c);
+<anchor xml:id="_fps_8hpp_source_1l00289"/>00289 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fps_8hpp_source_1l00290"/>00290 }
+</programlisting></section>

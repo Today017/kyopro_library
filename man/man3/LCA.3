@@ -1,0 +1,80 @@
+.TH "LCA" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LCA \- \fBLCA\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'lca\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBLCA\fP (const \fBVVI\fP &g, int root=0)"
+.br
+.RI "コンストラクタ "
+.ti -1c
+.RI "int \fBlca\fP (int u, int v)"
+.br
+.RI "頂点 u, v のLCAを返す "
+.ti -1c
+.RI "int \fBdistance\fP (int u, int v)"
+.br
+.RI "頂点 u, v の距離を返す "
+.ti -1c
+.RI "bool \fBis_on_path\fP (int u, int v, int x)"
+.br
+.RI "頂点 x が u-v のパス上にあるか否かを返す "
+.ti -1c
+.RI "int \fBclimb\fP (int u, int d)"
+.br
+.RI "頂点 u から d 回遡った位置にある頂点を返す "
+.in -1c
+.SH "詳解"
+.PP 
+\fBLCA\fP 
+.PP
+ \fBlca\&.hpp\fP の \fB4\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "LCA::LCA (const \fBVVI\fP & g, int root = \fR0\fP)\fR [inline]\fP"
+
+.PP
+コンストラクタ 
+.PP
+ \fBlca\&.hpp\fP の \fB6\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "int LCA::lca (int u, int v)\fR [inline]\fP"
+
+.PP
+頂点 u, v のLCAを返す 
+.PP
+ \fBlca\&.hpp\fP の \fB16\fP 行目に定義があります。
+.SS "int LCA::distance (int u, int v)\fR [inline]\fP"
+
+.PP
+頂点 u, v の距離を返す 
+.PP
+ \fBlca\&.hpp\fP の \fB26\fP 行目に定義があります。
+.SS "bool LCA::is_on_path (int u, int v, int x)\fR [inline]\fP"
+
+.PP
+頂点 x が u-v のパス上にあるか否かを返す 
+.PP
+ \fBlca\&.hpp\fP の \fB31\fP 行目に定義があります。
+.PP
+参照先 \fBdistance()\fP\&.
+.SS "int LCA::climb (int u, int d)\fR [inline]\fP"
+
+.PP
+頂点 u から d 回遡った位置にある頂点を返す 
+.PP
+ \fBlca\&.hpp\fP の \fB36\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ring_8hpp" xml:lang="ja">
+<title>others/ring.hpp ファイル</title>
+<indexterm><primary>others/ring.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>名前空間    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_ring">Ring</link></para>
+
+<para>円環上での計算 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_namespace_ring_1abd2be741ee7adfd0fad8590991e231bd">Ring::BetweenIncrement</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> p1, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> p2, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> target)</para>
+
+<para>円環上で p1-&gt;p2 に+方向に移動する際に target を通過するかを判定する。 verify: <link xlink:href="https://atcoder.jp/contests/abc367/tasks/abc367_a">https://atcoder.jp/contests/abc367/tasks/abc367_a</link> </para>
+</listitem>
+            <listitem><para>bool <link linkend="_namespace_ring_1aa7be4526ac3dbffd587fa2940d69e45f">Ring::BetweenDecrement</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> p1, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> p2, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> target)</para>
+
+<para>円環上で p1-&gt;p2 に-方向に移動する際に target を通過するかを判定する。 </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_namespace_ring_1a51b59d6334dd0f6ffed02a0cfd26e69b">Ring::DistanceMin</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> p1, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> p2, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> n)</para>
+
+<para>サイズ n の円環上で p1-&gt;p2 に移動する距離を返す。 </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_namespace_ring_1adbb40db1fb017775281f57556a1f3787">Ring::DistanceIncrement</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> p1, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> p2, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> n)</para>
+
+<para>サイズ n の円環上で p1-&gt;p2 に+方向に移動する距離を返す。 </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_namespace_ring_1ae9fa707dfac273441785771d1e0d647e">Ring::DistanceDecrement</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> p1, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> p2, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> n)</para>
+
+<para>サイズ n の円環上で p1-&gt;p2 に-方向に移動する距離を返す。 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

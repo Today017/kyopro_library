@@ -1,0 +1,119 @@
+.TH "Combinatorics< T >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Combinatorics< T > \- 二項係数・階乗計算  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'combination\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBCombinatorics\fP ()=default"
+.br
+.ti -1c
+.RI "\fBCombinatorics\fP (int n)"
+.br
+.RI "二項係数の前計算 "
+.ti -1c
+.RI "T \fBcomb\fP (\fBll\fP n, \fBll\fP r)"
+.br
+.RI "nCr を返す "
+.ti -1c
+.RI "T \fBperm\fP (\fBll\fP n, \fBll\fP r)"
+.br
+.RI "nPr を返す "
+.ti -1c
+.RI "T \fBfactrial\fP (int n)"
+.br
+.RI "n! を返す "
+.ti -1c
+.RI "T \fBfactinv\fP (int n)"
+.br
+.RI "(n!)^-1 を返す "
+.ti -1c
+.RI "T \fBoperator()\fP (\fBll\fP n, \fBll\fP r)"
+.br
+.RI "nCr を返す "
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename T>
+.br
+struct Combinatorics< T >"二項係数・階乗計算 
+.PP
+ \fBcombination\&.hpp\fP の \fB5\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename T> \fBCombinatorics\fP< T >\fB::Combinatorics\fP ()\fR [default]\fP"
+
+.SS "template<typename T> \fBCombinatorics\fP< T >\fB::Combinatorics\fP (int n)\fR [inline]\fP"
+
+.PP
+二項係数の前計算 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(N) 
+.RE
+.PP
+
+.PP
+ \fBcombination\&.hpp\fP の \fB10\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "template<typename T> T \fBCombinatorics\fP< T >::comb (\fBll\fP n, \fBll\fP r)\fR [inline]\fP"
+
+.PP
+nCr を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+n < 0, r < 0, n < r のときは 0 を返す 
+.RE
+.PP
+
+.PP
+ \fBcombination\&.hpp\fP の \fB21\fP 行目に定義があります。
+.SS "template<typename T> T \fBCombinatorics\fP< T >::perm (\fBll\fP n, \fBll\fP r)\fR [inline]\fP"
+
+.PP
+nPr を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+n < 0, r < 0, n < r のときは 0 を返す 
+.RE
+.PP
+
+.PP
+ \fBcombination\&.hpp\fP の \fB28\fP 行目に定義があります。
+.SS "template<typename T> T \fBCombinatorics\fP< T >::factrial (int n)\fR [inline]\fP"
+
+.PP
+n! を返す 
+.PP
+ \fBcombination\&.hpp\fP の \fB34\fP 行目に定義があります。
+.SS "template<typename T> T \fBCombinatorics\fP< T >::factinv (int n)\fR [inline]\fP"
+
+.PP
+(n!)^-1 を返す 
+.PP
+ \fBcombination\&.hpp\fP の \fB37\fP 行目に定義があります。
+.SS "template<typename T> T \fBCombinatorics\fP< T >::operator() (\fBll\fP n, \fBll\fP r)\fR [inline]\fP"
+
+.PP
+nCr を返す 
+.PP
+ \fBcombination\&.hpp\fP の \fB40\fP 行目に定義があります。
+.PP
+参照先 \fBcomb()\fP\&.
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

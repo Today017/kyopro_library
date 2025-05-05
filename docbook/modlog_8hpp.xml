@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_modlog_8hpp" xml:lang="ja">
+<title>math/modlog.hpp ファイル</title>
+<indexterm><primary>math/modlog.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_modlog_8hpp_1adb207efc9898a62631a8531129c553e5">ModLog</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> x, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> y, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> mod)</para>
+
+<para>離散対数問題 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_modlog_8hpp_1adb207efc9898a62631a8531129c553e5"/><section>
+    <title>ModLog()</title>
+<indexterm><primary>ModLog</primary><secondary>modlog.hpp</secondary></indexterm>
+<indexterm><primary>modlog.hpp</primary><secondary>ModLog</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> ModLog (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> x, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> y, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> mod)</computeroutput></para><para>
+
+<para>離散対数問題 </para>
+</para>
+
+<para>x^k=y mod m なる最小の k を返す <note><title>覚え書き</title>
+
+<para>O(sqrt(m)) </para>
+</note>
+<caution><title>注意</title>
+
+<para>p は素数 </para>
+</caution>
+</para>
+<para>
+ <link linkend="_modlog_8hpp_source">modlog.hpp</link> の <link linkend="_modlog_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

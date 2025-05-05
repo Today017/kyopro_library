@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_merge_sort_tree" xml:lang="ja">
+<title>MergeSortTree&lt; T &gt; 構造体テンプレート</title>
+<indexterm><primary>MergeSortTree&lt; T &gt;</primary></indexterm>
+<para>
+
+<para>マージソート木 </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;merge_sort_tree.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_merge_sort_tree_1a127958ecca67593f3cb1fcbb8051506b">MergeSortTree</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_struct_merge_sort_tree_1ac8235ab846d13f418b4ba8783ff461d9">MergeSortTree</link> (const vector&lt; T &gt; &amp;v)</para>
+
+<para>配列 v からマージソート木を構築する </para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974">count_lt</link> (int l, int r, T val)</para>
+
+<para>区間 [l, r) に存在する val 未満の値の個数を返す </para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_merge_sort_tree_1a881a344a374c02cdd93379fe14a4ecdf">count_le</link> (int l, int r, T val)</para>
+
+<para>区間 [l, r) に存在する val 以下の値の個数を返す </para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_merge_sort_tree_1a90c47e319006d8204e2f43ea18a68a45">count_gt</link> (int l, int r, T val)</para>
+
+<para>区間 [l, r) に存在する val より大きい値の個数を返す </para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_merge_sort_tree_1ab7f899451891ab52b795867471bb1ba2">count_ge</link> (int l, int r, T val)</para>
+
+<para>区間 [l, r) に存在する val 以上の値の個数を返す </para>
+</listitem>
+            <listitem><para>T <link linkend="_struct_merge_sort_tree_1aac1f911fbf3ef224cfa6c1ef79f59973">kth</link> (int l, int r, int k)</para>
+
+<para>区間 [l, r) の小さい方から k(1-indexed) 番目の値を返す </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<simplesect><title>template&lt;typename T&gt;<?linebreak?>struct MergeSortTree&lt; T &gt;</title></simplesect>
+
+<para>マージソート木 </para>
+<para>
+ <link linkend="_merge__sort__tree_8hpp_source">merge_sort_tree.hpp</link> の <link linkend="_merge__sort__tree_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_merge_sort_tree_1a127958ecca67593f3cb1fcbb8051506b"/><section>
+    <title>MergeSortTree()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>MergeSortTree</primary><secondary>MergeSortTree&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>MergeSortTree&lt; T &gt;</primary><secondary>MergeSortTree</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput><link linkend="_struct_merge_sort_tree">MergeSortTree</link>&lt; T &gt;<link linkend="_struct_merge_sort_tree">::MergeSortTree</link> ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_merge_sort_tree_1ac8235ab846d13f418b4ba8783ff461d9"/><section>
+    <title>MergeSortTree()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>MergeSortTree</primary><secondary>MergeSortTree&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>MergeSortTree&lt; T &gt;</primary><secondary>MergeSortTree</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput><link linkend="_struct_merge_sort_tree">MergeSortTree</link>&lt; T &gt;<link linkend="_struct_merge_sort_tree">::MergeSortTree</link> (const vector&lt; T &gt; &amp; v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>配列 v からマージソート木を構築する </para>
+</para>
+<para>
+ <link linkend="_merge__sort__tree_8hpp_source">merge_sort_tree.hpp</link> の <link linkend="_merge__sort__tree_8hpp_source_1l00009">9</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_merge_sort_tree_1a647f9a3816a3718bd40e38f8a4f04974"/><section>
+    <title>count_lt()</title>
+<indexterm><primary>count_lt</primary><secondary>MergeSortTree&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>MergeSortTree&lt; T &gt;</primary><secondary>count_lt</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>int <link linkend="_struct_merge_sort_tree">MergeSortTree</link>&lt; T &gt;::count_lt (int l, int r, T val)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) に存在する val 未満の値の個数を返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log(N)^2) </para>
+</note>
+</para>
+<para>
+ <link linkend="_merge__sort__tree_8hpp_source">merge_sort_tree.hpp</link> の <link linkend="_merge__sort__tree_8hpp_source_1l00021">21</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_merge_sort_tree_1a881a344a374c02cdd93379fe14a4ecdf"/><section>
+    <title>count_le()</title>
+<indexterm><primary>count_le</primary><secondary>MergeSortTree&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>MergeSortTree&lt; T &gt;</primary><secondary>count_le</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>int <link linkend="_struct_merge_sort_tree">MergeSortTree</link>&lt; T &gt;::count_le (int l, int r, T val)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) に存在する val 以下の値の個数を返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log(N)^2) </para>
+</note>
+</para>
+<para>
+ <link linkend="_merge__sort__tree_8hpp_source">merge_sort_tree.hpp</link> の <link linkend="_merge__sort__tree_8hpp_source_1l00034">34</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_merge__sort__tree_8hpp_source_1l00021">count_lt()</link>.</para>
+</section>
+<anchor xml:id="_struct_merge_sort_tree_1a90c47e319006d8204e2f43ea18a68a45"/><section>
+    <title>count_gt()</title>
+<indexterm><primary>count_gt</primary><secondary>MergeSortTree&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>MergeSortTree&lt; T &gt;</primary><secondary>count_gt</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>int <link linkend="_struct_merge_sort_tree">MergeSortTree</link>&lt; T &gt;::count_gt (int l, int r, T val)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) に存在する val より大きい値の個数を返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log(N)^2) </para>
+</note>
+</para>
+<para>
+ <link linkend="_merge__sort__tree_8hpp_source">merge_sort_tree.hpp</link> の <link linkend="_merge__sort__tree_8hpp_source_1l00040">40</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_merge__sort__tree_8hpp_source_1l00034">count_le()</link>.</para>
+</section>
+<anchor xml:id="_struct_merge_sort_tree_1ab7f899451891ab52b795867471bb1ba2"/><section>
+    <title>count_ge()</title>
+<indexterm><primary>count_ge</primary><secondary>MergeSortTree&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>MergeSortTree&lt; T &gt;</primary><secondary>count_ge</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>int <link linkend="_struct_merge_sort_tree">MergeSortTree</link>&lt; T &gt;::count_ge (int l, int r, T val)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) に存在する val 以上の値の個数を返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log(N)^2) </para>
+</note>
+</para>
+<para>
+ <link linkend="_merge__sort__tree_8hpp_source">merge_sort_tree.hpp</link> の <link linkend="_merge__sort__tree_8hpp_source_1l00046">46</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_merge__sort__tree_8hpp_source_1l00021">count_lt()</link>.</para>
+</section>
+<anchor xml:id="_struct_merge_sort_tree_1aac1f911fbf3ef224cfa6c1ef79f59973"/><section>
+    <title>kth()</title>
+<indexterm><primary>kth</primary><secondary>MergeSortTree&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>MergeSortTree&lt; T &gt;</primary><secondary>kth</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T <link linkend="_struct_merge_sort_tree">MergeSortTree</link>&lt; T &gt;::kth (int l, int r, int k)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) の小さい方から k(1-indexed) 番目の値を返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log(N)^3) </para>
+</note>
+</para>
+<para>
+ <link linkend="_merge__sort__tree_8hpp_source">merge_sort_tree.hpp</link> の <link linkend="_merge__sort__tree_8hpp_source_1l00052">52</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_merge__sort__tree_8hpp_source_1l00021">count_lt()</link>.</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+data_structure/<link linkend="_merge__sort__tree_8hpp">merge_sort_tree.hpp</link></section>
+</section>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_intersect_8hpp" xml:lang="ja">
+<title>others/intersect.hpp ファイル</title>
+<indexterm><primary>others/intersect.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_intersect_8hpp_1a54e453c3674a9b11778d7426f93677cd">HaveIntersection</link> (const <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> l1, const <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> r1, const <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> l2, const <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> r2)</para>
+
+<para>区間 [l1, r1) と [l2, r2) が交差しているか否かを返す </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_intersect_8hpp_1a54e453c3674a9b11778d7426f93677cd"/><section>
+    <title>HaveIntersection()</title>
+<indexterm><primary>HaveIntersection</primary><secondary>intersect.hpp</secondary></indexterm>
+<indexterm><primary>intersect.hpp</primary><secondary>HaveIntersection</secondary></indexterm>
+<para><computeroutput>bool HaveIntersection (const <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> l1, const <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> r1, const <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> l2, const <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> r2)</computeroutput></para><para>
+
+<para>区間 [l1, r1) と [l2, r2) が交差しているか否かを返す </para>
+</para>
+<para>
+ <link linkend="_intersect_8hpp_source">intersect.hpp</link> の <link linkend="_intersect_8hpp_source_1l00004">4</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

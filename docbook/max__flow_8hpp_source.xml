@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_max__flow_8hpp_source" xml:lang="ja">
+<title>max_flow.hpp</title>
+<indexterm><primary>graph/flow/max_flow.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_max__flow_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_max__flow_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_max__flow_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;最大流</emphasis>
+<anchor xml:id="_max__flow_8hpp_source_1l00004"/><link linkend="_struct_max_flow">00004</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_max_flow">MaxFlow</link>&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00005"/>00005 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;辺構造体</emphasis>
+<anchor xml:id="_max__flow_8hpp_source_1l00006"/><link linkend="_struct_max_flow_1_1_edge">00006</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_max_flow_1_1_edge">Edge</link>&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00007"/><link linkend="_struct_max_flow_1_1_edge_1a91c4dcb113c554cba7dfda6bee9ee54d">00007</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_max_flow_1_1_edge_1a91c4dcb113c554cba7dfda6bee9ee54d">from</link>;&#32;<emphasis role="comment">///&lt;&#32;始点</emphasis>
+<anchor xml:id="_max__flow_8hpp_source_1l00008"/><link linkend="_struct_max_flow_1_1_edge_1a387d705870ec38ab60466eaaf1cb3113">00008</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_max_flow_1_1_edge_1a387d705870ec38ab60466eaaf1cb3113">to</link>;&#32;<emphasis role="comment">///&lt;&#32;終点</emphasis>
+<anchor xml:id="_max__flow_8hpp_source_1l00009"/><link linkend="_struct_max_flow_1_1_edge_1ae295247d64f8b72fdd97d34e4b70be15">00009</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_max_flow_1_1_edge_1ae295247d64f8b72fdd97d34e4b70be15">rev</link>;&#32;<emphasis role="comment">///&lt;&#32;逆辺のインデックス</emphasis>
+<anchor xml:id="_max__flow_8hpp_source_1l00010"/><link linkend="_struct_max_flow_1_1_edge_1aa487ab3fa5b70d6f8aaa0a4a0b946d40">00010</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ll&#32;<link linkend="_struct_max_flow_1_1_edge_1aa487ab3fa5b70d6f8aaa0a4a0b946d40">cap</link>;&#32;<emphasis role="comment">///&lt;&#32;容量</emphasis>
+<anchor xml:id="_max__flow_8hpp_source_1l00011"/><link linkend="_struct_max_flow_1_1_edge_1a75dc2e4b9d2fd2a9ebd2c14f1ad6f549">00011</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ll&#32;<link linkend="_struct_max_flow_1_1_edge_1a75dc2e4b9d2fd2a9ebd2c14f1ad6f549">flow</link>;&#32;<emphasis role="comment">///&lt;&#32;流量</emphasis>
+<anchor xml:id="_max__flow_8hpp_source_1l00012"/><link linkend="_struct_max_flow_1_1_edge_1a69e3492e30230f9ddc7fcb27c52aa92d">00012</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_max_flow_1_1_edge_1a69e3492e30230f9ddc7fcb27c52aa92d">isrev</link>;
+<anchor xml:id="_max__flow_8hpp_source_1l00013"/><link linkend="_struct_max_flow_1_1_edge_1a99a9a7a181561447db82dad0bc3c05d4">00013</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_max_flow_1_1_edge_1a99a9a7a181561447db82dad0bc3c05d4">Edge</link>(<emphasis role="keywordtype">int</emphasis>&#32;from,&#32;<emphasis role="keywordtype">int</emphasis>&#32;to,&#32;ll&#32;cap,&#32;<emphasis role="keywordtype">int</emphasis>&#32;rev,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;isrev):<link linkend="_struct_max_flow_1_1_edge_1a91c4dcb113c554cba7dfda6bee9ee54d">from</link>(from),<link linkend="_struct_max_flow_1_1_edge_1a387d705870ec38ab60466eaaf1cb3113">to</link>(to),<link linkend="_struct_max_flow_1_1_edge_1ae295247d64f8b72fdd97d34e4b70be15">rev</link>(rev),<link linkend="_struct_max_flow_1_1_edge_1aa487ab3fa5b70d6f8aaa0a4a0b946d40">cap</link>(cap),<link linkend="_struct_max_flow_1_1_edge_1a75dc2e4b9d2fd2a9ebd2c14f1ad6f549">flow</link>(0),<link linkend="_struct_max_flow_1_1_edge_1a69e3492e30230f9ddc7fcb27c52aa92d">isrev</link>(isrev)&#32;{}
+<anchor xml:id="_max__flow_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_max__flow_8hpp_source_1l00015"/>00015 
+<anchor xml:id="_max__flow_8hpp_source_1l00016"/><link linkend="_struct_max_flow_1a110c5a586e8fe54f4fbb8cfc03219d3b">00016</link> &#32;&#32;&#32;&#32;<link linkend="_struct_max_flow_1a110c5a586e8fe54f4fbb8cfc03219d3b">MaxFlow</link>(<emphasis role="keywordtype">int</emphasis>&#32;n):<link linkend="_struct_max_flow_1a110c5a586e8fe54f4fbb8cfc03219d3b">graph</link>(<link linkend="_struct_max_flow_1a110c5a586e8fe54f4fbb8cfc03219d3b">n</link>),<link linkend="_struct_max_flow_1a110c5a586e8fe54f4fbb8cfc03219d3b">level</link>(<link linkend="_struct_max_flow_1a110c5a586e8fe54f4fbb8cfc03219d3b">n</link>),<link linkend="_struct_max_flow_1a110c5a586e8fe54f4fbb8cfc03219d3b">iter</link>(<link linkend="_struct_max_flow_1a110c5a586e8fe54f4fbb8cfc03219d3b">n</link>)&#32;{}
+<anchor xml:id="_max__flow_8hpp_source_1l00017"/>00017 
+<anchor xml:id="_max__flow_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;容量&#32;cap&#32;の辺を追加する</emphasis>
+<anchor xml:id="_max__flow_8hpp_source_1l00019"/><link linkend="_struct_max_flow_1ac8661e215fa18b0710f8934378de29b0">00019</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_max_flow_1ac8661e215fa18b0710f8934378de29b0">add_edge</link>(<emphasis role="keywordtype">int</emphasis>&#32;from,&#32;<emphasis role="keywordtype">int</emphasis>&#32;to,&#32;ll&#32;cap)&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;graph[from].push_back(Edge(from,to,cap,graph[to].size(),<emphasis role="keyword">false</emphasis>));
+<anchor xml:id="_max__flow_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;graph[to].push_back(Edge(to,from,0,graph[from].size()-1,<emphasis role="keyword">true</emphasis>));
+<anchor xml:id="_max__flow_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00023"/>00023 
+<anchor xml:id="_max__flow_8hpp_source_1l00024"/>00024 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_max__flow_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;vector&lt;vector&lt;Edge&gt;&gt;&#32;graph;
+<anchor xml:id="_max__flow_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;VI&#32;level,iter;
+<anchor xml:id="_max__flow_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;bfs(<emphasis role="keywordtype">int</emphasis>&#32;s)&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fill(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(level),-1);
+<anchor xml:id="_max__flow_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queue&lt;<emphasis role="keywordtype">int</emphasis>&gt;&#32;que;
+<anchor xml:id="_max__flow_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;level[s]=0;
+<anchor xml:id="_max__flow_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;que.push(s);
+<anchor xml:id="_max__flow_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(!que.empty())&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;v=que.front();
+<anchor xml:id="_max__flow_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;que.pop();
+<anchor xml:id="_max__flow_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">auto</emphasis>&#32;&amp;e:graph[v])&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(e.cap&gt;0&amp;&amp;level[e.to]&lt;0)&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;level[e.to]=level[v]+1;
+<anchor xml:id="_max__flow_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;que.push(e.to);
+<anchor xml:id="_max__flow_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;ll&#32;dfs(<emphasis role="keywordtype">int</emphasis>&#32;v,&#32;<emphasis role="keywordtype">int</emphasis>&#32;t,&#32;ll&#32;f)&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(v==t)&#32;<emphasis role="keywordflow">return</emphasis>&#32;f;
+<anchor xml:id="_max__flow_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&amp;&#32;i=iter[v];&#32;i&lt;(<emphasis role="keywordtype">int</emphasis>)graph[v].size();&#32;i++)&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;e=graph[v][i];
+<anchor xml:id="_max__flow_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(e.cap&gt;0&amp;&amp;level[v]&lt;level[e.to])&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ll&#32;d=dfs(e.to,t,min(f,e.cap));
+<anchor xml:id="_max__flow_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(d&gt;0)&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e.cap-=d,graph[e.to][e.rev].cap+=d;
+<anchor xml:id="_max__flow_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e.flow+=d,graph[e.to][e.rev].flow-=d;
+<anchor xml:id="_max__flow_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;d;
+<anchor xml:id="_max__flow_8hpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_max__flow_8hpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00058"/>00058 
+<anchor xml:id="_max__flow_8hpp_source_1l00059"/>00059 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_max__flow_8hpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;s&#32;から&#32;t&#32;への最大流を求める</emphasis>
+<anchor xml:id="_max__flow_8hpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(V^2&#32;E)</emphasis>
+<anchor xml:id="_max__flow_8hpp_source_1l00062"/><link linkend="_struct_max_flow_1a9ae6af96026a4568d4e0c01c003a753f">00062</link> &#32;&#32;&#32;&#32;ll&#32;<link linkend="_struct_max_flow_1a9ae6af96026a4568d4e0c01c003a753f">flow</link>(<emphasis role="keywordtype">int</emphasis>&#32;s,&#32;<emphasis role="keywordtype">int</emphasis>&#32;t)&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ll&#32;ret=0;
+<anchor xml:id="_max__flow_8hpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(<emphasis role="keyword">true</emphasis>)&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bfs(s);
+<anchor xml:id="_max__flow_8hpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(level[t]==-1)&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_max__flow_8hpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fill(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(iter),0);
+<anchor xml:id="_max__flow_8hpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ll&#32;f;
+<anchor xml:id="_max__flow_8hpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>((f=dfs(s,t,<link linkend="_template_8hpp_1a1f713edb7a826e3710159658d6ef9815">INFL</link>))&gt;0)&#32;ret+=f;
+<anchor xml:id="_max__flow_8hpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00072"/>00072 
+<anchor xml:id="_max__flow_8hpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;直前に流したフローから最小カットを復元する</emphasis>
+<anchor xml:id="_max__flow_8hpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;始点&#32;v&#32;から到達可能か否か</emphasis>
+<anchor xml:id="_max__flow_8hpp_source_1l00075"/><link linkend="_struct_max_flow_1abee031fc4d62dea9bc9aadf29e57abae">00075</link> &#32;&#32;&#32;&#32;<link linkend="_struct_max_flow_1abee031fc4d62dea9bc9aadf29e57abae">VI</link>&#32;<link linkend="_struct_max_flow_1abee031fc4d62dea9bc9aadf29e57abae">mincut</link>(<emphasis role="keywordtype">int</emphasis>&#32;v=0)&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;VI&#32;ret(graph.size());
+<anchor xml:id="_max__flow_8hpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;queue&lt;<emphasis role="keywordtype">int</emphasis>&gt;&#32;que;
+<anchor xml:id="_max__flow_8hpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;que.push(v);
+<anchor xml:id="_max__flow_8hpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret[v]=<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_max__flow_8hpp_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(!que.empty())&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;v=que.front();
+<anchor xml:id="_max__flow_8hpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;que.pop();
+<anchor xml:id="_max__flow_8hpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">auto</emphasis>&amp;&#32;e:graph[v])&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(e.cap&gt;0&amp;&amp;!ret[e.to])&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret[e.to]=<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_max__flow_8hpp_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;que.push(e.to);
+<anchor xml:id="_max__flow_8hpp_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_max__flow_8hpp_source_1l00091"/>00091 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00092"/>00092 
+<anchor xml:id="_max__flow_8hpp_source_1l00093"/>00093 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;直前に流したフローの辺の情報を返す</emphasis>
+<anchor xml:id="_max__flow_8hpp_source_1l00094"/><link linkend="_struct_max_flow_1abbe9c0d60ca3b0f31aec84b73bfeb059">00094</link> &#32;&#32;&#32;&#32;<link linkend="_struct_max_flow_1abbe9c0d60ca3b0f31aec84b73bfeb059">vector</link>&lt;<link linkend="_struct_max_flow_1abbe9c0d60ca3b0f31aec84b73bfeb059">Edge</link>&gt;&#32;<link linkend="_struct_max_flow_1abbe9c0d60ca3b0f31aec84b73bfeb059">get_edges</link>()&#32;{
+<anchor xml:id="_max__flow_8hpp_source_1l00095"/>00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;Edge&gt;&#32;ret;
+<anchor xml:id="_max__flow_8hpp_source_1l00096"/>00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;graph.size();&#32;i++)&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">auto</emphasis>&#32;&amp;e:graph[i])&#32;<emphasis role="keywordflow">if</emphasis>(!e.isrev)&#32;ret.push_back(e);
+<anchor xml:id="_max__flow_8hpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_max__flow_8hpp_source_1l00098"/>00098 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_max__flow_8hpp_source_1l00099"/>00099 };
+</programlisting></section>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_prime__factorize_8hpp" xml:lang="ja">
+<title>math/prime_factorize.hpp ファイル</title>
+<indexterm><primary>math/prime_factorize.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/math/primality_test.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_template_8hpp_1a2c3a5a109d6d21e6f64ab05472266de4">VP</link> <link linkend="_prime__factorize_8hpp_1aff9025efaf03036409bcd5131cac3e00">PrimeFactorize</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> n)</para>
+
+<para>ポラードのロー法で n を素因数分解する </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_prime__factorize_8hpp_1aff9025efaf03036409bcd5131cac3e00"/><section>
+    <title>PrimeFactorize()</title>
+<indexterm><primary>PrimeFactorize</primary><secondary>prime_factorize.hpp</secondary></indexterm>
+<indexterm><primary>prime_factorize.hpp</primary><secondary>PrimeFactorize</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a2c3a5a109d6d21e6f64ab05472266de4">VP</link> PrimeFactorize (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> n)</computeroutput></para><para>
+
+<para>ポラードのロー法で n を素因数分解する </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(N^(1/4)) <link xlink:href="https://qiita.com/t_fuki/items/7cd50de54d3c5d063b4a">https://qiita.com/t_fuki/items/7cd50de54d3c5d063b4a</link> verify: <link xlink:href="https://algo-method.com/tasks/553">https://algo-method.com/tasks/553</link> </para>
+</note>
+</para>
+<para>
+ <link linkend="_prime__factorize_8hpp_source">prime_factorize.hpp</link> の <link linkend="_prime__factorize_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_primality__test_8hpp_source_1l00008">PrimalityTest()</link>.</para>
+</section>
+</section>
+</section>

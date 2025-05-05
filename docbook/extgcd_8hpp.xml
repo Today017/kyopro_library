@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_extgcd_8hpp" xml:lang="ja">
+<title>math/extgcd.hpp ファイル</title>
+<indexterm><primary>math/extgcd.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>tuple&lt; <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> &gt; <link linkend="_extgcd_8hpp_1a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> a, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> b)</para>
+
+<para>拡張ユークリッドの互除法 </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_extgcd_8hpp_1a9971b6b2383ca7009a1de48b02b31350">ModInvGcd</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> a, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> m)</para>
+
+<para>mod 逆元 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_extgcd_8hpp_1a1bbcc665326a2e27d9817bcc3b8b1d91"/><section>
+    <title>ExtGcd()</title>
+<indexterm><primary>ExtGcd</primary><secondary>extgcd.hpp</secondary></indexterm>
+<indexterm><primary>extgcd.hpp</primary><secondary>ExtGcd</secondary></indexterm>
+<para><computeroutput>tuple&lt; <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> &gt; ExtGcd (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> a, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> b)</computeroutput></para><para>
+
+<para>拡張ユークリッドの互除法 </para>
+</para>
+
+<para>gcd(a,b) = gcd(ba,a), gcd(b,0) = b と ba + (b/a)*a = b を使う。 ax + by = g なる x,y を求めたい。 今、(ba)X + aY = g なる X, Y が分かっている。 (ba)X = bX - (b/a)*a*X より、これを代入して、 bX - (b/a)*a*X + aY = g a(Y-(b/a)*X) + bX = g </para>
+<para>
+ <link linkend="_extgcd_8hpp_source">extgcd.hpp</link> の <link linkend="_extgcd_8hpp_source_1l00013">13</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_extgcd_8hpp_1a9971b6b2383ca7009a1de48b02b31350"/><section>
+    <title>ModInvGcd()</title>
+<indexterm><primary>ModInvGcd</primary><secondary>extgcd.hpp</secondary></indexterm>
+<indexterm><primary>extgcd.hpp</primary><secondary>ModInvGcd</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> ModInvGcd (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> a, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> m)</computeroutput></para><para>
+
+<para>mod 逆元 </para>
+</para>
+
+<para>a^(-1) (mod m) <note><title>覚え書き</title>
+
+<para>gcd(a,m)=1 でない場合、-1 を返す。 </para>
+</note>
+</para>
+<para>
+ <link linkend="_extgcd_8hpp_source">extgcd.hpp</link> の <link linkend="_extgcd_8hpp_source_1l00022">22</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

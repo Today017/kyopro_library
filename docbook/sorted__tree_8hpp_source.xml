@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_sorted__tree_8hpp_source" xml:lang="ja">
+<title>sorted_tree.hpp</title>
+<indexterm><primary>data_structure/sorted_tree.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_sorted__tree_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00003"/>00003 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&lt;</emphasis><emphasis role="preprocessor">bits</emphasis><emphasis role="preprocessor">/</emphasis><emphasis role="preprocessor">extc</emphasis><emphasis role="preprocessor">++</emphasis><emphasis role="preprocessor">.</emphasis><emphasis role="preprocessor">h</emphasis><emphasis role="preprocessor">&gt;</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00004"/>00004 <emphasis role="keyword">using</emphasis>&#32;<emphasis role="keyword">namespace</emphasis>&#32;__gnu_pbds;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00005"/>00005 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00006"/><link linkend="_struct_sorted_tree">00006</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_sorted_tree">SortedTree</link>:<link linkend="_struct_sorted_tree">tree</link>&lt;<link linkend="_struct_sorted_tree">T</link>,<link linkend="_struct_sorted_tree">null_type</link>,<link linkend="_struct_sorted_tree">less</link>&lt;<link linkend="_struct_sorted_tree">T</link>&gt;,<link linkend="_struct_sorted_tree">rb_tree_tag</link>,<link linkend="_struct_sorted_tree">tree_order_statistics_node_update</link>&gt;&#32;{
+<anchor xml:id="_sorted__tree_8hpp_source_1l00007"/>00007 &#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;<link linkend="_struct_sorted_tree">tree</link>&lt;<link linkend="_struct_sorted_tree">T</link>,<link linkend="_struct_sorted_tree">null_type</link>,<link linkend="_struct_sorted_tree">less</link>&lt;<link linkend="_struct_sorted_tree">T</link>&gt;,<link linkend="_struct_sorted_tree">rb_tree_tag</link>,<link linkend="_struct_sorted_tree">tree_order_statistics_node_update</link>&gt;::<link linkend="_struct_sorted_tree">tree</link>;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00008"/><link linkend="_struct_sorted_tree_1ad0ac9da95e030715e44bae8f0eae18b3">00008</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_sorted_tree_1ad0ac9da95e030715e44bae8f0eae18b3">not_found</link>=-1;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00009"/><link linkend="_struct_sorted_tree_1ae25c608f82e11136a7100240756e7917">00009</link> &#32;&#32;&#32;&#32;<link linkend="_struct_sorted_tree_1ae25c608f82e11136a7100240756e7917">SortedTree</link>()=<emphasis role="keywordflow">default</emphasis>;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00010"/>00010 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;コンストラクタ</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@param&#32;not_found&#32;指定の値が見つからなかったときに返す値</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00013"/><link linkend="_struct_sorted_tree_1a693ab7137ad14e3e989246c0944680ec">00013</link> &#32;&#32;&#32;&#32;<link linkend="_struct_sorted_tree_1a693ab7137ad14e3e989246c0944680ec">SortedTree</link>(T&#32;not_found=-1)&#32;{&#32;<emphasis role="keyword">this</emphasis><link linkend="_struct_sorted_tree_1ad0ac9da95e030715e44bae8f0eae18b3">-&gt;</link><link linkend="_struct_sorted_tree_1ad0ac9da95e030715e44bae8f0eae18b3">not_found</link>=not_found;&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00014"/>00014 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;最小値を返す</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00016"/><link linkend="_struct_sorted_tree_1aa83c587261288d7a4fa3a7dec02b88c4">00016</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_sorted_tree_1aa83c587261288d7a4fa3a7dec02b88c4">min</link>()&#32;{
+<anchor xml:id="_sorted__tree_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">this</emphasis>-&gt;empty())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_sorted_tree_1ad0ac9da95e030715e44bae8f0eae18b3">not_found</link>;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>*<emphasis role="keyword">this</emphasis>-&gt;begin();
+<anchor xml:id="_sorted__tree_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00020"/>00020 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;最大値を返す</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00022"/><link linkend="_struct_sorted_tree_1a6a608768ca3556fdfbb31764b4e48a09">00022</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_sorted_tree_1a6a608768ca3556fdfbb31764b4e48a09">max</link>()&#32;{
+<anchor xml:id="_sorted__tree_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">this</emphasis>-&gt;empty())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_sorted_tree_1ad0ac9da95e030715e44bae8f0eae18b3">not_found</link>;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>*<emphasis role="keyword">this</emphasis>-&gt;rbegin();
+<anchor xml:id="_sorted__tree_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00026"/>00026 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;最小値を返し、削除する</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00028"/><link linkend="_struct_sorted_tree_1a84629459ef11cd98378fd7b231c331a4">00028</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_sorted_tree_1a84629459ef11cd98378fd7b231c331a4">pop_min</link>()&#32;{
+<anchor xml:id="_sorted__tree_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">this</emphasis>-&gt;empty())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_sorted_tree_1ad0ac9da95e030715e44bae8f0eae18b3">not_found</link>;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;ret=<link linkend="_struct_sorted_tree_1aa83c587261288d7a4fa3a7dec02b88c4">min</link><link linkend="_struct_sorted_tree_1aa83c587261288d7a4fa3a7dec02b88c4">(</link><link linkend="_struct_sorted_tree_1aa83c587261288d7a4fa3a7dec02b88c4">)</link>;&#32;<emphasis role="keyword">this</emphasis>-&gt;erase(ret);
+<anchor xml:id="_sorted__tree_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00033"/>00033 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;最大値を返し、削除する</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00035"/><link linkend="_struct_sorted_tree_1a01cb57e4a4d3ff57cdb82b3e59950d70">00035</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_sorted_tree_1a01cb57e4a4d3ff57cdb82b3e59950d70">pop_max</link>()&#32;{
+<anchor xml:id="_sorted__tree_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">this</emphasis>-&gt;empty())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_sorted_tree_1ad0ac9da95e030715e44bae8f0eae18b3">not_found</link>;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;ret=<link linkend="_struct_sorted_tree_1a6a608768ca3556fdfbb31764b4e48a09">max</link><link linkend="_struct_sorted_tree_1a6a608768ca3556fdfbb31764b4e48a09">(</link><link linkend="_struct_sorted_tree_1a6a608768ca3556fdfbb31764b4e48a09">)</link>;&#32;<emphasis role="keyword">this</emphasis>-&gt;erase(ret);
+<anchor xml:id="_sorted__tree_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00040"/>00040 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;が含まれているか否かを返す</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00042"/><link linkend="_struct_sorted_tree_1a22ba2a1a35c4fdc1cb315ebd5e4bc706">00042</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_sorted_tree_1a22ba2a1a35c4fdc1cb315ebd5e4bc706">contains</link>(T&#32;x)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">this</emphasis>-&gt;find(x)!=<emphasis role="keyword">this</emphasis>-&gt;end();&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00043"/>00043 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;を削除する</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00045"/><link linkend="_struct_sorted_tree_1a539a29d1002e2a08e63710b14ad525ac">00045</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_struct_sorted_tree_1a539a29d1002e2a08e63710b14ad525ac">discard</link>(T&#32;x)&#32;{
+<anchor xml:id="_sorted__tree_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;itr=<emphasis role="keyword">this</emphasis>-&gt;find(x);
+<anchor xml:id="_sorted__tree_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(itr==<emphasis role="keyword">this</emphasis>-&gt;end())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;erase(itr);
+<anchor xml:id="_sorted__tree_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00051"/>00051 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;より大きい最小の値を返す</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00053"/><link linkend="_struct_sorted_tree_1ae44e1431526826a9c500aa73b5d9487f">00053</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_sorted_tree_1ae44e1431526826a9c500aa73b5d9487f">gt</link>(T&#32;x)&#32;{
+<anchor xml:id="_sorted__tree_8hpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;itr=<emphasis role="keyword">this</emphasis>-&gt;upper_bound(x);
+<anchor xml:id="_sorted__tree_8hpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(itr==<emphasis role="keyword">this</emphasis>-&gt;end())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_sorted_tree_1ad0ac9da95e030715e44bae8f0eae18b3">not_found</link>;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*itr;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00058"/>00058 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;以上最小の値を返す</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00060"/><link linkend="_struct_sorted_tree_1a38abcf6fa627dc1206e69a42839803e0">00060</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_sorted_tree_1a38abcf6fa627dc1206e69a42839803e0">ge</link>(T&#32;x)&#32;{
+<anchor xml:id="_sorted__tree_8hpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;itr=<emphasis role="keyword">this</emphasis>-&gt;lower_bound(x);
+<anchor xml:id="_sorted__tree_8hpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(itr==<emphasis role="keyword">this</emphasis>-&gt;end())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_sorted_tree_1ad0ac9da95e030715e44bae8f0eae18b3">not_found</link>;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*itr;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00065"/>00065 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;未満最大の値を返す</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00067"/><link linkend="_struct_sorted_tree_1ae7d73da4b7b5193f42825117545f1840">00067</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_sorted_tree_1ae7d73da4b7b5193f42825117545f1840">lt</link>(T&#32;x)&#32;{
+<anchor xml:id="_sorted__tree_8hpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;itr=<emphasis role="keyword">this</emphasis>-&gt;lower_bound(x);
+<anchor xml:id="_sorted__tree_8hpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(itr==<emphasis role="keyword">this</emphasis>-&gt;begin())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_sorted_tree_1ad0ac9da95e030715e44bae8f0eae18b3">not_found</link>;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*--itr;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00072"/>00072 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;以下の最大の値を返す</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00074"/><link linkend="_struct_sorted_tree_1a40539a867331e318cd63c48e9ad48cbc">00074</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_sorted_tree_1a40539a867331e318cd63c48e9ad48cbc">le</link>(T&#32;x)&#32;{
+<anchor xml:id="_sorted__tree_8hpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;itr=<emphasis role="keyword">this</emphasis>-&gt;upper_bound(x);
+<anchor xml:id="_sorted__tree_8hpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(itr==<emphasis role="keyword">this</emphasis>-&gt;begin())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_sorted_tree_1ad0ac9da95e030715e44bae8f0eae18b3">not_found</link>;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*--itr;
+<anchor xml:id="_sorted__tree_8hpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00079"/>00079 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00080"/>00080 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;より小さい値の個数を返す</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00081"/><link linkend="_struct_sorted_tree_1ab4507da023c738af9a977d4683907cd8">00081</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_sorted_tree_1ab4507da023c738af9a977d4683907cd8">count_lt</link>(T&#32;x)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">this</emphasis>-&gt;order_of_key(x);&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00082"/>00082 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;以下の値の個数を返す</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00084"/><link linkend="_struct_sorted_tree_1a29e4ad08805e847324ea1bc7e072fc96">00084</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_sorted_tree_1a29e4ad08805e847324ea1bc7e072fc96">count_le</link>(T&#32;x)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">this</emphasis>-&gt;order_of_key(x+1);&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00085"/>00085 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00086"/>00086 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;より大きい値の個数を返す</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00087"/><link linkend="_struct_sorted_tree_1a94b30d673b9916934458ccb5c26da60a">00087</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_sorted_tree_1a94b30d673b9916934458ccb5c26da60a">count_gt</link>(T&#32;x)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">this</emphasis>-&gt;size()-<emphasis role="keyword">this</emphasis>-&gt;order_of_key(x+1);&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00088"/>00088 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00089"/>00089 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;以上の値の個数を返す</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00090"/><link linkend="_struct_sorted_tree_1ab0257382ca5e817703f0d9127b976a41">00090</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_sorted_tree_1ab0257382ca5e817703f0d9127b976a41">count_ge</link>(T&#32;x)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">this</emphasis>-&gt;size()-<emphasis role="keyword">this</emphasis>-&gt;order_of_key(x);&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00091"/>00091 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00092"/>00092 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;k(0-indexed)&#32;番目に小さい値の個数を返す</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00093"/><link linkend="_struct_sorted_tree_1a96cd2a474df338aa89296a62ea09c025">00093</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_sorted_tree_1a96cd2a474df338aa89296a62ea09c025">kth_min</link>(<emphasis role="keywordtype">int</emphasis>&#32;k)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>-&gt;find_by_order(k);&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00094"/>00094 
+<anchor xml:id="_sorted__tree_8hpp_source_1l00095"/>00095 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;k(0-indexed)&#32;番目に大きい値の個数を返す</emphasis>
+<anchor xml:id="_sorted__tree_8hpp_source_1l00096"/><link linkend="_struct_sorted_tree_1a839cafb83a5b205c87ee456ccdf768f3">00096</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_sorted_tree_1a839cafb83a5b205c87ee456ccdf768f3">kth_max</link>(<emphasis role="keywordtype">int</emphasis>&#32;k)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>-&gt;find_by_order(<emphasis role="keyword">this</emphasis>-&gt;size()-k-1);&#32;}
+<anchor xml:id="_sorted__tree_8hpp_source_1l00097"/>00097 };
+</programlisting></section>

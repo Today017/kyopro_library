@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_76cf5d2c64440c8b33b2b96569e4a2eb" xml:lang="ja">
+<title>string ディレクトリリファレンス</title>
+<indexterm><primary>string ディレクトリリファレンス</primary></indexterm>
+<simplesect>
+    <title>ファイル    </title>
+        <itemizedlist>
+            <listitem><para>ファイル <link linkend="_lcp__array_8hpp">lcp_array.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_rolling__hash_8hpp">rolling_hash.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_run__length__encoding_8hpp">run_length_encoding.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_suffix__array_8hpp">suffix_array.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_trie_8hpp">trie.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_util_8hpp">util.hpp</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_z__algorithm_8hpp">z_algorithm.hpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

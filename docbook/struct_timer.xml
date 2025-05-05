@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_timer" xml:lang="ja">
+<title>Timer 構造体</title>
+<indexterm><primary>Timer</primary></indexterm>
+<para>
+
+<para>タイマー </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;timer.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_timer_1a5e945928273aa26d4d1f86f01337e510">Timer</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> time_limit_msec=5000)</para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_struct_timer_1a5c3f4e738e89aa4731317ecd41211cec">get</link> () const</para>
+
+<para>今の時間 msec を返す </para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_timer_1a6cacc7853a92453b3c0d2814f6122cc5">check</link> () const</para>
+
+<para>今が制限時間内であるかを返す </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+
+<para>タイマー </para>
+<para>
+ <link linkend="_timer_8hpp_source">timer.hpp</link> の <link linkend="_timer_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_timer_1a5e945928273aa26d4d1f86f01337e510"/><section>
+    <title>Timer()</title>
+<indexterm><primary>Timer</primary><secondary>Timer</secondary></indexterm>
+<indexterm><primary>Timer</primary><secondary>Timer</secondary></indexterm>
+<para><computeroutput>Timer::Timer (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> time_limit_msec = <computeroutput>5000</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_timer_8hpp_source">timer.hpp</link> の <link linkend="_timer_8hpp_source_1l00006">6</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_timer_1a5c3f4e738e89aa4731317ecd41211cec"/><section>
+    <title>get()</title>
+<indexterm><primary>get</primary><secondary>Timer</secondary></indexterm>
+<indexterm><primary>Timer</primary><secondary>get</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> Timer::get ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>今の時間 msec を返す </para>
+</para>
+<para>
+ <link linkend="_timer_8hpp_source">timer.hpp</link> の <link linkend="_timer_8hpp_source_1l00012">12</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_timer_1a6cacc7853a92453b3c0d2814f6122cc5"/><section>
+    <title>check()</title>
+<indexterm><primary>check</primary><secondary>Timer</secondary></indexterm>
+<indexterm><primary>Timer</primary><secondary>check</secondary></indexterm>
+<para><computeroutput>bool Timer::check ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>今が制限時間内であるかを返す </para>
+</para>
+<para>
+ <link linkend="_timer_8hpp_source">timer.hpp</link> の <link linkend="_timer_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+others/<link linkend="_timer_8hpp">timer.hpp</link></section>
+</section>

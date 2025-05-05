@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_segtree__2d_8hpp" xml:lang="ja">
+<title>data_structure/segtree_2d.hpp ファイル</title>
+<indexterm><primary>data_structure/segtree_2d.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_segment_tree2_d">SegmentTree2D&lt; Monoid &gt;</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

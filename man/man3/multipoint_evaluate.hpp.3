@@ -1,0 +1,39 @@
+.TH "math/multipoint_evaluate.hpp" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+math/multipoint_evaluate.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include '\&.\&./\&.\&./kyopro_library/template\&.hpp'\fP
+.br
+\fR#include '\&.\&./\&.\&./kyopro_library/math/fps\&.hpp'\fP
+.br
+
+.SS "関数"
+
+.in +1c
+.ti -1c
+.RI "template<typename T> vector< T > \fBMultipointEvaluate\fP (vector< T > f, vector< T > x)"
+.br
+.RI "n 次多項式 f について、n 個の点 x[i] における f(x[i]) を返す "
+.in -1c
+.SH "関数詳解"
+.PP 
+.SS "template<typename T> vector< T > MultipointEvaluate (vector< T > f, vector< T > x)"
+
+.PP
+n 次多項式 f について、n 個の点 x[i] における f(x[i]) を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(n (log(n))^2) 
+.RE
+.PP
+
+.PP
+ \fBmultipoint_evaluate\&.hpp\fP の \fB7\fP 行目に定義があります。
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

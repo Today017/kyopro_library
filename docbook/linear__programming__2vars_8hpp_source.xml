@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_linear__programming__2vars_8hpp_source" xml:lang="ja">
+<title>linear_programming_2vars.hpp</title>
+<indexterm><primary>math/linear_programming_2vars.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_linear__programming__2vars_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;2変数の線形計画問題</emphasis>
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;ax&#32;+&#32;by&#32;&gt;=&#32;c,&#32;x&#32;&gt;=&#32;0,&#32;y&#32;&gt;=&#32;0&#32;という条件のもと、px+qy&#32;の最小値を返す</emphasis>
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@note&#32;O(sqrt(c))</emphasis>
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00006"/><link linkend="_linear__programming__2vars_8hpp_1a4d295fe82ea5ed8a868a9150aa9caaba">00006</link> ll&#32;<link linkend="_linear__programming__2vars_8hpp_1a4d295fe82ea5ed8a868a9150aa9caaba">LinearProgramming_2valiables</link>(ll&#32;a,&#32;ll&#32;b,&#32;ll&#32;c,&#32;ll&#32;p,&#32;ll&#32;q)&#32;{
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00007"/>00007 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(a*q&lt;b*p)&#32;swap(a,b),&#32;swap(p,q);
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;ll&#32;ret=<link linkend="_template_8hpp_1a1f713edb7a826e3710159658d6ef9815">INFL</link>;
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(a*a&gt;c)&#32;{
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7">FOR</link>(x,0,(c+a-1)/a+1)&#32;{
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ll&#32;y=max(0LL,(c-a*x+b-1)/b);
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret=min(ret,p*x+q*y);
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;}<emphasis role="keywordflow">else</emphasis>{
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ll&#32;y=0;&#32;y&lt;a&amp;&amp;y&lt;=(c+b-1)/b;&#32;y++)&#32;{
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ll&#32;x=max(0LL,(c-b*y+a-1)/a);
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret=min(ret,p*x+q*y);
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_linear__programming__2vars_8hpp_source_1l00021"/>00021 }
+</programlisting></section>

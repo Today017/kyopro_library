@@ -6,6 +6,6 @@ var struct_seg_tree_dual =
     [ "SegTreeDual", "struct_seg_tree_dual.html#a4b660b709846d909a0c7918f5187fe3f", null ],
     [ "apply", "struct_seg_tree_dual.html#a1a1257683cef6cd97451518b480c2a9a", null ],
     [ "get", "struct_seg_tree_dual.html#a61bfbf2af340c5dc6e3b9785df156031", null ],
-    [ "operator[]", "struct_seg_tree_dual.html#a9196f5976be9aa2cd4f25e1e38177646", null ],
-    [ "size", "struct_seg_tree_dual.html#a127fdf2679469328fd1a4c451e88412e", null ]
+    [ "size", "struct_seg_tree_dual.html#a127fdf2679469328fd1a4c451e88412e", null ],
+    [ "operator[]", "struct_seg_tree_dual.html#a9196f5976be9aa2cd4f25e1e38177646", null ]
 ];

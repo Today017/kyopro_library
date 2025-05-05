@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_fast_8hpp_source" xml:lang="ja">
+<title>fast.hpp</title>
+<indexterm><primary>others/fast.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_fast_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">pragma</emphasis>&#32;<emphasis role="preprocessor">GCC</emphasis>&#32;<emphasis role="preprocessor">target</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="stringliteral">&quot;avx2&quot;</emphasis><emphasis role="preprocessor">)</emphasis>
+<anchor xml:id="_fast_8hpp_source_1l00002"/>00002 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">pragma</emphasis>&#32;<emphasis role="preprocessor">GCC</emphasis>&#32;<emphasis role="preprocessor">optimize</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="stringliteral">&quot;O3&quot;</emphasis><emphasis role="preprocessor">)</emphasis>
+<anchor xml:id="_fast_8hpp_source_1l00003"/>00003 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">pragma</emphasis>&#32;<emphasis role="preprocessor">GCC</emphasis>&#32;<emphasis role="preprocessor">optimize</emphasis><emphasis role="preprocessor">(</emphasis><emphasis role="stringliteral">&quot;unroll-loops&quot;</emphasis><emphasis role="preprocessor">)</emphasis>
+</programlisting></section>

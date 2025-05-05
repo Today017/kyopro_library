@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_primitive__root_8hpp" xml:lang="ja">
+<title>math/primitive_root.hpp ファイル</title>
+<indexterm><primary>math/primitive_root.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/others/modcal.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/math/prime_factorize.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/others/xor128.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_primitive__root_8hpp_1adec91ba45a107da3aa0f218785b8df98">PrimitiveRoot</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> n)</para>
+
+<para>n の原始根を求める <link xlink:href="https://37zigen.com/primitive-root/">https://37zigen.com/primitive-root/</link> verify: <link xlink:href="https://judge.yosupo.jp/problem/primitive_root">https://judge.yosupo.jp/problem/primitive_root</link> </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_primitive__root_8hpp_1adec91ba45a107da3aa0f218785b8df98"/><section>
+    <title>PrimitiveRoot()</title>
+<indexterm><primary>PrimitiveRoot</primary><secondary>primitive_root.hpp</secondary></indexterm>
+<indexterm><primary>primitive_root.hpp</primary><secondary>PrimitiveRoot</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> PrimitiveRoot (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> n)</computeroutput></para><para>
+
+<para>n の原始根を求める <link xlink:href="https://37zigen.com/primitive-root/">https://37zigen.com/primitive-root/</link> verify: <link xlink:href="https://judge.yosupo.jp/problem/primitive_root">https://judge.yosupo.jp/problem/primitive_root</link> </para>
+</para>
+<para>
+ <link linkend="_primitive__root_8hpp_source">primitive_root.hpp</link> の <link linkend="_primitive__root_8hpp_source_1l00010">10</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_primality__test_8hpp_source_1l00008">PrimalityTest()</link>, <link linkend="_xor128_8hpp_source_1l00018">Xor128()</link>.</para>
+</section>
+</section>
+</section>

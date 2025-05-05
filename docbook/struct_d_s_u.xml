@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_d_s_u" xml:lang="ja">
+<title>DSU 構造体</title>
+<indexterm><primary>DSU</primary></indexterm>
+<para>
+
+<para>Disjoint <link linkend="_struct_set">Set</link> Union </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;dsu.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_d_s_u_1a2037e5dac19248a4e5f2f70133fdea12">DSU</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_struct_d_s_u_1abbae2d8b88cba33b50386cbbf229685a">DSU</link> (int n)</para>
+
+<para>コンストラクタ </para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_d_s_u_1a70d8917e08a86dd49446ce8263f675a3">find</link> (int x)</para>
+
+<para>頂点 x を含む連結成分の代表元を返す </para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_d_s_u_1a81af0a8861251cc70ae491c6249e672d">merge</link> (int x, int y)</para>
+
+<para>頂点 x と y を連結し、true を返す </para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_d_s_u_1ae15ca5c12804826f13632d23443e36e8">size</link> (int x)</para>
+
+<para>頂点 x を含む連結成分のサイズを返す </para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_d_s_u_1ad3a04e676273604d56db0344795cd693">same</link> (int x, int y)</para>
+
+<para>頂点 x と y が同じ連結成分に属するか否かを返す </para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_d_s_u_1a042d4bb179819d69d53f2b96e23b099e">count</link> ()</para>
+
+<para>連結成分の個数を返す </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> <link linkend="_struct_d_s_u_1a1c5c3d071acd50cbe58a86c38a6a3da7">groups</link> ()</para>
+
+<para>各頂点を連結成分に分解する </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+
+<para>Disjoint <link linkend="_struct_set">Set</link> Union </para>
+<para>
+ <link linkend="_dsu_8hpp_source">dsu.hpp</link> の <link linkend="_dsu_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_d_s_u_1a2037e5dac19248a4e5f2f70133fdea12"/><section>
+    <title>DSU()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>DSU</primary><secondary>DSU</secondary></indexterm>
+<indexterm><primary>DSU</primary><secondary>DSU</secondary></indexterm>
+<para><computeroutput>DSU::DSU ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_d_s_u_1abbae2d8b88cba33b50386cbbf229685a"/><section>
+    <title>DSU()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>DSU</primary><secondary>DSU</secondary></indexterm>
+<indexterm><primary>DSU</primary><secondary>DSU</secondary></indexterm>
+<para><computeroutput>DSU::DSU (int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>コンストラクタ </para>
+</para>
+<para>
+ <link linkend="_dsu_8hpp_source">dsu.hpp</link> の <link linkend="_dsu_8hpp_source_1l00009">9</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_d_s_u_1a70d8917e08a86dd49446ce8263f675a3"/><section>
+    <title>find()</title>
+<indexterm><primary>find</primary><secondary>DSU</secondary></indexterm>
+<indexterm><primary>DSU</primary><secondary>find</secondary></indexterm>
+<para><computeroutput>int DSU::find (int x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>頂点 x を含む連結成分の代表元を返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(α(N)) </para>
+</note>
+</para>
+<para>
+ <link linkend="_dsu_8hpp_source">dsu.hpp</link> の <link linkend="_dsu_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_d_s_u_1a81af0a8861251cc70ae491c6249e672d"/><section>
+    <title>merge()</title>
+<indexterm><primary>merge</primary><secondary>DSU</secondary></indexterm>
+<indexterm><primary>DSU</primary><secondary>merge</secondary></indexterm>
+<para><computeroutput>bool DSU::merge (int x, int y)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>頂点 x と y を連結し、true を返す </para>
+</para>
+
+<para>既に連結されている場合は false を返す <note><title>覚え書き</title>
+
+<para>O(α(N)) </para>
+</note>
+</para>
+<para>
+ <link linkend="_dsu_8hpp_source">dsu.hpp</link> の <link linkend="_dsu_8hpp_source_1l00025">25</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_dsu_8hpp_source_1l00017">find()</link>.</para>
+</section>
+<anchor xml:id="_struct_d_s_u_1ae15ca5c12804826f13632d23443e36e8"/><section>
+    <title>size()</title>
+<indexterm><primary>size</primary><secondary>DSU</secondary></indexterm>
+<indexterm><primary>DSU</primary><secondary>size</secondary></indexterm>
+<para><computeroutput>int DSU::size (int x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>頂点 x を含む連結成分のサイズを返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(α(N)) </para>
+</note>
+</para>
+<para>
+ <link linkend="_dsu_8hpp_source">dsu.hpp</link> の <link linkend="_dsu_8hpp_source_1l00036">36</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_d_s_u_1ad3a04e676273604d56db0344795cd693"/><section>
+    <title>same()</title>
+<indexterm><primary>same</primary><secondary>DSU</secondary></indexterm>
+<indexterm><primary>DSU</primary><secondary>same</secondary></indexterm>
+<para><computeroutput>bool DSU::same (int x, int y)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>頂点 x と y が同じ連結成分に属するか否かを返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(α(N)) </para>
+</note>
+</para>
+<para>
+ <link linkend="_dsu_8hpp_source">dsu.hpp</link> の <link linkend="_dsu_8hpp_source_1l00040">40</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_dsu_8hpp_source_1l00017">find()</link>.</para>
+</section>
+<anchor xml:id="_struct_d_s_u_1a042d4bb179819d69d53f2b96e23b099e"/><section>
+    <title>count()</title>
+<indexterm><primary>count</primary><secondary>DSU</secondary></indexterm>
+<indexterm><primary>DSU</primary><secondary>count</secondary></indexterm>
+<para><computeroutput>int DSU::count ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>連結成分の個数を返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(1) </para>
+</note>
+</para>
+<para>
+ <link linkend="_dsu_8hpp_source">dsu.hpp</link> の <link linkend="_dsu_8hpp_source_1l00044">44</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_d_s_u_1a1c5c3d071acd50cbe58a86c38a6a3da7"/><section>
+    <title>groups()</title>
+<indexterm><primary>groups</primary><secondary>DSU</secondary></indexterm>
+<indexterm><primary>DSU</primary><secondary>groups</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> DSU::groups ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>各頂点を連結成分に分解する </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(N) </para>
+</note>
+</para>
+<para>
+ <link linkend="_dsu_8hpp_source">dsu.hpp</link> の <link linkend="_dsu_8hpp_source_1l00048">48</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_dsu_8hpp_source_1l00017">find()</link>.</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+graph/<link linkend="_dsu_8hpp">dsu.hpp</link></section>
+</section>

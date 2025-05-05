@@ -92,36 +92,36 @@ var NAVTREE =
         [ "各構造の要件", "md__r_e_a_d_m_e.html#autotoc_md58", null ]
       ] ]
     ] ],
-    [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
-      [ "Namespace Members", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ],
-        [ "Enumerator", "namespacemembers_eval.html", null ]
+    [ "名前空間", "namespaces.html", [
+      [ "名前空間一覧", "namespaces.html", "namespaces_dup" ],
+      [ "名前空間メンバ", "namespacemembers.html", [
+        [ "全て", "namespacemembers.html", null ],
+        [ "関数", "namespacemembers_func.html", null ],
+        [ "変数", "namespacemembers_vars.html", null ],
+        [ "型定義", "namespacemembers_type.html", null ],
+        [ "列挙型", "namespacemembers_enum.html", null ],
+        [ "列挙値", "namespacemembers_eval.html", null ]
       ] ]
     ] ],
-    [ "Classes", "annotated.html", [
-      [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
-        [ "Typedefs", "functions_type.html", null ],
-        [ "Related Symbols", "functions_rela.html", null ]
+    [ "クラス", "annotated.html", [
+      [ "クラス一覧", "annotated.html", "annotated_dup" ],
+      [ "クラス階層", "hierarchy.html", "hierarchy" ],
+      [ "クラスメンバ", "functions.html", [
+        [ "全て", "functions.html", "functions_dup" ],
+        [ "関数", "functions_func.html", "functions_func" ],
+        [ "変数", "functions_vars.html", null ],
+        [ "型定義", "functions_type.html", null ],
+        [ "関連関数", "functions_rela.html", null ]
       ] ]
     ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+    [ "ファイル", "files.html", [
+      [ "ファイル一覧", "files.html", "files_dup" ],
+      [ "ファイルメンバ", "globals.html", [
+        [ "全て", "globals.html", null ],
+        [ "関数", "globals_func.html", null ],
+        [ "変数", "globals_vars.html", null ],
+        [ "型定義", "globals_type.html", null ],
+        [ "マクロ定義", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -137,5 +137,5 @@ var NAVTREEINDEX =
 "struct_sorted_multi_tree.html#a5c802af68f298ac3e73e0dba0ad75e79"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronization';
-var SYNCOFFMSG = 'click to enable panel synchronization';
+var SYNCONMSG = 'クリックで同期表示が無効になります';
+var SYNCOFFMSG = 'クリックで同期表示が有効になります';

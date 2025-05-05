@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_combination__lucas_8hpp" xml:lang="ja">
+<title>mod/combination_lucas.hpp ファイル</title>
+<indexterm><primary>mod/combination_lucas.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/others/modcal.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_combination_lucas">CombinationLucas</link></para>
+
+<para>Lucas の定理を用いた二項係数計算用ライブラリ </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

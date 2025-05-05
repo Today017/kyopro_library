@@ -1,0 +1,155 @@
+.TH "AngelBeats" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AngelBeats \- Segment Tree Beat! \fBhttps://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'segtree_beats\&.hpp'\fP
+.SS "クラス"
+
+.in +1c
+.ti -1c
+.RI "struct \fBNode\fP"
+.br
+.in -1c
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBAngelBeats\fP ()"
+.br
+.ti -1c
+.RI "\fBAngelBeats\fP (int _n)"
+.br
+.ti -1c
+.RI "\fBAngelBeats\fP (const vector< \fBll\fP > &vc)"
+.br
+.ti -1c
+.RI "void \fBrange_chmin\fP (int l, int r, \fBll\fP x)"
+.br
+.RI "[l, r) に対し、v[i] <- min(v[i], x) "
+.ti -1c
+.RI "void \fBrange_chmax\fP (int l, int r, \fBll\fP x)"
+.br
+.RI "[l, r) に対し、v[i] <- max(v[i], x) "
+.ti -1c
+.RI "void \fBrange_add\fP (int l, int r, \fBll\fP x)"
+.br
+.RI "[l, r) に対し、v[i] <- v[i] + x "
+.ti -1c
+.RI "void \fBrange_update\fP (int l, int r, \fBll\fP x)"
+.br
+.RI "[l, r) に対し、v[i] <- x "
+.ti -1c
+.RI "\fBll\fP \fBrange_min\fP (int l, int r)"
+.br
+.RI "min[l, r)(v[i]) を返す "
+.ti -1c
+.RI "\fBll\fP \fBrange_max\fP (int l, int r)"
+.br
+.RI "max[l, r)(v[i]) を返す "
+.ti -1c
+.RI "\fBll\fP \fBrange_sum\fP (int l, int r)"
+.br
+.RI "sum[l, r)(v[i]) を返す "
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "vector< \fBNode\fP > \fBv\fP"
+.br
+.ti -1c
+.RI "\fBll\fP \fBn\fP"
+.br
+.ti -1c
+.RI "\fBll\fP \fBlog\fP"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+Segment Tree Beat! \fBhttps://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp\fP 
+.PP
+ \fBsegtree_beats\&.hpp\fP の \fB5\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "AngelBeats::AngelBeats ()\fR [inline]\fP"
+
+.PP
+ \fBsegtree_beats\&.hpp\fP の \fB12\fP 行目に定義があります。
+.SS "AngelBeats::AngelBeats (int _n)\fR [inline]\fP"
+
+.PP
+ \fBsegtree_beats\&.hpp\fP の \fB13\fP 行目に定義があります。
+.SS "AngelBeats::AngelBeats (const vector< \fBll\fP > & vc)\fR [inline]\fP"
+
+.PP
+ \fBsegtree_beats\&.hpp\fP の \fB14\fP 行目に定義があります。
+.PP
+参照先 \fBlog\fP, \fBn\fP\&.
+.SH "関数詳解"
+.PP 
+.SS "void AngelBeats::range_chmin (int l, int r, \fBll\fP x)\fR [inline]\fP"
+
+.PP
+[l, r) に対し、v[i] <- min(v[i], x) 
+.PP
+ \fBsegtree_beats\&.hpp\fP の \fB24\fP 行目に定義があります。
+.SS "void AngelBeats::range_chmax (int l, int r, \fBll\fP x)\fR [inline]\fP"
+
+.PP
+[l, r) に対し、v[i] <- max(v[i], x) 
+.PP
+ \fBsegtree_beats\&.hpp\fP の \fB26\fP 行目に定義があります。
+.SS "void AngelBeats::range_add (int l, int r, \fBll\fP x)\fR [inline]\fP"
+
+.PP
+[l, r) に対し、v[i] <- v[i] + x 
+.PP
+ \fBsegtree_beats\&.hpp\fP の \fB28\fP 行目に定義があります。
+.SS "void AngelBeats::range_update (int l, int r, \fBll\fP x)\fR [inline]\fP"
+
+.PP
+[l, r) に対し、v[i] <- x 
+.PP
+ \fBsegtree_beats\&.hpp\fP の \fB30\fP 行目に定義があります。
+.SS "\fBll\fP AngelBeats::range_min (int l, int r)\fR [inline]\fP"
+
+.PP
+min[l, r)(v[i]) を返す 
+.PP
+ \fBsegtree_beats\&.hpp\fP の \fB32\fP 行目に定義があります。
+.SS "\fBll\fP AngelBeats::range_max (int l, int r)\fR [inline]\fP"
+
+.PP
+max[l, r)(v[i]) を返す 
+.PP
+ \fBsegtree_beats\&.hpp\fP の \fB34\fP 行目に定義があります。
+.SS "\fBll\fP AngelBeats::range_sum (int l, int r)\fR [inline]\fP"
+
+.PP
+sum[l, r)(v[i]) を返す 
+.PP
+ \fBsegtree_beats\&.hpp\fP の \fB36\fP 行目に定義があります。
+.SH "メンバ詳解"
+.PP 
+.SS "vector<\fBNode\fP> AngelBeats::v"
+
+.PP
+ \fBsegtree_beats\&.hpp\fP の \fB10\fP 行目に定義があります。
+.SS "\fBll\fP AngelBeats::n"
+
+.PP
+ \fBsegtree_beats\&.hpp\fP の \fB11\fP 行目に定義があります。
+.SS "\fBll\fP AngelBeats::log"
+
+.PP
+ \fBsegtree_beats\&.hpp\fP の \fB11\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

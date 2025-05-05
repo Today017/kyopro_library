@@ -1,0 +1,55 @@
+.TH "TwoSat" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TwoSat \- 2-SAT  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'two_sat\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBTwoSat\fP (int n)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (int i, bool fi, int j, bool fj)"
+.br
+.RI "条件 \fRi==fi || j==fj\fP を追加 "
+.ti -1c
+.RI "vector< bool > \fBsolve\fP ()"
+.br
+.RI "2-SATを解く "
+.in -1c
+.SH "詳解"
+.PP 
+2-SAT 
+.PP
+ \fBtwo_sat\&.hpp\fP の \fB5\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "TwoSat::TwoSat (int n)\fR [inline]\fP"
+
+.PP
+ \fBtwo_sat\&.hpp\fP の \fB6\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "void TwoSat::add (int i, bool fi, int j, bool fj)\fR [inline]\fP"
+
+.PP
+条件 \fRi==fi || j==fj\fP を追加 
+.PP
+ \fBtwo_sat\&.hpp\fP の \fB9\fP 行目に定義があります。
+.SS "vector< bool > TwoSat::solve ()\fR [inline]\fP"
+
+.PP
+2-SATを解く 解が存在しないなら空のvectorを返す 
+.PP
+ \fBtwo_sat\&.hpp\fP の \fB18\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

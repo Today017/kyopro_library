@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_convolution_8hpp_source" xml:lang="ja">
+<title>convolution.hpp</title>
+<indexterm><primary>math/convolution.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_convolution_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_convolution_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;高速フーリエ変換</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@note&#32;O(N&#32;log(N))</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@details&#32;f(x)&#32;=&#32;Σ&#32;a[i]x^i,&#32;w^N&#32;=&#32;1&#32;とすると、F(t)&#32;=&#32;Σ&#32;f(w^i)t^i&#32;の各係数を返す。</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00006"/>00006 <emphasis role="comment">///&#32;@details&#32;a&#32;=&#32;(a[0],&#32;a[1],&#32;...,&#32;a[n-1])&#32;-&gt;&#32;fa&#32;=&#32;(f(w^0),&#32;f(w^1),&#32;...,&#32;f(w^(n-1)))</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00007"/><link linkend="_convolution_8hpp_1a6a27829658ebde922fee66179fe05f3c">00007</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_convolution_8hpp_1a6a27829658ebde922fee66179fe05f3c">FFT</link>(vector&lt;complex&lt;<emphasis role="keywordtype">double</emphasis>&gt;&gt;&amp;&#32;a,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;inv=<emphasis role="keyword">false</emphasis>)&#32;{
+<anchor xml:id="_convolution_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n=a.size(),h=0;
+<anchor xml:id="_convolution_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>((1&lt;&lt;h)&lt;n)&#32;h++;
+<anchor xml:id="_convolution_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;{
+<anchor xml:id="_convolution_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;j=0;
+<anchor xml:id="_convolution_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//ビットを逆に</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(k,h)&#32;j|=(i&gt;&gt;k&amp;1)&lt;&lt;(h-1-k);
+<anchor xml:id="_convolution_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(i&lt;j)&#32;swap(a[i],a[j]);
+<anchor xml:id="_convolution_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_convolution_8hpp_source_1l00016"/>00016 
+<anchor xml:id="_convolution_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;b=1;&#32;b&lt;n;&#32;b&lt;&lt;=1)&#32;{
+<anchor xml:id="_convolution_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(j,b)&#32;{
+<anchor xml:id="_convolution_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//b&#32;=&#32;ブロックサイズの半分</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//j,&#32;j+b&#32;を計算</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//w&#32;=&#32;exp(-2πj&#32;/&#32;2b)&#32;=&#32;1&#32;の&#32;b&#32;乗根の&#32;j&#32;乗</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;complex&lt;<emphasis role="keywordtype">double</emphasis>&gt;&#32;w=polar(1.0,(2.0*M_PI)/(2.0*b)*j*(inv?1:-1));
+<anchor xml:id="_convolution_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//ブロックサイズ&#32;2b&#32;だけずらしながら計算</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;k=0;&#32;k&lt;n;&#32;k+=b*2)&#32;{
+<anchor xml:id="_convolution_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;complex&lt;<emphasis role="keywordtype">double</emphasis>&gt;&#32;s=a[j+k],t=a[j+k+b]*w;
+<anchor xml:id="_convolution_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;a[j+k]=s+t,a[j+k+b]=s-t;
+<anchor xml:id="_convolution_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_convolution_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_convolution_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_convolution_8hpp_source_1l00030"/>00030 
+<anchor xml:id="_convolution_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(inv)<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;a[i]/=n;
+<anchor xml:id="_convolution_8hpp_source_1l00032"/>00032 }
+<anchor xml:id="_convolution_8hpp_source_1l00033"/>00033 
+<anchor xml:id="_convolution_8hpp_source_1l00034"/>00034 <emphasis role="comment">///&#32;@brief&#32;畳み込み</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00035"/>00035 <emphasis role="comment">///&#32;@note&#32;O(N&#32;log(N))</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00036"/><link linkend="_convolution_8hpp_1a12143899ae24137944835fc0aaf1c397">00036</link> <link linkend="_convolution_8hpp_1a12143899ae24137944835fc0aaf1c397">vector</link>&lt;<emphasis role="keywordtype">double</emphasis>&gt;&#32;<link linkend="_convolution_8hpp_1a12143899ae24137944835fc0aaf1c397">Convolve</link>(<emphasis role="keyword">const</emphasis>&#32;vector&lt;<emphasis role="keywordtype">double</emphasis>&gt;&amp;&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;vector&lt;<emphasis role="keywordtype">double</emphasis>&gt;&amp;&#32;b)&#32;{
+<anchor xml:id="_convolution_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n=1;
+<anchor xml:id="_convolution_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(n+1&lt;a.size()+b.size())&#32;n*=2;
+<anchor xml:id="_convolution_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;vector&lt;complex&lt;<emphasis role="keywordtype">double</emphasis>&gt;&gt;&#32;fa(n),fb(n);
+<anchor xml:id="_convolution_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,a.size())&#32;fa[i]=a[i];&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,b.size())&#32;fb[i]=b[i];
+<anchor xml:id="_convolution_8hpp_source_1l00041"/>00041 
+<anchor xml:id="_convolution_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;fa,&#32;fb&#32;を高速フーリエ変換</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;FFT(fa);&#32;FFT(fb);
+<anchor xml:id="_convolution_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;fa&apos;&#32;*&#32;fb&apos;&#32;を計算</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;fa[i]*=fb[i];
+<anchor xml:id="_convolution_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;fa&apos;&#32;*&#32;fb&apos;&#32;を逆高速フーリエ変換し、fa&#32;*&#32;fb&#32;の係数を得る</emphasis>
+<anchor xml:id="_convolution_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;FFT(fa,<emphasis role="keyword">true</emphasis>);
+<anchor xml:id="_convolution_8hpp_source_1l00048"/>00048 
+<anchor xml:id="_convolution_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;vector&lt;<emphasis role="keywordtype">double</emphasis>&gt;&#32;ret(n);&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;ret[i]=fa[i].real();
+<anchor xml:id="_convolution_8hpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_convolution_8hpp_source_1l00051"/>00051 }
+</programlisting></section>

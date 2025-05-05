@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_combination_8hpp_source" xml:lang="ja">
+<title>combination.hpp</title>
+<indexterm><primary>mod/combination.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_combination_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_combination_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_combination_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;二項係数・階乗計算</emphasis>
+<anchor xml:id="_combination_8hpp_source_1l00004"/>00004 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_combination_8hpp_source_1l00005"/><link linkend="_struct_combinatorics">00005</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_combinatorics">Combinatorics</link>&#32;{
+<anchor xml:id="_combination_8hpp_source_1l00006"/><link linkend="_struct_combinatorics_1a03267b012345ac4ca4b3282ca937f355">00006</link> &#32;&#32;&#32;&#32;<link linkend="_struct_combinatorics_1a03267b012345ac4ca4b3282ca937f355">Combinatorics</link>()=<emphasis role="keywordflow">default</emphasis>;
+<anchor xml:id="_combination_8hpp_source_1l00007"/>00007 
+<anchor xml:id="_combination_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;二項係数の前計算</emphasis>
+<anchor xml:id="_combination_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(N)</emphasis>
+<anchor xml:id="_combination_8hpp_source_1l00010"/><link linkend="_struct_combinatorics_1ace51d39e7e21969b25e4a7b10a4bada3">00010</link> &#32;&#32;&#32;&#32;<link linkend="_struct_combinatorics_1ace51d39e7e21969b25e4a7b10a4bada3">Combinatorics</link>(<emphasis role="keywordtype">int</emphasis>&#32;n)&#32;{
+<anchor xml:id="_combination_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fac=vector&lt;T&gt;(n+1);
+<anchor xml:id="_combination_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;finv=vector&lt;T&gt;(n+1);
+<anchor xml:id="_combination_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fac[0]=1;
+<anchor xml:id="_combination_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=1;&#32;i&lt;=n;&#32;i++)&#32;fac[i]=fac[i-1]*i;
+<anchor xml:id="_combination_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;finv[n]=fac[n].inv();
+<anchor xml:id="_combination_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=n;&#32;i&gt;=1;&#32;i--)&#32;finv[i-1]=finv[i]*i;
+<anchor xml:id="_combination_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_combination_8hpp_source_1l00018"/>00018 
+<anchor xml:id="_combination_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;nCr&#32;を返す</emphasis>
+<anchor xml:id="_combination_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;n&#32;&lt;&#32;0,&#32;r&#32;&lt;&#32;0,&#32;n&#32;&lt;&#32;r&#32;のときは&#32;0&#32;を返す</emphasis>
+<anchor xml:id="_combination_8hpp_source_1l00021"/><link linkend="_struct_combinatorics_1a977b699b6416d19473239931fca6f2f7">00021</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_combinatorics_1a977b699b6416d19473239931fca6f2f7">comb</link>(ll&#32;n,&#32;ll&#32;r)&#32;{
+<anchor xml:id="_combination_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(n&lt;0||r&lt;0||n-r&lt;0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_combination_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;fac[n]*finv[r]*finv[n-r];
+<anchor xml:id="_combination_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_combination_8hpp_source_1l00025"/>00025 
+<anchor xml:id="_combination_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;nPr&#32;を返す</emphasis>
+<anchor xml:id="_combination_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;n&#32;&lt;&#32;0,&#32;r&#32;&lt;&#32;0,&#32;n&#32;&lt;&#32;r&#32;のときは&#32;0&#32;を返す</emphasis>
+<anchor xml:id="_combination_8hpp_source_1l00028"/><link linkend="_struct_combinatorics_1ac07d10087e698b320be57919234f569b">00028</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_combinatorics_1ac07d10087e698b320be57919234f569b">perm</link>(ll&#32;n,&#32;ll&#32;r)&#32;{
+<anchor xml:id="_combination_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(n&lt;0||r&lt;0||n-r&lt;0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_combination_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;fac[n]*finv[n-r];
+<anchor xml:id="_combination_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_combination_8hpp_source_1l00032"/>00032 
+<anchor xml:id="_combination_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;n!&#32;を返す</emphasis>
+<anchor xml:id="_combination_8hpp_source_1l00034"/><link linkend="_struct_combinatorics_1a612688ccbc9653abc8098403fced48b3">00034</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_combinatorics_1a612688ccbc9653abc8098403fced48b3">factrial</link>(<emphasis role="keywordtype">int</emphasis>&#32;n)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;fac[n];&#32;}
+<anchor xml:id="_combination_8hpp_source_1l00035"/>00035 
+<anchor xml:id="_combination_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;(n!)^-1&#32;を返す</emphasis>
+<anchor xml:id="_combination_8hpp_source_1l00037"/><link linkend="_struct_combinatorics_1abf0b71d9a682af871adc550a8091b05d">00037</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_combinatorics_1abf0b71d9a682af871adc550a8091b05d">factinv</link>(<emphasis role="keywordtype">int</emphasis>&#32;n)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;finv[n];&#32;}
+<anchor xml:id="_combination_8hpp_source_1l00038"/>00038 
+<anchor xml:id="_combination_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;nCr&#32;を返す</emphasis>
+<anchor xml:id="_combination_8hpp_source_1l00040"/><link linkend="_struct_combinatorics_1a9e27460393170091fbf3429fdbb3925a">00040</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_combinatorics_1a9e27460393170091fbf3429fdbb3925a">operator</link>()(ll&#32;n,&#32;ll&#32;r)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_combinatorics_1a977b699b6416d19473239931fca6f2f7">comb</link><link linkend="_struct_combinatorics_1a977b699b6416d19473239931fca6f2f7">(</link>n<link linkend="_struct_combinatorics_1a977b699b6416d19473239931fca6f2f7">,</link>r<link linkend="_struct_combinatorics_1a977b699b6416d19473239931fca6f2f7">)</link>;&#32;}
+<anchor xml:id="_combination_8hpp_source_1l00041"/>00041 
+<anchor xml:id="_combination_8hpp_source_1l00042"/>00042 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_combination_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;vector&lt;T&gt;&#32;fac,finv;
+<anchor xml:id="_combination_8hpp_source_1l00044"/>00044 };
+</programlisting></section>

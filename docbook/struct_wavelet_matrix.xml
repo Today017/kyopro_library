@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_wavelet_matrix" xml:lang="ja">
+<title>WaveletMatrix 構造体</title>
+<indexterm><primary>WaveletMatrix</primary></indexterm>
+<para>
+
+<para>Wavelet Matrix <link xlink:href="https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix">https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix</link> <link xlink:href="https://miti-7.hatenablog.com/entry/2019/02/01/152131">https://miti-7.hatenablog.com/entry/2019/02/01/152131</link> </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;wavelet_matrix.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_wavelet_matrix_1a3509863e3953b3e85960f176483ea314">WaveletMatrix</link> (const vector&lt; <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> &gt; &amp;a)</para>
+
+<para>コンストラクタ </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_wavelet_matrix_1a3a1eefb0414102aeeac72a1f31fc5b8d">access</link> (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> pos)</para>
+
+<para>a[pos] を返す </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_wavelet_matrix_1a2b4d0a49f7e6ff7439359beab3ec5c49">select</link> (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> c, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_wavelet_matrix_1ab6da004ddc73ce3283c091c306832688">rank</link>)</para>
+
+<para>rank 番目の c の位置 +1 を返す </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_wavelet_matrix_1a6bc748ebdfcaecf9b5c8659287989390">max_range</link> (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin_pos, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end_pos)</para>
+
+<para>区間 [l, r) で最大のインデックスを返す </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_wavelet_matrix_1a928a5cdef4bbb6e505ccc3cd868bb00a">min_range</link> (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin_pos, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end_pos)</para>
+
+<para>区間 [l, r) で最小のインデックスを返す </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_wavelet_matrix_1a32c9df866b15491fe51cbbda0378b614">quantile_range</link> (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin_pos, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end_pos, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> k)</para>
+
+<para>区間 [l, r) で k 番目に小さい値のインデックスを返す </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_wavelet_matrix_1ab6da004ddc73ce3283c091c306832688">rank</link> (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> c, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> pos)</para>
+
+<para>区間 [0, pos) の c の数 </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_wavelet_matrix_1a13f19575cd1606bc3f4bb631276a4c4f">range_freq</link> (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin_pos, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end_pos, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> min_c, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> max_c)</para>
+
+<para>区間 [l, r) の [min_c, max_c) に入る値の個数 </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_wavelet_matrix_1ac307c703867bfbc709256f78167484b3">rank_less_than</link> (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> c, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end)</para>
+
+<para>区間 [l, r) の c より小さい値の数 </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_wavelet_matrix_1a139b3097b57944221f74b2e76748df10">rank_more_than</link> (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> c, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end)</para>
+
+<para>区間 [l, r) の c より大きい値の数 </para>
+</listitem>
+            <listitem><para>tuple&lt; <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link>, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link>, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> &gt; <link linkend="_struct_wavelet_matrix_1aa4e70eeb91a042f7bd8cb723f46c5bbe">rank_all</link> (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> c, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end)</para>
+
+<para>区間 [l, r) の (c と同じ値の数, c より小さい値の数, c より大きい値の数) </para>
+</listitem>
+            <listitem><para>vector&lt; pair&lt; <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link>, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> &gt; &gt; <link linkend="_struct_wavelet_matrix_1a384b3825c4706d9979fa468ae6fc81d8">topk</link> (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> k)</para>
+
+<para>区間 [l, r) で出現回数が多い順に k 個の (値, 頻度) を返す </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_wavelet_matrix_1a1e85b0b321d873479991f2f2bfee863f">range_sum</link> (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> x, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> y)</para>
+
+<para>区間 [l, r) で [x, y) に入る値の総和 </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_wavelet_matrix_1aca169731a469969acb7685e9f338172a">prev_value</link> (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin_pos, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end_pos, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> x, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> y)</para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_wavelet_matrix_1a50331fad103e7d41e3183888cf89c0c9">next_value</link> (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin_pos, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end_pos, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> x, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> y)</para>
+</listitem>
+            <listitem><para>vector&lt; tuple&lt; <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link>, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link>, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> &gt; &gt; <link linkend="_struct_wavelet_matrix_1a0aa4dc733c0b2ddaaae4fa274fc739a9">intersect</link> (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> _s1, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> _e1, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> _s2, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> _e2)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>静的公開変数類    </title>
+        <itemizedlist>
+            <listitem><para>static const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_wavelet_matrix_1ad09fa0edc4214cc70e466ceb92e3de90">NOTFOUND</link> =SuccinctBitVector::NOTFOUND</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+
+<para>Wavelet Matrix <link xlink:href="https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix">https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix</link> <link xlink:href="https://miti-7.hatenablog.com/entry/2019/02/01/152131">https://miti-7.hatenablog.com/entry/2019/02/01/152131</link> </para>
+<para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00161">161</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_wavelet_matrix_1a3509863e3953b3e85960f176483ea314"/><section>
+    <title>WaveletMatrix()</title>
+<indexterm><primary>WaveletMatrix</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>WaveletMatrix</secondary></indexterm>
+<para><computeroutput>WaveletMatrix::WaveletMatrix (const vector&lt; <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> &gt; &amp; a)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>コンストラクタ </para>
+</para>
+
+<para>a から Wavelet Matrix を構築する </para>
+<para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00176">176</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_wavelet_matrix_1a3a1eefb0414102aeeac72a1f31fc5b8d"/><section>
+    <title>access()</title>
+<indexterm><primary>access</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>access</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> WaveletMatrix::access (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> pos)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>a[pos] を返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log σ) </para>
+</note>
+</para>
+<para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00222">222</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_wavelet_matrix_1a2b4d0a49f7e6ff7439359beab3ec5c49"/><section>
+    <title>select()</title>
+<indexterm><primary>select</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>select</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> WaveletMatrix::select (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> c, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> rank)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>rank 番目の c の位置 +1 を返す </para>
+</para>
+
+<para>rank は 1-indexed <note><title>覚え書き</title>
+
+<para>O(log σ) </para>
+</note>
+</para>
+<para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00237">237</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_wavelet_matrix_1a6bc748ebdfcaecf9b5c8659287989390"/><section>
+    <title>max_range()</title>
+<indexterm><primary>max_range</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>max_range</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> WaveletMatrix::max_range (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin_pos, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end_pos)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) で最大のインデックスを返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log σ) </para>
+</note>
+</para>
+<para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00252">252</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_wavelet_matrix_1a928a5cdef4bbb6e505ccc3cd868bb00a"/><section>
+    <title>min_range()</title>
+<indexterm><primary>min_range</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>min_range</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> WaveletMatrix::min_range (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin_pos, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end_pos)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) で最小のインデックスを返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log σ) </para>
+</note>
+</para>
+<para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00258">258</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_wavelet_matrix_1a32c9df866b15491fe51cbbda0378b614"/><section>
+    <title>quantile_range()</title>
+<indexterm><primary>quantile_range</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>quantile_range</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> WaveletMatrix::quantile_range (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin_pos, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end_pos, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> k)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) で k 番目に小さい値のインデックスを返す </para>
+</para>
+
+<para>k は 0-indexed <note><title>覚え書き</title>
+
+<para>O(log σ) </para>
+</note>
+</para>
+<para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00265">265</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_wavelet_matrix_1ab6da004ddc73ce3283c091c306832688"/><section>
+    <title>rank()</title>
+<indexterm><primary>rank</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>rank</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> WaveletMatrix::rank (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> c, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> pos)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [0, pos) の c の数 </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log σ) </para>
+</note>
+</para>
+<para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00295">295</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_wavelet_matrix_1a13f19575cd1606bc3f4bb631276a4c4f"/><section>
+    <title>range_freq()</title>
+<indexterm><primary>range_freq</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>range_freq</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> WaveletMatrix::range_freq (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin_pos, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end_pos, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> min_c, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> max_c)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) の [min_c, max_c) に入る値の個数 </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log σ) </para>
+</note>
+</para>
+<para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00310">310</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_wavelet_matrix_1ac307c703867bfbc709256f78167484b3"/><section>
+    <title>rank_less_than()</title>
+<indexterm><primary>rank_less_than</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>rank_less_than</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> WaveletMatrix::rank_less_than (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> c, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) の c より小さい値の数 </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log σ) </para>
+</note>
+</para>
+<para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00321">321</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_wavelet_matrix_1a139b3097b57944221f74b2e76748df10"/><section>
+    <title>rank_more_than()</title>
+<indexterm><primary>rank_more_than</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>rank_more_than</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> WaveletMatrix::rank_more_than (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> c, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) の c より大きい値の数 </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log σ) </para>
+</note>
+</para>
+<para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00328">328</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_wavelet_matrix_1aa4e70eeb91a042f7bd8cb723f46c5bbe"/><section>
+    <title>rank_all()</title>
+<indexterm><primary>rank_all</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>rank_all</secondary></indexterm>
+<para><computeroutput>tuple&lt; <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link>, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link>, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> &gt; WaveletMatrix::rank_all (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> c, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) の (c と同じ値の数, c より小さい値の数, c より大きい値の数) </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log σ) </para>
+</note>
+</para>
+<para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00335">335</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_wavelet_matrix_1a384b3825c4706d9979fa468ae6fc81d8"/><section>
+    <title>topk()</title>
+<indexterm><primary>topk</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>topk</secondary></indexterm>
+<para><computeroutput>vector&lt; pair&lt; <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link>, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> &gt; &gt; WaveletMatrix::topk (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> k)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) で出現回数が多い順に k 個の (値, 頻度) を返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log σ) </para>
+</note>
+</para>
+<para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00363">363</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_wavelet_matrix_1a1e85b0b321d873479991f2f2bfee863f"/><section>
+    <title>range_sum()</title>
+<indexterm><primary>range_sum</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>range_sum</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> WaveletMatrix::range_sum (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> x, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> y)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>区間 [l, r) で [x, y) に入る値の総和 </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(log σ) </para>
+</note>
+</para>
+<para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00397">397</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_wavelet_matrix_1aca169731a469969acb7685e9f338172a"/><section>
+    <title>prev_value()</title>
+<indexterm><primary>prev_value</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>prev_value</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> WaveletMatrix::prev_value (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin_pos, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end_pos, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> x, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> y)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00401">401</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_wavelet_matrix_1a50331fad103e7d41e3183888cf89c0c9"/><section>
+    <title>next_value()</title>
+<indexterm><primary>next_value</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>next_value</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> WaveletMatrix::next_value (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> begin_pos, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> end_pos, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> x, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> y)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00441">441</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_wavelet_matrix_1a0aa4dc733c0b2ddaaae4fa274fc739a9"/><section>
+    <title>intersect()</title>
+<indexterm><primary>intersect</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>intersect</secondary></indexterm>
+<para><computeroutput>vector&lt; tuple&lt; <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link>, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link>, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> &gt; &gt; WaveletMatrix::intersect (<link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> _s1, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> _e1, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> _s2, <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> _e2)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00479">479</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>メンバ詳解</title>
+<anchor xml:id="_struct_wavelet_matrix_1ad09fa0edc4214cc70e466ceb92e3de90"/><section>
+    <title>NOTFOUND</title>
+<indexterm><primary>NOTFOUND</primary><secondary>WaveletMatrix</secondary></indexterm>
+<indexterm><primary>WaveletMatrix</primary><secondary>NOTFOUND</secondary></indexterm>
+<para><computeroutput>const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> WaveletMatrix::NOTFOUND =SuccinctBitVector::NOTFOUND<computeroutput>[static]</computeroutput></computeroutput></para><para>
+ <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00162">162</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+data_structure/<link linkend="_wavelet__matrix_8hpp">wavelet_matrix.hpp</link></section>
+</section>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_diameter_8hpp" xml:lang="ja">
+<title>graph/tree/diameter.hpp ファイル</title>
+<indexterm><primary>graph/tree/diameter.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../../kyopro_library/template.hpp&quot;<?linebreak?>#include &quot;../../../kyopro_library/graph/shortest_path/dijkstra.hpp&quot;<?linebreak?>#include &quot;../../../kyopro_library/graph/shortest_path/bfs.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>pair&lt; <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> &gt; <link linkend="_diameter_8hpp_1a24ee70241e9b08a7a6f279c8c1e151ce">TreeDiameter</link> (const <link linkend="_template_8hpp_1a20b579988fc1098f6357cbd1f07dc5e8">WG</link> &amp;g)</para>
+</listitem>
+            <listitem><para>pair&lt; <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> &gt; <link linkend="_diameter_8hpp_1a316f2499444d82bfb41454b6df45216a">TreeDiameter</link> (const <link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> &amp;g)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_diameter_8hpp_1a24ee70241e9b08a7a6f279c8c1e151ce"/><section>
+    <title>TreeDiameter()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>TreeDiameter</primary><secondary>diameter.hpp</secondary></indexterm>
+<indexterm><primary>diameter.hpp</primary><secondary>TreeDiameter</secondary></indexterm>
+<para><computeroutput>pair&lt; <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> &gt; TreeDiameter (const <link linkend="_template_8hpp_1a20b579988fc1098f6357cbd1f07dc5e8">WG</link> &amp; g)</computeroutput></para><para>
+ <link linkend="_diameter_8hpp_source">diameter.hpp</link> の <link linkend="_diameter_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_diameter_8hpp_1a316f2499444d82bfb41454b6df45216a"/><section>
+    <title>TreeDiameter()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>TreeDiameter</primary><secondary>diameter.hpp</secondary></indexterm>
+<indexterm><primary>diameter.hpp</primary><secondary>TreeDiameter</secondary></indexterm>
+<para><computeroutput>pair&lt; <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> &gt; TreeDiameter (const <link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> &amp; g)</computeroutput></para><para>
+ <link linkend="_diameter_8hpp_source">diameter.hpp</link> の <link linkend="_diameter_8hpp_source_1l00026">26</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

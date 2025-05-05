@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_bezout__identity_8hpp" xml:lang="ja">
+<title>math/bezout_identity.hpp ファイル</title>
+<indexterm><primary>math/bezout_identity.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/math/extgcd.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_bezout_identity">BezoutIdentity</link></para>
+
+<para>一次不定方程式 ax+by=c を解く verify: <link xlink:href="https://atcoder.jp/contests/abc340/submissions/62495050">https://atcoder.jp/contests/abc340/submissions/62495050</link> </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

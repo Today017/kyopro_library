@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_bridge_info" xml:lang="ja">
+<title>BridgeInfo 構造体</title>
+<indexterm><primary>BridgeInfo</primary></indexterm>
+<para>
+
+<para>橋と関節点の情報 </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;lowlink.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開変数類    </title>
+        <itemizedlist>
+            <listitem><para>vector&lt; pair&lt; int, int &gt; &gt; <link linkend="_struct_bridge_info_1aaaf5c030e642505d500d0df745738c6a">bridge</link></para>
+
+<para>橋 </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> <link linkend="_struct_bridge_info_1a46cddefb4df5de85551aa4f07ac88fca">articulation</link></para>
+
+<para>関節点 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+
+<para>橋と関節点の情報 </para>
+<para>
+ <link linkend="_lowlink_8hpp_source">lowlink.hpp</link> の <link linkend="_lowlink_8hpp_source_1l00004">4</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>メンバ詳解</title>
+<anchor xml:id="_struct_bridge_info_1aaaf5c030e642505d500d0df745738c6a"/><section>
+    <title>bridge</title>
+<indexterm><primary>bridge</primary><secondary>BridgeInfo</secondary></indexterm>
+<indexterm><primary>BridgeInfo</primary><secondary>bridge</secondary></indexterm>
+<para><computeroutput>vector&lt;pair&lt;int,int&gt; &gt; BridgeInfo::bridge</computeroutput></para><para>
+
+<para>橋 </para>
+</para>
+<para>
+ <link linkend="_lowlink_8hpp_source">lowlink.hpp</link> の <link linkend="_lowlink_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_bridge_info_1a46cddefb4df5de85551aa4f07ac88fca"/><section>
+    <title>articulation</title>
+<indexterm><primary>articulation</primary><secondary>BridgeInfo</secondary></indexterm>
+<indexterm><primary>BridgeInfo</primary><secondary>articulation</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> BridgeInfo::articulation</computeroutput></para><para>
+
+<para>関節点 </para>
+</para>
+<para>
+ <link linkend="_lowlink_8hpp_source">lowlink.hpp</link> の <link linkend="_lowlink_8hpp_source_1l00006">6</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+graph/<link linkend="_lowlink_8hpp">lowlink.hpp</link></section>
+</section>

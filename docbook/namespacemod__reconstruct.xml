@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespacemod__reconstruct" xml:lang="ja">
+<title>mod_reconstruct 名前空間</title>
+<indexterm><primary>mod_reconstruct</primary></indexterm>
+<simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespacemod__reconstruct_1a2b66d8d76557c1fdc2baf29121dc430b">reconstruct</link> (n, mod)</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemod__reconstruct_1a028a3a305338e730dbab6526032d586d">add_rational_expression</link> (original, mod)</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemod__reconstruct_1af05e87c8d03131fac1b74586551c090e">main</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_namespacemod__reconstruct_1a2b66d8d76557c1fdc2baf29121dc430b"/><section>
+    <title>reconstruct()</title>
+<indexterm><primary>reconstruct</primary><secondary>mod_reconstruct</secondary></indexterm>
+<indexterm><primary>mod_reconstruct</primary><secondary>reconstruct</secondary></indexterm>
+<para><computeroutput>mod_reconstruct.reconstruct ( n,  mod)</computeroutput></para><para>
+ <link linkend="_mod__reconstruct_8py_source">mod_reconstruct.py</link> の <link linkend="_mod__reconstruct_8py_source_1l00003">3</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespacemod__reconstruct_1a028a3a305338e730dbab6526032d586d"/><section>
+    <title>add_rational_expression()</title>
+<indexterm><primary>add_rational_expression</primary><secondary>mod_reconstruct</secondary></indexterm>
+<indexterm><primary>mod_reconstruct</primary><secondary>add_rational_expression</secondary></indexterm>
+<para><computeroutput>mod_reconstruct.add_rational_expression ( original,  mod)</computeroutput></para><para>
+ <link linkend="_mod__reconstruct_8py_source">mod_reconstruct.py</link> の <link linkend="_mod__reconstruct_8py_source_1l00019">19</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_mod__reconstruct_8py_source_1l00003">reconstruct()</link>.</para>
+</section>
+<anchor xml:id="_namespacemod__reconstruct_1af05e87c8d03131fac1b74586551c090e"/><section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>mod_reconstruct</secondary></indexterm>
+<indexterm><primary>mod_reconstruct</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>mod_reconstruct.main ( )</computeroutput></para><para>
+ <link linkend="_mod__reconstruct_8py_source">mod_reconstruct.py</link> の <link linkend="_mod__reconstruct_8py_source_1l00050">50</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_mod__reconstruct_8py_source_1l00019">add_rational_expression()</link>, <link linkend="_mod__reconstruct_8py_source_1l00050">main()</link>.</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_binary__search_8hpp_source" xml:lang="ja">
+<title>binary_search.hpp</title>
+<indexterm><primary>algorithm/binary_search.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_binary__search_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_binary__search_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_binary__search_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;二分探索</emphasis>
+<anchor xml:id="_binary__search_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@details&#32;条件&#32;judge&#32;を満たす&#32;ok&#32;と&#32;ng&#32;の境界を二分探索によって求める。</emphasis>
+<anchor xml:id="_binary__search_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@note&#32;O(log(|ok&#32;-&#32;ng|)&#32;*&#32;f)</emphasis>
+<anchor xml:id="_binary__search_8hpp_source_1l00006"/>00006 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T,&#32;<emphasis role="keyword">typename</emphasis>&#32;Judge&gt;
+<anchor xml:id="_binary__search_8hpp_source_1l00007"/><link linkend="_binary__search_8hpp_1ac51e21ede218b1fc3ce5beca36a6fc30">00007</link> T&#32;<link linkend="_binary__search_8hpp_1ac51e21ede218b1fc3ce5beca36a6fc30">BinarySearch</link>(T&#32;ok,&#32;T&#32;ng,&#32;Judge&#32;judge)&#32;{
+<anchor xml:id="_binary__search_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(abs(ok-ng)&gt;1)&#32;{
+<anchor xml:id="_binary__search_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;mid=(ok+ng)/2;
+<anchor xml:id="_binary__search_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(judge(mid))&#32;ok=mid;
+<anchor xml:id="_binary__search_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;ng=mid;
+<anchor xml:id="_binary__search_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__search_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ok;
+<anchor xml:id="_binary__search_8hpp_source_1l00014"/>00014 }
+<anchor xml:id="_binary__search_8hpp_source_1l00015"/>00015 
+<anchor xml:id="_binary__search_8hpp_source_1l00016"/>00016 <emphasis role="comment">///&#32;@brief&#32;回数指定二分探索</emphasis>
+<anchor xml:id="_binary__search_8hpp_source_1l00017"/>00017 <emphasis role="comment">///&#32;@details&#32;条件&#32;judge&#32;を満たす&#32;ok&#32;と&#32;ng&#32;の境界を二分探索によって求める。</emphasis>
+<anchor xml:id="_binary__search_8hpp_source_1l00018"/>00018 <emphasis role="comment">///&#32;@note&#32;O(iter&#32;*&#32;f)</emphasis>
+<anchor xml:id="_binary__search_8hpp_source_1l00019"/>00019 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T,&#32;<emphasis role="keyword">typename</emphasis>&#32;Judge&gt;
+<anchor xml:id="_binary__search_8hpp_source_1l00020"/><link linkend="_binary__search_8hpp_1aa10292c755723d3eca2daec700f835dd">00020</link> T&#32;<link linkend="_binary__search_8hpp_1aa10292c755723d3eca2daec700f835dd">BinarySearchIteration</link>(T&#32;ok,&#32;T&#32;ng,&#32;Judge&#32;judge,&#32;<emphasis role="keywordtype">int</emphasis>&#32;iter=100)&#32;{
+<anchor xml:id="_binary__search_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(iter--)&#32;{
+<anchor xml:id="_binary__search_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;mid=(ok+ng)/2;
+<anchor xml:id="_binary__search_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(judge(mid))&#32;ok=mid;
+<anchor xml:id="_binary__search_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;ng=mid;
+<anchor xml:id="_binary__search_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__search_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ok;
+<anchor xml:id="_binary__search_8hpp_source_1l00027"/>00027 }
+<anchor xml:id="_binary__search_8hpp_source_1l00028"/>00028 
+<anchor xml:id="_binary__search_8hpp_source_1l00029"/>00029 <emphasis role="comment">///&#32;@brief&#32;単調性の確認</emphasis>
+<anchor xml:id="_binary__search_8hpp_source_1l00030"/>00030 <emphasis role="comment">///&#32;@details&#32;関数&#32;judge&#32;が単調性を満たすか否かを確認する</emphasis>
+<anchor xml:id="_binary__search_8hpp_source_1l00031"/>00031 <emphasis role="comment">///&#32;@param&#32;start&#32;開始要素</emphasis>
+<anchor xml:id="_binary__search_8hpp_source_1l00032"/>00032 <emphasis role="comment">///&#32;@param&#32;step&#32;探索幅</emphasis>
+<anchor xml:id="_binary__search_8hpp_source_1l00033"/>00033 <emphasis role="comment">///&#32;@param&#32;iter&#32;探索回数</emphasis>
+<anchor xml:id="_binary__search_8hpp_source_1l00034"/>00034 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T,&#32;<emphasis role="keyword">typename</emphasis>&#32;Judge&gt;
+<anchor xml:id="_binary__search_8hpp_source_1l00035"/><link linkend="_binary__search_8hpp_1ad882a3759569b5eac90be8983df7bd54">00035</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_binary__search_8hpp_1ad882a3759569b5eac90be8983df7bd54">CheckMonotonicity</link>(T&#32;start,&#32;T&#32;step,&#32;ll&#32;iter,&#32;Judge&#32;judge)&#32;{
+<anchor xml:id="_binary__search_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;cerr&lt;&lt;<emphasis role="stringliteral">&quot;[&#32;&quot;</emphasis>;
+<anchor xml:id="_binary__search_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;pre=<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_binary__search_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;ll&#32;cnt=0;
+<anchor xml:id="_binary__search_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(T&#32;i=start;&#32;iter&gt;0;&#32;iter--,&#32;i+=step)&#32;{
+<anchor xml:id="_binary__search_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;tmp=judge(i);
+<anchor xml:id="_binary__search_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cerr&lt;&lt;<emphasis role="stringliteral">&quot;{&#32;&quot;</emphasis>&lt;&lt;i&lt;&lt;<emphasis role="stringliteral">&quot;&#32;:&#32;&quot;</emphasis>&lt;&lt;(tmp&#32;?&#32;<emphasis role="stringliteral">&quot;OK&quot;</emphasis>&#32;:&#32;<emphasis role="stringliteral">&quot;NG&quot;</emphasis>)&lt;&lt;<emphasis role="stringliteral">&quot;&#32;},&#32;&quot;</emphasis>;
+<anchor xml:id="_binary__search_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(i!=start&amp;&amp;tmp!=pre)&#32;cnt++;
+<anchor xml:id="_binary__search_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pre=tmp;
+<anchor xml:id="_binary__search_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_binary__search_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;cerr&lt;&lt;<emphasis role="stringliteral">&quot;&#32;]\n&quot;</emphasis>;
+<anchor xml:id="_binary__search_8hpp_source_1l00046"/>00046 
+<anchor xml:id="_binary__search_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(cnt&lt;=1)&#32;cerr&lt;&lt;<emphasis role="stringliteral">&quot;Is&#32;Monotonic\n&quot;</emphasis>;
+<anchor xml:id="_binary__search_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;cerr&lt;&lt;<emphasis role="stringliteral">&quot;Not&#32;Monotonicss\n&quot;</emphasis>;
+<anchor xml:id="_binary__search_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;cnt&lt;=1;
+<anchor xml:id="_binary__search_8hpp_source_1l00050"/>00050 }
+</programlisting></section>

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_max_flow" xml:lang="ja">
+<title>MaxFlow 構造体</title>
+<indexterm><primary>MaxFlow</primary></indexterm>
+<para>
+
+<para>最大流 </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;max_flow.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_max_flow_1_1_edge">Edge</link></para>
+
+<para>辺構造体 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_max_flow_1a110c5a586e8fe54f4fbb8cfc03219d3b">MaxFlow</link> (int n)</para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_max_flow_1ac8661e215fa18b0710f8934378de29b0">add_edge</link> (int from, int to, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> cap)</para>
+
+<para>容量 cap の辺を追加する </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_struct_max_flow_1a9ae6af96026a4568d4e0c01c003a753f">flow</link> (int s, int t)</para>
+
+<para>s から t への最大流を求める </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> <link linkend="_struct_max_flow_1abee031fc4d62dea9bc9aadf29e57abae">mincut</link> (int v=0)</para>
+
+<para>直前に流したフローから最小カットを復元する </para>
+</listitem>
+            <listitem><para>vector&lt; <link linkend="_struct_max_flow_1_1_edge">Edge</link> &gt; <link linkend="_struct_max_flow_1abbe9c0d60ca3b0f31aec84b73bfeb059">get_edges</link> ()</para>
+
+<para>直前に流したフローの辺の情報を返す </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+
+<para>最大流 </para>
+<para>
+ <link linkend="_max__flow_8hpp_source">max_flow.hpp</link> の <link linkend="_max__flow_8hpp_source_1l00004">4</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_max_flow_1a110c5a586e8fe54f4fbb8cfc03219d3b"/><section>
+    <title>MaxFlow()</title>
+<indexterm><primary>MaxFlow</primary><secondary>MaxFlow</secondary></indexterm>
+<indexterm><primary>MaxFlow</primary><secondary>MaxFlow</secondary></indexterm>
+<para><computeroutput>MaxFlow::MaxFlow (int n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_max__flow_8hpp_source">max_flow.hpp</link> の <link linkend="_max__flow_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_max_flow_1ac8661e215fa18b0710f8934378de29b0"/><section>
+    <title>add_edge()</title>
+<indexterm><primary>add_edge</primary><secondary>MaxFlow</secondary></indexterm>
+<indexterm><primary>MaxFlow</primary><secondary>add_edge</secondary></indexterm>
+<para><computeroutput>void MaxFlow::add_edge (int from, int to, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> cap)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>容量 cap の辺を追加する </para>
+</para>
+<para>
+ <link linkend="_max__flow_8hpp_source">max_flow.hpp</link> の <link linkend="_max__flow_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_max_flow_1a9ae6af96026a4568d4e0c01c003a753f"/><section>
+    <title>flow()</title>
+<indexterm><primary>flow</primary><secondary>MaxFlow</secondary></indexterm>
+<indexterm><primary>MaxFlow</primary><secondary>flow</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> MaxFlow::flow (int s, int t)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>s から t への最大流を求める </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(V^2 E) </para>
+</note>
+</para>
+<para>
+ <link linkend="_max__flow_8hpp_source">max_flow.hpp</link> の <link linkend="_max__flow_8hpp_source_1l00062">62</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_template_8hpp_source_1l00015">INFL</link>.</para>
+</section>
+<anchor xml:id="_struct_max_flow_1abee031fc4d62dea9bc9aadf29e57abae"/><section>
+    <title>mincut()</title>
+<indexterm><primary>mincut</primary><secondary>MaxFlow</secondary></indexterm>
+<indexterm><primary>MaxFlow</primary><secondary>mincut</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> MaxFlow::mincut (int v = <computeroutput>0</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>直前に流したフローから最小カットを復元する </para>
+</para>
+
+<para>始点 v から到達可能か否か </para>
+<para>
+ <link linkend="_max__flow_8hpp_source">max_flow.hpp</link> の <link linkend="_max__flow_8hpp_source_1l00075">75</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_max_flow_1abbe9c0d60ca3b0f31aec84b73bfeb059"/><section>
+    <title>get_edges()</title>
+<indexterm><primary>get_edges</primary><secondary>MaxFlow</secondary></indexterm>
+<indexterm><primary>MaxFlow</primary><secondary>get_edges</secondary></indexterm>
+<para><computeroutput>vector&lt; <link linkend="_struct_max_flow_1_1_edge">Edge</link> &gt; MaxFlow::get_edges ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>直前に流したフローの辺の情報を返す </para>
+</para>
+<para>
+ <link linkend="_max__flow_8hpp_source">max_flow.hpp</link> の <link linkend="_max__flow_8hpp_source_1l00094">94</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+graph/flow/<link linkend="_max__flow_8hpp">max_flow.hpp</link></section>
+</section>

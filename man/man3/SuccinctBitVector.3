@@ -1,0 +1,87 @@
+.TH "SuccinctBitVector" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SuccinctBitVector
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'wavelet_matrix\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBSuccinctBitVector\fP (const \fBull\fP n)"
+.br
+.ti -1c
+.RI "void \fBset_bit\fP (const \fBull\fP bit, const \fBull\fP pos)"
+.br
+.ti -1c
+.RI "\fBull\fP \fBaccess\fP (const \fBull\fP pos)"
+.br
+.ti -1c
+.RI "void \fBbuild\fP ()"
+.br
+.ti -1c
+.RI "\fBull\fP \fBrank\fP (const \fBull\fP bit, const \fBull\fP pos)"
+.br
+.ti -1c
+.RI "\fBull\fP \fBselect\fP (const \fBull\fP bit, const \fBull\fP \fBrank\fP)"
+.br
+.ti -1c
+.RI "\fBull\fP \fBget_num_one\fP () const"
+.br
+.in -1c
+.SS "静的公開変数類"
+
+.in +1c
+.ti -1c
+.RI "static const \fBull\fP \fBNOTFOUND\fP =0xFFFFFFFFFFFFFFFFLLU"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+ \fBwavelet_matrix\&.hpp\fP の \fB3\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "SuccinctBitVector::SuccinctBitVector (const \fBull\fP n)\fR [inline]\fP, \fR [explicit]\fP"
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB17\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "void SuccinctBitVector::set_bit (const \fBull\fP bit, const \fBull\fP pos)\fR [inline]\fP"
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB23\fP 行目に定義があります。
+.SS "\fBull\fP SuccinctBitVector::access (const \fBull\fP pos)\fR [inline]\fP"
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB34\fP 行目に定義があります。
+.SS "void SuccinctBitVector::build ()\fR [inline]\fP"
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB40\fP 行目に定義があります。
+.SS "\fBull\fP SuccinctBitVector::rank (const \fBull\fP bit, const \fBull\fP pos)\fR [inline]\fP"
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB49\fP 行目に定義があります。
+.SS "\fBull\fP SuccinctBitVector::select (const \fBull\fP bit, const \fBull\fP rank)\fR [inline]\fP"
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB58\fP 行目に定義があります。
+.SS "\fBull\fP SuccinctBitVector::get_num_one () const\fR [inline]\fP"
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB115\fP 行目に定義があります。
+.SH "メンバ詳解"
+.PP 
+.SS "const \fBull\fP SuccinctBitVector::NOTFOUND =0xFFFFFFFFFFFFFFFFLLU\fR [static]\fP"
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB4\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

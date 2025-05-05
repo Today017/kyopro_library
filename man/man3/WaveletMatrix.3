@@ -1,0 +1,276 @@
+.TH "WaveletMatrix" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WaveletMatrix \- Wavelet Matrix \fBhttps://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix\fP \fBhttps://miti-7.hatenablog.com/entry/2019/02/01/152131\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'wavelet_matrix\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBWaveletMatrix\fP (const vector< \fBull\fP > &a)"
+.br
+.RI "コンストラクタ "
+.ti -1c
+.RI "\fBull\fP \fBaccess\fP (\fBull\fP pos)"
+.br
+.RI "a[pos] を返す "
+.ti -1c
+.RI "\fBull\fP \fBselect\fP (\fBull\fP c, \fBull\fP \fBrank\fP)"
+.br
+.RI "rank 番目の c の位置 +1 を返す "
+.ti -1c
+.RI "\fBull\fP \fBmax_range\fP (\fBull\fP begin_pos, \fBull\fP end_pos)"
+.br
+.RI "区間 [l, r) で最大のインデックスを返す "
+.ti -1c
+.RI "\fBull\fP \fBmin_range\fP (\fBull\fP begin_pos, \fBull\fP end_pos)"
+.br
+.RI "区間 [l, r) で最小のインデックスを返す "
+.ti -1c
+.RI "\fBull\fP \fBquantile_range\fP (\fBull\fP begin_pos, \fBull\fP end_pos, \fBull\fP k)"
+.br
+.RI "区間 [l, r) で k 番目に小さい値のインデックスを返す "
+.ti -1c
+.RI "\fBull\fP \fBrank\fP (\fBull\fP c, \fBull\fP pos)"
+.br
+.RI "区間 [0, pos) の c の数 "
+.ti -1c
+.RI "\fBull\fP \fBrange_freq\fP (\fBull\fP begin_pos, \fBull\fP end_pos, \fBull\fP min_c, \fBull\fP max_c)"
+.br
+.RI "区間 [l, r) の [min_c, max_c) に入る値の個数 "
+.ti -1c
+.RI "\fBull\fP \fBrank_less_than\fP (\fBull\fP c, \fBull\fP begin, \fBull\fP end)"
+.br
+.RI "区間 [l, r) の c より小さい値の数 "
+.ti -1c
+.RI "\fBull\fP \fBrank_more_than\fP (\fBull\fP c, \fBull\fP begin, \fBull\fP end)"
+.br
+.RI "区間 [l, r) の c より大きい値の数 "
+.ti -1c
+.RI "tuple< \fBull\fP, \fBull\fP, \fBull\fP > \fBrank_all\fP (const \fBull\fP c, \fBull\fP begin, \fBull\fP end)"
+.br
+.RI "区間 [l, r) の (c と同じ値の数, c より小さい値の数, c より大きい値の数) "
+.ti -1c
+.RI "vector< pair< \fBull\fP, \fBull\fP > > \fBtopk\fP (\fBull\fP begin, \fBull\fP end, \fBull\fP k)"
+.br
+.RI "区間 [l, r) で出現回数が多い順に k 個の (値, 頻度) を返す "
+.ti -1c
+.RI "\fBull\fP \fBrange_sum\fP (const \fBull\fP begin, const \fBull\fP end, const \fBull\fP x, const \fBull\fP y)"
+.br
+.RI "区間 [l, r) で [x, y) に入る値の総和 "
+.ti -1c
+.RI "\fBull\fP \fBprev_value\fP (const \fBull\fP begin_pos, const \fBull\fP end_pos, const \fBull\fP x, \fBull\fP y)"
+.br
+.ti -1c
+.RI "\fBull\fP \fBnext_value\fP (const \fBull\fP begin_pos, const \fBull\fP end_pos, const \fBull\fP x, const \fBull\fP y)"
+.br
+.ti -1c
+.RI "vector< tuple< \fBull\fP, \fBull\fP, \fBull\fP > > \fBintersect\fP (\fBull\fP _s1, \fBull\fP _e1, \fBull\fP _s2, \fBull\fP _e2)"
+.br
+.in -1c
+.SS "静的公開変数類"
+
+.in +1c
+.ti -1c
+.RI "static const \fBull\fP \fBNOTFOUND\fP =SuccinctBitVector::NOTFOUND"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+Wavelet Matrix \fBhttps://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix\fP \fBhttps://miti-7.hatenablog.com/entry/2019/02/01/152131\fP 
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB161\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "WaveletMatrix::WaveletMatrix (const vector< \fBull\fP > & a)\fR [inline]\fP"
+
+.PP
+コンストラクタ a から Wavelet Matrix を構築する 
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB176\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "\fBull\fP WaveletMatrix::access (\fBull\fP pos)\fR [inline]\fP"
+
+.PP
+a[pos] を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log σ) 
+.RE
+.PP
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB222\fP 行目に定義があります。
+.SS "\fBull\fP WaveletMatrix::select (\fBull\fP c, \fBull\fP rank)\fR [inline]\fP"
+
+.PP
+rank 番目の c の位置 +1 を返す rank は 1-indexed 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log σ) 
+.RE
+.PP
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB237\fP 行目に定義があります。
+.SS "\fBull\fP WaveletMatrix::max_range (\fBull\fP begin_pos, \fBull\fP end_pos)\fR [inline]\fP"
+
+.PP
+区間 [l, r) で最大のインデックスを返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log σ) 
+.RE
+.PP
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB252\fP 行目に定義があります。
+.SS "\fBull\fP WaveletMatrix::min_range (\fBull\fP begin_pos, \fBull\fP end_pos)\fR [inline]\fP"
+
+.PP
+区間 [l, r) で最小のインデックスを返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log σ) 
+.RE
+.PP
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB258\fP 行目に定義があります。
+.SS "\fBull\fP WaveletMatrix::quantile_range (\fBull\fP begin_pos, \fBull\fP end_pos, \fBull\fP k)\fR [inline]\fP"
+
+.PP
+区間 [l, r) で k 番目に小さい値のインデックスを返す k は 0-indexed 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log σ) 
+.RE
+.PP
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB265\fP 行目に定義があります。
+.SS "\fBull\fP WaveletMatrix::rank (\fBull\fP c, \fBull\fP pos)\fR [inline]\fP"
+
+.PP
+区間 [0, pos) の c の数 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log σ) 
+.RE
+.PP
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB295\fP 行目に定義があります。
+.SS "\fBull\fP WaveletMatrix::range_freq (\fBull\fP begin_pos, \fBull\fP end_pos, \fBull\fP min_c, \fBull\fP max_c)\fR [inline]\fP"
+
+.PP
+区間 [l, r) の [min_c, max_c) に入る値の個数 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log σ) 
+.RE
+.PP
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB310\fP 行目に定義があります。
+.SS "\fBull\fP WaveletMatrix::rank_less_than (\fBull\fP c, \fBull\fP begin, \fBull\fP end)\fR [inline]\fP"
+
+.PP
+区間 [l, r) の c より小さい値の数 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log σ) 
+.RE
+.PP
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB321\fP 行目に定義があります。
+.SS "\fBull\fP WaveletMatrix::rank_more_than (\fBull\fP c, \fBull\fP begin, \fBull\fP end)\fR [inline]\fP"
+
+.PP
+区間 [l, r) の c より大きい値の数 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log σ) 
+.RE
+.PP
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB328\fP 行目に定義があります。
+.SS "tuple< \fBull\fP, \fBull\fP, \fBull\fP > WaveletMatrix::rank_all (const \fBull\fP c, \fBull\fP begin, \fBull\fP end)\fR [inline]\fP"
+
+.PP
+区間 [l, r) の (c と同じ値の数, c より小さい値の数, c より大きい値の数) 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log σ) 
+.RE
+.PP
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB335\fP 行目に定義があります。
+.SS "vector< pair< \fBull\fP, \fBull\fP > > WaveletMatrix::topk (\fBull\fP begin, \fBull\fP end, \fBull\fP k)\fR [inline]\fP"
+
+.PP
+区間 [l, r) で出現回数が多い順に k 個の (値, 頻度) を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log σ) 
+.RE
+.PP
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB363\fP 行目に定義があります。
+.SS "\fBull\fP WaveletMatrix::range_sum (const \fBull\fP begin, const \fBull\fP end, const \fBull\fP x, const \fBull\fP y)\fR [inline]\fP"
+
+.PP
+区間 [l, r) で [x, y) に入る値の総和 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log σ) 
+.RE
+.PP
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB397\fP 行目に定義があります。
+.SS "\fBull\fP WaveletMatrix::prev_value (const \fBull\fP begin_pos, const \fBull\fP end_pos, const \fBull\fP x, \fBull\fP y)\fR [inline]\fP"
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB401\fP 行目に定義があります。
+.SS "\fBull\fP WaveletMatrix::next_value (const \fBull\fP begin_pos, const \fBull\fP end_pos, const \fBull\fP x, const \fBull\fP y)\fR [inline]\fP"
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB441\fP 行目に定義があります。
+.SS "vector< tuple< \fBull\fP, \fBull\fP, \fBull\fP > > WaveletMatrix::intersect (\fBull\fP _s1, \fBull\fP _e1, \fBull\fP _s2, \fBull\fP _e2)\fR [inline]\fP"
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB479\fP 行目に定義があります。
+.SH "メンバ詳解"
+.PP 
+.SS "const \fBull\fP WaveletMatrix::NOTFOUND =SuccinctBitVector::NOTFOUND\fR [static]\fP"
+
+.PP
+ \fBwavelet_matrix\&.hpp\fP の \fB162\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

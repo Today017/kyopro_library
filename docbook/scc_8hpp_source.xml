@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_scc_8hpp_source" xml:lang="ja">
+<title>scc.hpp</title>
+<indexterm><primary>graph/scc.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_scc_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">pragma</emphasis>&#32;<emphasis role="preprocessor">once</emphasis>
+<anchor xml:id="_scc_8hpp_source_1l00002"/>00002 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_scc_8hpp_source_1l00003"/>00003 
+<anchor xml:id="_scc_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;強連結成分分解の情報</emphasis>
+<anchor xml:id="_scc_8hpp_source_1l00005"/><link linkend="_struct_scc_info">00005</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_scc_info">SccInfo</link>&#32;{
+<anchor xml:id="_scc_8hpp_source_1l00006"/><link linkend="_struct_scc_info_1a6c60f29bbebf5f08925e7a324ea94fea">00006</link> &#32;&#32;&#32;&#32;<link linkend="_struct_scc_info_1a6c60f29bbebf5f08925e7a324ea94fea">VVI</link>&#32;<link linkend="_struct_scc_info_1a6c60f29bbebf5f08925e7a324ea94fea">members</link>;&#32;<emphasis role="comment">///&lt;&#32;各強連結成分の頂点</emphasis>
+<anchor xml:id="_scc_8hpp_source_1l00007"/><link linkend="_struct_scc_info_1ac35e2812adadb0090e8005a282c73d38">00007</link> &#32;&#32;&#32;&#32;<link linkend="_struct_scc_info_1ac35e2812adadb0090e8005a282c73d38">VVI</link>&#32;<link linkend="_struct_scc_info_1ac35e2812adadb0090e8005a282c73d38">graph_decomposed</link>;&#32;<emphasis role="comment">///&lt;&#32;強連結成分による分解グラフ</emphasis>
+<anchor xml:id="_scc_8hpp_source_1l00008"/><link linkend="_struct_scc_info_1a54a36f89682c3553e9269004a4affce1">00008</link> &#32;&#32;&#32;&#32;<link linkend="_struct_scc_info_1a54a36f89682c3553e9269004a4affce1">VI</link>&#32;<link linkend="_struct_scc_info_1a54a36f89682c3553e9269004a4affce1">group</link>;&#32;<emphasis role="comment">///&lt;&#32;各頂点の所属する強連結成分の番号</emphasis>
+<anchor xml:id="_scc_8hpp_source_1l00009"/>00009 };
+<anchor xml:id="_scc_8hpp_source_1l00010"/>00010 
+<anchor xml:id="_scc_8hpp_source_1l00011"/>00011 <emphasis role="comment">///&#32;@brief&#32;グラフ&#32;g&#32;の強連結成分分解を行う</emphasis>
+<anchor xml:id="_scc_8hpp_source_1l00012"/>00012 <emphasis role="comment">///&#32;@brief&#32;{&#32;各強連結成分の頂点,&#32;強連結成分による分解グラフ,&#32;各頂点の所属する強連結成分の番号&#32;}&#32;を返す</emphasis>
+<anchor xml:id="_scc_8hpp_source_1l00013"/>00013 <emphasis role="comment">///&#32;@note&#32;O(V+E)</emphasis>
+<anchor xml:id="_scc_8hpp_source_1l00014"/><link linkend="_scc_8hpp_1a75fd07fc8345ee4382b75738f61eeeba">00014</link> <link linkend="_struct_scc_info">SccInfo</link>&#32;<link linkend="_scc_8hpp_1a75fd07fc8345ee4382b75738f61eeeba">SccDecomposition</link>(<emphasis role="keyword">const</emphasis>&#32;VVI&amp;&#32;g)&#32;{
+<anchor xml:id="_scc_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n=g.size();
+<anchor xml:id="_scc_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;VVI&#32;g2(n);
+<anchor xml:id="_scc_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;j:g[i])&#32;g2[j].push_back(i);
+<anchor xml:id="_scc_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;VI&#32;order,component(n,-1),seen(n,<emphasis role="keyword">false</emphasis>);
+<anchor xml:id="_scc_8hpp_source_1l00019"/>00019 
+<anchor xml:id="_scc_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;dfs=[&amp;](<emphasis role="keyword">auto</emphasis>&#32;dfs,&#32;<emphasis role="keywordtype">int</emphasis>&#32;now)-&gt;&#32;<emphasis role="keywordtype">void</emphasis>&#32;{
+<anchor xml:id="_scc_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;seen[now]=<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_scc_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;nxt:g[now])&#32;<emphasis role="keywordflow">if</emphasis>(!seen[nxt])&#32;dfs(dfs,nxt);
+<anchor xml:id="_scc_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;order.push_back(now);
+<anchor xml:id="_scc_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_scc_8hpp_source_1l00025"/>00025 
+<anchor xml:id="_scc_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;dfs2=[&amp;](<emphasis role="keyword">auto</emphasis>&#32;dfs2,&#32;<emphasis role="keywordtype">int</emphasis>&#32;now,&#32;<emphasis role="keywordtype">int</emphasis>&#32;idx)-&gt;&#32;<emphasis role="keywordtype">void</emphasis>&#32;{
+<anchor xml:id="_scc_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;component[now]=idx;
+<anchor xml:id="_scc_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;nxt:g2[now])&#32;<emphasis role="keywordflow">if</emphasis>(component[nxt]==-1)&#32;dfs2(dfs2,nxt,idx);
+<anchor xml:id="_scc_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_scc_8hpp_source_1l00030"/>00030 
+<anchor xml:id="_scc_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;<emphasis role="keywordflow">if</emphasis>(!seen[i])&#32;dfs(dfs,i);
+<anchor xml:id="_scc_8hpp_source_1l00032"/>00032 
+<anchor xml:id="_scc_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;reverse(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(order));
+<anchor xml:id="_scc_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;idx=0;
+<anchor xml:id="_scc_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;now:order)&#32;<emphasis role="keywordflow">if</emphasis>(component[now]==-1)&#32;dfs2(dfs2,now,idx),idx++;
+<anchor xml:id="_scc_8hpp_source_1l00036"/>00036 
+<anchor xml:id="_scc_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n_n=*max_element(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(component))+1;
+<anchor xml:id="_scc_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;VVI&#32;ret(n_n),ret2(n_n);
+<anchor xml:id="_scc_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;ret[component[i]].push_back(i);
+<anchor xml:id="_scc_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;j:g[i])&#32;<emphasis role="keywordflow">if</emphasis>(component[i]!=component[j])&#32;ret2[component[i]].push_back(component[j]);
+<anchor xml:id="_scc_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n_n)&#32;<link linkend="_template_8hpp_1a6cf4a0f2f552bf0356a95bf621d4a15d">UQ</link>(ret2[i]);
+<anchor xml:id="_scc_8hpp_source_1l00042"/>00042 
+<anchor xml:id="_scc_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;{ret,ret2,component};
+<anchor xml:id="_scc_8hpp_source_1l00044"/>00044 }
+</programlisting></section>

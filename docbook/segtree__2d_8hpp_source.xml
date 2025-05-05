@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_segtree__2d_8hpp_source" xml:lang="ja">
+<title>segtree_2d.hpp</title>
+<indexterm><primary>data_structure/segtree_2d.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_segtree__2d_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_segtree__2d_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_segtree__2d_8hpp_source_1l00003"/>00003 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;Monoid&gt;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00004"/><link linkend="_struct_segment_tree2_d">00004</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_segment_tree2_d">SegmentTree2D</link>&#32;{
+<anchor xml:id="_segtree__2d_8hpp_source_1l00005"/><link linkend="_struct_segment_tree2_d_1a7a98f071c3f67b1728edc6784a4dac62">00005</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;Type=Monoid::Type;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00006"/>00006 
+<anchor xml:id="_segtree__2d_8hpp_source_1l00007"/><link linkend="_struct_segment_tree2_d_1a1f340ff0fcceff8ca552fbc7c1610194">00007</link> &#32;&#32;&#32;&#32;<link linkend="_struct_segment_tree2_d_1a1f340ff0fcceff8ca552fbc7c1610194">SegmentTree2D</link>()=<emphasis role="keywordflow">default</emphasis>;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00008"/>00008 
+<anchor xml:id="_segtree__2d_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;サイズ&#32;h&#32;*&#32;w&#32;の２次元セグメント木を構築する</emphasis>
+<anchor xml:id="_segtree__2d_8hpp_source_1l00010"/><link linkend="_struct_segment_tree2_d_1a7422bf53112a0d3df9b215a2c5293a26">00010</link> &#32;&#32;&#32;&#32;<link linkend="_struct_segment_tree2_d_1a7422bf53112a0d3df9b215a2c5293a26">SegmentTree2D</link>(<emphasis role="keywordtype">int</emphasis>&#32;h,&#32;<emphasis role="keywordtype">int</emphasis>&#32;w)&#32;{
+<anchor xml:id="_segtree__2d_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;h=h,<emphasis role="keyword">this</emphasis>-&gt;w=w;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat=vector&lt;vector&lt;Type&gt;&gt;(<emphasis role="keyword">this</emphasis>-&gt;h*2,vector&lt;Type&gt;(<emphasis role="keyword">this</emphasis>-&gt;w*2,Monoid::id()));
+<anchor xml:id="_segtree__2d_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__2d_8hpp_source_1l00014"/>00014 
+<anchor xml:id="_segtree__2d_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;位置&#32;(x,&#32;y)&#32;の要素を&#32;v&#32;に更新する</emphasis>
+<anchor xml:id="_segtree__2d_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log(h)&#32;log(w))</emphasis>
+<anchor xml:id="_segtree__2d_8hpp_source_1l00017"/><link linkend="_struct_segment_tree2_d_1acd4e88f120683b23eda460fce60537ae">00017</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_segment_tree2_d_1acd4e88f120683b23eda460fce60537ae">set</link>(<emphasis role="keywordtype">int</emphasis>&#32;x,&#32;<emphasis role="keywordtype">int</emphasis>&#32;y,&#32;Type&#32;v)&#32;{
+<anchor xml:id="_segtree__2d_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x+=h,y+=w;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[x][y]=v;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=x&gt;&gt;1;&#32;i&gt;0;&#32;i&gt;&gt;=1)&#32;dat[i][y]=Monoid::op(dat[i1&lt;&lt;1][y],dat[i&lt;&lt;1|1][y]);
+<anchor xml:id="_segtree__2d_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(x&gt;0)&#32;{
+<anchor xml:id="_segtree__2d_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;j=y&gt;&gt;1;&#32;j&gt;0;&#32;j&gt;&gt;=1)&#32;dat[x][j]=Monoid::op(dat[x][j&lt;&lt;1],dat[x][j&lt;&lt;1|1]);
+<anchor xml:id="_segtree__2d_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x&gt;&gt;=1;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__2d_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__2d_8hpp_source_1l00026"/>00026 
+<anchor xml:id="_segtree__2d_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;矩形領域&#32;[l,&#32;r)&#32;×&#32;[u,&#32;d)&#32;のモノイド積を返す</emphasis>
+<anchor xml:id="_segtree__2d_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log(h)&#32;log(w))</emphasis>
+<anchor xml:id="_segtree__2d_8hpp_source_1l00029"/><link linkend="_struct_segment_tree2_d_1a746d58b6e0eb033030b54e67036b5798">00029</link> &#32;&#32;&#32;&#32;Type&#32;<link linkend="_struct_segment_tree2_d_1a746d58b6e0eb033030b54e67036b5798">fold</link>(<emphasis role="keywordtype">int</emphasis>&#32;l,&#32;<emphasis role="keywordtype">int</emphasis>&#32;r,&#32;<emphasis role="keywordtype">int</emphasis>&#32;u,&#32;<emphasis role="keywordtype">int</emphasis>&#32;d)&#32;{
+<anchor xml:id="_segtree__2d_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Type&#32;ret=Monoid::id();
+<anchor xml:id="_segtree__2d_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l+=h,r+=h,u+=w,d+=w;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(l&lt;r)&#32;{
+<anchor xml:id="_segtree__2d_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(l&amp;1)&#32;ret=Monoid::op(ret,fold_sub(l++,u,d));
+<anchor xml:id="_segtree__2d_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(r&amp;1)&#32;ret=Monoid::op(ret,fold_sub(--r,u,d));
+<anchor xml:id="_segtree__2d_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l&gt;&gt;=1,r&gt;&gt;=1;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__2d_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__2d_8hpp_source_1l00039"/>00039 
+<anchor xml:id="_segtree__2d_8hpp_source_1l00040"/>00040 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_segtree__2d_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;h,w;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;vector&lt;vector&lt;Type&gt;&gt;dat;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;F&#32;Monoid::op;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;<link linkend="_struct_segment_tree2_d">Type</link>&#32;<link linkend="_struct_segment_tree2_d">Monoid</link>::<link linkend="_struct_segment_tree2_d">id</link>();
+<anchor xml:id="_segtree__2d_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;Type&#32;fold_sub(<emphasis role="keywordtype">int</emphasis>&#32;x,&#32;<emphasis role="keywordtype">int</emphasis>&#32;u,&#32;<emphasis role="keywordtype">int</emphasis>&#32;d)&#32;{
+<anchor xml:id="_segtree__2d_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Type&#32;ret=Monoid::id();
+<anchor xml:id="_segtree__2d_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(u&lt;d)&#32;{
+<anchor xml:id="_segtree__2d_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u&amp;1)&#32;ret=Monoid::op(ret,dat[x][u]),u++;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(d&amp;1)&#32;d--,ret=Monoid::op(ret,dat[x][d]);
+<anchor xml:id="_segtree__2d_8hpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u&gt;&gt;=1,d&gt;&gt;=1;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__2d_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_segtree__2d_8hpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__2d_8hpp_source_1l00054"/>00054 };
+</programlisting></section>

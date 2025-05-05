@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_trie" xml:lang="ja">
+<title>Trie 構造体</title>
+<indexterm><primary>Trie</primary></indexterm>
+<para>
+<computeroutput>#include &quot;trie.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_trie_1_1_node">Node</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_trie_1a061fbd5e9f5453de8558c078c9d371e8">Trie</link> (int len)</para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_trie_1abfe4a4f10e3662529a07c66f42c54405">insert</link> (const string &amp;s)</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_trie_1a40c92cc6339d52134619f1a2aad28109">count</link> (const string &amp;s)</para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_trie_1a6531d8fb5e75df10735b6ce33297879b">erase</link> (const string &amp;s)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<para>
+ <link linkend="_trie_8hpp_source">trie.hpp</link> の <link linkend="_trie_8hpp_source_1l00001">1</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_trie_1a061fbd5e9f5453de8558c078c9d371e8"/><section>
+    <title>Trie()</title>
+<indexterm><primary>Trie</primary><secondary>Trie</secondary></indexterm>
+<indexterm><primary>Trie</primary><secondary>Trie</secondary></indexterm>
+<para><computeroutput>Trie::Trie (int len)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_trie_8hpp_source">trie.hpp</link> の <link linkend="_trie_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_trie_1abfe4a4f10e3662529a07c66f42c54405"/><section>
+    <title>insert()</title>
+<indexterm><primary>insert</primary><secondary>Trie</secondary></indexterm>
+<indexterm><primary>Trie</primary><secondary>insert</secondary></indexterm>
+<para><computeroutput>void Trie::insert (const string &amp; s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_trie_8hpp_source">trie.hpp</link> の <link linkend="_trie_8hpp_source_1l00014">14</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_trie_1a40c92cc6339d52134619f1a2aad28109"/><section>
+    <title>count()</title>
+<indexterm><primary>count</primary><secondary>Trie</secondary></indexterm>
+<indexterm><primary>Trie</primary><secondary>count</secondary></indexterm>
+<para><computeroutput>int Trie::count (const string &amp; s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_trie_8hpp_source">trie.hpp</link> の <link linkend="_trie_8hpp_source_1l00029">29</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_trie_1a6531d8fb5e75df10735b6ce33297879b"/><section>
+    <title>erase()</title>
+<indexterm><primary>erase</primary><secondary>Trie</secondary></indexterm>
+<indexterm><primary>Trie</primary><secondary>erase</secondary></indexterm>
+<para><computeroutput>void Trie::erase (const string &amp; s)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_trie_8hpp_source">trie.hpp</link> の <link linkend="_trie_8hpp_source_1l00039">39</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+string/<link linkend="_trie_8hpp">trie.hpp</link></section>
+</section>

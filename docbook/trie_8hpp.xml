@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_trie_8hpp" xml:lang="ja">
+<title>string/trie.hpp ファイル</title>
+<indexterm><primary>string/trie.hpp</primary></indexterm>
+<simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_trie">Trie</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_trie_1_1_node">Trie::Node</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_compress_8py_source" xml:lang="ja">
+<title>compress.py</title>
+<indexterm><primary>kyopro_tools/compress.py</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_compress_8py_source_1l00001"/><link linkend="_namespacecompress_1a30b635f18c81637d3c1d613b8be0e223">00001</link> symbols=[<emphasis role="stringliteral">&apos;!&apos;</emphasis>,<emphasis role="stringliteral">&apos;#&apos;</emphasis>,<emphasis role="stringliteral">&apos;$&apos;</emphasis>,<emphasis role="stringliteral">&apos;%&apos;</emphasis>,<emphasis role="stringliteral">&apos;&amp;&apos;</emphasis>,<emphasis role="stringliteral">&apos;*&apos;</emphasis>,<emphasis role="stringliteral">&apos;+&apos;</emphasis>,<emphasis role="stringliteral">&apos;-&apos;</emphasis>,<emphasis role="stringliteral">&apos;/&apos;</emphasis>,<emphasis role="stringliteral">&apos;&lt;&apos;</emphasis>,<emphasis role="stringliteral">&apos;=&apos;</emphasis>,<emphasis role="stringliteral">&apos;&gt;&apos;</emphasis>,<emphasis role="stringliteral">&apos;?&apos;</emphasis>,<emphasis role="stringliteral">&apos;@&apos;</emphasis>,<emphasis role="stringliteral">&apos;^&apos;</emphasis>,<emphasis role="stringliteral">&apos;_&apos;</emphasis>,<emphasis role="stringliteral">&apos;~&apos;</emphasis>,<emphasis role="stringliteral">&apos;|&apos;</emphasis>,<emphasis role="stringliteral">&apos;\\&apos;</emphasis>,<emphasis role="stringliteral">&apos;.&apos;</emphasis>,<emphasis role="stringliteral">&apos;:&apos;</emphasis>,<emphasis role="stringliteral">&apos;;&apos;</emphasis>,<emphasis role="stringliteral">&apos;[&apos;</emphasis>,<emphasis role="stringliteral">&apos;]&apos;</emphasis>,<emphasis role="stringliteral">&apos;{&apos;</emphasis>,<emphasis role="stringliteral">&apos;}&apos;</emphasis>,<emphasis role="stringliteral">&apos;(&apos;</emphasis>,<emphasis role="stringliteral">&apos;)&apos;</emphasis>,<emphasis role="stringliteral">&apos;&quot;&apos;</emphasis>,<emphasis role="stringliteral">&quot;&apos;&quot;</emphasis>,<emphasis role="stringliteral">&apos;,&apos;</emphasis>]
+<anchor xml:id="_compress_8py_source_1l00002"/>00002 
+<anchor xml:id="_compress_8py_source_1l00003"/><link linkend="_namespacecompress_1aea3e350d16ae2d80ffde6053a6d3dcb3">00003</link> code=<emphasis role="stringliteral">&apos;&apos;</emphasis>
+<anchor xml:id="_compress_8py_source_1l00004"/>00004 
+<anchor xml:id="_compress_8py_source_1l00005"/>00005 <emphasis role="keywordflow">while</emphasis>&#32;<emphasis role="keyword">True</emphasis>:
+<anchor xml:id="_compress_8py_source_1l00006"/>00006 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>:
+<anchor xml:id="_compress_8py_source_1l00007"/><link linkend="_namespacecompress_1a8e7877c3a20b124f013d1fda1eb05465">00007</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;line=input()
+<anchor xml:id="_compress_8py_source_1l00008"/>00008 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;code+=line+<emphasis role="stringliteral">&apos;\n&apos;</emphasis>
+<anchor xml:id="_compress_8py_source_1l00009"/>00009 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">except</emphasis>:
+<anchor xml:id="_compress_8py_source_1l00010"/>00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>
+<anchor xml:id="_compress_8py_source_1l00011"/>00011 
+<anchor xml:id="_compress_8py_source_1l00012"/><link linkend="_namespacecompress_1a54ac03d8200b90f0df7eaef116a6634d">00012</link> res=<emphasis role="stringliteral">&quot;&quot;</emphasis>
+<anchor xml:id="_compress_8py_source_1l00013"/>00013 
+<anchor xml:id="_compress_8py_source_1l00014"/>00014 <emphasis role="keywordflow">for</emphasis>&#32;line&#32;<emphasis role="keywordflow">in</emphasis>&#32;code.split(<emphasis role="stringliteral">&apos;\n&apos;</emphasis>):
+<anchor xml:id="_compress_8py_source_1l00015"/>00015 &#32;&#32;&#32;&#32;line=line.replace(<emphasis role="stringliteral">&quot;&#32;&#32;&#32;&#32;&quot;</emphasis>,<emphasis role="stringliteral">&quot;\t&quot;</emphasis>)
+<anchor xml:id="_compress_8py_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;symbol&#32;<emphasis role="keywordflow">in</emphasis>&#32;symbols:
+<anchor xml:id="_compress_8py_source_1l00017"/><link linkend="_namespacecompress_1ab51c4d79a5d1f1a8a2d46f126ac20894">00017</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;a=<emphasis role="stringliteral">&apos;&#32;&apos;</emphasis>+symbol
+<anchor xml:id="_compress_8py_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;line=line.replace(a,symbol)
+<anchor xml:id="_compress_8py_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;a=symbol+<emphasis role="stringliteral">&apos;&#32;&apos;</emphasis>
+<anchor xml:id="_compress_8py_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;line=line.replace(a,symbol)
+<anchor xml:id="_compress_8py_source_1l00021"/>00021 &#32;&#32;&#32;&#32;res+=line+<emphasis role="stringliteral">&apos;\n&apos;</emphasis>
+<anchor xml:id="_compress_8py_source_1l00022"/>00022 
+<anchor xml:id="_compress_8py_source_1l00023"/>00023 print(res)
+</programlisting></section>

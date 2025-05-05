@@ -1,0 +1,69 @@
+.TH "CombinationLucas" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CombinationLucas \- Lucas の定理を用いた二項係数計算用ライブラリ  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'combination_lucas\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBCombinationLucas\fP (int mod)"
+.br
+.RI "Lucas の定理を用いて二項係数を計算するための前計算をする "
+.ti -1c
+.RI "\fBll\fP \fBcomb\fP (int n, int r)"
+.br
+.RI "nCr mod を返す "
+.in -1c
+.SH "詳解"
+.PP 
+Lucas の定理を用いた二項係数計算用ライブラリ 
+
+Lucas の定理 p を素数とし、n, r を非負整数とする。 また、n = n[k]p^k + n[k-1]p^(k-1) + \&.\&.\&. + n[1]p + n[0], r = r[k]p^k + r[k-1]p^(k-1) + \&.\&.\&. + r[1]p + r[0] とする。
+
+.PP
+このとき、nCr(mod p) = Π[k=0~N]n[k]Cr[k] 
+.PP
+ \fBcombination_lucas\&.hpp\fP の \fB14\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "CombinationLucas::CombinationLucas (int mod)\fR [inline]\fP"
+
+.PP
+Lucas の定理を用いて二項係数を計算するための前計算をする 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(mod) 
+.RE
+.PP
+
+.PP
+ \fBcombination_lucas\&.hpp\fP の \fB17\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "\fBll\fP CombinationLucas::comb (int n, int r)\fR [inline]\fP"
+
+.PP
+nCr mod を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log(n)) 
+.RE
+.PP
+
+.PP
+ \fBcombination_lucas\&.hpp\fP の \fB28\fP 行目に定義があります。
+.PP
+参照先 \fBcomb()\fP\&.
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_multiset_8hpp" xml:lang="ja">
+<title>data_structure/multiset.hpp ファイル</title>
+<indexterm><primary>data_structure/multiset.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_multi_set">MultiSet&lt; T &gt;</link></para>
+
+<para>std::multiset ラッパー </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

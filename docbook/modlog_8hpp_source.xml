@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_modlog_8hpp_source" xml:lang="ja">
+<title>modlog.hpp</title>
+<indexterm><primary>math/modlog.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_modlog_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_modlog_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_modlog_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;離散対数問題</emphasis>
+<anchor xml:id="_modlog_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;x^k=y&#32;mod&#32;m&#32;なる最小の&#32;k&#32;を返す</emphasis>
+<anchor xml:id="_modlog_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@note&#32;O(sqrt(m))</emphasis>
+<anchor xml:id="_modlog_8hpp_source_1l00006"/>00006 <emphasis role="comment">///&#32;@attention&#32;p&#32;は素数</emphasis>
+<anchor xml:id="_modlog_8hpp_source_1l00007"/><link linkend="_modlog_8hpp_1adb207efc9898a62631a8531129c553e5">00007</link> ll&#32;<link linkend="_modlog_8hpp_1adb207efc9898a62631a8531129c553e5">ModLog</link>(ll&#32;x,&#32;ll&#32;y,&#32;ll&#32;mod)&#32;{
+<anchor xml:id="_modlog_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;ll&#32;m=ceil(sqrt(mod))+1;
+<anchor xml:id="_modlog_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;ll&#32;now_y=y;
+<anchor xml:id="_modlog_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;map&lt;ll,ll&gt;&#32;mp;
+<anchor xml:id="_modlog_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,m)&#32;{
+<anchor xml:id="_modlog_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mp[now_y]=i;
+<anchor xml:id="_modlog_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;now_y=now_y*x%mod;
+<anchor xml:id="_modlog_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_modlog_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;ll&#32;x_pow=1;
+<anchor xml:id="_modlog_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,m)&#32;{
+<anchor xml:id="_modlog_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x_pow*=x;
+<anchor xml:id="_modlog_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x_pow%=mod;
+<anchor xml:id="_modlog_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_modlog_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;ll&#32;now_x=x_pow;
+<anchor xml:id="_modlog_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7">FOR</link>(i,1,m+1)&#32;{
+<anchor xml:id="_modlog_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(mp.find(now_x)!=mp.end())&#32;<emphasis role="keywordflow">return</emphasis>&#32;i*m-mp[now_x];
+<anchor xml:id="_modlog_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;now_x=now_x*x_pow%mod;
+<anchor xml:id="_modlog_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_modlog_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="_modlog_8hpp_source_1l00026"/>00026 }
+</programlisting></section>

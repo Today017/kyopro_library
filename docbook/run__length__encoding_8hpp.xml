@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_run__length__encoding_8hpp" xml:lang="ja">
+<title>string/run_length_encoding.hpp ファイル</title>
+<indexterm><primary>string/run_length_encoding.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>vector&lt; pair&lt; char, int &gt; &gt; <link linkend="_run__length__encoding_8hpp_1a7f01629c3961317d963a4666dbe7622b">RunLengthEncoding</link> (const string &amp;s)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_run__length__encoding_8hpp_1a7f01629c3961317d963a4666dbe7622b"/><section>
+    <title>RunLengthEncoding()</title>
+<indexterm><primary>RunLengthEncoding</primary><secondary>run_length_encoding.hpp</secondary></indexterm>
+<indexterm><primary>run_length_encoding.hpp</primary><secondary>RunLengthEncoding</secondary></indexterm>
+<para><computeroutput>vector&lt; pair&lt; char, int &gt; &gt; RunLengthEncoding (const string &amp; s)</computeroutput></para><para>
+ <link linkend="_run__length__encoding_8hpp_source">run_length_encoding.hpp</link> の <link linkend="_run__length__encoding_8hpp_source_1l00003">3</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

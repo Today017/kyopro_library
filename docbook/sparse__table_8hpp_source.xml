@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_sparse__table_8hpp_source" xml:lang="ja">
+<title>sparse_table.hpp</title>
+<indexterm><primary>data_structure/sparse_table.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_sparse__table_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_sparse__table_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_sparse__table_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;スパーステーブル</emphasis>
+<anchor xml:id="_sparse__table_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@tparam&#32;Band&#32;冪等な半群</emphasis>
+<anchor xml:id="_sparse__table_8hpp_source_1l00005"/>00005 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;Band&gt;
+<anchor xml:id="_sparse__table_8hpp_source_1l00006"/><link linkend="_struct_sparse_table">00006</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_sparse_table">SparseTable</link>&#32;{
+<anchor xml:id="_sparse__table_8hpp_source_1l00007"/><link linkend="_struct_sparse_table_1adcdeb84f6d3751a8ab27afcf73d9efbb">00007</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;Type=<emphasis role="keyword">typename</emphasis>&#32;Band::Type;
+<anchor xml:id="_sparse__table_8hpp_source_1l00008"/><link linkend="_struct_sparse_table_1ae42eef700b062684842b48fe3dd694ae">00008</link> &#32;&#32;&#32;&#32;<link linkend="_struct_sparse_table_1ae42eef700b062684842b48fe3dd694ae">SparseTable</link>()=<emphasis role="keywordflow">default</emphasis>;
+<anchor xml:id="_sparse__table_8hpp_source_1l00009"/>00009 
+<anchor xml:id="_sparse__table_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;配列&#32;v&#32;からスパーステーブルを構築する</emphasis>
+<anchor xml:id="_sparse__table_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(N&#32;log(N))</emphasis>
+<anchor xml:id="_sparse__table_8hpp_source_1l00012"/><link linkend="_struct_sparse_table_1a21a0384979486679924c67a94fbf3a0c">00012</link> &#32;&#32;&#32;&#32;<link linkend="_struct_sparse_table_1a21a0384979486679924c67a94fbf3a0c">SparseTable</link>(<emphasis role="keyword">const</emphasis>&#32;vector&lt;Type&gt;&amp;v)&#32;{
+<anchor xml:id="_sparse__table_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;n=v.size();
+<anchor xml:id="_sparse__table_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat.assign(__lg(n)+1,vector&lt;Type&gt;(n));
+<anchor xml:id="_sparse__table_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[0]=v;
+<anchor xml:id="_sparse__table_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=1;i&lt;(<emphasis role="keywordtype">int</emphasis>)dat.size();i++)&#32;{
+<anchor xml:id="_sparse__table_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;j=0;j+(1&lt;&lt;i)&lt;=n;j++)&#32;{
+<anchor xml:id="_sparse__table_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[i][j]=Band::op(dat[i-1][j],dat[i-1][j+(1&lt;&lt;(i-1))]);
+<anchor xml:id="_sparse__table_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_sparse__table_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_sparse__table_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sparse__table_8hpp_source_1l00022"/>00022 
+<anchor xml:id="_sparse__table_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;の半群積を返す</emphasis>
+<anchor xml:id="_sparse__table_8hpp_source_1l00024"/><link linkend="_struct_sparse_table_1a58ddfa937ff083999c2847f66305da96">00024</link> &#32;&#32;&#32;&#32;Type&#32;<link linkend="_struct_sparse_table_1a58ddfa937ff083999c2847f66305da96">fold</link>(<emphasis role="keywordtype">int</emphasis>&#32;l,<emphasis role="keywordtype">int</emphasis>&#32;r)&#32;{
+<anchor xml:id="_sparse__table_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;r--;
+<anchor xml:id="_sparse__table_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;i=__lg(r-l+1);
+<anchor xml:id="_sparse__table_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Band::op(dat[i][l],dat[i][r-(1&lt;&lt;i)+1]);
+<anchor xml:id="_sparse__table_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sparse__table_8hpp_source_1l00029"/>00029 
+<anchor xml:id="_sparse__table_8hpp_source_1l00030"/><link linkend="_struct_sparse_table_1ab42c36160305467fb3977ffdfb1b4851">00030</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_sparse_table_1ab42c36160305467fb3977ffdfb1b4851">size</link>()&#32;{<emphasis role="keywordflow">return</emphasis>&#32;n;}
+<anchor xml:id="_sparse__table_8hpp_source_1l00031"/><link linkend="_struct_sparse_table_1a208fad6a2149037792c14b1acfcf45bc">00031</link> &#32;&#32;&#32;&#32;Type&#32;<link linkend="_struct_sparse_table_1a208fad6a2149037792c14b1acfcf45bc">operator</link>[](<emphasis role="keywordtype">int</emphasis>&#32;i)<emphasis role="keyword">const</emphasis>{<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_sparse_table_1a58ddfa937ff083999c2847f66305da96">fold</link><link linkend="_struct_sparse_table_1a58ddfa937ff083999c2847f66305da96">(</link>i<link linkend="_struct_sparse_table_1a58ddfa937ff083999c2847f66305da96">,</link>i+1<link linkend="_struct_sparse_table_1a58ddfa937ff083999c2847f66305da96">)</link>;}
+<anchor xml:id="_sparse__table_8hpp_source_1l00032"/>00032 
+<anchor xml:id="_sparse__table_8hpp_source_1l00033"/>00033 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_sparse__table_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n;
+<anchor xml:id="_sparse__table_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;vector&lt;vector&lt;Type&gt;&gt;dat;
+<anchor xml:id="_sparse__table_8hpp_source_1l00036"/>00036 };
+</programlisting></section>

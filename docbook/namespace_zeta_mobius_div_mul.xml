@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_zeta_mobius_div_mul" xml:lang="ja">
+<title>ZetaMobiusDivMul 名前空間</title>
+<indexterm><primary>ZetaMobiusDivMul</primary></indexterm>
+<para>
+
+<para>倍数・約数ゼータ・メビウス変換 </para>
+ 
+</para>
+<simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_namespace_zeta_mobius_div_mul_1a60c1e6ce641275a4ee75d229514c1691">Init</link> (int n=1e6)</para>
+</listitem>
+            <listitem><para>template&lt;typename Monoid&gt; </para><para>vector&lt; typename Monoid::Type &gt; <link linkend="_namespace_zeta_mobius_div_mul_1a3464457ced48ed60b5726ff223b31af4">MultipleZeta</link> (vector&lt; typename Monoid::Type &gt; v)</para>
+
+<para>倍数高速ゼータ変換 </para>
+</listitem>
+            <listitem><para>template&lt;typename Monoid&gt; </para><para>vector&lt; typename Monoid::Type &gt; <link linkend="_namespace_zeta_mobius_div_mul_1a0eb786dcdc175107ad43dfdb12461c51">DivisorZeta</link> (vector&lt; typename Monoid::Type &gt; v)</para>
+
+<para>約数高速ゼータ変換 </para>
+</listitem>
+            <listitem><para>template&lt;typename Abel&gt; </para><para>vector&lt; typename Abel::Type &gt; <link linkend="_namespace_zeta_mobius_div_mul_1a17972686c127951d7816aef375120758">MultipleMobius</link> (vector&lt; typename Abel::Type &gt; v)</para>
+
+<para>倍数高速メビウス変換 </para>
+</listitem>
+            <listitem><para>template&lt;typename Abel&gt; </para><para>vector&lt; typename Abel::Type &gt; <link linkend="_namespace_zeta_mobius_div_mul_1afe1e6c2c7d8180ade6e65334eec8368f">DivisorMobius</link> (vector&lt; typename Abel::Type &gt; v)</para>
+
+<para>約数高速メビウス変換 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>変数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> <link linkend="_namespace_zeta_mobius_div_mul_1a0a1025ad27bd1edb07d16fbcf56cb471">primes</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+
+<para>倍数・約数ゼータ・メビウス変換 </para>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_namespace_zeta_mobius_div_mul_1a60c1e6ce641275a4ee75d229514c1691"/><section>
+    <title>Init()</title>
+<indexterm><primary>Init</primary><secondary>ZetaMobiusDivMul</secondary></indexterm>
+<indexterm><primary>ZetaMobiusDivMul</primary><secondary>Init</secondary></indexterm>
+<para><computeroutput>void ZetaMobiusDivMul::Init (int n = <computeroutput>1e6</computeroutput>
+)</computeroutput></para><para>
+ <link linkend="_zeta__mobius__div__mul_8hpp_source">zeta_mobius_div_mul.hpp</link> の <link linkend="_zeta__mobius__div__mul_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_zeta_mobius_div_mul_1a3464457ced48ed60b5726ff223b31af4"/><section>
+    <title>MultipleZeta()</title>
+<indexterm><primary>MultipleZeta</primary><secondary>ZetaMobiusDivMul</secondary></indexterm>
+<indexterm><primary>ZetaMobiusDivMul</primary><secondary>MultipleZeta</secondary></indexterm>
+<computeroutput>template&lt;typename Monoid&gt; </computeroutput><para><computeroutput>vector&lt; typename Monoid::Type &gt; ZetaMobiusDivMul::MultipleZeta (vector&lt; typename Monoid::Type &gt; v)</computeroutput></para><para>
+
+<para>倍数高速ゼータ変換 </para>
+</para>
+
+<para>v&apos;[k] = Σ_{k|d} v[d] なる v&apos; を返す <note><title>覚え書き</title>
+
+<para>O(N log(log(N))) </para>
+</note>
+</para>
+<para>
+ <link linkend="_zeta__mobius__div__mul_8hpp_source">zeta_mobius_div_mul.hpp</link> の <link linkend="_zeta__mobius__div__mul_8hpp_source_1l00013">13</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_zeta__mobius__div__mul_8hpp_source_1l00007">Init()</link>.</para>
+</section>
+<anchor xml:id="_namespace_zeta_mobius_div_mul_1a0eb786dcdc175107ad43dfdb12461c51"/><section>
+    <title>DivisorZeta()</title>
+<indexterm><primary>DivisorZeta</primary><secondary>ZetaMobiusDivMul</secondary></indexterm>
+<indexterm><primary>ZetaMobiusDivMul</primary><secondary>DivisorZeta</secondary></indexterm>
+<computeroutput>template&lt;typename Monoid&gt; </computeroutput><para><computeroutput>vector&lt; typename Monoid::Type &gt; ZetaMobiusDivMul::DivisorZeta (vector&lt; typename Monoid::Type &gt; v)</computeroutput></para><para>
+
+<para>約数高速ゼータ変換 </para>
+</para>
+
+<para>v&apos;[k] = Σ_{d|k} v[d] なる v&apos; を返す <note><title>覚え書き</title>
+
+<para>O(N log(log(N))) </para>
+</note>
+</para>
+<para>
+ <link linkend="_zeta__mobius__div__mul_8hpp_source">zeta_mobius_div_mul.hpp</link> の <link linkend="_zeta__mobius__div__mul_8hpp_source_1l00024">24</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_zeta__mobius__div__mul_8hpp_source_1l00007">Init()</link>.</para>
+</section>
+<anchor xml:id="_namespace_zeta_mobius_div_mul_1a17972686c127951d7816aef375120758"/><section>
+    <title>MultipleMobius()</title>
+<indexterm><primary>MultipleMobius</primary><secondary>ZetaMobiusDivMul</secondary></indexterm>
+<indexterm><primary>ZetaMobiusDivMul</primary><secondary>MultipleMobius</secondary></indexterm>
+<computeroutput>template&lt;typename Abel&gt; </computeroutput><para><computeroutput>vector&lt; typename Abel::Type &gt; ZetaMobiusDivMul::MultipleMobius (vector&lt; typename Abel::Type &gt; v)</computeroutput></para><para>
+
+<para>倍数高速メビウス変換 </para>
+</para>
+
+<para>v&apos;[k] = Σ_{k|d} μ(d) v[d] なる v&apos; を返す <note><title>覚え書き</title>
+
+<para>逆変換が必要なので、v は可換群の元である必要がある </para>
+
+<para>O(N log(log(N))) </para>
+</note>
+</para>
+<para>
+ <link linkend="_zeta__mobius__div__mul_8hpp_source">zeta_mobius_div_mul.hpp</link> の <link linkend="_zeta__mobius__div__mul_8hpp_source_1l00036">36</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_zeta__mobius__div__mul_8hpp_source_1l00007">Init()</link>.</para>
+</section>
+<anchor xml:id="_namespace_zeta_mobius_div_mul_1afe1e6c2c7d8180ade6e65334eec8368f"/><section>
+    <title>DivisorMobius()</title>
+<indexterm><primary>DivisorMobius</primary><secondary>ZetaMobiusDivMul</secondary></indexterm>
+<indexterm><primary>ZetaMobiusDivMul</primary><secondary>DivisorMobius</secondary></indexterm>
+<computeroutput>template&lt;typename Abel&gt; </computeroutput><para><computeroutput>vector&lt; typename Abel::Type &gt; ZetaMobiusDivMul::DivisorMobius (vector&lt; typename Abel::Type &gt; v)</computeroutput></para><para>
+
+<para>約数高速メビウス変換 </para>
+</para>
+
+<para>v&apos;[k] = Σ_{d|k} μ(d) v[k/d] なる v&apos; を返す <note><title>覚え書き</title>
+
+<para>逆変換が必要なので、v は可換群の元である必要がある </para>
+
+<para>O(N log(log(N))) </para>
+</note>
+</para>
+<para>
+ <link linkend="_zeta__mobius__div__mul_8hpp_source">zeta_mobius_div_mul.hpp</link> の <link linkend="_zeta__mobius__div__mul_8hpp_source_1l00048">48</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_zeta__mobius__div__mul_8hpp_source_1l00007">Init()</link>.</para>
+</section>
+</section>
+<section>
+<title>変数詳解</title>
+<anchor xml:id="_namespace_zeta_mobius_div_mul_1a0a1025ad27bd1edb07d16fbcf56cb471"/><section>
+    <title>primes</title>
+<indexterm><primary>primes</primary><secondary>ZetaMobiusDivMul</secondary></indexterm>
+<indexterm><primary>ZetaMobiusDivMul</primary><secondary>primes</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> ZetaMobiusDivMul::primes</computeroutput></para><para>
+ <link linkend="_zeta__mobius__div__mul_8hpp_source">zeta_mobius_div_mul.hpp</link> の <link linkend="_zeta__mobius__div__mul_8hpp_source_1l00006">6</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

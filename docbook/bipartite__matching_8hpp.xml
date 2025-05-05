@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_bipartite__matching_8hpp" xml:lang="ja">
+<title>graph/bipartite_matching.hpp ファイル</title>
+<indexterm><primary>graph/bipartite_matching.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/graph/flow/max_flow.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_bi_info">BiInfo</link></para>
+
+<para>二部グラフのパラメータ </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>vector&lt; pair&lt; int, int &gt; &gt; <link linkend="_bipartite__matching_8hpp_1aceb8bd6097e9654a9f9b08968c7e6049">BipartiteMatching</link> (const <link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> &amp;g)</para>
+
+<para>二部グラフの最大マッチングを返す </para>
+</listitem>
+            <listitem><para><link linkend="_struct_bi_info">BiInfo</link> <link linkend="_bipartite__matching_8hpp_1a96afd81a65980bfc86d7273bf3ec482a">GetBiInfo</link> (const <link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> &amp;g)</para>
+
+<para>二部グラフのパラメータを求める </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_bipartite__matching_8hpp_1aceb8bd6097e9654a9f9b08968c7e6049"/><section>
+    <title>BipartiteMatching()</title>
+<indexterm><primary>BipartiteMatching</primary><secondary>bipartite_matching.hpp</secondary></indexterm>
+<indexterm><primary>bipartite_matching.hpp</primary><secondary>BipartiteMatching</secondary></indexterm>
+<para><computeroutput>vector&lt; pair&lt; int, int &gt; &gt; BipartiteMatching (const <link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> &amp; g)</computeroutput></para><para>
+
+<para>二部グラフの最大マッチングを返す </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(E*sqrt(V)) </para>
+</note>
+<caution><title>注意</title>
+
+<para>G は二部グラフであること </para>
+</caution>
+</para>
+<para>
+ <link linkend="_bipartite__matching_8hpp_source">bipartite_matching.hpp</link> の <link linkend="_bipartite__matching_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_max__flow_8hpp_source_1l00019">MaxFlow::add_edge()</link>, <link linkend="_max__flow_8hpp_source_1l00062">MaxFlow::flow()</link>, <link linkend="_max__flow_8hpp_source_1l00016">MaxFlow::MaxFlow()</link>.</para>
+</section>
+<anchor xml:id="_bipartite__matching_8hpp_1a96afd81a65980bfc86d7273bf3ec482a"/><section>
+    <title>GetBiInfo()</title>
+<indexterm><primary>GetBiInfo</primary><secondary>bipartite_matching.hpp</secondary></indexterm>
+<indexterm><primary>bipartite_matching.hpp</primary><secondary>GetBiInfo</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_bi_info">BiInfo</link> GetBiInfo (const <link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> &amp; g)</computeroutput></para><para>
+
+<para>二部グラフのパラメータを求める </para>
+</para>
+
+<para><note><title>覚え書き</title>
+
+<para>O(E*sqrt(V)) </para>
+</note>
+<caution><title>注意</title>
+
+<para>G は二部グラフであること </para>
+</caution>
+</para>
+<para>
+ <link linkend="_bipartite__matching_8hpp_source">bipartite_matching.hpp</link> の <link linkend="_bipartite__matching_8hpp_source_1l00042">42</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_bipartite__matching_8hpp_source_1l00034">BiInfo::max_independent_set</link>, <link linkend="_bipartite__matching_8hpp_source_1l00032">BiInfo::max_matching</link>, <link linkend="_bipartite__matching_8hpp_source_1l00033">BiInfo::min_edge_cover</link>, <link linkend="_bipartite__matching_8hpp_source_1l00035">BiInfo::min_vertex_cover</link>.</para>
+</section>
+</section>
+</section>

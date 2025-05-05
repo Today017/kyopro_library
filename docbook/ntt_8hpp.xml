@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ntt_8hpp" xml:lang="ja">
+<title>math/ntt.hpp ファイル</title>
+<indexterm><primary>math/ntt.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/others/modcal.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_n_t_t">NTT&lt; MOD, primitive_root &gt;</link></para>
+
+<para><link linkend="_class_n_t_t">NTT</link> Friendly 素数用 <link linkend="_class_n_t_t">NTT</link> 構造体 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

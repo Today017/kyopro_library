@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_bezout_identity" xml:lang="ja">
+<title>BezoutIdentity 構造体</title>
+<indexterm><primary>BezoutIdentity</primary></indexterm>
+<para>
+
+<para>一次不定方程式 ax+by=c を解く verify: <link xlink:href="https://atcoder.jp/contests/abc340/submissions/62495050">https://atcoder.jp/contests/abc340/submissions/62495050</link> </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;bezout_identity.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_bezout_identity_1ae6269715a6bae60bc5ce0b4bfae2618e">BezoutIdentity</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> a, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> b, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> c)</para>
+
+<para>ax+by=c </para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_bezout_identity_1a2cf086366016d944941e8100fec64191">build</link> ()</para>
+
+<para>解が存在するか否かを返す </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1a7f582aad13bf86402da717000515ca1c">PL</link> <link linkend="_struct_bezout_identity_1ad6b2e3225c8c8d920b9287459fda8b52">general_solution</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> t=0)</para>
+
+<para>一般解を返す </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+
+<para>一次不定方程式 ax+by=c を解く verify: <link xlink:href="https://atcoder.jp/contests/abc340/submissions/62495050">https://atcoder.jp/contests/abc340/submissions/62495050</link> </para>
+
+
+
+<para>g=gcd(a,b) とする。extGCD(a,b) によって、ax&apos;+by&apos;=g を解く。 両辺を c/g 倍し x=x&apos;<emphasis>(c/g),y=y&apos;</emphasis>(c/g) とすると、ax+by=c を満たす。c が g で割り切れない場合、解は存在しない。 ax+by=c の両辺を g で割ると、(a/g)*x + (b/g)*y = c/g となる。方程式の一般解を X,Y とおくと、(a/g)*(X-x) + (b/g)*(Y-y) = 0 を満たす。 a/g と b/g は互いに素なので X-x は b/g の倍数であり、X=(b/g)*t+x となる。 これを再代入すると、Y=-(a/g)*t+y を得る。 </para>
+<para>
+ <link linkend="_bezout__identity_8hpp_source">bezout_identity.hpp</link> の <link linkend="_bezout__identity_8hpp_source_1l00013">13</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_bezout_identity_1ae6269715a6bae60bc5ce0b4bfae2618e"/><section>
+    <title>BezoutIdentity()</title>
+<indexterm><primary>BezoutIdentity</primary><secondary>BezoutIdentity</secondary></indexterm>
+<indexterm><primary>BezoutIdentity</primary><secondary>BezoutIdentity</secondary></indexterm>
+<para><computeroutput>BezoutIdentity::BezoutIdentity (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> a, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> b, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> c)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>ax+by=c </para>
+</para>
+<para>
+ <link linkend="_bezout__identity_8hpp_source">bezout_identity.hpp</link> の <link linkend="_bezout__identity_8hpp_source_1l00015">15</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_bezout_identity_1a2cf086366016d944941e8100fec64191"/><section>
+    <title>build()</title>
+<indexterm><primary>build</primary><secondary>BezoutIdentity</secondary></indexterm>
+<indexterm><primary>BezoutIdentity</primary><secondary>build</secondary></indexterm>
+<para><computeroutput>bool BezoutIdentity::build ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>解が存在するか否かを返す </para>
+</para>
+<para>
+ <link linkend="_bezout__identity_8hpp_source">bezout_identity.hpp</link> の <link linkend="_bezout__identity_8hpp_source_1l00022">22</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_bezout_identity_1ad6b2e3225c8c8d920b9287459fda8b52"/><section>
+    <title>general_solution()</title>
+<indexterm><primary>general_solution</primary><secondary>BezoutIdentity</secondary></indexterm>
+<indexterm><primary>BezoutIdentity</primary><secondary>general_solution</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a7f582aad13bf86402da717000515ca1c">PL</link> BezoutIdentity::general_solution (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> t = <computeroutput>0</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>一般解を返す </para>
+</para>
+<para>
+ <link linkend="_bezout__identity_8hpp_source">bezout_identity.hpp</link> の <link linkend="_bezout__identity_8hpp_source_1l00033">33</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+math/<link linkend="_bezout__identity_8hpp">bezout_identity.hpp</link></section>
+</section>

@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_random_generator" xml:lang="ja">
+<title>RandomGenerator 名前空間</title>
+<indexterm><primary>RandomGenerator</primary></indexterm>
+<para>
+
+<para>ランダムテストケース生成 </para>
+ 
+</para>
+<simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename T&gt; </para><para>T <link linkend="_namespace_random_generator_1a5c4e7572d2ceb965e8dcf64536f641c8">RandomInt</link> (T n)</para>
+
+<para>0 以上 n 未満のランダムな整数を返す </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>T <link linkend="_namespace_random_generator_1a0656f0daed147f1b93f12ec860e36cb8">RandomInt</link> (T l, T r)</para>
+
+<para>[l, r) の範囲からランダムな整数を返す </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>T <link linkend="_namespace_random_generator_1a3c98b920805fef522e251eefc9d34240">GetRandomElement</link> (vector&lt; T &gt; &amp;a)</para>
+
+<para>配列 a からランダムな要素を取得し、削除する </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; T &gt; <link linkend="_namespace_random_generator_1af3b9b6bd498d184de06d2b0bb1a93a9a">RandomArray</link> (int n, T lo, T hi, bool no_dup=false)</para>
+
+<para>長さ n の [lo, hi) の要素からなるランダムな数列を返す </para>
+</listitem>
+            <listitem><para>string <link linkend="_namespace_random_generator_1a6ce4fc238b4b61e84e9adc79169e674a">RandomAlphabet</link> (int n, bool lower=true)</para>
+
+<para>ランダムなアルファベット文字列を返す </para>
+</listitem>
+            <listitem><para>string <link linkend="_namespace_random_generator_1a9725e25be389f5954ba66413f8bb47f6">RandomString</link> (int n, string s)</para>
+
+<para>文字列 s の要素からなるランダムな文字列を返す </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; vector&lt; T &gt; &gt; <link linkend="_namespace_random_generator_1ad40c0778feabd51ed2096289659efcf1">RandomArray2D</link> (int <link linkend="_sparse__table__2d_8hpp_1a16611451551e3d15916bae723c3f59f7">h</link>, int <link linkend="_sparse__table__2d_8hpp_1aac374e320caaadeca4874add33b62af2">w</link>, T lo, T hi)</para>
+</listitem>
+            <listitem><para>vector&lt; string &gt; <link linkend="_namespace_random_generator_1a767667e603fdf0e6b5de453536be74ac">RandomAlphabet2D</link> (int <link linkend="_sparse__table__2d_8hpp_1a16611451551e3d15916bae723c3f59f7">h</link>, int <link linkend="_sparse__table__2d_8hpp_1aac374e320caaadeca4874add33b62af2">w</link>, bool lower=true)</para>
+</listitem>
+            <listitem><para>vector&lt; pair&lt; int, int &gt; &gt; <link linkend="_namespace_random_generator_1a41a864cbf95c867c8a14293bee4208bf">RandomTree</link> (int n)</para>
+</listitem>
+            <listitem><para>vector&lt; pair&lt; int, int &gt; &gt; <link linkend="_namespace_random_generator_1a628c11cd40bf1a876969eefeea03dcec">RandomBinaryTree</link> (int n)</para>
+</listitem>
+            <listitem><para>vector&lt; pair&lt; int, int &gt; &gt; <link linkend="_namespace_random_generator_1a722b56d2093f36cfaf6b2b30929af07d">RandomUndirectedGraph</link> (int n, int m, bool connected=true)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+
+<para>ランダムテストケース生成 </para>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_namespace_random_generator_1a5c4e7572d2ceb965e8dcf64536f641c8"/><section>
+    <title>RandomInt()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>RandomInt</primary><secondary>RandomGenerator</secondary></indexterm>
+<indexterm><primary>RandomGenerator</primary><secondary>RandomInt</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T RandomGenerator::RandomInt (T n)</computeroutput></para><para>
+
+<para>0 以上 n 未満のランダムな整数を返す </para>
+</para>
+<para>
+ <link linkend="_random_8hpp_source">random.hpp</link> の <link linkend="_random_8hpp_source_1l00009">9</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_random_generator_1a0656f0daed147f1b93f12ec860e36cb8"/><section>
+    <title>RandomInt()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>RandomInt</primary><secondary>RandomGenerator</secondary></indexterm>
+<indexterm><primary>RandomGenerator</primary><secondary>RandomInt</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T RandomGenerator::RandomInt (T l, T r)</computeroutput></para><para>
+
+<para>[l, r) の範囲からランダムな整数を返す </para>
+</para>
+<para>
+ <link linkend="_random_8hpp_source">random.hpp</link> の <link linkend="_random_8hpp_source_1l00013">13</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_random_generator_1a3c98b920805fef522e251eefc9d34240"/><section>
+    <title>GetRandomElement()</title>
+<indexterm><primary>GetRandomElement</primary><secondary>RandomGenerator</secondary></indexterm>
+<indexterm><primary>RandomGenerator</primary><secondary>GetRandomElement</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T RandomGenerator::GetRandomElement (vector&lt; T &gt; &amp; a)</computeroutput></para><para>
+
+<para>配列 a からランダムな要素を取得し、削除する </para>
+</para>
+<para>
+ <link linkend="_random_8hpp_source">random.hpp</link> の <link linkend="_random_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_random_generator_1af3b9b6bd498d184de06d2b0bb1a93a9a"/><section>
+    <title>RandomArray()</title>
+<indexterm><primary>RandomArray</primary><secondary>RandomGenerator</secondary></indexterm>
+<indexterm><primary>RandomGenerator</primary><secondary>RandomArray</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; T &gt; RandomGenerator::RandomArray (int n, T lo, T hi, bool no_dup = <computeroutput>false</computeroutput>
+)</computeroutput></para><para>
+
+<para>長さ n の [lo, hi) の要素からなるランダムな数列を返す </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+引数</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>no_dup</entry><entry>
+<para>false の場合、重複要素を許容する </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+ <link linkend="_random_8hpp_source">random.hpp</link> の <link linkend="_random_8hpp_source_1l00029">29</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_random_generator_1a6ce4fc238b4b61e84e9adc79169e674a"/><section>
+    <title>RandomAlphabet()</title>
+<indexterm><primary>RandomAlphabet</primary><secondary>RandomGenerator</secondary></indexterm>
+<indexterm><primary>RandomGenerator</primary><secondary>RandomAlphabet</secondary></indexterm>
+<para><computeroutput>string RandomGenerator::RandomAlphabet (int n, bool lower = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+
+<para>ランダムなアルファベット文字列を返す </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+引数</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>lower</entry><entry>
+<para>小文字 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+ <link linkend="_random_8hpp_source">random.hpp</link> の <link linkend="_random_8hpp_source_1l00046">46</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_random_generator_1a9725e25be389f5954ba66413f8bb47f6"/><section>
+    <title>RandomString()</title>
+<indexterm><primary>RandomString</primary><secondary>RandomGenerator</secondary></indexterm>
+<indexterm><primary>RandomGenerator</primary><secondary>RandomString</secondary></indexterm>
+<para><computeroutput>string RandomGenerator::RandomString (int n, string s)</computeroutput></para><para>
+
+<para>文字列 s の要素からなるランダムな文字列を返す </para>
+</para>
+<para>
+ <link linkend="_random_8hpp_source">random.hpp</link> の <link linkend="_random_8hpp_source_1l00056">56</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_random_generator_1ad40c0778feabd51ed2096289659efcf1"/><section>
+    <title>RandomArray2D()</title>
+<indexterm><primary>RandomArray2D</primary><secondary>RandomGenerator</secondary></indexterm>
+<indexterm><primary>RandomGenerator</primary><secondary>RandomArray2D</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; vector&lt; T &gt; &gt; RandomGenerator::RandomArray2D (int h, int w, T lo, T hi)</computeroutput></para><para>
+ <link linkend="_random_8hpp_source">random.hpp</link> の <link linkend="_random_8hpp_source_1l00067">67</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_random_generator_1a767667e603fdf0e6b5de453536be74ac"/><section>
+    <title>RandomAlphabet2D()</title>
+<indexterm><primary>RandomAlphabet2D</primary><secondary>RandomGenerator</secondary></indexterm>
+<indexterm><primary>RandomGenerator</primary><secondary>RandomAlphabet2D</secondary></indexterm>
+<para><computeroutput>vector&lt; string &gt; RandomGenerator::RandomAlphabet2D (int h, int w, bool lower = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+ <link linkend="_random_8hpp_source">random.hpp</link> の <link linkend="_random_8hpp_source_1l00073">73</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_random_generator_1a41a864cbf95c867c8a14293bee4208bf"/><section>
+    <title>RandomTree()</title>
+<indexterm><primary>RandomTree</primary><secondary>RandomGenerator</secondary></indexterm>
+<indexterm><primary>RandomGenerator</primary><secondary>RandomTree</secondary></indexterm>
+<para><computeroutput>vector&lt; pair&lt; int, int &gt; &gt; RandomGenerator::RandomTree (int n)</computeroutput></para><para>
+ <link linkend="_random_8hpp_source">random.hpp</link> の <link linkend="_random_8hpp_source_1l00079">79</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_random_generator_1a628c11cd40bf1a876969eefeea03dcec"/><section>
+    <title>RandomBinaryTree()</title>
+<indexterm><primary>RandomBinaryTree</primary><secondary>RandomGenerator</secondary></indexterm>
+<indexterm><primary>RandomGenerator</primary><secondary>RandomBinaryTree</secondary></indexterm>
+<para><computeroutput>vector&lt; pair&lt; int, int &gt; &gt; RandomGenerator::RandomBinaryTree (int n)</computeroutput></para><para>
+ <link linkend="_random_8hpp_source">random.hpp</link> の <link linkend="_random_8hpp_source_1l00105">105</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_random_generator_1a722b56d2093f36cfaf6b2b30929af07d"/><section>
+    <title>RandomUndirectedGraph()</title>
+<indexterm><primary>RandomUndirectedGraph</primary><secondary>RandomGenerator</secondary></indexterm>
+<indexterm><primary>RandomGenerator</primary><secondary>RandomUndirectedGraph</secondary></indexterm>
+<para><computeroutput>vector&lt; pair&lt; int, int &gt; &gt; RandomGenerator::RandomUndirectedGraph (int n, int m, bool connected = <computeroutput>true</computeroutput>
+)</computeroutput></para><para>
+ <link linkend="_random_8hpp_source">random.hpp</link> の <link linkend="_random_8hpp_source_1l00123">123</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

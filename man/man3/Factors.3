@@ -1,0 +1,79 @@
+.TH "Factors" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Factors \- エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法） \fBhttps://osak.jp/diary/diary_201310.html#20131017\fP \fBhttps://qiita.com/drken/items/3beb679e54266f20ab63\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'factors\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBFactors\fP (int n)"
+.br
+.RI "前計算 "
+.ti -1c
+.RI "vector< pair< int, int > > \fBget_prime_factors\fP (int n)"
+.br
+.RI "n を素因数分解する "
+.ti -1c
+.RI "\fBVI\fP \fBget_divisors\fP (int n)"
+.br
+.RI "n の約数を返す "
+.in -1c
+.SH "詳解"
+.PP 
+エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法） \fBhttps://osak.jp/diary/diary_201310.html#20131017\fP \fBhttps://qiita.com/drken/items/3beb679e54266f20ab63\fP 
+.PP
+ \fBfactors\&.hpp\fP の \fB6\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "Factors::Factors (int n)\fR [inline]\fP"
+
+.PP
+前計算 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(n log(log(n))) 
+.RE
+.PP
+
+.PP
+ \fBfactors\&.hpp\fP の \fB9\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "vector< pair< int, int > > Factors::get_prime_factors (int n)\fR [inline]\fP"
+
+.PP
+n を素因数分解する 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(log(n)) 
+.RE
+.PP
+
+.PP
+ \fBfactors\&.hpp\fP の \fB27\fP 行目に定義があります。
+.SS "\fBVI\fP Factors::get_divisors (int n)\fR [inline]\fP"
+
+.PP
+n の約数を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(d(n)) 
+.RE
+.PP
+
+.PP
+ \fBfactors\&.hpp\fP の \fB45\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

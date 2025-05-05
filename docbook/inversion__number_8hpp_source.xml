@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_inversion__number_8hpp_source" xml:lang="ja">
+<title>inversion_number.hpp</title>
+<indexterm><primary>algorithm/inversion_number.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_inversion__number_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis>&#32;<emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_inversion__number_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_inversion__number_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;転倒数</emphasis>
+<anchor xml:id="_inversion__number_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;配列&#32;v&#32;の転倒数を求める</emphasis>
+<anchor xml:id="_inversion__number_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@note&#32;O(N&#32;log(N))</emphasis>
+<anchor xml:id="_inversion__number_8hpp_source_1l00006"/><link linkend="_inversion__number_8hpp_1a7973f38066e81579d126adfc53beb1ac">00006</link> ll&#32;<link linkend="_inversion__number_8hpp_1a7973f38066e81579d126adfc53beb1ac">InversionNumber</link>(<emphasis role="keyword">const</emphasis>&#32;VI&amp;&#32;v)&#32;{
+<anchor xml:id="_inversion__number_8hpp_source_1l00007"/>00007 &#32;&#32;&#32;&#32;ll&#32;ret=0;
+<anchor xml:id="_inversion__number_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;Merge=[&amp;](<emphasis role="keyword">const</emphasis>&#32;VI&amp;&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;VI&amp;&#32;b)&#32;{
+<anchor xml:id="_inversion__number_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n=a.size();
+<anchor xml:id="_inversion__number_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;r=0;
+<anchor xml:id="_inversion__number_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(l,n){
+<anchor xml:id="_inversion__number_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(r&lt;n&amp;&amp;b[r]&lt;a[l])&#32;r++;
+<anchor xml:id="_inversion__number_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret+=r;
+<anchor xml:id="_inversion__number_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_inversion__number_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;VI&#32;c(2*n);
+<anchor xml:id="_inversion__number_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;merge(a.begin(),a.end(),b.begin(),b.end(),c.begin());
+<anchor xml:id="_inversion__number_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;c;
+<anchor xml:id="_inversion__number_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_inversion__number_8hpp_source_1l00019"/>00019 
+<anchor xml:id="_inversion__number_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n=v.size(),n2=1;
+<anchor xml:id="_inversion__number_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(n2&lt;n)&#32;n2&lt;&lt;=1;
+<anchor xml:id="_inversion__number_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;vector&lt;VI&gt;&#32;node(n2&lt;&lt;1,VI(1,INF));
+<anchor xml:id="_inversion__number_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;node[i+n2][0]=v[i];
+<anchor xml:id="_inversion__number_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=n2-1;&#32;i&gt;0;&#32;i--)&#32;node[i]=Merge(node[i&lt;&lt;1],node[i&lt;&lt;1|1]);
+<anchor xml:id="_inversion__number_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_inversion__number_8hpp_source_1l00026"/>00026 }
+</programlisting></section>

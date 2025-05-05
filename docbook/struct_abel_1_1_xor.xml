@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_abel_1_1_xor" xml:lang="ja">
+<title>Abel::Xor&lt; T &gt; 構造体テンプレート</title>
+<indexterm><primary>Abel::Xor&lt; T &gt;</primary></indexterm>
+<para>
+
+<para>XOR </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;abel.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開型    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_struct_abel_1_1_xor_1a06e18c99932d5d4bf2442f05d5a5688e">Type</link> = T</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>静的公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_struct_abel_1_1_xor_1a06e18c99932d5d4bf2442f05d5a5688e">Type</link> <link linkend="_struct_abel_1_1_xor_1ab5e6fe608d99cbb7fbefb8f413ba9509">id</link> ()</para>
+</listitem>
+            <listitem><para>static <link linkend="_struct_abel_1_1_xor_1a06e18c99932d5d4bf2442f05d5a5688e">Type</link> <link linkend="_struct_abel_1_1_xor_1a1b96ec871eac5d18d549f42605501d63">op</link> (const <link linkend="_struct_abel_1_1_xor_1a06e18c99932d5d4bf2442f05d5a5688e">Type</link> &amp;a, const <link linkend="_struct_abel_1_1_xor_1a06e18c99932d5d4bf2442f05d5a5688e">Type</link> &amp;b)</para>
+</listitem>
+            <listitem><para>static <link linkend="_struct_abel_1_1_xor_1a06e18c99932d5d4bf2442f05d5a5688e">Type</link> <link linkend="_struct_abel_1_1_xor_1a139adead748ebb2dd62ca58569ce355f">inv</link> (const <link linkend="_struct_abel_1_1_xor_1a06e18c99932d5d4bf2442f05d5a5688e">Type</link> &amp;x)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<simplesect><title>template&lt;typename T&gt;<?linebreak?>struct Abel::Xor&lt; T &gt;</title></simplesect>
+
+<para>XOR </para>
+<para>
+ <link linkend="_abel_8hpp_source">abel.hpp</link> の <link linkend="_abel_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>型定義メンバ詳解</title>
+<anchor xml:id="_struct_abel_1_1_xor_1a06e18c99932d5d4bf2442f05d5a5688e"/><section>
+    <title>Type</title>
+<indexterm><primary>Type</primary><secondary>Abel::Xor&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Abel::Xor&lt; T &gt;</primary><secondary>Type</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>using <link linkend="_struct_abel_1_1_xor">Abel::Xor</link>&lt; T &gt;::Type = T</computeroutput></para><para>
+ <link linkend="_abel_8hpp_source">abel.hpp</link> の <link linkend="_abel_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_abel_1_1_xor_1ab5e6fe608d99cbb7fbefb8f413ba9509"/><section>
+    <title>id()</title>
+<indexterm><primary>id</primary><secondary>Abel::Xor&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Abel::Xor&lt; T &gt;</primary><secondary>id</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>static <link linkend="_struct_abel_1_1_xor_1a06e18c99932d5d4bf2442f05d5a5688e">Type</link> <link linkend="_struct_abel_1_1_xor">Abel::Xor</link>&lt; T &gt;::id ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+ <link linkend="_abel_8hpp_source">abel.hpp</link> の <link linkend="_abel_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_abel_1_1_xor_1a1b96ec871eac5d18d549f42605501d63"/><section>
+    <title>op()</title>
+<indexterm><primary>op</primary><secondary>Abel::Xor&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Abel::Xor&lt; T &gt;</primary><secondary>op</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>static <link linkend="_struct_abel_1_1_xor_1a06e18c99932d5d4bf2442f05d5a5688e">Type</link> <link linkend="_struct_abel_1_1_xor">Abel::Xor</link>&lt; T &gt;::op (const <link linkend="_struct_abel_1_1_xor_1a06e18c99932d5d4bf2442f05d5a5688e">Type</link> &amp; a, const <link linkend="_struct_abel_1_1_xor_1a06e18c99932d5d4bf2442f05d5a5688e">Type</link> &amp; b)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+ <link linkend="_abel_8hpp_source">abel.hpp</link> の <link linkend="_abel_8hpp_source_1l00020">20</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_abel_1_1_xor_1a139adead748ebb2dd62ca58569ce355f"/><section>
+    <title>inv()</title>
+<indexterm><primary>inv</primary><secondary>Abel::Xor&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Abel::Xor&lt; T &gt;</primary><secondary>inv</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>static <link linkend="_struct_abel_1_1_xor_1a06e18c99932d5d4bf2442f05d5a5688e">Type</link> <link linkend="_struct_abel_1_1_xor">Abel::Xor</link>&lt; T &gt;::inv (const <link linkend="_struct_abel_1_1_xor_1a06e18c99932d5d4bf2442f05d5a5688e">Type</link> &amp; x)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para><para>
+ <link linkend="_abel_8hpp_source">abel.hpp</link> の <link linkend="_abel_8hpp_source_1l00021">21</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+others/<link linkend="_abel_8hpp">abel.hpp</link></section>
+</section>

@@ -1,0 +1,65 @@
+.TH "RangeQuery::ApplyUpdate_GetSum< T, not_exist >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RangeQuery::ApplyUpdate_GetSum< T, not_exist > \- 区間更新 / 区間和  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'segtree_lazy\&.hpp'\fP
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "using \fBS\fP = typename \fBMonoid::SumPair\fP<T>\fB::Type\fP"
+.br
+.ti -1c
+.RI "using \fBType\fP = struct \fBSegTreeLazy\fP<\fBMonoid::SumPair\fP<T>,\fBOperator::Update\fP<T,not_exist>,\fBmapping\fP>"
+.br
+.in -1c
+.SS "静的公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "static \fBS\fP \fBmapping\fP (const \fBS\fP &a, const T &b)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename T, T not_exist>
+.br
+struct RangeQuery::ApplyUpdate_GetSum< T, not_exist >"区間更新 / 区間和 
+
+
+.PP
+\fBテンプレート引数\fP
+.RS 4
+\fInot_exist\fP 存在しない値 
+.RE
+.PP
+
+.PP
+ \fBsegtree_lazy\&.hpp\fP の \fB224\fP 行目に定義があります。
+.SH "型定義メンバ詳解"
+.PP 
+.SS "template<typename T, T not_exist> using \fBRangeQuery::ApplyUpdate_GetSum\fP< T, not_exist >::S = typename \fBMonoid::SumPair\fP<T>\fB::Type\fP"
+
+.PP
+ \fBsegtree_lazy\&.hpp\fP の \fB225\fP 行目に定義があります。
+.SS "template<typename T, T not_exist> using \fBRangeQuery::ApplyUpdate_GetSum\fP< T, not_exist >::Type = struct \fBSegTreeLazy\fP<\fBMonoid::SumPair\fP<T>,\fBOperator::Update\fP<T,not_exist>,\fBmapping\fP>"
+
+.PP
+ \fBsegtree_lazy\&.hpp\fP の \fB227\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "template<typename T, T not_exist> static \fBS\fP \fBRangeQuery::ApplyUpdate_GetSum\fP< T, not_exist >::mapping (const \fBS\fP & a, const T & b)\fR [inline]\fP, \fR [static]\fP"
+
+.PP
+ \fBsegtree_lazy\&.hpp\fP の \fB226\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

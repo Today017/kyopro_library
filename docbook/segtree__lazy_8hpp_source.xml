@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_segtree__lazy_8hpp_source" xml:lang="ja">
+<title>segtree_lazy.hpp</title>
+<indexterm><primary>data_structure/segtree_lazy.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_segtree__lazy_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">pragma</emphasis>&#32;<emphasis role="preprocessor">once</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00002"/>00002 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00003"/>00003 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;遅延評価セグメント木</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@tparam&#32;Monoid&#32;モノイド</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00006"/>00006 <emphasis role="comment">///&#32;@tparam&#32;Operator&#32;作用素</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00007"/>00007 <emphasis role="comment">///&#32;@tparam&#32;mapping&#32;（モノイドの元，作用素の元）→モノイドの元を返す関数</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00008"/>00008 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;Monoid,&#32;<emphasis role="keyword">typename</emphasis>&#32;Operator,&#32;<emphasis role="keyword">auto</emphasis>&#32;mapping&gt;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00009"/><link linkend="_struct_seg_tree_lazy">00009</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_seg_tree_lazy">SegTreeLazy</link>&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00010"/><link linkend="_struct_seg_tree_lazy_1ab20ca57d57ff4a47c60f50ef5a1265e4">00010</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;MonoidType=<emphasis role="keyword">typename</emphasis>&#32;Monoid::Type;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00011"/><link linkend="_struct_seg_tree_lazy_1a85ccbd9400631857c24066af7f230c18">00011</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;OperatorType=<emphasis role="keyword">typename</emphasis>&#32;Operator::Type;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00012"/><link linkend="_struct_seg_tree_lazy_1ad7fdb9653e028ff01ed90da72d1570dd">00012</link> &#32;&#32;&#32;&#32;<link linkend="_struct_seg_tree_lazy_1ad7fdb9653e028ff01ed90da72d1570dd">SegTreeLazy</link>()=<emphasis role="keywordflow">default</emphasis>;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00013"/>00013 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;要素数&#32;n&#32;の遅延セグ木を構築する</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00015"/><link linkend="_struct_seg_tree_lazy_1ae01e57c4f628819bbf6f08691e4b77e7">00015</link> &#32;&#32;&#32;&#32;<link linkend="_struct_seg_tree_lazy_1ae01e57c4f628819bbf6f08691e4b77e7">SegTreeLazy</link>(<emphasis role="keywordtype">int</emphasis>&#32;n)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;n=n;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat.assign(n&lt;&lt;1,Monoid::id());
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lazy.assign(n&lt;&lt;1,Operator::id());
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00020"/>00020 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;配列&#32;v&#32;から遅延セグ木を構築する</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00022"/><link linkend="_struct_seg_tree_lazy_1a2d23d454ba4728c7c0ba4b1a67bc01b7">00022</link> &#32;&#32;&#32;&#32;<link linkend="_struct_seg_tree_lazy_1a2d23d454ba4728c7c0ba4b1a67bc01b7">SegTreeLazy</link>(<emphasis role="keyword">const</emphasis>&#32;vector&lt;MonoidType&gt;&amp;&#32;v)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;n=v.size();
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat.assign(n&lt;&lt;1,Monoid::id());
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lazy.assign(n&lt;&lt;1,Operator::id());
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;n;&#32;i++)&#32;dat[i+n]=v[i];
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=n-1;&#32;i&gt;0;&#32;i--)&#32;dat[i]=Monoid::op(dat[i&lt;&lt;1],dat[i&lt;&lt;1|1]);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00029"/>00029 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;i&#32;番目の要素を&#32;x&#32;に更新する</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00031"/><link linkend="_struct_seg_tree_lazy_1ad0b49b3ff4b8c6b57c733449ffdf5b85">00031</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_seg_tree_lazy_1ad0b49b3ff4b8c6b57c733449ffdf5b85">set</link>(<emphasis role="keywordtype">int</emphasis>&#32;i,&#32;MonoidType&#32;x)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;generate_indices(i,i+1);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pushdown();
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i+=n;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[i]=x;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(i&gt;&gt;=1)&#32;dat[i]=Monoid::op(dat[i&lt;&lt;1],dat[i&lt;&lt;1|1]);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00038"/>00038 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;に&#32;x&#32;を作用させる</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00040"/><link linkend="_struct_seg_tree_lazy_1a3d2684a4b4fbc1995a2d1790eba427a3">00040</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_seg_tree_lazy_1a3d2684a4b4fbc1995a2d1790eba427a3">apply</link>(<emphasis role="keywordtype">int</emphasis>&#32;l,&#32;<emphasis role="keywordtype">int</emphasis>&#32;r,&#32;OperatorType&#32;x)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(l==r)&#32;<emphasis role="keywordflow">return</emphasis>;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;generate_indices(l,r);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pushdown();
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l+=n,r+=n;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(l&lt;r)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(l&amp;1)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lazy[l]=Operator::op(lazy[l],x);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[l]=mapping(dat[l],x);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l++;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(r&amp;1)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;r--;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lazy[r]=Operator::op(lazy[r],x);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[r]=mapping(dat[r],x);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l&gt;&gt;=1,r&gt;&gt;=1;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pushup();
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00060"/>00060 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;のモノイド積を返す</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00062"/><link linkend="_struct_seg_tree_lazy_1a7f424f5acb8639d9ec9f5b42005dd567">00062</link> &#32;&#32;&#32;&#32;MonoidType&#32;<link linkend="_struct_seg_tree_lazy_1a7f424f5acb8639d9ec9f5b42005dd567">fold</link>(<emphasis role="keywordtype">int</emphasis>&#32;l,&#32;<emphasis role="keywordtype">int</emphasis>&#32;r)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(l==r)&#32;<emphasis role="keywordflow">return</emphasis>&#32;Monoid::id();
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;generate_indices(l,r);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pushdown();
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MonoidType&#32;retl=Monoid::id(),retr=Monoid::id();
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l+=n,r+=n;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(l&lt;r)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(l&amp;1)&#32;retl=Monoid::op(retl,dat[l++]);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(r&amp;1)&#32;retr=Monoid::op(dat[--r],retr);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l&gt;&gt;=1,r&gt;&gt;=1;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;Monoid::op(retl,retr);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00075"/>00075 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;x)&#32;のモノイド積が&#32;f&#32;を満たすような最大の&#32;x&#32;&gt;=&#32;l&#32;を返す</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@attention&#32;`f(Monoid::id())=true`&#32;が成り立つ必要がある</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log(N))</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;F&gt;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00080"/><link linkend="_struct_seg_tree_lazy_1abf01c743ea6b8648ab8fbb5590de0065">00080</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_seg_tree_lazy_1abf01c743ea6b8648ab8fbb5590de0065">find_right</link>(<emphasis role="keywordtype">int</emphasis>&#32;l,&#32;F&#32;f)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(f(Monoid::id()));
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(l==n)&#32;<emphasis role="keywordflow">return</emphasis>&#32;n;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;generate_indices(l,n);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pushdown();
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l+=n;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;r=n+n;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;<emphasis role="keywordtype">int</emphasis>&gt;&#32;cand_l,cand_r;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(l&lt;r)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(l&amp;1)&#32;cand_l.push_back(l++);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(r&amp;1)&#32;cand_r.push_back(--r);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l&gt;&gt;=1,r&gt;&gt;=1;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00092"/>00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;<emphasis role="keywordtype">int</emphasis>&gt;&#32;cand=cand_l;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00094"/>00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reverse(cand_r.begin(),cand_r.end());
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00095"/>00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cand.insert(cand.end(),cand_r.begin(),cand_r.end());
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00096"/>00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MonoidType&#32;val=Monoid::id();
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i:cand)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00098"/>00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(f(Monoid::op(val,dat[i])))&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00099"/>00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;val=Monoid::op(val,dat[i]);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00100"/>00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00101"/>00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(i&lt;n)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00102"/>00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;propagate(i);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00103"/>00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&lt;&lt;=1;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00104"/>00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(f(Monoid::op(val,dat[i])))&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00105"/>00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;val=Monoid::op(val,dat[i]);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00106"/>00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i|=1;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00107"/>00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00108"/>00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00109"/>00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;i-n;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00110"/>00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00111"/>00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00112"/>00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;n;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00113"/>00113 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00114"/>00114 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00115"/>00115 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[x,&#32;r)&#32;のモノイド積が&#32;f&#32;を満たすような最小の&#32;x&lt;=r&#32;を返す</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00116"/>00116 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@attention&#32;`f(Monoid::id())=true`&#32;が成り立つ必要がある</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00117"/>00117 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(log(N))</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00118"/>00118 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;F&gt;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00119"/><link linkend="_struct_seg_tree_lazy_1a96ee12dc05c4296b4176ea1a91564558">00119</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_seg_tree_lazy_1a96ee12dc05c4296b4176ea1a91564558">find_left</link>(<emphasis role="keywordtype">int</emphasis>&#32;r,&#32;F&#32;f)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00120"/>00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;assert(f(Monoid::id()));
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00121"/>00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(r==0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00122"/>00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;generate_indices(0,r);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00123"/>00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pushdown();
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;r+=n;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00125"/>00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;l=n;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00126"/>00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;<emphasis role="keywordtype">int</emphasis>&gt;&#32;cand_l,cand_r;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00127"/>00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(l&lt;r)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00128"/>00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(l&amp;1)&#32;cand_l.push_back(l++);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00129"/>00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(r&amp;1)&#32;cand_r.push_back(--r);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00130"/>00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l&gt;&gt;=1,r&gt;&gt;=1;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00132"/>00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;<emphasis role="keywordtype">int</emphasis>&gt;&#32;cand=cand_r;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00133"/>00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reverse(cand_l.begin(),cand_l.end());
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00134"/>00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cand.insert(cand.end(),cand_l.begin(),cand_l.end());
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00135"/>00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MonoidType&#32;val=Monoid::id();
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00136"/>00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i:cand)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00137"/>00137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(f(Monoid::op(dat[i],val)))&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00138"/>00138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;val=Monoid::op(dat[i],val);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00139"/>00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00140"/>00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(i&lt;n)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00141"/>00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;propagate(i);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00142"/>00142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i=(i&lt;&lt;1)|1;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00143"/>00143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(f(Monoid::op(dat[i],val)))&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00144"/>00144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;val=Monoid::op(dat[i],val);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00145"/>00145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i^=1;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00146"/>00146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00147"/>00147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00148"/>00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;i-n+1;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00149"/>00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00150"/>00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00151"/>00151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00152"/>00152 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00153"/>00153 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00154"/><link linkend="_struct_seg_tree_lazy_1ad04a20cae43ac18270ee7b1b509c51f9">00154</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_seg_tree_lazy_1ad04a20cae43ac18270ee7b1b509c51f9">size</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;n;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00155"/><link linkend="_struct_seg_tree_lazy_1abc1293d5bcbb6b175fc749044e0c2c52">00155</link> &#32;&#32;&#32;&#32;MonoidType&#32;<link linkend="_struct_seg_tree_lazy_1abc1293d5bcbb6b175fc749044e0c2c52">operator</link>[](<emphasis role="keywordtype">int</emphasis>&#32;i)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_seg_tree_lazy_1a7f424f5acb8639d9ec9f5b42005dd567">fold</link><link linkend="_struct_seg_tree_lazy_1a7f424f5acb8639d9ec9f5b42005dd567">(</link>i<link linkend="_struct_seg_tree_lazy_1a7f424f5acb8639d9ec9f5b42005dd567">,</link>i+1<link linkend="_struct_seg_tree_lazy_1a7f424f5acb8639d9ec9f5b42005dd567">)</link>;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00156"/>00156 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00157"/>00157 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00158"/>00158 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00159"/>00159 &#32;&#32;&#32;&#32;vector&lt;MonoidType&gt;&#32;dat;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00160"/>00160 &#32;&#32;&#32;&#32;vector&lt;OperatorType&gt;&#32;lazy;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00161"/>00161 &#32;&#32;&#32;&#32;vector&lt;<emphasis role="keywordtype">int</emphasis>&gt;&#32;indices;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00162"/>00162 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;generate_indices(<emphasis role="keywordtype">int</emphasis>&#32;l,&#32;<emphasis role="keywordtype">int</emphasis>&#32;r)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00163"/>00163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;indices.clear();
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00164"/>00164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l+=n,r+=n;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00165"/>00165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;lm=(l/(l&amp;-l))&gt;&gt;1,rm=(r/(r&amp;-r))&gt;&gt;1;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00166"/>00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(l&lt;r)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00167"/>00167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(l&lt;=lm)&#32;indices.push_back(l);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00168"/>00168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(r&lt;=rm)&#32;indices.push_back(r);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00169"/>00169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l&gt;&gt;=1,r&gt;&gt;=1;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00170"/>00170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00171"/>00171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(l)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00172"/>00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;indices.push_back(l);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00173"/>00173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l&gt;&gt;=1;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00174"/>00174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00175"/>00175 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00176"/>00176 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;propagate(<emphasis role="keywordtype">int</emphasis>&#32;i)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00177"/>00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(i&lt;n)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00178"/>00178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lazy[i&lt;&lt;1]=Operator::op(lazy[i&lt;&lt;1],lazy[i]);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00179"/>00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lazy[i&lt;&lt;1|1]=Operator::op(lazy[i&lt;&lt;1|1],lazy[i]);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00180"/>00180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[i&lt;&lt;1]=mapping(dat[i&lt;&lt;1],lazy[i]);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00181"/>00181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[i&lt;&lt;1|1]=mapping(dat[i&lt;&lt;1|1],lazy[i]);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00182"/>00182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00183"/>00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lazy[i]=Operator::id();
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00184"/>00184 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00185"/>00185 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;pushdown()&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00186"/>00186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;j=(<emphasis role="keywordtype">int</emphasis>)indices.size()-1;&#32;j&gt;=0;&#32;j--)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00187"/>00187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;i=indices[j];
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00188"/>00188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;propagate(i);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00189"/>00189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00190"/>00190 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00191"/>00191 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;pushup()&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00192"/>00192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;j=0;&#32;j&lt;(<emphasis role="keywordtype">int</emphasis>)indices.size();&#32;j++)&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00193"/>00193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;i=indices[j];
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00194"/>00194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[i]=Monoid::op(dat[i&lt;&lt;1],dat[i&lt;&lt;1|1]);
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00195"/>00195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00196"/>00196 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00197"/>00197 };
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00198"/>00198 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00199"/>00199 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/others/monoid.hpp&quot;</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00200"/>00200 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/others/operator.hpp&quot;</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00201"/>00201 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00202"/>00202 <emphasis role="keyword">namespace</emphasis>&#32;<link linkend="_namespace_range_query">RangeQuery</link>&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00203"/>00203 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間更新&#32;/&#32;区間min</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00204"/>00204 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@tparam&#32;max_value&#32;最大値</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00205"/>00205 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@tparam&#32;not_exist&#32;存在しない値</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00206"/>00206 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T,&#32;T&#32;max_value,&#32;T&#32;not_exist&gt;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00207"/><link linkend="_struct_range_query_1_1_apply_update___get_min">00207</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_update___get_min">ApplyUpdate_GetMin</link>&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00208"/><link linkend="_struct_range_query_1_1_apply_update___get_min_1a440427d0273fd0decd673640266a9fa8">00208</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;T&#32;<link linkend="_struct_range_query_1_1_apply_update___get_min_1a440427d0273fd0decd673640266a9fa8">mapping</link>(<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;b)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;b==not_exist?a:b;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00209"/><link linkend="_struct_range_query_1_1_apply_update___get_min_1a94be51ee0f22e55e1cd5b3fb3ba03f84">00209</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_update___get_min">Type</link>=<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_update___get_min">SegTreeLazy</link>&lt;<link linkend="_struct_range_query_1_1_apply_update___get_min">Monoid</link>::<link linkend="_struct_range_query_1_1_apply_update___get_min">Min</link>&lt;<link linkend="_struct_range_query_1_1_apply_update___get_min">T</link>,<link linkend="_struct_range_query_1_1_apply_update___get_min">max_value</link>&gt;,<link linkend="_struct_range_query_1_1_apply_update___get_min">Operator</link>::<link linkend="_struct_range_query_1_1_apply_update___get_min">Update</link>&lt;<link linkend="_struct_range_query_1_1_apply_update___get_min">T</link>,<link linkend="_struct_range_query_1_1_apply_update___get_min">not_exist</link>&gt;,<link linkend="_struct_range_query_1_1_apply_update___get_min">mapping</link>&gt;;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00210"/>00210 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00211"/>00211 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00212"/>00212 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間更新&#32;/&#32;区間max</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00213"/>00213 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@tparam&#32;min_value&#32;最小値</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00214"/>00214 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@tparam&#32;not_exist&#32;存在しない値</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00215"/>00215 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T,&#32;T&#32;min_value,&#32;T&#32;not_exist&gt;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00216"/><link linkend="_struct_range_query_1_1_apply_update___get_max">00216</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_update___get_max">ApplyUpdate_GetMax</link>&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00217"/><link linkend="_struct_range_query_1_1_apply_update___get_max_1ac9d2047758175fb5ee7a6b06fa8a640a">00217</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;T&#32;<link linkend="_struct_range_query_1_1_apply_update___get_max_1ac9d2047758175fb5ee7a6b06fa8a640a">mapping</link>(<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;b)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;b==not_exist?a:b;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00218"/><link linkend="_struct_range_query_1_1_apply_update___get_max_1afde8fc29322fab9724de4b4ffa928d90">00218</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_update___get_max">Type</link>=<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_update___get_max">SegTreeLazy</link>&lt;<link linkend="_struct_range_query_1_1_apply_update___get_max">Monoid</link>::<link linkend="_struct_range_query_1_1_apply_update___get_max">Max</link>&lt;<link linkend="_struct_range_query_1_1_apply_update___get_max">T</link>,<link linkend="_struct_range_query_1_1_apply_update___get_max">min_value</link>&gt;,<link linkend="_struct_range_query_1_1_apply_update___get_max">Operator</link>::<link linkend="_struct_range_query_1_1_apply_update___get_max">Update</link>&lt;<link linkend="_struct_range_query_1_1_apply_update___get_max">T</link>,<link linkend="_struct_range_query_1_1_apply_update___get_max">not_exist</link>&gt;,<link linkend="_struct_range_query_1_1_apply_update___get_max">mapping</link>&gt;;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00219"/>00219 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00220"/>00220 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00221"/>00221 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間更新&#32;/&#32;区間和</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00222"/>00222 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@tparam&#32;not_exist&#32;存在しない値</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00223"/>00223 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T,&#32;T&#32;not_exist&gt;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00224"/><link linkend="_struct_range_query_1_1_apply_update___get_sum">00224</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_update___get_sum">ApplyUpdate_GetSum</link>&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00225"/><link linkend="_struct_range_query_1_1_apply_update___get_sum_1ad30e2dbdaf90a38072462ad68f8db948">00225</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;S=<emphasis role="keyword">typename</emphasis>&#32;<link linkend="_namespace_monoid">Monoid</link>::<link linkend="_struct_monoid_1_1_sum_pair">SumPair</link>&lt;T&gt;::Type;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00226"/><link linkend="_struct_range_query_1_1_apply_update___get_sum_1a8938c3b73c67295d0d05128d8a940843">00226</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;S&#32;<link linkend="_struct_range_query_1_1_apply_update___get_sum_1a8938c3b73c67295d0d05128d8a940843">mapping</link>(<emphasis role="keyword">const</emphasis>&#32;S&amp;&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;b)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;b==not_exist?a:S{b*a.second,a.second};&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00227"/><link linkend="_struct_range_query_1_1_apply_update___get_sum_1a27fe5609443fb6a6ca4bfab133c4282a">00227</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_update___get_sum">Type</link>=<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_update___get_sum">SegTreeLazy</link>&lt;<link linkend="_struct_range_query_1_1_apply_update___get_sum">Monoid</link>::<link linkend="_struct_range_query_1_1_apply_update___get_sum">SumPair</link>&lt;<link linkend="_struct_range_query_1_1_apply_update___get_sum">T</link>&gt;,<link linkend="_struct_range_query_1_1_apply_update___get_sum">Operator</link>::<link linkend="_struct_range_query_1_1_apply_update___get_sum">Update</link>&lt;<link linkend="_struct_range_query_1_1_apply_update___get_sum">T</link>,<link linkend="_struct_range_query_1_1_apply_update___get_sum">not_exist</link>&gt;,<link linkend="_struct_range_query_1_1_apply_update___get_sum">mapping</link>&gt;;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00228"/>00228 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00229"/>00229 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00230"/>00230 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間加算&#32;/&#32;区間min</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00231"/>00231 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T,&#32;T&#32;max_value&gt;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00232"/><link linkend="_struct_range_query_1_1_apply_add___get_min">00232</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_add___get_min">ApplyAdd_GetMin</link>&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00233"/><link linkend="_struct_range_query_1_1_apply_add___get_min_1a26153f047d6377259bb442cbebf27fae">00233</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;T&#32;<link linkend="_struct_range_query_1_1_apply_add___get_min_1a26153f047d6377259bb442cbebf27fae">mapping</link>(<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;b)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;a+b;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00234"/><link linkend="_struct_range_query_1_1_apply_add___get_min_1a3b525a16b3466cfe2a4a3732bd016112">00234</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_add___get_min">Type</link>=<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_add___get_min">SegTreeLazy</link>&lt;<link linkend="_struct_range_query_1_1_apply_add___get_min">Monoid</link>::<link linkend="_struct_range_query_1_1_apply_add___get_min">Min</link>&lt;<link linkend="_struct_range_query_1_1_apply_add___get_min">T</link>,<link linkend="_struct_range_query_1_1_apply_add___get_min">max_value</link>&gt;,<link linkend="_struct_range_query_1_1_apply_add___get_min">Operator</link>::<link linkend="_struct_range_query_1_1_apply_add___get_min">Add</link>&lt;<link linkend="_struct_range_query_1_1_apply_add___get_min">T</link>&gt;,<link linkend="_struct_range_query_1_1_apply_add___get_min">mapping</link>&gt;;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00235"/>00235 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00236"/>00236 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00237"/>00237 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間加算&#32;/&#32;区間max</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00238"/>00238 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T,&#32;T&#32;min_value&gt;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00239"/><link linkend="_struct_range_query_1_1_apply_add___get_max">00239</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_add___get_max">ApplyAdd_GetMax</link>&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00240"/><link linkend="_struct_range_query_1_1_apply_add___get_max_1ab18434afdb16f4aa02de40675d12b093">00240</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;T&#32;<link linkend="_struct_range_query_1_1_apply_add___get_max_1ab18434afdb16f4aa02de40675d12b093">mapping</link>(<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;b)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;a+b;&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00241"/><link linkend="_struct_range_query_1_1_apply_add___get_max_1a9c9ed3a7147c3df91c9349cccdca8a04">00241</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_add___get_max">Type</link>=<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_add___get_max">SegTreeLazy</link>&lt;<link linkend="_struct_range_query_1_1_apply_add___get_max">Monoid</link>::<link linkend="_struct_range_query_1_1_apply_add___get_max">Max</link>&lt;<link linkend="_struct_range_query_1_1_apply_add___get_max">T</link>,<link linkend="_struct_range_query_1_1_apply_add___get_max">min_value</link>&gt;,<link linkend="_struct_range_query_1_1_apply_add___get_max">Operator</link>::<link linkend="_struct_range_query_1_1_apply_add___get_max">Add</link>&lt;<link linkend="_struct_range_query_1_1_apply_add___get_max">T</link>&gt;,<link linkend="_struct_range_query_1_1_apply_add___get_max">mapping</link>&gt;;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00242"/>00242 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00243"/>00243 
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00244"/>00244 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間加算&#32;/&#32;区間和</emphasis>
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00245"/>00245 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00246"/><link linkend="_struct_range_query_1_1_apply_add___get_sum">00246</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_add___get_sum">ApplyAdd_GetSum</link>&#32;{
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00247"/><link linkend="_struct_range_query_1_1_apply_add___get_sum_1aabaabec75582f39b00bcf0c18801193c">00247</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;S=<emphasis role="keyword">typename</emphasis>&#32;<link linkend="_namespace_monoid">Monoid</link>::<link linkend="_struct_monoid_1_1_sum_pair">SumPair</link>&lt;T&gt;::Type;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00248"/><link linkend="_struct_range_query_1_1_apply_add___get_sum_1aa11c84358cc478f8837b10e80eb06945">00248</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;S&#32;<link linkend="_struct_range_query_1_1_apply_add___get_sum_1aa11c84358cc478f8837b10e80eb06945">mapping</link>(<emphasis role="keyword">const</emphasis>&#32;S&amp;&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;b)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;{a.first+b*a.second,a.second};&#32;}
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00249"/><link linkend="_struct_range_query_1_1_apply_add___get_sum_1ad71b55b90d25ce8caf078e71213d819a">00249</link> &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_add___get_sum">Type</link>=<emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_range_query_1_1_apply_add___get_sum">SegTreeLazy</link>&lt;<link linkend="_struct_range_query_1_1_apply_add___get_sum">Monoid</link>::<link linkend="_struct_range_query_1_1_apply_add___get_sum">SumPair</link>&lt;<link linkend="_struct_range_query_1_1_apply_add___get_sum">T</link>&gt;,<link linkend="_struct_range_query_1_1_apply_add___get_sum">Operator</link>::<link linkend="_struct_range_query_1_1_apply_add___get_sum">Add</link>&lt;<link linkend="_struct_range_query_1_1_apply_add___get_sum">T</link>&gt;,<link linkend="_struct_range_query_1_1_apply_add___get_sum">mapping</link>&gt;;
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00250"/>00250 &#32;&#32;&#32;&#32;};
+<anchor xml:id="_segtree__lazy_8hpp_source_1l00251"/>00251 }
+</programlisting></section>

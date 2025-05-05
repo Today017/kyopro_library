@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_two__sat_8hpp" xml:lang="ja">
+<title>graph/two_sat.hpp ファイル</title>
+<indexterm><primary>graph/two_sat.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/graph/scc.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_two_sat">TwoSat</link></para>
+
+<para>2-SAT </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

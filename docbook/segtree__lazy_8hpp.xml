@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_segtree__lazy_8hpp" xml:lang="ja">
+<title>data_structure/segtree_lazy.hpp ファイル</title>
+<indexterm><primary>data_structure/segtree_lazy.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/others/monoid.hpp&quot;<?linebreak?>#include &quot;../../kyopro_library/others/operator.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_seg_tree_lazy">SegTreeLazy&lt; Monoid, Operator, mapping &gt;</link></para>
+
+<para>遅延評価セグメント木 </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_range_query_1_1_apply_update___get_min">RangeQuery::ApplyUpdate_GetMin&lt; T, max_value, not_exist &gt;</link></para>
+
+<para>区間更新 / 区間min </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_range_query_1_1_apply_update___get_max">RangeQuery::ApplyUpdate_GetMax&lt; T, min_value, not_exist &gt;</link></para>
+
+<para>区間更新 / 区間max </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_range_query_1_1_apply_update___get_sum">RangeQuery::ApplyUpdate_GetSum&lt; T, not_exist &gt;</link></para>
+
+<para>区間更新 / 区間和 </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_range_query_1_1_apply_add___get_min">RangeQuery::ApplyAdd_GetMin&lt; T, max_value &gt;</link></para>
+
+<para>区間加算 / 区間min </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_range_query_1_1_apply_add___get_max">RangeQuery::ApplyAdd_GetMax&lt; T, min_value &gt;</link></para>
+
+<para>区間加算 / 区間max </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_range_query_1_1_apply_add___get_sum">RangeQuery::ApplyAdd_GetSum&lt; T &gt;</link></para>
+
+<para>区間加算 / 区間和 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>名前空間    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_range_query">RangeQuery</link></para>
+
+<para>区間クエリ </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

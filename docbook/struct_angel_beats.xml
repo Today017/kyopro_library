@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_angel_beats" xml:lang="ja">
+<title>AngelBeats 構造体</title>
+<indexterm><primary>AngelBeats</primary></indexterm>
+<para>
+
+<para>Segment Tree Beat! <link xlink:href="https://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp">https://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp</link> </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;segtree_beats.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_angel_beats_1_1_node">Node</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_angel_beats_1a443bd6b7add01f16c232edb11c465827">AngelBeats</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_struct_angel_beats_1a19aaeeed7af8b469583441d70c54b959">AngelBeats</link> (int _n)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_angel_beats_1a125a96bbf7f72c40fc69a7e13443e8dc">AngelBeats</link> (const vector&lt; <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> &gt; &amp;vc)</para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_angel_beats_1a67c2e44c754b5dd0673b2030b4030e85">range_chmin</link> (int l, int r, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> x)</para>
+
+<para>[l, r) に対し、v[i] &lt;- min(v[i], x) </para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_angel_beats_1ac9b00c11a8c9d6233ad0a4c82517c738">range_chmax</link> (int l, int r, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> x)</para>
+
+<para>[l, r) に対し、v[i] &lt;- max(v[i], x) </para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_angel_beats_1aa15c52a208f93f199177ba9dcd4075ad">range_add</link> (int l, int r, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> x)</para>
+
+<para>[l, r) に対し、v[i] &lt;- v[i] + x </para>
+</listitem>
+            <listitem><para>void <link linkend="_struct_angel_beats_1a000ae625539fb25bd1fa22407a78893d">range_update</link> (int l, int r, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> x)</para>
+
+<para>[l, r) に対し、v[i] &lt;- x </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_struct_angel_beats_1a4fcefcfbe67f6b936d04c466517cc82f">range_min</link> (int l, int r)</para>
+
+<para>min[l, r)(v[i]) を返す </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_struct_angel_beats_1a697f138772500873140fbf1e220be15a">range_max</link> (int l, int r)</para>
+
+<para>max[l, r)(v[i]) を返す </para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_struct_angel_beats_1a3ac7d0122289b20297f73e5bdb848f58">range_sum</link> (int l, int r)</para>
+
+<para>sum[l, r)(v[i]) を返す </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>公開変数類    </title>
+        <itemizedlist>
+            <listitem><para>vector&lt; <link linkend="_struct_angel_beats_1_1_node">Node</link> &gt; <link linkend="_struct_angel_beats_1a3790c7a7422fd2ea41dad7d913b51f15">v</link></para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_struct_angel_beats_1a3b15aa0697428b129b15307fa5b6e363">n</link></para>
+</listitem>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_struct_angel_beats_1a125d02f83e433d4be2724d5d5e0e982f">log</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+
+<para>Segment Tree Beat! <link xlink:href="https://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp">https://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp</link> </para>
+<para>
+ <link linkend="_segtree__beats_8hpp_source">segtree_beats.hpp</link> の <link linkend="_segtree__beats_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_angel_beats_1a443bd6b7add01f16c232edb11c465827"/><section>
+    <title>AngelBeats()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>AngelBeats</primary><secondary>AngelBeats</secondary></indexterm>
+<indexterm><primary>AngelBeats</primary><secondary>AngelBeats</secondary></indexterm>
+<para><computeroutput>AngelBeats::AngelBeats ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_segtree__beats_8hpp_source">segtree_beats.hpp</link> の <link linkend="_segtree__beats_8hpp_source_1l00012">12</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_angel_beats_1a19aaeeed7af8b469583441d70c54b959"/><section>
+    <title>AngelBeats()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>AngelBeats</primary><secondary>AngelBeats</secondary></indexterm>
+<indexterm><primary>AngelBeats</primary><secondary>AngelBeats</secondary></indexterm>
+<para><computeroutput>AngelBeats::AngelBeats (int _n)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_segtree__beats_8hpp_source">segtree_beats.hpp</link> の <link linkend="_segtree__beats_8hpp_source_1l00013">13</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_angel_beats_1a125a96bbf7f72c40fc69a7e13443e8dc"/><section>
+    <title>AngelBeats()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>AngelBeats</primary><secondary>AngelBeats</secondary></indexterm>
+<indexterm><primary>AngelBeats</primary><secondary>AngelBeats</secondary></indexterm>
+<para><computeroutput>AngelBeats::AngelBeats (const vector&lt; <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> &gt; &amp; vc)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_segtree__beats_8hpp_source">segtree_beats.hpp</link> の <link linkend="_segtree__beats_8hpp_source_1l00014">14</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_segtree__beats_8hpp_source_1l00011">log</link>, <link linkend="_segtree__beats_8hpp_source_1l00011">n</link>.</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_angel_beats_1a67c2e44c754b5dd0673b2030b4030e85"/><section>
+    <title>range_chmin()</title>
+<indexterm><primary>range_chmin</primary><secondary>AngelBeats</secondary></indexterm>
+<indexterm><primary>AngelBeats</primary><secondary>range_chmin</secondary></indexterm>
+<para><computeroutput>void AngelBeats::range_chmin (int l, int r, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>[l, r) に対し、v[i] &lt;- min(v[i], x) </para>
+</para>
+<para>
+ <link linkend="_segtree__beats_8hpp_source">segtree_beats.hpp</link> の <link linkend="_segtree__beats_8hpp_source_1l00024">24</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_angel_beats_1ac9b00c11a8c9d6233ad0a4c82517c738"/><section>
+    <title>range_chmax()</title>
+<indexterm><primary>range_chmax</primary><secondary>AngelBeats</secondary></indexterm>
+<indexterm><primary>AngelBeats</primary><secondary>range_chmax</secondary></indexterm>
+<para><computeroutput>void AngelBeats::range_chmax (int l, int r, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>[l, r) に対し、v[i] &lt;- max(v[i], x) </para>
+</para>
+<para>
+ <link linkend="_segtree__beats_8hpp_source">segtree_beats.hpp</link> の <link linkend="_segtree__beats_8hpp_source_1l00026">26</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_angel_beats_1aa15c52a208f93f199177ba9dcd4075ad"/><section>
+    <title>range_add()</title>
+<indexterm><primary>range_add</primary><secondary>AngelBeats</secondary></indexterm>
+<indexterm><primary>AngelBeats</primary><secondary>range_add</secondary></indexterm>
+<para><computeroutput>void AngelBeats::range_add (int l, int r, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>[l, r) に対し、v[i] &lt;- v[i] + x </para>
+</para>
+<para>
+ <link linkend="_segtree__beats_8hpp_source">segtree_beats.hpp</link> の <link linkend="_segtree__beats_8hpp_source_1l00028">28</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_angel_beats_1a000ae625539fb25bd1fa22407a78893d"/><section>
+    <title>range_update()</title>
+<indexterm><primary>range_update</primary><secondary>AngelBeats</secondary></indexterm>
+<indexterm><primary>AngelBeats</primary><secondary>range_update</secondary></indexterm>
+<para><computeroutput>void AngelBeats::range_update (int l, int r, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>[l, r) に対し、v[i] &lt;- x </para>
+</para>
+<para>
+ <link linkend="_segtree__beats_8hpp_source">segtree_beats.hpp</link> の <link linkend="_segtree__beats_8hpp_source_1l00030">30</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_angel_beats_1a4fcefcfbe67f6b936d04c466517cc82f"/><section>
+    <title>range_min()</title>
+<indexterm><primary>range_min</primary><secondary>AngelBeats</secondary></indexterm>
+<indexterm><primary>AngelBeats</primary><secondary>range_min</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> AngelBeats::range_min (int l, int r)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>min[l, r)(v[i]) を返す </para>
+</para>
+<para>
+ <link linkend="_segtree__beats_8hpp_source">segtree_beats.hpp</link> の <link linkend="_segtree__beats_8hpp_source_1l00032">32</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_angel_beats_1a697f138772500873140fbf1e220be15a"/><section>
+    <title>range_max()</title>
+<indexterm><primary>range_max</primary><secondary>AngelBeats</secondary></indexterm>
+<indexterm><primary>AngelBeats</primary><secondary>range_max</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> AngelBeats::range_max (int l, int r)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>max[l, r)(v[i]) を返す </para>
+</para>
+<para>
+ <link linkend="_segtree__beats_8hpp_source">segtree_beats.hpp</link> の <link linkend="_segtree__beats_8hpp_source_1l00034">34</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_angel_beats_1a3ac7d0122289b20297f73e5bdb848f58"/><section>
+    <title>range_sum()</title>
+<indexterm><primary>range_sum</primary><secondary>AngelBeats</secondary></indexterm>
+<indexterm><primary>AngelBeats</primary><secondary>range_sum</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> AngelBeats::range_sum (int l, int r)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>sum[l, r)(v[i]) を返す </para>
+</para>
+<para>
+ <link linkend="_segtree__beats_8hpp_source">segtree_beats.hpp</link> の <link linkend="_segtree__beats_8hpp_source_1l00036">36</link> 行目に定義があります。</para>
+</section>
+</section>
+<section>
+<title>メンバ詳解</title>
+<anchor xml:id="_struct_angel_beats_1a3790c7a7422fd2ea41dad7d913b51f15"/><section>
+    <title>v</title>
+<indexterm><primary>v</primary><secondary>AngelBeats</secondary></indexterm>
+<indexterm><primary>AngelBeats</primary><secondary>v</secondary></indexterm>
+<para><computeroutput>vector&lt;<link linkend="_struct_angel_beats_1_1_node">Node</link>&gt; AngelBeats::v</computeroutput></para><para>
+ <link linkend="_segtree__beats_8hpp_source">segtree_beats.hpp</link> の <link linkend="_segtree__beats_8hpp_source_1l00010">10</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_angel_beats_1a3b15aa0697428b129b15307fa5b6e363"/><section>
+    <title>n</title>
+<indexterm><primary>n</primary><secondary>AngelBeats</secondary></indexterm>
+<indexterm><primary>AngelBeats</primary><secondary>n</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> AngelBeats::n</computeroutput></para><para>
+ <link linkend="_segtree__beats_8hpp_source">segtree_beats.hpp</link> の <link linkend="_segtree__beats_8hpp_source_1l00011">11</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_angel_beats_1a125d02f83e433d4be2724d5d5e0e982f"/><section>
+    <title>log</title>
+<indexterm><primary>log</primary><secondary>AngelBeats</secondary></indexterm>
+<indexterm><primary>AngelBeats</primary><secondary>log</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> AngelBeats::log</computeroutput></para><para>
+ <link linkend="_segtree__beats_8hpp_source">segtree_beats.hpp</link> の <link linkend="_segtree__beats_8hpp_source_1l00011">11</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+data_structure/<link linkend="_segtree__beats_8hpp">segtree_beats.hpp</link></section>
+</section>

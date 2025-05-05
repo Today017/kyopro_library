@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_two__sat_8hpp_source" xml:lang="ja">
+<title>two_sat.hpp</title>
+<indexterm><primary>graph/two_sat.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_two__sat_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_two__sat_8hpp_source_1l00002"/>00002 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/graph/scc.hpp&quot;</emphasis>
+<anchor xml:id="_two__sat_8hpp_source_1l00003"/>00003 
+<anchor xml:id="_two__sat_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;2-SAT</emphasis>
+<anchor xml:id="_two__sat_8hpp_source_1l00005"/><link linkend="_struct_two_sat">00005</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_two_sat">TwoSat</link>&#32;{
+<anchor xml:id="_two__sat_8hpp_source_1l00006"/><link linkend="_struct_two_sat_1a4b6625d3218c6bd8dd83951f17e35ed4">00006</link> &#32;&#32;&#32;&#32;<link linkend="_struct_two_sat_1a4b6625d3218c6bd8dd83951f17e35ed4">TwoSat</link>(<emphasis role="keywordtype">int</emphasis>&#32;n)&#32;{&#32;g=VVI(2*n);&#32;}
+<anchor xml:id="_two__sat_8hpp_source_1l00007"/>00007 
+<anchor xml:id="_two__sat_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;条件&#32;`i==fi&#32;||&#32;j==fj`&#32;を追加</emphasis>
+<anchor xml:id="_two__sat_8hpp_source_1l00009"/><link linkend="_struct_two_sat_1a71d1b0cf574787c596fe87d26bd905df">00009</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_two_sat_1a71d1b0cf574787c596fe87d26bd905df">add</link>(<emphasis role="keywordtype">int</emphasis>&#32;i,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;fi,&#32;<emphasis role="keywordtype">int</emphasis>&#32;j,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;fj)&#32;{
+<anchor xml:id="_two__sat_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;2i&#32;=&#32;i&#32;が&#32;true,&#32;2i+1&#32;=&#32;i&#32;が&#32;false</emphasis>
+<anchor xml:id="_two__sat_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i=2*i+!fi,j=2*j+!fj;
+<anchor xml:id="_two__sat_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;!i&#32;-&gt;&#32;j,&#32;!j&#32;-&gt;&#32;i</emphasis>
+<anchor xml:id="_two__sat_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;g[i^1].push_back(j),g[j^1].push_back(i);
+<anchor xml:id="_two__sat_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_two__sat_8hpp_source_1l00015"/>00015 
+<anchor xml:id="_two__sat_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;2-SATを解く</emphasis>
+<anchor xml:id="_two__sat_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;解が存在しないなら空のvectorを返す</emphasis>
+<anchor xml:id="_two__sat_8hpp_source_1l00018"/><link linkend="_struct_two_sat_1a56351416679e5a93eef4c9ff1620cfec">00018</link> &#32;&#32;&#32;&#32;<link linkend="_struct_two_sat_1a56351416679e5a93eef4c9ff1620cfec">vector</link>&lt;<emphasis role="keywordtype">bool</emphasis>&gt;&#32;<link linkend="_struct_two_sat_1a56351416679e5a93eef4c9ff1620cfec">solve</link>()&#32;{
+<anchor xml:id="_two__sat_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;[mem,ng,gr]=SccDecomposition(g);
+<anchor xml:id="_two__sat_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n=g.size()/2;
+<anchor xml:id="_two__sat_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;<emphasis role="keywordtype">bool</emphasis>&gt;&#32;ret(n);
+<anchor xml:id="_two__sat_8hpp_source_1l00022"/>00022 
+<anchor xml:id="_two__sat_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;{
+<anchor xml:id="_two__sat_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(gr[i*2]==gr[i*2+1])&#32;<emphasis role="keywordflow">return</emphasis>&#32;vector&lt;<emphasis role="keywordtype">bool</emphasis>&gt;();
+<anchor xml:id="_two__sat_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;2i(true)&#32;が後ろなら&#32;i&#32;は&#32;true</emphasis>
+<anchor xml:id="_two__sat_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret[i]=gr[i*2]&gt;gr[i*2+1];
+<anchor xml:id="_two__sat_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_two__sat_8hpp_source_1l00028"/>00028 
+<anchor xml:id="_two__sat_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_two__sat_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_two__sat_8hpp_source_1l00031"/>00031 
+<anchor xml:id="_two__sat_8hpp_source_1l00032"/>00032 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_two__sat_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;VVI&#32;g;
+<anchor xml:id="_two__sat_8hpp_source_1l00034"/>00034 };
+</programlisting></section>

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_geometry_1_1_circle" xml:lang="ja">
+<title>Geometry::Circle 構造体</title>
+<indexterm><primary>Geometry::Circle</primary></indexterm>
+<para>
+<computeroutput>#include &quot;geo.hpp&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_geometry_1_1_circle_1ae2792daa2742d54317c58d62309b47db">Circle</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_struct_geometry_1_1_circle_1a0d68df3bf040a3ebc59045dd86f5e700">Circle</link> (<link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> x, <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> y, <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> <link linkend="_struct_geometry_1_1_circle_1a01c85a4e3f9ea0e7eb98825a465cd509">r</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_geometry_1_1_circle_1a96003c23fef9b4bf305728137661f907">Circle</link> (<link linkend="_struct_geometry_1_1_point">Point</link> _center, <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> <link linkend="_struct_geometry_1_1_circle_1a01c85a4e3f9ea0e7eb98825a465cd509">r</link>)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_geometry_1_1_circle_1a318ce8385f862858ea1c514f2e4072be">operator==</link> (const <link linkend="_struct_geometry_1_1_circle">Circle</link> &amp;C) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>公開変数類    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_geometry_1_1_point">Point</link> <link linkend="_struct_geometry_1_1_circle_1a2240114cd5d8188550d2ff3980866b63">center</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> <link linkend="_struct_geometry_1_1_circle_1a01c85a4e3f9ea0e7eb98825a465cd509">r</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>フレンド    </title>
+        <itemizedlist>
+            <listitem><para>istream &amp; <link linkend="_struct_geometry_1_1_circle_1a7e26473c97b7315692a436c83da32ed7">operator&gt;&gt;</link> (istream &amp;is, <link linkend="_struct_geometry_1_1_circle">Circle</link> &amp;C)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00061">61</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_geometry_1_1_circle_1ae2792daa2742d54317c58d62309b47db"/><section>
+    <title>Circle()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>Circle</primary><secondary>Geometry::Circle</secondary></indexterm>
+<indexterm><primary>Geometry::Circle</primary><secondary>Circle</secondary></indexterm>
+<para><computeroutput>Geometry::Circle::Circle ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_geometry_1_1_circle_1a0d68df3bf040a3ebc59045dd86f5e700"/><section>
+    <title>Circle()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>Circle</primary><secondary>Geometry::Circle</secondary></indexterm>
+<indexterm><primary>Geometry::Circle</primary><secondary>Circle</secondary></indexterm>
+<para><computeroutput>Geometry::Circle::Circle (<link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> x, <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> y, <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> r)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00065">65</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00062">center</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::Point()</link>, <link linkend="_geo_8hpp_source_1l00063">r</link>.</para>
+</section>
+<anchor xml:id="_struct_geometry_1_1_circle_1a96003c23fef9b4bf305728137661f907"/><section>
+    <title>Circle()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>Circle</primary><secondary>Geometry::Circle</secondary></indexterm>
+<indexterm><primary>Geometry::Circle</primary><secondary>Circle</secondary></indexterm>
+<para><computeroutput>Geometry::Circle::Circle (<link linkend="_struct_geometry_1_1_point">Point</link> _center, <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> r)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00066">66</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00062">center</link>, <link linkend="_geo_8hpp_source_1l00063">r</link>.</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_geometry_1_1_circle_1a318ce8385f862858ea1c514f2e4072be"/><section>
+    <title>operator==()</title>
+<indexterm><primary>operator==</primary><secondary>Geometry::Circle</secondary></indexterm>
+<indexterm><primary>Geometry::Circle</primary><secondary>operator==</secondary></indexterm>
+<para><computeroutput>bool Geometry::Circle::operator== (const <link linkend="_struct_geometry_1_1_circle">Circle</link> &amp; C) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00067">67</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00062">center</link>, <link linkend="_geo_8hpp_source_1l00027">Geometry::Point::operator==()</link>, <link linkend="_geo_8hpp_source_1l00063">r</link>.</para>
+</section>
+</section>
+<section>
+<title>フレンドと関連関数の詳解</title>
+<anchor xml:id="_struct_geometry_1_1_circle_1a7e26473c97b7315692a436c83da32ed7"/><section>
+    <title>operator&gt;&gt;</title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Geometry::Circle</secondary></indexterm>
+<indexterm><primary>Geometry::Circle</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>istream &amp; operator&gt;&gt; (istream &amp; is, <link linkend="_struct_geometry_1_1_circle">Circle</link> &amp; C)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00068">68</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00062">center</link>, <link linkend="_geo_8hpp_source_1l00063">r</link>.</para>
+</section>
+</section>
+<section>
+<title>メンバ詳解</title>
+<anchor xml:id="_struct_geometry_1_1_circle_1a2240114cd5d8188550d2ff3980866b63"/><section>
+    <title>center</title>
+<indexterm><primary>center</primary><secondary>Geometry::Circle</secondary></indexterm>
+<indexterm><primary>Geometry::Circle</primary><secondary>center</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_geometry_1_1_point">Point</link> Geometry::Circle::center</computeroutput></para><para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00062">62</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_geometry_1_1_circle_1a01c85a4e3f9ea0e7eb98825a465cd509"/><section>
+    <title>r</title>
+<indexterm><primary>r</primary><secondary>Geometry::Circle</secondary></indexterm>
+<indexterm><primary>Geometry::Circle</primary><secondary>r</secondary></indexterm>
+<para><computeroutput><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::Circle::r</computeroutput></para><para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00063">63</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+geometry/<link linkend="_geo_8hpp">geo.hpp</link></section>
+</section>

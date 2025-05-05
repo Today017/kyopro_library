@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_f_p_s" xml:lang="ja">
+<title>FPS 名前空間</title>
+<indexterm><primary>FPS</primary></indexterm>
+<para>
+
+<para>形式的冪級数 borrowed from:https://potato167.github.io/po167_library </para>
+ 
+</para>
+<simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; T &gt; <link linkend="_namespace_f_p_s_1ab8e16e5c05f00c85e0a2d8ed9650a75a">Mul</link> (const vector&lt; T &gt; &amp;a, const vector&lt; T &gt; &amp;b)</para>
+
+<para>多項式 f, g の積を返す </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; T &gt; <link linkend="_namespace_f_p_s_1acab6f12f41b871e31d16cb02a9a7c77d">Add</link> (const vector&lt; T &gt; &amp;a, const vector&lt; T &gt; &amp;b)</para>
+
+<para>多項式 f, g の和を返す </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; T &gt; <link linkend="_namespace_f_p_s_1a3f18c8b1d6f03a0255b86f501cbff66a">Sub</link> (const vector&lt; T &gt; &amp;a, const vector&lt; T &gt; &amp;b)</para>
+
+<para>多項式 f, g の差を返す </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; T &gt; <link linkend="_namespace_f_p_s_1a8eef2a11b10be52cddfd0c9288c4457b">Inv</link> (vector&lt; T &gt; f, int len=-1)</para>
+
+<para>多項式 f に対し、f*g = 1 なる g を返す </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; T &gt; <link linkend="_namespace_f_p_s_1a1c7e8ea5e82c17b70c163bda72b5c85d">CyclicConvolution</link> (vector&lt; T &gt; f, vector&lt; T &gt; g)</para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; T &gt; <link linkend="_namespace_f_p_s_1aac4a1224c61c85667cd96f74e138405b">Integral</link> (vector&lt; T &gt; f)</para>
+
+<para>多項式 f の積分を返す </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; T &gt; <link linkend="_namespace_f_p_s_1a18d3a03cb678d29deefc254e2fcb1b50">Differential</link> (vector&lt; T &gt; f)</para>
+
+<para>多項式 f の微分を返す </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; T &gt; <link linkend="_namespace_f_p_s_1a513c11c4e1a5a02c0e665f8c8d0d71d9">Exp</link> (vector&lt; T &gt; f, int len=-1)</para>
+
+<para>多項式 f について、e^f を返す </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>vector&lt; T &gt; <link linkend="_namespace_f_p_s_1a1464585355625594be0a83eb118fa2de">Log</link> (vector&lt; T &gt; f, int len=-1)</para>
+
+<para>多項式 f について、log(f) を返す </para>
+</listitem>
+            <listitem><para>template&lt;class T&gt; </para><para>vector&lt; T &gt; <link linkend="_namespace_f_p_s_1ad880a20b5da1f7ba2f05aa95429ee08d">Pow</link> (vector&lt; T &gt; f, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> M, int len=-1)</para>
+
+<para>多項式 f^M を返す </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>void <link linkend="_namespace_f_p_s_1a19f83b0936d8aa5255d060101ecd8fad">Extend</link> (vector&lt; T &gt; &amp;v)</para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>void <link linkend="_namespace_f_p_s_1aa2f295d3c015c1b90c03b895507e2961">PickEvenOdd</link> (vector&lt; T &gt; &amp;v, int odd)</para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>pair&lt; vector&lt; T &gt;, vector&lt; T &gt; &gt; <link linkend="_namespace_f_p_s_1a50424cf32ca2c09b2a9ad454915e84c9">Div</link> (vector&lt; T &gt; f, vector&lt; T &gt; g)</para>
+
+<para>多項式 f, g について、<computeroutput>f = gq + r</computeroutput> なる q, r を返す </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>T <link linkend="_namespace_f_p_s_1ad5a7c86fb5d29d85a778514cbc31647e">BostonMori</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> k, vector&lt; T &gt; P, vector&lt; T &gt; Q)</para>
+
+<para><computeroutput>[x^k](P/Q)</computeroutput> を返す </para>
+</listitem>
+            <listitem><para>template&lt;typename T&gt; </para><para>T <link linkend="_namespace_f_p_s_1ad80ebbb0f03f81108e94e432272b9cfe">KthLinear</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> k, vector&lt; T &gt; a, vector&lt; T &gt; c)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+
+<para>形式的冪級数 borrowed from:https://potato167.github.io/po167_library </para>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_namespace_f_p_s_1ab8e16e5c05f00c85e0a2d8ed9650a75a"/><section>
+    <title>Mul()</title>
+<indexterm><primary>Mul</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>Mul</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; T &gt; FPS::Mul (const vector&lt; T &gt; &amp; a, const vector&lt; T &gt; &amp; b)</computeroutput></para><para>
+
+<para>多項式 f, g の積を返す </para>
+</para>
+<para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00012">12</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_f_p_s_1acab6f12f41b871e31d16cb02a9a7c77d"/><section>
+    <title>Add()</title>
+<indexterm><primary>Add</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>Add</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; T &gt; FPS::Add (const vector&lt; T &gt; &amp; a, const vector&lt; T &gt; &amp; b)</computeroutput></para><para>
+
+<para>多項式 f, g の和を返す </para>
+</para>
+<para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_f_p_s_1a3f18c8b1d6f03a0255b86f501cbff66a"/><section>
+    <title>Sub()</title>
+<indexterm><primary>Sub</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>Sub</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; T &gt; FPS::Sub (const vector&lt; T &gt; &amp; a, const vector&lt; T &gt; &amp; b)</computeroutput></para><para>
+
+<para>多項式 f, g の差を返す </para>
+</para>
+<para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00029">29</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_f_p_s_1a8eef2a11b10be52cddfd0c9288c4457b"/><section>
+    <title>Inv()</title>
+<indexterm><primary>Inv</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>Inv</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; T &gt; FPS::Inv (vector&lt; T &gt; f, int len = <computeroutput>-1</computeroutput>
+)</computeroutput></para><para>
+
+<para>多項式 f に対し、f*g = 1 なる g を返す </para>
+</para>
+<para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00040">40</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_f_p_s_1a1c7e8ea5e82c17b70c163bda72b5c85d"/><section>
+    <title>CyclicConvolution()</title>
+<indexterm><primary>CyclicConvolution</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>CyclicConvolution</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; T &gt; FPS::CyclicConvolution (vector&lt; T &gt; f, vector&lt; T &gt; g)</computeroutput></para><para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00074">74</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_f_p_s_1aac4a1224c61c85667cd96f74e138405b"/><section>
+    <title>Integral()</title>
+<indexterm><primary>Integral</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>Integral</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; T &gt; FPS::Integral (vector&lt; T &gt; f)</computeroutput></para><para>
+
+<para>多項式 f の積分を返す </para>
+</para>
+<para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00086">86</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_f_p_s_1a18d3a03cb678d29deefc254e2fcb1b50"/><section>
+    <title>Differential()</title>
+<indexterm><primary>Differential</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>Differential</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; T &gt; FPS::Differential (vector&lt; T &gt; f)</computeroutput></para><para>
+
+<para>多項式 f の微分を返す </para>
+</para>
+<para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00101">101</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_f_p_s_1a513c11c4e1a5a02c0e665f8c8d0d71d9"/><section>
+    <title>Exp()</title>
+<indexterm><primary>Exp</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>Exp</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; T &gt; FPS::Exp (vector&lt; T &gt; f, int len = <computeroutput>-1</computeroutput>
+)</computeroutput></para><para>
+
+<para>多項式 f について、e^f を返す </para>
+</para>
+<para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00110">110</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_f_p_s_1a1464585355625594be0a83eb118fa2de"/><section>
+    <title>Log()</title>
+<indexterm><primary>Log</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>Log</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>vector&lt; T &gt; FPS::Log (vector&lt; T &gt; f, int len = <computeroutput>-1</computeroutput>
+)</computeroutput></para><para>
+
+<para>多項式 f について、log(f) を返す </para>
+</para>
+<para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00143">143</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_f_p_s_1ad880a20b5da1f7ba2f05aa95429ee08d"/><section>
+    <title>Pow()</title>
+<indexterm><primary>Pow</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>Pow</secondary></indexterm>
+<computeroutput>template&lt;class T&gt; </computeroutput><para><computeroutput>vector&lt; T &gt; FPS::Pow (vector&lt; T &gt; f, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> M, int len = <computeroutput>-1</computeroutput>
+)</computeroutput></para><para>
+
+<para>多項式 f^M を返す </para>
+</para>
+<para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00155">155</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_f_p_s_1a19f83b0936d8aa5255d060101ecd8fad"/><section>
+    <title>Extend()</title>
+<indexterm><primary>Extend</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>Extend</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>void FPS::Extend (vector&lt; T &gt; &amp; v)</computeroutput></para><para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00189">189</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_f_p_s_1aa2f295d3c015c1b90c03b895507e2961"/><section>
+    <title>PickEvenOdd()</title>
+<indexterm><primary>PickEvenOdd</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>PickEvenOdd</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>void FPS::PickEvenOdd (vector&lt; T &gt; &amp; v, int odd)</computeroutput></para><para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00205">205</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_f_p_s_1a50424cf32ca2c09b2a9ad454915e84c9"/><section>
+    <title>Div()</title>
+<indexterm><primary>Div</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>Div</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>pair&lt; vector&lt; T &gt;, vector&lt; T &gt; &gt; FPS::Div (vector&lt; T &gt; f, vector&lt; T &gt; g)</computeroutput></para><para>
+
+<para>多項式 f, g について、<computeroutput>f = gq + r</computeroutput> なる q, r を返す </para>
+</para>
+<para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00231">231</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_f_p_s_1ad5a7c86fb5d29d85a778514cbc31647e"/><section>
+    <title>BostonMori()</title>
+<indexterm><primary>BostonMori</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>BostonMori</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T FPS::BostonMori (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> k, vector&lt; T &gt; P, vector&lt; T &gt; Q)</computeroutput></para><para>
+
+<para><computeroutput>[x^k](P/Q)</computeroutput> を返す </para>
+</para>
+<para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00248">248</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespace_f_p_s_1ad80ebbb0f03f81108e94e432272b9cfe"/><section>
+    <title>KthLinear()</title>
+<indexterm><primary>KthLinear</primary><secondary>FPS</secondary></indexterm>
+<indexterm><primary>FPS</primary><secondary>KthLinear</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T FPS::KthLinear (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> k, vector&lt; T &gt; a, vector&lt; T &gt; c)</computeroutput></para><para>
+ <link linkend="_fps_8hpp_source">fps.hpp</link> の <link linkend="_fps_8hpp_source_1l00283">283</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

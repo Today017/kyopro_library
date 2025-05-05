@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_totient_8hpp" xml:lang="ja">
+<title>math/totient.hpp ファイル</title>
+<indexterm><primary>math/totient.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> <link linkend="_totient_8hpp_1a56f751b8859fdd976f4812d1e01eac32">Totient</link> (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> n)</para>
+
+<para>オイラーのtotient関数 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_totient_8hpp_1a56f751b8859fdd976f4812d1e01eac32"/><section>
+    <title>Totient()</title>
+<indexterm><primary>Totient</primary><secondary>totient.hpp</secondary></indexterm>
+<indexterm><primary>totient.hpp</primary><secondary>Totient</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> Totient (<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> n)</computeroutput></para><para>
+
+<para>オイラーのtotient関数 </para>
+</para>
+
+<para>n 以下で n と互いに素な自然数の個数を返す。 <note><title>覚え書き</title>
+
+<para>O(sqrt(N)) </para>
+</note>
+</para>
+<para>
+ <link linkend="_totient_8hpp_source">totient.hpp</link> の <link linkend="_totient_8hpp_source_1l00006">6</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

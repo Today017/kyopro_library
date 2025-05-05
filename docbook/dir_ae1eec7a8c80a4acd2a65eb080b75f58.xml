@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_ae1eec7a8c80a4acd2a65eb080b75f58" xml:lang="ja">
+<title>kyopro_tools ディレクトリリファレンス</title>
+<indexterm><primary>kyopro_tools ディレクトリリファレンス</primary></indexterm>
+<simplesect>
+    <title>ファイル    </title>
+        <itemizedlist>
+            <listitem><para>ファイル <link linkend="_compress_8py">compress.py</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_exp_8py">exp.py</link></para>
+</listitem>
+            <listitem><para>ファイル <link linkend="_mod__reconstruct_8py">mod_reconstruct.py</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

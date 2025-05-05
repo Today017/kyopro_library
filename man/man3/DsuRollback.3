@@ -1,0 +1,141 @@
+.TH "DsuRollback" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DsuRollback \- ロールバック可能DSU  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'dsu_rollback\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBDsuRollback\fP ()=default"
+.br
+.ti -1c
+.RI "\fBDsuRollback\fP (int n)"
+.br
+.RI "コンストラクタ "
+.ti -1c
+.RI "int \fBfind\fP (int x)"
+.br
+.RI "頂点 x を含む連結成分の代表元を返す "
+.ti -1c
+.RI "bool \fBmerge\fP (int x, int y)"
+.br
+.RI "頂点 x と y を連結し、true を返す "
+.ti -1c
+.RI "void \fBundo\fP ()"
+.br
+.RI "最後に行った連結操作を取り消す "
+.ti -1c
+.RI "void \fBsnapshot\fP ()"
+.br
+.RI "DSUの状態を上書き保存する "
+.ti -1c
+.RI "void \fBrollback\fP ()"
+.br
+.RI "最後に snapshot した時点まで巻き戻す "
+.ti -1c
+.RI "int \fBsize\fP (int x)"
+.br
+.RI "頂点 x を含む連結成分のサイズを返す "
+.ti -1c
+.RI "bool \fBsame\fP (int x, int y)"
+.br
+.RI "頂点 x と y が同じ連結成分に属するか否かを返す "
+.ti -1c
+.RI "int \fBcount\fP ()"
+.br
+.RI "連結成分の個数を返す "
+.ti -1c
+.RI "\fBVVI\fP \fBgroups\fP ()"
+.br
+.RI "各頂点を連結成分に分解する "
+.in -1c
+.SH "詳解"
+.PP 
+ロールバック可能DSU 
+.PP
+ \fBdsu_rollback\&.hpp\fP の \fB4\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "DsuRollback::DsuRollback ()\fR [default]\fP"
+
+.SS "DsuRollback::DsuRollback (int n)\fR [inline]\fP"
+
+.PP
+コンストラクタ 
+.PP
+ \fBdsu_rollback\&.hpp\fP の \fB8\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "int DsuRollback::find (int x)\fR [inline]\fP"
+
+.PP
+頂点 x を含む連結成分の代表元を返す 
+.PP
+ \fBdsu_rollback\&.hpp\fP の \fB15\fP 行目に定義があります。
+.SS "bool DsuRollback::merge (int x, int y)\fR [inline]\fP"
+
+.PP
+頂点 x と y を連結し、true を返す 既に連結されている場合は false を返す 
+.PP
+ \fBdsu_rollback\&.hpp\fP の \fB22\fP 行目に定義があります。
+.PP
+参照先 \fBfind()\fP\&.
+.SS "void DsuRollback::undo ()\fR [inline]\fP"
+
+.PP
+最後に行った連結操作を取り消す 
+.PP
+ \fBdsu_rollback\&.hpp\fP の \fB36\fP 行目に定義があります。
+.SS "void DsuRollback::snapshot ()\fR [inline]\fP"
+
+.PP
+DSUの状態を上書き保存する 
+.PP
+ \fBdsu_rollback\&.hpp\fP の \fB45\fP 行目に定義があります。
+.SS "void DsuRollback::rollback ()\fR [inline]\fP"
+
+.PP
+最後に snapshot した時点まで巻き戻す 
+.PP
+ \fBdsu_rollback\&.hpp\fP の \fB48\fP 行目に定義があります。
+.PP
+参照先 \fBundo()\fP\&.
+.SS "int DsuRollback::size (int x)\fR [inline]\fP"
+
+.PP
+頂点 x を含む連結成分のサイズを返す 
+.PP
+ \fBdsu_rollback\&.hpp\fP の \fB51\fP 行目に定義があります。
+.SS "bool DsuRollback::same (int x, int y)\fR [inline]\fP"
+
+.PP
+頂点 x と y が同じ連結成分に属するか否かを返す 
+.PP
+ \fBdsu_rollback\&.hpp\fP の \fB54\fP 行目に定義があります。
+.PP
+参照先 \fBfind()\fP\&.
+.SS "int DsuRollback::count ()\fR [inline]\fP"
+
+.PP
+連結成分の個数を返す 
+.PP
+ \fBdsu_rollback\&.hpp\fP の \fB57\fP 行目に定義があります。
+.SS "\fBVVI\fP DsuRollback::groups ()\fR [inline]\fP"
+
+.PP
+各頂点を連結成分に分解する 
+.PP
+ \fBdsu_rollback\&.hpp\fP の \fB60\fP 行目に定義があります。
+.PP
+参照先 \fBfind()\fP\&.
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

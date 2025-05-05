@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_abel" xml:lang="ja">
+<title>Abel 名前空間</title>
+<indexterm><primary>Abel</primary></indexterm>
+<para>
+
+<para>可換群 </para>
+ 
+</para>
+<simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_abel_1_1_sum">Sum</link></para>
+
+<para>和 </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_abel_1_1_xor">Xor</link></para>
+
+<para>XOR </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+
+<para>可換群 </para>
+</section>
+</section>

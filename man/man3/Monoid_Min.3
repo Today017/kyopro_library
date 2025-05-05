@@ -1,0 +1,65 @@
+.TH "Monoid::Min< T, max_value >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Monoid::Min< T, max_value > \- Minモノイド  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'monoid\&.hpp'\fP
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "using \fBType\fP = T"
+.br
+.in -1c
+.SS "静的公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "static \fBType\fP \fBid\fP ()"
+.br
+.ti -1c
+.RI "static \fBType\fP \fBop\fP (const \fBType\fP &a, const \fBType\fP &b)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename T, T max_value = INF>
+.br
+struct Monoid::Min< T, max_value >"Minモノイド 
+
+
+.PP
+\fBテンプレート引数\fP
+.RS 4
+\fImax_value\fP 単位元 
+.RE
+.PP
+
+.PP
+ \fBmonoid\&.hpp\fP の \fB9\fP 行目に定義があります。
+.SH "型定義メンバ詳解"
+.PP 
+.SS "template<typename T, T max_value = INF> using \fBMonoid::Min\fP< T, max_value >::Type = T"
+
+.PP
+ \fBmonoid\&.hpp\fP の \fB10\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "template<typename T, T max_value = INF> static \fBType\fP \fBMonoid::Min\fP< T, max_value >::id ()\fR [inline]\fP, \fR [static]\fP"
+
+.PP
+ \fBmonoid\&.hpp\fP の \fB11\fP 行目に定義があります。
+.SS "template<typename T, T max_value = INF> static \fBType\fP \fBMonoid::Min\fP< T, max_value >::op (const \fBType\fP & a, const \fBType\fP & b)\fR [inline]\fP, \fR [static]\fP"
+
+.PP
+ \fBmonoid\&.hpp\fP の \fB12\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_linear__equation_8hpp_source" xml:lang="ja">
+<title>linear_equation.hpp</title>
+<indexterm><primary>math/linear_equation.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_linear__equation_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_linear__equation_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;F_2&#32;上の連立線形方程式</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@ref&#32;https://mathlandscape.com/solution-sp/</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@ref&#32;https://yukicoder.me/submissions/1011997</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00006"/>00006 <emphasis role="comment">///&#32;@ref&#32;verify:https://yukicoder.me/problems/no/2895</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00007"/>00007 
+<anchor xml:id="_linear__equation_8hpp_source_1l00008"/>00008 <emphasis role="comment">///&#32;@brief&#32;掃き出し法</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00009"/>00009 <emphasis role="comment">///&#32;@param&#32;a&#32;連立方程式&#32;Ax=b&#32;の拡大係数行列</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00010"/>00010 <emphasis role="comment">///&#32;@param&#32;where&#32;ピボットとなる変数を記録するための配列</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00011"/>00011 <emphasis role="comment">///&#32;@return&#32;A&#32;のランク</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00012"/><link linkend="_linear__equation_8hpp_1ad783a386934fd2ebc14105b5babb4aec">00012</link> <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_linear__equation_8hpp_1ad783a386934fd2ebc14105b5babb4aec">RowReduction</link>(vector&lt;vector&lt;<emphasis role="keywordtype">bool</emphasis>&gt;&gt;&amp;&#32;a,&#32;VI&amp;&#32;where)&#32;{
+<anchor xml:id="_linear__equation_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;row=a.size(),col=a.front().size();
+<anchor xml:id="_linear__equation_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rank=0;
+<anchor xml:id="_linear__equation_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(c,col-1)&#32;{
+<anchor xml:id="_linear__equation_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;pivot=rank;
+<anchor xml:id="_linear__equation_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(pivot&lt;row&amp;&amp;!a[pivot][c])&#32;pivot++;
+<anchor xml:id="_linear__equation_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(pivot==row)&#32;<emphasis role="keywordflow">continue</emphasis>;
+<anchor xml:id="_linear__equation_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;swap(a[pivot],a[rank]);
+<anchor xml:id="_linear__equation_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;where.push_back(c);
+<anchor xml:id="_linear__equation_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(r,row)&#32;{
+<anchor xml:id="_linear__equation_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(r!=rank&amp;&amp;a[r][c])&#32;{
+<anchor xml:id="_linear__equation_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//A[r]^=A[c]</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,col)&#32;a[r][i]=a[r][i]^a[rank][i];
+<anchor xml:id="_linear__equation_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_linear__equation_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_linear__equation_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rank++;
+<anchor xml:id="_linear__equation_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_linear__equation_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;rank;
+<anchor xml:id="_linear__equation_8hpp_source_1l00030"/>00030 }
+<anchor xml:id="_linear__equation_8hpp_source_1l00031"/>00031 
+<anchor xml:id="_linear__equation_8hpp_source_1l00032"/>00032 <emphasis role="comment">///&#32;@brief&#32;連立線形方程式&#32;Ax=b&#32;を解く</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00033"/>00033 <emphasis role="comment">///&#32;@param&#32;x0&#32;特殊解(b=0&#32;の場合は自明解になる)</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00034"/>00034 <emphasis role="comment">///&#32;@param&#32;ker&#32;Ax=0&#32;の解空間の基底</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00035"/>00035 <emphasis role="comment">///&#32;@note&#32;一般解は&#32;x0&#32;と解空間の基底の任意の線形結合で表される</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00036"/>00036 <emphasis role="comment">///&#32;@attention&#32;A&#32;のサイズによっては基底のサイズが巨大になるので注意すること</emphasis>
+<anchor xml:id="_linear__equation_8hpp_source_1l00037"/><link linkend="_linear__equation_8hpp_1ac91575eafd15cbdfc1da2ae7cf5bb964">00037</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_linear__equation_8hpp_1ac91575eafd15cbdfc1da2ae7cf5bb964">LinearEquation</link>(vector&lt;vector&lt;<emphasis role="keywordtype">bool</emphasis>&gt;&gt;&#32;a,&#32;vector&lt;<emphasis role="keywordtype">bool</emphasis>&gt;&#32;b,&#32;vector&lt;<emphasis role="keywordtype">bool</emphasis>&gt;&amp;&#32;x0,&#32;vector&lt;vector&lt;<emphasis role="keywordtype">bool</emphasis>&gt;&gt;&amp;&#32;ker)&#32;{
+<anchor xml:id="_linear__equation_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;row=a.size(),col=a.front().size();
+<anchor xml:id="_linear__equation_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;assert(b.size()==row);
+<anchor xml:id="_linear__equation_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;vector&lt;vector&lt;<emphasis role="keywordtype">bool</emphasis>&gt;&gt;&#32;a2=a;
+<anchor xml:id="_linear__equation_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,row)&#32;a2[i].push_back(b[i]);
+<anchor xml:id="_linear__equation_8hpp_source_1l00042"/>00042 
+<anchor xml:id="_linear__equation_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;VI&#32;where;
+<anchor xml:id="_linear__equation_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rank=RowReduction(a2,where);
+<anchor xml:id="_linear__equation_8hpp_source_1l00045"/>00045 
+<anchor xml:id="_linear__equation_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;r=rank;&#32;r&lt;row;&#32;r++)&#32;<emphasis role="keywordflow">if</emphasis>(a2[r].back())&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_linear__equation_8hpp_source_1l00047"/>00047 
+<anchor xml:id="_linear__equation_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;x0=vector&lt;<emphasis role="keywordtype">bool</emphasis>&gt;(col,<emphasis role="keyword">false</emphasis>);
+<anchor xml:id="_linear__equation_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,rank)&#32;x0[where[i]]=a2[i].back();
+<anchor xml:id="_linear__equation_8hpp_source_1l00050"/>00050 
+<anchor xml:id="_linear__equation_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;r=0;
+<anchor xml:id="_linear__equation_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(c,col)&#32;{
+<anchor xml:id="_linear__equation_8hpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(r&lt;rank&amp;&amp;c==where[r])&#32;{
+<anchor xml:id="_linear__equation_8hpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;r++;
+<anchor xml:id="_linear__equation_8hpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">continue</emphasis>;
+<anchor xml:id="_linear__equation_8hpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_linear__equation_8hpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;<emphasis role="keywordtype">bool</emphasis>&gt;&#32;x(col);
+<anchor xml:id="_linear__equation_8hpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x[c]=<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_linear__equation_8hpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(r2,r)&#32;x[where[r2]]=a2[r2][c];
+<anchor xml:id="_linear__equation_8hpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ker.push_back(x);
+<anchor xml:id="_linear__equation_8hpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_linear__equation_8hpp_source_1l00062"/>00062 
+<anchor xml:id="_linear__equation_8hpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_linear__equation_8hpp_source_1l00064"/>00064 }
+</programlisting></section>

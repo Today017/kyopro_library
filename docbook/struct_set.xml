@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_set" xml:lang="ja">
+<title>Set&lt; T &gt; 構造体テンプレート</title>
+<indexterm><primary>Set&lt; T &gt;</primary></indexterm>
+<para>
+
+<para>std::set ラッパー </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;set.hpp&quot;</computeroutput>
+</para>
+<para>Set&lt; T &gt; の継承関係図    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_set.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>公開メンバ関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_set_1ad50edd8c655871b6fbe7280b2d29e673">Set</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_struct_set_1a58491814e28dcd2876bc6ce87f3cc809">Set</link> (T <link linkend="_struct_set_1a970a07f6923c83c2fa1195803edb6364">not_found</link>=-1)</para>
+
+<para>コンストラクタ </para>
+</listitem>
+            <listitem><para>T <link linkend="_struct_set_1a9625ca33788f09648b240f98c0eb33a7">min</link> ()</para>
+
+<para>最小値を返す </para>
+</listitem>
+            <listitem><para>T <link linkend="_struct_set_1ab1cbe6674e6ec706e07d03e13bf20dcd">max</link> ()</para>
+
+<para>最大値を返す </para>
+</listitem>
+            <listitem><para>T <link linkend="_struct_set_1a77887906e2020e72f3d99af29e98db67">pop_min</link> ()</para>
+
+<para>最小値を返し、削除する </para>
+</listitem>
+            <listitem><para>T <link linkend="_struct_set_1a5a23b8d407841f11cff0d6a19f4a9faf">pop_max</link> ()</para>
+
+<para>最大値を返し、削除する </para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_set_1ab53c8f03bd84270af37c399351e085fa">contains</link> (T x)</para>
+
+<para>x が含まれているか否かを返す </para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_set_1ad1f6464e4c982ea6ec2846fc33ccd86e">discard</link> (T x)</para>
+
+<para>x を削除する </para>
+</listitem>
+            <listitem><para>T <link linkend="_struct_set_1a5f67dcbc5701f7af323117f7473329a6">gt</link> (T x)</para>
+
+<para>x より大きい最小の値を返す </para>
+</listitem>
+            <listitem><para>T <link linkend="_struct_set_1a7e8d9363142571d7b1866bc9241c3b01">ge</link> (T x)</para>
+
+<para>x 以上の最小の値を返す </para>
+</listitem>
+            <listitem><para>T <link linkend="_struct_set_1a9dc583428486cda3dfc0b16beb4a2981">le</link> (T x)</para>
+
+<para>x 以下の最大の値を返す </para>
+</listitem>
+            <listitem><para>T <link linkend="_struct_set_1a08ba7ca11b7433208e0c8ad341964542">lt</link> (T x)</para>
+
+<para>x 未満の最大値の値を返す </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>公開変数類    </title>
+        <itemizedlist>
+            <listitem><para>T <link linkend="_struct_set_1a970a07f6923c83c2fa1195803edb6364">not_found</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>詳解</title>
+<simplesect><title>template&lt;typename T&gt;<?linebreak?>struct Set&lt; T &gt;</title></simplesect>
+
+<para>std::set ラッパー </para>
+<para>
+ <link linkend="_set_8hpp_source">set.hpp</link> の <link linkend="_set_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
+</section>
+<section>
+<title>構築子と解体子</title>
+<anchor xml:id="_struct_set_1ad50edd8c655871b6fbe7280b2d29e673"/><section>
+    <title>Set()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Set</primary><secondary>Set&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; T &gt;</primary><secondary>Set</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput><link linkend="_struct_set">Set</link>&lt; T &gt;<link linkend="_struct_set">::Set</link> ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_set_1a58491814e28dcd2876bc6ce87f3cc809"/><section>
+    <title>Set()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Set</primary><secondary>Set&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; T &gt;</primary><secondary>Set</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput><link linkend="_struct_set">Set</link>&lt; T &gt;<link linkend="_struct_set">::Set</link> (T not_found = <computeroutput>-1</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>コンストラクタ </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+引数</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>not_found</entry><entry>
+<para>指定の値が見つからなかったときに返す値 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+ <link linkend="_set_8hpp_source">set.hpp</link> の <link linkend="_set_8hpp_source_1l00012">12</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_set_8hpp_source_1l00007">not_found</link>.</para>
+</section>
+</section>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_struct_set_1a9625ca33788f09648b240f98c0eb33a7"/><section>
+    <title>min()</title>
+<indexterm><primary>min</primary><secondary>Set&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; T &gt;</primary><secondary>min</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T <link linkend="_struct_set">Set</link>&lt; T &gt;::min ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>最小値を返す </para>
+</para>
+<para>
+ <link linkend="_set_8hpp_source">set.hpp</link> の <link linkend="_set_8hpp_source_1l00015">15</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_set_8hpp_source_1l00007">not_found</link>.</para>
+</section>
+<anchor xml:id="_struct_set_1ab1cbe6674e6ec706e07d03e13bf20dcd"/><section>
+    <title>max()</title>
+<indexterm><primary>max</primary><secondary>Set&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; T &gt;</primary><secondary>max</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T <link linkend="_struct_set">Set</link>&lt; T &gt;::max ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>最大値を返す </para>
+</para>
+<para>
+ <link linkend="_set_8hpp_source">set.hpp</link> の <link linkend="_set_8hpp_source_1l00021">21</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_set_8hpp_source_1l00007">not_found</link>.</para>
+</section>
+<anchor xml:id="_struct_set_1a77887906e2020e72f3d99af29e98db67"/><section>
+    <title>pop_min()</title>
+<indexterm><primary>pop_min</primary><secondary>Set&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; T &gt;</primary><secondary>pop_min</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T <link linkend="_struct_set">Set</link>&lt; T &gt;::pop_min ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>最小値を返し、削除する </para>
+</para>
+<para>
+ <link linkend="_set_8hpp_source">set.hpp</link> の <link linkend="_set_8hpp_source_1l00027">27</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_set_8hpp_source_1l00015">min()</link>, <link linkend="_set_8hpp_source_1l00007">not_found</link>.</para>
+</section>
+<anchor xml:id="_struct_set_1a5a23b8d407841f11cff0d6a19f4a9faf"/><section>
+    <title>pop_max()</title>
+<indexterm><primary>pop_max</primary><secondary>Set&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; T &gt;</primary><secondary>pop_max</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T <link linkend="_struct_set">Set</link>&lt; T &gt;::pop_max ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>最大値を返し、削除する </para>
+</para>
+<para>
+ <link linkend="_set_8hpp_source">set.hpp</link> の <link linkend="_set_8hpp_source_1l00035">35</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_set_8hpp_source_1l00021">max()</link>, <link linkend="_set_8hpp_source_1l00007">not_found</link>.</para>
+</section>
+<anchor xml:id="_struct_set_1ab53c8f03bd84270af37c399351e085fa"/><section>
+    <title>contains()</title>
+<indexterm><primary>contains</primary><secondary>Set&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; T &gt;</primary><secondary>contains</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_set">Set</link>&lt; T &gt;::contains (T x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>x が含まれているか否かを返す </para>
+</para>
+<para>
+ <link linkend="_set_8hpp_source">set.hpp</link> の <link linkend="_set_8hpp_source_1l00043">43</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_set_1ad1f6464e4c982ea6ec2846fc33ccd86e"/><section>
+    <title>discard()</title>
+<indexterm><primary>discard</primary><secondary>Set&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; T &gt;</primary><secondary>discard</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_set">Set</link>&lt; T &gt;::discard (T x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>x を削除する </para>
+</para>
+
+<para>x が含まれていたか否かを返す </para>
+<para>
+ <link linkend="_set_8hpp_source">set.hpp</link> の <link linkend="_set_8hpp_source_1l00049">49</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_set_1a5f67dcbc5701f7af323117f7473329a6"/><section>
+    <title>gt()</title>
+<indexterm><primary>gt</primary><secondary>Set&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; T &gt;</primary><secondary>gt</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T <link linkend="_struct_set">Set</link>&lt; T &gt;::gt (T x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>x より大きい最小の値を返す </para>
+</para>
+<para>
+ <link linkend="_set_8hpp_source">set.hpp</link> の <link linkend="_set_8hpp_source_1l00057">57</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_set_8hpp_source_1l00007">not_found</link>.</para>
+</section>
+<anchor xml:id="_struct_set_1a7e8d9363142571d7b1866bc9241c3b01"/><section>
+    <title>ge()</title>
+<indexterm><primary>ge</primary><secondary>Set&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; T &gt;</primary><secondary>ge</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T <link linkend="_struct_set">Set</link>&lt; T &gt;::ge (T x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>x 以上の最小の値を返す </para>
+</para>
+<para>
+ <link linkend="_set_8hpp_source">set.hpp</link> の <link linkend="_set_8hpp_source_1l00064">64</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_set_8hpp_source_1l00007">not_found</link>.</para>
+</section>
+<anchor xml:id="_struct_set_1a9dc583428486cda3dfc0b16beb4a2981"/><section>
+    <title>le()</title>
+<indexterm><primary>le</primary><secondary>Set&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; T &gt;</primary><secondary>le</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T <link linkend="_struct_set">Set</link>&lt; T &gt;::le (T x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>x 以下の最大の値を返す </para>
+</para>
+<para>
+ <link linkend="_set_8hpp_source">set.hpp</link> の <link linkend="_set_8hpp_source_1l00071">71</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_set_8hpp_source_1l00007">not_found</link>.</para>
+</section>
+<anchor xml:id="_struct_set_1a08ba7ca11b7433208e0c8ad341964542"/><section>
+    <title>lt()</title>
+<indexterm><primary>lt</primary><secondary>Set&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; T &gt;</primary><secondary>lt</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T <link linkend="_struct_set">Set</link>&lt; T &gt;::lt (T x)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>x 未満の最大値の値を返す </para>
+</para>
+<para>
+ <link linkend="_set_8hpp_source">set.hpp</link> の <link linkend="_set_8hpp_source_1l00078">78</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_set_8hpp_source_1l00007">not_found</link>.</para>
+</section>
+</section>
+<section>
+<title>メンバ詳解</title>
+<anchor xml:id="_struct_set_1a970a07f6923c83c2fa1195803edb6364"/><section>
+    <title>not_found</title>
+<indexterm><primary>not_found</primary><secondary>Set&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Set&lt; T &gt;</primary><secondary>not_found</secondary></indexterm>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>T <link linkend="_struct_set">Set</link>&lt; T &gt;::not_found</computeroutput></para><para>
+ <link linkend="_set_8hpp_source">set.hpp</link> の <link linkend="_set_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
+</section>
+<para>
+この構造体詳解は次のファイルから抽出されました:</para>
+data_structure/<link linkend="_set_8hpp">set.hpp</link></section>
+</section>
