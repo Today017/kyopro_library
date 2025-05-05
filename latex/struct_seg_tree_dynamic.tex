@@ -1,0 +1,62 @@
+\doxysection{Seg\+Tree\+Dynamic\texorpdfstring{$<$}{<} Monoid \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_seg_tree_dynamic}{}\label{struct_seg_tree_dynamic}\index{SegTreeDynamic$<$ Monoid $>$@{SegTreeDynamic$<$ Monoid $>$}}
+
+
+動的セグ木  
+
+
+
+
+{\ttfamily \#include $<$segtree\+\_\+dynamic.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_seg_tree_dynamic_1_1_node}{Node}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_seg_tree_dynamic_a227357d02ccd09e86117b2bdae1b70e3}\label{struct_seg_tree_dynamic_a227357d02ccd09e86117b2bdae1b70e3} 
+using {\bfseries Type} = typename Monoid\+::\+Type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_seg_tree_dynamic_a59a06ec2a8d6964629a6a789a6d50c6e}\label{struct_seg_tree_dynamic_a59a06ec2a8d6964629a6a789a6d50c6e} 
+{\bfseries Seg\+Tree\+Dynamic} (ll mx=1e9, int q=5e5)
+\begin{DoxyCompactList}\small\item\em サイズ mx の動的セグ木を宣言する \end{DoxyCompactList}\item 
+\Hypertarget{struct_seg_tree_dynamic_aabe5d1774f4bd10f1d1d23de51c14969}\label{struct_seg_tree_dynamic_aabe5d1774f4bd10f1d1d23de51c14969} 
+void {\bfseries set} (ll i, Type v)
+\begin{DoxyCompactList}\small\item\em i 番目の要素を v に変える \end{DoxyCompactList}\item 
+\Hypertarget{struct_seg_tree_dynamic_a94bcb75b9656636184cf16e39aad8a51}\label{struct_seg_tree_dynamic_a94bcb75b9656636184cf16e39aad8a51} 
+Type {\bfseries fold} (ll l, ll r, int idx, ll left, ll right)
+\begin{DoxyCompactList}\small\item\em 区間 \mbox{[}l, r) のモノイド積を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_seg_tree_dynamic_aae80e1181ba66952873e2cfa9b0865f9}\label{struct_seg_tree_dynamic_aae80e1181ba66952873e2cfa9b0865f9} 
+Type {\bfseries fold} (ll l, ll r)
+\item 
+\Hypertarget{struct_seg_tree_dynamic_aa257624ddaf92d127067a1d950c2c65c}\label{struct_seg_tree_dynamic_aa257624ddaf92d127067a1d950c2c65c} 
+Type {\bfseries operator\mbox{[}$\,$\mbox{]}} (ll i)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_seg_tree_dynamic_ac3c641dd98da348fee0d3bea19ccb708}\label{struct_seg_tree_dynamic_ac3c641dd98da348fee0d3bea19ccb708} 
+vector$<$ \mbox{\hyperlink{struct_seg_tree_dynamic_1_1_node}{Node}} $>$ {\bfseries node}
+\item 
+\Hypertarget{struct_seg_tree_dynamic_a4b665cea167c726d364e045eb2943f00}\label{struct_seg_tree_dynamic_a4b665cea167c726d364e045eb2943f00} 
+ll {\bfseries mx} =1e9
+\item 
+\Hypertarget{struct_seg_tree_dynamic_a64fcf4dcb58a2d8b17592d72110e8e91}\label{struct_seg_tree_dynamic_a64fcf4dcb58a2d8b17592d72110e8e91} 
+vector$<$ int $>$ {\bfseries route}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Monoid$>$\newline
+struct Seg\+Tree\+Dynamic$<$ Monoid $>$}
+動的セグ木 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+data\+\_\+structure/segtree\+\_\+dynamic.\+hpp\end{DoxyCompactItemize}

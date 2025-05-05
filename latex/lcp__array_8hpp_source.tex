@@ -1,0 +1,28 @@
+\doxysection{lcp\+\_\+array.\+hpp}
+\hypertarget{lcp__array_8hpp_source}{}\label{lcp__array_8hpp_source}\index{string/lcp\_array.hpp@{string/lcp\_array.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/string/suffix\_array.hpp"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00008\ VI\ LcpArray(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&s,\ \textcolor{keyword}{const}\ VI\&\ sa)\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ n=s.size();}
+\DoxyCodeLine{00010\ \ \ \ \ VI\ lcp(n-\/1),rank(n);}
+\DoxyCodeLine{00011\ \ \ \ \ REP(i,n)\ rank[sa[i]]=i;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ len=0;\textcolor{comment}{//lcp\ の長さ}}
+\DoxyCodeLine{00014\ \ \ \ \ REP(i,n)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(rank[i]==0)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j=sa[rank[i]-\/1];}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(i+len<n\ \&\&\ j+len<n\ \&\&\ s[i+len]==s[j+len])\ len++;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ lcp[rank[i]-\/1]=len;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(len>0)\ len-\/-\/;}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{return}\ lcp;}
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}

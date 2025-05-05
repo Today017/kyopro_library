@@ -1,0 +1,65 @@
+\doxysection{dsu\+\_\+merging.\+hpp}
+\hypertarget{dsu__merging_8hpp_source}{}\label{dsu__merging_8hpp_source}\index{graph/dsu\_merging.hpp@{graph/dsu\_merging.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_dsu_base_semigroup}{DsuBaseSemigroup}}\ \{}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keyword}{using\ }Type=ll;}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keyword}{static}\ Type\ op(Type\ a,\ Type\ b)\ \{\ \textcolor{keywordflow}{return}\ a+b;\ \}}
+\DoxyCodeLine{00006\ \};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Semigroup=DsuBaseSemigroup>}
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }DsuMerging\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{using\ }Type=\textcolor{keyword}{typename}\ Semigroup::Type;}
+\DoxyCodeLine{00013\ \ \ \ \ DsuMerging()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{struct_dsu_merging_a176fb90f26e3696383392e94d7491cdb}{DsuMerging}}(\textcolor{keywordtype}{int}\ n,\ \textcolor{keyword}{const}\ vector<Type>\&\ v)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ par=VI(n);\ iota(ALL(par),0);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ sz=VI(n,1);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ dat=v;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ forest\_count=n;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_dsu_merging_afcf8fd363d1d2348869c0e43df04199d}{find}}(\textcolor{keywordtype}{int}\ x)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(par[x]==x)\ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ par[x]=\mbox{\hyperlink{struct_dsu_merging_afcf8fd363d1d2348869c0e43df04199d}{find}}(par[x]);}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_dsu_merging_adcc3916018699b654242ea713b02adac}{merge}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ x=\mbox{\hyperlink{struct_dsu_merging_afcf8fd363d1d2348869c0e43df04199d}{find}}(x);\ y=\mbox{\hyperlink{struct_dsu_merging_afcf8fd363d1d2348869c0e43df04199d}{find}}(y);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x==y)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(sz[x]>=sz[y])\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ par[y]=x;\ sz[x]+=sz[y];}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ dat[x]=Semigroup::op(dat[x],dat[y]);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ par[x]=y;\ sz[y]+=sz[x];}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ dat[y]=Semigroup::op(dat[x],dat[y]);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ forest\_count-\/-\/;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ Type\&\ \mbox{\hyperlink{struct_dsu_merging_aae3ac2e8c0546029e540523cfb19d57f}{get}}(\textcolor{keywordtype}{int}\ x)\ \{\ \textcolor{keywordflow}{return}\ dat[\mbox{\hyperlink{struct_dsu_merging_afcf8fd363d1d2348869c0e43df04199d}{find}}(x)];\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_dsu_merging_ac70e527b5635c63da7c8923816d4e66e}{size}}(\textcolor{keywordtype}{int}\ x)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ sz[\mbox{\hyperlink{struct_dsu_merging_afcf8fd363d1d2348869c0e43df04199d}{find}}(x)];\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_dsu_merging_a2c094054f83b0f6b1adeb6dea4f1b6e8}{same}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_dsu_merging_afcf8fd363d1d2348869c0e43df04199d}{find}}(x)==\mbox{\hyperlink{struct_dsu_merging_afcf8fd363d1d2348869c0e43df04199d}{find}}(y);\}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_dsu_merging_a76200780dde72296276b892b74e6da98}{count}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ forest\_count;\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \ \ \ \ VVI\ \mbox{\hyperlink{struct_dsu_merging_a500af4d11f058f17b499842d35181b01}{groups}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=par.size();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ VVI\ ret(n);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ REP(i,n)\ ret[\mbox{\hyperlink{struct_dsu_merging_afcf8fd363d1d2348869c0e43df04199d}{find}}(i)].push\_back(i);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ ret.erase(remove\_if(ALL(ret),[\&](\textcolor{keyword}{const}\ VI\&\ v)\ \{\ \textcolor{keywordflow}{return}\ v.empty();\ \}),ret.end());}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00069\ \ \ \ \ VI\ par,sz;}
+\DoxyCodeLine{00070\ \ \ \ \ vector<Type>\ dat;}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ forest\_count;}
+\DoxyCodeLine{00072\ \};}
+
+\end{DoxyCode}

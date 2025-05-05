@@ -1,5 +1,5 @@
 var matrix_8hpp =
 [
-    [ "matMul", "matrix_8hpp.html#af6591037cf5ea73b25a01fe479441433", null ],
-    [ "matPow", "matrix_8hpp.html#afdda3f3b6c91c6708e818794d34b63de", null ]
+    [ "MatMul", "matrix_8hpp.html#a1e820ec4e269e7cf0c6335efe8851469", null ],
+    [ "MatPow", "matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712", null ]
 ];

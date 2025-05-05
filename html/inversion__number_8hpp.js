@@ -1,4 +1,4 @@
 var inversion__number_8hpp =
 [
-    [ "inversionNumber", "inversion__number_8hpp.html#aeedbba8c814b53b586315babad798aa4", null ]
+    [ "InversionNumber", "inversion__number_8hpp.html#a7973f38066e81579d126adfc53beb1ac", null ]
 ];

@@ -1,0 +1,27 @@
+\doxysection{cumulative\+\_\+sum\+\_\+2d.\+hpp}
+\hypertarget{cumulative__sum__2d_8hpp_source}{}\label{cumulative__sum__2d_8hpp_source}\index{data\_structure/cumulative\_sum\_2d.hpp@{data\_structure/cumulative\_sum\_2d.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00006\ \textcolor{keyword}{struct\ }CumulativeSum2D\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ CumulativeSum2D()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{struct_cumulative_sum2_d_a0c031b219413ba2284d6c3cf4ecb5a0d}{CumulativeSum2D}}(\textcolor{keyword}{const}\ vector<vector<U>>\&\ v)\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ n=v.size(),m=v.front().size();}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ dat.assign(n+1,vector<T>(m+1));}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ REP(i,n)\ REP(j,m)\ dat[i+1][j+1]=dat[i][j+1]+dat[i+1][j]-\/dat[i][j]+v[i][j];}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00018\ \ \ \ \ T\ \mbox{\hyperlink{struct_cumulative_sum2_d_a30ae612dead6c43be533a6bfd112a78e}{sum}}(\textcolor{keywordtype}{int}\ l,\ \textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ u,\ \textcolor{keywordtype}{int}\ d)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dat[r][d]-\/dat[l][d]-\/dat[r][u]+dat[l][u];}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ n,m;}
+\DoxyCodeLine{00024\ \ \ \ \ vector<vector<T>>\ dat;}
+\DoxyCodeLine{00025\ \};}
+
+\end{DoxyCode}

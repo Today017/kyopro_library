@@ -1,0 +1,64 @@
+\doxysection{Dsu\+Potentialized\texorpdfstring{$<$}{<} Group \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_dsu_potentialized}{}\label{struct_dsu_potentialized}\index{DsuPotentialized$<$ Group $>$@{DsuPotentialized$<$ Group $>$}}
+
+
+ポテンシャル付き \doxylink{struct_d_s_u}{DSU}  
+
+
+
+
+{\ttfamily \#include $<$dsu\+\_\+potentialized.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_dsu_potentialized_a6a50de8f7bc8099eeeff22de2e98a3bb}\label{struct_dsu_potentialized_a6a50de8f7bc8099eeeff22de2e98a3bb} 
+using {\bfseries Type} = typename Group\+::\+Type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_dsu_potentialized_a8c36a02bd95351413d537dabdcdd40b1}\label{struct_dsu_potentialized_a8c36a02bd95351413d537dabdcdd40b1} 
+{\bfseries Dsu\+Potentialized} (int n)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_potentialized_a8c3159f334ce50adad836e3cdbc996f9}\label{struct_dsu_potentialized_a8c3159f334ce50adad836e3cdbc996f9} 
+int {\bfseries find} (int x)
+\begin{DoxyCompactList}\small\item\em 頂点 x を含む連結成分の代表元を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_potentialized_af5810896e43c6ea1254cee6cbc6230af}\label{struct_dsu_potentialized_af5810896e43c6ea1254cee6cbc6230af} 
+bool {\bfseries merge} (int x, int y, Type w)
+\begin{DoxyCompactList}\small\item\em 頂点　x と y を連結し、weight(x) = op(weight(y), w) とする \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_potentialized_a338b6c5662ba80ae991ca456020b2012}\label{struct_dsu_potentialized_a338b6c5662ba80ae991ca456020b2012} 
+Type {\bfseries weight} (int x)
+\begin{DoxyCompactList}\small\item\em 頂点 x のポテンシャルを返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_potentialized_ab9a92fc6174f8c4b5da8db55c060d1b6}\label{struct_dsu_potentialized_ab9a92fc6174f8c4b5da8db55c060d1b6} 
+Type {\bfseries diff} (int x, int y)
+\begin{DoxyCompactList}\small\item\em op(inv(weight(y)), weight(x)) (x と y の間のポテンシャル差)を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_potentialized_a072746a958e60659bf1b46a0535de056}\label{struct_dsu_potentialized_a072746a958e60659bf1b46a0535de056} 
+int {\bfseries size} (int x)
+\begin{DoxyCompactList}\small\item\em 頂点 x を含む連結成分のサイズを返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_potentialized_aabb23fd0efc64b1a349acd65504fb774}\label{struct_dsu_potentialized_aabb23fd0efc64b1a349acd65504fb774} 
+bool {\bfseries same} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 頂点 x と y が同じ連結成分に属するか否かを返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_potentialized_a407010411f5318c6a00c00508f277e3d}\label{struct_dsu_potentialized_a407010411f5318c6a00c00508f277e3d} 
+int {\bfseries count} ()
+\begin{DoxyCompactList}\small\item\em 連結成分の個数を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_potentialized_a5b4d569d8849d49bf9cda0776c67fe30}\label{struct_dsu_potentialized_a5b4d569d8849d49bf9cda0776c67fe30} 
+VVI {\bfseries groups} ()
+\begin{DoxyCompactList}\small\item\em 各頂点を連結成分に分解する \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Group$>$\newline
+struct Dsu\+Potentialized$<$ Group $>$}
+ポテンシャル付き \doxylink{struct_d_s_u}{DSU} 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Group} & 群 \\
+\hline
+\end{DoxyTemplParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+graph/dsu\+\_\+potentialized.\+hpp\end{DoxyCompactItemize}

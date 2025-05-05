@@ -1,9 +1,10 @@
 var dir_76cf5d2c64440c8b33b2b96569e4a2eb =
 [
-    [ "lcp.hpp", "lcp_8hpp.html", "lcp_8hpp" ],
-    [ "rh.hpp", "rh_8hpp.html", "rh_8hpp" ],
-    [ "rle.hpp", "rle_8hpp.html", "rle_8hpp" ],
-    [ "sa.hpp", "sa_8hpp.html", "sa_8hpp" ],
+    [ "lcp_array.hpp", "lcp__array_8hpp.html", "lcp__array_8hpp" ],
+    [ "rolling_hash.hpp", "rolling__hash_8hpp.html", "rolling__hash_8hpp" ],
+    [ "run_length_encoding.hpp", "run__length__encoding_8hpp.html", "run__length__encoding_8hpp" ],
+    [ "suffix_array.hpp", "suffix__array_8hpp.html", "suffix__array_8hpp" ],
     [ "trie.hpp", "trie_8hpp.html", "trie_8hpp" ],
-    [ "zalgo.hpp", "zalgo_8hpp.html", "zalgo_8hpp" ]
+    [ "util.hpp", "util_8hpp.html", "util_8hpp" ],
+    [ "z_algorithm.hpp", "z__algorithm_8hpp.html", "z__algorithm_8hpp" ]
 ];

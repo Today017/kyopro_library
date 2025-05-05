@@ -1,0 +1,30 @@
+\doxysection{modcal.\+hpp}
+\hypertarget{modcal_8hpp_source}{}\label{modcal_8hpp_source}\index{others/modcal.hpp@{others/modcal.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T=ll>}
+\DoxyCodeLine{00006\ T\ ModPow(T\ x,\ T\ n,\ T\ mod)\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ ll\ ret=1;}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{if}(\textcolor{keyword}{typeid}(T)==\textcolor{keyword}{typeid}(ll)\&\&mod>INF*2)\ \textcolor{keywordflow}{return}\ ModPow<LL>(x,n,mod);}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{while}(n>0)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(n\&1)\ (ret*=x)\%=mod;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ (x*=x)\%=mod;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ n>>=1;}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00015\ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00018\ ll\ ModInv(ll\ a,\ ll\ m)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ ll\ b=m,u=1,v=0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{while}(b)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ ll\ t=a/b;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ a-\/=t*b;\ swap(a,b);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ u-\/=t*v;\ swap(u,v);}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ (u+m)\%m;}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}

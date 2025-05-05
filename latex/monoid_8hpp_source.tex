@@ -1,0 +1,38 @@
+\doxysection{monoid.\+hpp}
+\hypertarget{monoid_8hpp_source}{}\label{monoid_8hpp_source}\index{others/monoid.hpp@{others/monoid.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_monoid}{Monoid}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ T\ max\_value=INF>}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_monoid_1_1_min}{Min}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }Type=T;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Type\ id()\ \{\ \textcolor{keywordflow}{return}\ max\_value;\ \}}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Type\ op(\textcolor{keyword}{const}\ Type\&\ a,\ \textcolor{keyword}{const}\ Type\&\ b)\ \{\ \textcolor{keywordflow}{return}\ min(a,b);\ \}}
+\DoxyCodeLine{00013\ \ \ \ \ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ T\ min\_value=-\/INF>}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_monoid_1_1_max}{Max}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }Type=T;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Type\ id()\ \{\ \textcolor{keywordflow}{return}\ min\_value;\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Type\ op(\textcolor{keyword}{const}\ Type\&\ a,\ \textcolor{keyword}{const}\ Type\&\ b)\ \{\ \textcolor{keywordflow}{return}\ max(a,b);\ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_monoid_1_1_sum}{Sum}}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }Type=T;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Type\ id()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Type\ op(\textcolor{keyword}{const}\ Type\&\ a,\ \textcolor{keyword}{const}\ Type\&\ b)\ \{\ \textcolor{keywordflow}{return}\ a+b;\ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_monoid_1_1_sum_pair}{SumPair}}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }Type=pair<T,int>;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Type\ id()\ \{\ \textcolor{keywordflow}{return}\ make\_pair(T(0),0);\ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Type\ op(\textcolor{keyword}{const}\ Type\&\ a,\ \textcolor{keyword}{const}\ Type\&\ b)\ \{\ \textcolor{keywordflow}{return}\ \{a.first+b.first,a.second+b.second\};\ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,28 @@
+\doxysection{matrix.\+hpp}
+\hypertarget{matrix_8hpp_source}{}\label{matrix_8hpp_source}\index{math/matrix.hpp@{math/matrix.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00004\ vector<vector<T>>\ MatMul(\textcolor{keyword}{const}\ vector<vector<T>>\&\ A,\ \textcolor{keyword}{const}\ vector<vector<T>>\&\ B)\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keywordtype}{int}\ N=A.size();}
+\DoxyCodeLine{00006\ \ \ \ \ vector<vector<T>>\ ret(N,vector<T>(N));}
+\DoxyCodeLine{00007\ \ \ \ \ REP(i,N)\ REP(j,N)\ REP(k,N)\ ret[i][j]+=A[i][k]*B[k][j];}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00009\ \}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00012\ vector<vector<T>>\ MatPow(vector<vector<T>>\ A,\ ll\ b)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ N=A.size();}
+\DoxyCodeLine{00014\ \ \ \ \ vector<vector<T>>\ ret(N,vector<T>(N));}
+\DoxyCodeLine{00015\ \ \ \ \ REP(i,N)\ ret[i][j]=1;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{while}(b)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(b\&1)\ ret=MatMul(ret,A);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ A=MatMul(A,A);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ b>>=1;}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}

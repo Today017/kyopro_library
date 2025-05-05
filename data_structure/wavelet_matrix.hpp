@@ -1,6 +1,6 @@
 #include"../../kyopro_library/template.hpp"
 
-struct SuccinctBitVector{
+struct SuccinctBitVector {
     static const ull NOTFOUND=0xFFFFFFFFFFFFFFFFLLU;
 
 private:

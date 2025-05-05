@@ -1,0 +1,30 @@
+\doxysection{multipoint\+\_\+evaluate.\+hpp}
+\hypertarget{multipoint__evaluate_8hpp_source}{}\label{multipoint__evaluate_8hpp_source}\index{math/multipoint\_evaluate.hpp@{math/multipoint\_evaluate.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/math/fps.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00007\ vector<T>\ MultipointEvaluate(vector<T>\ f,\ vector<T>\ x)\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{int}\ n=x.size();}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{if}(n==0)\ \textcolor{keywordflow}{return}\{\};}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordflow}{if}(n==1)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ T\ ret=0,tmp=1;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(T\ a:f)\ ret+=a*tmp,tmp*=x[0];}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{ret\};}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ n2=1;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{while}(n2<n)\ n2<<=1;}
+\DoxyCodeLine{00017\ \ \ \ \ vector<vector<T>>\ g(n2*2,\{1\});}
+\DoxyCodeLine{00018\ \ \ \ \ REP(i,n)\ g[n2+i]=\{-\/x[i],1\};}
+\DoxyCodeLine{00019\ \ \ \ \ FOR(i,n2-\/1,0)\ g[i]=PolyMul(g[i<<1],g[i<<1|1]);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ g[1]=PolyDiv(f,g[1]).second;}
+\DoxyCodeLine{00022\ \ \ \ \ FOR(i,2,n2+n)\ g[i]=PolyDiv(g[i>>1],g[i]).second;}
+\DoxyCodeLine{00023\ \ \ \ \ vector<T>\ ret(n);}
+\DoxyCodeLine{00024\ \ \ \ \ REP(i,n)\ ret[i]=g[n2+i][0];}
+\DoxyCodeLine{00025\ \ \ \ \ return\ ret;}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}

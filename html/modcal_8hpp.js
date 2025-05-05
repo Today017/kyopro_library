@@ -1,5 +1,5 @@
 var modcal_8hpp =
 [
-    [ "modInv", "modcal_8hpp.html#a62fad876bcfd9f0c9b5b1f8bb18c7502", null ],
-    [ "modPow", "modcal_8hpp.html#a6abf2d71c2827f8546805aa2dc0c8c49", null ]
+    [ "ModInv", "modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc", null ],
+    [ "ModPow", "modcal_8hpp.html#a36972de598e8c5d9fe14db0be639c098", null ]
 ];

@@ -1,21 +1,13 @@
 var searchData=
 [
   ['lagrange_2ehpp_0',['lagrange.hpp',['../lagrange_8hpp.html',1,'']]],
-  ['lagrange_2emd_1',['lagrange.md',['../lagrange_8md.html',1,'']]],
-  ['lagrange2_2ehpp_2',['lagrange2.hpp',['../lagrange2_8hpp.html',1,'']]],
-  ['lca_2ehpp_3',['lca.hpp',['../lca_8hpp.html',1,'']]],
-  ['lca_2emd_4',['lca.md',['../lca_8md.html',1,'']]],
-  ['lca_5fedge_2ehpp_5',['lca_edge.hpp',['../lca__edge_8hpp.html',1,'']]],
-  ['lca_5fvtx_2ehpp_6',['lca_vtx.hpp',['../lca__vtx_8hpp.html',1,'']]],
-  ['lcp_2ehpp_7',['lcp.hpp',['../lcp_8hpp.html',1,'']]],
-  ['linear_5fequation_2ehpp_8',['linear_equation.hpp',['../linear__equation_8hpp.html',1,'']]],
-  ['linear_5fequation_2emd_9',['linear_equation.md',['../linear__equation_8md.html',1,'']]],
-  ['lis_2ehpp_10',['lis.hpp',['../lis_8hpp.html',1,'']]],
-  ['lis_2emd_11',['lis.md',['../lis_8md.html',1,'']]],
-  ['lowlink_2ehpp_12',['lowlink.hpp',['../lowlink_8hpp.html',1,'']]],
-  ['lowlink_2emd_13',['lowlink.md',['../lowlink_8md.html',1,'']]],
-  ['lp2vars_2ehpp_14',['lp2vars.hpp',['../lp2vars_8hpp.html',1,'']]],
-  ['lp2vars_2emd_15',['lp2vars.md',['../lp2vars_8md.html',1,'']]],
-  ['lucas_2ehpp_16',['lucas.hpp',['../lucas_8hpp.html',1,'']]],
-  ['lucas_2emd_17',['lucas.md',['../lucas_8md.html',1,'']]]
+  ['lagrange2_2ehpp_1',['lagrange2.hpp',['../lagrange2_8hpp.html',1,'']]],
+  ['lca_2ehpp_2',['lca.hpp',['../lca_8hpp.html',1,'']]],
+  ['lca_5fedge_2ehpp_3',['lca_edge.hpp',['../lca__edge_8hpp.html',1,'']]],
+  ['lca_5fvertex_2ehpp_4',['lca_vertex.hpp',['../lca__vertex_8hpp.html',1,'']]],
+  ['lcp_5farray_2ehpp_5',['lcp_array.hpp',['../lcp__array_8hpp.html',1,'']]],
+  ['linear_5fequation_2ehpp_6',['linear_equation.hpp',['../linear__equation_8hpp.html',1,'']]],
+  ['linear_5fprogramming_5f2vars_2ehpp_7',['linear_programming_2vars.hpp',['../linear__programming__2vars_8hpp.html',1,'']]],
+  ['lis_2ehpp_8',['lis.hpp',['../lis_8hpp.html',1,'']]],
+  ['lowlink_2ehpp_9',['lowlink.hpp',['../lowlink_8hpp.html',1,'']]]
 ];

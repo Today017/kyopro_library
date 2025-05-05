@@ -1,7 +1,7 @@
 #include"../../kyopro_library/template.hpp"
 
 /// @brief 実行時に mod を変更できる ModInt
-struct DynamicModInt{
+struct DynamicModInt {
     ll value;
     static ll mod;
     static void set_mod(ll x) { mod=x; }

@@ -1,0 +1,24 @@
+\doxysection{linear\+\_\+programming\+\_\+2vars.\+hpp}
+\hypertarget{linear__programming__2vars_8hpp_source}{}\label{linear__programming__2vars_8hpp_source}\index{math/linear\_programming\_2vars.hpp@{math/linear\_programming\_2vars.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00006\ ll\ LinearProgramming\_2valiables(ll\ a,\ ll\ b,\ ll\ c,\ ll\ p,\ ll\ q)\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordflow}{if}(a*q<b*p)\ swap(a,b),\ swap(p,q);}
+\DoxyCodeLine{00008\ \ \ \ \ ll\ ret=INFL;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{if}(a*a>c)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ FOR(x,0,(c+a-\/1)/a+1)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ ll\ y=max(0LL,(c-\/a*x+b-\/1)/b);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ ret=min(ret,p*x+q*y);}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00014\ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(ll\ y=0;\ y<a\&\&y<=(c+b-\/1)/b;\ y++)\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ ll\ x=max(0LL,(c-\/b*y+a-\/1)/a);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ ret=min(ret,p*x+q*y);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}

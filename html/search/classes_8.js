@@ -6,6 +6,6 @@ var searchData=
   ['lazyreversiblerbstnode_3c_20t_2c_20t_20_3e_3',['LazyReversibleRBSTNode&lt; T, T &gt;',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node.html',1,'InsertableReversibleArrayImpl']]],
   ['lca_4',['LCA',['../struct_l_c_a.html',1,'']]],
   ['lcaedge_5',['LcaEdge',['../struct_lca_edge.html',1,'']]],
-  ['lcavtx_6',['LcaVtx',['../struct_lca_vtx.html',1,'']]],
+  ['lcavertex_6',['LcaVertex',['../struct_lca_vertex.html',1,'']]],
   ['line_7',['Line',['../struct_geometry_1_1_line.html',1,'Geometry']]]
 ];

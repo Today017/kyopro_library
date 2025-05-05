@@ -1,0 +1,66 @@
+\doxysection{CHT\texorpdfstring{$<$}{<} T, Min \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_c_h_t}{}\label{struct_c_h_t}\index{CHT$<$ T, Min $>$@{CHT$<$ T, Min $>$}}
+
+
+Convex Hull Trick verify \+: \href{https://judge.yosupo.jp/problem/line_add_get_min}{\texttt{ https\+://judge.\+yosupo.\+jp/problem/line\+\_\+add\+\_\+get\+\_\+min}} \href{https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf}{\texttt{ https\+://hcpc-\/hokudai.\+github.\+io/archive/algorithm\+\_\+convex\+\_\+hull\+\_\+trick\+\_\+001.\+pdf}}.  
+
+
+
+
+{\ttfamily \#include $<$cht.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct_c_h_t_a98990faf0c0f436c501ce5bc94e8f555}{add}} (T a, T b)
+\begin{DoxyCompactList}\small\item\em 直線 ax + b を追加する \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{struct_c_h_t_a652d63fa85df6b36fb09fdae60ebc6cf}{get}} (T x)
+\begin{DoxyCompactList}\small\item\em x に対する直線群の最小値を求める \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T = ll, bool Min = true$>$\newline
+struct CHT$<$ T, Min $>$}
+Convex Hull Trick verify \+: \href{https://judge.yosupo.jp/problem/line_add_get_min}{\texttt{ https\+://judge.\+yosupo.\+jp/problem/line\+\_\+add\+\_\+get\+\_\+min}} \href{https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf}{\texttt{ https\+://hcpc-\/hokudai.\+github.\+io/archive/algorithm\+\_\+convex\+\_\+hull\+\_\+trick\+\_\+001.\+pdf}}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Min} & true のとき最小値を管理する \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_c_h_t_a98990faf0c0f436c501ce5bc94e8f555}\index{CHT$<$ T, Min $>$@{CHT$<$ T, Min $>$}!add@{add}}
+\index{add@{add}!CHT$<$ T, Min $>$@{CHT$<$ T, Min $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily \label{struct_c_h_t_a98990faf0c0f436c501ce5bc94e8f555} 
+template$<$typename T = ll, bool Min = true$>$ \\
+void \mbox{\hyperlink{struct_c_h_t}{CHT}}$<$ T, Min $>$\+::add (\begin{DoxyParamCaption}\item[{T}]{a}{, }\item[{T}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+直線 ax + b を追加する 
+
+\begin{DoxyNote}{Note}
+O(log(\+N)) 
+\end{DoxyNote}
+\Hypertarget{struct_c_h_t_a652d63fa85df6b36fb09fdae60ebc6cf}\index{CHT$<$ T, Min $>$@{CHT$<$ T, Min $>$}!get@{get}}
+\index{get@{get}!CHT$<$ T, Min $>$@{CHT$<$ T, Min $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \label{struct_c_h_t_a652d63fa85df6b36fb09fdae60ebc6cf} 
+template$<$typename T = ll, bool Min = true$>$ \\
+T \mbox{\hyperlink{struct_c_h_t}{CHT}}$<$ T, Min $>$\+::get (\begin{DoxyParamCaption}\item[{T}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+x に対する直線群の最小値を求める 
+
+\begin{DoxyNote}{Note}
+O((log(\+N))\texorpdfstring{$^\wedge$}{\string^}2) 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+algorithm/cht.\+hpp\end{DoxyCompactItemize}

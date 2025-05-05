@@ -15,7 +15,7 @@ var struct_mod_int =
     [ "operator/=", "struct_mod_int.html#a96078358d334d2352bc93718741f5cc6", null ],
     [ "operator==", "struct_mod_int.html#ad98d5a5c762d0d1662f9df246fa13ebd", null ],
     [ "pow", "struct_mod_int.html#ad51ec271b27d8b4ffee3af3a25be2d5b", null ],
+    [ "val", "struct_mod_int.html#ac1b44a18ac974f3f34f7ec40edb97761", null ],
     [ "operator<<", "struct_mod_int.html#a0781c38bd75eafd6bcb5e0ad2f2146b9", null ],
-    [ "operator>>", "struct_mod_int.html#aae4982d90889904faefcab6ee63356dc", null ],
-    [ "value", "struct_mod_int.html#aa0fa7671d2536f3d2101fcdc630c5cc3", null ]
+    [ "operator>>", "struct_mod_int.html#aae4982d90889904faefcab6ee63356dc", null ]
 ];

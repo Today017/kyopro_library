@@ -1,0 +1,81 @@
+\doxysection{Sparse\+Table\+Disjoint\texorpdfstring{$<$}{<} Semigroup \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_sparse_table_disjoint}{}\label{struct_sparse_table_disjoint}\index{SparseTableDisjoint$<$ Semigroup $>$@{SparseTableDisjoint$<$ Semigroup $>$}}
+
+
+スパーステーブル（\+Disjoint）  
+
+
+
+
+{\ttfamily \#include $<$sparse\+\_\+table\+\_\+disjoint.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_sparse_table_disjoint_a57c52b4b8bdc6bc40f230c7313a7dc38}\label{struct_sparse_table_disjoint_a57c52b4b8bdc6bc40f230c7313a7dc38} 
+using {\bfseries Type} = typename Semigroup\+::\+Type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_sparse_table_disjoint_a48075adf65cef80776b5c5ad914240d5}{Sparse\+Table\+Disjoint}} (const vector$<$ Type $>$ \&v)
+\begin{DoxyCompactList}\small\item\em 配列 v から\+Disjoint Sparse Tableを構築する \end{DoxyCompactList}\item 
+Type \mbox{\hyperlink{struct_sparse_table_disjoint_aa984a0d78a9e15251a151cbb8953d10e}{fold}} (int l, int r)
+\begin{DoxyCompactList}\small\item\em 区間 \mbox{[}l, r) の半群積を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sparse_table_disjoint_abace0a4798ea72d6d063b68b4b218ff1}\label{struct_sparse_table_disjoint_abace0a4798ea72d6d063b68b4b218ff1} 
+Type {\bfseries operator\mbox{[}$\,$\mbox{]}} (int i) const
+\begin{DoxyCompactList}\small\item\em i 番目の要素を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sparse_table_disjoint_a0b726f6dedf26f0b28affebff1e0674d}\label{struct_sparse_table_disjoint_a0b726f6dedf26f0b28affebff1e0674d} 
+int {\bfseries size} ()
+\begin{DoxyCompactList}\small\item\em 配列のサイズを返す \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Semigroup$>$\newline
+struct Sparse\+Table\+Disjoint$<$ Semigroup $>$}
+スパーステーブル（\+Disjoint） 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Semigroup} & 半群（結合則が成り立つこと） \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_sparse_table_disjoint_a48075adf65cef80776b5c5ad914240d5}\index{SparseTableDisjoint$<$ Semigroup $>$@{SparseTableDisjoint$<$ Semigroup $>$}!SparseTableDisjoint@{SparseTableDisjoint}}
+\index{SparseTableDisjoint@{SparseTableDisjoint}!SparseTableDisjoint$<$ Semigroup $>$@{SparseTableDisjoint$<$ Semigroup $>$}}
+\doxysubsubsection{\texorpdfstring{SparseTableDisjoint()}{SparseTableDisjoint()}}
+{\footnotesize\ttfamily \label{struct_sparse_table_disjoint_a48075adf65cef80776b5c5ad914240d5} 
+template$<$typename Semigroup$>$ \\
+\mbox{\hyperlink{struct_sparse_table_disjoint}{Sparse\+Table\+Disjoint}}$<$ Semigroup $>$\mbox{\hyperlink{struct_sparse_table_disjoint}{\+::\+Sparse\+Table\+Disjoint}} (\begin{DoxyParamCaption}\item[{const vector$<$ Type $>$ \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+配列 v から\+Disjoint Sparse Tableを構築する 
+
+\begin{DoxyNote}{Note}
+O(\+N log(\+N)) 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_sparse_table_disjoint_aa984a0d78a9e15251a151cbb8953d10e}\index{SparseTableDisjoint$<$ Semigroup $>$@{SparseTableDisjoint$<$ Semigroup $>$}!fold@{fold}}
+\index{fold@{fold}!SparseTableDisjoint$<$ Semigroup $>$@{SparseTableDisjoint$<$ Semigroup $>$}}
+\doxysubsubsection{\texorpdfstring{fold()}{fold()}}
+{\footnotesize\ttfamily \label{struct_sparse_table_disjoint_aa984a0d78a9e15251a151cbb8953d10e} 
+template$<$typename Semigroup$>$ \\
+Type \mbox{\hyperlink{struct_sparse_table_disjoint}{Sparse\+Table\+Disjoint}}$<$ Semigroup $>$\+::fold (\begin{DoxyParamCaption}\item[{int}]{l}{, }\item[{int}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+区間 \mbox{[}l, r) の半群積を返す 
+
+\begin{DoxyNote}{Note}
+O(1) 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+data\+\_\+structure/sparse\+\_\+table\+\_\+disjoint.\+hpp\end{DoxyCompactItemize}

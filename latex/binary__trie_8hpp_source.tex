@@ -1,0 +1,125 @@
+\doxysection{binary\+\_\+trie.\+hpp}
+\hypertarget{binary__trie_8hpp_source}{}\label{binary__trie_8hpp_source}\index{data\_structure/binary\_trie.hpp@{data\_structure/binary\_trie.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T=u\textcolor{keywordtype}{int}32\_t,\ \textcolor{keywordtype}{int}\ Log=32>}
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }BinaryTrie\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ BinaryTrie()\ \{\ root=\textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_binary_trie_a8894b19178488ed5a376fc2f62fe774e}{size}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(root==\textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ root-\/>size;}
+\DoxyCodeLine{00012\ \ \ \ \ \}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_binary_trie_a74c72898c1aa1970a149a895b50d533a}{insert}}(T\ x,\ \textcolor{keywordtype}{int}\ t=1)\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ root=\mbox{\hyperlink{struct_binary_trie_a74c72898c1aa1970a149a895b50d533a}{insert}}(root,x,Log-\/1,t);}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_binary_trie_ab383a881f8c83b83bd3b2c2978c543ad}{erase}}(T\ x,\ \textcolor{keywordtype}{int}\ t=1)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ chmin(t,\mbox{\hyperlink{struct_binary_trie_a8414d307e624d792b9e7cf1d498e499d}{count}}(x));}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(t==0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ root=\mbox{\hyperlink{struct_binary_trie_ab383a881f8c83b83bd3b2c2978c543ad}{erase}}(root,x,Log-\/1,t);}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_binary_trie_a206bee98568661600b0148bfc0f9a902}{apply\_xor}}(T\ x)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(root!=\textcolor{keyword}{nullptr})\ root-\/>lazy\string^=x;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ T\ \mbox{\hyperlink{struct_binary_trie_a574e1542d7930e058e8ac8949424063f}{max}}()\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get\_min(root,\string~0,Log-\/1);}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ T\ \mbox{\hyperlink{struct_binary_trie_aa535fa5b5a9c4a43be753790348b940d}{min}}()\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get\_min(root,0,Log-\/1);}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ T\ \mbox{\hyperlink{struct_binary_trie_a2580a67854d4e8fe057c0e2bfcd173bc}{kth\_min}}(\textcolor{keywordtype}{int}\ k)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ assert(0<=k\&\&k<\mbox{\hyperlink{struct_binary_trie_a8894b19178488ed5a376fc2f62fe774e}{size}}());}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get(root,k,Log-\/1);}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_binary_trie_a89a91b195e0f2f46ecf75b0e40745189}{lower\_bound}}(T\ x)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ count\_lower(root,x,Log-\/1);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_binary_trie_a8414d307e624d792b9e7cf1d498e499d}{count}}(T\ x)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(root==\textcolor{keyword}{nullptr})\textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ Node*v=root;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=Log-\/1;\ i>=0;\ i-\/-\/)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ evaluate(v,i);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ v=v-\/>next[(x>>i)\&1];}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(v==\textcolor{keyword}{nullptr})\textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v-\/>size;}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{struct\ }Node\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Node*next[2];}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ T\ lazy;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ Node()\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ size=0;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ lazy=0;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ next[0]=next[1]=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ Node*root;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ evaluate(Node*v,\ \textcolor{keywordtype}{int}\ bit)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((v-\/>lazy>>bit)\&1)\ swap(v-\/>next[0],v-\/>next[1]);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(v-\/>next[0]!=\textcolor{keyword}{nullptr})\ v-\/>next[0]-\/>lazy\string^=v-\/>lazy;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(v-\/>next[1]!=\textcolor{keyword}{nullptr})\ v-\/>next[1]-\/>lazy\string^=v-\/>lazy;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ v-\/>lazy=0;}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ Node*\mbox{\hyperlink{struct_binary_trie_a74c72898c1aa1970a149a895b50d533a}{insert}}(Node*v,\ T\ x,\ \textcolor{keywordtype}{int}\ bit,\ \textcolor{keywordtype}{int}\ cnt)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(v==\textcolor{keyword}{nullptr})\ v=\textcolor{keyword}{new}\ Node;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ v-\/>size+=cnt;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(bit<0)\ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ evaluate(v,bit);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lr=(x>>bit)\&1;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ v-\/>next[lr]=\mbox{\hyperlink{struct_binary_trie_a74c72898c1aa1970a149a895b50d533a}{insert}}(v-\/>next[lr],x,bit-\/1,cnt);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ Node*\mbox{\hyperlink{struct_binary_trie_ab383a881f8c83b83bd3b2c2978c543ad}{erase}}(Node*v,\ T\ x,\ \textcolor{keywordtype}{int}\ bit,\ \textcolor{keywordtype}{int}\ cnt)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ assert(v!=\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ v-\/>size-\/=cnt;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(v-\/>size==0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(bit<0)\ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ evaluate(v,bit);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lr=(x>>bit)\&1;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ v-\/>next[lr]=\mbox{\hyperlink{struct_binary_trie_ab383a881f8c83b83bd3b2c2978c543ad}{erase}}(v-\/>next[lr],x,bit-\/1,cnt);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ T\ get\_min(Node*v,\ T\ x,\ \textcolor{keywordtype}{int}\ bit)\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(bit<0)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ evaluate(v,bit);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lr=(x>>bit)\&1;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(v-\/>next[lr]==\textcolor{keyword}{nullptr})\ lr=1-\/lr;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get\_min(v-\/>next[lr],x,bit-\/1)|((T)lr<<bit);}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ T\ get(Node*v,\ \textcolor{keywordtype}{int}\ k,\ \textcolor{keywordtype}{int}\ bit)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(bit<0)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ evaluate(v,bit);}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m=v-\/>next[0]!=\textcolor{keyword}{nullptr}?v-\/>next[0]-\/>size:0;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(k<m)\ \textcolor{keywordflow}{return}\ get(v-\/>next[0],k,bit-\/1);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{return}\ get(v-\/>next[1],k-\/m,bit-\/1)|((T)1<<bit);}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{int}\ count\_lower(Node*v,T\ x,\textcolor{keywordtype}{int}\ bit)\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(v==\textcolor{keyword}{nullptr}||bit<0)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ evaluate(v,bit);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lr=(x>>bit)\&1;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ret=lr\&\&v-\/>next[0]!=\textcolor{keyword}{nullptr}?v-\/>next[0]-\/>size:0;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret+count\_lower(v-\/>next[lr],x,bit-\/1);}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \};}
+
+\end{DoxyCode}

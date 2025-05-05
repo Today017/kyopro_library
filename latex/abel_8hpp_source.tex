@@ -1,0 +1,26 @@
+\doxysection{abel.\+hpp}
+\hypertarget{abel_8hpp_source}{}\label{abel_8hpp_source}\index{others/abel.hpp@{others/abel.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_abel}{Abel}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_abel_1_1_sum}{Sum}}\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }Type=T;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Type\ id()\ \{\ \textcolor{keywordflow}{return}\ T(0);\ \}}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Type\ op(\textcolor{keyword}{const}\ Type\&\ a,\ \textcolor{keyword}{const}\ Type\&\ b)\ \{\ \textcolor{keywordflow}{return}\ a+b;\ \}}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Type\ inv(\textcolor{keyword}{const}\ Type\&\ x)\ \{\ \textcolor{keywordflow}{return}\ -\/x;\ \}}
+\DoxyCodeLine{00013\ \ \ \ \ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_abel_1_1_xor}{Xor}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }Type=T;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Type\ id()\ \{\ \textcolor{keywordflow}{return}\ T(0);\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Type\ op(\textcolor{keyword}{const}\ Type\&\ a,\ \textcolor{keyword}{const}\ Type\&\ b)\ \{\ \textcolor{keywordflow}{return}\ a\string^b;\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Type\ inv(\textcolor{keyword}{const}\ Type\&\ x)\ \{\ \textcolor{keywordflow}{return}\ x;\ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \};}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}

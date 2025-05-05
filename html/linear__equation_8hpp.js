@@ -1,5 +1,5 @@
 var linear__equation_8hpp =
 [
-    [ "linearEquation", "linear__equation_8hpp.html#a3f4d03c995e8fcc2d46cee4ebbc113ab", null ],
-    [ "rowReduction", "linear__equation_8hpp.html#a07bfc1ddf6cfdce04f23ac6ab70a47f0", null ]
+    [ "LinearEquation", "linear__equation_8hpp.html#ac91575eafd15cbdfc1da2ae7cf5bb964", null ],
+    [ "RowReduction", "linear__equation_8hpp.html#ad783a386934fd2ebc14105b5babb4aec", null ]
 ];

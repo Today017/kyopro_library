@@ -1,0 +1,52 @@
+\doxysection{dsu.\+hpp}
+\hypertarget{dsu_8hpp_source}{}\label{dsu_8hpp_source}\index{graph/dsu.hpp@{graph/dsu.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }DSU\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ DSU()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{struct_d_s_u_abbae2d8b88cba33b50386cbbf229685a}{DSU}}(\textcolor{keywordtype}{int}\ n)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ par=VI(n);\ iota(ALL(par),0);}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ sz=VI(n,1);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ forest\_count=n;}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_d_s_u_a70d8917e08a86dd49446ce8263f675a3}{find}}(\textcolor{keywordtype}{int}\ x)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(par[x]==x)\ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ par[x]=\mbox{\hyperlink{struct_d_s_u_a70d8917e08a86dd49446ce8263f675a3}{find}}(par[x]);}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_d_s_u_a81af0a8861251cc70ae491c6249e672d}{merge}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ x=\mbox{\hyperlink{struct_d_s_u_a70d8917e08a86dd49446ce8263f675a3}{find}}(x);\ y=\mbox{\hyperlink{struct_d_s_u_a70d8917e08a86dd49446ce8263f675a3}{find}}(y);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x==y)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(sz[x]<sz[y])\ swap(x,y);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ par[y]=x;\ sz[x]+=sz[y];}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ forest\_count-\/-\/;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_d_s_u_ae15ca5c12804826f13632d23443e36e8}{size}}(\textcolor{keywordtype}{int}\ x)\ \{\ \textcolor{keywordflow}{return}\ sz[\mbox{\hyperlink{struct_d_s_u_a70d8917e08a86dd49446ce8263f675a3}{find}}(x)];\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_d_s_u_ad3a04e676273604d56db0344795cd693}{same}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_d_s_u_a70d8917e08a86dd49446ce8263f675a3}{find}}(x)==\mbox{\hyperlink{struct_d_s_u_a70d8917e08a86dd49446ce8263f675a3}{find}}(y);\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_d_s_u_a042d4bb179819d69d53f2b96e23b099e}{count}}()\ \{\ \textcolor{keywordflow}{return}\ forest\_count;\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00048\ \ \ \ \ VVI\ \mbox{\hyperlink{struct_d_s_u_a1c5c3d071acd50cbe58a86c38a6a3da7}{groups}}()\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=par.size();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ VVI\ ret(n);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ REP(i,n)\ ret[\mbox{\hyperlink{struct_d_s_u_a70d8917e08a86dd49446ce8263f675a3}{find}}(i)].push\_back(i);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ ret.erase(remove\_if(ALL(ret),[\&](\textcolor{keyword}{const}\ VI\&\ v)\ \{\ \textcolor{keywordflow}{return}\ v.empty();\ \}),ret.end());}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ \ \ VI\ par,sz;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ forest\_count;}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+
+\end{DoxyCode}

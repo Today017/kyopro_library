@@ -1,0 +1,90 @@
+\doxysection{Dsu\+Merging\texorpdfstring{$<$}{<} Semigroup \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_dsu_merging}{}\label{struct_dsu_merging}\index{DsuMerging$<$ Semigroup $>$@{DsuMerging$<$ Semigroup $>$}}
+
+
+値をマージする \doxylink{struct_d_s_u}{DSU}  
+
+
+
+
+{\ttfamily \#include $<$dsu\+\_\+merging.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_dsu_merging_a31648bc93d4bc29960fe93fff7ca0914}\label{struct_dsu_merging_a31648bc93d4bc29960fe93fff7ca0914} 
+using {\bfseries Type} = typename Semigroup\+::\+Type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_dsu_merging_a176fb90f26e3696383392e94d7491cdb}\label{struct_dsu_merging_a176fb90f26e3696383392e94d7491cdb} 
+{\bfseries Dsu\+Merging} (int n, const vector$<$ Type $>$ \&v)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_dsu_merging_afcf8fd363d1d2348869c0e43df04199d}{find}} (int x)
+\begin{DoxyCompactList}\small\item\em 頂点 x を含む連結成分の代表元を返す \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_dsu_merging_adcc3916018699b654242ea713b02adac}{merge}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 頂点 x と y を連結し、true を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_merging_aae3ac2e8c0546029e540523cfb19d57f}\label{struct_dsu_merging_aae3ac2e8c0546029e540523cfb19d57f} 
+const Type \& {\bfseries get} (int x)
+\begin{DoxyCompactList}\small\item\em 頂点 x を含む連結成分の半群積を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_merging_ac70e527b5635c63da7c8923816d4e66e}\label{struct_dsu_merging_ac70e527b5635c63da7c8923816d4e66e} 
+int {\bfseries size} (int x) const
+\begin{DoxyCompactList}\small\item\em 頂点 x を含む連結成分のサイズを返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_merging_a2c094054f83b0f6b1adeb6dea4f1b6e8}\label{struct_dsu_merging_a2c094054f83b0f6b1adeb6dea4f1b6e8} 
+bool {\bfseries same} (int x, int y) const
+\begin{DoxyCompactList}\small\item\em 頂点 x と y が同じ連結成分に属するか否かを返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_merging_a76200780dde72296276b892b74e6da98}\label{struct_dsu_merging_a76200780dde72296276b892b74e6da98} 
+int {\bfseries count} () const
+\begin{DoxyCompactList}\small\item\em 連結成分の個数を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_merging_a500af4d11f058f17b499842d35181b01}\label{struct_dsu_merging_a500af4d11f058f17b499842d35181b01} 
+VVI {\bfseries groups} () const
+\begin{DoxyCompactList}\small\item\em 各頂点を連結成分に分解する \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Semigroup = Dsu\+Base\+Semigroup$>$\newline
+struct Dsu\+Merging$<$ Semigroup $>$}
+値をマージする \doxylink{struct_d_s_u}{DSU} 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Semigroup} & 半群 \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_dsu_merging_afcf8fd363d1d2348869c0e43df04199d}\index{DsuMerging$<$ Semigroup $>$@{DsuMerging$<$ Semigroup $>$}!find@{find}}
+\index{find@{find}!DsuMerging$<$ Semigroup $>$@{DsuMerging$<$ Semigroup $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \label{struct_dsu_merging_afcf8fd363d1d2348869c0e43df04199d} 
+template$<$typename Semigroup = Dsu\+Base\+Semigroup$>$ \\
+int \mbox{\hyperlink{struct_dsu_merging}{Dsu\+Merging}}$<$ Semigroup $>$\+::find (\begin{DoxyParamCaption}\item[{int}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+頂点 x を含む連結成分の代表元を返す 
+
+\begin{DoxyNote}{Note}
+O(α(\+N)) 
+\end{DoxyNote}
+\Hypertarget{struct_dsu_merging_adcc3916018699b654242ea713b02adac}\index{DsuMerging$<$ Semigroup $>$@{DsuMerging$<$ Semigroup $>$}!merge@{merge}}
+\index{merge@{merge}!DsuMerging$<$ Semigroup $>$@{DsuMerging$<$ Semigroup $>$}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}}
+{\footnotesize\ttfamily \label{struct_dsu_merging_adcc3916018699b654242ea713b02adac} 
+template$<$typename Semigroup = Dsu\+Base\+Semigroup$>$ \\
+bool \mbox{\hyperlink{struct_dsu_merging}{Dsu\+Merging}}$<$ Semigroup $>$\+::merge (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+頂点 x と y を連結し、true を返す 
+
+既に連結されている場合は false を返す \begin{DoxyNote}{Note}
+O(α(\+N)) 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+graph/dsu\+\_\+merging.\+hpp\end{DoxyCompactItemize}

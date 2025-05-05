@@ -1,0 +1,63 @@
+\doxysection{Mo\texorpdfstring{$<$}{<} L \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_mo}{}\label{struct_mo}\index{Mo$<$ L $>$@{Mo$<$ L $>$}}
+
+
+\doxylink{struct_mo}{Mo}\textquotesingle{}s Algorithm \href{https://ei1333.hateblo.jp/entry/2017/09/11/211011}{\texttt{ https\+://ei1333.\+hateblo.\+jp/entry/2017/09/11/211011}}.  
+
+
+
+
+{\ttfamily \#include $<$mo.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_mo_a12c0e52820513d400e3ebabb498c68f3}\label{struct_mo_a12c0e52820513d400e3ebabb498c68f3} 
+{\bfseries Mo} (int n)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\Hypertarget{struct_mo_a39bea8915a24a54030b29c834637342b}\label{struct_mo_a39bea8915a24a54030b29c834637342b} 
+void {\bfseries add} (int l, int r)
+\begin{DoxyCompactList}\small\item\em クエリ \mbox{[}l, r) を追加する \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename F1, typename F2, typename F3, typename F4, typename F5$>$ }\\void \mbox{\hyperlink{struct_mo_a487fe96e3907bd2d23fb9569b98500d3}{execute}} (F1 \&\&add\+\_\+left, F2 \&\&add\+\_\+right, F3 \&\&del\+\_\+left, F4 \&\&del\+\_\+right, F5 \&\&out)
+\begin{DoxyCompactList}\small\item\em クエリを実行する \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$ll L = 20$>$\newline
+struct Mo$<$ L $>$}
+\doxylink{struct_mo}{Mo}\textquotesingle{}s Algorithm \href{https://ei1333.hateblo.jp/entry/2017/09/11/211011}{\texttt{ https\+://ei1333.\+hateblo.\+jp/entry/2017/09/11/211011}}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_mo_a487fe96e3907bd2d23fb9569b98500d3}\index{Mo$<$ L $>$@{Mo$<$ L $>$}!execute@{execute}}
+\index{execute@{execute}!Mo$<$ L $>$@{Mo$<$ L $>$}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{struct_mo_a487fe96e3907bd2d23fb9569b98500d3} 
+template$<$ll L = 20$>$ \\
+template$<$typename F1, typename F2, typename F3, typename F4, typename F5$>$ \\
+void \mbox{\hyperlink{struct_mo}{Mo}}$<$ L $>$\+::execute (\begin{DoxyParamCaption}\item[{F1 \&\&}]{add\+\_\+left}{, }\item[{F2 \&\&}]{add\+\_\+right}{, }\item[{F3 \&\&}]{del\+\_\+left}{, }\item[{F4 \&\&}]{del\+\_\+right}{, }\item[{F5 \&\&}]{out}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+クエリを実行する 
+
+
+\begin{DoxyParams}{Parameters}
+{\em add\+\_\+left} & {\ttfamily add\+\_\+left(i)} i 番目の要素が左から加わるときの処理 \\
+\hline
+{\em add\+\_\+right} & {\ttfamily add\+\_\+right(i)} i 番目の要素が右から加わるときの処理 \\
+\hline
+{\em del\+\_\+left} & {\ttfamily del\+\_\+left(i)} i 番目の要素が左から抜けるときの処理 \\
+\hline
+{\em del\+\_\+right} & {\ttfamily del\+\_\+right(i)} i 番目の要素が右から抜けるときの処理 \\
+\hline
+{\em out} & {\ttfamily out(i)} i 番目のクエリの答えを求めたときの処理 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+O(\+N sqrt(\+Q)) 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+algorithm/mo.\+hpp\end{DoxyCompactItemize}

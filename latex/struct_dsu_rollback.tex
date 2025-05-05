@@ -1,0 +1,64 @@
+\doxysection{Dsu\+Rollback Struct Reference}
+\hypertarget{struct_dsu_rollback}{}\label{struct_dsu_rollback}\index{DsuRollback@{DsuRollback}}
+
+
+ロールバック可能\+DSU  
+
+
+
+
+{\ttfamily \#include $<$dsu\+\_\+rollback.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_dsu_rollback_ad42c892c309ec0aa491c70bec3d58779}\label{struct_dsu_rollback_ad42c892c309ec0aa491c70bec3d58779} 
+{\bfseries Dsu\+Rollback} (int n)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_rollback_ac2028d09c590bdde38b2669f19728452}\label{struct_dsu_rollback_ac2028d09c590bdde38b2669f19728452} 
+int {\bfseries find} (int x)
+\begin{DoxyCompactList}\small\item\em 頂点 x を含む連結成分の代表元を返す \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_dsu_rollback_a103be2aa1ff86601ef80cf051c3d566f}{merge}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 頂点 x と y を連結し、true を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_rollback_a576e5300d28f07244d0548cd2e98b052}\label{struct_dsu_rollback_a576e5300d28f07244d0548cd2e98b052} 
+void {\bfseries undo} ()
+\begin{DoxyCompactList}\small\item\em 最後に行った連結操作を取り消す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_rollback_aa0ce04a8aaf999bda7719d681775505d}\label{struct_dsu_rollback_aa0ce04a8aaf999bda7719d681775505d} 
+void {\bfseries snapshot} ()
+\begin{DoxyCompactList}\small\item\em DSUの状態を上書き保存する \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_rollback_a7c33fb0f4e5b0f804b937ab4edb7a5ea}\label{struct_dsu_rollback_a7c33fb0f4e5b0f804b937ab4edb7a5ea} 
+void {\bfseries rollback} ()
+\begin{DoxyCompactList}\small\item\em 最後に snapshot した時点まで巻き戻す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_rollback_ade29264c1fbd5b5bfdaefe918c9d6163}\label{struct_dsu_rollback_ade29264c1fbd5b5bfdaefe918c9d6163} 
+int {\bfseries size} (int x)
+\begin{DoxyCompactList}\small\item\em 頂点 x を含む連結成分のサイズを返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_rollback_a954350180a0b6956d0661419b2f764f6}\label{struct_dsu_rollback_a954350180a0b6956d0661419b2f764f6} 
+bool {\bfseries same} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 頂点 x と y が同じ連結成分に属するか否かを返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_rollback_ada87b7194225ccb7dccb62080069bac6}\label{struct_dsu_rollback_ada87b7194225ccb7dccb62080069bac6} 
+int {\bfseries count} ()
+\begin{DoxyCompactList}\small\item\em 連結成分の個数を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_dsu_rollback_aad21b3281d43bc47b352d86f880b3462}\label{struct_dsu_rollback_aad21b3281d43bc47b352d86f880b3462} 
+VVI {\bfseries groups} ()
+\begin{DoxyCompactList}\small\item\em 各頂点を連結成分に分解する \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ロールバック可能\+DSU 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_dsu_rollback_a103be2aa1ff86601ef80cf051c3d566f}\index{DsuRollback@{DsuRollback}!merge@{merge}}
+\index{merge@{merge}!DsuRollback@{DsuRollback}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}}
+{\footnotesize\ttfamily \label{struct_dsu_rollback_a103be2aa1ff86601ef80cf051c3d566f} 
+bool Dsu\+Rollback\+::merge (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+頂点 x と y を連結し、true を返す 
+
+既に連結されている場合は false を返す 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+graph/dsu\+\_\+rollback.\+hpp\end{DoxyCompactItemize}

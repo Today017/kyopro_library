@@ -1,0 +1,116 @@
+\doxysection{Sorted\+Multi\+Tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_sorted_multi_tree}{}\label{struct_sorted_multi_tree}\index{SortedMultiTree$<$ T $>$@{SortedMultiTree$<$ T $>$}}
+Inheritance diagram for Sorted\+Multi\+Tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.842105cm]{struct_sorted_multi_tree}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_sorted_multi_tree_a9add5e4ba3456a20a6e531f3b056b93f}\label{struct_sorted_multi_tree_a9add5e4ba3456a20a6e531f3b056b93f} 
+using {\bfseries P} = pair$<$T,int$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_sorted_multi_tree_ab8c36e4170f299dbe68b00cd2c9d2305}{Sorted\+Multi\+Tree}} (T not\+\_\+found=-\/1)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_aeaeff7f2d03c7046a82a0971b1e52272}\label{struct_sorted_multi_tree_aeaeff7f2d03c7046a82a0971b1e52272} 
+void {\bfseries add} (T x)
+\begin{DoxyCompactList}\small\item\em x を追加する \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_a002d58401bbd7c496de2a493225dc462}\label{struct_sorted_multi_tree_a002d58401bbd7c496de2a493225dc462} 
+T {\bfseries min} ()
+\begin{DoxyCompactList}\small\item\em 最小値を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_a34080f5436802049e526dbcfcdb4657c}\label{struct_sorted_multi_tree_a34080f5436802049e526dbcfcdb4657c} 
+T {\bfseries max} ()
+\begin{DoxyCompactList}\small\item\em 最大値を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_a57e225a43a6ffe8a2c40f792375d04bc}\label{struct_sorted_multi_tree_a57e225a43a6ffe8a2c40f792375d04bc} 
+T {\bfseries pop\+\_\+min} ()
+\begin{DoxyCompactList}\small\item\em 最小値を返し、削除する \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_a8c295dcfe5327e9219f013dc159ab1f0}\label{struct_sorted_multi_tree_a8c295dcfe5327e9219f013dc159ab1f0} 
+T {\bfseries pop\+\_\+max} ()
+\begin{DoxyCompactList}\small\item\em 最大値を返し、削除する \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_a1ed109943dfb52d97cc4c88f917abef7}\label{struct_sorted_multi_tree_a1ed109943dfb52d97cc4c88f917abef7} 
+bool {\bfseries contains} (T x)
+\begin{DoxyCompactList}\small\item\em x が含まれているか否かを返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_a4eebce5fa541af30d00aa76bfd6fce25}\label{struct_sorted_multi_tree_a4eebce5fa541af30d00aa76bfd6fce25} 
+int {\bfseries count} (T x)
+\begin{DoxyCompactList}\small\item\em x の個数を返す \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_sorted_multi_tree_af0e3cfa5d92c2eaf249cac5db2653119}{discard}} (T x)
+\begin{DoxyCompactList}\small\item\em x を削除する \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_a20bc2b91712e2d3b78967ff278626c0f}\label{struct_sorted_multi_tree_a20bc2b91712e2d3b78967ff278626c0f} 
+T {\bfseries gt} (T x)
+\begin{DoxyCompactList}\small\item\em x より大きい最小の値を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_abe622762de7d4549d60bfb03013c6f26}\label{struct_sorted_multi_tree_abe622762de7d4549d60bfb03013c6f26} 
+T {\bfseries ge} (T x)
+\begin{DoxyCompactList}\small\item\em x 以上最小の値を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_a563ca712d94965facf1e69b881440a32}\label{struct_sorted_multi_tree_a563ca712d94965facf1e69b881440a32} 
+T {\bfseries lt} (T x)
+\begin{DoxyCompactList}\small\item\em x 未満最大の値を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_a62f7b68b894a4a44ae4a0ae0c09cbc19}\label{struct_sorted_multi_tree_a62f7b68b894a4a44ae4a0ae0c09cbc19} 
+T {\bfseries le} (T x)
+\begin{DoxyCompactList}\small\item\em x 以下最大の値を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_a8320fbeb312ae3cb068401e6fab4b303}\label{struct_sorted_multi_tree_a8320fbeb312ae3cb068401e6fab4b303} 
+int {\bfseries count\+\_\+lt} (T x)
+\begin{DoxyCompactList}\small\item\em x 未満の値の個数を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_a43a38d17a649bfb671db1c1372f2fbec}\label{struct_sorted_multi_tree_a43a38d17a649bfb671db1c1372f2fbec} 
+int {\bfseries count\+\_\+le} (T x)
+\begin{DoxyCompactList}\small\item\em x 以下の値の個数を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_aa74800e39c3a6d6e04b4a56a881de478}\label{struct_sorted_multi_tree_aa74800e39c3a6d6e04b4a56a881de478} 
+int {\bfseries count\+\_\+gt} (T x)
+\begin{DoxyCompactList}\small\item\em x より大きい値の個数を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_afa4ee14f9f701a9e8bd5d8b4e3c2d945}\label{struct_sorted_multi_tree_afa4ee14f9f701a9e8bd5d8b4e3c2d945} 
+int {\bfseries count\+\_\+ge} (T x)
+\begin{DoxyCompactList}\small\item\em x 以上の値の個数を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_a2925d903b778ceea8042accb4b318f4a}\label{struct_sorted_multi_tree_a2925d903b778ceea8042accb4b318f4a} 
+T {\bfseries kth\+\_\+min} (int k)
+\begin{DoxyCompactList}\small\item\em k(0-\/indexed) 番目に小さい値の個数を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sorted_multi_tree_a73f728a83e21417917a9d35185322dcb}\label{struct_sorted_multi_tree_a73f728a83e21417917a9d35185322dcb} 
+T {\bfseries kth\+\_\+max} (int k)
+\begin{DoxyCompactList}\small\item\em k(0-\/indexed) 番目に大きい値の個数を返す \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_sorted_multi_tree_a744d411af0375f528be6ad7f1ec21c9c}\label{struct_sorted_multi_tree_a744d411af0375f528be6ad7f1ec21c9c} 
+T {\bfseries not\+\_\+found} =-\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_sorted_multi_tree_ab8c36e4170f299dbe68b00cd2c9d2305}\index{SortedMultiTree$<$ T $>$@{SortedMultiTree$<$ T $>$}!SortedMultiTree@{SortedMultiTree}}
+\index{SortedMultiTree@{SortedMultiTree}!SortedMultiTree$<$ T $>$@{SortedMultiTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SortedMultiTree()}{SortedMultiTree()}}
+{\footnotesize\ttfamily \label{struct_sorted_multi_tree_ab8c36e4170f299dbe68b00cd2c9d2305} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{struct_sorted_multi_tree}{Sorted\+Multi\+Tree}}$<$ T $>$\mbox{\hyperlink{struct_sorted_multi_tree}{\+::\+Sorted\+Multi\+Tree}} (\begin{DoxyParamCaption}\item[{T}]{not\+\_\+found}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+コンストラクタ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em not\+\_\+found} & 指定の値が見つからなかったときに返す値 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_sorted_multi_tree_af0e3cfa5d92c2eaf249cac5db2653119}\index{SortedMultiTree$<$ T $>$@{SortedMultiTree$<$ T $>$}!discard@{discard}}
+\index{discard@{discard}!SortedMultiTree$<$ T $>$@{SortedMultiTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{discard()}{discard()}}
+{\footnotesize\ttfamily \label{struct_sorted_multi_tree_af0e3cfa5d92c2eaf249cac5db2653119} 
+template$<$typename T$>$ \\
+bool \mbox{\hyperlink{struct_sorted_multi_tree}{Sorted\+Multi\+Tree}}$<$ T $>$\+::discard (\begin{DoxyParamCaption}\item[{T}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+x を削除する 
+
+x が含まれていたか否かを返す 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+data\+\_\+structure/sorted\+\_\+multitree.\+hpp\end{DoxyCompactItemize}

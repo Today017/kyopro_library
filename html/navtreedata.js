@@ -24,25 +24,117 @@
 */
 var NAVTREE =
 [
-  [ "My Project", "index.html", [
+  [ "Kyopro Library", "index.html", [
+    [ "wvmt", "md_data__structure_2wvmt.html", [
+      [ "Wavelet Matrix", "md_data__structure_2wvmt.html#autotoc_md0", null ]
+    ] ],
+    [ "geo", "md_geometry_2geo.html", [
+      [ "Template", "md_geometry_2geo.html#autotoc_md1", [
+        [ "Inequality", "md_geometry_2geo.html#autotoc_md2", null ],
+        [ "Structure", "md_geometry_2geo.html#autotoc_md3", [
+          [ "Point", "md_geometry_2geo.html#autotoc_md4", null ],
+          [ "Segment", "md_geometry_2geo.html#autotoc_md5", null ],
+          [ "Line", "md_geometry_2geo.html#autotoc_md6", null ],
+          [ "Circle", "md_geometry_2geo.html#autotoc_md7", null ]
+        ] ],
+        [ "Point and Vector", "md_geometry_2geo.html#autotoc_md8", [
+          [ "Counter Clockwise", "md_geometry_2geo.html#autotoc_md9", null ],
+          [ "射影", "md_geometry_2geo.html#autotoc_md10", null ],
+          [ "反射", "md_geometry_2geo.html#autotoc_md11", null ]
+        ] ],
+        [ "Segment and Line", "md_geometry_2geo.html#autotoc_md12", [
+          [ "平行判定", "md_geometry_2geo.html#autotoc_md13", null ],
+          [ "垂直判定", "md_geometry_2geo.html#autotoc_md14", null ],
+          [ "直線上に点が存在するか判定", "md_geometry_2geo.html#autotoc_md16", null ],
+          [ "線分上に点が存在するか判定", "md_geometry_2geo.html#autotoc_md17", null ],
+          [ "線分と線分の交差", "md_geometry_2geo.html#autotoc_md18", null ],
+          [ "線分と線分の交点", "md_geometry_2geo.html#autotoc_md19", null ],
+          [ "点と直線の距離", "md_geometry_2geo.html#autotoc_md21", null ],
+          [ "線分と線分の距離", "md_geometry_2geo.html#autotoc_md22", null ]
+        ] ],
+        [ "Polygon", "md_geometry_2geo.html#autotoc_md23", [
+          [ "多角形の面積", "md_geometry_2geo.html#autotoc_md24", null ],
+          [ "凸多角形の判定", "md_geometry_2geo.html#autotoc_md26", null ],
+          [ "点が凸多角形の辺上に存在するか判定", "md_geometry_2geo.html#autotoc_md28", null ],
+          [ "点が凸多角形の内部に存在するか判定", "md_geometry_2geo.html#autotoc_md29", null ]
+        ] ],
+        [ "Convex Polygon", "md_geometry_2geo.html#autotoc_md30", [
+          [ "凸包", "md_geometry_2geo.html#autotoc_md31", null ],
+          [ "凸包の直径", "md_geometry_2geo.html#autotoc_md33", null ],
+          [ "凸包をカットして左側を返す", "md_geometry_2geo.html#autotoc_md35", null ]
+        ] ],
+        [ "Point Set", "md_geometry_2geo.html#autotoc_md36", [
+          [ "最近点対", "md_geometry_2geo.html#autotoc_md37", null ]
+        ] ],
+        [ "Segment Set", "md_geometry_2geo.html#autotoc_md38", [
+          [ "線分集合の交点の個数", "md_geometry_2geo.html#autotoc_md39", null ]
+        ] ],
+        [ "Circle", "md_geometry_2geo.html#autotoc_md40", [
+          [ "2つの円の交点の個数", "md_geometry_2geo.html#autotoc_md41", null ],
+          [ "内接円", "md_geometry_2geo.html#autotoc_md43", null ],
+          [ "外接円", "md_geometry_2geo.html#autotoc_md45", null ],
+          [ "円と直線の交点", "md_geometry_2geo.html#autotoc_md47", null ],
+          [ "2つの円の交点", "md_geometry_2geo.html#autotoc_md48", null ],
+          [ "点 $p$ を通る接線との接点", "md_geometry_2geo.html#autotoc_md49", null ],
+          [ "2つの円の共通接線", "md_geometry_2geo.html#autotoc_md50", null ]
+        ] ]
+      ] ]
+    ] ],
+    [ "sa", "md_heuristic_2sa.html", [
+      [ "焼きなまし法のテンプレート", "md_heuristic_2sa.html#autotoc_md51", null ]
+    ] ],
     [ "Today03", "md__r_e_a_d_m_e.html", [
-      [ "環境構築", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "スクリプト", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
-      [ "使い方", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
-      [ "データ構造に載せる代数構造の定義の仕方", "md__r_e_a_d_m_e.html#autotoc_md4", [
-        [ "例) モノイド", "md__r_e_a_d_m_e.html#autotoc_md5", null ],
-        [ "各構造の要件", "md__r_e_a_d_m_e.html#autotoc_md6", null ]
+      [ "環境構築", "md__r_e_a_d_m_e.html#autotoc_md53", null ],
+      [ "スクリプト", "md__r_e_a_d_m_e.html#autotoc_md54", null ],
+      [ "使い方", "md__r_e_a_d_m_e.html#autotoc_md55", null ],
+      [ "データ構造に載せる代数構造の定義の仕方", "md__r_e_a_d_m_e.html#autotoc_md56", [
+        [ "例) モノイド", "md__r_e_a_d_m_e.html#autotoc_md57", null ],
+        [ "各構造の要件", "md__r_e_a_d_m_e.html#autotoc_md58", null ]
+      ] ]
+    ] ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ],
+        [ "Typedefs", "namespacemembers_type.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
+      ] ]
+    ] ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", null ],
+        [ "Typedefs", "functions_type.html", null ],
+        [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"debug_8hpp_source.html"
+"abel_8hpp.html",
+"linear__programming__2vars_8hpp.html",
+"ntt998_8hpp.html#a133aaf5782761e1866cfd3fd40e784d3",
+"struct_fraction.html#a03558e1b5e4a60bad8637df7d3b81296",
+"struct_max_flow_1_1_edge.html#aa487ab3fa5b70d6f8aaa0a4a0b946d40",
+"struct_sorted_multi_tree.html#a5c802af68f298ac3e73e0dba0ad75e79"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

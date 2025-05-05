@@ -1,0 +1,45 @@
+\doxysection{zeta\+\_\+mobius\+\_\+div\+\_\+mul.\+hpp}
+\hypertarget{zeta__mobius__div__mul_8hpp_source}{}\label{zeta__mobius__div__mul_8hpp_source}\index{algorithm/zeta\_mobius\_div\_mul.hpp@{algorithm/zeta\_mobius\_div\_mul.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/math/prime\_enumerate.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_zeta_mobius_div_mul}{ZetaMobiusDivMul}}\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ VI\ primes;}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{void}\ Init(\textcolor{keywordtype}{int}\ n=1e6)\ \{\ primes=PrimeEnumerate(n);\ \}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Mono\textcolor{keywordtype}{id}>}
+\DoxyCodeLine{00013\ \ \ \ \ vector<typename\ Monoid::Type>\ \mbox{\hyperlink{namespace_zeta_mobius_div_mul_a3464457ced48ed60b5726ff223b31af4}{MultipleZeta}}(vector<typename\ Monoid::Type>\ v)\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=v.size()-\/1;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\textcolor{keywordtype}{int})primes.size()<n)\ Init(n);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ p:primes)\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=n/p;\ k>0;\ k-\/-\/)\ v[k]=Monoid::op(v[k],v[k*p]);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Mono\textcolor{keywordtype}{id}>}
+\DoxyCodeLine{00024\ \ \ \ \ vector<typename\ Monoid::Type>\ \mbox{\hyperlink{namespace_zeta_mobius_div_mul_a0eb786dcdc175107ad43dfdb12461c51}{DivisorZeta}}(vector<typename\ Monoid::Type>\ v)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=v.size()-\/1;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\textcolor{keywordtype}{int})primes.size()<n)\ Init(n);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ p:primes)\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=1;\ k*p<=n;\ k++)\ v[k*p]=Monoid::op(v[k*p],v[k]);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Abel>}
+\DoxyCodeLine{00036\ \ \ \ \ vector<typename\ Abel::Type>\ \mbox{\hyperlink{namespace_zeta_mobius_div_mul_a17972686c127951d7816aef375120758}{MultipleMobius}}(vector<typename\ Abel::Type>\ v)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=v.size()-\/1;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\textcolor{keywordtype}{int})primes.size()<n)\ Init(n);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ p:primes)\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=1;\ k*p<=n;\ k++)\ v[k]=Abel::op(v[k],Abel::inv(v[k*p]));}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Abel>}
+\DoxyCodeLine{00048\ \ \ \ \ vector<typename\ Abel::Type>\ \mbox{\hyperlink{namespace_zeta_mobius_div_mul_afe1e6c2c7d8180ade6e65334eec8368f}{DivisorMobius}}(vector<typename\ Abel::Type>\ v)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=v.size()-\/1;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\textcolor{keywordtype}{int})primes.size()<n)\ Init(n);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ p:primes)\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=n/p;\ k>0;\ k-\/-\/)\ v[k*p]=Abel::op(v[k*p],Abel::inv(v[k]));}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \};}
+
+\end{DoxyCode}

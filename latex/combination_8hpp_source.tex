@@ -1,0 +1,40 @@
+\doxysection{combination.\+hpp}
+\hypertarget{combination_8hpp_source}{}\label{combination_8hpp_source}\index{mod/combination.hpp@{mod/combination.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }Combinatorics\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ Combinatorics()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{struct_combinatorics_ace51d39e7e21969b25e4a7b10a4bada3}{Combinatorics}}(\textcolor{keywordtype}{int}\ n)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ fac=vector<T>(n+1);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ finv=vector<T>(n+1);}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ fac[0]=1;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=1;\ i<=n;\ i++)\ fac[i]=fac[i-\/1]*i;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ finv[n]=fac[n].inv();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=n;\ i>=1;\ i-\/-\/)\ finv[i-\/1]=finv[i]*i;}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00021\ \ \ \ \ T\ \mbox{\hyperlink{struct_combinatorics_a977b699b6416d19473239931fca6f2f7}{comb}}(ll\ n,\ ll\ r)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(n<0||r<0||n-\/r<0)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fac[n]*finv[r]*finv[n-\/r];}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00028\ \ \ \ \ T\ \mbox{\hyperlink{struct_combinatorics_ac07d10087e698b320be57919234f569b}{perm}}(ll\ n,\ ll\ r)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(n<0||r<0||n-\/r<0)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fac[n]*finv[n-\/r];}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \ \ \ \ T\ \mbox{\hyperlink{struct_combinatorics_a612688ccbc9653abc8098403fced48b3}{factrial}}(\textcolor{keywordtype}{int}\ n)\ \{\ \textcolor{keywordflow}{return}\ fac[n];\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ T\ \mbox{\hyperlink{struct_combinatorics_abf0b71d9a682af871adc550a8091b05d}{factinv}}(\textcolor{keywordtype}{int}\ n)\ \{\ \textcolor{keywordflow}{return}\ finv[n];\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ T\ \mbox{\hyperlink{struct_combinatorics_a9e27460393170091fbf3429fdbb3925a}{operator()}}(ll\ n,\ ll\ r)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_combinatorics_a977b699b6416d19473239931fca6f2f7}{comb}}(n,r);\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ vector<T>\ fac,finv;}
+\DoxyCodeLine{00044\ \};}
+
+\end{DoxyCode}

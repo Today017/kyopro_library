@@ -1,0 +1,57 @@
+\doxysection{linear\+\_\+equation.\+hpp}
+\hypertarget{linear__equation_8hpp_source}{}\label{linear__equation_8hpp_source}\index{math/linear\_equation.hpp@{math/linear\_equation.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \textcolor{keywordtype}{int}\ RowReduction(vector<vector<bool>>\&\ a,\ VI\&\ where)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ row=a.size(),col=a.front().size();}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ rank=0;}
+\DoxyCodeLine{00015\ \ \ \ \ REP(c,col-\/1)\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pivot=rank;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(pivot<row\&\&!a[pivot][c])\ pivot++;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pivot==row)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ swap(a[pivot],a[rank]);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ where.push\_back(c);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ REP(r,row)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(r!=rank\&\&a[r][c])\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//A[r]\string^=A[c]}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ REP(i,col)\ a[r][i]=a[r][i]\string^a[rank][i];}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ rank++;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{return}\ rank;}
+\DoxyCodeLine{00030\ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{bool}\ LinearEquation(vector<vector<bool>>\ a,\ vector<bool>\ b,\ vector<bool>\&\ x0,\ vector<vector<bool>>\&\ ker)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ row=a.size(),col=a.front().size();}
+\DoxyCodeLine{00039\ \ \ \ \ assert(b.size()==row);}
+\DoxyCodeLine{00040\ \ \ \ \ vector<vector<bool>>\ a2=a;}
+\DoxyCodeLine{00041\ \ \ \ \ REP(i,row)\ a2[i].push\_back(b[i]);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ VI\ where;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ rank=RowReduction(a2,where);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ r=rank;\ r<row;\ r++)\ \textcolor{keywordflow}{if}(a2[r].back())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ x0=vector<bool>(col,\textcolor{keyword}{false});}
+\DoxyCodeLine{00049\ \ \ \ \ REP(i,rank)\ x0[where[i]]=a2[i].back();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ r=0;}
+\DoxyCodeLine{00052\ \ \ \ \ REP(c,col)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(r<rank\&\&c==where[r])\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ r++;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ vector<bool>\ x(col);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ x[c]=\textcolor{keyword}{true};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ REP(r2,r)\ x[where[r2]]=a2[r2][c];}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ ker.push\_back(x);}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00064\ \}}
+
+\end{DoxyCode}

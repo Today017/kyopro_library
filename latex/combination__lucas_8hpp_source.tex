@@ -1,0 +1,32 @@
+\doxysection{combination\+\_\+lucas.\+hpp}
+\hypertarget{combination__lucas_8hpp_source}{}\label{combination__lucas_8hpp_source}\index{mod/combination\_lucas.hpp@{mod/combination\_lucas.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/others/modcal.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_combination_lucas_a0c46e2850894c0d5690bffc81047ddd8}{CombinationLucas}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{struct_combination_lucas_a0c46e2850894c0d5690bffc81047ddd8}{CombinationLucas}}(\textcolor{keywordtype}{int}\ mod)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ this-\/>mod=mod;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ fact=VL(mod);\ fact[0]=1;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ factinv=VL(mod);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=1;\ i<mod;\ i++)\ fact[i]=fact[i-\/1]*i\%mod;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ factinv[mod-\/1]=ModInv(fact[mod-\/1],mod);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=mod-\/2;\ i>=0;\ i-\/-\/)\ factinv[i]=factinv[i+1]*(i+1)\%mod;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00028\ \ \ \ \ ll\ \mbox{\hyperlink{struct_combination_lucas_a5f1804272f10fc0e69792ea54e172e2b}{comb}}(\textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{int}\ r)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(r==0||r==n)\ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ calc(n\%mod,r\%mod)*\mbox{\hyperlink{struct_combination_lucas_a5f1804272f10fc0e69792ea54e172e2b}{comb}}(n/mod,r/mod)\%mod;}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ VL\ fact,factinv;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ mod;}
+\DoxyCodeLine{00036\ \ \ \ \ ll\ calc(\textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{int}\ r)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(n<r||r<0||n<0)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fact[n]*factinv[r]\%mod*factinv[n-\/r]\%mod;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \};}
+
+\end{DoxyCode}

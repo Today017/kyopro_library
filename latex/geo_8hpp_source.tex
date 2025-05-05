@@ -1,0 +1,549 @@
+\doxysection{geo.\+hpp}
+\hypertarget{geo_8hpp_source}{}\label{geo_8hpp_source}\index{geometry/geo.hpp@{geometry/geo.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{namespace\ }Geometry\{}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keyword}{using\ }Real=\textcolor{keywordtype}{long}\ double;}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keyword}{const}\ Real\ EPS=1e-\/9;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{bool}\ almostEqual(Real\ a,Real\ b)\{\textcolor{keywordflow}{return}\ abs(a-\/b)<EPS;\}}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{bool}\ lessThan(Real\ a,Real\ b)\{\textcolor{keywordflow}{return}\ a<b\&\&!almostEqual(a,b);\}}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{bool}\ greaterThan(Real\ a,Real\ b)\{\textcolor{keywordflow}{return}\ a>b\&\&!almostEqual(a,b);\}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{bool}\ lessThanOrEqual(Real\ a,Real\ b)\{\textcolor{keywordflow}{return}\ a<b||almostEqual(a,b);\}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{bool}\ greaterThanOrEqual(Real\ a,Real\ b)\{\textcolor{keywordflow}{return}\ a>b||almostEqual(a,b);\}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{struct\ }Point\{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ Real\ x,y;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ Point()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ Point(Real\ x,Real\ y):x(x),y(y)\{\}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ Point\ operator+(\textcolor{keyword}{const}\ Point\&p)\textcolor{keyword}{const}\{\textcolor{keywordflow}{return}\ Point(x+p.x,y+p.y);\}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ Point\ operator-\/(\textcolor{keyword}{const}\ Point\&p)\textcolor{keyword}{const}\{\textcolor{keywordflow}{return}\ Point(x-\/p.x,y-\/p.y);\}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ Point\ operator*(Real\ k)\textcolor{keyword}{const}\{\textcolor{keywordflow}{return}\ Point(x*k,y*k);\}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ Point\ operator/(Real\ k)\textcolor{keyword}{const}\{\textcolor{keywordflow}{return}\ Point(x/k,y/k);\}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ Real\ dot(\textcolor{keyword}{const}\ Point\&p)\textcolor{keyword}{const}\{\textcolor{keywordflow}{return}\ x*p.x+y*p.y;\}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ Real\ cross(\textcolor{keyword}{const}\ Point\&p)\textcolor{keyword}{const}\{\textcolor{keywordflow}{return}\ x*p.y-\/y*p.x;\}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ Real\ cross(\textcolor{keyword}{const}\ Point\&p1,\textcolor{keyword}{const}\ Point\&p2)\textcolor{keyword}{const}\{\textcolor{keywordflow}{return}(p1.x-\/x)*(p2.y-\/y)-\/(p1.y-\/y)*(p2.x-\/x);\}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ Real\ norm()\textcolor{keyword}{const}\{\textcolor{keywordflow}{return}\ x*x+y*y;\}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ Real\ abs()\textcolor{keyword}{const}\{\textcolor{keywordflow}{return}\ sqrt(norm());\}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Real\ arg()\textcolor{keyword}{const}\{\textcolor{keywordflow}{return}\ atan2(y,x);\}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ Point\&p)\textcolor{keyword}{const}\{\textcolor{keywordflow}{return}\ almostEqual(x,p.x)\&\&almostEqual(y,p.y);\}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ istream\&operator>>(istream\&is,Point\&p)\{\textcolor{keywordflow}{return}\ is>>p.x>>p.y;\}}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{struct\ }Line\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ a,b;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ Line()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ Line(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&\_a,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&\_b):a(\_a),b(\_b)\{\}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Ax+By=C}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ Line(\textcolor{keyword}{const}\ Real\&A,\textcolor{keyword}{const}\ Real\&B,\textcolor{keyword}{const}\ Real\&C)\{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(almostEqual(A,0))\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assert(!almostEqual(B,0));}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a=\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}(0,C/B);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b=\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}(1,C/B);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(almostEqual(B,0))\{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a=\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}(C/A,0);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b=\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}(C/A,1);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(almostEqual(C,0))\{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a=\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}(0,C/B);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b=\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}(1,(C-\/A)/B);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a=\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}(0,C/B);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b=\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}(C/A,0);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ Line\&l)\textcolor{keyword}{const}\{\textcolor{keywordflow}{return}\ a==l.a\&\&b==l.b;\}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ istream\&operator>>(istream\&is,Line\&l)\{\textcolor{keywordflow}{return}\ is>>l.a>>l.b;\}}
+\DoxyCodeLine{00054\ \ \ \ \ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{struct\ }Segment:Line\{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ Segment()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }Line::Line;}
+\DoxyCodeLine{00059\ \ \ \ \ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{struct\ }Circle\{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ center;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ Real\ r;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ Circle()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ Circle(Real\ x,Real\ y,Real\ r):center(x,y),r(r)\{\}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Circle(\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ \_center,Real\ r):center(\_center),r(r)\{\}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ Circle\&C)\textcolor{keyword}{const}\{\textcolor{keywordflow}{return}\ center==C.center\&\&r==C.r;\}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ istream\&operator>>(istream\&is,Circle\&C)\{\textcolor{keywordflow}{return}\ is>>C.center>>C.r;\}}
+\DoxyCodeLine{00069\ \ \ \ \ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{enum}\ Orientation\{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ COUNTER\_CLOCKWISE,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ CLOCKWISE,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ ONLINE\_BACK,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ ONLINE\_FRONT,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ ON\_SEGMENT}
+\DoxyCodeLine{00079\ \ \ \ \ \};}
+\DoxyCodeLine{00080\ \ \ \ \ Orientation\ ccw(\textcolor{keyword}{const}\ Point\&p0,\textcolor{keyword}{const}\ Point\&p1,\textcolor{keyword}{const}\ Point\&p2)\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ Point\ a=p1-\/p0;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ Point\ b=p2-\/p0;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ Real\ cross\_product=a.cross(b);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(greaterThan(cross\_product,0))\textcolor{keywordflow}{return}\ COUNTER\_CLOCKWISE;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(lessThan(cross\_product,0))\textcolor{keywordflow}{return}\ CLOCKWISE;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(lessThan(a.dot(b),0))\textcolor{keywordflow}{return}\ ONLINE\_BACK;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(lessThan(a.norm(),b.norm()))\textcolor{keywordflow}{return}\ ONLINE\_FRONT;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ON\_SEGMENT;}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{string}\ orientationToString(Orientation\ o)\{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(o)\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ COUNTER\_CLOCKWISE:}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\textcolor{stringliteral}{"{}COUNTER\_CLOCKWISE"{}};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ CLOCKWISE:}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\textcolor{stringliteral}{"{}CLOCKWISE"{}};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ONLINE\_BACK:}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\textcolor{stringliteral}{"{}ONLINE\_BACK"{}};}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ONLINE\_FRONT:}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\textcolor{stringliteral}{"{}ONLINE\_FRONT"{}};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ ON\_SEGMENT:}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\textcolor{stringliteral}{"{}ON\_SEGMENT"{}};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\textcolor{stringliteral}{"{}UNKNOWN"{}};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ projection(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p2,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p)\{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ base=p2-\/p1;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ Real\ r=(p-\/p1).dot(base)/base.norm();}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p1+base*r;}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ projection(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_line}{Line}}\&l,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p)\{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ base=l.b-\/l.a;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ Real\ r=(p-\/l.a).dot(base)/base.norm();}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ l.a+base*r;}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ reflection(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p2,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p)\{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ proj=projection(p1,p2,p);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ proj*2-\/p;}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ reflection(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_line}{Line}}\&l,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p)\{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ proj=projection(l,p);}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ proj*2-\/p;}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{bool}\ isParallel(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_line}{Line}}\&l1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_line}{Line}}\&l2)\{\textcolor{keywordflow}{return}\ almostEqual((l1.b-\/l1.a).cross(l2.b-\/l2.a),0);\}}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{bool}\ isOrthogonal(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_line}{Line}}\&l1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_line}{Line}}\&l2)\{\textcolor{keywordflow}{return}\ almostEqual((l1.b-\/l1.a).dot(l2.b-\/l2.a),0);\}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{bool}\ isParallel(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&l1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&l2)\{\textcolor{keywordflow}{return}\ almostEqual((l1.b-\/l1.a).cross(l2.b-\/l2.a),0);\}}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{bool}\ isOrthogonal(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&l1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&l2)\{\textcolor{keywordflow}{return}\ almostEqual((l1.b-\/l1.a).dot(l2.b-\/l2.a),0);\}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{bool}\ isParallel(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_line}{Line}}\&l1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&l2)\{\textcolor{keywordflow}{return}\ almostEqual((l1.b-\/l1.a).cross(l2.b-\/l2.a),0);\}}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{bool}\ isOrthogonal(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_line}{Line}}\&l1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&l2)\{\textcolor{keywordflow}{return}\ almostEqual((l1.b-\/l1.a).dot(l2.b-\/l2.a),0);\}}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{bool}\ isParallel(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&l1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_line}{Line}}\&l2)\{\textcolor{keywordflow}{return}\ almostEqual((l1.b-\/l1.a).cross(l2.b-\/l2.a),0);\}}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{bool}\ isOrthogonal(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&l1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_line}{Line}}\&l2)\{\textcolor{keywordflow}{return}\ almostEqual((l1.b-\/l1.a).dot(l2.b-\/l2.a),0);\}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPointOnLine(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_line}{Line}}\&l)\{\textcolor{keywordflow}{return}\ almostEqual((l.b-\/l.a).cross(p-\/l.a),0.0);\}}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPointOnSegment(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&s)\{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lessThanOrEqual(min(s.a.x,s.b.x),p.x)\&\&}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ lessThanOrEqual(p.x,max(s.a.x,s.b.x))\&\&}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ lessThanOrEqual(min(s.a.y,s.b.y),p.y)\&\&}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ lessThanOrEqual(p.y,max(s.a.y,s.b.y))\&\&}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ almostEqual((s.b-\/s.a).cross(p-\/s.a),0.0);}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{bool}\ isIntersecting(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&s1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&s2)\{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ p0p1=s1.b-\/s1.a;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ p0p2=s2.a-\/s1.a;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ p0p3=s2.b-\/s1.a;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ p2p3=s2.b-\/s2.a;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ p2p0=s1.a-\/s2.a;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ p2p1=s1.b-\/s2.a;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ Real\ d1=p0p1.cross(p0p2);}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ Real\ d2=p0p1.cross(p0p3);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ Real\ d3=p2p3.cross(p2p0);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ Real\ d4=p2p3.cross(p2p1);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(lessThan(d1*d2,0)\&\&lessThan(d3*d4,0))\textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(almostEqual(d1,0.0)\&\&isPointOnSegment(s2.a,s1))\textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(almostEqual(d2,0.0)\&\&isPointOnSegment(s2.b,s1))\textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(almostEqual(d3,0.0)\&\&isPointOnSegment(s1.a,s2))\textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(almostEqual(d4,0.0)\&\&isPointOnSegment(s1.b,s2))\textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ getIntersection(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&s1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&s2)\{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ assert(isIntersecting(s1,s2));}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ cross=[](\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ p,\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ q)\{\textcolor{keywordflow}{return}\ p.x*q.y-\/p.y*q.x;\};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ base=s2.b-\/s2.a;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ Real\ d1=abs(cross(base,s1.a-\/s2.a));}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ Real\ d2=abs(cross(base,s1.b-\/s2.a));}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ Real\ t=d1/(d1+d2);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ s1.a+(s1.b-\/s1.a)*t;}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ Real\ distancePointToSegment(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&s)\{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ proj=projection(s.a,s.b,p);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isPointOnSegment(proj,s))\{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}(p-\/proj).abs();}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ min((p-\/s.a).abs(),(p-\/s.b).abs());}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ Real\ distanceSegmentToSegment(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&s1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&s2)\{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isIntersecting(s1,s2))\textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ min(}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{distancePointToSegment(s1.a,s2),distancePointToSegment(s1.b,s2),}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ distancePointToSegment(s2.a,s1),distancePointToSegment(s2.b,s1)\});}
+\DoxyCodeLine{00183\ \ \ \ \ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ Real\ getPolygonArea(\textcolor{keyword}{const}\ vector<Point>\&points)\{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=points.size();}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ Real\ area=0.0;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<n;++i)\{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j=(i+1)\%n;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ area+=points[i].x*points[j].y;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ area-\/=points[i].y*points[j].x;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ abs(area)/2.0;}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{bool}\ isConvex(\textcolor{keyword}{const}\ vector<Point>\&points)\{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=points.size();}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ has\_positive=\textcolor{keyword}{false},has\_negative=\textcolor{keyword}{false};}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<n;++i)\{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j=(i+1)\%n;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k=(i+2)\%n;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ a=points[j]-\/points[i];}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ b=points[k]-\/points[j];}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ cross\_product=a.cross(b);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(greaterThan(cross\_product,0))has\_positive=\textcolor{keyword}{true};}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(lessThan(cross\_product,0))has\_negative=\textcolor{keyword}{true};}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}!(has\_positive\&\&has\_negative);}
+\DoxyCodeLine{00210\ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPointOnPolygon(\textcolor{keyword}{const}\ vector<Point>\&polygon,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p)\{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=polygon.size();}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<n;++i)\{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ a=polygon[i];}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ b=polygon[(i+1)\%n];}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\ s(a,b);}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isPointOnSegment(p,s))\textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPointInsidePolygon(\textcolor{keyword}{const}\ vector<Point>\&polygon,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p)\{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=polygon.size();}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ inPolygon=\textcolor{keyword}{false};}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<n;++i)\{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ a=polygon[i];}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ b=polygon[(i+1)\%n];}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(greaterThan(a.y,b.y))swap(a,b);}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(lessThanOrEqual(a.y,p.y)\&\&lessThan(p.y,b.y)\&\&greaterThan((b-\/a).cross(p-\/a),0))inPolygon=!inPolygon;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ inPolygon;}
+\DoxyCodeLine{00231\ \ \ \ \ \}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ vector<Point>convexHull(vector<Point>\&points,\textcolor{keywordtype}{bool}\ include\_collinear=\textcolor{keyword}{false})\{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=points.size();}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(n<=1)\textcolor{keywordflow}{return}\ points;}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ sort(points.begin(),points.end(),[](\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&l,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&r)-\/>bool\{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ if(almostEqual(l.y,r.y))return\ lessThan(l.x,r.x);}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ return\ lessThan(l.y,r.y);}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(n==2)\textcolor{keywordflow}{return}\ points;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ vector<Point>upper=\{points[0],points[1]\},lower=\{points[0],points[1]\};}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=2;i<n;++i)\{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((\textcolor{keywordtype}{int})upper.size()>=2\&\&ccw(upper.end()[-\/2],upper.end()[-\/1],points[i])!=CLOCKWISE)\{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ccw(upper.end()[-\/2],upper.end()[-\/1],points[i])==ONLINE\_FRONT\&\&include\_collinear)\textcolor{keywordflow}{break};}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ upper.pop\_back();}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ upper.push\_back(points[i]);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((\textcolor{keywordtype}{int})lower.size()>=2\&\&ccw(lower.end()[-\/2],lower.end()[-\/1],points[i])!=COUNTER\_CLOCKWISE)\{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ccw(lower.end()[-\/2],lower.end()[-\/1],points[i])==ONLINE\_FRONT\&\&include\_collinear)\textcolor{keywordflow}{break};}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lower.pop\_back();}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ lower.push\_back(points[i]);}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ reverse(upper.begin(),upper.end());}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ upper.pop\_back();}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ lower.pop\_back();}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ lower.insert(lower.end(),upper.begin(),upper.end());}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lower;}
+\DoxyCodeLine{00261\ \ \ \ \ \}}
+\DoxyCodeLine{00262\ \ \ \ \ Real\ convexHullDiameter(\textcolor{keyword}{const}\ vector<Point>\&hull)\{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=hull.size();}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(n==1)\textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k=1;}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ Real\ max\_dist=0;}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<n;++i)\{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j=(k+1)\%n;}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ dist1=hull[i]-\/hull[j],dist2=hull[i]-\/hull[k];}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ max\_dist=max(max\_dist,dist1.abs());}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ max\_dist=max(max\_dist,dist2.abs());}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dist1.abs()>dist2.abs())\{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k=j;}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ dist=hull[i]-\/hull[k];}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ max\_dist=max(max\_dist,dist.abs());}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ max\_dist;}
+\DoxyCodeLine{00283\ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \ \ \ \ vector<Point>cutPolygon(\textcolor{keyword}{const}\ vector<Point>\&g,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_line}{Line}}\&l)\{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ isLeft=[](\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p2,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p)-\/>\textcolor{keywordtype}{bool}\{\textcolor{keywordflow}{return}(p2-\/p1).cross(p-\/p1)>0;\};}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ vector<Point>newPolygon;}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=g.size();}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<n;++i)\{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&cur=g[i];}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&next=g[(i+1)\%n];}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isLeft(l.a,l.b,cur))newPolygon.push\_back(cur);}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((isLeft(l.a,l.b,cur)\&\&!isLeft(l.a,l.b,next))||(!isLeft(l.a,l.b,cur)\&\&isLeft(l.a,l.b,next)))\{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ A1=(next-\/cur).cross(l.a-\/cur);}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ A2=(next-\/cur).cross(l.b-\/cur);}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ intersection=l.a+(l.b-\/l.a)*(A1/(A1-\/A2));}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newPolygon.push\_back(intersection);}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ newPolygon;}
+\DoxyCodeLine{00300\ \ \ \ \ \}}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ Real\ closestPair(vector<Point>\&points,\textcolor{keywordtype}{int}\ l,\textcolor{keywordtype}{int}\ r)\{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(r-\/l<=1)\textcolor{keywordflow}{return}\ numeric\_limits<Real>::max();}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mid=(l+r)>>1;}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ Real\ x=points[mid].x;}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ Real\ d=min(closestPair(points,l,mid),closestPair(points,mid,r));}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ iti=points.begin(),itl=iti+l,itm=iti+mid,itr=iti+r;}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ inplace\_merge(itl,itm,itr,[](\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&lhs,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&rhs)-\/>\textcolor{keywordtype}{bool}\{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lessThan(lhs.y,rhs.y);}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ vector<Point>nearLine;}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=l;i<r;++i)\{}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(greaterThanOrEqual(fabs(points[i].x-\/x),d))\textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sz=nearLine.size();}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=sz-\/1;j>=0;-\/-\/j)\{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ dv=points[i]-\/nearLine[j];}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dv.y>=d)\textcolor{keywordflow}{break};}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d=min(d,dv.abs());}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ nearLine.push\_back(points[i]);}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ d;}
+\DoxyCodeLine{00325\ \ \ \ \ \}}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordtype}{int}\ countIntersections(vector<Segment>segments)\{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }Event\{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ x;}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ type;\textcolor{comment}{//0:horizontal\ start,1:vertical,2:horizontal\ end}}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ y1,y2;}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ Event(Real\ x,\textcolor{keywordtype}{int}\ type,Real\ y1,Real\ y2):x(x),type(type),y1(y1),y2(y2)\{\}}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator<(\textcolor{keyword}{const}\ Event\&other)\textcolor{keyword}{const}\{}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x==other.x)\textcolor{keywordflow}{return}\ type<other.type;}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x<other.x;}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ vector<Event>events;}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ sort(segments.begin(),segments.end(),[](\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&lhs,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&rhs)-\/>bool\{}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ return\ lessThan(min(lhs.a.x,lhs.b.x),min(rhs.a.x,rhs.b.x));}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&seg:segments)\{}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(seg.a.y==seg.b.y)\{}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Horizontal\ segment}}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ y=seg.a.y;}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ x1=min(seg.a.x,seg.b.x);}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ x2=max(seg.a.x,seg.b.x);}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ events.emplace\_back(x1,0,y,y);}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ events.emplace\_back(x2,2,y,y);}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Vertical\ segment}}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ x=seg.a.x;}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ y1=min(seg.a.y,seg.b.y);}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ y2=max(seg.a.y,seg.b.y);}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ events.emplace\_back(x,1,y1,y2);}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ sort(events.begin(),events.end());}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ set<Real>activeSegments;}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ intersectionCount=0;}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&event:events)\{}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(event.type==0)\{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Add\ horizontal\ segment\ to\ active\ set}}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ activeSegments.insert(event.y1);}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(event.type==2)\{}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Remove\ horizontal\ segment\ from\ active\ set}}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ activeSegments.erase(event.y1);}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(event.type==1)\{}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Count\ intersections\ with\ vertical\ segment}}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ lower=activeSegments.lower\_bound(event.y1);}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ upper=activeSegments.upper\_bound(event.y2);}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ intersectionCount+=distance(lower,upper);}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ intersectionCount;}
+\DoxyCodeLine{00378\ \ \ \ \ \}}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keywordtype}{int}\ countCirclesIntersection(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_circle}{Circle}}\&c1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_circle}{Circle}}\&c2)\{}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ Real\ d=sqrt((c1.center.x-\/c2.center.x)*(c1.center.x-\/c2.center.x)+}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (c1.center.y-\/c2.center.y)*(c1.center.y-\/c2.center.y));}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ Real\ r1=c1.r,r2=c2.r;}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(greaterThan(d,r1+r2))\{}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 4;}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(almostEqual(d,r1+r2))\{}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 3;}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(greaterThan(d,fabs(r1-\/r2)))\{}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(almostEqual(d,fabs(r1-\/r2)))\{}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00397\ \ \ \ \ \}}
+\DoxyCodeLine{00398\ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_circle}{Circle}}\ getInCircle(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&A,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&B,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&C)\{}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ Real\ a=(B-\/C).abs();}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ Real\ b=(A-\/C).abs();}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ Real\ c=(A-\/B).abs();}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ Real\ s=(a+b+c)/2;}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ Real\ area=sqrt(s*(s-\/a)*(s-\/b)*(s-\/c));}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ Real\ r=area/s;}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ Real\ cx=(a*A.x+b*B.x+c*C.x)/(a+b+c);}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ Real\ cy=(a*A.y+b*B.y+c*C.y)/(a+b+c);}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_geometry_1_1_circle}{Circle}}\{\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}(cx,cy),r\};}
+\DoxyCodeLine{00408\ \ \ \ \ \}}
+\DoxyCodeLine{00409\ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_circle}{Circle}}\ getCircumCircle(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&A,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&B,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&C)\{}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ Real\ D=2*(A.x*(B.y-\/C.y)+B.x*(C.y-\/A.y)+C.x*(A.y-\/B.y));}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ Real\ Ux=((A.x*A.x+A.y*A.y)*(B.y-\/C.y)+(B.x*B.x+B.y*B.y)*(C.y-\/A.y)+(C.x*C.x+C.y*C.y)*(A.y-\/B.y))/D;}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ Real\ Uy=((A.x*A.x+A.y*A.y)*(C.x-\/B.x)+(B.x*B.x+B.y*B.y)*(A.x-\/C.x)+(C.x*C.x+C.y*C.y)*(B.x-\/A.x))/D;}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ center(Ux,Uy);}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ Real\ radius=(center-\/A).abs();}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_geometry_1_1_circle}{Circle}}\{center,radius\};}
+\DoxyCodeLine{00416\ \ \ \ \ \}}
+\DoxyCodeLine{00417\ \ \ \ \ vector<Point>getCircleLineIntersection(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_circle}{Circle}}\&c,\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ p1,\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ p2)\{}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ Real\ cx=c.center.x,cy=c.center.y,r=c.r;}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ Real\ dx=p2.x-\/p1.x;}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ Real\ dy=p2.y-\/p1.y;}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ Real\ a=dx*dx+dy*dy;}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ Real\ b=2*(dx*(p1.x-\/cx)+dy*(p1.y-\/cy));}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ Real\ c\_const=(p1.x-\/cx)*(p1.x-\/cx)+(p1.y-\/cy)*(p1.y-\/cy)-\/r*r;}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ Real\ discriminant=b*b-\/4*a*c\_const;}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ vector<Point>intersections;}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(almostEqual(discriminant,0))\{}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ t=-\/b/(2*a);}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ ix=p1.x+t*dx;}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ iy=p1.y+t*dy;}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ intersections.emplace\_back(ix,iy);}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ intersections.emplace\_back(ix,iy);}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(discriminant>0)\{}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ sqrt\_discriminant=sqrt(discriminant);}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ t1=(-\/b+sqrt\_discriminant)/(2*a);}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ t2=(-\/b-\/sqrt\_discriminant)/(2*a);}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ ix1=p1.x+t1*dx;}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ iy1=p1.y+t1*dy;}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ ix2=p1.x+t2*dx;}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ iy2=p1.y+t2*dy;}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ intersections.emplace\_back(ix1,iy1);}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ intersections.emplace\_back(ix2,iy2);}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(almostEqual(intersections[0].x,intersections[1].x))\{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(greaterThan(intersections[0].y,intersections[1].y))swap(intersections[0],intersections[1]);}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(greaterThan(intersections[0].x,intersections[1].x))\{}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ swap(intersections[0],intersections[1]);}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ intersections;}
+\DoxyCodeLine{00449\ \ \ \ \ \}}
+\DoxyCodeLine{00450\ \ \ \ \ vector<Point>getCirclesIntersect(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_circle}{Circle}}\&c1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_circle}{Circle}}\&c2)\{}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ Real\ x1=c1.center.x,y1=c1.center.y,r1=c1.r;}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ Real\ x2=c2.center.x,y2=c2.center.y,r2=c2.r;}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ Real\ d=sqrt((x2-\/x1)*(x2-\/x1)+(y2-\/y1)*(y2-\/y1));}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(d>r1+r2||d<abs(r1-\/r2))\textcolor{keywordflow}{return}\{\};\textcolor{comment}{//No\ intersection}}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ Real\ a=(r1*r1-\/r2*r2+d*d)/(2*d);}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ Real\ h=sqrt(r1*r1-\/a*a);}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ Real\ x0=x1+a*(x2-\/x1)/d;}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ Real\ y0=y1+a*(y2-\/y1)/d;}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ Real\ rx=-\/(y2-\/y1)*(h/d);}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ Real\ ry=(x2-\/x1)*(h/d);}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ p1(x0+rx,y0+ry);}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\ p2(x0-\/rx,y0-\/ry);}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ vector<Point>intersections;}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ intersections.push\_back(p1);}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ intersections.push\_back(p2);}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(almostEqual(intersections[0].x,intersections[1].x))\{}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(greaterThan(intersections[0].y,intersections[1].y))swap(intersections[0],intersections[1]);}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(greaterThan(intersections[0].x,intersections[1].x))\{}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ swap(intersections[0],intersections[1]);}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ intersections;}
+\DoxyCodeLine{00472\ \ \ \ \ \}}
+\DoxyCodeLine{00473\ \ \ \ \ vector<Point>getTangentLinesFromPoint(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_circle}{Circle}}\&c,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_point}{Point}}\&p)\{}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ Real\ cx=c.center.x,cy=c.center.y,r=c.r;}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ Real\ px=p.x,py=p.y;}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ Real\ dx=px-\/cx;}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ Real\ dy=py-\/cy;}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ Real\ d=(p-\/c.center).abs();}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(lessThan(d,r))\{}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\{\};\textcolor{comment}{//No\ tangents\ if\ the\ point\ is\ inside\ the\ circle}}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(almostEqual(d,r))\{}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\{p\};}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ Real\ a=r*r/d;}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ Real\ h=sqrt(r*r-\/a*a);}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ Real\ cx1=cx+a*dx/d;}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ Real\ cy1=cy+a*dy/d;}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ vector<Point>tangents;}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ tangents.emplace\_back(cx1+h*dy/d,cy1-\/h*dx/d);}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ tangents.emplace\_back(cx1-\/h*dy/d,cy1+h*dx/d);}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(almostEqual(tangents[0].x,tangents[1].x))\{}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(greaterThan(tangents[0].y,tangents[1].y))swap(tangents[0],tangents[1]);}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(greaterThan(tangents[0].x,tangents[1].x))\{}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ swap(tangents[0],tangents[1]);}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tangents;}
+\DoxyCodeLine{00497\ \ \ \ \ \}}
+\DoxyCodeLine{00498\ \ \ \ \ vector<Segment>getCommonTangentsLine(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_circle}{Circle}}\&c1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_circle}{Circle}}\&c2)\{}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ Real\ x1=c1.center.x,y1=c1.center.y,r1=c1.r;}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ Real\ x2=c2.center.x,y2=c2.center.y,r2=c2.r;}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ Real\ dx=x2-\/x1;}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ Real\ dy=y2-\/y1;}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ Real\ d=sqrt(dx*dx+dy*dy);}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ vector<Segment>tangents;}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Coincident\ circles(infinite\ tangents)}}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(almostEqual(d,0)\&\&almostEqual(r1,r2))\textcolor{keywordflow}{return}\ tangents;}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \textcolor{comment}{//External\ tangents}}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(greaterThanOrEqual(d,r1+r2))\{}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ a=atan2(dy,dx);}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ sign:\{-\/1,1\})\{}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ theta=acos((r1+r2)/d);}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ cx1=x1+r1*cos(a+sign*theta);}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ cy1=y1+r1*sin(a+sign*theta);}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ cx2=x2+r2*cos(a+sign*theta);}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ cy2=y2+r2*sin(a+sign*theta);}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tangents.emplace\_back(\mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\{\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}(cx1,cy1),\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}(cx2,cy2)\});}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(almostEqual(d,r1+r2))\textcolor{keywordflow}{break};}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Internal\ tangents}}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(greaterThanOrEqual(d,fabs(r1-\/r2)))\{}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ Real\ a=atan2(dy,dx);}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ sign:\{-\/1,1\})\{}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ theta=acos((r1-\/r2)/d);}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ cx1=x1+r1*cos(a+sign*theta);}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ cy1=y1+r1*sin(a+sign*theta);}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ cx2=x2-\/r2*cos(a+sign*theta);}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Real\ cy2=y2-\/r2*sin(a+sign*theta);}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tangents.emplace\_back(\mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\{\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}(cx1,cy1),\mbox{\hyperlink{struct_geometry_1_1_point}{Point}}(cx2,cy2)\});}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(almostEqual(d,fabs(r1-\/r2)))}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ sort(tangents.begin(),tangents.end(),[\&](\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&s1,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_geometry_1_1_segment}{Segment}}\&s2)\{}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ if(almostEqual(s1.a.x,s2.a.x))\{}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ lessThan(s1.a.y,s2.a.y);}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ lessThan(s1.a.x,s2.a.x);}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tangents;}
+\DoxyCodeLine{00542\ \ \ \ \ \}}
+\DoxyCodeLine{00543\ \}}
+
+\end{DoxyCode}

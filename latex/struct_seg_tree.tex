@@ -1,0 +1,146 @@
+\doxysection{Seg\+Tree\texorpdfstring{$<$}{<} Monoid \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_seg_tree}{}\label{struct_seg_tree}\index{SegTree$<$ Monoid $>$@{SegTree$<$ Monoid $>$}}
+
+
+セグメント木  
+
+
+
+
+{\ttfamily \#include $<$segtree.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_seg_tree_aac5a3f0410edaa464604856c1a182460}\label{struct_seg_tree_aac5a3f0410edaa464604856c1a182460} 
+using {\bfseries Type} = typename Monoid\+::\+Type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_seg_tree_acf1bec279e7ef62b88a4b734cd34051d}\label{struct_seg_tree_acf1bec279e7ef62b88a4b734cd34051d} 
+{\bfseries Seg\+Tree} (int n)
+\begin{DoxyCompactList}\small\item\em 要素数 n のセグ木を構築する \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_seg_tree_a4b1322c2c40ed18503529433425955fe}{Seg\+Tree}} (const vector$<$ Type $>$ \&v)
+\begin{DoxyCompactList}\small\item\em 配列 v からセグ木を構築する \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_seg_tree_abffaeb2310c009d4c80189a710a0254d}{set}} (int i, Type x)
+\begin{DoxyCompactList}\small\item\em i 番目の要素を x に変更する \end{DoxyCompactList}\item 
+Type \mbox{\hyperlink{struct_seg_tree_ab9725a4dc2152446887d87195cc88c4d}{fold}} (int l, int r)
+\begin{DoxyCompactList}\small\item\em 区間 \mbox{[}l, r) のモノイド積を返す \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename F$>$ }\\int \mbox{\hyperlink{struct_seg_tree_ad2d7958e9a4bf972af9a17c75797f05b}{find\+\_\+right}} (int l, F f)
+\begin{DoxyCompactList}\small\item\em 区間 \mbox{[}l, x) のモノイド積が f を満たすような最大の x \texorpdfstring{$>$}{>}= l を返す \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename F$>$ }\\int \mbox{\hyperlink{struct_seg_tree_a42e25bc5f3c27da146721b6bc9099893}{find\+\_\+left}} (int r, F f)
+\begin{DoxyCompactList}\small\item\em 区間 \mbox{[}x, r) のモノイド積が f を満たすような最小の x \texorpdfstring{$<$}{<}= r を返す \end{DoxyCompactList}\item 
+Type \mbox{\hyperlink{struct_seg_tree_abaaec86084bfc4f3ea884347097d2277}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em i 番目の要素を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_seg_tree_a5df8a514cb63bc8845fa4077e183317f}\label{struct_seg_tree_a5df8a514cb63bc8845fa4077e183317f} 
+int {\bfseries size} ()
+\begin{DoxyCompactList}\small\item\em 配列のサイズを返す \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Monoid$>$\newline
+struct Seg\+Tree$<$ Monoid $>$}
+セグメント木 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_seg_tree_a4b1322c2c40ed18503529433425955fe}\index{SegTree$<$ Monoid $>$@{SegTree$<$ Monoid $>$}!SegTree@{SegTree}}
+\index{SegTree@{SegTree}!SegTree$<$ Monoid $>$@{SegTree$<$ Monoid $>$}}
+\doxysubsubsection{\texorpdfstring{SegTree()}{SegTree()}}
+{\footnotesize\ttfamily \label{struct_seg_tree_a4b1322c2c40ed18503529433425955fe} 
+template$<$typename Monoid$>$ \\
+\mbox{\hyperlink{struct_seg_tree}{Seg\+Tree}}$<$ Monoid $>$\mbox{\hyperlink{struct_seg_tree}{\+::\+Seg\+Tree}} (\begin{DoxyParamCaption}\item[{const vector$<$ Type $>$ \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+配列 v からセグ木を構築する 
+
+\begin{DoxyNote}{Note}
+O(\+N) 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_seg_tree_a42e25bc5f3c27da146721b6bc9099893}\index{SegTree$<$ Monoid $>$@{SegTree$<$ Monoid $>$}!find\_left@{find\_left}}
+\index{find\_left@{find\_left}!SegTree$<$ Monoid $>$@{SegTree$<$ Monoid $>$}}
+\doxysubsubsection{\texorpdfstring{find\_left()}{find\_left()}}
+{\footnotesize\ttfamily \label{struct_seg_tree_a42e25bc5f3c27da146721b6bc9099893} 
+template$<$typename Monoid$>$ \\
+template$<$typename F$>$ \\
+int \mbox{\hyperlink{struct_seg_tree}{Seg\+Tree}}$<$ Monoid $>$\+::find\+\_\+left (\begin{DoxyParamCaption}\item[{int}]{r}{, }\item[{F}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+区間 \mbox{[}x, r) のモノイド積が f を満たすような最小の x \texorpdfstring{$<$}{<}= r を返す 
+
+\begin{DoxyAttention}{Attention}
+{\ttfamily f(\+Monoid\+::id())=true} が成り立つ必要がある 
+\end{DoxyAttention}
+\begin{DoxyNote}{Note}
+O(log(\+N)) 
+\end{DoxyNote}
+\Hypertarget{struct_seg_tree_ad2d7958e9a4bf972af9a17c75797f05b}\index{SegTree$<$ Monoid $>$@{SegTree$<$ Monoid $>$}!find\_right@{find\_right}}
+\index{find\_right@{find\_right}!SegTree$<$ Monoid $>$@{SegTree$<$ Monoid $>$}}
+\doxysubsubsection{\texorpdfstring{find\_right()}{find\_right()}}
+{\footnotesize\ttfamily \label{struct_seg_tree_ad2d7958e9a4bf972af9a17c75797f05b} 
+template$<$typename Monoid$>$ \\
+template$<$typename F$>$ \\
+int \mbox{\hyperlink{struct_seg_tree}{Seg\+Tree}}$<$ Monoid $>$\+::find\+\_\+right (\begin{DoxyParamCaption}\item[{int}]{l}{, }\item[{F}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+区間 \mbox{[}l, x) のモノイド積が f を満たすような最大の x \texorpdfstring{$>$}{>}= l を返す 
+
+\begin{DoxyAttention}{Attention}
+{\ttfamily f(\+Monoid\+::id())=true} が成り立つ必要がある 
+\end{DoxyAttention}
+\begin{DoxyNote}{Note}
+O(log(\+N)) 
+\end{DoxyNote}
+\Hypertarget{struct_seg_tree_ab9725a4dc2152446887d87195cc88c4d}\index{SegTree$<$ Monoid $>$@{SegTree$<$ Monoid $>$}!fold@{fold}}
+\index{fold@{fold}!SegTree$<$ Monoid $>$@{SegTree$<$ Monoid $>$}}
+\doxysubsubsection{\texorpdfstring{fold()}{fold()}}
+{\footnotesize\ttfamily \label{struct_seg_tree_ab9725a4dc2152446887d87195cc88c4d} 
+template$<$typename Monoid$>$ \\
+Type \mbox{\hyperlink{struct_seg_tree}{Seg\+Tree}}$<$ Monoid $>$\+::fold (\begin{DoxyParamCaption}\item[{int}]{l}{, }\item[{int}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+区間 \mbox{[}l, r) のモノイド積を返す 
+
+\begin{DoxyNote}{Note}
+O(log(\+N)) 
+\end{DoxyNote}
+\Hypertarget{struct_seg_tree_abaaec86084bfc4f3ea884347097d2277}\index{SegTree$<$ Monoid $>$@{SegTree$<$ Monoid $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!SegTree$<$ Monoid $>$@{SegTree$<$ Monoid $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \label{struct_seg_tree_abaaec86084bfc4f3ea884347097d2277} 
+template$<$typename Monoid$>$ \\
+Type \mbox{\hyperlink{struct_seg_tree}{Seg\+Tree}}$<$ Monoid $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+i 番目の要素を返す 
+
+\begin{DoxyNote}{Note}
+O(1) 
+\end{DoxyNote}
+\Hypertarget{struct_seg_tree_abffaeb2310c009d4c80189a710a0254d}\index{SegTree$<$ Monoid $>$@{SegTree$<$ Monoid $>$}!set@{set}}
+\index{set@{set}!SegTree$<$ Monoid $>$@{SegTree$<$ Monoid $>$}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily \label{struct_seg_tree_abffaeb2310c009d4c80189a710a0254d} 
+template$<$typename Monoid$>$ \\
+void \mbox{\hyperlink{struct_seg_tree}{Seg\+Tree}}$<$ Monoid $>$\+::set (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{Type}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+i 番目の要素を x に変更する 
+
+\begin{DoxyNote}{Note}
+O(log(\+N)) 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+data\+\_\+structure/segtree.\+hpp\end{DoxyCompactItemize}

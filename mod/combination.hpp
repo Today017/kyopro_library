@@ -2,7 +2,7 @@
 
 /// @brief 二項係数・階乗計算
 template<typename T>
-struct Combinatorics{
+struct Combinatorics {
     Combinatorics()=default;
 
     /// @brief 二項係数の前計算

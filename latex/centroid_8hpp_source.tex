@@ -1,0 +1,35 @@
+\doxysection{centroid.\+hpp}
+\hypertarget{centroid_8hpp_source}{}\label{centroid_8hpp_source}\index{graph/tree/centroid.hpp@{graph/tree/centroid.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{int}\ TreeCentroid(\textcolor{keyword}{const}\ VVI\&\ g,\ \textcolor{keywordtype}{int}\ root,\ VI\&\ seen,\ VI\&\ sz)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ n=g.size();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{if}(sz.empty())\ sz=VI(n);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}(seen.empty())\ seen=VI(n,\textcolor{keyword}{false});}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{auto}\ dfs=[\&](\textcolor{keyword}{auto}\ dfs,\textcolor{keywordtype}{int}\ now,\textcolor{keywordtype}{int}\ pre)-\/>\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ sz[now]=1;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ nxt:g[now])\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(nxt==pre||seen[nxt])\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ sz[now]+=dfs(dfs,nxt,now);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sz[now];}
+\DoxyCodeLine{00038\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ total=dfs(dfs,root,-\/1);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ centroid=root;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{auto}\ dfs2=[\&](\textcolor{keyword}{auto}\ dfs2,\textcolor{keywordtype}{int}\ now,\textcolor{keywordtype}{int}\ pre)-\/>\ \textcolor{keywordtype}{void}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ok=(total-\/sz[now])*2<=total;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ nxt:g[now])\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(nxt==pre||seen[nxt])\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ dfs2(dfs2,nxt,now);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(sz[nxt]*2>total)\ ok=\textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ok)\ centroid=now;}
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ \ \ \ \ dfs2(dfs2,root,-\/1);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{return}\ centroid;}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}

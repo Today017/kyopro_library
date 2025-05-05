@@ -1,0 +1,51 @@
+\doxysection{convolution.\+hpp}
+\hypertarget{convolution_8hpp_source}{}\label{convolution_8hpp_source}\index{math/convolution.hpp@{math/convolution.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00007\ \textcolor{keywordtype}{void}\ FFT(vector<complex<double>>\&\ a,\ \textcolor{keywordtype}{bool}\ inv=\textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.size(),h=0;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{while}((1<<h)<n)\ h++;}
+\DoxyCodeLine{00010\ \ \ \ \ REP(i,n)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j=0;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{comment}{//ビットを逆に}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ REP(k,h)\ j|=(i>>k\&1)<<(h-\/1-\/k);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i<j)\ swap(a[i],a[j]);}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ b=1;\ b<n;\ b<<=1)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ REP(j,b)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//b\ =\ ブロックサイズの半分}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//j,\ j+b\ を計算}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//w\ =\ exp(-\/2πj\ /\ 2b)\ =\ 1\ の\ b\ 乗根の\ j\ 乗}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ complex<double>\ w=polar(1.0,(2.0*M\_PI)/(2.0*b)*j*(inv?1:-\/1));}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//ブロックサイズ\ 2b\ だけずらしながら計算}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=0;\ k<n;\ k+=b*2)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ complex<double>\ s=a[j+k],t=a[j+k+b]*w;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a[j+k]=s+t,a[j+k+b]=s-\/t;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}(inv)REP(i,n)\ a[i]/=n;}
+\DoxyCodeLine{00032\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00036\ vector<double>\ Convolve(\textcolor{keyword}{const}\ vector<double>\&\ a,\ \textcolor{keyword}{const}\ vector<double>\&\ b)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ n=1;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{while}(n+1<a.size()+b.size())\ n*=2;}
+\DoxyCodeLine{00039\ \ \ \ \ vector<complex<double>>\ fa(n),fb(n);}
+\DoxyCodeLine{00040\ \ \ \ \ REP(i,a.size())\ fa[i]=a[i];\ REP(i,b.size())\ fb[i]=b[i];}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ fa,\ fb\ を高速フーリエ変換}}
+\DoxyCodeLine{00043\ \ \ \ \ FFT(fa);\ FFT(fb);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ fa'\ *\ fb'\ を計算}}
+\DoxyCodeLine{00045\ \ \ \ \ REP(i,n)\ fa[i]*=fb[i];}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ fa'\ *\ fb'\ を逆高速フーリエ変換し、fa\ *\ fb\ の係数を得る}}
+\DoxyCodeLine{00047\ \ \ \ \ FFT(fa,true);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ vector<\textcolor{keywordtype}{double}>\ ret(n);\ REP(i,n)\ ret[i]=fa[i].real();}
+\DoxyCodeLine{00050\ \ \ \ \ return\ ret;}
+\DoxyCodeLine{00051\ \}}
+
+\end{DoxyCode}

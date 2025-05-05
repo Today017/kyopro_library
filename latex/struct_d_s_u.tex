@@ -1,0 +1,118 @@
+\doxysection{DSU Struct Reference}
+\hypertarget{struct_d_s_u}{}\label{struct_d_s_u}\index{DSU@{DSU}}
+
+
+Disjoint \doxylink{struct_set}{Set} Union.  
+
+
+
+
+{\ttfamily \#include $<$dsu.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_d_s_u_abbae2d8b88cba33b50386cbbf229685a}\label{struct_d_s_u_abbae2d8b88cba33b50386cbbf229685a} 
+{\bfseries DSU} (int n)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_d_s_u_a70d8917e08a86dd49446ce8263f675a3}{find}} (int x)
+\begin{DoxyCompactList}\small\item\em 頂点 x を含む連結成分の代表元を返す \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_d_s_u_a81af0a8861251cc70ae491c6249e672d}{merge}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 頂点 x と y を連結し、true を返す \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_d_s_u_ae15ca5c12804826f13632d23443e36e8}{size}} (int x)
+\begin{DoxyCompactList}\small\item\em 頂点 x を含む連結成分のサイズを返す \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_d_s_u_ad3a04e676273604d56db0344795cd693}{same}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em 頂点 x と y が同じ連結成分に属するか否かを返す \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_d_s_u_a042d4bb179819d69d53f2b96e23b099e}{count}} ()
+\begin{DoxyCompactList}\small\item\em 連結成分の個数を返す \end{DoxyCompactList}\item 
+VVI \mbox{\hyperlink{struct_d_s_u_a1c5c3d071acd50cbe58a86c38a6a3da7}{groups}} ()
+\begin{DoxyCompactList}\small\item\em 各頂点を連結成分に分解する \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Disjoint \doxylink{struct_set}{Set} Union. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_d_s_u_a042d4bb179819d69d53f2b96e23b099e}\index{DSU@{DSU}!count@{count}}
+\index{count@{count}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily \label{struct_d_s_u_a042d4bb179819d69d53f2b96e23b099e} 
+int DSU\+::count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+連結成分の個数を返す 
+
+\begin{DoxyNote}{Note}
+O(1) 
+\end{DoxyNote}
+\Hypertarget{struct_d_s_u_a70d8917e08a86dd49446ce8263f675a3}\index{DSU@{DSU}!find@{find}}
+\index{find@{find}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \label{struct_d_s_u_a70d8917e08a86dd49446ce8263f675a3} 
+int DSU\+::find (\begin{DoxyParamCaption}\item[{int}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+頂点 x を含む連結成分の代表元を返す 
+
+\begin{DoxyNote}{Note}
+O(α(\+N)) 
+\end{DoxyNote}
+\Hypertarget{struct_d_s_u_a1c5c3d071acd50cbe58a86c38a6a3da7}\index{DSU@{DSU}!groups@{groups}}
+\index{groups@{groups}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{groups()}{groups()}}
+{\footnotesize\ttfamily \label{struct_d_s_u_a1c5c3d071acd50cbe58a86c38a6a3da7} 
+VVI DSU\+::groups (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+各頂点を連結成分に分解する 
+
+\begin{DoxyNote}{Note}
+O(\+N) 
+\end{DoxyNote}
+\Hypertarget{struct_d_s_u_a81af0a8861251cc70ae491c6249e672d}\index{DSU@{DSU}!merge@{merge}}
+\index{merge@{merge}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}}
+{\footnotesize\ttfamily \label{struct_d_s_u_a81af0a8861251cc70ae491c6249e672d} 
+bool DSU\+::merge (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+頂点 x と y を連結し、true を返す 
+
+既に連結されている場合は false を返す \begin{DoxyNote}{Note}
+O(α(\+N)) 
+\end{DoxyNote}
+\Hypertarget{struct_d_s_u_ad3a04e676273604d56db0344795cd693}\index{DSU@{DSU}!same@{same}}
+\index{same@{same}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{same()}{same()}}
+{\footnotesize\ttfamily \label{struct_d_s_u_ad3a04e676273604d56db0344795cd693} 
+bool DSU\+::same (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+頂点 x と y が同じ連結成分に属するか否かを返す 
+
+\begin{DoxyNote}{Note}
+O(α(\+N)) 
+\end{DoxyNote}
+\Hypertarget{struct_d_s_u_ae15ca5c12804826f13632d23443e36e8}\index{DSU@{DSU}!size@{size}}
+\index{size@{size}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{struct_d_s_u_ae15ca5c12804826f13632d23443e36e8} 
+int DSU\+::size (\begin{DoxyParamCaption}\item[{int}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+頂点 x を含む連結成分のサイズを返す 
+
+\begin{DoxyNote}{Note}
+O(α(\+N)) 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+graph/dsu.\+hpp\end{DoxyCompactItemize}

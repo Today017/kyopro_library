@@ -1,7 +1,6 @@
 var struct_wavelet_matrix =
 [
-    [ "ull", "struct_wavelet_matrix.html#acca14005eccc56aacd905b6024a21b65", null ],
-    [ "WaveletMatrix", "struct_wavelet_matrix.html#ae971273a5fbabe1bf3d67fc4cadd1f1a", null ],
+    [ "WaveletMatrix", "struct_wavelet_matrix.html#a3509863e3953b3e85960f176483ea314", null ],
     [ "access", "struct_wavelet_matrix.html#a3a1eefb0414102aeeac72a1f31fc5b8d", null ],
     [ "intersect", "struct_wavelet_matrix.html#a0aa4dc733c0b2ddaaae4fa274fc739a9", null ],
     [ "max_range", "struct_wavelet_matrix.html#a6bc748ebdfcaecf9b5c8659287989390", null ],
@@ -16,5 +15,5 @@ var struct_wavelet_matrix =
     [ "rank_less_than", "struct_wavelet_matrix.html#ac307c703867bfbc709256f78167484b3", null ],
     [ "rank_more_than", "struct_wavelet_matrix.html#a139b3097b57944221f74b2e76748df10", null ],
     [ "select", "struct_wavelet_matrix.html#a2b4d0a49f7e6ff7439359beab3ec5c49", null ],
-    [ "topk", "struct_wavelet_matrix.html#a522104c6abe225e753a6f769504a4876", null ]
+    [ "topk", "struct_wavelet_matrix.html#a384b3825c4706d9979fa468ae6fc81d8", null ]
 ];

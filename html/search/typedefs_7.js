@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['p_0',['P',['../struct_dynamic_connectivity.html#ab24b39a0b50b20580591d32c4fa9a80c',1,'DynamicConnectivity']]],
-  ['ptr_1',['Ptr',['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a180ae88301ad385924163bd074675c64',1,'InsertableReversibleArrayImpl::RBSTBase']]]
+  ['s_0',['S',['../struct_range_query_1_1_apply_update___get_sum.html#ad30e2dbdaf90a38072462ad68f8db948',1,'RangeQuery::ApplyUpdate_GetSum::S'],['../struct_range_query_1_1_apply_add___get_sum.html#aabaabec75582f39b00bcf0c18801193c',1,'RangeQuery::ApplyAdd_GetSum::S']]]
 ];

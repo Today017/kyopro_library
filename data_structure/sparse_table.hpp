@@ -3,7 +3,7 @@
 /// @brief スパーステーブル
 /// @tparam Band 冪等な半群
 template<typename Band>
-struct SparseTable{
+struct SparseTable {
     using Type=typename Band::Type;
     SparseTable()=default;
 

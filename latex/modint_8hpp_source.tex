@@ -1,0 +1,67 @@
+\doxysection{modint.\+hpp}
+\hypertarget{modint_8hpp_source}{}\label{modint_8hpp_source}\index{mod/modint.hpp@{mod/modint.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{template}<ll\ MOD>}
+\DoxyCodeLine{00006\ \textcolor{keyword}{struct\ }ModInt\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ ModInt(ll\ x=0)\{\ value=(x>=0?x\%MOD:MOD-\/(-\/x)\%MOD);\ \}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ ModInt\ operator-\/()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ ModInt(-\/value);\ \}}
+\DoxyCodeLine{00010\ \ \ \ \ ModInt\ operator+()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ ModInt(*\textcolor{keyword}{this});\ \}}
+\DoxyCodeLine{00011\ \ \ \ \ ModInt\&\ operator+=(\textcolor{keyword}{const}\ ModInt\&\ other)\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ value+=other.value;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(value>=MOD)\ value-\/=MOD;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}*\textcolor{keyword}{this};}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ \ \ \ \ ModInt\&\ operator-\/=(\textcolor{keyword}{const}\ ModInt\&\ other)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ value+=MOD-\/other.value;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(value>=MOD)\ value-\/=MOD;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}*\textcolor{keyword}{this};}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ ModInt\&\ operator*=(\textcolor{keyword}{const}\ ModInt\ other)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ value=value*other.value\%MOD;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}*\textcolor{keyword}{this};}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ ModInt\&\ operator/=(ModInt\ other)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ (*this)*=other.inv();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}*\textcolor{keyword}{this};}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ ModInt\ operator+(\textcolor{keyword}{const}\ ModInt\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ ModInt(*\textcolor{keyword}{this})+=other;\ \}}
+\DoxyCodeLine{00030\ \ \ \ \ ModInt\ operator-\/(\textcolor{keyword}{const}\ ModInt\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ ModInt(*\textcolor{keyword}{this})-\/=other;\ \}}
+\DoxyCodeLine{00031\ \ \ \ \ ModInt\ operator*(\textcolor{keyword}{const}\ ModInt\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ ModInt(*\textcolor{keyword}{this})*=other;\ \}}
+\DoxyCodeLine{00032\ \ \ \ \ ModInt\ operator/(\textcolor{keyword}{const}\ ModInt\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ ModInt(*\textcolor{keyword}{this})/=other;\ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ ModInt\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ value==other.value;\ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ ModInt\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ value!=other.value;\ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{friend}\ ostream\&\ operator<<(ostream\&\ os,\ \textcolor{keyword}{const}\ ModInt\&\ x)\ \{\ \textcolor{keywordflow}{return}\ os<<x.value;\ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{friend}\ istream\&\ operator>>(istream\&\ is,\ ModInt\&\ x)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ ll\ v;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ is>>v;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ x=ModInt<MOD>(v);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ ModInt\ pow(ll\ x)\textcolor{keyword}{\ const\ }\{\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ ModInt\ ret(1),mul(value);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(x)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\&1)\ ret*=mul;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ mul*=mul;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ x>>=1;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ ModInt\ inv()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ pow(MOD-\/2);\ \}}
+\DoxyCodeLine{00053\ \ \ \ \ ll\ val()\ \{\textcolor{keywordflow}{return}\ value;\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ ll\ get\_mod()\ \{\ \textcolor{keywordflow}{return}\ MOD;\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ \ \ ll\ value;}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{using\ }Mod998=\mbox{\hyperlink{struct_mod_int}{ModInt<998244353>}};}
+\DoxyCodeLine{00061\ \textcolor{keyword}{using\ }Mod107=\mbox{\hyperlink{struct_mod_int}{ModInt<1000000007>}};}
+\DoxyCodeLine{00062\ \textcolor{keyword}{using\ }VM=vector<Mod998>;}
+
+\end{DoxyCode}

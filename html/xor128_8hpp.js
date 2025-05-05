@@ -1,7 +1,7 @@
 var xor128_8hpp =
 [
-    [ "xor128", "xor128_8hpp.html#ad61cd940a825aa9996dd0f9c0e4401c4", null ],
-    [ "xor128", "xor128_8hpp.html#aa19cfc004358ed4e445b2d9476a01e50", null ],
-    [ "xor128", "xor128_8hpp.html#ac99e526e3093236233b1a8a3c991f58d", null ],
-    [ "xor128_prob", "xor128_8hpp.html#af7c4cc76f2476d287730c532b0e4eb7b", null ]
+    [ "Xor128", "xor128_8hpp.html#ae5f1abc0605f565940993209877af05d", null ],
+    [ "Xor128", "xor128_8hpp.html#a1769a3e4e9794ae293252dc65f5c2425", null ],
+    [ "Xor128", "xor128_8hpp.html#af918dca70549f657c3e1117950ac6dd1", null ],
+    [ "Xor128Prob", "xor128_8hpp.html#ac4a18f1be8c5784c150a143e3900f248", null ]
 ];

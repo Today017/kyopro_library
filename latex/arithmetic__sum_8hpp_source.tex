@@ -1,0 +1,32 @@
+\doxysection{arithmetic\+\_\+sum.\+hpp}
+\hypertarget{arithmetic__sum_8hpp_source}{}\label{arithmetic__sum_8hpp_source}\index{others/arithmetic\_sum.hpp@{others/arithmetic\_sum.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_arithmetic_progression}{ArithmeticProgression}}\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ ll\ start=INFL,goal=INFL,step=INFL,length=INFL;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_arithmetic_progression_a6723b8759541579ceaadce1af254f2fb}{normalize}}()\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ undef\_cnt=0;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(start==INFL)\ undef\_cnt++;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(goal==INFL)\ undef\_cnt++;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(step==INFL)\ undef\_cnt++;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(length==INFL)\ undef\_cnt++;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ assert(undef\_cnt<=1);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(goal==INFL)\ goal=start+(length-\/1)*step;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(start==INFL)\ start=goal-\/(length-\/1)*step;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(step==INFL)\ step=(start==goal)?0:(goal-\/start)/(length-\/1);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(length==INFL)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ assert(step!=0);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ length=(goal-\/start)/step+1;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ ll\ ArithmeticSum(\mbox{\hyperlink{struct_arithmetic_progression}{ArithmeticProgression}}\ ap)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ ap.\mbox{\hyperlink{struct_arithmetic_progression_a6723b8759541579ceaadce1af254f2fb}{normalize}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{return}(ap.start+ap.goal)*ap.length/2;}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}

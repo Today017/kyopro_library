@@ -1,0 +1,37 @@
+\doxysection{sparse\+\_\+table.\+hpp}
+\hypertarget{sparse__table_8hpp_source}{}\label{sparse__table_8hpp_source}\index{data\_structure/sparse\_table.hpp@{data\_structure/sparse\_table.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Band>}
+\DoxyCodeLine{00006\ \textcolor{keyword}{struct\ }SparseTable\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{using\ }Type=\textcolor{keyword}{typename}\ Band::Type;}
+\DoxyCodeLine{00008\ \ \ \ \ SparseTable()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{struct_sparse_table_a21a0384979486679924c67a94fbf3a0c}{SparseTable}}(\textcolor{keyword}{const}\ vector<Type>\&v)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ n=v.size();}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ dat.assign(\_\_lg(n)+1,vector<Type>(n));}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ dat[0]=v;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=1;i<(int)dat.size();i++)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=0;j+(1<<i)<=n;j++)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dat[i][j]=Band::op(dat[i-\/1][j],dat[i-\/1][j+(1<<(i-\/1))]);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \ \ \ \ Type\ \mbox{\hyperlink{struct_sparse_table_a58ddfa937ff083999c2847f66305da96}{fold}}(\textcolor{keywordtype}{int}\ l,\textcolor{keywordtype}{int}\ r)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ r-\/-\/;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i=\_\_lg(r-\/l+1);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Band::op(dat[i][l],dat[i][r-\/(1<<i)+1]);}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ size()\ \{\textcolor{keywordflow}{return}\ n;\}}
+\DoxyCodeLine{00031\ \ \ \ \ Type\ operator[](\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{const}\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_sparse_table_a58ddfa937ff083999c2847f66305da96}{fold}}(i,i+1);\}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ n;}
+\DoxyCodeLine{00035\ \ \ \ \ vector<vector<Type>>dat;}
+\DoxyCodeLine{00036\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,51 @@
+\doxysection{diameter.\+hpp}
+\hypertarget{diameter_8hpp_source}{}\label{diameter_8hpp_source}\index{graph/tree/diameter.hpp@{graph/tree/diameter.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../../kyopro\_library/graph/shortest\_path/dijkstra.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include"{}../../../kyopro\_library/graph/shortest\_path/bfs.hpp"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ pair<VI,ll>\ TreeDiameter(\textcolor{keyword}{const}\ WG\&\ g)\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ VL\ dist=Dijkstra(g);}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{int}\ s=max\_element(ALL(dist))-\/dist.begin();}
+\DoxyCodeLine{00008\ \ \ \ \ dist=Dijkstra(g,s);}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ t=max\_element(ALL(dist))-\/dist.begin();}
+\DoxyCodeLine{00010\ \ \ \ \ VI\ path;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ now=t;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{while}(now!=s)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ path.push\_back(now);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}[nxt,cost]:g[now])\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dist[now]==dist[nxt]+cost)\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ now=nxt;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ path.push\_back(s);}
+\DoxyCodeLine{00022\ \ \ \ \ ll\ diameter=dist[t];}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{return}\ \{path,diameter\};}
+\DoxyCodeLine{00024\ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ pair<VI,ll>TreeDiameter(\textcolor{keyword}{const}\ VVI\&\ g)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ VL\ dist=BFS(g);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ s=max\_element(ALL(dist))-\/dist.begin();}
+\DoxyCodeLine{00029\ \ \ \ \ dist=BFS(g,s);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ t=max\_element(ALL(dist))-\/dist.begin();}
+\DoxyCodeLine{00031\ \ \ \ \ VI\ path;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ now=t;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{while}(now!=s)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ path.push\_back(now);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ nxt:g[now])\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dist[now]==dist[nxt]+1)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ now=nxt;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ path.push\_back(s);}
+\DoxyCodeLine{00043\ \ \ \ \ ll\ diameter=dist[t];}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{return}\ \{path,diameter\};}
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}

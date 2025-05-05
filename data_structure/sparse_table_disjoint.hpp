@@ -3,7 +3,7 @@
 /// @brief スパーステーブル（Disjoint）
 /// @tparam Semigroup 半群（結合則が成り立つこと）
 template<typename Semigroup>
-struct SparseTableDisjoint{
+struct SparseTableDisjoint {
     using Type=typename Semigroup::Type;
     SparseTableDisjoint()=default;
 

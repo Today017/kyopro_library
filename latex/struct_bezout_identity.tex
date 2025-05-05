@@ -1,0 +1,33 @@
+\doxysection{Bezout\+Identity Struct Reference}
+\hypertarget{struct_bezout_identity}{}\label{struct_bezout_identity}\index{BezoutIdentity@{BezoutIdentity}}
+
+
+一次不定方程式 ax+by=c を解く verify\+: \href{https://atcoder.jp/contests/abc340/submissions/62495050}{\texttt{ https\+://atcoder.\+jp/contests/abc340/submissions/62495050}}  
+
+
+
+
+{\ttfamily \#include $<$bezout\+\_\+identity.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_bezout_identity_ae6269715a6bae60bc5ce0b4bfae2618e}\label{struct_bezout_identity_ae6269715a6bae60bc5ce0b4bfae2618e} 
+{\bfseries Bezout\+Identity} (ll a, ll b, ll c)
+\begin{DoxyCompactList}\small\item\em ax+by=c \end{DoxyCompactList}\item 
+\Hypertarget{struct_bezout_identity_a2cf086366016d944941e8100fec64191}\label{struct_bezout_identity_a2cf086366016d944941e8100fec64191} 
+bool {\bfseries build} ()
+\begin{DoxyCompactList}\small\item\em 解が存在するか否かを返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_bezout_identity_ad6b2e3225c8c8d920b9287459fda8b52}\label{struct_bezout_identity_ad6b2e3225c8c8d920b9287459fda8b52} 
+PL {\bfseries general\+\_\+solution} (ll t=0)
+\begin{DoxyCompactList}\small\item\em 一般解を返す \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+一次不定方程式 ax+by=c を解く verify\+: \href{https://atcoder.jp/contests/abc340/submissions/62495050}{\texttt{ https\+://atcoder.\+jp/contests/abc340/submissions/62495050}} 
+
+g=gcd(a,b) とする。ext\+GCD(a,b) によって、ax\textquotesingle{}+by\textquotesingle{}=g を解く。 両辺を c/g 倍し x=x\textquotesingle{}{\itshape (c/g),y=y\textquotesingle{}}(c/g) とすると、ax+by=c を満たす。c が g で割り切れない場合、解は存在しない。 ax+by=c の両辺を g で割ると、(a/g)\texorpdfstring{$\ast$}{*}x + (b/g)\texorpdfstring{$\ast$}{*}y = c/g となる。方程式の一般解を X,Y とおくと、(a/g)\texorpdfstring{$\ast$}{*}(X-\/x) + (b/g)\texorpdfstring{$\ast$}{*}(Y-\/y) = 0 を満たす。 a/g と b/g は互いに素なので X-\/x は b/g の倍数であり、X=(b/g)\texorpdfstring{$\ast$}{*}t+x となる。 これを再代入すると、Y=-\/(a/g)\texorpdfstring{$\ast$}{*}t+y を得る。 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+math/bezout\+\_\+identity.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\doxysection{offline\+\_\+dynamic\+\_\+connectivity.\+hpp}
+\hypertarget{offline__dynamic__connectivity_8hpp_source}{}\label{offline__dynamic__connectivity_8hpp_source}\index{graph/offline\_dynamic\_connectivity.hpp@{graph/offline\_dynamic\_connectivity.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/graph/dsu\_rollback.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_dynamic_connectivity_a770dc53dd142ee82b63cee5dc0989ed4}{DynamicConnectivity}}\{}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{struct_dynamic_connectivity_a770dc53dd142ee82b63cee5dc0989ed4}{DynamicConnectivity}}(\textcolor{keywordtype}{int}\ v,\ \textcolor{keywordtype}{int}\ q)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ n=q;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ edges=vector<vector<P>>(2*n);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ dsu=\mbox{\hyperlink{struct_dsu_rollback}{DsuRollback}}(v);}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_dynamic_connectivity_a4c2531481116b0b378a98c6ca907d78c}{unite}}(\textcolor{keywordtype}{int}\ time,\ \textcolor{keywordtype}{int}\ u,\ \textcolor{keywordtype}{int}\ v)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ P\ e=minmax(u,v);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(count[e]++==0)\ appear[e]=time;}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_dynamic_connectivity_aa4b9840215ff5517d9433b4dbf97272f}{cut}}(\textcolor{keywordtype}{int}\ time,\ \textcolor{keywordtype}{int}\ u,\ \textcolor{keywordtype}{int}\ v)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ P\ e=minmax(u,v);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(-\/-\/count[e]==0)\ period.push\_back(\{\{appear[e],time\},e\});}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_dynamic_connectivity_aef6dbb8a8163c1aa473f68d4986c5226}{build}}()\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [e,val]:count)\ \textcolor{keywordflow}{if}(val>0)\ period.push\_back(\{\{appear[e],n\},e\});}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [range,e]:period)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [l,r]=range;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ l+=n,r+=n;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(l<r)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(l\&1)\ edges[l++].push\_back(e);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(r\&1)\ edges[-\/-\/r].push\_back(e);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l>>=1,r>>=1;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_dynamic_connectivity_a1693ebcaa78d8bf3058cda0160c1afe6}{execute}}(\textcolor{keyword}{auto}\&\ f,\ \textcolor{keywordtype}{int}\ k=1)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(k>=2*n)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [u,v]:edges[k])\ dsu.merge(u,v);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(k<n)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_dynamic_connectivity_a1693ebcaa78d8bf3058cda0160c1afe6}{execute}}(f,k<<1);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_dynamic_connectivity_a1693ebcaa78d8bf3058cda0160c1afe6}{execute}}(f,k<<1|1);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(0<=k-\/n\&\&k-\/n<n)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ query\_idx=k-\/n;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ f(query\_idx);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [u,v]:edges[k])\ dsu.undo();}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{using\ }P=pair<int,int>;}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{struct_dsu_rollback}{DsuRollback}}\ dsu;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ n;}
+\DoxyCodeLine{00059\ \ \ \ \ vector<vector<P>>\ edges;}
+\DoxyCodeLine{00060\ \ \ \ \ vector<pair<P,P>>\ period;}
+\DoxyCodeLine{00061\ \ \ \ \ map<P,int>\ count,appear;}
+\DoxyCodeLine{00062\ \};}
+
+\end{DoxyCode}

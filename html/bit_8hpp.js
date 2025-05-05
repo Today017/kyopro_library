@@ -1,15 +1,17 @@
 var bit_8hpp =
 [
-    [ "Bit::hasBit", "namespace_bit.html#abcaa8de7f5d541952e5dbc35f6d40a90", null ],
-    [ "Bit::isPowerOfTwo", "namespace_bit.html#a2352508502a97c857422fb76f8b68cbe", null ],
-    [ "Bit::lowBit", "namespace_bit.html#a2acf79e5cfb4e07d69e5526245b19b5e", null ],
-    [ "Bit::lowBit", "namespace_bit.html#a56f4a9e54e45d1aeb5ae13075d4ff337", null ],
-    [ "Bit::mask", "namespace_bit.html#a0df9c375f3d9b750a2124105d8cc3fd1", null ],
-    [ "Bit::parity", "namespace_bit.html#a899c5edf1658bd994ec3390914803057", null ],
-    [ "Bit::parity", "namespace_bit.html#af375255cf24198b6506c9ae973673b28", null ],
-    [ "Bit::popcount", "namespace_bit.html#abf1d1d9f7091f028858d887c7550c78a", null ],
-    [ "Bit::popcount", "namespace_bit.html#af123ab65c324095541b1ba49a6df6076", null ],
-    [ "Bit::toBinary", "namespace_bit.html#ab8c23096532f960cca35ed120ec3fd2c", null ],
-    [ "Bit::topBit", "namespace_bit.html#a1aaf0973b29d644dc9ba68e3433df365", null ],
-    [ "Bit::topBit", "namespace_bit.html#a1d098a5de0a04ecc0adf0273e69fe2ba", null ]
+    [ "Bit::BitLength", "namespace_bit.html#a870a0bc19f2526f8179a4da45dc52efc", null ],
+    [ "Bit::BitLength", "namespace_bit.html#a489e2250c1755c4b0efe77c8b27f116c", null ],
+    [ "Bit::HasBit", "namespace_bit.html#a0af6dce857ec8aa6cef9e6ac1d4410e6", null ],
+    [ "Bit::IsPowerOfTwo", "namespace_bit.html#a40cfacaf824921dc87de6a5297491fde", null ],
+    [ "Bit::LowBit", "namespace_bit.html#af393abef4ae81565dcf932bceafec533", null ],
+    [ "Bit::LowBit", "namespace_bit.html#adfb65c7d7cafdb482df24671d93f7a74", null ],
+    [ "Bit::Mask", "namespace_bit.html#acd8e1799dd385e69d34df3bea530b920", null ],
+    [ "Bit::Parity", "namespace_bit.html#a39936fdc1d9e615dd4cffc483c1dca8c", null ],
+    [ "Bit::Parity", "namespace_bit.html#a7d701e06b98bd3273126ccb3bb8bba5b", null ],
+    [ "Bit::PopCount", "namespace_bit.html#a1c596333431a2b9557848add9aaec912", null ],
+    [ "Bit::PopCount", "namespace_bit.html#a72c1df96643f535ccb12e866f1022726", null ],
+    [ "Bit::ToBinary", "namespace_bit.html#ab14c175590d01b3c7a01971de3218c7a", null ],
+    [ "Bit::TopBit", "namespace_bit.html#a385f3d9f37540986c5af0dea755fbfdb", null ],
+    [ "Bit::TopBit", "namespace_bit.html#a38f7f49874426ffdda91602476c71396", null ]
 ];

@@ -3,7 +3,7 @@
 
 /// @brief ModInt
 template<ll MOD>
-struct ModInt{
+struct ModInt {
     ModInt(ll x=0){ value=(x>=0?x%MOD:MOD-(-x)%MOD); }
 
     ModInt operator-() const { return ModInt(-value); }

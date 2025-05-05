@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['の定理_0',['Lucas の定理',['../md_mod_2lucas.html#autotoc_md140',1,'']]]
+  ['を通る接線との接点_0',['点 $p$ を通る接線との接点',['../md_geometry_2geo.html#autotoc_md49',1,'']]]
 ];

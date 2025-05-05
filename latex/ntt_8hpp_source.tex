@@ -1,0 +1,63 @@
+\doxysection{ntt.\+hpp}
+\hypertarget{ntt_8hpp_source}{}\label{ntt_8hpp_source}\index{math/ntt.hpp@{math/ntt.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/others/modcal.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{template}<ll\ MOD,\ ll\ primitive\_root>}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }NTT\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{int}\ divide\_max,n;}
+\DoxyCodeLine{00008\ \ \ \ \ VL\ roots,inv\_roots,tmp;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{void}\ ntt(VL\&\ a,\ \textcolor{keywordtype}{bool}\ inv=\textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mask=n-\/1,p=0;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=n>>1;\ i>=1;\ i>>=1)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ cur=(p\&1)?tmp:a;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ nxt=(p\&1)?a:tmp;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ ll\ e=inv?roots[p+1]:inv\_roots[p+1];}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ ll\ w=1;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=0;\ j<n;\ j+=i)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ REP(k,i)\ nxt[j+k]=(cur[((j<<1)\&mask)+k]+w*cur[(((j<<1)+i)\&mask)+k])\%MOD;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (w*=e)\%=MOD;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ p++;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(p\&1)\ swap(a,tmp);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(inv)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ inv\_sz=ModInv(n,MOD);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ REP(i,n)\ (a[i]*=inv\_sz)\%=MOD;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ NTT()\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ divide\_max=1;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ ll\ n=MOD-\/1;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(n\%2==0)\ n>>=1,divide\_max++;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ roots=VL(divide\_max+1);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ inv\_roots=VL(divide\_max+1);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ roots[0]=inv\_roots[0]=1;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ FOR(i,1,divide\_max+1)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ roots[i]=ModPow(primitive\_root,(MOD-\/1)/(1<<i),MOD);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ inv\_roots[i]=ModInv(roots[i],MOD);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ VL\ \mbox{\hyperlink{class_n_t_t_af7d5dac5eee3af11ecf0c361f5fbe581}{convolve}}(VL\ a,\ VL\ b)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ n=1;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(n+1<a.size()+b.size())\ n<<=1;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ tmp=VL(n);\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ VL\ fa(n),\ fb(n);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ REP(i,a.size())\ fa[i]=a[i];\ REP(i,b.size())\ fb[i]=b[i];}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ ntt(fa);\ ntt(fb);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ REP(i,n)\ (fa[i]*=fb[i])\%=MOD;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ ntt(fa,\textcolor{keyword}{true});}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(fa.size()+1>a.size()+b.size())\ fa.pop\_back();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fa;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \};}
+
+\end{DoxyCode}

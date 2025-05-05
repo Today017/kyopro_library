@@ -1,0 +1,42 @@
+\doxysection{lowlink.\+hpp}
+\hypertarget{lowlink_8hpp_source}{}\label{lowlink_8hpp_source}\index{graph/lowlink.hpp@{graph/lowlink.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_bridge_info}{BridgeInfo}}\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ vector<pair<int,int>>\ \mbox{\hyperlink{struct_bridge_info_aaaf5c030e642505d500d0df745738c6a}{bridge}};\ }
+\DoxyCodeLine{00006\ \ \ \ \ VI\ \mbox{\hyperlink{struct_bridge_info_a46cddefb4df5de85551aa4f07ac88fca}{articulation}};\ }
+\DoxyCodeLine{00007\ \};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00011\ \mbox{\hyperlink{struct_bridge_info}{BridgeInfo}}\ LowLink(\textcolor{keyword}{const}\ VVI\&\ g)\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ n=g.size();}
+\DoxyCodeLine{00013\ \ \ \ \ VI\ ord(n,-\/1),low(n,-\/1),articulation,seen(n,\textcolor{keyword}{false});}
+\DoxyCodeLine{00014\ \ \ \ \ vector<pair<int,int>>\ bridge;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{auto}\ dfs=[\&](\textcolor{keyword}{auto}\&\&\ dfs,\ \textcolor{keywordtype}{int}\ now,\ \textcolor{keywordtype}{int}\ pre,\ \textcolor{keywordtype}{int}\&\ cnt)-\/>\ \textcolor{keywordtype}{void}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ seen[now]=\textcolor{keyword}{true};\ ord[now]=low[now]=cnt++;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_articulation=\textcolor{keyword}{false};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ child=0;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ nxt:g[now])\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!seen[nxt])\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ child++;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dfs(dfs,nxt,now,cnt);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ low[now]=min(low[now],low[nxt]);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pre!=-\/1\&\&ord[now]<=low[nxt])\ is\_articulation=\textcolor{keyword}{true};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ord[now]<low[nxt])\ bridge.push\_back(minmax(now,nxt));}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(nxt!=pre)\ low[now]=min(low[now],ord[nxt]);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pre==-\/1\&\&child>1)\ is\_articulation=\textcolor{keyword}{true};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(is\_articulation)\ articulation.push\_back(now);}
+\DoxyCodeLine{00032\ \ \ \ \ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ cnt=0;}
+\DoxyCodeLine{00035\ \ \ \ \ REP(i,n)\ \textcolor{keywordflow}{if}(!seen[i])\ dfs(dfs,i,-\/1,cnt);}
+\DoxyCodeLine{00036\ \ \ \ \ sort(ALL(bridge));}
+\DoxyCodeLine{00037\ \ \ \ \ sort(ALL(articulation));}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ \{bridge,articulation\};}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}

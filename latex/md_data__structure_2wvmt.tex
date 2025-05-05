@@ -1,0 +1,93 @@
+\chapter{wvmt}
+\hypertarget{md_data__structure_2wvmt}{}\label{md_data__structure_2wvmt}\index{wvmt@{wvmt}}
+\doxysectlink{md__r_e_a_d_m_e}{top}{0}\hypertarget{md_data__structure_2wvmt_autotoc_md0}{}\doxysection{\texorpdfstring{\href{./wvmt.hpp}{\texttt{ Wavelet Matrix}}}{\href{./wvmt.hpp}{\texttt{ Wavelet Matrix}}}}\label{md_data__structure_2wvmt_autotoc_md0}
+\href{https://miti-7.hatenablog.com/entry/2019/02/01/152131}{\texttt{ 解説}}
+
+\href{https://github.com/MitI-7/WaveletMatrix/blob/master/WaveletMatrix/WaveletMatrix.hpp}{\texttt{ 参考}}
+
+\href{https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix}{\texttt{ 原典}}
+
+全体集合のサイズを \$\textbackslash{}sigma\$ とする。
+
+{\ttfamily \doxylink{struct_wavelet_matrix}{Wavelet\+Matrix}(vector\texorpdfstring{$<$}{<}ull\texorpdfstring{$>$}{>} a)}
+
+{\ttfamily ull access(ull i)}
+\begin{DoxyItemize}
+\item \$a\+\_\+i\$ を復元する。
+\item \$O(\textbackslash{}log\textbackslash{}sigma)\$
+\end{DoxyItemize}
+
+{\ttfamily ull select(ull c, ull rank)}
+\begin{DoxyItemize}
+\item \$rank\$ 番目の \$c\$ の位置 \$+1\$ を返す。 \$rank\$ は{\ttfamily 1-\/indexed}。
+\item \$O(\textbackslash{}log\textbackslash{}sigma)\$
+\end{DoxyItemize}
+
+{\ttfamily ull max\+\_\+range(ull l, ull r)}
+\begin{DoxyItemize}
+\item \$\mbox{[}l, r)\$ で最大値のindexを返す。
+\end{DoxyItemize}
+
+{\ttfamily ull min\+\_\+range(ull l, ull r)}
+
+{\ttfamily ull quantile\+\_\+range(ull l, ull r, ull k)}
+\begin{DoxyItemize}
+\item \$\mbox{[}l, r)\$ で \$k\$ 番目に小さい数値のindexを返す。 \$k\$ は{\ttfamily 0-\/indexed}。
+\item \$O(\textbackslash{}log\textbackslash{}sigma)\$
+\end{DoxyItemize}
+
+{\ttfamily ull rank(ull c, ull pos)}
+\begin{DoxyItemize}
+\item \$\mbox{[}0, pos)\$ の \$c\$ の数。
+\item \$O(\textbackslash{}log\textbackslash{}sigma)\$
+\end{DoxyItemize}
+
+{\ttfamily ull range\+\_\+freq(ull l, ull r, ull min, ull max)}
+\begin{DoxyItemize}
+\item \$\mbox{[}l, r)\$ で \$\mbox{[}min, max)\$ に入る値の個数。
+\item \$O(\textbackslash{}log\textbackslash{}sigma)\$
+\end{DoxyItemize}
+
+{\ttfamily ull rank\+\_\+less\+\_\+than(ull c, ull l, ull r)}
+\begin{DoxyItemize}
+\item \$\mbox{[}l, r)\$ で \$c\$ より小さい値の数。
+\item \$O(\textbackslash{}log\textbackslash{}sigma)\$
+\end{DoxyItemize}
+
+{\ttfamily ull rank\+\_\+more\+\_\+than(ull c, ull l, ull r)}
+
+{\ttfamily tuple\texorpdfstring{$<$}{<}ull, ull, ull\texorpdfstring{$>$}{>} rank\+\_\+all(ull c, ull l, ull r)}
+\begin{DoxyItemize}
+\item \$\mbox{[}l, r)\$ で \$(\$ \$c\$ と同じ値の数、\$c\$ より小さい値の数、\$c\$ より大きい値の数 \$)\$ 。
+\item \$O(\textbackslash{}log\textbackslash{}sigma)\$
+\end{DoxyItemize}
+
+{\ttfamily pair\texorpdfstring{$<$}{<}ull, ull\texorpdfstring{$>$}{>} topk(ull l, ull r, ull k)}
+\begin{DoxyItemize}
+\item \$\mbox{[}l, r)\$ で出現回数が多い順に \$k\$ 個の \$(\$ 値, 頻度 \$)\$ を返す。頻度が同じ場合は小さいものが優先。
+\item \$O(k\textbackslash{}log\textbackslash{}sigma)\$
+\end{DoxyItemize}
+
+{\ttfamily ull range\+\_\+sum(ull l, ull r, ull min, ull max)}
+\begin{DoxyItemize}
+\item \$\mbox{[}l, r)\$ で \$\mbox{[}min, max)\$ に入る値の総和。
+\item \$O(\textbackslash{}log\textbackslash{}sigma)\$
+\end{DoxyItemize}
+
+{\ttfamily ull prev\+\_\+value(ull l, ull r, ull min, ull max)}
+\begin{DoxyItemize}
+\item \$\mbox{[}l, r)\$ で \$\mbox{[}min, max)\$ に入る値の最大値
+\item \$O(\textbackslash{}log\textbackslash{}sigma)\$
+\end{DoxyItemize}
+
+{\ttfamily ull next\+\_\+value(ull l, ull r, ull min, ull max)}
+\begin{DoxyItemize}
+\item \$\mbox{[}l, r)\$ で \$\mbox{[}min, max)\$ に入る値の最小値。
+\item \$O(\textbackslash{}log\textbackslash{}sigma)\$
+\end{DoxyItemize}
+
+{\ttfamily tuple\texorpdfstring{$<$}{<}ull, ull, ull\texorpdfstring{$>$}{>} intersect(ull l1, ull r1, ull l2, ull r2)}
+\begin{DoxyItemize}
+\item \$\mbox{[}l1, r1)\$, \$\mbox{[}l2, r2)\$ に共通して出現する要素を返す。(tupleの先頭)
+\item \$\+O(n)\$ 
+\end{DoxyItemize}

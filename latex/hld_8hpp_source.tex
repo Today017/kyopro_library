@@ -1,0 +1,81 @@
+\doxysection{hld.\+hpp}
+\hypertarget{hld_8hpp_source}{}\label{hld_8hpp_source}\index{graph/tree/hld.hpp@{graph/tree/hld.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}../../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }HLD\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ HLD(\textcolor{keywordtype}{int}\ n)\ \{\ resize(n);\ \}}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_edge(\textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{int}\ b)\ \{\ graph[a].push\_back(b),graph[b].push\_back(a);\ \}}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{void}\ build(\textcolor{keywordtype}{int}\ root=0)\ \{\ dfs1(root),dfs2(root,root);\ \}}
+\DoxyCodeLine{00009\ \ \ \ \ HLD(\textcolor{keyword}{const}\ VVI\&\ g,\ \textcolor{keywordtype}{int}\ root=0)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ resize(g.size());}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ this-\/>graph=g;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ build(root);}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ \ \ \ \ vector<tuple<bool,int,int>>\ \mbox{\hyperlink{struct_h_l_d_af5c1751760a5d34be274c54acd9f60c3}{path}}(\textcolor{keywordtype}{int}\ u,\ \textcolor{keywordtype}{int}\ v)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ vector<tuple<bool,int,int>>\ ret;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(head[u]!=head[v])\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dep[head[u]]>dep[head[v]])\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret.push\_back(\{\textcolor{keyword}{true},pos[head[u]],pos[u]\});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u=par[head[u]];}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret.push\_back(\{\textcolor{keyword}{false},pos[head[v]],pos[v]\});}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v=par[head[v]];}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dep[u]>dep[v])\ ret.push\_back(\{\textcolor{keyword}{true},pos[v],pos[u]\});}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ ret.push\_back(\{\textcolor{keyword}{false},pos[u],pos[v]\});}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_h_l_d_ae95bc5be0f704bafb0ab667d1dffb0cc}{lca}}(\textcolor{keywordtype}{int}\ u,\ \textcolor{keywordtype}{int}\ v)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(head[u]!=head[v])\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dep[head[u]]>dep[head[v]])\ u=par[head[u]];}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ v=par[head[v]];}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dep[u]<dep[v]\ ?\ u:v;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ at(\textcolor{keywordtype}{int}\ v)\ \{\ \textcolor{keywordflow}{return}\ pos[v];\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ VVI\ graph;}
+\DoxyCodeLine{00051\ \ \ \ \ VI\ sz,par,dep,head;}
+\DoxyCodeLine{00052\ \ \ \ \ VI\ hld;\ }
+\DoxyCodeLine{00053\ \ \ \ \ VI\ pos;\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ resize(\textcolor{keywordtype}{int}\ n)\ \{\ graph.resize(n),sz.resize(n),par.resize(n),dep.resize(n),pos.resize(n),head.resize(n);\ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ dfs1(\textcolor{keywordtype}{int}\ now,\ \textcolor{keywordtype}{int}\ pre=-\/1)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ par[now]=pre;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ res=1;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ nxt:graph[now])\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(nxt==pre)\textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ dep[nxt]=dep[now]+1;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ dfs1(nxt,now);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ res+=sz[nxt];}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ sz[now]=res;}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ dfs2(\textcolor{keywordtype}{int}\ now,\ \textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{int}\ pre=-\/1)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ pos[now]=hld.size();}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ hld.push\_back(now);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ head[now]=a;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(sz[now]==1)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mx=0,idx=0;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ nxt:graph[now])\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(nxt==pre)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mx<sz[nxt])\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mx=sz[nxt];}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ idx=nxt;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ dfs2(idx,a,now);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ nxt:graph[now])\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(nxt==pre||nxt==idx)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ dfs2(nxt,nxt,now);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \};}
+
+\end{DoxyCode}

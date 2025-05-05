@@ -1,0 +1,87 @@
+\doxysection{Combinatorics\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_combinatorics}{}\label{struct_combinatorics}\index{Combinatorics$<$ T $>$@{Combinatorics$<$ T $>$}}
+
+
+二項係数・階乗計算  
+
+
+
+
+{\ttfamily \#include $<$combination.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_combinatorics_ace51d39e7e21969b25e4a7b10a4bada3}{Combinatorics}} (int n)
+\begin{DoxyCompactList}\small\item\em 二項係数の前計算 \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{struct_combinatorics_a977b699b6416d19473239931fca6f2f7}{comb}} (ll n, ll r)
+\begin{DoxyCompactList}\small\item\em n\+Cr を返す \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{struct_combinatorics_ac07d10087e698b320be57919234f569b}{perm}} (ll n, ll r)
+\begin{DoxyCompactList}\small\item\em n\+Pr を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_combinatorics_a612688ccbc9653abc8098403fced48b3}\label{struct_combinatorics_a612688ccbc9653abc8098403fced48b3} 
+T {\bfseries factrial} (int n)
+\begin{DoxyCompactList}\small\item\em n! を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_combinatorics_abf0b71d9a682af871adc550a8091b05d}\label{struct_combinatorics_abf0b71d9a682af871adc550a8091b05d} 
+T {\bfseries factinv} (int n)
+\begin{DoxyCompactList}\small\item\em (n!)\texorpdfstring{$^\wedge$}{\string^}-\/1 を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_combinatorics_a9e27460393170091fbf3429fdbb3925a}\label{struct_combinatorics_a9e27460393170091fbf3429fdbb3925a} 
+T {\bfseries operator()} (ll n, ll r)
+\begin{DoxyCompactList}\small\item\em n\+Cr を返す \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct Combinatorics$<$ T $>$}
+二項係数・階乗計算 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_combinatorics_ace51d39e7e21969b25e4a7b10a4bada3}\index{Combinatorics$<$ T $>$@{Combinatorics$<$ T $>$}!Combinatorics@{Combinatorics}}
+\index{Combinatorics@{Combinatorics}!Combinatorics$<$ T $>$@{Combinatorics$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Combinatorics()}{Combinatorics()}}
+{\footnotesize\ttfamily \label{struct_combinatorics_ace51d39e7e21969b25e4a7b10a4bada3} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{struct_combinatorics}{Combinatorics}}$<$ T $>$\mbox{\hyperlink{struct_combinatorics}{\+::\+Combinatorics}} (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+二項係数の前計算 
+
+\begin{DoxyNote}{Note}
+O(\+N) 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_combinatorics_a977b699b6416d19473239931fca6f2f7}\index{Combinatorics$<$ T $>$@{Combinatorics$<$ T $>$}!comb@{comb}}
+\index{comb@{comb}!Combinatorics$<$ T $>$@{Combinatorics$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{comb()}{comb()}}
+{\footnotesize\ttfamily \label{struct_combinatorics_a977b699b6416d19473239931fca6f2f7} 
+template$<$typename T$>$ \\
+T \mbox{\hyperlink{struct_combinatorics}{Combinatorics}}$<$ T $>$\+::comb (\begin{DoxyParamCaption}\item[{ll}]{n}{, }\item[{ll}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+n\+Cr を返す 
+
+\begin{DoxyNote}{Note}
+n \texorpdfstring{$<$}{<} 0, r \texorpdfstring{$<$}{<} 0, n \texorpdfstring{$<$}{<} r のときは 0 を返す 
+\end{DoxyNote}
+\Hypertarget{struct_combinatorics_ac07d10087e698b320be57919234f569b}\index{Combinatorics$<$ T $>$@{Combinatorics$<$ T $>$}!perm@{perm}}
+\index{perm@{perm}!Combinatorics$<$ T $>$@{Combinatorics$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{perm()}{perm()}}
+{\footnotesize\ttfamily \label{struct_combinatorics_ac07d10087e698b320be57919234f569b} 
+template$<$typename T$>$ \\
+T \mbox{\hyperlink{struct_combinatorics}{Combinatorics}}$<$ T $>$\+::perm (\begin{DoxyParamCaption}\item[{ll}]{n}{, }\item[{ll}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+n\+Pr を返す 
+
+\begin{DoxyNote}{Note}
+n \texorpdfstring{$<$}{<} 0, r \texorpdfstring{$<$}{<} 0, n \texorpdfstring{$<$}{<} r のときは 0 を返す 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mod/combination.\+hpp\end{DoxyCompactItemize}

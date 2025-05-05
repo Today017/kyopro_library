@@ -1,0 +1,40 @@
+\doxysection{zeta\+\_\+mobius.\+hpp}
+\hypertarget{zeta__mobius_8hpp_source}{}\label{zeta__mobius_8hpp_source}\index{algorithm/zeta\_mobius.hpp@{algorithm/zeta\_mobius.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_zeta_mobius}{ZetaMobius}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Mono\textcolor{keywordtype}{id}>}
+\DoxyCodeLine{00009\ \ \ \ \ vector<typename\ Monoid::Type>\ \mbox{\hyperlink{namespace_zeta_mobius_a96b8a2e447ea6c66bf33a8a0e39e4fcc}{SubsetZeta}}(vector<typename\ Monoid::Type>\ v)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=\_\_lg(v.size());}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ REP(i,n)\ REP(j,1<<n)\textcolor{keywordflow}{if}(j>>i\&1)\ v[j]=Monoid::op(v[j],v[j\string^(1<<i)]);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Mono\textcolor{keywordtype}{id}>}
+\DoxyCodeLine{00019\ \ \ \ \ vector<typename\ Monoid::Type>\ \mbox{\hyperlink{namespace_zeta_mobius_a482f4f29cbbd38287bd6dfa4fa3752bc}{SupersetZeta}}(vector<typename\ Monoid::Type>\ v)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=\_\_lg(v.size());}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ REP(i,n)\ REP(j,1<<n)\ \textcolor{keywordflow}{if}(\string~j>>i\&1)\ v[j]=Monoid::op(v[j],v[j\string^(1<<i)]);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Abel>}
+\DoxyCodeLine{00030\ \ \ \ \ vector<typename\ Abel::Type>\ \mbox{\hyperlink{namespace_zeta_mobius_acdbe2642fe5208a44eb861ad2e0666bf}{SubsetMobius}}(vector<typename\ Abel::Type>\ v)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=\_\_lg(v.size());}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ REP(i,n)\ REP(j,1<<n)\ \textcolor{keywordflow}{if}(j>>i\&1)\ v[j]=Abel::op(v[j],Abel::inv(v[j\string^(1<<i)]));}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Abel>}
+\DoxyCodeLine{00041\ \ \ \ \ vector<typename\ Abel::Type>\ \mbox{\hyperlink{namespace_zeta_mobius_a2411a0dca9b8ae8e8a4ce4e36683c98c}{SupersetMobius}}(vector<typename\ Abel::Type>\ v)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=\_\_lg(v.size());}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ REP(i,n)\ REP(j,1<<n)\ \textcolor{keywordflow}{if}(\string~j>>i\&1)\ v[j]=Abel::op(v[j],Abel::inv(v[j\string^(1<<i)]));}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/others/monoid.hpp"{}}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/others/abel.hpp"{}}}
+
+\end{DoxyCode}

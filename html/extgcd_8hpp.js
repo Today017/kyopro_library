@@ -1,5 +1,5 @@
 var extgcd_8hpp =
 [
-    [ "extGCD", "extgcd_8hpp.html#a89b2a2edadafadc68572c92fa263e0e5", null ],
-    [ "modInvGcd", "extgcd_8hpp.html#a48683a55579ff2b440e527070715889d", null ]
+    [ "ExtGcd", "extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91", null ],
+    [ "ModInvGcd", "extgcd_8hpp.html#a9971b6b2383ca7009a1de48b02b31350", null ]
 ];

@@ -1,0 +1,73 @@
+\doxysection{Factors Struct Reference}
+\hypertarget{struct_factors}{}\label{struct_factors}\index{Factors@{Factors}}
+
+
+エラトステネスの篩を利用した高速な素因数分解・約数列挙（\+Osa\+\_\+k 法） \href{https://osak.jp/diary/diary_201310.html\#20131017}{\texttt{ https\+://osak.\+jp/diary/diary\+\_\+201310.\+html\#20131017}} \href{https://qiita.com/drken/items/3beb679e54266f20ab63}{\texttt{ https\+://qiita.\+com/drken/items/3beb679e54266f20ab63}}  
+
+
+
+
+{\ttfamily \#include $<$factors.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_factors_a219a3cb166153a020f2fc3d83b9a9e57}{Factors}} (int n)
+\begin{DoxyCompactList}\small\item\em 前計算 \end{DoxyCompactList}\item 
+vector$<$ pair$<$ int, int $>$ $>$ \mbox{\hyperlink{struct_factors_a9c62b3d154c3d164110ce5365d978732}{get\+\_\+prime\+\_\+factors}} (int n)
+\begin{DoxyCompactList}\small\item\em n を素因数分解する \end{DoxyCompactList}\item 
+VI \mbox{\hyperlink{struct_factors_a24bcfb630170a5aae2e2ae3c7ce3f656}{get\+\_\+divisors}} (int n)
+\begin{DoxyCompactList}\small\item\em n の約数を返す \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+エラトステネスの篩を利用した高速な素因数分解・約数列挙（\+Osa\+\_\+k 法） \href{https://osak.jp/diary/diary_201310.html\#20131017}{\texttt{ https\+://osak.\+jp/diary/diary\+\_\+201310.\+html\#20131017}} \href{https://qiita.com/drken/items/3beb679e54266f20ab63}{\texttt{ https\+://qiita.\+com/drken/items/3beb679e54266f20ab63}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_factors_a219a3cb166153a020f2fc3d83b9a9e57}\index{Factors@{Factors}!Factors@{Factors}}
+\index{Factors@{Factors}!Factors@{Factors}}
+\doxysubsubsection{\texorpdfstring{Factors()}{Factors()}}
+{\footnotesize\ttfamily \label{struct_factors_a219a3cb166153a020f2fc3d83b9a9e57} 
+Factors\+::\+Factors (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+前計算 
+
+\begin{DoxyNote}{Note}
+O(n log(log(n))) 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_factors_a24bcfb630170a5aae2e2ae3c7ce3f656}\index{Factors@{Factors}!get\_divisors@{get\_divisors}}
+\index{get\_divisors@{get\_divisors}!Factors@{Factors}}
+\doxysubsubsection{\texorpdfstring{get\_divisors()}{get\_divisors()}}
+{\footnotesize\ttfamily \label{struct_factors_a24bcfb630170a5aae2e2ae3c7ce3f656} 
+VI Factors\+::get\+\_\+divisors (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+n の約数を返す 
+
+\begin{DoxyNote}{Note}
+O(d(n)) 
+\end{DoxyNote}
+\Hypertarget{struct_factors_a9c62b3d154c3d164110ce5365d978732}\index{Factors@{Factors}!get\_prime\_factors@{get\_prime\_factors}}
+\index{get\_prime\_factors@{get\_prime\_factors}!Factors@{Factors}}
+\doxysubsubsection{\texorpdfstring{get\_prime\_factors()}{get\_prime\_factors()}}
+{\footnotesize\ttfamily \label{struct_factors_a9c62b3d154c3d164110ce5365d978732} 
+vector$<$ pair$<$ int, int $>$ $>$ Factors\+::get\+\_\+prime\+\_\+factors (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+n を素因数分解する 
+
+\begin{DoxyNote}{Note}
+O(log(n)) 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+math/factors.\+hpp\end{DoxyCompactItemize}

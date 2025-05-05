@@ -1,0 +1,283 @@
+\doxysection{fps.\+hpp}
+\hypertarget{fps_8hpp_source}{}\label{fps_8hpp_source}\index{math/fps.hpp@{math/fps.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include<atcoder/convolution>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include<atcoder/modint>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_p_s}{FPS}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00012\ \ \ \ \ vector<T>\ \mbox{\hyperlink{namespace_f_p_s_ab8e16e5c05f00c85e0a2d8ed9650a75a}{Mul}}(\textcolor{keyword}{const}\ vector<T>\&\ a,\textcolor{keyword}{const}\ vector<T>\&\ b)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ atcoder::convolution(a,b);}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00018\ \ \ \ \ vector<T>\ \mbox{\hyperlink{namespace_f_p_s_acab6f12f41b871e31d16cb02a9a7c77d}{Add}}(\textcolor{keyword}{const}\ vector<T>\&\ a,\ \textcolor{keyword}{const}\ vector<T>\&\ b)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ vector<T>\ res(max(a.size(),b.size()));}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<res.size();\ i++)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i<a.size())\ res[i]+=a[i];}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i<b.size())\ res[i]+=b[i];}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00029\ \ \ \ \ vector<T>\ \mbox{\hyperlink{namespace_f_p_s_a3f18c8b1d6f03a0255b86f501cbff66a}{Sub}}(\textcolor{keyword}{const}\ vector<T>\&\ a,\ \textcolor{keyword}{const}\ vector<T>\&\ b)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ vector<T>\ res(max(a.size(),b.size()));}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<res.size();\ i++)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i<a.size())\ res[i]+=a[i];}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i<b.size())\ res[i]-\/=b[i];}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00040\ \ \ \ \ vector<T>\ \mbox{\hyperlink{namespace_f_p_s_a8eef2a11b10be52cddfd0c9288c4457b}{Inv}}(vector<T>\ f,\ \textcolor{keywordtype}{int}\ len=-\/1)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(len==-\/1)\ len=f.size();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ assert(f[0]!=0);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ vector<T>\ g=\{1/f[0]\};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ s=1;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(s<len)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//g=2g\_s-\/f(g\_s)\string^2(mod\ x\string^(2*s))}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//g=g-\/(fg-\/1)g}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//(fg-\/1)=0(mod\ x\string^(s))}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ vector<T>\ n\_g(s*2,0),f\_s(s*2,0);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ g.resize(s*2);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<s*2;\ i++)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\textcolor{keywordtype}{int}(f.size())>i)\ f\_s[i]=f[i];}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n\_g[i]=g[i];}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ atcoder::internal::butterfly(g);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ atcoder::internal::butterfly(f\_s);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<s*2;\ i++)\ f\_s[i]*=g[i];}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ atcoder::internal::butterfly\_inv(f\_s);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ T\ iz=1/(T)(s*2);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=s;\ i<s*2;\ i++)\ f\_s[i]*=iz;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<s;\ i++)\ f\_s[i]=0;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ atcoder::internal::butterfly(f\_s);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<s*2;\ i++)\ f\_s[i]*=g[i];}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ atcoder::internal::butterfly\_inv(f\_s);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=s;\ i<s*2;\ i++)\ n\_g[i]-\/=f\_s[i]*iz;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ swap(n\_g,g);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ s*=2;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ g.resize(len);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ g;}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00074\ \ \ \ \ vector<T>\ CyclicConvolution(vector<T>\ f,\ vector<T>\ g)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ atcoder::internal::butterfly(f);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ atcoder::internal::butterfly(g);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<(int)f.size();\ i++)\ f[i]*=g[i];}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ atcoder::internal::butterfly\_inv(f);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ T\ iz=(T)(1)/(T)(f.size());}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<(int)f.size();\ i++)\ f[i]*=iz;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f;}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00086\ \ \ \ \ vector<T>\ \mbox{\hyperlink{namespace_f_p_s_aac4a1224c61c85667cd96f74e138405b}{Integral}}(vector<T>\ f)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(f.empty())\ \textcolor{keywordflow}{return}\ f;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ vector<T>\ num\_inv((\textcolor{keywordtype}{int})f.size()+1);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ num\_inv[0]=1;\ num\_inv[1]=1;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ m=T::mod();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=2;\ i<=(int)f.size();\ i++)\ num\_inv[i]=(0-\/num\_inv[m\%i])*(T)(m/i);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ f.reserve((\textcolor{keywordtype}{int})f.size()+1);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ f.push\_back(0);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=(\textcolor{keywordtype}{int})f.size()-\/1;\ i>0;\ i-\/-\/)\ f[i]=f[i-\/1]*num\_inv[i];}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ f[0]=0;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f;}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00101\ \ \ \ \ vector<T>\ \mbox{\hyperlink{namespace_f_p_s_a18d3a03cb678d29deefc254e2fcb1b50}{Differential}}(vector<T>\ f)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(f.empty())\ \textcolor{keywordflow}{return}\ f;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<(int)f.size()-\/1;\ i++)\ f[i]=f[i+1]*(T)(i+1);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ f.pop\_back();}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f;}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00110\ \ \ \ \ vector<T>\ \mbox{\hyperlink{namespace_f_p_s_a513c11c4e1a5a02c0e665f8c8d0d71d9}{Exp}}(vector<T>\ f,\ \textcolor{keywordtype}{int}\ len=-\/1)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(len==-\/1)\ len=f.size();}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(len==0)\ \textcolor{keywordflow}{return}\{\};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(len==1)\ \textcolor{keywordflow}{return}\{T(1)\};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ assert(!f.empty()\&\&f[0]==0);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ s=1;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//simple}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ vector<T>\ g=\{T(1)\};}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(s<len)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//g'/g}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//A*B}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ vector<T>\ A=g,B=g;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ A=\mbox{\hyperlink{namespace_f_p_s_a18d3a03cb678d29deefc254e2fcb1b50}{Differential}}(A);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ B=\mbox{\hyperlink{namespace_f_p_s_a8eef2a11b10be52cddfd0c9288c4457b}{Inv}}(B,2*s);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ A.resize(2*s);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ A=CyclicConvolution(A,B);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ A.pop\_back();}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ A=\mbox{\hyperlink{namespace_f_p_s_aac4a1224c61c85667cd96f74e138405b}{Integral}}(A);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<s;\ i++)\ A[i]=0;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=s;\ i<s*2;\ i++)\ A[i]=(i<(\textcolor{keywordtype}{int})f.size()?f[i]:0)-\/A[i];}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//g\_hat=g(1-\/g+f)}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//g+=B=g*A}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ g.resize(2*s);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ B=CyclicConvolution(A,g);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=s;\ i<s*2;\ i++)\ g[i]=B[i];}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ s*=2;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ g.resize(len);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ g;}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00143\ \ \ \ \ vector<T>\ \mbox{\hyperlink{namespace_f_p_s_a1464585355625594be0a83eb118fa2de}{Log}}(vector<T>\ f,\ \textcolor{keywordtype}{int}\ len=-\/1)\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(len==-\/1)\ len=f.size();}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(len==0)\ \textcolor{keywordflow}{return}\{\};}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(len==1)\ \textcolor{keywordflow}{return}\{T(0)\};}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ assert(!f.empty()\&\&f[0]==1);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ vector<T>\ res=atcoder::convolution(\mbox{\hyperlink{namespace_f_p_s_a18d3a03cb678d29deefc254e2fcb1b50}{Differential}}(f),\mbox{\hyperlink{namespace_f_p_s_a8eef2a11b10be52cddfd0c9288c4457b}{Inv}}(f,len));}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ res.resize(len-\/1);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_f_p_s_aac4a1224c61c85667cd96f74e138405b}{Integral}}(res);}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00155\ \ \ \ \ vector<T>\ \mbox{\hyperlink{namespace_f_p_s_ad880a20b5da1f7ba2f05aa95429ee08d}{Pow}}(vector<T>\ f,\ ll\ M,\ \textcolor{keywordtype}{int}\ len=-\/1)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(len==-\/1)\ len=f.size();}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ vector<T>\ res(len,0);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(M==0)\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ res[0]=1;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<(int)f.size();\ i++)\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(f[i]==0)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i>(len-\/1)/M)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ vector<T>\ g((\textcolor{keywordtype}{int})f.size()-\/i);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ T\ v=(T)(1)/(T)(f[i]);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=i;\ j<(int)f.size();\ j++)\ g[j-\/i]=f[j]*v;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ ll\ zero=i*M;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i)\ len-\/=i*M;}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ g=\mbox{\hyperlink{namespace_f_p_s_a1464585355625594be0a83eb118fa2de}{Log}}(g,len);}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(T\&\ x:g)\ x*=M;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ g=\mbox{\hyperlink{namespace_f_p_s_a513c11c4e1a5a02c0e665f8c8d0d71d9}{Exp}}(g,len);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ v=(T)(1)/v;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ T\ c=1;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(M)\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(M\&1)\ c=c*v;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v=v*v;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ M>>=1;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<len;\ i++)\ res[i+zero]=g[i]*c;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00184\ \ \ \ \ \}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{comment}{//in\ :DFT(v)(len(v)=z)}}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{comment}{//out:DFT(v)(len(v)=2*z)}}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ Extend(vector<T>\&\ v)\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ z=v.size();}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ T\ e=(T(atcoder::internal::primitive\_root\_constexpr(T::mod()))).pow(T::mod()/(2*z));}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ cp=v;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ atcoder::internal::butterfly\_inv(cp);}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ T\ tmp=(T)(1)/(T)(z);}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<z;\ i++)\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ cp[i]*=tmp;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ tmp*=e;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ atcoder::internal::butterfly(cp);}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<z;\ i++)\ v.push\_back(cp[i]);}
+\DoxyCodeLine{00201\ \ \ \ \ \}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{comment}{//s.t|v|=2\string^s(no\ assert)}}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{void}\ PickEvenOdd(vector<T>\&\ v,\ \textcolor{keywordtype}{int}\ odd)\ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ z=v.size()/2;}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ T\ half=(T)(1)/(T)(2);}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(odd==0)\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<z;\ i++)\ v[i]=(v[i*2]+v[i*2+1])*half;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ v.resize(z);}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ T\ e=(T(atcoder::internal::primitive\_root\_constexpr(T::mod()))).pow(T::mod()/(2*z));}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ T\ ie=T(1)/e;}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ vector<T>\ es=\{half\};}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((\textcolor{keywordtype}{int})es.size()!=z)\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<T>\ n\_es((\textcolor{keywordtype}{int})es.size()*2);}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<(int)es.size();\ i++)\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n\_es[i*2]=(es[i]);}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n\_es[i*2+1]=(es[i]*ie);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ie*=ie;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ swap(n\_es,es);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<z;\ i++)\ v[i]=(v[i*2]-\/v[i*2+1])*es[i];}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ v.resize(z);}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00227\ \ \ \ \ \}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00231\ \ \ \ \ pair<vector<T>,vector<T>>\ \mbox{\hyperlink{namespace_f_p_s_a50424cf32ca2c09b2a9ad454915e84c9}{Div}}(vector<T>\ f,\ vector<T>\ g)\ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=f.size(),m=g.size();}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(n<m)\ \textcolor{keywordflow}{return}\{\{\},f\};}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ vector<T>\ r=f;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ reverse(ALL(f));\ reverse(ALL(g));}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ f.resize(n-\/m+1);}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ vector<T>\ q=\mbox{\hyperlink{namespace_f_p_s_ab8e16e5c05f00c85e0a2d8ed9650a75a}{Mul}}(f,\mbox{\hyperlink{namespace_f_p_s_a8eef2a11b10be52cddfd0c9288c4457b}{Inv}}(g,n-\/m+1));}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ q.resize(n-\/m+1);}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ reverse(ALL(q));\ reverse(ALL(g));}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ r=\mbox{\hyperlink{namespace_f_p_s_a3f18c8b1d6f03a0255b86f501cbff66a}{Sub}}(r,\mbox{\hyperlink{namespace_f_p_s_ab8e16e5c05f00c85e0a2d8ed9650a75a}{Mul}}(q,g));}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(!q.empty()\&\&q.back()==0)\ q.pop\_back();}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(!r.empty()\&\&r.back()==0)\ r.pop\_back();}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{q,r\};}
+\DoxyCodeLine{00244\ \ \ \ \ \}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00248\ \ \ \ \ T\ \mbox{\hyperlink{namespace_f_p_s_ad5a7c86fb5d29d85a778514cbc31647e}{BostonMori}}(ll\ k,\ vector<T>\ P,\ vector<T>\ Q)\ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ assert(!Q.empty()\&\&Q[0]!=0);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ z=1;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(z<(\textcolor{keywordtype}{int})max(P.size(),Q.size()))\ z*=2;}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ P.resize(z*2,0);\ Q.resize(z*2,0);}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ atcoder::internal::butterfly(P);\ atcoder::internal::butterfly(Q);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{comment}{//fast}}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(k)\ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Q(-\/x)}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ vector<T>\ Q\_n(z*2);}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<z;\ i++)\ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q\_n[i*2]=Q[i*2+1];}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q\_n[i*2+1]=Q[i*2];}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<z*2;\ i++)\ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ P[i]*=Q\_n[i];}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q[i]*=Q\_n[i];}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ PickEvenOdd(P,k\&1);}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ PickEvenOdd(Q,0);}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ k/=2;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(k==0)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ Extend(P);}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ Extend(Q);}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ T\ SP=0,SQ=0;}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<z;\ i++)\ SP+=P[i],SQ+=Q[i];}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SP/SQ;}
+\DoxyCodeLine{00276\ \ \ \ \ \}}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{comment}{//0=a[i]*c[0]+a[i-\/1]*c[1]+a[i-\/2]*c[2]+...+a[i-\/d]*c[d]}}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{comment}{//a.size()+1==c.size()}}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{comment}{//c[0]=-\/1?}}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{comment}{//return\ a[k]}}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00283\ \ \ \ \ T\ KthLinear(ll\ k,\ vector<T>\ a,\ vector<T>\ c)\ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ d=a.size();}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ assert(d+1==\textcolor{keywordtype}{int}(c.size()));}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ vector<T>\ P=atcoder::convolution(a,c);}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ P.resize(d);}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BostanMori(k,P,c);}
+\DoxyCodeLine{00289\ \ \ \ \ \}}
+\DoxyCodeLine{00290\ \}}
+
+\end{DoxyCode}

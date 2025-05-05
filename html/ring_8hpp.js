@@ -1,8 +1,8 @@
 var ring_8hpp =
 [
-    [ "Ring::betweenDecrement", "namespace_ring.html#add179070aef352db4f1433114d52d484", null ],
-    [ "Ring::betweenIncrement", "namespace_ring.html#a5fbd81dc30bed25f8b97d91838d2d85f", null ],
-    [ "Ring::distanceDecrement", "namespace_ring.html#a8a1d33ce416e60604ebc577a5eb02ac8", null ],
-    [ "Ring::distanceIncrement", "namespace_ring.html#a99db27a4dadf73852d599fef24593a24", null ],
-    [ "Ring::distanceMin", "namespace_ring.html#a23eb4666dc1bfab0429cc8c73f2fb07f", null ]
+    [ "Ring::BetweenDecrement", "namespace_ring.html#aa7be4526ac3dbffd587fa2940d69e45f", null ],
+    [ "Ring::BetweenIncrement", "namespace_ring.html#abd2be741ee7adfd0fad8590991e231bd", null ],
+    [ "Ring::DistanceDecrement", "namespace_ring.html#ae9fa707dfac273441785771d1e0d647e", null ],
+    [ "Ring::DistanceIncrement", "namespace_ring.html#adbb40db1fb017775281f57556a1f3787", null ],
+    [ "Ring::DistanceMin", "namespace_ring.html#a51b59d6334dd0f6ffed02a0cfd26e69b", null ]
 ];

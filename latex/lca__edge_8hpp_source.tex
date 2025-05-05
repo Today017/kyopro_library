@@ -1,0 +1,56 @@
+\doxysection{lca\+\_\+edge.\+hpp}
+\hypertarget{lca__edge_8hpp_source}{}\label{lca__edge_8hpp_source}\index{graph/tree/lca\_edge.hpp@{graph/tree/lca\_edge.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}../../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Mono\textcolor{keywordtype}{id}>}
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_lca_edge_a4ea24fb4a2054bd7b21d40e3c66226e5}{LcaEdge}}\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{using\ }Type=\textcolor{keyword}{typename}\ Monoid::Type;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{struct_lca_edge_a4ea24fb4a2054bd7b21d40e3c66226e5}{LcaEdge}}(\textcolor{keyword}{const}\ vector<vector<pair<int,Type>>>\&\ g,\ \textcolor{keywordtype}{int}\ root=0)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=g.size();}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k=1;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((1<<k)<n)\ k++;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ par=VVI(k,VI(n,-\/1)),dep=VI(n),dat=vector<vector<Type>>(k,vector<Type>(n,Monoid::id()));}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ dfs(g,root,-\/1);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ REP(i,k-\/1)\ REP(j,n)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ par[i+1][j]=par[i][j]==-\/1?-\/1:par[i][par[i][j]];}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ dat[i+1][j]=par[i][j]==-\/1?Monoid::id():Monoid::op(dat[i][j],dat[i][par[i][j]]);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \ \ \ \ Type\ \mbox{\hyperlink{struct_lca_edge_af292e8187eca836629b2e6d9a10daf08}{fold}}(\textcolor{keywordtype}{int}\ u,\ \textcolor{keywordtype}{int}\ v)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dep[u]>dep[v])\ swap(u,v);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ Type\ ret=Monoid::id();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(dep[u]<dep[v])\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k=0;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((dep[v]-\/dep[u])>=(1<<(k+1)))\ k++;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ ret=Monoid::op(ret,dat[k][v]),v=par[k][v];}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(u!=v)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k=0;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(par[k+1][u]!=par[k+1][v])\ k++;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ ret=Monoid::op(ret,dat[k][u]),ret=Monoid::op(ret,dat[k][v]);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ u=par[k][u],v=par[k][v];}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ VVI\ par;}
+\DoxyCodeLine{00042\ \ \ \ \ VI\ dep;}
+\DoxyCodeLine{00043\ \ \ \ \ vector<vector<Type>>\ dat;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ dfs(\textcolor{keyword}{const}\ vector<vector<pair<int,Type>>>\&\ g,\ \textcolor{keywordtype}{int}\ now,\ \textcolor{keywordtype}{int}\ pre)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ par[0][now]=pre,dep[now]=pre==-\/1?0:dep[pre]+1;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [nxt,cost]:g[now])\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(nxt==pre)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ dat[0][nxt]=cost;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ dfs(g,nxt,now);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include"{}../../../kyopro\_library/others/monoid.hpp"{}}}
+
+\end{DoxyCode}

@@ -1,0 +1,46 @@
+\doxysection{moyasu\+\_\+umeru.\+hpp}
+\hypertarget{moyasu__umeru_8hpp_source}{}\label{moyasu__umeru_8hpp_source}\index{graph/flow/moyasu\_umeru.hpp@{graph/flow/moyasu\_umeru.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include<atcoder/maxflow>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Cost>}
+\DoxyCodeLine{00007\ \textcolor{keyword}{struct\ }BurningBurying\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ BurningBurying(\textcolor{keywordtype}{int}\ n)\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ this-\/>n=n;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ start=n;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ goal=n+1;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ mf=atcoder::mf\_graph<Cost>(n+2);}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_burning_burying_af68f6edc148d7bbdb20c3e3eca21a55b}{add\_single}}(\textcolor{keywordtype}{int}\ i,\ Cost\ zero,\ Cost\ one)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(zero<=one)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//基本コストがzeroで、iを0から1に変えると+one-\/zeroされる}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ offset+=zero;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ mf.add\_edge(start,i,one-\/zero);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//基本コストがoneで、iを1から0に変えると-\/one+zeroされる}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ offset+=one;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ mf.add\_edge(i,goal,zero-\/one);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_burning_burying_a44ab45cb039360509bab62a01f384d28}{add\_double}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ Cost\ a,\ Cost\ b,\ Cost\ c,\ Cost\ d)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ assert(b+c>=a+d);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ offset+=a;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_burning_burying_af68f6edc148d7bbdb20c3e3eca21a55b}{add\_single}}(i,0,c-\/a);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_burning_burying_af68f6edc148d7bbdb20c3e3eca21a55b}{add\_single}}(j,0,d-\/c);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ mf.add\_edge(i,j,b+c-\/a-\/d);}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ Cost\ \mbox{\hyperlink{struct_burning_burying_a90fd210c7fb2b5e0a929a3f2b973d543}{solve}}()\ \{\ \textcolor{keywordflow}{return}\ mf.flow(start,goal)+offset;\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ n,start,goal;}
+\DoxyCodeLine{00051\ \ \ \ \ Cost\ offset=0;}
+\DoxyCodeLine{00052\ \ \ \ \ atcoder::mf\_graph<Cost>\ mf;}
+\DoxyCodeLine{00053\ \};}
+
+\end{DoxyCode}

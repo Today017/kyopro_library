@@ -1,0 +1,121 @@
+\doxysection{sorted\+\_\+multitree.\+hpp}
+\hypertarget{sorted__multitree_8hpp_source}{}\label{sorted__multitree_8hpp_source}\index{data\_structure/sorted\_multitree.hpp@{data\_structure/sorted\_multitree.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include<ext/pb\_ds/assoc\_container.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include<ext/pb\_ds/tree\_policy.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ namespace\ }\_\_gnu\_pbds;}
+\DoxyCodeLine{00006\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00007\ \textcolor{keyword}{struct\ }SortedMultiTree:tree<pair<T,int>,null\_type,less<pair<T,int>>,rb\_tree\_tag,tree\_order\_statistics\_node\_update>\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{using\ }tree<pair<T,int>,null\_type,less<pair<T,int>>,rb\_tree\_tag,tree\_order\_statistics\_node\_update>::tree;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{using\ }P=pair<T,int>;}
+\DoxyCodeLine{00010\ \ \ \ \ T\ not\_found=-\/1;}
+\DoxyCodeLine{00011\ \ \ \ \ SortedMultiTree()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{struct_sorted_multi_tree_ab8c36e4170f299dbe68b00cd2c9d2305}{SortedMultiTree}}(T\ not\_found=-\/1)\ \{\ this-\/>not\_found=not\_found;\ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_sorted_multi_tree_aeaeff7f2d03c7046a82a0971b1e52272}{add}}(T\ x)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>size()==0)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>insert(P\{x,0\});}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ itr=this-\/>lower\_bound(P\{x+1,0\});}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(itr==this-\/>begin())\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>insert(P\{x,0\});}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ itr-\/-\/;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(itr-\/>first!=x)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>insert(P\{x,0\});}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ this-\/>insert(P\{x,itr-\/>second+1\});}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ T\ \mbox{\hyperlink{struct_sorted_multi_tree_a002d58401bbd7c496de2a493225dc462}{min}}()\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>empty())\textcolor{keywordflow}{return}\ not\_found;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}*this-\/>begin()-\/>first;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ T\ \mbox{\hyperlink{struct_sorted_multi_tree_a34080f5436802049e526dbcfcdb4657c}{max}}()\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>empty())\textcolor{keywordflow}{return}\ not\_found;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}*this-\/>rbegin()-\/>first;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ T\ \mbox{\hyperlink{struct_sorted_multi_tree_a57e225a43a6ffe8a2c40f792375d04bc}{pop\_min}}()\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>empty())\textcolor{keywordflow}{return}\ not\_found;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ mn=*this-\/>begin();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ T\ ret=mn.first;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ this-\/>erase(mn);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ T\ \mbox{\hyperlink{struct_sorted_multi_tree_a8c295dcfe5327e9219f013dc159ab1f0}{pop\_max}}()\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>empty())\textcolor{keywordflow}{return}\ not\_found;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ mx=*this-\/>rbegin();}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ T\ ret=mx.first;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ this-\/>erase(mx);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_sorted_multi_tree_a1ed109943dfb52d97cc4c88f917abef7}{contains}}(T\ x)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ itr=this-\/>lower\_bound(\{x,0\});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(itr==this-\/>end())\textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ itr-\/>first==x;}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_sorted_multi_tree_a4eebce5fa541af30d00aa76bfd6fce25}{count}}(T\ x)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{struct_sorted_multi_tree_a1ed109943dfb52d97cc4c88f917abef7}{contains}}(x))\textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ itr=this-\/>lower\_bound(\{x+1,0\});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ itr-\/-\/;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ itr-\/>second+1;}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_sorted_multi_tree_af0e3cfa5d92c2eaf249cac5db2653119}{discard}}(T\ x)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{struct_sorted_multi_tree_a1ed109943dfb52d97cc4c88f917abef7}{contains}}(x))\textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ itr=prev(this-\/>lower\_bound(\{x+1,0\}));}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(itr==this-\/>end())\textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ this-\/>erase(itr);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \ \ \ \ T\ \mbox{\hyperlink{struct_sorted_multi_tree_a20bc2b91712e2d3b78967ff278626c0f}{gt}}(T\ x)\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ itr=this-\/>lower\_bound(\{x+1,0\});}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(itr==this-\/>end())\textcolor{keywordflow}{return}\ not\_found;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ itr-\/>first;}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00099\ \ \ \ \ T\ \mbox{\hyperlink{struct_sorted_multi_tree_abe622762de7d4549d60bfb03013c6f26}{ge}}(T\ x)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ itr=this-\/>lower\_bound(\{x,0\});}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(itr==this-\/>end())\textcolor{keywordflow}{return}\ not\_found;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ itr-\/>first;}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \ \ \ \ T\ \mbox{\hyperlink{struct_sorted_multi_tree_a563ca712d94965facf1e69b881440a32}{lt}}(T\ x)\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ itr=this-\/>lower\_bound(\{x,0\});}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(itr==this-\/>begin())\textcolor{keywordflow}{return}\ not\_found;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}(-\/-\/itr)-\/>first;}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \ \ \ \ T\ \mbox{\hyperlink{struct_sorted_multi_tree_a62f7b68b894a4a44ae4a0ae0c09cbc19}{le}}(T\ x)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ itr=this-\/>lower\_bound(\{x+1,0\});}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(itr==this-\/>begin())\textcolor{keywordflow}{return}\ not\_found;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}(-\/-\/itr)-\/>first;}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_sorted_multi_tree_a8320fbeb312ae3cb068401e6fab4b303}{count\_lt}}(T\ x)\ \{\ \textcolor{keywordflow}{return}\ this-\/>order\_of\_key(\{x,0\});\ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_sorted_multi_tree_a43a38d17a649bfb671db1c1372f2fbec}{count\_le}}(T\ x)\ \{\ \textcolor{keywordflow}{return}\ this-\/>order\_of\_key(\{x+1,0\});\ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_sorted_multi_tree_aa74800e39c3a6d6e04b4a56a881de478}{count\_gt}}(T\ x)\ \{\ \textcolor{keywordflow}{return}\ this-\/>size()-\/this-\/>order\_of\_key(\{x+1,0\});\ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_sorted_multi_tree_afa4ee14f9f701a9e8bd5d8b4e3c2d945}{count\_ge}}(T\ x)\ \{\ \textcolor{keywordflow}{return}\ this-\/>size()-\/this-\/>order\_of\_key(\{x,0\});\ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00132\ \ \ \ \ T\ \mbox{\hyperlink{struct_sorted_multi_tree_a2925d903b778ceea8042accb4b318f4a}{kth\_min}}(\textcolor{keywordtype}{int}\ k)\ \{\ \textcolor{keywordflow}{return}\ this-\/>find\_by\_order(k)-\/>first;\ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00135\ \ \ \ \ T\ \mbox{\hyperlink{struct_sorted_multi_tree_a73f728a83e21417917a9d35185322dcb}{kth\_max}}(\textcolor{keywordtype}{int}\ k)\ \{\ \textcolor{keywordflow}{return}\ this-\/>find\_by\_order(this-\/>size()-\/k-\/1)-\/>first;\ \}}
+\DoxyCodeLine{00136\ \};}
+
+\end{DoxyCode}

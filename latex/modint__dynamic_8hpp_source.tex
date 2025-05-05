@@ -1,0 +1,62 @@
+\doxysection{modint\+\_\+dynamic.\+hpp}
+\hypertarget{modint__dynamic_8hpp_source}{}\label{modint__dynamic_8hpp_source}\index{mod/modint\_dynamic.hpp@{mod/modint\_dynamic.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{struct\ }DynamicModInt\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ ll\ value;}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{static}\ ll\ mod;}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ set\_mod(ll\ x)\ \{\ mod=x;\ \}}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{static}\ ll\ get\_mod()\ \{\ \textcolor{keywordflow}{return}\ mod;\ \}}
+\DoxyCodeLine{00009\ \ \ \ \ DynamicModInt(ll\ x=0)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x>=0)\ value=x\%mod;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ value=mod-\/(-\/x)\%mod;}
+\DoxyCodeLine{00012\ \ \ \ \ \}}
+\DoxyCodeLine{00013\ \ \ \ \ DynamicModInt\ operator-\/()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ DynamicModInt(-\/value);\ \}}
+\DoxyCodeLine{00014\ \ \ \ \ DynamicModInt\ operator+()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ DynamicModInt(*\textcolor{keyword}{this});\ \}}
+\DoxyCodeLine{00015\ \ \ \ \ DynamicModInt\&\ operator+=(\textcolor{keyword}{const}\ DynamicModInt\&\ other)\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ value+=other.value;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(value>=mod)\ value-\/=mod;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}*\textcolor{keyword}{this};}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ DynamicModInt\&\ operator-\/=(\textcolor{keyword}{const}\ DynamicModInt\&\ other)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ value+=mod-\/other.value;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(value>=mod)\ value-\/=mod;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}*\textcolor{keyword}{this};}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ DynamicModInt\&\ operator*=(\textcolor{keyword}{const}\ DynamicModInt\ other)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ value=value*other.value\%mod;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}*\textcolor{keyword}{this};}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ DynamicModInt\&\ operator/=(DynamicModInt\ other)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ (*this)*=other.inv();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}*\textcolor{keyword}{this};}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ DynamicModInt\ operator+(\textcolor{keyword}{const}\ DynamicModInt\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ DynamicModInt(*\textcolor{keyword}{this})+=other;\ \}}
+\DoxyCodeLine{00034\ \ \ \ \ DynamicModInt\ operator-\/(\textcolor{keyword}{const}\ DynamicModInt\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ DynamicModInt(*\textcolor{keyword}{this})-\/=other;\ \}}
+\DoxyCodeLine{00035\ \ \ \ \ DynamicModInt\ operator*(\textcolor{keyword}{const}\ DynamicModInt\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ DynamicModInt(*\textcolor{keyword}{this})*=other;\ \}}
+\DoxyCodeLine{00036\ \ \ \ \ DynamicModInt\ operator/(\textcolor{keyword}{const}\ DynamicModInt\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ DynamicModInt(*\textcolor{keyword}{this})/=other;\ \}}
+\DoxyCodeLine{00037\ \ \ \ \ DynamicModInt\ pow(ll\ x)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ DynamicModInt\ ret(1),mul(value);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(x)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\&1)\ ret*=mul;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ mul*=mul;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ x>>=1;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ DynamicModInt\ inv()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ pow(mod-\/2);\ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ DynamicModInt\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ value==other.value;\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ DynamicModInt\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ value!=other.value;\ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{friend}\ ostream\&\ operator<<(ostream\&\ os,\ \textcolor{keyword}{const}\ DynamicModInt\&\ x)\ \{\ \textcolor{keywordflow}{return}\ os<<x.value;\ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{friend}\ istream\&\ operator>>(istream\&\ is,\ DynamicModInt\&\ x)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ ll\ v;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ is>>v;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ x=DynamicModInt(v);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ ll\ DynamicModInt::mod=998244353;}
+
+\end{DoxyCode}

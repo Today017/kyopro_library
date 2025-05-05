@@ -1,0 +1,29 @@
+\doxysection{offset\+\_\+vector.\+hpp}
+\hypertarget{offset__vector_8hpp_source}{}\label{offset__vector_8hpp_source}\index{data\_structure/offset\_vector.hpp@{data\_structure/offset\_vector.hpp}}
+\mbox{\hyperlink{offset__vector_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00006\ \textcolor{keyword}{struct\ }OffsetVector:vector<T>\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{int}\ offset=0;}
+\DoxyCodeLine{00008\ \ \ \ \ OffsetVector()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{struct_offset_vector_a95439aaf800eb489322e996e2857f885}{OffsetVector}}(\textcolor{keywordtype}{int}\ lo,\textcolor{keywordtype}{int}\ hi,T\ init)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ assert(lo<=hi);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ this-\/>assign(hi-\/lo+1,init);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ offset=-\/lo;}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ T\&operator[](\textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ assert(i+offset>=0);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vector<T>::operator[](i+offset);}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ T\ operator[](\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ assert(i+offset>=0);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vector<T>::operator[](i+offset);}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \};}
+
+\end{DoxyCode}

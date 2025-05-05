@@ -1,4 +1,4 @@
 var lagrange_8hpp =
 [
-    [ "lagrangePolynomial", "lagrange_8hpp.html#ac7cffccc1d987126f4dc4cb1177d13c6", null ]
+    [ "LagrangePolynomial", "lagrange_8hpp.html#a50261df3c197ae7a34013b771fd1ddb6", null ]
 ];

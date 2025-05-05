@@ -1,0 +1,51 @@
+\doxysection{Binary\+Trie\texorpdfstring{$<$}{<} T, Log \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_binary_trie}{}\label{struct_binary_trie}\index{BinaryTrie$<$ T, Log $>$@{BinaryTrie$<$ T, Log $>$}}
+
+
+Binary \doxylink{struct_trie}{Trie}.  
+
+
+
+
+{\ttfamily \#include $<$binary\+\_\+trie.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_binary_trie_a8894b19178488ed5a376fc2f62fe774e}\label{struct_binary_trie_a8894b19178488ed5a376fc2f62fe774e} 
+int {\bfseries size} () const
+\begin{DoxyCompactList}\small\item\em \doxylink{struct_binary_trie}{Binary\+Trie} のサイズを返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_binary_trie_a74c72898c1aa1970a149a895b50d533a}\label{struct_binary_trie_a74c72898c1aa1970a149a895b50d533a} 
+void {\bfseries insert} (T x, int t=1)
+\begin{DoxyCompactList}\small\item\em x を t 個挿入する \end{DoxyCompactList}\item 
+\Hypertarget{struct_binary_trie_ab383a881f8c83b83bd3b2c2978c543ad}\label{struct_binary_trie_ab383a881f8c83b83bd3b2c2978c543ad} 
+void {\bfseries erase} (T x, int t=1)
+\begin{DoxyCompactList}\small\item\em x を min(count(x), t) 個削除する \end{DoxyCompactList}\item 
+\Hypertarget{struct_binary_trie_a206bee98568661600b0148bfc0f9a902}\label{struct_binary_trie_a206bee98568661600b0148bfc0f9a902} 
+void {\bfseries apply\+\_\+xor} (T x)
+\begin{DoxyCompactList}\small\item\em 要素全体に x を xor する \end{DoxyCompactList}\item 
+\Hypertarget{struct_binary_trie_a574e1542d7930e058e8ac8949424063f}\label{struct_binary_trie_a574e1542d7930e058e8ac8949424063f} 
+T {\bfseries max} ()
+\begin{DoxyCompactList}\small\item\em 最大値を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_binary_trie_aa535fa5b5a9c4a43be753790348b940d}\label{struct_binary_trie_aa535fa5b5a9c4a43be753790348b940d} 
+T {\bfseries min} ()
+\begin{DoxyCompactList}\small\item\em 最小値を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_binary_trie_a2580a67854d4e8fe057c0e2bfcd173bc}\label{struct_binary_trie_a2580a67854d4e8fe057c0e2bfcd173bc} 
+T {\bfseries kth\+\_\+min} (int k)
+\begin{DoxyCompactList}\small\item\em k(0-\/indexed) 番目に小さい要素を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_binary_trie_a89a91b195e0f2f46ecf75b0e40745189}\label{struct_binary_trie_a89a91b195e0f2f46ecf75b0e40745189} 
+int {\bfseries lower\+\_\+bound} (T x)
+\begin{DoxyCompactList}\small\item\em x 以上の最小の要素が何番目に小さいかを返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_binary_trie_a8414d307e624d792b9e7cf1d498e499d}\label{struct_binary_trie_a8414d307e624d792b9e7cf1d498e499d} 
+int {\bfseries count} (T x)
+\begin{DoxyCompactList}\small\item\em x がいくつ含まれているかを返す \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T = uint32\+\_\+t, int Log = 32$>$\newline
+struct Binary\+Trie$<$ T, Log $>$}
+Binary \doxylink{struct_trie}{Trie}. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+data\+\_\+structure/binary\+\_\+trie.\+hpp\end{DoxyCompactItemize}

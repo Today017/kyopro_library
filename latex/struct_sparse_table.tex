@@ -1,0 +1,65 @@
+\doxysection{Sparse\+Table\texorpdfstring{$<$}{<} Band \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_sparse_table}{}\label{struct_sparse_table}\index{SparseTable$<$ Band $>$@{SparseTable$<$ Band $>$}}
+
+
+スパーステーブル  
+
+
+
+
+{\ttfamily \#include $<$sparse\+\_\+table.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_sparse_table_adcdeb84f6d3751a8ab27afcf73d9efbb}\label{struct_sparse_table_adcdeb84f6d3751a8ab27afcf73d9efbb} 
+using {\bfseries Type} = typename Band\+::\+Type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_sparse_table_a21a0384979486679924c67a94fbf3a0c}{Sparse\+Table}} (const vector$<$ Type $>$ \&v)
+\begin{DoxyCompactList}\small\item\em 配列 v からスパーステーブルを構築する \end{DoxyCompactList}\item 
+\Hypertarget{struct_sparse_table_a58ddfa937ff083999c2847f66305da96}\label{struct_sparse_table_a58ddfa937ff083999c2847f66305da96} 
+Type {\bfseries fold} (int l, int r)
+\begin{DoxyCompactList}\small\item\em 区間 \mbox{[}l, r) の半群積を返す \end{DoxyCompactList}\item 
+\Hypertarget{struct_sparse_table_ab42c36160305467fb3977ffdfb1b4851}\label{struct_sparse_table_ab42c36160305467fb3977ffdfb1b4851} 
+int {\bfseries size} ()
+\item 
+\Hypertarget{struct_sparse_table_a208fad6a2149037792c14b1acfcf45bc}\label{struct_sparse_table_a208fad6a2149037792c14b1acfcf45bc} 
+Type {\bfseries operator\mbox{[}$\,$\mbox{]}} (int i) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Band$>$\newline
+struct Sparse\+Table$<$ Band $>$}
+スパーステーブル 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Band} & 冪等な半群 \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_sparse_table_a21a0384979486679924c67a94fbf3a0c}\index{SparseTable$<$ Band $>$@{SparseTable$<$ Band $>$}!SparseTable@{SparseTable}}
+\index{SparseTable@{SparseTable}!SparseTable$<$ Band $>$@{SparseTable$<$ Band $>$}}
+\doxysubsubsection{\texorpdfstring{SparseTable()}{SparseTable()}}
+{\footnotesize\ttfamily \label{struct_sparse_table_a21a0384979486679924c67a94fbf3a0c} 
+template$<$typename Band$>$ \\
+\mbox{\hyperlink{struct_sparse_table}{Sparse\+Table}}$<$ Band $>$\mbox{\hyperlink{struct_sparse_table}{\+::\+Sparse\+Table}} (\begin{DoxyParamCaption}\item[{const vector$<$ Type $>$ \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+配列 v からスパーステーブルを構築する 
+
+\begin{DoxyNote}{Note}
+O(\+N log(\+N)) 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+data\+\_\+structure/sparse\+\_\+table.\+hpp\end{DoxyCompactItemize}

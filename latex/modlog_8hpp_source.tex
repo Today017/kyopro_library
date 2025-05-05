@@ -1,0 +1,28 @@
+\doxysection{modlog.\+hpp}
+\hypertarget{modlog_8hpp_source}{}\label{modlog_8hpp_source}\index{math/modlog.hpp@{math/modlog.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00007\ ll\ ModLog(ll\ x,\ ll\ y,\ ll\ mod)\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ ll\ m=ceil(sqrt(mod))+1;}
+\DoxyCodeLine{00009\ \ \ \ \ ll\ now\_y=y;}
+\DoxyCodeLine{00010\ \ \ \ \ map<ll,ll>\ mp;}
+\DoxyCodeLine{00011\ \ \ \ \ REP(i,m)\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ mp[now\_y]=i;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ now\_y=now\_y*x\%mod;}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ \ \ \ \ ll\ x\_pow=1;}
+\DoxyCodeLine{00016\ \ \ \ \ REP(i,m)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ x\_pow*=x;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ x\_pow\%=mod;}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ ll\ now\_x=x\_pow;}
+\DoxyCodeLine{00021\ \ \ \ \ FOR(i,1,m+1)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mp.find(now\_x)!=mp.end())\ \textcolor{keywordflow}{return}\ i*m-\/mp[now\_x];}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ now\_x=now\_x*x\_pow\%mod;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}

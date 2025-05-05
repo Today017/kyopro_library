@@ -1,0 +1,71 @@
+\doxysection{fraction.\+hpp}
+\hypertarget{fraction_8hpp_source}{}\label{fraction_8hpp_source}\index{math/fraction.hpp@{math/fraction.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T=ll>}
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }Fraction\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ T\ upper,lower;}
+\DoxyCodeLine{00007\ \ \ \ \ Fraction()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{struct_fraction_a42f7ffc10b3eb9cb2185656d6ce63162}{Fraction}}(T\ a,\ T\ b)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ T\ g=gcd(a,b);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ upper=a/g,lower=b/g;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(lower<0)\ upper*=-\/1,lower*=-\/1;}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{struct_fraction}{Fraction}}(T\ a=0)\ \{\ upper=a,lower=1;\ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ Fraction\ operator+(\textcolor{keyword}{const}\ Fraction\&\ f)\ \{\ \textcolor{keywordflow}{return}\ Fraction(upper*f.lower+f.upper*lower,lower*f.lower);\ \}}
+\DoxyCodeLine{00019\ \ \ \ \ Fraction\ operator-\/(\textcolor{keyword}{const}\ Fraction\&\ f)\ \{\ \textcolor{keywordflow}{return}\ Fraction(upper*f.lower-\/f.upper*lower,lower*f.lower);\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ Fraction\ operator*(\textcolor{keyword}{const}\ Fraction\&\ f)\ \{\ \textcolor{keywordflow}{return}\ Fraction(upper*f.upper,lower*f.lower);\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ Fraction\ operator/(\textcolor{keyword}{const}\ Fraction\&\ f)\ \{\ \textcolor{keywordflow}{return}\ Fraction(upper*f.lower,lower*f.upper);\ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ Fraction\ operator+=(\textcolor{keyword}{const}\ Fraction\&\ f)\ \{\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}=*\textcolor{keyword}{this}+f;\ \}}
+\DoxyCodeLine{00024\ \ \ \ \ Fraction\ operator-\/=(\textcolor{keyword}{const}\ Fraction\&\ f)\ \{\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}=*\textcolor{keyword}{this}-\/f;\ \}}
+\DoxyCodeLine{00025\ \ \ \ \ Fraction\ operator*=(\textcolor{keyword}{const}\ Fraction\&\ f)\ \{\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}=*\textcolor{keyword}{this}*f;\ \}}
+\DoxyCodeLine{00026\ \ \ \ \ Fraction\ operator/=(\textcolor{keyword}{const}\ Fraction\&\ f)\ \{\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}=*\textcolor{keyword}{this}/f;\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ Fraction\ operator+(\textcolor{keyword}{const}\ T\&\ f)\ \{\ \textcolor{keywordflow}{return}\ Fraction(upper+f*lower,lower);\ \}}
+\DoxyCodeLine{00029\ \ \ \ \ Fraction\ operator-\/(\textcolor{keyword}{const}\ T\&\ f)\ \{\ \textcolor{keywordflow}{return}\ Fraction(upper-\/f*lower,lower);\ \}}
+\DoxyCodeLine{00030\ \ \ \ \ Fraction\ operator*(\textcolor{keyword}{const}\ T\&\ f)\ \{\ \textcolor{keywordflow}{return}\ Fraction(upper*f,lower);\ \}}
+\DoxyCodeLine{00031\ \ \ \ \ Fraction\ operator/(\textcolor{keyword}{const}\ T\&\ f)\ \{\ \textcolor{keywordflow}{return}\ Fraction(upper,lower*f);\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ Fraction\ operator+=(\textcolor{keyword}{const}\ T\&\ f)\ \{\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}=*\textcolor{keyword}{this}+f;\ \}}
+\DoxyCodeLine{00034\ \ \ \ \ Fraction\ operator-\/=(\textcolor{keyword}{const}\ T\&\ f)\ \{\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}=*\textcolor{keyword}{this}-\/f;\ \}}
+\DoxyCodeLine{00035\ \ \ \ \ Fraction\ operator*=(\textcolor{keyword}{const}\ T\&\ f)\ \{\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}=*\textcolor{keyword}{this}*f;\ \}}
+\DoxyCodeLine{00036\ \ \ \ \ Fraction\ operator/=(\textcolor{keyword}{const}\ T\&\ f)\ \{\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}=*\textcolor{keyword}{this}/f;\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ Fraction\ operator-\/()\ \{\ \textcolor{keywordflow}{return}\ Fraction(-\/upper,lower);\ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ Fraction\&\ f)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ upper==f.upper\&\&lower==f.lower;\ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ Fraction\&\ f)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ upper!=f.upper||lower!=f.lower;\ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator<(\textcolor{keyword}{const}\ Fraction\&\ f)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ upper*f.lower<f.upper*lower;\ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator<=(\textcolor{keyword}{const}\ Fraction\&\ f)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ upper*f.lower<=f.upper*lower;\ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator>(\textcolor{keyword}{const}\ Fraction\&\ f)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ upper*f.lower>f.upper*lower;\ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator>=(\textcolor{keyword}{const}\ Fraction\&\ f)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ upper*f.lower>=f.upper*lower;\ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ T\&\ f)\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ upper==f\&\&lower==1;\ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ T\&\ f)\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ upper!=f||lower!=1;\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator<(\textcolor{keyword}{const}\ T\&\ f)\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ upper<f*lower;\ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator<=(\textcolor{keyword}{const}\ T\&\ f)\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ upper<=f*lower;\ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator>(\textcolor{keyword}{const}\ T\&\ f)\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ upper>f*lower;\ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator>=(\textcolor{keyword}{const}\ T\&\ f)\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ upper>=f*lower;\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{friend}\ ostream\&\ operator<<(ostream\&\ os,\ \textcolor{keyword}{const}\ Fraction\&\ f)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ os<<f.upper<<\textcolor{stringliteral}{"{}/"{}}<<f.lower;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ T\ gcd(T\ a,\ T\ b)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(b!=0)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ T\ r=a\%b;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ a=b;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ b=r;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \};}
+
+\end{DoxyCode}

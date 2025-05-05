@@ -1,0 +1,21 @@
+\doxysection{kth\+\_\+root.\+hpp}
+\hypertarget{kth__root_8hpp_source}{}\label{kth__root_8hpp_source}\index{others/kth\_root.hpp@{others/kth\_root.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/algorithm/binary\_search.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00005\ ll\ KthRoot(ll\ n,\ ll\ k=2)\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordflow}{if}(k==1)\ \textcolor{keywordflow}{return}\ n;}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordflow}{return}\ (ll)BinarySearch<LL>(0,4e10,[\&](LL\ x)\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ LL\ tmp=1;}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ flag=\textcolor{keyword}{true};}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ REP(i,k)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tmp*x>n)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ tmp*=x;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00015\ \ \ \ \ \});}
+\DoxyCodeLine{00016\ \}}
+
+\end{DoxyCode}

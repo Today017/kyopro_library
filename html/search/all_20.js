@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['モノイド_0',['例) モノイド',['../md_note.html#autotoc_md146',1,'']]]
+  ['使い方_0',['使い方',['../md__r_e_a_d_m_e.html#autotoc_md55',1,'']]]
 ];

@@ -1,0 +1,64 @@
+\doxysection{Range\+Set Struct Reference}
+\hypertarget{struct_range_set}{}\label{struct_range_set}\index{RangeSet@{RangeSet}}
+
+
+区間を set で管理するデータ構造 verify\+:https\+://yukicoder.me/submissions/1021763  
+
+
+
+
+{\ttfamily \#include $<$range\+\_\+set.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_range_set_a2f309dc243b842cc7e0b4d4f57fe0806}\label{struct_range_set_a2f309dc243b842cc7e0b4d4f57fe0806} 
+void {\bfseries insert} (ll l, ll r)
+\begin{DoxyCompactList}\small\item\em 区間 \mbox{[}l, r) を追加する \end{DoxyCompactList}\item 
+\Hypertarget{struct_range_set_ada98ff9e07cffbd288efd85c87b1f77f}\label{struct_range_set_ada98ff9e07cffbd288efd85c87b1f77f} 
+void {\bfseries erase} (ll l, ll r)
+\begin{DoxyCompactList}\small\item\em 区間 \mbox{[}l, r) を削除する \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_range_set_ae210a109dde6a0646562b2970f9c7447}{is\+\_\+covered}} (ll l, ll r)
+\begin{DoxyCompactList}\small\item\em 区間 \mbox{[}l, r) が完全に被覆されているかどうかを判定する \end{DoxyCompactList}\item 
+PL \mbox{\hyperlink{struct_range_set_afd40a872558d702201c77783aa73889b}{covering\+\_\+range}} (ll x)
+\begin{DoxyCompactList}\small\item\em 点 x を含む区間を返す \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_range_set_a5f516de3fe3aafe273e7a6dc62f949ff}\label{struct_range_set_a5f516de3fe3aafe273e7a6dc62f949ff} 
+set$<$ PL $>$ {\bfseries dat}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+区間を set で管理するデータ構造 verify\+:https\+://yukicoder.me/submissions/1021763 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_range_set_afd40a872558d702201c77783aa73889b}\index{RangeSet@{RangeSet}!covering\_range@{covering\_range}}
+\index{covering\_range@{covering\_range}!RangeSet@{RangeSet}}
+\doxysubsubsection{\texorpdfstring{covering\_range()}{covering\_range()}}
+{\footnotesize\ttfamily \label{struct_range_set_afd40a872558d702201c77783aa73889b} 
+PL Range\+Set\+::covering\+\_\+range (\begin{DoxyParamCaption}\item[{ll}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+点 x を含む区間を返す 
+
+存在しない場合は {\ttfamily \{-\/INFL, -\/INFL\}} を返す \Hypertarget{struct_range_set_ae210a109dde6a0646562b2970f9c7447}\index{RangeSet@{RangeSet}!is\_covered@{is\_covered}}
+\index{is\_covered@{is\_covered}!RangeSet@{RangeSet}}
+\doxysubsubsection{\texorpdfstring{is\_covered()}{is\_covered()}}
+{\footnotesize\ttfamily \label{struct_range_set_ae210a109dde6a0646562b2970f9c7447} 
+bool Range\+Set\+::is\+\_\+covered (\begin{DoxyParamCaption}\item[{ll}]{l}{, }\item[{ll}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+区間 \mbox{[}l, r) が完全に被覆されているかどうかを判定する 
+
+\begin{DoxyAttention}{Attention}
+unverified 
+\end{DoxyAttention}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+data\+\_\+structure/range\+\_\+set.\+hpp\end{DoxyCompactItemize}

@@ -1,5 +1,5 @@
 var scc_8hpp =
 [
-    [ "SCC", "struct_s_c_c.html", "struct_s_c_c" ],
-    [ "sccDecomposition", "scc_8hpp.html#a57b083107436aa08eb9bf691391234ae", null ]
+    [ "SccInfo", "struct_scc_info.html", "struct_scc_info" ],
+    [ "SccDecomposition", "scc_8hpp.html#a75fd07fc8345ee4382b75738f61eeeba", null ]
 ];

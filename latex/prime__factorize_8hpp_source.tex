@@ -1,0 +1,68 @@
+\doxysection{prime\+\_\+factorize.\+hpp}
+\hypertarget{prime__factorize_8hpp_source}{}\label{prime__factorize_8hpp_source}\index{math/prime\_factorize.hpp@{math/prime\_factorize.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/math/primality\_test.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00008\ VP\ PrimeFactorize(ll\ n)\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{if}(PrimalityTest(n))\ \textcolor{keywordflow}{return}\ \{\{n,1\}\};}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{auto}\ find\_factor=[](\textcolor{keyword}{auto}\&\&\ find\_factor,\ ll\ n)-\/>\ ll\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ LL\ m=(ll)pow(n,0.125)+1;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \_gcd=[](LL\ a,\ LL\ b)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(a)\ b\%=a,swap(a,b);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ b;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \_abs=[](LL\ x)\ \{\ \textcolor{keywordflow}{return}\ x<0?-\/x:x;\ \};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ FOR(c,1,n)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ f=[\&](LL\ x)\ \{\ \textcolor{keywordflow}{return}((x\%n)*(x\%n)+c)\%n;\ \};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ LL\ y=0,r=1,q=1,g=1,k=0,x=0,ys=0;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(g==1)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x=y;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(k<r*3/4)\ y=f(y),k++;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(k<r\&\&g==1)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ys=y;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<min(m,r-\/k);\ i++)\ y=f(y),q=q*\_abs(x-\/y)\%n;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ g=\_gcd(q,n),k+=m;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k=r,r*=2;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(g==n)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ g=1,y=ys;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(g==1)\ y=f(y),g=\_gcd(\_abs(x-\/y),n);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(g<n)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(PrimalityTest(g))\ \textcolor{keywordflow}{return}\ g;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(PrimalityTest(n/g))\ \textcolor{keywordflow}{return}\ n/g;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ find\_factor(find\_factor,g);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ \ \ \ \ map<ll,ll>\ mp;}
+\DoxyCodeLine{00043\ \ \ \ \ ll\ i=2;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{while}(i*i<=n)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ ll\ k=0;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(n\%i==0)\ n/=i,k++;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(k)\ mp[i]=k;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ i+=i\%2+1;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i==101\&\&n>=(1ll<<20))\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(n>1)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(PrimalityTest(n))\ mp[n]=1,n=1;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ll\ j=find\_factor(find\_factor,n);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k=0;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(n\%j==0)\ n/=j,k++;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mp[j]=k;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{if}(n>1)\ mp[n]=1;}
+\DoxyCodeLine{00062\ \ \ \ \ VP\ ret;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ p:mp)\ ret.push\_back(p);}
+\DoxyCodeLine{00064\ \ \ \ \ sort(ALL(ret));}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00066\ \}}
+
+\end{DoxyCode}

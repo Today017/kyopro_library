@@ -1,0 +1,74 @@
+\doxysection{min\+\_\+cost\+\_\+flow.\+hpp}
+\hypertarget{min__cost__flow_8hpp_source}{}\label{min__cost__flow_8hpp_source}\index{graph/flow/min\_cost\_flow.hpp@{graph/flow/min\_cost\_flow.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}../../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }MinCostFlow\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{struct\ }Edge\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_min_cost_flow_1_1_edge_a547696eaaa79241ef48244ef50ef8f11}{from}};\ }
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_min_cost_flow_1_1_edge_a7cedccd94c97295705d0e852bae7dd7a}{to}};\ }
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_min_cost_flow_1_1_edge_aa0302cff92809184f4660b0302a7e554}{rev}};\ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ ll\ \mbox{\hyperlink{struct_min_cost_flow_1_1_edge_a7a5666a6fbaaca1cc1feaca729b509c6}{cap}};\ }
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ ll\ \mbox{\hyperlink{struct_min_cost_flow_1_1_edge_acecbbadab9200139d6fca7ff17fd92ca}{cost}};\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isrev;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ Edge(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_min_cost_flow_1_1_edge_a547696eaaa79241ef48244ef50ef8f11}{from}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_min_cost_flow_1_1_edge_a7cedccd94c97295705d0e852bae7dd7a}{to}},\ ll\ \mbox{\hyperlink{struct_min_cost_flow_1_1_edge_a7a5666a6fbaaca1cc1feaca729b509c6}{cap}},\ ll\ \mbox{\hyperlink{struct_min_cost_flow_1_1_edge_acecbbadab9200139d6fca7ff17fd92ca}{cost}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_min_cost_flow_1_1_edge_aa0302cff92809184f4660b0302a7e554}{rev}},\ \textcolor{keywordtype}{bool}\ isrev):\mbox{\hyperlink{struct_min_cost_flow_1_1_edge_a547696eaaa79241ef48244ef50ef8f11}{from}}(\mbox{\hyperlink{struct_min_cost_flow_1_1_edge_a547696eaaa79241ef48244ef50ef8f11}{from}}),\mbox{\hyperlink{struct_min_cost_flow_1_1_edge_a7cedccd94c97295705d0e852bae7dd7a}{to}}(\mbox{\hyperlink{struct_min_cost_flow_1_1_edge_a7cedccd94c97295705d0e852bae7dd7a}{to}}),\mbox{\hyperlink{struct_min_cost_flow_1_1_edge_a7a5666a6fbaaca1cc1feaca729b509c6}{cap}}(\mbox{\hyperlink{struct_min_cost_flow_1_1_edge_a7a5666a6fbaaca1cc1feaca729b509c6}{cap}}),\mbox{\hyperlink{struct_min_cost_flow_1_1_edge_acecbbadab9200139d6fca7ff17fd92ca}{cost}}(\mbox{\hyperlink{struct_min_cost_flow_1_1_edge_acecbbadab9200139d6fca7ff17fd92ca}{cost}}),\mbox{\hyperlink{struct_min_cost_flow_1_1_edge_aa0302cff92809184f4660b0302a7e554}{rev}}(\mbox{\hyperlink{struct_min_cost_flow_1_1_edge_aa0302cff92809184f4660b0302a7e554}{rev}}),isrev(isrev)\ \{\}}
+\DoxyCodeLine{00015\ \ \ \ \ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{struct_min_cost_flow}{MinCostFlow}}(\textcolor{keywordtype}{int}\ n)\ \{\ graph.resize(n),dist.resize(n),pot.resize(n),pv.resize(n),pe.resize(n);\ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_min_cost_flow_a5430122987ebfe40c88c82b50012df30}{add\_edge}}(\textcolor{keywordtype}{int}\ from,\ \textcolor{keywordtype}{int}\ to,\ ll\ cap,\ ll\ cost)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ graph[from].push\_back(\mbox{\hyperlink{struct_min_cost_flow_1_1_edge}{Edge}}(from,to,cap,cost,graph[to].size(),\textcolor{keyword}{false}));}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ graph[to].push\_back(\mbox{\hyperlink{struct_min_cost_flow_1_1_edge}{Edge}}(to,from,0,-\/cost,(\textcolor{keywordtype}{int})graph[from].size()-\/1,\textcolor{keyword}{true}));}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \ \ vector<Edge>\ \mbox{\hyperlink{struct_min_cost_flow_a54a6053fe01e39bc1a54a28864982d9e}{get\_edges}}()\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ vector<Edge>\ ret;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<graph.size();\ i++)\ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&e:graph[i])\ \textcolor{keywordflow}{if}(!e.isrev)\ ret.push\_back(e);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ ll\ \mbox{\hyperlink{struct_min_cost_flow_ad73724ca7ad68fef33e7e1c1f4271ccf}{flow}}(\textcolor{keywordtype}{int}\ s,\ \textcolor{keywordtype}{int}\ t,\ ll\ f)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=graph.size();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ rpriority\_queue<pair<ll,int>>\ pq;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ fill(ALL(pot),0),fill(ALL(pv),0),fill(ALL(pe),0);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ ll\ ret=0;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(f>0)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ fill(dist.begin(),dist.end(),INFL);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ dist[s]=0;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ pq.push(\{0,s\});}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(!pq.empty())\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [tmp,now]=pq.top();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pq.pop();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dist[now]<tmp)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<graph[now].size();\ i++)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [from,to,rev,cap,cost,isrev]=graph[now][i];}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ll\ ncost=dist[now]+cost+pot[now]-\/pot[to];}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(cap>0\&\&dist[to]>ncost)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dist[to]=ncost,pv[to]=now,pe[to]=i;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pq.push(\{dist[to],to\});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dist[t]==INFL)\ \textcolor{keywordflow}{return}\ INFL;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<n;\ i++)\ pot[i]+=dist[i];}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ ll\ d=f;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ v=t;\ v!=s;\ v=pv[v])\ d=min(d,graph[pv[v]][pe[v]].cap);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ f-\/=d,ret+=d*pot[t];}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ v=t;\ v!=s;\ v=pv[v])\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&e=graph[pv[v]][pe[v]];}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.cap-\/=d,graph[v][e.rev].cap+=d;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00076\ \ \ \ \ vector<vector<Edge>>\ graph;}
+\DoxyCodeLine{00077\ \ \ \ \ VL\ dist,pot;\ \textcolor{comment}{//\ 距離,\ ポテンシャル}}
+\DoxyCodeLine{00078\ \ \ \ \ VI\ pv,pe;}
+\DoxyCodeLine{00079\ \};}
+
+\end{DoxyCode}

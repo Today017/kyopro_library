@@ -1,15 +1,15 @@
 var searchData=
 [
   ['id_0',['id',['../struct_abel_1_1_sum.html#a3adf3ea50f0f359934a70b29bb7bb308',1,'Abel::Sum::id()'],['../struct_abel_1_1_xor.html#ab5e6fe608d99cbb7fbefb8f413ba9509',1,'Abel::Xor::id()'],['../struct_monoid_1_1_min.html#a1751a1c69ded28e92cfd6f9c4b42f3ee',1,'Monoid::Min::id()'],['../struct_monoid_1_1_max.html#a5137dcf5aacd39b21f6ae23605136831',1,'Monoid::Max::id()'],['../struct_monoid_1_1_sum.html#a23a7ab3898ae4b224d00d724b9cb09d1',1,'Monoid::Sum::id()'],['../struct_monoid_1_1_sum_pair.html#a043585d89c5f6298c87a3555669a03a7',1,'Monoid::SumPair::id()'],['../struct_operator_1_1_update.html#a8a95d2315dfc15130309f5d489097e32',1,'Operator::Update::id()'],['../struct_operator_1_1_add.html#a8e0e087f00637c890ca8b50fa7e4e0fc',1,'Operator::Add::id()'],['../struct_operator_1_1_update_time_stamp.html#a16234d6362c308f826cff9cc3a2d31a0',1,'Operator::UpdateTimeStamp::id()']]],
-  ['index_1',['index',['../struct_sorted_array.html#ad950b019e1eccc41714da7e3d9043801',1,'SortedArray']]],
-  ['init_2',['init',['../namespace_div_mul_transform.html#a75c365673bcb0731bd53a9ab2e8006cc',1,'DivMulTransform::init()'],['../namespace_random_generator.html#afef16b623e0689d0eb24a5634965bd2e',1,'RandomGenerator::init()']]],
-  ['insert_3',['insert',['../struct_binary_trie.html#a26fff1a80ef5ea11c59becf254fff39f',1,'BinaryTrie::insert()'],['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a6b8d4d3825b9d530359ee07fc0a51b30',1,'InsertableReversibleArrayImpl::RBSTBase::insert()'],['../struct_insertable_reversible_array.html#ab2b765916173504d440af42e3df58868',1,'InsertableReversibleArray::insert()'],['../struct_range_set.html#a2f309dc243b842cc7e0b4d4f57fe0806',1,'RangeSet::insert()'],['../struct_trie.html#abfe4a4f10e3662529a07c66f42c54405',1,'Trie::insert()']]],
+  ['init_1',['Init',['../namespace_zeta_mobius_div_mul.html#a60c1e6ce641275a4ee75d229514c1691',1,'ZetaMobiusDivMul']]],
+  ['init_2',['init',['../struct_hash.html#a525ce897ce585256fd241baf51c165b9',1,'Hash']]],
+  ['insert_3',['insert',['../struct_binary_trie.html#a74c72898c1aa1970a149a895b50d533a',1,'BinaryTrie::insert()'],['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a6b8d4d3825b9d530359ee07fc0a51b30',1,'InsertableReversibleArrayImpl::RBSTBase::insert()'],['../struct_insertable_reversible_array.html#ab2b765916173504d440af42e3df58868',1,'InsertableReversibleArray::insert()'],['../struct_range_set.html#a2f309dc243b842cc7e0b4d4f57fe0806',1,'RangeSet::insert()'],['../struct_trie.html#abfe4a4f10e3662529a07c66f42c54405',1,'Trie::insert()']]],
   ['insertablereversiblearray_4',['InsertableReversibleArray',['../struct_insertable_reversible_array.html#aa2087eb079b25efc16b6c5a6356a9299',1,'InsertableReversibleArray::InsertableReversibleArray()=default'],['../struct_insertable_reversible_array.html#a8b180eeb6d7a237eb7abedb5975c42ab',1,'InsertableReversibleArray::InsertableReversibleArray(int n)'],['../struct_insertable_reversible_array.html#a2411bea8ef1cf9692bbaf7df9b83a210',1,'InsertableReversibleArray::InsertableReversibleArray(const vector&lt; T &gt; &amp;init)']]],
-  ['integral_5',['integral',['../struct_f_p_s.html#ad2cc3deeb2b689e2cc83b2f19b24512b',1,'FPS']]],
-  ['integral_5finplace_6',['integral_inplace',['../struct_f_p_s.html#ae0cb9f42292fd84ac62a3dc2b1b47b58',1,'FPS']]],
-  ['intersect_7',['intersect',['../struct_wavelet_matrix.html#a0aa4dc733c0b2ddaaae4fa274fc739a9',1,'WaveletMatrix']]],
-  ['inv_8',['inv',['../struct_m_f_p_s.html#a42cff6d61be3ee36e00b8362580736da',1,'MFPS::inv()'],['../struct_f_p_s.html#ae59769538acf39560082f742b4af5e7d',1,'FPS::inv()'],['../struct_dynamic_mod_int.html#a71b04dec2a5afd90f40bbad8a26e12d2',1,'DynamicModInt::inv()'],['../struct_mod_int.html#abe6791d500924668e08cc248d1451ebf',1,'ModInt::inv()'],['../struct_abel_1_1_sum.html#af923d298d1515593755bf20697cc0252',1,'Abel::Sum::inv()'],['../struct_abel_1_1_xor.html#a139adead748ebb2dd62ca58569ce355f',1,'Abel::Xor::inv()']]],
-  ['inversionnumber_9',['inversionNumber',['../inversion__number_8hpp.html#aeedbba8c814b53b586315babad798aa4',1,'inversion_number.hpp']]],
+  ['integral_5',['Integral',['../namespace_f_p_s.html#aac4a1224c61c85667cd96f74e138405b',1,'FPS']]],
+  ['intersect_6',['intersect',['../struct_wavelet_matrix.html#a0aa4dc733c0b2ddaaae4fa274fc739a9',1,'WaveletMatrix']]],
+  ['inv_7',['Inv',['../namespace_f_p_s.html#a8eef2a11b10be52cddfd0c9288c4457b',1,'FPS']]],
+  ['inv_8',['inv',['../struct_mod_int.html#abe6791d500924668e08cc248d1451ebf',1,'ModInt::inv()'],['../struct_dynamic_mod_int.html#a71b04dec2a5afd90f40bbad8a26e12d2',1,'DynamicModInt::inv()'],['../struct_abel_1_1_sum.html#af923d298d1515593755bf20697cc0252',1,'Abel::Sum::inv()'],['../struct_abel_1_1_xor.html#a139adead748ebb2dd62ca58569ce355f',1,'Abel::Xor::inv()']]],
+  ['inversionnumber_9',['InversionNumber',['../inversion__number_8hpp.html#a7973f38066e81579d126adfc53beb1ac',1,'inversion_number.hpp']]],
   ['is_5fcovered_10',['is_covered',['../struct_range_set.html#ae210a109dde6a0646562b2970f9c7447',1,'RangeSet']]],
   ['is_5fignored_5fline_11',['is_ignored_line',['../classexp_1_1_expander.html#a40f520a2104b3e6a2217d4b84be44f35',1,'exp::Expander']]],
   ['is_5fon_5fpath_12',['is_on_path',['../struct_l_c_a.html#ad5fecd6ac33048d9665470774370e3e5',1,'LCA']]],
@@ -21,5 +21,5 @@ var searchData=
   ['ispointonline_18',['isPointOnLine',['../namespace_geometry.html#a8613d484a8c0b5d6d603592a11190c67',1,'Geometry']]],
   ['ispointonpolygon_19',['isPointOnPolygon',['../namespace_geometry.html#ad8a7fbcb1e7ddafa0ec0d42800d90164',1,'Geometry']]],
   ['ispointonsegment_20',['isPointOnSegment',['../namespace_geometry.html#abcf022a48d43025f1b3f91dda172ca2b',1,'Geometry']]],
-  ['ispoweroftwo_21',['isPowerOfTwo',['../namespace_bit.html#a2352508502a97c857422fb76f8b68cbe',1,'Bit']]]
+  ['ispoweroftwo_21',['IsPowerOfTwo',['../namespace_bit.html#a40cfacaf824921dc87de6a5297491fde',1,'Bit']]]
 ];

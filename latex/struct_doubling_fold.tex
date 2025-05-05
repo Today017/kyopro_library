@@ -1,0 +1,100 @@
+\doxysection{Doubling\+Fold\texorpdfstring{$<$}{<} Monoid, Log \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_doubling_fold}{}\label{struct_doubling_fold}\index{DoublingFold$<$ Monoid, Log $>$@{DoublingFold$<$ Monoid, Log $>$}}
+
+
+ダブリング（モノイド合成）  
+
+
+
+
+{\ttfamily \#include $<$doubling\+\_\+fold.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_doubling_fold_a2fac53adf611f062e7c40d5f28a398b8}\label{struct_doubling_fold_a2fac53adf611f062e7c40d5f28a398b8} 
+using {\bfseries Type} = typename Monoid\+::\+Type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_doubling_fold_a7326be1879b679c77c45571fef4d4083}{Doubling\+Fold}} (const VI \&p, const vector$<$ Type $>$ \&v)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+Type \mbox{\hyperlink{struct_doubling_fold_a8351c3419c2041117f47e80436506010}{fold}} (int start, ll k)
+\begin{DoxyCompactList}\small\item\em モノイド積 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_doubling_fold_afd50a59ab1f2ab56d585b7896e444e65}{next}} (int start, ll k)
+\begin{DoxyCompactList}\small\item\em 頂点 start から k 回遷移した先の頂点を返す \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Monoid, int Log$>$\newline
+struct Doubling\+Fold$<$ Monoid, Log $>$}
+ダブリング（モノイド合成） 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \doxylink{namespace_monoid}{Monoid}} & 合成するモノイド \\
+\hline
+{\em Log} & ダブリングの深さ \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_doubling_fold_a7326be1879b679c77c45571fef4d4083}\index{DoublingFold$<$ Monoid, Log $>$@{DoublingFold$<$ Monoid, Log $>$}!DoublingFold@{DoublingFold}}
+\index{DoublingFold@{DoublingFold}!DoublingFold$<$ Monoid, Log $>$@{DoublingFold$<$ Monoid, Log $>$}}
+\doxysubsubsection{\texorpdfstring{DoublingFold()}{DoublingFold()}}
+{\footnotesize\ttfamily \label{struct_doubling_fold_a7326be1879b679c77c45571fef4d4083} 
+template$<$typename Monoid, int Log$>$ \\
+\mbox{\hyperlink{struct_doubling_fold}{Doubling\+Fold}}$<$ Monoid, Log $>$\mbox{\hyperlink{struct_doubling_fold}{\+::\+Doubling\+Fold}} (\begin{DoxyParamCaption}\item[{const VI \&}]{p}{, }\item[{const vector$<$ Type $>$ \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+コンストラクタ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & 各頂点の遷移先 \\
+\hline
+{\em v} & 各頂点の値 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+O(\+N Log) 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_doubling_fold_a8351c3419c2041117f47e80436506010}\index{DoublingFold$<$ Monoid, Log $>$@{DoublingFold$<$ Monoid, Log $>$}!fold@{fold}}
+\index{fold@{fold}!DoublingFold$<$ Monoid, Log $>$@{DoublingFold$<$ Monoid, Log $>$}}
+\doxysubsubsection{\texorpdfstring{fold()}{fold()}}
+{\footnotesize\ttfamily \label{struct_doubling_fold_a8351c3419c2041117f47e80436506010} 
+template$<$typename Monoid, int Log$>$ \\
+Type \mbox{\hyperlink{struct_doubling_fold}{Doubling\+Fold}}$<$ Monoid, Log $>$\+::fold (\begin{DoxyParamCaption}\item[{int}]{start}{, }\item[{ll}]{k}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+モノイド積 
+
+頂点 start から k 回遷移したときのモノイド積を返す \begin{DoxyNote}{Note}
+O(\+Log) 
+\end{DoxyNote}
+\Hypertarget{struct_doubling_fold_afd50a59ab1f2ab56d585b7896e444e65}\index{DoublingFold$<$ Monoid, Log $>$@{DoublingFold$<$ Monoid, Log $>$}!next@{next}}
+\index{next@{next}!DoublingFold$<$ Monoid, Log $>$@{DoublingFold$<$ Monoid, Log $>$}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{struct_doubling_fold_afd50a59ab1f2ab56d585b7896e444e65} 
+template$<$typename Monoid, int Log$>$ \\
+int \mbox{\hyperlink{struct_doubling_fold}{Doubling\+Fold}}$<$ Monoid, Log $>$\+::next (\begin{DoxyParamCaption}\item[{int}]{start}{, }\item[{ll}]{k}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+頂点 start から k 回遷移した先の頂点を返す 
+
+\begin{DoxyNote}{Note}
+O(\+Log) 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+algorithm/doubling\+\_\+fold.\+hpp\end{DoxyCompactItemize}

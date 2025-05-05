@@ -3,6 +3,7 @@ var struct_multi_set =
     [ "MultiSet", "struct_multi_set.html#ae1683508411d44c542872827503b2881", null ],
     [ "MultiSet", "struct_multi_set.html#a99a83ecab866565566687d8aae71d018", null ],
     [ "contains", "struct_multi_set.html#a203a2028c468bb813bd14c8d79a3b9ea", null ],
+    [ "count", "struct_multi_set.html#aec0db35536a9fcd9da1d1e35273f0337", null ],
     [ "discard", "struct_multi_set.html#a0fd57998bffa9ea644ed55c5681df35b", null ],
     [ "ge", "struct_multi_set.html#af5f4fdc603110941a5ae08f4a067aa73", null ],
     [ "gt", "struct_multi_set.html#ac5ea12f9b549bf8c218976e440e3dcba", null ],

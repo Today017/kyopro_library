@@ -1,0 +1,273 @@
+\doxysection{debug.\+hpp}
+\hypertarget{debug_8hpp_source}{}\label{debug_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../kyopro\_library/data\_structure/fenwick\_tree.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../kyopro\_library/data\_structure/segtree.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include"{}../kyopro\_library/data\_structure/segtree\_lazy.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include"{}../kyopro\_library/data\_structure/segtree\_dual.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include"{}../kyopro\_library/graph/dsu.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include"{}../kyopro\_library/others/int128.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include"{}../atcoder/modint"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include"{}../atcoder/segtree"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include"{}../atcoder/lazysegtree"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include"{}../atcoder/fenwicktree"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include"{}../atcoder/dsu"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ ostream\&\ operator<<(ostream\&\ os,\ atcoder::modint998244353\ a)\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ os<<a.val();}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00016\ \}}
+\DoxyCodeLine{00017\ ostream\&\ operator<<(ostream\&\ os,\ atcoder::modint1000000007\ a)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ os<<a.val();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00020\ \}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ T(*op)(T,T),\ T(*e)()>}
+\DoxyCodeLine{00022\ ostream\&\ operator<<(ostream\&\ os,\ atcoder::segtree<T,op,e>\ a)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.get\_size();}
+\DoxyCodeLine{00024\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00025\ \ \ \ \ REP(i,n)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ os<<a.prod(i,i+1);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i!=n-\/1)\ os<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ T(*op)(T,T),\ T(*e)(),\ \textcolor{keyword}{typename}\ F,\ T(*mapping)(F,T),\ F(*composition)(F,F),\ F(*\textcolor{keywordtype}{id})()>}
+\DoxyCodeLine{00033\ ostream\&\ operator<<(ostream\&\ os,\ atcoder::lazy\_segtree<T,op,e,F,mapping,composition,id>\ a)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.get\_size();}
+\DoxyCodeLine{00035\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00036\ \ \ \ \ REP(i,n)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ os<<a.get(i);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i!=n-\/1)\ os<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00043\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00044\ ostream\&\ operator<<(ostream\&\ os,\ atcoder::fenwick\_tree<T>\ a)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.size();}
+\DoxyCodeLine{00046\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00047\ \ \ \ \ REP(i,n)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ os<<a.sum(i,i+1);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i!=n-\/1)\ os<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T1,\ \textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00055\ ostream\&\ operator<<(ostream\&\ os,\ \textcolor{keyword}{const}\ pair<T1,T2>\&\ p)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ os<<\textcolor{stringliteral}{"{}("{}}<<p.first<<\textcolor{stringliteral}{"{},"{}}<<p.second<<\textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T1,\ \textcolor{keyword}{typename}\ T2,\ \textcolor{keyword}{typename}\ T3>}
+\DoxyCodeLine{00060\ ostream\&\ operator<<(ostream\&\ os,\ \textcolor{keyword}{const}\ tuple<T1,T2,T3>\&\ t)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ os<<\textcolor{stringliteral}{"{}("{}}<<get<0>(t)<<\textcolor{stringliteral}{"{},"{}}<<get<1>(t)<<\textcolor{stringliteral}{"{},"{}}<<get<2>(t)<<\textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T1,\ \textcolor{keyword}{typename}\ T2,\ \textcolor{keyword}{typename}\ T3,\ \textcolor{keyword}{typename}\ T4>}
+\DoxyCodeLine{00065\ ostream\&\ operator<<(ostream\&\ os,\ \textcolor{keyword}{const}\ tuple<T1,T2,T3,T4>\&\ t)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ os<<\textcolor{stringliteral}{"{}("{}}<<get<0>(t)<<\textcolor{stringliteral}{"{},"{}}<<get<1>(t)<<\textcolor{stringliteral}{"{},"{}}<<get<2>(t)<<\textcolor{stringliteral}{"{},"{}}<<get<3>(t)<<\textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00070\ ostream\&\ operator<<(ostream\&\ os,\ \textcolor{keyword}{const}\ vector<vector<vector<T>>>\&\ a)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ I=a.size();}
+\DoxyCodeLine{00072\ \ \ \ \ os<<\textcolor{stringliteral}{"{}[\(\backslash\)n"{}};}
+\DoxyCodeLine{00073\ \ \ \ \ REP(i,I)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ os<<\textcolor{stringliteral}{"{}\ "{}}<<i<<\textcolor{stringliteral}{"{}:[\(\backslash\)n"{}};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ J=a[i].size();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ REP(j,J)\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ os<<\textcolor{stringliteral}{"{}\ \ \ \ "{}}<<j<<\textcolor{stringliteral}{"{}:["{}};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ K=a[i][j].size();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ REP(k,K)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os<<a[i][j][k];}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(k!=K-\/1)\ os<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ os<<\textcolor{stringliteral}{"{}]\(\backslash\)n"{}};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ os<<\textcolor{stringliteral}{"{}\ ]\(\backslash\)n"{}};}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00089\ \}}
+\DoxyCodeLine{00090\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00091\ ostream\&\ operator<<(ostream\&\ os,\ \textcolor{keyword}{const}\ vector<vector<T>>\&\ a)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ os<<\textcolor{stringliteral}{"{}[\(\backslash\)n"{}};}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{int}\ I=a.size();}
+\DoxyCodeLine{00094\ \ \ \ \ REP(i,I)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ os<<\textcolor{stringliteral}{"{}\ "{}}<<i<<\textcolor{stringliteral}{"{}:["{}};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ J=a[i].size();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ REP(j,J)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ os<<a[i][j];}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(j!=J-\/1)\ os<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ os<<\textcolor{stringliteral}{"{}]\(\backslash\)n"{}};}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00105\ \}}
+\DoxyCodeLine{00106\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00107\ ostream\&\ operator<<(ostream\&\ os,\ \textcolor{keyword}{const}\ vector<T>\&\ a)\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.size();}
+\DoxyCodeLine{00109\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00110\ \ \ \ \ REP(i,n)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ os<<a[i];}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i!=n-\/1)\ os<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00116\ \}}
+\DoxyCodeLine{00117\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00118\ ostream\&\ operator<<(ostream\&\ os,\ \textcolor{keyword}{const}\ set<T>\&\ a)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.size();}
+\DoxyCodeLine{00120\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{for}(T\ x:a)\ os<<x<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00122\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00125\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00126\ ostream\&\ operator<<(ostream\&\ os,\ \textcolor{keyword}{const}\ multiset<T>\&\ a)\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.size();}
+\DoxyCodeLine{00128\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{for}(T\ x:a)\ os<<x<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00130\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00132\ \}}
+\DoxyCodeLine{00133\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00134\ ostream\&\ operator<<(ostream\&\ os,\ \textcolor{keyword}{const}\ deque<T>\&\ a)\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.size();}
+\DoxyCodeLine{00136\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{for}(T\ x:a)\ os<<x<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00138\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00140\ \}}
+\DoxyCodeLine{00141\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T1,\ \textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00142\ ostream\&\ operator<<(ostream\&\ os,\ \textcolor{keyword}{const}\ map<T1,T2>\&\ a)\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{for}(pair<T1,T2>\ x:a)\ os<<x<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00145\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00147\ \}}
+\DoxyCodeLine{00148\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00149\ ostream\&\ operator<<(ostream\&\ os,\ queue<T>\ a)\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.size();}
+\DoxyCodeLine{00151\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordflow}{while}(!a.empty())\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ os<<a.front()<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ a.pop();}
+\DoxyCodeLine{00155\ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00158\ \}}
+\DoxyCodeLine{00159\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00160\ ostream\&\ operator<<(ostream\&\ os,\ priority\_queue<T>\ a)\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.size();}
+\DoxyCodeLine{00162\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{while}(!a.empty())\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ os<<a.top()<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ a.pop();}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00169\ \}}
+\DoxyCodeLine{00170\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00171\ ostream\&\ operator<<(ostream\&\ os,\ rpriority\_queue<T>\ a)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.size();}
+\DoxyCodeLine{00173\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{while}(!a.empty())\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ os<<a.top()<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ a.pop();}
+\DoxyCodeLine{00177\ \ \ \ \ \}}
+\DoxyCodeLine{00178\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00180\ \}}
+\DoxyCodeLine{00181\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ auto\ N>}
+\DoxyCodeLine{00182\ ostream\&\ operator<<(ostream\&\ os,\ array<T,N>\ a)\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00184\ \ \ \ \ REP(i,N)\ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ os<<a[i];}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i!=N-\/1)\ os<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00187\ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00190\ \}}
+\DoxyCodeLine{00191\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00192\ ostream\&\ operator<<(ostream\&\ os,\ \mbox{\hyperlink{struct_fenwick_tree}{FenwickTree<T>}}\ a)\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.size();}
+\DoxyCodeLine{00194\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00195\ \ \ \ \ REP(i,n)\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ os<<a[i];}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i!=n-\/1)\ os<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00201\ \}}
+\DoxyCodeLine{00202\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00203\ ostream\&\ operator<<(ostream\&\ os,\ \mbox{\hyperlink{struct_seg_tree}{SegTree<T>}}\ a)\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.size();}
+\DoxyCodeLine{00205\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00206\ \ \ \ \ REP(i,n)\ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ os<<a[i];}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i!=n-\/1)\ os<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00209\ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00212\ \}}
+\DoxyCodeLine{00213\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U,\ auto\ M>}
+\DoxyCodeLine{00214\ ostream\&\ operator<<(ostream\&\ os,\ \mbox{\hyperlink{struct_seg_tree_lazy}{SegTreeLazy<T,U,M>}}\ a)\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.size();}
+\DoxyCodeLine{00216\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00217\ \ \ \ \ REP(i,n)\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ os<<a[i];}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i!=n-\/1)\ os<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00223\ \}}
+\DoxyCodeLine{00224\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00225\ ostream\&\ operator<<(ostream\&\ os,\ \mbox{\hyperlink{struct_seg_tree_dual}{SegTreeDual<T>}}\ a)\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.size();}
+\DoxyCodeLine{00227\ \ \ \ \ os<<\textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00228\ \ \ \ \ REP(i,n)\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ os<<a[i];}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i!=n-\/1)\ os<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00231\ \ \ \ \ \}}
+\DoxyCodeLine{00232\ \ \ \ \ os<<\textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00234\ \}}
+\DoxyCodeLine{00235\ ostream\&\ operator<<(ostream\&\ os,\ \mbox{\hyperlink{struct_d_s_u}{DSU}}\ a)\ \{}
+\DoxyCodeLine{00236\ \ \ \ \ VVI\ group=a.groups();}
+\DoxyCodeLine{00237\ \ \ \ \ os<<group;}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00239\ \}}
+\DoxyCodeLine{00240\ ostream\&\ operator<<(ostream\&\ os,\ atcoder::dsu\ a)\ \{}
+\DoxyCodeLine{00241\ \ \ \ \ VVI\ group=a.groups();}
+\DoxyCodeLine{00242\ \ \ \ \ os<<group;}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00244\ \}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#define\ print\_line\ cerr<<"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}<<\_\_LINE\_\_<<"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}<<"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#define\ debug(...)\ DebugPring(0,\#\_\_VA\_ARGS\_\_,\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#define\ getName(VariableName)\ \#VariableName}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00251\ \textcolor{keywordtype}{void}\ DebugPring(\textcolor{keywordtype}{int}\ i,\ T\ name)\ \{\ cerr<<endl;\ \}}
+\DoxyCodeLine{00252\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T1,\ \textcolor{keyword}{typename}\ T2,\ \textcolor{keyword}{typename}...T3>}
+\DoxyCodeLine{00253\ \textcolor{keywordtype}{void}\ DebugPring(\textcolor{keywordtype}{int}\ i,\ \textcolor{keyword}{const}\ T1\&\ name,\ \textcolor{keyword}{const}\ T2\&\ a,\ \textcolor{keyword}{const}\ T3\&\ ...b)\ \{}
+\DoxyCodeLine{00254\ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}\(\backslash\)033[31m"{}};}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordtype}{int}\ tmp=0;}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(name[i]==\textcolor{charliteral}{'\(\backslash\)0'})\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tmp==0\&\&name[i]==\textcolor{charliteral}{','})\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ cerr<<name[i];}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(name[i]==\textcolor{charliteral}{'('})\ tmp++;}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(name[i]==\textcolor{charliteral}{')'})\ tmp-\/-\/;}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00263\ \ \ \ \ \}}
+\DoxyCodeLine{00264\ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}\(\backslash\)033[32m"{}};}
+\DoxyCodeLine{00265\ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}:"{}}<<a<<\textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00266\ \ \ \ \ cerr<<\textcolor{stringliteral}{"{}\(\backslash\)033[0m"{}};}
+\DoxyCodeLine{00267\ \ \ \ \ DebugPring(i+1,name,b...);}
+\DoxyCodeLine{00268\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,26 @@
+\doxysection{bellman\+\_\+ford.\+hpp}
+\hypertarget{bellman__ford_8hpp_source}{}\label{bellman__ford_8hpp_source}\index{graph/shortest\_path/bellman\_ford.hpp@{graph/shortest\_path/bellman\_ford.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00014\ pair<bool,VL>\ BellmanFord(\textcolor{keyword}{const}\ WG\&\ g,\ \textcolor{keywordtype}{int}\ start)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ n=g.size();}
+\DoxyCodeLine{00016\ \ \ \ \ VL\ dst(n,INFL);\ dst[start]=0;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ i=0;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{for}(;\ i<n;\ i++)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ update=\textcolor{keyword}{false};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=0;\ j<n;\ j++)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [nxt,cost]:g[j])\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dst[j]!=INFL\&\&dst[j]+cost<dst[nxt])\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dst[nxt]=dst[j]+cost;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ update=\textcolor{keyword}{true};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!update)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{return}\ \{i==n,dst\};}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}

@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['phi_2ehpp_0',['phi.hpp',['../phi_8hpp.html',1,'']]],
-  ['phi_2emd_1',['phi.md',['../phi_8md.html',1,'']]],
-  ['phip_2ehpp_2',['phip.hpp',['../phip_8hpp.html',1,'']]],
-  ['prime_2ehpp_3',['prime.hpp',['../prime_8hpp.html',1,'']]],
-  ['proot_2ehpp_4',['proot.hpp',['../proot_8hpp.html',1,'']]],
-  ['proot_2emd_5',['proot.md',['../proot_8md.html',1,'']]],
-  ['ptest_2ehpp_6',['ptest.hpp',['../ptest_8hpp.html',1,'']]],
-  ['ptest_2emd_7',['ptest.md',['../ptest_8md.html',1,'']]]
+  ['primality_5ftest_2ehpp_0',['primality_test.hpp',['../primality__test_8hpp.html',1,'']]],
+  ['prime_5fenumerate_2ehpp_1',['prime_enumerate.hpp',['../prime__enumerate_8hpp.html',1,'']]],
+  ['prime_5ffactorize_2ehpp_2',['prime_factorize.hpp',['../prime__factorize_8hpp.html',1,'']]],
+  ['primitive_5froot_2ehpp_3',['primitive_root.hpp',['../primitive__root_8hpp.html',1,'']]]
 ];

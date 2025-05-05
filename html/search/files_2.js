@@ -1,19 +1,11 @@
 var searchData=
 [
-  ['cd_2ehpp_0',['cd.hpp',['../cd_8hpp.html',1,'']]],
-  ['cd_2emd_1',['cd.md',['../cd_8md.html',1,'']]],
-  ['centroid_2ehpp_2',['centroid.hpp',['../centroid_8hpp.html',1,'']]],
-  ['centroid_2emd_3',['centroid.md',['../centroid_8md.html',1,'']]],
-  ['cht_2ehpp_4',['cht.hpp',['../cht_8hpp.html',1,'']]],
-  ['cht_2emd_5',['cht.md',['../cht_8md.html',1,'']]],
-  ['cmb_2ehpp_6',['cmb.hpp',['../cmb_8hpp.html',1,'']]],
-  ['cmb_2emd_7',['cmb.md',['../cmb_8md.html',1,'']]],
-  ['cmb2_2ehpp_8',['cmb2.hpp',['../cmb2_8hpp.html',1,'']]],
-  ['compress_2ehpp_9',['compress.hpp',['../compress_8hpp.html',1,'']]],
-  ['compress_2emd_10',['compress.md',['../compress_8md.html',1,'']]],
-  ['compress_2epy_11',['compress.py',['../compress_8py.html',1,'']]],
-  ['convolution_2ehpp_12',['convolution.hpp',['../convolution_8hpp.html',1,'']]],
-  ['convolution_2emd_13',['convolution.md',['../convolution_8md.html',1,'']]],
-  ['cum2d_2ehpp_14',['cum2d.hpp',['../cum2d_8hpp.html',1,'']]],
-  ['cum2d_2emd_15',['cum2d.md',['../cum2d_8md.html',1,'']]]
+  ['centroid_2ehpp_0',['centroid.hpp',['../centroid_8hpp.html',1,'']]],
+  ['cht_2ehpp_1',['cht.hpp',['../cht_8hpp.html',1,'']]],
+  ['combination_2ehpp_2',['combination.hpp',['../combination_8hpp.html',1,'']]],
+  ['combination_5flucas_2ehpp_3',['combination_lucas.hpp',['../combination__lucas_8hpp.html',1,'']]],
+  ['compress_2epy_4',['compress.py',['../compress_8py.html',1,'']]],
+  ['convolution_2ehpp_5',['convolution.hpp',['../convolution_8hpp.html',1,'']]],
+  ['convolution_5fll_2ehpp_6',['convolution_ll.hpp',['../convolution__ll_8hpp.html',1,'']]],
+  ['cumulative_5fsum_5f2d_2ehpp_7',['cumulative_sum_2d.hpp',['../cumulative__sum__2d_8hpp.html',1,'']]]
 ];

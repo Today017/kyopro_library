@@ -1,0 +1,49 @@
+\doxysection{lca.\+hpp}
+\hypertarget{lca_8hpp_source}{}\label{lca_8hpp_source}\index{graph/tree/lca.hpp@{graph/tree/lca.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_l_c_a_af6d23a47705e2f854117d680168155c2}{LCA}}\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{struct_l_c_a_af6d23a47705e2f854117d680168155c2}{LCA}}(\textcolor{keyword}{const}\ VVI\&\ g,\ \textcolor{keywordtype}{int}\ root=0)\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n=g.size();}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k=1;}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((1<<k)<n)\ k++;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ par=VVI(k,VI(n,-\/1)),dep=VI(n);}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ dfs(g,root,-\/1);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ REP(i,k-\/1)\ REP(j,n)\ par[i+1][j]=par[i][j]==-\/1?-\/1:par[i][par[i][j]];}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_l_c_a_a487d1c6c968cd4282e6e0cae4e28fe66}{lca}}(\textcolor{keywordtype}{int}\ u,\ \textcolor{keywordtype}{int}\ v)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dep[u]<dep[v])\ swap(u,v);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k=par.size();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ REP(i,k)\ \textcolor{keywordflow}{if}((dep[u]-\/dep[v])>>i\&1)\ u=par[i][u];}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(u==v)\ \textcolor{keywordflow}{return}\ u;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ FOR(i,k-\/1,-\/1)\ \textcolor{keywordflow}{if}(par[i][u]!=par[i][v])\ u=par[0][u],v=par[0][v];}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ par[0][u];}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_l_c_a_a73fba08794ae4d796df5308c57e1a237}{distance}}(\textcolor{keywordtype}{int}\ u,\ \textcolor{keywordtype}{int}\ v)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dep[u]+dep[v]-\/2*dep[\mbox{\hyperlink{struct_l_c_a_a487d1c6c968cd4282e6e0cae4e28fe66}{lca}}(u,v)];}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_l_c_a_ad5fecd6ac33048d9665470774370e3e5}{is\_on\_path}}(\textcolor{keywordtype}{int}\ u,\ \textcolor{keywordtype}{int}\ v,\ \textcolor{keywordtype}{int}\ x)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_l_c_a_a73fba08794ae4d796df5308c57e1a237}{distance}}(u,x)+\mbox{\hyperlink{struct_l_c_a_a73fba08794ae4d796df5308c57e1a237}{distance}}(x,v)==\mbox{\hyperlink{struct_l_c_a_a73fba08794ae4d796df5308c57e1a237}{distance}}(u,v);}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_l_c_a_acdc1eaf704f9531b0d3703e547261f8b}{climb}}(\textcolor{keywordtype}{int}\ u,\ \textcolor{keywordtype}{int}\ d)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k=par.size();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ FOR(i,k-\/1,-\/1)\ \textcolor{keywordflow}{if}(d>>i\&1)\ u=par[i][u];}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ u;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ VVI\ par;}
+\DoxyCodeLine{00044\ \ \ \ \ VI\ dep;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ dfs(\textcolor{keyword}{const}\ VVI\&\ g,\ \textcolor{keywordtype}{int}\ now,\ \textcolor{keywordtype}{int}\ pre)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ par[0][now]=pre,dep[now]=pre==-\/1?0:dep[pre]+1;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ nxt:g[now])\ \textcolor{keywordflow}{if}(nxt!=pre)\ dfs(g,nxt,now);}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \};}
+
+\end{DoxyCode}

@@ -1,16 +1,16 @@
 var dir_12552d7fa429bf94a2e32e5cf39f7e69 =
 [
     [ "flow", "dir_4749669cb3d8881dd50dff60c7c5b44e.html", "dir_4749669cb3d8881dd50dff60c7c5b44e" ],
-    [ "sp", "dir_df9843f1aab4043bef18256611bedf70.html", "dir_df9843f1aab4043bef18256611bedf70" ],
+    [ "shortest_path", "dir_d0569a394d1bad71786d51186f895983.html", "dir_d0569a394d1bad71786d51186f895983" ],
     [ "tree", "dir_92baa47522fd2f139804df086ff7368f.html", "dir_92baa47522fd2f139804df086ff7368f" ],
-    [ "bi.hpp", "bi_8hpp.html", "bi_8hpp" ],
+    [ "bipartite_matching.hpp", "bipartite__matching_8hpp.html", "bipartite__matching_8hpp" ],
     [ "dsu.hpp", "dsu_8hpp.html", "dsu_8hpp" ],
-    [ "dsum.hpp", "dsum_8hpp.html", "dsum_8hpp" ],
-    [ "dsup.hpp", "dsup_8hpp.html", "dsup_8hpp" ],
-    [ "dsur.hpp", "dsur_8hpp.html", "dsur_8hpp" ],
+    [ "dsu_merging.hpp", "dsu__merging_8hpp.html", "dsu__merging_8hpp" ],
+    [ "dsu_potentialized.hpp", "dsu__potentialized_8hpp.html", "dsu__potentialized_8hpp" ],
+    [ "dsu_rollback.hpp", "dsu__rollback_8hpp.html", "dsu__rollback_8hpp" ],
     [ "lowlink.hpp", "lowlink_8hpp.html", "lowlink_8hpp" ],
-    [ "odc.hpp", "odc_8hpp.html", "odc_8hpp" ],
+    [ "offline_dynamic_connectivity.hpp", "offline__dynamic__connectivity_8hpp.html", "offline__dynamic__connectivity_8hpp" ],
     [ "scc.hpp", "scc_8hpp.html", "scc_8hpp" ],
-    [ "toposort.hpp", "toposort_8hpp.html", "toposort_8hpp" ],
-    [ "ts.hpp", "ts_8hpp.html", "ts_8hpp" ]
+    [ "topological_sort.hpp", "topological__sort_8hpp.html", "topological__sort_8hpp" ],
+    [ "two_sat.hpp", "two__sat_8hpp.html", "two__sat_8hpp" ]
 ];

@@ -1,0 +1,55 @@
+\doxysection{segtree\+\_\+2d.\+hpp}
+\hypertarget{segtree__2d_8hpp_source}{}\label{segtree__2d_8hpp_source}\index{data\_structure/segtree\_2d.hpp@{data\_structure/segtree\_2d.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Mono\textcolor{keywordtype}{id}>}
+\DoxyCodeLine{00004\ \textcolor{keyword}{struct\ }SegmentTree2D\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keyword}{using\ }Type=Monoid::Type;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ SegmentTree2D()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{struct_segment_tree2_d_a7422bf53112a0d3df9b215a2c5293a26}{SegmentTree2D}}(\textcolor{keywordtype}{int}\ h,\ \textcolor{keywordtype}{int}\ w)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ this-\/>h=h,this-\/>w=w;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ dat=vector<vector<Type>>(this-\/>h*2,vector<Type>(this-\/>w*2,Monoid::id()));}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_segment_tree2_d_acd4e88f120683b23eda460fce60537ae}{set}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ Type\ v)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ x+=h,y+=w;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ dat[x][y]=v;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=x>>1;\ i>0;\ i>>=1)\ dat[i][y]=Monoid::op(dat[i1<<1][y],dat[i<<1|1][y]);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(x>0)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=y>>1;\ j>0;\ j>>=1)\ dat[x][j]=Monoid::op(dat[x][j<<1],dat[x][j<<1|1]);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ x>>=1;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00029\ \ \ \ \ Type\ \mbox{\hyperlink{struct_segment_tree2_d_a746d58b6e0eb033030b54e67036b5798}{fold}}(\textcolor{keywordtype}{int}\ l,\ \textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ u,\ \textcolor{keywordtype}{int}\ d)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ Type\ ret=Monoid::id();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ l+=h,r+=h,u+=w,d+=w;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(l<r)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(l\&1)\ ret=Monoid::op(ret,fold\_sub(l++,u,d));}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(r\&1)\ ret=Monoid::op(ret,fold\_sub(-\/-\/r,u,d));}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ l>>=1,r>>=1;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ h,w;}
+\DoxyCodeLine{00042\ \ \ \ \ vector<vector<Type>>dat;}
+\DoxyCodeLine{00043\ \ \ \ \ F\ Monoid::op;}
+\DoxyCodeLine{00044\ \ \ \ \ Type\ Monoid::id();}
+\DoxyCodeLine{00045\ \ \ \ \ Type\ fold\_sub(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ u,\ \textcolor{keywordtype}{int}\ d)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ Type\ ret=Monoid::id();}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(u<d)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(u\&1)\ ret=Monoid::op(ret,dat[x][u]),u++;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(d\&1)\ d-\/-\/,ret=Monoid::op(ret,dat[x][d]);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ u>>=1,d>>=1;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \};}
+
+\end{DoxyCode}

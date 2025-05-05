@@ -1,0 +1,36 @@
+\doxysection{bezout\+\_\+identity.\+hpp}
+\hypertarget{bezout__identity_8hpp_source}{}\label{bezout__identity_8hpp_source}\index{math/bezout\_identity.hpp@{math/bezout\_identity.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/math/extgcd.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_bezout_identity_ae6269715a6bae60bc5ce0b4bfae2618e}{BezoutIdentity}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{struct_bezout_identity_ae6269715a6bae60bc5ce0b4bfae2618e}{BezoutIdentity}}(ll\ a,\ ll\ b,\ ll\ c)\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ this-\/>a=a;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ this-\/>b=b;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ this-\/>c=c;}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_bezout_identity_a2cf086366016d944941e8100fec64191}{build}}()\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [g,X,Y]=ExtGcd(abs(a),abs(b));}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(c\%g!=0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ this-\/>g=g,this-\/>X=X,this-\/>Y=Y;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(a<0)\ this-\/>X=-\/this-\/>X;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(b<0)\ this-\/>Y=-\/this-\/>Y;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ this-\/>X*=c/g,this-\/>Y*=c/g;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ PL\ \mbox{\hyperlink{struct_bezout_identity_ad6b2e3225c8c8d920b9287459fda8b52}{general\_solution}}(ll\ t=0)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ ll\ x=b/g*t+X,y=-\/a/g*t+Y;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{x,y\};}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ ll\ a,b,c,g;}
+\DoxyCodeLine{00040\ \ \ \ \ ll\ X,Y;}
+\DoxyCodeLine{00041\ \};}
+
+\end{DoxyCode}

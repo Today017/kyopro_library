@@ -1,0 +1,39 @@
+\chapter{sa}
+\hypertarget{md_heuristic_2sa}{}\label{md_heuristic_2sa}\index{sa@{sa}}
+\doxysectlink{md__r_e_a_d_m_e}{top}{0}\hypertarget{md_heuristic_2sa_autotoc_md51}{}\doxysection{\texorpdfstring{焼きなまし法のテンプレート}{焼きなまし法のテンプレート}}\label{md_heuristic_2sa_autotoc_md51}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ START\_TEMP\ =\ 1e4;}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ END\_TEMP\ =\ 1e-\/4;}
+\DoxyCodeLine{\textcolor{keyword}{const}\ ll\ TIME\_LIMIT\ =\ 5000;}
+\DoxyCodeLine{}
+\DoxyCodeLine{Random\ rnd;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ solve()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_timer}{Timer}}\ timer(TIME\_LIMIT);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ 初期状態}}
+\DoxyCodeLine{\ \ \ \ State\ now\ =\ initialState();}
+\DoxyCodeLine{\ \ \ \ State\ best\ =\ now;}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (timer.check())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 近傍}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ next\_score\ =\ now.get\_next\_score();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ diff\ =\ next\_score\ -\/\ now.get\_score();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ temp\ =\ START\_TEMP\ +\ (END\_TEMP\ -\/\ START\_TEMP)\ *\ timer.get\_time()\ /\ TIME\_LIMIT;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ prob\ =\ exp(diff\ /\ temp);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rnd.prob()\ <\ prob)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 遷移}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ now.modify();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (now.get\_score()\ >\ best.get\_score())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 記録}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ best\ =\ now;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

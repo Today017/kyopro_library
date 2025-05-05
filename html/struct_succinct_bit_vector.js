@@ -1,6 +1,5 @@
 var struct_succinct_bit_vector =
 [
-    [ "ull", "struct_succinct_bit_vector.html#aec5ad187d871e396a6374abc32aff060", null ],
     [ "SuccinctBitVector", "struct_succinct_bit_vector.html#a7e21d3fc0ad8a91418ba37a262c4f97f", null ],
     [ "access", "struct_succinct_bit_vector.html#ac384d026ac86d26b1607148cf4efcba7", null ],
     [ "build", "struct_succinct_bit_vector.html#aafee3472a9c2b616aeddccbceafe455b", null ],

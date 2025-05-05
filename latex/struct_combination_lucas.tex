@@ -1,0 +1,62 @@
+\doxysection{Combination\+Lucas Struct Reference}
+\hypertarget{struct_combination_lucas}{}\label{struct_combination_lucas}\index{CombinationLucas@{CombinationLucas}}
+
+
+Lucas の定理を用いた二項係数計算用ライブラリ  
+
+
+
+
+{\ttfamily \#include $<$combination\+\_\+lucas.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_combination_lucas_a0c46e2850894c0d5690bffc81047ddd8}{Combination\+Lucas}} (int mod)
+\begin{DoxyCompactList}\small\item\em Lucas の定理を用いて二項係数を計算するための前計算をする \end{DoxyCompactList}\item 
+ll \mbox{\hyperlink{struct_combination_lucas_a5f1804272f10fc0e69792ea54e172e2b}{comb}} (int n, int r)
+\begin{DoxyCompactList}\small\item\em n\+Cr mod を返す \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lucas の定理を用いた二項係数計算用ライブラリ 
+
+Lucas の定理 p を素数とし、n, r を非負整数とする。 また、n = n\mbox{[}k\mbox{]}p\texorpdfstring{$^\wedge$}{\string^}k + n\mbox{[}k-\/1\mbox{]}p\texorpdfstring{$^\wedge$}{\string^}(k-\/1) + ... + n\mbox{[}1\mbox{]}p + n\mbox{[}0\mbox{]}, r = r\mbox{[}k\mbox{]}p\texorpdfstring{$^\wedge$}{\string^}k + r\mbox{[}k-\/1\mbox{]}p\texorpdfstring{$^\wedge$}{\string^}(k-\/1) + ... + r\mbox{[}1\mbox{]}p + r\mbox{[}0\mbox{]} とする。
+
+このとき、n\+Cr(mod p) = Π\mbox{[}k=0\texorpdfstring{$\sim$}{\string~}N\mbox{]}n\mbox{[}k\mbox{]}Cr\mbox{[}k\mbox{]} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_combination_lucas_a0c46e2850894c0d5690bffc81047ddd8}\index{CombinationLucas@{CombinationLucas}!CombinationLucas@{CombinationLucas}}
+\index{CombinationLucas@{CombinationLucas}!CombinationLucas@{CombinationLucas}}
+\doxysubsubsection{\texorpdfstring{CombinationLucas()}{CombinationLucas()}}
+{\footnotesize\ttfamily \label{struct_combination_lucas_a0c46e2850894c0d5690bffc81047ddd8} 
+Combination\+Lucas\+::\+Combination\+Lucas (\begin{DoxyParamCaption}\item[{int}]{mod}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lucas の定理を用いて二項係数を計算するための前計算をする 
+
+\begin{DoxyNote}{Note}
+O(mod) 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_combination_lucas_a5f1804272f10fc0e69792ea54e172e2b}\index{CombinationLucas@{CombinationLucas}!comb@{comb}}
+\index{comb@{comb}!CombinationLucas@{CombinationLucas}}
+\doxysubsubsection{\texorpdfstring{comb()}{comb()}}
+{\footnotesize\ttfamily \label{struct_combination_lucas_a5f1804272f10fc0e69792ea54e172e2b} 
+ll Combination\+Lucas\+::comb (\begin{DoxyParamCaption}\item[{int}]{n}{, }\item[{int}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+n\+Cr mod を返す 
+
+\begin{DoxyNote}{Note}
+O(log(n)) 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mod/combination\+\_\+lucas.\+hpp\end{DoxyCompactItemize}

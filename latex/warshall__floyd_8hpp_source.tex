@@ -1,0 +1,12 @@
+\doxysection{warshall\+\_\+floyd.\+hpp}
+\hypertarget{warshall__floyd_8hpp_source}{}\label{warshall__floyd_8hpp_source}\index{graph/shortest\_path/warshall\_floyd.hpp@{graph/shortest\_path/warshall\_floyd.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00006\ \textcolor{keywordtype}{void}\ WarshallFloyd(VVL\&\ g)\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{int}\ n=g.size();}
+\DoxyCodeLine{00008\ \ \ \ \ REP(k,n)\ REP(i,n)\ REP(j,n)\ chmin(g[i][j],g[i][k]+g[k][j]);}
+\DoxyCodeLine{00009\ \}}
+
+\end{DoxyCode}

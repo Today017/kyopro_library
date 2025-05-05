@@ -1,0 +1,19 @@
+\doxysection{run\+\_\+length\+\_\+encoding.\+hpp}
+\hypertarget{run__length__encoding_8hpp_source}{}\label{run__length__encoding_8hpp_source}\index{string/run\_length\_encoding.hpp@{string/run\_length\_encoding.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ vector<pair<char,int>>\ RunLengthEncoding(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ s)\ \{}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordtype}{int}\ n=s.size();}
+\DoxyCodeLine{00005\ \ \ \ \ vector<pair<char,int>>\ ret;}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ l=0,r;\ l<n;)\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ r=l+1;}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(r<n\&\&s[l]==s[r])\ r++;}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ ret.push\_back(\{s[l],r-\/l\});}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ l=r;}
+\DoxyCodeLine{00011\ \ \ \ \}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}

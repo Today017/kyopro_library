@@ -1,0 +1,53 @@
+\doxysection{ntt998.\+hpp}
+\hypertarget{ntt998_8hpp_source}{}\label{ntt998_8hpp_source}\index{math/ntt998.hpp@{math/ntt998.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/mod/modint.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00007\ \textcolor{keywordtype}{void}\ NTT998(VM\&\ a,\ \textcolor{keywordtype}{bool}\ inv=\textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{int}\ n=a.size(),h=0;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{while}((1<<h)<n)\ h++;}
+\DoxyCodeLine{00010\ \ \ \ \ REP(i,n)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j=0;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ビットを逆に}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ REP(k,h)\ j|=(i>>k\&1)<<(h-\/1-\/k);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i<j)\ swap(a[i],a[j]);}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{const}\ VM\ rt=\{1,998244352,911660635,372528824,929031873,452798380,922799308,781712469,476477967,166035806,258648936,584193783,63912897,350007156,666702199,968855178,629671588,24514907,996173970,363395222,565042129,733596141,267099868,15311432\};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{const}\ VM\ irt=\{1,998244352,86583718,509520358,337190230,87557064,609441965,135236158,304459705,685443576,381598368,335559352,129292727,358024708,814576206,708402881,283043518,3707709,121392023,704923114,950391366,428961804,382752275,469870224\};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ b=1,t=1;\ b<n;\ b<<=1,t++)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ Mod998\ w=1,base=inv?irt[t]:rt[t];}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ REP(j,b)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ w\ :=\ 1\ の\ b\ 乗根の\ j\ 乗}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=0;\ k<n;\ k+=b*2)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Mod998\ s=a[j+k],t=a[j+k+b]*w;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a[j+k]=s+t,a[j+k+b]=s-\/t;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ w*=base;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}(inv)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ Mod998\ inv\_n=Mod998(n).inv();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ REP(i,n)\ a[i]*=inv\_n;}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ VM\ Convolve998(VM\ a,VM\ b)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ n=1;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{while}(n+1<a.size()+b.size())\ n<<=1;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ VM\ fa(n),fb(n);}
+\DoxyCodeLine{00046\ \ \ \ \ REP(i,a.size())\ fa[i]=a[i];\ REP(i,b.size())\ fb[i]=b[i];}
+\DoxyCodeLine{00047\ \ \ \ \ NTT998(fa);\ NTT998(fb);}
+\DoxyCodeLine{00048\ \ \ \ \ REP(i,n)\ fa[i]*=fb[i];}
+\DoxyCodeLine{00049\ \ \ \ \ NTT998(fa,true);}
+\DoxyCodeLine{00050\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ while(fa.size()+1>a.size()+b.size())\ fa.pop\_back();}
+\DoxyCodeLine{00052\ \ \ \ \ return\ fa;}
+\DoxyCodeLine{00053\ \}}
+
+\end{DoxyCode}

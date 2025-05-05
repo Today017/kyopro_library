@@ -1,0 +1,29 @@
+\doxysection{topological\+\_\+sort.\+hpp}
+\hypertarget{topological__sort_8hpp_source}{}\label{topological__sort_8hpp_source}\index{graph/topological\_sort.hpp@{graph/topological\_sort.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00006\ VI\ TopologicalSort(\textcolor{keyword}{const}\ VVI\&\ g)\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{int}\ n=g.size();}
+\DoxyCodeLine{00008\ \ \ \ \ VI\ indeg(n);}
+\DoxyCodeLine{00009\ \ \ \ \ REP(i,n)\ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ nxt:g[i])\ indeg[nxt]++;}
+\DoxyCodeLine{00010\ \ \ \ \ queue<int>\ que;}
+\DoxyCodeLine{00011\ \ \ \ \ REP(i,n)\ \textcolor{keywordflow}{if}(indeg[i]==0)\ que.push(i);}
+\DoxyCodeLine{00012\ \ \ \ \ VI\ ret;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{while}(!que.empty())\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ now=que.front();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ que.pop();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ nxt:g[now])\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ indeg[nxt]-\/-\/;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(indeg[nxt]==0)\ que.push(nxt);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ ret.push\_back(now);}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{if}(ret.size()!=n)\ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}

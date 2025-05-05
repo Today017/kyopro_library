@@ -1,0 +1,110 @@
+\doxysection{Merge\+Sort\+Tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_merge_sort_tree}{}\label{struct_merge_sort_tree}\index{MergeSortTree$<$ T $>$@{MergeSortTree$<$ T $>$}}
+
+
+マージソート木  
+
+
+
+
+{\ttfamily \#include $<$merge\+\_\+sort\+\_\+tree.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_merge_sort_tree_ac8235ab846d13f418b4ba8783ff461d9}\label{struct_merge_sort_tree_ac8235ab846d13f418b4ba8783ff461d9} 
+{\bfseries Merge\+Sort\+Tree} (const vector$<$ T $>$ \&v)
+\begin{DoxyCompactList}\small\item\em 配列 v からマージソート木を構築する \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_merge_sort_tree_a647f9a3816a3718bd40e38f8a4f04974}{count\+\_\+lt}} (int l, int r, T val)
+\begin{DoxyCompactList}\small\item\em 区間 \mbox{[}l, r) に存在する val 未満の値の個数を返す \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_merge_sort_tree_a881a344a374c02cdd93379fe14a4ecdf}{count\+\_\+le}} (int l, int r, T val)
+\begin{DoxyCompactList}\small\item\em 区間 \mbox{[}l, r) に存在する val 以下の値の個数を返す \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_merge_sort_tree_a90c47e319006d8204e2f43ea18a68a45}{count\+\_\+gt}} (int l, int r, T val)
+\begin{DoxyCompactList}\small\item\em 区間 \mbox{[}l, r) に存在する val より大きい値の個数を返す \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_merge_sort_tree_ab7f899451891ab52b795867471bb1ba2}{count\+\_\+ge}} (int l, int r, T val)
+\begin{DoxyCompactList}\small\item\em 区間 \mbox{[}l, r) に存在する val 以上の値の個数を返す \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{struct_merge_sort_tree_aac1f911fbf3ef224cfa6c1ef79f59973}{kth}} (int l, int r, int k)
+\begin{DoxyCompactList}\small\item\em 区間 \mbox{[}l, r) の小さい方から k(1-\/indexed) 番目の値を返す \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct Merge\+Sort\+Tree$<$ T $>$}
+マージソート木 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_merge_sort_tree_ab7f899451891ab52b795867471bb1ba2}\index{MergeSortTree$<$ T $>$@{MergeSortTree$<$ T $>$}!count\_ge@{count\_ge}}
+\index{count\_ge@{count\_ge}!MergeSortTree$<$ T $>$@{MergeSortTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{count\_ge()}{count\_ge()}}
+{\footnotesize\ttfamily \label{struct_merge_sort_tree_ab7f899451891ab52b795867471bb1ba2} 
+template$<$typename T$>$ \\
+int \mbox{\hyperlink{struct_merge_sort_tree}{Merge\+Sort\+Tree}}$<$ T $>$\+::count\+\_\+ge (\begin{DoxyParamCaption}\item[{int}]{l}{, }\item[{int}]{r}{, }\item[{T}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+区間 \mbox{[}l, r) に存在する val 以上の値の個数を返す 
+
+\begin{DoxyNote}{Note}
+O(log(\+N)\texorpdfstring{$^\wedge$}{\string^}2) 
+\end{DoxyNote}
+\Hypertarget{struct_merge_sort_tree_a90c47e319006d8204e2f43ea18a68a45}\index{MergeSortTree$<$ T $>$@{MergeSortTree$<$ T $>$}!count\_gt@{count\_gt}}
+\index{count\_gt@{count\_gt}!MergeSortTree$<$ T $>$@{MergeSortTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{count\_gt()}{count\_gt()}}
+{\footnotesize\ttfamily \label{struct_merge_sort_tree_a90c47e319006d8204e2f43ea18a68a45} 
+template$<$typename T$>$ \\
+int \mbox{\hyperlink{struct_merge_sort_tree}{Merge\+Sort\+Tree}}$<$ T $>$\+::count\+\_\+gt (\begin{DoxyParamCaption}\item[{int}]{l}{, }\item[{int}]{r}{, }\item[{T}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+区間 \mbox{[}l, r) に存在する val より大きい値の個数を返す 
+
+\begin{DoxyNote}{Note}
+O(log(\+N)\texorpdfstring{$^\wedge$}{\string^}2) 
+\end{DoxyNote}
+\Hypertarget{struct_merge_sort_tree_a881a344a374c02cdd93379fe14a4ecdf}\index{MergeSortTree$<$ T $>$@{MergeSortTree$<$ T $>$}!count\_le@{count\_le}}
+\index{count\_le@{count\_le}!MergeSortTree$<$ T $>$@{MergeSortTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{count\_le()}{count\_le()}}
+{\footnotesize\ttfamily \label{struct_merge_sort_tree_a881a344a374c02cdd93379fe14a4ecdf} 
+template$<$typename T$>$ \\
+int \mbox{\hyperlink{struct_merge_sort_tree}{Merge\+Sort\+Tree}}$<$ T $>$\+::count\+\_\+le (\begin{DoxyParamCaption}\item[{int}]{l}{, }\item[{int}]{r}{, }\item[{T}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+区間 \mbox{[}l, r) に存在する val 以下の値の個数を返す 
+
+\begin{DoxyNote}{Note}
+O(log(\+N)\texorpdfstring{$^\wedge$}{\string^}2) 
+\end{DoxyNote}
+\Hypertarget{struct_merge_sort_tree_a647f9a3816a3718bd40e38f8a4f04974}\index{MergeSortTree$<$ T $>$@{MergeSortTree$<$ T $>$}!count\_lt@{count\_lt}}
+\index{count\_lt@{count\_lt}!MergeSortTree$<$ T $>$@{MergeSortTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{count\_lt()}{count\_lt()}}
+{\footnotesize\ttfamily \label{struct_merge_sort_tree_a647f9a3816a3718bd40e38f8a4f04974} 
+template$<$typename T$>$ \\
+int \mbox{\hyperlink{struct_merge_sort_tree}{Merge\+Sort\+Tree}}$<$ T $>$\+::count\+\_\+lt (\begin{DoxyParamCaption}\item[{int}]{l}{, }\item[{int}]{r}{, }\item[{T}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+区間 \mbox{[}l, r) に存在する val 未満の値の個数を返す 
+
+\begin{DoxyNote}{Note}
+O(log(\+N)\texorpdfstring{$^\wedge$}{\string^}2) 
+\end{DoxyNote}
+\Hypertarget{struct_merge_sort_tree_aac1f911fbf3ef224cfa6c1ef79f59973}\index{MergeSortTree$<$ T $>$@{MergeSortTree$<$ T $>$}!kth@{kth}}
+\index{kth@{kth}!MergeSortTree$<$ T $>$@{MergeSortTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{kth()}{kth()}}
+{\footnotesize\ttfamily \label{struct_merge_sort_tree_aac1f911fbf3ef224cfa6c1ef79f59973} 
+template$<$typename T$>$ \\
+T \mbox{\hyperlink{struct_merge_sort_tree}{Merge\+Sort\+Tree}}$<$ T $>$\+::kth (\begin{DoxyParamCaption}\item[{int}]{l}{, }\item[{int}]{r}{, }\item[{int}]{k}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+区間 \mbox{[}l, r) の小さい方から k(1-\/indexed) 番目の値を返す 
+
+\begin{DoxyNote}{Note}
+O(log(\+N)\texorpdfstring{$^\wedge$}{\string^}3) 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+data\+\_\+structure/merge\+\_\+sort\+\_\+tree.\+hpp\end{DoxyCompactItemize}

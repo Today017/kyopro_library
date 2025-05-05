@@ -1,0 +1,38 @@
+\doxysection{lagrange.\+hpp}
+\hypertarget{lagrange_8hpp_source}{}\label{lagrange_8hpp_source}\index{math/lagrange.hpp@{math/lagrange.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/math/multipoint\_evaluate.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00008\ vector<T>\ LagrangePolynomial(vector<T>\ x,\ vector<T>\ y)\{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ n=x.size();}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ n2=1;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{while}(n2<n)\ n2<<=1;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ vector<vector<T>>\ g(n2*2,\{1\});}
+\DoxyCodeLine{00014\ \ \ \ \ REP(i,n)\ g[n2+i]=\{-\/x[i],1\};}
+\DoxyCodeLine{00015\ \ \ \ \ FOR(i,n2-\/1,0)\ g[i]=PolyMul(g[i<<1],g[i<<1|1]);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ vector<T>\ prod=g[1];}
+\DoxyCodeLine{00018\ \ \ \ \ vector<T>\ diff=PolyDifferential(prod),eval=MultipointEvaluate(diff,x);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ using\ P=pair<vector<T>,vector<T>>;\textcolor{comment}{//first/second}}
+\DoxyCodeLine{00021\ \ \ \ \ vector<P>\ g2(n2*2,\{\{0\},\{1\}\});}
+\DoxyCodeLine{00022\ \ \ \ \ REP(i,n)\ g2[n2+i]=\{\{y[i]\},\{-\/eval[i]*x[i],eval[i]\}\};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{auto}\ merge=[](P\ l,\ P\ r)-\/>\ P\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ vector<T>\ tmp1=PolyMul(l.first,r.second),tmp2=PolyMul(l.second,r.first);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{PolyAdd(tmp1,tmp2),PolyMul(l.second,r.second)\};}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ \ \ \ \ FOR(i,n2-\/1,0)\ g2[i]=merge(g2[i<<1],g2[i<<1|1]);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ vector<T>\ ret=g2[1].first;}
+\DoxyCodeLine{00030\ \ \ \ \ T\ p=1;}
+\DoxyCodeLine{00031\ \ \ \ \ REP(i,n)\ p*=eval[i];}
+\DoxyCodeLine{00032\ \ \ \ \ p=p.inv();}
+\DoxyCodeLine{00033\ \ \ \ \ REP(i,n)\ ret[i]*=p;}
+\DoxyCodeLine{00034\ \ \ \ \ return\ ret;}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}

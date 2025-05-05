@@ -1,0 +1,66 @@
+\doxysection{cht.\+hpp}
+\hypertarget{cht_8hpp_source}{}\label{cht_8hpp_source}\index{algorithm/cht.hpp@{algorithm/cht.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/algorithm/binary\_search.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T=ll,\ \textcolor{keywordtype}{bool}\ Min=true>}
+\DoxyCodeLine{00009\ \textcolor{keyword}{struct\ }CHT\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ CHT()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_c_h_t_a98990faf0c0f436c501ce5bc94e8f555}{add}}(T\ a,\ T\ b)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Min)\ a*=-\/1,b*=-\/1;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(lines.count(a)\&\&lines[a]<=b)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ lines[a]=b;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it=lines.find(a);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!need(it))\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ lines.erase(a);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(it!=lines.begin())\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ it=prev(it);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(need(it))\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ prv=prev(it);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lines.erase(it);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it=prv;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ it=next(lines.find(a));}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(need(it))\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ nxt=next(it);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ lines.erase(it);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ it=nxt;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00043\ \ \ \ \ T\ \mbox{\hyperlink{struct_c_h_t_a652d63fa85df6b36fb09fdae60ebc6cf}{get}}(T\ x)\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [a,b]=*(lines.lower\_bound(}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ BinarySearch(lines.begin()-\/>first,lines.rbegin()-\/>first+1,[\&](T\ x)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auto\ it=lines.lower\_bound(mid);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(it==lines.begin())\ return\ true;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(it==lines.end())\ return\ false;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auto\ [a1,b1]=*prev(it);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auto\ [a2,b2]=*it;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ a1*x+b1>a2*x+b2;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \})}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ ));}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}(a*x+b)*(Min?1:-\/1);}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \ \ map<T,T>\ lines;}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ need(\textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ map<T,T>::iterator\ it)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(it==lines.begin()||it==prev(lines.end())||it==lines.end())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ prv=prev(it);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ nxt=next(it);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [a,b]=*it;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [a1,b1]=*nxt;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [a2,b2]=*prv;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}(\_\_int128\_t)(a1-\/a)*(b-\/b2)<(\_\_int128\_t)(a-\/a2)*(b1-\/b);}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \};}
+
+\end{DoxyCode}

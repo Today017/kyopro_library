@@ -1,0 +1,51 @@
+\doxysection{suffix\+\_\+array.\+hpp}
+\hypertarget{suffix__array_8hpp_source}{}\label{suffix__array_8hpp_source}\index{string/suffix\_array.hpp@{string/suffix\_array.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{template}<\textcolor{keywordtype}{int}\ C=256>}
+\DoxyCodeLine{00009\ VI\ SuffixArray(\textcolor{keywordtype}{string}\ s)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ s.push\_back(\textcolor{charliteral}{'\$'});}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ n=s.size();}
+\DoxyCodeLine{00012\ \ \ \ \ VI\ p(n),\ c(n),\ cnt(max(n,C),0);}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//p[i]\ :=\ 辞書順\ i\ 番目のインデックス}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//c[i]\ :=\ インデックス\ i\ の部分文字列の同値類}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//2\string^0,2\string^1,...,2\string^k,...\ をやる}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//k=0}}
+\DoxyCodeLine{00018\ \ \ \ \ REP(i,n)\ cnt[s[i]]++;}
+\DoxyCodeLine{00019\ \ \ \ \ FOR(i,1,cnt.size())\ cnt[i]+=cnt[i-\/1];}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//辞書順\ =\ 累積和の小さい順\ になる}}
+\DoxyCodeLine{00021\ \ \ \ \ REP(i,n)\ p[-\/-\/cnt[s[i]]]=i;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//同値類を計算する}}
+\DoxyCodeLine{00023\ \ \ \ \ c[p[0]]=0;}
+\DoxyCodeLine{00024\ \ \ \ \ FOR(i,1,n)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ c[p[i]]=c[p[i-\/1]];}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(s[p[i]]!=s[p[i-\/1]])\ c[p[i]]++;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ VI\ np(n),nc(n);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k=0;\ (1<<k)<n;\ k++)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//k\ を使って、(c[i],c[i+2\string^k])\ でソート、\ p[i]-\/=2\string^k\ でできる}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//c[i+2\string^k]\ でソート}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ REP(i,n)\ np[i]=p[i]-\/(1<<k),(np[i]+=n)\%=n;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ fill(ALL(cnt),0);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ REP(i,n)\ cnt[c[np[i]]]++;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ FOR(i,1,cnt.size())\ cnt[i]+=cnt[i-\/1];}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ FOR(i,n-\/1,-\/1)\ p[-\/-\/cnt[c[np[i]]]]=np[i];}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//同値類}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ nc[p[0]]=0;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ FOR(i,1,n)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ nc[p[i]]=nc[p[i-\/1]];}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(c[p[i]]!=c[p[i-\/1]]\ ||\ c[(p[i]+(1<<k))\%n]!=c[(p[i-\/1]+(1<<k))\%n])\ nc[p[i]]++;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ swap(c,nc);}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ p.erase(p.begin());}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ p;}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,68 @@
+\doxysection{factors.\+hpp}
+\hypertarget{factors_8hpp_source}{}\label{factors_8hpp_source}\index{math/factors.hpp@{math/factors.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include"{}../../kyopro\_library/template.hpp"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_factors_a219a3cb166153a020f2fc3d83b9a9e57}{Factors}}\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{struct_factors_a219a3cb166153a020f2fc3d83b9a9e57}{Factors}}(\textcolor{keywordtype}{int}\ n)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ mx=n;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ min\_factor=VI(mx+1);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ is\_prime=VI(mx+1,\textcolor{keyword}{true});\ is\_prime[0]=is\_prime[1]=\textcolor{keyword}{false};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ divisors=VVI(mx+1);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ prime\_factors=vector<vector<pair<int,int>>>(mx+1);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ FOR(i,2,mx+1)\ \textcolor{keywordflow}{if}(is\_prime[i])\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ min\_factor[i]=i;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=2*i;\ j<=mx;\ j+=i)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ is\_prime[j]=\textcolor{keyword}{false};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(min\_factor[j]==0)\ min\_factor[j]=i;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00027\ \ \ \ \ vector<pair<int,int>>\ \mbox{\hyperlink{struct_factors_a9c62b3d154c3d164110ce5365d978732}{get\_prime\_factors}}(\textcolor{keywordtype}{int}\ n)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(prime\_factors[n].size()==0)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x=n;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(x>1)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ p=min\_factor[x];}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cnt=0;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(x\%p==0)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x/=p;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cnt++;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prime\_factors[n].push\_back(\{p,cnt\});}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ prime\_factors[n];}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00045\ \ \ \ \ VI\ \mbox{\hyperlink{struct_factors_a24bcfb630170a5aae2e2ae3c7ce3f656}{get\_divisors}}(\textcolor{keywordtype}{int}\ n)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(divisors[n].size()==0)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ vector<pair<int,int>>\ pf=\mbox{\hyperlink{struct_factors_a9c62b3d154c3d164110ce5365d978732}{get\_prime\_factors}}(n);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sz=pf.size();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ dfs=[\&](\textcolor{keyword}{auto}\&\&\ dfs,\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ x)-\/>\ \textcolor{keywordtype}{void}\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i==sz)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ divisors[n].push\_back(x);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}[p,cnt]=pf[i];}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FOR(j,0,cnt+1)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dfs(dfs,i+1,x);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x*=p;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ dfs(dfs,0,1);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ sort(ALL(divisors[n]));}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ divisors[n];}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{int}\ mx;}
+\DoxyCodeLine{00068\ \ \ \ \ VI\ min\_factor,is\_prime;}
+\DoxyCodeLine{00069\ \ \ \ \ VVI\ divisors;}
+\DoxyCodeLine{00070\ \ \ \ \ vector<vector<pair<int,int>>>\ prime\_factors;}
+\DoxyCodeLine{00071\ \};}
+
+\end{DoxyCode}
