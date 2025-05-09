@@ -28,7 +28,7 @@ int TreeCentroid(const VVI& g, int root, VI& seen, VI& sz) {
     int n=g.size();
     if(sz.empty()) sz=VI(n);
     if(seen.empty()) seen=VI(n,false);
-    auto dfs=[&](auto dfs,int now,int pre)-> int {
+    auto dfs=[&](auto dfs, int now, int pre)-> int {
         sz[now]=1;
         for(int nxt:g[now]) {
             if(nxt==pre||seen[nxt]) continue;
@@ -38,7 +38,7 @@ int TreeCentroid(const VVI& g, int root, VI& seen, VI& sz) {
     };
     int total=dfs(dfs,root,-1);
     int centroid=root;
-    auto dfs2=[&](auto dfs2,int now,int pre)-> void {
+    auto dfs2=[&](auto dfs2, int now, int pre)-> void {
         bool ok=(total-sz[now])*2<=total;
         for(int nxt:g[now]) {
             if(nxt==pre||seen[nxt]) continue;
