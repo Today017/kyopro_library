@@ -53,8 +53,8 @@ private:
 
 namespace RangeQuery {
     template<typename T>
-    struct RangeAdd { using Type=struct SegTreeDual<Operator::Add<T>>; };
+    struct ApplyAdd { using Type=struct SegTreeDual<Operator::Add<T>>; };
 
     template<typename T>
-    struct RangeUpdate { using Type=struct SegTreeDual<Operator::UpdateTimeStamp<T>>; };
+    struct ApplyUpdate { using Type=struct SegTreeDual<Operator::UpdateTimeStamp<T>>; };
 }
