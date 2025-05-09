@@ -13,7 +13,7 @@ template<typename T> bool chmax(T &a, T b) { return a<b ? a=b, true : false; }
 template<typename T> bool chmin(T &a, T b) { return a>b ? a=b, true : false; }
 template<typename T> using rpriority_queue=priority_queue<T,vector<T>,greater<T>>;
 using ll=long long; const int INF=1e9+10; const ll INFL=4e18;
-using ld=long double; using ull=uint64_t; using LL=__int128_t;
+using ld=long double; using ull=unsigned long long; using lll=__int128_t;
 using VI=vector<int>; using VVI=vector<VI>; using VL=vector<ll>; using VVL=vector<VL>;
 using PL=pair<ll,ll>; using VP=vector<PL>; using WG=vector<vector<pair<int,ll>>>;
 

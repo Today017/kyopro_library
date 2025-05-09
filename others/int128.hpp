@@ -1,11 +1,10 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-constexpr const LL LL0=0;
-constexpr const LL LL1=1;
-constexpr const LL INFLL=LL1<<120;
+constexpr lll operator ""lll(ull x) { return static_cast<lll>(x); }
+constexpr const lll INFLL=1lll<<120;
 
-istream& operator>>(istream& is, LL& x) {
+istream& operator>>(istream& is, lll& x) {
 	int c=is.peek();
 	while(c==' '||c=='\n') is.get(), c=is.peek();
 	bool neg=false;
@@ -16,7 +15,7 @@ istream& operator>>(istream& is, LL& x) {
 	return is;
 }
 
-ostream& operator<<(ostream& os, LL x) {
+ostream& operator<<(ostream& os, lll x) {
 	if(x<0) os<<'-', x=-x;
 	if(x==0) return os<<'0';
 	string s;
