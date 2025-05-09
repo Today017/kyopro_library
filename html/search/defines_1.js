@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['chmax_0',['chmax',['../template_8hpp.html#a4c27eb89ff96e0ad6fda2ea4040816d4',1,'template.hpp']]],
-  ['chmin_1',['chmin',['../template_8hpp.html#afab395ab2eac3679be924c315291bf58',1,'template.hpp']]]
+  ['debug_0',['debug',['../debug_8hpp.html#a86ee3ff44c537d94ccbabf941a613688',1,'debug:&#160;debug.hpp'],['../template_8hpp.html#a86ee3ff44c537d94ccbabf941a613688',1,'debug:&#160;template.hpp']]]
 ];

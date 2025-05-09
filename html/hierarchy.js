@@ -2,9 +2,11 @@ var hierarchy =
 [
     [ "Operator::Add< T >", "struct_operator_1_1_add.html", null ],
     [ "AngelBeats", "struct_angel_beats.html", null ],
+    [ "RangeQuery::ApplyAdd< T >", "struct_range_query_1_1_apply_add.html", null ],
     [ "RangeQuery::ApplyAdd_GetMax< T, min_value >", "struct_range_query_1_1_apply_add___get_max.html", null ],
     [ "RangeQuery::ApplyAdd_GetMin< T, max_value >", "struct_range_query_1_1_apply_add___get_min.html", null ],
     [ "RangeQuery::ApplyAdd_GetSum< T >", "struct_range_query_1_1_apply_add___get_sum.html", null ],
+    [ "RangeQuery::ApplyUpdate< T >", "struct_range_query_1_1_apply_update.html", null ],
     [ "RangeQuery::ApplyUpdate_GetMax< T, min_value, not_exist >", "struct_range_query_1_1_apply_update___get_max.html", null ],
     [ "RangeQuery::ApplyUpdate_GetMin< T, max_value, not_exist >", "struct_range_query_1_1_apply_update___get_min.html", null ],
     [ "RangeQuery::ApplyUpdate_GetSum< T, not_exist >", "struct_range_query_1_1_apply_update___get_sum.html", null ],
@@ -63,9 +65,7 @@ var hierarchy =
     [ "Trie::Node", "struct_trie_1_1_node.html", null ],
     [ "NTT< MOD, primitive_root >", "class_n_t_t.html", null ],
     [ "Geometry::Point", "struct_geometry_1_1_point.html", null ],
-    [ "RangeQuery::RangeAdd< T >", "struct_range_query_1_1_range_add.html", null ],
     [ "RangeSet", "struct_range_set.html", null ],
-    [ "RangeQuery::RangeUpdate< T >", "struct_range_query_1_1_range_update.html", null ],
     [ "InsertableReversibleArrayImpl::RBSTBase< Node >", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html", null ],
     [ "InsertableReversibleArrayImpl::RBSTBase< LazyReversibleRBSTNode< T, E > >", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html", [
       [ "InsertableReversibleArrayImpl::LazyReversibleRBST< T, E, f, g, h, ts >", "struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html", null ]

@@ -42,7 +42,7 @@
 <anchor xml:id="_scc_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;VVI&#32;ret(n_n),ret2(n_n);
 <anchor xml:id="_scc_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;ret[component[i]].push_back(i);
 <anchor xml:id="_scc_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;j:g[i])&#32;<emphasis role="keywordflow">if</emphasis>(component[i]!=component[j])&#32;ret2[component[i]].push_back(component[j]);
-<anchor xml:id="_scc_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n_n)&#32;<link linkend="_template_8hpp_1a6cf4a0f2f552bf0356a95bf621d4a15d">UQ</link>(ret2[i]);
+<anchor xml:id="_scc_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n_n)&#32;UQ(ret2[i]);
 <anchor xml:id="_scc_8hpp_source_1l00042"/>00042 
 <anchor xml:id="_scc_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;{ret,ret2,component};
 <anchor xml:id="_scc_8hpp_source_1l00044"/>00044 }

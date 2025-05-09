@@ -21,7 +21,7 @@
 <simplesect>
     <title>変数    </title>
         <itemizedlist>
-            <listitem><para>bool <link linkend="_namespaceexp_1a6b6bffc9f575cd0e79d0b42f7ec5a3d5">exp.HEAD</link> = False</para>
+            <listitem><para>bool <link linkend="_namespaceexp_1a6b6bffc9f575cd0e79d0b42f7ec5a3d5">exp.HEAD</link> = True</para>
 </listitem>
             <listitem><para>bool <link linkend="_namespaceexp_1a608b7d478866fe325b1fc10a0d2f5d11">exp.CONST</link> = True</para>
 </listitem>

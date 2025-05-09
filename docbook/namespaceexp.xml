@@ -14,7 +14,7 @@
 <simplesect>
     <title>変数    </title>
         <itemizedlist>
-            <listitem><para>bool <link linkend="_namespaceexp_1a6b6bffc9f575cd0e79d0b42f7ec5a3d5">HEAD</link> = False</para>
+            <listitem><para>bool <link linkend="_namespaceexp_1a6b6bffc9f575cd0e79d0b42f7ec5a3d5">HEAD</link> = True</para>
 </listitem>
             <listitem><para>bool <link linkend="_namespaceexp_1a608b7d478866fe325b1fc10a0d2f5d11">CONST</link> = True</para>
 </listitem>
@@ -50,7 +50,7 @@
     <title>HEAD</title>
 <indexterm><primary>HEAD</primary><secondary>exp</secondary></indexterm>
 <indexterm><primary>exp</primary><secondary>HEAD</secondary></indexterm>
-<para><computeroutput>bool exp.HEAD = False</computeroutput></para><para>
+<para><computeroutput>bool exp.HEAD = True</computeroutput></para><para>
  <link linkend="_exp_8py_source">exp.py</link> の <link linkend="_exp_8py_source_1l00001">1</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_namespaceexp_1a608b7d478866fe325b1fc10a0d2f5d11"/><section>

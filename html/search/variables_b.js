@@ -10,10 +10,8 @@ var searchData=
   ['level_7',['level',['../namespaceexp.html#a49e5fbe4c2e197b7cad902be286a86e2',1,'exp']]],
   ['lib_5fpaths_8',['lib_paths',['../classexp_1_1_expander.html#ad397a4644368a84d734be60b5093d8e8',1,'exp.Expander.lib_paths'],['../namespaceexp.html#a87a231231cbdfb686cd851de84901086',1,'exp.lib_paths']]],
   ['line_9',['line',['../namespacecompress.html#a8e7877c3a20b124f013d1fda1eb05465',1,'compress']]],
-  ['ll0_10',['LL0',['../int128_8hpp.html#a569de9eb99faee0238ff9441be7ef577',1,'int128.hpp']]],
-  ['ll1_11',['LL1',['../int128_8hpp.html#add589433c62320e9ad0fd33e0e14e601',1,'int128.hpp']]],
-  ['log_12',['log',['../struct_angel_beats.html#a125d02f83e433d4be2724d5d5e0e982f',1,'AngelBeats']]],
-  ['log_5ftable_13',['log_table',['../sparse__table__2d_8hpp.html#aedc43c40341829d5e6ddc350c177219c',1,'sparse_table_2d.hpp']]],
-  ['logger_14',['logger',['../namespaceexp.html#ada77898509a0b8a75821e97592d32509',1,'exp']]],
-  ['lower_15',['lower',['../struct_fraction.html#a03558e1b5e4a60bad8637df7d3b81296',1,'Fraction']]]
+  ['log_10',['log',['../struct_angel_beats.html#a125d02f83e433d4be2724d5d5e0e982f',1,'AngelBeats']]],
+  ['log_5ftable_11',['log_table',['../sparse__table__2d_8hpp.html#aedc43c40341829d5e6ddc350c177219c',1,'sparse_table_2d.hpp']]],
+  ['logger_12',['logger',['../namespaceexp.html#ada77898509a0b8a75821e97592d32509',1,'exp']]],
+  ['lower_13',['lower',['../struct_fraction.html#a03558e1b5e4a60bad8637df7d3b81296',1,'Fraction']]]
 ];

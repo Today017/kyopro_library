@@ -19,22 +19,10 @@ template.hpp
 .RI "#define \fBIO\fP   ios::sync_with_stdio(false),cin\&.tie(nullptr);"
 .br
 .ti -1c
-.RI "#define \fBLB\fP(v,  x)"
-.br
-.ti -1c
-.RI "#define \fBUQ\fP(v)"
-.br
-.ti -1c
 .RI "#define \fBREP\fP(i,  n)"
 .br
 .ti -1c
 .RI "#define \fBFOR\fP(i,  a,  b)"
-.br
-.ti -1c
-.RI "#define \fBchmax\fP(a,  b)"
-.br
-.ti -1c
-.RI "#define \fBchmin\fP(a,  b)"
 .br
 .ti -1c
 .RI "#define \fBdebug\fP(\&.\&.\&.)"
@@ -56,10 +44,10 @@ template.hpp
 .RI "using \fBld\fP = long double"
 .br
 .ti -1c
-.RI "using \fBull\fP = uint64_t"
+.RI "using \fBull\fP = unsigned long long"
 .br
 .ti -1c
-.RI "using \fBLL\fP = __int128_t"
+.RI "using \fBlll\fP = __int128_t"
 .br
 .ti -1c
 .RI "using \fBVI\fP = vector<int>"
@@ -81,6 +69,22 @@ template.hpp
 .br
 .ti -1c
 .RI "using \fBWG\fP = vector<vector<pair<int,\fBll\fP>>>"
+.br
+.in -1c
+.SS "関数"
+
+.in +1c
+.ti -1c
+.RI "template<typename T> int \fBLB\fP (vector< T > v, T x)"
+.br
+.ti -1c
+.RI "template<typename T> int \fBUQ\fP (T &v)"
+.br
+.ti -1c
+.RI "template<typename T> bool \fBchmax\fP (T &a, T b)"
+.br
+.ti -1c
+.RI "template<typename T> bool \fBchmin\fP (T &a, T b)"
 .br
 .in -1c
 .SS "変数"
@@ -108,24 +112,6 @@ template.hpp
 
 .PP
  \fBtemplate\&.hpp\fP の \fB6\fP 行目に定義があります。
-.SS "#define LB( v,  x)"
-\fB値:\fP
-.nf
-(ll)(lower_bound(ALL(v),x)\-(v)\&.begin())
-.PP
-.fi
-
-.PP
- \fBtemplate\&.hpp\fP の \fB7\fP 行目に定義があります。
-.SS "#define UQ( v)"
-\fB値:\fP
-.nf
-sort(ALL(v)),(v)\&.erase(unique(ALL(v)),v\&.end())
-.PP
-.fi
-
-.PP
- \fBtemplate\&.hpp\fP の \fB8\fP 行目に定義があります。
 .SS "#define REP( i,  n)"
 \fB値:\fP
 .nf
@@ -134,7 +120,7 @@ for(ll i=0; i<(ll)(n); i++)
 .fi
 
 .PP
- \fBtemplate\&.hpp\fP の \fB9\fP 行目に定義があります。
+ \fBtemplate\&.hpp\fP の \fB7\fP 行目に定義があります。
 .SS "#define FOR( i,  a,  b)"
 \fB値:\fP
 .nf
@@ -143,25 +129,7 @@ for(ll i=(ll)(a); (a)<(b) ? i<(b) : i>(b); i+=((a)<(b) ? 1 : \-1))
 .fi
 
 .PP
- \fBtemplate\&.hpp\fP の \fB10\fP 行目に定義があります。
-.SS "#define chmax( a,  b)"
-\fB値:\fP
-.nf
-((a)<(b) ? ((a)=(b), 1) : 0)
-.PP
-.fi
-
-.PP
- \fBtemplate\&.hpp\fP の \fB11\fP 行目に定義があります。
-.SS "#define chmin( a,  b)"
-\fB値:\fP
-.nf
-((a)>(b) ? ((a)=(b), 1) : 0)
-.PP
-.fi
-
-.PP
- \fBtemplate\&.hpp\fP の \fB12\fP 行目に定義があります。
+ \fBtemplate\&.hpp\fP の \fB8\fP 行目に定義があります。
 .SS "#define debug( \&.\&.\&.)"
 
 .PP
@@ -184,11 +152,11 @@ for(ll i=(ll)(a); (a)<(b) ? i<(b) : i>(b); i+=((a)<(b) ? 1 : \-1))
 
 .PP
  \fBtemplate\&.hpp\fP の \fB16\fP 行目に定義があります。
-.SS "using \fBull\fP = uint64_t"
+.SS "using \fBull\fP = unsigned long long"
 
 .PP
  \fBtemplate\&.hpp\fP の \fB16\fP 行目に定義があります。
-.SS "using \fBLL\fP = __int128_t"
+.SS "using \fBlll\fP = __int128_t"
 
 .PP
  \fBtemplate\&.hpp\fP の \fB16\fP 行目に定義があります。
@@ -220,6 +188,24 @@ for(ll i=(ll)(a); (a)<(b) ? i<(b) : i>(b); i+=((a)<(b) ? 1 : \-1))
 
 .PP
  \fBtemplate\&.hpp\fP の \fB18\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "template<typename T> int LB (vector< T > v, T x)"
+
+.PP
+ \fBtemplate\&.hpp\fP の \fB10\fP 行目に定義があります。
+.SS "template<typename T> int UQ (T & v)"
+
+.PP
+ \fBtemplate\&.hpp\fP の \fB11\fP 行目に定義があります。
+.SS "template<typename T> bool chmax (T & a, T b)"
+
+.PP
+ \fBtemplate\&.hpp\fP の \fB12\fP 行目に定義があります。
+.SS "template<typename T> bool chmin (T & a, T b)"
+
+.PP
+ \fBtemplate\&.hpp\fP の \fB13\fP 行目に定義があります。
 .SH "変数詳解"
 .PP 
 .SS "const int INF =1e9+10"

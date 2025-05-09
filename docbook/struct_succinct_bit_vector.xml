@@ -8,26 +8,26 @@
 <simplesect>
     <title>公開メンバ関数    </title>
         <itemizedlist>
-            <listitem><para><link linkend="_struct_succinct_bit_vector_1a7e21d3fc0ad8a91418ba37a262c4f97f">SuccinctBitVector</link> (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> n)</para>
+            <listitem><para><link linkend="_struct_succinct_bit_vector_1a7e21d3fc0ad8a91418ba37a262c4f97f">SuccinctBitVector</link> (const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> n)</para>
 </listitem>
-            <listitem><para>void <link linkend="_struct_succinct_bit_vector_1a3144d46c2b97e2bf0c536ce786d88c22">set_bit</link> (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> bit, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> pos)</para>
+            <listitem><para>void <link linkend="_struct_succinct_bit_vector_1a3144d46c2b97e2bf0c536ce786d88c22">set_bit</link> (const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> bit, const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> pos)</para>
 </listitem>
-            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_succinct_bit_vector_1ac384d026ac86d26b1607148cf4efcba7">access</link> (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> pos)</para>
+            <listitem><para><link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> <link linkend="_struct_succinct_bit_vector_1ac384d026ac86d26b1607148cf4efcba7">access</link> (const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> pos)</para>
 </listitem>
             <listitem><para>void <link linkend="_struct_succinct_bit_vector_1aafee3472a9c2b616aeddccbceafe455b">build</link> ()</para>
 </listitem>
-            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_succinct_bit_vector_1a48146af946417824ba1079eca73670c7">rank</link> (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> bit, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> pos)</para>
+            <listitem><para><link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> <link linkend="_struct_succinct_bit_vector_1a48146af946417824ba1079eca73670c7">rank</link> (const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> bit, const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> pos)</para>
 </listitem>
-            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_succinct_bit_vector_1ac8f4deffcbc0e8635ec3e8a6a145c1a3">select</link> (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> bit, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_succinct_bit_vector_1a48146af946417824ba1079eca73670c7">rank</link>)</para>
+            <listitem><para><link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> <link linkend="_struct_succinct_bit_vector_1ac8f4deffcbc0e8635ec3e8a6a145c1a3">select</link> (const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> bit, const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> <link linkend="_struct_succinct_bit_vector_1a48146af946417824ba1079eca73670c7">rank</link>)</para>
 </listitem>
-            <listitem><para><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_succinct_bit_vector_1aa697420b9abc14fb4e6bb8e06517d5bb">get_num_one</link> () const</para>
+            <listitem><para><link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> <link linkend="_struct_succinct_bit_vector_1aa697420b9abc14fb4e6bb8e06517d5bb">get_num_one</link> () const</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>静的公開変数類    </title>
         <itemizedlist>
-            <listitem><para>static const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> <link linkend="_struct_succinct_bit_vector_1a8d705cf2ab85758d338e6fd0977274b2">NOTFOUND</link> =0xFFFFFFFFFFFFFFFFLLU</para>
+            <listitem><para>static const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> <link linkend="_struct_succinct_bit_vector_1a8d705cf2ab85758d338e6fd0977274b2">NOTFOUND</link> =0xFFFFFFFFFFFFFFFFLLU</para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -42,7 +42,7 @@
     <title>SuccinctBitVector()</title>
 <indexterm><primary>SuccinctBitVector</primary><secondary>SuccinctBitVector</secondary></indexterm>
 <indexterm><primary>SuccinctBitVector</primary><secondary>SuccinctBitVector</secondary></indexterm>
-<para><computeroutput>SuccinctBitVector::SuccinctBitVector (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> n)<computeroutput>[inline]</computeroutput>, <computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+<para><computeroutput>SuccinctBitVector::SuccinctBitVector (const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> n)<computeroutput>[inline]</computeroutput>, <computeroutput>[explicit]</computeroutput></computeroutput></para><para>
  <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
 </section>
 </section>
@@ -52,14 +52,14 @@
     <title>set_bit()</title>
 <indexterm><primary>set_bit</primary><secondary>SuccinctBitVector</secondary></indexterm>
 <indexterm><primary>SuccinctBitVector</primary><secondary>set_bit</secondary></indexterm>
-<para><computeroutput>void SuccinctBitVector::set_bit (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> bit, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> pos)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+<para><computeroutput>void SuccinctBitVector::set_bit (const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> bit, const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> pos)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
  <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00023">23</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_struct_succinct_bit_vector_1ac384d026ac86d26b1607148cf4efcba7"/><section>
     <title>access()</title>
 <indexterm><primary>access</primary><secondary>SuccinctBitVector</secondary></indexterm>
 <indexterm><primary>SuccinctBitVector</primary><secondary>access</secondary></indexterm>
-<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> SuccinctBitVector::access (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> pos)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+<para><computeroutput><link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> SuccinctBitVector::access (const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> pos)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
  <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00034">34</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_struct_succinct_bit_vector_1aafee3472a9c2b616aeddccbceafe455b"/><section>
@@ -73,21 +73,25 @@
     <title>rank()</title>
 <indexterm><primary>rank</primary><secondary>SuccinctBitVector</secondary></indexterm>
 <indexterm><primary>SuccinctBitVector</primary><secondary>rank</secondary></indexterm>
-<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> SuccinctBitVector::rank (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> bit, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> pos)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+<para><computeroutput><link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> SuccinctBitVector::rank (const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> bit, const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> pos)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
  <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00049">49</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_wavelet__matrix_8hpp_source_1l00049">rank()</link>.</para>
 </section>
 <anchor xml:id="_struct_succinct_bit_vector_1ac8f4deffcbc0e8635ec3e8a6a145c1a3"/><section>
     <title>select()</title>
 <indexterm><primary>select</primary><secondary>SuccinctBitVector</secondary></indexterm>
 <indexterm><primary>SuccinctBitVector</primary><secondary>select</secondary></indexterm>
-<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> SuccinctBitVector::select (const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> bit, const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> rank)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+<para><computeroutput><link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> SuccinctBitVector::select (const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> bit, const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> rank)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
  <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00058">58</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_wavelet__matrix_8hpp_source_1l00004">NOTFOUND</link>.</para>
 </section>
 <anchor xml:id="_struct_succinct_bit_vector_1aa697420b9abc14fb4e6bb8e06517d5bb"/><section>
     <title>get_num_one()</title>
 <indexterm><primary>get_num_one</primary><secondary>SuccinctBitVector</secondary></indexterm>
 <indexterm><primary>SuccinctBitVector</primary><secondary>get_num_one</secondary></indexterm>
-<para><computeroutput><link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> SuccinctBitVector::get_num_one ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+<para><computeroutput><link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> SuccinctBitVector::get_num_one ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
  <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00115">115</link> 行目に定義があります。</para>
 </section>
 </section>
@@ -97,7 +101,7 @@
     <title>NOTFOUND</title>
 <indexterm><primary>NOTFOUND</primary><secondary>SuccinctBitVector</secondary></indexterm>
 <indexterm><primary>SuccinctBitVector</primary><secondary>NOTFOUND</secondary></indexterm>
-<para><computeroutput>const <link linkend="_template_8hpp_1a3999f2d770e5e4c008caf3d8977c7ef0">ull</link> SuccinctBitVector::NOTFOUND =0xFFFFFFFFFFFFFFFFLLU<computeroutput>[static]</computeroutput></computeroutput></para><para>
+<para><computeroutput>const <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> SuccinctBitVector::NOTFOUND =0xFFFFFFFFFFFFFFFFLLU<computeroutput>[static]</computeroutput></computeroutput></para><para>
  <link linkend="_wavelet__matrix_8hpp_source">wavelet_matrix.hpp</link> の <link linkend="_wavelet__matrix_8hpp_source_1l00004">4</link> 行目に定義があります。</para>
 </section>
 <para>

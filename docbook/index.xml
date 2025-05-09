@@ -29,9 +29,11 @@
     <title>クラス詳解</title>
     <xi:include href="struct_operator_1_1_add.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_angel_beats.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_range_query_1_1_apply_add.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_range_query_1_1_apply_add___get_max.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_range_query_1_1_apply_add___get_min.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_range_query_1_1_apply_add___get_sum.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_range_query_1_1_apply_update.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_range_query_1_1_apply_update___get_max.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_range_query_1_1_apply_update___get_min.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_range_query_1_1_apply_update___get_sum.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -88,9 +90,7 @@
     <xi:include href="class_n_t_t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_offset_vector.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_geometry_1_1_point.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="struct_range_query_1_1_range_add.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_range_set.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="struct_range_query_1_1_range_update.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_rolling_hash.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_scc_info.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

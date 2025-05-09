@@ -117,7 +117,7 @@ $(function(){initNavTree('bfs_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">while</span>(!que.empty()) {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordtype">int</span> now=que.front();que.pop();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:g[now]) <span class="keywordflow">if</span>(<a class="code hl_define" href="template_8hpp.html#afab395ab2eac3679be924c315291bf58">chmin</a>(ret[nxt],ret[now]+1)) que.push(nxt);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:g[now]) <span class="keywordflow">if</span>(chmin(ret[nxt],ret[now]+1)) que.push(nxt);</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">return</span> ret;</div>
@@ -125,7 +125,6 @@ $(function(){initNavTree('bfs_8hpp_source.html',''); initResizable(true); });
 </div>
 <div class="ttc" id="abfs_8hpp_html_a640c64414ac3359a9bfee2d11d83962a"><div class="ttname"><a href="bfs_8hpp.html#a640c64414ac3359a9bfee2d11d83962a">BFS</a></div><div class="ttdeci">VL BFS(const VVI &amp;g, int start=0)</div><div class="ttdoc">重みなしグラフ g の頂点 start からの最短距離を求める</div><div class="ttdef"><b>Definition</b> <a href="#l00005">bfs.hpp:5</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_a14c9dbab105f1b8b8182a022d73e610c"><div class="ttname"><a href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a></div><div class="ttdeci">const int INF</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00015">template.hpp:15</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_afab395ab2eac3679be924c315291bf58"><div class="ttname"><a href="template_8hpp.html#afab395ab2eac3679be924c315291bf58">chmin</a></div><div class="ttdeci">#define chmin(a, b)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00012">template.hpp:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

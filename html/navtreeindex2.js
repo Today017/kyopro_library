@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"ntt998_8hpp.html#a133aaf5782761e1866cfd3fd40e784d3":[6,0,6,15,0],
 "ntt998_8hpp.html#a8a7e67d1f552a5092501af3910fa134e":[6,0,6,15,1],
 "ntt998_8hpp_source.html":[6,0,6,15],
 "ntt_8hpp.html":[6,0,6,14],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "struct_fenwick_tree.html#aa2b1ef3738b376e71753f4277f255656":[5,0,28,0],
 "struct_fenwick_tree.html#adb288d923b27fe266f99021056a2785f":[5,0,28,3],
 "struct_fenwick_tree.html#af4134f187d10ed8498b20a585ed5eb33":[5,0,28,6],
-"struct_fraction.html":[5,0,29]
+"struct_fraction.html":[5,0,29],
+"struct_fraction.html#a03558e1b5e4a60bad8637df7d3b81296":[5,0,29,34]
 };

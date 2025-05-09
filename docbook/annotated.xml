@@ -5,13 +5,13 @@
 <para>加算 </para>
 <link linkend="_struct_angel_beats">AngelBeats</link>
 <para>Segment Tree Beat! <link xlink:href="https://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp">https://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp</link> </para>
-<link linkend="_struct_range_query_1_1_apply_add___get_max">RangeQuery::ApplyAdd_GetMax&lt; T, min_value &gt;</link>
+<link linkend="_struct_range_query_1_1_apply_add">RangeQuery::ApplyAdd&lt; T &gt;</link><link linkend="_struct_range_query_1_1_apply_add___get_max">RangeQuery::ApplyAdd_GetMax&lt; T, min_value &gt;</link>
 <para>区間加算 / 区間max </para>
 <link linkend="_struct_range_query_1_1_apply_add___get_min">RangeQuery::ApplyAdd_GetMin&lt; T, max_value &gt;</link>
 <para>区間加算 / 区間min </para>
 <link linkend="_struct_range_query_1_1_apply_add___get_sum">RangeQuery::ApplyAdd_GetSum&lt; T &gt;</link>
 <para>区間加算 / 区間和 </para>
-<link linkend="_struct_range_query_1_1_apply_update___get_max">RangeQuery::ApplyUpdate_GetMax&lt; T, min_value, not_exist &gt;</link>
+<link linkend="_struct_range_query_1_1_apply_update">RangeQuery::ApplyUpdate&lt; T &gt;</link><link linkend="_struct_range_query_1_1_apply_update___get_max">RangeQuery::ApplyUpdate_GetMax&lt; T, min_value, not_exist &gt;</link>
 <para>区間更新 / 区間max </para>
 <link linkend="_struct_range_query_1_1_apply_update___get_min">RangeQuery::ApplyUpdate_GetMin&lt; T, max_value, not_exist &gt;</link>
 <para>区間更新 / 区間min </para>
@@ -99,9 +99,9 @@
 <para>Std::multiset ラッパー </para>
 <link linkend="_struct_angel_beats_1_1_node">AngelBeats::Node</link><link linkend="_struct_seg_tree_dynamic_1_1_node">SegTreeDynamic&lt; Monoid &gt;::Node</link><link linkend="_struct_trie_1_1_node">Trie::Node</link><link linkend="_class_n_t_t">NTT&lt; MOD, primitive_root &gt;</link>
 <para><link linkend="_class_n_t_t">NTT</link> Friendly 素数用 <link linkend="_class_n_t_t">NTT</link> 構造体 </para>
-<link linkend="_struct_offset_vector">OffsetVector&lt; T &gt;</link><link linkend="_struct_geometry_1_1_point">Geometry::Point</link><link linkend="_struct_range_query_1_1_range_add">RangeQuery::RangeAdd&lt; T &gt;</link><link linkend="_struct_range_set">RangeSet</link>
+<link linkend="_struct_offset_vector">OffsetVector&lt; T &gt;</link><link linkend="_struct_geometry_1_1_point">Geometry::Point</link><link linkend="_struct_range_set">RangeSet</link>
 <para>区間を set で管理するデータ構造 verify:https://yukicoder.me/submissions/1021763 </para>
-<link linkend="_struct_range_query_1_1_range_update">RangeQuery::RangeUpdate&lt; T &gt;</link><link linkend="_struct_insertable_reversible_array_impl_1_1_r_b_s_t_base">InsertableReversibleArrayImpl::RBSTBase&lt; Node &gt;</link><link linkend="_struct_rolling_hash">RollingHash</link>
+<link linkend="_struct_insertable_reversible_array_impl_1_1_r_b_s_t_base">InsertableReversibleArrayImpl::RBSTBase&lt; Node &gt;</link><link linkend="_struct_rolling_hash">RollingHash</link>
 <para>Rolling <link linkend="_struct_hash">Hash</link> </para>
 <link linkend="_struct_scc_info">SccInfo</link>
 <para>強連結成分分解の情報 </para>

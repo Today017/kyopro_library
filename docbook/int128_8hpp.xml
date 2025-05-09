@@ -5,62 +5,53 @@
 <programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
     <title>関数    </title>
         <itemizedlist>
-            <listitem><para>istream &amp; <link linkend="_int128_8hpp_1a181461e991948abd22f27b8ef05b5678">operator&gt;&gt;</link> (istream &amp;is, <link linkend="_template_8hpp_1a5a2f15aa320f7c30bb71984af5985e73">LL</link> &amp;x)</para>
+            <listitem><para>constexpr <link linkend="_template_8hpp_1af459ee81f834e904cb702ffcb928335e">lll</link> <link linkend="_int128_8hpp_1ad81d0209d250e9141d7c661691790c3f">operator&quot;&quot;lll</link> (<link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> x)</para>
 </listitem>
-            <listitem><para>ostream &amp; <link linkend="_int128_8hpp_1a56890b3e847143795c33bd443ba3e67e">operator&lt;&lt;</link> (ostream &amp;os, <link linkend="_template_8hpp_1a5a2f15aa320f7c30bb71984af5985e73">LL</link> x)</para>
+            <listitem><para>istream &amp; <link linkend="_int128_8hpp_1afe140ebd0d1922eac0a3ccd4701f5446">operator&gt;&gt;</link> (istream &amp;is, <link linkend="_template_8hpp_1af459ee81f834e904cb702ffcb928335e">lll</link> &amp;x)</para>
+</listitem>
+            <listitem><para>ostream &amp; <link linkend="_int128_8hpp_1a01dfe26ad2682864fe404deda4361363">operator&lt;&lt;</link> (ostream &amp;os, <link linkend="_template_8hpp_1af459ee81f834e904cb702ffcb928335e">lll</link> x)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>変数    </title>
         <itemizedlist>
-            <listitem><para>constexpr const <link linkend="_template_8hpp_1a5a2f15aa320f7c30bb71984af5985e73">LL</link> <link linkend="_int128_8hpp_1a569de9eb99faee0238ff9441be7ef577">LL0</link> =0</para>
-</listitem>
-            <listitem><para>constexpr const <link linkend="_template_8hpp_1a5a2f15aa320f7c30bb71984af5985e73">LL</link> <link linkend="_int128_8hpp_1add589433c62320e9ad0fd33e0e14e601">LL1</link> =1</para>
-</listitem>
-            <listitem><para>constexpr const <link linkend="_template_8hpp_1a5a2f15aa320f7c30bb71984af5985e73">LL</link> <link linkend="_int128_8hpp_1a80504a3d3d20d5e7183f69f2ed027881">INFLL</link> =<link linkend="_int128_8hpp_1add589433c62320e9ad0fd33e0e14e601">LL1</link>&lt;&lt;120</para>
+            <listitem><para>constexpr const <link linkend="_template_8hpp_1af459ee81f834e904cb702ffcb928335e">lll</link> <link linkend="_int128_8hpp_1a642c9a2936c6b33c8f43371c81377cb7">INFLL</link> =1<link linkend="_template_8hpp_1af459ee81f834e904cb702ffcb928335e">lll</link>&lt;&lt;120</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <section>
 <title>関数詳解</title>
-<anchor xml:id="_int128_8hpp_1a181461e991948abd22f27b8ef05b5678"/><section>
+<anchor xml:id="_int128_8hpp_1ad81d0209d250e9141d7c661691790c3f"/><section>
+    <title>operator&quot;&quot;lll()</title>
+<indexterm><primary>operator&quot;&quot;lll</primary><secondary>int128.hpp</secondary></indexterm>
+<indexterm><primary>int128.hpp</primary><secondary>operator&quot;&quot;lll</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1af459ee81f834e904cb702ffcb928335e">lll</link> operator&quot;&quot;lll (<link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> x)<computeroutput>[constexpr]</computeroutput></computeroutput></para><para>
+ <link linkend="_int128_8hpp_source">int128.hpp</link> の <link linkend="_int128_8hpp_source_1l00004">4</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_int128_8hpp_1afe140ebd0d1922eac0a3ccd4701f5446"/><section>
     <title>operator&gt;&gt;()</title>
 <indexterm><primary>operator&gt;&gt;</primary><secondary>int128.hpp</secondary></indexterm>
 <indexterm><primary>int128.hpp</primary><secondary>operator&gt;&gt;</secondary></indexterm>
-<para><computeroutput>istream &amp; operator&gt;&gt; (istream &amp; is, <link linkend="_template_8hpp_1a5a2f15aa320f7c30bb71984af5985e73">LL</link> &amp; x)</computeroutput></para><para>
- <link linkend="_int128_8hpp_source">int128.hpp</link> の <link linkend="_int128_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
+<para><computeroutput>istream &amp; operator&gt;&gt; (istream &amp; is, <link linkend="_template_8hpp_1af459ee81f834e904cb702ffcb928335e">lll</link> &amp; x)</computeroutput></para><para>
+ <link linkend="_int128_8hpp_source">int128.hpp</link> の <link linkend="_int128_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
 </section>
-<anchor xml:id="_int128_8hpp_1a56890b3e847143795c33bd443ba3e67e"/><section>
+<anchor xml:id="_int128_8hpp_1a01dfe26ad2682864fe404deda4361363"/><section>
     <title>operator&lt;&lt;()</title>
 <indexterm><primary>operator&lt;&lt;</primary><secondary>int128.hpp</secondary></indexterm>
 <indexterm><primary>int128.hpp</primary><secondary>operator&lt;&lt;</secondary></indexterm>
-<para><computeroutput>ostream &amp; operator&lt;&lt; (ostream &amp; os, <link linkend="_template_8hpp_1a5a2f15aa320f7c30bb71984af5985e73">LL</link> x)</computeroutput></para><para>
- <link linkend="_int128_8hpp_source">int128.hpp</link> の <link linkend="_int128_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
+<para><computeroutput>ostream &amp; operator&lt;&lt; (ostream &amp; os, <link linkend="_template_8hpp_1af459ee81f834e904cb702ffcb928335e">lll</link> x)</computeroutput></para><para>
+ <link linkend="_int128_8hpp_source">int128.hpp</link> の <link linkend="_int128_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
 </section>
 </section>
 <section>
 <title>変数詳解</title>
-<anchor xml:id="_int128_8hpp_1a569de9eb99faee0238ff9441be7ef577"/><section>
-    <title>LL0</title>
-<indexterm><primary>LL0</primary><secondary>int128.hpp</secondary></indexterm>
-<indexterm><primary>int128.hpp</primary><secondary>LL0</secondary></indexterm>
-<para><computeroutput>const <link linkend="_template_8hpp_1a5a2f15aa320f7c30bb71984af5985e73">LL</link> LL0 =0<computeroutput>[constexpr]</computeroutput></computeroutput></para><para>
- <link linkend="_int128_8hpp_source">int128.hpp</link> の <link linkend="_int128_8hpp_source_1l00004">4</link> 行目に定義があります。</para>
-</section>
-<anchor xml:id="_int128_8hpp_1add589433c62320e9ad0fd33e0e14e601"/><section>
-    <title>LL1</title>
-<indexterm><primary>LL1</primary><secondary>int128.hpp</secondary></indexterm>
-<indexterm><primary>int128.hpp</primary><secondary>LL1</secondary></indexterm>
-<para><computeroutput>const <link linkend="_template_8hpp_1a5a2f15aa320f7c30bb71984af5985e73">LL</link> LL1 =1<computeroutput>[constexpr]</computeroutput></computeroutput></para><para>
- <link linkend="_int128_8hpp_source">int128.hpp</link> の <link linkend="_int128_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
-</section>
-<anchor xml:id="_int128_8hpp_1a80504a3d3d20d5e7183f69f2ed027881"/><section>
+<anchor xml:id="_int128_8hpp_1a642c9a2936c6b33c8f43371c81377cb7"/><section>
     <title>INFLL</title>
 <indexterm><primary>INFLL</primary><secondary>int128.hpp</secondary></indexterm>
 <indexterm><primary>int128.hpp</primary><secondary>INFLL</secondary></indexterm>
-<para><computeroutput>const <link linkend="_template_8hpp_1a5a2f15aa320f7c30bb71984af5985e73">LL</link> INFLL =<link linkend="_int128_8hpp_1add589433c62320e9ad0fd33e0e14e601">LL1</link>&lt;&lt;120<computeroutput>[constexpr]</computeroutput></computeroutput></para><para>
- <link linkend="_int128_8hpp_source">int128.hpp</link> の <link linkend="_int128_8hpp_source_1l00006">6</link> 行目に定義があります。</para>
+<para><computeroutput>const <link linkend="_template_8hpp_1af459ee81f834e904cb702ffcb928335e">lll</link> INFLL =1<link linkend="_template_8hpp_1af459ee81f834e904cb702ffcb928335e">lll</link>&lt;&lt;120<computeroutput>[constexpr]</computeroutput></computeroutput></para><para>
+ <link linkend="_int128_8hpp_source">int128.hpp</link> の <link linkend="_int128_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
 </section>
 </section>
 </section>

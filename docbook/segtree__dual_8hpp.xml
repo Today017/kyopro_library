@@ -9,9 +9,9 @@
 
 <para>双対セグメント木 </para>
 </listitem>
-            <listitem><para>struct <link linkend="_struct_range_query_1_1_range_add">RangeQuery::RangeAdd&lt; T &gt;</link></para>
+            <listitem><para>struct <link linkend="_struct_range_query_1_1_apply_add">RangeQuery::ApplyAdd&lt; T &gt;</link></para>
 </listitem>
-            <listitem><para>struct <link linkend="_struct_range_query_1_1_range_update">RangeQuery::RangeUpdate&lt; T &gt;</link></para>
+            <listitem><para>struct <link linkend="_struct_range_query_1_1_apply_update">RangeQuery::ApplyUpdate&lt; T &gt;</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>

@@ -5,27 +5,26 @@
 [詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_int128_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">pragma</emphasis>&#32;<emphasis role="preprocessor">once</emphasis>
 <anchor xml:id="_int128_8hpp_source_1l00002"/>00002 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
 <anchor xml:id="_int128_8hpp_source_1l00003"/>00003 
-<anchor xml:id="_int128_8hpp_source_1l00004"/><link linkend="_int128_8hpp_1a569de9eb99faee0238ff9441be7ef577">00004</link> <emphasis role="keyword">constexpr</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;LL&#32;<link linkend="_int128_8hpp_1a569de9eb99faee0238ff9441be7ef577">LL0</link>=0;
-<anchor xml:id="_int128_8hpp_source_1l00005"/><link linkend="_int128_8hpp_1add589433c62320e9ad0fd33e0e14e601">00005</link> <emphasis role="keyword">constexpr</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;LL&#32;<link linkend="_int128_8hpp_1add589433c62320e9ad0fd33e0e14e601">LL1</link>=1;
-<anchor xml:id="_int128_8hpp_source_1l00006"/><link linkend="_int128_8hpp_1a80504a3d3d20d5e7183f69f2ed027881">00006</link> <emphasis role="keyword">constexpr</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;LL&#32;<link linkend="_int128_8hpp_1a80504a3d3d20d5e7183f69f2ed027881">INFLL</link>=<link linkend="_int128_8hpp_1add589433c62320e9ad0fd33e0e14e601">LL1</link>&lt;&lt;120;
-<anchor xml:id="_int128_8hpp_source_1l00007"/>00007 
-<anchor xml:id="_int128_8hpp_source_1l00008"/><link linkend="_int128_8hpp_1a181461e991948abd22f27b8ef05b5678">00008</link> <link linkend="_int128_8hpp_1a181461e991948abd22f27b8ef05b5678">istream</link>&amp;&#32;<link linkend="_int128_8hpp_1a181461e991948abd22f27b8ef05b5678">operator</link>&gt;&gt;(istream&amp;&#32;is,&#32;LL&amp;&#32;x)&#32;{
-<anchor xml:id="_int128_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;c=is.peek();
-<anchor xml:id="_int128_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(c==<emphasis role="stringliteral">&apos;&#32;&apos;</emphasis>||c==<emphasis role="stringliteral">&apos;\n&apos;</emphasis>)&#32;is.get(),&#32;c=is.peek();
-<anchor xml:id="_int128_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;neg=<emphasis role="keyword">false</emphasis>;
-<anchor xml:id="_int128_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(c==<emphasis role="stringliteral">&apos;-&apos;</emphasis>)&#32;neg=<emphasis role="keyword">true</emphasis>,&#32;is.get();
-<anchor xml:id="_int128_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;x=0;
-<anchor xml:id="_int128_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(isdigit(is.peek()))&#32;x=x*10+is.get()-<emphasis role="stringliteral">&apos;0&apos;</emphasis>;
-<anchor xml:id="_int128_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(neg)&#32;x=-x;
-<anchor xml:id="_int128_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;is;
-<anchor xml:id="_int128_8hpp_source_1l00017"/>00017 }
-<anchor xml:id="_int128_8hpp_source_1l00018"/>00018 
-<anchor xml:id="_int128_8hpp_source_1l00019"/><link linkend="_int128_8hpp_1a56890b3e847143795c33bd443ba3e67e">00019</link> <link linkend="_int128_8hpp_1a56890b3e847143795c33bd443ba3e67e">ostream</link>&amp;&#32;<link linkend="_int128_8hpp_1a56890b3e847143795c33bd443ba3e67e">operator</link>&lt;&lt;(ostream&amp;&#32;os,&#32;LL&#32;x)&#32;{
-<anchor xml:id="_int128_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(x&lt;0)&#32;os&lt;&lt;<emphasis role="stringliteral">&apos;-&apos;</emphasis>,&#32;x=-x;
-<anchor xml:id="_int128_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(x==0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;os&lt;&lt;<emphasis role="stringliteral">&apos;0&apos;</emphasis>;
-<anchor xml:id="_int128_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;string&#32;s;
-<anchor xml:id="_int128_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(x&gt;0)&#32;s+=x%10+<emphasis role="stringliteral">&apos;0&apos;</emphasis>,&#32;x/=10;
-<anchor xml:id="_int128_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;reverse(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(s));
-<anchor xml:id="_int128_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;os&lt;&lt;s;
-<anchor xml:id="_int128_8hpp_source_1l00026"/>00026 }
+<anchor xml:id="_int128_8hpp_source_1l00004"/><link linkend="_int128_8hpp_1ad81d0209d250e9141d7c661691790c3f">00004</link> <emphasis role="keyword">constexpr</emphasis>&#32;lll&#32;<link linkend="_int128_8hpp_1ad81d0209d250e9141d7c661691790c3f">operator</link>&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis><link linkend="_int128_8hpp_1ad81d0209d250e9141d7c661691790c3f">lll</link>(ull&#32;x)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">static_cast</emphasis>&lt;lll&gt;(x);&#32;}
+<anchor xml:id="_int128_8hpp_source_1l00005"/><link linkend="_int128_8hpp_1a642c9a2936c6b33c8f43371c81377cb7">00005</link> <emphasis role="keyword">constexpr</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;lll&#32;<link linkend="_int128_8hpp_1a642c9a2936c6b33c8f43371c81377cb7">INFLL</link>=1lll&lt;&lt;120;
+<anchor xml:id="_int128_8hpp_source_1l00006"/>00006 
+<anchor xml:id="_int128_8hpp_source_1l00007"/><link linkend="_int128_8hpp_1afe140ebd0d1922eac0a3ccd4701f5446">00007</link> <link linkend="_int128_8hpp_1afe140ebd0d1922eac0a3ccd4701f5446">istream</link>&amp;&#32;<link linkend="_int128_8hpp_1afe140ebd0d1922eac0a3ccd4701f5446">operator</link>&gt;&gt;(istream&amp;&#32;is,&#32;lll&amp;&#32;x)&#32;{
+<anchor xml:id="_int128_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;c=is.peek();
+<anchor xml:id="_int128_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(c==<emphasis role="stringliteral">&apos;&#32;&apos;</emphasis>||c==<emphasis role="stringliteral">&apos;\n&apos;</emphasis>)&#32;is.get(),&#32;c=is.peek();
+<anchor xml:id="_int128_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;neg=<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_int128_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(c==<emphasis role="stringliteral">&apos;-&apos;</emphasis>)&#32;neg=<emphasis role="keyword">true</emphasis>,&#32;is.get();
+<anchor xml:id="_int128_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;x=0;
+<anchor xml:id="_int128_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(isdigit(is.peek()))&#32;x=x*10+is.get()-<emphasis role="stringliteral">&apos;0&apos;</emphasis>;
+<anchor xml:id="_int128_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(neg)&#32;x=-x;
+<anchor xml:id="_int128_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;is;
+<anchor xml:id="_int128_8hpp_source_1l00016"/>00016 }
+<anchor xml:id="_int128_8hpp_source_1l00017"/>00017 
+<anchor xml:id="_int128_8hpp_source_1l00018"/><link linkend="_int128_8hpp_1a01dfe26ad2682864fe404deda4361363">00018</link> <link linkend="_int128_8hpp_1a01dfe26ad2682864fe404deda4361363">ostream</link>&amp;&#32;<link linkend="_int128_8hpp_1a01dfe26ad2682864fe404deda4361363">operator</link>&lt;&lt;(ostream&amp;&#32;os,&#32;lll&#32;x)&#32;{
+<anchor xml:id="_int128_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(x&lt;0)&#32;os&lt;&lt;<emphasis role="stringliteral">&apos;-&apos;</emphasis>,&#32;x=-x;
+<anchor xml:id="_int128_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(x==0)&#32;<emphasis role="keywordflow">return</emphasis>&#32;os&lt;&lt;<emphasis role="stringliteral">&apos;0&apos;</emphasis>;
+<anchor xml:id="_int128_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;string&#32;s;
+<anchor xml:id="_int128_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(x&gt;0)&#32;s+=x%10+<emphasis role="stringliteral">&apos;0&apos;</emphasis>,&#32;x/=10;
+<anchor xml:id="_int128_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;reverse(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(s));
+<anchor xml:id="_int128_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;os&lt;&lt;s;
+<anchor xml:id="_int128_8hpp_source_1l00025"/>00025 }
 </programlisting></section>

@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"linear__programming__2vars_8hpp.html":[6,0,6,10],
 "linear__programming__2vars_8hpp.html#a4d295fe82ea5ed8a868a9150aa9caaba":[6,0,6,10,0],
 "linear__programming__2vars_8hpp_source.html":[6,0,6,10],
 "lis_8hpp.html":[6,0,0,5],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "namespacemod__reconstruct.html#a2b66d8d76557c1fdc2baf29121dc430b":[4,0,7,0],
 "namespacemod__reconstruct.html#af05e87c8d03131fac1b74586551c090e":[4,0,7,2],
 "namespaces.html":[4,0],
-"ntt998_8hpp.html":[6,0,6,15]
+"ntt998_8hpp.html":[6,0,6,15],
+"ntt998_8hpp.html#a133aaf5782761e1866cfd3fd40e784d3":[6,0,6,15,0]
 };

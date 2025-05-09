@@ -15,7 +15,7 @@
 <anchor xml:id="_dijkstra_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(!pq.empty())&#32;{
 <anchor xml:id="_dijkstra_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;[tmp,now]=pq.top();pq.pop();
 <anchor xml:id="_dijkstra_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(ret[now]&lt;tmp)&#32;<emphasis role="keywordflow">continue</emphasis>;
-<anchor xml:id="_dijkstra_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">auto</emphasis>&#32;[nxt,cost]:g[now])&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_template_8hpp_1afab395ab2eac3679be924c315291bf58">chmin</link>(ret[nxt],ret[now]+cost))&#32;pq.push({ret[nxt],nxt});
+<anchor xml:id="_dijkstra_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">auto</emphasis>&#32;[nxt,cost]:g[now])&#32;<emphasis role="keywordflow">if</emphasis>(chmin(ret[nxt],ret[now]+cost))&#32;pq.push({ret[nxt],nxt});
 <anchor xml:id="_dijkstra_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;}
 <anchor xml:id="_dijkstra_8hpp_source_1l00016"/>00016 
 <anchor xml:id="_dijkstra_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;

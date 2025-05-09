@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['debug_0',['debug',['../debug_8hpp.html#a86ee3ff44c537d94ccbabf941a613688',1,'debug:&#160;debug.hpp'],['../template_8hpp.html#a86ee3ff44c537d94ccbabf941a613688',1,'debug:&#160;template.hpp']]]
+  ['for_0',['FOR',['../template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7',1,'template.hpp']]]
 ];

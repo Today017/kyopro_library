@@ -2,7 +2,7 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_exp_8py_source" xml:lang="ja">
 <title>exp.py</title>
 <indexterm><primary>kyopro_tools/exp.py</primary></indexterm>
-[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_exp_8py_source_1l00001"/><link linkend="_namespaceexp_1a6b6bffc9f575cd0e79d0b42f7ec5a3d5">00001</link> HEAD&#32;=&#32;<emphasis role="keyword">False</emphasis>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_exp_8py_source_1l00001"/><link linkend="_namespaceexp_1a6b6bffc9f575cd0e79d0b42f7ec5a3d5">00001</link> HEAD&#32;=&#32;<emphasis role="keyword">True</emphasis>
 <anchor xml:id="_exp_8py_source_1l00002"/><link linkend="_namespaceexp_1a608b7d478866fe325b1fc10a0d2f5d11">00002</link> CONST&#32;=&#32;<emphasis role="keyword">True</emphasis>
 <anchor xml:id="_exp_8py_source_1l00003"/>00003 
 <anchor xml:id="_exp_8py_source_1l00004"/>00004 <emphasis role="comment">#!/usr/bin/env&#32;python3</emphasis>

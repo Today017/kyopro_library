@@ -105,6 +105,7 @@ $(function(){initNavTree('template_8hpp.html',''); initResizable(true); });
   <div class="summary">
 <a href="#define-members">マクロ定義</a> &#124;
 <a href="#typedef-members">型定義</a> &#124;
+<a href="#func-members">関数</a> &#124;
 <a href="#var-members">変数</a>  </div>
   <div class="headertitle"><div class="title">template.hpp ファイル</div></div>
 </div><!--header-->
@@ -119,18 +120,10 @@ $(function(){initNavTree('template_8hpp.html',''); initResizable(true); });
 <tr class="separator:a7ab29d3bd6e8d66e320f4224e75f6cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affe9a1ffd6cd7b2e404200ef182fa18f" id="r_affe9a1ffd6cd7b2e404200ef182fa18f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affe9a1ffd6cd7b2e404200ef182fa18f">IO</a>&#160;&#160;&#160;ios::sync_with_stdio(false),cin.tie(nullptr);</td></tr>
 <tr class="separator:affe9a1ffd6cd7b2e404200ef182fa18f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6b1ca645104fc8e3678f999ebe71f41" id="r_ab6b1ca645104fc8e3678f999ebe71f41"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6b1ca645104fc8e3678f999ebe71f41">LB</a>(v,  x)</td></tr>
-<tr class="separator:ab6b1ca645104fc8e3678f999ebe71f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cf4a0f2f552bf0356a95bf621d4a15d" id="r_a6cf4a0f2f552bf0356a95bf621d4a15d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cf4a0f2f552bf0356a95bf621d4a15d">UQ</a>(v)</td></tr>
-<tr class="separator:a6cf4a0f2f552bf0356a95bf621d4a15d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17daffa35db12daabc89c90df168e706" id="r_a17daffa35db12daabc89c90df168e706"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17daffa35db12daabc89c90df168e706">REP</a>(i,  n)</td></tr>
 <tr class="separator:a17daffa35db12daabc89c90df168e706"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9af2de86c4be813e9c60ede438bb4cd7" id="r_a9af2de86c4be813e9c60ede438bb4cd7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(i,  a,  b)</td></tr>
 <tr class="separator:a9af2de86c4be813e9c60ede438bb4cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c27eb89ff96e0ad6fda2ea4040816d4" id="r_a4c27eb89ff96e0ad6fda2ea4040816d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c27eb89ff96e0ad6fda2ea4040816d4">chmax</a>(a,  b)</td></tr>
-<tr class="separator:a4c27eb89ff96e0ad6fda2ea4040816d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afab395ab2eac3679be924c315291bf58" id="r_afab395ab2eac3679be924c315291bf58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afab395ab2eac3679be924c315291bf58">chmin</a>(a,  b)</td></tr>
-<tr class="separator:afab395ab2eac3679be924c315291bf58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86ee3ff44c537d94ccbabf941a613688" id="r_a86ee3ff44c537d94ccbabf941a613688"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86ee3ff44c537d94ccbabf941a613688">debug</a>(...)</td></tr>
 <tr class="separator:a86ee3ff44c537d94ccbabf941a613688"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03e896b87233163e2dc3399c65cdfc2d" id="r_a03e896b87233163e2dc3399c65cdfc2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03e896b87233163e2dc3399c65cdfc2d">print_line</a></td></tr>
@@ -145,10 +138,10 @@ $(function(){initNavTree('template_8hpp.html',''); initResizable(true); });
 <tr class="separator:adcb0b6ef4cd780a895c7089c0191cd62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41f1d17ffdc8a7500e7aadc2b7e05a63" id="r_a41f1d17ffdc8a7500e7aadc2b7e05a63"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41f1d17ffdc8a7500e7aadc2b7e05a63">ld</a> = long double</td></tr>
 <tr class="separator:a41f1d17ffdc8a7500e7aadc2b7e05a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3999f2d770e5e4c008caf3d8977c7ef0" id="r_a3999f2d770e5e4c008caf3d8977c7ef0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3999f2d770e5e4c008caf3d8977c7ef0">ull</a> = uint64_t</td></tr>
-<tr class="separator:a3999f2d770e5e4c008caf3d8977c7ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a2f15aa320f7c30bb71984af5985e73" id="r_a5a2f15aa320f7c30bb71984af5985e73"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a2f15aa320f7c30bb71984af5985e73">LL</a> = __int128_t</td></tr>
-<tr class="separator:a5a2f15aa320f7c30bb71984af5985e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f251da6a09dd744f98ee0f43f42b765" id="r_a5f251da6a09dd744f98ee0f43f42b765"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f251da6a09dd744f98ee0f43f42b765">ull</a> = unsigned long long</td></tr>
+<tr class="separator:a5f251da6a09dd744f98ee0f43f42b765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af459ee81f834e904cb702ffcb928335e" id="r_af459ee81f834e904cb702ffcb928335e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af459ee81f834e904cb702ffcb928335e">lll</a> = __int128_t</td></tr>
+<tr class="separator:af459ee81f834e904cb702ffcb928335e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a675649b5da3f6454b83fa37d00cc2b" id="r_a6a675649b5da3f6454b83fa37d00cc2b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> = vector&lt;int&gt;</td></tr>
 <tr class="separator:a6a675649b5da3f6454b83fa37d00cc2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa04f4352ca552897b0c9d791a7bdfa85" id="r_aa04f4352ca552897b0c9d791a7bdfa85"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a> = vector&lt;<a class="el" href="#a6a675649b5da3f6454b83fa37d00cc2b">VI</a>&gt;</td></tr>
@@ -163,6 +156,21 @@ $(function(){initNavTree('template_8hpp.html',''); initResizable(true); });
 <tr class="separator:a2c3a5a109d6d21e6f64ab05472266de4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20b579988fc1098f6357cbd1f07dc5e8" id="r_a20b579988fc1098f6357cbd1f07dc5e8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20b579988fc1098f6357cbd1f07dc5e8">WG</a> = vector&lt;vector&lt;pair&lt;int,<a class="el" href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&gt;&gt;&gt;</td></tr>
 <tr class="separator:a20b579988fc1098f6357cbd1f07dc5e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a72eba122b2f2cfe52ff54a982da0849e" id="r_a72eba122b2f2cfe52ff54a982da0849e"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a72eba122b2f2cfe52ff54a982da0849e"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a72eba122b2f2cfe52ff54a982da0849e">LB</a> (vector&lt; T &gt; v, T x)</td></tr>
+<tr class="separator:a72eba122b2f2cfe52ff54a982da0849e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8743e7b47f30c6bc8b3ef708cfd690a5" id="r_a8743e7b47f30c6bc8b3ef708cfd690a5"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a8743e7b47f30c6bc8b3ef708cfd690a5"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8743e7b47f30c6bc8b3ef708cfd690a5">UQ</a> (T &amp;v)</td></tr>
+<tr class="separator:a8743e7b47f30c6bc8b3ef708cfd690a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e8244c32e6ce7ca2cdd01c86aac2d3f" id="r_a3e8244c32e6ce7ca2cdd01c86aac2d3f"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a3e8244c32e6ce7ca2cdd01c86aac2d3f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a3e8244c32e6ce7ca2cdd01c86aac2d3f">chmax</a> (T &amp;a, T b)</td></tr>
+<tr class="separator:a3e8244c32e6ce7ca2cdd01c86aac2d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3e093a6b7f9ed915c0c64ec47b45564" id="r_ad3e093a6b7f9ed915c0c64ec47b45564"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:ad3e093a6b7f9ed915c0c64ec47b45564"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad3e093a6b7f9ed915c0c64ec47b45564">chmin</a> (T &amp;a, T b)</td></tr>
+<tr class="separator:ad3e093a6b7f9ed915c0c64ec47b45564"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 変数</h2></td></tr>
@@ -208,52 +216,6 @@ $(function(){initNavTree('template_8hpp.html',''); initResizable(true); });
 
 </div>
 </div>
-<a id="ab6b1ca645104fc8e3678f999ebe71f41" name="ab6b1ca645104fc8e3678f999ebe71f41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6b1ca645104fc8e3678f999ebe71f41">&#9670;&#160;</a></span>LB</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LB</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>値:</b><div class="fragment"><div class="line">(<a class="code hl_typedef" href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>)(lower_bound(<a class="code hl_define" href="#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(v),x)-(v).begin())</div>
-<div class="ttc" id="atemplate_8hpp_html_a7ab29d3bd6e8d66e320f4224e75f6cea"><div class="ttname"><a href="#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a></div><div class="ttdeci">#define ALL(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00005">template.hpp:5</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00015">template.hpp:15</a></div></div>
-</div><!-- fragment -->
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a id="a6cf4a0f2f552bf0356a95bf621d4a15d" name="a6cf4a0f2f552bf0356a95bf621d4a15d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cf4a0f2f552bf0356a95bf621d4a15d">&#9670;&#160;</a></span>UQ</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define UQ</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>値:</b><div class="fragment"><div class="line">sort(<a class="code hl_define" href="#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(v)),(v).erase(unique(<a class="code hl_define" href="#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(v)),v.end())</div>
-</div><!-- fragment -->
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00008">8</a> 行目に定義があります。</p>
-
-</div>
-</div>
 <a id="a17daffa35db12daabc89c90df168e706" name="a17daffa35db12daabc89c90df168e706"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a17daffa35db12daabc89c90df168e706">&#9670;&#160;</a></span>REP</h2>
 
@@ -273,8 +235,9 @@ $(function(){initNavTree('template_8hpp.html',''); initResizable(true); });
       </table>
 </div><div class="memdoc">
 <b>値:</b><div class="fragment"><div class="line"><span class="keywordflow">for</span>(<a class="code hl_typedef" href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> i=0; i&lt;(<a class="code hl_typedef" href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>)(n); i++)</div>
+<div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00015">template.hpp:15</a></div></div>
 </div><!-- fragment -->
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00009">9</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -303,55 +266,7 @@ $(function(){initNavTree('template_8hpp.html',''); initResizable(true); });
 </div><div class="memdoc">
 <b>値:</b><div class="fragment"><div class="line"><span class="keywordflow">for</span>(<a class="code hl_typedef" href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> i=(<a class="code hl_typedef" href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>)(a); (a)&lt;(b) ? i&lt;(b) : i&gt;(b); i+=((a)&lt;(b) ? 1 : -1))</div>
 </div><!-- fragment -->
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00010">10</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a id="a4c27eb89ff96e0ad6fda2ea4040816d4" name="a4c27eb89ff96e0ad6fda2ea4040816d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c27eb89ff96e0ad6fda2ea4040816d4">&#9670;&#160;</a></span>chmax</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define chmax</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>値:</b><div class="fragment"><div class="line">((a)&lt;(b) ? ((a)=(b), 1) : 0)</div>
-</div><!-- fragment -->
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00011">11</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a id="afab395ab2eac3679be924c315291bf58" name="afab395ab2eac3679be924c315291bf58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afab395ab2eac3679be924c315291bf58">&#9670;&#160;</a></span>chmin</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define chmin</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>値:</b><div class="fragment"><div class="line">((a)&gt;(b) ? ((a)=(b), 1) : 0)</div>
-</div><!-- fragment -->
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00008">8</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -441,14 +356,14 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
-<a id="a3999f2d770e5e4c008caf3d8977c7ef0" name="a3999f2d770e5e4c008caf3d8977c7ef0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3999f2d770e5e4c008caf3d8977c7ef0">&#9670;&#160;</a></span>ull</h2>
+<a id="a5f251da6a09dd744f98ee0f43f42b765" name="a5f251da6a09dd744f98ee0f43f42b765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f251da6a09dd744f98ee0f43f42b765">&#9670;&#160;</a></span>ull</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#a3999f2d770e5e4c008caf3d8977c7ef0">ull</a> = uint64_t</td>
+          <td class="memname">using <a class="el" href="#a5f251da6a09dd744f98ee0f43f42b765">ull</a> = unsigned long long</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -457,14 +372,14 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
-<a id="a5a2f15aa320f7c30bb71984af5985e73" name="a5a2f15aa320f7c30bb71984af5985e73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a2f15aa320f7c30bb71984af5985e73">&#9670;&#160;</a></span>LL</h2>
+<a id="af459ee81f834e904cb702ffcb928335e" name="af459ee81f834e904cb702ffcb928335e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af459ee81f834e904cb702ffcb928335e">&#9670;&#160;</a></span>lll</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#a5a2f15aa320f7c30bb71984af5985e73">LL</a> = __int128_t</td>
+          <td class="memname">using <a class="el" href="#af459ee81f834e904cb702ffcb928335e">lll</a> = __int128_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -582,6 +497,103 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a72eba122b2f2cfe52ff54a982da0849e" name="a72eba122b2f2cfe52ff54a982da0849e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72eba122b2f2cfe52ff54a982da0849e">&#9670;&#160;</a></span>LB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int LB </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00010">10</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8743e7b47f30c6bc8b3ef708cfd690a5" name="a8743e7b47f30c6bc8b3ef708cfd690a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8743e7b47f30c6bc8b3ef708cfd690a5">&#9670;&#160;</a></span>UQ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int UQ </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00011">11</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3e8244c32e6ce7ca2cdd01c86aac2d3f" name="a3e8244c32e6ce7ca2cdd01c86aac2d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e8244c32e6ce7ca2cdd01c86aac2d3f">&#9670;&#160;</a></span>chmax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chmax </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad3e093a6b7f9ed915c0c64ec47b45564" name="ad3e093a6b7f9ed915c0c64ec47b45564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3e093a6b7f9ed915c0c64ec47b45564">&#9670;&#160;</a></span>chmin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chmin </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
 
 </div>
 </div>
