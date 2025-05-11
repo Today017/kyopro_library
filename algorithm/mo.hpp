@@ -2,12 +2,11 @@
 
 /// @brief Mo's Algorithm
 /// @ref https://ei1333.hateblo.jp/entry/2017/09/11/211011
-template<ll L=20>
 struct Mo {
     /// @brief コンストラクタ
     Mo(int n) {
         this->n=n;
-        max_n=1<<L;
+        q=0;
     }
 
     /// @brief クエリ [l, r) を追加する
@@ -27,9 +26,15 @@ struct Mo {
     template<typename F1, typename F2, typename F3, typename F4, typename F5>
     void execute(F1&& add_left, F2&& add_right, F3&& del_left, F4&& del_right, F5&& out) {
         VI qi(q); iota(ALL(qi),0);
-        VL eval(q);
-        REP(i,q) eval[i]=hilbertorder(ls[i],rs[i]);
-        sort(ALL(qi),[&](int i, int j){ return eval[i]<eval[j]; });
+
+        // https://nyaannyaan.github.io/library/misc/mo.hpp.html
+        const int wid=max<int>(1,1.0*n/max<double>(1.0,sqrt(q*2.0/3.0)));
+        sort(ALL(qi),[&](int a, int b) {
+            if(ls[a]/wid!=ls[b]/wid) return ls[a]<ls[b];
+            if((ls[a]/wid)&1) return rs[a]<rs[b];
+            return rs[a]>rs[b];
+        });
+
         int nl=0,nr=0;
         for(int& i:qi){
             while(nl>ls[i]) add_left(--nl);
@@ -42,17 +47,5 @@ struct Mo {
 
 private:
     int n,q;
-    ll max_n;
     VI ls,rs;
-    ll hilbertorder(int x, int y) {
-        ll rx,ry,d=0;
-        for(ll s=max_n>>1ll; s; s>>=1ll) {
-            rx=(x&s)>0,ry=(y&s)>0;
-            d+=s*s*((rx*3)^ry);
-            if(ry) continue;
-            if(rx) x=max_n-1-x,y=max_n-1-y;
-            swap(x,y);
-        }
-        return d;
-    }
 };
