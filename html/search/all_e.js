@@ -29,7 +29,7 @@ var searchData=
   ['mincostflow_26',['MinCostFlow',['../struct_min_cost_flow.html',1,'MinCostFlow'],['../struct_min_cost_flow.html#a127b5fdc43378b741da7f935770e4a7c',1,'MinCostFlow::MinCostFlow()']]],
   ['mincut_27',['mincut',['../struct_max_flow.html#abee031fc4d62dea9bc9aadf29e57abae',1,'MaxFlow']]],
   ['mindynamic_28',['MinDynamic',['../struct_range_query_1_1_min_dynamic.html',1,'RangeQuery']]],
-  ['mo_29',['Mo',['../struct_mo.html',1,'Mo&lt; L &gt;'],['../struct_mo.html#a12c0e52820513d400e3ebabb498c68f3',1,'Mo::Mo()']]],
+  ['mo_29',['Mo',['../struct_mo.html',1,'Mo'],['../struct_mo.html#a08e93c8976a04e8913d5f8c7615175ea',1,'Mo::Mo()']]],
   ['mo_2ehpp_30',['mo.hpp',['../mo_8hpp.html',1,'']]],
   ['mod_31',['mod',['../struct_dynamic_mod_int.html#a52987abdcc66bf203627b3d6bfcd0404',1,'DynamicModInt::mod'],['../struct_hash.html#a3bd24b140ac1c70ae98a01974b0c9980',1,'Hash::mod']]],
   ['mod107_32',['Mod107',['../modint_8hpp.html#a9b38c2f1bf6ce7683c4d432248fc986b',1,'modint.hpp']]],

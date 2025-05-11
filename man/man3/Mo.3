@@ -1,8 +1,8 @@
-.TH "Mo< L >" 3 "Kyopro Library" \" -*- nroff -*-
+.TH "Mo" 3 "Kyopro Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-Mo< L > \- \fBMo\fP's Algorithm \fBhttps://ei1333.hateblo.jp/entry/2017/09/11/211011\fP  
+Mo \- \fBMo\fP's Algorithm \fBhttps://ei1333.hateblo.jp/entry/2017/09/11/211011\fP  
 
 .SH SYNOPSIS
 .br
@@ -27,29 +27,26 @@ Mo< L > \- \fBMo\fP's Algorithm \fBhttps://ei1333.hateblo.jp/entry/2017/09/11/21
 .in -1c
 .SH "詳解"
 .PP 
-
-.SS "template<\fBll\fP L = 20>
-.br
-struct Mo< L >"\fBMo\fP's Algorithm \fBhttps://ei1333.hateblo.jp/entry/2017/09/11/211011\fP 
+\fBMo\fP's Algorithm \fBhttps://ei1333.hateblo.jp/entry/2017/09/11/211011\fP 
 .PP
- \fBmo\&.hpp\fP の \fB6\fP 行目に定義があります。
+ \fBmo\&.hpp\fP の \fB5\fP 行目に定義があります。
 .SH "構築子と解体子"
 .PP 
-.SS "template<\fBll\fP L = 20> \fBMo\fP< L >\fB::Mo\fP (int n)\fR [inline]\fP"
+.SS "Mo::Mo (int n)\fR [inline]\fP"
 
 .PP
 コンストラクタ 
 .PP
- \fBmo\&.hpp\fP の \fB8\fP 行目に定義があります。
+ \fBmo\&.hpp\fP の \fB7\fP 行目に定義があります。
 .SH "関数詳解"
 .PP 
-.SS "template<\fBll\fP L = 20> void \fBMo\fP< L >::add (int l, int r)\fR [inline]\fP"
+.SS "void Mo::add (int l, int r)\fR [inline]\fP"
 
 .PP
 クエリ [l, r) を追加する 
 .PP
- \fBmo\&.hpp\fP の \fB14\fP 行目に定義があります。
-.SS "template<\fBll\fP L = 20> template<typename F1, typename F2, typename F3, typename F4, typename F5> void \fBMo\fP< L >::execute (F1 && add_left, F2 && add_right, F3 && del_left, F4 && del_right, F5 && out)\fR [inline]\fP"
+ \fBmo\&.hpp\fP の \fB13\fP 行目に定義があります。
+.SS "template<typename F1, typename F2, typename F3, typename F4, typename F5> void Mo::execute (F1 && add_left, F2 && add_right, F3 && del_left, F4 && del_right, F5 && out)\fR [inline]\fP"
 
 .PP
 クエリを実行する 
@@ -74,7 +71,7 @@ O(N sqrt(Q))
 .PP
 
 .PP
- \fBmo\&.hpp\fP の \fB28\fP 行目に定義があります。
+ \fBmo\&.hpp\fP の \fB27\fP 行目に定義があります。
 
 .SH "著者"
 .PP 

@@ -5,7 +5,7 @@
 <programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
     <title>クラス    </title>
         <itemizedlist>
-            <listitem><para>struct <link linkend="_struct_mo">Mo&lt; L &gt;</link></para>
+            <listitem><para>struct <link linkend="_struct_mo">Mo</link></para>
 
 <para><link linkend="_struct_mo">Mo</link>&apos;s Algorithm <link xlink:href="https://ei1333.hateblo.jp/entry/2017/09/11/211011">https://ei1333.hateblo.jp/entry/2017/09/11/211011</link> </para>
 </listitem>

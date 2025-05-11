@@ -109,73 +109,65 @@ $(function(){initNavTree('mo_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @brief Mo&#39;s Algorithm</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @ref https://ei1333.hateblo.jp/entry/2017/09/11/211011</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span>&lt;ll L=20&gt;</div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_mo.html">    6</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_mo.html">Mo</a> {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">/// @brief コンストラクタ</span></div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_mo.html#a12c0e52820513d400e3ebabb498c68f3">    8</a></span>    <a class="code hl_function" href="struct_mo.html#a12c0e52820513d400e3ebabb498c68f3">Mo</a>(<span class="keywordtype">int</span> n) {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keyword">this</span>-&gt;n=n;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        max_n=1&lt;&lt;L;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_mo.html">    5</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_mo.html">Mo</a> {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="comment">/// @brief コンストラクタ</span></div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_mo.html#a08e93c8976a04e8913d5f8c7615175ea">    7</a></span>    <a class="code hl_function" href="struct_mo.html#a08e93c8976a04e8913d5f8c7615175ea">Mo</a>(<span class="keywordtype">int</span> n) {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        <span class="keyword">this</span>-&gt;n=n;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        q=0;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    }</div>
 </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">/// @brief クエリ [l, r) を追加する</span></div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_mo.html#a39bea8915a24a54030b29c834637342b">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_mo.html#a39bea8915a24a54030b29c834637342b">add</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r) {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        q++;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        ls.push_back(l);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        rs.push_back(r);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">/// @brief クエリ [l, r) を追加する</span></div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_mo.html#a74f7dcf6e3a3e3a49814457e20f1b3dd">   13</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_mo.html#a74f7dcf6e3a3e3a49814457e20f1b3dd">add</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        q++;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        ls.push_back(l);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        rs.push_back(r);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
 </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">/// @brief クエリを実行する</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">/// @param add_left `add_left(i)` i 番目の要素が左から加わるときの処理</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">/// @param add_right `add_right(i)` i 番目の要素が右から加わるときの処理</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">/// @param del_left `del_left(i)` i 番目の要素が左から抜けるときの処理</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">/// @param del_right `del_right(i)` i 番目の要素が右から抜けるときの処理</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">/// @param out `out(i)` i 番目のクエリの答えを求めたときの処理</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">/// @note O(N sqrt(Q))</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> F1, <span class="keyword">typename</span> F2, <span class="keyword">typename</span> F3, <span class="keyword">typename</span> F4, <span class="keyword">typename</span> F5&gt;</div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_mo.html#a487fe96e3907bd2d23fb9569b98500d3">   28</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_mo.html#a487fe96e3907bd2d23fb9569b98500d3">execute</a>(F1&amp;&amp; add_left, F2&amp;&amp; add_right, F3&amp;&amp; del_left, F4&amp;&amp; del_right, F5&amp;&amp; out) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        VI qi(q); iota(<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(qi),0);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        VL eval(q);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,q) eval[i]=hilbertorder(ls[i],rs[i]);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        sort(<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(qi),[&amp;](<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j){ <span class="keywordflow">return</span> eval[i]&lt;eval[j]; });</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">int</span> nl=0,nr=0;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span>&amp; i:qi){</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordflow">while</span>(nl&gt;ls[i]) add_left(--nl);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordflow">while</span>(nr&lt;rs[i]) add_right(nr++);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="keywordflow">while</span>(nl&lt;ls[i]) del_left(nl++);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordflow">while</span>(nr&gt;rs[i]) del_right(--nr);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            out(i);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">/// @brief クエリを実行する</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">/// @param add_left `add_left(i)` i 番目の要素が左から加わるときの処理</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">/// @param add_right `add_right(i)` i 番目の要素が右から加わるときの処理</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">/// @param del_left `del_left(i)` i 番目の要素が左から抜けるときの処理</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">/// @param del_right `del_right(i)` i 番目の要素が右から抜けるときの処理</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">/// @param out `out(i)` i 番目のクエリの答えを求めたときの処理</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">/// @note O(N sqrt(Q))</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> F1, <span class="keyword">typename</span> F2, <span class="keyword">typename</span> F3, <span class="keyword">typename</span> F4, <span class="keyword">typename</span> F5&gt;</div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_mo.html#a0be4c837e4b343af9e1b35fb1114d500">   27</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_mo.html#a0be4c837e4b343af9e1b35fb1114d500">execute</a>(F1&amp;&amp; add_left, F2&amp;&amp; add_right, F3&amp;&amp; del_left, F4&amp;&amp; del_right, F5&amp;&amp; out) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        VI qi(q); iota(<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(qi),0);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="comment">// https://nyaannyaan.github.io/library/misc/mo.hpp.html</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> wid=max&lt;<span class="keywordtype">int</span>&gt;(1,1.0*n/max&lt;<span class="keywordtype">double</span>&gt;(1.0,sqrt(q*2.0/3.0)));</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        sort(<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(qi),[&amp;](<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">if</span>(ls[a]/wid!=ls[b]/wid) <span class="keywordflow">return</span> ls[a]&lt;ls[b];</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">if</span>((ls[a]/wid)&amp;1) <span class="keywordflow">return</span> rs[a]&lt;rs[b];</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordflow">return</span> rs[a]&gt;rs[b];</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        });</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">int</span> nl=0,nr=0;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span>&amp; i:qi){</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keywordflow">while</span>(nl&gt;ls[i]) add_left(--nl);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">while</span>(nr&lt;rs[i]) add_right(nr++);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">while</span>(nl&lt;ls[i]) del_left(nl++);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">while</span>(nr&gt;rs[i]) del_right(--nr);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            out(i);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
 </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> n,q;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    ll max_n;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    VI ls,rs;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    ll hilbertorder(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        ll rx,ry,d=0;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">for</span>(ll s=max_n&gt;&gt;1ll; s; s&gt;&gt;=1ll) {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            rx=(x&amp;s)&gt;0,ry=(y&amp;s)&gt;0;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            d+=s*s*((rx*3)^ry);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keywordflow">if</span>(ry) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keywordflow">if</span>(rx) x=max_n-1-x,y=max_n-1-y;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            swap(x,y);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">return</span> d;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">int</span> n,q;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    VI ls,rs;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
 </div>
-<div class="ttc" id="astruct_mo_html"><div class="ttname"><a href="struct_mo.html">Mo</a></div><div class="ttdoc">Mo&#39;s Algorithm https://ei1333.hateblo.jp/entry/2017/09/11/211011</div><div class="ttdef"><b>Definition</b> <a href="#l00006">mo.hpp:6</a></div></div>
-<div class="ttc" id="astruct_mo_html_a12c0e52820513d400e3ebabb498c68f3"><div class="ttname"><a href="struct_mo.html#a12c0e52820513d400e3ebabb498c68f3">Mo::Mo</a></div><div class="ttdeci">Mo(int n)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition</b> <a href="#l00008">mo.hpp:8</a></div></div>
-<div class="ttc" id="astruct_mo_html_a39bea8915a24a54030b29c834637342b"><div class="ttname"><a href="struct_mo.html#a39bea8915a24a54030b29c834637342b">Mo::add</a></div><div class="ttdeci">void add(int l, int r)</div><div class="ttdoc">クエリ [l, r) を追加する</div><div class="ttdef"><b>Definition</b> <a href="#l00014">mo.hpp:14</a></div></div>
-<div class="ttc" id="astruct_mo_html_a487fe96e3907bd2d23fb9569b98500d3"><div class="ttname"><a href="struct_mo.html#a487fe96e3907bd2d23fb9569b98500d3">Mo::execute</a></div><div class="ttdeci">void execute(F1 &amp;&amp;add_left, F2 &amp;&amp;add_right, F3 &amp;&amp;del_left, F4 &amp;&amp;del_right, F5 &amp;&amp;out)</div><div class="ttdoc">クエリを実行する</div><div class="ttdef"><b>Definition</b> <a href="#l00028">mo.hpp:28</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00007">template.hpp:7</a></div></div>
+<div class="ttc" id="astruct_mo_html"><div class="ttname"><a href="struct_mo.html">Mo</a></div><div class="ttdoc">Mo&#39;s Algorithm https://ei1333.hateblo.jp/entry/2017/09/11/211011</div><div class="ttdef"><b>Definition</b> <a href="#l00005">mo.hpp:5</a></div></div>
+<div class="ttc" id="astruct_mo_html_a08e93c8976a04e8913d5f8c7615175ea"><div class="ttname"><a href="struct_mo.html#a08e93c8976a04e8913d5f8c7615175ea">Mo::Mo</a></div><div class="ttdeci">Mo(int n)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition</b> <a href="#l00007">mo.hpp:7</a></div></div>
+<div class="ttc" id="astruct_mo_html_a0be4c837e4b343af9e1b35fb1114d500"><div class="ttname"><a href="struct_mo.html#a0be4c837e4b343af9e1b35fb1114d500">Mo::execute</a></div><div class="ttdeci">void execute(F1 &amp;&amp;add_left, F2 &amp;&amp;add_right, F3 &amp;&amp;del_left, F4 &amp;&amp;del_right, F5 &amp;&amp;out)</div><div class="ttdoc">クエリを実行する</div><div class="ttdef"><b>Definition</b> <a href="#l00027">mo.hpp:27</a></div></div>
+<div class="ttc" id="astruct_mo_html_a74f7dcf6e3a3e3a49814457e20f1b3dd"><div class="ttname"><a href="struct_mo.html#a74f7dcf6e3a3e3a49814457e20f1b3dd">Mo::add</a></div><div class="ttdeci">void add(int l, int r)</div><div class="ttdoc">クエリ [l, r) を追加する</div><div class="ttdef"><b>Definition</b> <a href="#l00013">mo.hpp:13</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_a7ab29d3bd6e8d66e320f4224e75f6cea"><div class="ttname"><a href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a></div><div class="ttdeci">#define ALL(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00005">template.hpp:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -91,7 +91,7 @@
 <para>最小費用流 </para>
 <link linkend="_struct_range_query_1_1_min_dynamic">RangeQuery::MinDynamic&lt; T, max_value &gt;</link>
 <para>1点変更 / 区間 min </para>
-<link linkend="_struct_mo">Mo&lt; L &gt;</link>
+<link linkend="_struct_mo">Mo</link>
 <para><link linkend="_struct_mo">Mo</link>&apos;s Algorithm <link xlink:href="https://ei1333.hateblo.jp/entry/2017/09/11/211011">https://ei1333.hateblo.jp/entry/2017/09/11/211011</link> </para>
 <link linkend="_struct_mod_int">ModInt&lt; MOD &gt;</link>
 <para><link linkend="_struct_mod_int">ModInt</link> </para>
@@ -119,6 +119,8 @@
 <para>スパーステーブル </para>
 <link linkend="_struct_sparse_table_disjoint">SparseTableDisjoint&lt; Semigroup &gt;</link>
 <para>スパーステーブル（Disjoint） </para>
+<link linkend="_struct_sqrt_tree">SqrtTree&lt; Abel &gt;</link>
+<para>更新 O(1) クエリ O(sqrt(N)) の改造版セグ木 </para>
 <link linkend="_struct_succinct_bit_vector">SuccinctBitVector</link><link linkend="_struct_abel_1_1_sum">Abel::Sum&lt; T &gt;</link>
 <para>和 </para>
 <link linkend="_struct_monoid_1_1_sum">Monoid::Sum&lt; T &gt;</link>

@@ -55,7 +55,7 @@ var hierarchy =
     [ "RangeQuery::Min< T, max_value >", "struct_range_query_1_1_min.html", null ],
     [ "MinCostFlow", "struct_min_cost_flow.html", null ],
     [ "RangeQuery::MinDynamic< T, max_value >", "struct_range_query_1_1_min_dynamic.html", null ],
-    [ "Mo< L >", "struct_mo.html", null ],
+    [ "Mo", "struct_mo.html", null ],
     [ "ModInt< MOD >", "struct_mod_int.html", null ],
     [ "multiset", null, [
       [ "MultiSet< T >", "struct_multi_set.html", null ]
@@ -85,6 +85,7 @@ var hierarchy =
     ] ],
     [ "SparseTable< Band >", "struct_sparse_table.html", null ],
     [ "SparseTableDisjoint< Semigroup >", "struct_sparse_table_disjoint.html", null ],
+    [ "SqrtTree< Abel >", "struct_sqrt_tree.html", null ],
     [ "SuccinctBitVector", "struct_succinct_bit_vector.html", null ],
     [ "Abel::Sum< T >", "struct_abel_1_1_sum.html", null ],
     [ "Monoid::Sum< T >", "struct_monoid_1_1_sum.html", null ],

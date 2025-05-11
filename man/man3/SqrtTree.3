@@ -1,0 +1,143 @@
+.TH "SqrtTree< Abel >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SqrtTree< Abel > \- 更新 O(1) クエリ O(sqrt(N)) の改造版セグ木  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'sqrt_tree\&.hpp'\fP
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "using \fBType\fP = typename Abel::Type"
+.br
+.in -1c
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBSqrtTree\fP ()=default"
+.br
+.ti -1c
+.RI "\fBSqrtTree\fP (int n)"
+.br
+.ti -1c
+.RI "\fBSqrtTree\fP (const vector< \fBType\fP > &v)"
+.br
+.RI "配列 v で初期化する "
+.ti -1c
+.RI "\fBSqrtTree\fP (const vector< \fBType\fP > &v, const vector< \fBType\fP > &v_inv)"
+.br
+.RI "配列 v とその逆元 v_inv で初期化する "
+.ti -1c
+.RI "void \fBset\fP (int i, \fBType\fP x)"
+.br
+.RI "i 番目の要素を x に更新する "
+.ti -1c
+.RI "void \fBset\fP (int i, \fBType\fP x, \fBType\fP x_inv)"
+.br
+.RI "i 番目の要素を x に更新し、その逆元を x_inv に更新する "
+.ti -1c
+.RI "\fBType\fP \fBfold\fP (int l, int r)"
+.br
+.RI "区間 [l, r) の群積を返す "
+.ti -1c
+.RI "\fBType\fP \fBoperator[]\fP (int i) const"
+.br
+.ti -1c
+.RI "int \fBsize\fP () const"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename Abel>
+.br
+struct SqrtTree< Abel >"更新 O(1) クエリ O(sqrt(N)) の改造版セグ木 
+
+\fBMo\fP's Algorithmとの相性が良い 
+.PP
+\fB覚え書き\fP
+.RS 4
+モノイドではなくアーベル群が乗る（モノイドや群の場合、更新が Θ(√N) でメリットがない） \fBhttps://atcoder.jp/contests/abc405/submissions/65704867\fP 
+.RE
+.PP
+
+.PP
+ \fBsqrt_tree\&.hpp\fP の \fB8\fP 行目に定義があります。
+.SH "型定義メンバ詳解"
+.PP 
+.SS "template<typename Abel> using \fBSqrtTree\fP< Abel >::Type = typename Abel::Type"
+
+.PP
+ \fBsqrt_tree\&.hpp\fP の \fB9\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename Abel> \fBSqrtTree\fP< Abel >\fB::SqrtTree\fP ()\fR [default]\fP"
+
+.SS "template<typename Abel> \fBSqrtTree\fP< Abel >\fB::SqrtTree\fP (int n)\fR [inline]\fP"
+
+.PP
+ \fBsqrt_tree\&.hpp\fP の \fB12\fP 行目に定義があります。
+.SS "template<typename Abel> \fBSqrtTree\fP< Abel >\fB::SqrtTree\fP (const vector< \fBType\fP > & v)\fR [inline]\fP"
+
+.PP
+配列 v で初期化する 
+.PP
+ \fBsqrt_tree\&.hpp\fP の \fB22\fP 行目に定義があります。
+.SS "template<typename Abel> \fBSqrtTree\fP< Abel >\fB::SqrtTree\fP (const vector< \fBType\fP > & v, const vector< \fBType\fP > & v_inv)\fR [inline]\fP"
+
+.PP
+配列 v とその逆元 v_inv で初期化する 
+.PP
+ \fBsqrt_tree\&.hpp\fP の \fB37\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "template<typename Abel> void \fBSqrtTree\fP< Abel >::set (int i, \fBType\fP x)\fR [inline]\fP"
+
+.PP
+i 番目の要素を x に更新する 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(f) （f : 逆元を求めるのにかかる計算量） 
+.RE
+.PP
+
+.PP
+ \fBsqrt_tree\&.hpp\fP の \fB53\fP 行目に定義があります。
+.SS "template<typename Abel> void \fBSqrtTree\fP< Abel >::set (int i, \fBType\fP x, \fBType\fP x_inv)\fR [inline]\fP"
+
+.PP
+i 番目の要素を x に更新し、その逆元を x_inv に更新する 
+.PP
+ \fBsqrt_tree\&.hpp\fP の \fB62\fP 行目に定義があります。
+.SS "template<typename Abel> \fBType\fP \fBSqrtTree\fP< Abel >::fold (int l, int r)\fR [inline]\fP"
+
+.PP
+区間 [l, r) の群積を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(√N) 
+.RE
+.PP
+
+.PP
+ \fBsqrt_tree\&.hpp\fP の \fB72\fP 行目に定義があります。
+.SS "template<typename Abel> \fBType\fP \fBSqrtTree\fP< Abel >::operator[] (int i) const\fR [inline]\fP"
+
+.PP
+ \fBsqrt_tree\&.hpp\fP の \fB86\fP 行目に定義があります。
+.SS "template<typename Abel> int \fBSqrtTree\fP< Abel >::size () const\fR [inline]\fP"
+
+.PP
+ \fBsqrt_tree\&.hpp\fP の \fB87\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

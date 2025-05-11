@@ -105,6 +105,7 @@
     <xi:include href="struct_sorted_tree.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_sparse_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_sparse_table_disjoint.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_sqrt_tree.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_succinct_bit_vector.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_abel_1_1_sum.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_monoid_1_1_sum.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -179,6 +180,8 @@
     <xi:include href="sparse__table__2d_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="sparse__table__disjoint_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="sparse__table__disjoint_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="sqrt__tree_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="sqrt__tree_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="wavelet__matrix_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="wavelet__matrix_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="wvmt_8md.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

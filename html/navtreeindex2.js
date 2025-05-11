@@ -71,6 +71,8 @@ var NAVTREEINDEX2 =
 "sparse__table__2d_8hpp_source.html":[6,0,1,18],
 "sparse__table__disjoint_8hpp.html":[6,0,1,19],
 "sparse__table__disjoint_8hpp_source.html":[6,0,1,19],
+"sqrt__tree_8hpp.html":[6,0,1,20],
+"sqrt__tree_8hpp_source.html":[6,0,1,20],
 "struct_abel_1_1_sum.html":[4,0,0,0],
 "struct_abel_1_1_sum.html":[5,0,0,0],
 "struct_abel_1_1_sum.html#a4ed8ba11a72b72fdf8f0f269fcd0970b":[4,0,0,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "struct_fenwick_tree.html#aa1d3e8b54fc3fcfeb21f5696566e10ac":[5,0,28,4],
 "struct_fenwick_tree.html#aa2b1ef3738b376e71753f4277f255656":[5,0,28,0],
 "struct_fenwick_tree.html#adb288d923b27fe266f99021056a2785f":[5,0,28,3],
-"struct_fenwick_tree.html#af4134f187d10ed8498b20a585ed5eb33":[5,0,28,6],
-"struct_fraction.html":[5,0,29],
-"struct_fraction.html#a03558e1b5e4a60bad8637df7d3b81296":[5,0,29,34]
+"struct_fenwick_tree.html#af4134f187d10ed8498b20a585ed5eb33":[5,0,28,6]
 };

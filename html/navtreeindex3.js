@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"struct_fraction.html":[5,0,29],
+"struct_fraction.html#a03558e1b5e4a60bad8637df7d3b81296":[5,0,29,34],
 "struct_fraction.html#a04666e42dc296a7382ff66ac7d416e36":[5,0,29,20],
 "struct_fraction.html#a089e4c7e0237561227b5c6cfe460f3b1":[5,0,29,6],
 "struct_fraction.html#a1104ef7f107be7ea8e42bc4707fe5ae0":[5,0,29,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "struct_max_flow_1_1_edge.html#a387d705870ec38ab60466eaaf1cb3113":[5,0,36,0,2],
 "struct_max_flow_1_1_edge.html#a69e3492e30230f9ddc7fcb27c52aa92d":[5,0,36,0,6],
 "struct_max_flow_1_1_edge.html#a75dc2e4b9d2fd2a9ebd2c14f1ad6f549":[5,0,36,0,5],
-"struct_max_flow_1_1_edge.html#a91c4dcb113c554cba7dfda6bee9ee54d":[5,0,36,0,1],
-"struct_max_flow_1_1_edge.html#a99a9a7a181561447db82dad0bc3c05d4":[5,0,36,0,0],
-"struct_max_flow_1_1_edge.html#aa487ab3fa5b70d6f8aaa0a4a0b946d40":[5,0,36,0,4]
+"struct_max_flow_1_1_edge.html#a91c4dcb113c554cba7dfda6bee9ee54d":[5,0,36,0,1]
 };

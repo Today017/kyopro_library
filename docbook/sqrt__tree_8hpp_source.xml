@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_sqrt__tree_8hpp_source" xml:lang="ja">
+<title>sqrt_tree.hpp</title>
+<indexterm><primary>data_structure/sqrt_tree.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_sqrt__tree_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;更新&#32;O(1)&#32;クエリ&#32;O(sqrt(N))&#32;の改造版セグ木</emphasis>
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;Mo&apos;s&#32;Algorithmとの相性が良い</emphasis>
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@note&#32;モノイドではなくアーベル群が乗る（モノイドや群の場合、更新が&#32;Θ(√N)&#32;でメリットがない）</emphasis>
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00006"/>00006 <emphasis role="comment">///&#32;@ref&#32;https://atcoder.jp/contests/abc405/submissions/65704867</emphasis>
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00007"/>00007 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;Abel&gt;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00008"/><link linkend="_struct_sqrt_tree">00008</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_sqrt_tree">SqrtTree</link>&#32;{
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00009"/><link linkend="_struct_sqrt_tree_1a46ab9cd6f10fedeb28683788e8f9dff0">00009</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">using</emphasis>&#32;Type=<emphasis role="keyword">typename</emphasis>&#32;Abel::Type;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00010"/><link linkend="_struct_sqrt_tree_1ab0fbb1c94e236f7e18f8bf06ef6427b9">00010</link> &#32;&#32;&#32;&#32;<link linkend="_struct_sqrt_tree_1ab0fbb1c94e236f7e18f8bf06ef6427b9">SqrtTree</link>()=<emphasis role="keywordflow">default</emphasis>;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00011"/>00011 
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00012"/><link linkend="_struct_sqrt_tree_1ae0a29057985de7b015ad1150826067fe">00012</link> &#32;&#32;&#32;&#32;<link linkend="_struct_sqrt_tree_1ae0a29057985de7b015ad1150826067fe">SqrtTree</link>(<emphasis role="keywordtype">int</emphasis>&#32;n)&#32;{
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;n=n;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rn=1;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(rn*rn&lt;n)&#32;rn++;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat.assign(rn,Abel::id());
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat2.assign(n,Abel::id());
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat2_inv.assign(n,Abel::id());
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00020"/>00020 
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;配列&#32;v&#32;で初期化する</emphasis>
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00022"/><link linkend="_struct_sqrt_tree_1a8628edad00e39182bd82bb2fd04add3d">00022</link> &#32;&#32;&#32;&#32;<link linkend="_struct_sqrt_tree_1a8628edad00e39182bd82bb2fd04add3d">SqrtTree</link>(<emphasis role="keyword">const</emphasis>&#32;vector&lt;Type&gt;&amp;&#32;v)&#32;{
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;n=v.size();
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rn=1;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(rn*rn&lt;n)&#32;rn++;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat.assign(rn,Abel::id());
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat2=v;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;rn;&#32;i++)&#32;{
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;j=i*rn;&#32;j&lt;min((i+1)*rn,n);&#32;j++)&#32;{
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[i]=Abel::op(dat[i],dat2[j]);
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat2_inv[j]=Abel::inv(dat2[j]);
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00035"/>00035 
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;配列&#32;v&#32;とその逆元&#32;v_inv&#32;で初期化する</emphasis>
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00037"/><link linkend="_struct_sqrt_tree_1a1a36223247e599446425fdb14c14e941">00037</link> &#32;&#32;&#32;&#32;<link linkend="_struct_sqrt_tree_1a1a36223247e599446425fdb14c14e941">SqrtTree</link>(<emphasis role="keyword">const</emphasis>&#32;vector&lt;Type&gt;&amp;&#32;v,&#32;<emphasis role="keyword">const</emphasis>&#32;vector&lt;Type&gt;&amp;&#32;v_inv)&#32;{
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">this</emphasis>-&gt;n=v.size();
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rn=1;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(rn*rn&lt;n)&#32;rn++;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat.assign(rn,Abel::id());
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat2=v;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat2_inv=v_inv;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;rn;&#32;i++)&#32;{
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;j=i*rn;&#32;j&lt;min((i+1)*rn,n);&#32;j++)&#32;{
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[i]=Abel::op(dat[i],dat2[j]);
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00050"/>00050 
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;i&#32;番目の要素を&#32;x&#32;に更新する</emphasis>
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(f)&#32;（f&#32;:&#32;逆元を求めるのにかかる計算量）</emphasis>
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00053"/><link linkend="_struct_sqrt_tree_1a3842c3c8ecc681bab6867d2e34979669">00053</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_sqrt_tree_1a3842c3c8ecc681bab6867d2e34979669">set</link>(<emphasis role="keywordtype">int</emphasis>&#32;i,&#32;Type&#32;x)&#32;{
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;j=i/rn;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[j]=Abel::op(dat[j],Abel::inv(dat2[i]));
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat2[i]=x;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[j]=Abel::op(dat[j],dat2[i]);
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat2_inv[i]=Abel::inv(dat2[i]);
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00060"/>00060 
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;i&#32;番目の要素を&#32;x&#32;に更新し、その逆元を&#32;x_inv&#32;に更新する</emphasis>
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00062"/><link linkend="_struct_sqrt_tree_1a7c3e46e49b2b52b2fbf432ed0220a3e6">00062</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_sqrt_tree_1a7c3e46e49b2b52b2fbf432ed0220a3e6">set</link>(<emphasis role="keywordtype">int</emphasis>&#32;i,&#32;Type&#32;x,&#32;Type&#32;x_inv)&#32;{
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;j=i/rn;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[j]=Abel::op(dat[j],dat2_inv[i]);
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat2[i]=x;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat2_inv[i]=x_inv;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dat[j]=Abel::op(dat[j],dat2[i]);
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00069"/>00069 
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;区間&#32;[l,&#32;r)&#32;の群積を返す</emphasis>
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(√N)</emphasis>
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00072"/><link linkend="_struct_sqrt_tree_1a14f3772f850e992950cde4b07af50bee">00072</link> &#32;&#32;&#32;&#32;Type&#32;<link linkend="_struct_sqrt_tree_1a14f3772f850e992950cde4b07af50bee">fold</link>(<emphasis role="keywordtype">int</emphasis>&#32;l,&#32;<emphasis role="keywordtype">int</emphasis>&#32;r)&#32;{
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Type&#32;ret=Abel::id();
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(l&lt;r)&#32;{
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(l%rn==0&#32;&amp;&amp;&#32;l+rn&lt;=r)&#32;{
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret=Abel::op(ret,dat[l/rn]);
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l+=rn;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret=Abel::op(ret,dat2[l]);
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l++;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00085"/>00085 
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00086"/><link linkend="_struct_sqrt_tree_1a5c6518d9bea2c100fb8f7da9ef440657">00086</link> &#32;&#32;&#32;&#32;Type&#32;<link linkend="_struct_sqrt_tree_1a5c6518d9bea2c100fb8f7da9ef440657">operator</link>[](<emphasis role="keywordtype">int</emphasis>&#32;i)&#32;<emphasis role="keyword">const</emphasis>&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;dat2[i];&#32;}
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00087"/><link linkend="_struct_sqrt_tree_1a9f5050f5c479d4714b05a200625ca3fe">00087</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_sqrt_tree_1a9f5050f5c479d4714b05a200625ca3fe">size</link>()&#32;<emphasis role="keyword">const</emphasis>&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;n;&#32;}
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00088"/>00088 
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00089"/>00089 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00090"/>00090 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n,rn;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00091"/>00091 &#32;&#32;&#32;&#32;vector&lt;Type&gt;&#32;dat,dat2,dat2_inv;
+<anchor xml:id="_sqrt__tree_8hpp_source_1l00092"/>00092 };
+</programlisting></section>

@@ -26,8 +26,9 @@ var searchData=
   ['sortedtree_23',['SortedTree',['../struct_sorted_tree.html',1,'']]],
   ['sparsetable_24',['SparseTable',['../struct_sparse_table.html',1,'']]],
   ['sparsetabledisjoint_25',['SparseTableDisjoint',['../struct_sparse_table_disjoint.html',1,'']]],
-  ['succinctbitvector_26',['SuccinctBitVector',['../struct_succinct_bit_vector.html',1,'']]],
-  ['sum_27',['Sum',['../struct_abel_1_1_sum.html',1,'Abel::Sum&lt; T &gt;'],['../struct_monoid_1_1_sum.html',1,'Monoid::Sum&lt; T &gt;'],['../struct_range_query_1_1_sum.html',1,'RangeQuery::Sum&lt; T &gt;']]],
-  ['sumdynamic_28',['SumDynamic',['../struct_range_query_1_1_sum_dynamic.html',1,'RangeQuery']]],
-  ['sumpair_29',['SumPair',['../struct_monoid_1_1_sum_pair.html',1,'Monoid']]]
+  ['sqrttree_26',['SqrtTree',['../struct_sqrt_tree.html',1,'']]],
+  ['succinctbitvector_27',['SuccinctBitVector',['../struct_succinct_bit_vector.html',1,'']]],
+  ['sum_28',['Sum',['../struct_abel_1_1_sum.html',1,'Abel::Sum&lt; T &gt;'],['../struct_monoid_1_1_sum.html',1,'Monoid::Sum&lt; T &gt;'],['../struct_range_query_1_1_sum.html',1,'RangeQuery::Sum&lt; T &gt;']]],
+  ['sumdynamic_29',['SumDynamic',['../struct_range_query_1_1_sum_dynamic.html',1,'RangeQuery']]],
+  ['sumpair_30',['SumPair',['../struct_monoid_1_1_sum_pair.html',1,'Monoid']]]
 ];

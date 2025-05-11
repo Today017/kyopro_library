@@ -20,5 +20,6 @@ var dir_b8d8e9e6d882cbdac7436f7026baf609 =
     [ "sparse_table.hpp", "sparse__table_8hpp.html", "sparse__table_8hpp" ],
     [ "sparse_table_2d.hpp", "sparse__table__2d_8hpp.html", "sparse__table__2d_8hpp" ],
     [ "sparse_table_disjoint.hpp", "sparse__table__disjoint_8hpp.html", "sparse__table__disjoint_8hpp" ],
+    [ "sqrt_tree.hpp", "sqrt__tree_8hpp.html", "sqrt__tree_8hpp" ],
     [ "wavelet_matrix.hpp", "wavelet__matrix_8hpp.html", "wavelet__matrix_8hpp" ]
 ];

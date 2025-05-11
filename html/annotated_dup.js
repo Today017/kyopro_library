@@ -95,6 +95,7 @@ var annotated_dup =
     [ "SortedTree", "struct_sorted_tree.html", "struct_sorted_tree" ],
     [ "SparseTable", "struct_sparse_table.html", "struct_sparse_table" ],
     [ "SparseTableDisjoint", "struct_sparse_table_disjoint.html", "struct_sparse_table_disjoint" ],
+    [ "SqrtTree", "struct_sqrt_tree.html", "struct_sqrt_tree" ],
     [ "SuccinctBitVector", "struct_succinct_bit_vector.html", "struct_succinct_bit_vector" ],
     [ "Timer", "struct_timer.html", "struct_timer" ],
     [ "Trie", "struct_trie.html", "struct_trie" ],

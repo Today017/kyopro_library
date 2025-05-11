@@ -132,9 +132,9 @@ var NAVTREEINDEX =
 "abel_8hpp.html",
 "linear__programming__2vars_8hpp.html#a4d295fe82ea5ed8a868a9150aa9caaba",
 "ntt998_8hpp.html#a8a7e67d1f552a5092501af3910fa134e",
-"struct_fraction.html#a04666e42dc296a7382ff66ac7d416e36",
-"struct_max_flow_1_1_edge.html#ae295247d64f8b72fdd97d34e4b70be15",
-"struct_sorted_multi_tree.html#a62f7b68b894a4a44ae4a0ae0c09cbc19"
+"struct_fraction.html",
+"struct_max_flow_1_1_edge.html#a99a9a7a181561447db82dad0bc3c05d4",
+"struct_sorted_multi_tree.html#a57e225a43a6ffe8a2c40f792375d04bc"
 ];
 
 var SYNCONMSG = 'クリックで同期表示が無効になります';

@@ -49,6 +49,8 @@
 </listitem>
             <listitem><para>ファイル <link linkend="_sparse__table__disjoint_8hpp">sparse_table_disjoint.hpp</link></para>
 </listitem>
+            <listitem><para>ファイル <link linkend="_sqrt__tree_8hpp">sqrt_tree.hpp</link></para>
+</listitem>
             <listitem><para>ファイル <link linkend="_wavelet__matrix_8hpp">wavelet_matrix.hpp</link></para>
 </listitem>
         </itemizedlist>

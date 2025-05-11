@@ -14,5 +14,6 @@ var searchData=
   ['sparse_5ftable_2ehpp_11',['sparse_table.hpp',['../sparse__table_8hpp.html',1,'']]],
   ['sparse_5ftable_5f2d_2ehpp_12',['sparse_table_2d.hpp',['../sparse__table__2d_8hpp.html',1,'']]],
   ['sparse_5ftable_5fdisjoint_2ehpp_13',['sparse_table_disjoint.hpp',['../sparse__table__disjoint_8hpp.html',1,'']]],
-  ['suffix_5farray_2ehpp_14',['suffix_array.hpp',['../suffix__array_8hpp.html',1,'']]]
+  ['sqrt_5ftree_2ehpp_14',['sqrt_tree.hpp',['../sqrt__tree_8hpp.html',1,'']]],
+  ['suffix_5farray_2ehpp_15',['suffix_array.hpp',['../suffix__array_8hpp.html',1,'']]]
 ];
