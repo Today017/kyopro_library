@@ -5,7 +5,7 @@ var searchData=
   ['checkmonotonicity_2',['CheckMonotonicity',['../binary__search_8hpp.html#ad882a3759569b5eac90be8983df7bd54',1,'binary_search.hpp']]],
   ['chmax_3',['chmax',['../template_8hpp.html#a3e8244c32e6ce7ca2cdd01c86aac2d3f',1,'template.hpp']]],
   ['chmin_4',['chmin',['../template_8hpp.html#ad3e093a6b7f9ed915c0c64ec47b45564',1,'template.hpp']]],
-  ['cht_5',['CHT',['../struct_c_h_t.html#a8ee3002f76dde43433f9aadf45cbf32c',1,'CHT']]],
+  ['cht_5',['CHT',['../struct_c_h_t.html#ace0eaacebdd28102aab34cb40dd2fd00',1,'CHT']]],
   ['circle_6',['Circle',['../struct_geometry_1_1_circle.html#ae2792daa2742d54317c58d62309b47db',1,'Geometry::Circle::Circle()=default'],['../struct_geometry_1_1_circle.html#a0d68df3bf040a3ebc59045dd86f5e700',1,'Geometry::Circle::Circle(Real x, Real y, Real r)'],['../struct_geometry_1_1_circle.html#a96003c23fef9b4bf305728137661f907',1,'Geometry::Circle::Circle(Point _center, Real r)']]],
   ['climb_7',['climb',['../struct_l_c_a.html#acdc1eaf704f9531b0d3703e547261f8b',1,'LCA']]],
   ['closestpair_8',['closestPair',['../namespace_geometry.html#a5b1e16827da06a6b3f3ce3875b3f216d',1,'Geometry']]],

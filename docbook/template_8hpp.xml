@@ -51,7 +51,7 @@
 <simplesect>
     <title>関数    </title>
         <itemizedlist>
-            <listitem><para>template&lt;typename T&gt; </para><para>int <link linkend="_template_8hpp_1a72eba122b2f2cfe52ff54a982da0849e">LB</link> (vector&lt; T &gt; v, T x)</para>
+            <listitem><para>template&lt;typename T&gt; </para><para>int <link linkend="_template_8hpp_1a296dd4c6d59f3c6fef615325ff306017">LB</link> (const vector&lt; T &gt; &amp;v, T x)</para>
 </listitem>
             <listitem><para>template&lt;typename T&gt; </para><para>int <link linkend="_template_8hpp_1a8743e7b47f30c6bc8b3ef708cfd690a5">UQ</link> (T &amp;v)</para>
 </listitem>
@@ -207,11 +207,11 @@
 </section>
 <section>
 <title>関数詳解</title>
-<anchor xml:id="_template_8hpp_1a72eba122b2f2cfe52ff54a982da0849e"/><section>
+<anchor xml:id="_template_8hpp_1a296dd4c6d59f3c6fef615325ff306017"/><section>
     <title>LB()</title>
 <indexterm><primary>LB</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>LB</secondary></indexterm>
-<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>int LB (vector&lt; T &gt; v, T x)</computeroutput></para><para>
+<computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>int LB (const vector&lt; T &gt; &amp; v, T x)</computeroutput></para><para>
  <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00010">10</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a8743e7b47f30c6bc8b3ef708cfd690a5"/><section>

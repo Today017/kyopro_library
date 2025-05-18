@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: ErasablePQ&lt; T, MAX &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('struct_erasable_p_q.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="struct_erasable_p_q-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">ErasablePQ&lt; T, MAX &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>削除可能な優先度付きキュー  
+ <a href="#details">[詳解]</a></p>
+
+<p><code>#include &quot;<a class="el" href="erasable__pq_8hpp_source.html">erasable_pq.hpp</a>&quot;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a86605306b216cd9297b8451ec97f30b0" id="r_a86605306b216cd9297b8451ec97f30b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86605306b216cd9297b8451ec97f30b0">ErasablePQ</a> ()=default</td></tr>
+<tr class="separator:a86605306b216cd9297b8451ec97f30b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad315ef95b61bfc27f7c5431e94fcd834" id="r_ad315ef95b61bfc27f7c5431e94fcd834"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad315ef95b61bfc27f7c5431e94fcd834">push</a> (int x)</td></tr>
+<tr class="memdesc:ad315ef95b61bfc27f7c5431e94fcd834"><td class="mdescLeft">&#160;</td><td class="mdescRight">x を追加する  <br /></td></tr>
+<tr class="separator:ad315ef95b61bfc27f7c5431e94fcd834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dec8b63ea68fed10d8a113368629122" id="r_a9dec8b63ea68fed10d8a113368629122"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9dec8b63ea68fed10d8a113368629122">erase</a> (int x)</td></tr>
+<tr class="memdesc:a9dec8b63ea68fed10d8a113368629122"><td class="mdescLeft">&#160;</td><td class="mdescRight">x を削除する  <br /></td></tr>
+<tr class="separator:a9dec8b63ea68fed10d8a113368629122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf5d79b42b672bf2c933e414c9dad12c" id="r_adf5d79b42b672bf2c933e414c9dad12c"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf5d79b42b672bf2c933e414c9dad12c">top</a> ()</td></tr>
+<tr class="memdesc:adf5d79b42b672bf2c933e414c9dad12c"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大値を返す  <br /></td></tr>
+<tr class="separator:adf5d79b42b672bf2c933e414c9dad12c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fbfc24b64a6bb11113f9a43fb1d6ca5" id="r_a5fbfc24b64a6bb11113f9a43fb1d6ca5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fbfc24b64a6bb11113f9a43fb1d6ca5">size</a> ()</td></tr>
+<tr class="memdesc:a5fbfc24b64a6bb11113f9a43fb1d6ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在のサイズを返す  <br /></td></tr>
+<tr class="separator:a5fbfc24b64a6bb11113f9a43fb1d6ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a4c202fe33ca3d1ce4b7f0b062c457a0d" id="r_a4c202fe33ca3d1ce4b7f0b062c457a0d"><td class="memItemLeft" align="right" valign="top">priority_queue&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c202fe33ca3d1ce4b7f0b062c457a0d">pq</a></td></tr>
+<tr class="separator:a4c202fe33ca3d1ce4b7f0b062c457a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a7c4db5cffffc1c4e450d9604a834d6" id="r_a1a7c4db5cffffc1c4e450d9604a834d6"><td class="memItemLeft" align="right" valign="top">priority_queue&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a7c4db5cffffc1c4e450d9604a834d6">pq2</a></td></tr>
+<tr class="separator:a1a7c4db5cffffc1c4e450d9604a834d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b8b482851ad8dab0e8a62e48984b2eb" id="r_a9b8b482851ad8dab0e8a62e48984b2eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b8b482851ad8dab0e8a62e48984b2eb">siz</a> =0</td></tr>
+<tr class="separator:a9b8b482851ad8dab0e8a62e48984b2eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, bool MAX = true&gt;<br />
+struct ErasablePQ&lt; T, MAX &gt;</div><p>削除可能な優先度付きキュー </p>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">MAX</td><td>trueのとき、最大値を返す </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="erasable__pq_8hpp_source.html">erasable_pq.hpp</a> の <a class="el" href="erasable__pq_8hpp_source.html#l00006">6</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a86605306b216cd9297b8451ec97f30b0" name="a86605306b216cd9297b8451ec97f30b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86605306b216cd9297b8451ec97f30b0">&#9670;&#160;</a></span>ErasablePQ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool MAX = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_erasable_p_q.html">ErasablePQ</a>&lt; T, MAX &gt;<a class="el" href="struct_erasable_p_q.html">::ErasablePQ</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ad315ef95b61bfc27f7c5431e94fcd834" name="ad315ef95b61bfc27f7c5431e94fcd834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad315ef95b61bfc27f7c5431e94fcd834">&#9670;&#160;</a></span>push()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool MAX = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_erasable_p_q.html">ErasablePQ</a>&lt; T, MAX &gt;::push </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x を追加する </p>
+
+<p class="definition"> <a class="el" href="erasable__pq_8hpp_source.html">erasable_pq.hpp</a> の <a class="el" href="erasable__pq_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="erasable__pq_8hpp_source.html#l00008">siz</a>.</p>
+
+</div>
+</div>
+<a id="a9dec8b63ea68fed10d8a113368629122" name="a9dec8b63ea68fed10d8a113368629122"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dec8b63ea68fed10d8a113368629122">&#9670;&#160;</a></span>erase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool MAX = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_erasable_p_q.html">ErasablePQ</a>&lt; T, MAX &gt;::erase </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x を削除する </p>
+
+<p class="definition"> <a class="el" href="erasable__pq_8hpp_source.html">erasable_pq.hpp</a> の <a class="el" href="erasable__pq_8hpp_source.html#l00020">20</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="erasable__pq_8hpp_source.html#l00008">siz</a>.</p>
+
+</div>
+</div>
+<a id="adf5d79b42b672bf2c933e414c9dad12c" name="adf5d79b42b672bf2c933e414c9dad12c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf5d79b42b672bf2c933e414c9dad12c">&#9670;&#160;</a></span>top()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool MAX = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="struct_erasable_p_q.html">ErasablePQ</a>&lt; T, MAX &gt;::top </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最大値を返す </p>
+
+<p class="definition"> <a class="el" href="erasable__pq_8hpp_source.html">erasable_pq.hpp</a> の <a class="el" href="erasable__pq_8hpp_source.html#l00027">27</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5fbfc24b64a6bb11113f9a43fb1d6ca5" name="a5fbfc24b64a6bb11113f9a43fb1d6ca5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fbfc24b64a6bb11113f9a43fb1d6ca5">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool MAX = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_erasable_p_q.html">ErasablePQ</a>&lt; T, MAX &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>現在のサイズを返す </p>
+
+<p class="definition"> <a class="el" href="erasable__pq_8hpp_source.html">erasable_pq.hpp</a> の <a class="el" href="erasable__pq_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="erasable__pq_8hpp_source.html#l00008">siz</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a4c202fe33ca3d1ce4b7f0b062c457a0d" name="a4c202fe33ca3d1ce4b7f0b062c457a0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c202fe33ca3d1ce4b7f0b062c457a0d">&#9670;&#160;</a></span>pq</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool MAX = true&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">priority_queue&lt;T&gt; <a class="el" href="struct_erasable_p_q.html">ErasablePQ</a>&lt; T, MAX &gt;::pq</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="erasable__pq_8hpp_source.html">erasable_pq.hpp</a> の <a class="el" href="erasable__pq_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1a7c4db5cffffc1c4e450d9604a834d6" name="a1a7c4db5cffffc1c4e450d9604a834d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a7c4db5cffffc1c4e450d9604a834d6">&#9670;&#160;</a></span>pq2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool MAX = true&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">priority_queue&lt;T&gt; <a class="el" href="struct_erasable_p_q.html">ErasablePQ</a>&lt; T, MAX &gt;::pq2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="erasable__pq_8hpp_source.html">erasable_pq.hpp</a> の <a class="el" href="erasable__pq_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9b8b482851ad8dab0e8a62e48984b2eb" name="a9b8b482851ad8dab0e8a62e48984b2eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b8b482851ad8dab0e8a62e48984b2eb">&#9670;&#160;</a></span>siz</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool MAX = true&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_erasable_p_q.html">ErasablePQ</a>&lt; T, MAX &gt;::siz =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="erasable__pq_8hpp_source.html">erasable_pq.hpp</a> の <a class="el" href="erasable__pq_8hpp_source.html#l00008">8</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>data_structure/<a class="el" href="erasable__pq_8hpp_source.html">erasable_pq.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_erasable_p_q.html">ErasablePQ</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

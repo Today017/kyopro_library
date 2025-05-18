@@ -1,0 +1,118 @@
+.TH "ErasablePQ< T, MAX >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ErasablePQ< T, MAX > \- 削除可能な優先度付きキュー  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'erasable_pq\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBErasablePQ\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBpush\fP (int x)"
+.br
+.RI "x を追加する "
+.ti -1c
+.RI "void \fBerase\fP (int x)"
+.br
+.RI "x を削除する "
+.ti -1c
+.RI "T \fBtop\fP ()"
+.br
+.RI "最大値を返す "
+.ti -1c
+.RI "int \fBsize\fP ()"
+.br
+.RI "現在のサイズを返す "
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "priority_queue< T > \fBpq\fP"
+.br
+.ti -1c
+.RI "priority_queue< T > \fBpq2\fP"
+.br
+.ti -1c
+.RI "int \fBsiz\fP =0"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename T, bool MAX = true>
+.br
+struct ErasablePQ< T, MAX >"削除可能な優先度付きキュー 
+
+
+.PP
+\fBテンプレート引数\fP
+.RS 4
+\fIMAX\fP trueのとき、最大値を返す 
+.RE
+.PP
+
+.PP
+ \fBerasable_pq\&.hpp\fP の \fB6\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename T, bool MAX = true> \fBErasablePQ\fP< T, MAX >\fB::ErasablePQ\fP ()\fR [default]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "template<typename T, bool MAX = true> void \fBErasablePQ\fP< T, MAX >::push (int x)\fR [inline]\fP"
+
+.PP
+x を追加する 
+.PP
+ \fBerasable_pq\&.hpp\fP の \fB13\fP 行目に定義があります。
+.PP
+参照先 \fBsiz\fP\&.
+.SS "template<typename T, bool MAX = true> void \fBErasablePQ\fP< T, MAX >::erase (int x)\fR [inline]\fP"
+
+.PP
+x を削除する 
+.PP
+ \fBerasable_pq\&.hpp\fP の \fB20\fP 行目に定義があります。
+.PP
+参照先 \fBsiz\fP\&.
+.SS "template<typename T, bool MAX = true> T \fBErasablePQ\fP< T, MAX >::top ()\fR [inline]\fP"
+
+.PP
+最大値を返す 
+.PP
+ \fBerasable_pq\&.hpp\fP の \fB27\fP 行目に定義があります。
+.SS "template<typename T, bool MAX = true> int \fBErasablePQ\fP< T, MAX >::size ()\fR [inline]\fP"
+
+.PP
+現在のサイズを返す 
+.PP
+ \fBerasable_pq\&.hpp\fP の \fB44\fP 行目に定義があります。
+.PP
+参照先 \fBsiz\fP\&.
+.SH "メンバ詳解"
+.PP 
+.SS "template<typename T, bool MAX = true> priority_queue<T> \fBErasablePQ\fP< T, MAX >::pq"
+
+.PP
+ \fBerasable_pq\&.hpp\fP の \fB7\fP 行目に定義があります。
+.SS "template<typename T, bool MAX = true> priority_queue<T> \fBErasablePQ\fP< T, MAX >::pq2"
+
+.PP
+ \fBerasable_pq\&.hpp\fP の \fB7\fP 行目に定義があります。
+.SS "template<typename T, bool MAX = true> int \fBErasablePQ\fP< T, MAX >::siz =0"
+
+.PP
+ \fBerasable_pq\&.hpp\fP の \fB8\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

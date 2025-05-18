@@ -1,5 +1,10 @@
 var NAVTREEINDEX1 =
 {
+"linear__equation_8hpp.html":[6,0,6,9],
+"linear__equation_8hpp.html#ac91575eafd15cbdfc1da2ae7cf5bb964":[6,0,6,9,1],
+"linear__equation_8hpp.html#ad783a386934fd2ebc14105b5babb4aec":[6,0,6,9,0],
+"linear__equation_8hpp_source.html":[6,0,6,9],
+"linear__programming__2vars_8hpp.html":[6,0,6,10],
 "linear__programming__2vars_8hpp.html#a4d295fe82ea5ed8a868a9150aa9caaba":[6,0,6,10,0],
 "linear__programming__2vars_8hpp_source.html":[6,0,6,10],
 "lis_8hpp.html":[6,0,0,5],
@@ -67,8 +72,8 @@ var NAVTREEINDEX1 =
 "md_geometry_2geo.html#autotoc_md9":[1,0,2,0],
 "md_heuristic_2sa.html":[2],
 "md_heuristic_2sa.html#autotoc_md51":[2,0],
-"merge__sort__tree_8hpp.html":[6,0,1,4],
-"merge__sort__tree_8hpp_source.html":[6,0,1,4],
+"merge__sort__tree_8hpp.html":[6,0,1,5],
+"merge__sort__tree_8hpp_source.html":[6,0,1,5],
 "min__cost__flow_8hpp.html":[6,0,3,0,1],
 "min__cost__flow_8hpp_source.html":[6,0,3,0,1],
 "mo_8hpp.html":[6,0,0,6],
@@ -96,8 +101,8 @@ var NAVTREEINDEX1 =
 "multipoint__evaluate_8hpp.html":[6,0,6,13],
 "multipoint__evaluate_8hpp.html#abb2c277f4d822368ce7159e49b2c7fd0":[6,0,6,13,0],
 "multipoint__evaluate_8hpp_source.html":[6,0,6,13],
-"multiset_8hpp.html":[6,0,1,5],
-"multiset_8hpp_source.html":[6,0,1,5],
+"multiset_8hpp.html":[6,0,1,6],
+"multiset_8hpp_source.html":[6,0,1,6],
 "namespace_abel.html":[4,0,0],
 "namespace_bit.html":[4,0,1],
 "namespace_bit.html#a0af6dce857ec8aa6cef9e6ac1d4410e6":[4,0,1,12],
@@ -244,10 +249,5 @@ var NAVTREEINDEX1 =
 "namespacemembers_type.html":[4,1,3],
 "namespacemembers_vars.html":[4,1,2],
 "namespacemod__reconstruct.html":[4,0,7],
-"namespacemod__reconstruct.html#a028a3a305338e730dbab6526032d586d":[4,0,7,1],
-"namespacemod__reconstruct.html#a2b66d8d76557c1fdc2baf29121dc430b":[4,0,7,0],
-"namespacemod__reconstruct.html#af05e87c8d03131fac1b74586551c090e":[4,0,7,2],
-"namespaces.html":[4,0],
-"ntt998_8hpp.html":[6,0,6,15],
-"ntt998_8hpp.html#a133aaf5782761e1866cfd3fd40e784d3":[6,0,6,15,0]
+"namespacemod__reconstruct.html#a028a3a305338e730dbab6526032d586d":[4,0,7,1]
 };

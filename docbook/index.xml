@@ -59,6 +59,7 @@
     <xi:include href="struct_dynamic_mod_int.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_max_flow_1_1_edge.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_min_cost_flow_1_1_edge.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_erasable_p_q.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="classexp_1_1_expander.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_factors.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_fenwick_tree.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -144,6 +145,8 @@
     <xi:include href="binary__trie_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="cumulative__sum__2d_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="cumulative__sum__2d_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="erasable__pq_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="erasable__pq_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="fenwick__tree_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="fenwick__tree_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="insert__reverse__array_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -228,6 +231,8 @@
     <xi:include href="centroid_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="diameter_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="diameter_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="euler__tour_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="euler__tour_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="hld_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="hld_8hpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="lca_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

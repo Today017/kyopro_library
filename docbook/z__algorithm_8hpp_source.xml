@@ -21,9 +21,8 @@
 <anchor xml:id="_z__algorithm_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 <anchor xml:id="_z__algorithm_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;k=1;
 <anchor xml:id="_z__algorithm_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(i+k&lt;n&#32;&amp;&amp;&#32;k+ret[k]&lt;j)&#32;ret[i+k]=ret[k],++k;
-<anchor xml:id="_z__algorithm_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i+=k;
-<anchor xml:id="_z__algorithm_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;j-=k;
-<anchor xml:id="_z__algorithm_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;}
-<anchor xml:id="_z__algorithm_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
-<anchor xml:id="_z__algorithm_8hpp_source_1l00024"/>00024 }
+<anchor xml:id="_z__algorithm_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i+=k;&#32;j-=k;
+<anchor xml:id="_z__algorithm_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;}
+<anchor xml:id="_z__algorithm_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_z__algorithm_8hpp_source_1l00023"/>00023 }
 </programlisting></section>

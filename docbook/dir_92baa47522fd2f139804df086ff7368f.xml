@@ -9,6 +9,8 @@
 </listitem>
             <listitem><para>ファイル <link linkend="_diameter_8hpp">diameter.hpp</link></para>
 </listitem>
+            <listitem><para>ファイル <link linkend="_euler__tour_8hpp">euler_tour.hpp</link></para>
+</listitem>
             <listitem><para>ファイル <link linkend="_hld_8hpp">hld.hpp</link></para>
 </listitem>
             <listitem><para>ファイル <link linkend="_lca_8hpp">lca.hpp</link></para>

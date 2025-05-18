@@ -9,6 +9,8 @@
 </listitem>
             <listitem><para>ファイル <link linkend="_cumulative__sum__2d_8hpp">cumulative_sum_2d.hpp</link></para>
 </listitem>
+            <listitem><para>ファイル <link linkend="_erasable__pq_8hpp">erasable_pq.hpp</link></para>
+</listitem>
             <listitem><para>ファイル <link linkend="_fenwick__tree_8hpp">fenwick_tree.hpp</link></para>
 </listitem>
             <listitem><para>ファイル <link linkend="_insert__reverse__array_8hpp">insert_reverse_array.hpp</link></para>

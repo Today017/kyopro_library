@@ -2,6 +2,7 @@ var dir_b8d8e9e6d882cbdac7436f7026baf609 =
 [
     [ "binary_trie.hpp", "binary__trie_8hpp.html", "binary__trie_8hpp" ],
     [ "cumulative_sum_2d.hpp", "cumulative__sum__2d_8hpp.html", "cumulative__sum__2d_8hpp" ],
+    [ "erasable_pq.hpp", "erasable__pq_8hpp.html", "erasable__pq_8hpp" ],
     [ "fenwick_tree.hpp", "fenwick__tree_8hpp.html", "fenwick__tree_8hpp" ],
     [ "insert_reverse_array.hpp", "insert__reverse__array_8hpp.html", "insert__reverse__array_8hpp" ],
     [ "merge_sort_tree.hpp", "merge__sort__tree_8hpp.html", "merge__sort__tree_8hpp" ],

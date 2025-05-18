@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_erasable__pq_8hpp_source" xml:lang="ja">
+<title>erasable_pq.hpp</title>
+<indexterm><primary>data_structure/erasable_pq.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_erasable__pq_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_erasable__pq_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_erasable__pq_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;削除可能な優先度付きキュー</emphasis>
+<anchor xml:id="_erasable__pq_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@tparam&#32;MAX&#32;trueのとき、最大値を返す</emphasis>
+<anchor xml:id="_erasable__pq_8hpp_source_1l00005"/>00005 <emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;T,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;MAX=<emphasis role="keyword">true</emphasis>&gt;
+<anchor xml:id="_erasable__pq_8hpp_source_1l00006"/><link linkend="_struct_erasable_p_q">00006</link> <emphasis role="keyword">struct</emphasis>&#32;<link linkend="_struct_erasable_p_q">ErasablePQ</link>&#32;{
+<anchor xml:id="_erasable__pq_8hpp_source_1l00007"/><link linkend="_struct_erasable_p_q_1a4c202fe33ca3d1ce4b7f0b062c457a0d">00007</link> &#32;&#32;&#32;&#32;<link linkend="_struct_erasable_p_q_1a4c202fe33ca3d1ce4b7f0b062c457a0d">priority_queue</link>&lt;<link linkend="_struct_erasable_p_q_1a4c202fe33ca3d1ce4b7f0b062c457a0d">T</link>&gt;&#32;<link linkend="_struct_erasable_p_q_1a4c202fe33ca3d1ce4b7f0b062c457a0d">pq</link>,&#32;<link linkend="_struct_erasable_p_q_1a1a7c4db5cffffc1c4e450d9604a834d6">pq2</link>;
+<anchor xml:id="_erasable__pq_8hpp_source_1l00008"/><link linkend="_struct_erasable_p_q_1a9b8b482851ad8dab0e8a62e48984b2eb">00008</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_erasable_p_q_1a9b8b482851ad8dab0e8a62e48984b2eb">siz</link>=0;
+<anchor xml:id="_erasable__pq_8hpp_source_1l00009"/>00009 
+<anchor xml:id="_erasable__pq_8hpp_source_1l00010"/><link linkend="_struct_erasable_p_q_1a86605306b216cd9297b8451ec97f30b0">00010</link> &#32;&#32;&#32;&#32;<link linkend="_struct_erasable_p_q_1a86605306b216cd9297b8451ec97f30b0">ErasablePQ</link>()=<emphasis role="keywordflow">default</emphasis>;
+<anchor xml:id="_erasable__pq_8hpp_source_1l00011"/>00011 
+<anchor xml:id="_erasable__pq_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;を追加する</emphasis>
+<anchor xml:id="_erasable__pq_8hpp_source_1l00013"/><link linkend="_struct_erasable_p_q_1ad315ef95b61bfc27f7c5431e94fcd834">00013</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_erasable_p_q_1ad315ef95b61bfc27f7c5431e94fcd834">push</link>(<emphasis role="keywordtype">int</emphasis>&#32;x)&#32;{
+<anchor xml:id="_erasable__pq_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!MAX)&#32;x=-x;
+<anchor xml:id="_erasable__pq_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pq.push(x);
+<anchor xml:id="_erasable__pq_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_erasable_p_q_1a9b8b482851ad8dab0e8a62e48984b2eb">siz</link>++;
+<anchor xml:id="_erasable__pq_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_erasable__pq_8hpp_source_1l00018"/>00018 
+<anchor xml:id="_erasable__pq_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;x&#32;を削除する</emphasis>
+<anchor xml:id="_erasable__pq_8hpp_source_1l00020"/><link linkend="_struct_erasable_p_q_1a9dec8b63ea68fed10d8a113368629122">00020</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_struct_erasable_p_q_1a9dec8b63ea68fed10d8a113368629122">erase</link>(<emphasis role="keywordtype">int</emphasis>&#32;x)&#32;{
+<anchor xml:id="_erasable__pq_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!MAX)&#32;x=-x;
+<anchor xml:id="_erasable__pq_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pq2.push(x);
+<anchor xml:id="_erasable__pq_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_erasable_p_q_1a9b8b482851ad8dab0e8a62e48984b2eb">siz</link>--;
+<anchor xml:id="_erasable__pq_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_erasable__pq_8hpp_source_1l00025"/>00025 
+<anchor xml:id="_erasable__pq_8hpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;最大値を返す</emphasis>
+<anchor xml:id="_erasable__pq_8hpp_source_1l00027"/><link linkend="_struct_erasable_p_q_1adf5d79b42b672bf2c933e414c9dad12c">00027</link> &#32;&#32;&#32;&#32;T&#32;<link linkend="_struct_erasable_p_q_1adf5d79b42b672bf2c933e414c9dad12c">top</link>()&#32;{
+<anchor xml:id="_erasable__pq_8hpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(!pq.empty())&#32;{
+<anchor xml:id="_erasable__pq_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(pq2.empty())&#32;<emphasis role="keywordflow">return</emphasis>&#32;pq.top();
+<anchor xml:id="_erasable__pq_8hpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(pq.top()==pq2.top())&#32;{
+<anchor xml:id="_erasable__pq_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pq.pop();
+<anchor xml:id="_erasable__pq_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pq2.pop();
+<anchor xml:id="_erasable__pq_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_erasable__pq_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;pq.top();
+<anchor xml:id="_erasable__pq_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_erasable__pq_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_erasable__pq_8hpp_source_1l00037"/>00037 
+<anchor xml:id="_erasable__pq_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&lt;&lt;<emphasis role="stringliteral">&quot;ErasablePQ::top()&#32;:&#32;empty&quot;</emphasis>&lt;&lt;endl;
+<anchor xml:id="_erasable__pq_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;exit(1);
+<anchor xml:id="_erasable__pq_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;T();
+<anchor xml:id="_erasable__pq_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_erasable__pq_8hpp_source_1l00042"/>00042 
+<anchor xml:id="_erasable__pq_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;現在のサイズを返す</emphasis>
+<anchor xml:id="_erasable__pq_8hpp_source_1l00044"/><link linkend="_struct_erasable_p_q_1a5fbfc24b64a6bb11113f9a43fb1d6ca5">00044</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_erasable_p_q_1a5fbfc24b64a6bb11113f9a43fb1d6ca5">size</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_struct_erasable_p_q_1a9b8b482851ad8dab0e8a62e48984b2eb">siz</link>;&#32;}
+<anchor xml:id="_erasable__pq_8hpp_source_1l00045"/>00045 };
+</programlisting></section>

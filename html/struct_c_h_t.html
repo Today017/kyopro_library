@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Kyopro Library: CHT&lt; T, Min &gt; 構造体テンプレート</title>
+<title>Kyopro Library: CHT&lt; T, MIN &gt; 構造体テンプレート</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,7 +105,7 @@ $(function(){initNavTree('struct_c_h_t.html',''); initResizable(true); });
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
 <a href="struct_c_h_t-members.html">全メンバ一覧</a>  </div>
-  <div class="headertitle"><div class="title">CHT&lt; T, Min &gt; 構造体テンプレート</div></div>
+  <div class="headertitle"><div class="title">CHT&lt; T, MIN &gt; 構造体テンプレート</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -116,18 +116,18 @@ $(function(){initNavTree('struct_c_h_t.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a8ee3002f76dde43433f9aadf45cbf32c" id="r_a8ee3002f76dde43433f9aadf45cbf32c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ee3002f76dde43433f9aadf45cbf32c">CHT</a> ()=default</td></tr>
-<tr class="separator:a8ee3002f76dde43433f9aadf45cbf32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98990faf0c0f436c501ce5bc94e8f555" id="r_a98990faf0c0f436c501ce5bc94e8f555"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98990faf0c0f436c501ce5bc94e8f555">add</a> (T a, T b)</td></tr>
-<tr class="memdesc:a98990faf0c0f436c501ce5bc94e8f555"><td class="mdescLeft">&#160;</td><td class="mdescRight">直線 ax + b を追加する  <br /></td></tr>
-<tr class="separator:a98990faf0c0f436c501ce5bc94e8f555"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a652d63fa85df6b36fb09fdae60ebc6cf" id="r_a652d63fa85df6b36fb09fdae60ebc6cf"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a652d63fa85df6b36fb09fdae60ebc6cf">get</a> (T x)</td></tr>
-<tr class="memdesc:a652d63fa85df6b36fb09fdae60ebc6cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">x に対する直線群の最小値を求める  <br /></td></tr>
-<tr class="separator:a652d63fa85df6b36fb09fdae60ebc6cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace0eaacebdd28102aab34cb40dd2fd00" id="r_ace0eaacebdd28102aab34cb40dd2fd00"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace0eaacebdd28102aab34cb40dd2fd00">CHT</a> ()=default</td></tr>
+<tr class="separator:ace0eaacebdd28102aab34cb40dd2fd00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13379c27cda3ed92a6e093a29da99634" id="r_a13379c27cda3ed92a6e093a29da99634"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13379c27cda3ed92a6e093a29da99634">add</a> (T a, T b)</td></tr>
+<tr class="memdesc:a13379c27cda3ed92a6e093a29da99634"><td class="mdescLeft">&#160;</td><td class="mdescRight">直線 ax + b を追加する  <br /></td></tr>
+<tr class="separator:a13379c27cda3ed92a6e093a29da99634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e96b21a5063430042cbb4e558228094" id="r_a5e96b21a5063430042cbb4e558228094"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e96b21a5063430042cbb4e558228094">get</a> (T x)</td></tr>
+<tr class="memdesc:a5e96b21a5063430042cbb4e558228094"><td class="mdescLeft">&#160;</td><td class="mdescRight">x に対する直線群の最小値を求める  <br /></td></tr>
+<tr class="separator:a5e96b21a5063430042cbb4e558228094"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename T = ll, bool Min = true&gt;<br />
-struct CHT&lt; T, Min &gt;</div><p>Convex Hull Trick verify : <a href="https://judge.yosupo.jp/problem/line_add_get_min">https://judge.yosupo.jp/problem/line_add_get_min</a> <a href="https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf">https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf</a> </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T = ll, bool MIN = true&gt;<br />
+struct CHT&lt; T, MIN &gt;</div><p>Convex Hull Trick verify : <a href="https://judge.yosupo.jp/problem/line_add_get_min">https://judge.yosupo.jp/problem/line_add_get_min</a> <a href="https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf">https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf</a> </p>
 <dl class="tparams"><dt>テンプレート引数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Min</td><td>true のとき最小値を管理する </td></tr>
@@ -137,19 +137,19 @@ struct CHT&lt; T, Min &gt;</div><p>Convex Hull Trick verify : <a href="https://j
 
 <p class="definition"> <a class="el" href="cht_8hpp_source.html">cht.hpp</a> の <a class="el" href="cht_8hpp_source.html#l00009">9</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="a8ee3002f76dde43433f9aadf45cbf32c" name="a8ee3002f76dde43433f9aadf45cbf32c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ee3002f76dde43433f9aadf45cbf32c">&#9670;&#160;</a></span>CHT()</h2>
+<a id="ace0eaacebdd28102aab34cb40dd2fd00" name="ace0eaacebdd28102aab34cb40dd2fd00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace0eaacebdd28102aab34cb40dd2fd00">&#9670;&#160;</a></span>CHT()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T = ll, bool Min = true&gt; </div>
+template&lt;typename T = ll, bool MIN = true&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_c_h_t.html">CHT</a>&lt; T, Min &gt;<a class="el" href="struct_c_h_t.html">::CHT</a> </td>
+          <td class="memname"><a class="el" href="struct_c_h_t.html">CHT</a>&lt; T, MIN &gt;<a class="el" href="struct_c_h_t.html">::CHT</a> </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -165,19 +165,19 @@ template&lt;typename T = ll, bool Min = true&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a98990faf0c0f436c501ce5bc94e8f555" name="a98990faf0c0f436c501ce5bc94e8f555"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98990faf0c0f436c501ce5bc94e8f555">&#9670;&#160;</a></span>add()</h2>
+<a id="a13379c27cda3ed92a6e093a29da99634" name="a13379c27cda3ed92a6e093a29da99634"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13379c27cda3ed92a6e093a29da99634">&#9670;&#160;</a></span>add()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T = ll, bool Min = true&gt; </div>
+template&lt;typename T = ll, bool MIN = true&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="struct_c_h_t.html">CHT</a>&lt; T, Min &gt;::add </td>
+          <td class="memname">void <a class="el" href="struct_c_h_t.html">CHT</a>&lt; T, MIN &gt;::add </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
@@ -201,19 +201,19 @@ template&lt;typename T = ll, bool Min = true&gt; </div>
 
 </div>
 </div>
-<a id="a652d63fa85df6b36fb09fdae60ebc6cf" name="a652d63fa85df6b36fb09fdae60ebc6cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a652d63fa85df6b36fb09fdae60ebc6cf">&#9670;&#160;</a></span>get()</h2>
+<a id="a5e96b21a5063430042cbb4e558228094" name="a5e96b21a5063430042cbb4e558228094"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e96b21a5063430042cbb4e558228094">&#9670;&#160;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T = ll, bool Min = true&gt; </div>
+template&lt;typename T = ll, bool MIN = true&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T <a class="el" href="struct_c_h_t.html">CHT</a>&lt; T, Min &gt;::get </td>
+          <td class="memname">T <a class="el" href="struct_c_h_t.html">CHT</a>&lt; T, MIN &gt;::get </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
           <td></td>
@@ -229,7 +229,7 @@ template&lt;typename T = ll, bool Min = true&gt; </div>
 <p>x に対する直線群の最小値を求める </p>
 <dl class="section note"><dt>覚え書き</dt><dd>O((log(N))^2) </dd></dl>
 
-<p class="definition"> <a class="el" href="cht_8hpp_source.html">cht.hpp</a> の <a class="el" href="cht_8hpp_source.html#l00043">43</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="cht_8hpp_source.html">cht.hpp</a> の <a class="el" href="cht_8hpp_source.html#l00046">46</a> 行目に定義があります。</p>
 
 </div>
 </div>
