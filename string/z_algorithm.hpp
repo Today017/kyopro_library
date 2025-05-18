@@ -17,8 +17,7 @@ VI ZAlgorithm(const T& s) {
         }
         int k=1;
         while(i+k<n && k+ret[k]<j) ret[i+k]=ret[k],++k;
-        i+=k;
-        j-=k;
+        i+=k; j-=k;
    }
     return ret;
 }
