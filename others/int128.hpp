@@ -1,8 +1,8 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-constexpr lll operator ""lll(ull x) { return static_cast<lll>(x); }
-constexpr const lll INFLL=1lll<<120;
+constexpr lll operator ""_lll(ull x) { return static_cast<lll>(x); }
+constexpr const lll INFLL=1_lll<<120;
 
 istream& operator>>(istream& is, lll& x) {
 	int c=is.peek();
