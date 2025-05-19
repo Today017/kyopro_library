@@ -16,4 +16,4 @@ ull Xor128() {
 }
 ll Xor128(ll n) { return Xor128()%n; }
 ll Xor128(ll l, ll r) { return Xor128(r-l)+l; }//[l,r)
-ld Xor128Prob() { return (ld)Xor128()/(1ULL<<32); }
+ld Xor128Prob() { return (ld)Xor128()/(ULLONG_MAX); }
