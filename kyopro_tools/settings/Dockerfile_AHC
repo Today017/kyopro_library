@@ -1,0 +1,29 @@
+FROM ubuntu:22.04
+
+# 基本ツールのインストール
+RUN apt-get update && apt-get install -y \
+    g++ \
+    python3 \
+    python3-pip \
+    git \
+    curl \
+    vim \
+    sudo \
+    ca-certificates \
+    build-essential \
+    && apt-get clean
+
+# rustup をインストールして cargo/rustc を使えるようにする
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+# 環境変数を設定して、cargo などを使えるようにする
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# pahcer のインストール
+RUN cargo install pahcer
+
+# 作業ディレクトリの設定
+WORKDIR /workspace
+
+# デフォルトでシェルを起動
+CMD [ "bash" ]
