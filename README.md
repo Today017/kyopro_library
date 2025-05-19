@@ -7,7 +7,7 @@
 
 ## 環境構築
 1. Docker, Git, make のインストール
-3. [build](https://github.com/Today017/kyopro_library/blob/main/kyopro_tools/scripts/build) をコピペ、実行
+3. [build](https://github.com/Today017/kyopro_library/blob/main/kyopro_tools/scripts/build) （AHCの場合は [build_AHC](https://github.com/Today017/kyopro_library/blob/main/kyopro_tools/scripts/build_AHC)）をコピペ、実行
 4. `make build` でDockerイメージをビルドする（初回のみ）
 5. `make run` でコンテナを起動して入る
 
