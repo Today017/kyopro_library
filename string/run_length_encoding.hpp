@@ -11,3 +11,15 @@ vector<pair<char,int>> RunLengthEncoding(const string& s) {
    }
     return ret;
 }
+
+vector<pair<ll,int>> RunLengthEncoding(const vector<ll>& s) {
+    int n=s.size();
+    vector<pair<ll,int>> ret;
+    for(int l=0,r; l<n;) {
+        r=l+1;
+        while(r<n&&s[l]==s[r]) r++;
+        ret.push_back({s[l],r-l});
+        l=r;
+   }
+    return ret;
+}
