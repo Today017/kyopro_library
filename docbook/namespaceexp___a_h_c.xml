@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceexp___a_h_c" xml:lang="ja">
+<title>exp_AHC 名前空間</title>
+<indexterm><primary>exp_AHC</primary></indexterm>
+<simplesect>
+    <title>クラス    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classexp___a_h_c_1_1_expander">Expander</link></para>
+
+<para><link linkend="_classexp___a_h_c_1_1_expander">Expander</link> class is responsible for expanding libraries in the source code. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>変数    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_namespaceexp___a_h_c_1a1fa3fa2d43ea82ba06dce2ab903b6914">HEAD</link> = True</para>
+</listitem>
+            <listitem><para>bool <link linkend="_namespaceexp___a_h_c_1a046c7d4b7d969df4c762e1ce5d2df23e">CONST</link> = True</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceexp___a_h_c_1afbeeb12428b503330c49865684d5f524">logger</link> = getLogger(__name__)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceexp___a_h_c_1a4f54ce99252ab9adf71581134b630a08">format</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespaceexp___a_h_c_1ad7c1f64571c786c0280691daca4bc579">datefmt</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespaceexp___a_h_c_1ad33b0eacdcbb8e8ebe1eab08c1d2e69b">level</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespaceexp___a_h_c_1ab112e54267b9174264d2a0cb26575186">parser</link> = argparse.ArgumentParser(description=&quot;Expander&quot;)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceexp___a_h_c_1a288be580909793668e78f56c6cfedf2b">help</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespaceexp___a_h_c_1a0dc89f52545ee1c7d8dc54edd2a11596">action</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespaceexp___a_h_c_1a5b862bf4d73db06f61fbea47eb4191ab">opts</link> = parser.parse_args()</para>
+</listitem>
+            <listitem><para>list <link linkend="_namespaceexp___a_h_c_1a11ce0b4adf63fab77f026b51f3909a7d">lib_paths</link> = []</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceexp___a_h_c_1a5148e3153d23a86619ee6e2c4f73ce75">expander</link> = <link linkend="_classexp___a_h_c_1_1_expander">Expander</link>(<link linkend="_namespaceexp___a_h_c_1a11ce0b4adf63fab77f026b51f3909a7d">lib_paths</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceexp___a_h_c_1acf93965763ecde414f94e2c88522aa37">source</link> = open(opts.source).read()</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceexp___a_h_c_1a457a0d581f95d86a9f477df462790829">output</link> = expander.expand(<link linkend="_namespaceexp___a_h_c_1acf93965763ecde414f94e2c88522aa37">source</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>変数詳解</title>
+<anchor xml:id="_namespaceexp___a_h_c_1a1fa3fa2d43ea82ba06dce2ab903b6914"/><section>
+    <title>HEAD</title>
+<indexterm><primary>HEAD</primary><secondary>exp_AHC</secondary></indexterm>
+<indexterm><primary>exp_AHC</primary><secondary>HEAD</secondary></indexterm>
+<para><computeroutput>bool exp_AHC.HEAD = True</computeroutput></para><para>
+ <link linkend="_exp___a_h_c_8py_source">exp_AHC.py</link> の <link linkend="_exp___a_h_c_8py_source_1l00001">1</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespaceexp___a_h_c_1a046c7d4b7d969df4c762e1ce5d2df23e"/><section>
+    <title>CONST</title>
+<indexterm><primary>CONST</primary><secondary>exp_AHC</secondary></indexterm>
+<indexterm><primary>exp_AHC</primary><secondary>CONST</secondary></indexterm>
+<para><computeroutput>bool exp_AHC.CONST = True</computeroutput></para><para>
+ <link linkend="_exp___a_h_c_8py_source">exp_AHC.py</link> の <link linkend="_exp___a_h_c_8py_source_1l00002">2</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespaceexp___a_h_c_1afbeeb12428b503330c49865684d5f524"/><section>
+    <title>logger</title>
+<indexterm><primary>logger</primary><secondary>exp_AHC</secondary></indexterm>
+<indexterm><primary>exp_AHC</primary><secondary>logger</secondary></indexterm>
+<para><computeroutput>exp_AHC.logger = getLogger(__name__)</computeroutput></para><para>
+ <link linkend="_exp___a_h_c_8py_source">exp_AHC.py</link> の <link linkend="_exp___a_h_c_8py_source_1l00017">17</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespaceexp___a_h_c_1a4f54ce99252ab9adf71581134b630a08"/><section>
+    <title>format</title>
+<indexterm><primary>format</primary><secondary>exp_AHC</secondary></indexterm>
+<indexterm><primary>exp_AHC</primary><secondary>format</secondary></indexterm>
+<para><computeroutput>exp_AHC.format</computeroutput></para><para>
+ <link linkend="_exp___a_h_c_8py_source">exp_AHC.py</link> の <link linkend="_exp___a_h_c_8py_source_1l00178">178</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespaceexp___a_h_c_1ad7c1f64571c786c0280691daca4bc579"/><section>
+    <title>datefmt</title>
+<indexterm><primary>datefmt</primary><secondary>exp_AHC</secondary></indexterm>
+<indexterm><primary>exp_AHC</primary><secondary>datefmt</secondary></indexterm>
+<para><computeroutput>exp_AHC.datefmt</computeroutput></para><para>
+ <link linkend="_exp___a_h_c_8py_source">exp_AHC.py</link> の <link linkend="_exp___a_h_c_8py_source_1l00179">179</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespaceexp___a_h_c_1ad33b0eacdcbb8e8ebe1eab08c1d2e69b"/><section>
+    <title>level</title>
+<indexterm><primary>level</primary><secondary>exp_AHC</secondary></indexterm>
+<indexterm><primary>exp_AHC</primary><secondary>level</secondary></indexterm>
+<para><computeroutput>exp_AHC.level</computeroutput></para><para>
+ <link linkend="_exp___a_h_c_8py_source">exp_AHC.py</link> の <link linkend="_exp___a_h_c_8py_source_1l00180">180</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespaceexp___a_h_c_1ab112e54267b9174264d2a0cb26575186"/><section>
+    <title>parser</title>
+<indexterm><primary>parser</primary><secondary>exp_AHC</secondary></indexterm>
+<indexterm><primary>exp_AHC</primary><secondary>parser</secondary></indexterm>
+<para><computeroutput>exp_AHC.parser = argparse.ArgumentParser(description=&quot;Expander&quot;)</computeroutput></para><para>
+ <link linkend="_exp___a_h_c_8py_source">exp_AHC.py</link> の <link linkend="_exp___a_h_c_8py_source_1l00182">182</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespaceexp___a_h_c_1a288be580909793668e78f56c6cfedf2b"/><section>
+    <title>help</title>
+<indexterm><primary>help</primary><secondary>exp_AHC</secondary></indexterm>
+<indexterm><primary>exp_AHC</primary><secondary>help</secondary></indexterm>
+<para><computeroutput>exp_AHC.help</computeroutput></para><para>
+ <link linkend="_exp___a_h_c_8py_source">exp_AHC.py</link> の <link linkend="_exp___a_h_c_8py_source_1l00183">183</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespaceexp___a_h_c_1a0dc89f52545ee1c7d8dc54edd2a11596"/><section>
+    <title>action</title>
+<indexterm><primary>action</primary><secondary>exp_AHC</secondary></indexterm>
+<indexterm><primary>exp_AHC</primary><secondary>action</secondary></indexterm>
+<para><computeroutput>exp_AHC.action</computeroutput></para><para>
+ <link linkend="_exp___a_h_c_8py_source">exp_AHC.py</link> の <link linkend="_exp___a_h_c_8py_source_1l00184">184</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespaceexp___a_h_c_1a5b862bf4d73db06f61fbea47eb4191ab"/><section>
+    <title>opts</title>
+<indexterm><primary>opts</primary><secondary>exp_AHC</secondary></indexterm>
+<indexterm><primary>exp_AHC</primary><secondary>opts</secondary></indexterm>
+<para><computeroutput>exp_AHC.opts = parser.parse_args()</computeroutput></para><para>
+ <link linkend="_exp___a_h_c_8py_source">exp_AHC.py</link> の <link linkend="_exp___a_h_c_8py_source_1l00186">186</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespaceexp___a_h_c_1a11ce0b4adf63fab77f026b51f3909a7d"/><section>
+    <title>lib_paths</title>
+<indexterm><primary>lib_paths</primary><secondary>exp_AHC</secondary></indexterm>
+<indexterm><primary>exp_AHC</primary><secondary>lib_paths</secondary></indexterm>
+<para><computeroutput>list exp_AHC.lib_paths = []</computeroutput></para><para>
+ <link linkend="_exp___a_h_c_8py_source">exp_AHC.py</link> の <link linkend="_exp___a_h_c_8py_source_1l00188">188</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespaceexp___a_h_c_1a5148e3153d23a86619ee6e2c4f73ce75"/><section>
+    <title>expander</title>
+<indexterm><primary>expander</primary><secondary>exp_AHC</secondary></indexterm>
+<indexterm><primary>exp_AHC</primary><secondary>expander</secondary></indexterm>
+<para><computeroutput>exp_AHC.expander = <link linkend="_classexp___a_h_c_1_1_expander">Expander</link>(<link linkend="_namespaceexp___a_h_c_1a11ce0b4adf63fab77f026b51f3909a7d">lib_paths</link>)</computeroutput></para><para>
+ <link linkend="_exp___a_h_c_8py_source">exp_AHC.py</link> の <link linkend="_exp___a_h_c_8py_source_1l00196">196</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespaceexp___a_h_c_1acf93965763ecde414f94e2c88522aa37"/><section>
+    <title>source</title>
+<indexterm><primary>source</primary><secondary>exp_AHC</secondary></indexterm>
+<indexterm><primary>exp_AHC</primary><secondary>source</secondary></indexterm>
+<para><computeroutput>exp_AHC.source = open(opts.source).read()</computeroutput></para><para>
+ <link linkend="_exp___a_h_c_8py_source">exp_AHC.py</link> の <link linkend="_exp___a_h_c_8py_source_1l00197">197</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_namespaceexp___a_h_c_1a457a0d581f95d86a9f477df462790829"/><section>
+    <title>output</title>
+<indexterm><primary>output</primary><secondary>exp_AHC</secondary></indexterm>
+<indexterm><primary>exp_AHC</primary><secondary>output</secondary></indexterm>
+<para><computeroutput>exp_AHC.output = expander.expand(<link linkend="_namespaceexp___a_h_c_1acf93965763ecde414f94e2c88522aa37">source</link>)</computeroutput></para><para>
+ <link linkend="_exp___a_h_c_8py_source">exp_AHC.py</link> の <link linkend="_exp___a_h_c_8py_source_1l00198">198</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

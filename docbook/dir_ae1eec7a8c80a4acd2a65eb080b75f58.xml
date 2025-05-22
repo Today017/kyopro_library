@@ -9,6 +9,8 @@
 </listitem>
             <listitem><para>ファイル <link linkend="_exp_8py">exp.py</link></para>
 </listitem>
+            <listitem><para>ファイル <link linkend="_exp___a_h_c_8py">exp_AHC.py</link></para>
+</listitem>
             <listitem><para>ファイル <link linkend="_mod__reconstruct_8py">mod_reconstruct.py</link></para>
 </listitem>
         </itemizedlist>

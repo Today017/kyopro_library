@@ -1,0 +1,159 @@
+.TH "FPS" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FPS \- 形式的冪級数 \fBborrowed\fP from:https://potato167\&.github\&.io/po167_library  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "関数"
+
+.in +1c
+.ti -1c
+.RI "template<typename T> vector< T > \fBMul\fP (const vector< T > &a, const vector< T > &b)"
+.br
+.RI "多項式 f, g の積を返す "
+.ti -1c
+.RI "template<typename T> vector< T > \fBAdd\fP (const vector< T > &a, const vector< T > &b)"
+.br
+.RI "多項式 f, g の和を返す "
+.ti -1c
+.RI "template<typename T> vector< T > \fBSub\fP (const vector< T > &a, const vector< T > &b)"
+.br
+.RI "多項式 f, g の差を返す "
+.ti -1c
+.RI "template<typename T> vector< T > \fBInv\fP (vector< T > f, int len=\-1)"
+.br
+.RI "多項式 f に対し、f*g = 1 なる g を返す "
+.ti -1c
+.RI "template<typename T> vector< T > \fBCyclicConvolution\fP (vector< T > f, vector< T > g)"
+.br
+.ti -1c
+.RI "template<typename T> vector< T > \fBIntegral\fP (vector< T > f)"
+.br
+.RI "多項式 f の積分を返す "
+.ti -1c
+.RI "template<typename T> vector< T > \fBDifferential\fP (vector< T > f)"
+.br
+.RI "多項式 f の微分を返す "
+.ti -1c
+.RI "template<typename T> vector< T > \fBExp\fP (vector< T > f, int len=\-1)"
+.br
+.RI "多項式 f について、e^f を返す "
+.ti -1c
+.RI "template<typename T> vector< T > \fBLog\fP (vector< T > f, int len=\-1)"
+.br
+.RI "多項式 f について、log(f) を返す "
+.ti -1c
+.RI "template<class T> vector< T > \fBPow\fP (vector< T > f, \fBll\fP M, int len=\-1)"
+.br
+.RI "多項式 f^M を返す "
+.ti -1c
+.RI "template<typename T> void \fBExtend\fP (vector< T > &v)"
+.br
+.ti -1c
+.RI "template<typename T> void \fBPickEvenOdd\fP (vector< T > &v, int odd)"
+.br
+.ti -1c
+.RI "template<typename T> pair< vector< T >, vector< T > > \fBDiv\fP (vector< T > f, vector< T > g)"
+.br
+.RI "多項式 f, g について、\fRf = gq + r\fP なる q, r を返す "
+.ti -1c
+.RI "template<typename T> T \fBBostonMori\fP (\fBll\fP k, vector< T > P, vector< T > Q)"
+.br
+.RI "\fR[x^k](P/Q)\fP を返す "
+.ti -1c
+.RI "template<typename T> T \fBKthLinear\fP (\fBll\fP k, vector< T > a, vector< T > c)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+形式的冪級数 \fBborrowed\fP from:https://potato167\&.github\&.io/po167_library 
+.SH "関数詳解"
+.PP 
+.SS "template<typename T> vector< T > FPS::Mul (const vector< T > & a, const vector< T > & b)"
+
+.PP
+多項式 f, g の積を返す 
+.PP
+ \fBfps\&.hpp\fP の \fB12\fP 行目に定義があります。
+.SS "template<typename T> vector< T > FPS::Add (const vector< T > & a, const vector< T > & b)"
+
+.PP
+多項式 f, g の和を返す 
+.PP
+ \fBfps\&.hpp\fP の \fB18\fP 行目に定義があります。
+.SS "template<typename T> vector< T > FPS::Sub (const vector< T > & a, const vector< T > & b)"
+
+.PP
+多項式 f, g の差を返す 
+.PP
+ \fBfps\&.hpp\fP の \fB29\fP 行目に定義があります。
+.SS "template<typename T> vector< T > FPS::Inv (vector< T > f, int len = \fR\-1\fP)"
+
+.PP
+多項式 f に対し、f*g = 1 なる g を返す 
+.PP
+ \fBfps\&.hpp\fP の \fB40\fP 行目に定義があります。
+.SS "template<typename T> vector< T > FPS::CyclicConvolution (vector< T > f, vector< T > g)"
+
+.PP
+ \fBfps\&.hpp\fP の \fB74\fP 行目に定義があります。
+.SS "template<typename T> vector< T > FPS::Integral (vector< T > f)"
+
+.PP
+多項式 f の積分を返す 
+.PP
+ \fBfps\&.hpp\fP の \fB86\fP 行目に定義があります。
+.SS "template<typename T> vector< T > FPS::Differential (vector< T > f)"
+
+.PP
+多項式 f の微分を返す 
+.PP
+ \fBfps\&.hpp\fP の \fB101\fP 行目に定義があります。
+.SS "template<typename T> vector< T > FPS::Exp (vector< T > f, int len = \fR\-1\fP)"
+
+.PP
+多項式 f について、e^f を返す 
+.PP
+ \fBfps\&.hpp\fP の \fB110\fP 行目に定義があります。
+.SS "template<typename T> vector< T > FPS::Log (vector< T > f, int len = \fR\-1\fP)"
+
+.PP
+多項式 f について、log(f) を返す 
+.PP
+ \fBfps\&.hpp\fP の \fB143\fP 行目に定義があります。
+.SS "template<class T> vector< T > FPS::Pow (vector< T > f, \fBll\fP M, int len = \fR\-1\fP)"
+
+.PP
+多項式 f^M を返す 
+.PP
+ \fBfps\&.hpp\fP の \fB155\fP 行目に定義があります。
+.SS "template<typename T> void FPS::Extend (vector< T > & v)"
+
+.PP
+ \fBfps\&.hpp\fP の \fB189\fP 行目に定義があります。
+.SS "template<typename T> void FPS::PickEvenOdd (vector< T > & v, int odd)"
+
+.PP
+ \fBfps\&.hpp\fP の \fB205\fP 行目に定義があります。
+.SS "template<typename T> pair< vector< T >, vector< T > > FPS::Div (vector< T > f, vector< T > g)"
+
+.PP
+多項式 f, g について、\fRf = gq + r\fP なる q, r を返す 
+.PP
+ \fBfps\&.hpp\fP の \fB231\fP 行目に定義があります。
+.SS "template<typename T> T FPS::BostonMori (\fBll\fP k, vector< T > P, vector< T > Q)"
+
+.PP
+\fR[x^k](P/Q)\fP を返す 
+.PP
+ \fBfps\&.hpp\fP の \fB248\fP 行目に定義があります。
+.SS "template<typename T> T FPS::KthLinear (\fBll\fP k, vector< T > a, vector< T > c)"
+
+.PP
+ \fBfps\&.hpp\fP の \fB283\fP 行目に定義があります。
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

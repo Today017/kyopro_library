@@ -122,6 +122,8 @@ $(function(){initNavTree('template_8hpp.html',''); initResizable(true); });
 <tr class="separator:affe9a1ffd6cd7b2e404200ef182fa18f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17daffa35db12daabc89c90df168e706" id="r_a17daffa35db12daabc89c90df168e706"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17daffa35db12daabc89c90df168e706">REP</a>(i,  n)</td></tr>
 <tr class="separator:a17daffa35db12daabc89c90df168e706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98be0bb4bc26ab18cde222e08f2e5127" id="r_a98be0bb4bc26ab18cde222e08f2e5127"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98be0bb4bc26ab18cde222e08f2e5127">PER</a>(i,  n)</td></tr>
+<tr class="separator:a98be0bb4bc26ab18cde222e08f2e5127"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9af2de86c4be813e9c60ede438bb4cd7" id="r_a9af2de86c4be813e9c60ede438bb4cd7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(i,  a,  b)</td></tr>
 <tr class="separator:a9af2de86c4be813e9c60ede438bb4cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86ee3ff44c537d94ccbabf941a613688" id="r_a86ee3ff44c537d94ccbabf941a613688"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86ee3ff44c537d94ccbabf941a613688">debug</a>(...)</td></tr>
@@ -235,9 +237,33 @@ $(function(){initNavTree('template_8hpp.html',''); initResizable(true); });
       </table>
 </div><div class="memdoc">
 <b>値:</b><div class="fragment"><div class="line"><span class="keywordflow">for</span>(<a class="code hl_typedef" href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> i=0; i&lt;(<a class="code hl_typedef" href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>)(n); i++)</div>
-<div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00015">template.hpp:15</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00016">template.hpp:16</a></div></div>
 </div><!-- fragment -->
 <p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a98be0bb4bc26ab18cde222e08f2e5127" name="a98be0bb4bc26ab18cde222e08f2e5127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98be0bb4bc26ab18cde222e08f2e5127">&#9670;&#160;</a></span>PER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PER</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>n</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line"><span class="keywordflow">for</span>(<a class="code hl_typedef" href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> i=(n)-1; i&gt;=0; i--)</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00008">8</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -264,9 +290,9 @@ $(function(){initNavTree('template_8hpp.html',''); initResizable(true); });
         </tr>
       </table>
 </div><div class="memdoc">
-<b>値:</b><div class="fragment"><div class="line"><span class="keywordflow">for</span>(<a class="code hl_typedef" href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> i=(<a class="code hl_typedef" href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>)(a); (a)&lt;(b) ? i&lt;(b) : i&gt;(b); i+=((a)&lt;(b) ? 1 : -1))</div>
+<b>値:</b><div class="fragment"><div class="line"><span class="keywordflow">for</span>(<a class="code hl_typedef" href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> i=(<a class="code hl_typedef" href="#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>)(a); i&lt;(b); i++)</div>
 </div><!-- fragment -->
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00008">8</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00009">9</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -285,7 +311,7 @@ $(function(){initNavTree('template_8hpp.html',''); initResizable(true); });
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00023">23</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00024">24</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -301,7 +327,7 @@ $(function(){initNavTree('template_8hpp.html',''); initResizable(true); });
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00024">24</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00025">25</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -320,7 +346,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00014">14</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00015">15</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -336,7 +362,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00015">15</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -352,7 +378,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -368,7 +394,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -384,7 +410,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -400,7 +426,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -416,7 +442,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -432,7 +458,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -448,7 +474,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -464,7 +490,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -480,7 +506,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -496,7 +522,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -522,7 +548,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00010">10</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00011">11</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -543,7 +569,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00011">11</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -568,7 +594,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -593,7 +619,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00014">14</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -610,7 +636,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00015">15</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -626,7 +652,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00015">15</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="template_8hpp_source.html">template.hpp</a> の <a class="el" href="template_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
 
 </div>
 </div>

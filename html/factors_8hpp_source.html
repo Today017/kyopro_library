@@ -165,7 +165,7 @@ $(function(){initNavTree('factors_8hpp_source.html',''); initResizable(true); })
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                }</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <span class="keyword">auto</span>[p,cnt]=pf[i];</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <a class="code hl_define" href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(j,0,cnt+1) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(j,cnt+1) {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    dfs(dfs,i+1,x);</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                    x*=p;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                }</div>
@@ -188,8 +188,9 @@ $(function(){initNavTree('factors_8hpp_source.html',''); initResizable(true); })
 <div class="ttc" id="astruct_factors_html_a219a3cb166153a020f2fc3d83b9a9e57"><div class="ttname"><a href="struct_factors.html#a219a3cb166153a020f2fc3d83b9a9e57">Factors::Factors</a></div><div class="ttdeci">Factors(int n)</div><div class="ttdoc">前計算</div><div class="ttdef"><b>Definition</b> <a href="#l00009">factors.hpp:9</a></div></div>
 <div class="ttc" id="astruct_factors_html_a24bcfb630170a5aae2e2ae3c7ce3f656"><div class="ttname"><a href="struct_factors.html#a24bcfb630170a5aae2e2ae3c7ce3f656">Factors::get_divisors</a></div><div class="ttdeci">VI get_divisors(int n)</div><div class="ttdoc">n の約数を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00045">factors.hpp:45</a></div></div>
 <div class="ttc" id="astruct_factors_html_a9c62b3d154c3d164110ce5365d978732"><div class="ttname"><a href="struct_factors.html#a9c62b3d154c3d164110ce5365d978732">Factors::get_prime_factors</a></div><div class="ttdeci">vector&lt; pair&lt; int, int &gt; &gt; get_prime_factors(int n)</div><div class="ttdoc">n を素因数分解する</div><div class="ttdef"><b>Definition</b> <a href="#l00027">factors.hpp:27</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00007">template.hpp:7</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_a7ab29d3bd6e8d66e320f4224e75f6cea"><div class="ttname"><a href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a></div><div class="ttdeci">#define ALL(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00005">template.hpp:5</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a9af2de86c4be813e9c60ede438bb4cd7"><div class="ttname"><a href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a></div><div class="ttdeci">#define FOR(i, a, b)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00008">template.hpp:8</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a9af2de86c4be813e9c60ede438bb4cd7"><div class="ttname"><a href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a></div><div class="ttdeci">#define FOR(i, a, b)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00009">template.hpp:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

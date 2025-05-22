@@ -13,6 +13,7 @@
 <xi:include href="namespace_bit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 <xi:include href="namespacecompress.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 <xi:include href="namespaceexp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceexp___a_h_c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 <xi:include href="namespace_f_p_s.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 <xi:include href="namespace_geometry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 <xi:include href="namespace_insertable_reversible_array_impl.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -61,6 +62,7 @@
     <xi:include href="struct_min_cost_flow_1_1_edge.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_erasable_p_q.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="classexp_1_1_expander.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classexp___a_h_c_1_1_expander.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_factors.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_fenwick_tree.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="struct_fraction.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -248,6 +250,8 @@
     <xi:include href="compress_8py_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="exp_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="exp_8py_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="exp___a_h_c_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="exp___a_h_c_8py_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="mod__reconstruct_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="mod__reconstruct_8py_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="bezout__identity_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

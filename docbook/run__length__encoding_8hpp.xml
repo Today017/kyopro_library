@@ -7,16 +7,25 @@
         <itemizedlist>
             <listitem><para>vector&lt; pair&lt; char, int &gt; &gt; <link linkend="_run__length__encoding_8hpp_1a7f01629c3961317d963a4666dbe7622b">RunLengthEncoding</link> (const string &amp;s)</para>
 </listitem>
+            <listitem><para>vector&lt; pair&lt; <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, int &gt; &gt; <link linkend="_run__length__encoding_8hpp_1a625d6d63e6987b34a913bb2d6f3cae5f">RunLengthEncoding</link> (const vector&lt; <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> &gt; &amp;s)</para>
+</listitem>
         </itemizedlist>
 </simplesect>
 <section>
 <title>関数詳解</title>
 <anchor xml:id="_run__length__encoding_8hpp_1a7f01629c3961317d963a4666dbe7622b"/><section>
-    <title>RunLengthEncoding()</title>
+    <title>RunLengthEncoding()<computeroutput>[1/2]</computeroutput></title>
 <indexterm><primary>RunLengthEncoding</primary><secondary>run_length_encoding.hpp</secondary></indexterm>
 <indexterm><primary>run_length_encoding.hpp</primary><secondary>RunLengthEncoding</secondary></indexterm>
 <para><computeroutput>vector&lt; pair&lt; char, int &gt; &gt; RunLengthEncoding (const string &amp; s)</computeroutput></para><para>
  <link linkend="_run__length__encoding_8hpp_source">run_length_encoding.hpp</link> の <link linkend="_run__length__encoding_8hpp_source_1l00003">3</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_run__length__encoding_8hpp_1a625d6d63e6987b34a913bb2d6f3cae5f"/><section>
+    <title>RunLengthEncoding()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>RunLengthEncoding</primary><secondary>run_length_encoding.hpp</secondary></indexterm>
+<indexterm><primary>run_length_encoding.hpp</primary><secondary>RunLengthEncoding</secondary></indexterm>
+<para><computeroutput>vector&lt; pair&lt; <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, int &gt; &gt; RunLengthEncoding (const vector&lt; <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> &gt; &amp; s)</computeroutput></para><para>
+ <link linkend="_run__length__encoding_8hpp_source">run_length_encoding.hpp</link> の <link linkend="_run__length__encoding_8hpp_source_1l00015">15</link> 行目に定義があります。</para>
 </section>
 </section>
 </section>

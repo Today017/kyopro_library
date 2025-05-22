@@ -111,6 +111,9 @@ $(function(){initNavTree('struct_geometry_1_1_line.html',''); initResizable(true
 </div><!--header-->
 <div class="contents">
 
+<p>直線  
+ <a href="#details">[詳解]</a></p>
+
 <p><code>#include &quot;<a class="el" href="geo_8hpp_source.html">geo.hpp</a>&quot;</code></p>
 <div class="dynheader">
 Geometry::Line の継承関係図</div>
@@ -118,7 +121,7 @@ Geometry::Line の継承関係図</div>
  <div class="center">
   <img src="struct_geometry_1_1_line.png" usemap="#Geometry::Line_map" alt=""/>
   <map id="Geometry::Line_map" name="Geometry::Line_map">
-<area href="struct_geometry_1_1_segment.html" alt="Geometry::Segment" shape="rect" coords="0,56,120,80"/>
+<area href="struct_geometry_1_1_segment.html" title="線分" alt="Geometry::Segment" shape="rect" coords="0,56,120,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -129,6 +132,7 @@ Geometry::Line の継承関係図</div>
 <tr class="memitem:adbd13c9fb4116428fb0c709b85665913" id="r_adbd13c9fb4116428fb0c709b85665913"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbd13c9fb4116428fb0c709b85665913">Line</a> (const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;_a, const <a class="el" href="struct_geometry_1_1_point.html">Point</a> &amp;_b)</td></tr>
 <tr class="separator:adbd13c9fb4116428fb0c709b85665913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd633e2aa86b9783a5928a4a6d0ac71d" id="r_acd633e2aa86b9783a5928a4a6d0ac71d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd633e2aa86b9783a5928a4a6d0ac71d">Line</a> (const <a class="el" href="namespace_geometry.html#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> &amp;A, const <a class="el" href="namespace_geometry.html#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> &amp;B, const <a class="el" href="namespace_geometry.html#aa4fd942614eba4a1561c5a22278a1bcc">Real</a> &amp;C)</td></tr>
+<tr class="memdesc:acd633e2aa86b9783a5928a4a6d0ac71d"><td class="mdescLeft">&#160;</td><td class="mdescRight">直線 Ax+By=C を定義する  <br /></td></tr>
 <tr class="separator:acd633e2aa86b9783a5928a4a6d0ac71d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea48a257bc3c9bed360894873e9ead59" id="r_aea48a257bc3c9bed360894873e9ead59"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea48a257bc3c9bed360894873e9ead59">operator==</a> (const <a class="el" href="struct_geometry_1_1_line.html">Line</a> &amp;l) const</td></tr>
 <tr class="separator:aea48a257bc3c9bed360894873e9ead59"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,8 +150,9 @@ Geometry::Line の継承関係図</div>
 <tr class="separator:a43274759669f85ec40b45733f753fd6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock">
-<p class="definition"> <a class="el" href="geo_8hpp_source.html">geo.hpp</a> の <a class="el" href="geo_8hpp_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="textblock"><p>直線 </p>
+
+<p class="definition"> <a class="el" href="geo_8hpp_source.html">geo.hpp</a> の <a class="el" href="geo_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="adf96128626b67044e81ceefcb8200955" name="adf96128626b67044e81ceefcb8200955"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf96128626b67044e81ceefcb8200955">&#9670;&#160;</a></span>Line() <span class="overload">[1/3]</span></h2>
@@ -201,9 +206,9 @@ Geometry::Line の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="geo_8hpp_source.html">geo.hpp</a> の <a class="el" href="geo_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="geo_8hpp_source.html">geo.hpp</a> の <a class="el" href="geo_8hpp_source.html#l00051">51</a> 行目に定義があります。</p>
 
-<p class="reference">参照先 <a class="el" href="geo_8hpp_source.html#l00032">a</a>, <a class="el" href="geo_8hpp_source.html#l00032">b</a>.</p>
+<p class="reference">参照先 <a class="el" href="geo_8hpp_source.html#l00049">a</a>, <a class="el" href="geo_8hpp_source.html#l00049">b</a>.</p>
 
 </div>
 </div>
@@ -239,9 +244,11 @@ Geometry::Line の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="geo_8hpp_source.html">geo.hpp</a> の <a class="el" href="geo_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
+<p>直線 Ax+By=C を定義する </p>
 
-<p class="reference">参照先 <a class="el" href="geo_8hpp_source.html#l00032">a</a>, <a class="el" href="geo_8hpp_source.html#l00007">Geometry::almostEqual()</a>, <a class="el" href="geo_8hpp_source.html#l00032">b</a>, <a class="el" href="geo_8hpp_source.html#l00016">Geometry::Point::Point()</a>.</p>
+<p class="definition"> <a class="el" href="geo_8hpp_source.html">geo.hpp</a> の <a class="el" href="geo_8hpp_source.html#l00054">54</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="geo_8hpp_source.html#l00049">a</a>, <a class="el" href="geo_8hpp_source.html#l00008">Geometry::almostEqual()</a>, <a class="el" href="geo_8hpp_source.html#l00049">b</a>, <a class="el" href="geo_8hpp_source.html#l00018">Geometry::Point::Point()</a>.</p>
 
 </div>
 </div>
@@ -269,9 +276,9 @@ Geometry::Line の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="geo_8hpp_source.html">geo.hpp</a> の <a class="el" href="geo_8hpp_source.html#l00052">52</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="geo_8hpp_source.html">geo.hpp</a> の <a class="el" href="geo_8hpp_source.html#l00071">71</a> 行目に定義があります。</p>
 
-<p class="reference">参照先 <a class="el" href="geo_8hpp_source.html#l00032">a</a>, <a class="el" href="geo_8hpp_source.html#l00032">b</a>, <a class="el" href="geo_8hpp_source.html#l00027">Geometry::Point::operator==()</a>.</p>
+<p class="reference">参照先 <a class="el" href="geo_8hpp_source.html#l00049">a</a>, <a class="el" href="geo_8hpp_source.html#l00049">b</a>, <a class="el" href="geo_8hpp_source.html#l00043">Geometry::Point::operator==()</a>.</p>
 
 </div>
 </div>
@@ -303,9 +310,9 @@ Geometry::Line の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="geo_8hpp_source.html">geo.hpp</a> の <a class="el" href="geo_8hpp_source.html#l00053">53</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="geo_8hpp_source.html">geo.hpp</a> の <a class="el" href="geo_8hpp_source.html#l00072">72</a> 行目に定義があります。</p>
 
-<p class="reference">参照先 <a class="el" href="geo_8hpp_source.html#l00032">a</a>, <a class="el" href="geo_8hpp_source.html#l00032">b</a>.</p>
+<p class="reference">参照先 <a class="el" href="geo_8hpp_source.html#l00049">a</a>, <a class="el" href="geo_8hpp_source.html#l00049">b</a>.</p>
 
 </div>
 </div>
@@ -322,7 +329,7 @@ Geometry::Line の継承関係図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="geo_8hpp_source.html">geo.hpp</a> の <a class="el" href="geo_8hpp_source.html#l00032">32</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="geo_8hpp_source.html">geo.hpp</a> の <a class="el" href="geo_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -338,7 +345,7 @@ Geometry::Line の継承関係図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="geo_8hpp_source.html">geo.hpp</a> の <a class="el" href="geo_8hpp_source.html#l00032">32</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="geo_8hpp_source.html">geo.hpp</a> の <a class="el" href="geo_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
 
 </div>
 </div>

@@ -34,6 +34,7 @@ var hierarchy =
     [ "MinCostFlow::Edge", "struct_min_cost_flow_1_1_edge.html", null ],
     [ "ErasablePQ< T, MAX >", "struct_erasable_p_q.html", null ],
     [ "exp.Expander", "classexp_1_1_expander.html", null ],
+    [ "exp_AHC.Expander", "classexp___a_h_c_1_1_expander.html", null ],
     [ "Factors", "struct_factors.html", null ],
     [ "FenwickTree< Abel >", "struct_fenwick_tree.html", null ],
     [ "Fraction< T >", "struct_fraction.html", null ],

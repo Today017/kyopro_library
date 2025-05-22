@@ -1,0 +1,118 @@
+.TH "DoublingFold< Monoid, Log >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DoublingFold< Monoid, Log > \- ダブリング（モノイド合成）  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'doubling_fold\&.hpp'\fP
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "using \fBType\fP = typename Monoid::Type"
+.br
+.in -1c
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBDoublingFold\fP ()=default"
+.br
+.ti -1c
+.RI "\fBDoublingFold\fP (const \fBVI\fP &p, const vector< \fBType\fP > &v)"
+.br
+.RI "コンストラクタ "
+.ti -1c
+.RI "\fBType\fP \fBfold\fP (int start, \fBll\fP k)"
+.br
+.RI "モノイド積 "
+.ti -1c
+.RI "int \fBnext\fP (int start, \fBll\fP k)"
+.br
+.RI "頂点 start から k 回遷移した先の頂点を返す "
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename Monoid, int Log>
+.br
+struct DoublingFold< Monoid, Log >"ダブリング（モノイド合成） 
+
+
+.PP
+\fBテンプレート引数\fP
+.RS 4
+\fI\fBMonoid\fP\fP 合成するモノイド 
+.br
+\fILog\fP ダブリングの深さ 
+.RE
+.PP
+
+.PP
+ \fBdoubling_fold\&.hpp\fP の \fB7\fP 行目に定義があります。
+.SH "型定義メンバ詳解"
+.PP 
+.SS "template<typename Monoid, int Log> using \fBDoublingFold\fP< Monoid, Log >::Type = typename Monoid::Type"
+
+.PP
+ \fBdoubling_fold\&.hpp\fP の \fB8\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename Monoid, int Log> \fBDoublingFold\fP< Monoid, Log >\fB::DoublingFold\fP ()\fR [default]\fP"
+
+.SS "template<typename Monoid, int Log> \fBDoublingFold\fP< Monoid, Log >\fB::DoublingFold\fP (const \fBVI\fP & p, const vector< \fBType\fP > & v)\fR [inline]\fP"
+
+.PP
+コンストラクタ 
+.PP
+\fB引数\fP
+.RS 4
+\fIp\fP 各頂点の遷移先 
+.br
+\fIv\fP 各頂点の値 
+.RE
+.PP
+\fB覚え書き\fP
+.RS 4
+O(N Log) 
+.RE
+.PP
+
+.PP
+ \fBdoubling_fold\&.hpp\fP の \fB15\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "template<typename Monoid, int Log> \fBType\fP \fBDoublingFold\fP< Monoid, Log >::fold (int start, \fBll\fP k)\fR [inline]\fP"
+
+.PP
+モノイド積 頂点 start から k 回遷移したときのモノイド積を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(Log) 
+.RE
+.PP
+
+.PP
+ \fBdoubling_fold\&.hpp\fP の \fB29\fP 行目に定義があります。
+.SS "template<typename Monoid, int Log> int \fBDoublingFold\fP< Monoid, Log >::next (int start, \fBll\fP k)\fR [inline]\fP"
+
+.PP
+頂点 start から k 回遷移した先の頂点を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(Log) 
+.RE
+.PP
+
+.PP
+ \fBdoubling_fold\&.hpp\fP の \fB40\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

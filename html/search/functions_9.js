@@ -11,7 +11,7 @@ var searchData=
   ['inv_8',['inv',['../struct_mod_int.html#abe6791d500924668e08cc248d1451ebf',1,'ModInt::inv()'],['../struct_dynamic_mod_int.html#a71b04dec2a5afd90f40bbad8a26e12d2',1,'DynamicModInt::inv()'],['../struct_abel_1_1_sum.html#af923d298d1515593755bf20697cc0252',1,'Abel::Sum::inv()'],['../struct_abel_1_1_xor.html#a139adead748ebb2dd62ca58569ce355f',1,'Abel::Xor::inv()']]],
   ['inversionnumber_9',['InversionNumber',['../inversion__number_8hpp.html#a7973f38066e81579d126adfc53beb1ac',1,'inversion_number.hpp']]],
   ['is_5fcovered_10',['is_covered',['../struct_range_set.html#ae210a109dde6a0646562b2970f9c7447',1,'RangeSet']]],
-  ['is_5fignored_5fline_11',['is_ignored_line',['../classexp_1_1_expander.html#a40f520a2104b3e6a2217d4b84be44f35',1,'exp::Expander']]],
+  ['is_5fignored_5fline_11',['is_ignored_line',['../classexp_1_1_expander.html#a40f520a2104b3e6a2217d4b84be44f35',1,'exp.Expander.is_ignored_line()'],['../classexp___a_h_c_1_1_expander.html#a2f06c5c8a096ea1d6bacb43670751399',1,'exp_AHC.Expander.is_ignored_line()']]],
   ['is_5fon_5fpath_12',['is_on_path',['../struct_l_c_a.html#ad5fecd6ac33048d9665470774370e3e5',1,'LCA']]],
   ['isconvex_13',['isConvex',['../namespace_geometry.html#ab9bf3d0fb49fb3cccd08e2905e1ffce6',1,'Geometry']]],
   ['isintersecting_14',['isIntersecting',['../namespace_geometry.html#afd1aee161954f89e741e6873568fd1d8',1,'Geometry']]],

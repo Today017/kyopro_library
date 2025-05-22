@@ -24,7 +24,7 @@ var searchData=
   ['combinatorics_21',['Combinatorics',['../struct_combinatorics.html',1,'Combinatorics&lt; T &gt;'],['../struct_combinatorics.html#a03267b012345ac4ca4b3282ca937f355',1,'Combinatorics::Combinatorics()=default'],['../struct_combinatorics.html#ace51d39e7e21969b25e4a7b10a4bada3',1,'Combinatorics::Combinatorics(int n)']]],
   ['compress_22',['compress',['../namespacecompress.html',1,'']]],
   ['compress_2epy_23',['compress.py',['../compress_8py.html',1,'']]],
-  ['const_24',['CONST',['../namespaceexp.html#a608b7d478866fe325b1fc10a0d2f5d11',1,'exp']]],
+  ['const_24',['CONST',['../namespaceexp.html#a608b7d478866fe325b1fc10a0d2f5d11',1,'exp.CONST'],['../namespaceexp___a_h_c.html#a046c7d4b7d969df4c762e1ce5d2df23e',1,'exp_AHC.CONST']]],
   ['contains_25',['contains',['../struct_multi_set.html#a203a2028c468bb813bd14c8d79a3b9ea',1,'MultiSet::contains()'],['../struct_set.html#ab53c8f03bd84270af37c399351e085fa',1,'Set::contains()'],['../struct_sorted_multi_tree.html#a1ed109943dfb52d97cc4c88f917abef7',1,'SortedMultiTree::contains()'],['../struct_sorted_tree.html#a22ba2a1a35c4fdc1cb315ebd5e4bc706',1,'SortedTree::contains()']]],
   ['convex_20polygon_26',['Convex Polygon',['../md_geometry_2geo.html#autotoc_md30',1,'']]],
   ['convexhull_27',['convexHull',['../namespace_geometry.html#af7466d8b7624193a11c59f8e0558d8ad',1,'Geometry']]],

@@ -7,7 +7,7 @@ var searchData=
   ['abel_2ehpp_4',['abel.hpp',['../abel_8hpp.html',1,'']]],
   ['abs_5',['abs',['../struct_geometry_1_1_point.html#a8472d95742274c7339e1f227729f8f39',1,'Geometry::Point']]],
   ['access_6',['access',['../struct_succinct_bit_vector.html#ac384d026ac86d26b1607148cf4efcba7',1,'SuccinctBitVector::access()'],['../struct_wavelet_matrix.html#a3a1eefb0414102aeeac72a1f31fc5b8d',1,'WaveletMatrix::access()']]],
-  ['action_7',['action',['../namespaceexp.html#a8c1d43c485008a14d53c21826fc19b8a',1,'exp']]],
+  ['action_7',['action',['../namespaceexp.html#a8c1d43c485008a14d53c21826fc19b8a',1,'exp.action'],['../namespaceexp___a_h_c.html#a0dc89f52545ee1c7d8dc54edd2a11596',1,'exp_AHC.action']]],
   ['add_8',['Add',['../struct_operator_1_1_add.html',1,'Operator::Add&lt; T &gt;'],['../namespace_f_p_s.html#acab6f12f41b871e31d16cb02a9a7c77d',1,'FPS::Add()']]],
   ['add_9',['add',['../struct_angel_beats_1_1_node.html#a077eb8bcd44334f40d1ab75bb38a09ea',1,'AngelBeats::Node::add'],['../struct_c_h_t.html#a13379c27cda3ed92a6e093a29da99634',1,'CHT::add()'],['../struct_mo.html#a74f7dcf6e3a3e3a49814457e20f1b3dd',1,'Mo::add()'],['../struct_fenwick_tree.html#adb288d923b27fe266f99021056a2785f',1,'FenwickTree::add()'],['../struct_sorted_multi_tree.html#aeaeff7f2d03c7046a82a0971b1e52272',1,'SortedMultiTree::add()'],['../struct_two_sat.html#a71d1b0cf574787c596fe87d26bd905df',1,'TwoSat::add()']]],
   ['add_5fdouble_10',['add_double',['../struct_burning_burying.html#a44ab45cb039360509bab62a01f384d28',1,'BurningBurying']]],

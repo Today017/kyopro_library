@@ -7,6 +7,9 @@ var annotated_dup =
     [ "exp", "namespaceexp.html", [
       [ "Expander", "classexp_1_1_expander.html", "classexp_1_1_expander" ]
     ] ],
+    [ "exp_AHC", "namespaceexp___a_h_c.html", [
+      [ "Expander", "classexp___a_h_c_1_1_expander.html", "classexp___a_h_c_1_1_expander" ]
+    ] ],
     [ "Geometry", "namespace_geometry.html", [
       [ "Circle", "struct_geometry_1_1_circle.html", "struct_geometry_1_1_circle" ],
       [ "Line", "struct_geometry_1_1_line.html", "struct_geometry_1_1_line" ],

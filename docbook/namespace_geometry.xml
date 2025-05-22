@@ -2,16 +2,29 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_geometry" xml:lang="ja">
 <title>Geometry 名前空間</title>
 <indexterm><primary>Geometry</primary></indexterm>
+<para>
+
+<para>幾何ライブラリ </para>
+ 
+</para>
 <simplesect>
     <title>クラス    </title>
         <itemizedlist>
             <listitem><para>struct <link linkend="_struct_geometry_1_1_circle">Circle</link></para>
+
+<para>円 </para>
 </listitem>
             <listitem><para>struct <link linkend="_struct_geometry_1_1_line">Line</link></para>
+
+<para>直線 </para>
 </listitem>
             <listitem><para>struct <link linkend="_struct_geometry_1_1_point">Point</link></para>
+
+<para>２次元平面上の位置ベクトル </para>
 </listitem>
             <listitem><para>struct <link linkend="_struct_geometry_1_1_segment">Segment</link></para>
+
+<para>線分 </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -48,16 +61,26 @@
             <listitem><para>bool <link linkend="_namespace_geometry_1a48301418052e96f2270cbc235c91e9c7">greaterThanOrEqual</link> (<link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> a, <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> b)</para>
 </listitem>
             <listitem><para><link linkend="_namespace_geometry_1ac6833944045520a63bc44de0c261aa7a">Orientation</link> <link linkend="_namespace_geometry_1a68f1a8a27e6074ca5dae6b151a765cb3">ccw</link> (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p0, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p1, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p2)</para>
+
+<para>3点 p0, p1, p2 の進行方向を返す </para>
 </listitem>
             <listitem><para>string <link linkend="_namespace_geometry_1a9bb98900b14f9cd763b7c5e958a868c8">orientationToString</link> (<link linkend="_namespace_geometry_1ac6833944045520a63bc44de0c261aa7a">Orientation</link> o)</para>
 </listitem>
             <listitem><para><link linkend="_struct_geometry_1_1_point">Point</link> <link linkend="_namespace_geometry_1a350e7c66a3052218fb10273521646a5a">projection</link> (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p1, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p2, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p)</para>
+
+<para>ベクトル p の直線 p1, p2 への正射影ベクトルを返す </para>
 </listitem>
             <listitem><para><link linkend="_struct_geometry_1_1_point">Point</link> <link linkend="_namespace_geometry_1a6459f2465325d059e045db0c357253a0">projection</link> (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp;l, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p)</para>
+
+<para>ベクトル p の直線 l への正射影ベクトルを返す </para>
 </listitem>
             <listitem><para><link linkend="_struct_geometry_1_1_point">Point</link> <link linkend="_namespace_geometry_1a401f2efd71755a4e3dc7cc4b3a60762e">reflection</link> (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p1, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p2, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p)</para>
+
+<para>ベクトル p の直線 p1, p2 に対する鏡像ベクトルを返す </para>
 </listitem>
             <listitem><para><link linkend="_struct_geometry_1_1_point">Point</link> <link linkend="_namespace_geometry_1a3cdefdb1ec92d44cf07f06dfdd4f4be8">reflection</link> (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp;l, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p)</para>
+
+<para>ベクトル p の直線 l に対する鏡像ベクトルを返す </para>
 </listitem>
             <listitem><para>bool <link linkend="_namespace_geometry_1a5905c3b472de2209f9fa39119da309d0">isParallel</link> (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp;l1, const <link linkend="_struct_geometry_1_1_line">Line</link> &amp;l2)</para>
 </listitem>
@@ -129,13 +152,18 @@
         </itemizedlist>
 </simplesect>
 <section>
+<title>詳解</title>
+
+<para>幾何ライブラリ </para>
+</section>
+<section>
 <title>型定義詳解</title>
 <anchor xml:id="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc"/><section>
     <title>Real</title>
 <indexterm><primary>Real</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>Real</secondary></indexterm>
 <para><computeroutput>using <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Geometry::Real</link> = long double</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00004">4</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
 </section>
 </section>
 <section>
@@ -164,7 +192,7 @@
     </tgroup>
 </informaltable>
 <para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00073">73</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00096">96</link> 行目に定義があります。</para>
 </section>
 </section>
 <section>
@@ -174,259 +202,279 @@
 <indexterm><primary>almostEqual</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>almostEqual</secondary></indexterm>
 <para><computeroutput>bool Geometry::almostEqual (<link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> a, <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> b)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00005">EPS</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00006">EPS</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1ace43f4cd28f78a9fa79439ee8416b2e4"/><section>
     <title>lessThan()</title>
 <indexterm><primary>lessThan</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>lessThan</secondary></indexterm>
 <para><computeroutput>bool Geometry::lessThan (<link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> a, <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> b)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00009">9</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a85801ae240703892e050e65ebc1f97eb"/><section>
     <title>greaterThan()</title>
 <indexterm><primary>greaterThan</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>greaterThan</secondary></indexterm>
 <para><computeroutput>bool Geometry::greaterThan (<link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> a, <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> b)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00009">9</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00010">10</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1aaa93b6715f377d2ef8ba44c79d98641c"/><section>
     <title>lessThanOrEqual()</title>
 <indexterm><primary>lessThanOrEqual</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>lessThanOrEqual</secondary></indexterm>
 <para><computeroutput>bool Geometry::lessThanOrEqual (<link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> a, <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> b)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00010">10</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00011">11</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a48301418052e96f2270cbc235c91e9c7"/><section>
     <title>greaterThanOrEqual()</title>
 <indexterm><primary>greaterThanOrEqual</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>greaterThanOrEqual</secondary></indexterm>
 <para><computeroutput>bool Geometry::greaterThanOrEqual (<link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> a, <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> b)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00011">11</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00012">12</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a68f1a8a27e6074ca5dae6b151a765cb3"/><section>
     <title>ccw()</title>
 <indexterm><primary>ccw</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>ccw</secondary></indexterm>
 <para><computeroutput><link linkend="_namespace_geometry_1ac6833944045520a63bc44de0c261aa7a">Orientation</link> Geometry::ccw (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p0, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p1, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00080">80</link> 行目に定義があります。</para>
+
+<para>3点 p0, p1, p2 の進行方向を返す </para>
+</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00075">CLOCKWISE</link>, <link linkend="_geo_8hpp_source_1l00074">COUNTER_CLOCKWISE</link>, <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::dot()</link>, <link linkend="_geo_8hpp_source_1l00009">greaterThan()</link>, <link linkend="_geo_8hpp_source_1l00008">lessThan()</link>, <link linkend="_geo_8hpp_source_1l00024">Geometry::Point::norm()</link>, <link linkend="_geo_8hpp_source_1l00078">ON_SEGMENT</link>, <link linkend="_geo_8hpp_source_1l00076">ONLINE_BACK</link>, <link linkend="_geo_8hpp_source_1l00077">ONLINE_FRONT</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>.</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00105">105</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00098">CLOCKWISE</link>, <link linkend="_geo_8hpp_source_1l00097">COUNTER_CLOCKWISE</link>, <link linkend="_geo_8hpp_source_1l00029">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00026">Geometry::Point::dot()</link>, <link linkend="_geo_8hpp_source_1l00010">greaterThan()</link>, <link linkend="_geo_8hpp_source_1l00009">lessThan()</link>, <link linkend="_geo_8hpp_source_1l00035">Geometry::Point::norm()</link>, <link linkend="_geo_8hpp_source_1l00101">ON_SEGMENT</link>, <link linkend="_geo_8hpp_source_1l00099">ONLINE_BACK</link>, <link linkend="_geo_8hpp_source_1l00100">ONLINE_FRONT</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a9bb98900b14f9cd763b7c5e958a868c8"/><section>
     <title>orientationToString()</title>
 <indexterm><primary>orientationToString</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>orientationToString</secondary></indexterm>
 <para><computeroutput>string Geometry::orientationToString (<link linkend="_namespace_geometry_1ac6833944045520a63bc44de0c261aa7a">Orientation</link> o)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00090">90</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00116">116</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00075">CLOCKWISE</link>, <link linkend="_geo_8hpp_source_1l00074">COUNTER_CLOCKWISE</link>, <link linkend="_geo_8hpp_source_1l00078">ON_SEGMENT</link>, <link linkend="_geo_8hpp_source_1l00076">ONLINE_BACK</link>, <link linkend="_geo_8hpp_source_1l00077">ONLINE_FRONT</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00098">CLOCKWISE</link>, <link linkend="_geo_8hpp_source_1l00097">COUNTER_CLOCKWISE</link>, <link linkend="_geo_8hpp_source_1l00101">ON_SEGMENT</link>, <link linkend="_geo_8hpp_source_1l00099">ONLINE_BACK</link>, <link linkend="_geo_8hpp_source_1l00100">ONLINE_FRONT</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a350e7c66a3052218fb10273521646a5a"/><section>
     <title>projection()<computeroutput>[1/2]</computeroutput></title>
 <indexterm><primary>projection</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>projection</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_geometry_1_1_point">Point</link> Geometry::projection (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p1, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p2, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00106">106</link> 行目に定義があります。</para>
+
+<para>ベクトル p の直線 p1, p2 への正射影ベクトルを返す </para>
+</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::dot()</link>, <link linkend="_geo_8hpp_source_1l00024">Geometry::Point::norm()</link>, <link linkend="_geo_8hpp_source_1l00019">Geometry::Point::operator*()</link>, <link linkend="_geo_8hpp_source_1l00017">Geometry::Point::operator+()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>.</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00134">134</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00026">Geometry::Point::dot()</link>, <link linkend="_geo_8hpp_source_1l00035">Geometry::Point::norm()</link>, <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::operator*()</link>, <link linkend="_geo_8hpp_source_1l00020">Geometry::Point::operator+()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a6459f2465325d059e045db0c357253a0"/><section>
     <title>projection()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>projection</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>projection</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_geometry_1_1_point">Point</link> Geometry::projection (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp; l, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00111">111</link> 行目に定義があります。</para>
+
+<para>ベクトル p の直線 l への正射影ベクトルを返す </para>
+</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::dot()</link>, <link linkend="_geo_8hpp_source_1l00024">Geometry::Point::norm()</link>, <link linkend="_geo_8hpp_source_1l00019">Geometry::Point::operator*()</link>, <link linkend="_geo_8hpp_source_1l00017">Geometry::Point::operator+()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>.</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00141">141</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00026">Geometry::Point::dot()</link>, <link linkend="_geo_8hpp_source_1l00035">Geometry::Point::norm()</link>, <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::operator*()</link>, <link linkend="_geo_8hpp_source_1l00020">Geometry::Point::operator+()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a401f2efd71755a4e3dc7cc4b3a60762e"/><section>
     <title>reflection()<computeroutput>[1/2]</computeroutput></title>
 <indexterm><primary>reflection</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>reflection</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_geometry_1_1_point">Point</link> Geometry::reflection (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p1, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p2, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00116">116</link> 行目に定義があります。</para>
+
+<para>ベクトル p の直線 p1, p2 に対する鏡像ベクトルを返す </para>
+</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00019">Geometry::Point::operator*()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00106">projection()</link>.</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00148">148</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::operator*()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00134">projection()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a3cdefdb1ec92d44cf07f06dfdd4f4be8"/><section>
     <title>reflection()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>reflection</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>reflection</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_geometry_1_1_point">Point</link> Geometry::reflection (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp; l, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00120">120</link> 行目に定義があります。</para>
+
+<para>ベクトル p の直線 l に対する鏡像ベクトルを返す </para>
+</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00019">Geometry::Point::operator*()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00111">projection()</link>.</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00154">154</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::operator*()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00141">projection()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a5905c3b472de2209f9fa39119da309d0"/><section>
     <title>isParallel()<computeroutput>[1/4]</computeroutput></title>
 <indexterm><primary>isParallel</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>isParallel</secondary></indexterm>
 <para><computeroutput>bool Geometry::isParallel (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp; l1, const <link linkend="_struct_geometry_1_1_line">Line</link> &amp; l2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00127">127</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00161">161</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00029">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1abfda3f3ff79f9b2f8d6a9d7052ecb770"/><section>
     <title>isOrthogonal()<computeroutput>[1/4]</computeroutput></title>
 <indexterm><primary>isOrthogonal</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>isOrthogonal</secondary></indexterm>
 <para><computeroutput>bool Geometry::isOrthogonal (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp; l1, const <link linkend="_struct_geometry_1_1_line">Line</link> &amp; l2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00128">128</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00162">162</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::dot()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00026">Geometry::Point::dot()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1ab794a4baaf90b7e2308f67ef18c8aaef"/><section>
     <title>isParallel()<computeroutput>[2/4]</computeroutput></title>
 <indexterm><primary>isParallel</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>isParallel</secondary></indexterm>
 <para><computeroutput>bool Geometry::isParallel (const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; l1, const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; l2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00129">129</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00163">163</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00029">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a529832026f1ac3e2b14cfb6b41e9c1af"/><section>
     <title>isOrthogonal()<computeroutput>[2/4]</computeroutput></title>
 <indexterm><primary>isOrthogonal</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>isOrthogonal</secondary></indexterm>
 <para><computeroutput>bool Geometry::isOrthogonal (const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; l1, const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; l2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00130">130</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00164">164</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::dot()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00026">Geometry::Point::dot()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a205dd318a5b496f3a02afc0b026003e1"/><section>
     <title>isParallel()<computeroutput>[3/4]</computeroutput></title>
 <indexterm><primary>isParallel</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>isParallel</secondary></indexterm>
 <para><computeroutput>bool Geometry::isParallel (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp; l1, const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; l2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00131">131</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00165">165</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00029">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a1ad29186e135cf0fe0f6e80e526882f5"/><section>
     <title>isOrthogonal()<computeroutput>[3/4]</computeroutput></title>
 <indexterm><primary>isOrthogonal</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>isOrthogonal</secondary></indexterm>
 <para><computeroutput>bool Geometry::isOrthogonal (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp; l1, const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; l2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00132">132</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00166">166</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::dot()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00026">Geometry::Point::dot()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a0791c792e98411c4960aa26e165c8f21"/><section>
     <title>isParallel()<computeroutput>[4/4]</computeroutput></title>
 <indexterm><primary>isParallel</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>isParallel</secondary></indexterm>
 <para><computeroutput>bool Geometry::isParallel (const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; l1, const <link linkend="_struct_geometry_1_1_line">Line</link> &amp; l2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00133">133</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00167">167</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00029">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a03322a671b1a773f7de3971fdb222bd4"/><section>
     <title>isOrthogonal()<computeroutput>[4/4]</computeroutput></title>
 <indexterm><primary>isOrthogonal</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>isOrthogonal</secondary></indexterm>
 <para><computeroutput>bool Geometry::isOrthogonal (const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; l1, const <link linkend="_struct_geometry_1_1_line">Line</link> &amp; l2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00134">134</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00168">168</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::dot()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00026">Geometry::Point::dot()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a8613d484a8c0b5d6d603592a11190c67"/><section>
     <title>isPointOnLine()</title>
 <indexterm><primary>isPointOnLine</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>isPointOnLine</secondary></indexterm>
 <para><computeroutput>bool Geometry::isPointOnLine (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p, const <link linkend="_struct_geometry_1_1_line">Line</link> &amp; l)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00135">135</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00169">169</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00029">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1abcf022a48d43025f1b3f91dda172ca2b"/><section>
     <title>isPointOnSegment()</title>
 <indexterm><primary>isPointOnSegment</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>isPointOnSegment</secondary></indexterm>
 <para><computeroutput>bool Geometry::isPointOnSegment (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p, const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; s)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00136">136</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00170">170</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00029">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::y</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1afd1aee161954f89e741e6873568fd1d8"/><section>
     <title>isIntersecting()</title>
 <indexterm><primary>isIntersecting</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>isIntersecting</secondary></indexterm>
 <para><computeroutput>bool Geometry::isIntersecting (const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; s1, const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; s2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00143">143</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00177">177</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00136">isPointOnSegment()</link>, <link linkend="_geo_8hpp_source_1l00008">lessThan()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00029">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00170">isPointOnSegment()</link>, <link linkend="_geo_8hpp_source_1l00009">lessThan()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a774399dc2bebae37aabf1a46750ee6c7"/><section>
     <title>getIntersection()</title>
 <indexterm><primary>getIntersection</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>getIntersection</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_geometry_1_1_point">Point</link> Geometry::getIntersection (const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; s1, const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; s2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00161">161</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00195">195</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00143">isIntersecting()</link>, <link linkend="_geo_8hpp_source_1l00019">Geometry::Point::operator*()</link>, <link linkend="_geo_8hpp_source_1l00017">Geometry::Point::operator+()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00177">isIntersecting()</link>, <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::operator*()</link>, <link linkend="_geo_8hpp_source_1l00020">Geometry::Point::operator+()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::y</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a4a8de96e1f3bf3f804c773c80c2f3a25"/><section>
     <title>distancePointToSegment()</title>
 <indexterm><primary>distancePointToSegment</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>distancePointToSegment</secondary></indexterm>
 <para><computeroutput><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::distancePointToSegment (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p, const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; s)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00170">170</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00204">204</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00025">Geometry::Point::abs()</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00136">isPointOnSegment()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00106">projection()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00038">Geometry::Point::abs()</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00170">isPointOnSegment()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00134">projection()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a255834d9deeba16697273e0471248c87"/><section>
     <title>distanceSegmentToSegment()</title>
 <indexterm><primary>distanceSegmentToSegment</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>distanceSegmentToSegment</secondary></indexterm>
 <para><computeroutput><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::distanceSegmentToSegment (const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; s1, const <link linkend="_struct_geometry_1_1_segment">Segment</link> &amp; s2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00178">178</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00212">212</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00170">distancePointToSegment()</link>, <link linkend="_geo_8hpp_source_1l00143">isIntersecting()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00204">distancePointToSegment()</link>, <link linkend="_geo_8hpp_source_1l00177">isIntersecting()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a9c5e5ffd70ed15d3ce03c6f5b69524df"/><section>
     <title>getPolygonArea()</title>
 <indexterm><primary>getPolygonArea</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>getPolygonArea</secondary></indexterm>
 <para><computeroutput><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::getPolygonArea (const vector&lt; <link linkend="_struct_geometry_1_1_point">Point</link> &gt; &amp; points)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00187">187</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00221">221</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_namespace_geometry_1ab9bf3d0fb49fb3cccd08e2905e1ffce6"/><section>
     <title>isConvex()</title>
 <indexterm><primary>isConvex</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>isConvex</secondary></indexterm>
 <para><computeroutput>bool Geometry::isConvex (const vector&lt; <link linkend="_struct_geometry_1_1_point">Point</link> &gt; &amp; points)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00197">197</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00231">231</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00009">greaterThan()</link>, <link linkend="_geo_8hpp_source_1l00008">lessThan()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00029">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00010">greaterThan()</link>, <link linkend="_geo_8hpp_source_1l00009">lessThan()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1ad8a7fbcb1e7ddafa0ec0d42800d90164"/><section>
     <title>isPointOnPolygon()</title>
 <indexterm><primary>isPointOnPolygon</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>isPointOnPolygon</secondary></indexterm>
 <para><computeroutput>bool Geometry::isPointOnPolygon (const vector&lt; <link linkend="_struct_geometry_1_1_point">Point</link> &gt; &amp; polygon, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00211">211</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00245">245</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00136">isPointOnSegment()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00170">isPointOnSegment()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a48aa32d46955c3cf80e1c37676edf4a6"/><section>
     <title>isPointInsidePolygon()</title>
 <indexterm><primary>isPointInsidePolygon</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>isPointInsidePolygon</secondary></indexterm>
 <para><computeroutput>bool Geometry::isPointInsidePolygon (const vector&lt; <link linkend="_struct_geometry_1_1_point">Point</link> &gt; &amp; polygon, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00221">221</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00255">255</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00009">greaterThan()</link>, <link linkend="_geo_8hpp_source_1l00008">lessThan()</link>, <link linkend="_geo_8hpp_source_1l00010">lessThanOrEqual()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00029">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00010">greaterThan()</link>, <link linkend="_geo_8hpp_source_1l00009">lessThan()</link>, <link linkend="_geo_8hpp_source_1l00011">lessThanOrEqual()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::y</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1af7466d8b7624193a11c59f8e0558d8ad"/><section>
     <title>convexHull()</title>
@@ -434,108 +482,108 @@
 <indexterm><primary>Geometry</primary><secondary>convexHull</secondary></indexterm>
 <para><computeroutput>vector&lt; <link linkend="_struct_geometry_1_1_point">Point</link> &gt; Geometry::convexHull (vector&lt; <link linkend="_struct_geometry_1_1_point">Point</link> &gt; &amp; points, bool include_collinear = <computeroutput>false</computeroutput>
 )</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00235">235</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00269">269</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00075">CLOCKWISE</link>, <link linkend="_geo_8hpp_source_1l00008">lessThan()</link>, <link linkend="_geo_8hpp_source_1l00077">ONLINE_FRONT</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00098">CLOCKWISE</link>, <link linkend="_geo_8hpp_source_1l00009">lessThan()</link>, <link linkend="_geo_8hpp_source_1l00100">ONLINE_FRONT</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::y</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a737b89d779a2c60bc146439342e24769"/><section>
     <title>convexHullDiameter()</title>
 <indexterm><primary>convexHullDiameter</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>convexHullDiameter</secondary></indexterm>
 <para><computeroutput><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::convexHullDiameter (const vector&lt; <link linkend="_struct_geometry_1_1_point">Point</link> &gt; &amp; hull)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00262">262</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00296">296</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00025">Geometry::Point::abs()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00038">Geometry::Point::abs()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a200dbcd1585ae4b59217590a4f86c135"/><section>
     <title>cutPolygon()</title>
 <indexterm><primary>cutPolygon</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>cutPolygon</secondary></indexterm>
 <para><computeroutput>vector&lt; <link linkend="_struct_geometry_1_1_point">Point</link> &gt; Geometry::cutPolygon (const vector&lt; <link linkend="_struct_geometry_1_1_point">Point</link> &gt; &amp; g, const <link linkend="_struct_geometry_1_1_line">Line</link> &amp; l)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00284">284</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00318">318</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00019">Geometry::Point::operator*()</link>, <link linkend="_geo_8hpp_source_1l00017">Geometry::Point::operator+()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00029">Geometry::Point::cross()</link>, <link linkend="_geo_8hpp_source_1l00022">Geometry::Point::operator*()</link>, <link linkend="_geo_8hpp_source_1l00020">Geometry::Point::operator+()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a5b1e16827da06a6b3f3ce3875b3f216d"/><section>
     <title>closestPair()</title>
 <indexterm><primary>closestPair</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>closestPair</secondary></indexterm>
 <para><computeroutput><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::closestPair (vector&lt; <link linkend="_struct_geometry_1_1_point">Point</link> &gt; &amp; points, int l, int r)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00304">304</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00338">338</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00025">Geometry::Point::abs()</link>, <link linkend="_geo_8hpp_source_1l00008">lessThan()</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00038">Geometry::Point::abs()</link>, <link linkend="_geo_8hpp_source_1l00009">lessThan()</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::y</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a25c84d2aafb07dd03188112b3c9b69e5"/><section>
     <title>countIntersections()</title>
 <indexterm><primary>countIntersections</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>countIntersections</secondary></indexterm>
 <para><computeroutput>int Geometry::countIntersections (vector&lt; <link linkend="_struct_geometry_1_1_segment">Segment</link> &gt; segments)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00329">329</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00363">363</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::x</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::b</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::x</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a160a3cda4bb1f308ae9166489d7b2f2d"/><section>
     <title>countCirclesIntersection()</title>
 <indexterm><primary>countCirclesIntersection</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>countCirclesIntersection</secondary></indexterm>
 <para><computeroutput>int Geometry::countCirclesIntersection (const <link linkend="_struct_geometry_1_1_circle">Circle</link> &amp; c1, const <link linkend="_struct_geometry_1_1_circle">Circle</link> &amp; c2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00382">382</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00416">416</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00062">Geometry::Circle::center</link>, <link linkend="_geo_8hpp_source_1l00009">greaterThan()</link>, <link linkend="_geo_8hpp_source_1l00063">Geometry::Circle::r</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00083">Geometry::Circle::center</link>, <link linkend="_geo_8hpp_source_1l00010">greaterThan()</link>, <link linkend="_geo_8hpp_source_1l00084">Geometry::Circle::r</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::y</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a6e29a04c787ae3404a41b0782b06b436"/><section>
     <title>getInCircle()</title>
 <indexterm><primary>getInCircle</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>getInCircle</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_geometry_1_1_circle">Circle</link> Geometry::getInCircle (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; A, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; B, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; C)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00398">398</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00432">432</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00025">Geometry::Point::abs()</link>, <link linkend="_geo_8hpp_source_1l00066">Geometry::Circle::Circle()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::Point()</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00038">Geometry::Point::abs()</link>, <link linkend="_geo_8hpp_source_1l00088">Geometry::Circle::Circle()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::Point()</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::y</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a5f10ad69ef666ea0a18e57b09dfc1aca"/><section>
     <title>getCircumCircle()</title>
 <indexterm><primary>getCircumCircle</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>getCircumCircle</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_geometry_1_1_circle">Circle</link> Geometry::getCircumCircle (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; A, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; B, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; C)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00409">409</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00443">443</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00025">Geometry::Point::abs()</link>, <link linkend="_geo_8hpp_source_1l00066">Geometry::Circle::Circle()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::Point()</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00038">Geometry::Point::abs()</link>, <link linkend="_geo_8hpp_source_1l00088">Geometry::Circle::Circle()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::Point()</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::y</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1aea8002cf252acca8ca329b77f17d4e5c"/><section>
     <title>getCircleLineIntersection()</title>
 <indexterm><primary>getCircleLineIntersection</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>getCircleLineIntersection</secondary></indexterm>
 <para><computeroutput>vector&lt; <link linkend="_struct_geometry_1_1_point">Point</link> &gt; Geometry::getCircleLineIntersection (const <link linkend="_struct_geometry_1_1_circle">Circle</link> &amp; c, <link linkend="_struct_geometry_1_1_point">Point</link> p1, <link linkend="_struct_geometry_1_1_point">Point</link> p2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00417">417</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00451">451</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00062">Geometry::Circle::center</link>, <link linkend="_geo_8hpp_source_1l00063">Geometry::Circle::r</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00083">Geometry::Circle::center</link>, <link linkend="_geo_8hpp_source_1l00084">Geometry::Circle::r</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::y</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1afa467fced21597c91d88160aa368dde0"/><section>
     <title>getCirclesIntersect()</title>
 <indexterm><primary>getCirclesIntersect</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>getCirclesIntersect</secondary></indexterm>
 <para><computeroutput>vector&lt; <link linkend="_struct_geometry_1_1_point">Point</link> &gt; Geometry::getCirclesIntersect (const <link linkend="_struct_geometry_1_1_circle">Circle</link> &amp; c1, const <link linkend="_struct_geometry_1_1_circle">Circle</link> &amp; c2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00450">450</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00484">484</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00062">Geometry::Circle::center</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::Point()</link>, <link linkend="_geo_8hpp_source_1l00063">Geometry::Circle::r</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00083">Geometry::Circle::center</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::Point()</link>, <link linkend="_geo_8hpp_source_1l00084">Geometry::Circle::r</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::y</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1affd43c52385e0185f55de795b049426b"/><section>
     <title>getTangentLinesFromPoint()</title>
 <indexterm><primary>getTangentLinesFromPoint</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>getTangentLinesFromPoint</secondary></indexterm>
 <para><computeroutput>vector&lt; <link linkend="_struct_geometry_1_1_point">Point</link> &gt; Geometry::getTangentLinesFromPoint (const <link linkend="_struct_geometry_1_1_circle">Circle</link> &amp; c, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00473">473</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00507">507</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00025">Geometry::Point::abs()</link>, <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00062">Geometry::Circle::center</link>, <link linkend="_geo_8hpp_source_1l00008">lessThan()</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00063">Geometry::Circle::r</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00038">Geometry::Point::abs()</link>, <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00083">Geometry::Circle::center</link>, <link linkend="_geo_8hpp_source_1l00009">lessThan()</link>, <link linkend="_geo_8hpp_source_1l00021">Geometry::Point::operator-()</link>, <link linkend="_geo_8hpp_source_1l00084">Geometry::Circle::r</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::y</link>.</para>
 </section>
 <anchor xml:id="_namespace_geometry_1a624725fa83089bed00ea1d0fa8fc4c1e"/><section>
     <title>getCommonTangentsLine()</title>
 <indexterm><primary>getCommonTangentsLine</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>getCommonTangentsLine</secondary></indexterm>
 <para><computeroutput>vector&lt; <link linkend="_struct_geometry_1_1_segment">Segment</link> &gt; Geometry::getCommonTangentsLine (const <link linkend="_struct_geometry_1_1_circle">Circle</link> &amp; c1, const <link linkend="_struct_geometry_1_1_circle">Circle</link> &amp; c2)</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00498">498</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00532">532</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00007">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00062">Geometry::Circle::center</link>, <link linkend="_geo_8hpp_source_1l00011">greaterThanOrEqual()</link>, <link linkend="_geo_8hpp_source_1l00008">lessThan()</link>, <link linkend="_geo_8hpp_source_1l00063">Geometry::Circle::r</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00014">Geometry::Point::y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">Geometry::Line::a</link>, <link linkend="_geo_8hpp_source_1l00008">almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00083">Geometry::Circle::center</link>, <link linkend="_geo_8hpp_source_1l00012">greaterThanOrEqual()</link>, <link linkend="_geo_8hpp_source_1l00009">lessThan()</link>, <link linkend="_geo_8hpp_source_1l00084">Geometry::Circle::r</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::x</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::y</link>.</para>
 </section>
 </section>
 <section>
@@ -545,7 +593,7 @@
 <indexterm><primary>EPS</primary><secondary>Geometry</secondary></indexterm>
 <indexterm><primary>Geometry</primary><secondary>EPS</secondary></indexterm>
 <para><computeroutput>const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::EPS =1e-9</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00006">6</link> 行目に定義があります。</para>
 </section>
 </section>
 </section>

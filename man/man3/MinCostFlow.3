@@ -1,0 +1,108 @@
+.TH "MinCostFlow" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MinCostFlow \- 最小費用流  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'min_cost_flow\&.hpp'\fP
+.SS "クラス"
+
+.in +1c
+.ti -1c
+.RI "struct \fBEdge\fP"
+.br
+.RI "辺構造体 "
+.in -1c
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBMinCostFlow\fP (int n)"
+.br
+.ti -1c
+.RI "void \fBadd_edge\fP (int from, int to, \fBll\fP cap, \fBll\fP cost)"
+.br
+.RI "s -> t に容量 cap, コスト cost の辺を追加する "
+.ti -1c
+.RI "vector< \fBEdge\fP > \fBget_edges\fP ()"
+.br
+.RI "全ての辺を返す "
+.ti -1c
+.RI "\fBll\fP \fBflow\fP (int s, int t, \fBll\fP f)"
+.br
+.RI "s から t へ流量 f の最小費用流のコストを求める "
+.in -1c
+.SH "詳解"
+.PP 
+最小費用流 
+
+
+.PP
+\fB覚え書き\fP
+.RS 4
+コスト負の辺を許容する。負の閉路はダメ。 
+.RE
+.PP
+
+.PP
+ \fBmin_cost_flow\&.hpp\fP の \fB5\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "MinCostFlow::MinCostFlow (int n)\fR [inline]\fP"
+
+.PP
+ \fBmin_cost_flow\&.hpp\fP の \fB17\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "void MinCostFlow::add_edge (int from, int to, \fBll\fP cap, \fBll\fP cost)\fR [inline]\fP"
+
+.PP
+s -> t に容量 cap, コスト cost の辺を追加する 
+.PP
+\fB覚え書き\fP
+.RS 4
+cost は負でも良い 
+.RE
+.PP
+
+.PP
+ \fBmin_cost_flow\&.hpp\fP の \fB21\fP 行目に定義があります。
+.SS "vector< \fBEdge\fP > MinCostFlow::get_edges ()\fR [inline]\fP"
+
+.PP
+全ての辺を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(V+E) 
+
+.PP
+直前に流した flow による残余であることに注意 
+.RE
+.PP
+
+.PP
+ \fBmin_cost_flow\&.hpp\fP の \fB29\fP 行目に定義があります。
+.SS "\fBll\fP MinCostFlow::flow (int s, int t, \fBll\fP f)\fR [inline]\fP"
+
+.PP
+s から t へ流量 f の最小費用流のコストを求める 流せない場合は INFL を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(FE log V) 
+.RE
+.PP
+
+.PP
+ \fBmin_cost_flow\&.hpp\fP の \fB38\fP 行目に定義があります。
+.PP
+参照先 \fBINFL\fP\&.
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

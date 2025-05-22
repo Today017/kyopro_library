@@ -20,7 +20,7 @@
 <anchor xml:id="_multipoint__evaluate_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(n2&lt;n)&#32;n2&lt;&lt;=1;
 <anchor xml:id="_multipoint__evaluate_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;vector&lt;vector&lt;T&gt;&gt;&#32;g(n2*2,{1});
 <anchor xml:id="_multipoint__evaluate_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;g[n2+i]={-x[i],1};
-<anchor xml:id="_multipoint__evaluate_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7">FOR</link>(i,n2-1,0)&#32;g[i]=PolyMul(g[i&lt;&lt;1],g[i&lt;&lt;1|1]);
+<anchor xml:id="_multipoint__evaluate_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ll&#32;i=n2-1;&#32;i&gt;0;&#32;i--)&#32;g[i]=PolyMul(g[i&lt;&lt;1],g[i&lt;&lt;1|1]);
 <anchor xml:id="_multipoint__evaluate_8hpp_source_1l00020"/>00020 
 <anchor xml:id="_multipoint__evaluate_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;g[1]=PolyDiv(f,g[1]).second;
 <anchor xml:id="_multipoint__evaluate_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7">FOR</link>(i,2,n2+n)&#32;g[i]=PolyDiv(g[i&gt;&gt;1],g[i]).second;

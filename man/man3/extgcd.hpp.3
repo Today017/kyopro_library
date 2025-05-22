@@ -1,0 +1,47 @@
+.TH "math/extgcd.hpp" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+math/extgcd.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include '\&.\&./\&.\&./kyopro_library/template\&.hpp'\fP
+.br
+
+.SS "関数"
+
+.in +1c
+.ti -1c
+.RI "tuple< \fBll\fP, \fBll\fP, \fBll\fP > \fBExtGcd\fP (\fBll\fP a, \fBll\fP b)"
+.br
+.RI "拡張ユークリッドの互除法 "
+.ti -1c
+.RI "\fBll\fP \fBModInvGcd\fP (\fBll\fP a, \fBll\fP m)"
+.br
+.RI "mod 逆元 "
+.in -1c
+.SH "関数詳解"
+.PP 
+.SS "tuple< \fBll\fP, \fBll\fP, \fBll\fP > ExtGcd (\fBll\fP a, \fBll\fP b)"
+
+.PP
+拡張ユークリッドの互除法 gcd(a,b) = gcd(ba,a), gcd(b,0) = b と ba + (b/a)*a = b を使う。 ax + by = g なる x,y を求めたい。 今、(ba)X + aY = g なる X, Y が分かっている。 (ba)X = bX - (b/a)*a*X より、これを代入して、 bX - (b/a)*a*X + aY = g a(Y-(b/a)*X) + bX = g 
+.PP
+ \fBextgcd\&.hpp\fP の \fB13\fP 行目に定義があります。
+.SS "\fBll\fP ModInvGcd (\fBll\fP a, \fBll\fP m)"
+
+.PP
+mod 逆元 a^(-1) (mod m) 
+.PP
+\fB覚え書き\fP
+.RS 4
+gcd(a,m)=1 でない場合、-1 を返す。 
+.RE
+.PP
+
+.PP
+ \fBextgcd\&.hpp\fP の \fB22\fP 行目に定義があります。
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

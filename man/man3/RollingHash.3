@@ -1,0 +1,68 @@
+.TH "RollingHash" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RollingHash \- Rolling \fBHash\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'rolling_hash\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBRollingHash\fP ()=default"
+.br
+.ti -1c
+.RI "\fBRollingHash\fP (const string &s)"
+.br
+.RI "文字列 s の Rolling \fBHash\fP を構築する "
+.ti -1c
+.RI "\fBHash\fP \fBget\fP (int l, int r)"
+.br
+.RI "区間 [l, r) のハッシュ値を取得する "
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "vector< \fBHash\fP > \fBhash\fP"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+Rolling \fBHash\fP 
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB91\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "RollingHash::RollingHash ()\fR [default]\fP"
+
+.SS "RollingHash::RollingHash (const string & s)\fR [inline]\fP"
+
+.PP
+文字列 s の Rolling \fBHash\fP を構築する 
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB96\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "\fBHash\fP RollingHash::get (int l, int r)\fR [inline]\fP"
+
+.PP
+区間 [l, r) のハッシュ値を取得する 
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB103\fP 行目に定義があります。
+.PP
+参照先 \fBHash::operator=()\fP, \fBHash::shift()\fP\&.
+.SH "メンバ詳解"
+.PP 
+.SS "vector<\fBHash\fP> RollingHash::hash"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB93\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

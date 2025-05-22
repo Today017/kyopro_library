@@ -48,43 +48,52 @@
 <anchor xml:id="_hld_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 <anchor xml:id="_hld_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;dep[u]&lt;dep[v]&#32;?&#32;u:v;
 <anchor xml:id="_hld_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;}
-<anchor xml:id="_hld_8hpp_source_1l00047"/><link linkend="_struct_h_l_d_1a57a2a1fce944ca4c9b4cfc4f497963e0">00047</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_h_l_d_1a57a2a1fce944ca4c9b4cfc4f497963e0">at</link>(<emphasis role="keywordtype">int</emphasis>&#32;v)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;pos[v];&#32;}
-<anchor xml:id="_hld_8hpp_source_1l00048"/>00048 
-<anchor xml:id="_hld_8hpp_source_1l00049"/>00049 <emphasis role="keyword">private</emphasis>:
-<anchor xml:id="_hld_8hpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;VVI&#32;graph;
-<anchor xml:id="_hld_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;VI&#32;sz,par,dep,head;
-<anchor xml:id="_hld_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;VI&#32;hld;&#32;<emphasis role="comment">///&lt;&#32;HLD後の配列</emphasis>
-<anchor xml:id="_hld_8hpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;VI&#32;pos;&#32;<emphasis role="comment">///&lt;&#32;hldの逆引き</emphasis>
-<anchor xml:id="_hld_8hpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;resize(<emphasis role="keywordtype">int</emphasis>&#32;n)&#32;{&#32;graph.resize(n),sz.resize(n),par.resize(n),dep.resize(n),pos.resize(n),head.resize(n);&#32;}
-<anchor xml:id="_hld_8hpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;dfs1(<emphasis role="keywordtype">int</emphasis>&#32;now,&#32;<emphasis role="keywordtype">int</emphasis>&#32;pre=-1)&#32;{
-<anchor xml:id="_hld_8hpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;par[now]=pre;
-<anchor xml:id="_hld_8hpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;res=1;
-<anchor xml:id="_hld_8hpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;nxt:graph[now])&#32;{
-<anchor xml:id="_hld_8hpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(nxt==pre)<emphasis role="keywordflow">continue</emphasis>;
-<anchor xml:id="_hld_8hpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dep[nxt]=dep[now]+1;
-<anchor xml:id="_hld_8hpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dfs1(nxt,now);
-<anchor xml:id="_hld_8hpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;res+=sz[nxt];
-<anchor xml:id="_hld_8hpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<anchor xml:id="_hld_8hpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sz[now]=res;
-<anchor xml:id="_hld_8hpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;}
-<anchor xml:id="_hld_8hpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;dfs2(<emphasis role="keywordtype">int</emphasis>&#32;now,&#32;<emphasis role="keywordtype">int</emphasis>&#32;a,&#32;<emphasis role="keywordtype">int</emphasis>&#32;pre=-1)&#32;{
-<anchor xml:id="_hld_8hpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pos[now]=hld.size();
-<anchor xml:id="_hld_8hpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hld.push_back(now);
-<anchor xml:id="_hld_8hpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;head[now]=a;
-<anchor xml:id="_hld_8hpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(sz[now]==1)&#32;<emphasis role="keywordflow">return</emphasis>;
-<anchor xml:id="_hld_8hpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;mx=0,idx=0;
-<anchor xml:id="_hld_8hpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;nxt:graph[now])&#32;{
-<anchor xml:id="_hld_8hpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(nxt==pre)&#32;<emphasis role="keywordflow">continue</emphasis>;
-<anchor xml:id="_hld_8hpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(mx&lt;sz[nxt])&#32;{
-<anchor xml:id="_hld_8hpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mx=sz[nxt];
-<anchor xml:id="_hld_8hpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;idx=nxt;
-<anchor xml:id="_hld_8hpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_hld_8hpp_source_1l00047"/>00047 
+<anchor xml:id="_hld_8hpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;頂点vのHL分解後の列での位置を返す</emphasis>
+<anchor xml:id="_hld_8hpp_source_1l00049"/><link linkend="_struct_h_l_d_1a57a2a1fce944ca4c9b4cfc4f497963e0">00049</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_h_l_d_1a57a2a1fce944ca4c9b4cfc4f497963e0">at</link>(<emphasis role="keywordtype">int</emphasis>&#32;v)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;pos[v];&#32;}
+<anchor xml:id="_hld_8hpp_source_1l00050"/>00050 
+<anchor xml:id="_hld_8hpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;HL分解後の列で、頂点vの部分木に対応する区間を返す</emphasis>
+<anchor xml:id="_hld_8hpp_source_1l00052"/><link linkend="_struct_h_l_d_1a3c1640f8cf6c7d78cb56336d223edb94">00052</link> &#32;&#32;&#32;&#32;<link linkend="_struct_h_l_d_1a3c1640f8cf6c7d78cb56336d223edb94">pair</link>&lt;<emphasis role="keywordtype">int</emphasis>,<emphasis role="keywordtype">int</emphasis>&gt;&#32;<link linkend="_struct_h_l_d_1a3c1640f8cf6c7d78cb56336d223edb94">subtree</link>(<emphasis role="keywordtype">int</emphasis>&#32;v)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;{pos[v],pos2[v]};&#32;}
+<anchor xml:id="_hld_8hpp_source_1l00053"/>00053 
+<anchor xml:id="_hld_8hpp_source_1l00054"/>00054 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_hld_8hpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;VVI&#32;graph;
+<anchor xml:id="_hld_8hpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;VI&#32;sz,par,dep,head;
+<anchor xml:id="_hld_8hpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;VI&#32;hld;&#32;<emphasis role="comment">///&lt;&#32;HLD後の配列</emphasis>
+<anchor xml:id="_hld_8hpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;VI&#32;pos,pos2;&#32;<emphasis role="comment">///&lt;&#32;hldの逆引き</emphasis>
+<anchor xml:id="_hld_8hpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;resize(<emphasis role="keywordtype">int</emphasis>&#32;n)&#32;{&#32;graph.resize(n),sz.resize(n),par.resize(n),dep.resize(n),pos.resize(n),head.resize(n),pos2.resize(n);&#32;}
+<anchor xml:id="_hld_8hpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;dfs1(<emphasis role="keywordtype">int</emphasis>&#32;now,&#32;<emphasis role="keywordtype">int</emphasis>&#32;pre=-1)&#32;{
+<anchor xml:id="_hld_8hpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;par[now]=pre;
+<anchor xml:id="_hld_8hpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;res=1;
+<anchor xml:id="_hld_8hpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;nxt:graph[now])&#32;{
+<anchor xml:id="_hld_8hpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(nxt==pre)<emphasis role="keywordflow">continue</emphasis>;
+<anchor xml:id="_hld_8hpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dep[nxt]=dep[now]+1;
+<anchor xml:id="_hld_8hpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dfs1(nxt,now);
+<anchor xml:id="_hld_8hpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;res+=sz[nxt];
+<anchor xml:id="_hld_8hpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_hld_8hpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sz[now]=res;
+<anchor xml:id="_hld_8hpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_hld_8hpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;dfs2(<emphasis role="keywordtype">int</emphasis>&#32;now,&#32;<emphasis role="keywordtype">int</emphasis>&#32;a,&#32;<emphasis role="keywordtype">int</emphasis>&#32;pre=-1)&#32;{
+<anchor xml:id="_hld_8hpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pos[now]=hld.size();
+<anchor xml:id="_hld_8hpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hld.push_back(now);
+<anchor xml:id="_hld_8hpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;head[now]=a;
+<anchor xml:id="_hld_8hpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(sz[now]==1)&#32;{
+<anchor xml:id="_hld_8hpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pos2[now]=hld.size();
+<anchor xml:id="_hld_8hpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
 <anchor xml:id="_hld_8hpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<anchor xml:id="_hld_8hpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dfs2(idx,a,now);
+<anchor xml:id="_hld_8hpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;mx=0,idx=0;
 <anchor xml:id="_hld_8hpp_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;nxt:graph[now])&#32;{
-<anchor xml:id="_hld_8hpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(nxt==pre||nxt==idx)&#32;<emphasis role="keywordflow">continue</emphasis>;
-<anchor xml:id="_hld_8hpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dfs2(nxt,nxt,now);
-<anchor xml:id="_hld_8hpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<anchor xml:id="_hld_8hpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;}
-<anchor xml:id="_hld_8hpp_source_1l00085"/>00085 };
+<anchor xml:id="_hld_8hpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(nxt==pre)&#32;<emphasis role="keywordflow">continue</emphasis>;
+<anchor xml:id="_hld_8hpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(mx&lt;sz[nxt])&#32;{
+<anchor xml:id="_hld_8hpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mx=sz[nxt];
+<anchor xml:id="_hld_8hpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;idx=nxt;
+<anchor xml:id="_hld_8hpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_hld_8hpp_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_hld_8hpp_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dfs2(idx,a,now);
+<anchor xml:id="_hld_8hpp_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;nxt:graph[now])&#32;{
+<anchor xml:id="_hld_8hpp_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(nxt==pre||nxt==idx)&#32;<emphasis role="keywordflow">continue</emphasis>;
+<anchor xml:id="_hld_8hpp_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dfs2(nxt,nxt,now);
+<anchor xml:id="_hld_8hpp_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_hld_8hpp_source_1l00092"/>00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pos2[now]=hld.size();
+<anchor xml:id="_hld_8hpp_source_1l00093"/>00093 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_hld_8hpp_source_1l00094"/>00094 };
 </programlisting></section>

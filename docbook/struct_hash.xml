@@ -8,7 +8,7 @@
 <simplesect>
     <title>公開型    </title>
         <itemizedlist>
-            <listitem><para>using <link linkend="_struct_hash_1a21e94320d986c15f38f83c0a1bc92e52">Type</link> = array&lt;<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>,5&gt;</para>
+            <listitem><para>using <link linkend="_struct_hash_1a093390f17c113dc150020dac86c6ddd4">Type</link> = array&lt;<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>,HASH_PRIME&gt;</para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -42,7 +42,7 @@
 <simplesect>
     <title>公開変数類    </title>
         <itemizedlist>
-            <listitem><para><link linkend="_struct_hash_1a21e94320d986c15f38f83c0a1bc92e52">Type</link> <link linkend="_struct_hash_1a6a39c22a994feb6e341c48e1a9ac24cb">value</link></para>
+            <listitem><para><link linkend="_struct_hash_1a093390f17c113dc150020dac86c6ddd4">Type</link> <link linkend="_struct_hash_1a6a39c22a994feb6e341c48e1a9ac24cb">value</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -59,23 +59,29 @@
 </listitem>
             <listitem><para>static bool <link linkend="_struct_hash_1a07623ca4117730eb67bce9817f146810">flag</link> =false</para>
 </listitem>
-            <listitem><para>static array&lt; array&lt; <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, 5 &gt;, 256 &gt; <link linkend="_struct_hash_1a0265ebdf193428764f0b21cc2a9d324a">num</link> ={}</para>
+            <listitem><para>static array&lt; array&lt; <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, HASH_PRIME &gt;, 256 &gt; <link linkend="_struct_hash_1afec174db8743f3050d2f39baef2a0e51">num</link> ={}</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <section>
 <title>詳解</title>
+
+<para><caution><title>注意</title>
+
+<para>問題の成約に合わせて書き換えること </para>
+</caution>
+</para>
 <para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00010">10</link> 行目に定義があります。</para>
 </section>
 <section>
 <title>型定義メンバ詳解</title>
-<anchor xml:id="_struct_hash_1a21e94320d986c15f38f83c0a1bc92e52"/><section>
+<anchor xml:id="_struct_hash_1a093390f17c113dc150020dac86c6ddd4"/><section>
     <title>Type</title>
 <indexterm><primary>Type</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>Type</secondary></indexterm>
-<para><computeroutput>using <link linkend="_struct_hash_1a21e94320d986c15f38f83c0a1bc92e52">Hash::Type</link> = array&lt;<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>,5&gt;</computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00009">9</link> 行目に定義があります。</para>
+<para><computeroutput>using <link linkend="_struct_hash_1a093390f17c113dc150020dac86c6ddd4">Hash::Type</link> = array&lt;<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>,HASH_PRIME&gt;</computeroutput></para><para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00012">12</link> 行目に定義があります。</para>
 </section>
 </section>
 <section>
@@ -90,18 +96,18 @@
 <indexterm><primary>Hash</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>Hash</secondary></indexterm>
 <para><computeroutput>Hash::Hash (const <link linkend="_struct_hash">Hash</link> &amp; other)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00035">35</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00038">38</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_rolling__hash_8hpp_source_1l00013">flag</link>, <link linkend="_rolling__hash_8hpp_source_1l00018">init()</link>.</para>
+参照先 <link linkend="_rolling__hash_8hpp_source_1l00016">flag</link>, <link linkend="_rolling__hash_8hpp_source_1l00021">init()</link>.</para>
 </section>
 <anchor xml:id="_struct_hash_1aa2704fbc0e9be14105f061e71b8c144a"/><section>
     <title>Hash()<computeroutput>[3/3]</computeroutput></title>
 <indexterm><primary>Hash</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>Hash</secondary></indexterm>
 <para><computeroutput>Hash::Hash (char c)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00039">39</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00042">42</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_rolling__hash_8hpp_source_1l00013">flag</link>, <link linkend="_rolling__hash_8hpp_source_1l00018">init()</link>.</para>
+参照先 <link linkend="_rolling__hash_8hpp_source_1l00016">flag</link>, <link linkend="_rolling__hash_8hpp_source_1l00021">init()</link>.</para>
 </section>
 </section>
 <section>
@@ -111,62 +117,62 @@
 <indexterm><primary>init</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>init</secondary></indexterm>
 <para><computeroutput>void Hash::init ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00021">21</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_rolling__hash_8hpp_source_1l00013">flag</link>, <link linkend="_rolling__hash_8hpp_source_1l00006">HASH_C</link>, <link linkend="_rolling__hash_8hpp_source_1l00005">HASH_MAX</link>, <link linkend="_xor128_8hpp_source_1l00018">Xor128()</link>.</para>
+参照先 <link linkend="_rolling__hash_8hpp_source_1l00016">flag</link>, <link linkend="_xor128_8hpp_source_1l00018">Xor128()</link>.</para>
 </section>
 <anchor xml:id="_struct_hash_1ad788fc103417e8d81d2c140bb05c1447"/><section>
     <title>operator+=()</title>
 <indexterm><primary>operator+=</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>operator+=</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_hash">Hash</link> &amp; Hash::operator+= (const <link linkend="_struct_hash">Hash</link> &amp; other)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00045">45</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00048">48</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_struct_hash_1ae8b7b557d9b0fdbd7709be1bfc4ca9f5"/><section>
     <title>operator-=()</title>
 <indexterm><primary>operator-=</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>operator-=</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_hash">Hash</link> &amp; Hash::operator-= (const <link linkend="_struct_hash">Hash</link> &amp; other)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00049">49</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00052">52</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_struct_hash_1a37354fe2736bdaca531b94e17c44b784"/><section>
     <title>operator+()</title>
 <indexterm><primary>operator+</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>operator+</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_hash">Hash</link> Hash::operator+ (const <link linkend="_struct_hash">Hash</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00053">53</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00056">56</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_rolling__hash_8hpp_source_1l00045">operator+=()</link>.</para>
+参照先 <link linkend="_rolling__hash_8hpp_source_1l00048">operator+=()</link>.</para>
 </section>
 <anchor xml:id="_struct_hash_1a6c2d1e0f276c921cfc4e46b001100c06"/><section>
     <title>operator-()</title>
 <indexterm><primary>operator-</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>operator-</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_hash">Hash</link> Hash::operator- (const <link linkend="_struct_hash">Hash</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00058">58</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00061">61</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_rolling__hash_8hpp_source_1l00049">operator-=()</link>.</para>
+参照先 <link linkend="_rolling__hash_8hpp_source_1l00052">operator-=()</link>.</para>
 </section>
 <anchor xml:id="_struct_hash_1ad96321a44bb502422139b5c06f484be3"/><section>
     <title>shift()</title>
 <indexterm><primary>shift</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>shift</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_hash">Hash</link> Hash::shift (int x) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00063">63</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00066">66</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_struct_hash_1a06b1d032944f2169544b27ddedfe9abc"/><section>
     <title>operator==()</title>
 <indexterm><primary>operator==</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>operator==</secondary></indexterm>
 <para><computeroutput>bool Hash::operator== (const <link linkend="_struct_hash">Hash</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00069">69</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00072">72</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_struct_hash_1af4e61589fbc15d41e10e54abecb77d9c"/><section>
     <title>operator=()</title>
 <indexterm><primary>operator=</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>operator=</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_hash">Hash</link> &amp; Hash::operator= (const <link linkend="_struct_hash">Hash</link> &amp; other)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00073">73</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00076">76</link> 行目に定義があります。</para>
 </section>
 </section>
 <section>
@@ -176,49 +182,49 @@
 <indexterm><primary>base</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>base</secondary></indexterm>
 <para><computeroutput><link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> Hash::base<computeroutput>[static]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00010">10</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00013">13</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_struct_hash_1a65e9a611ad519be5e54523e2845422dc"/><section>
     <title>inv</title>
 <indexterm><primary>inv</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>inv</secondary></indexterm>
 <para><computeroutput><link linkend="_template_8hpp_1a11a9e4e46b8b410aee9374e030feb3de">VVL</link> Hash::inv<computeroutput>[static]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00011">11</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00014">14</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_struct_hash_1a40b806f7e170c9454766807a0340696b"/><section>
     <title>pow</title>
 <indexterm><primary>pow</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>pow</secondary></indexterm>
 <para><computeroutput><link linkend="_template_8hpp_1a11a9e4e46b8b410aee9374e030feb3de">VVL</link> Hash::pow<computeroutput>[static]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00011">11</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00014">14</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_struct_hash_1a3bd24b140ac1c70ae98a01974b0c9980"/><section>
     <title>mod</title>
 <indexterm><primary>mod</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>mod</secondary></indexterm>
 <para><computeroutput>const <link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> Hash::mod ={1000000007,1000000009,1000000021,1000000033,1000000087}<computeroutput>[static]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00082">82</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00085">85</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_struct_hash_1a07623ca4117730eb67bce9817f146810"/><section>
     <title>flag</title>
 <indexterm><primary>flag</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>flag</secondary></indexterm>
 <para><computeroutput>bool Hash::flag =false<computeroutput>[static]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00013">13</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
 </section>
-<anchor xml:id="_struct_hash_1a0265ebdf193428764f0b21cc2a9d324a"/><section>
+<anchor xml:id="_struct_hash_1afec174db8743f3050d2f39baef2a0e51"/><section>
     <title>num</title>
 <indexterm><primary>num</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>num</secondary></indexterm>
-<para><computeroutput>array&lt; array&lt; <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, 5 &gt;, <link linkend="_rolling__hash_8hpp_1a404ac35e6b35b40321967f29d9f2c783">HASH_C</link> &gt; Hash::num ={}<computeroutput>[static]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00084">84</link> 行目に定義があります。</para>
+<para><computeroutput>array&lt; array&lt; <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, HASH_PRIME &gt;, HASH_C &gt; Hash::num ={}<computeroutput>[static]</computeroutput></computeroutput></para><para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00087">87</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_struct_hash_1a6a39c22a994feb6e341c48e1a9ac24cb"/><section>
     <title>value</title>
 <indexterm><primary>value</primary><secondary>Hash</secondary></indexterm>
 <indexterm><primary>Hash</primary><secondary>value</secondary></indexterm>
-<para><computeroutput><link linkend="_struct_hash_1a21e94320d986c15f38f83c0a1bc92e52">Type</link> Hash::value</computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
+<para><computeroutput><link linkend="_struct_hash_1a093390f17c113dc150020dac86c6ddd4">Type</link> Hash::value</computeroutput></para><para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
 </section>
 <para>
 この構造体詳解は次のファイルから抽出されました:</para>

@@ -11,6 +11,8 @@
 </listitem>
             <listitem><para>#define <link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,  n)</para>
 </listitem>
+            <listitem><para>#define <link linkend="_template_8hpp_1a98be0bb4bc26ab18cde222e08f2e5127">PER</link>(i,  n)</para>
+</listitem>
             <listitem><para>#define <link linkend="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7">FOR</link>(i,  a,  b)</para>
 </listitem>
             <listitem><para>#define <link linkend="_template_8hpp_1a86ee3ff44c537d94ccbabf941a613688">debug</link>(...)</para>
@@ -95,27 +97,35 @@
 </programlisting><para>
  <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
 </section>
+<anchor xml:id="_template_8hpp_1a98be0bb4bc26ab18cde222e08f2e5127"/><section>
+    <title>PER</title>
+<indexterm><primary>PER</primary><secondary>template.hpp</secondary></indexterm>
+<indexterm><primary>template.hpp</primary><secondary>PER</secondary></indexterm>
+<para><computeroutput>#define PER( i,  n)</computeroutput></para><emphasis role="strong">値:</emphasis><programlisting linenumbering="unnumbered"><emphasis role="keywordflow">for</emphasis>(<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>&#32;i=(n)-1;&#32;i&gt;=0;&#32;i--)
+</programlisting><para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
+</section>
 <anchor xml:id="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7"/><section>
     <title>FOR</title>
 <indexterm><primary>FOR</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>FOR</secondary></indexterm>
-<para><computeroutput>#define FOR( i,  a,  b)</computeroutput></para><emphasis role="strong">値:</emphasis><programlisting linenumbering="unnumbered"><emphasis role="keywordflow">for</emphasis>(<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>&#32;i=(<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>)(a);&#32;(a)&lt;(b)&#32;?&#32;i&lt;(b)&#32;:&#32;i&gt;(b);&#32;i+=((a)&lt;(b)&#32;?&#32;1&#32;:&#32;-1))
+<para><computeroutput>#define FOR( i,  a,  b)</computeroutput></para><emphasis role="strong">値:</emphasis><programlisting linenumbering="unnumbered"><emphasis role="keywordflow">for</emphasis>(<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>&#32;i=(<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>)(a);&#32;i&lt;(b);&#32;i++)
 </programlisting><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00009">9</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a86ee3ff44c537d94ccbabf941a613688"/><section>
     <title>debug</title>
 <indexterm><primary>debug</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>debug</secondary></indexterm>
 <para><computeroutput>#define debug( ...)</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00023">23</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00024">24</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a03e896b87233163e2dc3399c65cdfc2d"/><section>
     <title>print_line</title>
 <indexterm><primary>print_line</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>print_line</secondary></indexterm>
 <para><computeroutput>#define print_line</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00024">24</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00025">25</link> 行目に定義があります。</para>
 </section>
 </section>
 <section>
@@ -125,84 +135,84 @@
 <indexterm><primary>rpriority_queue</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>rpriority_queue</secondary></indexterm>
 <computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>using <link linkend="_template_8hpp_1ae5ef38025fe230c42996fedcb333507a">rpriority_queue</link> = priority_queue&lt;T,vector&lt;T&gt;,greater&lt;T&gt;&gt;</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00014">14</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00015">15</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62"/><section>
     <title>ll</title>
 <indexterm><primary>ll</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>ll</secondary></indexterm>
 <para><computeroutput>using <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> = long long</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00015">15</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a41f1d17ffdc8a7500e7aadc2b7e05a63"/><section>
     <title>ld</title>
 <indexterm><primary>ld</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>ld</secondary></indexterm>
 <para><computeroutput>using <link linkend="_template_8hpp_1a41f1d17ffdc8a7500e7aadc2b7e05a63">ld</link> = long double</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765"/><section>
     <title>ull</title>
 <indexterm><primary>ull</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>ull</secondary></indexterm>
 <para><computeroutput>using <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> = unsigned long long</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1af459ee81f834e904cb702ffcb928335e"/><section>
     <title>lll</title>
 <indexterm><primary>lll</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>lll</secondary></indexterm>
 <para><computeroutput>using <link linkend="_template_8hpp_1af459ee81f834e904cb702ffcb928335e">lll</link> = __int128_t</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b"/><section>
     <title>VI</title>
 <indexterm><primary>VI</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>VI</secondary></indexterm>
 <para><computeroutput>using <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> = vector&lt;int&gt;</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85"/><section>
     <title>VVI</title>
 <indexterm><primary>VVI</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>VVI</secondary></indexterm>
 <para><computeroutput>using <link linkend="_template_8hpp_1aa04f4352ca552897b0c9d791a7bdfa85">VVI</link> = vector&lt;<link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link>&gt;</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532"/><section>
     <title>VL</title>
 <indexterm><primary>VL</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>VL</secondary></indexterm>
 <para><computeroutput>using <link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> = vector&lt;<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>&gt;</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a11a9e4e46b8b410aee9374e030feb3de"/><section>
     <title>VVL</title>
 <indexterm><primary>VVL</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>VVL</secondary></indexterm>
 <para><computeroutput>using <link linkend="_template_8hpp_1a11a9e4e46b8b410aee9374e030feb3de">VVL</link> = vector&lt;<link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link>&gt;</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a7f582aad13bf86402da717000515ca1c"/><section>
     <title>PL</title>
 <indexterm><primary>PL</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>PL</secondary></indexterm>
 <para><computeroutput>using <link linkend="_template_8hpp_1a7f582aad13bf86402da717000515ca1c">PL</link> = pair&lt;<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>,<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>&gt;</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a2c3a5a109d6d21e6f64ab05472266de4"/><section>
     <title>VP</title>
 <indexterm><primary>VP</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>VP</secondary></indexterm>
 <para><computeroutput>using <link linkend="_template_8hpp_1a2c3a5a109d6d21e6f64ab05472266de4">VP</link> = vector&lt;<link linkend="_template_8hpp_1a7f582aad13bf86402da717000515ca1c">PL</link>&gt;</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a20b579988fc1098f6357cbd1f07dc5e8"/><section>
     <title>WG</title>
 <indexterm><primary>WG</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>WG</secondary></indexterm>
 <para><computeroutput>using <link linkend="_template_8hpp_1a20b579988fc1098f6357cbd1f07dc5e8">WG</link> = vector&lt;vector&lt;pair&lt;int,<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>&gt;&gt;&gt;</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
 </section>
 </section>
 <section>
@@ -212,28 +222,28 @@
 <indexterm><primary>LB</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>LB</secondary></indexterm>
 <computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>int LB (const vector&lt; T &gt; &amp; v, T x)</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00010">10</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00011">11</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a8743e7b47f30c6bc8b3ef708cfd690a5"/><section>
     <title>UQ()</title>
 <indexterm><primary>UQ</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>UQ</secondary></indexterm>
 <computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>int UQ (T &amp; v)</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00011">11</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00012">12</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a3e8244c32e6ce7ca2cdd01c86aac2d3f"/><section>
     <title>chmax()</title>
 <indexterm><primary>chmax</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>chmax</secondary></indexterm>
 <computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>bool chmax (T &amp; a, T b)</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00012">12</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00013">13</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1ad3e093a6b7f9ed915c0c64ec47b45564"/><section>
     <title>chmin()</title>
 <indexterm><primary>chmin</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>chmin</secondary></indexterm>
 <computeroutput>template&lt;typename T&gt; </computeroutput><para><computeroutput>bool chmin (T &amp; a, T b)</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00013">13</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00014">14</link> 行目に定義があります。</para>
 </section>
 </section>
 <section>
@@ -243,14 +253,14 @@
 <indexterm><primary>INF</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>INF</secondary></indexterm>
 <para><computeroutput>const int INF =1e9+10</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00015">15</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a1f713edb7a826e3710159658d6ef9815"/><section>
     <title>INFL</title>
 <indexterm><primary>INFL</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>INFL</secondary></indexterm>
 <para><computeroutput>const <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> INFL =4e18</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00015">15</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
 </section>
 </section>
 </section>

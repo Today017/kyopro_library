@@ -54,8 +54,6 @@
 <indexterm><primary>xor128.hpp</primary><secondary>Xor128Prob</secondary></indexterm>
 <para><computeroutput><link linkend="_template_8hpp_1a41f1d17ffdc8a7500e7aadc2b7e05a63">ld</link> Xor128Prob ( )</computeroutput></para><para>
  <link linkend="_xor128_8hpp_source">xor128.hpp</link> の <link linkend="_xor128_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
-<para>
-参照先 <link linkend="_xor128_8hpp_source_1l00005">Xor128()</link>.</para>
 </section>
 </section>
 </section>

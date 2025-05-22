@@ -3,6 +3,11 @@
 <title>Geometry::Point 構造体</title>
 <indexterm><primary>Geometry::Point</primary></indexterm>
 <para>
+
+<para>２次元平面上の位置ベクトル </para>
+ 
+</para>
+<para>
 <computeroutput>#include &quot;geo.hpp&quot;</computeroutput>
 </para>
 <simplesect>
@@ -21,16 +26,28 @@
             <listitem><para><link linkend="_struct_geometry_1_1_point">Point</link> <link linkend="_struct_geometry_1_1_point_1a19e7f3176a2f93c3a0347266066dfd9e">operator/</link> (<link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> k) const</para>
 </listitem>
             <listitem><para><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> <link linkend="_struct_geometry_1_1_point_1ab17c1525afa5688443c09963ce5512bf">dot</link> (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p) const</para>
+
+<para>p との内積を返す </para>
 </listitem>
             <listitem><para><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> <link linkend="_struct_geometry_1_1_point_1a0ddff0422405796c7a964360bb022f5c">cross</link> (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p) const</para>
+
+<para>p との外積を返す </para>
 </listitem>
             <listitem><para><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> <link linkend="_struct_geometry_1_1_point_1af920478ca39ffd1bad37d4ede4b3c037">cross</link> (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p1, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p2) const</para>
+
+<para>p1 と p2 を端点とするベクトルとの外積を返す </para>
 </listitem>
             <listitem><para><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> <link linkend="_struct_geometry_1_1_point_1a81f8b8ce71c902bb0207d058920e6ef3">norm</link> () const</para>
+
+<para>２乗ノルムを返す </para>
 </listitem>
             <listitem><para><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> <link linkend="_struct_geometry_1_1_point_1a8472d95742274c7339e1f227729f8f39">abs</link> () const</para>
+
+<para>ユークリッドノルムを返す </para>
 </listitem>
             <listitem><para><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> <link linkend="_struct_geometry_1_1_point_1a1729c4329f9453a3cd2806cafb5d54c3">arg</link> () const</para>
+
+<para>偏角を返す </para>
 </listitem>
             <listitem><para>bool <link linkend="_struct_geometry_1_1_point_1abceed0f8bd56215ac72a181686ef82c0">operator==</link> (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p) const</para>
 </listitem>
@@ -54,8 +71,10 @@
 </simplesect>
 <section>
 <title>詳解</title>
+
+<para>２次元平面上の位置ベクトル </para>
 <para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00013">13</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00015">15</link> 行目に定義があります。</para>
 </section>
 <section>
 <title>構築子と解体子</title>
@@ -69,9 +88,9 @@
 <indexterm><primary>Point</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>Point</secondary></indexterm>
 <para><computeroutput>Geometry::Point::Point (<link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> x, <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> y)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00014">x</link>, <link linkend="_geo_8hpp_source_1l00014">y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00016">x</link>, <link linkend="_geo_8hpp_source_1l00016">y</link>.</para>
 </section>
 </section>
 <section>
@@ -81,99 +100,123 @@
 <indexterm><primary>operator+</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>operator+</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_geometry_1_1_point">Point</link> Geometry::Point::operator+ (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00020">20</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00016">Point()</link>, <link linkend="_geo_8hpp_source_1l00014">x</link>, <link linkend="_geo_8hpp_source_1l00014">y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00018">Point()</link>, <link linkend="_geo_8hpp_source_1l00016">x</link>, <link linkend="_geo_8hpp_source_1l00016">y</link>.</para>
 </section>
 <anchor xml:id="_struct_geometry_1_1_point_1af5c915184c8721ef6b59eee6fda6f37c"/><section>
     <title>operator-()</title>
 <indexterm><primary>operator-</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>operator-</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_geometry_1_1_point">Point</link> Geometry::Point::operator- (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00018">18</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00021">21</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00016">Point()</link>, <link linkend="_geo_8hpp_source_1l00014">x</link>, <link linkend="_geo_8hpp_source_1l00014">y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00018">Point()</link>, <link linkend="_geo_8hpp_source_1l00016">x</link>, <link linkend="_geo_8hpp_source_1l00016">y</link>.</para>
 </section>
 <anchor xml:id="_struct_geometry_1_1_point_1a7a98ffe237923ca61f6cc0320ab168f1"/><section>
     <title>operator*()</title>
 <indexterm><primary>operator*</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>operator*</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_geometry_1_1_point">Point</link> Geometry::Point::operator* (<link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> k) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00019">19</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00022">22</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00016">Point()</link>, <link linkend="_geo_8hpp_source_1l00014">x</link>, <link linkend="_geo_8hpp_source_1l00014">y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00018">Point()</link>, <link linkend="_geo_8hpp_source_1l00016">x</link>, <link linkend="_geo_8hpp_source_1l00016">y</link>.</para>
 </section>
 <anchor xml:id="_struct_geometry_1_1_point_1a19e7f3176a2f93c3a0347266066dfd9e"/><section>
     <title>operator/()</title>
 <indexterm><primary>operator/</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>operator/</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_geometry_1_1_point">Point</link> Geometry::Point::operator/ (<link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> k) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00020">20</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00023">23</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00016">Point()</link>, <link linkend="_geo_8hpp_source_1l00014">x</link>, <link linkend="_geo_8hpp_source_1l00014">y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00018">Point()</link>, <link linkend="_geo_8hpp_source_1l00016">x</link>, <link linkend="_geo_8hpp_source_1l00016">y</link>.</para>
 </section>
 <anchor xml:id="_struct_geometry_1_1_point_1ab17c1525afa5688443c09963ce5512bf"/><section>
     <title>dot()</title>
 <indexterm><primary>dot</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>dot</secondary></indexterm>
 <para><computeroutput><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::Point::dot (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00021">21</link> 行目に定義があります。</para>
+
+<para>p との内積を返す </para>
+</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00014">x</link>, <link linkend="_geo_8hpp_source_1l00014">y</link>.</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00026">26</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00016">x</link>, <link linkend="_geo_8hpp_source_1l00016">y</link>.</para>
 </section>
 <anchor xml:id="_struct_geometry_1_1_point_1a0ddff0422405796c7a964360bb022f5c"/><section>
     <title>cross()<computeroutput>[1/2]</computeroutput></title>
 <indexterm><primary>cross</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>cross</secondary></indexterm>
 <para><computeroutput><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::Point::cross (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00022">22</link> 行目に定義があります。</para>
+
+<para>p との外積を返す </para>
+</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00014">x</link>, <link linkend="_geo_8hpp_source_1l00014">y</link>.</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00029">29</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00016">x</link>, <link linkend="_geo_8hpp_source_1l00016">y</link>.</para>
 </section>
 <anchor xml:id="_struct_geometry_1_1_point_1af920478ca39ffd1bad37d4ede4b3c037"/><section>
     <title>cross()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>cross</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>cross</secondary></indexterm>
 <para><computeroutput><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::Point::cross (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p1, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p2) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00023">23</link> 行目に定義があります。</para>
+
+<para>p1 と p2 を端点とするベクトルとの外積を返す </para>
+</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00014">x</link>, <link linkend="_geo_8hpp_source_1l00014">y</link>.</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00032">32</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00016">x</link>, <link linkend="_geo_8hpp_source_1l00016">y</link>.</para>
 </section>
 <anchor xml:id="_struct_geometry_1_1_point_1a81f8b8ce71c902bb0207d058920e6ef3"/><section>
     <title>norm()</title>
 <indexterm><primary>norm</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>norm</secondary></indexterm>
 <para><computeroutput><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::Point::norm ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00024">24</link> 行目に定義があります。</para>
+
+<para>２乗ノルムを返す </para>
+</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00014">x</link>, <link linkend="_geo_8hpp_source_1l00014">y</link>.</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00035">35</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00016">x</link>, <link linkend="_geo_8hpp_source_1l00016">y</link>.</para>
 </section>
 <anchor xml:id="_struct_geometry_1_1_point_1a8472d95742274c7339e1f227729f8f39"/><section>
     <title>abs()</title>
 <indexterm><primary>abs</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>abs</secondary></indexterm>
 <para><computeroutput><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::Point::abs ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00025">25</link> 行目に定義があります。</para>
+
+<para>ユークリッドノルムを返す </para>
+</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00024">norm()</link>.</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00038">38</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00035">norm()</link>.</para>
 </section>
 <anchor xml:id="_struct_geometry_1_1_point_1a1729c4329f9453a3cd2806cafb5d54c3"/><section>
     <title>arg()</title>
 <indexterm><primary>arg</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>arg</secondary></indexterm>
 <para><computeroutput><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::Point::arg ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00026">26</link> 行目に定義があります。</para>
+
+<para>偏角を返す </para>
+</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00014">x</link>, <link linkend="_geo_8hpp_source_1l00014">y</link>.</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00041">41</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00016">x</link>, <link linkend="_geo_8hpp_source_1l00016">y</link>.</para>
 </section>
 <anchor xml:id="_struct_geometry_1_1_point_1abceed0f8bd56215ac72a181686ef82c0"/><section>
     <title>operator==()</title>
 <indexterm><primary>operator==</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>operator==</secondary></indexterm>
 <para><computeroutput>bool Geometry::Point::operator== (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00027">27</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00043">43</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00007">Geometry::almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00014">x</link>, <link linkend="_geo_8hpp_source_1l00014">y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00008">Geometry::almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00016">x</link>, <link linkend="_geo_8hpp_source_1l00016">y</link>.</para>
 </section>
 </section>
 <section>
@@ -183,9 +226,9 @@
 <indexterm><primary>operator&gt;&gt;</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>operator&gt;&gt;</secondary></indexterm>
 <para><computeroutput>istream &amp; operator&gt;&gt; (istream &amp; is, <link linkend="_struct_geometry_1_1_point">Point</link> &amp; p)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00028">28</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00044">44</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00014">x</link>, <link linkend="_geo_8hpp_source_1l00014">y</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00016">x</link>, <link linkend="_geo_8hpp_source_1l00016">y</link>.</para>
 </section>
 </section>
 <section>
@@ -195,14 +238,14 @@
 <indexterm><primary>x</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>x</secondary></indexterm>
 <para><computeroutput><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::Point::x</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00014">14</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_struct_geometry_1_1_point_1afeb9c1837554b44f9e87936aa17076f1"/><section>
     <title>y</title>
 <indexterm><primary>y</primary><secondary>Geometry::Point</secondary></indexterm>
 <indexterm><primary>Geometry::Point</primary><secondary>y</secondary></indexterm>
 <para><computeroutput><link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> Geometry::Point::y</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00014">14</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
 </section>
 <para>
 この構造体詳解は次のファイルから抽出されました:</para>

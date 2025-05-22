@@ -6,5 +6,6 @@ var struct_h_l_d =
     [ "build", "struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb", null ],
     [ "path", "struct_h_l_d.html#af5c1751760a5d34be274c54acd9f60c3", null ],
     [ "lca", "struct_h_l_d.html#ae95bc5be0f704bafb0ab667d1dffb0cc", null ],
-    [ "at", "struct_h_l_d.html#a57a2a1fce944ca4c9b4cfc4f497963e0", null ]
+    [ "at", "struct_h_l_d.html#a57a2a1fce944ca4c9b4cfc4f497963e0", null ],
+    [ "subtree", "struct_h_l_d.html#a3c1640f8cf6c7d78cb56336d223edb94", null ]
 ];

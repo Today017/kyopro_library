@@ -22,7 +22,7 @@
 <listitem>
 <para>Docker, Git, make のインストール</para>
 </listitem><listitem>
-<para><link xlink:href="https://github.com/Today017/kyopro_library/blob/main/kyopro_tools/scripts/build">build</link> をコピペ、実行</para>
+<para><link xlink:href="https://github.com/Today017/kyopro_library/blob/main/kyopro_tools/scripts/build">build</link> （AHCの場合は <link xlink:href="https://github.com/Today017/kyopro_library/blob/main/kyopro_tools/scripts/build_AHC">build_AHC</link>）をコピペ、実行</para>
 </listitem><listitem>
 <para><computeroutput>make build</computeroutput> でDockerイメージをビルドする（初回のみ）</para>
 </listitem><listitem>

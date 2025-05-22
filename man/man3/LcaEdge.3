@@ -1,0 +1,71 @@
+.TH "LcaEdge< Monoid >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LcaEdge< Monoid > \- 辺属性LCA  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'lca_edge\&.hpp'\fP
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "using \fBType\fP = typename Monoid::Type"
+.br
+.in -1c
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBLcaEdge\fP (const vector< vector< pair< int, \fBType\fP > > > &g, int root=0)"
+.br
+.RI "コンストラクタ "
+.ti -1c
+.RI "\fBType\fP \fBfold\fP (int u, int v)"
+.br
+.RI "パス u-v のモノイド積を返す "
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename Monoid>
+.br
+struct LcaEdge< Monoid >"辺属性LCA 
+.PP
+ \fBlca_edge\&.hpp\fP の \fB5\fP 行目に定義があります。
+.SH "型定義メンバ詳解"
+.PP 
+.SS "template<typename Monoid> using \fBLcaEdge\fP< Monoid >::Type = typename Monoid::Type"
+
+.PP
+ \fBlca_edge\&.hpp\fP の \fB6\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename Monoid> \fBLcaEdge\fP< Monoid >\fB::LcaEdge\fP (const vector< vector< pair< int, \fBType\fP > > > & g, int root = \fR0\fP)\fR [inline]\fP"
+
+.PP
+コンストラクタ 
+.PP
+\fB引数\fP
+.RS 4
+\fIg\fP 重み付き木 
+.RE
+.PP
+
+.PP
+ \fBlca_edge\&.hpp\fP の \fB10\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "template<typename Monoid> \fBType\fP \fBLcaEdge\fP< Monoid >::fold (int u, int v)\fR [inline]\fP"
+
+.PP
+パス u-v のモノイド積を返す 
+.PP
+ \fBlca_edge\&.hpp\fP の \fB23\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

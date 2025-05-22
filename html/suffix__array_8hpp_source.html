@@ -142,7 +142,7 @@ $(function(){initNavTree('suffix__array_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        fill(<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(cnt),0);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) cnt[c[np[i]]]++;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <a class="code hl_define" href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(i,1,cnt.size()) cnt[i]+=cnt[i-1];</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_define" href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(i,n-1,-1) p[--cnt[c[np[i]]]]=np[i];</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">for</span>(ll i=n-1; i&gt;=0; i--) p[--cnt[c[np[i]]]]=np[i];</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="comment">//同値類</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        nc[p[0]]=0;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_define" href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(i,1,n) {</div>
@@ -159,7 +159,7 @@ $(function(){initNavTree('suffix__array_8hpp_source.html',''); initResizable(tru
 <div class="ttc" id="asuffix__array_8hpp_html_ac1be72293193624f6db6b85912e49462"><div class="ttname"><a href="suffix__array_8hpp.html#ac1be72293193624f6db6b85912e49462">SuffixArray</a></div><div class="ttdeci">VI SuffixArray(string s)</div><div class="ttdoc">Suffix Array</div><div class="ttdef"><b>Definition</b> <a href="#l00009">suffix_array.hpp:9</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00007">template.hpp:7</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_a7ab29d3bd6e8d66e320f4224e75f6cea"><div class="ttname"><a href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a></div><div class="ttdeci">#define ALL(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00005">template.hpp:5</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a9af2de86c4be813e9c60ede438bb4cd7"><div class="ttname"><a href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a></div><div class="ttdeci">#define FOR(i, a, b)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00008">template.hpp:8</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a9af2de86c4be813e9c60ede438bb4cd7"><div class="ttname"><a href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a></div><div class="ttdeci">#define FOR(i, a, b)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00009">template.hpp:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

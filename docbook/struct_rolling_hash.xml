@@ -37,7 +37,7 @@
 
 <para>Rolling <link linkend="_struct_hash">Hash</link> </para>
 <para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00088">88</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00091">91</link> 行目に定義があります。</para>
 </section>
 <section>
 <title>構築子と解体子</title>
@@ -55,7 +55,7 @@
 <para>文字列 s の Rolling <link linkend="_struct_hash">Hash</link> を構築する </para>
 </para>
 <para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00093">93</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00096">96</link> 行目に定義があります。</para>
 </section>
 </section>
 <section>
@@ -69,9 +69,9 @@
 <para>区間 [l, r) のハッシュ値を取得する </para>
 </para>
 <para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00100">100</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00103">103</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_rolling__hash_8hpp_source_1l00073">Hash::operator=()</link>, <link linkend="_rolling__hash_8hpp_source_1l00063">Hash::shift()</link>.</para>
+参照先 <link linkend="_rolling__hash_8hpp_source_1l00076">Hash::operator=()</link>, <link linkend="_rolling__hash_8hpp_source_1l00066">Hash::shift()</link>.</para>
 </section>
 </section>
 <section>
@@ -81,7 +81,7 @@
 <indexterm><primary>hash</primary><secondary>RollingHash</secondary></indexterm>
 <indexterm><primary>RollingHash</primary><secondary>hash</secondary></indexterm>
 <para><computeroutput>vector&lt;<link linkend="_struct_hash">Hash</link>&gt; RollingHash::hash</computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00090">90</link> 行目に定義があります。</para>
+ <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00093">93</link> 行目に定義があります。</para>
 </section>
 <para>
 この構造体詳解は次のファイルから抽出されました:</para>

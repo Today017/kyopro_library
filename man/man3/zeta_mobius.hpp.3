@@ -1,0 +1,46 @@
+.TH "algorithm/zeta_mobius.hpp" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+algorithm/zeta_mobius.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include '\&.\&./\&.\&./kyopro_library/template\&.hpp'\fP
+.br
+\fR#include '\&.\&./\&.\&./kyopro_library/others/monoid\&.hpp'\fP
+.br
+\fR#include '\&.\&./\&.\&./kyopro_library/others/abel\&.hpp'\fP
+.br
+
+.SS "名前空間"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBZetaMobius\fP"
+.br
+.RI "ゼータ変換・メビウス変換 "
+.in -1c
+.SS "関数"
+
+.in +1c
+.ti -1c
+.RI "template<typename Monoid> vector< typename Monoid::Type > \fBZetaMobius::SubsetZeta\fP (vector< typename Monoid::Type > v)"
+.br
+.RI "高速ゼータ変換（下位集合） "
+.ti -1c
+.RI "template<typename Monoid> vector< typename Monoid::Type > \fBZetaMobius::SupersetZeta\fP (vector< typename Monoid::Type > v)"
+.br
+.RI "高速ゼータ変換（上位集合） "
+.ti -1c
+.RI "template<typename Abel> vector< typename Abel::Type > \fBZetaMobius::SubsetMobius\fP (vector< typename Abel::Type > v)"
+.br
+.RI "高速メビウス変換（下位集合） "
+.ti -1c
+.RI "template<typename Abel> vector< typename Abel::Type > \fBZetaMobius::SupersetMobius\fP (vector< typename Abel::Type > v)"
+.br
+.RI "高速メビウス変換（上位集合） "
+.in -1c
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

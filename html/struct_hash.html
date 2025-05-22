@@ -116,8 +116,8 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 公開型</h2></td></tr>
-<tr class="memitem:a21e94320d986c15f38f83c0a1bc92e52" id="r_a21e94320d986c15f38f83c0a1bc92e52"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21e94320d986c15f38f83c0a1bc92e52">Type</a> = array&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>,5&gt;</td></tr>
-<tr class="separator:a21e94320d986c15f38f83c0a1bc92e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a093390f17c113dc150020dac86c6ddd4" id="r_a093390f17c113dc150020dac86c6ddd4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a093390f17c113dc150020dac86c6ddd4">Type</a> = array&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>,HASH_PRIME&gt;</td></tr>
+<tr class="separator:a093390f17c113dc150020dac86c6ddd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
@@ -146,7 +146,7 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 公開変数類</h2></td></tr>
-<tr class="memitem:a6a39c22a994feb6e341c48e1a9ac24cb" id="r_a6a39c22a994feb6e341c48e1a9ac24cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a21e94320d986c15f38f83c0a1bc92e52">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a39c22a994feb6e341c48e1a9ac24cb">value</a></td></tr>
+<tr class="memitem:a6a39c22a994feb6e341c48e1a9ac24cb" id="r_a6a39c22a994feb6e341c48e1a9ac24cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a093390f17c113dc150020dac86c6ddd4">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a39c22a994feb6e341c48e1a9ac24cb">value</a></td></tr>
 <tr class="separator:a6a39c22a994feb6e341c48e1a9ac24cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
@@ -161,26 +161,27 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 <tr class="separator:a3bd24b140ac1c70ae98a01974b0c9980"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07623ca4117730eb67bce9817f146810" id="r_a07623ca4117730eb67bce9817f146810"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07623ca4117730eb67bce9817f146810">flag</a> =false</td></tr>
 <tr class="separator:a07623ca4117730eb67bce9817f146810"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0265ebdf193428764f0b21cc2a9d324a" id="r_a0265ebdf193428764f0b21cc2a9d324a"><td class="memItemLeft" align="right" valign="top">static array&lt; array&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, 5 &gt;, 256 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0265ebdf193428764f0b21cc2a9d324a">num</a> ={}</td></tr>
-<tr class="separator:a0265ebdf193428764f0b21cc2a9d324a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afec174db8743f3050d2f39baef2a0e51" id="r_afec174db8743f3050d2f39baef2a0e51"><td class="memItemLeft" align="right" valign="top">static array&lt; array&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, HASH_PRIME &gt;, 256 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afec174db8743f3050d2f39baef2a0e51">num</a> ={}</td></tr>
+<tr class="separator:afec174db8743f3050d2f39baef2a0e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock">
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
+<div class="textblock"><dl class="section attention"><dt>注意</dt><dd>問題の成約に合わせて書き換えること </dd></dl>
+
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00010">10</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">型定義メンバ詳解</h2>
-<a id="a21e94320d986c15f38f83c0a1bc92e52" name="a21e94320d986c15f38f83c0a1bc92e52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21e94320d986c15f38f83c0a1bc92e52">&#9670;&#160;</a></span>Type</h2>
+<a id="a093390f17c113dc150020dac86c6ddd4" name="a093390f17c113dc150020dac86c6ddd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a093390f17c113dc150020dac86c6ddd4">&#9670;&#160;</a></span>Type</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#a21e94320d986c15f38f83c0a1bc92e52">Hash::Type</a> = array&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>,5&gt;</td>
+          <td class="memname">using <a class="el" href="#a093390f17c113dc150020dac86c6ddd4">Hash::Type</a> = array&lt;<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>,HASH_PRIME&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00009">9</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -233,9 +234,9 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00038">38</a> 行目に定義があります。</p>
 
-<p class="reference">参照先 <a class="el" href="rolling__hash_8hpp_source.html#l00013">flag</a>, <a class="el" href="rolling__hash_8hpp_source.html#l00018">init()</a>.</p>
+<p class="reference">参照先 <a class="el" href="rolling__hash_8hpp_source.html#l00016">flag</a>, <a class="el" href="rolling__hash_8hpp_source.html#l00021">init()</a>.</p>
 
 </div>
 </div>
@@ -262,9 +263,9 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00042">42</a> 行目に定義があります。</p>
 
-<p class="reference">参照先 <a class="el" href="rolling__hash_8hpp_source.html#l00013">flag</a>, <a class="el" href="rolling__hash_8hpp_source.html#l00018">init()</a>.</p>
+<p class="reference">参照先 <a class="el" href="rolling__hash_8hpp_source.html#l00016">flag</a>, <a class="el" href="rolling__hash_8hpp_source.html#l00021">init()</a>.</p>
 
 </div>
 </div>
@@ -292,9 +293,9 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00021">21</a> 行目に定義があります。</p>
 
-<p class="reference">参照先 <a class="el" href="rolling__hash_8hpp_source.html#l00013">flag</a>, <a class="el" href="rolling__hash_8hpp_source.html#l00006">HASH_C</a>, <a class="el" href="rolling__hash_8hpp_source.html#l00005">HASH_MAX</a>, <a class="el" href="xor128_8hpp_source.html#l00018">Xor128()</a>.</p>
+<p class="reference">参照先 <a class="el" href="rolling__hash_8hpp_source.html#l00016">flag</a>, <a class="el" href="xor128_8hpp_source.html#l00018">Xor128()</a>.</p>
 
 </div>
 </div>
@@ -321,7 +322,7 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00045">45</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -348,7 +349,7 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00052">52</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -375,9 +376,9 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00053">53</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
 
-<p class="reference">参照先 <a class="el" href="rolling__hash_8hpp_source.html#l00045">operator+=()</a>.</p>
+<p class="reference">参照先 <a class="el" href="rolling__hash_8hpp_source.html#l00048">operator+=()</a>.</p>
 
 </div>
 </div>
@@ -404,9 +405,9 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00058">58</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00061">61</a> 行目に定義があります。</p>
 
-<p class="reference">参照先 <a class="el" href="rolling__hash_8hpp_source.html#l00049">operator-=()</a>.</p>
+<p class="reference">参照先 <a class="el" href="rolling__hash_8hpp_source.html#l00052">operator-=()</a>.</p>
 
 </div>
 </div>
@@ -433,7 +434,7 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00063">63</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00066">66</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -460,7 +461,7 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00069">69</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00072">72</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -487,7 +488,7 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00073">73</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00076">76</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -512,7 +513,7 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00010">10</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -536,7 +537,7 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00011">11</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00014">14</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -560,7 +561,7 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00011">11</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00014">14</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -584,7 +585,7 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00082">82</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00085">85</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -608,12 +609,12 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="a0265ebdf193428764f0b21cc2a9d324a" name="a0265ebdf193428764f0b21cc2a9d324a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0265ebdf193428764f0b21cc2a9d324a">&#9670;&#160;</a></span>num</h2>
+<a id="afec174db8743f3050d2f39baef2a0e51" name="afec174db8743f3050d2f39baef2a0e51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afec174db8743f3050d2f39baef2a0e51">&#9670;&#160;</a></span>num</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -622,7 +623,7 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">array&lt; array&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, 5 &gt;, <a class="el" href="rolling__hash_8hpp.html#a404ac35e6b35b40321967f29d9f2c783">HASH_C</a> &gt; Hash::num ={}</td>
+          <td class="memname">array&lt; array&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, HASH_PRIME &gt;, HASH_C &gt; Hash::num ={}</td>
         </tr>
       </table>
   </td>
@@ -632,7 +633,7 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00084">84</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00087">87</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -643,12 +644,12 @@ $(function(){initNavTree('struct_hash.html',''); initResizable(true); });
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a21e94320d986c15f38f83c0a1bc92e52">Type</a> Hash::value</td>
+          <td class="memname"><a class="el" href="#a093390f17c113dc150020dac86c6ddd4">Type</a> Hash::value</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
 
 </div>
 </div>

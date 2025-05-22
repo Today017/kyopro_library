@@ -31,7 +31,9 @@
 <para>燃やす埋める </para>
 <link linkend="_struct_c_h_t">CHT&lt; T, MIN &gt;</link>
 <para>Convex Hull Trick verify : <link xlink:href="https://judge.yosupo.jp/problem/line_add_get_min">https://judge.yosupo.jp/problem/line_add_get_min</link> <link xlink:href="https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf">https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf</link> </para>
-<link linkend="_struct_geometry_1_1_circle">Geometry::Circle</link><link linkend="_struct_combination_lucas">CombinationLucas</link>
+<link linkend="_struct_geometry_1_1_circle">Geometry::Circle</link>
+<para>円 </para>
+<link linkend="_struct_combination_lucas">CombinationLucas</link>
 <para>Lucas の定理を用いた二項係数計算用ライブラリ </para>
 <link linkend="_struct_combinatorics">Combinatorics&lt; T &gt;</link>
 <para>二項係数・階乗計算 </para>
@@ -61,6 +63,8 @@
 <para>削除可能な優先度付きキュー </para>
 <link linkend="_classexp_1_1_expander">exp.Expander</link>
 <para><link linkend="_classexp_1_1_expander">Expander</link> class is responsible for expanding libraries in the source code </para>
+<link linkend="_classexp___a_h_c_1_1_expander">exp_AHC.Expander</link>
+<para><link linkend="_classexp___a_h_c_1_1_expander">Expander</link> class is responsible for expanding libraries in the source code </para>
 <link linkend="_struct_factors">Factors</link>
 <para>エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法） <link xlink:href="https://osak.jp/diary/diary_201310.html#20131017">https://osak.jp/diary/diary_201310.html#20131017</link> <link xlink:href="https://qiita.com/drken/items/3beb679e54266f20ab63">https://qiita.com/drken/items/3beb679e54266f20ab63</link> </para>
 <link linkend="_struct_fenwick_tree">FenwickTree&lt; Abel &gt;</link>
@@ -75,7 +79,9 @@
 <para>辺属性LCA </para>
 <link linkend="_struct_lca_vertex">LcaVertex&lt; Monoid &gt;</link>
 <para>頂点属性 <link linkend="_struct_l_c_a">LCA</link> </para>
-<link linkend="_struct_geometry_1_1_line">Geometry::Line</link><link linkend="_struct_monoid_1_1_max">Monoid::Max&lt; T, min_value &gt;</link>
+<link linkend="_struct_geometry_1_1_line">Geometry::Line</link>
+<para>直線 </para>
+<link linkend="_struct_monoid_1_1_max">Monoid::Max&lt; T, min_value &gt;</link>
 <para>Maxモノイド </para>
 <link linkend="_struct_range_query_1_1_max">RangeQuery::Max&lt; T, min_value &gt;</link>
 <para>1点変更 / 区間 max </para>
@@ -101,13 +107,17 @@
 <para>Std::multiset ラッパー </para>
 <link linkend="_struct_angel_beats_1_1_node">AngelBeats::Node</link><link linkend="_struct_seg_tree_dynamic_1_1_node">SegTreeDynamic&lt; Monoid &gt;::Node</link><link linkend="_struct_trie_1_1_node">Trie::Node</link><link linkend="_class_n_t_t">NTT&lt; MOD, primitive_root &gt;</link>
 <para><link linkend="_class_n_t_t">NTT</link> Friendly 素数用 <link linkend="_class_n_t_t">NTT</link> 構造体 </para>
-<link linkend="_struct_offset_vector">OffsetVector&lt; T &gt;</link><link linkend="_struct_geometry_1_1_point">Geometry::Point</link><link linkend="_struct_range_set">RangeSet</link>
+<link linkend="_struct_offset_vector">OffsetVector&lt; T &gt;</link><link linkend="_struct_geometry_1_1_point">Geometry::Point</link>
+<para>２次元平面上の位置ベクトル </para>
+<link linkend="_struct_range_set">RangeSet</link>
 <para>区間を set で管理するデータ構造 verify:https://yukicoder.me/submissions/1021763 </para>
 <link linkend="_struct_insertable_reversible_array_impl_1_1_r_b_s_t_base">InsertableReversibleArrayImpl::RBSTBase&lt; Node &gt;</link><link linkend="_struct_rolling_hash">RollingHash</link>
 <para>Rolling <link linkend="_struct_hash">Hash</link> </para>
 <link linkend="_struct_scc_info">SccInfo</link>
 <para>強連結成分分解の情報 </para>
-<link linkend="_struct_geometry_1_1_segment">Geometry::Segment</link><link linkend="_struct_segment_tree2_d">SegmentTree2D&lt; Monoid &gt;</link><link linkend="_struct_seg_tree">SegTree&lt; Monoid &gt;</link>
+<link linkend="_struct_geometry_1_1_segment">Geometry::Segment</link>
+<para>線分 </para>
+<link linkend="_struct_segment_tree2_d">SegmentTree2D&lt; Monoid &gt;</link><link linkend="_struct_seg_tree">SegTree&lt; Monoid &gt;</link>
 <para>セグメント木 </para>
 <link linkend="_struct_seg_tree_dual">SegTreeDual&lt; CommutativeOperator &gt;</link>
 <para>双対セグメント木 </para>

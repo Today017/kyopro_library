@@ -1,0 +1,185 @@
+.TH "exp_AHC.Expander" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+exp_AHC.Expander \- \fBExpander\fP class is responsible for expanding libraries in the source code\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_ignored_line\fP (self, line)"
+.br
+.RI "Checks if a line should be ignored during expansion\&. "
+.ti -1c
+.RI "\fB__init__\fP (self, List[Path] \fBlib_paths\fP)"
+.br
+.RI "Initializes an \fBExpander\fP object\&. "
+.ti -1c
+.RI "Path \fBfind_library\fP (self, str library_name)"
+.br
+.RI "Finds the path of a library file\&. "
+.ti -1c
+.RI "List[str] \fBexpand_library\fP (self, Path library_file_path)"
+.br
+.RI "Expands a library file\&. "
+.ti -1c
+.RI "str \fBexpand\fP (self, str \fBsource\fP)"
+.br
+.RI "Expands libraries in the source code\&. "
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBlib_paths\fP = lib_paths"
+.br
+.in -1c
+.SS "静的公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBinclude\fP = re\&.compile(r'#include\\s*['<](kyopro_library/[a\-z0\-9_/]*(|\&.hpp))['>]\\s*')"
+.br
+.ti -1c
+.RI "\fBincluded\fP = set()"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+\fBExpander\fP class is responsible for expanding libraries in the source code\&. 
+
+Attributes:
+.IP "\(bu" 2
+include (re\&.Pattern): Regular expression pattern to match \fBinclude\fP statements\&.
+.IP "\(bu" 2
+lib_paths (List[Path]): List of library paths\&.
+.IP "\(bu" 2
+included (\fBSet\fP[Path]): \fBSet\fP of included library file paths\&.
+.PP
+
+.PP
+Methods:
+.IP "\(bu" 2
+is_ignored_line(line: str) -> bool: Checks if a line should be ignored during expansion\&.
+.IP "\(bu" 2
+find_library(library_name: str) -> Path: Finds the path of a library file\&.
+.IP "\(bu" 2
+expand_library(library_file_path: Path) -> List[str]: Expands a library file\&.
+.IP "\(bu" 2
+expand(source: str) -> str: Expands libraries in the source code\&. 
+.PP
+
+.PP
+ \fBexp_AHC\&.py\fP の \fB21\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "exp_AHC\&.Expander\&.__init__ ( self, List[Path] lib_paths)"
+
+.PP
+Initializes an \fBExpander\fP object\&. Args:
+.IP "\(bu" 2
+lib_paths (List[Path]): List of library paths\&. 
+.PP
+
+.PP
+ \fBexp_AHC\&.py\fP の \fB67\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS " bool exp_AHC\&.Expander\&.is_ignored_line ( self,  line)"
+
+.PP
+Checks if a line should be ignored during expansion\&. Args:
+.IP "\(bu" 2
+line (str): The line to be checked\&.
+.PP
+
+.PP
+Returns:
+.IP "\(bu" 2
+bool: True if the line should be ignored, False otherwise\&. 
+.PP
+
+.PP
+ \fBexp_AHC\&.py\fP の \fB40\fP 行目に定義があります。
+.SS " Path exp_AHC\&.Expander\&.find_library ( self, str library_name)"
+
+.PP
+Finds the path of a library file\&. Args:
+.IP "\(bu" 2
+library_name (str): The name of the library file\&.
+.PP
+
+.PP
+Returns:
+.IP "\(bu" 2
+Path: The path of the library file\&.
+.PP
+
+.PP
+Raises:
+.IP "\(bu" 2
+FileNotFoundError: If the library file cannot be found\&. 
+.PP
+
+.PP
+ \fBexp_AHC\&.py\fP の \fB79\fP 行目に定義があります。
+.PP
+参照先 \fBexp_AHC\&.format\fP, \fBexp\&.Expander\&.lib_paths\fP, \fBlib_paths\fP\&.
+.SS " List[str] exp_AHC\&.Expander\&.expand_library ( self, Path library_file_path)"
+
+.PP
+Expands a library file\&. Args:
+.IP "\(bu" 2
+library_file_path (Path): The path of the library file\&.
+.PP
+
+.PP
+Returns:
+.IP "\(bu" 2
+List[str]: The expanded lines of the library file\&. 
+.PP
+
+.PP
+ \fBexp_AHC\&.py\fP の \fB100\fP 行目に定義があります。
+.PP
+参照先 \fBexp\&.Expander\&.expand_library()\fP, \fBexpand_library()\fP, \fBexp\&.Expander\&.find_library()\fP, \fBfind_library()\fP, \fBexp_AHC\&.format\fP, \fBexp\&.Expander\&.include\fP, \fBinclude\fP, \fBexp\&.Expander\&.included\fP, \fBincluded\fP, \fBexp\&.Expander\&.is_ignored_line()\fP, \fBis_ignored_line()\fP\&.
+.SS " str exp_AHC\&.Expander\&.expand ( self, str source)"
+
+.PP
+Expands libraries in the source code\&. Args:
+.IP "\(bu" 2
+source (str): The source code to be expanded\&.
+.PP
+
+.PP
+Returns:
+.IP "\(bu" 2
+str: The expanded source code\&. 
+.PP
+
+.PP
+ \fBexp_AHC\&.py\fP の \fB145\fP 行目に定義があります。
+.PP
+参照先 \fBexp\&.Expander\&.expand_library()\fP, \fBexpand_library()\fP, \fBexp\&.Expander\&.find_library()\fP, \fBfind_library()\fP, \fBexp\&.Expander\&.include\fP, \fBinclude\fP, \fBexp\&.Expander\&.included\fP, \fBincluded\fP\&.
+.SH "メンバ詳解"
+.PP 
+.SS "exp_AHC\&.Expander\&.include = re\&.compile(r'#include\\s*['<](kyopro_library/[a\-z0\-9_/]*(|\&.hpp))['>]\\s*')\fR [static]\fP"
+
+.PP
+ \fBexp_AHC\&.py\fP の \fB38\fP 行目に定義があります。
+.SS "exp_AHC\&.Expander\&.included = set()\fR [static]\fP"
+
+.PP
+ \fBexp_AHC\&.py\fP の \fB77\fP 行目に定義があります。
+.SS "exp_AHC\&.Expander\&.lib_paths = lib_paths"
+
+.PP
+ \fBexp_AHC\&.py\fP の \fB75\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

@@ -38,7 +38,7 @@
 <anchor xml:id="_suffix__array_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fill(<link linkend="_template_8hpp_1a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</link>(cnt),0);
 <anchor xml:id="_suffix__array_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;cnt[c[np[i]]]++;
 <anchor xml:id="_suffix__array_8hpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7">FOR</link>(i,1,cnt.size())&#32;cnt[i]+=cnt[i-1];
-<anchor xml:id="_suffix__array_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7">FOR</link>(i,n-1,-1)&#32;p[--cnt[c[np[i]]]]=np[i];
+<anchor xml:id="_suffix__array_8hpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ll&#32;i=n-1;&#32;i&gt;=0;&#32;i--)&#32;p[--cnt[c[np[i]]]]=np[i];
 <anchor xml:id="_suffix__array_8hpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//同値類</emphasis>
 <anchor xml:id="_suffix__array_8hpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;nc[p[0]]=0;
 <anchor xml:id="_suffix__array_8hpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7">FOR</link>(i,1,n)&#32;{

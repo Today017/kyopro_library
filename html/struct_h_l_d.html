@@ -131,7 +131,11 @@ $(function(){initNavTree('struct_h_l_d.html',''); initResizable(true); });
 <tr class="memdesc:ae95bc5be0f704bafb0ab667d1dffb0cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 u, v のLCAを返す  <br /></td></tr>
 <tr class="separator:ae95bc5be0f704bafb0ab667d1dffb0cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57a2a1fce944ca4c9b4cfc4f497963e0" id="r_a57a2a1fce944ca4c9b4cfc4f497963e0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57a2a1fce944ca4c9b4cfc4f497963e0">at</a> (int v)</td></tr>
+<tr class="memdesc:a57a2a1fce944ca4c9b4cfc4f497963e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点vのHL分解後の列での位置を返す  <br /></td></tr>
 <tr class="separator:a57a2a1fce944ca4c9b4cfc4f497963e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c1640f8cf6c7d78cb56336d223edb94" id="r_a3c1640f8cf6c7d78cb56336d223edb94"><td class="memItemLeft" align="right" valign="top">pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c1640f8cf6c7d78cb56336d223edb94">subtree</a> (int v)</td></tr>
+<tr class="memdesc:a3c1640f8cf6c7d78cb56336d223edb94"><td class="mdescLeft">&#160;</td><td class="mdescRight">HL分解後の列で、頂点vの部分木に対応する区間を返す  <br /></td></tr>
+<tr class="separator:a3c1640f8cf6c7d78cb56336d223edb94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>HL分解 解説:https://hcpc-hokudai.github.io/archive/graph_tree_001.pdf </p>
@@ -351,7 +355,38 @@ $(function(){initNavTree('struct_h_l_d.html',''); initResizable(true); });
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="hld_8hpp_source.html">hld.hpp</a> の <a class="el" href="hld_8hpp_source.html#l00047">47</a> 行目に定義があります。</p>
+<p>頂点vのHL分解後の列での位置を返す </p>
+
+<p class="definition"> <a class="el" href="hld_8hpp_source.html">hld.hpp</a> の <a class="el" href="hld_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3c1640f8cf6c7d78cb56336d223edb94" name="a3c1640f8cf6c7d78cb56336d223edb94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c1640f8cf6c7d78cb56336d223edb94">&#9670;&#160;</a></span>subtree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pair&lt; int, int &gt; HLD::subtree </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>HL分解後の列で、頂点vの部分木に対応する区間を返す </p>
+
+<p class="definition"> <a class="el" href="hld_8hpp_source.html">hld.hpp</a> の <a class="el" href="hld_8hpp_source.html#l00052">52</a> 行目に定義があります。</p>
 
 </div>
 </div>

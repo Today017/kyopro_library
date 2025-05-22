@@ -1,8 +1,8 @@
 var searchData=
 [
   ['id_0',['id',['../struct_abel_1_1_sum.html#a3adf3ea50f0f359934a70b29bb7bb308',1,'Abel::Sum::id()'],['../struct_abel_1_1_xor.html#ab5e6fe608d99cbb7fbefb8f413ba9509',1,'Abel::Xor::id()'],['../struct_monoid_1_1_min.html#a1751a1c69ded28e92cfd6f9c4b42f3ee',1,'Monoid::Min::id()'],['../struct_monoid_1_1_max.html#a5137dcf5aacd39b21f6ae23605136831',1,'Monoid::Max::id()'],['../struct_monoid_1_1_sum.html#a23a7ab3898ae4b224d00d724b9cb09d1',1,'Monoid::Sum::id()'],['../struct_monoid_1_1_sum_pair.html#a043585d89c5f6298c87a3555669a03a7',1,'Monoid::SumPair::id()'],['../struct_operator_1_1_update.html#a8a95d2315dfc15130309f5d489097e32',1,'Operator::Update::id()'],['../struct_operator_1_1_add.html#a8e0e087f00637c890ca8b50fa7e4e0fc',1,'Operator::Add::id()'],['../struct_operator_1_1_update_time_stamp.html#a16234d6362c308f826cff9cc3a2d31a0',1,'Operator::UpdateTimeStamp::id()']]],
-  ['include_1',['include',['../classexp_1_1_expander.html#a4d0a34bdb695b682660181bf3912276b',1,'exp::Expander']]],
-  ['included_2',['included',['../classexp_1_1_expander.html#a18d84a660ac3b120ae72ae7c3af47b57',1,'exp::Expander']]],
+  ['include_1',['include',['../classexp_1_1_expander.html#a4d0a34bdb695b682660181bf3912276b',1,'exp.Expander.include'],['../classexp___a_h_c_1_1_expander.html#ad98d41b559c60f5c5566583afdbf4350',1,'exp_AHC.Expander.include']]],
+  ['included_2',['included',['../classexp_1_1_expander.html#a18d84a660ac3b120ae72ae7c3af47b57',1,'exp.Expander.included'],['../classexp___a_h_c_1_1_expander.html#a2e602d36bc1ed17bcd2b31bb17128fef',1,'exp_AHC.Expander.included']]],
   ['inequality_3',['Inequality',['../md_geometry_2geo.html#autotoc_md2',1,'']]],
   ['inf_4',['INF',['../template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c',1,'template.hpp']]],
   ['infl_5',['INFL',['../template_8hpp.html#a1f713edb7a826e3710159658d6ef9815',1,'template.hpp']]],
@@ -23,7 +23,7 @@ var searchData=
   ['inversionnumber_20',['InversionNumber',['../inversion__number_8hpp.html#a7973f38066e81579d126adfc53beb1ac',1,'inversion_number.hpp']]],
   ['io_21',['IO',['../template_8hpp.html#affe9a1ffd6cd7b2e404200ef182fa18f',1,'template.hpp']]],
   ['is_5fcovered_22',['is_covered',['../struct_range_set.html#ae210a109dde6a0646562b2970f9c7447',1,'RangeSet']]],
-  ['is_5fignored_5fline_23',['is_ignored_line',['../classexp_1_1_expander.html#a40f520a2104b3e6a2217d4b84be44f35',1,'exp::Expander']]],
+  ['is_5fignored_5fline_23',['is_ignored_line',['../classexp_1_1_expander.html#a40f520a2104b3e6a2217d4b84be44f35',1,'exp.Expander.is_ignored_line()'],['../classexp___a_h_c_1_1_expander.html#a2f06c5c8a096ea1d6bacb43670751399',1,'exp_AHC.Expander.is_ignored_line()']]],
   ['is_5fon_5fpath_24',['is_on_path',['../struct_l_c_a.html#ad5fecd6ac33048d9665470774370e3e5',1,'LCA']]],
   ['isconvex_25',['isConvex',['../namespace_geometry.html#ab9bf3d0fb49fb3cccd08e2905e1ffce6',1,'Geometry']]],
   ['isintersecting_26',['isIntersecting',['../namespace_geometry.html#afd1aee161954f89e741e6873568fd1d8',1,'Geometry']]],

@@ -1,0 +1,57 @@
+.TH "math/convolution_ll.hpp" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+math/convolution_ll.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include '\&.\&./\&.\&./kyopro_library/template\&.hpp'\fP
+.br
+\fR#include '\&.\&./\&.\&./kyopro_library/others/modcal\&.hpp'\fP
+.br
+\fR#include '\&.\&./\&.\&./kyopro_library/math/ntt\&.hpp'\fP
+.br
+
+.SS "関数"
+
+.in +1c
+.ti -1c
+.RI "\fBll\fP \fBGarner\fP (\fBVL\fP a, \fBVL\fP m, \fBll\fP mod=\fBINFL\fP+3)"
+.br
+.RI "x=ai mod mi を満たす x mod m を返す "
+.ti -1c
+.RI "template<int USE> \fBVL\fP \fBConvolveInt64\fP (\fBVL\fP a, \fBVL\fP b, \fBll\fP mod=\fBINFL\fP+3)"
+.br
+.RI "a, b の自然数での畳み込みを返す "
+.in -1c
+.SH "関数詳解"
+.PP 
+.SS "\fBll\fP Garner (\fBVL\fP a, \fBVL\fP m, \fBll\fP mod = \fR\fBINFL\fP+3\fP)"
+
+.PP
+x=ai mod mi を満たす x mod m を返す 
+.PP
+ \fBconvolution_ll\&.hpp\fP の \fB6\fP 行目に定義があります。
+.SS "template<int USE> \fBVL\fP ConvolveInt64 (\fBVL\fP a, \fBVL\fP b, \fBll\fP mod = \fR\fBINFL\fP+3\fP)"
+
+.PP
+a, b の自然数での畳み込みを返す 
+.PP
+\fBテンプレート引数\fP
+.RS 4
+\fIUSE\fP 使う素数の個数
+.RE
+.PP
+\fRUSE=1\fP 最終的な配列の値が \fRX < 1224736769 = 1\&.2*10^9 = 2^30\fP
+
+.PP
+\fRUSE=2\fP 最終的な配列の値が \fRX < 575334854091079681 = 5\&.8*10^17 = 2^59\fP
+
+.PP
+\fRUSE=3\fP 最終的な配列の値が \fRX < 2^86\fP 
+.PP
+ \fBconvolution_ll\&.hpp\fP の \fB27\fP 行目に定義があります。
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

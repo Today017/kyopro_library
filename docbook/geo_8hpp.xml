@@ -6,12 +6,20 @@
     <title>クラス    </title>
         <itemizedlist>
             <listitem><para>struct <link linkend="_struct_geometry_1_1_point">Geometry::Point</link></para>
+
+<para>２次元平面上の位置ベクトル </para>
 </listitem>
             <listitem><para>struct <link linkend="_struct_geometry_1_1_line">Geometry::Line</link></para>
+
+<para>直線 </para>
 </listitem>
             <listitem><para>struct <link linkend="_struct_geometry_1_1_segment">Geometry::Segment</link></para>
+
+<para>線分 </para>
 </listitem>
             <listitem><para>struct <link linkend="_struct_geometry_1_1_circle">Geometry::Circle</link></para>
+
+<para>円 </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -19,6 +27,8 @@
     <title>名前空間    </title>
         <itemizedlist>
             <listitem><para>namespace <link linkend="_namespace_geometry">Geometry</link></para>
+
+<para>幾何ライブラリ </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -55,16 +65,26 @@
             <listitem><para>bool <link linkend="_namespace_geometry_1a48301418052e96f2270cbc235c91e9c7">Geometry::greaterThanOrEqual</link> (<link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> a, <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> b)</para>
 </listitem>
             <listitem><para><link linkend="_namespace_geometry_1ac6833944045520a63bc44de0c261aa7a">Orientation</link> <link linkend="_namespace_geometry_1a68f1a8a27e6074ca5dae6b151a765cb3">Geometry::ccw</link> (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p0, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p1, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p2)</para>
+
+<para>3点 p0, p1, p2 の進行方向を返す </para>
 </listitem>
             <listitem><para>string <link linkend="_namespace_geometry_1a9bb98900b14f9cd763b7c5e958a868c8">Geometry::orientationToString</link> (<link linkend="_namespace_geometry_1ac6833944045520a63bc44de0c261aa7a">Orientation</link> o)</para>
 </listitem>
             <listitem><para><link linkend="_struct_geometry_1_1_point">Point</link> <link linkend="_namespace_geometry_1a350e7c66a3052218fb10273521646a5a">Geometry::projection</link> (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p1, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p2, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p)</para>
+
+<para>ベクトル p の直線 p1, p2 への正射影ベクトルを返す </para>
 </listitem>
             <listitem><para><link linkend="_struct_geometry_1_1_point">Point</link> <link linkend="_namespace_geometry_1a6459f2465325d059e045db0c357253a0">Geometry::projection</link> (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp;l, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p)</para>
+
+<para>ベクトル p の直線 l への正射影ベクトルを返す </para>
 </listitem>
             <listitem><para><link linkend="_struct_geometry_1_1_point">Point</link> <link linkend="_namespace_geometry_1a401f2efd71755a4e3dc7cc4b3a60762e">Geometry::reflection</link> (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p1, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p2, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p)</para>
+
+<para>ベクトル p の直線 p1, p2 に対する鏡像ベクトルを返す </para>
 </listitem>
             <listitem><para><link linkend="_struct_geometry_1_1_point">Point</link> <link linkend="_namespace_geometry_1a3cdefdb1ec92d44cf07f06dfdd4f4be8">Geometry::reflection</link> (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp;l, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;p)</para>
+
+<para>ベクトル p の直線 l に対する鏡像ベクトルを返す </para>
 </listitem>
             <listitem><para>bool <link linkend="_namespace_geometry_1a5905c3b472de2209f9fa39119da309d0">Geometry::isParallel</link> (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp;l1, const <link linkend="_struct_geometry_1_1_line">Line</link> &amp;l2)</para>
 </listitem>

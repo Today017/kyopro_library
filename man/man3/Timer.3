@@ -1,0 +1,55 @@
+.TH "Timer" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Timer \- タイマー  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'timer\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBTimer\fP (\fBll\fP time_limit_msec=5000)"
+.br
+.ti -1c
+.RI "\fBll\fP \fBget\fP () const"
+.br
+.RI "今の時間 msec を返す "
+.ti -1c
+.RI "bool \fBcheck\fP () const"
+.br
+.RI "今が制限時間内であるかを返す "
+.in -1c
+.SH "詳解"
+.PP 
+タイマー 
+.PP
+ \fBtimer\&.hpp\fP の \fB5\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "Timer::Timer (\fBll\fP time_limit_msec = \fR5000\fP)\fR [inline]\fP"
+
+.PP
+ \fBtimer\&.hpp\fP の \fB6\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "\fBll\fP Timer::get () const\fR [inline]\fP"
+
+.PP
+今の時間 msec を返す 
+.PP
+ \fBtimer\&.hpp\fP の \fB12\fP 行目に定義があります。
+.SS "bool Timer::check () const\fR [inline]\fP"
+
+.PP
+今が制限時間内であるかを返す 
+.PP
+ \fBtimer\&.hpp\fP の \fB18\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

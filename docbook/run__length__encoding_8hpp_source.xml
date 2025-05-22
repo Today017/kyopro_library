@@ -15,4 +15,16 @@
 <anchor xml:id="_run__length__encoding_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;}
 <anchor xml:id="_run__length__encoding_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
 <anchor xml:id="_run__length__encoding_8hpp_source_1l00013"/>00013 }
+<anchor xml:id="_run__length__encoding_8hpp_source_1l00014"/>00014 
+<anchor xml:id="_run__length__encoding_8hpp_source_1l00015"/><link linkend="_run__length__encoding_8hpp_1a625d6d63e6987b34a913bb2d6f3cae5f">00015</link> <link linkend="_run__length__encoding_8hpp_1a7f01629c3961317d963a4666dbe7622b">vector</link>&lt;<link linkend="_run__length__encoding_8hpp_1a7f01629c3961317d963a4666dbe7622b">pair</link>&lt;<link linkend="_run__length__encoding_8hpp_1a7f01629c3961317d963a4666dbe7622b">ll</link>,<emphasis role="keywordtype">int</emphasis>&gt;&gt;&#32;<link linkend="_run__length__encoding_8hpp_1a7f01629c3961317d963a4666dbe7622b">RunLengthEncoding</link>(<emphasis role="keyword">const</emphasis>&#32;vector&lt;ll&gt;&amp;&#32;s)&#32;{
+<anchor xml:id="_run__length__encoding_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n=s.size();
+<anchor xml:id="_run__length__encoding_8hpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;vector&lt;pair&lt;ll,<emphasis role="keywordtype">int</emphasis>&gt;&gt;&#32;ret;
+<anchor xml:id="_run__length__encoding_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;l=0,r;&#32;l&lt;n;)&#32;{
+<anchor xml:id="_run__length__encoding_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;r=l+1;
+<anchor xml:id="_run__length__encoding_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(r&lt;n&amp;&amp;s[l]==s[r])&#32;r++;
+<anchor xml:id="_run__length__encoding_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ret.push_back({s[l],r-l});
+<anchor xml:id="_run__length__encoding_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;l=r;
+<anchor xml:id="_run__length__encoding_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;}
+<anchor xml:id="_run__length__encoding_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_run__length__encoding_8hpp_source_1l00025"/>00025 }
 </programlisting></section>

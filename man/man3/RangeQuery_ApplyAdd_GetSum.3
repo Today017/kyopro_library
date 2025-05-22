@@ -1,0 +1,56 @@
+.TH "RangeQuery::ApplyAdd_GetSum< T >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RangeQuery::ApplyAdd_GetSum< T > \- 区間加算 / 区間和  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'segtree_lazy\&.hpp'\fP
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "using \fBS\fP = typename \fBMonoid::SumPair\fP<T>\fB::Type\fP"
+.br
+.ti -1c
+.RI "using \fBType\fP = struct \fBSegTreeLazy\fP<\fBMonoid::SumPair\fP<T>,\fBOperator::Add\fP<T>,\fBmapping\fP>"
+.br
+.in -1c
+.SS "静的公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "static \fBS\fP \fBmapping\fP (const \fBS\fP &a, const T &b)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename T>
+.br
+struct RangeQuery::ApplyAdd_GetSum< T >"区間加算 / 区間和 
+.PP
+ \fBsegtree_lazy\&.hpp\fP の \fB246\fP 行目に定義があります。
+.SH "型定義メンバ詳解"
+.PP 
+.SS "template<typename T> using \fBRangeQuery::ApplyAdd_GetSum\fP< T >::S = typename \fBMonoid::SumPair\fP<T>\fB::Type\fP"
+
+.PP
+ \fBsegtree_lazy\&.hpp\fP の \fB247\fP 行目に定義があります。
+.SS "template<typename T> using \fBRangeQuery::ApplyAdd_GetSum\fP< T >::Type = struct \fBSegTreeLazy\fP<\fBMonoid::SumPair\fP<T>,\fBOperator::Add\fP<T>,\fBmapping\fP>"
+
+.PP
+ \fBsegtree_lazy\&.hpp\fP の \fB249\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "template<typename T> static \fBS\fP \fBRangeQuery::ApplyAdd_GetSum\fP< T >::mapping (const \fBS\fP & a, const T & b)\fR [inline]\fP, \fR [static]\fP"
+
+.PP
+ \fBsegtree_lazy\&.hpp\fP の \fB248\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

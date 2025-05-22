@@ -1,0 +1,73 @@
+.TH "Ring" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ring \- 円環上での計算  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "関数"
+
+.in +1c
+.ti -1c
+.RI "bool \fBBetweenIncrement\fP (\fBll\fP p1, \fBll\fP p2, \fBll\fP target)"
+.br
+.RI "円環上で p1->p2 に+方向に移動する際に target を通過するかを判定する。 \fBverify:\fP https://atcoder.jp/contests/abc367/tasks/abc367_a "
+.ti -1c
+.RI "bool \fBBetweenDecrement\fP (\fBll\fP p1, \fBll\fP p2, \fBll\fP target)"
+.br
+.RI "円環上で p1->p2 に-方向に移動する際に target を通過するかを判定する。 "
+.ti -1c
+.RI "\fBll\fP \fBDistanceMin\fP (\fBll\fP p1, \fBll\fP p2, \fBll\fP n)"
+.br
+.RI "サイズ n の円環上で p1->p2 に移動する距離を返す。 "
+.ti -1c
+.RI "\fBll\fP \fBDistanceIncrement\fP (\fBll\fP p1, \fBll\fP p2, \fBll\fP n)"
+.br
+.RI "サイズ n の円環上で p1->p2 に+方向に移動する距離を返す。 "
+.ti -1c
+.RI "\fBll\fP \fBDistanceDecrement\fP (\fBll\fP p1, \fBll\fP p2, \fBll\fP n)"
+.br
+.RI "サイズ n の円環上で p1->p2 に-方向に移動する距離を返す。 "
+.in -1c
+.SH "詳解"
+.PP 
+円環上での計算 
+.SH "関数詳解"
+.PP 
+.SS "bool Ring::BetweenIncrement (\fBll\fP p1, \fBll\fP p2, \fBll\fP target)"
+
+.PP
+円環上で p1->p2 に+方向に移動する際に target を通過するかを判定する。 \fBverify:\fP https://atcoder.jp/contests/abc367/tasks/abc367_a 
+.PP
+ \fBring\&.hpp\fP の \fB7\fP 行目に定義があります。
+.SS "bool Ring::BetweenDecrement (\fBll\fP p1, \fBll\fP p2, \fBll\fP target)"
+
+.PP
+円環上で p1->p2 に-方向に移動する際に target を通過するかを判定する。 
+.PP
+ \fBring\&.hpp\fP の \fB13\fP 行目に定義があります。
+.PP
+参照先 \fBBetweenIncrement()\fP\&.
+.SS "\fBll\fP Ring::DistanceMin (\fBll\fP p1, \fBll\fP p2, \fBll\fP n)"
+
+.PP
+サイズ n の円環上で p1->p2 に移動する距離を返す。 
+.PP
+ \fBring\&.hpp\fP の \fB19\fP 行目に定義があります。
+.SS "\fBll\fP Ring::DistanceIncrement (\fBll\fP p1, \fBll\fP p2, \fBll\fP n)"
+
+.PP
+サイズ n の円環上で p1->p2 に+方向に移動する距離を返す。 
+.PP
+ \fBring\&.hpp\fP の \fB25\fP 行目に定義があります。
+.SS "\fBll\fP Ring::DistanceDecrement (\fBll\fP p1, \fBll\fP p2, \fBll\fP n)"
+
+.PP
+サイズ n の円環上で p1->p2 に-方向に移動する距離を返す。 
+.PP
+ \fBring\&.hpp\fP の \fB30\fP 行目に定義があります。
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

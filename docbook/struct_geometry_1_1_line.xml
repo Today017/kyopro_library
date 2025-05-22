@@ -3,6 +3,11 @@
 <title>Geometry::Line 構造体</title>
 <indexterm><primary>Geometry::Line</primary></indexterm>
 <para>
+
+<para>直線 </para>
+ 
+</para>
+<para>
 <computeroutput>#include &quot;geo.hpp&quot;</computeroutput>
 </para>
 <para>Geometry::Line の継承関係図    <informalfigure>
@@ -21,6 +26,8 @@
             <listitem><para><link linkend="_struct_geometry_1_1_line_1adbd13c9fb4116428fb0c709b85665913">Line</link> (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;_a, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;_b)</para>
 </listitem>
             <listitem><para><link linkend="_struct_geometry_1_1_line_1acd633e2aa86b9783a5928a4a6d0ac71d">Line</link> (const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp;A, const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp;B, const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp;C)</para>
+
+<para>直線 Ax+By=C を定義する </para>
 </listitem>
             <listitem><para>bool <link linkend="_struct_geometry_1_1_line_1aea48a257bc3c9bed360894873e9ead59">operator==</link> (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp;l) const</para>
 </listitem>
@@ -44,8 +51,10 @@
 </simplesect>
 <section>
 <title>詳解</title>
+
+<para>直線 </para>
 <para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00031">31</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00048">48</link> 行目に定義があります。</para>
 </section>
 <section>
 <title>構築子と解体子</title>
@@ -59,18 +68,22 @@
 <indexterm><primary>Line</primary><secondary>Geometry::Line</secondary></indexterm>
 <indexterm><primary>Geometry::Line</primary><secondary>Line</secondary></indexterm>
 <para><computeroutput>Geometry::Line::Line (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; _a, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; _b)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00034">34</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00051">51</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">a</link>, <link linkend="_geo_8hpp_source_1l00032">b</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">a</link>, <link linkend="_geo_8hpp_source_1l00049">b</link>.</para>
 </section>
 <anchor xml:id="_struct_geometry_1_1_line_1acd633e2aa86b9783a5928a4a6d0ac71d"/><section>
     <title>Line()<computeroutput>[3/3]</computeroutput></title>
 <indexterm><primary>Line</primary><secondary>Geometry::Line</secondary></indexterm>
 <indexterm><primary>Geometry::Line</primary><secondary>Line</secondary></indexterm>
 <para><computeroutput>Geometry::Line::Line (const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp; A, const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp; B, const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp; C)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00036">36</link> 行目に定義があります。</para>
+
+<para>直線 Ax+By=C を定義する </para>
+</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">a</link>, <link linkend="_geo_8hpp_source_1l00007">Geometry::almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00032">b</link>, <link linkend="_geo_8hpp_source_1l00016">Geometry::Point::Point()</link>.</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00054">54</link> 行目に定義があります。</para>
+<para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">a</link>, <link linkend="_geo_8hpp_source_1l00008">Geometry::almostEqual()</link>, <link linkend="_geo_8hpp_source_1l00049">b</link>, <link linkend="_geo_8hpp_source_1l00018">Geometry::Point::Point()</link>.</para>
 </section>
 </section>
 <section>
@@ -80,9 +93,9 @@
 <indexterm><primary>operator==</primary><secondary>Geometry::Line</secondary></indexterm>
 <indexterm><primary>Geometry::Line</primary><secondary>operator==</secondary></indexterm>
 <para><computeroutput>bool Geometry::Line::operator== (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp; l) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00052">52</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00071">71</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">a</link>, <link linkend="_geo_8hpp_source_1l00032">b</link>, <link linkend="_geo_8hpp_source_1l00027">Geometry::Point::operator==()</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">a</link>, <link linkend="_geo_8hpp_source_1l00049">b</link>, <link linkend="_geo_8hpp_source_1l00043">Geometry::Point::operator==()</link>.</para>
 </section>
 </section>
 <section>
@@ -92,9 +105,9 @@
 <indexterm><primary>operator&gt;&gt;</primary><secondary>Geometry::Line</secondary></indexterm>
 <indexterm><primary>Geometry::Line</primary><secondary>operator&gt;&gt;</secondary></indexterm>
 <para><computeroutput>istream &amp; operator&gt;&gt; (istream &amp; is, <link linkend="_struct_geometry_1_1_line">Line</link> &amp; l)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00053">53</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00072">72</link> 行目に定義があります。</para>
 <para>
-参照先 <link linkend="_geo_8hpp_source_1l00032">a</link>, <link linkend="_geo_8hpp_source_1l00032">b</link>.</para>
+参照先 <link linkend="_geo_8hpp_source_1l00049">a</link>, <link linkend="_geo_8hpp_source_1l00049">b</link>.</para>
 </section>
 </section>
 <section>
@@ -104,14 +117,14 @@
 <indexterm><primary>a</primary><secondary>Geometry::Line</secondary></indexterm>
 <indexterm><primary>Geometry::Line</primary><secondary>a</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_geometry_1_1_point">Point</link> Geometry::Line::a</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00032">32</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00049">49</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_struct_geometry_1_1_line_1a84c6695c3de1f9dee943074a86889359"/><section>
     <title>b</title>
 <indexterm><primary>b</primary><secondary>Geometry::Line</secondary></indexterm>
 <indexterm><primary>Geometry::Line</primary><secondary>b</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_geometry_1_1_point">Point</link> Geometry::Line::b</computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00032">32</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00049">49</link> 行目に定義があります。</para>
 </section>
 <para>
 この構造体詳解は次のファイルから抽出されました:</para>

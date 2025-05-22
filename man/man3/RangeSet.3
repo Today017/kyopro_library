@@ -1,0 +1,97 @@
+.TH "RangeSet" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RangeSet \- 区間を set で管理するデータ構造 \fBverify:https://yukicoder\&.me/submissions/1021763\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'range_set\&.hpp'\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBRangeSet\fP ()"
+.br
+.ti -1c
+.RI "void \fBinsert\fP (\fBll\fP l, \fBll\fP r)"
+.br
+.RI "区間 [l, r) を追加する "
+.ti -1c
+.RI "void \fBerase\fP (\fBll\fP l, \fBll\fP r)"
+.br
+.RI "区間 [l, r) を削除する "
+.ti -1c
+.RI "bool \fBis_covered\fP (\fBll\fP l, \fBll\fP r)"
+.br
+.RI "区間 [l, r) が完全に被覆されているかどうかを判定する "
+.ti -1c
+.RI "\fBPL\fP \fBcovering_range\fP (\fBll\fP x)"
+.br
+.RI "点 x を含む区間を返す "
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "set< \fBPL\fP > \fBdat\fP"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+区間を set で管理するデータ構造 \fBverify:https://yukicoder\&.me/submissions/1021763\fP 
+.PP
+ \fBrange_set\&.hpp\fP の \fB5\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "RangeSet::RangeSet ()\fR [inline]\fP"
+
+.PP
+ \fBrange_set\&.hpp\fP の \fB7\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "void RangeSet::insert (\fBll\fP l, \fBll\fP r)\fR [inline]\fP"
+
+.PP
+区間 [l, r) を追加する 
+.PP
+ \fBrange_set\&.hpp\fP の \fB13\fP 行目に定義があります。
+.SS "void RangeSet::erase (\fBll\fP l, \fBll\fP r)\fR [inline]\fP"
+
+.PP
+区間 [l, r) を削除する 
+.PP
+ \fBrange_set\&.hpp\fP の \fB34\fP 行目に定義があります。
+.SS "bool RangeSet::is_covered (\fBll\fP l, \fBll\fP r)\fR [inline]\fP"
+
+.PP
+区間 [l, r) が完全に被覆されているかどうかを判定する 
+.PP
+\fB注意\fP
+.RS 4
+unverified 
+.RE
+.PP
+
+.PP
+ \fBrange_set\&.hpp\fP の \fB58\fP 行目に定義があります。
+.SS "\fBPL\fP RangeSet::covering_range (\fBll\fP x)\fR [inline]\fP"
+
+.PP
+点 x を含む区間を返す 存在しない場合は \fR{-INFL, -INFL}\fP を返す 
+.PP
+ \fBrange_set\&.hpp\fP の \fB67\fP 行目に定義があります。
+.PP
+参照先 \fBINFL\fP, \fBis_covered()\fP\&.
+.SH "メンバ詳解"
+.PP 
+.SS "set<\fBPL\fP> RangeSet::dat"
+
+.PP
+ \fBrange_set\&.hpp\fP の \fB6\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

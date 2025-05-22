@@ -13,30 +13,4 @@
 </listitem>
         </itemizedlist>
 </simplesect>
-<simplesect>
-    <title>変数    </title>
-        <itemizedlist>
-            <listitem><para>constexpr const int <link linkend="_rolling__hash_8hpp_1a84e5a31f8ac23bac6f393494d0237d98">HASH_MAX</link> =1000000</para>
-</listitem>
-            <listitem><para>constexpr const int <link linkend="_rolling__hash_8hpp_1a404ac35e6b35b40321967f29d9f2c783">HASH_C</link> =256</para>
-</listitem>
-        </itemizedlist>
-</simplesect>
-<section>
-<title>変数詳解</title>
-<anchor xml:id="_rolling__hash_8hpp_1a84e5a31f8ac23bac6f393494d0237d98"/><section>
-    <title>HASH_MAX</title>
-<indexterm><primary>HASH_MAX</primary><secondary>rolling_hash.hpp</secondary></indexterm>
-<indexterm><primary>rolling_hash.hpp</primary><secondary>HASH_MAX</secondary></indexterm>
-<para><computeroutput>const int HASH_MAX =1000000<computeroutput>[constexpr]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00005">5</link> 行目に定義があります。</para>
-</section>
-<anchor xml:id="_rolling__hash_8hpp_1a404ac35e6b35b40321967f29d9f2c783"/><section>
-    <title>HASH_C</title>
-<indexterm><primary>HASH_C</primary><secondary>rolling_hash.hpp</secondary></indexterm>
-<indexterm><primary>rolling_hash.hpp</primary><secondary>HASH_C</secondary></indexterm>
-<para><computeroutput>const int HASH_C =256<computeroutput>[constexpr]</computeroutput></computeroutput></para><para>
- <link linkend="_rolling__hash_8hpp_source">rolling_hash.hpp</link> の <link linkend="_rolling__hash_8hpp_source_1l00006">6</link> 行目に定義があります。</para>
-</section>
-</section>
 </section>

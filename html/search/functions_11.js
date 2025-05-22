@@ -30,5 +30,5 @@ var searchData=
   ['rollback_27',['rollback',['../struct_dsu_rollback.html#a7c33fb0f4e5b0f804b937ab4edb7a5ea',1,'DsuRollback']]],
   ['rollinghash_28',['RollingHash',['../struct_rolling_hash.html#a71020424af6022b96f96117961ac4bc2',1,'RollingHash::RollingHash()=default'],['../struct_rolling_hash.html#aee33123a728c1df6d8c0b3550baa0c43',1,'RollingHash::RollingHash(const string &amp;s)']]],
   ['rowreduction_29',['RowReduction',['../linear__equation_8hpp.html#ad783a386934fd2ebc14105b5babb4aec',1,'linear_equation.hpp']]],
-  ['runlengthencoding_30',['RunLengthEncoding',['../run__length__encoding_8hpp.html#a7f01629c3961317d963a4666dbe7622b',1,'run_length_encoding.hpp']]]
+  ['runlengthencoding_30',['RunLengthEncoding',['../run__length__encoding_8hpp.html#a7f01629c3961317d963a4666dbe7622b',1,'RunLengthEncoding(const string &amp;s):&#160;run_length_encoding.hpp'],['../run__length__encoding_8hpp.html#a625d6d63e6987b34a913bb2d6f3cae5f',1,'RunLengthEncoding(const vector&lt; ll &gt; &amp;s):&#160;run_length_encoding.hpp']]]
 ];

@@ -1,0 +1,39 @@
+.TH "math/lagrange.hpp" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+math/lagrange.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include '\&.\&./\&.\&./kyopro_library/template\&.hpp'\fP
+.br
+\fR#include '\&.\&./\&.\&./kyopro_library/math/multipoint_evaluate\&.hpp'\fP
+.br
+
+.SS "関数"
+
+.in +1c
+.ti -1c
+.RI "template<typename T> vector< T > \fBLagrangePolynomial\fP (vector< T > x, vector< T > y)"
+.br
+.RI "ラグランジュ補間 "
+.in -1c
+.SH "関数詳解"
+.PP 
+.SS "template<typename T> vector< T > LagrangePolynomial (vector< T > x, vector< T > y)"
+
+.PP
+ラグランジュ補間 n+1 個の点 (x[i], y[i]) を通る n 次多項式の係数を返す 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(n (log(n))^2) 
+.RE
+.PP
+
+.PP
+ \fBlagrange\&.hpp\fP の \fB8\fP 行目に定義があります。
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

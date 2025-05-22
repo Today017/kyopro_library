@@ -1,0 +1,39 @@
+.TH "math/primality_test.hpp" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+math/primality_test.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include '\&.\&./\&.\&./kyopro_library/template\&.hpp'\fP
+.br
+\fR#include '\&.\&./\&.\&./kyopro_library/others/modcal\&.hpp'\fP
+.br
+
+.SS "関数"
+
+.in +1c
+.ti -1c
+.RI "bool \fBPrimalityTest\fP (\fBll\fP n)"
+.br
+.RI "ミラーラビン素数判定法により n が素数であるかを判定する "
+.in -1c
+.SH "関数詳解"
+.PP 
+.SS "bool PrimalityTest (\fBll\fP n)"
+
+.PP
+ミラーラビン素数判定法により n が素数であるかを判定する 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(k log^3 n) \fBhttps://drken1215.hatenablog.com/entry/2023/05/23/233000\fP \fBverify:\fP https://judge.yosupo.jp/problem/primality_test 
+.RE
+.PP
+
+.PP
+ \fBprimality_test\&.hpp\fP の \fB8\fP 行目に定義があります。
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

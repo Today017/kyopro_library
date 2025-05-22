@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: exp_AHC.Expander クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classexp___a_h_c_1_1_expander.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="#pub-static-attribs">静的公開変数類</a> &#124;
+<a href="classexp___a_h_c_1_1_expander-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">exp_AHC.Expander クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="classexp___a_h_c_1_1_expander.html" title="Expander class is responsible for expanding libraries in the source code.">Expander</a> class is responsible for expanding libraries in the source code.  
+ <a href="#details">[詳解]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a2f06c5c8a096ea1d6bacb43670751399" id="r_a2f06c5c8a096ea1d6bacb43670751399"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f06c5c8a096ea1d6bacb43670751399">is_ignored_line</a> (self, line)</td></tr>
+<tr class="memdesc:a2f06c5c8a096ea1d6bacb43670751399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a line should be ignored during expansion.  <br /></td></tr>
+<tr class="separator:a2f06c5c8a096ea1d6bacb43670751399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9754b60461b5d76a41f2b1ff325a5037" id="r_a9754b60461b5d76a41f2b1ff325a5037"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9754b60461b5d76a41f2b1ff325a5037">__init__</a> (self, List[Path] <a class="el" href="#ac37f8e6a4a59662ab2c01a80c94ebe33">lib_paths</a>)</td></tr>
+<tr class="memdesc:a9754b60461b5d76a41f2b1ff325a5037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an <a class="el" href="classexp___a_h_c_1_1_expander.html" title="Expander class is responsible for expanding libraries in the source code.">Expander</a> object.  <br /></td></tr>
+<tr class="separator:a9754b60461b5d76a41f2b1ff325a5037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b7a38dd0ece6deb5c2918f63619c4d" id="r_a88b7a38dd0ece6deb5c2918f63619c4d"><td class="memItemLeft" align="right" valign="top">Path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88b7a38dd0ece6deb5c2918f63619c4d">find_library</a> (self, str library_name)</td></tr>
+<tr class="memdesc:a88b7a38dd0ece6deb5c2918f63619c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the path of a library file.  <br /></td></tr>
+<tr class="separator:a88b7a38dd0ece6deb5c2918f63619c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3acdb0ba487cfef451ee66eb598b8185" id="r_a3acdb0ba487cfef451ee66eb598b8185"><td class="memItemLeft" align="right" valign="top">List[str]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3acdb0ba487cfef451ee66eb598b8185">expand_library</a> (self, Path library_file_path)</td></tr>
+<tr class="memdesc:a3acdb0ba487cfef451ee66eb598b8185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expands a library file.  <br /></td></tr>
+<tr class="separator:a3acdb0ba487cfef451ee66eb598b8185"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1b5a3cab7b3393f6a62597a32907164" id="r_aa1b5a3cab7b3393f6a62597a32907164"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1b5a3cab7b3393f6a62597a32907164">expand</a> (self, str <a class="el" href="namespaceexp___a_h_c.html#acf93965763ecde414f94e2c88522aa37">source</a>)</td></tr>
+<tr class="memdesc:aa1b5a3cab7b3393f6a62597a32907164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expands libraries in the source code.  <br /></td></tr>
+<tr class="separator:aa1b5a3cab7b3393f6a62597a32907164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:ac37f8e6a4a59662ab2c01a80c94ebe33" id="r_ac37f8e6a4a59662ab2c01a80c94ebe33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac37f8e6a4a59662ab2c01a80c94ebe33">lib_paths</a> = lib_paths</td></tr>
+<tr class="separator:ac37f8e6a4a59662ab2c01a80c94ebe33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+静的公開変数類</h2></td></tr>
+<tr class="memitem:ad98d41b559c60f5c5566583afdbf4350" id="r_ad98d41b559c60f5c5566583afdbf4350"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad98d41b559c60f5c5566583afdbf4350">include</a> = re.compile(r'#include\s*[&quot;&lt;](kyopro_library/[a-z0-9_/]*(|.hpp))[&quot;&gt;]\s*')</td></tr>
+<tr class="separator:ad98d41b559c60f5c5566583afdbf4350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e602d36bc1ed17bcd2b31bb17128fef" id="r_a2e602d36bc1ed17bcd2b31bb17128fef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e602d36bc1ed17bcd2b31bb17128fef">included</a> = set()</td></tr>
+<tr class="separator:a2e602d36bc1ed17bcd2b31bb17128fef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p><a class="el" href="classexp___a_h_c_1_1_expander.html" title="Expander class is responsible for expanding libraries in the source code.">Expander</a> class is responsible for expanding libraries in the source code. </p>
+<p>Attributes:</p><ul>
+<li>include (re.Pattern): Regular expression pattern to match <a class="el" href="#ad98d41b559c60f5c5566583afdbf4350">include</a> statements.</li>
+<li>lib_paths (List[Path]): List of library paths.</li>
+<li>included (<a class="el" href="struct_set.html" title="std::set ラッパー">Set</a>[Path]): <a class="el" href="struct_set.html" title="std::set ラッパー">Set</a> of included library file paths.</li>
+</ul>
+<p>Methods:</p><ul>
+<li>is_ignored_line(line: str) -&gt; bool: Checks if a line should be ignored during expansion.</li>
+<li>find_library(library_name: str) -&gt; Path: Finds the path of a library file.</li>
+<li>expand_library(library_file_path: Path) -&gt; List[str]: Expands a library file.</li>
+<li>expand(source: str) -&gt; str: Expands libraries in the source code. </li>
+</ul>
+
+<p class="definition"> <a class="el" href="exp___a_h_c_8py_source.html">exp_AHC.py</a> の <a class="el" href="exp___a_h_c_8py_source.html#l00021">21</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a9754b60461b5d76a41f2b1ff325a5037" name="a9754b60461b5d76a41f2b1ff325a5037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9754b60461b5d76a41f2b1ff325a5037">&#9670;&#160;</a></span>__init__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">exp_AHC.Expander.__init__ </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List[Path]</td>          <td class="paramname"><span class="paramname"><em>lib_paths</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes an <a class="el" href="classexp___a_h_c_1_1_expander.html" title="Expander class is responsible for expanding libraries in the source code.">Expander</a> object. </p>
+<p>Args:</p><ul>
+<li>lib_paths (List[Path]): List of library paths. </li>
+</ul>
+
+<p class="definition"> <a class="el" href="exp___a_h_c_8py_source.html">exp_AHC.py</a> の <a class="el" href="exp___a_h_c_8py_source.html#l00067">67</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a2f06c5c8a096ea1d6bacb43670751399" name="a2f06c5c8a096ea1d6bacb43670751399"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f06c5c8a096ea1d6bacb43670751399">&#9670;&#160;</a></span>is_ignored_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> bool exp_AHC.Expander.is_ignored_line </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>line</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a line should be ignored during expansion. </p>
+<p>Args:</p><ul>
+<li>line (str): The line to be checked.</li>
+</ul>
+<p>Returns:</p><ul>
+<li>bool: True if the line should be ignored, False otherwise. </li>
+</ul>
+
+<p class="definition"> <a class="el" href="exp___a_h_c_8py_source.html">exp_AHC.py</a> の <a class="el" href="exp___a_h_c_8py_source.html#l00040">40</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a88b7a38dd0ece6deb5c2918f63619c4d" name="a88b7a38dd0ece6deb5c2918f63619c4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b7a38dd0ece6deb5c2918f63619c4d">&#9670;&#160;</a></span>find_library()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> Path exp_AHC.Expander.find_library </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>library_name</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds the path of a library file. </p>
+<p>Args:</p><ul>
+<li>library_name (str): The name of the library file.</li>
+</ul>
+<p>Returns:</p><ul>
+<li>Path: The path of the library file.</li>
+</ul>
+<p>Raises:</p><ul>
+<li>FileNotFoundError: If the library file cannot be found. </li>
+</ul>
+
+<p class="definition"> <a class="el" href="exp___a_h_c_8py_source.html">exp_AHC.py</a> の <a class="el" href="exp___a_h_c_8py_source.html#l00079">79</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="exp___a_h_c_8py_source.html#l00178">exp_AHC.format</a>, <a class="el" href="exp_8py_source.html#l00075">exp.Expander.lib_paths</a>, <a class="el" href="exp___a_h_c_8py_source.html#l00075">lib_paths</a>.</p>
+
+</div>
+</div>
+<a id="a3acdb0ba487cfef451ee66eb598b8185" name="a3acdb0ba487cfef451ee66eb598b8185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3acdb0ba487cfef451ee66eb598b8185">&#9670;&#160;</a></span>expand_library()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> List[str] exp_AHC.Expander.expand_library </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Path</td>          <td class="paramname"><span class="paramname"><em>library_file_path</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Expands a library file. </p>
+<p>Args:</p><ul>
+<li>library_file_path (Path): The path of the library file.</li>
+</ul>
+<p>Returns:</p><ul>
+<li>List[str]: The expanded lines of the library file. </li>
+</ul>
+
+<p class="definition"> <a class="el" href="exp___a_h_c_8py_source.html">exp_AHC.py</a> の <a class="el" href="exp___a_h_c_8py_source.html#l00100">100</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="exp_8py_source.html#l00100">exp.Expander.expand_library()</a>, <a class="el" href="exp___a_h_c_8py_source.html#l00100">expand_library()</a>, <a class="el" href="exp_8py_source.html#l00079">exp.Expander.find_library()</a>, <a class="el" href="exp___a_h_c_8py_source.html#l00079">find_library()</a>, <a class="el" href="exp___a_h_c_8py_source.html#l00178">exp_AHC.format</a>, <a class="el" href="exp_8py_source.html#l00038">exp.Expander.include</a>, <a class="el" href="exp___a_h_c_8py_source.html#l00038">include</a>, <a class="el" href="exp_8py_source.html#l00077">exp.Expander.included</a>, <a class="el" href="exp___a_h_c_8py_source.html#l00077">included</a>, <a class="el" href="exp_8py_source.html#l00040">exp.Expander.is_ignored_line()</a>, <a class="el" href="exp___a_h_c_8py_source.html#l00040">is_ignored_line()</a>.</p>
+
+</div>
+</div>
+<a id="aa1b5a3cab7b3393f6a62597a32907164" name="aa1b5a3cab7b3393f6a62597a32907164"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1b5a3cab7b3393f6a62597a32907164">&#9670;&#160;</a></span>expand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> str exp_AHC.Expander.expand </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>source</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Expands libraries in the source code. </p>
+<p>Args:</p><ul>
+<li>source (str): The source code to be expanded.</li>
+</ul>
+<p>Returns:</p><ul>
+<li>str: The expanded source code. </li>
+</ul>
+
+<p class="definition"> <a class="el" href="exp___a_h_c_8py_source.html">exp_AHC.py</a> の <a class="el" href="exp___a_h_c_8py_source.html#l00145">145</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="exp_8py_source.html#l00100">exp.Expander.expand_library()</a>, <a class="el" href="exp___a_h_c_8py_source.html#l00100">expand_library()</a>, <a class="el" href="exp_8py_source.html#l00079">exp.Expander.find_library()</a>, <a class="el" href="exp___a_h_c_8py_source.html#l00079">find_library()</a>, <a class="el" href="exp_8py_source.html#l00038">exp.Expander.include</a>, <a class="el" href="exp___a_h_c_8py_source.html#l00038">include</a>, <a class="el" href="exp_8py_source.html#l00077">exp.Expander.included</a>, <a class="el" href="exp___a_h_c_8py_source.html#l00077">included</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ad98d41b559c60f5c5566583afdbf4350" name="ad98d41b559c60f5c5566583afdbf4350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad98d41b559c60f5c5566583afdbf4350">&#9670;&#160;</a></span>include</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">exp_AHC.Expander.include = re.compile(r'#include\s*[&quot;&lt;](kyopro_library/[a-z0-9_/]*(|.hpp))[&quot;&gt;]\s*')</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="exp___a_h_c_8py_source.html">exp_AHC.py</a> の <a class="el" href="exp___a_h_c_8py_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2e602d36bc1ed17bcd2b31bb17128fef" name="a2e602d36bc1ed17bcd2b31bb17128fef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e602d36bc1ed17bcd2b31bb17128fef">&#9670;&#160;</a></span>included</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">exp_AHC.Expander.included = set()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="exp___a_h_c_8py_source.html">exp_AHC.py</a> の <a class="el" href="exp___a_h_c_8py_source.html#l00077">77</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac37f8e6a4a59662ab2c01a80c94ebe33" name="ac37f8e6a4a59662ab2c01a80c94ebe33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac37f8e6a4a59662ab2c01a80c94ebe33">&#9670;&#160;</a></span>lib_paths</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">exp_AHC.Expander.lib_paths = lib_paths</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="exp___a_h_c_8py_source.html">exp_AHC.py</a> の <a class="el" href="exp___a_h_c_8py_source.html#l00075">75</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>kyopro_tools/<a class="el" href="exp___a_h_c_8py_source.html">exp_AHC.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceexp___a_h_c.html">exp_AHC</a></li><li class="navelem"><a class="el" href="classexp___a_h_c_1_1_expander.html">Expander</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

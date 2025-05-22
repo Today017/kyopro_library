@@ -3,6 +3,11 @@
 <title>Geometry::Segment 構造体</title>
 <indexterm><primary>Geometry::Segment</primary></indexterm>
 <para>
+
+<para>線分 </para>
+ 
+</para>
+<para>
 <computeroutput>#include &quot;geo.hpp&quot;</computeroutput>
 </para>
 <para>Geometry::Segment の継承関係図    <informalfigure>
@@ -23,6 +28,8 @@
             <listitem><para><link linkend="_struct_geometry_1_1_segment_1adbd13c9fb4116428fb0c709b85665913">Line</link> (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;_a, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;_b)</para>
 </listitem>
             <listitem><para><link linkend="_struct_geometry_1_1_segment_1acd633e2aa86b9783a5928a4a6d0ac71d">Line</link> (const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp;A, const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp;B, const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp;C)</para>
+
+<para>直線 Ax+By=C を定義する </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -32,6 +39,8 @@
             <listitem><para><link linkend="_struct_geometry_1_1_line_1adbd13c9fb4116428fb0c709b85665913">Line</link> (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;_a, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp;_b)</para>
 </listitem>
             <listitem><para><link linkend="_struct_geometry_1_1_line_1acd633e2aa86b9783a5928a4a6d0ac71d">Line</link> (const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp;A, const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp;B, const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp;C)</para>
+
+<para>直線 Ax+By=C を定義する </para>
 </listitem>
             <listitem><para>bool <link linkend="_struct_geometry_1_1_line_1aea48a257bc3c9bed360894873e9ead59">operator==</link> (const <link linkend="_struct_geometry_1_1_line">Line</link> &amp;l) const</para>
 </listitem>
@@ -47,8 +56,10 @@
 </simplesect>
 <section>
 <title>詳解</title>
+
+<para>線分 </para>
 <para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00056">56</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00076">76</link> 行目に定義があります。</para>
 </section>
 <section>
 <title>構築子と解体子</title>
@@ -70,14 +81,18 @@
 <indexterm><primary>Line</primary><secondary>Geometry::Segment</secondary></indexterm>
 <indexterm><primary>Geometry::Segment</primary><secondary>Line</secondary></indexterm>
 <para><computeroutput>Geometry::Line::Line (const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; _a, const <link linkend="_struct_geometry_1_1_point">Point</link> &amp; _b)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00034">34</link> 行目に定義があります。</para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00051">51</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_struct_geometry_1_1_segment_1acd633e2aa86b9783a5928a4a6d0ac71d"/><section>
     <title>Line()<computeroutput>[3/3]</computeroutput></title>
 <indexterm><primary>Line</primary><secondary>Geometry::Segment</secondary></indexterm>
 <indexterm><primary>Geometry::Segment</primary><secondary>Line</secondary></indexterm>
 <para><computeroutput>Geometry::Line::Line (const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp; A, const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp; B, const <link linkend="_namespace_geometry_1aa4fd942614eba4a1561c5a22278a1bcc">Real</link> &amp; C)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00036">36</link> 行目に定義があります。</para>
+
+<para>直線 Ax+By=C を定義する </para>
+</para>
+<para>
+ <link linkend="_geo_8hpp_source">geo.hpp</link> の <link linkend="_geo_8hpp_source_1l00054">54</link> 行目に定義があります。</para>
 </section>
 <para>
 この構造体詳解は次のファイルから抽出されました:</para>

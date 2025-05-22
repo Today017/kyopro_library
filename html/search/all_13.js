@@ -53,5 +53,5 @@ var searchData=
   ['rowreduction_50',['RowReduction',['../linear__equation_8hpp.html#ad783a386934fd2ebc14105b5babb4aec',1,'linear_equation.hpp']]],
   ['rpriority_5fqueue_51',['rpriority_queue',['../template_8hpp.html#ae5ef38025fe230c42996fedcb333507a',1,'template.hpp']]],
   ['run_5flength_5fencoding_2ehpp_52',['run_length_encoding.hpp',['../run__length__encoding_8hpp.html',1,'']]],
-  ['runlengthencoding_53',['RunLengthEncoding',['../run__length__encoding_8hpp.html#a7f01629c3961317d963a4666dbe7622b',1,'run_length_encoding.hpp']]]
+  ['runlengthencoding_53',['RunLengthEncoding',['../run__length__encoding_8hpp.html#a7f01629c3961317d963a4666dbe7622b',1,'RunLengthEncoding(const string &amp;s):&#160;run_length_encoding.hpp'],['../run__length__encoding_8hpp.html#a625d6d63e6987b34a913bb2d6f3cae5f',1,'RunLengthEncoding(const vector&lt; ll &gt; &amp;s):&#160;run_length_encoding.hpp']]]
 ];

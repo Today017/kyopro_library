@@ -1,7 +1,7 @@
 var searchData=
 [
   ['dat_0',['dat',['../struct_range_set.html#a5f516de3fe3aafe273e7a6dc62f949ff',1,'RangeSet::dat'],['../sparse__table__2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb',1,'dat:&#160;sparse_table_2d.hpp']]],
-  ['datefmt_1',['datefmt',['../namespaceexp.html#acd13cc680f535f17f76a099ea6da8068',1,'exp']]],
+  ['datefmt_1',['datefmt',['../namespaceexp.html#acd13cc680f535f17f76a099ea6da8068',1,'exp.datefmt'],['../namespaceexp___a_h_c.html#ad7c1f64571c786c0280691daca4bc579',1,'exp_AHC.datefmt']]],
   ['debug_2',['debug',['../debug_8hpp.html#a86ee3ff44c537d94ccbabf941a613688',1,'debug:&#160;debug.hpp'],['../template_8hpp.html#a86ee3ff44c537d94ccbabf941a613688',1,'debug:&#160;template.hpp']]],
   ['debug_2ehpp_3',['debug.hpp',['../debug_8hpp.html',1,'']]],
   ['debugpring_4',['DebugPring',['../debug_8hpp.html#affe6a40813d5ceb07f91f0d70d0ec97e',1,'DebugPring(int i, T name):&#160;debug.hpp'],['../debug_8hpp.html#aaefa44588b21ef2ac4d9ca32783b9f33',1,'DebugPring(int i, const T1 &amp;name, const T2 &amp;a, const T3 &amp;...b):&#160;debug.hpp']]],

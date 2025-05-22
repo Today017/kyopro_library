@@ -3,6 +3,7 @@ var template_8hpp =
     [ "ALL", "template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea", null ],
     [ "IO", "template_8hpp.html#affe9a1ffd6cd7b2e404200ef182fa18f", null ],
     [ "REP", "template_8hpp.html#a17daffa35db12daabc89c90df168e706", null ],
+    [ "PER", "template_8hpp.html#a98be0bb4bc26ab18cde222e08f2e5127", null ],
     [ "FOR", "template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7", null ],
     [ "debug", "template_8hpp.html#a86ee3ff44c537d94ccbabf941a613688", null ],
     [ "print_line", "template_8hpp.html#a03e896b87233163e2dc3399c65cdfc2d", null ],

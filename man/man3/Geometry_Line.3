@@ -1,0 +1,100 @@
+.TH "Geometry::Line" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Geometry::Line \- 直線  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'geo\&.hpp'\fP
+.PP
+\fBGeometry::Segment\fPに継承されています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBLine\fP ()=default"
+.br
+.ti -1c
+.RI "\fBLine\fP (const \fBPoint\fP &_a, const \fBPoint\fP &_b)"
+.br
+.ti -1c
+.RI "\fBLine\fP (const \fBReal\fP &A, const \fBReal\fP &B, const \fBReal\fP &C)"
+.br
+.RI "直線 Ax+By=C を定義する "
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBLine\fP &l) const"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBPoint\fP \fBa\fP"
+.br
+.ti -1c
+.RI "\fBPoint\fP \fBb\fP"
+.br
+.in -1c
+.SS "フレンド"
+
+.in +1c
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, \fBLine\fP &l)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+直線 
+.PP
+ \fBgeo\&.hpp\fP の \fB48\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "Geometry::Line::Line ()\fR [default]\fP"
+
+.SS "Geometry::Line::Line (const \fBPoint\fP & _a, const \fBPoint\fP & _b)\fR [inline]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB51\fP 行目に定義があります。
+.PP
+参照先 \fBa\fP, \fBb\fP\&.
+.SS "Geometry::Line::Line (const \fBReal\fP & A, const \fBReal\fP & B, const \fBReal\fP & C)\fR [inline]\fP"
+
+.PP
+直線 Ax+By=C を定義する 
+.PP
+ \fBgeo\&.hpp\fP の \fB54\fP 行目に定義があります。
+.PP
+参照先 \fBa\fP, \fBGeometry::almostEqual()\fP, \fBb\fP, \fBGeometry::Point::Point()\fP\&.
+.SH "関数詳解"
+.PP 
+.SS "bool Geometry::Line::operator== (const \fBLine\fP & l) const\fR [inline]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB71\fP 行目に定義があります。
+.PP
+参照先 \fBa\fP, \fBb\fP, \fBGeometry::Point::operator==()\fP\&.
+.SH "フレンドと関連関数の詳解"
+.PP 
+.SS "istream & operator>> (istream & is, \fBLine\fP & l)\fR [friend]\fP"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB72\fP 行目に定義があります。
+.PP
+参照先 \fBa\fP, \fBb\fP\&.
+.SH "メンバ詳解"
+.PP 
+.SS "\fBPoint\fP Geometry::Line::a"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB49\fP 行目に定義があります。
+.SS "\fBPoint\fP Geometry::Line::b"
+
+.PP
+ \fBgeo\&.hpp\fP の \fB49\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

@@ -30,6 +30,12 @@
 <para>頂点 u, v のLCAを返す </para>
 </listitem>
             <listitem><para>int <link linkend="_struct_h_l_d_1a57a2a1fce944ca4c9b4cfc4f497963e0">at</link> (int v)</para>
+
+<para>頂点vのHL分解後の列での位置を返す </para>
+</listitem>
+            <listitem><para>pair&lt; int, int &gt; <link linkend="_struct_h_l_d_1a3c1640f8cf6c7d78cb56336d223edb94">subtree</link> (int v)</para>
+
+<para>HL分解後の列で、頂点vの部分木に対応する区間を返す </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -114,7 +120,22 @@
 <indexterm><primary>at</primary><secondary>HLD</secondary></indexterm>
 <indexterm><primary>HLD</primary><secondary>at</secondary></indexterm>
 <para><computeroutput>int HLD::at (int v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
- <link linkend="_hld_8hpp_source">hld.hpp</link> の <link linkend="_hld_8hpp_source_1l00047">47</link> 行目に定義があります。</para>
+
+<para>頂点vのHL分解後の列での位置を返す </para>
+</para>
+<para>
+ <link linkend="_hld_8hpp_source">hld.hpp</link> の <link linkend="_hld_8hpp_source_1l00049">49</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_struct_h_l_d_1a3c1640f8cf6c7d78cb56336d223edb94"/><section>
+    <title>subtree()</title>
+<indexterm><primary>subtree</primary><secondary>HLD</secondary></indexterm>
+<indexterm><primary>HLD</primary><secondary>subtree</secondary></indexterm>
+<para><computeroutput>pair&lt; int, int &gt; HLD::subtree (int v)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>HL分解後の列で、頂点vの部分木に対応する区間を返す </para>
+</para>
+<para>
+ <link linkend="_hld_8hpp_source">hld.hpp</link> の <link linkend="_hld_8hpp_source_1l00052">52</link> 行目に定義があります。</para>
 </section>
 <para>
 この構造体詳解は次のファイルから抽出されました:</para>

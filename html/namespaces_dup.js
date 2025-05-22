@@ -25,6 +25,7 @@ var namespaces_dup =
       [ "a", "namespacecompress.html#ab51c4d79a5d1f1a8a2d46f126ac20894", null ]
     ] ],
     [ "exp", "namespaceexp.html", "namespaceexp" ],
+    [ "exp_AHC", "namespaceexp___a_h_c.html", "namespaceexp___a_h_c" ],
     [ "FPS", "namespace_f_p_s.html", [
       [ "Mul", "namespace_f_p_s.html#ab8e16e5c05f00c85e0a2d8ed9650a75a", null ],
       [ "Add", "namespace_f_p_s.html#acab6f12f41b871e31d16cb02a9a7c77d", null ],

@@ -1,0 +1,101 @@
+.TH "SparseTable< Band >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SparseTable< Band > \- スパーステーブル  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'sparse_table\&.hpp'\fP
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "using \fBType\fP = typename Band::Type"
+.br
+.in -1c
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBSparseTable\fP ()=default"
+.br
+.ti -1c
+.RI "\fBSparseTable\fP (const vector< \fBType\fP > &v)"
+.br
+.RI "配列 v からスパーステーブルを構築する "
+.ti -1c
+.RI "\fBType\fP \fBfold\fP (int l, int r)"
+.br
+.RI "区間 [l, r) の半群積を返す "
+.ti -1c
+.RI "int \fBsize\fP ()"
+.br
+.ti -1c
+.RI "\fBType\fP \fBoperator[]\fP (int i) const"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename Band>
+.br
+struct SparseTable< Band >"スパーステーブル 
+
+
+.PP
+\fBテンプレート引数\fP
+.RS 4
+\fIBand\fP 冪等な半群 
+.RE
+.PP
+
+.PP
+ \fBsparse_table\&.hpp\fP の \fB6\fP 行目に定義があります。
+.SH "型定義メンバ詳解"
+.PP 
+.SS "template<typename Band> using \fBSparseTable\fP< Band >::Type = typename Band::Type"
+
+.PP
+ \fBsparse_table\&.hpp\fP の \fB7\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename Band> \fBSparseTable\fP< Band >\fB::SparseTable\fP ()\fR [default]\fP"
+
+.SS "template<typename Band> \fBSparseTable\fP< Band >\fB::SparseTable\fP (const vector< \fBType\fP > & v)\fR [inline]\fP"
+
+.PP
+配列 v からスパーステーブルを構築する 
+.PP
+\fB覚え書き\fP
+.RS 4
+O(N log(N)) 
+.RE
+.PP
+
+.PP
+ \fBsparse_table\&.hpp\fP の \fB12\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "template<typename Band> \fBType\fP \fBSparseTable\fP< Band >::fold (int l, int r)\fR [inline]\fP"
+
+.PP
+区間 [l, r) の半群積を返す 
+.PP
+ \fBsparse_table\&.hpp\fP の \fB24\fP 行目に定義があります。
+.SS "template<typename Band> int \fBSparseTable\fP< Band >::size ()\fR [inline]\fP"
+
+.PP
+ \fBsparse_table\&.hpp\fP の \fB30\fP 行目に定義があります。
+.SS "template<typename Band> \fBType\fP \fBSparseTable\fP< Band >::operator[] (int i) const\fR [inline]\fP"
+
+.PP
+ \fBsparse_table\&.hpp\fP の \fB31\fP 行目に定義があります。
+.PP
+参照先 \fBfold()\fP\&.
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

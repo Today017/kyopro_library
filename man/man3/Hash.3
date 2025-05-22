@@ -1,0 +1,191 @@
+.TH "Hash" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Hash
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'rolling_hash\&.hpp'\fP
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "using \fBType\fP = array<\fBll\fP,HASH_PRIME>"
+.br
+.in -1c
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "void \fBinit\fP ()"
+.br
+.ti -1c
+.RI "\fBHash\fP ()=default"
+.br
+.ti -1c
+.RI "\fBHash\fP (const \fBHash\fP &other)"
+.br
+.ti -1c
+.RI "\fBHash\fP (char c)"
+.br
+.ti -1c
+.RI "\fBHash\fP & \fBoperator+=\fP (const \fBHash\fP &other)"
+.br
+.ti -1c
+.RI "\fBHash\fP & \fBoperator\-=\fP (const \fBHash\fP &other)"
+.br
+.ti -1c
+.RI "\fBHash\fP \fBoperator+\fP (const \fBHash\fP &other) const"
+.br
+.ti -1c
+.RI "\fBHash\fP \fBoperator\-\fP (const \fBHash\fP &other) const"
+.br
+.ti -1c
+.RI "\fBHash\fP \fBshift\fP (int x) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBHash\fP &other) const"
+.br
+.ti -1c
+.RI "\fBHash\fP & \fBoperator=\fP (const \fBHash\fP &other)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBType\fP \fBvalue\fP"
+.br
+.in -1c
+.SS "静的公開変数類"
+
+.in +1c
+.ti -1c
+.RI "static \fBVL\fP \fBbase\fP"
+.br
+.ti -1c
+.RI "static \fBVVL\fP \fBinv\fP"
+.br
+.ti -1c
+.RI "static \fBVVL\fP \fBpow\fP"
+.br
+.ti -1c
+.RI "static const \fBVL\fP \fBmod\fP ={1000000007,1000000009,1000000021,1000000033,1000000087}"
+.br
+.ti -1c
+.RI "static bool \fBflag\fP =false"
+.br
+.ti -1c
+.RI "static array< array< \fBll\fP, HASH_PRIME >, 256 > \fBnum\fP ={}"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+
+.PP
+\fB注意\fP
+.RS 4
+問題の成約に合わせて書き換えること 
+.RE
+.PP
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB10\fP 行目に定義があります。
+.SH "型定義メンバ詳解"
+.PP 
+.SS "using \fBHash::Type\fP = array<\fBll\fP,HASH_PRIME>"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB12\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "Hash::Hash ()\fR [default]\fP"
+
+.SS "Hash::Hash (const \fBHash\fP & other)\fR [inline]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB38\fP 行目に定義があります。
+.PP
+参照先 \fBflag\fP, \fBinit()\fP\&.
+.SS "Hash::Hash (char c)\fR [inline]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB42\fP 行目に定義があります。
+.PP
+参照先 \fBflag\fP, \fBinit()\fP\&.
+.SH "関数詳解"
+.PP 
+.SS "void Hash::init ()\fR [inline]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB21\fP 行目に定義があります。
+.PP
+参照先 \fBflag\fP, \fBXor128()\fP\&.
+.SS "\fBHash\fP & Hash::operator+= (const \fBHash\fP & other)\fR [inline]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB48\fP 行目に定義があります。
+.SS "\fBHash\fP & Hash::operator\-= (const \fBHash\fP & other)\fR [inline]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB52\fP 行目に定義があります。
+.SS "\fBHash\fP Hash::operator+ (const \fBHash\fP & other) const\fR [inline]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB56\fP 行目に定義があります。
+.PP
+参照先 \fBoperator+=()\fP\&.
+.SS "\fBHash\fP Hash::operator\- (const \fBHash\fP & other) const\fR [inline]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB61\fP 行目に定義があります。
+.PP
+参照先 \fBoperator\-=()\fP\&.
+.SS "\fBHash\fP Hash::shift (int x) const\fR [inline]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB66\fP 行目に定義があります。
+.SS "bool Hash::operator== (const \fBHash\fP & other) const\fR [inline]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB72\fP 行目に定義があります。
+.SS "\fBHash\fP & Hash::operator= (const \fBHash\fP & other)\fR [inline]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB76\fP 行目に定義があります。
+.SH "メンバ詳解"
+.PP 
+.SS "\fBVL\fP Hash::base\fR [static]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB13\fP 行目に定義があります。
+.SS "\fBVVL\fP Hash::inv\fR [static]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB14\fP 行目に定義があります。
+.SS "\fBVVL\fP Hash::pow\fR [static]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB14\fP 行目に定義があります。
+.SS "const \fBVL\fP Hash::mod ={1000000007,1000000009,1000000021,1000000033,1000000087}\fR [static]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB85\fP 行目に定義があります。
+.SS "bool Hash::flag =false\fR [static]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB16\fP 行目に定義があります。
+.SS "array< array< \fBll\fP, HASH_PRIME >, HASH_C > Hash::num ={}\fR [static]\fP"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB87\fP 行目に定義があります。
+.SS "\fBType\fP Hash::value"
+
+.PP
+ \fBrolling_hash\&.hpp\fP の \fB19\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。

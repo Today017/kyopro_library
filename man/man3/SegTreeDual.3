@@ -1,0 +1,111 @@
+.TH "SegTreeDual< CommutativeOperator >" 3 "Kyopro Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SegTreeDual< CommutativeOperator > \- 双対セグメント木  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'segtree_dual\&.hpp'\fP
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "using \fBType\fP = typename CommutativeOperator::Type"
+.br
+.in -1c
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBSegTreeDual\fP ()=default"
+.br
+.ti -1c
+.RI "\fBSegTreeDual\fP (int n)"
+.br
+.RI "要素数 n の双対セグ木を構築する "
+.ti -1c
+.RI "\fBSegTreeDual\fP (const vector< \fBType\fP > &v)"
+.br
+.RI "配列 v から双対セグ木を構築する "
+.ti -1c
+.RI "void \fBapply\fP (int l, int r, \fBType\fP x)"
+.br
+.ti -1c
+.RI "\fBType\fP \fBget\fP (int i)"
+.br
+.ti -1c
+.RI "int \fBsize\fP ()"
+.br
+.ti -1c
+.RI "\fBType\fP \fBoperator[]\fP (int i)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+
+.SS "template<typename CommutativeOperator>
+.br
+struct SegTreeDual< CommutativeOperator >"双対セグメント木 
+
+
+.PP
+\fBテンプレート引数\fP
+.RS 4
+\fICommutativeOperator\fP 作用素 
+.RE
+.PP
+\fB注意\fP
+.RS 4
+作用素は果敢である必要がある 
+.RE
+.PP
+
+.PP
+ \fBsegtree_dual\&.hpp\fP の \fB8\fP 行目に定義があります。
+.SH "型定義メンバ詳解"
+.PP 
+.SS "template<typename CommutativeOperator> using \fBSegTreeDual\fP< CommutativeOperator >::Type = typename CommutativeOperator::Type"
+
+.PP
+ \fBsegtree_dual\&.hpp\fP の \fB9\fP 行目に定義があります。
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename CommutativeOperator> \fBSegTreeDual\fP< CommutativeOperator >\fB::SegTreeDual\fP ()\fR [default]\fP"
+
+.SS "template<typename CommutativeOperator> \fBSegTreeDual\fP< CommutativeOperator >\fB::SegTreeDual\fP (int n)\fR [inline]\fP"
+
+.PP
+要素数 n の双対セグ木を構築する 
+.PP
+ \fBsegtree_dual\&.hpp\fP の \fB13\fP 行目に定義があります。
+.SS "template<typename CommutativeOperator> \fBSegTreeDual\fP< CommutativeOperator >\fB::SegTreeDual\fP (const vector< \fBType\fP > & v)\fR [inline]\fP"
+
+.PP
+配列 v から双対セグ木を構築する 
+.PP
+ \fBsegtree_dual\&.hpp\fP の \fB19\fP 行目に定義があります。
+.SH "関数詳解"
+.PP 
+.SS "template<typename CommutativeOperator> void \fBSegTreeDual\fP< CommutativeOperator >::apply (int l, int r, \fBType\fP x)\fR [inline]\fP"
+
+.PP
+ \fBsegtree_dual\&.hpp\fP の \fB26\fP 行目に定義があります。
+.SS "template<typename CommutativeOperator> \fBType\fP \fBSegTreeDual\fP< CommutativeOperator >::get (int i)\fR [inline]\fP"
+
+.PP
+ \fBsegtree_dual\&.hpp\fP の \fB34\fP 行目に定義があります。
+.SS "template<typename CommutativeOperator> int \fBSegTreeDual\fP< CommutativeOperator >::size ()\fR [inline]\fP"
+
+.PP
+ \fBsegtree_dual\&.hpp\fP の \fB44\fP 行目に定義があります。
+.SS "template<typename CommutativeOperator> \fBType\fP \fBSegTreeDual\fP< CommutativeOperator >::operator[] (int i)\fR [inline]\fP"
+
+.PP
+ \fBsegtree_dual\&.hpp\fP の \fB45\fP 行目に定義があります。
+
+.SH "著者"
+.PP 
+ Kyopro Libraryのソースコードから抽出しました。
