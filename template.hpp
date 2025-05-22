@@ -5,7 +5,8 @@ using namespace std;
 #define ALL(x) (x).begin(),(x).end()
 #define IO ios::sync_with_stdio(false),cin.tie(nullptr);
 #define REP(i, n) for(ll i=0; i<(ll)(n); i++)
-#define FOR(i, a, b) for(ll i=(ll)(a); (a)<(b) ? i<(b) : i>(b); i+=((a)<(b) ? 1 : -1))
+#define PER(i, n) for(ll i=(n)-1; i>=0; i--)
+#define FOR(i, a, b) for(ll i=(ll)(a); i<(b); i++)
 
 template<typename T> int LB(const vector<T>& v, T x) { return lower_bound(ALL(v),x)-(v).begin(); }
 template<typename T> int UQ(T& v) { sort(ALL(v)); v.erase(unique(ALL(v)),v.end()); return v.size(); }
