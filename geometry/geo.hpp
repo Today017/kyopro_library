@@ -1,5 +1,6 @@
 #include"../../kyopro_library/template.hpp"
 
+/// @brief 幾何ライブラリ
 namespace Geometry{
     using Real=long double;
     const Real EPS=1e-9;
@@ -10,29 +11,46 @@ namespace Geometry{
     bool lessThanOrEqual(Real a,Real b){return a<b||almostEqual(a,b);}
     bool greaterThanOrEqual(Real a,Real b){return a>b||almostEqual(a,b);}
 
+    /// @brief ２次元平面上の位置ベクトル
     struct Point{
         Real x,y;
         Point()=default;
         Point(Real x,Real y):x(x),y(y){}
+
         Point operator+(const Point&p)const{return Point(x+p.x,y+p.y);}
         Point operator-(const Point&p)const{return Point(x-p.x,y-p.y);}
         Point operator*(Real k)const{return Point(x*k,y*k);}
         Point operator/(Real k)const{return Point(x/k,y/k);}
+
+        /// @brief p との内積を返す
         Real dot(const Point&p)const{return x*p.x+y*p.y;}
+
+        /// @brief p との外積を返す
         Real cross(const Point&p)const{return x*p.y-y*p.x;}
+
+        /// @brief p1 と p2 を端点とするベクトルとの外積を返す
         Real cross(const Point&p1,const Point&p2)const{return(p1.x-x)*(p2.y-y)-(p1.y-y)*(p2.x-x);}
+
+        /// @brief ２乗ノルムを返す
         Real norm()const{return x*x+y*y;}
+
+        /// @brief ユークリッドノルムを返す
         Real abs()const{return sqrt(norm());}
+
+        /// @brief 偏角を返す
         Real arg()const{return atan2(y,x);}
+
         bool operator==(const Point&p)const{return almostEqual(x,p.x)&&almostEqual(y,p.y);}
         friend istream&operator>>(istream&is,Point&p){return is>>p.x>>p.y;}
     };
 
+    /// @brief 直線
     struct Line{
         Point a,b;
         Line()=default;
         Line(const Point&_a,const Point&_b):a(_a),b(_b){}
-        //Ax+By=C
+
+        /// @brief 直線 Ax+By=C を定義する
         Line(const Real&A,const Real&B,const Real&C){
             if(almostEqual(A,0)){
                 assert(!almostEqual(B,0));
@@ -49,21 +67,26 @@ namespace Geometry{
                 b=Point(C/A,0);
             }
         }
+
         bool operator==(const Line&l)const{return a==l.a&&b==l.b;}
         friend istream&operator>>(istream&is,Line&l){return is>>l.a>>l.b;}
     };
 
+    /// @brief 線分
     struct Segment:Line{
         Segment()=default;
         using Line::Line;
     };
 
+    /// @brief 円
     struct Circle{
-        Point center;
-        Real r;
+        Point center; ///< 中心
+        Real r; ///< 半径
+
         Circle()=default;
         Circle(Real x,Real y,Real r):center(x,y),r(r){}
         Circle(Point _center,Real r):center(_center),r(r){}
+
         bool operator==(const Circle&C)const{return center==C.center&&r==C.r;}
         friend istream&operator>>(istream&is,Circle&C){return is>>C.center>>C.r;}
     };
@@ -77,6 +100,8 @@ namespace Geometry{
         ONLINE_FRONT,
         ON_SEGMENT
     };
+
+    /// @brief 3点 p0, p1, p2 の進行方向を返す
     Orientation ccw(const Point&p0,const Point&p1,const Point&p2){
         Point a=p1-p0;
         Point b=p2-p0;
@@ -87,6 +112,7 @@ namespace Geometry{
         if(lessThan(a.norm(),b.norm()))return ONLINE_FRONT;
         return ON_SEGMENT;
     }
+
     string orientationToString(Orientation o){
         switch(o){
             case COUNTER_CLOCKWISE:
@@ -103,20 +129,28 @@ namespace Geometry{
                 return"UNKNOWN";
         }
     }
+
+    /// @brief ベクトル p の直線 p1, p2 への正射影ベクトルを返す
     Point projection(const Point&p1,const Point&p2,const Point&p){
         Point base=p2-p1;
         Real r=(p-p1).dot(base)/base.norm();
         return p1+base*r;
     }
+
+    /// @brief ベクトル p の直線 l への正射影ベクトルを返す
     Point projection(const Line&l,const Point&p){
         Point base=l.b-l.a;
         Real r=(p-l.a).dot(base)/base.norm();
         return l.a+base*r;
     }
+
+    /// @brief ベクトル p の直線 p1, p2 に対する鏡像ベクトルを返す
     Point reflection(const Point&p1,const Point&p2,const Point&p){
         Point proj=projection(p1,p2,p);
         return proj*2-p;
     }
+
+    /// @brief ベクトル p の直線 l に対する鏡像ベクトルを返す
     Point reflection(const Line&l,const Point&p){
         Point proj=projection(l,p);
         return proj*2-p;
