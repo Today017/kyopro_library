@@ -34,7 +34,7 @@ VI SuffixArray(string s) {
         fill(ALL(cnt),0);
         REP(i,n) cnt[c[np[i]]]++;
         FOR(i,1,cnt.size()) cnt[i]+=cnt[i-1];
-        FOR(i,n-1,-1) p[--cnt[c[np[i]]]]=np[i];
+        for(ll i=n-1; i>=0; i--) p[--cnt[c[np[i]]]]=np[i];
         //同値類
         nc[p[0]]=0;
         FOR(i,1,n) {

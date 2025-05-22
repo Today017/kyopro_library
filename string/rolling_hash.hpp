@@ -2,25 +2,28 @@
 #include"../../kyopro_library/others/xor128.hpp"
 #include"../../kyopro_library/others/modcal.hpp"
 
-constexpr const int HASH_MAX=1000000;
-constexpr const int HASH_C=256;
+/// @attention 問題の成約に合わせて書き換えること
+// constexpr const int HASH_MAX=1000000; ///< 長さの最大値
+// constexpr const int HASH_C=256; ///< 文字の範囲
+// constexpr const int HASH_PRIME=3; ///< 使う素数の個数
+
 struct Hash {
 
-    using Type=array<ll,5>;
+    using Type=array<ll,HASH_PRIME>;
     static VL base;
     static VVL inv,pow;
     static const VL mod;
     static bool flag;
-    static array<array<ll,5>,256> num;
+    static array<array<ll,HASH_PRIME>,256> num;
 
     Type value;
 
     void init() {
         if(flag) return;
         flag=true;
-        base=VL(5); REP(i,5) base[i]=Xor128(3000,mod[i]);
-        inv=VVL(5); pow=VVL(5);
-        REP(i,5) {
+        base=VL(HASH_PRIME); REP(i,HASH_PRIME) base[i]=Xor128(3000,mod[i]);
+        inv=VVL(HASH_PRIME); pow=VVL(HASH_PRIME);
+        REP(i,HASH_PRIME) {
             pow[i]=VL(HASH_MAX+1); inv[i]=VL(HASH_MAX+1);
             pow[i][0]=1; inv[i][HASH_MAX]=ModInv(ModPow<ll>(base[i],HASH_MAX,mod[i]),mod[i]);
             REP(j,HASH_MAX) {
@@ -28,7 +31,7 @@ struct Hash {
                 inv[i][HASH_MAX-j-1]=(inv[i][HASH_MAX-j]*base[i])%mod[i];
             }
         }
-        REP(i,HASH_C) REP(j,5) num[i][j]=Xor128(1,3000);
+        REP(i,HASH_C) REP(j,HASH_PRIME) num[i][j]=Xor128(1,3000);
     }
 
     Hash()=default;
@@ -39,15 +42,15 @@ struct Hash {
     Hash(char c) {
         if(!flag) init();
         value.fill(0);
-        REP(i,5) value[i]=num[c][i];
+        REP(i,HASH_PRIME) value[i]=num[c][i];
     }
 
     Hash& operator+=(const Hash& other) {
-        REP(i,5) value[i]=(value[i]+other.value[i])%mod[i];
+        REP(i,HASH_PRIME) value[i]=(value[i]+other.value[i])%mod[i];
         return *this;
     }
     Hash& operator-=(const Hash& other) {
-        REP(i,5) value[i]=(value[i]-other.value[i]+mod[i])%mod[i];
+        REP(i,HASH_PRIME) value[i]=(value[i]-other.value[i]+mod[i])%mod[i];
         return *this;
     }
     Hash operator+(const Hash& other) const {
@@ -62,16 +65,16 @@ struct Hash {
     }
     Hash shift(int x) const {
         Hash ret=*this;
-        if(x<0) REP(i,5) (ret.value[i]*=inv[i][-x])%=mod[i];
-        else REP(i,5) (ret.value[i]*=pow[i][x])%=mod[i];
+        if(x<0) REP(i,HASH_PRIME) (ret.value[i]*=inv[i][-x])%=mod[i];
+        else REP(i,HASH_PRIME) (ret.value[i]*=pow[i][x])%=mod[i];
         return ret;
     }
     bool operator==(const Hash& other) const {
-        REP(i,5) if(value[i]!=other.value[i]) return false;
+        REP(i,HASH_PRIME) if(value[i]!=other.value[i]) return false;
         return true;
     }
     Hash& operator=(const Hash& other) {
-        REP(i,5) value[i]=other.value[i];
+        REP(i,HASH_PRIME) value[i]=other.value[i];
         return *this;
     }
 };
@@ -81,7 +84,7 @@ VVL Hash::inv;
 VVL Hash::pow;
 const VL Hash::mod={1000000007,1000000009,1000000021,1000000033,1000000087};
 bool Hash::flag=false;
-array<array<ll,5>,HASH_C> Hash::num={};
+array<array<ll,HASH_PRIME>,HASH_C> Hash::num={};
 
 
 ///@brief Rolling Hash

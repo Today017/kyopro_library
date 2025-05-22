@@ -52,7 +52,7 @@ struct Factors {
                     return;
                 }
                 auto[p,cnt]=pf[i];
-                FOR(j,0,cnt+1) {
+                REP(j,cnt+1) {
                     dfs(dfs,i+1,x);
                     x*=p;
                 }

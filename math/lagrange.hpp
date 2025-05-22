@@ -12,7 +12,7 @@ vector<T> LagrangePolynomial(vector<T> x, vector<T> y){
 
     vector<vector<T>> g(n2*2,{1});
     REP(i,n) g[n2+i]={-x[i],1};
-    FOR(i,n2-1,0) g[i]=PolyMul(g[i<<1],g[i<<1|1]);
+    for(ll i=n2-1; i>0; i--) g[i]=PolyMul(g[i<<1],g[i<<1|1]);
 
     vector<T> prod=g[1];
     vector<T> diff=PolyDifferential(prod),eval=MultipointEvaluate(diff,x);
@@ -24,7 +24,7 @@ vector<T> LagrangePolynomial(vector<T> x, vector<T> y){
         vector<T> tmp1=PolyMul(l.first,r.second),tmp2=PolyMul(l.second,r.first);
         return {PolyAdd(tmp1,tmp2),PolyMul(l.second,r.second)};
     };
-    FOR(i,n2-1,0) g2[i]=merge(g2[i<<1],g2[i<<1|1]);
+    for(ll i=n2-1; i>0; i--) g2[i]=merge(g2[i<<1],g2[i<<1|1]);
 
     vector<T> ret=g2[1].first;
     T p=1;

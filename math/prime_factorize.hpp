@@ -8,15 +8,15 @@
 VP PrimeFactorize(ll n) {
     if(PrimalityTest(n)) return {{n,1}};
     auto find_factor=[](auto&& find_factor, ll n)-> ll {
-        LL m=(ll)pow(n,0.125)+1;
-        auto _gcd=[](LL a, LL b) {
+        lll m=(ll)pow(n,0.125)+1;
+        auto _gcd=[](lll a, lll b) {
             while(a) b%=a,swap(a,b);
             return b;
         };
-        auto _abs=[](LL x) { return x<0?-x:x; };
+        auto _abs=[](lll x) { return x<0?-x:x; };
         FOR(c,1,n) {
-            auto f=[&](LL x) { return((x%n)*(x%n)+c)%n; };
-            LL y=0,r=1,q=1,g=1,k=0,x=0,ys=0;
+            auto f=[&](lll x) { return((x%n)*(x%n)+c)%n; };
+            lll y=0,r=1,q=1,g=1,k=0,x=0,ys=0;
             while(g==1) {
                 x=y;
                 while(k<r*3/4) y=f(y),k++;
