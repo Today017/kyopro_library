@@ -18,7 +18,7 @@ bool PrimalityTest(ll n) {
 
     for(ll a:test) {
         if(a>=n) break;
-        LL x=ModPow<LL>(a,d,n);
+        lll x=ModPow<lll>(a,d,n);
 
         if(x==1||x==n-1) continue;
         else {
