@@ -22,7 +22,7 @@
 <anchor xml:id="_primality__test_8hpp_source_1l00018"/>00018 
 <anchor xml:id="_primality__test_8hpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(ll&#32;a:test)&#32;{
 <anchor xml:id="_primality__test_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(a&gt;=n)&#32;<emphasis role="keywordflow">break</emphasis>;
-<anchor xml:id="_primality__test_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;LL&#32;x=ModPow&lt;LL&gt;(a,d,n);
+<anchor xml:id="_primality__test_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lll&#32;x=ModPow&lt;lll&gt;(a,d,n);
 <anchor xml:id="_primality__test_8hpp_source_1l00022"/>00022 
 <anchor xml:id="_primality__test_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(x==1||x==n-1)&#32;<emphasis role="keywordflow">continue</emphasis>;
 <anchor xml:id="_primality__test_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{

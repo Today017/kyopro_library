@@ -112,7 +112,7 @@ $(function(){initNavTree('modcal_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T=ll&gt;</div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="modcal_8hpp.html#a36972de598e8c5d9fe14db0be639c098">    6</a></span>T <a class="code hl_function" href="modcal_8hpp.html#a36972de598e8c5d9fe14db0be639c098">ModPow</a>(T x, T n, T mod) {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    ll ret=1;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    T ret=1;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">if</span>(<span class="keyword">typeid</span>(T)==<span class="keyword">typeid</span>(ll)&amp;&amp;mod&gt;INF*2) <span class="keywordflow">return</span> ModPow&lt;lll&gt;(x,n,mod);</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">while</span>(n&gt;0) {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">if</span>(n&amp;1) (ret*=x)%=mod;</div>
