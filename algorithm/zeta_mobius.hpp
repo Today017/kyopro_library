@@ -3,7 +3,7 @@
 /// @brief ゼータ変換・メビウス変換
 namespace ZetaMobius {
     /// @brief 高速ゼータ変換（下位集合）
-    /// @details v'[s] = Σ_{t⊆s} v[t] なる v' を返す
+    /// @brief v'[s] = Σ_{t⊆s} v[t] なる v' を返す
     /// @note |v| = 2^N として O(N 2^N)
     template<typename Monoid>
     vector<typename Monoid::Type> SubsetZeta(vector<typename Monoid::Type> v) {
@@ -13,7 +13,7 @@ namespace ZetaMobius {
     }
 
     /// @brief 高速ゼータ変換（上位集合）
-    /// @details v'[s] = Σ_{t⊇s} v[t] なる v' を返す
+    /// @brief v'[s] = Σ_{t⊇s} v[t] なる v' を返す
     /// @note |v| = 2^N として O(N 2^N)
     template<typename Monoid>
     vector<typename Monoid::Type> SupersetZeta(vector<typename Monoid::Type> v) {
@@ -23,7 +23,7 @@ namespace ZetaMobius {
     }
 
     /// @brief 高速メビウス変換（下位集合）
-    /// @details v[s] = Σ_{t⊆s} v'[t] なる v' を返す
+    /// @brief v[s] = Σ_{t⊆s} v'[t] なる v' を返す
     /// @note 逆変換が必要なので、v は可換群の元である必要がある
     /// @note |v| = 2^N として O(N 2^N)
     template<typename Abel>
@@ -34,7 +34,7 @@ namespace ZetaMobius {
     }
 
     /// @brief 高速メビウス変換（上位集合）
-    /// @details v[s] = Σ_{t⊇s} v'[t] なる v' を返す
+    /// @brief v[s] = Σ_{t⊇s} v'[t] なる v' を返す
     /// @note 逆変換が必要なので、v は可換群の元である必要がある
     /// @note |v| = 2^N として O(N 2^N)
     template<typename Abel>
