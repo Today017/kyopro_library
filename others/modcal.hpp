@@ -4,7 +4,7 @@
 /// @brief x^n (mod m) を返す
 template<typename T=ll>
 T ModPow(T x, T n, T mod) {
-    ll ret=1;
+    T ret=1;
     if(typeid(T)==typeid(ll)&&mod>INF*2) return ModPow<lll>(x,n,mod);
     while(n>0) {
         if(n&1) (ret*=x)%=mod;
