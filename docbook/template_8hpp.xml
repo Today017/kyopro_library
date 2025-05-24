@@ -11,9 +11,9 @@
 </listitem>
             <listitem><para>#define <link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,  n)</para>
 </listitem>
-            <listitem><para>#define <link linkend="_template_8hpp_1a98be0bb4bc26ab18cde222e08f2e5127">PER</link>(i,  n)</para>
-</listitem>
             <listitem><para>#define <link linkend="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7">FOR</link>(i,  a,  b)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_template_8hpp_1ac7f829d1f5543cc26fb954be53252a82">ROF</link>(i,  a,  b)</para>
 </listitem>
             <listitem><para>#define <link linkend="_template_8hpp_1a86ee3ff44c537d94ccbabf941a613688">debug</link>(...)</para>
 </listitem>
@@ -33,6 +33,8 @@
             <listitem><para>using <link linkend="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765">ull</link> = unsigned long long</para>
 </listitem>
             <listitem><para>using <link linkend="_template_8hpp_1af459ee81f834e904cb702ffcb928335e">lll</link> = __int128_t</para>
+</listitem>
+            <listitem><para>using <link linkend="_template_8hpp_1a38c204dd3c932a4028e48f7ed0f391a4">VST</link> = vector&lt;string&gt;</para>
 </listitem>
             <listitem><para>using <link linkend="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b">VI</link> = vector&lt;int&gt;</para>
 </listitem>
@@ -97,19 +99,19 @@
 </programlisting><para>
  <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00007">7</link> 行目に定義があります。</para>
 </section>
-<anchor xml:id="_template_8hpp_1a98be0bb4bc26ab18cde222e08f2e5127"/><section>
-    <title>PER</title>
-<indexterm><primary>PER</primary><secondary>template.hpp</secondary></indexterm>
-<indexterm><primary>template.hpp</primary><secondary>PER</secondary></indexterm>
-<para><computeroutput>#define PER( i,  n)</computeroutput></para><emphasis role="strong">値:</emphasis><programlisting linenumbering="unnumbered"><emphasis role="keywordflow">for</emphasis>(<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>&#32;i=(n)-1;&#32;i&gt;=0;&#32;i--)
-</programlisting><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
-</section>
 <anchor xml:id="_template_8hpp_1a9af2de86c4be813e9c60ede438bb4cd7"/><section>
     <title>FOR</title>
 <indexterm><primary>FOR</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>FOR</secondary></indexterm>
 <para><computeroutput>#define FOR( i,  a,  b)</computeroutput></para><emphasis role="strong">値:</emphasis><programlisting linenumbering="unnumbered"><emphasis role="keywordflow">for</emphasis>(<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>&#32;i=(<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>)(a);&#32;i&lt;(b);&#32;i++)
+</programlisting><para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00008">8</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_template_8hpp_1ac7f829d1f5543cc26fb954be53252a82"/><section>
+    <title>ROF</title>
+<indexterm><primary>ROF</primary><secondary>template.hpp</secondary></indexterm>
+<indexterm><primary>template.hpp</primary><secondary>ROF</secondary></indexterm>
+<para><computeroutput>#define ROF( i,  a,  b)</computeroutput></para><emphasis role="strong">値:</emphasis><programlisting linenumbering="unnumbered"><emphasis role="keywordflow">for</emphasis>(<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>&#32;i=(<link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>)(b)-1;&#32;i&gt;=(a);&#32;i--)
 </programlisting><para>
  <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00009">9</link> 行目に定義があります。</para>
 </section>
@@ -149,7 +151,7 @@
 <indexterm><primary>ld</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>ld</secondary></indexterm>
 <para><computeroutput>using <link linkend="_template_8hpp_1a41f1d17ffdc8a7500e7aadc2b7e05a63">ld</link> = long double</computeroutput></para><para>
- <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00016">16</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a5f251da6a09dd744f98ee0f43f42b765"/><section>
     <title>ull</title>
@@ -163,6 +165,13 @@
 <indexterm><primary>lll</primary><secondary>template.hpp</secondary></indexterm>
 <indexterm><primary>template.hpp</primary><secondary>lll</secondary></indexterm>
 <para><computeroutput>using <link linkend="_template_8hpp_1af459ee81f834e904cb702ffcb928335e">lll</link> = __int128_t</computeroutput></para><para>
+ <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
+</section>
+<anchor xml:id="_template_8hpp_1a38c204dd3c932a4028e48f7ed0f391a4"/><section>
+    <title>VST</title>
+<indexterm><primary>VST</primary><secondary>template.hpp</secondary></indexterm>
+<indexterm><primary>template.hpp</primary><secondary>VST</secondary></indexterm>
+<para><computeroutput>using <link linkend="_template_8hpp_1a38c204dd3c932a4028e48f7ed0f391a4">VST</link> = vector&lt;string&gt;</computeroutput></para><para>
  <link linkend="_template_8hpp_source">template.hpp</link> の <link linkend="_template_8hpp_source_1l00017">17</link> 行目に定義があります。</para>
 </section>
 <anchor xml:id="_template_8hpp_1a6a675649b5da3f6454b83fa37d00cc2b"/><section>

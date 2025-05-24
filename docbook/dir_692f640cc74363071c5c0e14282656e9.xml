@@ -19,6 +19,8 @@
 </listitem>
             <listitem><para>ファイル <link linkend="_mo_8hpp">mo.hpp</link></para>
 </listitem>
+            <listitem><para>ファイル <link linkend="_range__arithmetic__add_8hpp">range_arithmetic_add.hpp</link></para>
+</listitem>
             <listitem><para>ファイル <link linkend="_zeta__mobius_8hpp">zeta_mobius.hpp</link></para>
 </listitem>
             <listitem><para>ファイル <link linkend="_zeta__mobius__div__mul_8hpp">zeta_mobius_div_mul.hpp</link></para>

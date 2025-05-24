@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_range__arithmetic__add_8hpp" xml:lang="ja">
+<title>algorithm/range_arithmetic_add.hpp ファイル</title>
+<indexterm><primary>algorithm/range_arithmetic_add.hpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../kyopro_library/template.hpp&quot;<?linebreak?></programlisting><simplesect>
+    <title>関数    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> <link linkend="_range__arithmetic__add_8hpp_1addfedcf177c4ba41a14df3853fff8f7b">RangeArithmeticAdd</link> (int n, vector&lt; tuple&lt; <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> &gt; &gt; query)</para>
+
+<para>区間等差数列加算（オフライン） </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>関数詳解</title>
+<anchor xml:id="_range__arithmetic__add_8hpp_1addfedcf177c4ba41a14df3853fff8f7b"/><section>
+    <title>RangeArithmeticAdd()</title>
+<indexterm><primary>RangeArithmeticAdd</primary><secondary>range_arithmetic_add.hpp</secondary></indexterm>
+<indexterm><primary>range_arithmetic_add.hpp</primary><secondary>RangeArithmeticAdd</secondary></indexterm>
+<para><computeroutput><link linkend="_template_8hpp_1a5ee21b75b07f2ccf9eeb9e89922eb532">VL</link> RangeArithmeticAdd (int n, vector&lt; tuple&lt; <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link>, <link linkend="_template_8hpp_1adcb0b6ef4cd780a895c7089c0191cd62">ll</link> &gt; &gt; query)</computeroutput></para><para>
+
+<para>区間等差数列加算（オフライン） </para>
+</para>
+
+<para>長さ n の数列に対する区間等差数列加算クエリを処理する</para>
+
+<para>クエリは <computeroutput>(l, r, start, step)</computeroutput> の形式で与える <note><title>覚え書き</title>
+
+<para>O(N) verify: <link xlink:href="https://mojacoder.app/users/Today03/problems/range_arithmetic_add">https://mojacoder.app/users/Today03/problems/range_arithmetic_add</link> verify: <link xlink:href="https://atcoder.jp/contests/abc407/tasks/abc407_f">https://atcoder.jp/contests/abc407/tasks/abc407_f</link> </para>
+</note>
+</para>
+<para>
+ <link linkend="_range__arithmetic__add_8hpp_source">range_arithmetic_add.hpp</link> の <link linkend="_range__arithmetic__add_8hpp_source_1l00009">9</link> 行目に定義があります。</para>
+</section>
+</section>
+</section>

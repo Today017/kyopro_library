@@ -7,6 +7,7 @@ var dir_692f640cc74363071c5c0e14282656e9 =
     [ "inversion_number.hpp", "inversion__number_8hpp.html", "inversion__number_8hpp" ],
     [ "lis.hpp", "lis_8hpp.html", "lis_8hpp" ],
     [ "mo.hpp", "mo_8hpp.html", "mo_8hpp" ],
+    [ "range_arithmetic_add.hpp", "range__arithmetic__add_8hpp.html", "range__arithmetic__add_8hpp" ],
     [ "zeta_mobius.hpp", "zeta__mobius_8hpp.html", "zeta__mobius_8hpp" ],
     [ "zeta_mobius_div_mul.hpp", "zeta__mobius__div__mul_8hpp.html", "zeta__mobius__div__mul_8hpp" ]
 ];

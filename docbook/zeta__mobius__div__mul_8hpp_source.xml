@@ -11,7 +11,7 @@
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00007"/><link linkend="_namespace_zeta_mobius_div_mul_1a60c1e6ce641275a4ee75d229514c1691">00007</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_namespace_zeta_mobius_div_mul_1a60c1e6ce641275a4ee75d229514c1691">Init</link>(<emphasis role="keywordtype">int</emphasis>&#32;n=1e6)&#32;{&#32;primes=PrimeEnumerate(n);&#32;}
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00008"/>00008 
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;倍数高速ゼータ変換</emphasis>
-<anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@details&#32;v&apos;[k]&#32;=&#32;Σ_{k|d}&#32;v[d]&#32;なる&#32;v&apos;&#32;を返す</emphasis>
+<anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;v&apos;[k]&#32;=&#32;Σ_{k|d}&#32;v[d]&#32;なる&#32;v&apos;&#32;を返す</emphasis>
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(N&#32;log(log(N)))</emphasis>
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;Monoid&gt;
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00013"/><link linkend="_namespace_zeta_mobius_div_mul_1a3464457ced48ed60b5726ff223b31af4">00013</link> &#32;&#32;&#32;&#32;<link linkend="_namespace_zeta_mobius_div_mul_1a3464457ced48ed60b5726ff223b31af4">vector</link>&lt;<emphasis role="keyword">typename</emphasis>&#32;<link linkend="_namespace_zeta_mobius_div_mul_1a3464457ced48ed60b5726ff223b31af4">Monoid</link>::<link linkend="_namespace_zeta_mobius_div_mul_1a3464457ced48ed60b5726ff223b31af4">Type</link>&gt;&#32;<link linkend="_namespace_zeta_mobius_div_mul_1a3464457ced48ed60b5726ff223b31af4">MultipleZeta</link>(vector&lt;<emphasis role="keyword">typename</emphasis>&#32;Monoid::Type&gt;&#32;v)&#32;{
@@ -22,7 +22,7 @@
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;}
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00019"/>00019 
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;約数高速ゼータ変換</emphasis>
-<anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@details&#32;v&apos;[k]&#32;=&#32;Σ_{d|k}&#32;v[d]&#32;なる&#32;v&apos;&#32;を返す</emphasis>
+<anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;v&apos;[k]&#32;=&#32;Σ_{d|k}&#32;v[d]&#32;なる&#32;v&apos;&#32;を返す</emphasis>
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(N&#32;log(log(N)))</emphasis>
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;Monoid&gt;
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00024"/><link linkend="_namespace_zeta_mobius_div_mul_1a0eb786dcdc175107ad43dfdb12461c51">00024</link> &#32;&#32;&#32;&#32;<link linkend="_namespace_zeta_mobius_div_mul_1a0eb786dcdc175107ad43dfdb12461c51">vector</link>&lt;<emphasis role="keyword">typename</emphasis>&#32;<link linkend="_namespace_zeta_mobius_div_mul_1a0eb786dcdc175107ad43dfdb12461c51">Monoid</link>::<link linkend="_namespace_zeta_mobius_div_mul_1a0eb786dcdc175107ad43dfdb12461c51">Type</link>&gt;&#32;<link linkend="_namespace_zeta_mobius_div_mul_1a0eb786dcdc175107ad43dfdb12461c51">DivisorZeta</link>(vector&lt;<emphasis role="keyword">typename</emphasis>&#32;Monoid::Type&gt;&#32;v)&#32;{
@@ -33,7 +33,7 @@
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;}
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00030"/>00030 
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;倍数高速メビウス変換</emphasis>
-<anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@details&#32;v&apos;[k]&#32;=&#32;Σ_{k|d}&#32;μ(d)&#32;v[d]&#32;なる&#32;v&apos;&#32;を返す</emphasis>
+<anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;v&apos;[k]&#32;=&#32;Σ_{k|d}&#32;μ(d)&#32;v[d]&#32;なる&#32;v&apos;&#32;を返す</emphasis>
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;逆変換が必要なので、v&#32;は可換群の元である必要がある</emphasis>
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(N&#32;log(log(N)))</emphasis>
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;Abel&gt;
@@ -45,7 +45,7 @@
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;}
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00042"/>00042 
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;約数高速メビウス変換</emphasis>
-<anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@details&#32;v&apos;[k]&#32;=&#32;Σ_{d|k}&#32;μ(d)&#32;v[k/d]&#32;なる&#32;v&apos;&#32;を返す</emphasis>
+<anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@brief&#32;v&apos;[k]&#32;=&#32;Σ_{d|k}&#32;μ(d)&#32;v[k/d]&#32;なる&#32;v&apos;&#32;を返す</emphasis>
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;逆変換が必要なので、v&#32;は可換群の元である必要がある</emphasis>
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;<emphasis role="comment">///&#32;@note&#32;O(N&#32;log(log(N)))</emphasis>
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&lt;<emphasis role="keyword">typename</emphasis>&#32;Abel&gt;
@@ -56,4 +56,7 @@
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;v;
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;}
 <anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00054"/>00054 };
+<anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00055"/>00055 
+<anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00056"/>00056 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/others/monoid.hpp&quot;</emphasis>
+<anchor xml:id="_zeta__mobius__div__mul_8hpp_source_1l00057"/>00057 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/others/abel.hpp&quot;</emphasis>
 </programlisting></section>

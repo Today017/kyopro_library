@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"struct_dsu_rollback.html#ade29264c1fbd5b5bfdaefe918c9d6163":[5,0,25,7],
+"struct_dynamic_connectivity.html":[5,0,26],
+"struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6":[5,0,26,4],
 "struct_dynamic_connectivity.html#a4c2531481116b0b378a98c6ca907d78c":[5,0,26,1],
 "struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4":[5,0,26,0],
 "struct_dynamic_connectivity.html#aa4b9840215ff5517d9433b4dbf97272f":[5,0,26,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX3 =
 "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a09ee6014e81276efd5df9af49f61e735":[5,0,4,2,6],
 "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a180ae88301ad385924163bd074675c64":[4,0,7,2,0],
 "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a180ae88301ad385924163bd074675c64":[5,0,4,2,0],
-"struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a61257b4dedade09e42d6f79c48b3938c":[4,0,7,2,4],
-"struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a61257b4dedade09e42d6f79c48b3938c":[5,0,4,2,4],
-"struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a6b8d4d3825b9d530359ee07fc0a51b30":[4,0,7,2,9],
-"struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a6b8d4d3825b9d530359ee07fc0a51b30":[5,0,4,2,9]
+"struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a61257b4dedade09e42d6f79c48b3938c":[4,0,7,2,4]
 };

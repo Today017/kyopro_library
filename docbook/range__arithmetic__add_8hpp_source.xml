@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_range__arithmetic__add_8hpp_source" xml:lang="ja">
+<title>range_arithmetic_add.hpp</title>
+<indexterm><primary>algorithm/range_arithmetic_add.hpp</primary></indexterm>
+[詳解]<programlisting linenumbering="unnumbered"><anchor xml:id="_range__arithmetic__add_8hpp_source_1l00001"/>00001 <emphasis role="preprocessor">#</emphasis><emphasis role="preprocessor">include</emphasis><emphasis role="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</emphasis>
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00002"/>00002 
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00003"/>00003 <emphasis role="comment">///&#32;@brief&#32;区間等差数列加算（オフライン）</emphasis>
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;長さ&#32;n&#32;の数列に対する区間等差数列加算クエリを処理する</emphasis>
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00005"/>00005 <emphasis role="comment">///&#32;@brief&#32;クエリは&#32;`(l,&#32;r,&#32;start,&#32;step)`&#32;の形式で与える</emphasis>
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00006"/>00006 <emphasis role="comment">///&#32;@note&#32;O(N)</emphasis>
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00007"/>00007 <emphasis role="comment">///&#32;@ref&#32;verify:&#32;https://mojacoder.app/users/Today03/problems/range_arithmetic_add</emphasis>
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00008"/>00008 <emphasis role="comment">///&#32;@ref&#32;verify:&#32;https://atcoder.jp/contests/abc407/tasks/abc407_f</emphasis>
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00009"/><link linkend="_range__arithmetic__add_8hpp_1addfedcf177c4ba41a14df3853fff8f7b">00009</link> <link linkend="_range__arithmetic__add_8hpp_1addfedcf177c4ba41a14df3853fff8f7b">VL</link>&#32;<link linkend="_range__arithmetic__add_8hpp_1addfedcf177c4ba41a14df3853fff8f7b">RangeArithmeticAdd</link>(<emphasis role="keywordtype">int</emphasis>&#32;n,&#32;vector&lt;tuple&lt;ll,ll,ll,ll&gt;&gt;&#32;query)&#32;{
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;VL&#32;i1(n+10),i2(n+10);
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00011"/>00011 
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">auto</emphasis>&#32;[l,r,start,step]:query)&#32;{
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i1[l+1]+=step;&#32;i1[r]-=step;
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i1[r]-=step*(r-l-1);&#32;i1[r+1]+=step*(r-l-1);
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i2[l]+=start;&#32;i2[r]-=start;
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00017"/>00017 
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n+5)&#32;i1[i+1]+=i1[i],&#32;i2[i+1]+=i2[i];
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00019"/>00019 
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;VL&#32;ret(n);
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n-1)&#32;ret[i+1]=ret[i]+i1[i+1];
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,n)&#32;ret[i]+=i2[i];
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00023"/>00023 
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+<anchor xml:id="_range__arithmetic__add_8hpp_source_1l00025"/>00025 }
+</programlisting></section>

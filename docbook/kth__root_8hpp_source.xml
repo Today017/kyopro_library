@@ -8,14 +8,13 @@
 <anchor xml:id="_kth__root_8hpp_source_1l00004"/>00004 <emphasis role="comment">///&#32;@brief&#32;n　の&#32;k&#32;乗根の切り捨てを返す</emphasis>
 <anchor xml:id="_kth__root_8hpp_source_1l00005"/><link linkend="_kth__root_8hpp_1a5b404451d30c6da29b779e653a4c9823">00005</link> ll&#32;<link linkend="_kth__root_8hpp_1a5b404451d30c6da29b779e653a4c9823">KthRoot</link>(ll&#32;n,&#32;ll&#32;k=2)&#32;{
 <anchor xml:id="_kth__root_8hpp_source_1l00006"/>00006 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(k==1)&#32;<emphasis role="keywordflow">return</emphasis>&#32;n;
-<anchor xml:id="_kth__root_8hpp_source_1l00007"/>00007 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(ll)BinarySearch&lt;LL&gt;(0,4e10,[&amp;](LL&#32;x)&#32;{
-<anchor xml:id="_kth__root_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;LL&#32;tmp=1;
-<anchor xml:id="_kth__root_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;flag=<emphasis role="keyword">true</emphasis>;
-<anchor xml:id="_kth__root_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,k)&#32;{
-<anchor xml:id="_kth__root_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(tmp*x&gt;n)&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
-<anchor xml:id="_kth__root_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp*=x;
-<anchor xml:id="_kth__root_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<anchor xml:id="_kth__root_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
-<anchor xml:id="_kth__root_8hpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;});
-<anchor xml:id="_kth__root_8hpp_source_1l00016"/>00016 }
+<anchor xml:id="_kth__root_8hpp_source_1l00007"/>00007 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(ll)BinarySearch&lt;ll&gt;(0,4e10,[&amp;](ll&#32;x)&#32;{
+<anchor xml:id="_kth__root_8hpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lll&#32;tmp=1;
+<anchor xml:id="_kth__root_8hpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_template_8hpp_1a17daffa35db12daabc89c90df168e706">REP</link>(i,k)&#32;{
+<anchor xml:id="_kth__root_8hpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(tmp*x&gt;n)&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_kth__root_8hpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tmp*=x;
+<anchor xml:id="_kth__root_8hpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_kth__root_8hpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="_kth__root_8hpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;});
+<anchor xml:id="_kth__root_8hpp_source_1l00015"/>00015 }
 </programlisting></section>
