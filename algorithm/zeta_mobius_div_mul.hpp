@@ -7,7 +7,7 @@ namespace ZetaMobiusDivMul {
     void Init(int n=1e6) { primes=PrimeEnumerate(n); }
 
     /// @brief 倍数高速ゼータ変換
-    /// @details v'[k] = Σ_{k|d} v[d] なる v' を返す
+    /// @brief v'[k] = Σ_{k|d} v[d] なる v' を返す
     /// @note O(N log(log(N)))
     template<typename Monoid>
     vector<typename Monoid::Type> MultipleZeta(vector<typename Monoid::Type> v) {
@@ -18,7 +18,7 @@ namespace ZetaMobiusDivMul {
     }
 
     /// @brief 約数高速ゼータ変換
-    /// @details v'[k] = Σ_{d|k} v[d] なる v' を返す
+    /// @brief v'[k] = Σ_{d|k} v[d] なる v' を返す
     /// @note O(N log(log(N)))
     template<typename Monoid>
     vector<typename Monoid::Type> DivisorZeta(vector<typename Monoid::Type> v) {
@@ -29,7 +29,7 @@ namespace ZetaMobiusDivMul {
     }
 
     /// @brief 倍数高速メビウス変換
-    /// @details v'[k] = Σ_{k|d} μ(d) v[d] なる v' を返す
+    /// @brief v'[k] = Σ_{k|d} μ(d) v[d] なる v' を返す
     /// @note 逆変換が必要なので、v は可換群の元である必要がある
     /// @note O(N log(log(N)))
     template<typename Abel>
@@ -41,7 +41,7 @@ namespace ZetaMobiusDivMul {
     }
 
     /// @brief 約数高速メビウス変換
-    /// @details v'[k] = Σ_{d|k} μ(d) v[k/d] なる v' を返す
+    /// @brief v'[k] = Σ_{d|k} μ(d) v[k/d] なる v' を返す
     /// @note 逆変換が必要なので、v は可換群の元である必要がある
     /// @note O(N log(log(N)))
     template<typename Abel>
@@ -52,3 +52,6 @@ namespace ZetaMobiusDivMul {
         return v;
     }
 };
+
+#include"../../kyopro_library/others/monoid.hpp"
+#include"../../kyopro_library/others/abel.hpp"
