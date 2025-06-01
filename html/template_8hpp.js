@@ -1,7 +1,6 @@
 var template_8hpp =
 [
     [ "ALL", "template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea", null ],
-    [ "IO", "template_8hpp.html#affe9a1ffd6cd7b2e404200ef182fa18f", null ],
     [ "REP", "template_8hpp.html#a17daffa35db12daabc89c90df168e706", null ],
     [ "FOR", "template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7", null ],
     [ "ROF", "template_8hpp.html#ac7f829d1f5543cc26fb954be53252a82", null ],

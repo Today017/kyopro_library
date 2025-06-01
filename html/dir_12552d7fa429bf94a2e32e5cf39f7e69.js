@@ -4,6 +4,7 @@ var dir_12552d7fa429bf94a2e32e5cf39f7e69 =
     [ "shortest_path", "dir_d0569a394d1bad71786d51186f895983.html", "dir_d0569a394d1bad71786d51186f895983" ],
     [ "tree", "dir_92baa47522fd2f139804df086ff7368f.html", "dir_92baa47522fd2f139804df086ff7368f" ],
     [ "bipartite_matching.hpp", "bipartite__matching_8hpp.html", "bipartite__matching_8hpp" ],
+    [ "bipartite_matching_weighted.hpp", "bipartite__matching__weighted_8hpp.html", "bipartite__matching__weighted_8hpp" ],
     [ "dsu.hpp", "dsu_8hpp.html", "dsu_8hpp" ],
     [ "dsu_merging.hpp", "dsu__merging_8hpp.html", "dsu__merging_8hpp" ],
     [ "dsu_potentialized.hpp", "dsu__potentialized_8hpp.html", "dsu__potentialized_8hpp" ],

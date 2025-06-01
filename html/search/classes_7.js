@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['insertablereversiblearray_0',['InsertableReversibleArray',['../struct_insertable_reversible_array.html',1,'']]]
+  ['hash_0',['Hash',['../struct_hash.html',1,'']]],
+  ['hld_1',['HLD',['../struct_h_l_d.html',1,'']]]
 ];

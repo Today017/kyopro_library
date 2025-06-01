@@ -28,11 +28,13 @@ var searchData=
   ['getpolygonarea_25',['getPolygonArea',['../namespace_geometry.html#a9c5e5ffd70ed15d3ce03c6f5b69524df',1,'Geometry']]],
   ['getrandomelement_26',['GetRandomElement',['../namespace_random_generator.html#a3c98b920805fef522e251eefc9d34240',1,'RandomGenerator']]],
   ['gettangentlinesfrompoint_27',['getTangentLinesFromPoint',['../namespace_geometry.html#affd43c52385e0185f55de795b049426b',1,'Geometry']]],
-  ['goal_28',['goal',['../struct_arithmetic_progression.html#abc195b71cb16a2c02740eb8f0e3bedb7',1,'ArithmeticProgression']]],
+  ['goal_28',['goal',['../struct_bipartite_matching_weighted.html#ae61e34069f39a296c63fd03f98f2d7a4',1,'BipartiteMatchingWeighted::goal'],['../struct_arithmetic_progression.html#abc195b71cb16a2c02740eb8f0e3bedb7',1,'ArithmeticProgression::goal']]],
   ['graph_5fdecomposed_29',['graph_decomposed',['../struct_scc_info.html#ac35e2812adadb0090e8005a282c73d38',1,'SccInfo']]],
   ['greaterthan_30',['greaterThan',['../namespace_geometry.html#a85801ae240703892e050e65ebc1f97eb',1,'Geometry']]],
   ['greaterthanorequal_31',['greaterThanOrEqual',['../namespace_geometry.html#a48301418052e96f2270cbc235c91e9c7',1,'Geometry']]],
-  ['group_32',['group',['../struct_scc_info.html#a54a36f89682c3553e9269004a4affce1',1,'SccInfo']]],
-  ['groups_33',['groups',['../struct_d_s_u.html#a1c5c3d071acd50cbe58a86c38a6a3da7',1,'DSU::groups()'],['../struct_dsu_merging.html#a500af4d11f058f17b499842d35181b01',1,'DsuMerging::groups()'],['../struct_dsu_potentialized.html#a5b4d569d8849d49bf9cda0776c67fe30',1,'DsuPotentialized::groups()'],['../struct_dsu_rollback.html#aad21b3281d43bc47b352d86f880b3462',1,'DsuRollback::groups()']]],
-  ['gt_34',['gt',['../struct_multi_set.html#ac5ea12f9b549bf8c218976e440e3dcba',1,'MultiSet::gt()'],['../struct_set.html#a5f67dcbc5701f7af323117f7473329a6',1,'Set::gt()'],['../struct_sorted_multi_tree.html#a20bc2b91712e2d3b78967ff278626c0f',1,'SortedMultiTree::gt()'],['../struct_sorted_tree.html#ae44e1431526826a9c500aa73b5d9487f',1,'SortedTree::gt()']]]
+  ['grid_2ehpp_32',['grid.hpp',['../grid_8hpp.html',1,'']]],
+  ['gridutil_33',['GridUtil',['../struct_grid_util.html',1,'GridUtil'],['../struct_grid_util.html#a08df7ea877154d3260444b03273a0e9b',1,'GridUtil::GridUtil()']]],
+  ['group_34',['group',['../struct_scc_info.html#a54a36f89682c3553e9269004a4affce1',1,'SccInfo']]],
+  ['groups_35',['groups',['../struct_d_s_u.html#a1c5c3d071acd50cbe58a86c38a6a3da7',1,'DSU::groups()'],['../struct_dsu_merging.html#a500af4d11f058f17b499842d35181b01',1,'DsuMerging::groups()'],['../struct_dsu_potentialized.html#a5b4d569d8849d49bf9cda0776c67fe30',1,'DsuPotentialized::groups()'],['../struct_dsu_rollback.html#aad21b3281d43bc47b352d86f880b3462',1,'DsuRollback::groups()']]],
+  ['gt_36',['gt',['../struct_multi_set.html#ac5ea12f9b549bf8c218976e440e3dcba',1,'MultiSet::gt()'],['../struct_set.html#a5f67dcbc5701f7af323117f7473329a6',1,'Set::gt()'],['../struct_sorted_multi_tree.html#a20bc2b91712e2d3b78967ff278626c0f',1,'SortedMultiTree::gt()'],['../struct_sorted_tree.html#ae44e1431526826a9c500aa73b5d9487f',1,'SortedTree::gt()']]]
 ];

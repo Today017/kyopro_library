@@ -4,7 +4,7 @@ var searchData=
   ['rbst_1',['rbst',['../struct_insertable_reversible_array.html#a99106d441b1b34f3aa108ebcf0c4f3ea',1,'InsertableReversibleArray']]],
   ['res_2',['res',['../namespacecompress.html#a54ac03d8200b90f0df7eaef116a6634d',1,'compress']]],
   ['rev_3',['rev',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node.html#a0dd01ef62559340aa7b8430381893838',1,'InsertableReversibleArrayImpl::LazyReversibleRBSTNode::rev'],['../struct_max_flow_1_1_edge.html#ae295247d64f8b72fdd97d34e4b70be15',1,'MaxFlow::Edge::rev'],['../struct_min_cost_flow_1_1_edge.html#aa0302cff92809184f4660b0302a7e554',1,'MinCostFlow::Edge::rev']]],
-  ['right_4',['right',['../struct_seg_tree_dynamic_1_1_node.html#a58f60b6c23afbe3578321b809a045602',1,'SegTreeDynamic::Node']]],
+  ['right_4',['right',['../struct_seg_tree_dynamic_1_1_node.html#a58f60b6c23afbe3578321b809a045602',1,'SegTreeDynamic::Node::right'],['../struct_bipartite_matching_weighted.html#adaf3b50d1fa41e3afa9a8560fa430ed9',1,'BipartiteMatchingWeighted::right']]],
   ['root_5',['root',['../struct_insertable_reversible_array.html#a2d03db862b342d40e310d96e3730f1c8',1,'InsertableReversibleArray']]],
   ['route_6',['route',['../struct_seg_tree_dynamic.html#a64fcf4dcb58a2d8b17592d72110e8e91',1,'SegTreeDynamic']]]
 ];

@@ -43,7 +43,7 @@ var searchData=
   ['res_40',['res',['../namespacecompress.html#a54ac03d8200b90f0df7eaef116a6634d',1,'compress']]],
   ['rev_41',['rev',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node.html#a0dd01ef62559340aa7b8430381893838',1,'InsertableReversibleArrayImpl::LazyReversibleRBSTNode::rev'],['../struct_max_flow_1_1_edge.html#ae295247d64f8b72fdd97d34e4b70be15',1,'MaxFlow::Edge::rev'],['../struct_min_cost_flow_1_1_edge.html#aa0302cff92809184f4660b0302a7e554',1,'MinCostFlow::Edge::rev']]],
   ['reverse_42',['reverse',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a2ac842d27b458b66c5b113307dfe28ea',1,'InsertableReversibleArrayImpl::LazyReversibleRBST::reverse()'],['../struct_insertable_reversible_array.html#af25d43b4b88fd782a8c45c3616d50054',1,'InsertableReversibleArray::reverse()']]],
-  ['right_43',['right',['../struct_seg_tree_dynamic_1_1_node.html#a58f60b6c23afbe3578321b809a045602',1,'SegTreeDynamic::Node']]],
+  ['right_43',['right',['../struct_seg_tree_dynamic_1_1_node.html#a58f60b6c23afbe3578321b809a045602',1,'SegTreeDynamic::Node::right'],['../struct_bipartite_matching_weighted.html#adaf3b50d1fa41e3afa9a8560fa430ed9',1,'BipartiteMatchingWeighted::right']]],
   ['ring_44',['Ring',['../namespace_ring.html',1,'']]],
   ['ring_2ehpp_45',['ring.hpp',['../ring_8hpp.html',1,'']]],
   ['rng_46',['rng',['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#af5b7726452c97a737444c3281ddc7749',1,'InsertableReversibleArrayImpl::RBSTBase']]],

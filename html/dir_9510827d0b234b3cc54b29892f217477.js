@@ -4,6 +4,7 @@ var dir_9510827d0b234b3cc54b29892f217477 =
     [ "arithmetic_sum.hpp", "arithmetic__sum_8hpp.html", "arithmetic__sum_8hpp" ],
     [ "bit.hpp", "bit_8hpp.html", "bit_8hpp" ],
     [ "fast.hpp", "fast_8hpp.html", null ],
+    [ "grid.hpp", "grid_8hpp.html", "grid_8hpp" ],
     [ "int128.hpp", "int128_8hpp.html", "int128_8hpp" ],
     [ "intersect.hpp", "intersect_8hpp.html", "intersect_8hpp" ],
     [ "kth_root.hpp", "kth__root_8hpp.html", "kth__root_8hpp" ],

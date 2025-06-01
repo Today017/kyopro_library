@@ -34,6 +34,8 @@ var searchData=
   ['dsumerging_31',['DsuMerging',['../struct_dsu_merging.html',1,'DsuMerging&lt; Semigroup &gt;'],['../struct_dsu_merging.html#a6e06d3c3b50471bd58ea808d9b63ad77',1,'DsuMerging::DsuMerging()=default'],['../struct_dsu_merging.html#a176fb90f26e3696383392e94d7491cdb',1,'DsuMerging::DsuMerging(int n, const vector&lt; Type &gt; &amp;v)']]],
   ['dsupotentialized_32',['DsuPotentialized',['../struct_dsu_potentialized.html',1,'DsuPotentialized&lt; Group &gt;'],['../struct_dsu_potentialized.html#a2e7c6c09a18844667a4f0f7c0ddebe1d',1,'DsuPotentialized::DsuPotentialized()=default'],['../struct_dsu_potentialized.html#a8c36a02bd95351413d537dabdcdd40b1',1,'DsuPotentialized::DsuPotentialized(int n)']]],
   ['dsurollback_33',['DsuRollback',['../struct_dsu_rollback.html',1,'DsuRollback'],['../struct_dsu_rollback.html#a11aa0e4a2cd2660619a17e0dd828c22a',1,'DsuRollback::DsuRollback()=default'],['../struct_dsu_rollback.html#ad42c892c309ec0aa491c70bec3d58779',1,'DsuRollback::DsuRollback(int n)']]],
-  ['dynamicconnectivity_34',['DynamicConnectivity',['../struct_dynamic_connectivity.html',1,'DynamicConnectivity'],['../struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4',1,'DynamicConnectivity::DynamicConnectivity()']]],
-  ['dynamicmodint_35',['DynamicModInt',['../struct_dynamic_mod_int.html',1,'DynamicModInt'],['../struct_dynamic_mod_int.html#adf5f76fb001401a0b21811af31e86dab',1,'DynamicModInt::DynamicModInt()']]]
+  ['dx_34',['dx',['../struct_grid_util.html#a08c2319c9344e1bb39761b0cbdde79ed',1,'GridUtil']]],
+  ['dy_35',['dy',['../struct_grid_util.html#a887fcc18746de8ac3334292a0246592f',1,'GridUtil']]],
+  ['dynamicconnectivity_36',['DynamicConnectivity',['../struct_dynamic_connectivity.html',1,'DynamicConnectivity'],['../struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4',1,'DynamicConnectivity::DynamicConnectivity()']]],
+  ['dynamicmodint_37',['DynamicModInt',['../struct_dynamic_mod_int.html',1,'DynamicModInt'],['../struct_dynamic_mod_int.html#adf5f76fb001401a0b21811af31e86dab',1,'DynamicModInt::DynamicModInt()']]]
 ];

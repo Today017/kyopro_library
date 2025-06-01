@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['w_0',['w',['../sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2',1,'sparse_table_2d.hpp']]],
+  ['w_0',['w',['../struct_grid_util.html#a3d3b9be9eae4ca9e76e3d814bb971692',1,'GridUtil::w'],['../sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2',1,'w:&#160;sparse_table_2d.hpp']]],
   ['warshall_5ffloyd_2ehpp_1',['warshall_floyd.hpp',['../warshall__floyd_8hpp.html',1,'']]],
   ['warshallfloyd_2',['WarshallFloyd',['../warshall__floyd_8hpp.html#ae8e081c321ba2ef64df99e26d6a84a16',1,'warshall_floyd.hpp']]],
   ['wavelet_20matrix_20a_3',['&lt;a href=&quot;./wvmt.hpp&quot; &gt;Wavelet Matrix&lt;/a&gt;',['../md_data__structure_2wvmt.html#autotoc_md0',1,'']]],

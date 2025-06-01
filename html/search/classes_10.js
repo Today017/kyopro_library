@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['update_0',['Update',['../struct_operator_1_1_update.html',1,'Operator']]],
-  ['updatetimestamp_1',['UpdateTimeStamp',['../struct_operator_1_1_update_time_stamp.html',1,'Operator']]]
+  ['timer_0',['Timer',['../struct_timer.html',1,'']]],
+  ['trie_1',['Trie',['../struct_trie.html',1,'']]],
+  ['twosat_2',['TwoSat',['../struct_two_sat.html',1,'']]]
 ];
