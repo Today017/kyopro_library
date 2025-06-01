@@ -13,7 +13,6 @@ struct Doubling {
         int n=v.size();
         nxt.assign(Log+1,VI(n));
         REP(i,n) nxt[0][i]=v[i];
-        REP(i,n) nxt[0][i]=v[i];
         REP(i,Log) REP(j,n) nxt[i+1][j]=nxt[i][nxt[i][j]];
     }
 
