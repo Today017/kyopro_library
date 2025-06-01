@@ -29,7 +29,18 @@ done
 
 touch a.cpp
 echo "#include<kyopro_library/template.hpp>
-//----------------------------------------------------------" > a.cpp
+//----------------------------------------------------------
+
+void solve() {
+}
+
+int main() {
+    ios::sync_with_stdio(false); cin.tie(nullptr);
+    cout<<fixed<<setprecision(15);
+    int T=1;
+    //cin>>T;
+    while(T--) solve();
+}" > a.cpp
 touch b.cpp
 touch c.cpp
 touch d.cpp
