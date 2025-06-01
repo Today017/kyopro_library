@@ -59,4 +59,6 @@ private:
 
 using Mod998=ModInt<998244353>;
 using Mod107=ModInt<1000000007>;
-using VM=vector<Mod998>;
+
+#define VM vector<mint>
+#define VVM vector<vector<mint>>
