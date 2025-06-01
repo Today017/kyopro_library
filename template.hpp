@@ -3,7 +3,6 @@
 using namespace std;
 
 #define ALL(x) (x).begin(),(x).end()
-#define IO ios::sync_with_stdio(false),cin.tie(nullptr);
 #define REP(i, n) for(ll i=0; i<(ll)(n); i++)
 #define FOR(i, a, b) for(ll i=(ll)(a); i<(b); i++)
 #define ROF(i, a, b) for(ll i=(ll)(b)-1; i>=(a); i--)
