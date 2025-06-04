@@ -9,7 +9,7 @@ void FHT(vector<T>& a, bool inv=false) {
         a[j]=x+y,a[j|1<<i]=x-y;
         if(inv) a[j]/=2,a[j|1<<i]/=2;
     }
-    return a;
+    return;
 }
 
 /// @brief XOR Convolution
