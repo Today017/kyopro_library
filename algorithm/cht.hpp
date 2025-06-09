@@ -2,7 +2,7 @@
 #include"../../kyopro_library/algorithm/binary_search.hpp"
 
 /// @brief Convex Hull Trick
-/// @ref verify : https://judge.yosupo.jp/problem/line_add_get_min
+/// @ref verify: https://judge.yosupo.jp/submission/291811
 /// @ref https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf
 /// @tparam Min true のとき最小値を管理する
 template<typename T=ll, bool MIN=true>
