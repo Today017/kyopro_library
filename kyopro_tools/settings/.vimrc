@@ -1,0 +1,11 @@
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set smartindent
+set noswapfile
+set number
+set belloff=all
+set mouse=a
+colorscheme desert
+syntax on
