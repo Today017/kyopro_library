@@ -13,7 +13,7 @@ struct SparseTableDisjoint {
         n=v.size();
         dat.assign(__lg(n)+1,vector<Type>(n));
         dat[0]=v;
-        FOR(i,1,dat.size()) {
+        for(int i=1; i<dat.size(); i++) {
             int w=1<<i;
             for(int j=0; j<n; j+=w<<1) {
                 int t=min(j+w,n);

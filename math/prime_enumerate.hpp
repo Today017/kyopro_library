@@ -7,7 +7,7 @@
 VI PrimeEnumerate(int n) {
     VI prime,is_prime(n+1,true);
     is_prime[0]=is_prime[1]=false;
-    FOR(i,2,n+1) {
+    for(int i=2; i<=n; i++) {
         if(is_prime[i]) {
             prime.push_back(i);
             for(int j=2*i; j<=n; j+=i) is_prime[j]=false;

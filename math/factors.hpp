@@ -13,7 +13,7 @@ struct Factors {
         divisors=VVI(mx+1);
         prime_factors=vector<vector<pair<int,int>>>(mx+1);
         
-        FOR(i,2,mx+1) if(is_prime[i]) {
+        for(int i=2; i<=mx; i++) if(is_prime[i]) {
             min_factor[i]=i;
             for(int j=2*i; j<=mx; j+=i) {
                 is_prime[j]=false;

@@ -10,7 +10,7 @@ ll Garner(VL a, VL m, ll mod=INFL+3) {
     REP(i,n) {
         ll x=((a[i]-kp[i]+m[i])%m[i])*ModInv(rm[i],m[i]);
         x%=m[i];
-        FOR(j,i+1,n+1) {
+        for(int j=i+1; j<=n; j++) {
             (kp[j]+=rm[j]*x)%=m[j];
             (rm[j]*=m[i])%=m[j];
         }

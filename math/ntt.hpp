@@ -35,7 +35,7 @@ public:
         roots=VL(divide_max+1);
         inv_roots=VL(divide_max+1);
         roots[0]=inv_roots[0]=1;
-        FOR(i,1,divide_max+1) {
+        for(int i=1; i<=divide_max; i++) {
             roots[i]=ModPow(primitive_root,(MOD-1)/(1<<i),MOD);
             inv_roots[i]=ModInv(roots[i],MOD);
         }

@@ -14,7 +14,7 @@ VP PrimeFactorize(ll n) {
             return b;
         };
         auto _abs=[](lll x) { return x<0?-x:x; };
-        FOR(c,1,n) {
+        for(ll c=1; c<=n; c++) {
             auto f=[&](lll x) { return((x%n)*(x%n)+c)%n; };
             lll y=0,r=1,q=1,g=1,k=0,x=0,ys=0;
             while(g==1) {

@@ -78,10 +78,10 @@ namespace RandomGenerator {
 
     vector<pair<int,int>> RandomTree(int n) {
         VI a=RandomArray<int>(n-2,1,n+1);
-        VI d(n+1); REP(i,n-2) d[a[i]]++; FOR(i,1,n+1) d[i]++;
+        VI d(n+1); REP(i,n-2) d[a[i]]++; for(ll i=1; i<=n; i++) d[i]++;
         vector<pair<int,int>> ret;
         set<int> pq;
-        FOR(i,1,n+1) if(d[i]==1) pq.insert(i);
+        for(ll i=1; i<=n; i++) if(d[i]==1) pq.insert(i);
         REP(i,n-2) {
             int v=(*pq.begin());
             pq.erase(v);
@@ -90,7 +90,7 @@ namespace RandomGenerator {
             if(d[a[i]]==1) pq.insert(a[i]);
             else if(d[a[i]]==0) pq.erase(a[i]);
         }
-        FOR(i,1,n+1) {
+        for(ll i=1; i<=n; i++) {
             if(d[i]==1) {
                 for(int j=i+1; j<=n; j++) if(d[j]==1) {
                     ret.push_back(make_pair(i,j));
@@ -105,7 +105,7 @@ namespace RandomGenerator {
     vector<pair<int,int>> RandomBinaryTree(int n) {
         vector<pair<int,int>> ret;
         VL roots={RandomInt(1,n+1)},leaves;
-        FOR(i,1,n+1) if(i!=roots.back()) leaves.push_back(i);
+        for(ll i=1; i<=n; i++) if(i!=roots.back()) leaves.push_back(i);
         while(!leaves.empty()) {
             int root=GetRandomElement(roots);
             int leaf=GetRandomElement(leaves);

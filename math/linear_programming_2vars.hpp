@@ -7,7 +7,7 @@ ll LinearProgramming_2valiables(ll a, ll b, ll c, ll p, ll q) {
     if(a*q<b*p) swap(a,b), swap(p,q);
     ll ret=INFL;
     if(a*a>c) {
-        FOR(x,0,(c+a-1)/a+1) {
+        for(ll x=0; x<=(c+a-1)/a; x++) {
             ll y=max(0LL,(c-a*x+b-1)/b);
             ret=min(ret,p*x+q*y);
         }

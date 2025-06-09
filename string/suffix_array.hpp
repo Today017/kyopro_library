@@ -16,12 +16,12 @@ VI SuffixArray(string s) {
     //2^0,2^1,...,2^k,... をやる
     //k=0
     REP(i,n) cnt[s[i]]++;
-    FOR(i,1,cnt.size()) cnt[i]+=cnt[i-1];
+    for(int i=1; i<cnt.size(); i++) cnt[i]+=cnt[i-1];
     //辞書順 = 累積和の小さい順 になる
     REP(i,n) p[--cnt[s[i]]]=i;
     //同値類を計算する
     c[p[0]]=0;
-    FOR(i,1,n) {
+    for(int i=1; i<n; i++) {
         c[p[i]]=c[p[i-1]];
         if(s[p[i]]!=s[p[i-1]]) c[p[i]]++;
     }
@@ -33,11 +33,11 @@ VI SuffixArray(string s) {
         REP(i,n) np[i]=p[i]-(1<<k),(np[i]+=n)%=n;
         fill(ALL(cnt),0);
         REP(i,n) cnt[c[np[i]]]++;
-        FOR(i,1,cnt.size()) cnt[i]+=cnt[i-1];
+        for(int i=1; i<cnt.size(); i++) cnt[i]+=cnt[i-1];
         for(ll i=n-1; i>=0; i--) p[--cnt[c[np[i]]]]=np[i];
         //同値類
         nc[p[0]]=0;
-        FOR(i,1,n) {
+        for(int i=1; i<n; i++) {
             nc[p[i]]=nc[p[i-1]];
             if(c[p[i]]!=c[p[i-1]] || c[(p[i]+(1<<k))%n]!=c[(p[i-1]+(1<<k))%n]) nc[p[i]]++;
         }
