@@ -42,8 +42,8 @@ private:
     VI dep;
     vector<vector<Type>> dat;
     void dfs(const vector<vector<pair<int,Type>>>& g, int now, int pre) {
-        par[0][now]=pre,dep[now]=pre==-1?0:dep[pre]+1;
-        for(auto [nxt,cost]:g[now]) {
+        par[0][now]=pre; dep[now]=(pre==-1 ? 0 : dep[pre]+1);
+        for(auto [nxt,cost]: g[now]) {
             if(nxt==pre) continue;
             dat[0][nxt]=cost;
             dfs(g,nxt,now);

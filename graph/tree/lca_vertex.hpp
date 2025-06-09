@@ -1,6 +1,7 @@
 #include "../../../kyopro_library/template.hpp"
 
 /// @brief 頂点属性 LCA
+/// @ref verify: https://onlinejudge.u-aizu.ac.jp/solutions/problem/3372/review/10572853/Today03/C++17
 template<typename Monoid>
 struct LcaVertex {
     using Type=typename Monoid::Type;
@@ -12,7 +13,7 @@ struct LcaVertex {
         int k=1;
         while((1<<k)<n) k++;
         par=VVI(k,VI(n,-1)),dep=VI(n),dat=vector<vector<Type>>(k,vector<Type>(n,Monoid::id()));
-        dfs(g,v,root,-1,0);
+        dfs(g,v,root,-1);
         REP(i,k-1) REP(j,n) {
             par[i+1][j]=par[i][j]==-1?-1:par[i][par[i][j]];
             dat[i+1][j]=par[i][j]==-1?Monoid::id():Monoid::op(dat[i][j],dat[i][par[i][j]]);
@@ -43,8 +44,8 @@ private:
     VI dep;
     vector<vector<Type>> dat;
     void dfs(const VVI& g, const vector<Type>& v, int now, int pre) {
-        par[0][now]=pre,dep[now]=pre==-1?0:dep[pre]+1;
-        for(int nxt:g[now]) {
+        dat[0][now]=v[now]; par[0][now]=pre; dep[now]=(pre==-1 ? 0 : dep[pre]+1);
+        for(int nxt: g[now]) {
             if(nxt==pre) continue;
             dfs(g,v,nxt,now);
         }
