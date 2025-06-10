@@ -21,3 +21,5 @@ COPY kyopro_library/kyopro_tools/settings/.vimrc /root/.vimrc
 # デフォルトでシェルを起動
 CMD [ "bash" ]
 
+ENV LANG=C.UTF-8
+ENV LANGUAGE=en_US:
