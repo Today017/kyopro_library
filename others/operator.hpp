@@ -24,6 +24,6 @@ namespace Operator {
 	struct UpdateTimeStamp {
 		using Type=pair<T,int>;
 		static Type id() { return {0,-1}; }
-		static Type op(const Type& a, const Type& b) { return b.second>a.second?b:a; }
+		static Type op(const Type& a, const Type& b) { return b.second>a.second ? b : a; }
 	};
 }

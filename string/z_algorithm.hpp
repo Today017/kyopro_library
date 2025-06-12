@@ -3,10 +3,10 @@
 /// @brief Z Algorithm
 /// @brief `ret[i] = [0, n) と [i, n) の最長共通接頭辞の長さ`
 template<typename T=string>
-VI ZAlgorithm(const T& s) {
+vector<int> ZAlgorithm(const T& s) {
     int n=s.size();
-    VI A(n); REP(i,n) A[i]=s[i];
-    VI ret(n); ret[0]=n;
+    vector<int> A(n); for(int i=0; i<n; i++) A[i]=s[i];
+    vector<int> ret(n); ret[0]=n;
     int i=1,j=0;
     while(i<n) {
         while(i+j<n && A[j]==A[i+j]) j++;

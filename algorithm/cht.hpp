@@ -12,11 +12,9 @@ struct CHT {
     /// @brief 直線 ax + b を追加する
     /// @note O(log(N))
     void add(T a, T b) {
-        if(!MIN) {
-            a*=-1;
-            b*=-1;
-        }
-        if(lines.count(a)&&lines[a]<=b) return;
+        if(!MIN) a*=-1, b*=-1;
+
+        if(lines.count(a) && lines[a]<=b) return;
         lines[a]=b;
         auto it=lines.find(a);
         if(!need(it)) {

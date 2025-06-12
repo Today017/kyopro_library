@@ -1,5 +1,6 @@
 #include"../../kyopro_library/template.hpp"
 
+using ull=unsigned long long;
 struct SuccinctBitVector {
     static const ull NOTFOUND=0xFFFFFFFFFFFFFFFFLLU;
 

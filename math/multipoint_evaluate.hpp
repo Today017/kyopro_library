@@ -15,12 +15,12 @@ vector<T> MultipointEvaluate(vector<T> f, vector<T> x) {
     int n2=1;
     while(n2<n) n2<<=1;
     vector<vector<T>> g(n2*2,{1});
-    REP(i,n) g[n2+i]={-x[i],1};
+    for(int i=0; i<n; i++) g[n2+i]={-x[i],1};
     for(ll i=n2-1; i>0; i--) g[i]=PolyMul(g[i<<1],g[i<<1|1]);
 
     g[1]=PolyDiv(f,g[1]).second;
     for(int i=2; i<n2+n; i++) g[i]=PolyDiv(g[i>>1],g[i]).second;
     vector<T> ret(n);
-    REP(i,n) ret[i]=g[n2+i][0];
+    for(int i=0; i<n; i++) ret[i]=g[n2+i][0];
     return ret;
 }

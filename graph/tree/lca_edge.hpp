@@ -11,9 +11,9 @@ struct LcaEdge {
         int n=g.size();
         int k=1;
         while((1<<k)<n) k++;
-        par=VVI(k,VI(n,-1)),dep=VI(n),dat=vector<vector<Type>>(k,vector<Type>(n,Monoid::id()));
+        par=vector<vector<int>>(k,vector<int>(n,-1)),dep=vector<int>(n),dat=vector<vector<Type>>(k,vector<Type>(n,Monoid::id()));
         dfs(g,root,-1);
-        REP(i,k-1) REP(j,n) {
+        for(int i=0; i<k-1; i++) for(int j=0; j<n; j++) {
             par[i+1][j]=par[i][j]==-1?-1:par[i][par[i][j]];
             dat[i+1][j]=par[i][j]==-1?Monoid::id():Monoid::op(dat[i][j],dat[i][par[i][j]]);
         }
@@ -38,8 +38,8 @@ struct LcaEdge {
     }
 
 private:
-    VVI par;
-    VI dep;
+    vector<vector<int>> par;
+    vector<int> dep;
     vector<vector<Type>> dat;
     void dfs(const vector<vector<pair<int,Type>>>& g, int now, int pre) {
         par[0][now]=pre; dep[now]=(pre==-1 ? 0 : dep[pre]+1);

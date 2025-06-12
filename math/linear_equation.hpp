@@ -9,19 +9,19 @@
 /// @param a 連立方程式 Ax=b の拡大係数行列
 /// @param where ピボットとなる変数を記録するための配列
 /// @return A のランク
-int RowReduction(vector<vector<bool>>& a, VI& where) {
+int RowReduction(vector<vector<bool>>& a, vector<int>& where) {
     int row=a.size(),col=a.front().size();
     int rank=0;
-    REP(c,col-1) {
+    for(int c=0; c<col-1; c++) {
         int pivot=rank;
         while(pivot<row&&!a[pivot][c]) pivot++;
         if(pivot==row) continue;
         swap(a[pivot],a[rank]);
         where.push_back(c);
-        REP(r,row) {
+        for(int r=0; r<row; r++) {
             if(r!=rank&&a[r][c]) {
                 //A[r]^=A[c]
-                REP(i,col) a[r][i]=a[r][i]^a[rank][i];
+                for(int i=0; i<col; i++) a[r][i]=a[r][i]^a[rank][i];
             }
         }
         rank++;
@@ -38,25 +38,25 @@ bool LinearEquation(vector<vector<bool>> a, vector<bool> b, vector<bool>& x0, ve
     int row=a.size(),col=a.front().size();
     assert(b.size()==row);
     vector<vector<bool>> a2=a;
-    REP(i,row) a2[i].push_back(b[i]);
+    for(int i=0; i<row; i++) a2[i].push_back(b[i]);
 
-    VI where;
+    vector<int> where;
     int rank=RowReduction(a2,where);
 
     for(int r=rank; r<row; r++) if(a2[r].back()) return false;
 
     x0=vector<bool>(col,false);
-    REP(i,rank) x0[where[i]]=a2[i].back();
+    for(int i=0; i<rank; i++) x0[where[i]]=a2[i].back();
 
     int r=0;
-    REP(c,col) {
+    for(int c=0; c<col; c++) {
         if(r<rank&&c==where[r]) {
             r++;
             continue;
         }
         vector<bool> x(col);
         x[c]=true;
-        REP(r2,r) x[where[r2]]=a2[r2][c];
+        for(int r2=0; r2<r; r2++) x[where[r2]]=a2[r2][c];
         ker.push_back(x);
     }
 

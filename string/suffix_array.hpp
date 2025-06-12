@@ -6,19 +6,19 @@
 /// @brief O(n log(n))
 /// @ref https://wk1080id.hatenablog.com/entry/2018/12/25/005926
 template<int C=256>
-VI SuffixArray(string s) {
+vector<int> SuffixArray(string s) {
     s.push_back('$');
     int n=s.size();
-    VI p(n), c(n), cnt(max(n,C),0);
+    vector<int> p(n), c(n), cnt(max(n,C),0);
     //p[i] := 辞書順 i 番目のインデックス
     //c[i] := インデックス i の部分文字列の同値類
 
     //2^0,2^1,...,2^k,... をやる
     //k=0
-    REP(i,n) cnt[s[i]]++;
+    for(int i=0; i<n; i++) cnt[s[i]]++;
     for(int i=1; i<cnt.size(); i++) cnt[i]+=cnt[i-1];
     //辞書順 = 累積和の小さい順 になる
-    REP(i,n) p[--cnt[s[i]]]=i;
+    for(int i=0; i<n; i++) p[--cnt[s[i]]]=i;
     //同値類を計算する
     c[p[0]]=0;
     for(int i=1; i<n; i++) {
@@ -26,13 +26,13 @@ VI SuffixArray(string s) {
         if(s[p[i]]!=s[p[i-1]]) c[p[i]]++;
     }
 
-    VI np(n),nc(n);
+    vector<int> np(n),nc(n);
     for(int k=0; (1<<k)<n; k++) {
         //k を使って、(c[i],c[i+2^k]) でソート、 p[i]-=2^k でできる
         //c[i+2^k] でソート
-        REP(i,n) np[i]=p[i]-(1<<k),(np[i]+=n)%=n;
-        fill(ALL(cnt),0);
-        REP(i,n) cnt[c[np[i]]]++;
+        for(int i=0; i<n; i++) np[i]=p[i]-(1<<k),(np[i]+=n)%=n;
+        fill(cnt.begin(),cnt.end(),0);
+        for(int i=0; i<n; i++) cnt[c[np[i]]]++;
         for(int i=1; i<cnt.size(); i++) cnt[i]+=cnt[i-1];
         for(ll i=n-1; i>=0; i--) p[--cnt[c[np[i]]]]=np[i];
         //同値類

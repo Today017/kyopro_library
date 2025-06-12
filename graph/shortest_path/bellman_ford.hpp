@@ -11,9 +11,9 @@
  * @ref https://yukicoder.me/submissions/967952
  * @ref https://mhrb-minase.hatenablog.com/entry/2019/08/20/003915
  */
-pair<bool,VL> BellmanFord(const WG& g, int start) {
+pair<bool,vector<ll>> BellmanFord(const vector<vector<pair<int,ll>>>& g, int start) {
     int n=g.size();
-    VL dst(n,INFL); dst[start]=0;
+    vector<ll> dst(n,INFL); dst[start]=0;
     int i=0;
     for(; i<n; i++) {
         bool update=false;

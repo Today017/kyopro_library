@@ -15,7 +15,7 @@ ll PrimitiveRoot(ll n) {
     while(true) {
         ll i=Xor128(2,n);
         bool ok=true;
-        for(auto [p,_]:pf) {
+        for(auto [p,_]: pf) {
             if(ModPow(i,(n-1)/p,n)==1) {
                 ok=false;
                 break;

@@ -7,7 +7,7 @@ struct BipartiteMatchingWeighted {
     MinCostFlow mcf;
     int start, goal;
     BipartiteMatchingWeighted(int n): mcf(n+2), start(n), goal(n+1) {}
-    VI left,right;
+    vector<int> left,right;
 
     /// @brief 左側の頂点 u と右側の頂点 v に重み w の辺を追加する
     void add_edge(int u, int v, ll w) {
@@ -25,12 +25,12 @@ struct BipartiteMatchingWeighted {
 
     /// @brief 重み付き最大二部マッチング問題を解く
     /// @brief `ret[i] := i 組のマッチングが成立しているときの重み`
-    VL solve() {
+    vector<ll> solve() {
         UQ(left); UQ(right);
         for(int u: left) mcf.add_edge(start,u,1,0);
         for(int v: right) mcf.add_edge(v,goal,1,0);
 
-        VL ret;
+        vector<ll> ret;
         ret.push_back(0);
         while(true) {
             ll res=mcf.flow(start,goal,1);

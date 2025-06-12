@@ -9,8 +9,8 @@ struct DsuPotentialized {
 
     /// @brief コンストラクタ
     DsuPotentialized(int n) {
-        par=VI(n); iota(ALL(par),0);
-        sz=VI(n,1);
+        par.resize(n); iota(par.begin(),par.end(),0);
+        sz=vector<int>(n,1);
         diff_weight=vector<Type>(n,Group::id());
         forest_count=n;
     }
@@ -56,16 +56,16 @@ struct DsuPotentialized {
     int count() { return forest_count; }
 
     /// @brief 各頂点を連結成分に分解する
-    VVI groups() {
+    vector<vector<int>> groups() {
         int n=par.size();
-        VVI ret(n);
-        REP(i,n) ret[find(i)].push_back(i);
-        ret.erase(remove_if(ALL(ret),[&](const VI& v) { return v.empty(); }),ret.end());
+        vector<vector<int>> ret(n);
+        for(int i=0; i<n; i++) ret[find(i)].push_back(i);
+        ret.erase(remove_if(ret.begin(),ret.end(),[&](const vector<int>& v) { return v.empty(); }),ret.end());
         return ret;
     }
 
 private:
-    VI par,sz;
+    vector<int> par,sz;
     vector<Type> diff_weight;
     int forest_count;
 };

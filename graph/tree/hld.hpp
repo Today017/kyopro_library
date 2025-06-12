@@ -4,11 +4,11 @@
 /// @ref 解説:https://hcpc-hokudai.github.io/archive/graph_tree_001.pdf
 struct HLD {
     HLD(int n) { resize(n); }
-    void add_edge(int a, int b) { graph[a].push_back(b),graph[b].push_back(a); }
+    void add_edge(int a, int b) { g[a].push_back(b),g[b].push_back(a); }
     void build(int root=0) { dfs1(root),dfs2(root,root); }
-    HLD(const VVI& g, int root=0) {
+    HLD(const vector<vector<int>>& g, int root=0) {
         resize(g.size());
-        this->graph=g;
+        this->g=g;
         build(root);
     }
 
@@ -52,15 +52,15 @@ struct HLD {
     pair<int,int> subtree(int v) { return {pos[v],pos2[v]}; }
 
 private:
-    VVI graph;
-    VI sz,par,dep,head;
-    VI hld; ///< HLD後の配列
-    VI pos,pos2; ///< hldの逆引き
-    void resize(int n) { graph.resize(n),sz.resize(n),par.resize(n),dep.resize(n),pos.resize(n),head.resize(n),pos2.resize(n); }
+    vector<vector<int>> g;
+    vector<int> sz,par,dep,head;
+    vector<int> hld; ///< HLD後の配列
+    vector<int> pos,pos2; ///< hldの逆引き
+    void resize(int n) { g.resize(n),sz.resize(n),par.resize(n),dep.resize(n),pos.resize(n),head.resize(n),pos2.resize(n); }
     void dfs1(int now, int pre=-1) {
         par[now]=pre;
         int res=1;
-        for(int nxt:graph[now]) {
+        for(int nxt:g[now]) {
             if(nxt==pre)continue;
             dep[nxt]=dep[now]+1;
             dfs1(nxt,now);
@@ -77,7 +77,7 @@ private:
             return;
         }
         int mx=0,idx=0;
-        for(int nxt:graph[now]) {
+        for(int nxt: g[now]) {
             if(nxt==pre) continue;
             if(mx<sz[nxt]) {
                 mx=sz[nxt];
@@ -85,8 +85,8 @@ private:
             }
         }
         dfs2(idx,a,now);
-        for(int nxt:graph[now]) {
-            if(nxt==pre||nxt==idx) continue;
+        for(int nxt: g[now]) {
+            if(nxt==pre || nxt==idx) continue;
             dfs2(nxt,nxt,now);
         }
         pos2[now]=hld.size();

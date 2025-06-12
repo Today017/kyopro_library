@@ -4,11 +4,11 @@
 /// @brief 二部グラフの最大マッチングを返す
 /// @note O(E*sqrt(V))
 /// @attention G は二部グラフであること
-vector<pair<int,int>> BipartiteMatching(const VVI& g) {
+vector<pair<int,int>> BipartiteMatching(const vector<vector<int>>& g) {
     int n=g.size();
     MaxFlow mxf(n+2);
     int s=n,t=n+1;
-    REP(i,n) {
+    for(int i=0; i<n; i++) {
         for(int j:g[i]) mxf.add_edge(i,j,1);
         mxf.add_edge(s,i,1);
         mxf.add_edge(i,t,1);
@@ -39,10 +39,10 @@ struct BiInfo {
 /// @brief 二部グラフのパラメータを求める
 /// @note O(E*sqrt(V))
 /// @attention G は二部グラフであること
-BiInfo GetBiInfo(const VVI& g) {
+BiInfo GetBiInfo(const vector<vector<int>>& g) {
     int n=g.size();
     int isolation=0;
-    REP(i,n) if(g[i].size()==0) isolation++;
+    for(int i=0; i<n; i++) if(g[i].size()==0) isolation++;
 
     BiInfo ret;
     int m=BipartiteMatching(g).size();

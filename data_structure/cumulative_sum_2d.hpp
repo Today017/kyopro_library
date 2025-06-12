@@ -11,7 +11,9 @@ struct CumulativeSum2D {
     CumulativeSum2D(const vector<vector<U>>& v) {
         n=v.size(),m=v.front().size();
         dat.assign(n+1,vector<T>(m+1));
-        REP(i,n) REP(j,m) dat[i+1][j+1]=dat[i][j+1]+dat[i+1][j]-dat[i][j]+v[i][j];
+        for(int i=0; i<n; i++) for(int j=0; j<m; j++) {
+            dat[i+1][j+1]=dat[i][j]+dat[i+1][j]-dat[i][j]+v[i][j];
+        }
     }
 
     /// @brief 矩形領域 [l, r) × [u, d) の和を求める

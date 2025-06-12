@@ -8,9 +8,9 @@ struct Factors {
     /// @note O(n log(log(n)))
     Factors(int n) {
         mx=n;
-        min_factor=VI(mx+1);
-        is_prime=VI(mx+1,true); is_prime[0]=is_prime[1]=false;
-        divisors=VVI(mx+1);
+        min_factor=vector<int>(mx+1);
+        is_prime=vector<int>(mx+1,true); is_prime[0]=is_prime[1]=false;
+        divisors=vector<vector<int>>(mx+1);
         prime_factors=vector<vector<pair<int,int>>>(mx+1);
         
         for(int i=2; i<=mx; i++) if(is_prime[i]) {
@@ -42,7 +42,7 @@ struct Factors {
 
     /// @brief n の約数を返す
     /// @note O(d(n))
-    VI get_divisors(int n) {
+    vector<int> get_divisors(int n) {
         if(divisors[n].size()==0) {
             vector<pair<int,int>> pf=get_prime_factors(n);
             int sz=pf.size();
@@ -52,20 +52,20 @@ struct Factors {
                     return;
                 }
                 auto[p,cnt]=pf[i];
-                REP(j,cnt+1) {
+                for(int j=0; j<=cnt; j++) {
                     dfs(dfs,i+1,x);
                     x*=p;
                 }
             };
             dfs(dfs,0,1);
-            sort(ALL(divisors[n]));
+            sort(divisors[n].begin(),divisors[n].end());
         }
         return divisors[n];
     }
 
 private:
     int mx;
-    VI min_factor,is_prime;
-    VVI divisors;
+    vector<int> min_factor,is_prime;
+    vector<vector<int>> divisors;
     vector<vector<pair<int,int>>> prime_factors;
 };

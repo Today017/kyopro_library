@@ -16,8 +16,8 @@ struct CombinationLucas {
     /// @note O(mod)
     CombinationLucas(int mod) {
         this->mod=mod;
-        fact=VL(mod); fact[0]=1;
-        factinv=VL(mod);
+        fact=vector<ll>(mod); fact[0]=1;
+        factinv=vector<ll>(mod);
         for(int i=1; i<mod; i++) fact[i]=fact[i-1]*i%mod;
         factinv[mod-1]=ModInv(fact[mod-1],mod);
         for(int i=mod-2; i>=0; i--) factinv[i]=factinv[i+1]*(i+1)%mod;
@@ -31,7 +31,7 @@ struct CombinationLucas {
     }
 
 private:
-    VL fact,factinv;
+    vector<ll> fact,factinv;
     int mod;
     ll calc(int n, int r) {
         if(n<r||r<0||n<0) return 0;

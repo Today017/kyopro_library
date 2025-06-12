@@ -18,7 +18,7 @@ struct BinaryTrie {
 
     /// @brief x を min(count(x), t) 個削除する
     void erase(T x, int t=1) {
-        chmin(t,count(x));
+        t=min(t,count(x));
         if(t==0) return;
         root=erase(root,x,Log-1,t);
     }
@@ -114,7 +114,7 @@ private:
     T get(Node*v, int k, int bit) {
         if(bit<0) return 0;
         evaluate(v,bit);
-        int m=v->next[0]!=nullptr?v->next[0]->size:0;
+        int m=(v->next[0]!=nullptr ? v->next[0]->size : 0);
         if(k<m) return get(v->next[0],k,bit-1);
         else return get(v->next[1],k-m,bit-1)|((T)1<<bit);
     }
@@ -123,7 +123,7 @@ private:
         if(v==nullptr||bit<0) return 0;
         evaluate(v,bit);
         int lr=(x>>bit)&1;
-        int ret=lr&&v->next[0]!=nullptr?v->next[0]->size:0;
+        int ret=(lr&&v->next[0]!=nullptr ? v->next[0]->size : 0);
         return ret+count_lower(v->next[lr],x,bit-1);
     }
 };

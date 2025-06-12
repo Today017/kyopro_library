@@ -9,11 +9,11 @@ struct Doubling {
     /// @brief コンストラクタ
     /// @param v 各頂点からの遷移先
     /// @note O(N Log)
-    Doubling(const VI& v) {
+    Doubling(const vector<int>& v) {
         int n=v.size();
-        nxt.assign(Log+1,VI(n));
-        REP(i,n) nxt[0][i]=v[i];
-        REP(i,Log) REP(j,n) nxt[i+1][j]=nxt[i][nxt[i][j]];
+        nxt.assign(Log+1,vector<int>(n));
+        for(int i=0; i<n; i++) nxt[0][i]=v[i];
+        for(int i=0; i<Log; i++) for(int j=0; j<n; j++) nxt[i+1][j]=nxt[i][nxt[i][j]];
     }
 
     /// @brief 頂点 start から k 回遷移した先の頂点を返す
@@ -24,5 +24,5 @@ struct Doubling {
     }
 
 private:
-    VVI nxt;
+    vector<vector<int>> nxt;
 };

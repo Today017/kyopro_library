@@ -2,9 +2,9 @@
 
 /// @brief 重みなしグラフ g の頂点 start からの最短距離を求める
 /// @note O(E+V)
-VL BFS(const VVI& g, int start=0) {
+vector<ll> BFS(const vector<vector<int>>& g, int start=0) {
     int n=g.size();
-    VL ret(n,INF); ret[start]=0;
+    vector<ll> ret(n,INF); ret[start]=0;
     queue<int> que; que.push(start);
 
     while(!que.empty()) {
