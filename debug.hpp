@@ -228,7 +228,7 @@ ostream& operator<<(ostream& os, rpriority_queue<T> a) {
 template<typename T, auto N>
 ostream& operator<<(ostream& os, array<T,N> a) {
     os<<"[";
-    for(int i=0; i<n; i++) {
+    for(int i=0; i<N; i++) {
         os<<a[i];
         if(i!=N-1) os<<",";
     }
