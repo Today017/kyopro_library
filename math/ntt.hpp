@@ -1,10 +1,11 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/others/modcal.hpp"
 
 /// @brief NTT Friendly 素数用 NTT 構造体
 template<ll MOD, ll primitive_root>
 class NTT {
-    int divector<int>de_max,n;
+    int divide_max,n;
     vector<ll> roots,inv_roots,tmp;
 
     void ntt(vector<ll>& a, bool inv=false) {
@@ -29,13 +30,13 @@ class NTT {
 
 public:
     NTT() {
-        divector<int>de_max=1;
+        divide_max=1;
         ll n=MOD-1;
-        while(n%2==0) n>>=1,divector<int>de_max++;
-        roots=vector<ll>(divector<int>de_max+1);
-        inv_roots=vector<ll>(divector<int>de_max+1);
+        while(n%2==0) n>>=1,divide_max++;
+        roots=vector<ll>(divide_max+1);
+        inv_roots=vector<ll>(divide_max+1);
         roots[0]=inv_roots[0]=1;
-        for(int i=1; i<=divector<int>de_max; i++) {
+        for(int i=1; i<=divide_max; i++) {
             roots[i]=ModPow(primitive_root,(MOD-1)/(1<<i),MOD);
             inv_roots[i]=ModInv(roots[i],MOD);
         }

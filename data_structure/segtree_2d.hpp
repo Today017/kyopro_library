@@ -17,7 +17,7 @@ struct SegmentTree2D {
     void set(int x, int y, Type v) {
         x+=h,y+=w;
         dat[x][y]=v;
-        for(int i=x>>1; i>0; i>>=1) dat[i][y]=Monoid::op(dat[i1<<1][y],dat[i<<1|1][y]);
+        for(int i=x>>1; i>0; i>>=1) dat[i][y]=Monoid::op(dat[i<<1][y],dat[i<<1|1][y]);
         while(x>0) {
             for(int j=y>>1; j>0; j>>=1) dat[x][j]=Monoid::op(dat[x][j<<1],dat[x][j<<1|1]);
             x>>=1;
@@ -40,8 +40,6 @@ struct SegmentTree2D {
 private:
     int h,w;
     vector<vector<Type>>dat;
-    F Monoid::op;
-    Type Monoid::id();
     Type fold_sub(int x, int u, int d) {
         Type ret=Monoid::id();
         while(u<d) {

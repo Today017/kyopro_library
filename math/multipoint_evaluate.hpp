@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/math/fps.hpp"
 

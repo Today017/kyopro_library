@@ -225,7 +225,7 @@ public:
         ull c=0;
         for(ull i=0;i<bit_arrays.size();++i) {
             ull bit=bit_arrays.at(i).access(pos);
-            c=((c<<=1)|bit);
+            c=(c<<1)|bit;
             pos=bit_arrays.at(i).rank(bit,pos);
             if(bit)pos+=this->begin_one.at(i);
         }
@@ -371,7 +371,7 @@ public:
             if(get<4>(l)!=get<4>(r))return get<4>(l)>get<4>(r);
             return true;
         };
-        priority_queue<tuple<ull,ull,ull,ull,ull>,vector<tuple<ull,ull,ull,ull,ull>>,decltype(c)>que(c);//width,left,right,depth,value
+        std::priority_queue<tuple<ull,ull,ull,ull,ull>,vector<tuple<ull,ull,ull,ull,ull>>,decltype(c)>que(c);//width,left,right,depth,value
         que.push(make_tuple(e-s,s,e,0,0));
         while(not que.empty()) {
             auto element=que.top();

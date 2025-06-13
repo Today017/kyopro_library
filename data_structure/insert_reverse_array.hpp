@@ -63,8 +63,8 @@ namespace InsertableReversibleArrayImpl {
             return x_^=x_<<7,x_^=x_>>9,x_&0xFFFFFFFFull;
         }
         inline int count(const Ptr t) const  { return t?t->cnt:0; }
-        vector<int>rtual void push(Ptr)=0;
-        vector<int>rtual Ptr update(Ptr)=0;
+        virtual void push(Ptr)=0;
+        virtual Ptr update(Ptr)=0;
     };
 
     template<typename T, typename E>

@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 /// @brief 二分探索

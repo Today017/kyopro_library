@@ -1,3 +1,4 @@
+#pragma once
 #include"../../../kyopro_library/template.hpp"
 
 /// @brief 重みなしグラフ g の頂点 start からの最短距離を求める
