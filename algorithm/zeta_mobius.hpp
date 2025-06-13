@@ -8,7 +8,9 @@ namespace ZetaMobius {
     template<typename Monoid>
     vector<typename Monoid::Type> SubsetZeta(vector<typename Monoid::Type> v) {
         int n=__lg(v.size());
-        REP(i,n) REP(j,1<<n)if(j>>i&1) v[j]=Monoid::op(v[j],v[j^(1<<i)]);
+        for(int i=0; i<n; i++) for(int j=0; j<1<<n; j++) {
+            if(j>>i&1) v[j]=Monoid::op(v[j],v[j^(1<<i)]);
+        }
         return v;
     }
 
@@ -18,7 +20,9 @@ namespace ZetaMobius {
     template<typename Monoid>
     vector<typename Monoid::Type> SupersetZeta(vector<typename Monoid::Type> v) {
         int n=__lg(v.size());
-        REP(i,n) REP(j,1<<n) if(~j>>i&1) v[j]=Monoid::op(v[j],v[j^(1<<i)]);
+        for(int i=0; i<n; i++) for(int j=0; j<1<<n; j++) {
+            if(~j>>i&1) v[j]=Monoid::op(v[j],v[j^(1<<i)]);
+        }
         return v;
     }
 
@@ -29,7 +33,9 @@ namespace ZetaMobius {
     template<typename Abel>
     vector<typename Abel::Type> SubsetMobius(vector<typename Abel::Type> v) {
         int n=__lg(v.size());
-        REP(i,n) REP(j,1<<n) if(j>>i&1) v[j]=Abel::op(v[j],Abel::inv(v[j^(1<<i)]));
+        for(int i=0; i<n; i++) for(int j=0; j<1<<n; j++) {
+            if(j>>i&1) v[j]=Abel::op(v[j],Abel::inv(v[j^(1<<i)]));
+        }
         return v;
     }
 
@@ -40,7 +46,9 @@ namespace ZetaMobius {
     template<typename Abel>
     vector<typename Abel::Type> SupersetMobius(vector<typename Abel::Type> v) {
         int n=__lg(v.size());
-        REP(i,n) REP(j,1<<n) if(~j>>i&1) v[j]=Abel::op(v[j],Abel::inv(v[j^(1<<i)]));
+        for(int i=0; i<n; i++) for(int j=0; j<1<<n; j++) {
+            if(~j>>i&1) v[j]=Abel::op(v[j],Abel::inv(v[j^(1<<i)]));
+        }
         return v;
     }
 }

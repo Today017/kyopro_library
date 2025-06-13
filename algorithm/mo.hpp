@@ -25,18 +25,18 @@ struct Mo {
     /// @note O(N sqrt(Q))
     template<typename F1, typename F2, typename F3, typename F4, typename F5>
     void execute(F1&& add_left, F2&& add_right, F3&& del_left, F4&& del_right, F5&& out) {
-        VI qi(q); iota(ALL(qi),0);
+        vector<int> qi(q); iota(qi.begin(),qi.end(),0);
 
         // https://nyaannyaan.github.io/library/misc/mo.hpp.html
         const int wid=max<int>(1,1.0*n/max<double>(1.0,sqrt(q*2.0/3.0)));
-        sort(ALL(qi),[&](int a, int b) {
+        sort(qi.begin(),qi.end(),[&](int a, int b) {
             if(ls[a]/wid!=ls[b]/wid) return ls[a]<ls[b];
             if((ls[a]/wid)&1) return rs[a]<rs[b];
             return rs[a]>rs[b];
         });
 
         int nl=0,nr=0;
-        for(int& i:qi){
+        for(int& i: qi){
             while(nl>ls[i]) add_left(--nl);
             while(nr<rs[i]) add_right(nr++);
             while(nl<ls[i]) del_left(nl++);
@@ -47,5 +47,5 @@ struct Mo {
 
 private:
     int n,q;
-    VI ls,rs;
+    vector<int> ls,rs;
 };

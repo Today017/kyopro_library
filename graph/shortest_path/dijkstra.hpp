@@ -3,9 +3,9 @@
 /// @brief ダイクストラ法
 /// @brief グラフ g に対し、頂点 start から各頂点までの最短距離を求める
 /// @note O(E log V)
-VL Dijkstra(const WG& g, int start=0) {
+vector<ll> Dijkstra(const vector<vector<pair<int,ll>>>& g, int start=0) {
     int n=g.size();
-    VL ret(n,INFL); ret[start]=0;
+    vector<ll> ret(n,INFL); ret[start]=0;
     rpriority_queue<pair<ll,int>> pq; pq.push({0,start});
 
     while(!pq.empty()) {

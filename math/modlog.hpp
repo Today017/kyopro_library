@@ -8,12 +8,12 @@ ll ModLog(ll x, ll y, ll mod) {
     ll m=ceil(sqrt(mod))+1;
     ll now_y=y;
     map<ll,ll> mp;
-    REP(i,m) {
+    for(int i=0; i<m; i++) {
         mp[now_y]=i;
         now_y=now_y*x%mod;
     }
     ll x_pow=1;
-    REP(i,m) {
+    for(int i=0; i<m; i++) {
         x_pow*=x;
         x_pow%=mod;
     }

@@ -10,7 +10,7 @@ struct MergeSortTree {
         n=v.size();
         mx=*max_element(ALL(v)),mn=*min_element(ALL(v));
         dat=vector<vector<T>>(n<<1);
-        REP(i,n) dat[n+i]={v[i]};
+        for(int i=0; i<n; i++) dat[n+i]={v[i]};
         for(int i=n-1; i>0; i--) {
             merge(ALL(dat[i<<1]),ALL(dat[i<<1|1]),back_inserter(dat[i]));
         }

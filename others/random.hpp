@@ -28,10 +28,10 @@ namespace RandomGenerator {
     template<typename T>
     vector<T>RandomArray(int n, T lo, T hi, bool no_dup=false) {
         vector<T>ret(n);
-        if(!no_dup) REP(i,n) ret[i]=RandomInt(lo,hi);
+        if(!no_dup) for(int i=0; i<n; i++) ret[i]=RandomInt(lo,hi);
         else {
             set<T> st;
-            REP(i,n) {
+            for(int i=0; i<n; i++) {
                 int r=RandomInt(lo,hi);
                 while(st.count(r)) r=RandomInt(lo,hi);
                 ret[i]=r;
@@ -45,7 +45,7 @@ namespace RandomGenerator {
     /// @param lower 小文字
     string RandomAlphabet(int n, bool lower=true) {
         string ret;
-        REP(i,n) {
+        for(int i=0; i<n; i++) {
             int idx=RandomInt(26);
             ret.push_back(char((lower?'a':'A')+idx));
         }
@@ -56,7 +56,7 @@ namespace RandomGenerator {
     string RandomString(int n, string s) {
         string ret;
         int m=s.size();
-        REP(i,n) {
+        for(int i=0; i<n; i++) {
             int idx=RandomInt(m);
             ret.push_back(s[idx]);
         }
@@ -77,8 +77,8 @@ namespace RandomGenerator {
     }
 
     vector<pair<int,int>> RandomTree(int n) {
-        VI a=RandomArray<int>(n-2,1,n+1);
-        VI d(n+1); REP(i,n-2) d[a[i]]++; for(ll i=1; i<=n; i++) d[i]++;
+        vector<int> a=RandomArray<int>(n-2,1,n+1);
+        vector<int> d(n+1); REP(i,n-2) d[a[i]]++; for(ll i=1; i<=n; i++) d[i]++;
         vector<pair<int,int>> ret;
         set<int> pq;
         for(ll i=1; i<=n; i++) if(d[i]==1) pq.insert(i);
@@ -104,7 +104,7 @@ namespace RandomGenerator {
 
     vector<pair<int,int>> RandomBinaryTree(int n) {
         vector<pair<int,int>> ret;
-        VL roots={RandomInt(1,n+1)},leaves;
+        vector<ll> roots={RandomInt(1,n+1)},leaves;
         for(ll i=1; i<=n; i++) if(i!=roots.back()) leaves.push_back(i);
         while(!leaves.empty()) {
             int root=GetRandomElement(roots);
@@ -122,20 +122,20 @@ namespace RandomGenerator {
 
     vector<pair<int,int>> RandomUndirectedGraph(int n, int m, bool connected=true) {
         vector<pair<int,int>> edges;
-        REP(i,n) for(int j=i+1; j<n; j++) edges.push_back(make_pair(i+1,j+1));
+        for(int i=0; i<n; i++) for(int j=i+1; j<n; j++) edges.push_back(make_pair(i+1,j+1));
         int ed=edges.size();
         if(!connected) {
             vector<pair<int,int>> ret;
-            VI idxs=RandomArray<int>(m,0,ed,true);
+            vector<int> idxs=RandomArray<int>(m,0,ed,true);
             for(int idx:idxs) ret.push_back(edges[idx]);
             return ret;
         } else {
             vector<pair<int,int>> ret;
             while(true) {
                 ret.clear();
-                VI idxs=RandomArray<int>(m,0,ed,true),parent(n);
-                VVI sets(n);
-                REP(i,n) {
+                vector<int> idxs=RandomArray<int>(m,0,ed,true),parent(n);
+                vector<vector<int>> sets(n);
+                for(int i=0; i<n; i++) {
                     parent[i]=i;
                     sets[i].push_back(i);
                 }
@@ -153,7 +153,7 @@ namespace RandomGenerator {
                     }
                 }
                 bool ok=true;
-                REP(i,n) if(parent[i]!=parent[0]) {
+                for(int i=0; i<n; i++) if(parent[i]!=parent[0]) {
                     ok=false;
                     break;
                 }

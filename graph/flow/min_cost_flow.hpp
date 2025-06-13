@@ -38,7 +38,9 @@ struct MinCostFlow {
     ll flow(int s, int t, ll f) {
         int n=graph.size();
         rpriority_queue<pair<ll,int>> pq;
-        fill(ALL(pot),0),fill(ALL(pv),0),fill(ALL(pe),0);
+        fill(pot.begin(),pot.end(),0);
+        fill(pv.begin(),pv.end(),0);
+        fill(pe.begin(),pe.end(),0);
         ll ret=0;
 
         while(f>0) {
@@ -74,6 +76,6 @@ struct MinCostFlow {
 
 private:
     vector<vector<Edge>> graph;
-    VL dist,pot; // 距離, ポテンシャル
-    VI pv,pe;
+    vector<ll> dist,pot; // 距離, ポテンシャル
+    vector<int> pv,pe;
 };

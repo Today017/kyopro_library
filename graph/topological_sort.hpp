@@ -3,18 +3,18 @@
 /// @brief グラフ g をトポロジカルソートする
 /// @note グラフにサイクルがある場合は空の配列を返す
 /// @note O(V+E)
-VI TopologicalSort(const VVI& g) {
+vector<int> TopologicalSort(const vector<vector<int>>& g) {
     int n=g.size();
-    VI indeg(n);
-    REP(i,n) for(int nxt:g[i]) indeg[nxt]++;
+    vector<int> indeg(n);
+    for(int i=0; i<n; i++) for(int nxt:g[i]) indeg[nxt]++;
     queue<int> que;
-    REP(i,n) if(indeg[i]==0) que.push(i);
-    VI ret;
+    for(int i=0; i<n; i++) if(indeg[i]==0) que.push(i);
+    vector<int> ret;
 
     while(!que.empty()) {
         int now=que.front();
         que.pop();
-        for(int nxt:g[now]) {
+        for(int nxt: g[now]) {
             indeg[nxt]--;
             if(indeg[nxt]==0) que.push(nxt);
         }

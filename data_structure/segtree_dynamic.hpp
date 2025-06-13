@@ -4,20 +4,6 @@
 template<typename Monoid>
 struct SegTreeDynamic {
     using Type=typename Monoid::Type;
-    struct Node {
-        Type value;
-        array<int,2> to;
-        ll left,right;
-        Node(ll l, ll r) {
-            to.fill(-1);
-            left=l; right=r;
-            value=Monoid::id();
-        }
-    };
-    vector<Node> node;
-
-    ll mx=1e9;
-    vector<int> route;
 
     /// @brief サイズ mx の動的セグ木を宣言する
     SegTreeDynamic(ll mx=1e9, int q=5e5) {
@@ -57,8 +43,8 @@ struct SegTreeDynamic {
 
         for(int r:route) {
             int leftc=node[r].to[0],rightc=node[r].to[1];
-            Type leftv= leftc==-1 ? Monoid::id() : node[leftc].value;
-            Type rightv= rightc==-1 ? Monoid::id() : node[rightc].value;
+            Type leftv=(leftc==-1 ? Monoid::id() : node[leftc].value);
+            Type rightv=(rightc==-1 ? Monoid::id() : node[rightc].value);
             node[r].value=Monoid::op(leftv,rightv);
         }
     }
@@ -82,6 +68,21 @@ struct SegTreeDynamic {
     Type fold(ll l, ll r) { return fold(l,r,0,0,mx); }
 
     Type operator[](ll i) { return fold(i,i+1); }
+
+private:
+    struct Node {
+        Type value;
+        array<int,2> to;
+        ll left,right;
+        Node(ll l, ll r) {
+            to.fill(-1);
+            left=l; right=r;
+            value=Monoid::id();
+        }
+    };
+    vector<Node> node;
+    ll mx=1e9;
+    vector<int> route;
 };
 
 #include"../../kyopro_library/others/monoid.hpp"

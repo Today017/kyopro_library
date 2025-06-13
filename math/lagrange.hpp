@@ -11,7 +11,7 @@ vector<T> LagrangePolynomial(vector<T> x, vector<T> y){
     while(n2<n) n2<<=1;
 
     vector<vector<T>> g(n2*2,{1});
-    REP(i,n) g[n2+i]={-x[i],1};
+    for(int i=0; i<n; i++) g[n2+i]={-x[i],1};
     for(ll i=n2-1; i>0; i--) g[i]=PolyMul(g[i<<1],g[i<<1|1]);
 
     vector<T> prod=g[1];
@@ -19,7 +19,7 @@ vector<T> LagrangePolynomial(vector<T> x, vector<T> y){
 
     using P=pair<vector<T>,vector<T>>;//first/second
     vector<P> g2(n2*2,{{0},{1}});
-    REP(i,n) g2[n2+i]={{y[i]},{-eval[i]*x[i],eval[i]}};
+    for(int i=0; i<n; i++) g2[n2+i]={{y[i]},{-eval[i]*x[i],eval[i]}};
     auto merge=[](P l, P r)-> P {
         vector<T> tmp1=PolyMul(l.first,r.second),tmp2=PolyMul(l.second,r.first);
         return {PolyAdd(tmp1,tmp2),PolyMul(l.second,r.second)};
@@ -28,8 +28,8 @@ vector<T> LagrangePolynomial(vector<T> x, vector<T> y){
 
     vector<T> ret=g2[1].first;
     T p=1;
-    REP(i,n) p*=eval[i];
+    for(int i=0; i<n; i++) p*=eval[i];
     p=p.inv();
-    REP(i,n) ret[i]*=p;
+    for(int i=0; i<n; i++) ret[i]*=p;
     return ret;
 }

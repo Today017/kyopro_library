@@ -30,7 +30,7 @@ struct BezoutIdentity {
     }
 
     /// @brief 一般解を返す
-    PL general_solution(ll t=0) {
+    pair<ll,ll> general_solution(ll t=0) {
         ll x=b/g*t+X,y=-a/g*t+Y;
         return {x,y};
     }

@@ -10,8 +10,9 @@
 /// @brief 公式: totient(n)totient(m) = totient(nm) (n と m が互いに素)
 /// @brief 公式: Σ(d | n) totient(d) = n
 /// @brief 公式: a^totient(m) ≡ 1 (mod m) (a と m が互いに素)
-VL TotientTable(ll n) {
-    VL ret(n+1); iota(ALL(ret),0);
+vector<ll> TotientTable(ll n) {
+    vector<ll> ret(n+1);
+    iota(ret.begin(),ret.end(),0);
 
     for(ll i=2; i<=n; i++) if(ret[i]==i) for(ll j=i; j<=n; j+=i) ret[j]=ret[j]/i*(i-1);
 

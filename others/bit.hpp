@@ -15,25 +15,25 @@ namespace Bit{
     int Parity(ll n) { return __builtin_parityll(n); }
 
     /// @brief 最上位ビットの位置を返す
-    int TopBit(int n) { return n?31-__builtin_clz(n):-1; }
+    int TopBit(int n) { return n ? 31-__builtin_clz(n) : -1; }
 
     /// @brief 最上位ビットの位置を返す
-    int TopBit(ll n) { return n?63-__builtin_clzll(n):-1; }
+    int TopBit(ll n) { return n ? 63-__builtin_clzll(n) : -1; }
 
     /// @brief 2進表現の長さを返す
-    int BitLength(int n) { return n?32-__builtin_clz(n):1; }
+    int BitLength(int n) { return n ? 32-__builtin_clz(n) : 1; }
 
     //// @brief 2進表現の長さを返す
-    int BitLength(ll n) { return n?64-__builtin_clzll(n):1; }
+    int BitLength(ll n) { return n ? 64-__builtin_clzll(n) : 1; }
 
     /// @brief 最下位ビットの位置を返す
-    int LowBit(int n) { return n?__builtin_ctz(n):-1; }
+    int LowBit(int n) { return n ? __builtin_ctz(n) : -1; }
 
     /// @brief 最下位ビットの位置を返す
-    int LowBit(ll n) { return n?__builtin_ctzll(n):-1; }
+    int LowBit(ll n) { return n ? __builtin_ctzll(n) : -1; }
 
     /// @brief 2のべき乗か否かを返す
-    bool IsPowerOfTwo(int n) { return n&&(n&-n)==n; }
+    bool IsPowerOfTwo(int n) { return n && (n&-n)==n; }
 
     /// @brief 0~n-1 ビットを立てたビットマスクを返す
     ll Mask(int n) { return (1LL<<n)-1; }

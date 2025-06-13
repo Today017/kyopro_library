@@ -5,7 +5,7 @@
 /// @note O(N^(1/4))
 /// @ref https://qiita.com/t_fuki/items/7cd50de54d3c5d063b4a
 /// @ref verify: https://algo-method.com/tasks/553
-VP PrimeFactorize(ll n) {
+vector<pair<ll,ll>> PrimeFactorize(ll n) {
     if(PrimalityTest(n)) return {{n,1}};
     auto find_factor=[](auto&& find_factor, ll n)-> ll {
         lll m=(ll)pow(n,0.125)+1;
@@ -22,14 +22,14 @@ VP PrimeFactorize(ll n) {
                 while(k<r*3/4) y=f(y),k++;
                 while(k<r&&g==1) {
                     ys=y;
-                    for(int i=0; i<min(m,r-k); i++) y=f(y),q=q*_abs(x-y)%n;
-                    g=_gcd(q,n),k+=m;
+                    for(int i=0; i<min(m,r-k); i++) y=f(y), q=q*_abs(x-y)%n;
+                    g=_gcd(q,n); k+=m;
                 }
-                k=r,r*=2;
+                k=r; r*=2;
             }
             if(g==n) {
                 g=1,y=ys;
-                while(g==1) y=f(y),g=_gcd(_abs(x-y),n);
+                while(g==1) y=f(y), g=_gcd(_abs(x-y),n);
             }
             if(g<n) {
                 if(PrimalityTest(g)) return g;
@@ -43,12 +43,12 @@ VP PrimeFactorize(ll n) {
     ll i=2;
     while(i*i<=n) {
         ll k=0;
-        while(n%i==0) n/=i,k++;
+        while(n%i==0) n/=i, k++;
         if(k) mp[i]=k;
         i+=i%2+1;
-        if(i==101&&n>=(1ll<<20)) {
+        if(i==101 && n>=(1ll<<20)) {
             while(n>1) {
-                if(PrimalityTest(n)) mp[n]=1,n=1;
+                if(PrimalityTest(n)) mp[n]=1, n=1;
                 else {
                     ll j=find_factor(find_factor,n);
                     k=0;
@@ -59,8 +59,8 @@ VP PrimeFactorize(ll n) {
         }
     }
     if(n>1) mp[n]=1;
-    VP ret;
-    for(auto p:mp) ret.push_back(p);
-    sort(ALL(ret));
+    vector<pair<ll,ll>> ret;
+    for(auto p: mp) ret.push_back(p);
+    sort(ret.begin(),ret.end());
     return ret;
 }

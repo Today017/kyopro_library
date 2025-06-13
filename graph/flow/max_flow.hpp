@@ -23,9 +23,9 @@ struct MaxFlow {
 
 private:
     vector<vector<Edge>> graph;
-    VI level,iter;
+    vector<int> level,iter;
     void bfs(int s) {
-        fill(ALL(level),-1);
+        fill(level.begin(),level.end(),-1);
         queue<int> que;
         level[s]=0;
         que.push(s);
@@ -64,7 +64,7 @@ public:
         while(true) {
             bfs(s);
             if(level[t]==-1) return ret;
-            fill(ALL(iter),0);
+            fill(iter.begin(),iter.end(),0);
             ll f;
             while((f=dfs(s,t,INFL))>0) ret+=f;
         }
@@ -72,8 +72,8 @@ public:
 
     /// @brief 直前に流したフローから最小カットを復元する
     /// @brief 始点 v から到達可能か否か
-    VI mincut(int v=0) {
-        VI ret(graph.size());
+    vector<int> mincut(int v=0) {
+        vector<int> ret(graph.size());
         queue<int> que;
         que.push(v);
         ret[v]=true;

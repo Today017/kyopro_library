@@ -9,7 +9,7 @@ struct OffsetVector:vector<T> {
 
     /// @brief 添字として区間 [lo, hi] の値を取れる配列を宣言する
     /// @param init 初期値
-    OffsetVector(int lo,int hi,T init) {
+    OffsetVector(int lo, int hi, T init) {
         assert(lo<=hi);
         this->assign(hi-lo+1,init);
         offset=-lo;

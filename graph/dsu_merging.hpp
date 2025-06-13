@@ -14,8 +14,8 @@ struct DsuMerging {
 
     /// @brief コンストラクタ
     DsuMerging(int n, const vector<Type>& v) {
-        par=VI(n); iota(ALL(par),0);
-        sz=VI(n,1);
+        par.resize(n); iota(par.begin(),par.end(),0);
+        sz=vector<int>(n,1);
         dat=v;
         forest_count=n;
     }
@@ -57,16 +57,16 @@ struct DsuMerging {
     int count() const { return forest_count; }
 
     /// @brief 各頂点を連結成分に分解する
-    VVI groups() const {
+    vector<vector<int>> groups() const {
         int n=par.size();
-        VVI ret(n);
-        REP(i,n) ret[find(i)].push_back(i);
-        ret.erase(remove_if(ALL(ret),[&](const VI& v) { return v.empty(); }),ret.end());
+        vector<vector<int>> ret(n);
+        for(int i=0; i<n; i++) ret[find(i)].push_back(i);
+        ret.erase(remove_if(ret.begin(),ret.end(),[&](const vector<int>& v) { return v.empty(); }),ret.end());
         return ret;
     }
 
 private:
-    VI par,sz;
+    vector<int> par,sz;
     vector<Type> dat;
     int forest_count;
 };

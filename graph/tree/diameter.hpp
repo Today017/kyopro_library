@@ -2,12 +2,12 @@
 #include"../../../kyopro_library/graph/shortest_path/dijkstra.hpp"
 #include"../../../kyopro_library/graph/shortest_path/bfs.hpp"
 
-pair<VI,ll> TreeDiameter(const WG& g) {
-    VL dist=Dijkstra(g);
-    int s=max_element(ALL(dist))-dist.begin();
+pair<vector<int>,ll> TreeDiameter(const vector<vector<pair<int,ll>>>& g) {
+    vector<ll> dist=Dijkstra(g);
+    int s=max_element(dist.begin(),dist.end())-dist.begin();
     dist=Dijkstra(g,s);
-    int t=max_element(ALL(dist))-dist.begin();
-    VI path;
+    int t=max_element(dist.begin(),dist.end())-dist.begin();
+    vector<int> path;
     int now=t;
     while(now!=s) {
         path.push_back(now);
@@ -23,12 +23,12 @@ pair<VI,ll> TreeDiameter(const WG& g) {
     return {path,diameter};
 }
 
-pair<VI,ll>TreeDiameter(const VVI& g) {
-    VL dist=BFS(g);
-    int s=max_element(ALL(dist))-dist.begin();
+pair<vector<int>,ll>TreeDiameter(const vector<vector<int>>& g) {
+    vector<ll> dist=BFS(g);
+    int s=max_element(dist.begin(),dist.end())-dist.begin();
     dist=BFS(g,s);
-    int t=max_element(ALL(dist))-dist.begin();
-    VI path;
+    int t=max_element(dist.begin(),dist.end())-dist.begin();
+    vector<int> path;
     int now=t;
     while(now!=s) {
         path.push_back(now);

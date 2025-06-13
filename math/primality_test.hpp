@@ -7,16 +7,16 @@
 /// @ref verify: https://judge.yosupo.jp/problem/primality_test
 bool PrimalityTest(ll n) {
     if(n==2) return true;
-    if(n<=1||n%2==0) return false;
+    if(n<=1 || n%2==0) return false;
 
-    VL test;
+    vector<ll> test;
     if(n<4759123141ll) test={2,7,61};
     else test={2,325,9375,28178,450775,9780504,1795265022};
 
     ll s=0,d=n-1;
     while(d%2==0) d>>=1,s++;
 
-    for(ll a:test) {
+    for(ll a: test) {
         if(a>=n) break;
         lll x=ModPow<lll>(a,d,n);
 

@@ -3,7 +3,7 @@
 /// @brief 区間を set で管理するデータ構造
 /// @ref verify:https://yukicoder.me/submissions/1021763
 struct RangeSet {
-    set<PL> dat;
+    set<pair<ll,ll>> dat;
     RangeSet() {
         dat.insert({-INFL,-INFL});
         dat.insert({INFL,INFL});
@@ -64,7 +64,7 @@ struct RangeSet {
 
     /// @brief 点 x を含む区間を返す
     /// @brief 存在しない場合は `{-INFL, -INFL}` を返す
-    PL covering_range(ll x) {
+    pair<ll,ll> covering_range(ll x) {
         if(!is_covered(x,x+1)) return{-INFL,-INFL};
         auto it=dat.upper_bound({x,INFL});
         it--;
