@@ -105,37 +105,35 @@ $(function(){initNavTree('util_8hpp_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">util.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="util_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<a href="util_8hpp.html">[詳解]</a><div class="fragment"><div class="foldopen" id="foldopen00001" data-start="{" data-end="}">
+<div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="util_8hpp.html#a88f48cffbaef2f4a9ddd6e1c1ed28f71">    1</a></span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 文字列を数列に変換する</span></div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="util_8hpp.html#a8335b97f00ea079309901befee2792cc">    5</a></span><a class="code hl_function" href="util_8hpp.html#a8335b97f00ea079309901befee2792cc">VI</a> <a class="code hl_function" href="util_8hpp.html#a8335b97f00ea079309901befee2792cc">StringToVi</a>(<span class="keyword">const</span> string&amp; s, <span class="keywordtype">bool</span> lower=<span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    VI ret(s.size());</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>vector&lt;<span class="keywordtype">int</span>&gt; StringTovector&lt;<span class="keywordtype">int</span>&gt;(<span class="keyword">const</span> string&amp; s, <span class="keywordtype">bool</span> lower=<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    vector&lt;<span class="keywordtype">int</span>&gt; ret(s.size());</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,s.size()) ret[i]=(lower?s[i]-<span class="stringliteral">&#39;a&#39;</span>:s[i]-<span class="stringliteral">&#39;A&#39;</span>);</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>}</div>
 </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/// @brief 入力から文字列を受け取って数列に変換する</span></div>
 <div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="util_8hpp.html#aab43ef1e519912f613b571d595905948">   11</a></span><a class="code hl_function" href="util_8hpp.html#aab43ef1e519912f613b571d595905948">VI</a> <a class="code hl_function" href="util_8hpp.html#aab43ef1e519912f613b571d595905948">ReadString</a>(<span class="keywordtype">bool</span> lower=<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="util_8hpp.html#a17c49b395eb392127b72701bcd54a493">   11</a></span><a class="code hl_function" href="util_8hpp.html#a17c49b395eb392127b72701bcd54a493">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_function" href="util_8hpp.html#a17c49b395eb392127b72701bcd54a493">ReadString</a>(<span class="keywordtype">bool</span> lower=<span class="keyword">true</span>) {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    string s; cin&gt;&gt;s;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">return</span> StringToVi(s);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">return</span> StringTovector&lt;<span class="keywordtype">int</span>&gt;(s);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
 </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/// @brief 数列を文字列に変換する</span></div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="util_8hpp.html#ac8e46191ceee43d4c8626bdf6133fc6c">   17</a></span><a class="code hl_function" href="util_8hpp.html#ac8e46191ceee43d4c8626bdf6133fc6c">string</a> <a class="code hl_function" href="util_8hpp.html#ac8e46191ceee43d4c8626bdf6133fc6c">ViToString</a>(<span class="keyword">const</span> VI&amp; a, <span class="keywordtype">bool</span> lower=<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="util_8hpp.html#aacaa959eb46b667b6344ba2ed9e3124b">   17</a></span>string vector&lt;<span class="keywordtype">int</span>&gt;ToString(<span class="keyword">const</span> vector&lt;<span class="keywordtype">int</span>&gt;&amp; a, <span class="keywordtype">bool</span> lower=<span class="keyword">true</span>) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    string ret;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,a.size()) ret.push_back(lower?<span class="keywordtype">char</span>(<span class="stringliteral">&#39;a&#39;</span>+a[i]):<span class="keywordtype">char</span>(<span class="stringliteral">&#39;A&#39;</span>+a[i]));</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
 </div>
-<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
-<div class="ttc" id="autil_8hpp_html_a8335b97f00ea079309901befee2792cc"><div class="ttname"><a href="util_8hpp.html#a8335b97f00ea079309901befee2792cc">StringToVi</a></div><div class="ttdeci">VI StringToVi(const string &amp;s, bool lower=true)</div><div class="ttdoc">文字列を数列に変換する</div><div class="ttdef"><b>Definition</b> <a href="#l00005">util.hpp:5</a></div></div>
-<div class="ttc" id="autil_8hpp_html_aab43ef1e519912f613b571d595905948"><div class="ttname"><a href="util_8hpp.html#aab43ef1e519912f613b571d595905948">ReadString</a></div><div class="ttdeci">VI ReadString(bool lower=true)</div><div class="ttdoc">入力から文字列を受け取って数列に変換する</div><div class="ttdef"><b>Definition</b> <a href="#l00011">util.hpp:11</a></div></div>
-<div class="ttc" id="autil_8hpp_html_ac8e46191ceee43d4c8626bdf6133fc6c"><div class="ttname"><a href="util_8hpp.html#ac8e46191ceee43d4c8626bdf6133fc6c">ViToString</a></div><div class="ttdeci">string ViToString(const VI &amp;a, bool lower=true)</div><div class="ttdoc">数列を文字列に変換する</div><div class="ttdef"><b>Definition</b> <a href="#l00017">util.hpp:17</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00005">template.hpp:5</a></div></div>
+<div class="ttc" id="autil_8hpp_html_a17c49b395eb392127b72701bcd54a493"><div class="ttname"><a href="util_8hpp.html#a17c49b395eb392127b72701bcd54a493">ReadString</a></div><div class="ttdeci">vector&lt; int &gt; ReadString(bool lower=true)</div><div class="ttdoc">入力から文字列を受け取って数列に変換する</div><div class="ttdef"><b>Definition</b> <a href="#l00011">util.hpp:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

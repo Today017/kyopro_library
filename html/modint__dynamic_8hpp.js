@@ -1,4 +1,4 @@
 var modint__dynamic_8hpp =
 [
-    [ "DynamicModInt", "struct_dynamic_mod_int.html", "struct_dynamic_mod_int" ]
+    [ "ModIntDynamic", "struct_mod_int_dynamic.html", "struct_mod_int_dynamic" ]
 ];

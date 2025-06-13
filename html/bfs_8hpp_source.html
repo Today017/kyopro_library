@@ -110,9 +110,9 @@ $(function(){initNavTree('bfs_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @brief 重みなしグラフ g の頂点 start からの最短距離を求める</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @note O(E+V)</span></div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="bfs_8hpp.html#a640c64414ac3359a9bfee2d11d83962a">    5</a></span><a class="code hl_function" href="bfs_8hpp.html#a640c64414ac3359a9bfee2d11d83962a">VL</a> <a class="code hl_function" href="bfs_8hpp.html#a640c64414ac3359a9bfee2d11d83962a">BFS</a>(<span class="keyword">const</span> VVI&amp; g, <span class="keywordtype">int</span> start=0) {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="bfs_8hpp.html#a8d9a7a9c3e6fbf8515158da29f0f7657">    5</a></span><a class="code hl_function" href="bfs_8hpp.html#a8d9a7a9c3e6fbf8515158da29f0f7657">vector</a>&lt;<a class="code hl_function" href="bfs_8hpp.html#a8d9a7a9c3e6fbf8515158da29f0f7657">ll</a>&gt; <a class="code hl_function" href="bfs_8hpp.html#a8d9a7a9c3e6fbf8515158da29f0f7657">BFS</a>(<span class="keyword">const</span> vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;&amp; g, <span class="keywordtype">int</span> start=0) {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keywordtype">int</span> n=g.size();</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    VL ret(n,<a class="code hl_variable" href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a>); ret[start]=0;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    vector&lt;ll&gt; ret(n,INF); ret[start]=0;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    queue&lt;<span class="keywordtype">int</span>&gt; que; que.push(start);</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">while</span>(!que.empty()) {</div>
@@ -123,8 +123,7 @@ $(function(){initNavTree('bfs_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
 </div>
-<div class="ttc" id="abfs_8hpp_html_a640c64414ac3359a9bfee2d11d83962a"><div class="ttname"><a href="bfs_8hpp.html#a640c64414ac3359a9bfee2d11d83962a">BFS</a></div><div class="ttdeci">VL BFS(const VVI &amp;g, int start=0)</div><div class="ttdoc">重みなしグラフ g の頂点 start からの最短距離を求める</div><div class="ttdef"><b>Definition</b> <a href="#l00005">bfs.hpp:5</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a14c9dbab105f1b8b8182a022d73e610c"><div class="ttname"><a href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a></div><div class="ttdeci">const int INF</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00015">template.hpp:15</a></div></div>
+<div class="ttc" id="abfs_8hpp_html_a8d9a7a9c3e6fbf8515158da29f0f7657"><div class="ttname"><a href="bfs_8hpp.html#a8d9a7a9c3e6fbf8515158da29f0f7657">BFS</a></div><div class="ttdeci">vector&lt; ll &gt; BFS(const vector&lt; vector&lt; int &gt; &gt; &amp;g, int start=0)</div><div class="ttdoc">重みなしグラフ g の頂点 start からの最短距離を求める</div><div class="ttdef"><b>Definition</b> <a href="#l00005">bfs.hpp:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

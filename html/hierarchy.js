@@ -30,7 +30,6 @@ var hierarchy =
     [ "DsuPotentialized< Group >", "struct_dsu_potentialized.html", null ],
     [ "DsuRollback", "struct_dsu_rollback.html", null ],
     [ "DynamicConnectivity", "struct_dynamic_connectivity.html", null ],
-    [ "DynamicModInt", "struct_dynamic_mod_int.html", null ],
     [ "MaxFlow::Edge", "struct_max_flow_1_1_edge.html", null ],
     [ "MinCostFlow::Edge", "struct_min_cost_flow_1_1_edge.html", null ],
     [ "ErasablePQ< T, MAX >", "struct_erasable_p_q.html", null ],
@@ -61,11 +60,11 @@ var hierarchy =
     [ "RangeQuery::MinDynamic< T, max_value >", "struct_range_query_1_1_min_dynamic.html", null ],
     [ "Mo", "struct_mo.html", null ],
     [ "ModInt< MOD >", "struct_mod_int.html", null ],
+    [ "ModIntDynamic", "struct_mod_int_dynamic.html", null ],
     [ "multiset", null, [
       [ "MultiSet< T >", "struct_multi_set.html", null ]
     ] ],
     [ "AngelBeats::Node", "struct_angel_beats_1_1_node.html", null ],
-    [ "SegTreeDynamic< Monoid >::Node", "struct_seg_tree_dynamic_1_1_node.html", null ],
     [ "Trie::Node", "struct_trie_1_1_node.html", null ],
     [ "NTT< MOD, primitive_root >", "class_n_t_t.html", null ],
     [ "Geometry::Point", "struct_geometry_1_1_point.html", null ],

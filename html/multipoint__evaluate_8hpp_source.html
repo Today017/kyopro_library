@@ -123,19 +123,17 @@ $(function(){initNavTree('multipoint__evaluate_8hpp_source.html',''); initResiza
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> n2=1;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">while</span>(n2&lt;n) n2&lt;&lt;=1;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    vector&lt;vector&lt;T&gt;&gt; g(n2*2,{1});</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) g[n2+i]={-x[i],1};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) g[n2+i]={-x[i],1};</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">for</span>(ll i=n2-1; i&gt;0; i--) g[i]=PolyMul(g[i&lt;&lt;1],g[i&lt;&lt;1|1]);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    g[1]=PolyDiv(f,g[1]).second;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_define" href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(i,2,n2+n) g[i]=PolyDiv(g[i&gt;&gt;1],g[i]).second;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=2; i&lt;n2+n; i++) g[i]=PolyDiv(g[i&gt;&gt;1],g[i]).second;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    vector&lt;T&gt; ret(n);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) ret[i]=g[n2+i][0];</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) ret[i]=g[n2+i][0];</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 </div>
 <div class="ttc" id="amultipoint__evaluate_8hpp_html_abb2c277f4d822368ce7159e49b2c7fd0"><div class="ttname"><a href="multipoint__evaluate_8hpp.html#abb2c277f4d822368ce7159e49b2c7fd0">MultipointEvaluate</a></div><div class="ttdeci">vector&lt; T &gt; MultipointEvaluate(vector&lt; T &gt; f, vector&lt; T &gt; x)</div><div class="ttdoc">n 次多項式 f について、n 個の点 x[i] における f(x[i]) を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00007">multipoint_evaluate.hpp:7</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a9af2de86c4be813e9c60ede438bb4cd7"><div class="ttname"><a href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a></div><div class="ttdeci">#define FOR(i, a, b)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00007">template.hpp:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

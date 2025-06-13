@@ -117,12 +117,12 @@ $(function(){initNavTree('factors_8hpp_source.html',''); initResizable(true); })
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_factors.html#a219a3cb166153a020f2fc3d83b9a9e57">    9</a></span>    <a class="code hl_function" href="struct_factors.html#a219a3cb166153a020f2fc3d83b9a9e57">Factors</a>(<span class="keywordtype">int</span> n) {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        mx=n;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        min_factor=VI(mx+1);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        is_prime=VI(mx+1,<span class="keyword">true</span>); is_prime[0]=is_prime[1]=<span class="keyword">false</span>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        divisors=VVI(mx+1);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        min_factor=vector&lt;<span class="keywordtype">int</span>&gt;(mx+1);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        is_prime=vector&lt;<span class="keywordtype">int</span>&gt;(mx+1,<span class="keyword">true</span>); is_prime[0]=is_prime[1]=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        divisors=vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;(mx+1);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        prime_factors=vector&lt;vector&lt;pair&lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;&gt;&gt;(mx+1);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_define" href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(i,2,mx+1) <span class="keywordflow">if</span>(is_prime[i]) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=2; i&lt;=mx; i++) <span class="keywordflow">if</span>(is_prime[i]) {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            min_factor[i]=i;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=2*i; j&lt;=mx; j+=i) {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                is_prime[j]=<span class="keyword">false</span>;</div>
@@ -155,7 +155,7 @@ $(function(){initNavTree('factors_8hpp_source.html',''); initResizable(true); })
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">/// @brief n の約数を返す</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">/// @note O(d(n))</span></div>
 <div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="struct_factors.html#a24bcfb630170a5aae2e2ae3c7ce3f656">   45</a></span>    <a class="code hl_function" href="struct_factors.html#a24bcfb630170a5aae2e2ae3c7ce3f656">VI</a> <a class="code hl_function" href="struct_factors.html#a24bcfb630170a5aae2e2ae3c7ce3f656">get_divisors</a>(<span class="keywordtype">int</span> n) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="struct_factors.html#a5a2919bdbde2dbbba26d1c94b5a917c1">   45</a></span>    <a class="code hl_function" href="struct_factors.html#a5a2919bdbde2dbbba26d1c94b5a917c1">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_function" href="struct_factors.html#a5a2919bdbde2dbbba26d1c94b5a917c1">get_divisors</a>(<span class="keywordtype">int</span> n) {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span>(divisors[n].size()==0) {</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            vector&lt;pair&lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;&gt; pf=get_prime_factors(n);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordtype">int</span> sz=pf.size();</div>
@@ -165,13 +165,13 @@ $(function(){initNavTree('factors_8hpp_source.html',''); initResizable(true); })
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                }</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <span class="keyword">auto</span>[p,cnt]=pf[i];</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(j,cnt+1) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;=cnt; j++) {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    dfs(dfs,i+1,x);</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                    x*=p;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                }</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            };</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            dfs(dfs,0,1);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            sort(<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(divisors[n]));</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            sort(divisors[n].begin(),divisors[n].end());</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">return</span> divisors[n];</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
@@ -179,18 +179,15 @@ $(function(){initNavTree('factors_8hpp_source.html',''); initResizable(true); })
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">int</span> mx;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    VI min_factor,is_prime;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    VVI divisors;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    vector&lt;<span class="keywordtype">int</span>&gt; min_factor,is_prime;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt; divisors;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    vector&lt;vector&lt;pair&lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;&gt;&gt; prime_factors;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
 </div>
 <div class="ttc" id="astruct_factors_html"><div class="ttname"><a href="struct_factors.html">Factors</a></div><div class="ttdoc">エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法） https://osak.jp/diary/diary_201310.html#20131017 https://qiita....</div><div class="ttdef"><b>Definition</b> <a href="#l00006">factors.hpp:6</a></div></div>
 <div class="ttc" id="astruct_factors_html_a219a3cb166153a020f2fc3d83b9a9e57"><div class="ttname"><a href="struct_factors.html#a219a3cb166153a020f2fc3d83b9a9e57">Factors::Factors</a></div><div class="ttdeci">Factors(int n)</div><div class="ttdoc">前計算</div><div class="ttdef"><b>Definition</b> <a href="#l00009">factors.hpp:9</a></div></div>
-<div class="ttc" id="astruct_factors_html_a24bcfb630170a5aae2e2ae3c7ce3f656"><div class="ttname"><a href="struct_factors.html#a24bcfb630170a5aae2e2ae3c7ce3f656">Factors::get_divisors</a></div><div class="ttdeci">VI get_divisors(int n)</div><div class="ttdoc">n の約数を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00045">factors.hpp:45</a></div></div>
+<div class="ttc" id="astruct_factors_html_a5a2919bdbde2dbbba26d1c94b5a917c1"><div class="ttname"><a href="struct_factors.html#a5a2919bdbde2dbbba26d1c94b5a917c1">Factors::get_divisors</a></div><div class="ttdeci">vector&lt; int &gt; get_divisors(int n)</div><div class="ttdoc">n の約数を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00045">factors.hpp:45</a></div></div>
 <div class="ttc" id="astruct_factors_html_a9c62b3d154c3d164110ce5365d978732"><div class="ttname"><a href="struct_factors.html#a9c62b3d154c3d164110ce5365d978732">Factors::get_prime_factors</a></div><div class="ttdeci">vector&lt; pair&lt; int, int &gt; &gt; get_prime_factors(int n)</div><div class="ttdoc">n を素因数分解する</div><div class="ttdef"><b>Definition</b> <a href="#l00027">factors.hpp:27</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a7ab29d3bd6e8d66e320f4224e75f6cea"><div class="ttname"><a href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a></div><div class="ttdeci">#define ALL(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00005">template.hpp:5</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a9af2de86c4be813e9c60ede438bb4cd7"><div class="ttname"><a href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a></div><div class="ttdeci">#define FOR(i, a, b)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00007">template.hpp:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

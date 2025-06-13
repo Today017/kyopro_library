@@ -113,13 +113,13 @@ $(function(){initNavTree('lcp__array_8hpp_source.html',''); initResizable(true);
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @brief `lcp[i] := sa[i] と sa[i-1] の lcp の長さ`</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// @ref https://qiita.com/kgoto/items/9e28e37b8a4b15ea7230</span></div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="lcp__array_8hpp.html#ae0ced2c7950382932078f20c8e118c5e">    8</a></span><a class="code hl_function" href="lcp__array_8hpp.html#ae0ced2c7950382932078f20c8e118c5e">VI</a> <a class="code hl_function" href="lcp__array_8hpp.html#ae0ced2c7950382932078f20c8e118c5e">LcpArray</a>(<span class="keyword">const</span> string &amp;s, <span class="keyword">const</span> VI&amp; sa) {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="lcp__array_8hpp.html#a6ea341bee8a792b9f0f91a8400b222f3">    8</a></span><a class="code hl_function" href="lcp__array_8hpp.html#a6ea341bee8a792b9f0f91a8400b222f3">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_function" href="lcp__array_8hpp.html#a6ea341bee8a792b9f0f91a8400b222f3">LcpArray</a>(<span class="keyword">const</span> string &amp;s, <span class="keyword">const</span> vector&lt;<span class="keywordtype">int</span>&gt;&amp; sa) {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">int</span> n=s.size();</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    VI lcp(n-1),rank(n);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) rank[sa[i]]=i;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    vector&lt;<span class="keywordtype">int</span>&gt; lcp(n-1),rank(n);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) rank[sa[i]]=i;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> len=0;<span class="comment">//lcp の長さ</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span>(rank[i]==0) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">int</span> j=sa[rank[i]-1];</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
@@ -132,8 +132,7 @@ $(function(){initNavTree('lcp__array_8hpp_source.html',''); initResizable(true);
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> lcp;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 </div>
-<div class="ttc" id="alcp__array_8hpp_html_ae0ced2c7950382932078f20c8e118c5e"><div class="ttname"><a href="lcp__array_8hpp.html#ae0ced2c7950382932078f20c8e118c5e">LcpArray</a></div><div class="ttdeci">VI LcpArray(const string &amp;s, const VI &amp;sa)</div><div class="ttdoc">LCP Array</div><div class="ttdef"><b>Definition</b> <a href="#l00008">lcp_array.hpp:8</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
+<div class="ttc" id="alcp__array_8hpp_html_a6ea341bee8a792b9f0f91a8400b222f3"><div class="ttname"><a href="lcp__array_8hpp.html#a6ea341bee8a792b9f0f91a8400b222f3">LcpArray</a></div><div class="ttdeci">vector&lt; int &gt; LcpArray(const string &amp;s, const vector&lt; int &gt; &amp;sa)</div><div class="ttdoc">LCP Array</div><div class="ttdef"><b>Definition</b> <a href="#l00008">lcp_array.hpp:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

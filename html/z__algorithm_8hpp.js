@@ -1,4 +1,4 @@
 var z__algorithm_8hpp =
 [
-    [ "ZAlgorithm", "z__algorithm_8hpp.html#af550579ff39c6ff9baa4b70854b23cf5", null ]
+    [ "ZAlgorithm", "z__algorithm_8hpp.html#a81e705d1ba548f286c93756a5baec7f5", null ]
 ];

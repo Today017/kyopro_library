@@ -111,7 +111,7 @@ $(function(){initNavTree('two__sat_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 2-SAT</span></div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_two_sat.html">    5</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_two_sat.html">TwoSat</a> {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">    6</a></span>    <a class="code hl_function" href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">TwoSat</a>(<span class="keywordtype">int</span> n) { g=VVI(2*n); }</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">    6</a></span>    <a class="code hl_function" href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">TwoSat</a>(<span class="keywordtype">int</span> n) { g=vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;(2*n); }</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="comment">/// @brief 条件 `i==fi || j==fj` を追加</span></div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
@@ -119,7 +119,7 @@ $(function(){initNavTree('two__sat_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="comment">// 2i = i が true, 2i+1 = i が false</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        i=2*i+!fi,j=2*j+!fj;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="comment">// !i -&gt; j, !j -&gt; i</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        g[i^1].push_back(j),g[j^1].push_back(i);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        g[i^1].push_back(j); g[j^1].push_back(i);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
 </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
@@ -131,7 +131,7 @@ $(function(){initNavTree('two__sat_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordtype">int</span> n=g.size()/2;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        vector&lt;<span class="keywordtype">bool</span>&gt; ret(n);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">if</span>(gr[i*2]==gr[i*2+1]) <span class="keywordflow">return</span> vector&lt;<span class="keywordtype">bool</span>&gt;();</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="comment">// 2i(true) が後ろなら i は true</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            ret[i]=gr[i*2]&gt;gr[i*2+1];</div>
@@ -142,14 +142,13 @@ $(function(){initNavTree('two__sat_8hpp_source.html',''); initResizable(true); }
 </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    VVI g;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt; g;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
 </div>
 <div class="ttc" id="astruct_two_sat_html"><div class="ttname"><a href="struct_two_sat.html">TwoSat</a></div><div class="ttdoc">2-SAT</div><div class="ttdef"><b>Definition</b> <a href="#l00005">two_sat.hpp:5</a></div></div>
 <div class="ttc" id="astruct_two_sat_html_a4b6625d3218c6bd8dd83951f17e35ed4"><div class="ttname"><a href="struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4">TwoSat::TwoSat</a></div><div class="ttdeci">TwoSat(int n)</div><div class="ttdef"><b>Definition</b> <a href="#l00006">two_sat.hpp:6</a></div></div>
 <div class="ttc" id="astruct_two_sat_html_a56351416679e5a93eef4c9ff1620cfec"><div class="ttname"><a href="struct_two_sat.html#a56351416679e5a93eef4c9ff1620cfec">TwoSat::solve</a></div><div class="ttdeci">vector&lt; bool &gt; solve()</div><div class="ttdoc">2-SATを解く</div><div class="ttdef"><b>Definition</b> <a href="#l00018">two_sat.hpp:18</a></div></div>
 <div class="ttc" id="astruct_two_sat_html_a71d1b0cf574787c596fe87d26bd905df"><div class="ttname"><a href="struct_two_sat.html#a71d1b0cf574787c596fe87d26bd905df">TwoSat::add</a></div><div class="ttdeci">void add(int i, bool fi, int j, bool fj)</div><div class="ttdoc">条件 i==fi || j==fj を追加</div><div class="ttdef"><b>Definition</b> <a href="#l00009">two_sat.hpp:9</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

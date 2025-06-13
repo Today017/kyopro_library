@@ -10,5 +10,5 @@ var struct_dsu_rollback =
     [ "size", "struct_dsu_rollback.html#ade29264c1fbd5b5bfdaefe918c9d6163", null ],
     [ "same", "struct_dsu_rollback.html#a954350180a0b6956d0661419b2f764f6", null ],
     [ "count", "struct_dsu_rollback.html#ada87b7194225ccb7dccb62080069bac6", null ],
-    [ "groups", "struct_dsu_rollback.html#aad21b3281d43bc47b352d86f880b3462", null ]
+    [ "groups", "struct_dsu_rollback.html#a7955aef4830d3b5443d291e8933b6ed7", null ]
 ];

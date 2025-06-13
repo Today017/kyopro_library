@@ -1,6 +1,6 @@
 var sparse__table__2d_8hpp =
 [
-    [ "SparseTable2DInit", "sparse__table__2d_8hpp.html#a2183ec2af6331c364c4bbcbaeef2a702", null ],
+    [ "SparseTable2DInit", "sparse__table__2d_8hpp.html#a312865747de304850e6d28e8cfaa8a5b", null ],
     [ "SparseTable2DQuery", "sparse__table__2d_8hpp.html#af83ef7ffc2023be283fff7be7b6f3064", null ],
     [ "h", "sparse__table__2d_8hpp.html#a16611451551e3d15916bae723c3f59f7", null ],
     [ "w", "sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2", null ],

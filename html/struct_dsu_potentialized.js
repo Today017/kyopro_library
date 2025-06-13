@@ -10,5 +10,5 @@ var struct_dsu_potentialized =
     [ "size", "struct_dsu_potentialized.html#a072746a958e60659bf1b46a0535de056", null ],
     [ "same", "struct_dsu_potentialized.html#aabb23fd0efc64b1a349acd65504fb774", null ],
     [ "count", "struct_dsu_potentialized.html#a407010411f5318c6a00c00508f277e3d", null ],
-    [ "groups", "struct_dsu_potentialized.html#a5b4d569d8849d49bf9cda0776c67fe30", null ]
+    [ "groups", "struct_dsu_potentialized.html#a48c35faa0af5c26536c4ace5c11b1fc5", null ]
 ];

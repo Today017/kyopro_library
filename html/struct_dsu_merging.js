@@ -9,5 +9,5 @@ var struct_dsu_merging =
     [ "size", "struct_dsu_merging.html#ac70e527b5635c63da7c8923816d4e66e", null ],
     [ "same", "struct_dsu_merging.html#a2c094054f83b0f6b1adeb6dea4f1b6e8", null ],
     [ "count", "struct_dsu_merging.html#a76200780dde72296276b892b74e6da98", null ],
-    [ "groups", "struct_dsu_merging.html#a500af4d11f058f17b499842d35181b01", null ]
+    [ "groups", "struct_dsu_merging.html#a73a542ada89dfd4febc1766e43204834", null ]
 ];

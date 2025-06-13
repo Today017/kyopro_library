@@ -120,9 +120,9 @@ $(function(){initNavTree('lca__edge_8hpp_source.html',''); initResizable(true); 
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordtype">int</span> n=g.size();</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">int</span> k=1;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">while</span>((1&lt;&lt;k)&lt;n) k++;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        par=VVI(k,VI(n,-1)),dep=VI(n),dat=vector&lt;vector&lt;Type&gt;&gt;(k,vector&lt;Type&gt;(n,Monoid::id()));</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        par=vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;(k,vector&lt;<span class="keywordtype">int</span>&gt;(n,-1)),dep=vector&lt;<span class="keywordtype">int</span>&gt;(n),dat=vector&lt;vector&lt;Type&gt;&gt;(k,vector&lt;Type&gt;(n,Monoid::id()));</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        dfs(g,root,-1);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,k-1) <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(j,n) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;k-1; i++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; j++) {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            par[i+1][j]=par[i][j]==-1?-1:par[i][par[i][j]];</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            dat[i+1][j]=par[i][j]==-1?Monoid::id():Monoid::op(dat[i][j],dat[i][par[i][j]]);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        }</div>
@@ -150,12 +150,12 @@ $(function(){initNavTree('lca__edge_8hpp_source.html',''); initResizable(true); 
 </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    VVI par;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    VI dep;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt; par;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    vector&lt;<span class="keywordtype">int</span>&gt; dep;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    vector&lt;vector&lt;Type&gt;&gt; dat;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> dfs(<span class="keyword">const</span> vector&lt;vector&lt;pair&lt;<span class="keywordtype">int</span>,Type&gt;&gt;&gt;&amp; g, <span class="keywordtype">int</span> now, <span class="keywordtype">int</span> pre) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        par[0][now]=pre,dep[now]=pre==-1?0:dep[pre]+1;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [nxt,cost]:g[now]) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        par[0][now]=pre; dep[now]=(pre==-1 ? 0 : dep[pre]+1);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [nxt,cost]: g[now]) {</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">if</span>(nxt==pre) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            dat[0][nxt]=cost;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            dfs(g,nxt,now);</div>
@@ -168,7 +168,6 @@ $(function(){initNavTree('lca__edge_8hpp_source.html',''); initResizable(true); 
 <div class="ttc" id="astruct_lca_edge_html"><div class="ttname"><a href="struct_lca_edge.html">LcaEdge</a></div><div class="ttdoc">辺属性LCA</div><div class="ttdef"><b>Definition</b> <a href="#l00005">lca_edge.hpp:5</a></div></div>
 <div class="ttc" id="astruct_lca_edge_html_a4ea24fb4a2054bd7b21d40e3c66226e5"><div class="ttname"><a href="struct_lca_edge.html#a4ea24fb4a2054bd7b21d40e3c66226e5">LcaEdge::LcaEdge</a></div><div class="ttdeci">LcaEdge(const vector&lt; vector&lt; pair&lt; int, Type &gt; &gt; &gt; &amp;g, int root=0)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition</b> <a href="#l00010">lca_edge.hpp:10</a></div></div>
 <div class="ttc" id="astruct_lca_edge_html_af292e8187eca836629b2e6d9a10daf08"><div class="ttname"><a href="struct_lca_edge.html#af292e8187eca836629b2e6d9a10daf08">LcaEdge::fold</a></div><div class="ttdeci">Type fold(int u, int v)</div><div class="ttdoc">パス u-v のモノイド積を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00023">lca_edge.hpp:23</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

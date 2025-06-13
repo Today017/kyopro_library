@@ -112,12 +112,12 @@ $(function(){initNavTree('xor__convolution_8hpp_source.html',''); initResizable(
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="xor__convolution_8hpp.html#a2172face1088ecec4509579a02feedd9">    5</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="xor__convolution_8hpp.html#a2172face1088ecec4509579a02feedd9">FHT</a>(vector&lt;T&gt;&amp; a, <span class="keywordtype">bool</span> inv=<span class="keyword">false</span>) {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keywordtype">int</span> h=__lg(a.size());</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,h) <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(j,1&lt;&lt;h) <span class="keywordflow">if</span>(~j&gt;&gt;i&amp;1) {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;h; i++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;1&lt;&lt;h; j++) <span class="keywordflow">if</span>(~j&gt;&gt;i&amp;1) {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        T x=a[j],y=a[j|1&lt;&lt;i];</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        a[j]=x+y,a[j|1&lt;&lt;i]=x-y;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">if</span>(inv) a[j]/=2,a[j|1&lt;&lt;i]/=2;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">return</span> a;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
 </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
@@ -128,12 +128,11 @@ $(function(){initNavTree('xor__convolution_8hpp_source.html',''); initResizable(
 <div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="xor__convolution_8hpp.html#a791b5a55ef2207220b3bf2ce44ff80bc">   19</a></span><a class="code hl_function" href="xor__convolution_8hpp.html#a791b5a55ef2207220b3bf2ce44ff80bc">vector</a>&lt;<a class="code hl_function" href="xor__convolution_8hpp.html#a791b5a55ef2207220b3bf2ce44ff80bc">T</a>&gt; <a class="code hl_function" href="xor__convolution_8hpp.html#a791b5a55ef2207220b3bf2ce44ff80bc">XorConvolution</a>(vector&lt;T&gt; a, vector&lt;T&gt; b) {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    FHT(a); FHT(b);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,a.size()) a[i]*=b[i];</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;a.size(); i++) a[i]*=b[i];</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    FHT(a,<span class="keyword">true</span>);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">return</span> a;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
 </div>
-<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
 <div class="ttc" id="axor__convolution_8hpp_html_a2172face1088ecec4509579a02feedd9"><div class="ttname"><a href="xor__convolution_8hpp.html#a2172face1088ecec4509579a02feedd9">FHT</a></div><div class="ttdeci">void FHT(vector&lt; T &gt; &amp;a, bool inv=false)</div><div class="ttdoc">高速アダマール変換</div><div class="ttdef"><b>Definition</b> <a href="#l00005">xor_convolution.hpp:5</a></div></div>
 <div class="ttc" id="axor__convolution_8hpp_html_a791b5a55ef2207220b3bf2ce44ff80bc"><div class="ttname"><a href="xor__convolution_8hpp.html#a791b5a55ef2207220b3bf2ce44ff80bc">XorConvolution</a></div><div class="ttdeci">vector&lt; T &gt; XorConvolution(vector&lt; T &gt; a, vector&lt; T &gt; b)</div><div class="ttdoc">XOR Convolution</div><div class="ttdef"><b>Definition</b> <a href="#l00019">xor_convolution.hpp:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

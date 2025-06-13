@@ -7,6 +7,5 @@ var searchData=
   ['dsumerging_4',['DsuMerging',['../struct_dsu_merging.html',1,'']]],
   ['dsupotentialized_5',['DsuPotentialized',['../struct_dsu_potentialized.html',1,'']]],
   ['dsurollback_6',['DsuRollback',['../struct_dsu_rollback.html',1,'']]],
-  ['dynamicconnectivity_7',['DynamicConnectivity',['../struct_dynamic_connectivity.html',1,'']]],
-  ['dynamicmodint_8',['DynamicModInt',['../struct_dynamic_mod_int.html',1,'']]]
+  ['dynamicconnectivity_7',['DynamicConnectivity',['../struct_dynamic_connectivity.html',1,'']]]
 ];

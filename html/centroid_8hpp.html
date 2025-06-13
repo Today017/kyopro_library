@@ -113,13 +113,13 @@ $(function(){initNavTree('centroid_8hpp.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:a225d81ea785b9462e73f73b117911b7c" id="r_a225d81ea785b9462e73f73b117911b7c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a225d81ea785b9462e73f73b117911b7c">TreeCentroid</a> (const <a class="el" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a> &amp;g, int root, <a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> &amp;seen, <a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> &amp;sz)</td></tr>
-<tr class="memdesc:a225d81ea785b9462e73f73b117911b7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">重心分解  <br /></td></tr>
-<tr class="separator:a225d81ea785b9462e73f73b117911b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0741d80001fbc4b153ed07bc0a138ac" id="r_ac0741d80001fbc4b153ed07bc0a138ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0741d80001fbc4b153ed07bc0a138ac">TreeCentroid</a> (const vector&lt; vector&lt; int &gt; &gt; &amp;g, int root, vector&lt; int &gt; &amp;seen, vector&lt; int &gt; &amp;sz)</td></tr>
+<tr class="memdesc:ac0741d80001fbc4b153ed07bc0a138ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">重心分解  <br /></td></tr>
+<tr class="separator:ac0741d80001fbc4b153ed07bc0a138ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a225d81ea785b9462e73f73b117911b7c" name="a225d81ea785b9462e73f73b117911b7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a225d81ea785b9462e73f73b117911b7c">&#9670;&#160;</a></span>TreeCentroid()</h2>
+<a id="ac0741d80001fbc4b153ed07bc0a138ac" name="ac0741d80001fbc4b153ed07bc0a138ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0741d80001fbc4b153ed07bc0a138ac">&#9670;&#160;</a></span>TreeCentroid()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +127,7 @@ $(function(){initNavTree('centroid_8hpp.html',''); initResizable(true); });
         <tr>
           <td class="memname">int TreeCentroid </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+          <td class="paramtype">const vector&lt; vector&lt; int &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -137,12 +137,12 @@ $(function(){initNavTree('centroid_8hpp.html',''); initResizable(true); });
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>seen</em></span>, </td>
+          <td class="paramtype">vector&lt; int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>seen</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b">VI</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>sz</em></span>&#160;)</td>
+          <td class="paramtype">vector&lt; int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>sz</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -159,7 +159,7 @@ $(function(){initNavTree('centroid_8hpp.html',''); initResizable(true); });
 <div class="line">vector&lt;bool&gt; seen(N);</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> centroid_decomposition = [&amp;](<span class="keyword">auto</span> self, <span class="keywordtype">int</span> root) -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line">    <span class="keywordtype">int</span> centroid = <a class="code hl_function" href="#a225d81ea785b9462e73f73b117911b7c">TreeCentroid</a>(g, root, seen, sz);</div>
+<div class="line">    <span class="keywordtype">int</span> centroid = <a class="code hl_function" href="#ac0741d80001fbc4b153ed07bc0a138ac">TreeCentroid</a>(g, root, seen, sz);</div>
 <div class="line">    seen[centroid] = <span class="keyword">true</span>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// ここに処理を書く</span></div>
@@ -170,7 +170,7 @@ $(function(){initNavTree('centroid_8hpp.html',''); initResizable(true); });
 <div class="line">    }</div>
 <div class="line">};</div>
 <div class="line">centroid_decomposition(centroid_decomposition, 0);</div>
-<div class="ttc" id="acentroid_8hpp_html_a225d81ea785b9462e73f73b117911b7c"><div class="ttname"><a href="#a225d81ea785b9462e73f73b117911b7c">TreeCentroid</a></div><div class="ttdeci">int TreeCentroid(const VVI &amp;g, int root, VI &amp;seen, VI &amp;sz)</div><div class="ttdoc">重心分解</div><div class="ttdef"><b>Definition</b> <a href="centroid_8hpp_source.html#l00027">centroid.hpp:27</a></div></div>
+<div class="ttc" id="acentroid_8hpp_html_ac0741d80001fbc4b153ed07bc0a138ac"><div class="ttname"><a href="#ac0741d80001fbc4b153ed07bc0a138ac">TreeCentroid</a></div><div class="ttdeci">int TreeCentroid(const vector&lt; vector&lt; int &gt; &gt; &amp;g, int root, vector&lt; int &gt; &amp;seen, vector&lt; int &gt; &amp;sz)</div><div class="ttdoc">重心分解</div><div class="ttdef"><b>Definition</b> <a href="centroid_8hpp_source.html#l00027">centroid.hpp:27</a></div></div>
 </div><!-- fragment --> 
 <p class="definition"> <a class="el" href="centroid_8hpp_source.html">centroid.hpp</a> の <a class="el" href="centroid_8hpp_source.html#l00027">27</a> 行目に定義があります。</p>
 

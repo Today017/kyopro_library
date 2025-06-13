@@ -112,9 +112,9 @@ $(function(){initNavTree('euler__tour_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @details 部分木のクエリを列のに対する区間クエリとして扱えるようになる</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @details 例えば、頂点 v の部分木はオイラーツアー後の列の区間 `[in[v], out[v])` に対応する</span></div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="euler__tour_8hpp.html#abc7c32c2db93c045641d59915090307c">    7</a></span><a class="code hl_function" href="euler__tour_8hpp.html#abc7c32c2db93c045641d59915090307c">tuple</a>&lt;<a class="code hl_function" href="euler__tour_8hpp.html#abc7c32c2db93c045641d59915090307c">VI</a>,<a class="code hl_function" href="euler__tour_8hpp.html#abc7c32c2db93c045641d59915090307c">VI</a>,<a class="code hl_function" href="euler__tour_8hpp.html#abc7c32c2db93c045641d59915090307c">VI</a>,<a class="code hl_function" href="euler__tour_8hpp.html#abc7c32c2db93c045641d59915090307c">VI</a>&gt; <a class="code hl_function" href="euler__tour_8hpp.html#abc7c32c2db93c045641d59915090307c">EulerTour</a>(<span class="keyword">const</span> VVI&amp; g) {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="euler__tour_8hpp.html#ab5e40ace56fa964c4355fef656894348">    7</a></span>tuple&lt;vector&lt;<span class="keywordtype">int</span>&gt;,vector&lt;<span class="keywordtype">int</span>&gt;,vector&lt;<span class="keywordtype">int</span>&gt;,vector&lt;<span class="keywordtype">int</span>&gt;&gt; EulerTour(<span class="keyword">const</span> vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;&amp; g) {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">int</span> n=g.size();</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    VI tour,depth(n),in(n),out(n);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    vector&lt;<span class="keywordtype">int</span>&gt; tour,depth(n),in(n),out(n);</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">int</span> time=0;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">auto</span> dfs=[&amp;](<span class="keyword">auto</span>&amp;&amp; dfs, <span class="keywordtype">int</span> now, <span class="keywordtype">int</span> pre, <span class="keywordtype">int</span> d)-&gt; <span class="keywordtype">void</span> {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        depth[now]=d;</div>
@@ -128,7 +128,6 @@ $(function(){initNavTree('euler__tour_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span> {tour,depth,in,out};</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
 </div>
-<div class="ttc" id="aeuler__tour_8hpp_html_abc7c32c2db93c045641d59915090307c"><div class="ttname"><a href="euler__tour_8hpp.html#abc7c32c2db93c045641d59915090307c">EulerTour</a></div><div class="ttdeci">tuple&lt; VI, VI, VI, VI &gt; EulerTour(const VVI &amp;g)</div><div class="ttdoc">木 g をオイラーツアーする</div><div class="ttdef"><b>Definition</b> <a href="#l00007">euler_tour.hpp:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

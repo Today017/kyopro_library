@@ -1,4 +1,4 @@
 var totient__table_8hpp =
 [
-    [ "TotientTable", "totient__table_8hpp.html#a0914bcd1a8e4f43787323795904e6d40", null ]
+    [ "TotientTable", "totient__table_8hpp.html#ae6b1647dc3f81700983b731c4648c017", null ]
 ];

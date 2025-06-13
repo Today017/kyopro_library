@@ -11,5 +11,6 @@ var searchData=
   ['modint_8',['ModInt',['../struct_mod_int.html',1,'']]],
   ['modint_3c_201000000007_20_3e_9',['ModInt&lt; 1000000007 &gt;',['../struct_mod_int.html',1,'']]],
   ['modint_3c_20998244353_20_3e_10',['ModInt&lt; 998244353 &gt;',['../struct_mod_int.html',1,'']]],
-  ['multiset_11',['MultiSet',['../struct_multi_set.html',1,'']]]
+  ['modintdynamic_11',['ModIntDynamic',['../struct_mod_int_dynamic.html',1,'']]],
+  ['multiset_12',['MultiSet',['../struct_multi_set.html',1,'']]]
 ];

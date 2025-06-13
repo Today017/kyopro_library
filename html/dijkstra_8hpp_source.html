@@ -111,9 +111,9 @@ $(function(){initNavTree('dijkstra_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief グラフ g に対し、頂点 start から各頂点までの最短距離を求める</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @note O(E log V)</span></div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="dijkstra_8hpp.html#acfdfb589a639d25a8d7ec3d0e9613925">    6</a></span><a class="code hl_function" href="dijkstra_8hpp.html#acfdfb589a639d25a8d7ec3d0e9613925">VL</a> <a class="code hl_function" href="dijkstra_8hpp.html#acfdfb589a639d25a8d7ec3d0e9613925">Dijkstra</a>(<span class="keyword">const</span> WG&amp; g, <span class="keywordtype">int</span> start=0) {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="dijkstra_8hpp.html#a4e0e194e2b19ea300065b537c8cd3ce8">    6</a></span><a class="code hl_function" href="dijkstra_8hpp.html#a4e0e194e2b19ea300065b537c8cd3ce8">vector</a>&lt;<a class="code hl_function" href="dijkstra_8hpp.html#a4e0e194e2b19ea300065b537c8cd3ce8">ll</a>&gt; <a class="code hl_function" href="dijkstra_8hpp.html#a4e0e194e2b19ea300065b537c8cd3ce8">Dijkstra</a>(<span class="keyword">const</span> vector&lt;vector&lt;pair&lt;<span class="keywordtype">int</span>,ll&gt;&gt;&gt;&amp; g, <span class="keywordtype">int</span> start=0) {</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordtype">int</span> n=g.size();</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    VL ret(n,<a class="code hl_variable" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>); ret[start]=0;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    vector&lt;ll&gt; ret(n,INFL); ret[start]=0;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    rpriority_queue&lt;pair&lt;ll,<span class="keywordtype">int</span>&gt;&gt; pq; pq.push({0,start});</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">while</span>(!pq.empty()) {</div>
@@ -125,8 +125,7 @@ $(function(){initNavTree('dijkstra_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
 </div>
-<div class="ttc" id="adijkstra_8hpp_html_acfdfb589a639d25a8d7ec3d0e9613925"><div class="ttname"><a href="dijkstra_8hpp.html#acfdfb589a639d25a8d7ec3d0e9613925">Dijkstra</a></div><div class="ttdeci">VL Dijkstra(const WG &amp;g, int start=0)</div><div class="ttdoc">ダイクストラ法</div><div class="ttdef"><b>Definition</b> <a href="#l00006">dijkstra.hpp:6</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a1f713edb7a826e3710159658d6ef9815"><div class="ttname"><a href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></div><div class="ttdeci">const ll INFL</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00015">template.hpp:15</a></div></div>
+<div class="ttc" id="adijkstra_8hpp_html_a4e0e194e2b19ea300065b537c8cd3ce8"><div class="ttname"><a href="dijkstra_8hpp.html#a4e0e194e2b19ea300065b537c8cd3ce8">Dijkstra</a></div><div class="ttdeci">vector&lt; ll &gt; Dijkstra(const vector&lt; vector&lt; pair&lt; int, ll &gt; &gt; &gt; &amp;g, int start=0)</div><div class="ttdoc">ダイクストラ法</div><div class="ttdef"><b>Definition</b> <a href="#l00006">dijkstra.hpp:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

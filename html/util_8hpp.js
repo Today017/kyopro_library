@@ -1,6 +1,6 @@
 var util_8hpp =
 [
-    [ "StringToVi", "util_8hpp.html#a8335b97f00ea079309901befee2792cc", null ],
-    [ "ReadString", "util_8hpp.html#aab43ef1e519912f613b571d595905948", null ],
-    [ "ViToString", "util_8hpp.html#ac8e46191ceee43d4c8626bdf6133fc6c", null ]
+    [ "StringTovector< int >", "util_8hpp.html#a88f48cffbaef2f4a9ddd6e1c1ed28f71", null ],
+    [ "ReadString", "util_8hpp.html#a17c49b395eb392127b72701bcd54a493", null ],
+    [ "ToString", "util_8hpp.html#aacaa959eb46b667b6344ba2ed9e3124b", null ]
 ];

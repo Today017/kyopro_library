@@ -114,7 +114,7 @@ $(function(){initNavTree('kth__root_8hpp_source.html',''); initResizable(true); 
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keywordflow">if</span>(k==1) <span class="keywordflow">return</span> n;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordflow">return</span> (ll)BinarySearch&lt;ll&gt;(0,4e10,[&amp;](ll x) {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        lll tmp=1;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,k) {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;k; i++) {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>            <span class="keywordflow">if</span>(tmp*x&gt;n) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            tmp*=x;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        }</div>
@@ -123,7 +123,6 @@ $(function(){initNavTree('kth__root_8hpp_source.html',''); initResizable(true); 
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
 </div>
 <div class="ttc" id="akth__root_8hpp_html_a5b404451d30c6da29b779e653a4c9823"><div class="ttname"><a href="kth__root_8hpp.html#a5b404451d30c6da29b779e653a4c9823">KthRoot</a></div><div class="ttdeci">ll KthRoot(ll n, ll k=2)</div><div class="ttdoc">n　の k 乗根の切り捨てを返す</div><div class="ttdef"><b>Definition</b> <a href="#l00005">kth_root.hpp:5</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

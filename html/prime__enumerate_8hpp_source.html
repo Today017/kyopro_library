@@ -112,10 +112,10 @@ $(function(){initNavTree('prime__enumerate_8hpp_source.html',''); initResizable(
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @details n 以下の素数の配列を返す</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @note O(n log(log(n)))</span></div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="prime__enumerate_8hpp.html#acbe1d7419dfe173d994d7523535bc1b0">    7</a></span><a class="code hl_function" href="prime__enumerate_8hpp.html#acbe1d7419dfe173d994d7523535bc1b0">VI</a> <a class="code hl_function" href="prime__enumerate_8hpp.html#acbe1d7419dfe173d994d7523535bc1b0">PrimeEnumerate</a>(<span class="keywordtype">int</span> n) {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    VI prime,is_prime(n+1,<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="prime__enumerate_8hpp.html#a2c48898d8efb7bb62a7b53012fa72c8e">    7</a></span><a class="code hl_function" href="prime__enumerate_8hpp.html#a2c48898d8efb7bb62a7b53012fa72c8e">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_function" href="prime__enumerate_8hpp.html#a2c48898d8efb7bb62a7b53012fa72c8e">PrimeEnumerate</a>(<span class="keywordtype">int</span> n) {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    vector&lt;<span class="keywordtype">int</span>&gt; prime,is_prime(n+1,<span class="keyword">true</span>);</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    is_prime[0]=is_prime[1]=<span class="keyword">false</span>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_define" href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(i,2,n+1) {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=2; i&lt;=n; i++) {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordflow">if</span>(is_prime[i]) {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            prime.push_back(i);</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=2*i; j&lt;=n; j+=i) is_prime[j]=<span class="keyword">false</span>;</div>
@@ -124,8 +124,7 @@ $(function(){initNavTree('prime__enumerate_8hpp_source.html',''); initResizable(
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">return</span> prime;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
 </div>
-<div class="ttc" id="aprime__enumerate_8hpp_html_acbe1d7419dfe173d994d7523535bc1b0"><div class="ttname"><a href="prime__enumerate_8hpp.html#acbe1d7419dfe173d994d7523535bc1b0">PrimeEnumerate</a></div><div class="ttdeci">VI PrimeEnumerate(int n)</div><div class="ttdoc">素数列挙</div><div class="ttdef"><b>Definition</b> <a href="#l00007">prime_enumerate.hpp:7</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a9af2de86c4be813e9c60ede438bb4cd7"><div class="ttname"><a href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a></div><div class="ttdeci">#define FOR(i, a, b)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00007">template.hpp:7</a></div></div>
+<div class="ttc" id="aprime__enumerate_8hpp_html_a2c48898d8efb7bb62a7b53012fa72c8e"><div class="ttname"><a href="prime__enumerate_8hpp.html#a2c48898d8efb7bb62a7b53012fa72c8e">PrimeEnumerate</a></div><div class="ttdeci">vector&lt; int &gt; PrimeEnumerate(int n)</div><div class="ttdoc">素数列挙</div><div class="ttdef"><b>Definition</b> <a href="#l00007">prime_enumerate.hpp:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

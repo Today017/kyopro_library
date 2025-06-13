@@ -7,5 +7,5 @@ var struct_d_s_u =
     [ "size", "struct_d_s_u.html#ae15ca5c12804826f13632d23443e36e8", null ],
     [ "same", "struct_d_s_u.html#ad3a04e676273604d56db0344795cd693", null ],
     [ "count", "struct_d_s_u.html#a042d4bb179819d69d53f2b96e23b099e", null ],
-    [ "groups", "struct_d_s_u.html#a1c5c3d071acd50cbe58a86c38a6a3da7", null ]
+    [ "groups", "struct_d_s_u.html#a02f80e51a2682fc4465030afd4ae13f0", null ]
 ];

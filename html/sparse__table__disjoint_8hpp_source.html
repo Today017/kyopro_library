@@ -122,7 +122,7 @@ $(function(){initNavTree('sparse__table__disjoint_8hpp_source.html',''); initRes
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        n=v.size();</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        dat.assign(__lg(n)+1,vector&lt;Type&gt;(n));</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        dat[0]=v;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_define" href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(i,1,dat.size()) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;dat.size(); i++) {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <span class="keywordtype">int</span> w=1&lt;&lt;i;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; j+=w&lt;&lt;1) {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                <span class="keywordtype">int</span> t=min(j+w,n);</div>
@@ -164,7 +164,6 @@ $(function(){initNavTree('sparse__table__disjoint_8hpp_source.html',''); initRes
 <div class="ttc" id="astruct_sparse_table_disjoint_html_aa984a0d78a9e15251a151cbb8953d10e"><div class="ttname"><a href="struct_sparse_table_disjoint.html#aa984a0d78a9e15251a151cbb8953d10e">SparseTableDisjoint::fold</a></div><div class="ttdeci">Type fold(int l, int r)</div><div class="ttdoc">区間 [l, r) の半群積を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00031">sparse_table_disjoint.hpp:31</a></div></div>
 <div class="ttc" id="astruct_sparse_table_disjoint_html_abace0a4798ea72d6d063b68b4b218ff1"><div class="ttname"><a href="struct_sparse_table_disjoint.html#abace0a4798ea72d6d063b68b4b218ff1">SparseTableDisjoint::operator[]</a></div><div class="ttdeci">Type operator[](int i) const</div><div class="ttdoc">i 番目の要素を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00039">sparse_table_disjoint.hpp:39</a></div></div>
 <div class="ttc" id="astruct_sparse_table_disjoint_html_adc3bde9f28ff2430266ca1536c1afd25"><div class="ttname"><a href="struct_sparse_table_disjoint.html#adc3bde9f28ff2430266ca1536c1afd25">SparseTableDisjoint::SparseTableDisjoint</a></div><div class="ttdeci">SparseTableDisjoint()=default</div></div>
-<div class="ttc" id="atemplate_8hpp_html_a9af2de86c4be813e9c60ede438bb4cd7"><div class="ttname"><a href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a></div><div class="ttdeci">#define FOR(i, a, b)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00007">template.hpp:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

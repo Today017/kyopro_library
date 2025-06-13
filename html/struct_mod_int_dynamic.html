@@ -1,0 +1,796 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: ModIntDynamic 構造体</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('struct_mod_int_dynamic.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="#pub-static-attribs">静的公開変数類</a> &#124;
+<a href="#friends">フレンド</a> &#124;
+<a href="struct_mod_int_dynamic-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">ModIntDynamic 構造体</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>実行時に mod を変更できる <a class="el" href="struct_mod_int.html" title="ModInt">ModInt</a>  
+ <a href="#details">[詳解]</a></p>
+
+<p><code>#include &quot;<a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a>&quot;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a6fba9cf237b1ea6d57a40fefb2115470" id="r_a6fba9cf237b1ea6d57a40fefb2115470"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fba9cf237b1ea6d57a40fefb2115470">ModIntDynamic</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> x=0)</td></tr>
+<tr class="separator:a6fba9cf237b1ea6d57a40fefb2115470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab15aa4f5baf1bbfb48eebf12c0d4586a" id="r_ab15aa4f5baf1bbfb48eebf12c0d4586a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab15aa4f5baf1bbfb48eebf12c0d4586a">operator-</a> () const</td></tr>
+<tr class="separator:ab15aa4f5baf1bbfb48eebf12c0d4586a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a618abe4c01c317a690919afcee62fe9e" id="r_a618abe4c01c317a690919afcee62fe9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a618abe4c01c317a690919afcee62fe9e">operator+</a> () const</td></tr>
+<tr class="separator:a618abe4c01c317a690919afcee62fe9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2967ee91cb78890533d8397b7bc6a9d" id="r_ab2967ee91cb78890533d8397b7bc6a9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2967ee91cb78890533d8397b7bc6a9d">operator+=</a> (const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;other)</td></tr>
+<tr class="separator:ab2967ee91cb78890533d8397b7bc6a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1541738c92982458409984fc02d76c43" id="r_a1541738c92982458409984fc02d76c43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1541738c92982458409984fc02d76c43">operator-=</a> (const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;other)</td></tr>
+<tr class="separator:a1541738c92982458409984fc02d76c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a594e88bb139229a5fefca8230fa0b905" id="r_a594e88bb139229a5fefca8230fa0b905"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a594e88bb139229a5fefca8230fa0b905">operator*=</a> (const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> other)</td></tr>
+<tr class="separator:a594e88bb139229a5fefca8230fa0b905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7ae6880ba6f79ea211366ea69c0e769" id="r_ad7ae6880ba6f79ea211366ea69c0e769"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7ae6880ba6f79ea211366ea69c0e769">operator/=</a> (<a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> other)</td></tr>
+<tr class="separator:ad7ae6880ba6f79ea211366ea69c0e769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82d3fd4935154f6101aebe66aa581610" id="r_a82d3fd4935154f6101aebe66aa581610"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82d3fd4935154f6101aebe66aa581610">operator+</a> (const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;other) const</td></tr>
+<tr class="separator:a82d3fd4935154f6101aebe66aa581610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a8135d8d1110e746ce8a17bb53e3c5" id="r_a93a8135d8d1110e746ce8a17bb53e3c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93a8135d8d1110e746ce8a17bb53e3c5">operator-</a> (const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;other) const</td></tr>
+<tr class="separator:a93a8135d8d1110e746ce8a17bb53e3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85411bb243565bfb0f3f03bea9b44e75" id="r_a85411bb243565bfb0f3f03bea9b44e75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85411bb243565bfb0f3f03bea9b44e75">operator*</a> (const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;other) const</td></tr>
+<tr class="separator:a85411bb243565bfb0f3f03bea9b44e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adea4eaf44aa2e35489ea3bd830807091" id="r_adea4eaf44aa2e35489ea3bd830807091"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adea4eaf44aa2e35489ea3bd830807091">operator/</a> (const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;other) const</td></tr>
+<tr class="separator:adea4eaf44aa2e35489ea3bd830807091"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8db76526aacca836f703254dbc208cf9" id="r_a8db76526aacca836f703254dbc208cf9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8db76526aacca836f703254dbc208cf9">pow</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> x) const</td></tr>
+<tr class="separator:a8db76526aacca836f703254dbc208cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4cb57fa20c089037b8918cfa13e30f4" id="r_ab4cb57fa20c089037b8918cfa13e30f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4cb57fa20c089037b8918cfa13e30f4">inv</a> () const</td></tr>
+<tr class="separator:ab4cb57fa20c089037b8918cfa13e30f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76e30790dfc568ec1fcd4f9a1be805c1" id="r_a76e30790dfc568ec1fcd4f9a1be805c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76e30790dfc568ec1fcd4f9a1be805c1">operator==</a> (const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;other) const</td></tr>
+<tr class="separator:a76e30790dfc568ec1fcd4f9a1be805c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa9ddf98f777b1354af25dd664e9f825" id="r_afa9ddf98f777b1354af25dd664e9f825"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa9ddf98f777b1354af25dd664e9f825">operator!=</a> (const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;other) const</td></tr>
+<tr class="separator:afa9ddf98f777b1354af25dd664e9f825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:aa56e8554aba1b04cf999c12748a04549" id="r_aa56e8554aba1b04cf999c12748a04549"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa56e8554aba1b04cf999c12748a04549">set_mod</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> x)</td></tr>
+<tr class="separator:aa56e8554aba1b04cf999c12748a04549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5fef5e27ce43decb3c2ff928f146af" id="r_a6c5fef5e27ce43decb3c2ff928f146af"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c5fef5e27ce43decb3c2ff928f146af">get_mod</a> ()</td></tr>
+<tr class="separator:a6c5fef5e27ce43decb3c2ff928f146af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a5c35a975a4cb036416bc8fcce29f5904" id="r_a5c35a975a4cb036416bc8fcce29f5904"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c35a975a4cb036416bc8fcce29f5904">value</a></td></tr>
+<tr class="separator:a5c35a975a4cb036416bc8fcce29f5904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+静的公開変数類</h2></td></tr>
+<tr class="memitem:a46b27e22318d72e8f6b8084b4b28186d" id="r_a46b27e22318d72e8f6b8084b4b28186d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46b27e22318d72e8f6b8084b4b28186d">mod</a> =998244353</td></tr>
+<tr class="separator:a46b27e22318d72e8f6b8084b4b28186d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+フレンド</h2></td></tr>
+<tr class="memitem:a4df4c06832c82a16b9ea3d9ca41925c7" id="r_a4df4c06832c82a16b9ea3d9ca41925c7"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4df4c06832c82a16b9ea3d9ca41925c7">operator&lt;&lt;</a> (ostream &amp;os, const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;x)</td></tr>
+<tr class="separator:a4df4c06832c82a16b9ea3d9ca41925c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69437e1ca8b52f8136286846202165be" id="r_a69437e1ca8b52f8136286846202165be"><td class="memItemLeft" align="right" valign="top">istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69437e1ca8b52f8136286846202165be">operator&gt;&gt;</a> (istream &amp;is, <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;x)</td></tr>
+<tr class="separator:a69437e1ca8b52f8136286846202165be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>実行時に mod を変更できる <a class="el" href="struct_mod_int.html" title="ModInt">ModInt</a> </p>
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00004">4</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a6fba9cf237b1ea6d57a40fefb2115470" name="a6fba9cf237b1ea6d57a40fefb2115470"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fba9cf237b1ea6d57a40fefb2115470">&#9670;&#160;</a></span>ModIntDynamic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ModIntDynamic::ModIntDynamic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00009">9</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00006">mod</a>, <a class="el" href="modint__dynamic_8hpp_source.html#l00005">value</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aa56e8554aba1b04cf999c12748a04549" name="aa56e8554aba1b04cf999c12748a04549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa56e8554aba1b04cf999c12748a04549">&#9670;&#160;</a></span>set_mod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ModIntDynamic::set_mod </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00006">mod</a>.</p>
+
+</div>
+</div>
+<a id="a6c5fef5e27ce43decb3c2ff928f146af" name="a6c5fef5e27ce43decb3c2ff928f146af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c5fef5e27ce43decb3c2ff928f146af">&#9670;&#160;</a></span>get_mod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ModIntDynamic::get_mod </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00008">8</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00006">mod</a>.</p>
+
+</div>
+</div>
+<a id="ab15aa4f5baf1bbfb48eebf12c0d4586a" name="ab15aa4f5baf1bbfb48eebf12c0d4586a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab15aa4f5baf1bbfb48eebf12c0d4586a">&#9670;&#160;</a></span>operator-() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> ModIntDynamic::operator- </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00009">ModIntDynamic()</a>, <a class="el" href="modint__dynamic_8hpp_source.html#l00005">value</a>.</p>
+
+</div>
+</div>
+<a id="a618abe4c01c317a690919afcee62fe9e" name="a618abe4c01c317a690919afcee62fe9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a618abe4c01c317a690919afcee62fe9e">&#9670;&#160;</a></span>operator+() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> ModIntDynamic::operator+ </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab2967ee91cb78890533d8397b7bc6a9d" name="ab2967ee91cb78890533d8397b7bc6a9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2967ee91cb78890533d8397b7bc6a9d">&#9670;&#160;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp; ModIntDynamic::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00015">15</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00006">mod</a>, <a class="el" href="modint__dynamic_8hpp_source.html#l00005">value</a>.</p>
+
+</div>
+</div>
+<a id="a1541738c92982458409984fc02d76c43" name="a1541738c92982458409984fc02d76c43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1541738c92982458409984fc02d76c43">&#9670;&#160;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp; ModIntDynamic::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00020">20</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00006">mod</a>, <a class="el" href="modint__dynamic_8hpp_source.html#l00005">value</a>.</p>
+
+</div>
+</div>
+<a id="a594e88bb139229a5fefca8230fa0b905" name="a594e88bb139229a5fefca8230fa0b905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a594e88bb139229a5fefca8230fa0b905">&#9670;&#160;</a></span>operator*=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp; ModIntDynamic::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a></td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00025">25</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00006">mod</a>, <a class="el" href="modint__dynamic_8hpp_source.html#l00005">value</a>.</p>
+
+</div>
+</div>
+<a id="ad7ae6880ba6f79ea211366ea69c0e769" name="ad7ae6880ba6f79ea211366ea69c0e769"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7ae6880ba6f79ea211366ea69c0e769">&#9670;&#160;</a></span>operator/=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp; ModIntDynamic::operator/= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a></td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00029">29</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00046">inv()</a>, <a class="el" href="modint__dynamic_8hpp_source.html#l00025">operator*=()</a>.</p>
+
+</div>
+</div>
+<a id="a82d3fd4935154f6101aebe66aa581610" name="a82d3fd4935154f6101aebe66aa581610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82d3fd4935154f6101aebe66aa581610">&#9670;&#160;</a></span>operator+() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> ModIntDynamic::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00033">33</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00015">operator+=()</a>.</p>
+
+</div>
+</div>
+<a id="a93a8135d8d1110e746ce8a17bb53e3c5" name="a93a8135d8d1110e746ce8a17bb53e3c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93a8135d8d1110e746ce8a17bb53e3c5">&#9670;&#160;</a></span>operator-() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> ModIntDynamic::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00020">operator-=()</a>.</p>
+
+</div>
+</div>
+<a id="a85411bb243565bfb0f3f03bea9b44e75" name="a85411bb243565bfb0f3f03bea9b44e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85411bb243565bfb0f3f03bea9b44e75">&#9670;&#160;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> ModIntDynamic::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00025">operator*=()</a>.</p>
+
+</div>
+</div>
+<a id="adea4eaf44aa2e35489ea3bd830807091" name="adea4eaf44aa2e35489ea3bd830807091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adea4eaf44aa2e35489ea3bd830807091">&#9670;&#160;</a></span>operator/()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> ModIntDynamic::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00029">operator/=()</a>.</p>
+
+</div>
+</div>
+<a id="a8db76526aacca836f703254dbc208cf9" name="a8db76526aacca836f703254dbc208cf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8db76526aacca836f703254dbc208cf9">&#9670;&#160;</a></span>pow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> ModIntDynamic::pow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00009">ModIntDynamic()</a>, <a class="el" href="modint__dynamic_8hpp_source.html#l00025">operator*=()</a>, <a class="el" href="modint__dynamic_8hpp_source.html#l00005">value</a>.</p>
+
+</div>
+</div>
+<a id="ab4cb57fa20c089037b8918cfa13e30f4" name="ab4cb57fa20c089037b8918cfa13e30f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4cb57fa20c089037b8918cfa13e30f4">&#9670;&#160;</a></span>inv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> ModIntDynamic::inv </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00046">46</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00006">mod</a>, <a class="el" href="modint__dynamic_8hpp_source.html#l00037">pow()</a>.</p>
+
+</div>
+</div>
+<a id="a76e30790dfc568ec1fcd4f9a1be805c1" name="a76e30790dfc568ec1fcd4f9a1be805c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76e30790dfc568ec1fcd4f9a1be805c1">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ModIntDynamic::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00047">47</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00005">value</a>.</p>
+
+</div>
+</div>
+<a id="afa9ddf98f777b1354af25dd664e9f825" name="afa9ddf98f777b1354af25dd664e9f825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa9ddf98f777b1354af25dd664e9f825">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ModIntDynamic::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00005">value</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">フレンドと関連関数の詳解</h2>
+<a id="a4df4c06832c82a16b9ea3d9ca41925c7" name="a4df4c06832c82a16b9ea3d9ca41925c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4df4c06832c82a16b9ea3d9ca41925c7">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00005">value</a>.</p>
+
+</div>
+</div>
+<a id="a69437e1ca8b52f8136286846202165be" name="a69437e1ca8b52f8136286846202165be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69437e1ca8b52f8136286846202165be">&#9670;&#160;</a></span>operator&gt;&gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">istream &amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">istream &amp;</td>          <td class="paramname"><span class="paramname"><em>is</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="modint__dynamic_8hpp_source.html#l00009">ModIntDynamic()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a5c35a975a4cb036416bc8fcce29f5904" name="a5c35a975a4cb036416bc8fcce29f5904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c35a975a4cb036416bc8fcce29f5904">&#9670;&#160;</a></span>value</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ModIntDynamic::value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00005">5</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a46b27e22318d72e8f6b8084b4b28186d" name="a46b27e22318d72e8f6b8084b4b28186d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46b27e22318d72e8f6b8084b4b28186d">&#9670;&#160;</a></span>mod</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> ModIntDynamic::mod =998244353</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a> の <a class="el" href="modint__dynamic_8hpp_source.html#l00006">6</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>mod/<a class="el" href="modint__dynamic_8hpp_source.html">modint_dynamic.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_mod_int_dynamic.html">ModIntDynamic</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

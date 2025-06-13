@@ -116,8 +116,8 @@ $(function(){initNavTree('dsu_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="comment">/// @brief コンストラクタ</span></div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#abbae2d8b88cba33b50386cbbf229685a">    9</a></span>    <a class="code hl_function" href="struct_d_s_u.html#abbae2d8b88cba33b50386cbbf229685a">DSU</a>(<span class="keywordtype">int</span> n) {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        par=VI(n); iota(<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(par),0);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        sz=VI(n,1);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        par.resize(n); iota(par.begin(),par.end(),0);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        sz=vector&lt;<span class="keywordtype">int</span>&gt;(n,1);</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        forest_count=n;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
 </div>
@@ -160,31 +160,29 @@ $(function(){initNavTree('dsu_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">/// @brief 各頂点を連結成分に分解する</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">/// @note O(N)</span></div>
 <div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#a1c5c3d071acd50cbe58a86c38a6a3da7">   48</a></span>    <a class="code hl_function" href="struct_d_s_u.html#a1c5c3d071acd50cbe58a86c38a6a3da7">VVI</a> <a class="code hl_function" href="struct_d_s_u.html#a1c5c3d071acd50cbe58a86c38a6a3da7">groups</a>() {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#a02f80e51a2682fc4465030afd4ae13f0">   48</a></span>    <a class="code hl_function" href="struct_d_s_u.html#a02f80e51a2682fc4465030afd4ae13f0">vector</a>&lt;<a class="code hl_function" href="struct_d_s_u.html#a02f80e51a2682fc4465030afd4ae13f0">vector</a>&lt;<span class="keywordtype">int</span>&gt;&gt; <a class="code hl_function" href="struct_d_s_u.html#a02f80e51a2682fc4465030afd4ae13f0">groups</a>() {</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">int</span> n=par.size();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        VVI ret(n);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) ret[<a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">find</a><a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">(</a>i<a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">)</a>].push_back(i);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        ret.erase(remove_if(<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(ret),[&amp;](<span class="keyword">const</span> VI&amp; v) { <span class="keywordflow">return</span> v.empty(); }),ret.end());</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt; ret(n);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) ret[find(i)].push_back(i);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        ret.erase(remove_if(ret.begin(),ret.end(),[&amp;](<span class="keyword">const</span> vector&lt;<span class="keywordtype">int</span>&gt;&amp; v) { <span class="keywordflow">return</span> v.empty(); }),ret.end());</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
 </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    VI par,sz;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    vector&lt;<span class="keywordtype">int</span>&gt; par,sz;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">int</span> forest_count;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
 </div>
 <div class="ttc" id="astruct_d_s_u_html"><div class="ttname"><a href="struct_d_s_u.html">DSU</a></div><div class="ttdoc">Disjoint Set Union</div><div class="ttdef"><b>Definition</b> <a href="#l00005">dsu.hpp:5</a></div></div>
+<div class="ttc" id="astruct_d_s_u_html_a02f80e51a2682fc4465030afd4ae13f0"><div class="ttname"><a href="struct_d_s_u.html#a02f80e51a2682fc4465030afd4ae13f0">DSU::groups</a></div><div class="ttdeci">vector&lt; vector&lt; int &gt; &gt; groups()</div><div class="ttdoc">各頂点を連結成分に分解する</div><div class="ttdef"><b>Definition</b> <a href="#l00048">dsu.hpp:48</a></div></div>
 <div class="ttc" id="astruct_d_s_u_html_a042d4bb179819d69d53f2b96e23b099e"><div class="ttname"><a href="struct_d_s_u.html#a042d4bb179819d69d53f2b96e23b099e">DSU::count</a></div><div class="ttdeci">int count()</div><div class="ttdoc">連結成分の個数を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00044">dsu.hpp:44</a></div></div>
-<div class="ttc" id="astruct_d_s_u_html_a1c5c3d071acd50cbe58a86c38a6a3da7"><div class="ttname"><a href="struct_d_s_u.html#a1c5c3d071acd50cbe58a86c38a6a3da7">DSU::groups</a></div><div class="ttdeci">VVI groups()</div><div class="ttdoc">各頂点を連結成分に分解する</div><div class="ttdef"><b>Definition</b> <a href="#l00048">dsu.hpp:48</a></div></div>
 <div class="ttc" id="astruct_d_s_u_html_a2037e5dac19248a4e5f2f70133fdea12"><div class="ttname"><a href="struct_d_s_u.html#a2037e5dac19248a4e5f2f70133fdea12">DSU::DSU</a></div><div class="ttdeci">DSU()=default</div></div>
 <div class="ttc" id="astruct_d_s_u_html_a70d8917e08a86dd49446ce8263f675a3"><div class="ttname"><a href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">DSU::find</a></div><div class="ttdeci">int find(int x)</div><div class="ttdoc">頂点 x を含む連結成分の代表元を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00017">dsu.hpp:17</a></div></div>
 <div class="ttc" id="astruct_d_s_u_html_a81af0a8861251cc70ae491c6249e672d"><div class="ttname"><a href="struct_d_s_u.html#a81af0a8861251cc70ae491c6249e672d">DSU::merge</a></div><div class="ttdeci">bool merge(int x, int y)</div><div class="ttdoc">頂点 x と y を連結し、true を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00025">dsu.hpp:25</a></div></div>
 <div class="ttc" id="astruct_d_s_u_html_abbae2d8b88cba33b50386cbbf229685a"><div class="ttname"><a href="struct_d_s_u.html#abbae2d8b88cba33b50386cbbf229685a">DSU::DSU</a></div><div class="ttdeci">DSU(int n)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition</b> <a href="#l00009">dsu.hpp:9</a></div></div>
 <div class="ttc" id="astruct_d_s_u_html_ad3a04e676273604d56db0344795cd693"><div class="ttname"><a href="struct_d_s_u.html#ad3a04e676273604d56db0344795cd693">DSU::same</a></div><div class="ttdeci">bool same(int x, int y)</div><div class="ttdoc">頂点 x と y が同じ連結成分に属するか否かを返す</div><div class="ttdef"><b>Definition</b> <a href="#l00040">dsu.hpp:40</a></div></div>
 <div class="ttc" id="astruct_d_s_u_html_ae15ca5c12804826f13632d23443e36e8"><div class="ttname"><a href="struct_d_s_u.html#ae15ca5c12804826f13632d23443e36e8">DSU::size</a></div><div class="ttdeci">int size(int x)</div><div class="ttdoc">頂点 x を含む連結成分のサイズを返す</div><div class="ttdef"><b>Definition</b> <a href="#l00036">dsu.hpp:36</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a7ab29d3bd6e8d66e320f4224e75f6cea"><div class="ttname"><a href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a></div><div class="ttdeci">#define ALL(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00005">template.hpp:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

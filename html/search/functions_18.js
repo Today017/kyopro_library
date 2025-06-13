@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zalgorithm_0',['ZAlgorithm',['../z__algorithm_8hpp.html#af550579ff39c6ff9baa4b70854b23cf5',1,'z_algorithm.hpp']]]
+  ['zalgorithm_0',['ZAlgorithm',['../z__algorithm_8hpp.html#a81e705d1ba548f286c93756a5baec7f5',1,'z_algorithm.hpp']]]
 ];

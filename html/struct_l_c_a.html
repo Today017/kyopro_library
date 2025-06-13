@@ -104,21 +104,22 @@ $(function(){initNavTree('struct_l_c_a.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
 <a href="struct_l_c_a-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle"><div class="title">LCA 構造体</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="struct_l_c_a.html" title="LCA">LCA</a>  
+<p><a class="el" href="struct_l_c_a.html" title="LCA verify: https://onlinejudge.u-aizu.ac.jp/status/users/Today03/submissions/1/GRL_5_C/judge/1057284...">LCA</a> verify: <a href="https://onlinejudge.u-aizu.ac.jp/status/users/Today03/submissions/1/GRL_5_C/judge/10572843/C++17">https://onlinejudge.u-aizu.ac.jp/status/users/Today03/submissions/1/GRL_5_C/judge/10572843/C++17</a>  
  <a href="#details">[詳解]</a></p>
 
 <p><code>#include &quot;<a class="el" href="lca_8hpp_source.html">lca.hpp</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:af6d23a47705e2f854117d680168155c2" id="r_af6d23a47705e2f854117d680168155c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6d23a47705e2f854117d680168155c2">LCA</a> (const <a class="el" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a> &amp;g, int root=0)</td></tr>
-<tr class="memdesc:af6d23a47705e2f854117d680168155c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <br /></td></tr>
-<tr class="separator:af6d23a47705e2f854117d680168155c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2157628f4f88384efbe0a212d855701" id="r_af2157628f4f88384efbe0a212d855701"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2157628f4f88384efbe0a212d855701">LCA</a> (const vector&lt; vector&lt; int &gt; &gt; &amp;g, int root=0)</td></tr>
+<tr class="memdesc:af2157628f4f88384efbe0a212d855701"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <br /></td></tr>
+<tr class="separator:af2157628f4f88384efbe0a212d855701"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a487d1c6c968cd4282e6e0cae4e28fe66" id="r_a487d1c6c968cd4282e6e0cae4e28fe66"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a487d1c6c968cd4282e6e0cae4e28fe66">lca</a> (int u, int v)</td></tr>
 <tr class="memdesc:a487d1c6c968cd4282e6e0cae4e28fe66"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 u, v のLCAを返す  <br /></td></tr>
 <tr class="separator:a487d1c6c968cd4282e6e0cae4e28fe66"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,14 +132,21 @@ $(function(){initNavTree('struct_l_c_a.html',''); initResizable(true); });
 <tr class="memitem:acdc1eaf704f9531b0d3703e547261f8b" id="r_acdc1eaf704f9531b0d3703e547261f8b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdc1eaf704f9531b0d3703e547261f8b">climb</a> (int u, int d)</td></tr>
 <tr class="memdesc:acdc1eaf704f9531b0d3703e547261f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 u から d 回遡った位置にある頂点を返す  <br /></td></tr>
 <tr class="separator:acdc1eaf704f9531b0d3703e547261f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a8296a9d5f9207a58a42b8d646c2a60f3" id="r_a8296a9d5f9207a58a42b8d646c2a60f3"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8296a9d5f9207a58a42b8d646c2a60f3">par</a></td></tr>
+<tr class="separator:a8296a9d5f9207a58a42b8d646c2a60f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0020abc5764b39000f59ee648bef4b8" id="r_ab0020abc5764b39000f59ee648bef4b8"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0020abc5764b39000f59ee648bef4b8">dep</a></td></tr>
+<tr class="separator:ab0020abc5764b39000f59ee648bef4b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p><a class="el" href="struct_l_c_a.html" title="LCA">LCA</a> </p>
+<div class="textblock"><p><a class="el" href="struct_l_c_a.html" title="LCA verify: https://onlinejudge.u-aizu.ac.jp/status/users/Today03/submissions/1/GRL_5_C/judge/1057284...">LCA</a> verify: <a href="https://onlinejudge.u-aizu.ac.jp/status/users/Today03/submissions/1/GRL_5_C/judge/10572843/C++17">https://onlinejudge.u-aizu.ac.jp/status/users/Today03/submissions/1/GRL_5_C/judge/10572843/C++17</a> </p>
 
-<p class="definition"> <a class="el" href="lca_8hpp_source.html">lca.hpp</a> の <a class="el" href="lca_8hpp_source.html#l00004">4</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="lca_8hpp_source.html">lca.hpp</a> の <a class="el" href="lca_8hpp_source.html#l00005">5</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="af6d23a47705e2f854117d680168155c2" name="af6d23a47705e2f854117d680168155c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6d23a47705e2f854117d680168155c2">&#9670;&#160;</a></span>LCA()</h2>
+<a id="af2157628f4f88384efbe0a212d855701" name="af2157628f4f88384efbe0a212d855701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2157628f4f88384efbe0a212d855701">&#9670;&#160;</a></span>LCA()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -149,7 +157,7 @@ $(function(){initNavTree('struct_l_c_a.html',''); initResizable(true); });
         <tr>
           <td class="memname">LCA::LCA </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85">VVI</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+          <td class="paramtype">const vector&lt; vector&lt; int &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -166,7 +174,7 @@ $(function(){initNavTree('struct_l_c_a.html',''); initResizable(true); });
 
 <p>コンストラクタ </p>
 
-<p class="definition"> <a class="el" href="lca_8hpp_source.html">lca.hpp</a> の <a class="el" href="lca_8hpp_source.html#l00006">6</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="lca_8hpp_source.html">lca.hpp</a> の <a class="el" href="lca_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -200,7 +208,7 @@ $(function(){initNavTree('struct_l_c_a.html',''); initResizable(true); });
 
 <p>頂点 u, v のLCAを返す </p>
 
-<p class="definition"> <a class="el" href="lca_8hpp_source.html">lca.hpp</a> の <a class="el" href="lca_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="lca_8hpp_source.html">lca.hpp</a> の <a class="el" href="lca_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -233,7 +241,7 @@ $(function(){initNavTree('struct_l_c_a.html',''); initResizable(true); });
 
 <p>頂点 u, v の距離を返す </p>
 
-<p class="definition"> <a class="el" href="lca_8hpp_source.html">lca.hpp</a> の <a class="el" href="lca_8hpp_source.html#l00026">26</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="lca_8hpp_source.html">lca.hpp</a> の <a class="el" href="lca_8hpp_source.html#l00027">27</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -271,9 +279,9 @@ $(function(){initNavTree('struct_l_c_a.html',''); initResizable(true); });
 
 <p>頂点 x が u-v のパス上にあるか否かを返す </p>
 
-<p class="definition"> <a class="el" href="lca_8hpp_source.html">lca.hpp</a> の <a class="el" href="lca_8hpp_source.html#l00031">31</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="lca_8hpp_source.html">lca.hpp</a> の <a class="el" href="lca_8hpp_source.html#l00032">32</a> 行目に定義があります。</p>
 
-<p class="reference">参照先 <a class="el" href="lca_8hpp_source.html#l00026">distance()</a>.</p>
+<p class="reference">参照先 <a class="el" href="lca_8hpp_source.html#l00027">distance()</a>.</p>
 
 </div>
 </div>
@@ -306,7 +314,40 @@ $(function(){initNavTree('struct_l_c_a.html',''); initResizable(true); });
 
 <p>頂点 u から d 回遡った位置にある頂点を返す </p>
 
-<p class="definition"> <a class="el" href="lca_8hpp_source.html">lca.hpp</a> の <a class="el" href="lca_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="lca_8hpp_source.html">lca.hpp</a> の <a class="el" href="lca_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a8296a9d5f9207a58a42b8d646c2a60f3" name="a8296a9d5f9207a58a42b8d646c2a60f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8296a9d5f9207a58a42b8d646c2a60f3">&#9670;&#160;</a></span>par</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;vector&lt;int&gt; &gt; LCA::par</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="lca_8hpp_source.html">lca.hpp</a> の <a class="el" href="lca_8hpp_source.html#l00043">43</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab0020abc5764b39000f59ee648bef4b8" name="ab0020abc5764b39000f59ee648bef4b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0020abc5764b39000f59ee648bef4b8">&#9670;&#160;</a></span>dep</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;int&gt; LCA::dep</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="lca_8hpp_source.html">lca.hpp</a> の <a class="el" href="lca_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
 
 </div>
 </div>

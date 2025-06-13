@@ -118,17 +118,16 @@ $(function(){initNavTree('totient__table_8hpp_source.html',''); initResizable(tr
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/// @brief 公式: Σ(d | n) totient(d) = n</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/// @brief 公式: a^totient(m) ≡ 1 (mod m) (a と m が互いに素)</span></div>
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="totient__table_8hpp.html#a0914bcd1a8e4f43787323795904e6d40">   13</a></span><a class="code hl_function" href="totient__table_8hpp.html#a0914bcd1a8e4f43787323795904e6d40">VL</a> <a class="code hl_function" href="totient__table_8hpp.html#a0914bcd1a8e4f43787323795904e6d40">TotientTable</a>(ll n) {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    VL ret(n+1); iota(<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(ret),0);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_define" href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a>(i,2,n+1) <span class="keywordflow">if</span>(ret[i]==i) <span class="keywordflow">for</span>(ll j=i; j&lt;=n; j+=i) ret[j]=ret[j]/i*(i-1);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="totient__table_8hpp.html#ae6b1647dc3f81700983b731c4648c017">   13</a></span><a class="code hl_function" href="totient__table_8hpp.html#ae6b1647dc3f81700983b731c4648c017">vector</a>&lt;<a class="code hl_function" href="totient__table_8hpp.html#ae6b1647dc3f81700983b731c4648c017">ll</a>&gt; <a class="code hl_function" href="totient__table_8hpp.html#ae6b1647dc3f81700983b731c4648c017">TotientTable</a>(ll n) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    vector&lt;ll&gt; ret(n+1);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    iota(ret.begin(),ret.end(),0);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">for</span>(ll i=2; i&lt;=n; i++) <span class="keywordflow">if</span>(ret[i]==i) <span class="keywordflow">for</span>(ll j=i; j&lt;=n; j+=i) ret[j]=ret[j]/i*(i-1);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 </div>
-<div class="ttc" id="atemplate_8hpp_html_a7ab29d3bd6e8d66e320f4224e75f6cea"><div class="ttname"><a href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a></div><div class="ttdeci">#define ALL(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00005">template.hpp:5</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a9af2de86c4be813e9c60ede438bb4cd7"><div class="ttname"><a href="template_8hpp.html#a9af2de86c4be813e9c60ede438bb4cd7">FOR</a></div><div class="ttdeci">#define FOR(i, a, b)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00007">template.hpp:7</a></div></div>
-<div class="ttc" id="atotient__table_8hpp_html_a0914bcd1a8e4f43787323795904e6d40"><div class="ttname"><a href="totient__table_8hpp.html#a0914bcd1a8e4f43787323795904e6d40">TotientTable</a></div><div class="ttdeci">VL TotientTable(ll n)</div><div class="ttdoc">オイラーのtotient関数を前計算する</div><div class="ttdef"><b>Definition</b> <a href="#l00013">totient_table.hpp:13</a></div></div>
+<div class="ttc" id="atotient__table_8hpp_html_ae6b1647dc3f81700983b731c4648c017"><div class="ttname"><a href="totient__table_8hpp.html#ae6b1647dc3f81700983b731c4648c017">TotientTable</a></div><div class="ttdeci">vector&lt; ll &gt; TotientTable(ll n)</div><div class="ttdoc">オイラーのtotient関数を前計算する</div><div class="ttdef"><b>Definition</b> <a href="#l00013">totient_table.hpp:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

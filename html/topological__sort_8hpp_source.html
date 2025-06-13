@@ -111,18 +111,18 @@ $(function(){initNavTree('topological__sort_8hpp_source.html',''); initResizable
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @note グラフにサイクルがある場合は空の配列を返す</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @note O(V+E)</span></div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="topological__sort_8hpp.html#a67f53179bb981a6af54e95a6d6fde2ef">    6</a></span><a class="code hl_function" href="topological__sort_8hpp.html#a67f53179bb981a6af54e95a6d6fde2ef">VI</a> <a class="code hl_function" href="topological__sort_8hpp.html#a67f53179bb981a6af54e95a6d6fde2ef">TopologicalSort</a>(<span class="keyword">const</span> VVI&amp; g) {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="topological__sort_8hpp.html#aa2349361ab4557650966e703dd97fb1c">    6</a></span><a class="code hl_function" href="topological__sort_8hpp.html#aa2349361ab4557650966e703dd97fb1c">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_function" href="topological__sort_8hpp.html#aa2349361ab4557650966e703dd97fb1c">TopologicalSort</a>(<span class="keyword">const</span> vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;&amp; g) {</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordtype">int</span> n=g.size();</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    VI indeg(n);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:g[i]) indeg[nxt]++;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    vector&lt;<span class="keywordtype">int</span>&gt; indeg(n);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:g[i]) indeg[nxt]++;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    queue&lt;<span class="keywordtype">int</span>&gt; que;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n) <span class="keywordflow">if</span>(indeg[i]==0) que.push(i);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    VI ret;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) <span class="keywordflow">if</span>(indeg[i]==0) que.push(i);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    vector&lt;<span class="keywordtype">int</span>&gt; ret;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">while</span>(!que.empty()) {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordtype">int</span> now=que.front();</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        que.pop();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:g[now]) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt: g[now]) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            indeg[nxt]--;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <span class="keywordflow">if</span>(indeg[nxt]==0) que.push(nxt);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        }</div>
@@ -133,8 +133,7 @@ $(function(){initNavTree('topological__sort_8hpp_source.html',''); initResizable
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 </div>
-<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
-<div class="ttc" id="atopological__sort_8hpp_html_a67f53179bb981a6af54e95a6d6fde2ef"><div class="ttname"><a href="topological__sort_8hpp.html#a67f53179bb981a6af54e95a6d6fde2ef">TopologicalSort</a></div><div class="ttdeci">VI TopologicalSort(const VVI &amp;g)</div><div class="ttdoc">グラフ g をトポロジカルソートする</div><div class="ttdef"><b>Definition</b> <a href="#l00006">topological_sort.hpp:6</a></div></div>
+<div class="ttc" id="atopological__sort_8hpp_html_aa2349361ab4557650966e703dd97fb1c"><div class="ttname"><a href="topological__sort_8hpp.html#aa2349361ab4557650966e703dd97fb1c">TopologicalSort</a></div><div class="ttdeci">vector&lt; int &gt; TopologicalSort(const vector&lt; vector&lt; int &gt; &gt; &amp;g)</div><div class="ttdoc">グラフ g をトポロジカルソートする</div><div class="ttdef"><b>Definition</b> <a href="#l00006">topological_sort.hpp:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

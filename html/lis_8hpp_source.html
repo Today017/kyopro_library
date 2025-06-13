@@ -112,19 +112,17 @@ $(function(){initNavTree('lis_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @param strict `true` のとき狭義単調増加</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @note O(N log(N))</span></div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="lis_8hpp.html#a74f384a537bd222be3863dec11c5b321">    7</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="lis_8hpp.html#a74f384a537bd222be3863dec11c5b321">LisLength</a>(VI&amp; v, <span class="keywordtype">bool</span> strict=<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="lis_8hpp.html#a8be9178d199989b0528e38aef91af0fe">    7</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="lis_8hpp.html#a8be9178d199989b0528e38aef91af0fe">LisLength</a>(vector&lt;<span class="keywordtype">int</span>&gt;&amp; v, <span class="keywordtype">bool</span> strict=<span class="keyword">true</span>) {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">int</span> n=v.size();</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    VI dp(n,<a class="code hl_variable" href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a>);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n){</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">auto</span> itr=strict?lower_bound(dp.begin(),dp.end(),v[i]):upper_bound(dp.begin(),dp.end(),v[i]);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    vector&lt;<span class="keywordtype">int</span>&gt; dp(n,INF);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">auto</span> itr=(strict ? lower_bound(dp.begin(),dp.end(),v[i]) : upper_bound(dp.begin(),dp.end(),v[i]));</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        *itr=v[i];</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">return</span> find(dp.begin(),dp.end(),<a class="code hl_variable" href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a>)-dp.begin();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">return</span> find(dp.begin(),dp.end(),INF)-dp.begin();</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
 </div>
-<div class="ttc" id="alis_8hpp_html_a74f384a537bd222be3863dec11c5b321"><div class="ttname"><a href="lis_8hpp.html#a74f384a537bd222be3863dec11c5b321">LisLength</a></div><div class="ttdeci">int LisLength(VI &amp;v, bool strict=true)</div><div class="ttdoc">LIS</div><div class="ttdef"><b>Definition</b> <a href="#l00007">lis.hpp:7</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a14c9dbab105f1b8b8182a022d73e610c"><div class="ttname"><a href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a></div><div class="ttdeci">const int INF</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00015">template.hpp:15</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
+<div class="ttc" id="alis_8hpp_html_a8be9178d199989b0528e38aef91af0fe"><div class="ttname"><a href="lis_8hpp.html#a8be9178d199989b0528e38aef91af0fe">LisLength</a></div><div class="ttdeci">int LisLength(vector&lt; int &gt; &amp;v, bool strict=true)</div><div class="ttdoc">LIS</div><div class="ttdef"><b>Definition</b> <a href="#l00007">lis.hpp:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

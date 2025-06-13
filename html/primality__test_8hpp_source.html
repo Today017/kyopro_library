@@ -115,16 +115,16 @@ $(function(){initNavTree('primality__test_8hpp_source.html',''); initResizable(t
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="primality__test_8hpp.html#a50c80146bd471b603303181ec724eaf9">    8</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="primality__test_8hpp.html#a50c80146bd471b603303181ec724eaf9">PrimalityTest</a>(ll n) {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">if</span>(n==2) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">if</span>(n&lt;=1||n%2==0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">if</span>(n&lt;=1 || n%2==0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    VL test;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    vector&lt;ll&gt; test;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">if</span>(n&lt;4759123141ll) test={2,7,61};</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">else</span> test={2,325,9375,28178,450775,9780504,1795265022};</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    ll s=0,d=n-1;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">while</span>(d%2==0) d&gt;&gt;=1,s++;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">for</span>(ll a:test) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">for</span>(ll a: test) {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">if</span>(a&gt;=n) <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        lll x=ModPow&lt;lll&gt;(a,d,n);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>

@@ -112,12 +112,12 @@ $(function(){initNavTree('hld_8hpp_source.html',''); initResizable(true); });
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_h_l_d.html">    5</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_h_l_d.html">HLD</a> {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a4ded5ea491751676f93bb08121e85e7a">    6</a></span>    <a class="code hl_function" href="struct_h_l_d.html#a4ded5ea491751676f93bb08121e85e7a">HLD</a>(<span class="keywordtype">int</span> n) { resize(n); }</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a256387d5bc67a34fc8feb4a64555d05a">    7</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_h_l_d.html#a256387d5bc67a34fc8feb4a64555d05a">add_edge</a>(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b) { graph[a].push_back(b),graph[b].push_back(a); }</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a256387d5bc67a34fc8feb4a64555d05a">    7</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_h_l_d.html#a256387d5bc67a34fc8feb4a64555d05a">add_edge</a>(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b) { g[a].push_back(b),g[b].push_back(a); }</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb">    8</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb">build</a>(<span class="keywordtype">int</span> root=0) { dfs1(root),dfs2(root,root); }</div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#aad507c09947cd50bafe0fd839eb3ebbf">    9</a></span>    <a class="code hl_function" href="struct_h_l_d.html#aad507c09947cd50bafe0fd839eb3ebbf">HLD</a>(<span class="keyword">const</span> VVI&amp; g, <span class="keywordtype">int</span> root=0) {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a841236b6384bbab50fed3174075e469d">    9</a></span>    <a class="code hl_function" href="struct_h_l_d.html#a841236b6384bbab50fed3174075e469d">HLD</a>(<span class="keyword">const</span> vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;&amp; g, <span class="keywordtype">int</span> root=0) {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        resize(g.size());</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">this</span>-&gt;graph=g;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">this</span>-&gt;g=g;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <a class="code hl_function" href="struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb">build</a><a class="code hl_function" href="struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb">(</a>root<a class="code hl_function" href="struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb">)</a>;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
 </div>
@@ -166,15 +166,15 @@ $(function(){initNavTree('hld_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="struct_h_l_d.html#a3c1640f8cf6c7d78cb56336d223edb94">   52</a></span>    <a class="code hl_function" href="struct_h_l_d.html#a3c1640f8cf6c7d78cb56336d223edb94">pair</a>&lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt; <a class="code hl_function" href="struct_h_l_d.html#a3c1640f8cf6c7d78cb56336d223edb94">subtree</a>(<span class="keywordtype">int</span> v) { <span class="keywordflow">return</span> {pos[v],pos2[v]}; }</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    VVI graph;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    VI sz,par,dep,head;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    VI hld; <span class="comment">///&lt; HLD後の配列</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    VI pos,pos2; <span class="comment">///&lt; hldの逆引き</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> resize(<span class="keywordtype">int</span> n) { graph.resize(n),sz.resize(n),par.resize(n),dep.resize(n),pos.resize(n),head.resize(n),pos2.resize(n); }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt; g;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    vector&lt;<span class="keywordtype">int</span>&gt; sz,par,dep,head;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    vector&lt;<span class="keywordtype">int</span>&gt; hld; <span class="comment">///&lt; HLD後の配列</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    vector&lt;<span class="keywordtype">int</span>&gt; pos,pos2; <span class="comment">///&lt; hldの逆引き</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> resize(<span class="keywordtype">int</span> n) { g.resize(n),sz.resize(n),par.resize(n),dep.resize(n),pos.resize(n),head.resize(n),pos2.resize(n); }</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> dfs1(<span class="keywordtype">int</span> now, <span class="keywordtype">int</span> pre=-1) {</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        par[now]=pre;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordtype">int</span> res=1;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:graph[now]) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:g[now]) {</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">if</span>(nxt==pre)<span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            dep[nxt]=dep[now]+1;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            dfs1(nxt,now);</div>
@@ -191,7 +191,7 @@ $(function(){initNavTree('hld_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">int</span> mx=0,idx=0;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:graph[now]) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt: g[now]) {</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keywordflow">if</span>(nxt==pre) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordflow">if</span>(mx&lt;sz[nxt]) {</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                mx=sz[nxt];</div>
@@ -199,8 +199,8 @@ $(function(){initNavTree('hld_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            }</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        }</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        dfs2(idx,a,now);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:graph[now]) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">if</span>(nxt==pre||nxt==idx) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt: g[now]) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">if</span>(nxt==pre || nxt==idx) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            dfs2(nxt,nxt,now);</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        }</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        pos2[now]=hld.size();</div>
@@ -213,7 +213,7 @@ $(function(){initNavTree('hld_8hpp_source.html',''); initResizable(true); });
 <div class="ttc" id="astruct_h_l_d_html_a4ded5ea491751676f93bb08121e85e7a"><div class="ttname"><a href="struct_h_l_d.html#a4ded5ea491751676f93bb08121e85e7a">HLD::HLD</a></div><div class="ttdeci">HLD(int n)</div><div class="ttdef"><b>Definition</b> <a href="#l00006">hld.hpp:6</a></div></div>
 <div class="ttc" id="astruct_h_l_d_html_a57a2a1fce944ca4c9b4cfc4f497963e0"><div class="ttname"><a href="struct_h_l_d.html#a57a2a1fce944ca4c9b4cfc4f497963e0">HLD::at</a></div><div class="ttdeci">int at(int v)</div><div class="ttdoc">頂点vのHL分解後の列での位置を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00049">hld.hpp:49</a></div></div>
 <div class="ttc" id="astruct_h_l_d_html_a771bcfbb8251c5a9c62a08da8d149deb"><div class="ttname"><a href="struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb">HLD::build</a></div><div class="ttdeci">void build(int root=0)</div><div class="ttdef"><b>Definition</b> <a href="#l00008">hld.hpp:8</a></div></div>
-<div class="ttc" id="astruct_h_l_d_html_aad507c09947cd50bafe0fd839eb3ebbf"><div class="ttname"><a href="struct_h_l_d.html#aad507c09947cd50bafe0fd839eb3ebbf">HLD::HLD</a></div><div class="ttdeci">HLD(const VVI &amp;g, int root=0)</div><div class="ttdef"><b>Definition</b> <a href="#l00009">hld.hpp:9</a></div></div>
+<div class="ttc" id="astruct_h_l_d_html_a841236b6384bbab50fed3174075e469d"><div class="ttname"><a href="struct_h_l_d.html#a841236b6384bbab50fed3174075e469d">HLD::HLD</a></div><div class="ttdeci">HLD(const vector&lt; vector&lt; int &gt; &gt; &amp;g, int root=0)</div><div class="ttdef"><b>Definition</b> <a href="#l00009">hld.hpp:9</a></div></div>
 <div class="ttc" id="astruct_h_l_d_html_ae95bc5be0f704bafb0ab667d1dffb0cc"><div class="ttname"><a href="struct_h_l_d.html#ae95bc5be0f704bafb0ab667d1dffb0cc">HLD::lca</a></div><div class="ttdeci">int lca(int u, int v)</div><div class="ttdoc">頂点 u, v のLCAを返す</div><div class="ttdef"><b>Definition</b> <a href="#l00040">hld.hpp:40</a></div></div>
 <div class="ttc" id="astruct_h_l_d_html_af5c1751760a5d34be274c54acd9f60c3"><div class="ttname"><a href="struct_h_l_d.html#af5c1751760a5d34be274c54acd9f60c3">HLD::path</a></div><div class="ttdeci">vector&lt; tuple&lt; bool, int, int &gt; &gt; path(int u, int v)</div><div class="ttdoc">頂点 u, v を結ぶパスをHL分解後の辺の列にして返す</div><div class="ttdef"><b>Definition</b> <a href="#l00023">hld.hpp:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

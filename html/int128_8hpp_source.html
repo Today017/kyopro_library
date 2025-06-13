@@ -130,7 +130,7 @@ $(function(){initNavTree('int128_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span>(x==0) <span class="keywordflow">return</span> os&lt;&lt;<span class="stringliteral">&#39;0&#39;</span>;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    string s;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">while</span>(x&gt;0) s+=x%10+<span class="stringliteral">&#39;0&#39;</span>, x/=10;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    reverse(<a class="code hl_define" href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(s));</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    reverse(s.begin(),s.end());</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> os&lt;&lt;s;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 </div>
@@ -138,7 +138,6 @@ $(function(){initNavTree('int128_8hpp_source.html',''); initResizable(true); });
 <div class="ttc" id="aint128_8hpp_html_a11f231eccc639b561dd848350c493ba4"><div class="ttname"><a href="int128_8hpp.html#a11f231eccc639b561dd848350c493ba4">operator&quot;&quot;_lll</a></div><div class="ttdeci">constexpr lll operator&quot;&quot;_lll(ull x)</div><div class="ttdef"><b>Definition</b> <a href="#l00004">int128.hpp:4</a></div></div>
 <div class="ttc" id="aint128_8hpp_html_a642c9a2936c6b33c8f43371c81377cb7"><div class="ttname"><a href="int128_8hpp.html#a642c9a2936c6b33c8f43371c81377cb7">INFLL</a></div><div class="ttdeci">constexpr const lll INFLL</div><div class="ttdef"><b>Definition</b> <a href="#l00005">int128.hpp:5</a></div></div>
 <div class="ttc" id="aint128_8hpp_html_afe140ebd0d1922eac0a3ccd4701f5446"><div class="ttname"><a href="int128_8hpp.html#afe140ebd0d1922eac0a3ccd4701f5446">operator&gt;&gt;</a></div><div class="ttdeci">istream &amp; operator&gt;&gt;(istream &amp;is, lll &amp;x)</div><div class="ttdef"><b>Definition</b> <a href="#l00007">int128.hpp:7</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a7ab29d3bd6e8d66e320f4224e75f6cea"><div class="ttname"><a href="template_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a></div><div class="ttdeci">#define ALL(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00005">template.hpp:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

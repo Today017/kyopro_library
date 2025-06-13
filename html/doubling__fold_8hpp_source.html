@@ -121,10 +121,10 @@ $(function(){initNavTree('doubling__fold_8hpp_source.html',''); initResizable(tr
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">/// @param v 各頂点の値</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">/// @note O(N Log)</span></div>
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_doubling_fold.html#a7326be1879b679c77c45571fef4d4083">   15</a></span>    <a class="code hl_function" href="struct_doubling_fold.html#a7326be1879b679c77c45571fef4d4083">DoublingFold</a>(<span class="keyword">const</span> VI&amp; p, <span class="keyword">const</span> vector&lt;Type&gt;&amp; v) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_doubling_fold.html#a19e2e532bbcdba1946150f2cdefd1b86">   15</a></span>    <a class="code hl_function" href="struct_doubling_fold.html#a19e2e532bbcdba1946150f2cdefd1b86">DoublingFold</a>(<span class="keyword">const</span> vector&lt;<span class="keywordtype">int</span>&gt;&amp; p, <span class="keyword">const</span> vector&lt;Type&gt;&amp; v) {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">int</span> n=p.size();</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        dat.assign(Log+1, vector&lt;Type&gt;(n,Monoid::id()));</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        nxt.assign(Log+1, VI(n));</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        nxt.assign(Log+1, vector&lt;<span class="keywordtype">int</span>&gt;(n));</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) dat[0][i]=v[i],nxt[0][i]=p[i];</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;=Log; i++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; j++) {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            nxt[i][j]=nxt[i-1][nxt[i-1][j]];</div>
@@ -158,12 +158,12 @@ $(function(){initNavTree('doubling__fold_8hpp_source.html',''); initResizable(tr
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    vector&lt;vector&lt;Type&gt;&gt; dat;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    VVI nxt;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    vector&lt;<span class="keywordtype">int</span>&gt; nxt;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
 </div>
 <div class="ttc" id="astruct_doubling_fold_html"><div class="ttname"><a href="struct_doubling_fold.html">DoublingFold</a></div><div class="ttdoc">ダブリング（モノイド合成）</div><div class="ttdef"><b>Definition</b> <a href="#l00007">doubling_fold.hpp:7</a></div></div>
 <div class="ttc" id="astruct_doubling_fold_html_a04df85dc1028af6ecca7e1d00d60b4ed"><div class="ttname"><a href="struct_doubling_fold.html#a04df85dc1028af6ecca7e1d00d60b4ed">DoublingFold::DoublingFold</a></div><div class="ttdeci">DoublingFold()=default</div></div>
-<div class="ttc" id="astruct_doubling_fold_html_a7326be1879b679c77c45571fef4d4083"><div class="ttname"><a href="struct_doubling_fold.html#a7326be1879b679c77c45571fef4d4083">DoublingFold::DoublingFold</a></div><div class="ttdeci">DoublingFold(const VI &amp;p, const vector&lt; Type &gt; &amp;v)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition</b> <a href="#l00015">doubling_fold.hpp:15</a></div></div>
+<div class="ttc" id="astruct_doubling_fold_html_a19e2e532bbcdba1946150f2cdefd1b86"><div class="ttname"><a href="struct_doubling_fold.html#a19e2e532bbcdba1946150f2cdefd1b86">DoublingFold::DoublingFold</a></div><div class="ttdeci">DoublingFold(const vector&lt; int &gt; &amp;p, const vector&lt; Type &gt; &amp;v)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition</b> <a href="#l00015">doubling_fold.hpp:15</a></div></div>
 <div class="ttc" id="astruct_doubling_fold_html_a8351c3419c2041117f47e80436506010"><div class="ttname"><a href="struct_doubling_fold.html#a8351c3419c2041117f47e80436506010">DoublingFold::fold</a></div><div class="ttdeci">Type fold(int start, ll k)</div><div class="ttdoc">モノイド積</div><div class="ttdef"><b>Definition</b> <a href="#l00029">doubling_fold.hpp:29</a></div></div>
 <div class="ttc" id="astruct_doubling_fold_html_afd50a59ab1f2ab56d585b7896e444e65"><div class="ttname"><a href="struct_doubling_fold.html#afd50a59ab1f2ab56d585b7896e444e65">DoublingFold::next</a></div><div class="ttdeci">int next(int start, ll k)</div><div class="ttdoc">頂点 start から k 回遷移した先の頂点を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00040">doubling_fold.hpp:40</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
