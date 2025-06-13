@@ -124,7 +124,7 @@ class Expander:
             line = line.replace("../../../../", "")
             line = line.replace("../../../", "")
             line = line.replace("../../", "")
-            # line = line.replace("../", "")
+            line = line.replace("../", "")
 
             # if "debug" in line:
             #     line = "//" + line
