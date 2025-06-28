@@ -2,12 +2,13 @@
 
 /// @brief 削除可能な優先度付きキュー
 /// @tparam MAX trueのとき、最大値を返す
-template<typename T, bool MAX=true>
+/// @tparam NONE 空のときに返す値
+template<typename T, bool MAX=true, T NONE=-INF>
 struct ErasablePQ {
     priority_queue<T> pq, pq2;
     int siz=0;
 
-    ErasablePQ()=default;
+    ErasablePQ() { siz=0; }
 
     /// @brief x を追加する
     void push(int x) {
@@ -26,20 +27,15 @@ struct ErasablePQ {
     /// @brief 最大値を返す
     T top() {
         while(!pq.empty()) {
-            if(pq2.empty()) return pq.top();
+            if(pq2.empty()) return (MAX ? pq.top() : -pq.top());
             if(pq.top()==pq2.top()) {
                 pq.pop();
                 pq2.pop();
             } else {
-                return pq.top();
+                return (MAX ? pq.top() : -pq.top());
             }
         }
 
-        cout<<"ErasablePQ::top() : empty"<<endl;
-        exit(1);
-        return T();
+        return NONE;
     }
-
-    /// @brief 現在のサイズを返す
-    int size() { return siz; }
 };
