@@ -30,4 +30,4 @@ lll gcd(lll a, lll b) {
     while(b) a%=b, swap(a,b);
     return a;
 }
-endif
+#endif
