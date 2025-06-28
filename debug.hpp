@@ -46,8 +46,7 @@ template<typename T>
 ostream& operator<<(ostream& os, rpriority_queue<T> a);
 template<typename T, auto N>
 ostream& operator<<(ostream& os, array<T,N> a);
-template<typename T>
-ostream& operator<<(ostream& os, FenwickTree<T> a);
+ostream& operator<<(ostream& os, FenwickTree a);
 template<typename T>
 ostream& operator<<(ostream& os, SegTree<T> a);
 template<typename T, typename U, auto M>
@@ -235,8 +234,7 @@ ostream& operator<<(ostream& os, array<T,N> a) {
     os<<"]";
     return os;
 }
-template<typename T>
-ostream& operator<<(ostream& os, FenwickTree<T> a) {
+ostream& operator<<(ostream& os, FenwickTree a) {
     int n=a.size();
     os<<"[";
     for(int i=0; i<n; i++) {
