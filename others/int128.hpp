@@ -23,3 +23,11 @@ ostream& operator<<(ostream& os, lll x) {
     reverse(s.begin(),s.end());
 	return os<<s;
 }
+
+#ifdef TDY
+lll abs(lll x) { if (x<0) return -x; return x; }
+lll gcd(lll a, lll b) {
+    while(b) a%=b, swap(a,b);
+    return a;
+}
+endif
