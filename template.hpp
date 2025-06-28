@@ -5,7 +5,7 @@ using namespace std;
 #define REP(i, n) for(ll i=0; i<(ll)(n); i++)
 #define PER(i, n) for(ll i=(ll)(n)-1; i>=0; i--)
 
-template<typename T> int LB(const T& v, T x) { return lower_bound(ALL(v),x)-v.begin(); }
+template<typename T> int LB(const vector<T>& v, T x) { return lower_bound(ALL(v),x)-v.begin(); }
 template<typename T> int UQ(T& v) { sort(ALL(v)); v.erase(unique(ALL(v)),v.end()); return v.size(); }
 template<typename T> bool chmax(T &a, T b) { return a<b ? a=b, true : false; }
 template<typename T> bool chmin(T &a, T b) { return a>b ? a=b, true : false; }
