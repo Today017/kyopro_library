@@ -8,7 +8,7 @@ struct RangeMin {
         dat[i+=n]=x;
         while(i>>=1) dat[i]=min(dat[i<<1],dat[i<<1|1]);
     }
-    ll min(int l, int r) {
+    ll get(int l, int r) {
         l+=n; r+=n;
         ll ret=INF;
         while(l<r) {

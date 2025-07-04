@@ -8,7 +8,7 @@ struct RangeMax {
         dat[i+=n]=x;
         while(i>>=1) dat[i]=max(dat[i<<1],dat[i<<1|1]);
     }
-    ll max(int l, int r) {
+    ll get(int l, int r) {
         l+=n; r+=n;
         ll ret=-INF;
         while(l<r) {
