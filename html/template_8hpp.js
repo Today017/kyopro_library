@@ -16,7 +16,7 @@ var template_8hpp =
     [ "PL", "template_8hpp.html#a7f582aad13bf86402da717000515ca1c", null ],
     [ "VP", "template_8hpp.html#a2c3a5a109d6d21e6f64ab05472266de4", null ],
     [ "WG", "template_8hpp.html#a20b579988fc1098f6357cbd1f07dc5e8", null ],
-    [ "LB", "template_8hpp.html#af2d1da6bbeaa2e46ae671238611d3962", null ],
+    [ "LB", "template_8hpp.html#a296dd4c6d59f3c6fef615325ff306017", null ],
     [ "UQ", "template_8hpp.html#a8743e7b47f30c6bc8b3ef708cfd690a5", null ],
     [ "chmax", "template_8hpp.html#a3e8244c32e6ce7ca2cdd01c86aac2d3f", null ],
     [ "chmin", "template_8hpp.html#ad3e093a6b7f9ed915c0c64ec47b45564", null ],

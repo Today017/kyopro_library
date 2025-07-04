@@ -10,5 +10,5 @@ var searchData=
   ['vp_7',['VP',['../template_8hpp.html#a2c3a5a109d6d21e6f64ab05472266de4',1,'template.hpp']]],
   ['vvi_8',['VVI',['../template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85',1,'template.hpp']]],
   ['vvl_9',['VVL',['../template_8hpp.html#a11a9e4e46b8b410aee9374e030feb3de',1,'template.hpp']]],
-  ['vvm_10',['VVM',['../ntt998_8hpp.html#a6be79ba59646792daba542b208a73a16',1,'VVM:&#160;ntt998.hpp'],['../modint_8hpp.html#a6be79ba59646792daba542b208a73a16',1,'VVM:&#160;modint.hpp']]]
+  ['vvm_10',['VVM',['../modint_8hpp.html#a6be79ba59646792daba542b208a73a16',1,'modint.hpp']]]
 ];

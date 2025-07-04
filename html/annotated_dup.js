@@ -88,6 +88,8 @@ var annotated_dup =
     [ "MultiSet", "struct_multi_set.html", "struct_multi_set" ],
     [ "NTT", "class_n_t_t.html", "class_n_t_t" ],
     [ "OffsetVector", "struct_offset_vector.html", "struct_offset_vector" ],
+    [ "RangeMax", "struct_range_max.html", "struct_range_max" ],
+    [ "RangeMin", "struct_range_min.html", "struct_range_min" ],
     [ "RangeSet", "struct_range_set.html", "struct_range_set" ],
     [ "RollingHash", "struct_rolling_hash.html", "struct_rolling_hash" ],
     [ "SccInfo", "struct_scc_info.html", "struct_scc_info" ],

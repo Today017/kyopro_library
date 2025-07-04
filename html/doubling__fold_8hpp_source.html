@@ -123,9 +123,9 @@ $(function(){initNavTree('doubling__fold_8hpp_source.html',''); initResizable(tr
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_doubling_fold.html#a19e2e532bbcdba1946150f2cdefd1b86">   15</a></span>    <a class="code hl_function" href="struct_doubling_fold.html#a19e2e532bbcdba1946150f2cdefd1b86">DoublingFold</a>(<span class="keyword">const</span> vector&lt;<span class="keywordtype">int</span>&gt;&amp; p, <span class="keyword">const</span> vector&lt;Type&gt;&amp; v) {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">int</span> n=p.size();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        dat.assign(Log+1, vector&lt;Type&gt;(n,Monoid::id()));</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        nxt.assign(Log+1, vector&lt;<span class="keywordtype">int</span>&gt;(n));</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) dat[0][i]=v[i],nxt[0][i]=p[i];</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        dat=vector&lt;vector&lt;Type&gt;&gt;(Log+1,vector&lt;Type&gt;(n,Monoid::id()));</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        nxt=vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;(Log+1,vector&lt;<span class="keywordtype">int</span>&gt;(n));</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) dat[0][i]=v[i], nxt[0][i]=p[i];</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;=Log; i++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; j++) {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            nxt[i][j]=nxt[i-1][nxt[i-1][j]];</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            dat[i][j]=Monoid::op(dat[i-1][j], dat[i-1][nxt[i-1][j]]);</div>
@@ -158,7 +158,7 @@ $(function(){initNavTree('doubling__fold_8hpp_source.html',''); initResizable(tr
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    vector&lt;vector&lt;Type&gt;&gt; dat;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    vector&lt;<span class="keywordtype">int</span>&gt; nxt;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt; nxt;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
 </div>
 <div class="ttc" id="astruct_doubling_fold_html"><div class="ttname"><a href="struct_doubling_fold.html">DoublingFold</a></div><div class="ttdoc">ダブリング（モノイド合成）</div><div class="ttdef"><b>Definition</b> <a href="#l00007">doubling_fold.hpp:7</a></div></div>

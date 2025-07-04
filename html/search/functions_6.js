@@ -3,7 +3,7 @@ var searchData=
   ['factinv_0',['factinv',['../struct_combinatorics.html#abf0b71d9a682af871adc550a8091b05d',1,'Combinatorics']]],
   ['factors_1',['Factors',['../struct_factors.html#a219a3cb166153a020f2fc3d83b9a9e57',1,'Factors']]],
   ['factrial_2',['factrial',['../struct_combinatorics.html#a612688ccbc9653abc8098403fced48b3',1,'Combinatorics']]],
-  ['fenwicktree_3',['FenwickTree',['../struct_fenwick_tree.html#a99f9f30f8d15ac791e39dbd6ff7c753f',1,'FenwickTree::FenwickTree()=default'],['../struct_fenwick_tree.html#a4ab87239b75ef2870215eb29b50bcaaf',1,'FenwickTree::FenwickTree(int n)']]],
+  ['fenwicktree_3',['FenwickTree',['../struct_fenwick_tree.html#a99f9f30f8d15ac791e39dbd6ff7c753f',1,'FenwickTree::FenwickTree()=default'],['../struct_fenwick_tree.html#a4ab87239b75ef2870215eb29b50bcaaf',1,'FenwickTree::FenwickTree(int n)'],['../struct_fenwick_tree.html#a99f9f30f8d15ac791e39dbd6ff7c753f',1,'FenwickTree::FenwickTree()=default'],['../struct_fenwick_tree.html#a4ab87239b75ef2870215eb29b50bcaaf',1,'FenwickTree::FenwickTree(int n)']]],
   ['fft_4',['FFT',['../convolution_8hpp.html#a6a27829658ebde922fee66179fe05f3c',1,'convolution.hpp']]],
   ['fht_5',['FHT',['../xor__convolution_8hpp.html#a2172face1088ecec4509579a02feedd9',1,'xor_convolution.hpp']]],
   ['find_6',['find',['../struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3',1,'DSU::find()'],['../struct_dsu_merging.html#afcf8fd363d1d2348869c0e43df04199d',1,'DsuMerging::find()'],['../struct_dsu_potentialized.html#a8c3159f334ce50adad836e3cdbc996f9',1,'DsuPotentialized::find()'],['../struct_dsu_rollback.html#ac2028d09c590bdde38b2669f19728452',1,'DsuRollback::find()']]],

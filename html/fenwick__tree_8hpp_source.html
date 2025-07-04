@@ -107,72 +107,43 @@ $(function(){initNavTree('fenwick__tree_8hpp_source.html',''); initResizable(tru
 <div class="contents">
 <a href="fenwick__tree_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/others/abel.hpp&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @brief Fenwick Tree</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @tparam Abel 可換群</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Abel=Abel::Sum&lt;ll&gt;&gt;</div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html">    8</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_fenwick_tree.html">FenwickTree</a> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#aa2b1ef3738b376e71753f4277f255656">    9</a></span>    <span class="keyword">using</span> Type=<span class="keyword">typename</span> Abel::Type;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#a99f9f30f8d15ac791e39dbd6ff7c753f">   11</a></span>    <a class="code hl_function" href="struct_fenwick_tree.html#a99f9f30f8d15ac791e39dbd6ff7c753f">FenwickTree</a>()=<span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">/// @brief サイズ n のFenwick Treeを構築する</span></div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#a4ab87239b75ef2870215eb29b50bcaaf">   14</a></span>    <a class="code hl_function" href="struct_fenwick_tree.html#a4ab87239b75ef2870215eb29b50bcaaf">FenwickTree</a>(<span class="keywordtype">int</span> n) {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keyword">this</span>-&gt;n=n;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        dat.assign(n,Abel::id());</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="foldopen" id="foldopen00004" data-start="{" data-end="};">
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html">    4</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_fenwick_tree.html">FenwickTree</a> {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#a99f9f30f8d15ac791e39dbd6ff7c753f">    5</a></span>    <a class="code hl_function" href="struct_fenwick_tree.html#a99f9f30f8d15ac791e39dbd6ff7c753f">FenwickTree</a>()=<span class="keywordflow">default</span>;</div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#a4ab87239b75ef2870215eb29b50bcaaf">    6</a></span>    <a class="code hl_function" href="struct_fenwick_tree.html#a4ab87239b75ef2870215eb29b50bcaaf">FenwickTree</a>(<span class="keywordtype">int</span> n) {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        <span class="keyword">this</span>-&gt;n=n;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        dat.assign(n,0);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    }</div>
 </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">/// @brief i 番目の要素に対し v[i] &lt;- op(v[i], x) と更新する</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">/// @note O(log(N))</span></div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#adb288d923b27fe266f99021056a2785f">   21</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_fenwick_tree.html#adb288d923b27fe266f99021056a2785f">add</a>(<span class="keywordtype">int</span> i, Type x) {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        i++;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">while</span>(i&lt;=n) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            dat[i-1]=Abel::op(dat[i-1],x);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            i+=i&amp;-i;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#a8e45ab1b5d6b4ff836d87c6eb01ff68a">   10</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_fenwick_tree.html#a8e45ab1b5d6b4ff836d87c6eb01ff68a">add</a>(<span class="keywordtype">int</span> i, ll x) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        i++;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">while</span>(i&lt;=n) dat[i-1]+=x, i+=i&amp;-i;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
 </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">/// @brief 区間 [l, r) の群積を返す</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">/// @note O(log(N))</span></div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#aa1d3e8b54fc3fcfeb21f5696566e10ac">   31</a></span>    Type <a class="code hl_function" href="struct_fenwick_tree.html#aa1d3e8b54fc3fcfeb21f5696566e10ac">sum</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r) {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">return</span> Abel::op(Abel::inv(sum(l)),sum(r));</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#aea7c3a94c4e1953d8fb149ff839ecd2f">   14</a></span>    ll <a class="code hl_function" href="struct_fenwick_tree.html#aea7c3a94c4e1953d8fb149ff839ecd2f">sum</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r) { <span class="keywordflow">return</span> sum(r)-sum(l); }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#a619055940b54b21744220a54ed85709c">   15</a></span>    ll <a class="code hl_function" href="struct_fenwick_tree.html#a619055940b54b21744220a54ed85709c">operator</a>[](<span class="keywordtype">int</span> i) { <span class="keywordflow">return</span> <a class="code hl_function" href="struct_fenwick_tree.html#aea7c3a94c4e1953d8fb149ff839ecd2f">sum</a><a class="code hl_function" href="struct_fenwick_tree.html#aea7c3a94c4e1953d8fb149ff839ecd2f">(</a>i<a class="code hl_function" href="struct_fenwick_tree.html#aea7c3a94c4e1953d8fb149ff839ecd2f">,</a>i+1<a class="code hl_function" href="struct_fenwick_tree.html#aea7c3a94c4e1953d8fb149ff839ecd2f">)</a>; }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#af4134f187d10ed8498b20a585ed5eb33">   16</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_fenwick_tree.html#af4134f187d10ed8498b20a585ed5eb33">size</a>() { <span class="keywordflow">return</span> n; }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">int</span> n;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    vector&lt;ll&gt; dat;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    ll sum(<span class="keywordtype">int</span> r) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        ll ret=0;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">while</span>(r&gt;0) ret+=dat[r-1], r-=r&amp;-r;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
 </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">/// @brief i 番目の要素を返す</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">/// @note O(log(N))</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#a8a6c34d78e75ce893b48e82b0d9ba4cd">   37</a></span>    Type <a class="code hl_function" href="struct_fenwick_tree.html#a8a6c34d78e75ce893b48e82b0d9ba4cd">operator</a>[](<span class="keywordtype">int</span> i) { <span class="keywordflow">return</span> sum(i,i+1); }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">/// @brief 配列のサイズを返す</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_fenwick_tree.html#af4134f187d10ed8498b20a585ed5eb33">   40</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_fenwick_tree.html#af4134f187d10ed8498b20a585ed5eb33">size</a>() { <span class="keywordflow">return</span> n; }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">int</span> n;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    vector&lt;Type&gt; dat;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    Type sum(<span class="keywordtype">int</span> r) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        Type ret=Abel::id();</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">while</span>(r&gt;0) {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            ret=Abel::op(ret,dat[r-1]);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            r-=r&amp;-r;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
-</div>
-<div class="ttc" id="astruct_fenwick_tree_html"><div class="ttname"><a href="struct_fenwick_tree.html">FenwickTree</a></div><div class="ttdoc">Fenwick Tree</div><div class="ttdef"><b>Definition</b> <a href="#l00008">fenwick_tree.hpp:8</a></div></div>
-<div class="ttc" id="astruct_fenwick_tree_html_a4ab87239b75ef2870215eb29b50bcaaf"><div class="ttname"><a href="struct_fenwick_tree.html#a4ab87239b75ef2870215eb29b50bcaaf">FenwickTree::FenwickTree</a></div><div class="ttdeci">FenwickTree(int n)</div><div class="ttdoc">サイズ n のFenwick Treeを構築する</div><div class="ttdef"><b>Definition</b> <a href="#l00014">fenwick_tree.hpp:14</a></div></div>
-<div class="ttc" id="astruct_fenwick_tree_html_a8a6c34d78e75ce893b48e82b0d9ba4cd"><div class="ttname"><a href="struct_fenwick_tree.html#a8a6c34d78e75ce893b48e82b0d9ba4cd">FenwickTree::operator[]</a></div><div class="ttdeci">Type operator[](int i)</div><div class="ttdoc">i 番目の要素を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00037">fenwick_tree.hpp:37</a></div></div>
+<div class="ttc" id="astruct_fenwick_tree_html"><div class="ttname"><a href="struct_fenwick_tree.html">FenwickTree</a></div><div class="ttdoc">Fenwick Tree</div><div class="ttdef"><b>Definition</b> <a href="#l00004">fenwick_tree.hpp:4</a></div></div>
+<div class="ttc" id="astruct_fenwick_tree_html_a4ab87239b75ef2870215eb29b50bcaaf"><div class="ttname"><a href="struct_fenwick_tree.html#a4ab87239b75ef2870215eb29b50bcaaf">FenwickTree::FenwickTree</a></div><div class="ttdeci">FenwickTree(int n)</div><div class="ttdef"><b>Definition</b> <a href="#l00006">fenwick_tree.hpp:6</a></div></div>
+<div class="ttc" id="astruct_fenwick_tree_html_a619055940b54b21744220a54ed85709c"><div class="ttname"><a href="struct_fenwick_tree.html#a619055940b54b21744220a54ed85709c">FenwickTree::operator[]</a></div><div class="ttdeci">ll operator[](int i)</div><div class="ttdef"><b>Definition</b> <a href="#l00015">fenwick_tree.hpp:15</a></div></div>
+<div class="ttc" id="astruct_fenwick_tree_html_a8e45ab1b5d6b4ff836d87c6eb01ff68a"><div class="ttname"><a href="struct_fenwick_tree.html#a8e45ab1b5d6b4ff836d87c6eb01ff68a">FenwickTree::add</a></div><div class="ttdeci">void add(int i, ll x)</div><div class="ttdef"><b>Definition</b> <a href="#l00010">fenwick_tree.hpp:10</a></div></div>
 <div class="ttc" id="astruct_fenwick_tree_html_a99f9f30f8d15ac791e39dbd6ff7c753f"><div class="ttname"><a href="struct_fenwick_tree.html#a99f9f30f8d15ac791e39dbd6ff7c753f">FenwickTree::FenwickTree</a></div><div class="ttdeci">FenwickTree()=default</div></div>
-<div class="ttc" id="astruct_fenwick_tree_html_aa1d3e8b54fc3fcfeb21f5696566e10ac"><div class="ttname"><a href="struct_fenwick_tree.html#aa1d3e8b54fc3fcfeb21f5696566e10ac">FenwickTree::sum</a></div><div class="ttdeci">Type sum(int l, int r)</div><div class="ttdoc">区間 [l, r) の群積を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00031">fenwick_tree.hpp:31</a></div></div>
-<div class="ttc" id="astruct_fenwick_tree_html_adb288d923b27fe266f99021056a2785f"><div class="ttname"><a href="struct_fenwick_tree.html#adb288d923b27fe266f99021056a2785f">FenwickTree::add</a></div><div class="ttdeci">void add(int i, Type x)</div><div class="ttdoc">i 番目の要素に対し v[i] &lt;- op(v[i], x) と更新する</div><div class="ttdef"><b>Definition</b> <a href="#l00021">fenwick_tree.hpp:21</a></div></div>
-<div class="ttc" id="astruct_fenwick_tree_html_af4134f187d10ed8498b20a585ed5eb33"><div class="ttname"><a href="struct_fenwick_tree.html#af4134f187d10ed8498b20a585ed5eb33">FenwickTree::size</a></div><div class="ttdeci">int size()</div><div class="ttdoc">配列のサイズを返す</div><div class="ttdef"><b>Definition</b> <a href="#l00040">fenwick_tree.hpp:40</a></div></div>
+<div class="ttc" id="astruct_fenwick_tree_html_aea7c3a94c4e1953d8fb149ff839ecd2f"><div class="ttname"><a href="struct_fenwick_tree.html#aea7c3a94c4e1953d8fb149ff839ecd2f">FenwickTree::sum</a></div><div class="ttdeci">ll sum(int l, int r)</div><div class="ttdef"><b>Definition</b> <a href="#l00014">fenwick_tree.hpp:14</a></div></div>
+<div class="ttc" id="astruct_fenwick_tree_html_af4134f187d10ed8498b20a585ed5eb33"><div class="ttname"><a href="struct_fenwick_tree.html#af4134f187d10ed8498b20a585ed5eb33">FenwickTree::size</a></div><div class="ttdeci">int size()</div><div class="ttdef"><b>Definition</b> <a href="#l00016">fenwick_tree.hpp:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -105,39 +105,40 @@ $(function(){initNavTree('extgcd_8hpp_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">extgcd.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="extgcd_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">    4</span><span class="comment"> * @brief 拡張ユークリッドの互除法</span></div>
-<div class="line"><span class="lineno">    5</span><span class="comment"> * @details</span></div>
-<div class="line"><span class="lineno">    6</span><span class="comment"> * gcd(a,b) = gcd(b%a,a), gcd(b,0) = b と b%a + (b/a)*a = b を使う。</span></div>
-<div class="line"><span class="lineno">    7</span><span class="comment"> * ax + by = g なる x,y を求めたい。</span></div>
-<div class="line"><span class="lineno">    8</span><span class="comment"> * 今、(b%a)X + aY = g なる X, Y が分かっている。</span></div>
-<div class="line"><span class="lineno">    9</span><span class="comment"> * (b%a)X = bX - (b/a)*a*X より、これを代入して、</span></div>
-<div class="line"><span class="lineno">   10</span><span class="comment"> * bX - (b/a)*a*X + aY = g</span></div>
-<div class="line"><span class="lineno">   11</span><span class="comment"> * a(Y-(b/a)*X) + bX = g</span></div>
-<div class="line"><span class="lineno">   12</span><span class="comment"> */</span></div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">   13</a></span><a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">tuple</a>&lt;<a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ll</a>,<a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ll</a>,<a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ll</a>&gt; <a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a>(ll a, ll b) {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">if</span>(a==0) <span class="keywordflow">return</span> {b,0,1};</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">auto</span> [g,s,t]=ExtGcd(b%a,a);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">return</span> {g,t-(b/a)*s,s};</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
+<a href="extgcd_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">    5</span><span class="comment"> * @brief 拡張ユークリッドの互除法</span></div>
+<div class="line"><span class="lineno">    6</span><span class="comment"> * @details</span></div>
+<div class="line"><span class="lineno">    7</span><span class="comment"> * gcd(a,b) = gcd(b%a,a), gcd(b,0) = b と b%a + (b/a)*a = b を使う。</span></div>
+<div class="line"><span class="lineno">    8</span><span class="comment"> * ax + by = g なる x,y を求めたい。</span></div>
+<div class="line"><span class="lineno">    9</span><span class="comment"> * 今、(b%a)X + aY = g なる X, Y が分かっている。</span></div>
+<div class="line"><span class="lineno">   10</span><span class="comment"> * (b%a)X = bX - (b/a)*a*X より、これを代入して、</span></div>
+<div class="line"><span class="lineno">   11</span><span class="comment"> * bX - (b/a)*a*X + aY = g</span></div>
+<div class="line"><span class="lineno">   12</span><span class="comment"> * a(Y-(b/a)*X) + bX = g</span></div>
+<div class="line"><span class="lineno">   13</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">   14</a></span><a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">tuple</a>&lt;<a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ll</a>,<a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ll</a>,<a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ll</a>&gt; <a class="code hl_function" href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a>(ll a, ll b) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">if</span>(a==0) <span class="keywordflow">return</span> {b,0,1};</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">auto</span> [g,s,t]=ExtGcd(b%a,a);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">return</span> {g,t-(b/a)*s,s};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
 </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/// @brief mod 逆元</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/// @brief a^(-1) (mod m)</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/// @note gcd(a,m)=1 でない場合、-1 を返す。</span></div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="extgcd_8hpp.html#a9971b6b2383ca7009a1de48b02b31350">   22</a></span>ll <a class="code hl_function" href="extgcd_8hpp.html#a9971b6b2383ca7009a1de48b02b31350">ModInvGcd</a>(ll a, ll m) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// ax = 1 (mod m) &lt;-&gt; ax+my = 1 (mod m)</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">auto</span> [g,x,y]=ExtGcd(a,m);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span>(g!=1) <span class="keywordflow">return</span>-1;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> (x+m)%m;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/// @brief mod 逆元</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/// @brief a^(-1) (mod m)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/// @note gcd(a,m)=1 でない場合、-1 を返す。</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="extgcd_8hpp.html#a9971b6b2383ca7009a1de48b02b31350">   23</a></span>ll <a class="code hl_function" href="extgcd_8hpp.html#a9971b6b2383ca7009a1de48b02b31350">ModInvGcd</a>(ll a, ll m) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// ax = 1 (mod m) &lt;-&gt; ax+my = 1 (mod m)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">auto</span> [g,x,y]=ExtGcd(a,m);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">if</span>(g!=1) <span class="keywordflow">return</span>-1;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> (x+m)%m;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
 </div>
-<div class="ttc" id="aextgcd_8hpp_html_a1bbcc665326a2e27d9817bcc3b8b1d91"><div class="ttname"><a href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a></div><div class="ttdeci">tuple&lt; ll, ll, ll &gt; ExtGcd(ll a, ll b)</div><div class="ttdoc">拡張ユークリッドの互除法</div><div class="ttdef"><b>Definition</b> <a href="#l00013">extgcd.hpp:13</a></div></div>
-<div class="ttc" id="aextgcd_8hpp_html_a9971b6b2383ca7009a1de48b02b31350"><div class="ttname"><a href="extgcd_8hpp.html#a9971b6b2383ca7009a1de48b02b31350">ModInvGcd</a></div><div class="ttdeci">ll ModInvGcd(ll a, ll m)</div><div class="ttdoc">mod 逆元</div><div class="ttdef"><b>Definition</b> <a href="#l00022">extgcd.hpp:22</a></div></div>
+<div class="ttc" id="aextgcd_8hpp_html_a1bbcc665326a2e27d9817bcc3b8b1d91"><div class="ttname"><a href="extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91">ExtGcd</a></div><div class="ttdeci">tuple&lt; ll, ll, ll &gt; ExtGcd(ll a, ll b)</div><div class="ttdoc">拡張ユークリッドの互除法</div><div class="ttdef"><b>Definition</b> <a href="#l00014">extgcd.hpp:14</a></div></div>
+<div class="ttc" id="aextgcd_8hpp_html_a9971b6b2383ca7009a1de48b02b31350"><div class="ttname"><a href="extgcd_8hpp.html#a9971b6b2383ca7009a1de48b02b31350">ModInvGcd</a></div><div class="ttdeci">ll ModInvGcd(ll a, ll m)</div><div class="ttdoc">mod 逆元</div><div class="ttdef"><b>Definition</b> <a href="#l00023">extgcd.hpp:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

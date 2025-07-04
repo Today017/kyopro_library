@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"intersect_8hpp.html":[6,0,8,6],
+"intersect_8hpp.html#a54e453c3674a9b11778d7426f93677cd":[6,0,8,6,0],
+"intersect_8hpp_source.html":[6,0,8,6],
+"inversion__number_8hpp.html":[6,0,0,4],
 "inversion__number_8hpp.html#a4a691c80d5c3c829a4a2f3d7a4dc3c14":[6,0,0,4,0],
 "inversion__number_8hpp_source.html":[6,0,0,4],
 "kth__root_8hpp.html":[6,0,8,7],
@@ -92,8 +96,8 @@ var NAVTREEINDEX1 =
 "md_geometry_2geo.html#autotoc_md9":[1,0,2,0],
 "md_heuristic_2sa.html":[2],
 "md_heuristic_2sa.html#autotoc_md51":[2,0],
-"merge__sort__tree_8hpp.html":[6,0,1,5],
-"merge__sort__tree_8hpp_source.html":[6,0,1,5],
+"merge__sort__tree_8hpp.html":[6,0,1,6],
+"merge__sort__tree_8hpp_source.html":[6,0,1,6],
 "min__cost__flow_8hpp.html":[6,0,3,0,1],
 "min__cost__flow_8hpp_source.html":[6,0,3,0,1],
 "mo_8hpp.html":[6,0,0,6],
@@ -122,8 +126,8 @@ var NAVTREEINDEX1 =
 "multipoint__evaluate_8hpp.html":[6,0,6,13],
 "multipoint__evaluate_8hpp.html#abb2c277f4d822368ce7159e49b2c7fd0":[6,0,6,13,0],
 "multipoint__evaluate_8hpp_source.html":[6,0,6,13],
-"multiset_8hpp.html":[6,0,1,6],
-"multiset_8hpp_source.html":[6,0,1,6],
+"multiset_8hpp.html":[6,0,1,7],
+"multiset_8hpp_source.html":[6,0,1,7],
 "namespace_abel.html":[4,0,0],
 "namespace_bit.html":[4,0,1],
 "namespace_bit.html#a0af6dce857ec8aa6cef9e6ac1d4410e6":[4,0,1,12],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "namespacecompress.html":[4,0,2],
 "namespacecompress.html#a30b635f18c81637d3c1d613b8be0e223":[4,0,2,0],
 "namespacecompress.html#a54ac03d8200b90f0df7eaef116a6634d":[4,0,2,3],
-"namespacecompress.html#a8e7877c3a20b124f013d1fda1eb05465":[4,0,2,2],
-"namespacecompress.html#ab51c4d79a5d1f1a8a2d46f126ac20894":[4,0,2,4],
-"namespacecompress.html#aea3e350d16ae2d80ffde6053a6d3dcb3":[4,0,2,1],
-"namespaceexp.html":[4,0,3],
-"namespaceexp.html#a026091473c04f1255fbe54365b41c194":[4,0,3,12]
+"namespacecompress.html#a8e7877c3a20b124f013d1fda1eb05465":[4,0,2,2]
 };

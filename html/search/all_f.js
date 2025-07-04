@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['n_0',['n',['../struct_angel_beats.html#a3b15aa0697428b129b15307fa5b6e363',1,'AngelBeats']]],
+  ['n_0',['n',['../struct_range_max.html#a2e68b537b68ceb16412d369fd5dadfb5',1,'RangeMax::n'],['../struct_range_min.html#a0c7d9f63f356d8db943d1091aab9152e',1,'RangeMin::n'],['../struct_angel_beats.html#a3b15aa0697428b129b15307fa5b6e363',1,'AngelBeats::n']]],
   ['next_1',['next',['../struct_doubling.html#a0ba294fda4333aa6d26311da82eae634',1,'Doubling::next()'],['../struct_doubling_fold.html#afd50a59ab1f2ab56d585b7896e444e65',1,'DoublingFold::next()']]],
   ['next_5fvalue_2',['next_value',['../struct_wavelet_matrix.html#a50331fad103e7d41e3183888cf89c0c9',1,'WaveletMatrix']]],
   ['node_3',['Node',['../struct_angel_beats_1_1_node.html',1,'AngelBeats::Node'],['../struct_trie_1_1_node.html',1,'Trie::Node'],['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a2cc0713f1bac2dc605fe22990c2ee1bd',1,'InsertableReversibleArrayImpl::LazyReversibleRBST::Node'],['../struct_trie_1_1_node.html#aeb43ae0f05e236bdaac77ea555fe280c',1,'Trie::Node::Node()']]],

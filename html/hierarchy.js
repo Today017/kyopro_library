@@ -32,7 +32,7 @@ var hierarchy =
     [ "DynamicConnectivity", "struct_dynamic_connectivity.html", null ],
     [ "MaxFlow::Edge", "struct_max_flow_1_1_edge.html", null ],
     [ "MinCostFlow::Edge", "struct_min_cost_flow_1_1_edge.html", null ],
-    [ "ErasablePQ< T, MAX >", "struct_erasable_p_q.html", null ],
+    [ "ErasablePQ< T, MAX, NONE >", "struct_erasable_p_q.html", null ],
     [ "exp.Expander", "classexp_1_1_expander.html", null ],
     [ "exp_AHC.Expander", "classexp___a_h_c_1_1_expander.html", null ],
     [ "Factors", "struct_factors.html", null ],
@@ -68,6 +68,8 @@ var hierarchy =
     [ "Trie::Node", "struct_trie_1_1_node.html", null ],
     [ "NTT< MOD, primitive_root >", "class_n_t_t.html", null ],
     [ "Geometry::Point", "struct_geometry_1_1_point.html", null ],
+    [ "RangeMax", "struct_range_max.html", null ],
+    [ "RangeMin", "struct_range_min.html", null ],
     [ "RangeSet", "struct_range_set.html", null ],
     [ "InsertableReversibleArrayImpl::RBSTBase< Node >", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html", null ],
     [ "InsertableReversibleArrayImpl::RBSTBase< LazyReversibleRBSTNode< T, E > >", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html", [

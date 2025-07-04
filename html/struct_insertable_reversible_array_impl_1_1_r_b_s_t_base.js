@@ -12,6 +12,6 @@ var struct_insertable_reversible_array_impl_1_1_r_b_s_t_base =
     [ "insert", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a6b8d4d3825b9d530359ee07fc0a51b30", null ],
     [ "erase", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a8fe3d734da7206c01b3598bde497dd83", null ],
     [ "count", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#ab3be2623dd83bcea2293de98495a848a", null ],
-    [ "push", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#abd8e8e51accfc42cfbf86e364e1d6ab3", null ],
-    [ "update", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#acdef1fdc8ed827defe49485e19c0302e", null ]
+    [ "push", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#ae6287f00bdcec7ba70119cf3eabed5c8", null ],
+    [ "update", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#afc27924b11d50cb74621f223c1f5408d", null ]
 ];

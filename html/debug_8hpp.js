@@ -22,12 +22,12 @@ var debug_8hpp =
     [ "operator<<", "debug_8hpp.html#a9c5af95a818637d08e5650b9f88c1576", null ],
     [ "operator<<", "debug_8hpp.html#a5f45a34236ffe3f89befdc0b5a46834d", null ],
     [ "operator<<", "debug_8hpp.html#a91e2cdb2969c33672890cabe9e9d4192", null ],
-    [ "operator<<", "debug_8hpp.html#a8a800eb09dba42a30a8db83c30d98a66", null ],
+    [ "operator<<", "debug_8hpp.html#a3fc2813d39c59a2f5b20dd5034d72460", null ],
     [ "operator<<", "debug_8hpp.html#a17bb956047d9039736f87ea02be1bf26", null ],
     [ "operator<<", "debug_8hpp.html#a6c9344bef51278c280248a1a4e2de2a7", null ],
     [ "operator<<", "debug_8hpp.html#a5954642203d9ea8e5b467819d0cf678f", null ],
     [ "operator<<", "debug_8hpp.html#aac60a8c6e6839c4d4cd97e87241e7ad5", null ],
     [ "operator<<", "debug_8hpp.html#ac2fcdc6b38da4dbf782c94d651461112", null ],
-    [ "DebugPring", "debug_8hpp.html#affe6a40813d5ceb07f91f0d70d0ec97e", null ],
-    [ "DebugPring", "debug_8hpp.html#aaefa44588b21ef2ac4d9ca32783b9f33", null ]
+    [ "DebugPrint", "debug_8hpp.html#a966f60e90ba58ad164d45a0ed1614116", null ],
+    [ "DebugPrint", "debug_8hpp.html#ab71b4c038f1f1744888de17e8c17507f", null ]
 ];

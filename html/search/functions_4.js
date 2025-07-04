@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['debugpring_0',['DebugPring',['../debug_8hpp.html#affe6a40813d5ceb07f91f0d70d0ec97e',1,'DebugPring(int i, T name):&#160;debug.hpp'],['../debug_8hpp.html#aaefa44588b21ef2ac4d9ca32783b9f33',1,'DebugPring(int i, const T1 &amp;name, const T2 &amp;a, const T3 &amp;...b):&#160;debug.hpp']]],
+  ['debugprint_0',['DebugPrint',['../debug_8hpp.html#a966f60e90ba58ad164d45a0ed1614116',1,'DebugPrint(int i, T name):&#160;debug.hpp'],['../debug_8hpp.html#ab71b4c038f1f1744888de17e8c17507f',1,'DebugPrint(int i, const T1 &amp;name, const T2 &amp;a, const T3 &amp;...b):&#160;debug.hpp']]],
   ['diff_1',['diff',['../struct_dsu_potentialized.html#ab9a92fc6174f8c4b5da8db55c060d1b6',1,'DsuPotentialized']]],
   ['differential_2',['Differential',['../namespace_f_p_s.html#a18d3a03cb678d29deefc254e2fcb1b50',1,'FPS']]],
   ['dijkstra_3',['Dijkstra',['../dijkstra_8hpp.html#a4e0e194e2b19ea300065b537c8cd3ce8',1,'dijkstra.hpp']]],

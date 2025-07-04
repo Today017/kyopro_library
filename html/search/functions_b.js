@@ -4,7 +4,7 @@ var searchData=
   ['lagrangepolynomial_1',['lagrangePolynomial',['../lagrange2_8hpp.html#ac7cffccc1d987126f4dc4cb1177d13c6',1,'lagrange2.hpp']]],
   ['lazyreversiblerbst_2',['LazyReversibleRBST',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a6b57cd7c8c2abdf621c86e76aa2f5a58',1,'InsertableReversibleArrayImpl::LazyReversibleRBST']]],
   ['lazyreversiblerbstnode_3',['LazyReversibleRBSTNode',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node.html#a0d205c9909ffba7b009dc9e50a372a76',1,'InsertableReversibleArrayImpl::LazyReversibleRBSTNode']]],
-  ['lb_4',['LB',['../template_8hpp.html#af2d1da6bbeaa2e46ae671238611d3962',1,'template.hpp']]],
+  ['lb_4',['LB',['../template_8hpp.html#a296dd4c6d59f3c6fef615325ff306017',1,'template.hpp']]],
   ['lca_5',['LCA',['../struct_l_c_a.html#af2157628f4f88384efbe0a212d855701',1,'LCA']]],
   ['lca_6',['lca',['../struct_h_l_d.html#ae95bc5be0f704bafb0ab667d1dffb0cc',1,'HLD::lca()'],['../struct_l_c_a.html#a487d1c6c968cd4282e6e0cae4e28fe66',1,'LCA::lca()']]],
   ['lcaedge_7',['LcaEdge',['../struct_lca_edge.html#a4ea24fb4a2054bd7b21d40e3c66226e5',1,'LcaEdge']]],

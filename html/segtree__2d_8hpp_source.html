@@ -128,7 +128,7 @@ $(function(){initNavTree('segtree__2d_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_segment_tree2_d.html#acd4e88f120683b23eda460fce60537ae">   17</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_segment_tree2_d.html#acd4e88f120683b23eda460fce60537ae">set</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, Type v) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        x+=h,y+=w;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        dat[x][y]=v;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=x&gt;&gt;1; i&gt;0; i&gt;&gt;=1) dat[i][y]=Monoid::op(dat[i1&lt;&lt;1][y],dat[i&lt;&lt;1|1][y]);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=x&gt;&gt;1; i&gt;0; i&gt;&gt;=1) dat[i][y]=Monoid::op(dat[i&lt;&lt;1][y],dat[i&lt;&lt;1|1][y]);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">while</span>(x&gt;0) {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=y&gt;&gt;1; j&gt;0; j&gt;&gt;=1) dat[x][j]=Monoid::op(dat[x][j&lt;&lt;1],dat[x][j&lt;&lt;1|1]);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            x&gt;&gt;=1;</div>
@@ -154,18 +154,16 @@ $(function(){initNavTree('segtree__2d_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">int</span> h,w;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    vector&lt;vector&lt;Type&gt;&gt;dat;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    F Monoid::op;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_struct" href="struct_segment_tree2_d.html">Type</a> <a class="code hl_struct" href="struct_segment_tree2_d.html">Monoid</a>::<a class="code hl_struct" href="struct_segment_tree2_d.html">id</a>();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    Type fold_sub(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> u, <span class="keywordtype">int</span> d) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        Type ret=Monoid::id();</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">while</span>(u&lt;d) {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">if</span>(u&amp;1) ret=Monoid::op(ret,dat[x][u]),u++;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordflow">if</span>(d&amp;1) d--,ret=Monoid::op(ret,dat[x][d]);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            u&gt;&gt;=1,d&gt;&gt;=1;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    Type fold_sub(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> u, <span class="keywordtype">int</span> d) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        Type ret=Monoid::id();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">while</span>(u&lt;d) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">if</span>(u&amp;1) ret=Monoid::op(ret,dat[x][u]),u++;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">if</span>(d&amp;1) d--,ret=Monoid::op(ret,dat[x][d]);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            u&gt;&gt;=1,d&gt;&gt;=1;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
 </div>
 <div class="ttc" id="astruct_segment_tree2_d_html"><div class="ttname"><a href="struct_segment_tree2_d.html">SegmentTree2D</a></div><div class="ttdef"><b>Definition</b> <a href="#l00004">segtree_2d.hpp:4</a></div></div>
 <div class="ttc" id="astruct_segment_tree2_d_html_a1f340ff0fcceff8ca552fbc7c1610194"><div class="ttname"><a href="struct_segment_tree2_d.html#a1f340ff0fcceff8ca552fbc7c1610194">SegmentTree2D::SegmentTree2D</a></div><div class="ttdeci">SegmentTree2D()=default</div></div>

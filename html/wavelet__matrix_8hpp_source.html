@@ -352,7 +352,7 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        ull c=0;</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        <span class="keywordflow">for</span>(ull i=0;i&lt;bit_arrays.size();++i) {</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            ull bit=bit_arrays.at(i).access(pos);</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            c=((c&lt;&lt;=1)|bit);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            c=(c&lt;&lt;1)|bit;</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            pos=bit_arrays.at(i).rank(bit,pos);</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            <span class="keywordflow">if</span>(bit)pos+=<span class="keyword">this</span>-&gt;begin_one.at(i);</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        }</div>
@@ -518,7 +518,7 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>            <span class="keywordflow">if</span>(get&lt;4&gt;(l)!=get&lt;4&gt;(r))<span class="keywordflow">return</span> get&lt;4&gt;(l)&gt;get&lt;4&gt;(r);</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>        };</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>        priority_queue&lt;tuple&lt;ull,ull,ull,ull,ull&gt;,vector&lt;tuple&lt;ull,ull,ull,ull,ull&gt;&gt;,<span class="keyword">decltype</span>(c)&gt;que(c);<span class="comment">//width,left,right,depth,value</span></div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>        std::priority_queue&lt;tuple&lt;ull,ull,ull,ull,ull&gt;,vector&lt;tuple&lt;ull,ull,ull,ull,ull&gt;&gt;,<span class="keyword">decltype</span>(c)&gt;que(c);<span class="comment">//width,left,right,depth,value</span></div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>        que.push(make_tuple(e-s,s,e,0,0));</div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>        <span class="keywordflow">while</span>(<span class="keyword">not</span> que.empty()) {</div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>            <span class="keyword">auto</span> element=que.top();</div>
