@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"int128_8hpp.html#a642c9a2936c6b33c8f43371c81377cb7":[6,0,8,5,3],
+"int128_8hpp.html#afe140ebd0d1922eac0a3ccd4701f5446":[6,0,8,5,1],
+"int128_8hpp_source.html":[6,0,8,5],
 "intersect_8hpp.html":[6,0,8,6],
 "intersect_8hpp.html#a54e453c3674a9b11778d7426f93677cd":[6,0,8,6,0],
 "intersect_8hpp_source.html":[6,0,8,6],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9":[4,0,15,5],
 "namespace_zeta_mobius_div_mul.html#a60c1e6ce641275a4ee75d229514c1691":[4,0,15,0],
 "namespace_zeta_mobius_div_mul.html#afe1e6c2c7d8180ade6e65334eec8368f":[4,0,15,4],
-"namespacecompress.html":[4,0,2],
-"namespacecompress.html#a30b635f18c81637d3c1d613b8be0e223":[4,0,2,0],
-"namespacecompress.html#a54ac03d8200b90f0df7eaef116a6634d":[4,0,2,3],
-"namespacecompress.html#a8e7877c3a20b124f013d1fda1eb05465":[4,0,2,2]
+"namespacecompress.html":[4,0,2]
 };

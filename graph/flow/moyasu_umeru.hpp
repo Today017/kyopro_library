@@ -1,19 +1,17 @@
 #include"../../../kyopro_library/template.hpp"
-
-#include<atcoder/maxflow>
+#include"../../../kyopro_library/graph/flow/max_flow.hpp"
 
 /// @brief 燃やす埋める
-template<typename Cost>
-struct BurningBurying {
-    BurningBurying(int n) {
+struct MoyasuUmeru {
+    MoyasuUmeru(int n) {
         this->n=n;
         start=n;
         goal=n+1;
-        mf=atcoder::mf_graph<Cost>(n+2);
+        mf=MaxFlow(n+2);
     }
 
     /// @brief x[i] = 0 のときコスト zero, x[i] = 1 のときコスト one がかかるという条件を追加する
-    void add_single(int i, Cost zero, Cost one) {
+    void add_single(int i, ll zero, ll one) {
         if(zero<=one) {
             //基本コストがzeroで、iを0から1に変えると+one-zeroされる
             offset+=zero;
@@ -35,7 +33,7 @@ struct BurningBurying {
      * 
      * @attention b + c >= a + d を要求する
     */
-    void add_double(int i, int j, Cost a, Cost b, Cost c, Cost d) {
+    void add_double(int i, int j, ll a, ll b, ll c, ll d) {
         assert(b+c>=a+d);
         offset+=a;
         add_single(i,0,c-a);
@@ -43,11 +41,20 @@ struct BurningBurying {
         mf.add_edge(i,j,b+c-a-d);
     }
 
+    /// @brief 解を復元する
+    /// @attention `solve()` を実行した後に使うこと
+    vector<int> fukugen() {
+        auto ret=mf.mincut(start);
+        ret.pop_back(); ret.pop_back();
+        for(int& x: ret) x^=1;
+        return ret;
+    }
+
     /// @brief コスト最小値を求める
-    Cost solve() { return mf.flow(start,goal)+offset; }
+    ll solve() { return mf.flow(start,goal)+offset; }
 
 private:
     int n,start,goal;
-    Cost offset=0;
-    atcoder::mf_graph<Cost> mf;
+    ll offset=0;
+    MaxFlow mf;
 };

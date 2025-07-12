@@ -1,4 +1,4 @@
 var moyasu__umeru_8hpp =
 [
-    [ "BurningBurying< Cost >", "struct_burning_burying.html", "struct_burning_burying" ]
+    [ "MoyasuUmeru", "struct_moyasu_umeru.html", "struct_moyasu_umeru" ]
 ];

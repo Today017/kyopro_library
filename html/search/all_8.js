@@ -22,5 +22,6 @@ var searchData=
   ['fps_2ehpp_19',['fps.hpp',['../fps_8hpp.html',1,'']]],
   ['fraction_20',['Fraction',['../struct_fraction.html',1,'Fraction&lt; T &gt;'],['../struct_fraction.html#a55ebf786ffa0532ac299c78c0511e8f9',1,'Fraction::Fraction()=default'],['../struct_fraction.html#a42f7ffc10b3eb9cb2185656d6ce63162',1,'Fraction::Fraction(T a, T b)'],['../struct_fraction.html#ae6cdaacb37d8687ef6e250b509051af7',1,'Fraction::Fraction(T a=0)']]],
   ['fraction_2ehpp_21',['fraction.hpp',['../fraction_8hpp.html',1,'']]],
-  ['from_22',['from',['../struct_max_flow_1_1_edge.html#a91c4dcb113c554cba7dfda6bee9ee54d',1,'MaxFlow::Edge::from'],['../struct_min_cost_flow_1_1_edge.html#a547696eaaa79241ef48244ef50ef8f11',1,'MinCostFlow::Edge::from']]]
+  ['from_22',['from',['../struct_max_flow_1_1_edge.html#a91c4dcb113c554cba7dfda6bee9ee54d',1,'MaxFlow::Edge::from'],['../struct_min_cost_flow_1_1_edge.html#a547696eaaa79241ef48244ef50ef8f11',1,'MinCostFlow::Edge::from']]],
+  ['fukugen_23',['fukugen',['../struct_moyasu_umeru.html#a41fd6c3d29357ac60da7f94a90e87c6f',1,'MoyasuUmeru']]]
 ];

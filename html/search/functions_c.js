@@ -8,7 +8,7 @@ var searchData=
   ['matpow_5',['MatPow',['../matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712',1,'matrix.hpp']]],
   ['max_6',['max',['../struct_binary_trie.html#a574e1542d7930e058e8ac8949424063f',1,'BinaryTrie::max()'],['../struct_multi_set.html#ad78f6fac05a65bd05a34586b51a9eaee',1,'MultiSet::max()'],['../struct_set.html#ab1cbe6674e6ec706e07d03e13bf20dcd',1,'Set::max()'],['../struct_sorted_multi_tree.html#a34080f5436802049e526dbcfcdb4657c',1,'SortedMultiTree::max()'],['../struct_sorted_tree.html#a6a608768ca3556fdfbb31764b4e48a09',1,'SortedTree::max()']]],
   ['max_5frange_7',['max_range',['../struct_wavelet_matrix.html#a6bc748ebdfcaecf9b5c8659287989390',1,'WaveletMatrix']]],
-  ['maxflow_8',['MaxFlow',['../struct_max_flow.html#a110c5a586e8fe54f4fbb8cfc03219d3b',1,'MaxFlow']]],
+  ['maxflow_8',['MaxFlow',['../struct_max_flow.html#a110c5a586e8fe54f4fbb8cfc03219d3b',1,'MaxFlow::MaxFlow(int n)'],['../struct_max_flow.html#a030f4b0fb0a2d3cdb34fe71f74428c8e',1,'MaxFlow::MaxFlow()=default']]],
   ['merge_9',['merge',['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a786a13ae117b5d6a66e4fdee580da88e',1,'InsertableReversibleArrayImpl::RBSTBase::merge()'],['../struct_d_s_u.html#a81af0a8861251cc70ae491c6249e672d',1,'DSU::merge()'],['../struct_dsu_merging.html#adcc3916018699b654242ea713b02adac',1,'DsuMerging::merge()'],['../struct_dsu_potentialized.html#af5810896e43c6ea1254cee6cbc6230af',1,'DsuPotentialized::merge()'],['../struct_dsu_rollback.html#a103be2aa1ff86601ef80cf051c3d566f',1,'DsuRollback::merge()'],['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#aee7676fe4681e1812dabfdd680159f73',1,'InsertableReversibleArrayImpl::LazyReversibleRBST::merge()']]],
   ['mergesorttree_10',['MergeSortTree',['../struct_merge_sort_tree.html#a127958ecca67593f3cb1fcbb8051506b',1,'MergeSortTree::MergeSortTree()=default'],['../struct_merge_sort_tree.html#ac8235ab846d13f418b4ba8783ff461d9',1,'MergeSortTree::MergeSortTree(const vector&lt; T &gt; &amp;v)']]],
   ['min_11',['min',['../struct_binary_trie.html#aa535fa5b5a9c4a43be753790348b940d',1,'BinaryTrie::min()'],['../struct_multi_set.html#a588b67e05193fb2068526aa9d07a2145',1,'MultiSet::min()'],['../struct_set.html#a9625ca33788f09648b240f98c0eb33a7',1,'Set::min()'],['../struct_sorted_multi_tree.html#a002d58401bbd7c496de2a493225dc462',1,'SortedMultiTree::min()'],['../struct_sorted_tree.html#aa83c587261288d7a4fa3a7dec02b88c4',1,'SortedTree::min()']]],
@@ -22,11 +22,12 @@ var searchData=
   ['modinvgcd_19',['ModInvGcd',['../extgcd_8hpp.html#a9971b6b2383ca7009a1de48b02b31350',1,'extgcd.hpp']]],
   ['modlog_20',['ModLog',['../modlog_8hpp.html#adb207efc9898a62631a8531129c553e5',1,'modlog.hpp']]],
   ['modpow_21',['ModPow',['../modcal_8hpp.html#a36972de598e8c5d9fe14db0be639c098',1,'modcal.hpp']]],
-  ['mul_22',['Mul',['../namespace_f_p_s.html#ab8e16e5c05f00c85e0a2d8ed9650a75a',1,'FPS']]],
-  ['multiplemobius_23',['MultipleMobius',['../namespace_zeta_mobius_div_mul.html#a17972686c127951d7816aef375120758',1,'ZetaMobiusDivMul']]],
-  ['multiplezeta_24',['MultipleZeta',['../namespace_zeta_mobius_div_mul.html#a3464457ced48ed60b5726ff223b31af4',1,'ZetaMobiusDivMul']]],
-  ['multipointevaluate_25',['MultipointEvaluate',['../multipoint__evaluate_8hpp.html#abb2c277f4d822368ce7159e49b2c7fd0',1,'multipoint_evaluate.hpp']]],
-  ['multiset_26',['MultiSet',['../struct_multi_set.html#ae1683508411d44c542872827503b2881',1,'MultiSet::MultiSet()=default'],['../struct_multi_set.html#a99a83ecab866565566687d8aae71d018',1,'MultiSet::MultiSet(T not_found=-1)']]],
-  ['my_5fdel_27',['my_del',['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#ad3073c30f3809a630a7a90ae2a877c74',1,'InsertableReversibleArrayImpl::RBSTBase']]],
-  ['my_5fnew_28',['my_new',['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#aa8b6128c8a3a8fefe6919c8068788f5e',1,'InsertableReversibleArrayImpl::RBSTBase']]]
+  ['moyasuumeru_22',['MoyasuUmeru',['../struct_moyasu_umeru.html#a0a1da6ea897028742262913ad6577bf4',1,'MoyasuUmeru']]],
+  ['mul_23',['Mul',['../namespace_f_p_s.html#ab8e16e5c05f00c85e0a2d8ed9650a75a',1,'FPS']]],
+  ['multiplemobius_24',['MultipleMobius',['../namespace_zeta_mobius_div_mul.html#a17972686c127951d7816aef375120758',1,'ZetaMobiusDivMul']]],
+  ['multiplezeta_25',['MultipleZeta',['../namespace_zeta_mobius_div_mul.html#a3464457ced48ed60b5726ff223b31af4',1,'ZetaMobiusDivMul']]],
+  ['multipointevaluate_26',['MultipointEvaluate',['../multipoint__evaluate_8hpp.html#abb2c277f4d822368ce7159e49b2c7fd0',1,'multipoint_evaluate.hpp']]],
+  ['multiset_27',['MultiSet',['../struct_multi_set.html#ae1683508411d44c542872827503b2881',1,'MultiSet::MultiSet()=default'],['../struct_multi_set.html#a99a83ecab866565566687d8aae71d018',1,'MultiSet::MultiSet(T not_found=-1)']]],
+  ['my_5fdel_28',['my_del',['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#ad3073c30f3809a630a7a90ae2a877c74',1,'InsertableReversibleArrayImpl::RBSTBase']]],
+  ['my_5fnew_29',['my_new',['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#aa8b6128c8a3a8fefe6919c8068788f5e',1,'InsertableReversibleArrayImpl::RBSTBase']]]
 ];

@@ -76,6 +76,9 @@ var NAVTREEINDEX0 =
 "combination__lucas_8hpp_source.html":[6,0,7,1],
 "compress_8py.html":[6,0,5,0],
 "compress_8py_source.html":[6,0,5,0],
+"convex__hull_8hpp.html":[6,0,2,1],
+"convex__hull_8hpp.html#a8475573aaf52158717672623187705f6":[6,0,2,1,0],
+"convex__hull_8hpp_source.html":[6,0,2,1],
 "convolution_8hpp.html":[6,0,6,1],
 "convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397":[6,0,6,1,1],
 "convolution_8hpp.html#a6a27829658ebde922fee66179fe05f3c":[6,0,6,1,0],
@@ -229,8 +232,8 @@ var NAVTREEINDEX0 =
 "functions_w.html":[5,2,0,22],
 "functions_x.html":[5,2,0,23],
 "functions_y.html":[5,2,0,24],
-"geo_8hpp.html":[6,0,2,1],
-"geo_8hpp_source.html":[6,0,2,1],
+"geo_8hpp.html":[6,0,2,2],
+"geo_8hpp_source.html":[6,0,2,2],
 "globals.html":[6,1,0],
 "globals_defs.html":[6,1,4],
 "globals_func.html":[6,1,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX0 =
 "insert__reverse__array_8hpp_source.html":[6,0,1,5],
 "int128_8hpp.html":[6,0,8,5],
 "int128_8hpp.html#a01dfe26ad2682864fe404deda4361363":[6,0,8,5,2],
-"int128_8hpp.html#a11f231eccc639b561dd848350c493ba4":[6,0,8,5,0],
-"int128_8hpp.html#a642c9a2936c6b33c8f43371c81377cb7":[6,0,8,5,3],
-"int128_8hpp.html#afe140ebd0d1922eac0a3ccd4701f5446":[6,0,8,5,1],
-"int128_8hpp_source.html":[6,0,8,5]
+"int128_8hpp.html#a11f231eccc639b561dd848350c493ba4":[6,0,8,5,0]
 };

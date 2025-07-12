@@ -106,71 +106,82 @@ $(function(){initNavTree('moyasu__umeru_8hpp_source.html',''); initResizable(tru
 </div><!--header-->
 <div class="contents">
 <a href="moyasu__umeru_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&lt;</span><span class="preprocessor">atcoder</span><span class="preprocessor">/</span><span class="preprocessor">maxflow</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @brief 燃やす埋める</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Cost&gt;</div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_burning_burying.html">    7</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_burning_burying.html">BurningBurying</a> {</div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_burning_burying.html#a2f4140e564a37c264619079966077ee6">    8</a></span>    <a class="code hl_function" href="struct_burning_burying.html#a2f4140e564a37c264619079966077ee6">BurningBurying</a>(<span class="keywordtype">int</span> n) {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keyword">this</span>-&gt;n=n;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        start=n;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        goal=n+1;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        mf=atcoder::mf_graph&lt;Cost&gt;(n+2);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../../kyopro_library/graph/flow/max_flow.hpp&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 燃やす埋める</span></div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_moyasu_umeru.html">    5</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_moyasu_umeru.html">MoyasuUmeru</a> {</div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_moyasu_umeru.html#a0a1da6ea897028742262913ad6577bf4">    6</a></span>    <a class="code hl_function" href="struct_moyasu_umeru.html#a0a1da6ea897028742262913ad6577bf4">MoyasuUmeru</a>(<span class="keywordtype">int</span> n) {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        <span class="keyword">this</span>-&gt;n=n;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        start=n;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        goal=n+1;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        mf=MaxFlow(n+2);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">/// @brief x[i] = 0 のときコスト zero, x[i] = 1 のときコスト one がかかるという条件を追加する</span></div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">   16</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">add_single</a>(<span class="keywordtype">int</span> i, Cost zero, Cost one) {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">if</span>(zero&lt;=one) {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="comment">//基本コストがzeroで、iを0から1に変えると+one-zeroされる</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            offset+=zero;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            mf.add_edge(start,i,one-zero);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="comment">//基本コストがoneで、iを1から0に変えると-one+zeroされる</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            offset+=one;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            mf.add_edge(i,goal,zero-one);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">/// @brief x[i] = 0 のときコスト zero, x[i] = 1 のときコスト one がかかるという条件を追加する</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">add_single</a>(<span class="keywordtype">int</span> i, ll zero, ll one) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span>(zero&lt;=one) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="comment">//基本コストがzeroで、iを0から1に変えると+one-zeroされる</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            offset+=zero;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            mf.add_edge(start,i,one-zero);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="comment">//基本コストがoneで、iを1から0に変えると-one+zeroされる</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            offset+=one;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            mf.add_edge(i,goal,zero-one);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
 </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">   29</span><span class="comment">     * @brief</span></div>
-<div class="line"><span class="lineno">   30</span><span class="comment">     * x[ i ], x[ j ] の組み合わせについて、以下のコストかかるという条件を追加する</span></div>
-<div class="line"><span class="lineno">   31</span><span class="comment">     * |          | x[j] = 0 | x[j] = 1 |</span></div>
-<div class="line"><span class="lineno">   32</span><span class="comment">     * | ---      | ---      | ---      |</span></div>
-<div class="line"><span class="lineno">   33</span><span class="comment">     * | x[i] = 0 | a        | b        |</span></div>
-<div class="line"><span class="lineno">   34</span><span class="comment">     * | x[i] = 1 | c        | d        |</span></div>
-<div class="line"><span class="lineno">   35</span><span class="comment">     * </span></div>
-<div class="line"><span class="lineno">   36</span><span class="comment">     * @attention b + c &gt;= a + d を要求する</span></div>
-<div class="line"><span class="lineno">   37</span><span class="comment">    */</span></div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_burning_burying.html#a44ab45cb039360509bab62a01f384d28">   38</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_burning_burying.html#a44ab45cb039360509bab62a01f384d28">add_double</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, Cost a, Cost b, Cost c, Cost d) {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        assert(b+c&gt;=a+d);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        offset+=a;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_function" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">add_single</a><a class="code hl_function" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">(</a>i<a class="code hl_function" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">,</a>0<a class="code hl_function" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">,</a>c-a<a class="code hl_function" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">)</a>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <a class="code hl_function" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">add_single</a><a class="code hl_function" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">(</a>j<a class="code hl_function" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">,</a>0<a class="code hl_function" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">,</a>d-c<a class="code hl_function" href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">)</a>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        mf.add_edge(i,j,b+c-a-d);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   27</span><span class="comment">     * @brief</span></div>
+<div class="line"><span class="lineno">   28</span><span class="comment">     * x[ i ], x[ j ] の組み合わせについて、以下のコストかかるという条件を追加する</span></div>
+<div class="line"><span class="lineno">   29</span><span class="comment">     * |          | x[j] = 0 | x[j] = 1 |</span></div>
+<div class="line"><span class="lineno">   30</span><span class="comment">     * | ---      | ---      | ---      |</span></div>
+<div class="line"><span class="lineno">   31</span><span class="comment">     * | x[i] = 0 | a        | b        |</span></div>
+<div class="line"><span class="lineno">   32</span><span class="comment">     * | x[i] = 1 | c        | d        |</span></div>
+<div class="line"><span class="lineno">   33</span><span class="comment">     * </span></div>
+<div class="line"><span class="lineno">   34</span><span class="comment">     * @attention b + c &gt;= a + d を要求する</span></div>
+<div class="line"><span class="lineno">   35</span><span class="comment">    */</span></div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_moyasu_umeru.html#a79bc867a29b4b9284b5c500d0a0ae4cd">   36</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_moyasu_umeru.html#a79bc867a29b4b9284b5c500d0a0ae4cd">add_double</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, ll a, ll b, ll c, ll d) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        assert(b+c&gt;=a+d);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        offset+=a;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_function" href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">add_single</a><a class="code hl_function" href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">(</a>i<a class="code hl_function" href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">,</a>0<a class="code hl_function" href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">,</a>c-a<a class="code hl_function" href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">)</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_function" href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">add_single</a><a class="code hl_function" href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">(</a>j<a class="code hl_function" href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">,</a>0<a class="code hl_function" href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">,</a>d-c<a class="code hl_function" href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">)</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        mf.add_edge(i,j,b+c-a-d);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">/// @brief コスト最小値を求める</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_burning_burying.html#a90fd210c7fb2b5e0a929a3f2b973d543">   47</a></span>    Cost <a class="code hl_function" href="struct_burning_burying.html#a90fd210c7fb2b5e0a929a3f2b973d543">solve</a>() { <span class="keywordflow">return</span> mf.flow(start,goal)+offset; }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">int</span> n,start,goal;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    Cost offset=0;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    atcoder::mf_graph&lt;Cost&gt; mf;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">/// @brief 解を復元する</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">/// @attention `solve()` を実行した後に使うこと</span></div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct_moyasu_umeru.html#a41fd6c3d29357ac60da7f94a90e87c6f">   46</a></span>    <a class="code hl_function" href="struct_moyasu_umeru.html#a41fd6c3d29357ac60da7f94a90e87c6f">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_function" href="struct_moyasu_umeru.html#a41fd6c3d29357ac60da7f94a90e87c6f">fukugen</a>() {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">auto</span> ret=mf.mincut(start);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        ret.pop_back(); ret.pop_back();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span>&amp; x: ret) x^=1;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
 </div>
-<div class="ttc" id="astruct_burning_burying_html"><div class="ttname"><a href="struct_burning_burying.html">BurningBurying</a></div><div class="ttdoc">燃やす埋める</div><div class="ttdef"><b>Definition</b> <a href="#l00007">moyasu_umeru.hpp:7</a></div></div>
-<div class="ttc" id="astruct_burning_burying_html_a2f4140e564a37c264619079966077ee6"><div class="ttname"><a href="struct_burning_burying.html#a2f4140e564a37c264619079966077ee6">BurningBurying::BurningBurying</a></div><div class="ttdeci">BurningBurying(int n)</div><div class="ttdef"><b>Definition</b> <a href="#l00008">moyasu_umeru.hpp:8</a></div></div>
-<div class="ttc" id="astruct_burning_burying_html_a44ab45cb039360509bab62a01f384d28"><div class="ttname"><a href="struct_burning_burying.html#a44ab45cb039360509bab62a01f384d28">BurningBurying::add_double</a></div><div class="ttdeci">void add_double(int i, int j, Cost a, Cost b, Cost c, Cost d)</div><div class="ttdoc">x[ i ], x[ j ] の組み合わせについて、以下のコストかかるという条件を追加する</div><div class="ttdef"><b>Definition</b> <a href="#l00038">moyasu_umeru.hpp:38</a></div></div>
-<div class="ttc" id="astruct_burning_burying_html_a90fd210c7fb2b5e0a929a3f2b973d543"><div class="ttname"><a href="struct_burning_burying.html#a90fd210c7fb2b5e0a929a3f2b973d543">BurningBurying::solve</a></div><div class="ttdeci">Cost solve()</div><div class="ttdoc">コスト最小値を求める</div><div class="ttdef"><b>Definition</b> <a href="#l00047">moyasu_umeru.hpp:47</a></div></div>
-<div class="ttc" id="astruct_burning_burying_html_af68f6edc148d7bbdb20c3e3eca21a55b"><div class="ttname"><a href="struct_burning_burying.html#af68f6edc148d7bbdb20c3e3eca21a55b">BurningBurying::add_single</a></div><div class="ttdeci">void add_single(int i, Cost zero, Cost one)</div><div class="ttdoc">x[i] = 0 のときコスト zero, x[i] = 1 のときコスト one がかかるという条件を追加する</div><div class="ttdef"><b>Definition</b> <a href="#l00016">moyasu_umeru.hpp:16</a></div></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">/// @brief コスト最小値を求める</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="struct_moyasu_umeru.html#aec53842b36415dff35520299198116db">   54</a></span>    ll <a class="code hl_function" href="struct_moyasu_umeru.html#aec53842b36415dff35520299198116db">solve</a>() { <span class="keywordflow">return</span> mf.flow(start,goal)+offset; }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">int</span> n,start,goal;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    ll offset=0;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_struct" href="struct_max_flow.html">MaxFlow</a> mf;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
+</div>
+<div class="ttc" id="astruct_max_flow_html"><div class="ttname"><a href="struct_max_flow.html">MaxFlow</a></div><div class="ttdoc">最大流</div><div class="ttdef"><b>Definition</b> <a href="max__flow_8hpp_source.html#l00005">max_flow.hpp:5</a></div></div>
+<div class="ttc" id="astruct_moyasu_umeru_html"><div class="ttname"><a href="struct_moyasu_umeru.html">MoyasuUmeru</a></div><div class="ttdoc">燃やす埋める</div><div class="ttdef"><b>Definition</b> <a href="#l00005">moyasu_umeru.hpp:5</a></div></div>
+<div class="ttc" id="astruct_moyasu_umeru_html_a0a1da6ea897028742262913ad6577bf4"><div class="ttname"><a href="struct_moyasu_umeru.html#a0a1da6ea897028742262913ad6577bf4">MoyasuUmeru::MoyasuUmeru</a></div><div class="ttdeci">MoyasuUmeru(int n)</div><div class="ttdef"><b>Definition</b> <a href="#l00006">moyasu_umeru.hpp:6</a></div></div>
+<div class="ttc" id="astruct_moyasu_umeru_html_a1c3fa40c4f5705ef736f904923e623c8"><div class="ttname"><a href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">MoyasuUmeru::add_single</a></div><div class="ttdeci">void add_single(int i, ll zero, ll one)</div><div class="ttdoc">x[i] = 0 のときコスト zero, x[i] = 1 のときコスト one がかかるという条件を追加する</div><div class="ttdef"><b>Definition</b> <a href="#l00014">moyasu_umeru.hpp:14</a></div></div>
+<div class="ttc" id="astruct_moyasu_umeru_html_a41fd6c3d29357ac60da7f94a90e87c6f"><div class="ttname"><a href="struct_moyasu_umeru.html#a41fd6c3d29357ac60da7f94a90e87c6f">MoyasuUmeru::fukugen</a></div><div class="ttdeci">vector&lt; int &gt; fukugen()</div><div class="ttdoc">解を復元する</div><div class="ttdef"><b>Definition</b> <a href="#l00046">moyasu_umeru.hpp:46</a></div></div>
+<div class="ttc" id="astruct_moyasu_umeru_html_a79bc867a29b4b9284b5c500d0a0ae4cd"><div class="ttname"><a href="struct_moyasu_umeru.html#a79bc867a29b4b9284b5c500d0a0ae4cd">MoyasuUmeru::add_double</a></div><div class="ttdeci">void add_double(int i, int j, ll a, ll b, ll c, ll d)</div><div class="ttdoc">x[ i ], x[ j ] の組み合わせについて、以下のコストかかるという条件を追加する</div><div class="ttdef"><b>Definition</b> <a href="#l00036">moyasu_umeru.hpp:36</a></div></div>
+<div class="ttc" id="astruct_moyasu_umeru_html_aec53842b36415dff35520299198116db"><div class="ttname"><a href="struct_moyasu_umeru.html#aec53842b36415dff35520299198116db">MoyasuUmeru::solve</a></div><div class="ttdeci">ll solve()</div><div class="ttdoc">コスト最小値を求める</div><div class="ttdef"><b>Definition</b> <a href="#l00054">moyasu_umeru.hpp:54</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

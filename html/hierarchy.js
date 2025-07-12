@@ -16,7 +16,6 @@ var hierarchy =
     [ "BinaryTrie< T, Log >", "struct_binary_trie.html", null ],
     [ "BipartiteMatchingWeighted< MAX >", "struct_bipartite_matching_weighted.html", null ],
     [ "BridgeInfo", "struct_bridge_info.html", null ],
-    [ "BurningBurying< Cost >", "struct_burning_burying.html", null ],
     [ "CHT< T, MIN >", "struct_c_h_t.html", null ],
     [ "Geometry::Circle", "struct_geometry_1_1_circle.html", null ],
     [ "CombinationLucas", "struct_combination_lucas.html", null ],
@@ -61,6 +60,7 @@ var hierarchy =
     [ "Mo", "struct_mo.html", null ],
     [ "ModInt< MOD >", "struct_mod_int.html", null ],
     [ "ModIntDynamic", "struct_mod_int_dynamic.html", null ],
+    [ "MoyasuUmeru", "struct_moyasu_umeru.html", null ],
     [ "multiset", null, [
       [ "MultiSet< T >", "struct_multi_set.html", null ]
     ] ],
