@@ -5,7 +5,7 @@
 /// @details n 以下の素数の配列を返す
 /// @note O(n log(log(n)))
 vector<int> PrimeEnumerate(int n) {
-    vector<int> prime,is_prime(n+1,true);
+    vector<int> prime, is_prime(n+1,true);
     is_prime[0]=is_prime[1]=false;
     for(int i=2; i<=n; i++) {
         if(is_prime[i]) {

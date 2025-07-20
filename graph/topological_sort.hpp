@@ -12,8 +12,7 @@ vector<int> TopologicalSort(const vector<vector<int>>& g) {
     vector<int> ret;
 
     while(!que.empty()) {
-        int now=que.front();
-        que.pop();
+        int now=que.front(); que.pop();
         for(int nxt: g[now]) {
             indeg[nxt]--;
             if(indeg[nxt]==0) que.push(nxt);

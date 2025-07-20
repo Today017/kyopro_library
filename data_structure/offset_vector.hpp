@@ -3,7 +3,7 @@
 /// @file offset_vector.hpp
 /// @brief 負の添字を取れる vector
 template<typename T>
-struct OffsetVector:vector<T> {
+struct OffsetVector: vector<T> {
     int offset=0;
     OffsetVector()=default;
 

@@ -12,23 +12,23 @@ struct SegTreeDual {
     /// @brief 要素数 n の双対セグ木を構築する
     SegTreeDual(int n) {
         this->n=n;
-        dat.assign(n<<1,CommutativeOperator::id());
+        dat=vector<Type>(n<<1,CommutativeOperator::id());
     }
 
     /// @brief 配列 v から双対セグ木を構築する
     SegTreeDual(const vector<Type>& v) {
         this->n=v.size();
-        dat.assign(n<<1,CommutativeOperator::id());
+        dat=vector<Type>(n<<1,CommutativeOperator::id());
         for(int i=0; i<n; i++) dat[i+n]=v[i];
         for(int i=n-1; i>0; i--) dat[i]=CommutativeOperator::op(dat[i<<1],dat[i<<1|1]);
     }
 
     void apply(int l, int r, Type x) {
-        l+=n,r+=n;
+        l+=n; r+=n;
         while(l<r) {
-            if(l&1) dat[l]=CommutativeOperator::op(dat[l],x),l++;
-            if(r&1) r--,dat[r]=CommutativeOperator::op(dat[r],x);
-            l>>=1,r>>=1;
+            if(l&1) dat[l]=CommutativeOperator::op(dat[l],x), l++;
+            if(r&1) r--, dat[r]=CommutativeOperator::op(dat[r],x);
+            l>>=1; r>>=1;
         }
     }
     Type get(int i) {

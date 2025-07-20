@@ -6,7 +6,7 @@ struct DSU {
     DSU()=default;
 
     DSU(int n) {
-        par.resize(n); iota(par.begin(),par.end(),0);
+        par=vector<int>(n); iota(par.begin(),par.end(),0);
         sz=vector<int>(n,1);
         forest_count=n;
     }

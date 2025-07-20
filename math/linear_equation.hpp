@@ -14,12 +14,12 @@ int RowReduction(vector<vector<bool>>& a, vector<int>& where) {
     int rank=0;
     for(int c=0; c<col-1; c++) {
         int pivot=rank;
-        while(pivot<row&&!a[pivot][c]) pivot++;
+        while(pivot<row && !a[pivot][c]) pivot++;
         if(pivot==row) continue;
         swap(a[pivot],a[rank]);
         where.push_back(c);
         for(int r=0; r<row; r++) {
-            if(r!=rank&&a[r][c]) {
+            if(r!=rank && a[r][c]) {
                 //A[r]^=A[c]
                 for(int i=0; i<col; i++) a[r][i]=a[r][i]^a[rank][i];
             }
@@ -50,7 +50,7 @@ bool LinearEquation(vector<vector<bool>> a, vector<bool> b, vector<bool>& x0, ve
 
     int r=0;
     for(int c=0; c<col; c++) {
-        if(r<rank&&c==where[r]) {
+        if(r<rank && c==where[r]) {
             r++;
             continue;
         }

@@ -121,7 +121,7 @@ $(function(){initNavTree('segtree__dual_8hpp_source.html',''); initResizable(tru
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_seg_tree_dual.html#a18acc9ec63cfe99180c12419e9308975">   13</a></span>    <a class="code hl_function" href="struct_seg_tree_dual.html#a18acc9ec63cfe99180c12419e9308975">SegTreeDual</a>(<span class="keywordtype">int</span> n) {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">this</span>-&gt;n=n;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        dat.assign(n&lt;&lt;1,CommutativeOperator::id());</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        dat=vector&lt;Type&gt;(n&lt;&lt;1,CommutativeOperator::id());</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
 </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
@@ -129,7 +129,7 @@ $(function(){initNavTree('segtree__dual_8hpp_source.html',''); initResizable(tru
 <div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_seg_tree_dual.html#a4b660b709846d909a0c7918f5187fe3f">   19</a></span>    <a class="code hl_function" href="struct_seg_tree_dual.html#a4b660b709846d909a0c7918f5187fe3f">SegTreeDual</a>(<span class="keyword">const</span> vector&lt;Type&gt;&amp; v) {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">this</span>-&gt;n=v.size();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        dat.assign(n&lt;&lt;1,CommutativeOperator::id());</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        dat=vector&lt;Type&gt;(n&lt;&lt;1,CommutativeOperator::id());</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) dat[i+n]=v[i];</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=n-1; i&gt;0; i--) dat[i]=CommutativeOperator::op(dat[i&lt;&lt;1],dat[i&lt;&lt;1|1]);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
@@ -137,11 +137,11 @@ $(function(){initNavTree('segtree__dual_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_seg_tree_dual.html#a1a1257683cef6cd97451518b480c2a9a">   26</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_seg_tree_dual.html#a1a1257683cef6cd97451518b480c2a9a">apply</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, Type x) {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        l+=n,r+=n;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        l+=n; r+=n;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">while</span>(l&lt;r) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keywordflow">if</span>(l&amp;1) dat[l]=CommutativeOperator::op(dat[l],x),l++;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keywordflow">if</span>(r&amp;1) r--,dat[r]=CommutativeOperator::op(dat[r],x);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            l&gt;&gt;=1,r&gt;&gt;=1;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keywordflow">if</span>(l&amp;1) dat[l]=CommutativeOperator::op(dat[l],x), l++;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keywordflow">if</span>(r&amp;1) r--, dat[r]=CommutativeOperator::op(dat[r],x);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            l&gt;&gt;=1; r&gt;&gt;=1;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        }</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
 </div>

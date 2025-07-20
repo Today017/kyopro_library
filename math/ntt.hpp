@@ -11,9 +11,9 @@ class NTT {
     void ntt(vector<ll>& a, bool inv=false) {
         int mask=n-1,p=0;
         for(int i=n>>1; i>=1; i>>=1) {
-            auto& cur=(p&1)?tmp:a;
-            auto& nxt=(p&1)?a:tmp;
-            ll e=inv?roots[p+1]:inv_roots[p+1];
+            auto& cur=((p&1) ? tmp : a);
+            auto& nxt=((p&1) ? a : tmp);
+            ll e=(inv ? roots[p+1] : inv_roots[p+1]);
             ll w=1;
             for(int j=0; j<n; j+=i) {
                 REP(k,i) nxt[j+k]=(cur[((j<<1)&mask)+k]+w*cur[(((j<<1)+i)&mask)+k])%MOD;

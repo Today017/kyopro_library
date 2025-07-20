@@ -15,14 +15,14 @@ struct SegTreeDynamic {
 
     /// @brief i 番目の要素を v に変える
     void set(ll i, Type v) {
-        ll left=0,right=mx,cur=0;
+        ll left=0, right=mx, cur=0;
         route.clear();
         while(left<right-1) {
             ll mid=(left+right)/2;
 
-            int nxt,toi;
-            if(i<mid) nxt=node[cur].to[0],toi=0; //左
-            else nxt=node[cur].to[1],toi=1; //右
+            int nxt, toi;
+            if(i<mid) nxt=node[cur].to[0], toi=0; //左
+            else nxt=node[cur].to[1], toi=1; //右
 
             if(nxt==-1) {
                 nxt=node.size();
@@ -41,8 +41,8 @@ struct SegTreeDynamic {
         reverse(ALL(route));
         node[cur].value=v;
 
-        for(int r:route) {
-            int leftc=node[r].to[0],rightc=node[r].to[1];
+        for(int r: route) {
+            int leftc=node[r].to[0], rightc=node[r].to[1];
             Type leftv=(leftc==-1 ? Monoid::id() : node[leftc].value);
             Type rightv=(rightc==-1 ? Monoid::id() : node[rightc].value);
             node[r].value=Monoid::op(leftv,rightv);
@@ -51,11 +51,11 @@ struct SegTreeDynamic {
 
     /// @brief 区間 [l, r) のモノイド積を返す
     Type fold(ll l, ll r, int idx, ll left, ll right) {
-        if(right<l||left>r) return Monoid::id();
-        if(l<=left&&right<=r) return node[idx].value;
+        if(right<l || left>r) return Monoid::id();
+        if(l<=left && right<=r) return node[idx].value;
 
         ll mid=(left+right)/2;
-        int leftc=node[idx].to[0],rightc=node[idx].to[1];
+        int leftc=node[idx].to[0], rightc=node[idx].to[1];
 
         Type leftv,rightv;
         if(leftc==-1) leftv=Monoid::id();

@@ -4,12 +4,13 @@
 /// @brief 配列 v の転倒数を求める
 /// @note O(N log(N))
 ll InversionNumber(const vector<int>& v) {
+    //座圧する必要がない代わりに空間がΘ(N log(N)) どっちがいいんだろうね
     ll ret=0;
     auto Merge=[&](const vector<int>& a, const vector<int>& b) {
         int n=a.size();
         int r=0;
         for(int l=0; l<n; l++) {
-            while(r<n&&b[r]<a[l]) r++;
+            while(r<n && b[r]<a[l]) r++;
             ret+=r;
         }
         vector<int> c(2*n);

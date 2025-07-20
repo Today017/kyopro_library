@@ -118,7 +118,7 @@ $(function(){initNavTree('dsu__potentialized_8hpp_source.html',''); initResizabl
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">/// @brief コンストラクタ</span></div>
 <div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_dsu_potentialized.html#a8c36a02bd95351413d537dabdcdd40b1">   11</a></span>    <a class="code hl_function" href="struct_dsu_potentialized.html#a8c36a02bd95351413d537dabdcdd40b1">DsuPotentialized</a>(<span class="keywordtype">int</span> n) {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        par.resize(n); iota(par.begin(),par.end(),0);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        par=vector&lt;<span class="keywordtype">int</span>&gt;(n); iota(par.begin(),par.end(),0);</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        sz=vector&lt;<span class="keywordtype">int</span>&gt;(n,1);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        diff_weight=vector&lt;Type&gt;(n,Group::id());</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        forest_count=n;</div>

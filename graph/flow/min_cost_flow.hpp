@@ -12,10 +12,10 @@ struct MinCostFlow {
         ll cap; ///< 容量
         ll cost; ///< コスト
         bool isrev;
-        Edge(int from, int to, ll cap, ll cost, int rev, bool isrev):from(from),to(to),cap(cap),cost(cost),rev(rev),isrev(isrev) {}
+        Edge(int from, int to, ll cap, ll cost, int rev, bool isrev): from(from), to(to), cap(cap), cost(cost), rev(rev), isrev(isrev) {}
     };
 
-    MinCostFlow(int n) { graph.resize(n),dist.resize(n),pot.resize(n),pv.resize(n),pe.resize(n); }
+    MinCostFlow(int n) { graph.resize(n); dist.resize(n); pot.resize(n); pv.resize(n); pe.resize(n); }
 
     /// @brief s -> t に容量 cap, コスト cost の辺を追加する
     /// @note cost は負でも良い
@@ -55,8 +55,8 @@ struct MinCostFlow {
                 for(int i=0; i<graph[now].size(); i++) {
                     auto [from,to,rev,cap,cost,isrev]=graph[now][i];
                     ll ncost=dist[now]+cost+pot[now]-pot[to];
-                    if(cap>0&&dist[to]>ncost) {
-                        dist[to]=ncost,pv[to]=now,pe[to]=i;
+                    if(cap>0 && dist[to]>ncost) {
+                        dist[to]=ncost; pv[to]=now; pe[to]=i;
                         pq.push({dist[to],to});
                     }
                 }
@@ -65,10 +65,10 @@ struct MinCostFlow {
             for(int i=0; i<n; i++) pot[i]+=dist[i];
             ll d=f;
             for(int v=t; v!=s; v=pv[v]) d=min(d,graph[pv[v]][pe[v]].cap);
-            f-=d,ret+=d*pot[t];
+            f-=d; ret+=d*pot[t];
             for(int v=t; v!=s; v=pv[v]) {
-                auto &e=graph[pv[v]][pe[v]];
-                e.cap-=d,graph[v][e.rev].cap+=d;
+                auto& e=graph[pv[v]][pe[v]];
+                e.cap-=d; graph[v][e.rev].cap+=d;
             }
         }
 

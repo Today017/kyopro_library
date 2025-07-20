@@ -126,8 +126,8 @@ $(function(){initNavTree('bellman__ford_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">for</span>(; i&lt;n; i++) {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">bool</span> update=<span class="keyword">false</span>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; j++) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span> [nxt,cost]:g[j]) {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                <span class="keywordflow">if</span>(dst[j]!=INFL&amp;&amp;dst[j]+cost&lt;dst[nxt]) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span> [nxt,cost]: g[j]) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                <span class="keywordflow">if</span>(dst[j]!=INFL &amp;&amp; dst[j]+cost&lt;dst[nxt]) {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                    dst[nxt]=dst[j]+cost;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                    update=<span class="keyword">true</span>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                }</div>

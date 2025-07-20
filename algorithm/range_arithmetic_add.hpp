@@ -9,7 +9,7 @@
 vector<ll> RangeArithmeticAdd(int n, vector<tuple<ll,ll,ll,ll>> query) {
     vector<ll> i1(n+10),i2(n+10);
 
-    for(auto [l,r,start,step]:query) {
+    for(auto [l,r,start,step]: query) {
         i1[l+1]+=step; i1[r]-=step;
         i1[r]-=step*(r-l-1); i1[r+1]+=step*(r-l-1);
         i2[l]+=start; i2[r]-=start;

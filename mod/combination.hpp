@@ -19,14 +19,14 @@ struct Combinatorics {
     /// @brief nCr を返す
     /// @note n < 0, r < 0, n < r のときは 0 を返す
     T comb(ll n, ll r) {
-        if(n<0||r<0||n-r<0) return 0;
+        if(n<0 || r<0 || n-r<0) return 0;
         return fac[n]*finv[r]*finv[n-r];
     }
 
     /// @brief nPr を返す
     /// @note n < 0, r < 0, n < r のときは 0 を返す
     T perm(ll n, ll r) {
-        if(n<0||r<0||n-r<0) return 0;
+        if(n<0 || r<0 || n-r<0) return 0;
         return fac[n]*finv[n-r];
     }
 

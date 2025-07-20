@@ -14,15 +14,15 @@ struct SegTreeLazy {
     /// @brief 要素数 n の遅延セグ木を構築する
     SegTreeLazy(int n) {
         this->n=n;
-        dat.assign(n<<1,Monoid::id());
-        lazy.assign(n<<1,Operator::id());
+        dat=vector<MonoidType>(n<<1,Monoid::id());
+        lazy=vector<OperatorType>(n<<1,Operator::id());
     }
 
     /// @brief 配列 v から遅延セグ木を構築する
     SegTreeLazy(const vector<MonoidType>& v) {
         this->n=v.size();
-        dat.assign(n<<1,Monoid::id());
-        lazy.assign(n<<1,Operator::id());
+        dat=vector<MonoidType>(n<<1,Monoid::id());
+        lazy=vector<OperatorType>(n<<1,Operator::id());
         for(int i=0; i<n; i++) dat[i+n]=v[i];
         for(int i=n-1; i>0; i--) dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
     }
@@ -41,7 +41,7 @@ struct SegTreeLazy {
         if(l==r) return;
         generate_indices(l,r);
         pushdown();
-        l+=n,r+=n;
+        l+=n; r+=n;
         while(l<r) {
             if(l&1) {
                 lazy[l]=Operator::op(lazy[l],x);
@@ -53,7 +53,7 @@ struct SegTreeLazy {
                 lazy[r]=Operator::op(lazy[r],x);
                 dat[r]=mapping(dat[r],x);
             }
-            l>>=1,r>>=1;
+            l>>=1; r>>=1;
         }
         pushup();
     }
@@ -64,11 +64,11 @@ struct SegTreeLazy {
         generate_indices(l,r);
         pushdown();
         MonoidType retl=Monoid::id(),retr=Monoid::id();
-        l+=n,r+=n;
+        l+=n; r+=n;
         while(l<r) {
             if(l&1) retl=Monoid::op(retl,dat[l++]);
             if(r&1) retr=Monoid::op(dat[--r],retr);
-            l>>=1,r>>=1;
+            l>>=1; r>>=1;
         }
         return Monoid::op(retl,retr);
     }
@@ -88,7 +88,7 @@ struct SegTreeLazy {
         while(l<r) {
             if(l&1) cand_l.push_back(l++);
             if(r&1) cand_r.push_back(--r);
-            l>>=1,r>>=1;
+            l>>=1; r>>=1;
         }
         vector<int> cand=cand_l;
         reverse(cand_r.begin(),cand_r.end());
@@ -127,7 +127,7 @@ struct SegTreeLazy {
         while(l<r) {
             if(l&1) cand_l.push_back(l++);
             if(r&1) cand_r.push_back(--r);
-            l>>=1,r>>=1;
+            l>>=1; r>>=1;
         }
         vector<int> cand=cand_r;
         reverse(cand_l.begin(),cand_l.end());
@@ -161,12 +161,12 @@ private:
     vector<int> indices;
     void generate_indices(int l, int r) {
         indices.clear();
-        l+=n,r+=n;
+        l+=n; r+=n;
         int lm=(l/(l&-l))>>1,rm=(r/(r&-r))>>1;
         while(l<r) {
             if(l<=lm) indices.push_back(l);
             if(r<=rm) indices.push_back(r);
-            l>>=1,r>>=1;
+            l>>=1; r>>=1;
         }
         while(l) {
             indices.push_back(l);

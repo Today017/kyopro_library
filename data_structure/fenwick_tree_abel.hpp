@@ -5,22 +5,18 @@
 /// @brief Fenwick Tree
 /// @tparam Abel 可換群
 template<typename Abel=Abel::Sum<ll>>
-
 struct FenwickTree {
     using Type=typename Abel::Type;
-
     FenwickTree()=default;
 
     /// @brief サイズ n のFenwick Treeを構築する
-
     FenwickTree(int n) {
         this->n=n;
-        dat.assign(n,Abel::id());
+        dat=vector<Type>(n,Abel::id());
     }
 
     /// @brief i 番目の要素に対し v[i] <- op(v[i], x) と更新する
     /// @note O(log(N))
-
     void add(int i, Type x) {
         i++;
         while(i<=n) {
@@ -31,7 +27,6 @@ struct FenwickTree {
 
     /// @brief 区間 [l, r) の群積を返す
     /// @note O(log(N))
-
     Type sum(int l, int r) {
         return Abel::op(Abel::inv(sum(l)),sum(r));
     }

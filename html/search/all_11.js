@@ -31,7 +31,7 @@ var searchData=
   ['primes_28',['primes',['../namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9',1,'ZetaMobiusDivMul']]],
   ['primitive_5froot_2ehpp_29',['primitive_root.hpp',['../primitive__root_8hpp.html',1,'']]],
   ['primitiveroot_30',['PrimitiveRoot',['../primitive__root_8hpp.html#adec91ba45a107da3aa0f218785b8df98',1,'primitive_root.hpp']]],
-  ['print_5fline_31',['print_line',['../debug_8hpp.html#a03e896b87233163e2dc3399c65cdfc2d',1,'print_line:&#160;debug.hpp'],['../template_8hpp.html#a03e896b87233163e2dc3399c65cdfc2d',1,'print_line:&#160;template.hpp']]],
+  ['print_5fline_31',['print_line',['../debug_8hpp.html#a03e896b87233163e2dc3399c65cdfc2d',1,'print_line:&#160;debug.hpp'],['../template_8hpp.html#a03e896b87233163e2dc3399c65cdfc2d',1,'print_line:&#160;template.hpp'],['../template2_8hpp.html#a03e896b87233163e2dc3399c65cdfc2d',1,'print_line:&#160;template2.hpp']]],
   ['projection_32',['projection',['../namespace_geometry.html#a350e7c66a3052218fb10273521646a5a',1,'Geometry::projection(const Point &amp;p1, const Point &amp;p2, const Point &amp;p)'],['../namespace_geometry.html#a6459f2465325d059e045db0c357253a0',1,'Geometry::projection(const Line &amp;l, const Point &amp;p)']]],
   ['propagate_33',['propagate',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#af0ac4721b9dbe26f52dda5cc875ed584',1,'InsertableReversibleArrayImpl::LazyReversibleRBST']]],
   ['ptr_34',['Ptr',['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a180ae88301ad385924163bd074675c64',1,'InsertableReversibleArrayImpl::RBSTBase']]],

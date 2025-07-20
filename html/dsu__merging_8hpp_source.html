@@ -125,7 +125,7 @@ $(function(){initNavTree('dsu__merging_8hpp_source.html',''); initResizable(true
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">/// @brief コンストラクタ</span></div>
 <div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_dsu_merging.html#a176fb90f26e3696383392e94d7491cdb">   16</a></span>    <a class="code hl_function" href="struct_dsu_merging.html#a176fb90f26e3696383392e94d7491cdb">DsuMerging</a>(<span class="keywordtype">int</span> n, <span class="keyword">const</span> vector&lt;Type&gt;&amp; v) {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        par.resize(n); iota(par.begin(),par.end(),0);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        par=vector&lt;<span class="keywordtype">int</span>&gt;(n); iota(par.begin(),par.end(),0);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        sz=vector&lt;<span class="keywordtype">int</span>&gt;(n,1);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        dat=v;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        forest_count=n;</div>

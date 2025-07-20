@@ -139,7 +139,7 @@ $(function(){initNavTree('doubling__fold_8hpp_source.html',''); initResizable(tr
 <div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_doubling_fold.html#a8351c3419c2041117f47e80436506010">   29</a></span>    Type <a class="code hl_function" href="struct_doubling_fold.html#a8351c3419c2041117f47e80436506010">fold</a>(<span class="keywordtype">int</span> start, ll k) {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        Type ret= Monoid::id();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> b=0; k&gt;0; b++,k&gt;&gt;=1) <span class="keywordflow">if</span>(k&amp;1) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> b=0; k&gt;0; b++, k&gt;&gt;=1) <span class="keywordflow">if</span>(k&amp;1) {</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            ret=Monoid::op(ret,dat[b][start]);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            start=nxt[b][start];</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
@@ -151,7 +151,7 @@ $(function(){initNavTree('doubling__fold_8hpp_source.html',''); initResizable(tr
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">/// @note O(Log)</span></div>
 <div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_doubling_fold.html#afd50a59ab1f2ab56d585b7896e444e65">   40</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_doubling_fold.html#afd50a59ab1f2ab56d585b7896e444e65">next</a>(<span class="keywordtype">int</span> start, ll k) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> b=0; k&gt;0; b++,k&gt;&gt;=1) <span class="keywordflow">if</span>(k&amp;1) start=nxt[b][start];</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> b=0; k&gt;0; b++, k&gt;&gt;=1) <span class="keywordflow">if</span>(k&amp;1) start=nxt[b][start];</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">return</span> start;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
 </div>

@@ -130,8 +130,8 @@ $(function(){initNavTree('ntt998_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;b; j++) {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="comment">// w := 1 の b 乗根の j 乗</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0; k&lt;n; k+=b*2) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                Mod998 s=a[j+k],t=a[j+k+b]*w;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                a[j+k]=s+t,a[j+k+b]=s-t;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                Mod998 s=a[j+k], t=a[j+k+b]*w;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                a[j+k]=s+t; a[j+k+b]=s-t;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            }</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            w*=base;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }</div>
@@ -152,7 +152,7 @@ $(function(){initNavTree('ntt998_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">int</span> n=1;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">while</span>(n+1&lt;a.size()+b.size()) n&lt;&lt;=1;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    vector&lt;Mod998&gt; fa(n),fb(n);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    vector&lt;Mod998&gt; fa(n), fb(n);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;a.size(); i++) fa[i]=a[i];</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;b.size(); i++) fb[i]=b[i];</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>

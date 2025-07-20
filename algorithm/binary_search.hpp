@@ -40,12 +40,12 @@ bool CheckMonotonicity(T start, T step, ll iter, Judge judge) {
     for(T i=start; iter>0; iter--, i+=step) {
         bool tmp=judge(i);
         cerr<<"{ "<<i<<" : "<<(tmp ? "OK" : "NG")<<" }, ";
-        if(i!=start&&tmp!=pre) cnt++;
+        if(i!=start && tmp!=pre) cnt++;
         pre=tmp;
     }
     cerr<<" ]\n";
 
     if(cnt<=1) cerr<<"Is Monotonic\n";
-    else cerr<<"Not Monotonicss\n";
+    else cerr<<"Not Monotonic\n";
     return cnt<=1;
 }

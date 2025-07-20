@@ -26,7 +26,7 @@ struct CombinationLucas {
     /// @brief nCr mod を返す
     /// @note O(log(n))
     ll comb(int n, int r) {
-        if(r==0||r==n) return 1;
+        if(r==0 || r==n) return 1;
         return calc(n%mod,r%mod)*comb(n/mod,r/mod)%mod;
     }
 
@@ -34,7 +34,7 @@ private:
     vector<ll> fact,factinv;
     int mod;
     ll calc(int n, int r) {
-        if(n<r||r<0||n<0) return 0;
+        if(n<r || r<0 || n<0) return 0;
         return fact[n]*factinv[r]%mod*factinv[n-r]%mod;
     }
 };

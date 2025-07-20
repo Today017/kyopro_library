@@ -117,7 +117,7 @@ $(function(){initNavTree('segtree__2d_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">/// @brief サイズ h * w の２次元セグメント木を構築する</span></div>
 <div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_segment_tree2_d.html#a7422bf53112a0d3df9b215a2c5293a26">   10</a></span>    <a class="code hl_function" href="struct_segment_tree2_d.html#a7422bf53112a0d3df9b215a2c5293a26">SegmentTree2D</a>(<span class="keywordtype">int</span> h, <span class="keywordtype">int</span> w) {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">this</span>-&gt;h=h,<span class="keyword">this</span>-&gt;w=w;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">this</span>-&gt;h=h; <span class="keyword">this</span>-&gt;w=w;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        dat=vector&lt;vector&lt;Type&gt;&gt;(<span class="keyword">this</span>-&gt;h*2,vector&lt;Type&gt;(<span class="keyword">this</span>-&gt;w*2,Monoid::id()));</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
 </div>
@@ -126,7 +126,7 @@ $(function(){initNavTree('segtree__2d_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">/// @note O(log(h) log(w))</span></div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_segment_tree2_d.html#acd4e88f120683b23eda460fce60537ae">   17</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_segment_tree2_d.html#acd4e88f120683b23eda460fce60537ae">set</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, Type v) {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        x+=h,y+=w;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        x+=h; y+=w;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        dat[x][y]=v;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=x&gt;&gt;1; i&gt;0; i&gt;&gt;=1) dat[i][y]=Monoid::op(dat[i&lt;&lt;1][y],dat[i&lt;&lt;1|1][y]);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">while</span>(x&gt;0) {</div>
@@ -141,11 +141,11 @@ $(function(){initNavTree('segtree__2d_8hpp_source.html',''); initResizable(true)
 <div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_segment_tree2_d.html#a746d58b6e0eb033030b54e67036b5798">   29</a></span>    Type <a class="code hl_function" href="struct_segment_tree2_d.html#a746d58b6e0eb033030b54e67036b5798">fold</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, <span class="keywordtype">int</span> u, <span class="keywordtype">int</span> d) {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        Type ret=Monoid::id();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        l+=h,r+=h,u+=w,d+=w;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        l+=h; r+=h; u+=w; d+=w;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">while</span>(l&lt;r) {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">if</span>(l&amp;1) ret=Monoid::op(ret,fold_sub(l++,u,d));</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">if</span>(r&amp;1) ret=Monoid::op(ret,fold_sub(--r,u,d));</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            l&gt;&gt;=1,r&gt;&gt;=1;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            l&gt;&gt;=1; r&gt;&gt;=1;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        }</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
@@ -159,7 +159,7 @@ $(function(){initNavTree('segtree__2d_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">while</span>(u&lt;d) {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">if</span>(u&amp;1) ret=Monoid::op(ret,dat[x][u]),u++;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">if</span>(d&amp;1) d--,ret=Monoid::op(ret,dat[x][d]);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            u&gt;&gt;=1,d&gt;&gt;=1;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            u&gt;&gt;=1; d&gt;&gt;=1;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>

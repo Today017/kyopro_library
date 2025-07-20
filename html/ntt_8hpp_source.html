@@ -119,9 +119,9 @@ $(function(){initNavTree('ntt_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">void</span> ntt(vector&lt;ll&gt;&amp; a, <span class="keywordtype">bool</span> inv=<span class="keyword">false</span>) {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">int</span> mask=n-1,p=0;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=n&gt;&gt;1; i&gt;=1; i&gt;&gt;=1) {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <span class="keyword">auto</span>&amp; cur=(p&amp;1)?tmp:a;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <span class="keyword">auto</span>&amp; nxt=(p&amp;1)?a:tmp;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            ll e=inv?roots[p+1]:inv_roots[p+1];</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <span class="keyword">auto</span>&amp; cur=((p&amp;1) ? tmp : a);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <span class="keyword">auto</span>&amp; nxt=((p&amp;1) ? a : tmp);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            ll e=(inv ? roots[p+1] : inv_roots[p+1]);</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            ll w=1;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; j+=i) {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(k,i) nxt[j+k]=(cur[((j&lt;&lt;1)&amp;mask)+k]+w*cur[(((j&lt;&lt;1)+i)&amp;mask)+k])%MOD;</div>

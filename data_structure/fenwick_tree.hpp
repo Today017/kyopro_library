@@ -5,7 +5,7 @@ struct FenwickTree {
     FenwickTree()=default;
     FenwickTree(int n) {
         this->n=n;
-        dat.assign(n,0);
+        dat=vector<ll>(n,0);
     }
     void add(int i, ll x) {
         i++;

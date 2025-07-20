@@ -15,7 +15,7 @@ SccInfo SccDecomposition(const vector<vector<int>>& g) {
     int n=g.size();
     vector<vector<int>> g2(n);
     for(int i=0; i<n; i++) for(int j: g[i]) g2[j].push_back(i);
-    vector<int> order,component(n,-1),seen(n,false);
+    vector<int> order, component(n,-1), seen(n,false);
 
     auto dfs=[&](auto dfs, int now)-> void {
         seen[now]=true;

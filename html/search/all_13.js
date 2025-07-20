@@ -43,7 +43,7 @@ var searchData=
   ['real_40',['Real',['../namespace_geometry.html#aa4fd942614eba4a1561c5a22278a1bcc',1,'Geometry']]],
   ['reconstruct_41',['reconstruct',['../namespacemod__reconstruct.html#a2b66d8d76557c1fdc2baf29121dc430b',1,'mod_reconstruct']]],
   ['reflection_42',['reflection',['../namespace_geometry.html#a401f2efd71755a4e3dc7cc4b3a60762e',1,'Geometry::reflection(const Point &amp;p1, const Point &amp;p2, const Point &amp;p)'],['../namespace_geometry.html#a3cdefdb1ec92d44cf07f06dfdd4f4be8',1,'Geometry::reflection(const Line &amp;l, const Point &amp;p)']]],
-  ['rep_43',['REP',['../template_8hpp.html#a17daffa35db12daabc89c90df168e706',1,'template.hpp']]],
+  ['rep_43',['REP',['../template_8hpp.html#a17daffa35db12daabc89c90df168e706',1,'REP:&#160;template.hpp'],['../template2_8hpp.html#a17daffa35db12daabc89c90df168e706',1,'REP:&#160;template2.hpp']]],
   ['res_44',['res',['../namespacecompress.html#a54ac03d8200b90f0df7eaef116a6634d',1,'compress']]],
   ['rev_45',['rev',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node.html#a0dd01ef62559340aa7b8430381893838',1,'InsertableReversibleArrayImpl::LazyReversibleRBSTNode::rev'],['../struct_max_flow_1_1_edge.html#ae295247d64f8b72fdd97d34e4b70be15',1,'MaxFlow::Edge::rev'],['../struct_min_cost_flow_1_1_edge.html#aa0302cff92809184f4660b0302a7e554',1,'MinCostFlow::Edge::rev']]],
   ['reverse_46',['reverse',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a2ac842d27b458b66c5b113307dfe28ea',1,'InsertableReversibleArrayImpl::LazyReversibleRBST::reverse()'],['../struct_insertable_reversible_array.html#af25d43b4b88fd782a8c45c3616d50054',1,'InsertableReversibleArray::reverse()']]],
@@ -56,7 +56,7 @@ var searchData=
   ['rollinghash_53',['RollingHash',['../struct_rolling_hash.html',1,'RollingHash'],['../struct_rolling_hash.html#a71020424af6022b96f96117961ac4bc2',1,'RollingHash::RollingHash()=default'],['../struct_rolling_hash.html#aee33123a728c1df6d8c0b3550baa0c43',1,'RollingHash::RollingHash(const string &amp;s)']]],
   ['root_54',['root',['../struct_insertable_reversible_array.html#a2d03db862b342d40e310d96e3730f1c8',1,'InsertableReversibleArray']]],
   ['rowreduction_55',['RowReduction',['../linear__equation_8hpp.html#a5e5db525b2db932b4e07f9c0a2babddd',1,'linear_equation.hpp']]],
-  ['rpriority_5fqueue_56',['rpriority_queue',['../template_8hpp.html#a730f351df864d05f7d8a5ca30d9eac09',1,'template.hpp']]],
+  ['rpriority_5fqueue_56',['rpriority_queue',['../template_8hpp.html#ae5ef38025fe230c42996fedcb333507a',1,'template.hpp']]],
   ['run_5flength_5fencoding_2ehpp_57',['run_length_encoding.hpp',['../run__length__encoding_8hpp.html',1,'']]],
   ['runlengthencoding_58',['RunLengthEncoding',['../run__length__encoding_8hpp.html#a7f01629c3961317d963a4666dbe7622b',1,'RunLengthEncoding(const string &amp;s):&#160;run_length_encoding.hpp'],['../run__length__encoding_8hpp.html#a625d6d63e6987b34a913bb2d6f3cae5f',1,'RunLengthEncoding(const vector&lt; ll &gt; &amp;s):&#160;run_length_encoding.hpp']]]
 ];

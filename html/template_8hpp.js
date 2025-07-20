@@ -5,7 +5,7 @@ var template_8hpp =
     [ "PER", "template_8hpp.html#a98be0bb4bc26ab18cde222e08f2e5127", null ],
     [ "debug", "template_8hpp.html#a86ee3ff44c537d94ccbabf941a613688", null ],
     [ "print_line", "template_8hpp.html#a03e896b87233163e2dc3399c65cdfc2d", null ],
-    [ "rpriority_queue", "template_8hpp.html#a730f351df864d05f7d8a5ca30d9eac09", null ],
+    [ "rpriority_queue", "template_8hpp.html#ae5ef38025fe230c42996fedcb333507a", null ],
     [ "ll", "template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62", null ],
     [ "ld", "template_8hpp.html#a41f1d17ffdc8a7500e7aadc2b7e05a63", null ],
     [ "lll", "template_8hpp.html#af459ee81f834e904cb702ffcb928335e", null ],

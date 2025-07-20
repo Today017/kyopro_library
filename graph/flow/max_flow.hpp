@@ -11,7 +11,7 @@ struct MaxFlow {
         ll cap; ///< 容量
         ll flow; ///< 流量
         bool isrev;
-        Edge(int from, int to, ll cap, int rev, bool isrev): from(from),to(to),rev(rev),cap(cap),flow(0),isrev(isrev) {}
+        Edge(int from, int to, ll cap, int rev, bool isrev): from(from), to(to), rev(rev), cap(cap), flow(0), isrev(isrev) {}
     };
 
     MaxFlow(int n): graph(n), level(n), iter(n) {}
@@ -27,13 +27,10 @@ private:
     vector<vector<Edge>> graph;
     vector<int> level,iter;
     void bfs(int s) {
-        fill(level.begin(),level.end(),-1);
-        queue<int> que;
-        level[s]=0;
-        que.push(s);
+        fill(level.begin(),level.end(),-1); level[s]=0;
+        queue<int> que; que.push(s);
         while(!que.empty()) {
-            int v=que.front();
-            que.pop();
+            int v=que.front(); que.pop();
             for(auto &e: graph[v]) {
                 if(e.cap>0 && level[e.to]<0) {
                     level[e.to]=level[v]+1;

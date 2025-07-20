@@ -9,7 +9,7 @@ struct DsuPotentialized {
 
     /// @brief コンストラクタ
     DsuPotentialized(int n) {
-        par.resize(n); iota(par.begin(),par.end(),0);
+        par=vector<int>(n); iota(par.begin(),par.end(),0);
         sz=vector<int>(n,1);
         diff_weight=vector<Type>(n,Group::id());
         forest_count=n;

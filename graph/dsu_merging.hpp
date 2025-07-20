@@ -14,7 +14,7 @@ struct DsuMerging {
 
     /// @brief コンストラクタ
     DsuMerging(int n, const vector<Type>& v) {
-        par.resize(n); iota(par.begin(),par.end(),0);
+        par=vector<int>(n); iota(par.begin(),par.end(),0);
         sz=vector<int>(n,1);
         dat=v;
         forest_count=n;

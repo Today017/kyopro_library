@@ -120,7 +120,7 @@ $(function(){initNavTree('sparse__table_8hpp_source.html',''); initResizable(tru
 <div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_sparse_table.html#a21a0384979486679924c67a94fbf3a0c">   12</a></span>    <a class="code hl_function" href="struct_sparse_table.html#a21a0384979486679924c67a94fbf3a0c">SparseTable</a>(<span class="keyword">const</span> vector&lt;Type&gt;&amp;v) {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        n=v.size();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        dat.assign(__lg(n)+1,vector&lt;Type&gt;(n));</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        dat=vector&lt;vector&lt;Type&gt;&gt;(__lg(n)+1,vector&lt;Type&gt;(n));</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        dat[0]=v;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1;i&lt;(<span class="keywordtype">int</span>)dat.size();i++) {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j+(1&lt;&lt;i)&lt;=n;j++) {</div>

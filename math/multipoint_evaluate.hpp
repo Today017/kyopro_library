@@ -10,7 +10,7 @@ vector<T> MultipointEvaluate(vector<T> f, vector<T> x) {
     if(n==0) return{};
     if(n==1) {
         T ret=0,tmp=1;
-        for(T a:f) ret+=a*tmp,tmp*=x[0];
+        for(T a: f) ret+=a*tmp, tmp*=x[0];
         return {ret};
     }
     int n2=1;

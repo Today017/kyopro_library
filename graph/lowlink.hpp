@@ -10,7 +10,7 @@ struct BridgeInfo {
 /// @note O(V+E)
 BridgeInfo LowLink(const vector<vector<int>>& g) {
     int n=g.size();
-    vector<int> ord(n,-1),low(n,-1),articulation,seen(n,false);
+    vector<int> ord(n,-1), low(n,-1), articulation,seen(n,false);
     vector<pair<int,int>> bridge;
 
     auto dfs=[&](auto&& dfs, int now, int pre, int& cnt)-> void {

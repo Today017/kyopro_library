@@ -116,7 +116,7 @@ $(function(){initNavTree('dsu__rollback_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="comment">/// @brief コンストラクタ</span></div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_dsu_rollback.html#ad42c892c309ec0aa491c70bec3d58779">    9</a></span>    <a class="code hl_function" href="struct_dsu_rollback.html#ad42c892c309ec0aa491c70bec3d58779">DsuRollback</a>(<span class="keywordtype">int</span> n) {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        par.resize(n); iota(par.begin(),par.end(),0);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        par=vector&lt;<span class="keywordtype">int</span>&gt;(n); iota(par.begin(),par.end(),0);</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        sz=vector&lt;<span class="keywordtype">int</span>&gt;(n,1);</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        forest_count=n;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>

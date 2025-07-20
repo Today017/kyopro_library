@@ -11,7 +11,7 @@ struct SparseTable {
     /// @note O(N log(N))
     SparseTable(const vector<Type>&v) {
         n=v.size();
-        dat.assign(__lg(n)+1,vector<Type>(n));
+        dat=vector<vector<Type>>(__lg(n)+1,vector<Type>(n));
         dat[0]=v;
         for(int i=1;i<(int)dat.size();i++) {
             for(int j=0;j+(1<<i)<=n;j++) {

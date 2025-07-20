@@ -9,8 +9,20 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -19,11 +31,22 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
   <td id="projectalign">
    <div id="projectname">Kyopro Library
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -32,64 +55,84 @@
 <!-- 構築: Doxygen 1.13.2 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() { codefold.init(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
-<div id="doc-content">
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){ initResizable(false); });
+$(function(){initNavTree('template2_8hpp_source.html',''); initResizable(true); });
 /* @license-end */
 </script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="header">
   <div class="headertitle"><div class="title">template2.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="template2_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&lt;bits/stdc++.h&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a17daffa35db12daabc89c90df168e706">    5</a></span><span class="preprocessor">#define REP(i,n) for(int i=0;i&lt;(ll)(n);i++)</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">    6</a></span><span class="preprocessor">#define ALL(x) (x).begin(),(x).end()</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="template2_8hpp.html#affe9a1ffd6cd7b2e404200ef182fa18f">    7</a></span><span class="preprocessor">#define IO ios::sync_with_stdio(false),cin.tie(nullptr);</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a960ed4714a6b310cf975bc74563b3e61">    9</a></span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">bool</span> <a class="code hl_define" href="mac_8hpp.html#a4c27eb89ff96e0ad6fda2ea4040816d4">chmax</a>(T&amp;a, <span class="keyword">const</span> T&amp;b){ <span class="keywordflow">if</span>(a&lt;b){ a=b; <span class="keywordflow">return</span> <span class="keyword">true</span>; } <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="template2_8hpp.html#aba3f09f3c417a60da9edf3f9670914c3">   10</a></span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">bool</span> <a class="code hl_define" href="mac_8hpp.html#afab395ab2eac3679be924c315291bf58">chmin</a>(T&amp;a, <span class="keyword">const</span> T&amp;b){ <span class="keywordflow">if</span>(b&lt;a){ a=b; <span class="keywordflow">return</span> <span class="keyword">true</span>; } <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a466bb8e8d7998a5ee6fece2f050e85ef">   11</a></span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">int</span> <a class="code hl_function" href="template2_8hpp.html#a466bb8e8d7998a5ee6fece2f050e85ef">bisect</a>(<span class="keyword">const</span> vector&lt;T&gt;&amp;v,T x){ <span class="keywordflow">return</span> lower_bound(<a class="code hl_define" href="template2_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(v),x)-v.begin(); }</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a7f36bb2863e4e027994800be2a3a863e">   12</a></span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">void</span> <a class="code hl_function" href="template2_8hpp.html#a7f36bb2863e4e027994800be2a3a863e">uniq</a>(vector&lt;T&gt;&amp;v){ sort(<a class="code hl_define" href="template2_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(v)); v.erase(unique(<a class="code hl_define" href="template2_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a>(v)),v.end()); }</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">   13</a></span><span class="keyword">using </span><a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>=<span class="keywordtype">long</span> long; <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a>=1e9+10; <span class="keyword">const</span> <a class="code hl_typedef" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="code hl_variable" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>=4e18;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a51df5034171f17329fde124e499c2e26">   14</a></span><span class="keyword">using </span><a class="code hl_typedef" href="template2_8hpp.html#a51df5034171f17329fde124e499c2e26">vi</a>=vector&lt;int&gt;; <span class="keyword">using </span><a class="code hl_typedef" href="template2_8hpp.html#a241d7ce7f96f37dd24ce13e02aaa4167">vvi</a>=vector&lt;vi&gt;; <span class="keyword">using </span><a class="code hl_typedef" href="template2_8hpp.html#ad2c6b665e2bbec3a8790f19c52b29614">vl</a>=vector&lt;ll&gt;; <span class="keyword">using </span><a class="code hl_typedef" href="template2_8hpp.html#aefd5a3e3dd80a05cebdf0ef3fb29aad5">vvl</a>=vector&lt;vl&gt;; <span class="keyword">using </span><a class="code hl_typedef" href="template2_8hpp.html#a7888b26ade9dc783c5306b608911525d">vst</a>=vector&lt;string&gt;;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a1102df1cffa00e3e9c6a791bf3d5c91c">   15</a></span><span class="keyword">using </span><a class="code hl_typedef" href="template2_8hpp.html#a1102df1cffa00e3e9c6a791bf3d5c91c">pl</a>=pair&lt;ll,ll&gt;; <span class="keyword">using </span><a class="code hl_typedef" href="template2_8hpp.html#a2a26ed9c3cdfb647736b7632c7b6dd15">vp</a>=vector&lt;pl&gt;; <span class="keyword">using </span><a class="code hl_typedef" href="template2_8hpp.html#ae6f1be1af3317597606376c13410a706">tl</a>=tuple&lt;ll,ll,ll&gt;;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#ifdef LOCAL</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="debug_8hpp.html">./debug.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a86ee3ff44c537d94ccbabf941a613688">   20</a></span><span class="preprocessor">#define debug(...)</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a03e896b87233163e2dc3399c65cdfc2d">   21</a></span><span class="preprocessor">#define print_line</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="adebug_8hpp_html"><div class="ttname"><a href="debug_8hpp.html">debug.hpp</a></div></div>
-<div class="ttc" id="amac_8hpp_html_a4c27eb89ff96e0ad6fda2ea4040816d4"><div class="ttname"><a href="mac_8hpp.html#a4c27eb89ff96e0ad6fda2ea4040816d4">chmax</a></div><div class="ttdeci">#define chmax(a, b)</div><div class="ttdef"><b>Definition</b> mac.hpp:3</div></div>
-<div class="ttc" id="amac_8hpp_html_afab395ab2eac3679be924c315291bf58"><div class="ttname"><a href="mac_8hpp.html#afab395ab2eac3679be924c315291bf58">chmin</a></div><div class="ttdeci">#define chmin(a, b)</div><div class="ttdef"><b>Definition</b> mac.hpp:4</div></div>
-<div class="ttc" id="atemplate2_8hpp_html_a1102df1cffa00e3e9c6a791bf3d5c91c"><div class="ttname"><a href="template2_8hpp.html#a1102df1cffa00e3e9c6a791bf3d5c91c">pl</a></div><div class="ttdeci">pair&lt; ll, ll &gt; pl</div><div class="ttdef"><b>Definition</b> template2.hpp:15</div></div>
-<div class="ttc" id="atemplate2_8hpp_html_a241d7ce7f96f37dd24ce13e02aaa4167"><div class="ttname"><a href="template2_8hpp.html#a241d7ce7f96f37dd24ce13e02aaa4167">vvi</a></div><div class="ttdeci">vector&lt; vi &gt; vvi</div><div class="ttdef"><b>Definition</b> template2.hpp:14</div></div>
-<div class="ttc" id="atemplate2_8hpp_html_a2a26ed9c3cdfb647736b7632c7b6dd15"><div class="ttname"><a href="template2_8hpp.html#a2a26ed9c3cdfb647736b7632c7b6dd15">vp</a></div><div class="ttdeci">vector&lt; pl &gt; vp</div><div class="ttdef"><b>Definition</b> template2.hpp:15</div></div>
-<div class="ttc" id="atemplate2_8hpp_html_a466bb8e8d7998a5ee6fece2f050e85ef"><div class="ttname"><a href="template2_8hpp.html#a466bb8e8d7998a5ee6fece2f050e85ef">bisect</a></div><div class="ttdeci">int bisect(const vector&lt; T &gt; &amp;v, T x)</div><div class="ttdef"><b>Definition</b> template2.hpp:11</div></div>
-<div class="ttc" id="atemplate2_8hpp_html_a51df5034171f17329fde124e499c2e26"><div class="ttname"><a href="template2_8hpp.html#a51df5034171f17329fde124e499c2e26">vi</a></div><div class="ttdeci">vector&lt; int &gt; vi</div><div class="ttdef"><b>Definition</b> template2.hpp:14</div></div>
-<div class="ttc" id="atemplate2_8hpp_html_a7888b26ade9dc783c5306b608911525d"><div class="ttname"><a href="template2_8hpp.html#a7888b26ade9dc783c5306b608911525d">vst</a></div><div class="ttdeci">vector&lt; string &gt; vst</div><div class="ttdef"><b>Definition</b> template2.hpp:14</div></div>
-<div class="ttc" id="atemplate2_8hpp_html_a7ab29d3bd6e8d66e320f4224e75f6cea"><div class="ttname"><a href="template2_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">ALL</a></div><div class="ttdeci">#define ALL(x)</div><div class="ttdef"><b>Definition</b> template2.hpp:6</div></div>
-<div class="ttc" id="atemplate2_8hpp_html_a7f36bb2863e4e027994800be2a3a863e"><div class="ttname"><a href="template2_8hpp.html#a7f36bb2863e4e027994800be2a3a863e">uniq</a></div><div class="ttdeci">void uniq(vector&lt; T &gt; &amp;v)</div><div class="ttdef"><b>Definition</b> template2.hpp:12</div></div>
-<div class="ttc" id="atemplate2_8hpp_html_ad2c6b665e2bbec3a8790f19c52b29614"><div class="ttname"><a href="template2_8hpp.html#ad2c6b665e2bbec3a8790f19c52b29614">vl</a></div><div class="ttdeci">vector&lt; ll &gt; vl</div><div class="ttdef"><b>Definition</b> template2.hpp:14</div></div>
-<div class="ttc" id="atemplate2_8hpp_html_ae6f1be1af3317597606376c13410a706"><div class="ttname"><a href="template2_8hpp.html#ae6f1be1af3317597606376c13410a706">tl</a></div><div class="ttdeci">tuple&lt; ll, ll, ll &gt; tl</div><div class="ttdef"><b>Definition</b> template2.hpp:15</div></div>
-<div class="ttc" id="atemplate2_8hpp_html_aefd5a3e3dd80a05cebdf0ef3fb29aad5"><div class="ttname"><a href="template2_8hpp.html#aefd5a3e3dd80a05cebdf0ef3fb29aad5">vvl</a></div><div class="ttdeci">vector&lt; vl &gt; vvl</div><div class="ttdef"><b>Definition</b> template2.hpp:14</div></div>
-<div class="ttc" id="atemplate_8hpp_html_a14c9dbab105f1b8b8182a022d73e610c"><div class="ttname"><a href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a></div><div class="ttdeci">const int INF</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
-<div class="ttc" id="atemplate_8hpp_html_a1f713edb7a826e3710159658d6ef9815"><div class="ttname"><a href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></div><div class="ttdeci">const ll INFL</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
-<div class="ttc" id="atemplate_8hpp_html_adcb0b6ef4cd780a895c7089c0191cd62"><div class="ttname"><a href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></div><div class="ttdeci">long long ll</div><div class="ttdef"><b>Definition</b> template.hpp:15</div></div>
+<a href="template2_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">bits</span><span class="preprocessor">/</span><span class="preprocessor">stdc</span><span class="preprocessor">++</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using</span> <span class="keyword">namespace</span> std;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a7ab29d3bd6e8d66e320f4224e75f6cea">    4</a></span><span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">ALL</span><span class="preprocessor">(</span><span class="preprocessor">x</span><span class="preprocessor">)</span> <span class="preprocessor">(</span><span class="preprocessor">x</span><span class="preprocessor">)</span><span class="preprocessor">.</span><span class="preprocessor">begin</span><span class="preprocessor">(</span><span class="preprocessor">)</span><span class="preprocessor">,</span><span class="preprocessor">(</span><span class="preprocessor">x</span><span class="preprocessor">)</span><span class="preprocessor">.</span><span class="preprocessor">end</span><span class="preprocessor">(</span><span class="preprocessor">)</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a17daffa35db12daabc89c90df168e706">    5</a></span><span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">REP</span><span class="preprocessor">(</span><span class="preprocessor">i</span><span class="preprocessor">,</span> <span class="preprocessor">n</span><span class="preprocessor">)</span> <span class="keywordflow">for</span><span class="preprocessor">(</span><span class="preprocessor">ll</span> <span class="preprocessor">i</span><span class="preprocessor">=</span>0<span class="preprocessor">;</span> <span class="preprocessor">i</span><span class="preprocessor">&lt;</span><span class="preprocessor">(</span><span class="preprocessor">ll</span><span class="preprocessor">)</span><span class="preprocessor">(</span><span class="preprocessor">n</span><span class="preprocessor">)</span><span class="preprocessor">;</span> <span class="preprocessor">i</span><span class="preprocessor">++</span><span class="preprocessor">)</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a3e8244c32e6ce7ca2cdd01c86aac2d3f">    7</a></span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">bool</span> <a class="code hl_function" href="template_8hpp.html#a3e8244c32e6ce7ca2cdd01c86aac2d3f">chmax</a>(T&amp; a, T b) { <span class="keywordflow">return</span> a&lt;b ? a=b, <span class="keyword">true</span> : <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="template2_8hpp.html#ad3e093a6b7f9ed915c0c64ec47b45564">    8</a></span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">bool</span> <a class="code hl_function" href="template_8hpp.html#ad3e093a6b7f9ed915c0c64ec47b45564">chmin</a>(T&amp; a, T b) { <span class="keywordflow">return</span> a&gt;b ? a=b, <span class="keyword">true</span> : <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">    9</a></span><span class="keyword">using</span> ll=<span class="keywordtype">long</span> <span class="keywordtype">long</span>; <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="template2_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a>=1e9+10; <span class="keyword">const</span> ll <a class="code hl_variable" href="template2_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>=4e18;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">ifdef</span> <span class="preprocessor">LOCAL</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="stringliteral">&quot;./debug.hpp&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">else</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a86ee3ff44c537d94ccbabf941a613688">   14</a></span><span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">debug</span><span class="preprocessor">(</span><span class="preprocessor">...</span><span class="preprocessor">)</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="template2_8hpp.html#a03e896b87233163e2dc3399c65cdfc2d">   15</a></span><span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">print_line</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="ttc" id="atemplate2_8hpp_html_a14c9dbab105f1b8b8182a022d73e610c"><div class="ttname"><a href="template2_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a></div><div class="ttdeci">const int INF</div><div class="ttdef"><b>Definition</b> <a href="#l00009">template2.hpp:9</a></div></div>
+<div class="ttc" id="atemplate2_8hpp_html_a1f713edb7a826e3710159658d6ef9815"><div class="ttname"><a href="template2_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></div><div class="ttdeci">const ll INFL</div><div class="ttdef"><b>Definition</b> <a href="#l00009">template2.hpp:9</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a3e8244c32e6ce7ca2cdd01c86aac2d3f"><div class="ttname"><a href="template_8hpp.html#a3e8244c32e6ce7ca2cdd01c86aac2d3f">chmax</a></div><div class="ttdeci">bool chmax(T &amp;a, T b)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00010">template.hpp:10</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_ad3e093a6b7f9ed915c0c64ec47b45564"><div class="ttname"><a href="template_8hpp.html#ad3e093a6b7f9ed915c0c64ec47b45564">chmin</a></div><div class="ttdeci">bool chmin(T &amp;a, T b)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00011">template.hpp:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
-</small></address>
 </div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="template2_8hpp.html">template2.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
 </body>
 </html>

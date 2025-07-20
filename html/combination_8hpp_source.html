@@ -130,7 +130,7 @@ $(function(){initNavTree('combination_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">/// @note n &lt; 0, r &lt; 0, n &lt; r のときは 0 を返す</span></div>
 <div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_combinatorics.html#a977b699b6416d19473239931fca6f2f7">   21</a></span>    T <a class="code hl_function" href="struct_combinatorics.html#a977b699b6416d19473239931fca6f2f7">comb</a>(ll n, ll r) {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">if</span>(n&lt;0||r&lt;0||n-r&lt;0) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">if</span>(n&lt;0 || r&lt;0 || n-r&lt;0) <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">return</span> fac[n]*finv[r]*finv[n-r];</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
 </div>
@@ -139,7 +139,7 @@ $(function(){initNavTree('combination_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">/// @note n &lt; 0, r &lt; 0, n &lt; r のときは 0 を返す</span></div>
 <div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_combinatorics.html#ac07d10087e698b320be57919234f569b">   28</a></span>    T <a class="code hl_function" href="struct_combinatorics.html#ac07d10087e698b320be57919234f569b">perm</a>(ll n, ll r) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">if</span>(n&lt;0||r&lt;0||n-r&lt;0) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">if</span>(n&lt;0 || r&lt;0 || n-r&lt;0) <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">return</span> fac[n]*finv[n-r];</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
 </div>

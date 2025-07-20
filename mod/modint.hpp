@@ -51,7 +51,7 @@ struct ModInt {
     }
     ModInt inv() const { return pow(MOD-2); }
     ll val() {return value; }
-    static constexpr ll get_mod() { return MOD; }
+    static constexpr ll mod() { return MOD; }
 
 private:
     ll value;

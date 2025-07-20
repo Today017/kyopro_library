@@ -120,43 +120,37 @@ $(function(){initNavTree('bezout__identity_8hpp_source.html',''); initResizable(
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html">   13</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_bezout_identity.html">BezoutIdentity</a> {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">/// @brief ax+by=c</span></div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html#ae6269715a6bae60bc5ce0b4bfae2618e">   15</a></span>    <a class="code hl_function" href="struct_bezout_identity.html#ae6269715a6bae60bc5ce0b4bfae2618e">BezoutIdentity</a>(ll a, ll b, ll c) {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">this</span>-&gt;a=a;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keyword">this</span>-&gt;b=b;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">this</span>-&gt;c=c;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html#ae6269715a6bae60bc5ce0b4bfae2618e">   15</a></span>    <a class="code hl_function" href="struct_bezout_identity.html#ae6269715a6bae60bc5ce0b4bfae2618e">BezoutIdentity</a>(ll a, ll b, ll c) : a(a), b(b), c(c), g(0), X(0), Y(0) {}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">/// @brief 解が存在するか否かを返す</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html#a2cf086366016d944941e8100fec64191">   18</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_bezout_identity.html#a2cf086366016d944941e8100fec64191">build</a>() {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">auto</span> [tmpg,tmpx,tmpy]=ExtGcd(abs(a),abs(b));</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">if</span>(c%g!=0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        g=tmpg; X=tmpx; Y=tmpy;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">if</span>(a&lt;0) X=-X;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span>(b&lt;0) Y=-Y;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        X*=c/g; Y*=c/g;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
 </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">/// @brief 解が存在するか否かを返す</span></div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html#a2cf086366016d944941e8100fec64191">   22</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_bezout_identity.html#a2cf086366016d944941e8100fec64191">build</a>() {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">auto</span> [g,X,Y]=ExtGcd(abs(a),abs(b));</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(c%g!=0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">this</span>-&gt;g=g,<span class="keyword">this</span>-&gt;X=X,<span class="keyword">this</span>-&gt;Y=Y;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">if</span>(a&lt;0) <span class="keyword">this</span>-&gt;X=-<span class="keyword">this</span>-&gt;X;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">if</span>(b&lt;0) <span class="keyword">this</span>-&gt;Y=-<span class="keyword">this</span>-&gt;Y;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keyword">this</span>-&gt;X*=c/g,<span class="keyword">this</span>-&gt;Y*=c/g;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">/// @brief 一般解を返す</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">   29</a></span>    <a class="code hl_function" href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">pair</a>&lt;<a class="code hl_function" href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">ll</a>,<a class="code hl_function" href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">ll</a>&gt; <a class="code hl_function" href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">general_solution</a>(ll t=0) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        ll x=b/g*t+X, y=-a/g*t+Y;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">return</span> {x,y};</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
 </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">/// @brief 一般解を返す</span></div>
-<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">   33</a></span>    <a class="code hl_function" href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">pair</a>&lt;<a class="code hl_function" href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">ll</a>,<a class="code hl_function" href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">ll</a>&gt; <a class="code hl_function" href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">general_solution</a>(ll t=0) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        ll x=b/g*t+X,y=-a/g*t+Y;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">return</span> {x,y};</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
-</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    ll a,b,c,g;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    ll X,Y;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    ll a,b,c,g;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    ll X,Y;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
 </div>
 <div class="ttc" id="astruct_bezout_identity_html"><div class="ttname"><a href="struct_bezout_identity.html">BezoutIdentity</a></div><div class="ttdoc">一次不定方程式 ax+by=c を解く verify: https://atcoder.jp/contests/abc340/submissions/62495050</div><div class="ttdef"><b>Definition</b> <a href="#l00013">bezout_identity.hpp:13</a></div></div>
-<div class="ttc" id="astruct_bezout_identity_html_a2ca29bd9549c45e4419bda0b842f02c6"><div class="ttname"><a href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">BezoutIdentity::general_solution</a></div><div class="ttdeci">pair&lt; ll, ll &gt; general_solution(ll t=0)</div><div class="ttdoc">一般解を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00033">bezout_identity.hpp:33</a></div></div>
-<div class="ttc" id="astruct_bezout_identity_html_a2cf086366016d944941e8100fec64191"><div class="ttname"><a href="struct_bezout_identity.html#a2cf086366016d944941e8100fec64191">BezoutIdentity::build</a></div><div class="ttdeci">bool build()</div><div class="ttdoc">解が存在するか否かを返す</div><div class="ttdef"><b>Definition</b> <a href="#l00022">bezout_identity.hpp:22</a></div></div>
+<div class="ttc" id="astruct_bezout_identity_html_a2ca29bd9549c45e4419bda0b842f02c6"><div class="ttname"><a href="struct_bezout_identity.html#a2ca29bd9549c45e4419bda0b842f02c6">BezoutIdentity::general_solution</a></div><div class="ttdeci">pair&lt; ll, ll &gt; general_solution(ll t=0)</div><div class="ttdoc">一般解を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00029">bezout_identity.hpp:29</a></div></div>
+<div class="ttc" id="astruct_bezout_identity_html_a2cf086366016d944941e8100fec64191"><div class="ttname"><a href="struct_bezout_identity.html#a2cf086366016d944941e8100fec64191">BezoutIdentity::build</a></div><div class="ttdeci">bool build()</div><div class="ttdoc">解が存在するか否かを返す</div><div class="ttdef"><b>Definition</b> <a href="#l00018">bezout_identity.hpp:18</a></div></div>
 <div class="ttc" id="astruct_bezout_identity_html_ae6269715a6bae60bc5ce0b4bfae2618e"><div class="ttname"><a href="struct_bezout_identity.html#ae6269715a6bae60bc5ce0b4bfae2618e">BezoutIdentity::BezoutIdentity</a></div><div class="ttdeci">BezoutIdentity(ll a, ll b, ll c)</div><div class="ttdoc">ax+by=c</div><div class="ttdef"><b>Definition</b> <a href="#l00015">bezout_identity.hpp:15</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

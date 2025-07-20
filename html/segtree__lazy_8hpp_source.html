@@ -123,8 +123,8 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_seg_tree_lazy.html#ae01e57c4f628819bbf6f08691e4b77e7">   15</a></span>    <a class="code hl_function" href="struct_seg_tree_lazy.html#ae01e57c4f628819bbf6f08691e4b77e7">SegTreeLazy</a>(<span class="keywordtype">int</span> n) {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">this</span>-&gt;n=n;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        dat.assign(n&lt;&lt;1,Monoid::id());</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        lazy.assign(n&lt;&lt;1,Operator::id());</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        dat=vector&lt;MonoidType&gt;(n&lt;&lt;1,Monoid::id());</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        lazy=vector&lt;OperatorType&gt;(n&lt;&lt;1,Operator::id());</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
 </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
@@ -132,8 +132,8 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_seg_tree_lazy.html#a2d23d454ba4728c7c0ba4b1a67bc01b7">   22</a></span>    <a class="code hl_function" href="struct_seg_tree_lazy.html#a2d23d454ba4728c7c0ba4b1a67bc01b7">SegTreeLazy</a>(<span class="keyword">const</span> vector&lt;MonoidType&gt;&amp; v) {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">this</span>-&gt;n=v.size();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        dat.assign(n&lt;&lt;1,Monoid::id());</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        lazy.assign(n&lt;&lt;1,Operator::id());</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        dat=vector&lt;MonoidType&gt;(n&lt;&lt;1,Monoid::id());</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        lazy=vector&lt;OperatorType&gt;(n&lt;&lt;1,Operator::id());</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) dat[i+n]=v[i];</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=n-1; i&gt;0; i--) dat[i]=Monoid::op(dat[i&lt;&lt;1],dat[i&lt;&lt;1|1]);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
@@ -156,7 +156,7 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">if</span>(l==r) <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        generate_indices(l,r);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        pushdown();</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        l+=n,r+=n;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        l+=n; r+=n;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">while</span>(l&lt;r) {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">if</span>(l&amp;1) {</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                lazy[l]=Operator::op(lazy[l],x);</div>
@@ -168,7 +168,7 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                lazy[r]=Operator::op(lazy[r],x);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                dat[r]=mapping(dat[r],x);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            l&gt;&gt;=1,r&gt;&gt;=1;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            l&gt;&gt;=1; r&gt;&gt;=1;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        pushup();</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
@@ -181,11 +181,11 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        generate_indices(l,r);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        pushdown();</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        MonoidType retl=Monoid::id(),retr=Monoid::id();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        l+=n,r+=n;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        l+=n; r+=n;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">while</span>(l&lt;r) {</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">if</span>(l&amp;1) retl=Monoid::op(retl,dat[l++]);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordflow">if</span>(r&amp;1) retr=Monoid::op(dat[--r],retr);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            l&gt;&gt;=1,r&gt;&gt;=1;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            l&gt;&gt;=1; r&gt;&gt;=1;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">return</span> Monoid::op(retl,retr);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
@@ -207,7 +207,7 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">while</span>(l&lt;r) {</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">if</span>(l&amp;1) cand_l.push_back(l++);</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">if</span>(r&amp;1) cand_r.push_back(--r);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            l&gt;&gt;=1,r&gt;&gt;=1;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            l&gt;&gt;=1; r&gt;&gt;=1;</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        vector&lt;<span class="keywordtype">int</span>&gt; cand=cand_l;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        reverse(cand_r.begin(),cand_r.end());</div>
@@ -248,7 +248,7 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">while</span>(l&lt;r) {</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <span class="keywordflow">if</span>(l&amp;1) cand_l.push_back(l++);</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">if</span>(r&amp;1) cand_r.push_back(--r);</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            l&gt;&gt;=1,r&gt;&gt;=1;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            l&gt;&gt;=1; r&gt;&gt;=1;</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        vector&lt;<span class="keywordtype">int</span>&gt; cand=cand_r;</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        reverse(cand_l.begin(),cand_l.end());</div>
@@ -283,12 +283,12 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    vector&lt;<span class="keywordtype">int</span>&gt; indices;</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordtype">void</span> generate_indices(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r) {</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        indices.clear();</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        l+=n,r+=n;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        l+=n; r+=n;</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keywordtype">int</span> lm=(l/(l&amp;-l))&gt;&gt;1,rm=(r/(r&amp;-r))&gt;&gt;1;</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">while</span>(l&lt;r) {</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            <span class="keywordflow">if</span>(l&lt;=lm) indices.push_back(l);</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            <span class="keywordflow">if</span>(r&lt;=rm) indices.push_back(r);</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            l&gt;&gt;=1,r&gt;&gt;=1;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            l&gt;&gt;=1; r&gt;&gt;=1;</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        }</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="keywordflow">while</span>(l) {</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            indices.push_back(l);</div>

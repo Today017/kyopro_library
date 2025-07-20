@@ -10,18 +10,18 @@ struct SegTree {
     /// @brief 要素数 n のセグ木を構築する
     SegTree(int n) {
         this->n=n;
-        dat.assign(n<<1,Monoid::id());
-        cand.reserve(100),cand_l.reserve(100),cand_r.reserve(100);
+        dat=vector<Type>(n<<1,Monoid::id());
+        cand.reserve(100); cand_l.reserve(100); cand_r.reserve(100);
     }
 
     /// @brief 配列 v からセグ木を構築する
     /// @note O(N)
     SegTree(const vector<Type>& v) {
         this->n=v.size();
-        dat.assign(n<<1,Monoid::id());
+        dat=vector<Type>(n<<1,Monoid::id());
         for(int i=0; i<n; i++) dat[i+n]=v[i];
         for(int i=n-1; i>0; i--) dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
-        cand.reserve(100),cand_l.reserve(100),cand_r.reserve(100);
+        cand.reserve(100); cand_l.reserve(100); cand_r.reserve(100);
     }
 
     /// @brief i 番目の要素を x に変更する
@@ -36,11 +36,11 @@ struct SegTree {
     /// @note O(log(N))
     Type fold(int l, int r) {
         Type retl=Monoid::id(),retr=Monoid::id();
-        l+=n,r+=n;
+        l+=n; r+=n;
         while(l<r) {
             if(l&1) retl=Monoid::op(retl,dat[l++]);
             if(r&1) retr=Monoid::op(dat[--r],retr);
-            l>>=1,r>>=1;
+            l>>=1; r>>=1;
         }
         return Monoid::op(retl,retr);
     }
@@ -54,11 +54,11 @@ struct SegTree {
         if(l==n) return n;
         l+=n;
         int r=n+n;
-        cand_l.clear(),cand_r.clear();
+        cand_l.clear(); cand_r.clear();
         while(l<r) {
             if(l&1) cand_l.push_back(l++);
             if(r&1) cand_r.push_back(--r);
-            l>>=1,r>>=1;
+            l>>=1; r>>=1;
         }
         cand=cand_l;
         reverse(cand_r.begin(),cand_r.end());
@@ -90,11 +90,11 @@ struct SegTree {
         if(r==0) return 0;
         r+=n;
         int l=n;
-        cand_l.clear(),cand_r.clear();
+        cand_l.clear(); cand_r.clear();
         while(l<r) {
             if(l&1) cand_l.push_back(l++);
             if(r&1) cand_r.push_back(--r);
-            l>>=1,r>>=1;
+            l>>=1; r>>=1;
         }
         cand=cand_r;
         reverse(cand_l.begin(),cand_l.end());

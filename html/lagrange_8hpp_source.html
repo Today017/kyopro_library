@@ -123,7 +123,7 @@ $(function(){initNavTree('lagrange_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">for</span>(ll i=n2-1; i&gt;0; i--) g[i]=PolyMul(g[i&lt;&lt;1],g[i&lt;&lt;1|1]);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    vector&lt;T&gt; prod=g[1];</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    vector&lt;T&gt; diff=PolyDifferential(prod),eval=MultipointEvaluate(diff,x);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    vector&lt;T&gt; diff=PolyDifferential(prod), eval=MultipointEvaluate(diff,x);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">using</span> P=pair&lt;vector&lt;T&gt;,vector&lt;T&gt;&gt;;<span class="comment">//first/second</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    vector&lt;P&gt; g2(n2*2,{{0},{1}});</div>

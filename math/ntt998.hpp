@@ -22,8 +22,8 @@ void NTT998(vector<Mod998>& a, bool inv=false) {
         for(int j=0; j<b; j++) {
             // w := 1 の b 乗根の j 乗
             for(int k=0; k<n; k+=b*2) {
-                Mod998 s=a[j+k],t=a[j+k+b]*w;
-                a[j+k]=s+t,a[j+k+b]=s-t;
+                Mod998 s=a[j+k], t=a[j+k+b]*w;
+                a[j+k]=s+t; a[j+k+b]=s-t;
             }
             w*=base;
         }
@@ -42,7 +42,7 @@ vector<Mod998> Convolve998(vector<Mod998> a,vector<Mod998> b) {
     int n=1;
     while(n+1<a.size()+b.size()) n<<=1;
 
-    vector<Mod998> fa(n),fb(n);
+    vector<Mod998> fa(n), fb(n);
     for(int i=0; i<a.size(); i++) fa[i]=a[i];
     for(int i=0; i<b.size(); i++) fb[i]=b[i];
 

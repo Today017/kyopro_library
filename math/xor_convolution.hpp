@@ -5,9 +5,9 @@ template<typename T>
 void FHT(vector<T>& a, bool inv=false) {
     int h=__lg(a.size());
     for(int i=0; i<h; i++) for(int j=0; j<1<<h; j++) if(~j>>i&1) {
-        T x=a[j],y=a[j|1<<i];
-        a[j]=x+y,a[j|1<<i]=x-y;
-        if(inv) a[j]/=2,a[j|1<<i]/=2;
+        T x=a[j], y=a[j|1<<i];
+        a[j]=x+y; a[j|1<<i]=x-y;
+        if(inv) a[j]/=2, a[j|1<<i]/=2;
     }
     return;
 }

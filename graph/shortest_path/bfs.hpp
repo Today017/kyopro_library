@@ -9,8 +9,8 @@ vector<ll> BFS(const vector<vector<int>>& g, int start=0) {
     queue<int> que; que.push(start);
 
     while(!que.empty()) {
-        int now=que.front();que.pop();
-        for(int nxt:g[now]) if(chmin(ret[nxt],ret[now]+1)) que.push(nxt);
+        int now=que.front(); que.pop();
+        for(int nxt: g[now]) if(chmin(ret[nxt],ret[now]+1)) que.push(nxt);
     }
 
     return ret;

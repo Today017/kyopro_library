@@ -10,9 +10,9 @@ vector<ll> Dijkstra(const vector<vector<pair<int,ll>>>& g, int start=0) {
     rpriority_queue<pair<ll,int>> pq; pq.push({0,start});
 
     while(!pq.empty()) {
-        auto [tmp,now]=pq.top();pq.pop();
+        auto [tmp,now]=pq.top(); pq.pop();
         if(ret[now]<tmp) continue;
-        for(auto [nxt,cost]:g[now]) if(chmin(ret[nxt],ret[now]+cost)) pq.push({ret[nxt],nxt});
+        for(auto [nxt,cost]: g[now]) if(chmin(ret[nxt],ret[now]+cost)) pq.push({ret[nxt],nxt});
     }
 
     return ret;

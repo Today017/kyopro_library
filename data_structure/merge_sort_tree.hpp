@@ -8,7 +8,7 @@ struct MergeSortTree {
     /// @brief 配列 v からマージソート木を構築する
     MergeSortTree(const vector<T>& v) {
         n=v.size();
-        mx=*max_element(ALL(v)),mn=*min_element(ALL(v));
+        mx=*max_element(ALL(v)); mn=*min_element(ALL(v));
         dat=vector<vector<T>>(n<<1);
         for(int i=0; i<n; i++) dat[n+i]={v[i]};
         for(int i=n-1; i>0; i--) {
@@ -19,12 +19,12 @@ struct MergeSortTree {
     /// @brief 区間 [l, r) に存在する val 未満の値の個数を返す
     /// @note O(log(N)^2)
     int count_lt(int l, int r, T val) {
-        l+=n,r+=n;
+        l+=n; r+=n;
         int ret=0;
         while(l<r) {
-            if(l&1) ret+=LB(dat[l],val),l++;
-            if(r&1) --r,ret+=LB(dat[r],val);
-            l>>=1,r>>=1;
+            if(l&1) ret+=LB(dat[l],val), l++;
+            if(r&1) --r, ret+=LB(dat[r],val);
+            l>>=1; r>>=1;
         }
         return ret;
     }

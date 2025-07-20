@@ -113,9 +113,9 @@ $(function(){initNavTree('xor__convolution_8hpp_source.html',''); initResizable(
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="xor__convolution_8hpp.html#a2172face1088ecec4509579a02feedd9">    5</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="xor__convolution_8hpp.html#a2172face1088ecec4509579a02feedd9">FHT</a>(vector&lt;T&gt;&amp; a, <span class="keywordtype">bool</span> inv=<span class="keyword">false</span>) {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keywordtype">int</span> h=__lg(a.size());</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;h; i++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;1&lt;&lt;h; j++) <span class="keywordflow">if</span>(~j&gt;&gt;i&amp;1) {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        T x=a[j],y=a[j|1&lt;&lt;i];</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        a[j]=x+y,a[j|1&lt;&lt;i]=x-y;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">if</span>(inv) a[j]/=2,a[j|1&lt;&lt;i]/=2;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        T x=a[j], y=a[j|1&lt;&lt;i];</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        a[j]=x+y; a[j|1&lt;&lt;i]=x-y;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">if</span>(inv) a[j]/=2, a[j|1&lt;&lt;i]/=2;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>

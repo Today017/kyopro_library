@@ -35,7 +35,7 @@ struct Mo {
             return rs[a]>rs[b];
         });
 
-        int nl=0,nr=0;
+        int nl=0, nr=0;
         for(int& i: qi){
             while(nl>ls[i]) add_left(--nl);
             while(nr<rs[i]) add_right(nr++);
@@ -46,6 +46,6 @@ struct Mo {
     }
 
 private:
-    int n,q;
-    vector<int> ls,rs;
+    int n, q;
+    vector<int> ls, rs;
 };

@@ -12,7 +12,7 @@ namespace ZetaMobiusDivMul {
     template<typename Monoid>
     vector<typename Monoid::Type> MultipleZeta(vector<typename Monoid::Type> v) {
         int n=v.size()-1;
-        if((int)primes.size()<n) Init(n);
+        if(primes.size()<n) Init(n);
         for(int p: primes) for(int k=n/p; k>0; k--) v[k]=Monoid::op(v[k],v[k*p]);
         return v;
     }
@@ -23,7 +23,7 @@ namespace ZetaMobiusDivMul {
     template<typename Monoid>
     vector<typename Monoid::Type> DvisorZeta(vector<typename Monoid::Type> v) {
         int n=v.size()-1;
-        if((int)primes.size()<n) Init(n);
+        if(primes.size()<n) Init(n);
         for(int p: primes) for(int k=1; k*p<=n; k++) v[k*p]=Monoid::op(v[k*p],v[k]);
         return v;
     }
@@ -35,7 +35,7 @@ namespace ZetaMobiusDivMul {
     template<typename Abel>
     vector<typename Abel::Type> MultipleMobius(vector<typename Abel::Type> v) {
         int n=v.size()-1;
-        if((int)primes.size()<n) Init(n);
+        if(primes.size()<n) Init(n);
         for(int p: primes) for(int k=1; k*p<=n; k++) v[k]=Abel::op(v[k],Abel::inv(v[k*p]));
         return v;
     }
@@ -47,7 +47,7 @@ namespace ZetaMobiusDivMul {
     template<typename Abel>
     vector<typename Abel::Type> DivisorMobius(vector<typename Abel::Type> v) {
         int n=v.size()-1;
-        if((int)primes.size()<n) Init(n);
+        if(primes.size()<n) Init(n);
         for(int p: primes) for(int k=n/p; k>0; k--) v[k*p]=Abel::op(v[k*p],Abel::inv(v[k]));
         return v;
     }

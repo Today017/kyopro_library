@@ -28,7 +28,7 @@ struct DoublingFold {
     /// @note O(Log)
     Type fold(int start, ll k) {
         Type ret= Monoid::id();
-        for(int b=0; k>0; b++,k>>=1) if(k&1) {
+        for(int b=0; k>0; b++, k>>=1) if(k&1) {
             ret=Monoid::op(ret,dat[b][start]);
             start=nxt[b][start];
         }
@@ -38,7 +38,7 @@ struct DoublingFold {
     /// @brief 頂点 start から k 回遷移した先の頂点を返す
     /// @note O(Log)
     int next(int start, ll k) {
-        for(int b=0; k>0; b++,k>>=1) if(k&1) start=nxt[b][start];
+        for(int b=0; k>0; b++, k>>=1) if(k&1) start=nxt[b][start];
         return start;
     }
 

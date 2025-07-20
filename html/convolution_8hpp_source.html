@@ -113,7 +113,7 @@ $(function(){initNavTree('convolution_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @details a = (a[0], a[1], ..., a[n-1]) -&gt; fa = (f(w^0), f(w^1), ..., f(w^(n-1)))</span></div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="convolution_8hpp.html#a6a27829658ebde922fee66179fe05f3c">    7</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="convolution_8hpp.html#a6a27829658ebde922fee66179fe05f3c">FFT</a>(vector&lt;complex&lt;<span class="keywordtype">double</span>&gt;&gt;&amp; a, <span class="keywordtype">bool</span> inv=<span class="keyword">false</span>) {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">int</span> n=a.size(),h=0;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">int</span> n=a.size(), h=0;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">while</span>((1&lt;&lt;h)&lt;n) h++;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordtype">int</span> j=0;</div>
@@ -130,13 +130,13 @@ $(function(){initNavTree('convolution_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            complex&lt;<span class="keywordtype">double</span>&gt; w=polar(1.0,(2.0*M_PI)/(2.0*b)*j*(inv?1:-1));</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="comment">//ブロックサイズ 2b だけずらしながら計算</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0; k&lt;n; k+=b*2) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                complex&lt;<span class="keywordtype">double</span>&gt; s=a[j+k],t=a[j+k+b]*w;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                a[j+k]=s+t,a[j+k+b]=s-t;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                complex&lt;<span class="keywordtype">double</span>&gt; s=a[j+k], t=a[j+k+b]*w;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                a[j+k]=s+t; a[j+k+b]=s-t;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            }</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span>(inv)<span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) a[i]/=n;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span>(inv) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) a[i]/=n;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
 </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
@@ -146,7 +146,7 @@ $(function(){initNavTree('convolution_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397">   36</a></span><a class="code hl_function" href="convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397">vector</a>&lt;<span class="keywordtype">double</span>&gt; <a class="code hl_function" href="convolution_8hpp.html#a12143899ae24137944835fc0aaf1c397">Convolve</a>(<span class="keyword">const</span> vector&lt;<span class="keywordtype">double</span>&gt;&amp; a, <span class="keyword">const</span> vector&lt;<span class="keywordtype">double</span>&gt;&amp; b) {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">int</span> n=1;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">while</span>(n+1&lt;a.size()+b.size()) n*=2;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    vector&lt;complex&lt;<span class="keywordtype">double</span>&gt;&gt; fa(n),fb(n);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    vector&lt;complex&lt;<span class="keywordtype">double</span>&gt;&gt; fa(n), fb(n);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;a.size(); i++) fa[i]=a[i];</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;b.size(); i++) fb[i]=b[i];</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>

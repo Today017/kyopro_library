@@ -5,7 +5,7 @@
 /// @details f(x) = Σ a[i]x^i, w^N = 1 とすると、F(t) = Σ f(w^i)t^i の各係数を返す。
 /// @details a = (a[0], a[1], ..., a[n-1]) -> fa = (f(w^0), f(w^1), ..., f(w^(n-1)))
 void FFT(vector<complex<double>>& a, bool inv=false) {
-    int n=a.size(),h=0;
+    int n=a.size(), h=0;
     while((1<<h)<n) h++;
     for(int i=0; i<n; i++) {
         int j=0;
@@ -22,13 +22,13 @@ void FFT(vector<complex<double>>& a, bool inv=false) {
             complex<double> w=polar(1.0,(2.0*M_PI)/(2.0*b)*j*(inv?1:-1));
             //ブロックサイズ 2b だけずらしながら計算
             for(int k=0; k<n; k+=b*2) {
-                complex<double> s=a[j+k],t=a[j+k+b]*w;
-                a[j+k]=s+t,a[j+k+b]=s-t;
+                complex<double> s=a[j+k], t=a[j+k+b]*w;
+                a[j+k]=s+t; a[j+k+b]=s-t;
             }
         }
     }
 
-    if(inv)for(int i=0; i<n; i++) a[i]/=n;
+    if(inv) for(int i=0; i<n; i++) a[i]/=n;
 }
 
 /// @brief 畳み込み
@@ -36,7 +36,7 @@ void FFT(vector<complex<double>>& a, bool inv=false) {
 vector<double> Convolve(const vector<double>& a, const vector<double>& b) {
     int n=1;
     while(n+1<a.size()+b.size()) n*=2;
-    vector<complex<double>> fa(n),fb(n);
+    vector<complex<double>> fa(n), fb(n);
     for(int i=0; i<a.size(); i++) fa[i]=a[i];
     for(int i=0; i<b.size(); i++) fb[i]=b[i];
 

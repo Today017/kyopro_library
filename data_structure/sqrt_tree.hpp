@@ -13,9 +13,9 @@ struct SqrtTree {
         this->n=n;
         rn=1;
         while(rn*rn<n) rn++;
-        dat.assign(rn,Abel::id());
-        dat2.assign(n,Abel::id());
-        dat2_inv.assign(n,Abel::id());
+        dat=vector<Type>(n,Abel::id());
+        dat2=vector<Type>(n,Abel::id());
+        dat2_inv=vector<Type>(n,Abel::id());
     }
 
     /// @brief 配列 v で初期化する

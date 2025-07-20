@@ -56,7 +56,7 @@ struct CHT {
 private:
     map<T,T> lines;
     bool need(const typename map<T,T>::iterator it) {
-        if (it==lines.begin()||it==prev(lines.end())||it==lines.end()) return true;
+        if (it==lines.begin() || it==prev(lines.end()) || it==lines.end()) return true;
         auto prv=prev(it),nxt=next(it);
         auto [a,b]=*it;
         auto [a1,b1]=*nxt;

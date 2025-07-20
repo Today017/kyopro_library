@@ -29,11 +29,11 @@ struct DynamicConnectivity{
         for(auto [e,val]: count) if(val>0) period.push_back({{appear[e],n},e});
         for(auto [range,e]: period) {
             auto [l,r]=range;
-            l+=n,r+=n;
+            l+=n; r+=n;
             while(l<r) {
                 if(l&1) edges[l++].push_back(e);
                 if(r&1) edges[--r].push_back(e);
-                l>>=1,r>>=1;
+                l>>=1; r>>=1;
             }
         }
     }

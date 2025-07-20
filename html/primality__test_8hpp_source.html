@@ -122,14 +122,14 @@ $(function(){initNavTree('primality__test_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">if</span>(n&lt;4759123141ll) test={2,7,61};</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">else</span> test={2,325,9375,28178,450775,9780504,1795265022};</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    ll s=0,d=n-1;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">while</span>(d%2==0) d&gt;&gt;=1,s++;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    ll s=0, d=n-1;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">while</span>(d%2==0) d&gt;&gt;=1, s++;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">for</span>(ll a: test) {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">if</span>(a&gt;=n) <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        lll x=ModPow&lt;lll&gt;(a,d,n);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(x==1||x==n-1) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(x==1 || x==n-1) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">for</span>(ll r=1; r&lt;s; r++) {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                x=x*x%n;</div>

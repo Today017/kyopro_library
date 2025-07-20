@@ -2,7 +2,7 @@
 
 /// @brief 等差数列
 struct ArithmeticProgression {
-    ll start=INFL,goal=INFL,step=INFL,length=INFL;
+    ll start=INFL, goal=INFL, step=INFL, length=INFL;
 
     /// @brief 初項、公差、末項、項数のうち、足りない情報を計算する
     void normalize() {
@@ -25,5 +25,5 @@ struct ArithmeticProgression {
 /// @brief 等差数列の和を返す
 ll ArithmeticSum(ArithmeticProgression ap) {
     ap.normalize();
-    return(ap.start+ap.goal)*ap.length/2;
+    return (ap.start+ap.goal)*ap.length/2;
 }

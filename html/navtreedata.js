@@ -80,16 +80,13 @@ var NAVTREE =
         ] ]
       ] ]
     ] ],
-    [ "sa", "md_heuristic_2sa.html", [
-      [ "焼きなまし法のテンプレート", "md_heuristic_2sa.html#autotoc_md51", null ]
-    ] ],
     [ "Today03", "md__r_e_a_d_m_e.html", [
-      [ "環境構築", "md__r_e_a_d_m_e.html#autotoc_md53", null ],
-      [ "スクリプト", "md__r_e_a_d_m_e.html#autotoc_md54", null ],
-      [ "使い方", "md__r_e_a_d_m_e.html#autotoc_md55", null ],
-      [ "データ構造に載せる代数構造の定義の仕方", "md__r_e_a_d_m_e.html#autotoc_md56", [
-        [ "例) モノイド", "md__r_e_a_d_m_e.html#autotoc_md57", null ],
-        [ "各構造の要件", "md__r_e_a_d_m_e.html#autotoc_md58", null ]
+      [ "環境構築", "md__r_e_a_d_m_e.html#autotoc_md52", null ],
+      [ "スクリプト", "md__r_e_a_d_m_e.html#autotoc_md53", null ],
+      [ "使い方", "md__r_e_a_d_m_e.html#autotoc_md54", null ],
+      [ "データ構造に載せる代数構造の定義の仕方", "md__r_e_a_d_m_e.html#autotoc_md55", [
+        [ "例) モノイド", "md__r_e_a_d_m_e.html#autotoc_md56", null ],
+        [ "各構造の要件", "md__r_e_a_d_m_e.html#autotoc_md57", null ]
       ] ]
     ] ],
     [ "名前空間", "namespaces.html", [
@@ -130,12 +127,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "abel_8hpp.html",
-"int128_8hpp.html#a642c9a2936c6b33c8f43371c81377cb7",
+"int128_8hpp.html#a01dfe26ad2682864fe404deda4361363",
 "namespacecompress.html#a30b635f18c81637d3c1d613b8be0e223",
 "struct_dsu_merging.html#adcc3916018699b654242ea713b02adac",
 "struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#aee7676fe4681e1812dabfdd680159f73",
 "struct_range_query_1_1_max.html",
-"two__sat_8hpp.html"
+"topological__sort_8hpp.html#aa2349361ab4557650966e703dd97fb1c"
 ];
 
 var SYNCONMSG = 'クリックで同期表示が無効になります';
