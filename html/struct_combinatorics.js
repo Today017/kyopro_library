@@ -6,5 +6,6 @@ var struct_combinatorics =
     [ "perm", "struct_combinatorics.html#ac07d10087e698b320be57919234f569b", null ],
     [ "factrial", "struct_combinatorics.html#a612688ccbc9653abc8098403fced48b3", null ],
     [ "factinv", "struct_combinatorics.html#abf0b71d9a682af871adc550a8091b05d", null ],
-    [ "operator()", "struct_combinatorics.html#a9e27460393170091fbf3429fdbb3925a", null ]
+    [ "operator()", "struct_combinatorics.html#a9e27460393170091fbf3429fdbb3925a", null ],
+    [ "cataran", "struct_combinatorics.html#a20aef80faad2b75952d7244ae1ac0ceb", null ]
 ];

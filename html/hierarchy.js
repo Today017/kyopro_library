@@ -35,7 +35,8 @@ var hierarchy =
     [ "exp.Expander", "classexp_1_1_expander.html", null ],
     [ "exp_AHC.Expander", "classexp___a_h_c_1_1_expander.html", null ],
     [ "Factors", "struct_factors.html", null ],
-    [ "FenwickTree< Abel >", "struct_fenwick_tree.html", null ],
+    [ "FenwickTree", "struct_fenwick_tree.html", null ],
+    [ "FenwickTreeAbel< Abel >", "struct_fenwick_tree_abel.html", null ],
     [ "Fraction< T >", "struct_fraction.html", null ],
     [ "GridUtil", "struct_grid_util.html", null ],
     [ "Hash", "struct_hash.html", null ],
@@ -66,7 +67,7 @@ var hierarchy =
     ] ],
     [ "AngelBeats::Node", "struct_angel_beats_1_1_node.html", null ],
     [ "Trie::Node", "struct_trie_1_1_node.html", null ],
-    [ "NTT< MOD, primitive_root >", "class_n_t_t.html", null ],
+    [ "NTT< mint >", "struct_n_t_t.html", null ],
     [ "Geometry::Point", "struct_geometry_1_1_point.html", null ],
     [ "RangeMax", "struct_range_max.html", null ],
     [ "RangeMin", "struct_range_min.html", null ],
@@ -79,6 +80,7 @@ var hierarchy =
       [ "InsertableReversibleArrayImpl::LazyReversibleRBST< T, T, InsertableReversibleArrayImpl::op< T >, InsertableReversibleArrayImpl::op< T >, InsertableReversibleArrayImpl::op< T >, InsertableReversibleArrayImpl::e< T > >", "struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html", null ]
     ] ],
     [ "RollingHash", "struct_rolling_hash.html", null ],
+    [ "RollingHash2D", "struct_rolling_hash2_d.html", null ],
     [ "SccInfo", "struct_scc_info.html", null ],
     [ "SegmentTree2D< Monoid >", "struct_segment_tree2_d.html", null ],
     [ "SegTree< Monoid >", "struct_seg_tree.html", null ],
@@ -107,6 +109,7 @@ var hierarchy =
     [ "Operator::Update< T, not_exist >", "struct_operator_1_1_update.html", null ],
     [ "Operator::UpdateTimeStamp< T >", "struct_operator_1_1_update_time_stamp.html", null ],
     [ "vector", null, [
+      [ "FormalPowerSeries< mint >", "struct_formal_power_series.html", null ],
       [ "OffsetVector< T >", "struct_offset_vector.html", null ]
     ] ],
     [ "WaveletMatrix", "struct_wavelet_matrix.html", null ],

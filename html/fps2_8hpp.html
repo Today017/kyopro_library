@@ -9,8 +9,20 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -19,11 +31,22 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="circle_50.png"/></td>
   <td id="projectalign">
    <div id="projectname">Kyopro Library
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -32,23 +55,57 @@
 <!-- 構築: Doxygen 1.13.2 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() { codefold.init(0); });
+var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){ initResizable(false); });
+$(function() { codefold.init(0); });
 /* @license-end */
 </script>
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_296d53ceaeaa7e099814a6def439fe8a.html">math</a></li>  </ul>
-</div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('fps2_8hpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
 <div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">クラス</a>  </div>
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
   <div class="headertitle"><div class="title">fps2.hpp ファイル</div></div>
 </div><!--header-->
 <div class="contents">
@@ -57,15 +114,296 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 クラス</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_m_f_p_s.html">MFPS</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">【形式的冪級数】  <a href="struct_m_f_p_s.html#details">[詳解]</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_n_t_t.html">NTT&lt; mint &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_n_t_t.html" title="NTT Friendly 素数用 NTT 構造体">NTT</a> Friendly 素数用 <a class="el" href="struct_n_t_t.html" title="NTT Friendly 素数用 NTT 構造体">NTT</a> 構造体  <a href="struct_n_t_t.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries&lt; mint &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a74eccfbc6618075dd701da0efef1ac4d" id="r_a74eccfbc6618075dd701da0efef1ac4d"><td class="memTemplParams" colspan="2">template&lt;typename mint&gt; </td></tr>
+<tr class="memitem:a74eccfbc6618075dd701da0efef1ac4d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a74eccfbc6618075dd701da0efef1ac4d">sparse_div</a> (const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;f, const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;g, int deg=-1)</td></tr>
+<tr class="memdesc:a74eccfbc6618075dd701da0efef1ac4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式/形式的冪級数ライブラリ @docs docs/fps/formal-power-series.md  <br /></td></tr>
+<tr class="separator:a74eccfbc6618075dd701da0efef1ac4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3ec8d18672e6d014263d319a0a42754" id="r_ae3ec8d18672e6d014263d319a0a42754"><td class="memTemplParams" colspan="2">template&lt;typename mint&gt; </td></tr>
+<tr class="memitem:ae3ec8d18672e6d014263d319a0a42754"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae3ec8d18672e6d014263d319a0a42754">sparse_inv</a> (const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;f, int deg=-1)</td></tr>
+<tr class="separator:ae3ec8d18672e6d014263d319a0a42754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9efaed65e5fdc3420090b57d58cd1293" id="r_a9efaed65e5fdc3420090b57d58cd1293"><td class="memTemplParams" colspan="2">template&lt;typename mint&gt; </td></tr>
+<tr class="memitem:a9efaed65e5fdc3420090b57d58cd1293"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9efaed65e5fdc3420090b57d58cd1293">sparse_log</a> (const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;f, int deg=-1)</td></tr>
+<tr class="separator:a9efaed65e5fdc3420090b57d58cd1293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5db5a179a77c55445d01cf6664352fa8" id="r_a5db5a179a77c55445d01cf6664352fa8"><td class="memTemplParams" colspan="2">template&lt;typename mint&gt; </td></tr>
+<tr class="memitem:a5db5a179a77c55445d01cf6664352fa8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5db5a179a77c55445d01cf6664352fa8">sparse_exp</a> (const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;f, int deg=-1)</td></tr>
+<tr class="separator:a5db5a179a77c55445d01cf6664352fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae69057202df32677e29a659b95bb9dfc" id="r_ae69057202df32677e29a659b95bb9dfc"><td class="memTemplParams" colspan="2">template&lt;typename mint&gt; </td></tr>
+<tr class="memitem:ae69057202df32677e29a659b95bb9dfc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae69057202df32677e29a659b95bb9dfc">sparse_pow</a> (const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;f, long long k, int deg=-1)</td></tr>
+<tr class="separator:ae69057202df32677e29a659b95bb9dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a2df656f9f07ca76726824a5b3b3004" id="r_a8a2df656f9f07ca76726824a5b3b3004"><td class="memTemplParams" colspan="2">template&lt;typename mint&gt; </td></tr>
+<tr class="memitem:a8a2df656f9f07ca76726824a5b3b3004"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8a2df656f9f07ca76726824a5b3b3004">sqrt</a> (const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;f, int deg=-1)</td></tr>
+<tr class="separator:a8a2df656f9f07ca76726824a5b3b3004"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9faf38de6ba5d43b6ed2d3695bf08edd" id="r_a9faf38de6ba5d43b6ed2d3695bf08edd"><td class="memTemplParams" colspan="2">template&lt;typename mint&gt; </td></tr>
+<tr class="memitem:a9faf38de6ba5d43b6ed2d3695bf08edd"><td class="memTemplItemLeft" align="right" valign="top">pair&lt; <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;, <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9faf38de6ba5d43b6ed2d3695bf08edd">circular</a> (const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;fre, const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;fim, int deg=-1)</td></tr>
+<tr class="separator:a9faf38de6ba5d43b6ed2d3695bf08edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd668dcea64b9be8829dc70a9625c2e1" id="r_abd668dcea64b9be8829dc70a9625c2e1"><td class="memTemplParams" colspan="2">template&lt;typename mint&gt; </td></tr>
+<tr class="memitem:abd668dcea64b9be8829dc70a9625c2e1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#abd668dcea64b9be8829dc70a9625c2e1">TaylorShift</a> (<a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; f, mint a, Binomial&lt; mint &gt; &amp;C)</td></tr>
+<tr class="separator:abd668dcea64b9be8829dc70a9625c2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a73b84e023f3f55acb50957bac8734918" id="r_a73b84e023f3f55acb50957bac8734918"><td class="memTemplParams" colspan="2">template&lt;typename mint&gt; </td></tr>
+<tr class="memitem:a73b84e023f3f55acb50957bac8734918"><td class="memTemplItemLeft" align="right" valign="top">void *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a73b84e023f3f55acb50957bac8734918">FormalPowerSeries&lt; mint &gt;::ntt_ptr</a> = nullptr</td></tr>
+<tr class="separator:a73b84e023f3f55acb50957bac8734918"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a74eccfbc6618075dd701da0efef1ac4d" name="a74eccfbc6618075dd701da0efef1ac4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74eccfbc6618075dd701da0efef1ac4d">&#9670;&#160;</a></span>sparse_div()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; sparse_div </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>deg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>多項式/形式的冪級数ライブラリ @docs docs/fps/formal-power-series.md </p>
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00416">416</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae3ec8d18672e6d014263d319a0a42754" name="ae3ec8d18672e6d014263d319a0a42754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3ec8d18672e6d014263d319a0a42754">&#9670;&#160;</a></span>sparse_inv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; sparse_inv </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>deg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00438">438</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9efaed65e5fdc3420090b57d58cd1293" name="a9efaed65e5fdc3420090b57d58cd1293"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9efaed65e5fdc3420090b57d58cd1293">&#9670;&#160;</a></span>sparse_log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; sparse_log </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>deg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00460">460</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5db5a179a77c55445d01cf6664352fa8" name="a5db5a179a77c55445d01cf6664352fa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5db5a179a77c55445d01cf6664352fa8">&#9670;&#160;</a></span>sparse_exp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; sparse_exp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>deg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00490">490</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae69057202df32677e29a659b95bb9dfc" name="ae69057202df32677e29a659b95bb9dfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69057202df32677e29a659b95bb9dfc">&#9670;&#160;</a></span>sparse_pow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; sparse_pow </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long long</td>          <td class="paramname"><span class="paramname"><em>k</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>deg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00520">520</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8a2df656f9f07ca76726824a5b3b3004" name="a8a2df656f9f07ca76726824a5b3b3004"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a2df656f9f07ca76726824a5b3b3004">&#9670;&#160;</a></span>sqrt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; sqrt </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>deg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00708">708</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9faf38de6ba5d43b6ed2d3695bf08edd" name="a9faf38de6ba5d43b6ed2d3695bf08edd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9faf38de6ba5d43b6ed2d3695bf08edd">&#9670;&#160;</a></span>circular()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">pair&lt; <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;, <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &gt; circular </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>fre</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>fim</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>deg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00738">738</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abd668dcea64b9be8829dc70a9625c2e1" name="abd668dcea64b9be8829dc70a9625c2e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd668dcea64b9be8829dc70a9625c2e1">&#9670;&#160;</a></span>TaylorShift()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; TaylorShift </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mint</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Binomial&lt; mint &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>C</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00823">823</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">変数詳解</h2>
+<a id="a73b84e023f3f55acb50957bac8734918" name="a73b84e023f3f55acb50957bac8734918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73b84e023f3f55acb50957bac8734918">&#9670;&#160;</a></span>FormalPowerSeries&lt; mint &gt;::ntt_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::ntt_ptr = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00406">406</a> 行目に定義があります。</p>
+
+</div>
+</div>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
-</small></address>
 </div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_296d53ceaeaa7e099814a6def439fe8a.html">math</a></li><li class="navelem"><a class="el" href="fps2_8hpp.html">fps2.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
 </body>
 </html>

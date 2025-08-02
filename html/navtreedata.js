@@ -80,15 +80,7 @@ var NAVTREE =
         ] ]
       ] ]
     ] ],
-    [ "Today03", "md__r_e_a_d_m_e.html", [
-      [ "環境構築", "md__r_e_a_d_m_e.html#autotoc_md52", null ],
-      [ "スクリプト", "md__r_e_a_d_m_e.html#autotoc_md53", null ],
-      [ "使い方", "md__r_e_a_d_m_e.html#autotoc_md54", null ],
-      [ "データ構造に載せる代数構造の定義の仕方", "md__r_e_a_d_m_e.html#autotoc_md55", [
-        [ "例) モノイド", "md__r_e_a_d_m_e.html#autotoc_md56", null ],
-        [ "各構造の要件", "md__r_e_a_d_m_e.html#autotoc_md57", null ]
-      ] ]
-    ] ],
+    [ "README", "md__r_e_a_d_m_e.html", null ],
     [ "名前空間", "namespaces.html", [
       [ "名前空間一覧", "namespaces.html", "namespaces_dup" ],
       [ "名前空間メンバ", "namespacemembers.html", [
@@ -127,12 +119,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "abel_8hpp.html",
-"int128_8hpp.html#a01dfe26ad2682864fe404deda4361363",
-"namespacecompress.html#a30b635f18c81637d3c1d613b8be0e223",
-"struct_dsu_merging.html#adcc3916018699b654242ea713b02adac",
-"struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#aee7676fe4681e1812dabfdd680159f73",
-"struct_range_query_1_1_max.html",
-"topological__sort_8hpp.html#aa2349361ab4557650966e703dd97fb1c"
+"grid_8hpp_source.html",
+"namespace_zeta_mobius_div_mul.html#a60c1e6ce641275a4ee75d229514c1691",
+"struct_dsu_merging.html#a31648bc93d4bc29960fe93fff7ca0914",
+"struct_hash.html#ad96321a44bb502422139b5c06f484be3",
+"struct_operator_1_1_update.html#ab994d7d1f21b221ecd64cc2faf1153a4",
+"struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4"
 ];
 
 var SYNCONMSG = 'クリックで同期表示が無効になります';

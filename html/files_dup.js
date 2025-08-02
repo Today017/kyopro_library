@@ -12,5 +12,5 @@ var files_dup =
     [ "all.hpp", "all_8hpp.html", null ],
     [ "debug.hpp", "debug_8hpp.html", "debug_8hpp" ],
     [ "template.hpp", "template_8hpp.html", "template_8hpp" ],
-    [ "template2.hpp", "template2_8hpp.html", "template2_8hpp" ]
+    [ "template3.hpp", "template3_8hpp.html", "template3_8hpp" ]
 ];

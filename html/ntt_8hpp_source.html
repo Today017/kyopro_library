@@ -111,8 +111,7 @@ $(function(){initNavTree('ntt_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @brief NTT Friendly 素数用 NTT 構造体</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">template</span>&lt;ll MOD, ll primitive_root&gt;</div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_n_t_t.html">    7</a></span><span class="keyword">class</span> <a class="code hl_class" href="class_n_t_t.html">NTT</a> {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">class</span> NTT {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">int</span> divide_max,n;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    vector&lt;ll&gt; roots,inv_roots,tmp;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
@@ -138,7 +137,7 @@ $(function(){initNavTree('ntt_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_n_t_t.html#a08f7a88ab5d843873769c894112766ec">   32</a></span>    <a class="code hl_function" href="class_n_t_t.html#a08f7a88ab5d843873769c894112766ec">NTT</a>() {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_n_t_t.html#a7b4587e234d59101f8e9c0b9de68fef4">   32</a></span>    <a class="code hl_function" href="struct_n_t_t.html#a7b4587e234d59101f8e9c0b9de68fef4">NTT</a>() {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        divide_max=1;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        ll n=MOD-1;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">while</span>(n%2==0) n&gt;&gt;=1,divide_max++;</div>
@@ -154,7 +153,7 @@ $(function(){initNavTree('ntt_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">/// @brief a, b の畳み込み mod M を求める</span></div>
 <div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_n_t_t.html#a6d57ccca42ed7fef5aa6342717cb68a5">   46</a></span>    <a class="code hl_function" href="class_n_t_t.html#a6d57ccca42ed7fef5aa6342717cb68a5">vector</a>&lt;<a class="code hl_function" href="class_n_t_t.html#a6d57ccca42ed7fef5aa6342717cb68a5">ll</a>&gt; <a class="code hl_function" href="class_n_t_t.html#a6d57ccca42ed7fef5aa6342717cb68a5">convolve</a>(vector&lt;ll&gt; a, vector&lt;ll&gt; b) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct_n_t_t.html#a9f30e194c9987cee83878f38060e600a">   46</a></span>    <a class="code hl_function" href="struct_n_t_t.html#a9f30e194c9987cee83878f38060e600a">vector</a>&lt;<a class="code hl_function" href="struct_n_t_t.html#a9f30e194c9987cee83878f38060e600a">ll</a>&gt; <a class="code hl_function" href="struct_n_t_t.html#a9f30e194c9987cee83878f38060e600a">convolve</a>(vector&lt;ll&gt; a, vector&lt;ll&gt; b) {</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        n=1;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">while</span>(n+1&lt;a.size()+b.size()) n&lt;&lt;=1;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        tmp=vector&lt;ll&gt;(n);</div>
@@ -172,11 +171,9 @@ $(function(){initNavTree('ntt_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
 </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
-</div>
-<div class="ttc" id="aclass_n_t_t_html"><div class="ttname"><a href="class_n_t_t.html">NTT</a></div><div class="ttdoc">NTT Friendly 素数用 NTT 構造体</div><div class="ttdef"><b>Definition</b> <a href="#l00007">ntt.hpp:7</a></div></div>
-<div class="ttc" id="aclass_n_t_t_html_a08f7a88ab5d843873769c894112766ec"><div class="ttname"><a href="class_n_t_t.html#a08f7a88ab5d843873769c894112766ec">NTT::NTT</a></div><div class="ttdeci">NTT()</div><div class="ttdef"><b>Definition</b> <a href="#l00032">ntt.hpp:32</a></div></div>
-<div class="ttc" id="aclass_n_t_t_html_a6d57ccca42ed7fef5aa6342717cb68a5"><div class="ttname"><a href="class_n_t_t.html#a6d57ccca42ed7fef5aa6342717cb68a5">NTT::convolve</a></div><div class="ttdeci">vector&lt; ll &gt; convolve(vector&lt; ll &gt; a, vector&lt; ll &gt; b)</div><div class="ttdoc">a, b の畳み込み mod M を求める</div><div class="ttdef"><b>Definition</b> <a href="#l00046">ntt.hpp:46</a></div></div>
 <div class="ttc" id="amodcal_8hpp_html_a8fbaf043a7918c3ee026482c69f79bdc"><div class="ttname"><a href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">ModInv</a></div><div class="ttdeci">ll ModInv(ll a, ll m)</div><div class="ttdoc">x^(-1) (mod m) を返す</div><div class="ttdef"><b>Definition</b> <a href="modcal_8hpp_source.html#l00018">modcal.hpp:18</a></div></div>
+<div class="ttc" id="astruct_n_t_t_html_a7b4587e234d59101f8e9c0b9de68fef4"><div class="ttname"><a href="struct_n_t_t.html#a7b4587e234d59101f8e9c0b9de68fef4">NTT::NTT</a></div><div class="ttdeci">NTT()</div><div class="ttdef"><b>Definition</b> <a href="#l00032">ntt.hpp:32</a></div></div>
+<div class="ttc" id="astruct_n_t_t_html_a9f30e194c9987cee83878f38060e600a"><div class="ttname"><a href="struct_n_t_t.html#a9f30e194c9987cee83878f38060e600a">NTT::convolve</a></div><div class="ttdeci">vector&lt; ll &gt; convolve(vector&lt; ll &gt; a, vector&lt; ll &gt; b)</div><div class="ttdoc">a, b の畳み込み mod M を求める</div><div class="ttdef"><b>Definition</b> <a href="#l00046">ntt.hpp:46</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00005">template.hpp:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

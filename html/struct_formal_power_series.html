@@ -1,0 +1,1262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: FormalPowerSeries&lt; mint &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('struct_formal_power_series.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pub-static-attribs">静的公開変数類</a> &#124;
+<a href="struct_formal_power_series-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">FormalPowerSeries&lt; mint &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="fps2_8hpp_source.html">fps2.hpp</a>&quot;</code></p>
+<div class="dynheader">
+FormalPowerSeries&lt; mint &gt; の継承関係図</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="struct_formal_power_series.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a60a3f8019af5b97b852363896a462005" id="r_a60a3f8019af5b97b852363896a462005"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> = <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a></td></tr>
+<tr class="separator:a60a3f8019af5b97b852363896a462005"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a58a05455d03f8b460ed8a8726861e66e" id="r_a58a05455d03f8b460ed8a8726861e66e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58a05455d03f8b460ed8a8726861e66e">operator+=</a> (const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;r)</td></tr>
+<tr class="separator:a58a05455d03f8b460ed8a8726861e66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d3a73d833a73d5fcbdcde951d56f8cd" id="r_a0d3a73d833a73d5fcbdcde951d56f8cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d3a73d833a73d5fcbdcde951d56f8cd">operator+=</a> (const mint &amp;r)</td></tr>
+<tr class="separator:a0d3a73d833a73d5fcbdcde951d56f8cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d7c29993b6d3ceb680f857b54fa9041" id="r_a6d7c29993b6d3ceb680f857b54fa9041"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d7c29993b6d3ceb680f857b54fa9041">operator-=</a> (const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;r)</td></tr>
+<tr class="separator:a6d7c29993b6d3ceb680f857b54fa9041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b77dd4c6fb0dc443128dbf6b95d4ce8" id="r_a1b77dd4c6fb0dc443128dbf6b95d4ce8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b77dd4c6fb0dc443128dbf6b95d4ce8">operator-=</a> (const mint &amp;r)</td></tr>
+<tr class="separator:a1b77dd4c6fb0dc443128dbf6b95d4ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef445028cce7d90f434e36794a915985" id="r_aef445028cce7d90f434e36794a915985"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef445028cce7d90f434e36794a915985">operator*=</a> (const mint &amp;v)</td></tr>
+<tr class="separator:aef445028cce7d90f434e36794a915985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75617e5888495821b8d6febc43fe1baa" id="r_a75617e5888495821b8d6febc43fe1baa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75617e5888495821b8d6febc43fe1baa">operator/=</a> (const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;r)</td></tr>
+<tr class="separator:a75617e5888495821b8d6febc43fe1baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92485e3098cbd520f51257aec1cf3d65" id="r_a92485e3098cbd520f51257aec1cf3d65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92485e3098cbd520f51257aec1cf3d65">operator%=</a> (const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;r)</td></tr>
+<tr class="separator:a92485e3098cbd520f51257aec1cf3d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a601e13447f26c1eed996258e039b41d8" id="r_a601e13447f26c1eed996258e039b41d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a601e13447f26c1eed996258e039b41d8">operator+</a> (const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;r) const</td></tr>
+<tr class="separator:a601e13447f26c1eed996258e039b41d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a109aa4f22744b07c955fdeaf1918f346" id="r_a109aa4f22744b07c955fdeaf1918f346"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a109aa4f22744b07c955fdeaf1918f346">operator+</a> (const mint &amp;v) const</td></tr>
+<tr class="separator:a109aa4f22744b07c955fdeaf1918f346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae97bcd464397133cd0034b023368629c" id="r_ae97bcd464397133cd0034b023368629c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae97bcd464397133cd0034b023368629c">operator-</a> (const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;r) const</td></tr>
+<tr class="separator:ae97bcd464397133cd0034b023368629c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bb81dd6a05ff81f1769d62ffb5125f3" id="r_a4bb81dd6a05ff81f1769d62ffb5125f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bb81dd6a05ff81f1769d62ffb5125f3">operator-</a> (const mint &amp;v) const</td></tr>
+<tr class="separator:a4bb81dd6a05ff81f1769d62ffb5125f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab659c472f9ca7d3505a2dd214506eeed" id="r_ab659c472f9ca7d3505a2dd214506eeed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab659c472f9ca7d3505a2dd214506eeed">operator*</a> (const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;r) const</td></tr>
+<tr class="separator:ab659c472f9ca7d3505a2dd214506eeed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeba30d6d27a18047ddb38177b378071f" id="r_aeba30d6d27a18047ddb38177b378071f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeba30d6d27a18047ddb38177b378071f">operator*</a> (const mint &amp;v) const</td></tr>
+<tr class="separator:aeba30d6d27a18047ddb38177b378071f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754cc7d49575e9e9b5c75a5e05ecd125" id="r_a754cc7d49575e9e9b5c75a5e05ecd125"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a754cc7d49575e9e9b5c75a5e05ecd125">operator/</a> (const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;r) const</td></tr>
+<tr class="separator:a754cc7d49575e9e9b5c75a5e05ecd125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ce1035f57ef6e80a10ad5d687864ac2" id="r_a6ce1035f57ef6e80a10ad5d687864ac2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ce1035f57ef6e80a10ad5d687864ac2">operator%</a> (const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;r) const</td></tr>
+<tr class="separator:a6ce1035f57ef6e80a10ad5d687864ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae94a5aeb5a92d3609e599c7726c4996a" id="r_ae94a5aeb5a92d3609e599c7726c4996a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae94a5aeb5a92d3609e599c7726c4996a">operator-</a> () const</td></tr>
+<tr class="separator:ae94a5aeb5a92d3609e599c7726c4996a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4dd771cf028a040a49e6bdd8e61d218" id="r_ad4dd771cf028a040a49e6bdd8e61d218"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4dd771cf028a040a49e6bdd8e61d218">shrink</a> ()</td></tr>
+<tr class="separator:ad4dd771cf028a040a49e6bdd8e61d218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae48a0390a2a3953b2141e8420c054133" id="r_ae48a0390a2a3953b2141e8420c054133"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae48a0390a2a3953b2141e8420c054133">rev</a> () const</td></tr>
+<tr class="separator:ae48a0390a2a3953b2141e8420c054133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ca46e81067e9ebed5d6838fc1d97b7" id="r_a12ca46e81067e9ebed5d6838fc1d97b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12ca46e81067e9ebed5d6838fc1d97b7">dot</a> (<a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> r) const</td></tr>
+<tr class="separator:a12ca46e81067e9ebed5d6838fc1d97b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91ad49072d52d6a9c7daf7ac4917d008" id="r_a91ad49072d52d6a9c7daf7ac4917d008"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91ad49072d52d6a9c7daf7ac4917d008">pre</a> (int sz) const</td></tr>
+<tr class="separator:a91ad49072d52d6a9c7daf7ac4917d008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d609167fd4b8dda4d48518372ddbffc" id="r_a4d609167fd4b8dda4d48518372ddbffc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d609167fd4b8dda4d48518372ddbffc">operator&gt;&gt;</a> (int sz) const</td></tr>
+<tr class="separator:a4d609167fd4b8dda4d48518372ddbffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0415cd8d0712a3f335a3a121792d24e9" id="r_a0415cd8d0712a3f335a3a121792d24e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0415cd8d0712a3f335a3a121792d24e9">operator&lt;&lt;</a> (int sz) const</td></tr>
+<tr class="separator:a0415cd8d0712a3f335a3a121792d24e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a666efb98ef181b2b53fd0dd21a89eaf7" id="r_a666efb98ef181b2b53fd0dd21a89eaf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a666efb98ef181b2b53fd0dd21a89eaf7">diff</a> () const</td></tr>
+<tr class="separator:a666efb98ef181b2b53fd0dd21a89eaf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d39c5cc2115c900f2f4f85e3aa1253e" id="r_a7d39c5cc2115c900f2f4f85e3aa1253e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d39c5cc2115c900f2f4f85e3aa1253e">integral</a> () const</td></tr>
+<tr class="separator:a7d39c5cc2115c900f2f4f85e3aa1253e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6a53b0b3f234319d3744fb3c6724055" id="r_aa6a53b0b3f234319d3744fb3c6724055"><td class="memItemLeft" align="right" valign="top">mint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6a53b0b3f234319d3744fb3c6724055">eval</a> (mint x) const</td></tr>
+<tr class="separator:aa6a53b0b3f234319d3744fb3c6724055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eb651163d10ecc0297087cf62de2132" id="r_a9eb651163d10ecc0297087cf62de2132"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9eb651163d10ecc0297087cf62de2132">log</a> (int deg=-1) const</td></tr>
+<tr class="separator:a9eb651163d10ecc0297087cf62de2132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54b79431836a114867be8748b15187a5" id="r_a54b79431836a114867be8748b15187a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54b79431836a114867be8748b15187a5">pow</a> (int64_t k, int deg=-1) const</td></tr>
+<tr class="separator:a54b79431836a114867be8748b15187a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adba18a9d5c5a69e1b395b5ccd48b04fc" id="r_adba18a9d5c5a69e1b395b5ccd48b04fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adba18a9d5c5a69e1b395b5ccd48b04fc">operator*=</a> (const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;r)</td></tr>
+<tr class="separator:adba18a9d5c5a69e1b395b5ccd48b04fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ad229e19c801250df46a61cd539ff06" id="r_a9ad229e19c801250df46a61cd539ff06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ad229e19c801250df46a61cd539ff06">ntt</a> ()</td></tr>
+<tr class="separator:a9ad229e19c801250df46a61cd539ff06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dd9760aed0f438b50a32ddd753e0138" id="r_a2dd9760aed0f438b50a32ddd753e0138"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dd9760aed0f438b50a32ddd753e0138">intt</a> ()</td></tr>
+<tr class="separator:a2dd9760aed0f438b50a32ddd753e0138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa78d2752c87c3777991370ff0e5e9f49" id="r_aa78d2752c87c3777991370ff0e5e9f49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa78d2752c87c3777991370ff0e5e9f49">ntt_doubling</a> ()</td></tr>
+<tr class="separator:aa78d2752c87c3777991370ff0e5e9f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a606afa34311bbbdcfc28967d023b52cd" id="r_a606afa34311bbbdcfc28967d023b52cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a606afa34311bbbdcfc28967d023b52cd">inv</a> (int deg=-1) const</td></tr>
+<tr class="separator:a606afa34311bbbdcfc28967d023b52cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f2f31552d3045f3ee923ef5417b7bdc" id="r_a4f2f31552d3045f3ee923ef5417b7bdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f2f31552d3045f3ee923ef5417b7bdc">exp</a> (int deg=-1) const</td></tr>
+<tr class="separator:a4f2f31552d3045f3ee923ef5417b7bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a7e5328510976cb42650ada1a4b09eb5b" id="r_a7e5328510976cb42650ada1a4b09eb5b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e5328510976cb42650ada1a4b09eb5b">set_fft</a> ()</td></tr>
+<tr class="separator:a7e5328510976cb42650ada1a4b09eb5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bff5fa25d5924e83db507d71e95b1e9" id="r_a7bff5fa25d5924e83db507d71e95b1e9"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bff5fa25d5924e83db507d71e95b1e9">ntt_pr</a> ()</td></tr>
+<tr class="separator:a7bff5fa25d5924e83db507d71e95b1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+静的公開変数類</h2></td></tr>
+<tr class="memitem:aa104cb1059fb76944c1b752088682c77" id="r_aa104cb1059fb76944c1b752088682c77"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa104cb1059fb76944c1b752088682c77">ntt_ptr</a></td></tr>
+<tr class="separator:aa104cb1059fb76944c1b752088682c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename mint&gt;<br />
+struct FormalPowerSeries&lt; mint &gt;</div>
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00225">225</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a60a3f8019af5b97b852363896a462005" name="a60a3f8019af5b97b852363896a462005"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60a3f8019af5b97b852363896a462005">&#9670;&#160;</a></span>FPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::FPS = <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00227">227</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a58a05455d03f8b460ed8a8726861e66e" name="a58a05455d03f8b460ed8a8726861e66e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58a05455d03f8b460ed8a8726861e66e">&#9670;&#160;</a></span>operator+=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp; <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00229">229</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0d3a73d833a73d5fcbdcde951d56f8cd" name="a0d3a73d833a73d5fcbdcde951d56f8cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d3a73d833a73d5fcbdcde951d56f8cd">&#9670;&#160;</a></span>operator+=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp; <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const mint &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00235">235</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6d7c29993b6d3ceb680f857b54fa9041" name="a6d7c29993b6d3ceb680f857b54fa9041"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d7c29993b6d3ceb680f857b54fa9041">&#9670;&#160;</a></span>operator-=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp; <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00241">241</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1b77dd4c6fb0dc443128dbf6b95d4ce8" name="a1b77dd4c6fb0dc443128dbf6b95d4ce8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b77dd4c6fb0dc443128dbf6b95d4ce8">&#9670;&#160;</a></span>operator-=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp; <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const mint &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00247">247</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aef445028cce7d90f434e36794a915985" name="aef445028cce7d90f434e36794a915985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef445028cce7d90f434e36794a915985">&#9670;&#160;</a></span>operator*=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp; <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const mint &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00253">253</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a75617e5888495821b8d6febc43fe1baa" name="a75617e5888495821b8d6febc43fe1baa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75617e5888495821b8d6febc43fe1baa">&#9670;&#160;</a></span>operator/=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp; <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00258">258</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="fps2_8hpp_source.html#l00307">rev()</a>, <a class="el" href="fps2_8hpp_source.html#l00303">shrink()</a>.</p>
+
+</div>
+</div>
+<a id="a92485e3098cbd520f51257aec1cf3d65" name="a92485e3098cbd520f51257aec1cf3d65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92485e3098cbd520f51257aec1cf3d65">&#9670;&#160;</a></span>operator%=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp; <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator%= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00283">283</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="fps2_8hpp_source.html#l00303">shrink()</a>.</p>
+
+</div>
+</div>
+<a id="a601e13447f26c1eed996258e039b41d8" name="a601e13447f26c1eed996258e039b41d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a601e13447f26c1eed996258e039b41d8">&#9670;&#160;</a></span>operator+() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00289">289</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a109aa4f22744b07c955fdeaf1918f346" name="a109aa4f22744b07c955fdeaf1918f346"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a109aa4f22744b07c955fdeaf1918f346">&#9670;&#160;</a></span>operator+() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const mint &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00290">290</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae97bcd464397133cd0034b023368629c" name="ae97bcd464397133cd0034b023368629c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae97bcd464397133cd0034b023368629c">&#9670;&#160;</a></span>operator-() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00291">291</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4bb81dd6a05ff81f1769d62ffb5125f3" name="a4bb81dd6a05ff81f1769d62ffb5125f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bb81dd6a05ff81f1769d62ffb5125f3">&#9670;&#160;</a></span>operator-() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const mint &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00292">292</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab659c472f9ca7d3505a2dd214506eeed" name="ab659c472f9ca7d3505a2dd214506eeed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab659c472f9ca7d3505a2dd214506eeed">&#9670;&#160;</a></span>operator*() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00293">293</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aeba30d6d27a18047ddb38177b378071f" name="aeba30d6d27a18047ddb38177b378071f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeba30d6d27a18047ddb38177b378071f">&#9670;&#160;</a></span>operator*() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const mint &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00294">294</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a754cc7d49575e9e9b5c75a5e05ecd125" name="a754cc7d49575e9e9b5c75a5e05ecd125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a754cc7d49575e9e9b5c75a5e05ecd125">&#9670;&#160;</a></span>operator/()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00295">295</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6ce1035f57ef6e80a10ad5d687864ac2" name="a6ce1035f57ef6e80a10ad5d687864ac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ce1035f57ef6e80a10ad5d687864ac2">&#9670;&#160;</a></span>operator%()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator% </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00296">296</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae94a5aeb5a92d3609e599c7726c4996a" name="ae94a5aeb5a92d3609e599c7726c4996a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae94a5aeb5a92d3609e599c7726c4996a">&#9670;&#160;</a></span>operator-() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00297">297</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad4dd771cf028a040a49e6bdd8e61d218" name="ad4dd771cf028a040a49e6bdd8e61d218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4dd771cf028a040a49e6bdd8e61d218">&#9670;&#160;</a></span>shrink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::shrink </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00303">303</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae48a0390a2a3953b2141e8420c054133" name="ae48a0390a2a3953b2141e8420c054133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae48a0390a2a3953b2141e8420c054133">&#9670;&#160;</a></span>rev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::rev </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00307">307</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a12ca46e81067e9ebed5d6838fc1d97b7" name="a12ca46e81067e9ebed5d6838fc1d97b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ca46e81067e9ebed5d6838fc1d97b7">&#9670;&#160;</a></span>dot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::dot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a></td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00313">313</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a91ad49072d52d6a9c7daf7ac4917d008" name="a91ad49072d52d6a9c7daf7ac4917d008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91ad49072d52d6a9c7daf7ac4917d008">&#9670;&#160;</a></span>pre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::pre </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sz</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00320">320</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4d609167fd4b8dda4d48518372ddbffc" name="a4d609167fd4b8dda4d48518372ddbffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d609167fd4b8dda4d48518372ddbffc">&#9670;&#160;</a></span>operator&gt;&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sz</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00326">326</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0415cd8d0712a3f335a3a121792d24e9" name="a0415cd8d0712a3f335a3a121792d24e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0415cd8d0712a3f335a3a121792d24e9">&#9670;&#160;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sz</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00333">333</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a666efb98ef181b2b53fd0dd21a89eaf7" name="a666efb98ef181b2b53fd0dd21a89eaf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a666efb98ef181b2b53fd0dd21a89eaf7">&#9670;&#160;</a></span>diff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::diff </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00339">339</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7d39c5cc2115c900f2f4f85e3aa1253e" name="a7d39c5cc2115c900f2f4f85e3aa1253e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d39c5cc2115c900f2f4f85e3aa1253e">&#9670;&#160;</a></span>integral()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::integral </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00350">350</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa6a53b0b3f234319d3744fb3c6724055" name="aa6a53b0b3f234319d3744fb3c6724055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6a53b0b3f234319d3744fb3c6724055">&#9670;&#160;</a></span>eval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mint <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::eval </td>
+          <td>(</td>
+          <td class="paramtype">mint</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00361">361</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9eb651163d10ecc0297087cf62de2132" name="a9eb651163d10ecc0297087cf62de2132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eb651163d10ecc0297087cf62de2132">&#9670;&#160;</a></span>log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::log </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>deg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00367">367</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="fps2_8hpp_source.html#l00339">diff()</a>, <a class="el" href="fps2_8hpp_source.html#l00609">inv()</a>.</p>
+
+</div>
+</div>
+<a id="a54b79431836a114867be8748b15187a5" name="a54b79431836a114867be8748b15187a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54b79431836a114867be8748b15187a5">&#9670;&#160;</a></span>pow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::pow </td>
+          <td>(</td>
+          <td class="paramtype">int64_t</td>          <td class="paramname"><span class="paramname"><em>k</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>deg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00373">373</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7e5328510976cb42650ada1a4b09eb5b" name="a7e5328510976cb42650ada1a4b09eb5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e5328510976cb42650ada1a4b09eb5b">&#9670;&#160;</a></span>set_fft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::set_fft </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00568">568</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="fps2_8hpp_source.html#l00395">ntt_ptr</a>.</p>
+
+</div>
+</div>
+<a id="adba18a9d5c5a69e1b395b5ccd48b04fc" name="adba18a9d5c5a69e1b395b5ccd48b04fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adba18a9d5c5a69e1b395b5ccd48b04fc">&#9670;&#160;</a></span>operator*=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp; <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a60a3f8019af5b97b852363896a462005">FPS</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ad229e19c801250df46a61cd539ff06" name="a9ad229e19c801250df46a61cd539ff06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ad229e19c801250df46a61cd539ff06">&#9670;&#160;</a></span>ntt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::ntt </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00585">585</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="fps2_8hpp_source.html#l00395">ntt_ptr</a>, <a class="el" href="fps2_8hpp_source.html#l00568">set_fft()</a>.</p>
+
+</div>
+</div>
+<a id="a2dd9760aed0f438b50a32ddd753e0138" name="a2dd9760aed0f438b50a32ddd753e0138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dd9760aed0f438b50a32ddd753e0138">&#9670;&#160;</a></span>intt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::intt </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00591">591</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="fps2_8hpp_source.html#l00395">ntt_ptr</a>, <a class="el" href="fps2_8hpp_source.html#l00568">set_fft()</a>.</p>
+
+</div>
+</div>
+<a id="aa78d2752c87c3777991370ff0e5e9f49" name="aa78d2752c87c3777991370ff0e5e9f49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa78d2752c87c3777991370ff0e5e9f49">&#9670;&#160;</a></span>ntt_doubling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::ntt_doubling </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00597">597</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="fps2_8hpp_source.html#l00395">ntt_ptr</a>, <a class="el" href="fps2_8hpp_source.html#l00568">set_fft()</a>.</p>
+
+</div>
+</div>
+<a id="a7bff5fa25d5924e83db507d71e95b1e9" name="a7bff5fa25d5924e83db507d71e95b1e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bff5fa25d5924e83db507d71e95b1e9">&#9670;&#160;</a></span>ntt_pr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::ntt_pr </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00603">603</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="fps2_8hpp_source.html#l00395">ntt_ptr</a>, <a class="el" href="fps2_8hpp_source.html#l00568">set_fft()</a>.</p>
+
+</div>
+</div>
+<a id="a606afa34311bbbdcfc28967d023b52cd" name="a606afa34311bbbdcfc28967d023b52cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a606afa34311bbbdcfc28967d023b52cd">&#9670;&#160;</a></span>inv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::inv </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>deg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00609">609</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="fps2_8hpp_source.html#l00591">intt()</a>, <a class="el" href="fps2_8hpp_source.html#l00585">ntt()</a>, <a class="el" href="fps2_8hpp_source.html#l00320">pre()</a>.</p>
+
+</div>
+</div>
+<a id="a4f2f31552d3045f3ee923ef5417b7bdc" name="a4f2f31552d3045f3ee923ef5417b7bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f2f31552d3045f3ee923ef5417b7bdc">&#9670;&#160;</a></span>exp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt; <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::exp </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>deg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00632">632</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="fps2_8hpp_source.html#l00339">diff()</a>, <a class="el" href="fps2_8hpp_source.html#l00591">intt()</a>, <a class="el" href="fps2_8hpp_source.html#l00585">ntt()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="aa104cb1059fb76944c1b752088682c77" name="aa104cb1059fb76944c1b752088682c77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa104cb1059fb76944c1b752088682c77">&#9670;&#160;</a></span>ntt_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mint&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a>&lt; mint &gt;::ntt_ptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps2_8hpp_source.html">fps2.hpp</a> の <a class="el" href="fps2_8hpp_source.html#l00395">395</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>math/<a class="el" href="fps2_8hpp_source.html">fps2.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_formal_power_series.html">FormalPowerSeries</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
