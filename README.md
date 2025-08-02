@@ -1,8 +1,3 @@
-## Today03
-- [AtCoder](https://atcoder.jp/users/Today03)
-- [Codeforces](https://codeforces.com/profile/Today03)
-- [yukicoder](https://yukicoder.me/users/15224)
-
 [ライブラリのドキュメント](https://today017.github.io/kyopro_library/html/index.html)
 
 ## 環境構築
@@ -12,9 +7,9 @@
 5. `make run` でコンテナを起動して入る
 
 ## スクリプト
-- `./cmp <file>` `<file>` をコンパイルする。
-- `./copy <file>` `<file>` にincludeしたライブラリを展開し、`./combinded.cpp` に保存する。
-- `./test <solve> <generate> <naive>` ランダムテスト用スクリプト。`<solve>` を実行し、`<generate>` で生成した入力を与え、`<naive>` で生成した出力と比較する。
+- `./cmp <file> [t]` `<file>` をコンパイルする。`t` を指定すると、デバッグモードが有効になる。
+- `./copy <file> [-t]` `<file>` にincludeしたライブラリを展開し、`./combinded.cpp` に保存する。`-t` を指定すると、AtCoder Libraryも展開する。
+- `./test <solve> <generate> <naive> [testcount]` ランダムテスト用スクリプト。`<solve>` を実行し、`<generate>` で生成した入力を与え、`<naive>` で生成した出力と比較する。
 - `./contest` カレントディレクトリで作成したファイルを削除する。スクリプトやライブラリは削除しない。コンテスト前に実行する。
 
 ## 使い方
@@ -23,7 +18,7 @@
     #include<kyopro_library/template.hpp>
     #include<kyopro_library/graph/dsu.hpp> // 使うライブラリをincludeする
 
-    int main(){
+    int main() {
         // ここにコードを実装する
     }
     ```
@@ -52,6 +47,3 @@ struct Monoid {
   - `Type inv(const Type& x)`
   - `Type op(const Type& l, const Type& r)`
   - `Type id()`
-- 作用素
-  - `Type id()`
-  - `Type op(const Type& l, const Type& r)`

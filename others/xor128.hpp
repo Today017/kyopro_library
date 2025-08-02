@@ -1,6 +1,7 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
+using ull=unsigned long long;
 /// @brief 疑似乱数生成
 ull Xor128() {
     static bool flag=false;
@@ -16,4 +17,4 @@ ull Xor128() {
 }
 ll Xor128(ll n) { return Xor128()%n; }
 ll Xor128(ll l, ll r) { return Xor128(r-l)+l; }//[l,r)
-ld Xor128Prob() { return (ld)Xor128()/(ULLONG_MAX); }
+double Xor128Prob() { return (double)Xor128()/(ULLONG_MAX); }

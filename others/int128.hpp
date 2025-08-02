@@ -1,6 +1,7 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
+using ull=unsigned long long; using lll=__int128_t;
 constexpr lll operator ""_lll(ull x) { return static_cast<lll>(x); }
 constexpr const lll INFLL=1_lll<<120;
 

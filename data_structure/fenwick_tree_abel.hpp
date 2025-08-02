@@ -5,12 +5,12 @@
 /// @brief Fenwick Tree
 /// @tparam Abel 可換群
 template<typename Abel=Abel::Sum<ll>>
-struct FenwickTree {
+struct FenwickTreeAbel {
     using Type=typename Abel::Type;
-    FenwickTree()=default;
+    FenwickTreeAbel()=default;
 
     /// @brief サイズ n のFenwick Treeを構築する
-    FenwickTree(int n) {
+    FenwickTreeAbel(int n) {
         this->n=n;
         dat=vector<Type>(n,Abel::id());
     }

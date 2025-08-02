@@ -13,6 +13,7 @@
 #include "../kyopro_library/data_structure/cumulative_sum_2d.hpp"
 #include "../kyopro_library/data_structure/erasable_pq.hpp"
 #include "../kyopro_library/data_structure/fenwick_tree.hpp"
+#include "../kyopro_library/data_structure/fenwick_tree_abel.hpp"
 #include "../kyopro_library/data_structure/insert_reverse_array.hpp"
 #include "../kyopro_library/data_structure/merge_sort_tree.hpp"
 #include "../kyopro_library/data_structure/multiset.hpp"

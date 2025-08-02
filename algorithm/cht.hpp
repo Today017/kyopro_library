@@ -61,6 +61,6 @@ private:
         auto [a,b]=*it;
         auto [a1,b1]=*nxt;
         auto [a2,b2]=*prv;
-        return (lll)(a1-a)*(b-b2)<(lll)(a-a2)*(b1-b);
+        return (__int128_t)(a1-a)*(b-b2)<(__int128_t)(a-a2)*(b1-b);
     }
 };

@@ -7,6 +7,7 @@
 /// @ref https://qiita.com/t_fuki/items/7cd50de54d3c5d063b4a
 /// @ref verify: https://algo-method.com/tasks/553
 vector<pair<ll,ll>> PrimeFactorize(ll n) {
+    using lll=__int128_t;
     if(PrimalityTest(n)) return {{n,1}};
     auto find_factor=[](auto&& find_factor, ll n)-> ll {
         lll m=(ll)pow(n,0.125)+1;

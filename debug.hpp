@@ -1,4 +1,5 @@
 #include"../kyopro_library/data_structure/fenwick_tree.hpp"
+#include"../kyopro_library/data_structure/fenwick_tree_abel.hpp"
 #include"../kyopro_library/data_structure/segtree.hpp"
 #include"../kyopro_library/data_structure/segtree_lazy.hpp"
 #include"../kyopro_library/data_structure/segtree_dual.hpp"
@@ -42,11 +43,13 @@ template<typename T>
 ostream& operator<<(ostream& os, queue<T> a);
 template<typename T>
 ostream& operator<<(ostream& os, priority_queue<T> a);
-template<typename T>
-ostream& operator<<(ostream& os, rpriority_queue<T> a);
+//template<typename T>
+//ostream& operator<<(ostream& os, rpriority_queue<T> a);
 template<typename T, auto N>
 ostream& operator<<(ostream& os, array<T,N> a);
 ostream& operator<<(ostream& os, FenwickTree a);
+template<typename T>
+ostream& operator<<(ostream& os, FenwickTreeAbel<T> a);
 template<typename T>
 ostream& operator<<(ostream& os, SegTree<T> a);
 template<typename T, typename U, auto M>
@@ -213,7 +216,7 @@ ostream& operator<<(ostream& os, priority_queue<T> a) {
     os<<"]";
     return os;
 }
-template<typename T>
+/*template<typename T>
 ostream& operator<<(ostream& os, rpriority_queue<T> a) {
     int n=a.size();
     os<<"[";
@@ -223,7 +226,7 @@ ostream& operator<<(ostream& os, rpriority_queue<T> a) {
     }
     os<<"]";
     return os;
-}
+}*/
 template<typename T, auto N>
 ostream& operator<<(ostream& os, array<T,N> a) {
     os<<"[";
@@ -235,6 +238,17 @@ ostream& operator<<(ostream& os, array<T,N> a) {
     return os;
 }
 ostream& operator<<(ostream& os, FenwickTree a) {
+    int n=a.size();
+    os<<"[";
+    for(int i=0; i<n; i++) {
+        os<<a[i];
+        if(i!=n-1) os<<",";
+    }
+    os<<"]";
+    return os;
+}
+template<typename T>
+ostream& operator<<(ostream& os, FenwickTreeAbel<T> a) {
     int n=a.size();
     os<<"[";
     for(int i=0; i<n; i++) {
@@ -288,7 +302,7 @@ ostream& operator<<(ostream& os, atcoder::dsu a) {
     return os;
 }
 
-#define print_line cerr<<"--------------------"<<__LINE__<<"--------------------"<<"\n"
+#define print_line cerr<<"--------------------"<<__LINE__<<"--------------------"<<endl;
 #define debug(...) DebugPrint(0,#__VA_ARGS__,__VA_ARGS__)
 #define getName(VariableName) #VariableName
 

@@ -39,6 +39,9 @@ struct Combinatorics {
     /// @brief nCr を返す
     T operator()(ll n, ll r) { return comb(n,r); }
 
+    /// @brief n 番目のカタラン数を返す
+    T cataran(ll n) { return fac[2*n]*finv[n+1]*finv[n]; }
+
 private:
     vector<T> fac,finv;
 };

@@ -7,6 +7,7 @@
 /// @ref https://drken1215.hatenablog.com/entry/2023/05/23/233000
 /// @ref verify: https://judge.yosupo.jp/problem/primality_test
 bool PrimalityTest(ll n) {
+    using lll=__int128_t;
     if(n==2) return true;
     if(n<=1 || n%2==0) return false;
 

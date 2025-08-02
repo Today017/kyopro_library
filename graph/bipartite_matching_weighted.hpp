@@ -26,7 +26,8 @@ struct BipartiteMatchingWeighted {
     /// @brief 重み付き最大二部マッチング問題を解く
     /// @brief `ret[i] := i 組のマッチングが成立しているときの重み`
     vector<ll> solve() {
-        UQ(left); UQ(right);
+        sort(left.begin(),left.end()); left.erase(unique(left.begin(),left.end()),left.end());
+        sort(right.begin(),right.end()); right.erase(unique(right.begin(),right.end()),right.end());
         for(int u: left) mcf.add_edge(start,u,1,0);
         for(int v: right) mcf.add_edge(v,goal,1,0);
 

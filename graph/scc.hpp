@@ -38,7 +38,7 @@ SccInfo SccDecomposition(const vector<vector<int>>& g) {
     vector<vector<int>> ret(n_n),ret2(n_n);
     for(int i=0; i<n; i++) ret[component[i]].push_back(i);
     for(int i=0; i<n; i++) for(int j: g[i]) if(component[i]!=component[j]) ret2[component[i]].push_back(component[j]);
-    for(int i=0; i<n_n; i++) UQ(ret2[i]);
+    for(int i=0; i<n_n; i++) sort(ret2[i].begin(),ret2[i].end()), ret2[i].erase(unique(ret2[i].begin(),ret2[i].end()),ret2[i].end());
 
     return {ret,ret2,component};
 }

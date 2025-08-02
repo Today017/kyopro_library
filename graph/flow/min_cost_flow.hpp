@@ -38,7 +38,7 @@ struct MinCostFlow {
     /// @note O(FE log V)
     ll flow(int s, int t, ll f) {
         int n=graph.size();
-        rpriority_queue<pair<ll,int>> pq;
+        priority_queue<pair<ll,int>,vector<pair<ll,int>>,greater<>> pq;
         fill(pot.begin(),pot.end(),0);
         fill(pv.begin(),pv.end(),0);
         fill(pe.begin(),pe.end(),0);
