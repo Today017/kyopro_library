@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: AhoCorasick&lt; char_size, margin &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('struct_aho_corasick.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="struct_aho_corasick-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">AhoCorasick&lt; char_size, margin &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="struct_aho_corasick.html" title="AhoCorasick">AhoCorasick</a>  
+ <a href="#details">[詳解]</a></p>
+
+<p><code>#include &quot;<a class="el" href="aho_8hpp_source.html">aho.hpp</a>&quot;</code></p>
+<div class="dynheader">
+AhoCorasick&lt; char_size, margin &gt; の継承関係図</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="struct_aho_corasick.png" usemap="#AhoCorasick_3C_20char_5Fsize_2C_20margin_20_3E_map" alt=""/>
+  <map id="AhoCorasick_3C_20char_5Fsize_2C_20margin_20_3E_map" name="AhoCorasick_3C_20char_5Fsize_2C_20margin_20_3E_map">
+<area href="struct_trie.html" alt="Trie&lt; char_size+1, margin &gt;" shape="rect" coords="0,0,211,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a921f3a1190fbca63510581fd46b6194f" id="r_a921f3a1190fbca63510581fd46b6194f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a921f3a1190fbca63510581fd46b6194f">build</a> (bool heavy=true)</td></tr>
+<tr class="memdesc:a921f3a1190fbca63510581fd46b6194f"><td class="mdescLeft">&#160;</td><td class="mdescRight">前計算 オートマトンを構築する  <br /></td></tr>
+<tr class="separator:a921f3a1190fbca63510581fd46b6194f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaadde92222a53aa71b48f717540215d" id="r_acaadde92222a53aa71b48f717540215d"><td class="memItemLeft" align="right" valign="top">unordered_map&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acaadde92222a53aa71b48f717540215d">match</a> (const string &amp;str, int now=0)</td></tr>
+<tr class="memdesc:acaadde92222a53aa71b48f717540215d"><td class="mdescLeft">&#160;</td><td class="mdescRight">str の中に出現する全パターンの出現回数を返す  <br /></td></tr>
+<tr class="separator:acaadde92222a53aa71b48f717540215d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcb96446c2785d8ee4e1d5529220fbe6" id="r_abcb96446c2785d8ee4e1d5529220fbe6"><td class="memItemLeft" align="right" valign="top">pair&lt; int64_t, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcb96446c2785d8ee4e1d5529220fbe6">move</a> (const char &amp;c, int now=0)</td></tr>
+<tr class="memdesc:abcb96446c2785d8ee4e1d5529220fbe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在のノード now から文字 c で遷移したときの（見つかったパターンの総数, 次のノード）を返す  <br /></td></tr>
+<tr class="separator:abcb96446c2785d8ee4e1d5529220fbe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae017996861af830e8138041b856b8d86" id="r_ae017996861af830e8138041b856b8d86"><td class="memItemLeft" align="right" valign="top">pair&lt; int64_t, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae017996861af830e8138041b856b8d86">move</a> (const string &amp;str, int now=0)</td></tr>
+<tr class="memdesc:ae017996861af830e8138041b856b8d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">str に対して move を適用する。（見つかったパターンの総数, 最終ノードを返す）  <br /></td></tr>
+<tr class="separator:ae017996861af830e8138041b856b8d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_struct_trie"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_struct_trie')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="struct_trie.html">Trie&lt; char_size+1, margin &gt;</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a844916c8e6d928d55732da260bcb9a5b inherit pub_methods_struct_trie" id="r_a844916c8e6d928d55732da260bcb9a5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a844916c8e6d928d55732da260bcb9a5b">Trie</a> ()</td></tr>
+<tr class="separator:a844916c8e6d928d55732da260bcb9a5b inherit pub_methods_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a429455cabb2d0928fa120e94e4038f2b inherit pub_methods_struct_trie" id="r_a429455cabb2d0928fa120e94e4038f2b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a429455cabb2d0928fa120e94e4038f2b">Trie</a> (int len)</td></tr>
+<tr class="separator:a429455cabb2d0928fa120e94e4038f2b inherit pub_methods_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a67d51e36701e70d90b1b9249f68d13 inherit pub_methods_struct_trie" id="r_a0a67d51e36701e70d90b1b9249f68d13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a0a67d51e36701e70d90b1b9249f68d13">update_direct</a> (int node, int id)</td></tr>
+<tr class="separator:a0a67d51e36701e70d90b1b9249f68d13 inherit pub_methods_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2dec2833e52efc82baa7de709195078 inherit pub_methods_struct_trie" id="r_ac2dec2833e52efc82baa7de709195078"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#ac2dec2833e52efc82baa7de709195078">update_child</a> (int node, int child, int id)</td></tr>
+<tr class="separator:ac2dec2833e52efc82baa7de709195078 inherit pub_methods_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a726b2fb660541383c52b5dfdcc318b65 inherit pub_methods_struct_trie" id="r_a726b2fb660541383c52b5dfdcc318b65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a726b2fb660541383c52b5dfdcc318b65">add</a> (const string &amp;str, int str_index, int node_index, int id)</td></tr>
+<tr class="separator:a726b2fb660541383c52b5dfdcc318b65 inherit pub_methods_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aa046b915e51cee13e8667c7d8bde17 inherit pub_methods_struct_trie" id="r_a9aa046b915e51cee13e8667c7d8bde17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a9aa046b915e51cee13e8667c7d8bde17">add</a> (const string &amp;str, int id)</td></tr>
+<tr class="separator:a9aa046b915e51cee13e8667c7d8bde17 inherit pub_methods_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84a50a07bdf16902309a80dbd7e9dc56 inherit pub_methods_struct_trie" id="r_a84a50a07bdf16902309a80dbd7e9dc56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a84a50a07bdf16902309a80dbd7e9dc56">add</a> (const string &amp;str)</td></tr>
+<tr class="memdesc:a84a50a07bdf16902309a80dbd7e9dc56 inherit pub_methods_struct_trie"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列 str を追加する  <br /></td></tr>
+<tr class="separator:a84a50a07bdf16902309a80dbd7e9dc56 inherit pub_methods_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9b36ddcdeea7ffd055c925edb2cadd8 inherit pub_methods_struct_trie" id="r_ab9b36ddcdeea7ffd055c925edb2cadd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#ab9b36ddcdeea7ffd055c925edb2cadd8">query</a> (const string &amp;str, const function&lt; void(int)&gt; &amp;f, int str_index, int node_index)</td></tr>
+<tr class="separator:ab9b36ddcdeea7ffd055c925edb2cadd8 inherit pub_methods_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6576d73cd9883d5cc1b2027c8737e8fd inherit pub_methods_struct_trie" id="r_a6576d73cd9883d5cc1b2027c8737e8fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a6576d73cd9883d5cc1b2027c8737e8fd">query</a> (const string &amp;str, const function&lt; void(int)&gt; &amp;f)</td></tr>
+<tr class="memdesc:a6576d73cd9883d5cc1b2027c8737e8fd inherit pub_methods_struct_trie"><td class="mdescLeft">&#160;</td><td class="mdescRight">strをprefixとして持つ全ての文字列に対し、見つかった文字列のインデックスそれぞれに対してfを実行する  <br /></td></tr>
+<tr class="separator:a6576d73cd9883d5cc1b2027c8737e8fd inherit pub_methods_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88d68957a2eb05ff202b0ce99e6f9349 inherit pub_methods_struct_trie" id="r_a88d68957a2eb05ff202b0ce99e6f9349"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a88d68957a2eb05ff202b0ce99e6f9349">count</a> () const</td></tr>
+<tr class="memdesc:a88d68957a2eb05ff202b0ce99e6f9349 inherit pub_methods_struct_trie"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列の総数  <br /></td></tr>
+<tr class="separator:a88d68957a2eb05ff202b0ce99e6f9349 inherit pub_methods_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40d44a4e38493802d00a00335c8a7652 inherit pub_methods_struct_trie" id="r_a40d44a4e38493802d00a00335c8a7652"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a40d44a4e38493802d00a00335c8a7652">count</a> (const string &amp;s)</td></tr>
+<tr class="separator:a40d44a4e38493802d00a00335c8a7652 inherit pub_methods_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2736205aba5f7becfab3657a702b3f28 inherit pub_methods_struct_trie" id="r_a2736205aba5f7becfab3657a702b3f28"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a2736205aba5f7becfab3657a702b3f28">size</a> () const</td></tr>
+<tr class="memdesc:a2736205aba5f7becfab3657a702b3f28 inherit pub_methods_struct_trie"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノードの総数  <br /></td></tr>
+<tr class="separator:a2736205aba5f7becfab3657a702b3f28 inherit pub_methods_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e85c25c95291e9861fcf1d91c8872c8 inherit pub_methods_struct_trie" id="r_a2e85c25c95291e9861fcf1d91c8872c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a2e85c25c95291e9861fcf1d91c8872c8">insert</a> (const string &amp;s)</td></tr>
+<tr class="separator:a2e85c25c95291e9861fcf1d91c8872c8 inherit pub_methods_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c789423652daed7650a77bb796d6447 inherit pub_methods_struct_trie" id="r_a7c789423652daed7650a77bb796d6447"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a7c789423652daed7650a77bb796d6447">erase</a> (const string &amp;s)</td></tr>
+<tr class="separator:a7c789423652daed7650a77bb796d6447 inherit pub_methods_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:ab0923edfacd130e4c22f92da658e47c1" id="r_ab0923edfacd130e4c22f92da658e47c1"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0923edfacd130e4c22f92da658e47c1">FAIL</a> = char_size</td></tr>
+<tr class="separator:ab0923edfacd130e4c22f92da658e47c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef7272abd47a7874acd4f838ad86336" id="r_a7ef7272abd47a7874acd4f838ad86336"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ef7272abd47a7874acd4f838ad86336">correct</a></td></tr>
+<tr class="separator:a7ef7272abd47a7874acd4f838ad86336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_struct_trie"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_struct_trie')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="struct_trie.html">Trie&lt; char_size+1, margin &gt;</a> に属する継承公開変数類</td></tr>
+<tr class="memitem:a29ca204f239fed4837d2beb1dd26f4d1 inherit pub_attribs_struct_trie" id="r_a29ca204f239fed4837d2beb1dd26f4d1"><td class="memItemLeft" align="right" valign="top">vector&lt; Node &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a29ca204f239fed4837d2beb1dd26f4d1">nodes</a></td></tr>
+<tr class="separator:a29ca204f239fed4837d2beb1dd26f4d1 inherit pub_attribs_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5cbac794d4e7d8f466a1f961b9b2bf2 inherit pub_attribs_struct_trie" id="r_ae5cbac794d4e7d8f466a1f961b9b2bf2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#ae5cbac794d4e7d8f466a1f961b9b2bf2">root</a></td></tr>
+<tr class="separator:ae5cbac794d4e7d8f466a1f961b9b2bf2 inherit pub_attribs_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+その他の継承メンバ</h2></td></tr>
+<tr class="inherit_header pub_types_struct_trie"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_struct_trie')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="struct_trie.html">Trie&lt; char_size+1, margin &gt;</a> に属する継承公開型</td></tr>
+<tr class="memitem:a2bcf5b3d7a5d69121c19a33fb6525ae2 inherit pub_types_struct_trie" id="r_a2bcf5b3d7a5d69121c19a33fb6525ae2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a2bcf5b3d7a5d69121c19a33fb6525ae2">Node</a></td></tr>
+<tr class="separator:a2bcf5b3d7a5d69121c19a33fb6525ae2 inherit pub_types_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;int char_size, int margin&gt;<br />
+struct AhoCorasick&lt; char_size, margin &gt;</div><p><a class="el" href="struct_aho_corasick.html" title="AhoCorasick">AhoCorasick</a> </p>
+
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00076">76</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a921f3a1190fbca63510581fd46b6194f" name="a921f3a1190fbca63510581fd46b6194f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a921f3a1190fbca63510581fd46b6194f">&#9670;&#160;</a></span>build()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int char_size, int margin&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_aho_corasick.html">AhoCorasick</a>&lt; char_size, margin &gt;::build </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>heavy</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>前計算 オートマトンを構築する </p>
+
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00083">83</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="aho_8hpp_source.html#l00079">FAIL</a>.</p>
+
+</div>
+</div>
+<a id="acaadde92222a53aa71b48f717540215d" name="acaadde92222a53aa71b48f717540215d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaadde92222a53aa71b48f717540215d">&#9670;&#160;</a></span>match()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int char_size, int margin&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unordered_map&lt; int, int &gt; <a class="el" href="struct_aho_corasick.html">AhoCorasick</a>&lt; char_size, margin &gt;::match </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>now</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>str の中に出現する全パターンの出現回数を返す </p>
+
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00122">122</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abcb96446c2785d8ee4e1d5529220fbe6" name="abcb96446c2785d8ee4e1d5529220fbe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcb96446c2785d8ee4e1d5529220fbe6">&#9670;&#160;</a></span>move() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int char_size, int margin&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pair&lt; int64_t, int &gt; <a class="el" href="struct_aho_corasick.html">AhoCorasick</a>&lt; char_size, margin &gt;::move </td>
+          <td>(</td>
+          <td class="paramtype">const char &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>now</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>現在のノード now から文字 c で遷移したときの（見つかったパターンの総数, 次のノード）を返す </p>
+
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00135">135</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae017996861af830e8138041b856b8d86" name="ae017996861af830e8138041b856b8d86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae017996861af830e8138041b856b8d86">&#9670;&#160;</a></span>move() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int char_size, int margin&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pair&lt; int64_t, int &gt; <a class="el" href="struct_aho_corasick.html">AhoCorasick</a>&lt; char_size, margin &gt;::move </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>now</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>str に対して move を適用する。（見つかったパターンの総数, 最終ノードを返す） </p>
+
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00141">141</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ab0923edfacd130e4c22f92da658e47c1" name="ab0923edfacd130e4c22f92da658e47c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0923edfacd130e4c22f92da658e47c1">&#9670;&#160;</a></span>FAIL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int char_size, int margin&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="struct_aho_corasick.html">AhoCorasick</a>&lt; char_size, margin &gt;::FAIL = char_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00079">79</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7ef7272abd47a7874acd4f838ad86336" name="a7ef7272abd47a7874acd4f838ad86336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ef7272abd47a7874acd4f838ad86336">&#9670;&#160;</a></span>correct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int char_size, int margin&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;int&gt; <a class="el" href="struct_aho_corasick.html">AhoCorasick</a>&lt; char_size, margin &gt;::correct</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00080">80</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>string/<a class="el" href="aho_8hpp_source.html">aho.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_aho_corasick.html">AhoCorasick</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -12,6 +12,7 @@ var searchData=
   ['totienttable_9',['TotientTable',['../totient__table_8hpp.html#ae6b1647dc3f81700983b731c4648c017',1,'totient_table.hpp']]],
   ['treecentroid_10',['TreeCentroid',['../centroid_8hpp.html#ac0741d80001fbc4b153ed07bc0a138ac',1,'centroid.hpp']]],
   ['treediameter_11',['TreeDiameter',['../diameter_8hpp.html#a4407e8a83e2783d775723d0a505b4bb9',1,'TreeDiameter(const vector&lt; vector&lt; pair&lt; int, ll &gt; &gt; &gt; &amp;g):&#160;diameter.hpp'],['../diameter_8hpp.html#ac215b5736edf58f1ef92ec1d5acf0c75',1,'TreeDiameter(const vector&lt; vector&lt; int &gt; &gt; &amp;g):&#160;diameter.hpp']]],
-  ['trie_12',['Trie',['../struct_trie.html#a061fbd5e9f5453de8558c078c9d371e8',1,'Trie']]],
-  ['twosat_13',['TwoSat',['../struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4',1,'TwoSat']]]
+  ['trie_12',['Trie',['../struct_trie.html#a844916c8e6d928d55732da260bcb9a5b',1,'Trie::Trie()'],['../struct_trie.html#a429455cabb2d0928fa120e94e4038f2b',1,'Trie::Trie(int len)']]],
+  ['trienode_13',['TrieNode',['../struct_trie_node.html#a89d2d73b4ab36e2f35fa86fd518969a1',1,'TrieNode']]],
+  ['twosat_14',['TwoSat',['../struct_two_sat.html#a4b6625d3218c6bd8dd83951f17e35ed4',1,'TwoSat']]]
 ];

@@ -66,7 +66,7 @@ var hierarchy =
       [ "MultiSet< T >", "struct_multi_set.html", null ]
     ] ],
     [ "AngelBeats::Node", "struct_angel_beats_1_1_node.html", null ],
-    [ "Trie::Node", "struct_trie_1_1_node.html", null ],
+    [ "Trie< char_size, margin >::Node", "struct_trie_1_1_node.html", null ],
     [ "NTT< mint >", "struct_n_t_t.html", null ],
     [ "Geometry::Point", "struct_geometry_1_1_point.html", null ],
     [ "RangeMax", "struct_range_max.html", null ],
@@ -104,7 +104,11 @@ var hierarchy =
       [ "SortedMultiTree< T >", "struct_sorted_multi_tree.html", null ],
       [ "SortedTree< T >", "struct_sorted_tree.html", null ]
     ] ],
-    [ "Trie", "struct_trie.html", null ],
+    [ "Trie< char_size, margin >", "struct_trie.html", null ],
+    [ "Trie< char_size+1, margin >", "struct_trie.html", [
+      [ "AhoCorasick< char_size, margin >", "struct_aho_corasick.html", null ]
+    ] ],
+    [ "TrieNode< char_size >", "struct_trie_node.html", null ],
     [ "TwoSat", "struct_two_sat.html", null ],
     [ "Operator::Update< T, not_exist >", "struct_operator_1_1_update.html", null ],
     [ "Operator::UpdateTimeStamp< T >", "struct_operator_1_1_update_time_stamp.html", null ],

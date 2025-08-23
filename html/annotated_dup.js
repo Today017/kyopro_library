@@ -48,6 +48,7 @@ var annotated_dup =
       [ "Sum", "struct_range_query_1_1_sum.html", "struct_range_query_1_1_sum" ],
       [ "SumDynamic", "struct_range_query_1_1_sum_dynamic.html", "struct_range_query_1_1_sum_dynamic" ]
     ] ],
+    [ "AhoCorasick", "struct_aho_corasick.html", "struct_aho_corasick" ],
     [ "AngelBeats", "struct_angel_beats.html", "struct_angel_beats" ],
     [ "ArithmeticProgression", "struct_arithmetic_progression.html", "struct_arithmetic_progression" ],
     [ "BezoutIdentity", "struct_bezout_identity.html", "struct_bezout_identity" ],
@@ -110,6 +111,7 @@ var annotated_dup =
     [ "SuccinctBitVector", "struct_succinct_bit_vector.html", "struct_succinct_bit_vector" ],
     [ "Timer", "struct_timer.html", "struct_timer" ],
     [ "Trie", "struct_trie.html", "struct_trie" ],
+    [ "TrieNode", "struct_trie_node.html", "struct_trie_node" ],
     [ "TwoSat", "struct_two_sat.html", "struct_two_sat" ],
     [ "WaveletMatrix", "struct_wavelet_matrix.html", "struct_wavelet_matrix" ]
 ];

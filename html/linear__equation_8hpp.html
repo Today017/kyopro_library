@@ -113,24 +113,33 @@ $(function(){initNavTree('linear__equation_8hpp.html',''); initResizable(true); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:a5e5db525b2db932b4e07f9c0a2babddd" id="r_a5e5db525b2db932b4e07f9c0a2babddd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e5db525b2db932b4e07f9c0a2babddd">RowReduction</a> (vector&lt; vector&lt; bool &gt; &gt; &amp;a, vector&lt; int &gt; &amp;where)</td></tr>
-<tr class="memdesc:a5e5db525b2db932b4e07f9c0a2babddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">F_2 上の連立線形方程式 <a href="https://mathlandscape.com/solution-sp/">https://mathlandscape.com/solution-sp/</a> <a href="https://yukicoder.me/submissions/1011997">https://yukicoder.me/submissions/1011997</a> verify:https://yukicoder.me/problems/no/2895  <br /></td></tr>
-<tr class="separator:a5e5db525b2db932b4e07f9c0a2babddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac91575eafd15cbdfc1da2ae7cf5bb964" id="r_ac91575eafd15cbdfc1da2ae7cf5bb964"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac91575eafd15cbdfc1da2ae7cf5bb964">LinearEquation</a> (vector&lt; vector&lt; bool &gt; &gt; a, vector&lt; bool &gt; b, vector&lt; bool &gt; &amp;x0, vector&lt; vector&lt; bool &gt; &gt; &amp;ker)</td></tr>
-<tr class="memdesc:ac91575eafd15cbdfc1da2ae7cf5bb964"><td class="mdescLeft">&#160;</td><td class="mdescRight">連立線形方程式 Ax=b を解く  <br /></td></tr>
-<tr class="separator:ac91575eafd15cbdfc1da2ae7cf5bb964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bdc93e25aefc231e288ce18deb61197" id="r_a0bdc93e25aefc231e288ce18deb61197"><td class="memTemplParams" colspan="2">template&lt;int MAX_COL&gt; </td></tr>
+<tr class="memitem:a0bdc93e25aefc231e288ce18deb61197"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0bdc93e25aefc231e288ce18deb61197">RowReduction</a> (vector&lt; bitset&lt; MAX_COL &gt; &gt; &amp;a, int col, vector&lt; int &gt; &amp;where)</td></tr>
+<tr class="memdesc:a0bdc93e25aefc231e288ce18deb61197"><td class="mdescLeft">&#160;</td><td class="mdescRight">F_2 上の連立線形方程式 <a href="https://mathlandscape.com/solution-sp/">https://mathlandscape.com/solution-sp/</a> <a href="https://yukicoder.me/submissions/1011997">https://yukicoder.me/submissions/1011997</a> verify: <a href="https://yukicoder.me/problems/no/2895">https://yukicoder.me/problems/no/2895</a> verify: <a href="https://yukicoder.me/problems/no/3229">https://yukicoder.me/problems/no/3229</a> verify: <a href="https://judge.yosupo.jp/problem/system_of_linear_equations_mod_2">https://judge.yosupo.jp/problem/system_of_linear_equations_mod_2</a>  <br /></td></tr>
+<tr class="separator:a0bdc93e25aefc231e288ce18deb61197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b6794b8f97d965f0ce0786230dee7a0" id="r_a9b6794b8f97d965f0ce0786230dee7a0"><td class="memTemplParams" colspan="2">template&lt;int MAX_COL, bool ONE_KER = false&gt; </td></tr>
+<tr class="memitem:a9b6794b8f97d965f0ce0786230dee7a0"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9b6794b8f97d965f0ce0786230dee7a0">LinearEquation</a> (vector&lt; bitset&lt; MAX_COL &gt; &gt; a, vector&lt; bool &gt; b, int col, vector&lt; bool &gt; &amp;x0, vector&lt; vector&lt; bool &gt; &gt; &amp;ker)</td></tr>
+<tr class="memdesc:a9b6794b8f97d965f0ce0786230dee7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">連立線形方程式 Ax=b を解く  <br /></td></tr>
+<tr class="separator:a9b6794b8f97d965f0ce0786230dee7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a5e5db525b2db932b4e07f9c0a2babddd" name="a5e5db525b2db932b4e07f9c0a2babddd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e5db525b2db932b4e07f9c0a2babddd">&#9670;&#160;</a></span>RowReduction()</h2>
+<a id="a0bdc93e25aefc231e288ce18deb61197" name="a0bdc93e25aefc231e288ce18deb61197"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bdc93e25aefc231e288ce18deb61197">&#9670;&#160;</a></span>RowReduction()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;int MAX_COL&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">int RowReduction </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; vector&lt; bool &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype">vector&lt; bitset&lt; MAX_COL &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>col</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -140,35 +149,43 @@ $(function(){initNavTree('linear__equation_8hpp.html',''); initResizable(true); 
       </table>
 </div><div class="memdoc">
 
-<p>F_2 上の連立線形方程式 <a href="https://mathlandscape.com/solution-sp/">https://mathlandscape.com/solution-sp/</a> <a href="https://yukicoder.me/submissions/1011997">https://yukicoder.me/submissions/1011997</a> verify:https://yukicoder.me/problems/no/2895 </p>
+<p>F_2 上の連立線形方程式 <a href="https://mathlandscape.com/solution-sp/">https://mathlandscape.com/solution-sp/</a> <a href="https://yukicoder.me/submissions/1011997">https://yukicoder.me/submissions/1011997</a> verify: <a href="https://yukicoder.me/problems/no/2895">https://yukicoder.me/problems/no/2895</a> verify: <a href="https://yukicoder.me/problems/no/3229">https://yukicoder.me/problems/no/3229</a> verify: <a href="https://judge.yosupo.jp/problem/system_of_linear_equations_mod_2">https://judge.yosupo.jp/problem/system_of_linear_equations_mod_2</a> </p>
 <p>掃き出し法 </p><dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>連立方程式 Ax=b の拡大係数行列 </td></tr>
+    <tr><td class="paramname">col</td><td>拡大係数行列の列数 </td></tr>
     <tr><td class="paramname">where</td><td>ピボットとなる変数を記録するための配列 </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>A のランク </dd></dl>
 
-<p class="definition"> <a class="el" href="linear__equation_8hpp_source.html">linear_equation.hpp</a> の <a class="el" href="linear__equation_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="linear__equation_8hpp_source.html">linear_equation.hpp</a> の <a class="el" href="linear__equation_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="ac91575eafd15cbdfc1da2ae7cf5bb964" name="ac91575eafd15cbdfc1da2ae7cf5bb964"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac91575eafd15cbdfc1da2ae7cf5bb964">&#9670;&#160;</a></span>LinearEquation()</h2>
+<a id="a9b6794b8f97d965f0ce0786230dee7a0" name="a9b6794b8f97d965f0ce0786230dee7a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b6794b8f97d965f0ce0786230dee7a0">&#9670;&#160;</a></span>LinearEquation()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;int MAX_COL, bool ONE_KER = false&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool LinearEquation </td>
+          <td class="memname">int LinearEquation </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; vector&lt; bool &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype">vector&lt; bitset&lt; MAX_COL &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">vector&lt; bool &gt;</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>col</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -186,15 +203,17 @@ $(function(){initNavTree('linear__equation_8hpp.html',''); initResizable(true); 
 <p>連立線形方程式 Ax=b を解く </p>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
+    <tr><td class="paramname">col</td><td>連立方程式の変数の数 </td></tr>
     <tr><td class="paramname">x0</td><td>特殊解(b=0 の場合は自明解になる) </td></tr>
     <tr><td class="paramname">ker</td><td>Ax=0 の解空間の基底 </td></tr>
+    <tr><td class="paramname">ONE_KER</td><td>基底のサイズが巨大な場合、基底を1つだけ求められれば良いときはtrue </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section note"><dt>覚え書き</dt><dd>一般解は x0 と解空間の基底の任意の線形結合で表される </dd></dl>
 <dl class="section attention"><dt>注意</dt><dd>A のサイズによっては基底のサイズが巨大になるので注意すること </dd></dl>
 
-<p class="definition"> <a class="el" href="linear__equation_8hpp_source.html">linear_equation.hpp</a> の <a class="el" href="linear__equation_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="linear__equation_8hpp_source.html">linear_equation.hpp</a> の <a class="el" href="linear__equation_8hpp_source.html#l00041">41</a> 行目に定義があります。</p>
 
 </div>
 </div>
