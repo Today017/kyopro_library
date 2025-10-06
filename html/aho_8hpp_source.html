@@ -129,172 +129,170 @@ $(function(){initNavTree('aho_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_trie.html">   19</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_trie.html">Trie</a> {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_trie.html#a2bcf5b3d7a5d69121c19a33fb6525ae2">   20</a></span>    <span class="keyword">using</span> Node = <a class="code hl_struct" href="struct_trie_node.html">TrieNode</a>&lt;char_size&gt;;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_trie.html#a29ca204f239fed4837d2beb1dd26f4d1">   22</a></span>    <a class="code hl_variable" href="struct_trie.html#a29ca204f239fed4837d2beb1dd26f4d1">vector</a>&lt;<a class="code hl_variable" href="struct_trie.html#a29ca204f239fed4837d2beb1dd26f4d1">Node</a>&gt; <a class="code hl_variable" href="struct_trie.html#a29ca204f239fed4837d2beb1dd26f4d1">nodes</a>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_trie.html#ae5cbac794d4e7d8f466a1f961b9b2bf2">   23</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_trie.html#ae5cbac794d4e7d8f466a1f961b9b2bf2">root</a>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_trie.html#a844916c8e6d928d55732da260bcb9a5b">   25</a></span>    <a class="code hl_function" href="struct_trie.html#a844916c8e6d928d55732da260bcb9a5b">Trie</a>() : <a class="code hl_variable" href="struct_trie.html#ae5cbac794d4e7d8f466a1f961b9b2bf2">root</a>(0) { nodes.push_back(Node()); }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_trie.html#a0a67d51e36701e70d90b1b9249f68d13">   27</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_trie.html#a0a67d51e36701e70d90b1b9249f68d13">update_direct</a>(<span class="keywordtype">int</span> node, <span class="keywordtype">int</span> id) { nodes[node].accept.push_back(id); }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    vector&lt;Node&gt; nodes;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">int</span> root;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_trie.html#a844916c8e6d928d55732da260bcb9a5b">   27</a></span>    <a class="code hl_function" href="struct_trie.html#a844916c8e6d928d55732da260bcb9a5b">Trie</a>() : root(0) { nodes.push_back(Node()); }</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_trie.html#ac2dec2833e52efc82baa7de709195078">   29</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_trie.html#ac2dec2833e52efc82baa7de709195078">update_child</a>(<span class="keywordtype">int</span> node, <span class="keywordtype">int</span> child, <span class="keywordtype">int</span> id) { ++nodes[node].exist; }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_trie.html#a726b2fb660541383c52b5dfdcc318b65">   31</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_trie.html#a726b2fb660541383c52b5dfdcc318b65">add</a>(<span class="keyword">const</span> string&amp; str, <span class="keywordtype">int</span> str_index, <span class="keywordtype">int</span> node_index, <span class="keywordtype">int</span> id) {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">if</span> (str_index == str.size()) {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <a class="code hl_function" href="struct_trie.html#a0a67d51e36701e70d90b1b9249f68d13">update_direct</a><a class="code hl_function" href="struct_trie.html#a0a67d51e36701e70d90b1b9249f68d13">(</a>node_index<a class="code hl_function" href="struct_trie.html#a0a67d51e36701e70d90b1b9249f68d13">,</a> id<a class="code hl_function" href="struct_trie.html#a0a67d51e36701e70d90b1b9249f68d13">)</a>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keyword">const</span> <span class="keywordtype">int</span> c = str[str_index] - margin;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordflow">if</span> (nodes[node_index].nxt[c] == -1) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                nodes[node_index].nxt[c] = (<span class="keywordtype">int</span>)nodes.size();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                nodes.push_back(Node());</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            add(str, str_index + 1, nodes[node_index].nxt[c], id);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            update_child(node_index, nodes[node_index].nxt[c], id);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
-</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="struct_trie.html#a9aa046b915e51cee13e8667c7d8bde17">   45</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_trie.html#a9aa046b915e51cee13e8667c7d8bde17">add</a>(<span class="keyword">const</span> string&amp; str, <span class="keywordtype">int</span> id) { add(str, 0, 0, id); }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> update_direct(<span class="keywordtype">int</span> node, <span class="keywordtype">int</span> id) { nodes[node].accept.push_back(id); }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> update_child(<span class="keywordtype">int</span> node, <span class="keywordtype">int</span> child, <span class="keywordtype">int</span> id) { ++nodes[node].exist; }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> add(<span class="keyword">const</span> string&amp; str, <span class="keywordtype">int</span> str_index, <span class="keywordtype">int</span> node_index, <span class="keywordtype">int</span> id) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">if</span> (str_index == str.size()) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            update_direct(node_index, id);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keyword">const</span> <span class="keywordtype">int</span> c = str[str_index] - margin;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="keywordflow">if</span> (nodes[node_index].nxt[c] == -1) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                nodes[node_index].nxt[c] = (<span class="keywordtype">int</span>)nodes.size();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                nodes.push_back(Node());</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            add(str, str_index + 1, nodes[node_index].nxt[c], id);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            update_child(node_index, nodes[node_index].nxt[c], id);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> add(<span class="keyword">const</span> string&amp; str, <span class="keywordtype">int</span> id) { add(str, 0, 0, id); }</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">///@brief 文字列 str を追加する</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_trie.html#a84a50a07bdf16902309a80dbd7e9dc56">   48</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_trie.html#a84a50a07bdf16902309a80dbd7e9dc56">add</a>(<span class="keyword">const</span> string&amp; str) { add(str, nodes[0].exist); }</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_trie.html#ab9b36ddcdeea7ffd055c925edb2cadd8">   50</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_trie.html#ab9b36ddcdeea7ffd055c925edb2cadd8">query</a>(<span class="keyword">const</span> string&amp; str, <span class="keyword">const</span> function&lt;<span class="keywordtype">void</span>(<span class="keywordtype">int</span>)&gt;&amp; f, <span class="keywordtype">int</span> str_index,</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordtype">int</span> node_index) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; idx : nodes[node_index].accept) f(idx);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span> (str_index == str.size()) {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keyword">const</span> <span class="keywordtype">int</span> c = str[str_index] - margin;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">if</span> (nodes[node_index].nxt[c] == -1) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            query(str, f, str_index + 1, nodes[node_index].nxt[c]);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">///@brief 文字列 str を追加する</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">///@note O(|str|)</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_trie.html#a84a50a07bdf16902309a80dbd7e9dc56">   50</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_trie.html#a84a50a07bdf16902309a80dbd7e9dc56">add</a>(<span class="keyword">const</span> string&amp; str) { add(str, nodes[0].exist); }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> query(<span class="keyword">const</span> string&amp; str, <span class="keyword">const</span> function&lt;<span class="keywordtype">void</span>(<span class="keywordtype">int</span>)&gt;&amp; f, <span class="keywordtype">int</span> str_index,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordtype">int</span> node_index) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; idx : nodes[node_index].accept) f(idx);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">if</span> (str_index == str.size()) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keyword">const</span> <span class="keywordtype">int</span> c = str[str_index] - margin;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">if</span> (nodes[node_index].nxt[c] == -1) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            query(str, f, str_index + 1, nodes[node_index].nxt[c]);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">///@brief strのprefixと一致する文字列のインデックスそれぞれに対してfを実行する</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="comment">///@note O(|str| + (見つかった文字列の総数)*|f|)</span></div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="struct_trie.html#a6576d73cd9883d5cc1b2027c8737e8fd">   68</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_trie.html#a6576d73cd9883d5cc1b2027c8737e8fd">query</a>(<span class="keyword">const</span> string&amp; str, <span class="keyword">const</span> function&lt;<span class="keywordtype">void</span>(<span class="keywordtype">int</span>)&gt;&amp; f) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        query(str, f, 0, 0);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
 </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">///@brief strをprefixとして持つ全ての文字列に対し、見つかった文字列のインデックスそれぞれに対してfを実行する</span></div>
-<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="struct_trie.html#a6576d73cd9883d5cc1b2027c8737e8fd">   63</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_trie.html#a6576d73cd9883d5cc1b2027c8737e8fd">query</a>(<span class="keyword">const</span> string&amp; str, <span class="keyword">const</span> function&lt;<span class="keywordtype">void</span>(<span class="keywordtype">int</span>)&gt;&amp; f) {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        query(str, f, 0, 0);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="comment">///@brief 文字列の総数</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="struct_trie.html#a88d68957a2eb05ff202b0ce99e6f9349">   73</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_trie.html#a88d68957a2eb05ff202b0ce99e6f9349">count</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> (nodes[0].exist); }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">///@brief ノードの総数</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="struct_trie.html#a2736205aba5f7becfab3657a702b3f28">   76</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_trie.html#a2736205aba5f7becfab3657a702b3f28">size</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> ((<span class="keywordtype">int</span>)nodes.size()); }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>};</div>
 </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="comment">///@brief 文字列の総数</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="struct_trie.html#a88d68957a2eb05ff202b0ce99e6f9349">   68</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_trie.html#a88d68957a2eb05ff202b0ce99e6f9349">count</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> (nodes[0].exist); }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">///@brief ノードの総数</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="struct_trie.html#a2736205aba5f7becfab3657a702b3f28">   71</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_trie.html#a2736205aba5f7becfab3657a702b3f28">size</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> ((<span class="keywordtype">int</span>)nodes.size()); }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
-</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">///@brief AhoCorasick</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">template</span> &lt;<span class="keywordtype">int</span> char_size, <span class="keywordtype">int</span> margin&gt;</div>
-<div class="foldopen" id="foldopen00076" data-start="{" data-end="};">
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="struct_aho_corasick.html">   76</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_aho_corasick.html">AhoCorasick</a> : <a class="code hl_struct" href="struct_trie.html">Trie</a>&lt;char_size + 1, margin&gt; {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">using</span> <a class="code hl_struct" href="struct_trie.html">Trie</a>&lt;char_size + 1, margin&gt;::<a class="code hl_struct" href="struct_trie.html">Trie</a>;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="struct_aho_corasick.html#ab0923edfacd130e4c22f92da658e47c1">   79</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_aho_corasick.html#ab0923edfacd130e4c22f92da658e47c1">FAIL</a> = char_size;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="struct_aho_corasick.html#a7ef7272abd47a7874acd4f838ad86336">   80</a></span>    <a class="code hl_variable" href="struct_aho_corasick.html#a7ef7272abd47a7874acd4f838ad86336">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_variable" href="struct_aho_corasick.html#a7ef7272abd47a7874acd4f838ad86336">correct</a>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="comment">///@brief 前計算 オートマトンを構築する</span></div>
-<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="struct_aho_corasick.html#a921f3a1190fbca63510581fd46b6194f">   83</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_aho_corasick.html#a921f3a1190fbca63510581fd46b6194f">build</a>(<span class="keywordtype">bool</span> heavy = <span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        correct.resize(<span class="keyword">this</span>-&gt;size());</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <span class="keyword">this</span>-&gt;size(); i++) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            correct[i] = (<span class="keywordtype">int</span>)<span class="keyword">this</span>-&gt;nodes[i].accept.size();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        queue&lt;<span class="keywordtype">int</span>&gt; que;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= char_size; i++) {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">if</span> (~<span class="keyword">this</span>-&gt;nodes[0].nxt[i]) {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                <span class="keyword">this</span>-&gt;nodes[<span class="keyword">this</span>-&gt;nodes[0].nxt[i]].nxt[<a class="code hl_variable" href="struct_aho_corasick.html#ab0923edfacd130e4c22f92da658e47c1">FAIL</a>] = 0;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                que.emplace(<span class="keyword">this</span>-&gt;nodes[0].nxt[i]);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                <span class="keyword">this</span>-&gt;nodes[0].nxt[i] = 0;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            }</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">while</span> (!que.empty()) {</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keyword">auto</span>&amp; now = <span class="keyword">this</span>-&gt;nodes[que.front()];</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordtype">int</span> fail = now.nxt[<a class="code hl_variable" href="struct_aho_corasick.html#ab0923edfacd130e4c22f92da658e47c1">FAIL</a>];</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            correct[que.front()] += correct[fail];</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            que.pop();</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; char_size; i++) {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                <span class="keywordflow">if</span> (~now.nxt[i]) {</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                    <span class="keyword">this</span>-&gt;nodes[now.nxt[i]].nxt[<a class="code hl_variable" href="struct_aho_corasick.html#ab0923edfacd130e4c22f92da658e47c1">FAIL</a>] = <span class="keyword">this</span>-&gt;nodes[fail].nxt[i];</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                    <span class="keywordflow">if</span> (heavy) {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                        <span class="keyword">auto</span>&amp; u = <span class="keyword">this</span>-&gt;nodes[now.nxt[i]].accept;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                        <span class="keyword">auto</span>&amp; v = <span class="keyword">this</span>-&gt;nodes[<span class="keyword">this</span>-&gt;nodes[fail].nxt[i]].accept;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                        vector&lt;<span class="keywordtype">int</span>&gt; accept;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                        set_union(begin(u), end(u), begin(v), end(v),</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                                back_inserter(accept));</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                        u = accept;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                    }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                    que.emplace(now.nxt[i]);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                    now.nxt[i] = <span class="keyword">this</span>-&gt;nodes[fail].nxt[i];</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                }</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            }</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        }</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">///@brief AhoCorasick</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">template</span> &lt;<span class="keywordtype">int</span> char_size, <span class="keywordtype">int</span> margin&gt;</div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="};">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="struct_aho_corasick.html">   81</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_aho_corasick.html">AhoCorasick</a> : <a class="code hl_struct" href="struct_trie.html">Trie</a>&lt;char_size + 1, margin&gt; {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">using</span> <a class="code hl_struct" href="struct_trie.html">Trie</a>&lt;char_size + 1, margin&gt;::<a class="code hl_struct" href="struct_trie.html">Trie</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> FAIL = char_size;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    vector&lt;<span class="keywordtype">int</span>&gt; correct;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">///@brief 前計算 オートマトンを構築する</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">///@note O(文字列の長さの総和)</span></div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="struct_aho_corasick.html#a921f3a1190fbca63510581fd46b6194f">   91</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_aho_corasick.html#a921f3a1190fbca63510581fd46b6194f">build</a>(<span class="keywordtype">bool</span> heavy = <span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        correct.resize(<span class="keyword">this</span>-&gt;size());</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <span class="keyword">this</span>-&gt;size(); i++) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            correct[i] = (<span class="keywordtype">int</span>)<span class="keyword">this</span>-&gt;nodes[i].accept.size();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        queue&lt;<span class="keywordtype">int</span>&gt; que;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= char_size; i++) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keywordflow">if</span> (~<span class="keyword">this</span>-&gt;nodes[0].nxt[i]) {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keyword">this</span>-&gt;nodes[<span class="keyword">this</span>-&gt;nodes[0].nxt[i]].nxt[FAIL] = 0;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                que.emplace(<span class="keyword">this</span>-&gt;nodes[0].nxt[i]);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                <span class="keyword">this</span>-&gt;nodes[0].nxt[i] = 0;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">while</span> (!que.empty()) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keyword">auto</span>&amp; now = <span class="keyword">this</span>-&gt;nodes[que.front()];</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="keywordtype">int</span> fail = now.nxt[FAIL];</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            correct[que.front()] += correct[fail];</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            que.pop();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; char_size; i++) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                <span class="keywordflow">if</span> (~now.nxt[i]) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                    <span class="keyword">this</span>-&gt;nodes[now.nxt[i]].nxt[FAIL] = <span class="keyword">this</span>-&gt;nodes[fail].nxt[i];</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                    <span class="keywordflow">if</span> (heavy) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                        <span class="keyword">auto</span>&amp; u = <span class="keyword">this</span>-&gt;nodes[now.nxt[i]].accept;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                        <span class="keyword">auto</span>&amp; v = <span class="keyword">this</span>-&gt;nodes[<span class="keyword">this</span>-&gt;nodes[fail].nxt[i]].accept;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                        vector&lt;<span class="keywordtype">int</span>&gt; accept;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                        set_union(begin(u), end(u), begin(v), end(v),</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                                back_inserter(accept));</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                        u = accept;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                    }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                    que.emplace(now.nxt[i]);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                    now.nxt[i] = <span class="keyword">this</span>-&gt;nodes[fail].nxt[i];</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
 </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="comment">///@brief str の中に出現する全パターンの出現回数を返す</span></div>
-<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="struct_aho_corasick.html#acaadde92222a53aa71b48f717540215d">  122</a></span>    <a class="code hl_function" href="struct_aho_corasick.html#acaadde92222a53aa71b48f717540215d">unordered_map</a>&lt;<span class="keywordtype">int</span>, <span class="keywordtype">int</span>&gt; <a class="code hl_function" href="struct_aho_corasick.html#acaadde92222a53aa71b48f717540215d">match</a>(<span class="keyword">const</span> string&amp; str, <span class="keywordtype">int</span> now = 0) {</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        unordered_map&lt;<span class="keywordtype">int</span>, <span class="keywordtype">int</span>&gt; result, visit_cnt;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; c : str) {</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            now = <span class="keyword">this</span>-&gt;nodes[now].nxt[c - margin];</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            visit_cnt[now]++;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; [now, cnt] : visit_cnt) {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; v : <span class="keyword">this</span>-&gt;nodes[now].accept) result[v] += cnt;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="comment">///@brief str の中に出現する全パターンの出現回数を返す</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="comment">///@note O(|str|)</span></div>
+<div class="foldopen" id="foldopen00131" data-start="{" data-end="}">
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="struct_aho_corasick.html#acaadde92222a53aa71b48f717540215d">  131</a></span>    <a class="code hl_function" href="struct_aho_corasick.html#acaadde92222a53aa71b48f717540215d">unordered_map</a>&lt;<span class="keywordtype">int</span>, <span class="keywordtype">int</span>&gt; <a class="code hl_function" href="struct_aho_corasick.html#acaadde92222a53aa71b48f717540215d">match</a>(<span class="keyword">const</span> string&amp; str, <span class="keywordtype">int</span> now = 0) {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        unordered_map&lt;<span class="keywordtype">int</span>, <span class="keywordtype">int</span>&gt; result, visit_cnt;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; c : str) {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            now = <span class="keyword">this</span>-&gt;nodes[now].nxt[c - margin];</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            visit_cnt[now]++;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; [now, cnt] : visit_cnt) {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; v : <span class="keyword">this</span>-&gt;nodes[now].accept) result[v] += cnt;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }</div>
 </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="comment">///@brief 現在のノード now から文字 c で遷移したときの（見つかったパターンの総数, 次のノード）を返す</span></div>
-<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="struct_aho_corasick.html#abcb96446c2785d8ee4e1d5529220fbe6">  135</a></span>    <a class="code hl_function" href="struct_aho_corasick.html#abcb96446c2785d8ee4e1d5529220fbe6">pair</a>&lt;<a class="code hl_function" href="struct_aho_corasick.html#abcb96446c2785d8ee4e1d5529220fbe6">int64_t</a>, <span class="keywordtype">int</span>&gt; <a class="code hl_function" href="struct_aho_corasick.html#abcb96446c2785d8ee4e1d5529220fbe6">move</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>&amp; c, <span class="keywordtype">int</span> now = 0) {</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        now = <span class="keyword">this</span>-&gt;nodes[now].nxt[c - margin];</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">return</span> {correct[now], now};</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="comment">///@brief 現在のノード now から文字 c で遷移したときの（見つかったパターンの総数, 次のノード）を返す</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="comment">///@note O(1)</span></div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="struct_aho_corasick.html#abcb96446c2785d8ee4e1d5529220fbe6">  145</a></span>    <a class="code hl_function" href="struct_aho_corasick.html#abcb96446c2785d8ee4e1d5529220fbe6">pair</a>&lt;<a class="code hl_function" href="struct_aho_corasick.html#abcb96446c2785d8ee4e1d5529220fbe6">int64_t</a>, <span class="keywordtype">int</span>&gt; <a class="code hl_function" href="struct_aho_corasick.html#abcb96446c2785d8ee4e1d5529220fbe6">move</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>&amp; c, <span class="keywordtype">int</span> now = 0) {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        now = <span class="keyword">this</span>-&gt;nodes[now].nxt[c - margin];</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">return</span> {correct[now], now};</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
 </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="comment">///@brief str に対して move を適用する。（見つかったパターンの総数, 最終ノードを返す）</span></div>
-<div class="foldopen" id="foldopen00141" data-start="{" data-end="}">
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="struct_aho_corasick.html#ae017996861af830e8138041b856b8d86">  141</a></span>    <a class="code hl_function" href="struct_aho_corasick.html#ae017996861af830e8138041b856b8d86">pair</a>&lt;<a class="code hl_function" href="struct_aho_corasick.html#ae017996861af830e8138041b856b8d86">int64_t</a>, <span class="keywordtype">int</span>&gt; <a class="code hl_function" href="struct_aho_corasick.html#ae017996861af830e8138041b856b8d86">move</a>(<span class="keyword">const</span> string&amp; str, <span class="keywordtype">int</span> now = 0) {</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        int64_t sum = 0;</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; c : str) {</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            <span class="keyword">auto</span> nxt = move(c, now);</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            sum += nxt.first;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            now = nxt.second;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        }</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keywordflow">return</span> {sum, now};</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="comment">///@brief str に対して move を適用する。（見つかったパターンの総数, 最終ノードを返す）</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="comment">///@note O(|str|)</span></div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="}">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="struct_aho_corasick.html#ae017996861af830e8138041b856b8d86">  152</a></span>    <a class="code hl_function" href="struct_aho_corasick.html#ae017996861af830e8138041b856b8d86">pair</a>&lt;<a class="code hl_function" href="struct_aho_corasick.html#ae017996861af830e8138041b856b8d86">int64_t</a>, <span class="keywordtype">int</span>&gt; <a class="code hl_function" href="struct_aho_corasick.html#ae017996861af830e8138041b856b8d86">move</a>(<span class="keyword">const</span> string&amp; str, <span class="keywordtype">int</span> now = 0) {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        int64_t sum = 0;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; c : str) {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="keyword">auto</span> nxt = move(c, now);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            sum += nxt.first;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            now = nxt.second;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keywordflow">return</span> {sum, now};</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
 </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>};</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>};</div>
 </div>
-<div class="ttc" id="astruct_aho_corasick_html"><div class="ttname"><a href="struct_aho_corasick.html">AhoCorasick</a></div><div class="ttdoc">AhoCorasick</div><div class="ttdef"><b>Definition</b> <a href="#l00076">aho.hpp:76</a></div></div>
-<div class="ttc" id="astruct_aho_corasick_html_a7ef7272abd47a7874acd4f838ad86336"><div class="ttname"><a href="struct_aho_corasick.html#a7ef7272abd47a7874acd4f838ad86336">AhoCorasick::correct</a></div><div class="ttdeci">vector&lt; int &gt; correct</div><div class="ttdef"><b>Definition</b> <a href="#l00080">aho.hpp:80</a></div></div>
-<div class="ttc" id="astruct_aho_corasick_html_a921f3a1190fbca63510581fd46b6194f"><div class="ttname"><a href="struct_aho_corasick.html#a921f3a1190fbca63510581fd46b6194f">AhoCorasick::build</a></div><div class="ttdeci">void build(bool heavy=true)</div><div class="ttdoc">前計算 オートマトンを構築する</div><div class="ttdef"><b>Definition</b> <a href="#l00083">aho.hpp:83</a></div></div>
-<div class="ttc" id="astruct_aho_corasick_html_ab0923edfacd130e4c22f92da658e47c1"><div class="ttname"><a href="struct_aho_corasick.html#ab0923edfacd130e4c22f92da658e47c1">AhoCorasick::FAIL</a></div><div class="ttdeci">const int FAIL</div><div class="ttdef"><b>Definition</b> <a href="#l00079">aho.hpp:79</a></div></div>
-<div class="ttc" id="astruct_aho_corasick_html_abcb96446c2785d8ee4e1d5529220fbe6"><div class="ttname"><a href="struct_aho_corasick.html#abcb96446c2785d8ee4e1d5529220fbe6">AhoCorasick::move</a></div><div class="ttdeci">pair&lt; int64_t, int &gt; move(const char &amp;c, int now=0)</div><div class="ttdoc">現在のノード now から文字 c で遷移したときの（見つかったパターンの総数, 次のノード）を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00135">aho.hpp:135</a></div></div>
-<div class="ttc" id="astruct_aho_corasick_html_acaadde92222a53aa71b48f717540215d"><div class="ttname"><a href="struct_aho_corasick.html#acaadde92222a53aa71b48f717540215d">AhoCorasick::match</a></div><div class="ttdeci">unordered_map&lt; int, int &gt; match(const string &amp;str, int now=0)</div><div class="ttdoc">str の中に出現する全パターンの出現回数を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00122">aho.hpp:122</a></div></div>
-<div class="ttc" id="astruct_aho_corasick_html_ae017996861af830e8138041b856b8d86"><div class="ttname"><a href="struct_aho_corasick.html#ae017996861af830e8138041b856b8d86">AhoCorasick::move</a></div><div class="ttdeci">pair&lt; int64_t, int &gt; move(const string &amp;str, int now=0)</div><div class="ttdoc">str に対して move を適用する。（見つかったパターンの総数, 最終ノードを返す）</div><div class="ttdef"><b>Definition</b> <a href="#l00141">aho.hpp:141</a></div></div>
+<div class="ttc" id="astruct_aho_corasick_html"><div class="ttname"><a href="struct_aho_corasick.html">AhoCorasick</a></div><div class="ttdoc">AhoCorasick</div><div class="ttdef"><b>Definition</b> <a href="#l00081">aho.hpp:81</a></div></div>
+<div class="ttc" id="astruct_aho_corasick_html_a921f3a1190fbca63510581fd46b6194f"><div class="ttname"><a href="struct_aho_corasick.html#a921f3a1190fbca63510581fd46b6194f">AhoCorasick::build</a></div><div class="ttdeci">void build(bool heavy=true)</div><div class="ttdoc">前計算 オートマトンを構築する</div><div class="ttdef"><b>Definition</b> <a href="#l00091">aho.hpp:91</a></div></div>
+<div class="ttc" id="astruct_aho_corasick_html_abcb96446c2785d8ee4e1d5529220fbe6"><div class="ttname"><a href="struct_aho_corasick.html#abcb96446c2785d8ee4e1d5529220fbe6">AhoCorasick::move</a></div><div class="ttdeci">pair&lt; int64_t, int &gt; move(const char &amp;c, int now=0)</div><div class="ttdoc">現在のノード now から文字 c で遷移したときの（見つかったパターンの総数, 次のノード）を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00145">aho.hpp:145</a></div></div>
+<div class="ttc" id="astruct_aho_corasick_html_acaadde92222a53aa71b48f717540215d"><div class="ttname"><a href="struct_aho_corasick.html#acaadde92222a53aa71b48f717540215d">AhoCorasick::match</a></div><div class="ttdeci">unordered_map&lt; int, int &gt; match(const string &amp;str, int now=0)</div><div class="ttdoc">str の中に出現する全パターンの出現回数を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00131">aho.hpp:131</a></div></div>
+<div class="ttc" id="astruct_aho_corasick_html_ae017996861af830e8138041b856b8d86"><div class="ttname"><a href="struct_aho_corasick.html#ae017996861af830e8138041b856b8d86">AhoCorasick::move</a></div><div class="ttdeci">pair&lt; int64_t, int &gt; move(const string &amp;str, int now=0)</div><div class="ttdoc">str に対して move を適用する。（見つかったパターンの総数, 最終ノードを返す）</div><div class="ttdef"><b>Definition</b> <a href="#l00152">aho.hpp:152</a></div></div>
 <div class="ttc" id="astruct_trie_html"><div class="ttname"><a href="struct_trie.html">Trie</a></div><div class="ttdoc">Trie</div><div class="ttdef"><b>Definition</b> <a href="#l00019">aho.hpp:19</a></div></div>
-<div class="ttc" id="astruct_trie_html_a0a67d51e36701e70d90b1b9249f68d13"><div class="ttname"><a href="struct_trie.html#a0a67d51e36701e70d90b1b9249f68d13">Trie::update_direct</a></div><div class="ttdeci">void update_direct(int node, int id)</div><div class="ttdef"><b>Definition</b> <a href="#l00027">aho.hpp:27</a></div></div>
-<div class="ttc" id="astruct_trie_html_a2736205aba5f7becfab3657a702b3f28"><div class="ttname"><a href="struct_trie.html#a2736205aba5f7becfab3657a702b3f28">Trie::size</a></div><div class="ttdeci">int size() const</div><div class="ttdoc">ノードの総数</div><div class="ttdef"><b>Definition</b> <a href="#l00071">aho.hpp:71</a></div></div>
-<div class="ttc" id="astruct_trie_html_a29ca204f239fed4837d2beb1dd26f4d1"><div class="ttname"><a href="struct_trie.html#a29ca204f239fed4837d2beb1dd26f4d1">Trie::nodes</a></div><div class="ttdeci">vector&lt; Node &gt; nodes</div><div class="ttdef"><b>Definition</b> <a href="#l00022">aho.hpp:22</a></div></div>
-<div class="ttc" id="astruct_trie_html_a6576d73cd9883d5cc1b2027c8737e8fd"><div class="ttname"><a href="struct_trie.html#a6576d73cd9883d5cc1b2027c8737e8fd">Trie::query</a></div><div class="ttdeci">void query(const string &amp;str, const function&lt; void(int)&gt; &amp;f)</div><div class="ttdoc">strをprefixとして持つ全ての文字列に対し、見つかった文字列のインデックスそれぞれに対してfを実行する</div><div class="ttdef"><b>Definition</b> <a href="#l00063">aho.hpp:63</a></div></div>
-<div class="ttc" id="astruct_trie_html_a726b2fb660541383c52b5dfdcc318b65"><div class="ttname"><a href="struct_trie.html#a726b2fb660541383c52b5dfdcc318b65">Trie::add</a></div><div class="ttdeci">void add(const string &amp;str, int str_index, int node_index, int id)</div><div class="ttdef"><b>Definition</b> <a href="#l00031">aho.hpp:31</a></div></div>
-<div class="ttc" id="astruct_trie_html_a844916c8e6d928d55732da260bcb9a5b"><div class="ttname"><a href="struct_trie.html#a844916c8e6d928d55732da260bcb9a5b">Trie::Trie</a></div><div class="ttdeci">Trie()</div><div class="ttdef"><b>Definition</b> <a href="#l00025">aho.hpp:25</a></div></div>
-<div class="ttc" id="astruct_trie_html_a84a50a07bdf16902309a80dbd7e9dc56"><div class="ttname"><a href="struct_trie.html#a84a50a07bdf16902309a80dbd7e9dc56">Trie::add</a></div><div class="ttdeci">void add(const string &amp;str)</div><div class="ttdoc">文字列 str を追加する</div><div class="ttdef"><b>Definition</b> <a href="#l00048">aho.hpp:48</a></div></div>
-<div class="ttc" id="astruct_trie_html_a88d68957a2eb05ff202b0ce99e6f9349"><div class="ttname"><a href="struct_trie.html#a88d68957a2eb05ff202b0ce99e6f9349">Trie::count</a></div><div class="ttdeci">int count() const</div><div class="ttdoc">文字列の総数</div><div class="ttdef"><b>Definition</b> <a href="#l00068">aho.hpp:68</a></div></div>
-<div class="ttc" id="astruct_trie_html_a9aa046b915e51cee13e8667c7d8bde17"><div class="ttname"><a href="struct_trie.html#a9aa046b915e51cee13e8667c7d8bde17">Trie::add</a></div><div class="ttdeci">void add(const string &amp;str, int id)</div><div class="ttdef"><b>Definition</b> <a href="#l00045">aho.hpp:45</a></div></div>
-<div class="ttc" id="astruct_trie_html_ab9b36ddcdeea7ffd055c925edb2cadd8"><div class="ttname"><a href="struct_trie.html#ab9b36ddcdeea7ffd055c925edb2cadd8">Trie::query</a></div><div class="ttdeci">void query(const string &amp;str, const function&lt; void(int)&gt; &amp;f, int str_index, int node_index)</div><div class="ttdef"><b>Definition</b> <a href="#l00050">aho.hpp:50</a></div></div>
-<div class="ttc" id="astruct_trie_html_ac2dec2833e52efc82baa7de709195078"><div class="ttname"><a href="struct_trie.html#ac2dec2833e52efc82baa7de709195078">Trie::update_child</a></div><div class="ttdeci">void update_child(int node, int child, int id)</div><div class="ttdef"><b>Definition</b> <a href="#l00029">aho.hpp:29</a></div></div>
-<div class="ttc" id="astruct_trie_html_ae5cbac794d4e7d8f466a1f961b9b2bf2"><div class="ttname"><a href="struct_trie.html#ae5cbac794d4e7d8f466a1f961b9b2bf2">Trie::root</a></div><div class="ttdeci">int root</div><div class="ttdef"><b>Definition</b> <a href="#l00023">aho.hpp:23</a></div></div>
+<div class="ttc" id="astruct_trie_html_a2736205aba5f7becfab3657a702b3f28"><div class="ttname"><a href="struct_trie.html#a2736205aba5f7becfab3657a702b3f28">Trie::size</a></div><div class="ttdeci">int size() const</div><div class="ttdoc">ノードの総数</div><div class="ttdef"><b>Definition</b> <a href="#l00076">aho.hpp:76</a></div></div>
+<div class="ttc" id="astruct_trie_html_a6576d73cd9883d5cc1b2027c8737e8fd"><div class="ttname"><a href="struct_trie.html#a6576d73cd9883d5cc1b2027c8737e8fd">Trie::query</a></div><div class="ttdeci">void query(const string &amp;str, const function&lt; void(int)&gt; &amp;f)</div><div class="ttdoc">strのprefixと一致する文字列のインデックスそれぞれに対してfを実行する</div><div class="ttdef"><b>Definition</b> <a href="#l00068">aho.hpp:68</a></div></div>
+<div class="ttc" id="astruct_trie_html_a844916c8e6d928d55732da260bcb9a5b"><div class="ttname"><a href="struct_trie.html#a844916c8e6d928d55732da260bcb9a5b">Trie::Trie</a></div><div class="ttdeci">Trie()</div><div class="ttdef"><b>Definition</b> <a href="#l00027">aho.hpp:27</a></div></div>
+<div class="ttc" id="astruct_trie_html_a84a50a07bdf16902309a80dbd7e9dc56"><div class="ttname"><a href="struct_trie.html#a84a50a07bdf16902309a80dbd7e9dc56">Trie::add</a></div><div class="ttdeci">void add(const string &amp;str)</div><div class="ttdoc">文字列 str を追加する</div><div class="ttdef"><b>Definition</b> <a href="#l00050">aho.hpp:50</a></div></div>
+<div class="ttc" id="astruct_trie_html_a88d68957a2eb05ff202b0ce99e6f9349"><div class="ttname"><a href="struct_trie.html#a88d68957a2eb05ff202b0ce99e6f9349">Trie::count</a></div><div class="ttdeci">int count() const</div><div class="ttdoc">文字列の総数</div><div class="ttdef"><b>Definition</b> <a href="#l00073">aho.hpp:73</a></div></div>
 <div class="ttc" id="astruct_trie_node_html"><div class="ttname"><a href="struct_trie_node.html">TrieNode</a></div><div class="ttdoc">Trie, Aho-Corasick</div><div class="ttdef"><b>Definition</b> <a href="#l00007">aho.hpp:7</a></div></div>
 <div class="ttc" id="astruct_trie_node_html_a2a054fb209d09a86fa0897cf697b0925"><div class="ttname"><a href="struct_trie_node.html#a2a054fb209d09a86fa0897cf697b0925">TrieNode::exist</a></div><div class="ttdeci">int exist</div><div class="ttdoc">このノードをprefixとして持つ文字列の個数</div><div class="ttdef"><b>Definition</b> <a href="#l00009">aho.hpp:9</a></div></div>
 <div class="ttc" id="astruct_trie_node_html_a89d2d73b4ab36e2f35fa86fd518969a1"><div class="ttname"><a href="struct_trie_node.html#a89d2d73b4ab36e2f35fa86fd518969a1">TrieNode::TrieNode</a></div><div class="ttdeci">TrieNode()</div><div class="ttdef"><b>Definition</b> <a href="#l00012">aho.hpp:12</a></div></div>

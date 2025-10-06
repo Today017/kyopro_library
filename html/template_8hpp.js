@@ -5,15 +5,8 @@ var template_8hpp =
     [ "debug", "template_8hpp.html#a86ee3ff44c537d94ccbabf941a613688", null ],
     [ "print_line", "template_8hpp.html#a03e896b87233163e2dc3399c65cdfc2d", null ],
     [ "ll", "template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62", null ],
-    [ "VI", "template_8hpp.html#a6a675649b5da3f6454b83fa37d00cc2b", null ],
-    [ "VVI", "template_8hpp.html#aa04f4352ca552897b0c9d791a7bdfa85", null ],
-    [ "VL", "template_8hpp.html#a5ee21b75b07f2ccf9eeb9e89922eb532", null ],
-    [ "VVL", "template_8hpp.html#a11a9e4e46b8b410aee9374e030feb3de", null ],
-    [ "PL", "template_8hpp.html#a7f582aad13bf86402da717000515ca1c", null ],
-    [ "VP", "template_8hpp.html#a2c3a5a109d6d21e6f64ab05472266de4", null ],
-    [ "WG", "template_8hpp.html#a20b579988fc1098f6357cbd1f07dc5e8", null ],
-    [ "chmax", "template_8hpp.html#a3e8244c32e6ce7ca2cdd01c86aac2d3f", null ],
-    [ "chmin", "template_8hpp.html#ad3e093a6b7f9ed915c0c64ec47b45564", null ],
+    [ "chmax", "template_8hpp.html#a44dee26b70a7efdc698b666127b3f608", null ],
+    [ "chmin", "template_8hpp.html#a5943c9b7adb617118d07c618bb128c72", null ],
     [ "INF", "template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c", null ],
     [ "INFL", "template_8hpp.html#a1f713edb7a826e3710159658d6ef9815", null ]
 ];

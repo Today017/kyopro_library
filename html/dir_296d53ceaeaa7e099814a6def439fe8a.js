@@ -6,7 +6,6 @@ var dir_296d53ceaeaa7e099814a6def439fe8a =
     [ "extgcd.hpp", "extgcd_8hpp.html", "extgcd_8hpp" ],
     [ "factors.hpp", "factors_8hpp.html", "factors_8hpp" ],
     [ "fps.hpp", "fps_8hpp.html", "fps_8hpp" ],
-    [ "fps2.hpp", "fps2_8hpp.html", "fps2_8hpp" ],
     [ "fraction.hpp", "fraction_8hpp.html", "fraction_8hpp" ],
     [ "fraction_floor_sum.hpp", "fraction__floor__sum_8hpp.html", "fraction__floor__sum_8hpp" ],
     [ "lagrange.hpp", "lagrange_8hpp.html", "lagrange_8hpp" ],

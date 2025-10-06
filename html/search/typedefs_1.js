@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['fps_0',['FPS',['../struct_formal_power_series.html#a60a3f8019af5b97b852363896a462005',1,'FormalPowerSeries']]]
+  ['ll_0',['ll',['../template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62',1,'template.hpp']]],
+  ['lll_1',['lll',['../int128_8hpp.html#af459ee81f834e904cb702ffcb928335e',1,'int128.hpp']]]
 ];

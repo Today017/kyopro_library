@@ -106,7 +106,7 @@ $(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a href="https://today017.github.io/kyopro_library/html/index.html">ライブラリのドキュメント</a></p>
-<h2><a class="anchor" id="autotoc_md51"></a>
+<h2><a class="anchor" id="autotoc_md50"></a>
 環境構築</h2>
 <ol type="1">
 <li>Docker, Git, make のインストール</li>
@@ -114,7 +114,7 @@ $(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
 <li><code>make build</code> でDockerイメージをビルドする（初回のみ）</li>
 <li><code>make run</code> でコンテナを起動して入る</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md52"></a>
+<h2><a class="anchor" id="autotoc_md51"></a>
 スクリプト</h2>
 <ul>
 <li><code>./cmp &lt;file&gt; [t]</code> <code>&lt;file&gt;</code> をコンパイルする。<code>t</code> を指定すると、デバッグモードが有効になる。</li>
@@ -122,7 +122,7 @@ $(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
 <li><code>./test &lt;solve&gt; &lt;generate&gt; &lt;naive&gt; [testcount]</code> ランダムテスト用スクリプト。<code>&lt;solve&gt;</code> を実行し、<code>&lt;generate&gt;</code> で生成した入力を与え、<code>&lt;naive&gt;</code> で生成した出力と比較する。</li>
 <li><code>./contest</code> カレントディレクトリで作成したファイルを削除する。スクリプトやライブラリは削除しない。コンテスト前に実行する。</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md53"></a>
+<h2><a class="anchor" id="autotoc_md52"></a>
 使い方</h2>
 <ol type="1">
 <li><code>vim a.cpp</code> <div class="fragment"><div class="line"><span class="preprocessor">#include&lt;<a class="code" href="template_8hpp.html">kyopro_library/template.hpp</a>&gt;</span></div>
@@ -138,9 +138,9 @@ $(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
 <li><code>./a.out</code></li>
 <li><code>./copy a</code></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md54"></a>
+<h2><a class="anchor" id="autotoc_md53"></a>
 データ構造に載せる代数構造の定義の仕方</h2>
-<h3><a class="anchor" id="autotoc_md55"></a>
+<h3><a class="anchor" id="autotoc_md54"></a>
 例) モノイド</h3>
 <div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code hl_namespace" href="namespace_monoid.html">Monoid</a> {</div>
 <div class="line">    <span class="keyword">using </span>Type = hoge;</div>
@@ -148,7 +148,7 @@ $(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
 <div class="line">    <span class="keyword">static</span> Type op(<span class="keyword">const</span> Type&amp; l, <span class="keyword">const</span> Type&amp; r) { <span class="keywordflow">return</span> hoge; }</div>
 <div class="line">};</div>
 <div class="ttc" id="anamespace_monoid_html"><div class="ttname"><a href="namespace_monoid.html">Monoid</a></div><div class="ttdoc">モノイド</div><div class="ttdef"><b>Definition</b> <a href="monoid_8hpp_source.html#l00005">monoid.hpp:5</a></div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md56"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md55"></a>
 各構造の要件</h3>
 <ul>
 <li>モノイド<ul>

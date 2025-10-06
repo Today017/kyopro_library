@@ -104,13 +104,12 @@ $(function(){initNavTree('struct_rolling_hash.html',''); initResizable(true); })
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
-<a href="#pub-attribs">公開変数類</a> &#124;
 <a href="struct_rolling_hash-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle"><div class="title">RollingHash 構造体</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Rolling <a class="el" href="struct_hash.html">Hash</a>  
+<p>ローリングハッシュ  
  <a href="#details">[詳解]</a></p>
 
 <p><code>#include &quot;<a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a>&quot;</code></p>
@@ -120,19 +119,14 @@ $(function(){initNavTree('struct_rolling_hash.html',''); initResizable(true); })
 <tr class="memitem:a71020424af6022b96f96117961ac4bc2" id="r_a71020424af6022b96f96117961ac4bc2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71020424af6022b96f96117961ac4bc2">RollingHash</a> ()=default</td></tr>
 <tr class="separator:a71020424af6022b96f96117961ac4bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee33123a728c1df6d8c0b3550baa0c43" id="r_aee33123a728c1df6d8c0b3550baa0c43"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee33123a728c1df6d8c0b3550baa0c43">RollingHash</a> (const string &amp;s)</td></tr>
-<tr class="memdesc:aee33123a728c1df6d8c0b3550baa0c43"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列 s の Rolling <a class="el" href="struct_hash.html">Hash</a> を構築する  <br /></td></tr>
+<tr class="memdesc:aee33123a728c1df6d8c0b3550baa0c43"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列 s のローリングハッシュを構築する  <br /></td></tr>
 <tr class="separator:aee33123a728c1df6d8c0b3550baa0c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86240a7668f2836709c800ae2ba5e206" id="r_a86240a7668f2836709c800ae2ba5e206"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_hash.html">Hash</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86240a7668f2836709c800ae2ba5e206">get</a> (int l, int r)</td></tr>
 <tr class="memdesc:a86240a7668f2836709c800ae2ba5e206"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間 [l, r) のハッシュ値を取得する  <br /></td></tr>
 <tr class="separator:a86240a7668f2836709c800ae2ba5e206"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-公開変数類</h2></td></tr>
-<tr class="memitem:af6385ca8122334ec22fb8eb5819e320d" id="r_af6385ca8122334ec22fb8eb5819e320d"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="struct_hash.html">Hash</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6385ca8122334ec22fb8eb5819e320d">hash</a></td></tr>
-<tr class="separator:af6385ca8122334ec22fb8eb5819e320d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>Rolling <a class="el" href="struct_hash.html">Hash</a> </p>
+<div class="textblock"><p>ローリングハッシュ </p>
 
 <p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00091">91</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
@@ -184,9 +178,9 @@ $(function(){initNavTree('struct_rolling_hash.html',''); initResizable(true); })
 </table>
 </div><div class="memdoc">
 
-<p>文字列 s の Rolling <a class="el" href="struct_hash.html">Hash</a> を構築する </p>
+<p>文字列 s のローリングハッシュを構築する </p>
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00096">96</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00095">95</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -220,26 +214,9 @@ $(function(){initNavTree('struct_rolling_hash.html',''); initResizable(true); })
 
 <p>区間 [l, r) のハッシュ値を取得する </p>
 
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00103">103</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00102">102</a> 行目に定義があります。</p>
 
 <p class="reference">参照先 <a class="el" href="rolling__hash_8hpp_source.html#l00076">Hash::operator=()</a>, <a class="el" href="rolling__hash_8hpp_source.html#l00066">Hash::shift()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">メンバ詳解</h2>
-<a id="af6385ca8122334ec22fb8eb5819e320d" name="af6385ca8122334ec22fb8eb5819e320d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6385ca8122334ec22fb8eb5819e320d">&#9670;&#160;</a></span>hash</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt;<a class="el" href="struct_hash.html">Hash</a>&gt; RollingHash::hash</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition"> <a class="el" href="rolling__hash_8hpp_source.html">rolling_hash.hpp</a> の <a class="el" href="rolling__hash_8hpp_source.html#l00093">93</a> 行目に定義があります。</p>
 
 </div>
 </div>

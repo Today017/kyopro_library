@@ -1,7 +1,7 @@
 var searchData=
 [
   ['debugprint_0',['DebugPrint',['../debug_8hpp.html#a966f60e90ba58ad164d45a0ed1614116',1,'DebugPrint(int i, T name):&#160;debug.hpp'],['../debug_8hpp.html#ab71b4c038f1f1744888de17e8c17507f',1,'DebugPrint(int i, const T1 &amp;name, const T2 &amp;a, const T3 &amp;...b):&#160;debug.hpp']]],
-  ['diff_1',['diff',['../struct_dsu_potentialized.html#ab9a92fc6174f8c4b5da8db55c060d1b6',1,'DsuPotentialized::diff()'],['../struct_formal_power_series.html#a666efb98ef181b2b53fd0dd21a89eaf7',1,'FormalPowerSeries::diff()']]],
+  ['diff_1',['diff',['../struct_dsu_potentialized.html#ab9a92fc6174f8c4b5da8db55c060d1b6',1,'DsuPotentialized']]],
   ['differential_2',['Differential',['../namespace_f_p_s.html#a18d3a03cb678d29deefc254e2fcb1b50',1,'FPS']]],
   ['dijkstra_3',['Dijkstra',['../dijkstra_8hpp.html#a4e0e194e2b19ea300065b537c8cd3ce8',1,'dijkstra.hpp']]],
   ['discard_4',['discard',['../struct_multi_set.html#a0fd57998bffa9ea644ed55c5681df35b',1,'MultiSet::discard()'],['../struct_set.html#ad1f6464e4c982ea6ec2846fc33ccd86e',1,'Set::discard()'],['../struct_sorted_multi_tree.html#af0e3cfa5d92c2eaf249cac5db2653119',1,'SortedMultiTree::discard()'],['../struct_sorted_tree.html#a539a29d1002e2a08e63710b14ad525ac',1,'SortedTree::discard()']]],
@@ -13,7 +13,7 @@ var searchData=
   ['distancesegmenttosegment_10',['distanceSegmentToSegment',['../namespace_geometry.html#a255834d9deeba16697273e0471248c87',1,'Geometry']]],
   ['div_11',['Div',['../namespace_f_p_s.html#a50424cf32ca2c09b2a9ad454915e84c9',1,'FPS']]],
   ['divisormobius_12',['DivisorMobius',['../namespace_zeta_mobius_div_mul.html#afe1e6c2c7d8180ade6e65334eec8368f',1,'ZetaMobiusDivMul']]],
-  ['dot_13',['dot',['../struct_geometry_1_1_point.html#ab17c1525afa5688443c09963ce5512bf',1,'Geometry::Point::dot()'],['../struct_formal_power_series.html#a12ca46e81067e9ebed5d6838fc1d97b7',1,'FormalPowerSeries::dot()']]],
+  ['dot_13',['dot',['../struct_geometry_1_1_point.html#ab17c1525afa5688443c09963ce5512bf',1,'Geometry::Point']]],
   ['doubling_14',['Doubling',['../struct_doubling.html#aad11ee1d4c52c049dd5d984df8a81136',1,'Doubling::Doubling()=default'],['../struct_doubling.html#a46485f72c05162559825a3c1db231229',1,'Doubling::Doubling(const vector&lt; int &gt; &amp;v)']]],
   ['doublingfold_15',['DoublingFold',['../struct_doubling_fold.html#a04df85dc1028af6ecca7e1d00d60b4ed',1,'DoublingFold::DoublingFold()=default'],['../struct_doubling_fold.html#a19e2e532bbcdba1946150f2cdefd1b86',1,'DoublingFold::DoublingFold(const vector&lt; int &gt; &amp;p, const vector&lt; Type &gt; &amp;v)']]],
   ['dsu_16',['DSU',['../struct_d_s_u.html#a2037e5dac19248a4e5f2f70133fdea12',1,'DSU::DSU()=default'],['../struct_d_s_u.html#abbae2d8b88cba33b50386cbbf229685a',1,'DSU::DSU(int n)']]],

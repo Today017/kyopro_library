@@ -1,14 +1,17 @@
 #include "../../kyopro_library/template.hpp"
 
-/// @brief Segment Tree Beat!
+/// @brief Segment Tree Beats!
 /// @ref https://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp
 struct AngelBeats {
+private:
     struct alignas(32) Node {
         ll sum = 0, g1 = 0, l1 = 0;
         ll g2 = -INFL, gc = 1, l2 = INFL, lc = 1, add = 0;
     };
     vector<Node> v;
     ll n, log;
+
+public:
     AngelBeats() {}
     AngelBeats(int _n) : AngelBeats(vector<ll>(_n)) {}
     AngelBeats(const vector<ll>& vc) {
@@ -34,6 +37,9 @@ struct AngelBeats {
     ll range_max(int l, int r) { return inner_fold<2>(l, r); }
     /// @brief sum[l, r)(v[i]) を返す
     ll range_sum(int l, int r) { return inner_fold<3>(l, r); }
+    
+    int size() { return n; }
+    ll operator[](int i) { return inner_fold<1>(i, i+1); }
 
 private:
     void update(int k) {

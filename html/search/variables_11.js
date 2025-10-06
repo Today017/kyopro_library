@@ -6,6 +6,6 @@ var searchData=
   ['sparsetable2d_3',['SparseTable2D',['../sparse__table__2d_8hpp.html#a1f839f2ac5c01960ec3f3fea18ce0b59',1,'sparse_table_2d.hpp']]],
   ['start_4',['start',['../struct_bipartite_matching_weighted.html#ac9612cd09d524524d30346fb0da84ce3',1,'BipartiteMatchingWeighted::start'],['../struct_arithmetic_progression.html#a11989c11fe03b3043b66aa42a6186f02',1,'ArithmeticProgression::start']]],
   ['step_5',['step',['../struct_arithmetic_progression.html#a9f43fabcce1fd4d75762729df498b4ea',1,'ArithmeticProgression']]],
-  ['sum_6',['sum',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node.html#a9fb15c1ba67e63480fb1053209a781e2',1,'InsertableReversibleArrayImpl::LazyReversibleRBSTNode::sum'],['../struct_angel_beats_1_1_node.html#afbadfe98296c9dafbc8d47f76f510fba',1,'AngelBeats::Node::sum']]],
+  ['sum_6',['sum',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node.html#a9fb15c1ba67e63480fb1053209a781e2',1,'InsertableReversibleArrayImpl::LazyReversibleRBSTNode']]],
   ['symbols_7',['symbols',['../namespacecompress.html#a30b635f18c81637d3c1d613b8be0e223',1,'compress']]]
 ];

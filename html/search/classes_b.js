@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['node_0',['Node',['../struct_angel_beats_1_1_node.html',1,'AngelBeats::Node'],['../struct_trie_1_1_node.html',1,'Trie&lt; char_size, margin &gt;::Node']]],
-  ['ntt_1',['NTT',['../struct_n_t_t.html',1,'']]]
+  ['node_0',['Node',['../struct_trie_1_1_node.html',1,'Trie']]],
+  ['ntt_1',['NTT',['../class_n_t_t.html',1,'']]]
 ];

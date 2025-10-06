@@ -9,28 +9,25 @@ private:
     static const ull blockBitNum=16;
     static const ull LEVEL_L=512;
     static const ull LEVEL_S=16;
-    vector<ull>L;
-    vector<unsigned short>S;
-    vector<unsigned short>B;
-    ull numOne=0;
+    vector<ull> L;
+    vector<unsigned short> S;
+    vector<unsigned short> B;
+    ull num_one=0;
 
 public:
-    explicit SuccinctBitVector(const ull n):size(n) {
+    explicit SuccinctBitVector(const ull n) : size(n) {
         const ull s=(n+blockBitNum-1)/blockBitNum+1;
         this->B.assign(s,0);
         this->L.assign(n/LEVEL_L+1,0);
         this->S.assign(n/LEVEL_S+1,0);
     }
-    void set_bit(const ull bit,const ull pos) {
+    void set_bit(const ull bit, const ull pos) {
         assert(bit==0 or bit==1);
         assert(pos<this->size);
         const ull blockPos=pos/blockBitNum;
         const ull offset=pos%blockBitNum;
-        if(bit==1) {
-            B.at(blockPos)|=(1LLU<<offset);
-        }else{
-            B.at(blockPos)&=(~(1LLU<<offset));
-        }
+        if(bit==1) B.at(blockPos)|=(1LLU<<offset);
+        else B.at(blockPos)&=(~(1LLU<<offset));
     }
     ull access(const ull pos) {
         assert(pos<this->size);
@@ -40,27 +37,24 @@ public:
     }
     void build() {
         ull num=0;
-        for(ull i=0;i<=size;i++) {
-            if(i%LEVEL_L==0)L.at(i/LEVEL_L)=num;
-            if(i%LEVEL_S==0)S.at(i/LEVEL_S)=num-L.at(i/LEVEL_L);
-            if(i!=size and i%blockBitNum==0)num+=this->pop_count(this->B.at(i/blockBitNum));
+        for(ull i=0; i<=size; i++) {
+            if(i%LEVEL_L==0) L.at(i/LEVEL_L)=num;
+            if(i%LEVEL_S==0) S.at(i/LEVEL_S)=num-L.at(i/LEVEL_L);
+            if(i!=size && i%blockBitNum==0) num+=this->pop_count(this->B.at(i/blockBitNum));
         }
-        this->numOne=num;
+        this->num_one=num;
     }
-    ull rank(const ull bit,const ull pos) {
+    ull rank(const ull bit, const ull pos) {
         assert(bit==0 or bit==1);
         assert(pos<=this->size);
-        if(bit) {
-            return L[pos/LEVEL_L]+S[pos/LEVEL_S]+pop_count(B[pos/blockBitNum]&((1<<(pos%blockBitNum))-1));
-        }else{
-            return pos-rank(1,pos);
-        }
+        if(bit) return L[pos/LEVEL_L]+S[pos/LEVEL_S]+pop_count(B[pos/blockBitNum]&((1<<(pos%blockBitNum))-1));
+        else return pos-rank(1,pos);
     }
-    ull select(const ull bit,const ull rank) {
+    ull select(const ull bit, const ull rank) {
         assert(bit==0 or bit==1);
         assert(rank>0);
-        if(bit==0 and rank>this->size-this->numOne)return NOTFOUND;
-        if(bit==1 and rank>this->numOne)return NOTFOUND;
+        if(bit==0 && rank>this->size-this->num_one) return NOTFOUND;
+        if(bit==1 && rank>this->num_one) return NOTFOUND;
         ull large_idx=0;
         {
             ull left=0;
@@ -68,11 +62,11 @@ public:
             while(right-left>1) {
                 ull mid=(left+right)/2;
                 ull r=L.at(mid);
-                r=(bit)?r:mid*LEVEL_L-L.at(mid);
+                r=(bit)? r: mid*LEVEL_L-L.at(mid);
                 if(r<rank) {
                     left=mid;
                     large_idx=mid;
-                }else{
+                } else {
                     right=mid;
                 }
             }
@@ -84,11 +78,11 @@ public:
             while(right-left>1) {
                 ull mid=(left+right)/2;
                 ull r=L.at(large_idx)+S.at(mid);
-                r=(bit)?r:mid*LEVEL_S-r;
+                r=(bit)? r: mid*LEVEL_S-r;
                 if(r<rank) {
                     left=mid;
                     small_idx=mid;
-                }else{
+                } else {
                     right=mid;
                 }
             }
@@ -97,14 +91,12 @@ public:
         {
             const ull begin_block_idx=(small_idx*LEVEL_S)/blockBitNum;
             ull total_bit=L.at(large_idx)+S.at(small_idx);
-            if(bit==0) {
-                total_bit=small_idx*LEVEL_S-total_bit;
-            }
+            if(bit==0) total_bit=small_idx*LEVEL_S-total_bit;
             for(ull i=0;;++i) {
                 ull b=pop_count(B.at(begin_block_idx+i));
                 if(bit==0)b=blockBitNum-b;
                 if(total_bit+b>=rank) {
-                    ull block=(bit)?B.at(begin_block_idx+i):~B.at(begin_block_idx+i);
+                    ull block=(bit)? B.at(begin_block_idx+i): ~B.at(begin_block_idx+i);
                     rank_pos=(begin_block_idx+i)*blockBitNum+select_in_block(block,rank-total_bit);
                     break;
                 }
@@ -113,8 +105,8 @@ public:
         }
         return rank_pos+1;
     }
-    ull get_num_one()const{
-        return numOne;
+    ull get_num_one() const {
+        return num_one;
     }
 
 private:
@@ -127,14 +119,14 @@ private:
         x=x+(x>>32);
         return x&0x7FLLU;
     }
-    ull select_in_block(ull x,ull rank) {
+    ull select_in_block(ull x, ull rank) {
         ull x1=x-((x&0xAAAAAAAAAAAAAAAALLU)>>1);
         ull x2=(x1&0x3333333333333333LLU)+((x1>>2)&0x3333333333333333LLU);
         ull x3=(x2+(x2>>4))&0x0F0F0F0F0F0F0F0FLLU;
         ull pos=0;
         for(;;pos+=8) {
             ull rank_next=(x3>>pos)&0xFFLLU;
-            if(rank<=rank_next)break;
+            if(rank<=rank_next) break;
             rank-=rank_next;
         }
         ull v2=(x2>>pos)&0xFLLU;
@@ -163,10 +155,10 @@ struct WaveletMatrix{
     static const ull NOTFOUND=SuccinctBitVector::NOTFOUND;
 
 private:
-    vector<SuccinctBitVector>bit_arrays;
-    vector<ull>begin_one;
-    map<ull,ull>begin_alphabet;
-    vector<vector<ull>>cumulative_sum;
+    vector<SuccinctBitVector> bit_arrays;
+    vector<ull> begin_one;
+    map<ull,ull> begin_alphabet;
+    vector<vector<ull>> cumulative_sum;
     ull size;
     ull maximum_element;
     ull bit_size;
@@ -179,20 +171,20 @@ public:
         size=a.size();
         maximum_element=*max_element(a.begin(),a.end())+1;
         bit_size=get_num_of_bit(maximum_element);
-        if(bit_size==0)bit_size=1;
-        for(ull i=0;i<bit_size;++i) {
+        if(bit_size==0) bit_size=1;
+        for(ull i=0; i<bit_size; ++i) {
             SuccinctBitVector sv(size);
             bit_arrays.push_back(sv);
         }
         this->begin_one.resize(bit_size);
         this->cumulative_sum.resize(bit_size+1,vector<ull>(size+1,0));
-        for(ull j=0;j<a.size();++j) {
+        for(ull j=0; j<a.size(); ++j) {
             this->cumulative_sum.at(0).at(j+1)=this->cumulative_sum.at(0).at(j)+a[j];
         }
-        vector<ull>v(a);
-        for(ull i=0;i<bit_size;++i) {
+        vector<ull> v(a);
+        for(ull i=0; i<bit_size; ++i) {
             vector<ull>temp;
-            for(ull j=0;j<v.size();++j) {
+            for(ull j=0; j<v.size(); ++j) {
                 ull c=v.at(j);
                 ull bit=(c>>(bit_size-i-1))&1;
                 if(bit==0) {
@@ -201,7 +193,7 @@ public:
                 }
             }
             this->begin_one.at(i)=temp.size();
-            for(ull j=0;j<v.size();++j) {
+            for(ull j=0; j<v.size(); ++j) {
                 ull c=v.at(j);
                 ull bit=(c>>(bit_size-i-1))&1;
                 if(bit==1) {
@@ -209,25 +201,25 @@ public:
                     bit_arrays.at(i).set_bit(1,j);
                 }
             }
-            for(ull j=0;j<temp.size();++j) {
+            for(ull j=0; j<temp.size(); ++j) {
                 this->cumulative_sum.at(i+1).at(j+1)=this->cumulative_sum.at(i+1).at(j)+temp.at(j);
             }
             bit_arrays.at(i).build();
             v=temp;
         }
-        for(int i=v.size()-1;i>=0;--i)this->begin_alphabet[v.at(i)]=i;
+        for(int i=v.size()-1; i>=0; --i) this->begin_alphabet[v.at(i)]=i;
     }
 
     /// @brief a[pos] を返す
     /// @note O(log σ)
     ull access(ull pos) {
-        if(pos>=this->size)return NOTFOUND;
+        if(pos>=this->size) return NOTFOUND;
         ull c=0;
-        for(ull i=0;i<bit_arrays.size();++i) {
+        for(ull i=0; i<bit_arrays.size(); ++i) {
             ull bit=bit_arrays.at(i).access(pos);
             c=(c<<1)|bit;
             pos=bit_arrays.at(i).rank(bit,pos);
-            if(bit)pos+=this->begin_one.at(i);
+            if(bit) pos+=this->begin_one.at(i);
         }
         return c;
     }
@@ -235,14 +227,14 @@ public:
     /// @brief rank 番目の c の位置 +1 を返す
     /// @brief rank は 1-indexed
     /// @note O(log σ)
-    ull select(ull c,ull rank) {
+    ull select(ull c, ull rank) {
         assert(rank>0);
-        if(c>=maximum_element)return NOTFOUND;
+        if(c>=maximum_element) return NOTFOUND;
         if(this->begin_alphabet.find(c)==this->begin_alphabet.end())return NOTFOUND;
         ull index=this->begin_alphabet.at(c)+rank;
-        for(ull i=0;i<bit_arrays.size();++i) {
+        for(ull i=0; i<bit_arrays.size(); ++i) {
             ull bit=((c>>i)&1);
-            if(bit==1)index-=this->begin_one.at(bit_size-i-1);
+            if(bit==1) index-=this->begin_one.at(bit_size-i-1);
             index=this->bit_arrays.at(bit_size-i-1).select(bit,index);
         }
         return index;
@@ -250,23 +242,23 @@ public:
 
     /// @brief 区間 [l, r) で最大のインデックスを返す
     /// @note O(log σ)
-    ull max_range(ull begin_pos,ull end_pos) {
+    ull max_range(ull begin_pos, ull end_pos) {
         return quantile_range(begin_pos,end_pos,end_pos-begin_pos-1);
     }
 
     /// @brief 区間 [l, r) で最小のインデックスを返す
     /// @note O(log σ)
-    ull min_range(ull begin_pos,ull end_pos) {
+    ull min_range(ull begin_pos, ull end_pos) {
         return quantile_range(begin_pos,end_pos,0);
     }
 
     /// @brief 区間 [l, r) で k 番目に小さい値のインデックスを返す
     /// @brief k は 0-indexed
     /// @note O(log σ)
-    ull quantile_range(ull begin_pos,ull end_pos,ull k) {
-        if((end_pos>size||begin_pos>=end_pos)||(k>=end_pos-begin_pos))return NOTFOUND;
+    ull quantile_range(ull begin_pos, ull end_pos, ull k) {
+        if((end_pos>size||begin_pos>=end_pos)||(k>=end_pos-begin_pos)) return NOTFOUND;
         ull val=0;
-        for(ull i=0;i<bit_size;++i) {
+        for(ull i=0; i<bit_size; ++i) {
             const ull num_of_zero_begin=bit_arrays.at(i).rank(0,begin_pos);
             const ull num_of_zero_end=bit_arrays.at(i).rank(0,end_pos);
             const ull num_of_zero=num_of_zero_end-num_of_zero_begin;
@@ -275,17 +267,17 @@ public:
                 k-=num_of_zero;
                 begin_pos=this->begin_one.at(i)+begin_pos-num_of_zero_begin;
                 end_pos=this->begin_one.at(i)+end_pos-num_of_zero_end;
-            }else{
+            } else {
                 begin_pos=num_of_zero_begin;
                 end_pos=num_of_zero_begin+num_of_zero;
             }
             val=((val<<1)|bit);
         }
         ull left=0;
-        for(ull i=0;i<bit_size;++i) {
+        for(ull i=0; i<bit_size; ++i) {
             const ull bit=(val>>(bit_size-i-1))&1;
             left=bit_arrays.at(i).rank(bit,left);
-            if(bit)left+=this->begin_one.at(i);
+            if(bit) left+=this->begin_one.at(i);
         }
         const ull rank=begin_pos+k-left+1;
         return select(val,rank)-1;
@@ -293,14 +285,14 @@ public:
 
     /// @brief 区間 [0, pos) の c の数	
     /// @note O(log σ)
-    ull rank(ull c,ull pos) {
+    ull rank(ull c, ull pos) {
         assert(pos<size);
-        if(c>=maximum_element)return 0;
-        if(this->begin_alphabet.find(c)==this->begin_alphabet.end())return 0;
+        if(c>=maximum_element) return 0;
+        if(this->begin_alphabet.find(c)==this->begin_alphabet.end()) return 0;
         for(ull i=0;i<bit_size;++i) {
             ull bit=(c>>(bit_size-i-1))&1;
             pos=bit_arrays.at(i).rank(bit,pos);
-            if(bit)pos+=this->begin_one.at(i);
+            if(bit) pos+=this->begin_one.at(i);
         }
         ull begin_pos=this->begin_alphabet.at(c);
         return pos-begin_pos;
@@ -308,8 +300,8 @@ public:
 
     /// @brief 区間 [l, r) の [min_c, max_c) に入る値の個数
     /// @note O(log σ)
-    ull range_freq(ull begin_pos,ull end_pos,ull min_c,ull max_c) {
-        if((end_pos>size||begin_pos>=end_pos)||(min_c>=max_c)||min_c>=maximum_element) {
+    ull range_freq(ull begin_pos, ull end_pos, ull min_c, ull max_c) {
+        if((end_pos>size||begin_pos>=end_pos) || (min_c>=max_c)||min_c>=maximum_element) {
             return 0;
         }
         const auto maxi_t=rank_all(max_c,begin_pos,end_pos);
@@ -319,27 +311,27 @@ public:
 
     /// @brief 区間 [l, r) の c より小さい値の数
     /// @note O(log σ)
-    ull rank_less_than(ull c,ull begin,ull end) {
+    ull rank_less_than(ull c, ull begin, ull end) {
         auto t=rank_all(c,begin,end);
         return get<1>(t);
     }
     
     /// @brief 区間 [l, r) の c より大きい値の数
     /// @note O(log σ)
-    ull rank_more_than(ull c,ull begin,ull end) {
+    ull rank_more_than(ull c, ull begin, ull end) {
         auto t=rank_all(c,begin,end);
         return get<2>(t);
     }
 
     /// @brief 区間 [l, r) の (c と同じ値の数, c より小さい値の数, c より大きい値の数)
     /// @note O(log σ)
-    tuple<ull,ull,ull>rank_all(const ull c,ull begin,ull end) {
+    tuple<ull,ull,ull>rank_all(const ull c, ull begin, ull end) {
         assert(end<=size);
         const ull num=end-begin;
-        if(begin>=end)return make_tuple(0,0,0);
-        if(c>=maximum_element||end==0)return make_tuple(0,num,0);
+        if(begin>=end) return make_tuple(0,0,0);
+        if(c>=maximum_element || end==0) return make_tuple(0,num,0);
         ull rank_less_than=0,rank_more_than=0;
-        for(size_t i=0;i<bit_size&&begin<end;++i) {
+        for(size_t i=0; i<bit_size && begin<end; ++i) {
             const ull bit=(c>>(bit_size-i-1))&1;
             const ull rank0_begin=this->bit_arrays.at(i).rank(0,begin);
             const ull rank0_end=this->bit_arrays.at(i).rank(0,end);
@@ -349,7 +341,7 @@ public:
                 rank_less_than+=(rank0_end-rank0_begin);
                 begin=this->begin_one.at(i)+rank1_begin;
                 end=this->begin_one.at(i)+rank1_end;
-            }else{
+            } else {
                 rank_more_than+=(rank1_end-rank1_begin);
                 begin=rank0_begin;
                 end=rank0_end;
@@ -399,6 +391,8 @@ public:
         return range_sum(begin,end,0,0,x,y);
     }
 
+    /// @brief 区間 [l, r) で [x, y) に入る値の最大値
+    /// @note O(log σ)
     ull prev_value(const ull begin_pos,const ull end_pos,const ull x,ull y) {
         assert(end_pos<=size);
         if(x>=y or y==0)return NOTFOUND;
@@ -439,6 +433,9 @@ public:
         }
         return NOTFOUND;
     }
+
+    /// @brief 区間 [l, r) で [x, y) に入る値の最大値
+    /// @note O(log σ)
     ull next_value(const ull begin_pos,const ull end_pos,const ull x,const ull y) {
         assert(end_pos<=size);
         if(x>=y or y==0)return NOTFOUND;
@@ -477,6 +474,8 @@ public:
         }
         return NOTFOUND;
     }
+
+    /// @brief 区間 [l1, r1) [l2, r2) に共通して出現する要素を返す
     vector<tuple<ull,ull,ull>>intersect(ull _s1,ull _e1,ull _s2,ull _e2) {
         assert(_s1<_e1);
         assert(_s2<_e2);

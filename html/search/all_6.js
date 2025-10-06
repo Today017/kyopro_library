@@ -2,12 +2,12 @@ var searchData=
 [
   ['dat_0',['dat',['../struct_range_max.html#a63f728d17bbb331b3000beba86d93e6d',1,'RangeMax::dat'],['../struct_range_min.html#a0368406a046208c03cab67edf06b5b23',1,'RangeMin::dat'],['../struct_range_set.html#afd64d053f60f24ea602e0d98461f60ba',1,'RangeSet::dat'],['../sparse__table__2d_8hpp.html#ad4ffba731924575f47aa6d16920d0fbb',1,'dat:&#160;sparse_table_2d.hpp']]],
   ['datefmt_1',['datefmt',['../namespaceexp.html#acd13cc680f535f17f76a099ea6da8068',1,'exp.datefmt'],['../namespaceexp___a_h_c.html#ad7c1f64571c786c0280691daca4bc579',1,'exp_AHC.datefmt']]],
-  ['debug_2',['debug',['../debug_8hpp.html#a86ee3ff44c537d94ccbabf941a613688',1,'debug:&#160;debug.hpp'],['../template_8hpp.html#a86ee3ff44c537d94ccbabf941a613688',1,'debug:&#160;template.hpp'],['../template3_8hpp.html#a86ee3ff44c537d94ccbabf941a613688',1,'debug:&#160;template3.hpp']]],
+  ['debug_2',['debug',['../debug_8hpp.html#a86ee3ff44c537d94ccbabf941a613688',1,'debug:&#160;debug.hpp'],['../template_8hpp.html#a86ee3ff44c537d94ccbabf941a613688',1,'debug:&#160;template.hpp']]],
   ['debug_2ehpp_3',['debug.hpp',['../debug_8hpp.html',1,'']]],
   ['debugprint_4',['DebugPrint',['../debug_8hpp.html#a966f60e90ba58ad164d45a0ed1614116',1,'DebugPrint(int i, T name):&#160;debug.hpp'],['../debug_8hpp.html#ab71b4c038f1f1744888de17e8c17507f',1,'DebugPrint(int i, const T1 &amp;name, const T2 &amp;a, const T3 &amp;...b):&#160;debug.hpp']]],
   ['dep_5',['dep',['../struct_l_c_a.html#ab0020abc5764b39000f59ee648bef4b8',1,'LCA']]],
   ['diameter_2ehpp_6',['diameter.hpp',['../diameter_8hpp.html',1,'']]],
-  ['diff_7',['diff',['../struct_dsu_potentialized.html#ab9a92fc6174f8c4b5da8db55c060d1b6',1,'DsuPotentialized::diff()'],['../struct_formal_power_series.html#a666efb98ef181b2b53fd0dd21a89eaf7',1,'FormalPowerSeries::diff()']]],
+  ['diff_7',['diff',['../struct_dsu_potentialized.html#ab9a92fc6174f8c4b5da8db55c060d1b6',1,'DsuPotentialized']]],
   ['differential_8',['Differential',['../namespace_f_p_s.html#a18d3a03cb678d29deefc254e2fcb1b50',1,'FPS']]],
   ['dijkstra_9',['Dijkstra',['../dijkstra_8hpp.html#a4e0e194e2b19ea300065b537c8cd3ce8',1,'dijkstra.hpp']]],
   ['dijkstra_2ehpp_10',['dijkstra.hpp',['../dijkstra_8hpp.html',1,'']]],
@@ -20,7 +20,7 @@ var searchData=
   ['distancesegmenttosegment_17',['distanceSegmentToSegment',['../namespace_geometry.html#a255834d9deeba16697273e0471248c87',1,'Geometry']]],
   ['div_18',['Div',['../namespace_f_p_s.html#a50424cf32ca2c09b2a9ad454915e84c9',1,'FPS']]],
   ['divisormobius_19',['DivisorMobius',['../namespace_zeta_mobius_div_mul.html#afe1e6c2c7d8180ade6e65334eec8368f',1,'ZetaMobiusDivMul']]],
-  ['dot_20',['dot',['../struct_geometry_1_1_point.html#ab17c1525afa5688443c09963ce5512bf',1,'Geometry::Point::dot()'],['../struct_formal_power_series.html#a12ca46e81067e9ebed5d6838fc1d97b7',1,'FormalPowerSeries::dot()']]],
+  ['dot_20',['dot',['../struct_geometry_1_1_point.html#ab17c1525afa5688443c09963ce5512bf',1,'Geometry::Point']]],
   ['doubling_21',['Doubling',['../struct_doubling.html',1,'Doubling&lt; Log &gt;'],['../struct_doubling.html#aad11ee1d4c52c049dd5d984df8a81136',1,'Doubling::Doubling()=default'],['../struct_doubling.html#a46485f72c05162559825a3c1db231229',1,'Doubling::Doubling(const vector&lt; int &gt; &amp;v)']]],
   ['doubling_2ehpp_22',['doubling.hpp',['../doubling_8hpp.html',1,'']]],
   ['doubling_5ffold_2ehpp_23',['doubling_fold.hpp',['../doubling__fold_8hpp.html',1,'']]],
@@ -35,8 +35,7 @@ var searchData=
   ['dsupotentialized_32',['DsuPotentialized',['../struct_dsu_potentialized.html',1,'DsuPotentialized&lt; Group &gt;'],['../struct_dsu_potentialized.html#a2e7c6c09a18844667a4f0f7c0ddebe1d',1,'DsuPotentialized::DsuPotentialized()=default'],['../struct_dsu_potentialized.html#a8c36a02bd95351413d537dabdcdd40b1',1,'DsuPotentialized::DsuPotentialized(int n)']]],
   ['dsurollback_33',['DsuRollback',['../struct_dsu_rollback.html',1,'DsuRollback'],['../struct_dsu_rollback.html#a11aa0e4a2cd2660619a17e0dd828c22a',1,'DsuRollback::DsuRollback()=default'],['../struct_dsu_rollback.html#ad42c892c309ec0aa491c70bec3d58779',1,'DsuRollback::DsuRollback(int n)']]],
   ['dvisorzeta_34',['DvisorZeta',['../namespace_zeta_mobius_div_mul.html#a3ccdfca3c4527b7da17b4a018ec1204f',1,'ZetaMobiusDivMul']]],
-  ['dw_35',['dw',['../struct_n_t_t.html#ac12aad1566012a987bd9aa1ddcde9d2a',1,'NTT']]],
-  ['dx_36',['dx',['../struct_grid_util.html#a5c2ad2815d31c6d8abe1c95b04f5c6f5',1,'GridUtil']]],
-  ['dy_37',['dy',['../struct_n_t_t.html#a4dd4bee84997827f34e3ade86fc36a0c',1,'NTT::dy'],['../struct_grid_util.html#ae76c17d08ba2c553b417d82cdd7fed29',1,'GridUtil::dy']]],
-  ['dynamicconnectivity_38',['DynamicConnectivity',['../struct_dynamic_connectivity.html',1,'DynamicConnectivity'],['../struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4',1,'DynamicConnectivity::DynamicConnectivity()']]]
+  ['dx_35',['dx',['../struct_grid_util.html#a5c2ad2815d31c6d8abe1c95b04f5c6f5',1,'GridUtil']]],
+  ['dy_36',['dy',['../struct_grid_util.html#ae76c17d08ba2c553b417d82cdd7fed29',1,'GridUtil']]],
+  ['dynamicconnectivity_37',['DynamicConnectivity',['../struct_dynamic_connectivity.html',1,'DynamicConnectivity'],['../struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4',1,'DynamicConnectivity::DynamicConnectivity()']]]
 ];

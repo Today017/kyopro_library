@@ -25,58 +25,55 @@
 var NAVTREE =
 [
   [ "Kyopro Library", "index.html", [
-    [ "wvmt", "md_data__structure_2wvmt.html", [
-      [ "Wavelet Matrix", "md_data__structure_2wvmt.html#autotoc_md0", null ]
-    ] ],
     [ "geo", "md_geometry_2geo.html", [
-      [ "Template", "md_geometry_2geo.html#autotoc_md1", [
-        [ "Inequality", "md_geometry_2geo.html#autotoc_md2", null ],
-        [ "Structure", "md_geometry_2geo.html#autotoc_md3", [
-          [ "Point", "md_geometry_2geo.html#autotoc_md4", null ],
-          [ "Segment", "md_geometry_2geo.html#autotoc_md5", null ],
-          [ "Line", "md_geometry_2geo.html#autotoc_md6", null ],
-          [ "Circle", "md_geometry_2geo.html#autotoc_md7", null ]
+      [ "Template", "md_geometry_2geo.html#autotoc_md0", [
+        [ "Inequality", "md_geometry_2geo.html#autotoc_md1", null ],
+        [ "Structure", "md_geometry_2geo.html#autotoc_md2", [
+          [ "Point", "md_geometry_2geo.html#autotoc_md3", null ],
+          [ "Segment", "md_geometry_2geo.html#autotoc_md4", null ],
+          [ "Line", "md_geometry_2geo.html#autotoc_md5", null ],
+          [ "Circle", "md_geometry_2geo.html#autotoc_md6", null ]
         ] ],
-        [ "Point and Vector", "md_geometry_2geo.html#autotoc_md8", [
-          [ "Counter Clockwise", "md_geometry_2geo.html#autotoc_md9", null ],
-          [ "射影", "md_geometry_2geo.html#autotoc_md10", null ],
-          [ "反射", "md_geometry_2geo.html#autotoc_md11", null ]
+        [ "Point and Vector", "md_geometry_2geo.html#autotoc_md7", [
+          [ "Counter Clockwise", "md_geometry_2geo.html#autotoc_md8", null ],
+          [ "射影", "md_geometry_2geo.html#autotoc_md9", null ],
+          [ "反射", "md_geometry_2geo.html#autotoc_md10", null ]
         ] ],
-        [ "Segment and Line", "md_geometry_2geo.html#autotoc_md12", [
-          [ "平行判定", "md_geometry_2geo.html#autotoc_md13", null ],
-          [ "垂直判定", "md_geometry_2geo.html#autotoc_md14", null ],
-          [ "直線上に点が存在するか判定", "md_geometry_2geo.html#autotoc_md16", null ],
-          [ "線分上に点が存在するか判定", "md_geometry_2geo.html#autotoc_md17", null ],
-          [ "線分と線分の交差", "md_geometry_2geo.html#autotoc_md18", null ],
-          [ "線分と線分の交点", "md_geometry_2geo.html#autotoc_md19", null ],
-          [ "点と直線の距離", "md_geometry_2geo.html#autotoc_md21", null ],
-          [ "線分と線分の距離", "md_geometry_2geo.html#autotoc_md22", null ]
+        [ "Segment and Line", "md_geometry_2geo.html#autotoc_md11", [
+          [ "平行判定", "md_geometry_2geo.html#autotoc_md12", null ],
+          [ "垂直判定", "md_geometry_2geo.html#autotoc_md13", null ],
+          [ "直線上に点が存在するか判定", "md_geometry_2geo.html#autotoc_md15", null ],
+          [ "線分上に点が存在するか判定", "md_geometry_2geo.html#autotoc_md16", null ],
+          [ "線分と線分の交差", "md_geometry_2geo.html#autotoc_md17", null ],
+          [ "線分と線分の交点", "md_geometry_2geo.html#autotoc_md18", null ],
+          [ "点と直線の距離", "md_geometry_2geo.html#autotoc_md20", null ],
+          [ "線分と線分の距離", "md_geometry_2geo.html#autotoc_md21", null ]
         ] ],
-        [ "Polygon", "md_geometry_2geo.html#autotoc_md23", [
-          [ "多角形の面積", "md_geometry_2geo.html#autotoc_md24", null ],
-          [ "凸多角形の判定", "md_geometry_2geo.html#autotoc_md26", null ],
-          [ "点が凸多角形の辺上に存在するか判定", "md_geometry_2geo.html#autotoc_md28", null ],
-          [ "点が凸多角形の内部に存在するか判定", "md_geometry_2geo.html#autotoc_md29", null ]
+        [ "Polygon", "md_geometry_2geo.html#autotoc_md22", [
+          [ "多角形の面積", "md_geometry_2geo.html#autotoc_md23", null ],
+          [ "凸多角形の判定", "md_geometry_2geo.html#autotoc_md25", null ],
+          [ "点が凸多角形の辺上に存在するか判定", "md_geometry_2geo.html#autotoc_md27", null ],
+          [ "点が凸多角形の内部に存在するか判定", "md_geometry_2geo.html#autotoc_md28", null ]
         ] ],
-        [ "Convex Polygon", "md_geometry_2geo.html#autotoc_md30", [
-          [ "凸包", "md_geometry_2geo.html#autotoc_md31", null ],
-          [ "凸包の直径", "md_geometry_2geo.html#autotoc_md33", null ],
-          [ "凸包をカットして左側を返す", "md_geometry_2geo.html#autotoc_md35", null ]
+        [ "Convex Polygon", "md_geometry_2geo.html#autotoc_md29", [
+          [ "凸包", "md_geometry_2geo.html#autotoc_md30", null ],
+          [ "凸包の直径", "md_geometry_2geo.html#autotoc_md32", null ],
+          [ "凸包をカットして左側を返す", "md_geometry_2geo.html#autotoc_md34", null ]
         ] ],
-        [ "Point Set", "md_geometry_2geo.html#autotoc_md36", [
-          [ "最近点対", "md_geometry_2geo.html#autotoc_md37", null ]
+        [ "Point Set", "md_geometry_2geo.html#autotoc_md35", [
+          [ "最近点対", "md_geometry_2geo.html#autotoc_md36", null ]
         ] ],
-        [ "Segment Set", "md_geometry_2geo.html#autotoc_md38", [
-          [ "線分集合の交点の個数", "md_geometry_2geo.html#autotoc_md39", null ]
+        [ "Segment Set", "md_geometry_2geo.html#autotoc_md37", [
+          [ "線分集合の交点の個数", "md_geometry_2geo.html#autotoc_md38", null ]
         ] ],
-        [ "Circle", "md_geometry_2geo.html#autotoc_md40", [
-          [ "2つの円の交点の個数", "md_geometry_2geo.html#autotoc_md41", null ],
-          [ "内接円", "md_geometry_2geo.html#autotoc_md43", null ],
-          [ "外接円", "md_geometry_2geo.html#autotoc_md45", null ],
-          [ "円と直線の交点", "md_geometry_2geo.html#autotoc_md47", null ],
-          [ "2つの円の交点", "md_geometry_2geo.html#autotoc_md48", null ],
-          [ "点 $p$ を通る接線との接点", "md_geometry_2geo.html#autotoc_md49", null ],
-          [ "2つの円の共通接線", "md_geometry_2geo.html#autotoc_md50", null ]
+        [ "Circle", "md_geometry_2geo.html#autotoc_md39", [
+          [ "2つの円の交点の個数", "md_geometry_2geo.html#autotoc_md40", null ],
+          [ "内接円", "md_geometry_2geo.html#autotoc_md42", null ],
+          [ "外接円", "md_geometry_2geo.html#autotoc_md44", null ],
+          [ "円と直線の交点", "md_geometry_2geo.html#autotoc_md46", null ],
+          [ "2つの円の交点", "md_geometry_2geo.html#autotoc_md47", null ],
+          [ "点 $p$ を通る接線との接点", "md_geometry_2geo.html#autotoc_md48", null ],
+          [ "2つの円の共通接線", "md_geometry_2geo.html#autotoc_md49", null ]
         ] ]
       ] ]
     ] ],
@@ -119,12 +116,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "abel_8hpp.html",
-"globals_vars.html",
-"namespace_zeta_mobius_div_mul.html#a3ccdfca3c4527b7da17b4a018ec1204f",
-"struct_doubling_fold.html#a19e2e532bbcdba1946150f2cdefd1b86",
-"struct_hash.html#a093390f17c113dc150020dac86c6ddd4",
-"struct_offset_vector.html#a649368817cf7764111d85732f5c87d33",
-"struct_trie.html#a2736205aba5f7becfab3657a702b3f28"
+"insert__reverse__array_8hpp.html",
+"namespaceexp.html#a026091473c04f1255fbe54365b41c194",
+"struct_dsu_potentialized.html#a6a50de8f7bc8099eeeff22de2e98a3bb",
+"struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node.html#a0d205c9909ffba7b009dc9e50a372a76",
+"struct_range_query_1_1_min.html",
+"util_8hpp.html#a55c71db984621dc476d66a3f7ef04a3c"
 ];
 
 var SYNCONMSG = 'クリックで同期表示が無効になります';

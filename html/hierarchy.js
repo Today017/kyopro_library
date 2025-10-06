@@ -65,9 +65,8 @@ var hierarchy =
     [ "multiset", null, [
       [ "MultiSet< T >", "struct_multi_set.html", null ]
     ] ],
-    [ "AngelBeats::Node", "struct_angel_beats_1_1_node.html", null ],
     [ "Trie< char_size, margin >::Node", "struct_trie_1_1_node.html", null ],
-    [ "NTT< mint >", "struct_n_t_t.html", null ],
+    [ "NTT< MOD, primitive_root >", "class_n_t_t.html", null ],
     [ "Geometry::Point", "struct_geometry_1_1_point.html", null ],
     [ "RangeMax", "struct_range_max.html", null ],
     [ "RangeMin", "struct_range_min.html", null ],
@@ -113,7 +112,6 @@ var hierarchy =
     [ "Operator::Update< T, not_exist >", "struct_operator_1_1_update.html", null ],
     [ "Operator::UpdateTimeStamp< T >", "struct_operator_1_1_update_time_stamp.html", null ],
     [ "vector", null, [
-      [ "FormalPowerSeries< mint >", "struct_formal_power_series.html", null ],
       [ "OffsetVector< T >", "struct_offset_vector.html", null ]
     ] ],
     [ "WaveletMatrix", "struct_wavelet_matrix.html", null ],

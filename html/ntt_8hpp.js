@@ -1,4 +1,4 @@
 var ntt_8hpp =
 [
-    [ "NTT< mint >", "struct_n_t_t.html", "struct_n_t_t" ]
+    [ "NTT< MOD, primitive_root >", "class_n_t_t.html", "class_n_t_t" ]
 ];

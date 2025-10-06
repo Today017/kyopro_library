@@ -11,6 +11,5 @@ var files_dup =
     [ "string", "dir_76cf5d2c64440c8b33b2b96569e4a2eb.html", "dir_76cf5d2c64440c8b33b2b96569e4a2eb" ],
     [ "all.hpp", "all_8hpp.html", null ],
     [ "debug.hpp", "debug_8hpp.html", "debug_8hpp" ],
-    [ "template.hpp", "template_8hpp.html", "template_8hpp" ],
-    [ "template3.hpp", "template3_8hpp.html", "template3_8hpp" ]
+    [ "template.hpp", "template_8hpp.html", "template_8hpp" ]
 ];
