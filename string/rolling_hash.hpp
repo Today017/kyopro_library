@@ -2,13 +2,13 @@
 #include"../../kyopro_library/others/xor128.hpp"
 #include"../../kyopro_library/others/modcal.hpp"
 
-/// @attention 問題の成約に合わせて書き換えること
+/// @attention 問題の制約に合わせて書き換えること
 constexpr const int HASH_MAX=1000000; ///< 長さの最大値
 constexpr const int HASH_C=256; ///< 文字の範囲
 constexpr const int HASH_PRIME=3; ///< 使う素数の個数
 
+/// @brief ハッシュ
 struct Hash {
-
     using Type=array<ll,HASH_PRIME>;
     static vector<ll> base;
     static vector<vector<ll>> inv,pow;
@@ -87,12 +87,11 @@ bool Hash::flag=false;
 array<array<ll,HASH_PRIME>,HASH_C> Hash::num={};
 
 
-///@brief Rolling Hash
+///@brief ローリングハッシュ
 struct RollingHash{
     RollingHash()=default;
-    vector<Hash> hash;
 
-    /// @brief 文字列 s の Rolling Hash を構築する
+    /// @brief 文字列 s のローリングハッシュを構築する
     RollingHash(const string& s) {
         int n=s.size();
         hash.resize(n+1);
@@ -106,4 +105,7 @@ struct RollingHash{
         ret=ret.shift(-l);
         return ret;
     }
+
+private:
+    vector<Hash> hash;
 };
