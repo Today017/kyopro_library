@@ -43,8 +43,8 @@ template<typename T>
 ostream& operator<<(ostream& os, queue<T> a);
 template<typename T>
 ostream& operator<<(ostream& os, priority_queue<T> a);
-//template<typename T>
-//ostream& operator<<(ostream& os, rpriority_queue<T> a);
+template<typename T>
+ostream& operator<<(ostream& os, priority_queue<T,vector<T>,greater<T>> a);
 template<typename T, auto N>
 ostream& operator<<(ostream& os, array<T,N> a);
 ostream& operator<<(ostream& os, FenwickTree a);
@@ -216,8 +216,8 @@ ostream& operator<<(ostream& os, priority_queue<T> a) {
     os<<"]";
     return os;
 }
-/*template<typename T>
-ostream& operator<<(ostream& os, rpriority_queue<T> a) {
+template<typename T>
+ostream& operator<<(ostream& os, priority_queue<T,vector<T>,greater<T>>) {
     int n=a.size();
     os<<"[";
     while(!a.empty()) {
@@ -226,7 +226,7 @@ ostream& operator<<(ostream& os, rpriority_queue<T> a) {
     }
     os<<"]";
     return os;
-}*/
+}
 template<typename T, auto N>
 ostream& operator<<(ostream& os, array<T,N> a) {
     os<<"[";
