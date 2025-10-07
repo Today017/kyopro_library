@@ -217,8 +217,7 @@ ostream& operator<<(ostream& os, priority_queue<T> a) {
     return os;
 }
 template<typename T>
-ostream& operator<<(ostream& os, priority_queue<T,vector<T>,greater<T>>) {
-    int n=a.size();
+ostream& operator<<(ostream& os, priority_queue<T,vector<T>,greater<T>> a) {
     os<<"[";
     while(!a.empty()) {
         os<<a.top()<<",";
