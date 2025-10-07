@@ -1,3 +1,5 @@
-#pragma GCC target("avx2")
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
+#ifndef TDY
+#include <bits/allocator.h>
+#pragma GCC optimize("Ofast,unroll-loops")
+#pragma GCC target("avx2,popcnt")
+#endif
