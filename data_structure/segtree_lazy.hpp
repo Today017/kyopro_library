@@ -16,6 +16,7 @@ struct SegTreeLazy {
         this->n=n;
         dat=vector<MonoidType>(n<<1,Monoid::id());
         lazy=vector<OperatorType>(n<<1,Operator::id());
+        indices.reserve(100); cand.reserve(100); cand_l.reserve(100); cand_r.reserve(100);
     }
 
     /// @brief 配列 v から遅延セグ木を構築する
@@ -25,6 +26,7 @@ struct SegTreeLazy {
         lazy=vector<OperatorType>(n<<1,Operator::id());
         for(int i=0; i<n; i++) dat[i+n]=v[i];
         for(int i=n-1; i>0; i--) dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
+        indices.reserve(100); cand.reserve(100); cand_l.reserve(100); cand_r.reserve(100);
     }
 
     /// @brief i 番目の要素を x に更新する
@@ -84,13 +86,13 @@ struct SegTreeLazy {
         pushdown();
         l+=n;
         int r=n+n;
-        vector<int> cand_l,cand_r;
+        cand_l.clear(); cand_r.clear();
         while(l<r) {
             if(l&1) cand_l.push_back(l++);
             if(r&1) cand_r.push_back(--r);
             l>>=1; r>>=1;
         }
-        vector<int> cand=cand_l;
+        cand=cand_l;
         reverse(cand_r.begin(),cand_r.end());
         cand.insert(cand.end(),cand_r.begin(),cand_r.end());
         MonoidType val=Monoid::id();
@@ -123,13 +125,13 @@ struct SegTreeLazy {
         pushdown();
         r+=n;
         int l=n;
-        vector<int> cand_l,cand_r;
+        cand_l.clear(); cand_r.clear();
         while(l<r) {
             if(l&1) cand_l.push_back(l++);
             if(r&1) cand_r.push_back(--r);
             l>>=1; r>>=1;
         }
-        vector<int> cand=cand_r;
+        cand=cand_r;
         reverse(cand_l.begin(),cand_l.end());
         cand.insert(cand.end(),cand_l.begin(),cand_l.end());
         MonoidType val=Monoid::id();
@@ -158,7 +160,7 @@ private:
     int n;
     vector<MonoidType> dat;
     vector<OperatorType> lazy;
-    vector<int> indices;
+    vector<int> indices, cand, cand_l, cand_r;
     void generate_indices(int l, int r) {
         indices.clear();
         l+=n; r+=n;
