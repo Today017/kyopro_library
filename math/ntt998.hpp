@@ -30,7 +30,7 @@ void NTT998(vector<Mod998>& a, bool inv=false) {
         Mod998 e=(inv ? roots[p+1] : inv_roots[p+1]);
         Mod998 w=1;
         for(int j=0; j<n; j+=i) {
-            REP(k,i) nxt[j+k]=cur[((j<<1)&mask)+k]+w*cur[(((j<<1)+i)&mask)+k];
+            rep(k,i) nxt[j+k]=cur[((j<<1)&mask)+k]+w*cur[(((j<<1)+i)&mask)+k];
             w*=e;
         }
         p++;

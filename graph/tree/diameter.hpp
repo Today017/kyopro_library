@@ -2,6 +2,8 @@
 #include"../../../kyopro_library/graph/shortest_path/dijkstra.hpp"
 #include"../../../kyopro_library/graph/shortest_path/bfs.hpp"
 
+/// @brief 重み付き木 g の直径を求める
+/// @return 直径上の頂点の配列と端点間の距離のペア
 pair<vector<int>,ll> TreeDiameter(const vector<vector<pair<int,ll>>>& g) {
     vector<ll> dist=Dijkstra(g);
     int s=max_element(dist.begin(),dist.end())-dist.begin();
@@ -23,7 +25,9 @@ pair<vector<int>,ll> TreeDiameter(const vector<vector<pair<int,ll>>>& g) {
     return {path,diameter};
 }
 
-pair<vector<int>,ll>TreeDiameter(const vector<vector<int>>& g) {
+/// @brief 木 g の直径を求める
+/// @return 直径上の頂点の配列と端点間の距離のペア
+pair<vector<int>,int> TreeDiameter(const vector<vector<int>>& g) {
     vector<ll> dist=BFS(g);
     int s=max_element(dist.begin(),dist.end())-dist.begin();
     dist=BFS(g,s);
@@ -40,6 +44,6 @@ pair<vector<int>,ll>TreeDiameter(const vector<vector<int>>& g) {
         }
     }
     path.push_back(s);
-    ll diameter=dist[t];
+    int diameter=dist[t];
     return {path,diameter};
 }

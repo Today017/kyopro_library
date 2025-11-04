@@ -138,7 +138,7 @@ $(function(){initNavTree('ntt998_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        Mod998 e=(inv ? roots[p+1] : inv_roots[p+1]);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        Mod998 w=1;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; j+=i) {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(k,i) nxt[j+k]=cur[((j&lt;&lt;1)&amp;mask)+k]+w*cur[(((j&lt;&lt;1)+i)&amp;mask)+k];</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(k,i) nxt[j+k]=cur[((j&lt;&lt;1)&amp;mask)+k]+w*cur[(((j&lt;&lt;1)+i)&amp;mask)+k];</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            w*=e;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        p++;</div>
@@ -173,7 +173,7 @@ $(function(){initNavTree('ntt998_8hpp_source.html',''); initResizable(true); });
 </div>
 <div class="ttc" id="antt998_8hpp_html_a1e1c805bf5f53eddf4bd21d9890a4320"><div class="ttname"><a href="ntt998_8hpp.html#a1e1c805bf5f53eddf4bd21d9890a4320">NTT998</a></div><div class="ttdeci">void NTT998(vector&lt; Mod998 &gt; &amp;a, bool inv=false)</div><div class="ttdoc">数論変換</div><div class="ttdef"><b>Definition</b> <a href="#l00007">ntt998.hpp:7</a></div></div>
 <div class="ttc" id="antt998_8hpp_html_a903f7f25ea896e4eae55e62a21c0b379"><div class="ttname"><a href="ntt998_8hpp.html#a903f7f25ea896e4eae55e62a21c0b379">Convolve998</a></div><div class="ttdeci">vector&lt; Mod998 &gt; Convolve998(vector&lt; Mod998 &gt; a, vector&lt; Mod998 &gt; b)</div><div class="ttdoc">AとBの畳み込み C[i] = Σ A[j]B[i-j] mod 998244353 を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00048">ntt998.hpp:48</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00005">template.hpp:5</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

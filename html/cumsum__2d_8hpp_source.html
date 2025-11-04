@@ -62,7 +62,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_cumulative_sum2_d.html#a0c031b219413ba2284d6c3cf4ecb5a0d">   11</a></span>    <a class="code hl_function" href="struct_cumulative_sum2_d.html#a0c031b219413ba2284d6c3cf4ecb5a0d">CumulativeSum2D</a>(<span class="keyword">const</span> vector&lt;vector&lt;U&gt;&gt;&amp; v){</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        n=v.size(),m=v.front().size();</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        dat.assign(n+1,vector&lt;T&gt;(m+1));</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(i,n)<a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a>(j,m) dat[i+1][j+1]=dat[i][j+1]+dat[i+1][j]-dat[i][j]+v[i][j];</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">rep</a>(i,n)<a class="code hl_define" href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">rep</a>(j,m) dat[i+1][j+1]=dat[i][j+1]+dat[i+1][j]-dat[i][j]+v[i][j];</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
 </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
@@ -82,7 +82,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="astruct_cumulative_sum2_d_html_a30ae612dead6c43be533a6bfd112a78e"><div class="ttname"><a href="struct_cumulative_sum2_d.html#a30ae612dead6c43be533a6bfd112a78e">CumulativeSum2D::sum</a></div><div class="ttdeci">T sum(int l, int r, int u, int d)</div><div class="ttdoc">矩形領域 [l, r) × [u, d) の和を求める</div><div class="ttdef"><b>Definition</b> cumsum_2d.hpp:18</div></div>
 <div class="ttc" id="astruct_cumulative_sum2_d_html_aa68421d4767aa66b8546d90ecd602bf3"><div class="ttname"><a href="struct_cumulative_sum2_d.html#aa68421d4767aa66b8546d90ecd602bf3">CumulativeSum2D::CumulativeSum2D</a></div><div class="ttdeci">CumulativeSum2D()=default</div></div>
 <div class="ttc" id="atemplate_8hpp_html"><div class="ttname"><a href="template_8hpp.html">template.hpp</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">REP</a></div><div class="ttdeci">#define REP(i, n)</div><div class="ttdef"><b>Definition</b> template.hpp:9</div></div>
+<div class="ttc" id="atemplate_8hpp_html_a17daffa35db12daabc89c90df168e706"><div class="ttname"><a href="template_8hpp.html#a17daffa35db12daabc89c90df168e706">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> template.hpp:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

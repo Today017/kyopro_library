@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['x_0',['x',['../struct_geometry_1_1_point.html#a4855e61b2b90a91cf1e87fc758d6201b',1,'Geometry::Point']]],
-  ['xor_1',['Xor',['../struct_abel_1_1_xor.html',1,'Abel']]],
-  ['xor128_2',['Xor128',['../xor128_8hpp.html#ae5f1abc0605f565940993209877af05d',1,'Xor128():&#160;xor128.hpp'],['../xor128_8hpp.html#af918dca70549f657c3e1117950ac6dd1',1,'Xor128(ll n):&#160;xor128.hpp'],['../xor128_8hpp.html#a1769a3e4e9794ae293252dc65f5c2425',1,'Xor128(ll l, ll r):&#160;xor128.hpp']]],
-  ['xor128_2ehpp_3',['xor128.hpp',['../xor128_8hpp.html',1,'']]],
-  ['xor128prob_4',['Xor128Prob',['../xor128_8hpp.html#a5f6945301ed38f6de846c629c54d16c9',1,'xor128.hpp']]],
-  ['xor_5fconvolution_2ehpp_5',['xor_convolution.hpp',['../xor__convolution_8hpp.html',1,'']]],
-  ['xorconvolution_6',['XorConvolution',['../xor__convolution_8hpp.html#a791b5a55ef2207220b3bf2ce44ff80bc',1,'xor_convolution.hpp']]]
+  ['z_5falgorithm_2ehpp_0',['z_algorithm.hpp',['../z__algorithm_8hpp.html',1,'']]],
+  ['zalgorithm_1',['ZAlgorithm',['../z__algorithm_8hpp.html#a81e705d1ba548f286c93756a5baec7f5',1,'z_algorithm.hpp']]],
+  ['zeta_5fmobius_2ehpp_2',['zeta_mobius.hpp',['../zeta__mobius_8hpp.html',1,'']]],
+  ['zeta_5fmobius_5fdiv_5fmul_2ehpp_3',['zeta_mobius_div_mul.hpp',['../zeta__mobius__div__mul_8hpp.html',1,'']]],
+  ['zetamobius_4',['ZetaMobius',['../namespace_zeta_mobius.html',1,'']]],
+  ['zetamobiusdivmul_5',['ZetaMobiusDivMul',['../namespace_zeta_mobius_div_mul.html',1,'']]]
 ];

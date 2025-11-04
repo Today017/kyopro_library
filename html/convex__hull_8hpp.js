@@ -1,4 +1,4 @@
 var convex__hull_8hpp =
 [
-    [ "ConvexHull", "convex__hull_8hpp.html#a8475573aaf52158717672623187705f6", null ]
+    [ "ConvexHull", "convex__hull_8hpp.html#ace4144a570e7a1bf5d68030b29c0d9a0", null ]
 ];

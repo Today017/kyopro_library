@@ -1,6 +1,6 @@
 var indexSectionsWithContent =
 {
-  0: "$2_abcdefghiklmnopqrstuvwxyzをスデモ使例内円凸反各垂外多射平最点環直線",
+  0: "_abcdefghiklmnopqrstuvwxyzスデモ使例各環",
   1: "abcdefghilmnoprstuwx",
   2: "abcefgimorz",
   3: "abcdefghiklmnoprstuwxz",
@@ -11,7 +11,7 @@ var indexSectionsWithContent =
   8: "co",
   9: "o",
   10: "adgpr",
-  11: "gr"
+  11: "r"
 };
 
 var indexSectionNames =

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['を通る接線との接点_0',['点 $p$ を通る接線との接点',['../md_geometry_2geo.html#autotoc_md48',1,'']]]
+  ['モノイド_0',['例) モノイド',['../md__r_e_a_d_m_e.html#autotoc_md4',1,'']]]
 ];

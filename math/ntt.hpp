@@ -16,7 +16,7 @@ class NTT {
             ll e=(inv ? roots[p+1] : inv_roots[p+1]);
             ll w=1;
             for(int j=0; j<n; j+=i) {
-                REP(k,i) nxt[j+k]=(cur[((j<<1)&mask)+k]+w*cur[(((j<<1)+i)&mask)+k])%MOD;
+                rep(k,i) nxt[j+k]=(cur[((j<<1)&mask)+k]+w*cur[(((j<<1)+i)&mask)+k])%MOD;
                 (w*=e)%=MOD;
             }
             p++;

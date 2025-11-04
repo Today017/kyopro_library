@@ -38,7 +38,7 @@ struct SegTreeDynamic {
             route.push_back(cur);
             cur=nxt;
         }
-        reverse(ALL(route));
+        reverse(all(route));
         node[cur].value=v;
 
         for(int r: route) {

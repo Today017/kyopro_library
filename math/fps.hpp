@@ -10,7 +10,7 @@
 namespace FPS {
     /// @brief 多項式 f, g の積を返す
     template<typename T>
-    vector<T> Mul(const vector<T>& a,const vector<T>& b) {
+    vector<T> Mul(const vector<T>& a, const vector<T>& b) {
         return atcoder::convolution(a,b);
     }
 
@@ -233,11 +233,11 @@ namespace FPS {
         int n=f.size(),m=g.size();
         if(n<m) return{{},f};
         vector<T> r=f;
-        reverse(ALL(f)); reverse(ALL(g));
+        reverse(all(f)); reverse(all(g));
         f.resize(n-m+1);
         vector<T> q=Mul(f,Inv(g,n-m+1));
         q.resize(n-m+1);
-        reverse(ALL(q)); reverse(ALL(g));
+        reverse(all(q)); reverse(all(g));
         r=Sub(r,Mul(q,g));
         while(!q.empty()&&q.back()==0) q.pop_back();
         while(!r.empty()&&r.back()==0) r.pop_back();

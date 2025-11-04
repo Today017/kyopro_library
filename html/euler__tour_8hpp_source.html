@@ -107,27 +107,42 @@ $(function(){initNavTree('euler__tour_8hpp_source.html',''); initResizable(true)
 <div class="contents">
 <a href="euler__tour_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @brief 木 g をオイラーツアーする</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief `(行きがけ順, 深さ, 入力時刻, 出力時刻)` を返す</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @details 部分木のクエリを列のに対する区間クエリとして扱えるようになる</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @details 例えば、頂点 v の部分木はオイラーツアー後の列の区間 `[in[v], out[v])` に対応する</span></div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="euler__tour_8hpp.html#ab5e40ace56fa964c4355fef656894348">    7</a></span>tuple&lt;vector&lt;<span class="keywordtype">int</span>&gt;,vector&lt;<span class="keywordtype">int</span>&gt;,vector&lt;<span class="keywordtype">int</span>&gt;,vector&lt;<span class="keywordtype">int</span>&gt;&gt; EulerTour(<span class="keyword">const</span> vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;&amp; g) {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">int</span> n=g.size();</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    vector&lt;<span class="keywordtype">int</span>&gt; tour,depth(n),in(n),out(n);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">int</span> time=0;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">auto</span> dfs=[&amp;](<span class="keyword">auto</span>&amp;&amp; dfs, <span class="keywordtype">int</span> now, <span class="keywordtype">int</span> pre, <span class="keywordtype">int</span> d)-&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        depth[now]=d;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        in[now]=time++;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        tour.push_back(now);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:g[now]) <span class="keywordflow">if</span>(nxt!=pre) dfs(dfs,nxt,now,d+1);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        out[now]=time;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    };</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    dfs(dfs,0,-1,0);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span> {tour,depth,in,out};</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+<div class="foldopen" id="foldopen00003" data-start="{" data-end="};">
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="struct_euler_tour_info.html">    3</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_euler_tour_info.html">EulerTourInfo</a> {</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="struct_euler_tour_info.html#ae1846e8d91a37203742a1d7fc9b8daea">    4</a></span>    <a class="code hl_variable" href="struct_euler_tour_info.html#ae1846e8d91a37203742a1d7fc9b8daea">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_variable" href="struct_euler_tour_info.html#ae1846e8d91a37203742a1d7fc9b8daea">tour</a>; <span class="comment">///&lt; 行きがけ順の頂点列 tour[i] := i番目に訪問した頂点</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_euler_tour_info.html#a6d1320fb7d9db90e504c85f39f94b33f">    5</a></span>    <a class="code hl_variable" href="struct_euler_tour_info.html#a6d1320fb7d9db90e504c85f39f94b33f">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_variable" href="struct_euler_tour_info.html#a6d1320fb7d9db90e504c85f39f94b33f">depth</a>; <span class="comment">///&lt; 各頂点の深さ depth[v] := 頂点 v の深さ</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_euler_tour_info.html#a953199c1df21f2b7ff301bb4bd33cb9c">    6</a></span>    <a class="code hl_variable" href="struct_euler_tour_info.html#a953199c1df21f2b7ff301bb4bd33cb9c">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_variable" href="struct_euler_tour_info.html#a953199c1df21f2b7ff301bb4bd33cb9c">in</a>; <span class="comment">///&lt; 各頂点の入力時刻 in[v] := 頂点 v を訪問した時刻</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_euler_tour_info.html#a25c6e724649f7a2709554ee0155eae2c">    7</a></span>    <a class="code hl_variable" href="struct_euler_tour_info.html#a25c6e724649f7a2709554ee0155eae2c">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_variable" href="struct_euler_tour_info.html#a25c6e724649f7a2709554ee0155eae2c">out</a>; <span class="comment">///&lt; 各頂点の出力時刻 out[v] := 頂点 v の部分木の探索が終了した時刻</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>};</div>
 </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/// @brief 木 g をオイラーツアーする</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/// @brief `(行きがけ順, 深さ, 入力時刻, 出力時刻)` を返す</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/// @details 部分木のクエリを列のに対する区間クエリとして扱えるようになる</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/// @details 例えば、頂点 v の部分木はオイラーツアー後の列の区間 `[in[v], out[v])` に対応する</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="euler__tour_8hpp.html#a913f693ec4aff49977de35384e21b6dd">   14</a></span><a class="code hl_struct" href="struct_euler_tour_info.html">EulerTourInfo</a> <a class="code hl_function" href="euler__tour_8hpp.html#a913f693ec4aff49977de35384e21b6dd">EulerTour</a>(<span class="keyword">const</span> vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;&amp; g, <span class="keywordtype">int</span> r=0) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> n=g.size();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    vector&lt;<span class="keywordtype">int</span>&gt; tour,depth(n),in(n),out(n);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> time=0;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">auto</span> dfs=[&amp;](<span class="keyword">auto</span>&amp;&amp; dfs, <span class="keywordtype">int</span> now, <span class="keywordtype">int</span> pre, <span class="keywordtype">int</span> d)-&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        depth[now]=d;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        in[now]=time++;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        tour.push_back(now);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt:g[now]) <span class="keywordflow">if</span>(nxt!=pre) dfs(dfs,nxt,now,d+1);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        out[now]=time;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    };</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    dfs(dfs,r,-1,0);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> EulerTourInfo{tour,depth,in,out};</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+</div>
+<div class="ttc" id="aeuler__tour_8hpp_html_a913f693ec4aff49977de35384e21b6dd"><div class="ttname"><a href="euler__tour_8hpp.html#a913f693ec4aff49977de35384e21b6dd">EulerTour</a></div><div class="ttdeci">EulerTourInfo EulerTour(const vector&lt; vector&lt; int &gt; &gt; &amp;g, int r=0)</div><div class="ttdoc">木 g をオイラーツアーする</div><div class="ttdef"><b>Definition</b> <a href="#l00014">euler_tour.hpp:14</a></div></div>
+<div class="ttc" id="astruct_euler_tour_info_html"><div class="ttname"><a href="struct_euler_tour_info.html">EulerTourInfo</a></div><div class="ttdef"><b>Definition</b> <a href="#l00003">euler_tour.hpp:3</a></div></div>
+<div class="ttc" id="astruct_euler_tour_info_html_a25c6e724649f7a2709554ee0155eae2c"><div class="ttname"><a href="struct_euler_tour_info.html#a25c6e724649f7a2709554ee0155eae2c">EulerTourInfo::out</a></div><div class="ttdeci">vector&lt; int &gt; out</div><div class="ttdoc">各頂点の出力時刻 out[v] := 頂点 v の部分木の探索が終了した時刻</div><div class="ttdef"><b>Definition</b> <a href="#l00007">euler_tour.hpp:7</a></div></div>
+<div class="ttc" id="astruct_euler_tour_info_html_a6d1320fb7d9db90e504c85f39f94b33f"><div class="ttname"><a href="struct_euler_tour_info.html#a6d1320fb7d9db90e504c85f39f94b33f">EulerTourInfo::depth</a></div><div class="ttdeci">vector&lt; int &gt; depth</div><div class="ttdoc">各頂点の深さ depth[v] := 頂点 v の深さ</div><div class="ttdef"><b>Definition</b> <a href="#l00005">euler_tour.hpp:5</a></div></div>
+<div class="ttc" id="astruct_euler_tour_info_html_a953199c1df21f2b7ff301bb4bd33cb9c"><div class="ttname"><a href="struct_euler_tour_info.html#a953199c1df21f2b7ff301bb4bd33cb9c">EulerTourInfo::in</a></div><div class="ttdeci">vector&lt; int &gt; in</div><div class="ttdoc">各頂点の入力時刻 in[v] := 頂点 v を訪問した時刻</div><div class="ttdef"><b>Definition</b> <a href="#l00006">euler_tour.hpp:6</a></div></div>
+<div class="ttc" id="astruct_euler_tour_info_html_ae1846e8d91a37203742a1d7fc9b8daea"><div class="ttname"><a href="struct_euler_tour_info.html#ae1846e8d91a37203742a1d7fc9b8daea">EulerTourInfo::tour</a></div><div class="ttdeci">vector&lt; int &gt; tour</div><div class="ttdoc">行きがけ順の頂点列 tour[i] := i番目に訪問した頂点</div><div class="ttdef"><b>Definition</b> <a href="#l00004">euler_tour.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

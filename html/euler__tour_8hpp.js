@@ -1,4 +1,5 @@
 var euler__tour_8hpp =
 [
-    [ "EulerTour", "euler__tour_8hpp.html#ab5e40ace56fa964c4355fef656894348", null ]
+    [ "EulerTourInfo", "struct_euler_tour_info.html", "struct_euler_tour_info" ],
+    [ "EulerTour", "euler__tour_8hpp.html#a913f693ec4aff49977de35384e21b6dd", null ]
 ];

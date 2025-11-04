@@ -1,25 +1,18 @@
 #include"../../kyopro_library/template.hpp"
 
-vector<pair<char,int>> RunLengthEncoding(const string& s) {
+/// @brief 配列sをランレングス圧縮する
+template<typename T>
+vector<pair<T,int>> RunLenghtEncoding(const vector<T>& s) {
     int n=s.size();
-    vector<pair<char,int>> ret;
-    for(int l=0,r; l<n;) {
-        r=l+1;
-        while(r<n&&s[l]==s[r]) r++;
-        ret.push_back({s[l],r-l});
-        l=r;
-   }
+    vector<pair<T,int>> ret;
+    for(int i=0; i<n; i++) {
+        if(ret.empty() || ret.back().first!=s[i]) ret.push_back({s[i],1});
+        else ret.back().second++;
+    }
     return ret;
 }
 
-vector<pair<ll,int>> RunLengthEncoding(const vector<ll>& s) {
-    int n=s.size();
-    vector<pair<ll,int>> ret;
-    for(int l=0,r; l<n;) {
-        r=l+1;
-        while(r<n&&s[l]==s[r]) r++;
-        ret.push_back({s[l],r-l});
-        l=r;
-   }
-    return ret;
+/// @brief 文字列sをランレングス圧縮する
+vector<pair<char,int>> RunLengthEncoding(const string& s) {
+    return RunLenghtEncoding(vector<char>(s.begin(),s.end()));
 }

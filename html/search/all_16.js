@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['ull_0',['ull',['../wavelet__matrix_8hpp.html#a5f251da6a09dd744f98ee0f43f42b765',1,'wavelet_matrix.hpp']]],
-  ['undo_1',['undo',['../struct_dsu_rollback.html#a576e5300d28f07244d0548cd2e98b052',1,'DsuRollback']]],
-  ['unite_2',['unite',['../struct_dynamic_connectivity.html#a4c2531481116b0b378a98c6ca907d78c',1,'DynamicConnectivity']]],
-  ['update_3',['Update',['../struct_operator_1_1_update.html',1,'Operator']]],
-  ['update_4',['update',['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#afc27924b11d50cb74621f223c1f5408d',1,'InsertableReversibleArrayImpl::RBSTBase::update()'],['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a10c534293743a5329c0fc6f66b9135ae',1,'InsertableReversibleArrayImpl::LazyReversibleRBST::update()']]],
-  ['updatetimestamp_5',['UpdateTimeStamp',['../struct_operator_1_1_update_time_stamp.html',1,'Operator']]],
-  ['upper_6',['upper',['../struct_fraction.html#a4a5006a05f4675b7c5334ffbbd3136f4',1,'Fraction']]],
-  ['util_2ehpp_7',['util.hpp',['../util_8hpp.html',1,'']]]
+  ['w_0',['w',['../struct_grid_util.html#a3d3b9be9eae4ca9e76e3d814bb971692',1,'GridUtil::w'],['../sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2',1,'w:&#160;sparse_table_2d.hpp']]],
+  ['warshall_5ffloyd_2ehpp_1',['warshall_floyd.hpp',['../warshall__floyd_8hpp.html',1,'']]],
+  ['warshallfloyd_2',['WarshallFloyd',['../warshall__floyd_8hpp.html#a2ccd6fa6bbd63f7c6da2f3ec88a2595e',1,'warshall_floyd.hpp']]],
+  ['wavelet_5fmatrix_2ehpp_3',['wavelet_matrix.hpp',['../wavelet__matrix_8hpp.html',1,'']]],
+  ['waveletmatrix_4',['WaveletMatrix',['../struct_wavelet_matrix.html',1,'WaveletMatrix'],['../struct_wavelet_matrix.html#a3509863e3953b3e85960f176483ea314',1,'WaveletMatrix::WaveletMatrix()']]],
+  ['weight_5',['weight',['../struct_dsu_potentialized.html#a338b6c5662ba80ae991ca456020b2012',1,'DsuPotentialized']]]
 ];

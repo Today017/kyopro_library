@@ -2,7 +2,7 @@
 #include"../../../kyopro_library/template.hpp"
 
 /// @brief ダイクストラ法
-/// @brief グラフ g に対し、頂点 start から各頂点までの最短距離を求める
+/// @brief 重み付きグラフ g に対し、頂点 start から各頂点までの最短距離を求める
 /// @note O(E log V)
 vector<ll> Dijkstra(const vector<vector<pair<int,ll>>>& g, int start=0) {
     int n=g.size();

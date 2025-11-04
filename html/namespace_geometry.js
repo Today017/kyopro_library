@@ -45,7 +45,7 @@ var namespace_geometry =
     [ "convexHullDiameter", "namespace_geometry.html#a737b89d779a2c60bc146439342e24769", null ],
     [ "cutPolygon", "namespace_geometry.html#a200dbcd1585ae4b59217590a4f86c135", null ],
     [ "closestPair", "namespace_geometry.html#a5b1e16827da06a6b3f3ce3875b3f216d", null ],
-    [ "countIntersections", "namespace_geometry.html#a25c84d2aafb07dd03188112b3c9b69e5", null ],
+    [ "countIntersections", "namespace_geometry.html#a87d9373ac4728b6bf376f11590d5fd0f", null ],
     [ "countCirclesIntersection", "namespace_geometry.html#a160a3cda4bb1f308ae9166489d7b2f2d", null ],
     [ "getInCircle", "namespace_geometry.html#a6e29a04c787ae3404a41b0782b06b436", null ],
     [ "getCircumCircle", "namespace_geometry.html#a5f10ad69ef666ea0a18e57b09dfc1aca", null ],

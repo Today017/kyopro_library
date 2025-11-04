@@ -17,7 +17,7 @@ var searchData=
   ['getincircle_14',['getInCircle',['../namespace_geometry.html#a6e29a04c787ae3404a41b0782b06b436',1,'Geometry']]],
   ['getintersection_15',['getIntersection',['../namespace_geometry.html#a774399dc2bebae37aabf1a46750ee6c7',1,'Geometry']]],
   ['getpolygonarea_16',['getPolygonArea',['../namespace_geometry.html#a9c5e5ffd70ed15d3ce03c6f5b69524df',1,'Geometry']]],
-  ['getrandomelement_17',['GetRandomElement',['../namespace_random_generator.html#a3c98b920805fef522e251eefc9d34240',1,'RandomGenerator']]],
+  ['getrandomelement_17',['GetRandomElement',['../namespace_rand.html#acaf826f38a009544c146077bf4fdc4b9',1,'Rand']]],
   ['gettangentlinesfrompoint_18',['getTangentLinesFromPoint',['../namespace_geometry.html#affd43c52385e0185f55de795b049426b',1,'Geometry']]],
   ['greaterthan_19',['greaterThan',['../namespace_geometry.html#a85801ae240703892e050e65ebc1f97eb',1,'Geometry']]],
   ['greaterthanorequal_20',['greaterThanOrEqual',['../namespace_geometry.html#a48301418052e96f2270cbc235c91e9c7',1,'Geometry']]],

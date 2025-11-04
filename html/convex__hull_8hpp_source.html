@@ -105,34 +105,38 @@ $(function(){initNavTree('convex__hull_8hpp_source.html',''); initResizable(true
   <div class="headertitle"><div class="title">convex_hull.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="convex__hull_8hpp.html">[詳解]</a><div class="fragment"><div class="foldopen" id="foldopen00001" data-start="{" data-end="}">
-<div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="convex__hull_8hpp.html#a8475573aaf52158717672623187705f6">    1</a></span><a class="code hl_function" href="convex__hull_8hpp.html#a8475573aaf52158717672623187705f6">VP</a> <a class="code hl_function" href="convex__hull_8hpp.html#a8475573aaf52158717672623187705f6">ConvexHull</a>(VP p) {</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>    <span class="keyword">auto</span> cross=[](<span class="keyword">const</span> PL&amp; a, <span class="keyword">const</span> PL&amp; b, <span class="keyword">const</span> PL&amp; c) {</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>        <span class="keywordflow">return</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>            (b.first-a.first)*(c.second-a.second)</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>            -(b.second-a.second)*(c.first-a.first);</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    };</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    sort(ALL(p));</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    ll n=p.size();</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    VP ret; <span class="keywordtype">int</span> k=0;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    REP(i,n) {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">while</span>(k&gt;1 &amp;&amp; cross(ret[k-1],ret[k-2],p[i])&gt;0) ret.pop_back(), k--;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        ret.push_back(p[i]); k++;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    ll t=k;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">for</span>(ll i=n-2; i&gt;=0; i--) {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">while</span>(k&gt;t &amp;&amp; cross(ret[k-1],ret[k-2],p[i])&gt;0) ret.pop_back(), k--;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        ret.push_back(p[i]); k++;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    set&lt;PL&gt; seen;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    VP newret;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> p: ret) <span class="keywordflow">if</span>(!seen.count(p)) newret.push_back(p), seen.insert(p);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> newret;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<a href="convex__hull_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="foldopen" id="foldopen00003" data-start="{" data-end="}">
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="convex__hull_8hpp.html#ace4144a570e7a1bf5d68030b29c0d9a0">    3</a></span><a class="code hl_function" href="convex__hull_8hpp.html#ace4144a570e7a1bf5d68030b29c0d9a0">vector</a>&lt;<a class="code hl_function" href="convex__hull_8hpp.html#ace4144a570e7a1bf5d68030b29c0d9a0">pair</a>&lt;<a class="code hl_function" href="convex__hull_8hpp.html#ace4144a570e7a1bf5d68030b29c0d9a0">ll</a>,<a class="code hl_function" href="convex__hull_8hpp.html#ace4144a570e7a1bf5d68030b29c0d9a0">ll</a>&gt;&gt; <a class="code hl_function" href="convex__hull_8hpp.html#ace4144a570e7a1bf5d68030b29c0d9a0">ConvexHull</a>(vector&lt;pair&lt;ll,ll&gt;&gt; p) {</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="keyword">auto</span> cross=[](<span class="keyword">const</span> pair&lt;ll,ll&gt;&amp; a, <span class="keyword">const</span> pair&lt;ll,ll&gt;&amp; b, <span class="keyword">const</span> pair&lt;ll,ll&gt;&amp; c) {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>        <span class="keywordflow">return</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>            (b.first-a.first)*(c.second-a.second)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>            -(b.second-a.second)*(c.first-a.first);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    };</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    sort(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(p));</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    ll n=p.size();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    vector&lt;pair&lt;ll,ll&gt;&gt; ret; <span class="keywordtype">int</span> k=0;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">while</span>(k&gt;1 &amp;&amp; cross(ret[k-1],ret[k-2],p[i])&gt;0) ret.pop_back(), k--;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        ret.push_back(p[i]); k++;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    ll t=k;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">for</span>(ll i=n-2; i&gt;=0; i--) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">while</span>(k&gt;t &amp;&amp; cross(ret[k-1],ret[k-2],p[i])&gt;0) ret.pop_back(), k--;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        ret.push_back(p[i]); k++;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    set&lt;pair&lt;ll,ll&gt;&gt; seen;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    vector&lt;pair&lt;ll,ll&gt;&gt; newret;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> p: ret) <span class="keywordflow">if</span>(!seen.count(p)) newret.push_back(p), seen.insert(p);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> newret;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
 </div>
-<div class="ttc" id="aconvex__hull_8hpp_html_a8475573aaf52158717672623187705f6"><div class="ttname"><a href="convex__hull_8hpp.html#a8475573aaf52158717672623187705f6">ConvexHull</a></div><div class="ttdeci">VP ConvexHull(VP p)</div><div class="ttdef"><b>Definition</b> <a href="#l00001">convex_hull.hpp:1</a></div></div>
+<div class="ttc" id="aconvex__hull_8hpp_html_ace4144a570e7a1bf5d68030b29c0d9a0"><div class="ttname"><a href="convex__hull_8hpp.html#ace4144a570e7a1bf5d68030b29c0d9a0">ConvexHull</a></div><div class="ttdeci">vector&lt; pair&lt; ll, ll &gt; &gt; ConvexHull(vector&lt; pair&lt; ll, ll &gt; &gt; p)</div><div class="ttdef"><b>Definition</b> <a href="#l00003">convex_hull.hpp:3</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a9064c572b2b33295a5ca0950d4f8737e"><div class="ttname"><a href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a></div><div class="ttdeci">#define all(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00005">template.hpp:5</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -116,9 +116,11 @@ $(function(){initNavTree('diameter_8hpp.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
 <tr class="memitem:a4407e8a83e2783d775723d0a505b4bb9" id="r_a4407e8a83e2783d775723d0a505b4bb9"><td class="memItemLeft" align="right" valign="top">pair&lt; vector&lt; int &gt;, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4407e8a83e2783d775723d0a505b4bb9">TreeDiameter</a> (const vector&lt; vector&lt; pair&lt; int, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; &gt; &gt; &amp;g)</td></tr>
+<tr class="memdesc:a4407e8a83e2783d775723d0a505b4bb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">重み付き木 g の直径を求める  <br /></td></tr>
 <tr class="separator:a4407e8a83e2783d775723d0a505b4bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac215b5736edf58f1ef92ec1d5acf0c75" id="r_ac215b5736edf58f1ef92ec1d5acf0c75"><td class="memItemLeft" align="right" valign="top">pair&lt; vector&lt; int &gt;, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac215b5736edf58f1ef92ec1d5acf0c75">TreeDiameter</a> (const vector&lt; vector&lt; int &gt; &gt; &amp;g)</td></tr>
-<tr class="separator:ac215b5736edf58f1ef92ec1d5acf0c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1d7249b07f643576bdb1d1e0e49a8bc" id="r_af1d7249b07f643576bdb1d1e0e49a8bc"><td class="memItemLeft" align="right" valign="top">pair&lt; vector&lt; int &gt;, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1d7249b07f643576bdb1d1e0e49a8bc">TreeDiameter</a> (const vector&lt; vector&lt; int &gt; &gt; &amp;g)</td></tr>
+<tr class="memdesc:af1d7249b07f643576bdb1d1e0e49a8bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">木 g の直径を求める  <br /></td></tr>
+<tr class="separator:af1d7249b07f643576bdb1d1e0e49a8bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">関数詳解</h2>
 <a id="a4407e8a83e2783d775723d0a505b4bb9" name="a4407e8a83e2783d775723d0a505b4bb9"></a>
@@ -136,18 +138,21 @@ $(function(){initNavTree('diameter_8hpp.html',''); initResizable(true); });
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="diameter_8hpp_source.html">diameter.hpp</a> の <a class="el" href="diameter_8hpp_source.html#l00005">5</a> 行目に定義があります。</p>
+<p>重み付き木 g の直径を求める </p>
+<dl class="section return"><dt>戻り値</dt><dd>直径上の頂点の配列と端点間の距離のペア </dd></dl>
+
+<p class="definition"> <a class="el" href="diameter_8hpp_source.html">diameter.hpp</a> の <a class="el" href="diameter_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="ac215b5736edf58f1ef92ec1d5acf0c75" name="ac215b5736edf58f1ef92ec1d5acf0c75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac215b5736edf58f1ef92ec1d5acf0c75">&#9670;&#160;</a></span>TreeDiameter() <span class="overload">[2/2]</span></h2>
+<a id="af1d7249b07f643576bdb1d1e0e49a8bc" name="af1d7249b07f643576bdb1d1e0e49a8bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1d7249b07f643576bdb1d1e0e49a8bc">&#9670;&#160;</a></span>TreeDiameter() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">pair&lt; vector&lt; int &gt;, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; TreeDiameter </td>
+          <td class="memname">pair&lt; vector&lt; int &gt;, int &gt; TreeDiameter </td>
           <td>(</td>
           <td class="paramtype">const vector&lt; vector&lt; int &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
           <td></td>
@@ -155,7 +160,10 @@ $(function(){initNavTree('diameter_8hpp.html',''); initResizable(true); });
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="diameter_8hpp_source.html">diameter.hpp</a> の <a class="el" href="diameter_8hpp_source.html#l00026">26</a> 行目に定義があります。</p>
+<p>木 g の直径を求める </p>
+<dl class="section return"><dt>戻り値</dt><dd>直径上の頂点の配列と端点間の距離のペア </dd></dl>
+
+<p class="definition"> <a class="el" href="diameter_8hpp_source.html">diameter.hpp</a> の <a class="el" href="diameter_8hpp_source.html#l00030">30</a> 行目に定義があります。</p>
 
 </div>
 </div>

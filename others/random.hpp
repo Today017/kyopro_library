@@ -3,7 +3,7 @@
 #include"../../kyopro_library/others/xor128.hpp"
 
 /// @brief ランダムテストケース生成
-namespace RandomGenerator {
+namespace Rand {
     /// @brief 0 以上 n 未満のランダムな整数を返す
     template<typename T>
     T RandomInt(T n) { return Xor128(n); }
@@ -66,23 +66,23 @@ namespace RandomGenerator {
     template<typename T>
     vector<vector<T>> RandomArray2D(int h, int w, T lo, T hi) {
         vector<vector<T>> ret(h,vector<T>(w));
-        REP(i,h) ret[i]=RandomArray(w,lo,hi);
+        rep(i,h) ret[i]=RandomArray(w,lo,hi);
         return ret;
     }
 
     vector<string> RandomAlphabet2D(int h, int w, bool lower=true) {
         vector<string> ret(h);
-        REP(i,h) ret[i]=RandomAlphabet(w,lower);
+        rep(i,h) ret[i]=RandomAlphabet(w,lower);
         return ret;
     }
 
     vector<pair<int,int>> RandomTree(int n) {
         vector<int> a=RandomArray<int>(n-2,1,n+1);
-        vector<int> d(n+1); REP(i,n-2) d[a[i]]++; for(ll i=1; i<=n; i++) d[i]++;
+        vector<int> d(n+1); rep(i,n-2) d[a[i]]++; for(ll i=1; i<=n; i++) d[i]++;
         vector<pair<int,int>> ret;
         set<int> pq;
         for(ll i=1; i<=n; i++) if(d[i]==1) pq.insert(i);
-        REP(i,n-2) {
+        rep(i,n-2) {
             int v=(*pq.begin());
             pq.erase(v);
             ret.push_back(make_pair(v,a[i]));
@@ -162,3 +162,6 @@ namespace RandomGenerator {
         }
     }
 };
+
+using Rand::RandomInt;
+using Rand::RandomArray;

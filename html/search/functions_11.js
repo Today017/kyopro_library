@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['randomalphabet_0',['RandomAlphabet',['../namespace_random_generator.html#a6ce4fc238b4b61e84e9adc79169e674a',1,'RandomGenerator']]],
-  ['randomalphabet2d_1',['RandomAlphabet2D',['../namespace_random_generator.html#a767667e603fdf0e6b5de453536be74ac',1,'RandomGenerator']]],
-  ['randomarray_2',['RandomArray',['../namespace_random_generator.html#af3b9b6bd498d184de06d2b0bb1a93a9a',1,'RandomGenerator']]],
-  ['randomarray2d_3',['RandomArray2D',['../namespace_random_generator.html#ad40c0778feabd51ed2096289659efcf1',1,'RandomGenerator']]],
-  ['randombinarytree_4',['RandomBinaryTree',['../namespace_random_generator.html#a628c11cd40bf1a876969eefeea03dcec',1,'RandomGenerator']]],
-  ['randomint_5',['RandomInt',['../namespace_random_generator.html#a5c4e7572d2ceb965e8dcf64536f641c8',1,'RandomGenerator::RandomInt(T n)'],['../namespace_random_generator.html#a0656f0daed147f1b93f12ec860e36cb8',1,'RandomGenerator::RandomInt(T l, T r)']]],
-  ['randomstring_6',['RandomString',['../namespace_random_generator.html#a9725e25be389f5954ba66413f8bb47f6',1,'RandomGenerator']]],
-  ['randomtree_7',['RandomTree',['../namespace_random_generator.html#a41a864cbf95c867c8a14293bee4208bf',1,'RandomGenerator']]],
-  ['randomundirectedgraph_8',['RandomUndirectedGraph',['../namespace_random_generator.html#a722b56d2093f36cfaf6b2b30929af07d',1,'RandomGenerator']]],
+  ['randomalphabet_0',['RandomAlphabet',['../namespace_rand.html#aa872966ff3be80b0262c0e9bab6ec2e0',1,'Rand']]],
+  ['randomalphabet2d_1',['RandomAlphabet2D',['../namespace_rand.html#a98fc5ca2a217d8b91fc318a64af635c1',1,'Rand']]],
+  ['randomarray_2',['RandomArray',['../namespace_rand.html#a544ad160f2b156fb65f28c35d472d0e2',1,'Rand::RandomArray()'],['../random_8hpp.html#a544ad160f2b156fb65f28c35d472d0e2',1,'RandomArray():&#160;random.hpp']]],
+  ['randomarray2d_3',['RandomArray2D',['../namespace_rand.html#ab7f380c61bfcbff60fe7e8fbfe453f6d',1,'Rand']]],
+  ['randombinarytree_4',['RandomBinaryTree',['../namespace_rand.html#a5b258ec4dcef5b9c8be08e14c215364f',1,'Rand']]],
+  ['randomint_5',['RandomInt',['../namespace_rand.html#a3f3facff0ace3326cb57104e9e5caf39',1,'Rand::RandomInt(T n)'],['../namespace_rand.html#ab29ec34e3353a57d5f50ac9fcab433fb',1,'Rand::RandomInt(T l, T r)'],['../random_8hpp.html#a3f3facff0ace3326cb57104e9e5caf39',1,'RandomInt():&#160;random.hpp']]],
+  ['randomstring_6',['RandomString',['../namespace_rand.html#ab71ad8fe9fe3a395a4b3a5b85e3d01d6',1,'Rand']]],
+  ['randomtree_7',['RandomTree',['../namespace_rand.html#a408b4a2c9d5b936db0ece2a0865798a5',1,'Rand']]],
+  ['randomundirectedgraph_8',['RandomUndirectedGraph',['../namespace_rand.html#ad64152119bdbb6ccdda81d1e4eb48335',1,'Rand']]],
   ['range_5fadd_9',['range_add',['../struct_angel_beats.html#aa15c52a208f93f199177ba9dcd4075ad',1,'AngelBeats']]],
   ['range_5fchmax_10',['range_chmax',['../struct_angel_beats.html#ac9b00c11a8c9d6233ad0a4c82517c738',1,'AngelBeats']]],
   ['range_5fchmin_11',['range_chmin',['../struct_angel_beats.html#a67c2e44c754b5dd0673b2030b4030e85',1,'AngelBeats']]],
@@ -34,5 +34,6 @@ var searchData=
   ['rollinghash_31',['RollingHash',['../struct_rolling_hash.html#a71020424af6022b96f96117961ac4bc2',1,'RollingHash::RollingHash()=default'],['../struct_rolling_hash.html#aee33123a728c1df6d8c0b3550baa0c43',1,'RollingHash::RollingHash(const string &amp;s)']]],
   ['rollinghash2d_32',['RollingHash2D',['../struct_rolling_hash2_d.html#a7112fd8851e1f6f440aecb4091714029',1,'RollingHash2D::RollingHash2D()=default'],['../struct_rolling_hash2_d.html#a867e9fe2ab358dd891d007cd17472d35',1,'RollingHash2D::RollingHash2D(const vector&lt; string &gt; &amp;s)']]],
   ['rowreduction_33',['RowReduction',['../linear__equation_8hpp.html#a0bdc93e25aefc231e288ce18deb61197',1,'linear_equation.hpp']]],
-  ['runlengthencoding_34',['RunLengthEncoding',['../run__length__encoding_8hpp.html#a7f01629c3961317d963a4666dbe7622b',1,'RunLengthEncoding(const string &amp;s):&#160;run_length_encoding.hpp'],['../run__length__encoding_8hpp.html#a625d6d63e6987b34a913bb2d6f3cae5f',1,'RunLengthEncoding(const vector&lt; ll &gt; &amp;s):&#160;run_length_encoding.hpp']]]
+  ['runlenghtencoding_34',['RunLenghtEncoding',['../run__length__encoding_8hpp.html#a90bdc50e80b1d531177c546b57da2449',1,'run_length_encoding.hpp']]],
+  ['runlengthencoding_35',['RunLengthEncoding',['../run__length__encoding_8hpp.html#a7f01629c3961317d963a4666dbe7622b',1,'run_length_encoding.hpp']]]
 ];

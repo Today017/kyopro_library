@@ -69,6 +69,7 @@ var annotated_dup =
     [ "DsuRollback", "struct_dsu_rollback.html", "struct_dsu_rollback" ],
     [ "DynamicConnectivity", "struct_dynamic_connectivity.html", "struct_dynamic_connectivity" ],
     [ "ErasablePQ", "struct_erasable_p_q.html", "struct_erasable_p_q" ],
+    [ "EulerTourInfo", "struct_euler_tour_info.html", "struct_euler_tour_info" ],
     [ "Factors", "struct_factors.html", "struct_factors" ],
     [ "FenwickTree", "struct_fenwick_tree.html", "struct_fenwick_tree" ],
     [ "FenwickTreeAbel", "struct_fenwick_tree_abel.html", "struct_fenwick_tree_abel" ],
