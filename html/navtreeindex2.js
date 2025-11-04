@@ -1,5 +1,11 @@
 var NAVTREEINDEX2 =
 {
+"namespacemod__reconstruct.html#a028a3a305338e730dbab6526032d586d":[1,0,8,1],
+"namespacemod__reconstruct.html#a2b66d8d76557c1fdc2baf29121dc430b":[1,0,8,0],
+"namespacemod__reconstruct.html#af05e87c8d03131fac1b74586551c090e":[1,0,8,2],
+"namespaces.html":[1,0],
+"ntt998_8hpp.html":[3,0,5,16],
+"ntt998_8hpp.html#a1e1c805bf5f53eddf4bd21d9890a4320":[3,0,5,16,0],
 "ntt998_8hpp.html#a903f7f25ea896e4eae55e62a21c0b379":[3,0,5,16,1],
 "ntt998_8hpp_source.html":[3,0,5,16],
 "ntt_8hpp.html":[3,0,5,15],
@@ -243,11 +249,5 @@ var NAVTREEINDEX2 =
 "struct_erasable_p_q.html#acd41f882e0e6cd2ab92c456ed4c981a0":[2,0,28,6],
 "struct_erasable_p_q.html#ad612ab6f57208c6e4fb1e4c1834e53b8":[2,0,28,2],
 "struct_euler_tour_info.html":[2,0,29],
-"struct_euler_tour_info.html#a25c6e724649f7a2709554ee0155eae2c":[2,0,29,3],
-"struct_euler_tour_info.html#a6d1320fb7d9db90e504c85f39f94b33f":[2,0,29,1],
-"struct_euler_tour_info.html#a953199c1df21f2b7ff301bb4bd33cb9c":[2,0,29,2],
-"struct_euler_tour_info.html#ae1846e8d91a37203742a1d7fc9b8daea":[2,0,29,0],
-"struct_factors.html":[2,0,30],
-"struct_factors.html#a219a3cb166153a020f2fc3d83b9a9e57":[2,0,30,0],
-"struct_factors.html#a5a2919bdbde2dbbba26d1c94b5a917c1":[2,0,30,2]
+"struct_euler_tour_info.html#a25c6e724649f7a2709554ee0155eae2c":[2,0,29,3]
 };

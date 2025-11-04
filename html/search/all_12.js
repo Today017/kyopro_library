@@ -62,7 +62,7 @@ var searchData=
   ['start_59',['start',['../struct_bipartite_matching_weighted.html#ac9612cd09d524524d30346fb0da84ce3',1,'BipartiteMatchingWeighted::start'],['../struct_arithmetic_progression.html#a11989c11fe03b3043b66aa42a6186f02',1,'ArithmeticProgression::start']]],
   ['step_60',['step',['../struct_arithmetic_progression.html#a9f43fabcce1fd4d75762729df498b4ea',1,'ArithmeticProgression']]],
   ['stringtovi_61',['StringToVi',['../util_8hpp.html#a55c71db984621dc476d66a3f7ef04a3c',1,'util.hpp']]],
-  ['sub_62',['Sub',['../namespace_f_p_s.html#a3f18c8b1d6f03a0255b86f501cbff66a',1,'FPS']]],
+  ['sub_62',['Sub',['../namespace_f_p_s.html#a59078c6a47f14a4dccd035d1eb1b1215',1,'FPS']]],
   ['subsetmobius_63',['SubsetMobius',['../namespace_zeta_mobius.html#acdbe2642fe5208a44eb861ad2e0666bf',1,'ZetaMobius']]],
   ['subsetzeta_64',['SubsetZeta',['../namespace_zeta_mobius.html#a96b8a2e447ea6c66bf33a8a0e39e4fcc',1,'ZetaMobius']]],
   ['subtree_65',['subtree',['../struct_h_l_d.html#a3c1640f8cf6c7d78cb56336d223edb94',1,'HLD']]],

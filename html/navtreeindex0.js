@@ -178,6 +178,8 @@ var NAVTREEINDEX0 =
 "fenwick__tree__abel_8hpp_source.html":[3,0,1,4],
 "files.html":[3,0],
 "fps_8hpp.html":[3,0,5,5],
+"fps_8hpp.html#a004e0f258fdba6b09455f9a709023396":[3,0,5,5,1],
+"fps_8hpp.html#a5255675b4fd917ca27ba8c4073ed1829":[3,0,5,5,0],
 "fps_8hpp_source.html":[3,0,5,5],
 "fraction_8hpp.html":[3,0,5,6],
 "fraction_8hpp_source.html":[3,0,5,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "grid_8hpp.html":[3,0,7,4],
 "grid_8hpp_source.html":[3,0,7,4],
 "hierarchy.html":[2,1],
-"hld_8hpp.html":[3,0,3,2,3],
-"hld_8hpp_source.html":[3,0,3,2,3],
-"index.html":[]
+"hld_8hpp.html":[3,0,3,2,3]
 };

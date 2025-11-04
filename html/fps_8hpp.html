@@ -104,81 +104,120 @@ $(function(){initNavTree('fps_8hpp.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#namespaces">名前空間</a> &#124;
-<a href="#func-members">関数</a>  </div>
+<a href="#typedef-members">型定義</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
   <div class="headertitle"><div class="title">fps.hpp ファイル</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../kyopro_library/template.hpp</a>&quot;</code><br />
-<code>#include &lt;atcoder/convolution&gt;</code><br />
-<code>#include &lt;atcoder/modint&gt;</code><br />
+<code>#include &quot;<a class="el" href="ntt998_8hpp_source.html">../../kyopro_library/math/ntt998.hpp</a>&quot;</code><br />
 </div>
 <p><a href="fps_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 名前空間</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html">FPS</a></td></tr>
-<tr class="memdesc:namespace_f_p_s"><td class="mdescLeft">&#160;</td><td class="mdescRight">形式的冪級数 borrowed from:https://potato167.github.io/po167_library <br /></td></tr>
+<tr class="memdesc:namespace_f_p_s"><td class="mdescLeft">&#160;</td><td class="mdescRight">形式的冪級数 <a href="https://potato167.github.io/po167_library">https://potato167.github.io/po167_library</a> <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s_1_1_internal.html">FPS::Internal</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:a5255675b4fd917ca27ba8c4073ed1829" id="r_a5255675b4fd917ca27ba8c4073ed1829"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> = vector&lt;<a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a>&gt;</td></tr>
+<tr class="separator:a5255675b4fd917ca27ba8c4073ed1829"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a004e0f258fdba6b09455f9a709023396" id="r_a004e0f258fdba6b09455f9a709023396"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a004e0f258fdba6b09455f9a709023396">FpsSparse</a> = vector&lt;pair&lt;int,<a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a>&gt;&gt;</td></tr>
+<tr class="separator:a004e0f258fdba6b09455f9a709023396"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:ab8e16e5c05f00c85e0a2d8ed9650a75a" id="r_ab8e16e5c05f00c85e0a2d8ed9650a75a"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:ab8e16e5c05f00c85e0a2d8ed9650a75a"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#ab8e16e5c05f00c85e0a2d8ed9650a75a">FPS::Mul</a> (const vector&lt; T &gt; &amp;a, const vector&lt; T &gt; &amp;b)</td></tr>
-<tr class="memdesc:ab8e16e5c05f00c85e0a2d8ed9650a75a"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g の積を返す  <br /></td></tr>
-<tr class="separator:ab8e16e5c05f00c85e0a2d8ed9650a75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acab6f12f41b871e31d16cb02a9a7c77d" id="r_acab6f12f41b871e31d16cb02a9a7c77d"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:acab6f12f41b871e31d16cb02a9a7c77d"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#acab6f12f41b871e31d16cb02a9a7c77d">FPS::Add</a> (const vector&lt; T &gt; &amp;a, const vector&lt; T &gt; &amp;b)</td></tr>
-<tr class="memdesc:acab6f12f41b871e31d16cb02a9a7c77d"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g の和を返す  <br /></td></tr>
-<tr class="separator:acab6f12f41b871e31d16cb02a9a7c77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f18c8b1d6f03a0255b86f501cbff66a" id="r_a3f18c8b1d6f03a0255b86f501cbff66a"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a3f18c8b1d6f03a0255b86f501cbff66a"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a3f18c8b1d6f03a0255b86f501cbff66a">FPS::Sub</a> (const vector&lt; T &gt; &amp;a, const vector&lt; T &gt; &amp;b)</td></tr>
-<tr class="memdesc:a3f18c8b1d6f03a0255b86f501cbff66a"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g の差を返す  <br /></td></tr>
-<tr class="separator:a3f18c8b1d6f03a0255b86f501cbff66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8eef2a11b10be52cddfd0c9288c4457b" id="r_a8eef2a11b10be52cddfd0c9288c4457b"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a8eef2a11b10be52cddfd0c9288c4457b"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a8eef2a11b10be52cddfd0c9288c4457b">FPS::Inv</a> (vector&lt; T &gt; f, int len=-1)</td></tr>
-<tr class="memdesc:a8eef2a11b10be52cddfd0c9288c4457b"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f に対し、f*g = 1 なる g を返す  <br /></td></tr>
-<tr class="separator:a8eef2a11b10be52cddfd0c9288c4457b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c7e8ea5e82c17b70c163bda72b5c85d" id="r_a1c7e8ea5e82c17b70c163bda72b5c85d"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a1c7e8ea5e82c17b70c163bda72b5c85d"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a1c7e8ea5e82c17b70c163bda72b5c85d">FPS::CyclicConvolution</a> (vector&lt; T &gt; f, vector&lt; T &gt; g)</td></tr>
-<tr class="separator:a1c7e8ea5e82c17b70c163bda72b5c85d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac4a1224c61c85667cd96f74e138405b" id="r_aac4a1224c61c85667cd96f74e138405b"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:aac4a1224c61c85667cd96f74e138405b"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#aac4a1224c61c85667cd96f74e138405b">FPS::Integral</a> (vector&lt; T &gt; f)</td></tr>
-<tr class="memdesc:aac4a1224c61c85667cd96f74e138405b"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f の積分を返す  <br /></td></tr>
-<tr class="separator:aac4a1224c61c85667cd96f74e138405b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18d3a03cb678d29deefc254e2fcb1b50" id="r_a18d3a03cb678d29deefc254e2fcb1b50"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a18d3a03cb678d29deefc254e2fcb1b50"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a18d3a03cb678d29deefc254e2fcb1b50">FPS::Differential</a> (vector&lt; T &gt; f)</td></tr>
-<tr class="memdesc:a18d3a03cb678d29deefc254e2fcb1b50"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f の微分を返す  <br /></td></tr>
-<tr class="separator:a18d3a03cb678d29deefc254e2fcb1b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a513c11c4e1a5a02c0e665f8c8d0d71d9" id="r_a513c11c4e1a5a02c0e665f8c8d0d71d9"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a513c11c4e1a5a02c0e665f8c8d0d71d9"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a513c11c4e1a5a02c0e665f8c8d0d71d9">FPS::Exp</a> (vector&lt; T &gt; f, int len=-1)</td></tr>
-<tr class="memdesc:a513c11c4e1a5a02c0e665f8c8d0d71d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f について、e^f を返す  <br /></td></tr>
-<tr class="separator:a513c11c4e1a5a02c0e665f8c8d0d71d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1464585355625594be0a83eb118fa2de" id="r_a1464585355625594be0a83eb118fa2de"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a1464585355625594be0a83eb118fa2de"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a1464585355625594be0a83eb118fa2de">FPS::Log</a> (vector&lt; T &gt; f, int len=-1)</td></tr>
-<tr class="memdesc:a1464585355625594be0a83eb118fa2de"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f について、log(f) を返す  <br /></td></tr>
-<tr class="separator:a1464585355625594be0a83eb118fa2de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad880a20b5da1f7ba2f05aa95429ee08d" id="r_ad880a20b5da1f7ba2f05aa95429ee08d"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:ad880a20b5da1f7ba2f05aa95429ee08d"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#ad880a20b5da1f7ba2f05aa95429ee08d">FPS::Pow</a> (vector&lt; T &gt; f, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> M, int len=-1)</td></tr>
-<tr class="memdesc:ad880a20b5da1f7ba2f05aa95429ee08d"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f^M を返す  <br /></td></tr>
-<tr class="separator:ad880a20b5da1f7ba2f05aa95429ee08d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19f83b0936d8aa5255d060101ecd8fad" id="r_a19f83b0936d8aa5255d060101ecd8fad"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a19f83b0936d8aa5255d060101ecd8fad"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a19f83b0936d8aa5255d060101ecd8fad">FPS::Extend</a> (vector&lt; T &gt; &amp;v)</td></tr>
-<tr class="separator:a19f83b0936d8aa5255d060101ecd8fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2f295d3c015c1b90c03b895507e2961" id="r_aa2f295d3c015c1b90c03b895507e2961"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:aa2f295d3c015c1b90c03b895507e2961"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#aa2f295d3c015c1b90c03b895507e2961">FPS::PickEvenOdd</a> (vector&lt; T &gt; &amp;v, int odd)</td></tr>
-<tr class="separator:aa2f295d3c015c1b90c03b895507e2961"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50424cf32ca2c09b2a9ad454915e84c9" id="r_a50424cf32ca2c09b2a9ad454915e84c9"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a50424cf32ca2c09b2a9ad454915e84c9"><td class="memTemplItemLeft" align="right" valign="top">pair&lt; vector&lt; T &gt;, vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a50424cf32ca2c09b2a9ad454915e84c9">FPS::Div</a> (vector&lt; T &gt; f, vector&lt; T &gt; g)</td></tr>
-<tr class="memdesc:a50424cf32ca2c09b2a9ad454915e84c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g について、<code>f = gq + r</code> なる q, r を返す  <br /></td></tr>
-<tr class="separator:a50424cf32ca2c09b2a9ad454915e84c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5a7c86fb5d29d85a778514cbc31647e" id="r_ad5a7c86fb5d29d85a778514cbc31647e"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:ad5a7c86fb5d29d85a778514cbc31647e"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#ad5a7c86fb5d29d85a778514cbc31647e">FPS::BostonMori</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> k, vector&lt; T &gt; P, vector&lt; T &gt; Q)</td></tr>
-<tr class="memdesc:ad5a7c86fb5d29d85a778514cbc31647e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>[x^k](P/Q)</code> を返す  <br /></td></tr>
-<tr class="separator:ad5a7c86fb5d29d85a778514cbc31647e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad80ebbb0f03f81108e94e432272b9cfe" id="r_ad80ebbb0f03f81108e94e432272b9cfe"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:ad80ebbb0f03f81108e94e432272b9cfe"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#ad80ebbb0f03f81108e94e432272b9cfe">FPS::KthLinear</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> k, vector&lt; T &gt; a, vector&lt; T &gt; c)</td></tr>
-<tr class="separator:ad80ebbb0f03f81108e94e432272b9cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc754af3f8aa2d18259615badf65c373" id="r_adc754af3f8aa2d18259615badf65c373"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#adc754af3f8aa2d18259615badf65c373">FPS::Add</a> (const <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> &amp;a, const <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> &amp;b)</td></tr>
+<tr class="memdesc:adc754af3f8aa2d18259615badf65c373"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g の和を返す  <br /></td></tr>
+<tr class="separator:adc754af3f8aa2d18259615badf65c373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59078c6a47f14a4dccd035d1eb1b1215" id="r_a59078c6a47f14a4dccd035d1eb1b1215"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a59078c6a47f14a4dccd035d1eb1b1215">FPS::Sub</a> (const <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> &amp;a, const <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> &amp;b)</td></tr>
+<tr class="memdesc:a59078c6a47f14a4dccd035d1eb1b1215"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g の差を返す  <br /></td></tr>
+<tr class="separator:a59078c6a47f14a4dccd035d1eb1b1215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1159a78b354bb75f045411346c6244db" id="r_a1159a78b354bb75f045411346c6244db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a1159a78b354bb75f045411346c6244db">FPS::Mul</a> (const <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> &amp;a, const <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> &amp;b)</td></tr>
+<tr class="memdesc:a1159a78b354bb75f045411346c6244db"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g の積を返す  <br /></td></tr>
+<tr class="separator:a1159a78b354bb75f045411346c6244db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f69848dd46739d0f0a0a433ae9b5852" id="r_a7f69848dd46739d0f0a0a433ae9b5852"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a7f69848dd46739d0f0a0a433ae9b5852">FPS::Inv</a> (<a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> f, int len=-1)</td></tr>
+<tr class="memdesc:a7f69848dd46739d0f0a0a433ae9b5852"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f に対し、f*g = 1 なる g を返す  <br /></td></tr>
+<tr class="separator:a7f69848dd46739d0f0a0a433ae9b5852"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac954384d6b4dc16993045b2c26a0551d" id="r_ac954384d6b4dc16993045b2c26a0551d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#ac954384d6b4dc16993045b2c26a0551d">FPS::Integral</a> (<a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> f)</td></tr>
+<tr class="memdesc:ac954384d6b4dc16993045b2c26a0551d"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f の積分を返す  <br /></td></tr>
+<tr class="separator:ac954384d6b4dc16993045b2c26a0551d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa1d50cc4ef4f9c3a4cef827fa539229" id="r_aaa1d50cc4ef4f9c3a4cef827fa539229"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#aaa1d50cc4ef4f9c3a4cef827fa539229">FPS::Differential</a> (<a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> f)</td></tr>
+<tr class="memdesc:aaa1d50cc4ef4f9c3a4cef827fa539229"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f の微分を返す  <br /></td></tr>
+<tr class="separator:aaa1d50cc4ef4f9c3a4cef827fa539229"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02c16354088c924c828885b289c81cc7" id="r_a02c16354088c924c828885b289c81cc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a02c16354088c924c828885b289c81cc7">FPS::Exp</a> (<a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> f, int len=-1)</td></tr>
+<tr class="memdesc:a02c16354088c924c828885b289c81cc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f について、e^f を返す  <br /></td></tr>
+<tr class="separator:a02c16354088c924c828885b289c81cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af660054e18c91b3afbbaf68e98ec2485" id="r_af660054e18c91b3afbbaf68e98ec2485"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#af660054e18c91b3afbbaf68e98ec2485">FPS::Log</a> (<a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> f, int len=-1)</td></tr>
+<tr class="memdesc:af660054e18c91b3afbbaf68e98ec2485"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f について、log(f) を返す  <br /></td></tr>
+<tr class="separator:af660054e18c91b3afbbaf68e98ec2485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c86b88a0b03ddd58b0040516c14cb1f" id="r_a1c86b88a0b03ddd58b0040516c14cb1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a1c86b88a0b03ddd58b0040516c14cb1f">FPS::Pow</a> (<a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> f, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> M, int len=-1)</td></tr>
+<tr class="memdesc:a1c86b88a0b03ddd58b0040516c14cb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f^M を返す  <br /></td></tr>
+<tr class="separator:a1c86b88a0b03ddd58b0040516c14cb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a0a2256a2d478c70b3066cf13a3ee82" id="r_a1a0a2256a2d478c70b3066cf13a3ee82"><td class="memItemLeft" align="right" valign="top">pair&lt; <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a>, <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a1a0a2256a2d478c70b3066cf13a3ee82">FPS::Div</a> (<a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> f, <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> g)</td></tr>
+<tr class="memdesc:a1a0a2256a2d478c70b3066cf13a3ee82"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g について、<code>f = gq + r</code> なる q, r を返す  <br /></td></tr>
+<tr class="separator:a1a0a2256a2d478c70b3066cf13a3ee82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88e4cdaacf8a35d5ebdae8c56bb32122" id="r_a88e4cdaacf8a35d5ebdae8c56bb32122"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a88e4cdaacf8a35d5ebdae8c56bb32122">FPS::MulSparse</a> (<a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> f, <a class="el" href="#a004e0f258fdba6b09455f9a709023396">FpsSparse</a> g)</td></tr>
+<tr class="memdesc:a88e4cdaacf8a35d5ebdae8c56bb32122"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g の積を返す（ただし、g は疎な多項式として与える）  <br /></td></tr>
+<tr class="separator:a88e4cdaacf8a35d5ebdae8c56bb32122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1709a926cad6a327a0e32ac282a82116" id="r_a1709a926cad6a327a0e32ac282a82116"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a1709a926cad6a327a0e32ac282a82116">FPS::DivSparse</a> (<a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> f, <a class="el" href="#a004e0f258fdba6b09455f9a709023396">FpsSparse</a> g)</td></tr>
+<tr class="memdesc:a1709a926cad6a327a0e32ac282a82116"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g に対し、 f / g を返す（ただし、g は疎な多項式として与える）  <br /></td></tr>
+<tr class="separator:a1709a926cad6a327a0e32ac282a82116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af56e4601dbb7b923a80a92403692d459" id="r_af56e4601dbb7b923a80a92403692d459"><td class="memItemLeft" align="right" valign="top"><a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#af56e4601dbb7b923a80a92403692d459">FPS::BostanMori</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> k, <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> P, <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> Q)</td></tr>
+<tr class="memdesc:af56e4601dbb7b923a80a92403692d459"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>[x^k](P/Q)</code> を返す  <br /></td></tr>
+<tr class="separator:af56e4601dbb7b923a80a92403692d459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c205c79a0263cf83007294643cdb82" id="r_a73c205c79a0263cf83007294643cdb82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a73c205c79a0263cf83007294643cdb82">FPS::KthLinear</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> k, <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> a, <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> c)</td></tr>
+<tr class="separator:a73c205c79a0263cf83007294643cdb82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69052de217103d37a8e1965495a1a39c" id="r_a69052de217103d37a8e1965495a1a39c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s_1_1_internal.html#a69052de217103d37a8e1965495a1a39c">FPS::Internal::CyclicConvolution</a> (<a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> f, <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> g)</td></tr>
+<tr class="separator:a69052de217103d37a8e1965495a1a39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a800f3550946514fc26199e26bfd3303c" id="r_a800f3550946514fc26199e26bfd3303c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s_1_1_internal.html#a800f3550946514fc26199e26bfd3303c">FPS::Internal::Extend</a> (<a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> &amp;v)</td></tr>
+<tr class="separator:a800f3550946514fc26199e26bfd3303c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab37f04d5f9bed98374a95afa2b5ef509" id="r_ab37f04d5f9bed98374a95afa2b5ef509"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s_1_1_internal.html#ab37f04d5f9bed98374a95afa2b5ef509">FPS::Internal::PickEvenOdd</a> (<a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> &amp;v, int odd)</td></tr>
+<tr class="separator:ab37f04d5f9bed98374a95afa2b5ef509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a6a11775bfc541034bc1c1fb2df90752c" id="r_a6a11775bfc541034bc1c1fb2df90752c"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s_1_1_internal.html#a6a11775bfc541034bc1c1fb2df90752c">FPS::Internal::PRIMITIVE_ROOT</a> =3</td></tr>
+<tr class="separator:a6a11775bfc541034bc1c1fb2df90752c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">型定義詳解</h2>
+<a id="a5255675b4fd917ca27ba8c4073ed1829" name="a5255675b4fd917ca27ba8c4073ed1829"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5255675b4fd917ca27ba8c4073ed1829">&#9670;&#160;</a></span>Fps</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a5255675b4fd917ca27ba8c4073ed1829">Fps</a> = vector&lt;<a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps_8hpp_source.html">fps.hpp</a> の <a class="el" href="fps_8hpp_source.html#l00006">6</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a004e0f258fdba6b09455f9a709023396" name="a004e0f258fdba6b09455f9a709023396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a004e0f258fdba6b09455f9a709023396">&#9670;&#160;</a></span>FpsSparse</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a004e0f258fdba6b09455f9a709023396">FpsSparse</a> = vector&lt;pair&lt;int,<a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a>&gt;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fps_8hpp_source.html">fps.hpp</a> の <a class="el" href="fps_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

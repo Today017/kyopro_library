@@ -26,7 +26,7 @@ var searchData=
   ['split_23',['split',['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#a09ee6014e81276efd5df9af49f61e735',1,'InsertableReversibleArrayImpl::RBSTBase::split()'],['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a05a84e982cd08e2d1daab87d2d0ec78e',1,'InsertableReversibleArrayImpl::LazyReversibleRBST::split()']]],
   ['sqrttree_24',['SqrtTree',['../struct_sqrt_tree.html#ab0fbb1c94e236f7e18f8bf06ef6427b9',1,'SqrtTree::SqrtTree()=default'],['../struct_sqrt_tree.html#ae0a29057985de7b015ad1150826067fe',1,'SqrtTree::SqrtTree(int n)'],['../struct_sqrt_tree.html#a8628edad00e39182bd82bb2fd04add3d',1,'SqrtTree::SqrtTree(const vector&lt; Type &gt; &amp;v)'],['../struct_sqrt_tree.html#a1a36223247e599446425fdb14c14e941',1,'SqrtTree::SqrtTree(const vector&lt; Type &gt; &amp;v, const vector&lt; Type &gt; &amp;v_inv)']]],
   ['stringtovi_25',['StringToVi',['../util_8hpp.html#a55c71db984621dc476d66a3f7ef04a3c',1,'util.hpp']]],
-  ['sub_26',['Sub',['../namespace_f_p_s.html#a3f18c8b1d6f03a0255b86f501cbff66a',1,'FPS']]],
+  ['sub_26',['Sub',['../namespace_f_p_s.html#a59078c6a47f14a4dccd035d1eb1b1215',1,'FPS']]],
   ['subsetmobius_27',['SubsetMobius',['../namespace_zeta_mobius.html#acdbe2642fe5208a44eb861ad2e0666bf',1,'ZetaMobius']]],
   ['subsetzeta_28',['SubsetZeta',['../namespace_zeta_mobius.html#a96b8a2e447ea6c66bf33a8a0e39e4fcc',1,'ZetaMobius']]],
   ['subtree_29',['subtree',['../struct_h_l_d.html#a3c1640f8cf6c7d78cb56336d223edb94',1,'HLD']]],

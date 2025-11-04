@@ -23,7 +23,7 @@ var searchData=
   ['bit_20',['Bit',['../namespace_bit.html',1,'']]],
   ['bit_2ehpp_21',['bit.hpp',['../bit_8hpp.html',1,'']]],
   ['bitlength_22',['BitLength',['../namespace_bit.html#a870a0bc19f2526f8179a4da45dc52efc',1,'Bit::BitLength(int n)'],['../namespace_bit.html#a489e2250c1755c4b0efe77c8b27f116c',1,'Bit::BitLength(ll n)']]],
-  ['bostonmori_23',['BostonMori',['../namespace_f_p_s.html#ad5a7c86fb5d29d85a778514cbc31647e',1,'FPS']]],
+  ['bostanmori_23',['BostanMori',['../namespace_f_p_s.html#af56e4601dbb7b923a80a92403692d459',1,'FPS']]],
   ['bridge_24',['bridge',['../struct_bridge_info.html#aaaf5c030e642505d500d0df745738c6a',1,'BridgeInfo']]],
   ['bridgeinfo_25',['BridgeInfo',['../struct_bridge_info.html',1,'']]],
   ['build_26',['build',['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#ae1c4c75a693123736e99ff1ab285f4bc',1,'InsertableReversibleArrayImpl::RBSTBase::build(int l, int r, const vector&lt; decltype(Node::key)&gt; &amp;v)'],['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#acf244c4471e356a85278e993db8201b3',1,'InsertableReversibleArrayImpl::RBSTBase::build(const vector&lt; decltype(Node::key)&gt; &amp;v)'],['../struct_succinct_bit_vector.html#aafee3472a9c2b616aeddccbceafe455b',1,'SuccinctBitVector::build()'],['../struct_dynamic_connectivity.html#aef6dbb8a8163c1aa473f68d4986c5226',1,'DynamicConnectivity::build()'],['../struct_h_l_d.html#a771bcfbb8251c5a9c62a08da8d149deb',1,'HLD::build()'],['../struct_bezout_identity.html#a2cf086366016d944941e8100fec64191',1,'BezoutIdentity::build()'],['../struct_aho_corasick.html#a921f3a1190fbca63510581fd46b6194f',1,'AhoCorasick::build()']]]
