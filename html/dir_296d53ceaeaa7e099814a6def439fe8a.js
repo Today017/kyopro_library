@@ -1,6 +1,7 @@
 var dir_296d53ceaeaa7e099814a6def439fe8a =
 [
     [ "bezout_identity.hpp", "bezout__identity_8hpp.html", "bezout__identity_8hpp" ],
+    [ "bmbm.hpp", "bmbm_8hpp.html", "bmbm_8hpp" ],
     [ "convolution.hpp", "convolution_8hpp.html", "convolution_8hpp" ],
     [ "convolution_ll.hpp", "convolution__ll_8hpp.html", "convolution__ll_8hpp" ],
     [ "extgcd.hpp", "extgcd_8hpp.html", "extgcd_8hpp" ],

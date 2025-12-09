@@ -1,11 +1,11 @@
 #include"../../kyopro_library/template.hpp"
 
-/// @brief 動的セグ木
+/// @brief 動的セグメント木
 template<typename Monoid>
 struct SegTreeDynamic {
     using Type=typename Monoid::Type;
 
-    /// @brief サイズ mx の動的セグ木を宣言する
+    /// @brief サイズ mx で構築する
     SegTreeDynamic(ll mx=1e9, int q=5e5) {
         this->mx=mx;
         node.reserve(q);

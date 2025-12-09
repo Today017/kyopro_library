@@ -14,6 +14,7 @@ struct DsuMerging {
 
     /// @brief コンストラクタ
     DsuMerging(int n, const vector<Type>& v) {
+        assert(n==v.size());
         par=vector<int>(n); iota(par.begin(),par.end(),0);
         sz=vector<int>(n,1);
         dat=v;
@@ -51,7 +52,7 @@ struct DsuMerging {
     int size(int x) const { return sz[find(x)]; }
 
     /// @brief 頂点 x と y が同じ連結成分に属するか否かを返す
-    bool same(int x, int y) const {return find(x)==find(y);}
+    bool same(int x, int y) const { return find(x)==find(y); }
 
     /// @brief 連結成分の個数を返す
     int count() const { return forest_count; }

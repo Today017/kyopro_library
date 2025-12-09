@@ -1,4 +1,4 @@
 var combination_8hpp =
 [
-    [ "Combinatorics< T >", "struct_combinatorics.html", "struct_combinatorics" ]
+    [ "Comb< T >", "struct_comb.html", "struct_comb" ]
 ];

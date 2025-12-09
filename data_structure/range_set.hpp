@@ -10,47 +10,56 @@ struct RangeSet {
     }
 
     /// @brief 区間 [l, r) を追加する
-    void insert(ll l, ll r) {
+    /// @brief [l, r) と被っていた区間を返す
+    vector<pair<ll,ll>> insert(ll l, ll r) {
         assert(l<r);
         auto it=dat.lower_bound({l,0});
+        vector<pair<ll,ll>> ret;
         if(it!=dat.begin()) {
             it--;
             if(it->second>=l) {
                 l=it->first;
                 r=max(r,it->second);
+                ret.push_back(*it);
                 it=dat.erase(it);
             } else {
                 it++;
             }
         }
-        while(it!=dat.end()&&it->first<=r) {
+        while(it!=dat.end() && it->first<=r) {
             r=max(r,it->second);
+            ret.push_back(*it);
             it=dat.erase(it);
         }
         dat.insert({l,r});
+        return ret;
     }
 
     /// @brief 区間 [l, r) を削除する
-    void erase(ll l, ll r) {
-        assert(l<r);
-        auto it=dat.lower_bound({l,0});
+    /// @brief [l, r) と被っていた区間を返す
+    vector<pair<ll,ll>> erase(ll l, ll r) {
+        assert(l<r); auto it=dat.lower_bound({l,0});
+        vector<pair<ll,ll>> ret;
         if(it!=dat.begin()) {
             it--;
             if(it->second>l) {
                 ll L=it->first,R=it->second;
+                ret.push_back(*it);
                 it=dat.erase(it);
                 if(L<l) dat.insert({L,l});
                 if(r<R) dat.insert({r,R});
-            }else{
+            } else {
                 it++;
             }
         }
-        while(it!=dat.end()&&it->first<r) {
+        while(it!=dat.end() && it->first<r) {
             ll L=it->first,R=it->second;
+            ret.push_back(*it);
             it=dat.erase(it);
             if(L<l) dat.insert({L,l});
             if(r<R) dat.insert({r,R});
         }
+        return ret;
     }
 
     /// @brief 区間 [l, r) が完全に被覆されているかどうかを判定する

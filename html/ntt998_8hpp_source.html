@@ -114,67 +114,51 @@ $(function(){initNavTree('ntt998_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// @details f(x) = Σ a[i]x^i, w^N = 1 とすると、F(t) = Σ f(w^i)t^i の各係数 mod 998244353 に変換する</span></div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="ntt998_8hpp.html#a1e1c805bf5f53eddf4bd21d9890a4320">    8</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ntt998_8hpp.html#a1e1c805bf5f53eddf4bd21d9890a4320">NTT998</a>(vector&lt;Mod998&gt;&amp; a, <span class="keywordtype">bool</span> inv=<span class="keyword">false</span>) {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> flag=<span class="keyword">false</span>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> divide_max;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">static</span> vector&lt;Mod998&gt; roots, inv_roots, tmp;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">if</span>(!flag) {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        flag=<span class="keyword">true</span>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        divide_max=1;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        ll n=998244353-1;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">while</span>(n%2==0) n&gt;&gt;=1,divide_max++;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        roots=vector&lt;Mod998&gt;(divide_max+1);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        inv_roots=vector&lt;Mod998&gt;(divide_max+1);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        roots[0]=inv_roots[0]=1;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;=divide_max; i++) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            roots[i]=Mod998(3).pow((998244353-1)/(1&lt;&lt;i));</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            inv_roots[i]=roots[i].inv();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    tmp=vector&lt;Mod998&gt;(a.size());</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">int</span> n=a.size(), mask=n-1, p=0;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=n&gt;&gt;1; i&gt;=1; i&gt;&gt;=1) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">auto</span>&amp; cur=((p&amp;1) ? tmp : a);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keyword">auto</span>&amp; nxt=((p&amp;1) ? a : tmp);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        Mod998 e=(inv ? roots[p+1] : inv_roots[p+1]);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        Mod998 w=1;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; j+=i) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(k,i) nxt[j+k]=cur[((j&lt;&lt;1)&amp;mask)+k]+w*cur[(((j&lt;&lt;1)+i)&amp;mask)+k];</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            w*=e;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        p++;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">if</span>(p&amp;1) swap(a,tmp);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span>(inv) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        Mod998 inv_sz=Mod998(n).inv();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) a[i]*=inv_sz;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">static</span> vector&lt;Mod998&gt; r, ir, tmp;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">if</span>(r.empty()) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordtype">int</span> dm=1; ll n=Mod998::mod()-1;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">while</span>(n%2==0) n&gt;&gt;=1, dm++;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        r.resize(dm+1); ir.resize(dm+1); r[0]=ir[0]=1;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;=dm; i++) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            r[i]=Mod998(3).pow((Mod998::mod()-1)&gt;&gt;i);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            ir[i]=r[i].inv();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    tmp.resize(a.size());</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">int</span> n=a.size(), p=0;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=n&gt;&gt;1; i; i&gt;&gt;=1, p++) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">auto</span> &amp;cur=p&amp;1? tmp: a, &amp;nxt=p&amp;1? a: tmp;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        Mod998 w=1, e=inv? r[p+1]: ir[p+1];</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; j+=i, w*=e) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0; k&lt;i; k++) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            nxt[j+k]=cur[((j&lt;&lt;1)&amp;(n-1))+k]+w*cur[(((j&lt;&lt;1)+i)&amp;(n-1))+k];</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span>(p&amp;1) swap(a,tmp);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span>(inv) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        Mod998 in=Mod998(n).inv();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">for</span>(Mod998&amp; x: a) x*=in;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/// @brief AとBの畳み込み C[i] = Σ A[j]B[i-j] mod 998244353 を返す</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">/// @note O(N log(N))</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">/// @attention |a|+|b| &lt;= 2^23 が必要</span></div>
-<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="ntt998_8hpp.html#a903f7f25ea896e4eae55e62a21c0b379">   49</a></span><a class="code hl_function" href="ntt998_8hpp.html#a903f7f25ea896e4eae55e62a21c0b379">vector</a>&lt;<a class="code hl_function" href="ntt998_8hpp.html#a903f7f25ea896e4eae55e62a21c0b379">Mod998</a>&gt; <a class="code hl_function" href="ntt998_8hpp.html#a903f7f25ea896e4eae55e62a21c0b379">Convolve998</a>(vector&lt;Mod998&gt; a,vector&lt;Mod998&gt; b) {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">int</span> n=1;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">while</span>(n+1&lt;a.size()+b.size()) n&lt;&lt;=1;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    vector&lt;Mod998&gt; fa(n), fb(n);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;a.size(); i++) fa[i]=a[i];</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;b.size(); i++) fb[i]=b[i];</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    NTT998(fa); NTT998(fb);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) fa[i]*=fb[i];</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    NTT998(fa,<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">while</span>(fa.size()+1&gt;a.size()+b.size()) fa.pop_back();</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">return</span> fa;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/// @brief AとBの畳み込み C[i] = Σ A[j]B[i-j] mod 998244353 を返す</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">/// @note O(N log(N))</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">/// @attention |a|+|b| &lt;= 2^23 が必要</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">/// @ref verify: https://judge.yosupo.jp/problem/convolution_mod</span></div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="ntt998_8hpp.html#a903f7f25ea896e4eae55e62a21c0b379">   39</a></span><a class="code hl_function" href="ntt998_8hpp.html#a903f7f25ea896e4eae55e62a21c0b379">vector</a>&lt;<a class="code hl_function" href="ntt998_8hpp.html#a903f7f25ea896e4eae55e62a21c0b379">Mod998</a>&gt; <a class="code hl_function" href="ntt998_8hpp.html#a903f7f25ea896e4eae55e62a21c0b379">Convolve998</a>(vector&lt;Mod998&gt; a,vector&lt;Mod998&gt; b) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">int</span> n=1, z=a.size()+b.size();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">while</span>(n+1&lt;z) n&lt;&lt;=1;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    a.resize(n); b.resize(n);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    NTT998(a); NTT998(b);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) a[i]*=b[i];</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    NTT998(a,<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">while</span>(a.size()+1&gt;z) a.pop_back();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">return</span> a;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
 </div>
 <div class="ttc" id="antt998_8hpp_html_a1e1c805bf5f53eddf4bd21d9890a4320"><div class="ttname"><a href="ntt998_8hpp.html#a1e1c805bf5f53eddf4bd21d9890a4320">NTT998</a></div><div class="ttdeci">void NTT998(vector&lt; Mod998 &gt; &amp;a, bool inv=false)</div><div class="ttdoc">数論変換</div><div class="ttdef"><b>Definition</b> <a href="#l00008">ntt998.hpp:8</a></div></div>
-<div class="ttc" id="antt998_8hpp_html_a903f7f25ea896e4eae55e62a21c0b379"><div class="ttname"><a href="ntt998_8hpp.html#a903f7f25ea896e4eae55e62a21c0b379">Convolve998</a></div><div class="ttdeci">vector&lt; Mod998 &gt; Convolve998(vector&lt; Mod998 &gt; a, vector&lt; Mod998 &gt; b)</div><div class="ttdoc">AとBの畳み込み C[i] = Σ A[j]B[i-j] mod 998244353 を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00049">ntt998.hpp:49</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
+<div class="ttc" id="antt998_8hpp_html_a903f7f25ea896e4eae55e62a21c0b379"><div class="ttname"><a href="ntt998_8hpp.html#a903f7f25ea896e4eae55e62a21c0b379">Convolve998</a></div><div class="ttdeci">vector&lt; Mod998 &gt; Convolve998(vector&lt; Mod998 &gt; a, vector&lt; Mod998 &gt; b)</div><div class="ttdoc">AとBの畳み込み C[i] = Σ A[j]B[i-j] mod 998244353 を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00039">ntt998.hpp:39</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

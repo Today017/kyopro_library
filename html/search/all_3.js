@@ -1,7 +1,7 @@
 var searchData=
 [
   ['cap_0',['cap',['../struct_max_flow_1_1_edge.html#aa487ab3fa5b70d6f8aaa0a4a0b946d40',1,'MaxFlow::Edge::cap'],['../struct_min_cost_flow_1_1_edge.html#a7a5666a6fbaaca1cc1feaca729b509c6',1,'MinCostFlow::Edge::cap']]],
-  ['cataran_1',['cataran',['../struct_combinatorics.html#a20aef80faad2b75952d7244ae1ac0ceb',1,'Combinatorics']]],
+  ['cataran_1',['cataran',['../struct_comb.html#a04e54cb9483d9efa7db9b7a6f55b5664',1,'Comb']]],
   ['ccw_2',['ccw',['../namespace_geometry.html#a68f1a8a27e6074ca5dae6b151a765cb3',1,'Geometry']]],
   ['center_3',['center',['../struct_geometry_1_1_circle.html#a2240114cd5d8188550d2ff3980866b63',1,'Geometry::Circle']]],
   ['centroid_2ehpp_4',['centroid.hpp',['../centroid_8hpp.html',1,'']]],
@@ -17,11 +17,11 @@ var searchData=
   ['closestpair_14',['closestPair',['../namespace_geometry.html#a5b1e16827da06a6b3f3ce3875b3f216d',1,'Geometry']]],
   ['cnt_15',['cnt',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node.html#adbb4527804782fd27cfd978db7fe04af',1,'InsertableReversibleArrayImpl::LazyReversibleRBSTNode']]],
   ['code_16',['code',['../namespacecompress.html#aea3e350d16ae2d80ffde6053a6d3dcb3',1,'compress']]],
-  ['comb_17',['comb',['../struct_combinatorics.html#a977b699b6416d19473239931fca6f2f7',1,'Combinatorics::comb()'],['../struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b',1,'CombinationLucas::comb()']]],
-  ['combination_2ehpp_18',['combination.hpp',['../combination_8hpp.html',1,'']]],
-  ['combination_5flucas_2ehpp_19',['combination_lucas.hpp',['../combination__lucas_8hpp.html',1,'']]],
-  ['combinationlucas_20',['CombinationLucas',['../struct_combination_lucas.html',1,'CombinationLucas'],['../struct_combination_lucas.html#a0c46e2850894c0d5690bffc81047ddd8',1,'CombinationLucas::CombinationLucas()']]],
-  ['combinatorics_21',['Combinatorics',['../struct_combinatorics.html',1,'Combinatorics&lt; T &gt;'],['../struct_combinatorics.html#a03267b012345ac4ca4b3282ca937f355',1,'Combinatorics::Combinatorics()=default'],['../struct_combinatorics.html#ace51d39e7e21969b25e4a7b10a4bada3',1,'Combinatorics::Combinatorics(int n)']]],
+  ['comb_17',['Comb',['../struct_comb.html',1,'Comb&lt; T &gt;'],['../struct_comb.html#ac28bc347483aac7956686055296141b7',1,'Comb::Comb()=default'],['../struct_comb.html#a0e1a13649e228f0b0c57abe6bf50288c',1,'Comb::Comb(int n)']]],
+  ['comb_18',['comb',['../struct_comb.html#ad6dc3031af446d9b9897a38ca8c7590a',1,'Comb::comb()'],['../struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b',1,'CombinationLucas::comb()']]],
+  ['combination_2ehpp_19',['combination.hpp',['../combination_8hpp.html',1,'']]],
+  ['combination_5flucas_2ehpp_20',['combination_lucas.hpp',['../combination__lucas_8hpp.html',1,'']]],
+  ['combinationlucas_21',['CombinationLucas',['../struct_combination_lucas.html',1,'CombinationLucas'],['../struct_combination_lucas.html#a0c46e2850894c0d5690bffc81047ddd8',1,'CombinationLucas::CombinationLucas()']]],
   ['compress_22',['compress',['../namespacecompress.html',1,'']]],
   ['compress_2epy_23',['compress.py',['../compress_8py.html',1,'']]],
   ['const_24',['CONST',['../namespaceexp.html#a608b7d478866fe325b1fc10a0d2f5d11',1,'exp.CONST'],['../namespaceexp___a_h_c.html#a046c7d4b7d969df4c762e1ce5d2df23e',1,'exp_AHC.CONST']]],
@@ -49,9 +49,9 @@ var searchData=
   ['countintersections_46',['countIntersections',['../namespace_geometry.html#a87d9373ac4728b6bf376f11590d5fd0f',1,'Geometry']]],
   ['covering_5frange_47',['covering_range',['../struct_range_set.html#a1c12858463c77800b9b903a426e55e13',1,'RangeSet']]],
   ['cross_48',['cross',['../struct_geometry_1_1_point.html#a0ddff0422405796c7a964360bb022f5c',1,'Geometry::Point::cross(const Point &amp;p) const'],['../struct_geometry_1_1_point.html#af920478ca39ffd1bad37d4ede4b3c037',1,'Geometry::Point::cross(const Point &amp;p1, const Point &amp;p2) const']]],
-  ['cumulative_5fsum_5f2d_2ehpp_49',['cumulative_sum_2d.hpp',['../cumulative__sum__2d_8hpp.html',1,'']]],
-  ['cumulativesum2d_50',['CumulativeSum2D',['../struct_cumulative_sum2_d.html',1,'CumulativeSum2D&lt; T &gt;'],['../struct_cumulative_sum2_d.html#aa68421d4767aa66b8546d90ecd602bf3',1,'CumulativeSum2D::CumulativeSum2D()=default'],['../struct_cumulative_sum2_d.html#a0c031b219413ba2284d6c3cf4ecb5a0d',1,'CumulativeSum2D::CumulativeSum2D(const vector&lt; vector&lt; U &gt; &gt; &amp;v)']]],
+  ['cumsum2d_49',['Cumsum2D',['../struct_cumsum2_d.html',1,'Cumsum2D'],['../struct_cumsum2_d.html#ae396962cd09c3d75dce3c439c2d34c52',1,'Cumsum2D::Cumsum2D()=default'],['../struct_cumsum2_d.html#adf059270775e432021b4650a2a187462',1,'Cumsum2D::Cumsum2D(int h, int w)'],['../struct_cumsum2_d.html#a5cc8d8395d1280e2276f2ed1e985e3c9',1,'Cumsum2D::Cumsum2D(const auto &amp;v)']]],
+  ['cumsum2d_2ehpp_50',['cumsum2d.hpp',['../cumsum2d_8hpp.html',1,'']]],
   ['cut_51',['cut',['../struct_dynamic_connectivity.html#aa4b9840215ff5517d9433b4dbf97272f',1,'DynamicConnectivity']]],
   ['cutpolygon_52',['cutPolygon',['../namespace_geometry.html#a200dbcd1585ae4b59217590a4f86c135',1,'Geometry']]],
-  ['cyclicconvolution_53',['CyclicConvolution',['../namespace_f_p_s_1_1_internal.html#a69052de217103d37a8e1965495a1a39c',1,'FPS::Internal']]]
+  ['cyclicconvolution_53',['CyclicConvolution',['../namespace_f_p_s_1_1_internal.html#a803bdeda914115ffd70db88823d0b392',1,'FPS::Internal']]]
 ];

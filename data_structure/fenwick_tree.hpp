@@ -1,6 +1,7 @@
 #pragma once
 #include "../../kyopro_library/template.hpp"
 
+/// @brief フェニック木
 struct FenwickTree {
     FenwickTree()=default;
     FenwickTree(int n) {

@@ -29,8 +29,7 @@ var annotated_dup =
     ] ],
     [ "Operator", "namespace_operator.html", [
       [ "Add", "struct_operator_1_1_add.html", "struct_operator_1_1_add" ],
-      [ "Update", "struct_operator_1_1_update.html", "struct_operator_1_1_update" ],
-      [ "UpdateTimeStamp", "struct_operator_1_1_update_time_stamp.html", "struct_operator_1_1_update_time_stamp" ]
+      [ "Update", "struct_operator_1_1_update.html", "struct_operator_1_1_update" ]
     ] ],
     [ "RangeQuery", "namespace_range_query.html", [
       [ "ApplyAdd", "struct_range_query_1_1_apply_add.html", "struct_range_query_1_1_apply_add" ],
@@ -57,9 +56,9 @@ var annotated_dup =
     [ "BipartiteMatchingWeighted", "struct_bipartite_matching_weighted.html", "struct_bipartite_matching_weighted" ],
     [ "BridgeInfo", "struct_bridge_info.html", "struct_bridge_info" ],
     [ "CHT", "struct_c_h_t.html", "struct_c_h_t" ],
+    [ "Comb", "struct_comb.html", "struct_comb" ],
     [ "CombinationLucas", "struct_combination_lucas.html", "struct_combination_lucas" ],
-    [ "Combinatorics", "struct_combinatorics.html", "struct_combinatorics" ],
-    [ "CumulativeSum2D", "struct_cumulative_sum2_d.html", "struct_cumulative_sum2_d" ],
+    [ "Cumsum2D", "struct_cumsum2_d.html", "struct_cumsum2_d" ],
     [ "Doubling", "struct_doubling.html", "struct_doubling" ],
     [ "DoublingFold", "struct_doubling_fold.html", "struct_doubling_fold" ],
     [ "DSU", "struct_d_s_u.html", "struct_d_s_u" ],
@@ -77,6 +76,7 @@ var annotated_dup =
     [ "GridUtil", "struct_grid_util.html", "struct_grid_util" ],
     [ "Hash", "struct_hash.html", "struct_hash" ],
     [ "HLD", "struct_h_l_d.html", "struct_h_l_d" ],
+    [ "Imos2D", "struct_imos2_d.html", "struct_imos2_d" ],
     [ "InsertableReversibleArray", "struct_insertable_reversible_array.html", "struct_insertable_reversible_array" ],
     [ "LCA", "struct_l_c_a.html", "struct_l_c_a" ],
     [ "LcaEdge", "struct_lca_edge.html", "struct_lca_edge" ],
@@ -99,7 +99,7 @@ var annotated_dup =
     [ "SccInfo", "struct_scc_info.html", "struct_scc_info" ],
     [ "SegmentTree2D", "struct_segment_tree2_d.html", "struct_segment_tree2_d" ],
     [ "SegTree", "struct_seg_tree.html", "struct_seg_tree" ],
-    [ "SegTreeDual", "struct_seg_tree_dual.html", "struct_seg_tree_dual" ],
+    [ "SegTreeAct", "struct_seg_tree_act.html", "struct_seg_tree_act" ],
     [ "SegTreeDynamic", "struct_seg_tree_dynamic.html", "struct_seg_tree_dynamic" ],
     [ "SegTreeLazy", "struct_seg_tree_lazy.html", "struct_seg_tree_lazy" ],
     [ "Set", "struct_set.html", "struct_set" ],

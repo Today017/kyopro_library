@@ -112,7 +112,7 @@ $(function(){initNavTree('debug_8hpp.html',''); initResizable(true); });
 <code>#include &quot;<a class="el" href="fenwick__tree__abel_8hpp_source.html">../kyopro_library/data_structure/fenwick_tree_abel.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="segtree_8hpp_source.html">../kyopro_library/data_structure/segtree.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="segtree__lazy_8hpp_source.html">../kyopro_library/data_structure/segtree_lazy.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="segtree__dual_8hpp_source.html">../kyopro_library/data_structure/segtree_dual.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="segtree__act_8hpp_source.html">../kyopro_library/data_structure/segtree_act.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="dsu_8hpp_source.html">../kyopro_library/graph/dsu.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="int128_8hpp_source.html">../kyopro_library/others/int128.hpp</a>&quot;</code><br />
 <code>#include &quot;../atcoder/modint&quot;</code><br />
@@ -200,9 +200,9 @@ $(function(){initNavTree('debug_8hpp.html',''); initResizable(true); });
 <tr class="memitem:a6c9344bef51278c280248a1a4e2de2a7" id="r_a6c9344bef51278c280248a1a4e2de2a7"><td class="memTemplParams" colspan="2">template&lt;typename T, typename U, auto M&gt; </td></tr>
 <tr class="memitem:a6c9344bef51278c280248a1a4e2de2a7"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a6c9344bef51278c280248a1a4e2de2a7">operator&lt;&lt;</a> (ostream &amp;os, <a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; T, U, M &gt; a)</td></tr>
 <tr class="separator:a6c9344bef51278c280248a1a4e2de2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5954642203d9ea8e5b467819d0cf678f" id="r_a5954642203d9ea8e5b467819d0cf678f"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a5954642203d9ea8e5b467819d0cf678f"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5954642203d9ea8e5b467819d0cf678f">operator&lt;&lt;</a> (ostream &amp;os, <a class="el" href="struct_seg_tree_dual.html">SegTreeDual</a>&lt; T &gt; a)</td></tr>
-<tr class="separator:a5954642203d9ea8e5b467819d0cf678f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f1743022c874c2a37a26c2219cbd64" id="r_a18f1743022c874c2a37a26c2219cbd64"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a18f1743022c874c2a37a26c2219cbd64"><td class="memTemplItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a18f1743022c874c2a37a26c2219cbd64">operator&lt;&lt;</a> (ostream &amp;os, <a class="el" href="struct_seg_tree_act.html">SegTreeAct</a>&lt; T &gt; a)</td></tr>
+<tr class="separator:a18f1743022c874c2a37a26c2219cbd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac60a8c6e6839c4d4cd97e87241e7ad5" id="r_aac60a8c6e6839c4d4cd97e87241e7ad5"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac60a8c6e6839c4d4cd97e87241e7ad5">operator&lt;&lt;</a> (ostream &amp;os, <a class="el" href="struct_d_s_u.html">DSU</a> a)</td></tr>
 <tr class="separator:aac60a8c6e6839c4d4cd97e87241e7ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2fcdc6b38da4dbf782c94d651461112" id="r_ac2fcdc6b38da4dbf782c94d651461112"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2fcdc6b38da4dbf782c94d651461112">operator&lt;&lt;</a> (ostream &amp;os, atcoder::dsu a)</td></tr>
@@ -765,7 +765,7 @@ template&lt;typename T, auto N&gt; </div>
 
 <p class="definition"> <a class="el" href="debug_8hpp_source.html">debug.hpp</a> の <a class="el" href="debug_8hpp_source.html#l00239">239</a> 行目に定義があります。</p>
 
-<p class="reference">参照先 <a class="el" href="fenwick__tree_8hpp_source.html#l00015">FenwickTree::operator[]()</a>, <a class="el" href="fenwick__tree_8hpp_source.html#l00016">FenwickTree::size()</a>.</p>
+<p class="reference">参照先 <a class="el" href="fenwick__tree_8hpp_source.html#l00016">FenwickTree::operator[]()</a>, <a class="el" href="fenwick__tree_8hpp_source.html#l00017">FenwickTree::size()</a>.</p>
 
 </div>
 </div>
@@ -844,8 +844,8 @@ template&lt;typename T, typename U, auto M&gt; </div>
 
 </div>
 </div>
-<a id="a5954642203d9ea8e5b467819d0cf678f" name="a5954642203d9ea8e5b467819d0cf678f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5954642203d9ea8e5b467819d0cf678f">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[24/26]</span></h2>
+<a id="a18f1743022c874c2a37a26c2219cbd64" name="a18f1743022c874c2a37a26c2219cbd64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18f1743022c874c2a37a26c2219cbd64">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[24/26]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -860,7 +860,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_seg_tree_dual.html">SegTreeDual</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="struct_seg_tree_act.html">SegTreeAct</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

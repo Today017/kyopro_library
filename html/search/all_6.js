@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['factinv_0',['factinv',['../struct_combinatorics.html#abf0b71d9a682af871adc550a8091b05d',1,'Combinatorics']]],
+  ['factinv_0',['factinv',['../struct_comb.html#ae7da039c0809fe6098e655b0957690a1',1,'Comb']]],
   ['factors_1',['Factors',['../struct_factors.html',1,'Factors'],['../struct_factors.html#a219a3cb166153a020f2fc3d83b9a9e57',1,'Factors::Factors()']]],
   ['factors_2ehpp_2',['factors.hpp',['../factors_8hpp.html',1,'']]],
-  ['factrial_3',['factrial',['../struct_combinatorics.html#a612688ccbc9653abc8098403fced48b3',1,'Combinatorics']]],
+  ['factrial_3',['factrial',['../struct_comb.html#a43e86688b9a57f3f85ad22eca5a2d4f5',1,'Comb']]],
   ['fast_2ehpp_4',['fast.hpp',['../fast_8hpp.html',1,'']]],
   ['fenwick_5ftree_2ehpp_5',['fenwick_tree.hpp',['../fenwick__tree_8hpp.html',1,'']]],
   ['fenwick_5ftree_5fabel_2ehpp_6',['fenwick_tree_abel.hpp',['../fenwick__tree__abel_8hpp.html',1,'']]],
@@ -20,14 +20,12 @@ var searchData=
   ['fold_17',['fold',['../struct_doubling_fold.html#a8351c3419c2041117f47e80436506010',1,'DoublingFold::fold()'],['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#ae69875869036c22d87735c9e5b433bb5',1,'InsertableReversibleArrayImpl::LazyReversibleRBST::fold()'],['../struct_seg_tree.html#ab9725a4dc2152446887d87195cc88c4d',1,'SegTree::fold()'],['../struct_segment_tree2_d.html#a746d58b6e0eb033030b54e67036b5798',1,'SegmentTree2D::fold()'],['../struct_seg_tree_dynamic.html#a94bcb75b9656636184cf16e39aad8a51',1,'SegTreeDynamic::fold(ll l, ll r, int idx, ll left, ll right)'],['../struct_seg_tree_dynamic.html#aae80e1181ba66952873e2cfa9b0865f9',1,'SegTreeDynamic::fold(ll l, ll r)'],['../struct_seg_tree_lazy.html#a7f424f5acb8639d9ec9f5b42005dd567',1,'SegTreeLazy::fold()'],['../struct_sparse_table.html#a58ddfa937ff083999c2847f66305da96',1,'SparseTable::fold()'],['../struct_sparse_table_disjoint.html#aa984a0d78a9e15251a151cbb8953d10e',1,'SparseTableDisjoint::fold()'],['../struct_sqrt_tree.html#a14f3772f850e992950cde4b07af50bee',1,'SqrtTree::fold()'],['../struct_lca_edge.html#af292e8187eca836629b2e6d9a10daf08',1,'LcaEdge::fold()'],['../struct_lca_vertex.html#a0e4f860220eedd9b1bc9eee332e033ca',1,'LcaVertex::fold()']]],
   ['format_18',['format',['../namespaceexp.html#ae5768a59b2ca22024fe965d79f46f0b8',1,'exp.format'],['../namespaceexp___a_h_c.html#a4f54ce99252ab9adf71581134b630a08',1,'exp_AHC.format']]],
   ['fps_19',['FPS',['../namespace_f_p_s.html',1,'']]],
-  ['fps_20',['Fps',['../fps_8hpp.html#a5255675b4fd917ca27ba8c4073ed1829',1,'fps.hpp']]],
-  ['fps_2ehpp_21',['fps.hpp',['../fps_8hpp.html',1,'']]],
-  ['fps_3a_3ainternal_22',['Internal',['../namespace_f_p_s_1_1_internal.html',1,'FPS']]],
-  ['fpssparse_23',['FpsSparse',['../fps_8hpp.html#a004e0f258fdba6b09455f9a709023396',1,'fps.hpp']]],
-  ['fraction_24',['Fraction',['../struct_fraction.html',1,'Fraction&lt; T &gt;'],['../struct_fraction.html#a55ebf786ffa0532ac299c78c0511e8f9',1,'Fraction::Fraction()=default'],['../struct_fraction.html#a42f7ffc10b3eb9cb2185656d6ce63162',1,'Fraction::Fraction(T a, T b)'],['../struct_fraction.html#ae6cdaacb37d8687ef6e250b509051af7',1,'Fraction::Fraction(T a=0)']]],
-  ['fraction_2ehpp_25',['fraction.hpp',['../fraction_8hpp.html',1,'']]],
-  ['fraction_5ffloor_5fsum_2ehpp_26',['fraction_floor_sum.hpp',['../fraction__floor__sum_8hpp.html',1,'']]],
-  ['fractionfloorsum_27',['FractionFloorSum',['../fraction__floor__sum_8hpp.html#a1fa13377327babb260e83aa2884732d5',1,'fraction_floor_sum.hpp']]],
-  ['from_28',['from',['../struct_max_flow_1_1_edge.html#a91c4dcb113c554cba7dfda6bee9ee54d',1,'MaxFlow::Edge::from'],['../struct_min_cost_flow_1_1_edge.html#a547696eaaa79241ef48244ef50ef8f11',1,'MinCostFlow::Edge::from']]],
-  ['fukugen_29',['fukugen',['../struct_moyasu_umeru.html#a41fd6c3d29357ac60da7f94a90e87c6f',1,'MoyasuUmeru']]]
+  ['fps_2ehpp_20',['fps.hpp',['../fps_8hpp.html',1,'']]],
+  ['fps_3a_3ainternal_21',['Internal',['../namespace_f_p_s_1_1_internal.html',1,'FPS']]],
+  ['fraction_22',['Fraction',['../struct_fraction.html',1,'Fraction&lt; T &gt;'],['../struct_fraction.html#a55ebf786ffa0532ac299c78c0511e8f9',1,'Fraction::Fraction()=default'],['../struct_fraction.html#a42f7ffc10b3eb9cb2185656d6ce63162',1,'Fraction::Fraction(T a, T b)'],['../struct_fraction.html#ae6cdaacb37d8687ef6e250b509051af7',1,'Fraction::Fraction(T a=0)']]],
+  ['fraction_2ehpp_23',['fraction.hpp',['../fraction_8hpp.html',1,'']]],
+  ['fraction_5ffloor_5fsum_2ehpp_24',['fraction_floor_sum.hpp',['../fraction__floor__sum_8hpp.html',1,'']]],
+  ['fractionfloorsum_25',['FractionFloorSum',['../fraction__floor__sum_8hpp.html#a1fa13377327babb260e83aa2884732d5',1,'fraction_floor_sum.hpp']]],
+  ['from_26',['from',['../struct_max_flow_1_1_edge.html#a91c4dcb113c554cba7dfda6bee9ee54d',1,'MaxFlow::Edge::from'],['../struct_min_cost_flow_1_1_edge.html#a547696eaaa79241ef48244ef50ef8f11',1,'MinCostFlow::Edge::from']]],
+  ['fukugen_27',['fukugen',['../struct_moyasu_umeru.html#a41fd6c3d29357ac60da7f94a90e87c6f',1,'MoyasuUmeru']]]
 ];

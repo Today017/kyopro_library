@@ -50,7 +50,7 @@ struct ModInt {
         return ret;
     }
     ModInt inv() const { return pow(MOD-2); }
-    ll val() {return value; }
+    ll val() const { return value; }
     static constexpr ll mod() { return MOD; }
 
 private:

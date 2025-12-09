@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['factinv_0',['factinv',['../struct_combinatorics.html#abf0b71d9a682af871adc550a8091b05d',1,'Combinatorics']]],
+  ['factinv_0',['factinv',['../struct_comb.html#ae7da039c0809fe6098e655b0957690a1',1,'Comb']]],
   ['factors_1',['Factors',['../struct_factors.html#a219a3cb166153a020f2fc3d83b9a9e57',1,'Factors']]],
-  ['factrial_2',['factrial',['../struct_combinatorics.html#a612688ccbc9653abc8098403fced48b3',1,'Combinatorics']]],
+  ['factrial_2',['factrial',['../struct_comb.html#a43e86688b9a57f3f85ad22eca5a2d4f5',1,'Comb']]],
   ['fenwicktree_3',['FenwickTree',['../struct_fenwick_tree.html#ae085c1ee060e51af1ff17d4756072f07',1,'FenwickTree::FenwickTree()=default'],['../struct_fenwick_tree.html#a1427e094b397dfdb49e44e55386150cf',1,'FenwickTree::FenwickTree(int n)']]],
   ['fenwicktreeabel_4',['FenwickTreeAbel',['../struct_fenwick_tree_abel.html#adc61b3fd3c2fb31a8e1a07cdaa84b3cc',1,'FenwickTreeAbel::FenwickTreeAbel()=default'],['../struct_fenwick_tree_abel.html#a62cd21b02e8ffc94e837e2977a3d6ac7',1,'FenwickTreeAbel::FenwickTreeAbel(int n)']]],
   ['fft_5',['FFT',['../convolution_8hpp.html#a6a27829658ebde922fee66179fe05f3c',1,'convolution.hpp']]],

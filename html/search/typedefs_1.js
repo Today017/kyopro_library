@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['fps_0',['Fps',['../fps_8hpp.html#a5255675b4fd917ca27ba8c4073ed1829',1,'fps.hpp']]],
-  ['fpssparse_1',['FpsSparse',['../fps_8hpp.html#a004e0f258fdba6b09455f9a709023396',1,'fps.hpp']]]
+  ['ll_0',['ll',['../template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62',1,'template.hpp']]],
+  ['lll_1',['lll',['../int128_8hpp.html#af459ee81f834e904cb702ffcb928335e',1,'int128.hpp']]]
 ];
