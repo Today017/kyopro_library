@@ -2,12 +2,12 @@
 
 /// @brief 二項係数・階乗計算
 template<typename T>
-struct Combinatorics {
-    Combinatorics()=default;
+struct Comb {
+    Comb()=default;
 
     /// @brief 二項係数の前計算
     /// @note O(N)
-    Combinatorics(int n) {
+    Comb(int n) {
         fac=vector<T>(n+1);
         finv=vector<T>(n+1);
         fac[0]=1;
