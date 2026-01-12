@@ -108,11 +108,11 @@ $(function(){initNavTree('min__cost__flow_8hpp_source.html',''); initResizable(t
 <a href="min__cost__flow_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 最小費用流</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @note コスト負の辺を許容する。負の閉路はダメ。</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief 最小費用流</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@note コスト負の辺を許容する。負の閉路はダメ。</span></div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_min_cost_flow.html">    6</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_min_cost_flow.html">MinCostFlow</a> {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">/// @brief 辺構造体</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">///@brief 辺構造体</span></div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_min_cost_flow_1_1_edge.html">    8</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_min_cost_flow_1_1_edge.html">Edge</a> {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_min_cost_flow_1_1_edge.html#a547696eaaa79241ef48244ef50ef8f11">    9</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_min_cost_flow_1_1_edge.html#a547696eaaa79241ef48244ef50ef8f11">from</a>; <span class="comment">///&lt; 始点</span></div>
@@ -127,8 +127,8 @@ $(function(){initNavTree('min__cost__flow_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_min_cost_flow.html#a127b5fdc43378b741da7f935770e4a7c">   18</a></span>    <a class="code hl_function" href="struct_min_cost_flow.html#a127b5fdc43378b741da7f935770e4a7c">MinCostFlow</a>(<span class="keywordtype">int</span> n) { graph.resize(n); dist.resize(n); pot.resize(n); pv.resize(n); pe.resize(n); }</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">/// @brief s -&gt; t に容量 cap, コスト cost の辺を追加する</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">/// @note cost は負でも良い</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">///@brief s -&gt; t に容量 cap, コスト cost の辺を追加する</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">///@note cost は負でも良い</span></div>
 <div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_min_cost_flow.html#a5430122987ebfe40c88c82b50012df30">   22</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_min_cost_flow.html#a5430122987ebfe40c88c82b50012df30">add_edge</a>(<span class="keywordtype">int</span> from, <span class="keywordtype">int</span> to, ll cap, ll cost) {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        graph[from].push_back(Edge(from,to,cap,cost,graph[to].size(),<span class="keyword">false</span>));</div>
@@ -136,66 +136,64 @@ $(function(){initNavTree('min__cost__flow_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
 </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">/// @brief 全ての辺を返す</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">/// @note O(V+E)</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">/// @note 直前に流した flow による残余であることに注意</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">///@brief 全ての辺を返す</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">///@note O(V+E)</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">///@note 直前に流した flow による残余であることに注意</span></div>
 <div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_min_cost_flow.html#a54a6053fe01e39bc1a54a28864982d9e">   30</a></span>    <a class="code hl_function" href="struct_min_cost_flow.html#a54a6053fe01e39bc1a54a28864982d9e">vector</a>&lt;<a class="code hl_function" href="struct_min_cost_flow.html#a54a6053fe01e39bc1a54a28864982d9e">Edge</a>&gt; <a class="code hl_function" href="struct_min_cost_flow.html#a54a6053fe01e39bc1a54a28864982d9e">get_edges</a>() {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        vector&lt;Edge&gt; ret;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;graph.size(); i++) <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;e:graph[i]) <span class="keywordflow">if</span>(!e.isrev) ret.push_back(e);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,graph.size()) <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;e:graph[i]) <span class="keywordflow">if</span>(!e.isrev) ret.push_back(e);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
 </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">/// @brief s から t へ流量 f の最小費用流のコストを求める</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">/// @brief 流せない場合は INFL を返す</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">/// @note O(FE log V)</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">///@brief s から t へ流量 f の最小費用流のコストを求める</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">///@brief 流せない場合は INFL を返す</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">///@note O(FE log V)</span></div>
 <div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_min_cost_flow.html#ad73724ca7ad68fef33e7e1c1f4271ccf">   39</a></span>    ll <a class="code hl_function" href="struct_min_cost_flow.html#ad73724ca7ad68fef33e7e1c1f4271ccf">flow</a>(<span class="keywordtype">int</span> s, <span class="keywordtype">int</span> t, ll f) {</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">int</span> n=graph.size();</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        priority_queue&lt;pair&lt;ll,<span class="keywordtype">int</span>&gt;,vector&lt;pair&lt;ll,<span class="keywordtype">int</span>&gt;&gt;,greater&lt;&gt;&gt; pq;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        fill(pot.begin(),pot.end(),0);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        fill(pv.begin(),pv.end(),0);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        fill(pe.begin(),pe.end(),0);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        ll ret=0;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">while</span>(f&gt;0) {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            fill(dist.begin(),dist.end(),INFL);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            dist[s]=0;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            pq.push({0,s});</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordflow">while</span>(!pq.empty()) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                <span class="keyword">auto</span> [tmp,now]=pq.top();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                pq.pop();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <span class="keywordflow">if</span>(dist[now]&lt;tmp) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;graph[now].size(); i++) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    <span class="keyword">auto</span> [from,to,rev,cap,cost,isrev]=graph[now][i];</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                    ll ncost=dist[now]+cost+pot[now]-pot[to];</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                    <span class="keywordflow">if</span>(cap&gt;0 &amp;&amp; dist[to]&gt;ncost) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                        dist[to]=ncost; pv[to]=now; pe[to]=i;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                        pq.push({dist[to],to});</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                    }</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">if</span>(dist[t]==INFL) <span class="keywordflow">return</span> <a class="code hl_variable" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) pot[i]+=dist[i];</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            ll d=f;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> v=t; v!=s; v=pv[v]) d=min(d,graph[pv[v]][pe[v]].cap);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            f-=d; ret+=d*pot[t];</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> v=t; v!=s; v=pv[v]) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <span class="keyword">auto</span>&amp; e=graph[pv[v]][pe[v]];</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                e.cap-=d; graph[v][e.rev].cap+=d;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        fill(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(pot),0); fill(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(pv),0); fill(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(pe),0);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        ll ret=0;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">while</span>(f&gt;0) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            fill(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(dist),INFL);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            dist[s]=0;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            pq.push({0,s});</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordflow">while</span>(!pq.empty()) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                <span class="keyword">auto</span> [tmp,now]=pq.top();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                pq.pop();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                <span class="keywordflow">if</span>(dist[now]&lt;tmp) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,graph[now].size()) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                    <span class="keyword">auto</span> [from,to,rev,cap,cost,isrev]=graph[now][i];</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                    ll ncost=dist[now]+cost+pot[now]-pot[to];</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    <span class="keywordflow">if</span>(cap&gt;0 &amp;&amp; dist[to]&gt;ncost) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                        dist[to]=ncost; pv[to]=now; pe[to]=i;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                        pq.push({dist[to],to});</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                    }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">if</span>(dist[t]==INFL) <span class="keywordflow">return</span> <a class="code hl_variable" href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) pot[i]+=dist[i];</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            ll d=f;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> v=t; v!=s; v=pv[v]) chmin(d,graph[pv[v]][pe[v]].cap);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            f-=d; ret+=d*pot[t];</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> v=t; v!=s; v=pv[v]) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="keyword">auto</span>&amp; e=graph[pv[v]][pe[v]];</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                e.cap-=d; graph[v][e.rev].cap+=d;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
 </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    vector&lt;vector&lt;Edge&gt;&gt; graph;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    vector&lt;ll&gt; dist,pot; <span class="comment">// 距離, ポテンシャル</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    vector&lt;<span class="keywordtype">int</span>&gt; pv,pe;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>};</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    vector&lt;vector&lt;Edge&gt;&gt; graph;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    vector&lt;ll&gt; dist,pot; <span class="comment">// 距離, ポテンシャル</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    vector&lt;<span class="keywordtype">int</span>&gt; pv,pe;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>};</div>
 </div>
 <div class="ttc" id="astruct_min_cost_flow_1_1_edge_html"><div class="ttname"><a href="struct_min_cost_flow_1_1_edge.html">MinCostFlow::Edge</a></div><div class="ttdoc">辺構造体</div><div class="ttdef"><b>Definition</b> <a href="#l00008">min_cost_flow.hpp:8</a></div></div>
 <div class="ttc" id="astruct_min_cost_flow_1_1_edge_html_a414f6d0a7ad40f94dfe6eea0e2f1eddb"><div class="ttname"><a href="struct_min_cost_flow_1_1_edge.html#a414f6d0a7ad40f94dfe6eea0e2f1eddb">MinCostFlow::Edge::isrev</a></div><div class="ttdeci">bool isrev</div><div class="ttdef"><b>Definition</b> <a href="#l00014">min_cost_flow.hpp:14</a></div></div>
@@ -210,7 +208,9 @@ $(function(){initNavTree('min__cost__flow_8hpp_source.html',''); initResizable(t
 <div class="ttc" id="astruct_min_cost_flow_html_a5430122987ebfe40c88c82b50012df30"><div class="ttname"><a href="struct_min_cost_flow.html#a5430122987ebfe40c88c82b50012df30">MinCostFlow::add_edge</a></div><div class="ttdeci">void add_edge(int from, int to, ll cap, ll cost)</div><div class="ttdoc">s -&gt; t に容量 cap, コスト cost の辺を追加する</div><div class="ttdef"><b>Definition</b> <a href="#l00022">min_cost_flow.hpp:22</a></div></div>
 <div class="ttc" id="astruct_min_cost_flow_html_a54a6053fe01e39bc1a54a28864982d9e"><div class="ttname"><a href="struct_min_cost_flow.html#a54a6053fe01e39bc1a54a28864982d9e">MinCostFlow::get_edges</a></div><div class="ttdeci">vector&lt; Edge &gt; get_edges()</div><div class="ttdoc">全ての辺を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00030">min_cost_flow.hpp:30</a></div></div>
 <div class="ttc" id="astruct_min_cost_flow_html_ad73724ca7ad68fef33e7e1c1f4271ccf"><div class="ttname"><a href="struct_min_cost_flow.html#ad73724ca7ad68fef33e7e1c1f4271ccf">MinCostFlow::flow</a></div><div class="ttdeci">ll flow(int s, int t, ll f)</div><div class="ttdoc">s から t へ流量 f の最小費用流のコストを求める</div><div class="ttdef"><b>Definition</b> <a href="#l00039">min_cost_flow.hpp:39</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a1f713edb7a826e3710159658d6ef9815"><div class="ttname"><a href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></div><div class="ttdeci">const ll INFL</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00008">template.hpp:8</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a1f713edb7a826e3710159658d6ef9815"><div class="ttname"><a href="template_8hpp.html#a1f713edb7a826e3710159658d6ef9815">INFL</a></div><div class="ttdeci">const ll INFL</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00009">template.hpp:9</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a9064c572b2b33295a5ca0950d4f8737e"><div class="ttname"><a href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a></div><div class="ttdeci">#define all(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

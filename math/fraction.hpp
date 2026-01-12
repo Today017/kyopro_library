@@ -1,12 +1,12 @@
 #include"../../kyopro_library/template.hpp"
 
-/// @brief 有理数構造体
+///@brief 有理数構造体
 template<typename T=ll>
 struct Fraction {
     T upper,lower;
     Fraction()=default;
 
-    /// @brief 有理数 a/b を宣言する
+    ///@brief 有理数 a/b を宣言する
     Fraction(T a, T b) {
         T g=gcd(a,b);
         upper=a/g; lower=b/g;

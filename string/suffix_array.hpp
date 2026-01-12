@@ -1,10 +1,10 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-/// @brief Suffix Array
-/// @brief `sa[i] = j <-> s[j:] が辞書順 i 番目`
-/// @brief O(n log(n))
-/// @ref https://wk1080id.hatenablog.com/entry/2018/12/25/005926
+///@brief Suffix Array
+///@brief `sa[i] = j <-> s[j:] が辞書順 i 番目`
+///@brief O(n log(n))
+///@ref https://wk1080id.hatenablog.com/entry/2018/12/25/005926
 template<int C=256>
 vector<int> SuffixArray(string s) {
     s.push_back('$');
@@ -15,10 +15,10 @@ vector<int> SuffixArray(string s) {
 
     //2^0,2^1,...,2^k,... をやる
     //k=0
-    for(int i=0; i<n; i++) cnt[s[i]]++;
+    rep(i,n) cnt[s[i]]++;
     for(int i=1; i<cnt.size(); i++) cnt[i]+=cnt[i-1];
     //辞書順 = 累積和の小さい順 になる
-    for(int i=0; i<n; i++) p[--cnt[s[i]]]=i;
+    rep(i,n) p[--cnt[s[i]]]=i;
     //同値類を計算する
     c[p[0]]=0;
     for(int i=1; i<n; i++) {
@@ -30,9 +30,9 @@ vector<int> SuffixArray(string s) {
     for(int k=0; (1<<k)<n; k++) {
         //k を使って、(c[i],c[i+2^k]) でソート、 p[i]-=2^k でできる
         //c[i+2^k] でソート
-        for(int i=0; i<n; i++) np[i]=p[i]-(1<<k),(np[i]+=n)%=n;
-        fill(cnt.begin(),cnt.end(),0);
-        for(int i=0; i<n; i++) cnt[c[np[i]]]++;
+        rep(i,n) np[i]=p[i]-(1<<k),(np[i]+=n)%=n;
+        fill(all(cnt),0);
+        rep(i,n) cnt[c[np[i]]]++;
         for(int i=1; i<cnt.size(); i++) cnt[i]+=cnt[i-1];
         for(ll i=n-1; i>=0; i--) p[--cnt[c[np[i]]]]=np[i];
         //同値類

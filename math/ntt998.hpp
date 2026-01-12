@@ -2,9 +2,9 @@
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/mod/modint.hpp"
 
-/// @brief 数論変換
-/// @note O(N log(N))
-/// @details f(x) = Σ a[i]x^i, w^N = 1 とすると、F(t) = Σ f(w^i)t^i の各係数 mod 998244353 に変換する
+///@brief 数論変換
+///@note O(N log(N))
+///@details f(x) = Σ a[i]x^i, w^N = 1 とすると、F(t) = Σ f(w^i)t^i の各係数 mod 998244353 に変換する
 void NTT998(vector<Mod998>& a, bool inv=false) {
     static vector<Mod998> r, ir, tmp;
     if(r.empty()) {
@@ -21,7 +21,7 @@ void NTT998(vector<Mod998>& a, bool inv=false) {
     for(int i=n>>1; i; i>>=1, p++) {
         auto &cur=p&1? tmp: a, &nxt=p&1? a: tmp;
         Mod998 w=1, e=inv? r[p+1]: ir[p+1];
-        for(int j=0; j<n; j+=i, w*=e) for(int k=0; k<i; k++) {
+        for(int j=0; j<n; j+=i, w*=e) rep(k,i) {
             nxt[j+k]=cur[((j<<1)&(n-1))+k]+w*cur[(((j<<1)+i)&(n-1))+k];
         }
     }
@@ -32,16 +32,16 @@ void NTT998(vector<Mod998>& a, bool inv=false) {
     }
 }
 
-/// @brief AとBの畳み込み C[i] = Σ A[j]B[i-j] mod 998244353 を返す
-/// @note O(N log(N))
-/// @attention |a|+|b| <= 2^23 が必要
-/// @ref verify: https://judge.yosupo.jp/problem/convolution_mod
+///@brief AとBの畳み込み C[i] = Σ A[j]B[i-j] mod 998244353 を返す
+///@note O(N log(N))
+///@attention |a|+|b| <= 2^23 が必要
+///@ref verify: https://judge.yosupo.jp/problem/convolution_mod
 vector<Mod998> Convolve998(vector<Mod998> a,vector<Mod998> b) {
     int n=1, z=a.size()+b.size();
     while(n+1<z) n<<=1;
     a.resize(n); b.resize(n);
     NTT998(a); NTT998(b);
-    for(int i=0; i<n; i++) a[i]*=b[i];
+    rep(i,n) a[i]*=b[i];
     NTT998(a,true);
     while(a.size()+1>z) a.pop_back();
     return a;

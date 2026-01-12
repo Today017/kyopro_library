@@ -107,15 +107,15 @@ $(function(){initNavTree('lca__vertex_8hpp_source.html',''); initResizable(true)
 <div class="contents">
 <a href="lca__vertex_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @brief 頂点属性 LCA</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @ref verify: https://onlinejudge.u-aizu.ac.jp/solutions/problem/3372/revector&lt;int&gt;ew/10572853/Today03/C++17</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">///@brief 頂点属性 LCA</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@ref verify: https://onlinejudge.u-aizu.ac.jp/solutions/problem/3372/revector&lt;int&gt;ew/10572853/Today03/C++17</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Monoid&gt;</div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_lca_vertex.html">    6</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_lca_vertex.html">LcaVertex</a> {</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_lca_vertex.html#a125d5a6d04529671f85be9326630ae0e">    7</a></span>    <span class="keyword">using</span> Type=<span class="keyword">typename</span> Monoid::Type;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">/// @brief コンストラクタ</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">/// @param v 頂点の重み</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">///@brief コンストラクタ</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">///@param v 頂点の重み</span></div>
 <div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_lca_vertex.html#a281914034ced9e96528f4cdf3579ea80">   11</a></span>    <a class="code hl_function" href="struct_lca_vertex.html#a281914034ced9e96528f4cdf3579ea80">LcaVertex</a>(<span class="keyword">const</span> vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;&amp; g, <span class="keyword">const</span> vector&lt;Type&gt;&amp; v, <span class="keywordtype">int</span> root=0) {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">int</span> n=g.size();</div>
@@ -123,14 +123,14 @@ $(function(){initNavTree('lca__vertex_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">while</span>((1&lt;&lt;k)&lt;n) k++;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        par=vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;(k,vector&lt;<span class="keywordtype">int</span>&gt;(n,-1)),dep=vector&lt;<span class="keywordtype">int</span>&gt;(n),dat=vector&lt;vector&lt;Type&gt;&gt;(k,vector&lt;Type&gt;(n,Monoid::id()));</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        dfs(g,v,root,-1);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;k-1; i++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; j++) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,k-1) <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(j,n) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            par[i+1][j]=par[i][j]==-1?-1:par[i][par[i][j]];</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            dat[i+1][j]=par[i][j]==-1?Monoid::id():Monoid::op(dat[i][j],dat[i][par[i][j]]);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        }</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
 </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">/// @brief パス u-v のモノイド積を返す</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">///@brief パス u-v のモノイド積を返す</span></div>
 <div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_lca_vertex.html#a0e4f860220eedd9b1bc9eee332e033ca">   24</a></span>    Type <a class="code hl_function" href="struct_lca_vertex.html#a0e4f860220eedd9b1bc9eee332e033ca">fold</a>(<span class="keywordtype">int</span> u, <span class="keywordtype">int</span> v) {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">if</span>(dep[u]&gt;dep[v]) swap(u,v);</div>
@@ -166,9 +166,10 @@ $(function(){initNavTree('lca__vertex_8hpp_source.html',''); initResizable(true)
 </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../../kyopro_library/others/monoid.hpp&quot;</span></div>
-<div class="ttc" id="astruct_lca_vertex_html"><div class="ttname"><a href="struct_lca_vertex.html">LcaVertex</a></div><div class="ttdoc">頂点属性 LCA verify: https://onlinejudge.u-aizu.ac.jp/solutions/problem/3372/revector&lt;int&gt;ew/10572853/Tod...</div><div class="ttdef"><b>Definition</b> <a href="#l00006">lca_vertex.hpp:6</a></div></div>
+<div class="ttc" id="astruct_lca_vertex_html"><div class="ttname"><a href="struct_lca_vertex.html">LcaVertex</a></div><div class="ttdoc">頂点属性 LCA</div><div class="ttdef"><b>Definition</b> <a href="#l00006">lca_vertex.hpp:6</a></div></div>
 <div class="ttc" id="astruct_lca_vertex_html_a0e4f860220eedd9b1bc9eee332e033ca"><div class="ttname"><a href="struct_lca_vertex.html#a0e4f860220eedd9b1bc9eee332e033ca">LcaVertex::fold</a></div><div class="ttdeci">Type fold(int u, int v)</div><div class="ttdoc">パス u-v のモノイド積を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00024">lca_vertex.hpp:24</a></div></div>
 <div class="ttc" id="astruct_lca_vertex_html_a281914034ced9e96528f4cdf3579ea80"><div class="ttname"><a href="struct_lca_vertex.html#a281914034ced9e96528f4cdf3579ea80">LcaVertex::LcaVertex</a></div><div class="ttdeci">LcaVertex(const vector&lt; vector&lt; int &gt; &gt; &amp;g, const vector&lt; Type &gt; &amp;v, int root=0)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition</b> <a href="#l00011">lca_vertex.hpp:11</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

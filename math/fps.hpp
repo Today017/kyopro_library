@@ -3,43 +3,43 @@
 
 #include"../../kyopro_library/math/ntt998.hpp"
 
-using Poly=vector<Mod998>; //< 多項式
-using PolySparse=vector<pair<int,Mod998>>; //< 疎な多項式（(次数, 係数)の配列）
+using Poly=vector<Mod998>; ///< 多項式
+using PolySparse=vector<pair<int,Mod998>>; ///< 疎な多項式（(次数, 係数)の配列）
 
-/// @brief 形式的冪級数
-/// @ref https://potato167.github.io/po167_library
+///@brief 形式的冪級数
+///@ref https://potato167.github.io/po167_library
 namespace FPS {
-    /// @brief 多項式 f, g の和を返す
+    ///@brief 多項式 f, g の和を返す
     Poly Add(const Poly& a, const Poly& b) {
         Poly res(max(a.size(),b.size()));
-        for(int i=0; i<res.size(); i++) {
+        rep(i,res.size()) {
             if(i<a.size()) res[i]+=a[i];
             if(i<b.size()) res[i]+=b[i];
         }
         return res;
     }
 
-    /// @brief 多項式 f, g の差を返す
+    ///@brief 多項式 f, g の差を返す
     Poly Sub(const Poly& f, const Poly& g, int len=-1) {
         if(len==-1) len=max(f.size(),g.size());
         Poly res(len);
-        for(int i=0; i<len; i++) {
+        rep(i,len) {
             if(i<f.size()) res[i]+=f[i];
             if(i<g.size()) res[i]-=g[i];
         }
         return res;
     }
 
-    /// @brief 多項式 f, g の積を返す
+    ///@brief 多項式 f, g の積を返す
     Poly Mul(const Poly& f, const Poly& g, int len=-1) {
         auto fg=Convolve998(f,g);
         if(len!=-1) fg.resize(len+1);
         return fg;
     }
 
-    /// @brief 多項式 f に対し、f*g = 1 なる g を返す
-    /// @note O(N log(N))
-    /// @ref https://judge.yosupo.jp/problem/inv_of_formal_power_series
+    ///@brief 多項式 f に対し、f*g = 1 なる g を返す
+    ///@note O(N log(N))
+    ///@ref https://judge.yosupo.jp/problem/inv_of_formal_power_series
     Poly Inv(Poly f, int len=-1) {
         /**
          * 方程式 h(g) = 1/g - f = 0 の解を求める問題に変換する
@@ -64,18 +64,18 @@ namespace FPS {
         while(s<len) {
             Poly nxtg(s*2,0), res(s*2,0);
             g.resize(s*2);
-            for(int i=0; i<s*2; i++) {
+            rep(i,s*2) {
                 if(int(f.size())>i) res[i]=f[i];
                 nxtg[i]=g[i];
             }
 
             //fg_high を計算
             NTT998(g); NTT998(res);
-            for(int i=0; i<s*2; i++) res[i]*=g[i];
-            NTT998(res,true); for(int i=0; i<s; i++) res[i]=0; //fg_high
+            rep(i,s*2) res[i]*=g[i];
+            NTT998(res,true); rep(i,s) res[i]=0; //fg_high
 
             //fg_high * g_n を計算
-            NTT998(res); for(int i=0; i<s*2; i++) res[i]*=g[i]; NTT998(res,true);
+            NTT998(res); rep(i,s*2) res[i]*=g[i]; NTT998(res,true);
 
             for(int i=s; i<s*2; i++) nxtg[i]-=res[i];
             swap(nxtg,g);
@@ -85,7 +85,7 @@ namespace FPS {
         return g;
     }
 
-    /// @brief 多項式 f の積分を返す
+    ///@brief 多項式 f の積分を返す
     Poly Integral(Poly f) {
         if(f.empty()) return f;
         Poly num_inv((int)f.size()+1);
@@ -99,15 +99,15 @@ namespace FPS {
         return f;
     }
 
-    /// @brief 多項式 f の微分を返す
+    ///@brief 多項式 f の微分を返す
     Poly Differential(Poly f) {
         if(f.empty()) return f;
-        for(int i=0; i<(int)f.size()-1; i++) f[i]=f[i+1]*(Mod998)(i+1);
+        rep(i,(int)f.size()-1) f[i]=f[i+1]*(Mod998)(i+1);
         f.pop_back();
         return f;
     }
 
-    /// @brief 多項式 f, g について、`f = gq + r` なる q, r を返す
+    ///@brief 多項式 f, g について、`f = gq + r` なる q, r を返す
     pair<Poly,Poly> Div(Poly f, Poly g) {
         int n=f.size(),m=g.size();
         if(n<m) return{{},f};
@@ -123,13 +123,19 @@ namespace FPS {
         return {q,r};
     }
 
-    /// @brief 多項式 f, g の積を返す（ただし、g は疎な多項式として与える）
-    Poly MulSparse(Poly f, PolySparse g) {
-        auto itr=find_if(g.begin(),g.end(),[&](auto p) { return p.first==0; });
+    ///@brief 多項式 f, g の積を返す（ただし、g は疎な多項式として与える）
+    Poly MulSparse(Poly f, PolySparse g, bool extend=false) {
+        auto itr=find_if(all(g),[&](auto p) { return p.first==0; });
         Mod998 x0=0;
         if(itr!=g.end()) {
             x0=itr->second;
             g.erase(itr);
+        }
+
+        if(extend) {
+            int mxdeg=0;
+            for(auto p: g) chmax(mxdeg,p.first);
+            f.resize(f.size()+mxdeg+1);
         }
 
         for(int i=(int)f.size()-1; i>=0; i--) {
@@ -143,14 +149,20 @@ namespace FPS {
         return f;
     }
 
-    /// @brief 多項式 f, g に対し、 f / g を返す（ただし、g は疎な多項式として与える）
-    Poly DivSparse(Poly f, PolySparse g) {
-        auto itr=find_if(g.begin(),g.end(),[&](auto p) { return p.first==0; });
+    ///@brief 多項式 f, g に対し、 f / g を返す（ただし、g は疎な多項式として与える）
+    Poly DivSparse(Poly f, PolySparse g, bool extend=false) {
+        auto itr=find_if(all(g),[&](auto p) { return p.first==0; });
         assert(itr!=g.end());
         Mod998 x0_inv=itr->second.inv();
         g.erase(itr);
 
-        for(int i=0; i<f.size(); i++) {
+        if(extend) {
+            int mxdeg=0;
+            for(auto p: g) chmax(mxdeg,p.first);
+            f.resize(f.size()+mxdeg+1);
+        }
+
+        rep(i,f.size()) {
             f[i]*=x0_inv;
             for(auto& [d,c]: g) {
                 if(i+d>=f.size()) continue;
@@ -166,7 +178,7 @@ namespace FPS {
 
         Poly CyclicConvolution(Poly f, Poly g) {
             NTT998(f); NTT998(g);
-            for(int i=0; i<(int)f.size(); i++) f[i]*=g[i];
+            rep(i,(int)f.size()) f[i]*=g[i];
             NTT998(f,true);
             return f;
         }
@@ -179,12 +191,12 @@ namespace FPS {
             auto cp=v;
             NTT998(cp,true);  rep(i,z) cp[i]*=z;
             Mod998 tmp=Mod998(z).inv();
-            for(int i=0; i<z; i++) {
+            rep(i,z) {
                 cp[i]*=tmp;
                 tmp*=e;
             }
             NTT998(cp);
-            for(int i=0; i<z; i++) v.push_back(cp[i]);
+            rep(i,z) v.push_back(cp[i]);
         }
 
         //s.t|v|=2^s(no assert)
@@ -192,7 +204,7 @@ namespace FPS {
             int z=v.size()/2;
             Mod998 half=Mod998(2).inv();
             if(odd==0) {
-                for(int i=0; i<z; i++) v[i]=(v[i*2]+v[i*2+1])*half;
+                rep(i,z) v[i]=(v[i*2]+v[i*2+1])*half;
                 v.resize(z);
             }else{
                 Mod998 e=Mod998(PRIMITIVE_ROOT).pow(Mod998::mod()/(2*z));
@@ -200,20 +212,20 @@ namespace FPS {
                 Poly es={half};
                 while((int)es.size()!=z) {
                     Poly n_es((int)es.size()*2);
-                    for(int i=0; i<(int)es.size(); i++) {
+                    rep(i,(int)es.size()) {
                         n_es[i*2]=(es[i]);
                         n_es[i*2+1]=(es[i]*ie);
                     }
                     ie*=ie;
                     swap(n_es,es);
                 }
-                for(int i=0; i<z; i++) v[i]=(v[i*2]-v[i*2+1])*es[i];
+                rep(i,z) v[i]=(v[i*2]-v[i*2+1])*es[i];
                 v.resize(z);
             }
         }
     }
 
-    /// @brief 多項式 f について、e^f = Σ[k=0~len-1](f(x)^k/k!) を返す
+    ///@brief 多項式 f について、e^f = Σ[k=0~len-1](f(x)^k/k!) を返す
     Poly Exp(Poly f, int len=-1) {
         /**
          * 方程式 h(g) = log(g) - f = 0 の解を求める問題に変換する。
@@ -249,7 +261,7 @@ namespace FPS {
             A=Integral(A); //A = ∫(g'/g)dx = log(g)
 
             //A = (f-log(g_n))_high
-            for(int i=0; i<s; i++) A[i]=0;
+            rep(i,s) A[i]=0;
             for(int i=s; i<s*2; i++) A[i]=(i<(int)f.size() ? f[i] : 0)-A[i];
 
             //g_{n+1} = g_n + g_n * (f-log(g))_high
@@ -262,7 +274,7 @@ namespace FPS {
         return g;
     }
 
-    /// @brief 多項式 f について、log(f) を返す
+    ///@brief 多項式 f について、log(f) を返す
     Poly Log(Poly f, int len=-1) {
         if(len==-1) len=f.size();
         if(len==0) return{};
@@ -273,7 +285,7 @@ namespace FPS {
         return Integral(res);
     }
 
-    /// @brief 多項式 f^M を返す
+    ///@brief 多項式 f^M を返す
     Poly Pow(Poly f, ll M, int len=-1) {
         if(len==-1) len=f.size();
         Poly res(len,0);
@@ -281,7 +293,7 @@ namespace FPS {
             res[0]=1;
             return res;
         }
-        for(int i=0; i<(int)f.size(); i++) {
+        rep(i,(int)f.size()) {
             if(f[i]==0) continue;
             if(i>(len-1)/M) break;
             Poly g((int)f.size()-i);
@@ -299,13 +311,13 @@ namespace FPS {
                 v=v*v;
                 M>>=1;
             }
-            for(int i=0; i<len; i++) res[i+zero]=g[i]*c;
+            rep(i,len) res[i+zero]=g[i]*c;
             return res;
         }
         return res;
     }
 
-    /// @brief `[x^k](P/Q)` を返す
+    ///@brief `[x^k](P/Q)` を返す
     Mod998 BostanMori(ll k, Poly P, Poly Q) {
         assert(!Q.empty()&&Q[0]!=0);
         int z=1;
@@ -316,11 +328,11 @@ namespace FPS {
         while(k) {
             //Q(-x)
             Poly Q_n(z*2);
-            for(int i=0; i<z; i++) {
+            rep(i,z) {
                 Q_n[i*2]=Q[i*2+1];
                 Q_n[i*2+1]=Q[i*2];
             }
-            for(int i=0; i<z*2; i++) {
+            rep(i,z*2) {
                 P[i]*=Q_n[i];
                 Q[i]*=Q_n[i];
             }
@@ -332,7 +344,7 @@ namespace FPS {
             Internal::Extend(Q);
         }
         Mod998 SP=0,SQ=0;
-        for(int i=0; i<z; i++) SP+=P[i],SQ+=Q[i];
+        rep(i,z) SP+=P[i],SQ+=Q[i];
         return SP/SQ;
     }
 

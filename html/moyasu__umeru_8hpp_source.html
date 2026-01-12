@@ -108,7 +108,7 @@ $(function(){initNavTree('moyasu__umeru_8hpp_source.html',''); initResizable(tru
 <a href="moyasu__umeru_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../../kyopro_library/graph/flow/max_flow.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 燃やす埋める</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief 燃やす埋める</span></div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_moyasu_umeru.html">    5</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_moyasu_umeru.html">MoyasuUmeru</a> {</div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
@@ -120,7 +120,7 @@ $(function(){initNavTree('moyasu__umeru_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
 </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">/// @brief x[i] = 0 のときコスト zero, x[i] = 1 のときコスト one がかかるという条件を追加する</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">///@brief x[i] = 0 のときコスト zero, x[i] = 1 のときコスト one がかかるという条件を追加する</span></div>
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_moyasu_umeru.html#a1c3fa40c4f5705ef736f904923e623c8">add_single</a>(<span class="keywordtype">int</span> i, ll zero, ll one) {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span>(zero&lt;=one) {</div>
@@ -155,8 +155,8 @@ $(function(){initNavTree('moyasu__umeru_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
 </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">/// @brief 解を復元する</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">/// @attention `solve()` を実行した後に使うこと</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">///@brief 解を復元する</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">///@attention `solve()` を実行した後に使うこと</span></div>
 <div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct_moyasu_umeru.html#a41fd6c3d29357ac60da7f94a90e87c6f">   46</a></span>    <a class="code hl_function" href="struct_moyasu_umeru.html#a41fd6c3d29357ac60da7f94a90e87c6f">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_function" href="struct_moyasu_umeru.html#a41fd6c3d29357ac60da7f94a90e87c6f">fukugen</a>() {</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">auto</span> ret=mf.mincut(start);</div>
@@ -166,7 +166,7 @@ $(function(){initNavTree('moyasu__umeru_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
 </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">/// @brief コスト最小値を求める</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">///@brief コスト最小値を求める</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="struct_moyasu_umeru.html#aec53842b36415dff35520299198116db">   54</a></span>    ll <a class="code hl_function" href="struct_moyasu_umeru.html#aec53842b36415dff35520299198116db">solve</a>() { <span class="keywordflow">return</span> mf.flow(start,goal)+offset; }</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">private</span>:</div>

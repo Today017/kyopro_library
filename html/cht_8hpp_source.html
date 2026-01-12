@@ -108,17 +108,17 @@ $(function(){initNavTree('cht_8hpp_source.html',''); initResizable(true); });
 <a href="cht_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/algorithm/binary_search.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Convex Hull Trick</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @ref verify: https://judge.yosupo.jp/submission/291811</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @ref https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// @tparam Min true のとき最小値を管理する</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief Convex Hull Trick</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@ref verify: https://judge.yosupo.jp/submission/291811</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@ref https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">///@tparam Min true のとき最小値を管理する</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T=ll, <span class="keywordtype">bool</span> MIN=<span class="keyword">true</span>&gt;</div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_c_h_t.html">    9</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_c_h_t.html">CHT</a> {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_c_h_t.html#ace0eaacebdd28102aab34cb40dd2fd00">   10</a></span>    <a class="code hl_function" href="struct_c_h_t.html#ace0eaacebdd28102aab34cb40dd2fd00">CHT</a>()=<span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">/// @brief 直線 ax + b を追加する</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">/// @note O(log(N))</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">///@brief 直線 ax + b を追加する</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">///@note O(log(N))</span></div>
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_c_h_t.html#a13379c27cda3ed92a6e093a29da99634">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_c_h_t.html#a13379c27cda3ed92a6e093a29da99634">add</a>(T a, T b) {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span>(!MIN) a*=-1, b*=-1;</div>
@@ -149,8 +149,8 @@ $(function(){initNavTree('cht_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
 </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">/// @brief x に対する直線群の最小値を求める</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">/// @note O((log(N))^2)</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">///@brief x に対する直線群の最小値を求める</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">///@note O((log(N))^2)</span></div>
 <div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct_c_h_t.html#a5e96b21a5063430042cbb4e558228094">   44</a></span>    T <a class="code hl_function" href="struct_c_h_t.html#a5e96b21a5063430042cbb4e558228094">get</a>(T x) {</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keyword">auto</span> [a,b]=*lines.lower_bound(BinarySearch&lt;T&gt;(lines.begin()-&gt;first,lines.rbegin()-&gt;first+1,[&amp;](T m) {</div>
@@ -177,7 +177,7 @@ $(function(){initNavTree('cht_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
 </div>
-<div class="ttc" id="astruct_c_h_t_html"><div class="ttname"><a href="struct_c_h_t.html">CHT</a></div><div class="ttdoc">Convex Hull Trick verify: https://judge.yosupo.jp/submission/291811 https://hcpc-hokudai....</div><div class="ttdef"><b>Definition</b> <a href="#l00009">cht.hpp:9</a></div></div>
+<div class="ttc" id="astruct_c_h_t_html"><div class="ttname"><a href="struct_c_h_t.html">CHT</a></div><div class="ttdoc">Convex Hull Trick</div><div class="ttdef"><b>Definition</b> <a href="#l00009">cht.hpp:9</a></div></div>
 <div class="ttc" id="astruct_c_h_t_html_a13379c27cda3ed92a6e093a29da99634"><div class="ttname"><a href="struct_c_h_t.html#a13379c27cda3ed92a6e093a29da99634">CHT::add</a></div><div class="ttdeci">void add(T a, T b)</div><div class="ttdoc">直線 ax + b を追加する</div><div class="ttdef"><b>Definition</b> <a href="#l00014">cht.hpp:14</a></div></div>
 <div class="ttc" id="astruct_c_h_t_html_a5e96b21a5063430042cbb4e558228094"><div class="ttname"><a href="struct_c_h_t.html#a5e96b21a5063430042cbb4e558228094">CHT::get</a></div><div class="ttdeci">T get(T x)</div><div class="ttdoc">x に対する直線群の最小値を求める</div><div class="ttdef"><b>Definition</b> <a href="#l00044">cht.hpp:44</a></div></div>
 <div class="ttc" id="astruct_c_h_t_html_ace0eaacebdd28102aab34cb40dd2fd00"><div class="ttname"><a href="struct_c_h_t.html#ace0eaacebdd28102aab34cb40dd2fd00">CHT::CHT</a></div><div class="ttdeci">CHT()=default</div></div>

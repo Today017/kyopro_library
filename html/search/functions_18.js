@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['zalgorithm_0',['ZAlgorithm',['../z__algorithm_8hpp.html#a81e705d1ba548f286c93756a5baec7f5',1,'z_algorithm.hpp']]]
+  ['yesno_0',['YESNO',['../namespace_util.html#a73ddf5ec34989cb1cded6ca7f4974adb',1,'Util']]],
+  ['yesno_1',['YesNo',['../namespace_util.html#abf0a5fd021ab48cbb5185a311e3c654d',1,'Util']]]
 ];

@@ -109,23 +109,23 @@ $(function(){initNavTree('segtree__2d_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Monoid&gt;</div>
 <div class="foldopen" id="foldopen00004" data-start="{" data-end="};">
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="struct_segment_tree2_d.html">    4</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_segment_tree2_d.html">SegmentTree2D</a> {</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_segment_tree2_d.html#a7a98f071c3f67b1728edc6784a4dac62">    5</a></span>    <span class="keyword">using</span> Type=Monoid::Type;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="struct_seg_tree2_d.html">    4</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_seg_tree2_d.html">SegTree2D</a> {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_seg_tree2_d.html#a0c8ee46bd4eaadad5e9df039f5a041f1">    5</a></span>    <span class="keyword">using</span> Type=Monoid::Type;</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_segment_tree2_d.html#a1f340ff0fcceff8ca552fbc7c1610194">    7</a></span>    <a class="code hl_function" href="struct_segment_tree2_d.html#a1f340ff0fcceff8ca552fbc7c1610194">SegmentTree2D</a>()=<span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_seg_tree2_d.html#a8b11e061d4ece1728a332cf4debb1fa2">    7</a></span>    <a class="code hl_function" href="struct_seg_tree2_d.html#a8b11e061d4ece1728a332cf4debb1fa2">SegTree2D</a>()=<span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">/// @brief サイズ h * w の２次元セグメント木を構築する</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">///@brief サイズ h * w の２次元セグメント木を構築する</span></div>
 <div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_segment_tree2_d.html#a7422bf53112a0d3df9b215a2c5293a26">   10</a></span>    <a class="code hl_function" href="struct_segment_tree2_d.html#a7422bf53112a0d3df9b215a2c5293a26">SegmentTree2D</a>(<span class="keywordtype">int</span> h, <span class="keywordtype">int</span> w) {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_seg_tree2_d.html#a141a6e0be33a9f995b355c909a1f45f9">   10</a></span>    <a class="code hl_function" href="struct_seg_tree2_d.html#a141a6e0be33a9f995b355c909a1f45f9">SegTree2D</a>(<span class="keywordtype">int</span> h, <span class="keywordtype">int</span> w) {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">this</span>-&gt;h=h; <span class="keyword">this</span>-&gt;w=w;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        dat=vector&lt;vector&lt;Type&gt;&gt;(<span class="keyword">this</span>-&gt;h*2,vector&lt;Type&gt;(<span class="keyword">this</span>-&gt;w*2,Monoid::id()));</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
 </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">/// @brief 位置 (x, y) の要素を v に更新する</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">/// @note O(log(h) log(w))</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">///@brief 位置 (x, y) の要素を v に更新する</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">///@note O(log(h) log(w))</span></div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_segment_tree2_d.html#acd4e88f120683b23eda460fce60537ae">   17</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_segment_tree2_d.html#acd4e88f120683b23eda460fce60537ae">set</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, Type v) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_seg_tree2_d.html#ab3928880bac502ace6daf6bb0b27589c">   17</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_seg_tree2_d.html#ab3928880bac502ace6daf6bb0b27589c">set</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, Type v) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        x+=h; y+=w;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        dat[x][y]=v;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=x&gt;&gt;1; i&gt;0; i&gt;&gt;=1) dat[i][y]=Monoid::op(dat[i&lt;&lt;1][y],dat[i&lt;&lt;1|1][y]);</div>
@@ -136,10 +136,10 @@ $(function(){initNavTree('segtree__2d_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
 </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">/// @brief 矩形領域 [l, r) × [u, d) のモノイド積を返す</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">/// @note O(log(h) log(w))</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">///@brief 矩形領域 [l, r) × [u, d) のモノイド積を返す</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">///@note O(log(h) log(w))</span></div>
 <div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_segment_tree2_d.html#a746d58b6e0eb033030b54e67036b5798">   29</a></span>    Type <a class="code hl_function" href="struct_segment_tree2_d.html#a746d58b6e0eb033030b54e67036b5798">fold</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, <span class="keywordtype">int</span> u, <span class="keywordtype">int</span> d) {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_seg_tree2_d.html#a84d72e51cf62f1adf9e7468c7bee7e78">   29</a></span>    Type <a class="code hl_function" href="struct_seg_tree2_d.html#a84d72e51cf62f1adf9e7468c7bee7e78">fold</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, <span class="keywordtype">int</span> u, <span class="keywordtype">int</span> d) {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        Type ret=Monoid::id();</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        l+=h; r+=h; u+=w; d+=w;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">while</span>(l&lt;r) {</div>
@@ -165,11 +165,11 @@ $(function(){initNavTree('segtree__2d_8hpp_source.html',''); initResizable(true)
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
 </div>
-<div class="ttc" id="astruct_segment_tree2_d_html"><div class="ttname"><a href="struct_segment_tree2_d.html">SegmentTree2D</a></div><div class="ttdef"><b>Definition</b> <a href="#l00004">segtree_2d.hpp:4</a></div></div>
-<div class="ttc" id="astruct_segment_tree2_d_html_a1f340ff0fcceff8ca552fbc7c1610194"><div class="ttname"><a href="struct_segment_tree2_d.html#a1f340ff0fcceff8ca552fbc7c1610194">SegmentTree2D::SegmentTree2D</a></div><div class="ttdeci">SegmentTree2D()=default</div></div>
-<div class="ttc" id="astruct_segment_tree2_d_html_a7422bf53112a0d3df9b215a2c5293a26"><div class="ttname"><a href="struct_segment_tree2_d.html#a7422bf53112a0d3df9b215a2c5293a26">SegmentTree2D::SegmentTree2D</a></div><div class="ttdeci">SegmentTree2D(int h, int w)</div><div class="ttdoc">サイズ h * w の２次元セグメント木を構築する</div><div class="ttdef"><b>Definition</b> <a href="#l00010">segtree_2d.hpp:10</a></div></div>
-<div class="ttc" id="astruct_segment_tree2_d_html_a746d58b6e0eb033030b54e67036b5798"><div class="ttname"><a href="struct_segment_tree2_d.html#a746d58b6e0eb033030b54e67036b5798">SegmentTree2D::fold</a></div><div class="ttdeci">Type fold(int l, int r, int u, int d)</div><div class="ttdoc">矩形領域 [l, r) × [u, d) のモノイド積を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00029">segtree_2d.hpp:29</a></div></div>
-<div class="ttc" id="astruct_segment_tree2_d_html_acd4e88f120683b23eda460fce60537ae"><div class="ttname"><a href="struct_segment_tree2_d.html#acd4e88f120683b23eda460fce60537ae">SegmentTree2D::set</a></div><div class="ttdeci">void set(int x, int y, Type v)</div><div class="ttdoc">位置 (x, y) の要素を v に更新する</div><div class="ttdef"><b>Definition</b> <a href="#l00017">segtree_2d.hpp:17</a></div></div>
+<div class="ttc" id="astruct_seg_tree2_d_html"><div class="ttname"><a href="struct_seg_tree2_d.html">SegTree2D</a></div><div class="ttdef"><b>Definition</b> <a href="#l00004">segtree_2d.hpp:4</a></div></div>
+<div class="ttc" id="astruct_seg_tree2_d_html_a141a6e0be33a9f995b355c909a1f45f9"><div class="ttname"><a href="struct_seg_tree2_d.html#a141a6e0be33a9f995b355c909a1f45f9">SegTree2D::SegTree2D</a></div><div class="ttdeci">SegTree2D(int h, int w)</div><div class="ttdoc">サイズ h * w の２次元セグメント木を構築する</div><div class="ttdef"><b>Definition</b> <a href="#l00010">segtree_2d.hpp:10</a></div></div>
+<div class="ttc" id="astruct_seg_tree2_d_html_a84d72e51cf62f1adf9e7468c7bee7e78"><div class="ttname"><a href="struct_seg_tree2_d.html#a84d72e51cf62f1adf9e7468c7bee7e78">SegTree2D::fold</a></div><div class="ttdeci">Type fold(int l, int r, int u, int d)</div><div class="ttdoc">矩形領域 [l, r) × [u, d) のモノイド積を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00029">segtree_2d.hpp:29</a></div></div>
+<div class="ttc" id="astruct_seg_tree2_d_html_a8b11e061d4ece1728a332cf4debb1fa2"><div class="ttname"><a href="struct_seg_tree2_d.html#a8b11e061d4ece1728a332cf4debb1fa2">SegTree2D::SegTree2D</a></div><div class="ttdeci">SegTree2D()=default</div></div>
+<div class="ttc" id="astruct_seg_tree2_d_html_ab3928880bac502ace6daf6bb0b27589c"><div class="ttname"><a href="struct_seg_tree2_d.html#ab3928880bac502ace6daf6bb0b27589c">SegTree2D::set</a></div><div class="ttdeci">void set(int x, int y, Type v)</div><div class="ttdoc">位置 (x, y) の要素を v に更新する</div><div class="ttdef"><b>Definition</b> <a href="#l00017">segtree_2d.hpp:17</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

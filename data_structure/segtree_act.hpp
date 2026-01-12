@@ -1,29 +1,29 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-/// @brief 区間作用一点取得型セグメント木
-/// @tparam Operator 作用素（モノイド）
-/// @ref verify: https://judge.yosupo.jp/problem/range_affine_point_get
-/// @ref verify: https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_D
+///@brief 区間作用一点取得型セグメント木
+///@tparam Operator 作用素（モノイド）
+///@ref verify: https://judge.yosupo.jp/problem/range_affine_point_get
+///@ref verify: https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_D
 template<typename Operator>
 struct SegTreeAct {
     using Type=typename Operator::Type;
 
-    /// @brief 要素数 n で構築する
+    ///@brief 要素数 n で構築する
     SegTreeAct(int z) {
         n=1; while(n<z) n*=2;
         dat.resize(n*2,Operator::id());
     }
 
-    /// @brief 配列 v から構築する
+    ///@brief 配列 v から構築する
     SegTreeAct(vector<Type>& v) {
         int z=v.size();
         n=1; while(n<z) n*=2;
         dat.resize(n*2,Operator::id());
-        for(int i=0; i<z; i++) dat[i+n]=v[i];
+        rep(i,z) dat[i+n]=v[i];
     }
 
-    /// @brief k 番目の要素を取得する
+    ///@brief k 番目の要素を取得する
     Type operator[](int k) {
         int i=1, l=0, r=n;
         while(i<n) {
@@ -36,7 +36,7 @@ struct SegTreeAct {
         return dat[i];
     }
 
-    /// @brief 区間 [l, r) に x を作用させる
+    ///@brief 区間 [l, r) に x を作用させる
     void apply(int l, int r, Type x) {
         l+=n; r+=n;
         int h=__lg(n);

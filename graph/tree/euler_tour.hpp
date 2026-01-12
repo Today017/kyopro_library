@@ -7,10 +7,10 @@ struct EulerTourInfo {
     vector<int> out; ///< 各頂点の出力時刻 out[v] := 頂点 v の部分木の探索が終了した時刻
 };
 
-/// @brief 木 g をオイラーツアーする
-/// @brief `(行きがけ順, 深さ, 入力時刻, 出力時刻)` を返す
-/// @details 部分木のクエリを列のに対する区間クエリとして扱えるようになる
-/// @details 例えば、頂点 v の部分木はオイラーツアー後の列の区間 `[in[v], out[v])` に対応する
+///@brief 木 g をオイラーツアーする
+///@brief `(行きがけ順, 深さ, 入力時刻, 出力時刻)` を返す
+///@details 部分木のクエリを列のに対する区間クエリとして扱えるようになる
+///@details 例えば、頂点 v の部分木はオイラーツアー後の列の区間 `[in[v], out[v])` に対応する
 EulerTourInfo EulerTour(const vector<vector<int>>& g, int r=0) {
     int n=g.size();
     vector<int> tour,depth(n),in(n),out(n);

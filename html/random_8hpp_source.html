@@ -109,18 +109,18 @@ $(function(){initNavTree('random_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/others/xor128.hpp&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @brief ランダムテストケース生成</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@brief ランダムテストケース生成</span></div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespace_rand.html">    6</a></span><span class="keyword">namespace</span> <a class="code hl_namespace" href="namespace_rand.html">Rand</a> {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">/// @brief 0 以上 n 未満のランダムな整数を返す</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">///@brief 0 以上 n 未満のランダムな整数を返す</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="namespace_rand.html#a3f3facff0ace3326cb57104e9e5caf39">    9</a></span>    T <a class="code hl_function" href="namespace_rand.html#a3f3facff0ace3326cb57104e9e5caf39">RandomInt</a>(T n) { <span class="keywordflow">return</span> Xor128(n); }</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">/// @brief [l, r) の範囲からランダムな整数を返す</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">///@brief [l, r) の範囲からランダムな整数を返す</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespace_rand.html#ab29ec34e3353a57d5f50ac9fcab433fb">   13</a></span>    T <a class="code hl_function" href="namespace_rand.html#ab29ec34e3353a57d5f50ac9fcab433fb">RandomInt</a>(T l, T r) { <span class="keywordflow">return</span> Xor128(l,r); }</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">/// @brief 配列 a からランダムな要素を取得し、削除する</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">///@brief 配列 a からランダムな要素を取得し、削除する</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespace_rand.html#acaf826f38a009544c146077bf4fdc4b9">   17</a></span>    T <a class="code hl_function" href="namespace_rand.html#acaf826f38a009544c146077bf4fdc4b9">GetRandomElement</a>(vector&lt;T&gt;&amp; a) {</div>
@@ -133,16 +133,16 @@ $(function(){initNavTree('random_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
 </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">/// @brief 長さ n の [lo, hi) の要素からなるランダムな数列を返す</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">/// @param no_dup false の場合、重複要素を許容する</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">///@brief 長さ n の [lo, hi) の要素からなるランダムな数列を返す</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">///@param no_dup false の場合、重複要素を許容する</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespace_rand.html#a544ad160f2b156fb65f28c35d472d0e2">   29</a></span>    <a class="code hl_function" href="namespace_rand.html#a544ad160f2b156fb65f28c35d472d0e2">vector</a>&lt;<a class="code hl_function" href="namespace_rand.html#a544ad160f2b156fb65f28c35d472d0e2">T</a>&gt;<a class="code hl_function" href="namespace_rand.html#a544ad160f2b156fb65f28c35d472d0e2">RandomArray</a>(<span class="keywordtype">int</span> n, T lo, T hi, <span class="keywordtype">bool</span> no_dup=<span class="keyword">false</span>) {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        vector&lt;T&gt;ret(n);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">if</span>(!no_dup) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) ret[i]=RandomInt(lo,hi);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">if</span>(!no_dup) <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) ret[i]=RandomInt(lo,hi);</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            set&lt;T&gt; st;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                <span class="keywordtype">int</span> r=RandomInt(lo,hi);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                <span class="keywordflow">while</span>(st.count(r)) r=RandomInt(lo,hi);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                ret[i]=r;</div>
@@ -153,12 +153,12 @@ $(function(){initNavTree('random_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
 </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">/// @brief ランダムなアルファベット文字列を返す</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">/// @param lower 小文字</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">///@brief ランダムなアルファベット文字列を返す</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">///@param lower 小文字</span></div>
 <div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="namespace_rand.html#aa872966ff3be80b0262c0e9bab6ec2e0">   46</a></span>    <a class="code hl_function" href="namespace_rand.html#aa872966ff3be80b0262c0e9bab6ec2e0">string</a> <a class="code hl_function" href="namespace_rand.html#aa872966ff3be80b0262c0e9bab6ec2e0">RandomAlphabet</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">bool</span> lower=<span class="keyword">true</span>) {</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        string ret;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) {</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordtype">int</span> idx=RandomInt(26);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            ret.push_back(<span class="keywordtype">char</span>((lower?<span class="stringliteral">&#39;a&#39;</span>:<span class="stringliteral">&#39;A&#39;</span>)+idx));</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
@@ -166,12 +166,12 @@ $(function(){initNavTree('random_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
 </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">/// @brief 文字列 s の要素からなるランダムな文字列を返す</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">///@brief 文字列 s の要素からなるランダムな文字列を返す</span></div>
 <div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespace_rand.html#ab71ad8fe9fe3a395a4b3a5b85e3d01d6">   56</a></span>    <a class="code hl_function" href="namespace_rand.html#ab71ad8fe9fe3a395a4b3a5b85e3d01d6">string</a> <a class="code hl_function" href="namespace_rand.html#ab71ad8fe9fe3a395a4b3a5b85e3d01d6">RandomString</a>(<span class="keywordtype">int</span> n, string s) {</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        string ret;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordtype">int</span> m=s.size();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) {</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordtype">int</span> idx=RandomInt(m);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            ret.push_back(s[idx]);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
@@ -247,7 +247,7 @@ $(function(){initNavTree('random_8hpp_source.html',''); initResizable(true); });
 <div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="namespace_rand.html#ad64152119bdbb6ccdda81d1e4eb48335">  123</a></span>    <a class="code hl_function" href="namespace_rand.html#ad64152119bdbb6ccdda81d1e4eb48335">vector</a>&lt;<a class="code hl_function" href="namespace_rand.html#ad64152119bdbb6ccdda81d1e4eb48335">pair</a>&lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;&gt; <a class="code hl_function" href="namespace_rand.html#ad64152119bdbb6ccdda81d1e4eb48335">RandomUndirectedGraph</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> m, <span class="keywordtype">bool</span> connected=<span class="keyword">true</span>) {</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        vector&lt;pair&lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;&gt; edges;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=i+1; j&lt;n; j++) edges.push_back(make_pair(i+1,j+1));</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=i+1; j&lt;n; j++) edges.push_back(make_pair(i+1,j+1));</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordtype">int</span> ed=edges.size();</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">if</span>(!connected) {</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            vector&lt;pair&lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;&gt; ret;</div>
@@ -260,7 +260,7 @@ $(function(){initNavTree('random_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                ret.clear();</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                vector&lt;<span class="keywordtype">int</span>&gt; idxs=RandomArray&lt;<span class="keywordtype">int</span>&gt;(m,0,ed,<span class="keyword">true</span>),parent(n);</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt; sets(n);</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) {</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                    parent[i]=i;</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                    sets[i].push_back(i);</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                }</div>
@@ -278,7 +278,7 @@ $(function(){initNavTree('random_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                    }</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                }</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                <span class="keywordtype">bool</span> ok=<span class="keyword">true</span>;</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) <span class="keywordflow">if</span>(parent[i]!=parent[0]) {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) <span class="keywordflow">if</span>(parent[i]!=parent[0]) {</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                    ok=<span class="keyword">false</span>;</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                }</div>

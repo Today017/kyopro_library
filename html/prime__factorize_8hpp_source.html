@@ -109,10 +109,10 @@ $(function(){initNavTree('prime__factorize_8hpp_source.html',''); initResizable(
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/math/primality_test.hpp&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @brief ポラードのロー法で n を素因数分解する</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @note O(N^(1/4))</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// @ref https://qiita.com/t_fuki/items/7cd50de54d3c5d063b4a</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/// @ref verify: https://algo-method.com/tasks/553</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@brief ポラードのロー法で n を素因数分解する</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@note O(N^(1/4))</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">///@ref https://qiita.com/t_fuki/items/7cd50de54d3c5d063b4a</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">///@ref verify: https://algo-method.com/tasks/553</span></div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="prime__factorize_8hpp.html#a0ca6af330d8922fe9a45e4ddca7b208e">    9</a></span><a class="code hl_function" href="prime__factorize_8hpp.html#a0ca6af330d8922fe9a45e4ddca7b208e">vector</a>&lt;<a class="code hl_function" href="prime__factorize_8hpp.html#a0ca6af330d8922fe9a45e4ddca7b208e">pair</a>&lt;<a class="code hl_function" href="prime__factorize_8hpp.html#a0ca6af330d8922fe9a45e4ddca7b208e">ll</a>,<a class="code hl_function" href="prime__factorize_8hpp.html#a0ca6af330d8922fe9a45e4ddca7b208e">ll</a>&gt;&gt; <a class="code hl_function" href="prime__factorize_8hpp.html#a0ca6af330d8922fe9a45e4ddca7b208e">PrimeFactorize</a>(ll n) {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">using</span> lll=__int128_t;</div>
@@ -132,7 +132,7 @@ $(function(){initNavTree('prime__factorize_8hpp_source.html',''); initResizable(
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                <span class="keywordflow">while</span>(k&lt;r*3/4) y=f(y),k++;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                <span class="keywordflow">while</span>(k&lt;r&amp;&amp;g==1) {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                    ys=y;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;min(m,r-k); i++) y=f(y), q=q*_abs(x-y)%n;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,min(m,r-k)) y=f(y), q=q*_abs(x-y)%n;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                    g=_gcd(q,n); k+=m;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                }</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                k=r; r*=2;</div>
@@ -171,12 +171,14 @@ $(function(){initNavTree('prime__factorize_8hpp_source.html',''); initResizable(
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span>(n&gt;1) mp[n]=1;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    vector&lt;pair&lt;ll,ll&gt;&gt; ret;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> p: mp) ret.push_back(p);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    sort(ret.begin(),ret.end());</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    sort(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(ret));</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
 </div>
 <div class="ttc" id="aprimality__test_8hpp_html_a50c80146bd471b603303181ec724eaf9"><div class="ttname"><a href="primality__test_8hpp.html#a50c80146bd471b603303181ec724eaf9">PrimalityTest</a></div><div class="ttdeci">bool PrimalityTest(ll n)</div><div class="ttdoc">ミラーラビン素数判定法により n が素数であるかを判定する</div><div class="ttdef"><b>Definition</b> <a href="primality__test_8hpp_source.html#l00009">primality_test.hpp:9</a></div></div>
 <div class="ttc" id="aprime__factorize_8hpp_html_a0ca6af330d8922fe9a45e4ddca7b208e"><div class="ttname"><a href="prime__factorize_8hpp.html#a0ca6af330d8922fe9a45e4ddca7b208e">PrimeFactorize</a></div><div class="ttdeci">vector&lt; pair&lt; ll, ll &gt; &gt; PrimeFactorize(ll n)</div><div class="ttdoc">ポラードのロー法で n を素因数分解する</div><div class="ttdef"><b>Definition</b> <a href="#l00009">prime_factorize.hpp:9</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a9064c572b2b33295a5ca0950d4f8737e"><div class="ttname"><a href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a></div><div class="ttdeci">#define all(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -2,13 +2,13 @@
 #include"../../../kyopro_library/graph/shortest_path/dijkstra.hpp"
 #include"../../../kyopro_library/graph/shortest_path/bfs.hpp"
 
-/// @brief 重み付き木 g の直径を求める
-/// @return 直径上の頂点の配列と端点間の距離のペア
+///@brief 重み付き木 g の直径を求める
+///@return 直径上の頂点の配列と端点間の距離のペア
 pair<vector<int>,ll> TreeDiameter(const vector<vector<pair<int,ll>>>& g) {
     vector<ll> dist=Dijkstra(g);
-    int s=max_element(dist.begin(),dist.end())-dist.begin();
+    int s=max_element(all(dist))-dist.begin();
     dist=Dijkstra(g,s);
-    int t=max_element(dist.begin(),dist.end())-dist.begin();
+    int t=max_element(all(dist))-dist.begin();
     vector<int> path;
     int now=t;
     while(now!=s) {
@@ -25,13 +25,13 @@ pair<vector<int>,ll> TreeDiameter(const vector<vector<pair<int,ll>>>& g) {
     return {path,diameter};
 }
 
-/// @brief 木 g の直径を求める
-/// @return 直径上の頂点の配列と端点間の距離のペア
+///@brief 木 g の直径を求める
+///@return 直径上の頂点の配列と端点間の距離のペア
 pair<vector<int>,int> TreeDiameter(const vector<vector<int>>& g) {
     vector<ll> dist=BFS(g);
-    int s=max_element(dist.begin(),dist.end())-dist.begin();
+    int s=max_element(all(dist))-dist.begin();
     dist=BFS(g,s);
-    int t=max_element(dist.begin(),dist.end())-dist.begin();
+    int t=max_element(all(dist))-dist.begin();
     vector<int> path;
     int now=t;
     while(now!=s) {

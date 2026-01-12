@@ -1,7 +1,7 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-/// @brief x^n (mod m) を返す
+///@brief x^n (mod m) を返す
 template<typename T=ll>
 T ModPow(T x, T n, T mod) {
     T ret=1;
@@ -14,7 +14,7 @@ T ModPow(T x, T n, T mod) {
     return ret;
 }
 
-/// @brief x^(-1) (mod m) を返す
+///@brief x^(-1) (mod m) を返す
 ll ModInv(ll a, ll m) {
     ll b=m,u=1,v=0;
     while(b) {

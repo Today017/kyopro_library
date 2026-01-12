@@ -1,8 +1,8 @@
 #pragma once
 #include"../../../kyopro_library/template.hpp"
 
-/// @brief 重みなしグラフ g に対し、頂点 start から各頂点までの最短距離を求める
-/// @note O(E+V)
+///@brief 重みなしグラフ g に対し、頂点 start から各頂点までの最短距離を求める
+///@note O(E+V)
 vector<ll> BFS(const vector<vector<int>>& g, int start=0) {
     int n=g.size();
     vector<ll> ret(n,INF); ret[start]=0;

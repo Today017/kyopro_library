@@ -2,10 +2,10 @@
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/others/modcal.hpp"
 
-/// @brief ミラーラビン素数判定法により n が素数であるかを判定する
-/// @note O(k log^3 n)
-/// @ref https://drken1215.hatenablog.com/entry/2023/05/23/233000
-/// @ref verify: https://judge.yosupo.jp/problem/primality_test
+///@brief ミラーラビン素数判定法により n が素数であるかを判定する
+///@note O(k log^3 n)
+///@ref https://drken1215.hatenablog.com/entry/2023/05/23/233000
+///@ref verify: https://judge.yosupo.jp/problem/primality_test
 bool PrimalityTest(ll n) {
     using lll=__int128_t;
     if(n==2) return true;

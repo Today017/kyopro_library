@@ -1,7 +1,7 @@
 #include"../../../kyopro_library/template.hpp"
 #include"../../../kyopro_library/graph/flow/max_flow.hpp"
 
-/// @brief 燃やす埋める
+///@brief 燃やす埋める
 struct MoyasuUmeru {
     MoyasuUmeru(int n) {
         this->n=n;
@@ -10,7 +10,7 @@ struct MoyasuUmeru {
         mf=MaxFlow(n+2);
     }
 
-    /// @brief x[i] = 0 のときコスト zero, x[i] = 1 のときコスト one がかかるという条件を追加する
+    ///@brief x[i] = 0 のときコスト zero, x[i] = 1 のときコスト one がかかるという条件を追加する
     void add_single(int i, ll zero, ll one) {
         if(zero<=one) {
             //基本コストがzeroで、iを0から1に変えると+one-zeroされる
@@ -41,8 +41,8 @@ struct MoyasuUmeru {
         mf.add_edge(i,j,b+c-a-d);
     }
 
-    /// @brief 解を復元する
-    /// @attention `solve()` を実行した後に使うこと
+    ///@brief 解を復元する
+    ///@attention `solve()` を実行した後に使うこと
     vector<int> fukugen() {
         auto ret=mf.mincut(start);
         ret.pop_back(); ret.pop_back();
@@ -50,7 +50,7 @@ struct MoyasuUmeru {
         return ret;
     }
 
-    /// @brief コスト最小値を求める
+    ///@brief コスト最小値を求める
     ll solve() { return mf.flow(start,goal)+offset; }
 
 private:

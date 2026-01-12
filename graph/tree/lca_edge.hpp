@@ -1,25 +1,25 @@
 #include "../../../kyopro_library/template.hpp"
 
-/// @brief 辺属性LCA
+///@brief 辺属性LCA
 template<typename Monoid>
 struct LcaEdge {
     using Type=typename Monoid::Type;
 
-    /// @brief コンストラクタ
-    /// @param g 重み付き木
+    ///@brief コンストラクタ
+    ///@param g 重み付き木
     LcaEdge(const vector<vector<pair<int,Type>>>& g, int root=0) {
         int n=g.size();
         int k=1;
         while((1<<k)<n) k++;
         par=vector<vector<int>>(k,vector<int>(n,-1)),dep=vector<int>(n),dat=vector<vector<Type>>(k,vector<Type>(n,Monoid::id()));
         dfs(g,root,-1);
-        for(int i=0; i<k-1; i++) for(int j=0; j<n; j++) {
+        rep(i,k-1) rep(j,n) {
             par[i+1][j]=par[i][j]==-1?-1:par[i][par[i][j]];
             dat[i+1][j]=par[i][j]==-1?Monoid::id():Monoid::op(dat[i][j],dat[i][par[i][j]]);
         }
     }
 
-    /// @brief パス u-v のモノイド積を返す
+    ///@brief パス u-v のモノイド積を返す
     Type fold(int u, int v) {
         if(dep[u]>dep[v]) swap(u,v);
         Type ret=Monoid::id();

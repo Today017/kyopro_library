@@ -108,7 +108,7 @@ $(function(){initNavTree('scc_8hpp_source.html',''); initResizable(true); });
 <a href="scc_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 強連結成分分解の情報</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief 強連結成分分解の情報</span></div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_scc_info.html">    5</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_scc_info.html">SccInfo</a> {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_scc_info.html#a8fbcd2879f72c40480582752878bc371">    6</a></span>    <a class="code hl_variable" href="struct_scc_info.html#a8fbcd2879f72c40480582752878bc371">vector</a>&lt;<a class="code hl_variable" href="struct_scc_info.html#a8fbcd2879f72c40480582752878bc371">vector</a>&lt;<span class="keywordtype">int</span>&gt;&gt; <a class="code hl_variable" href="struct_scc_info.html#a8fbcd2879f72c40480582752878bc371">members</a>; <span class="comment">///&lt; 各強連結成分の頂点</span></div>
@@ -117,14 +117,14 @@ $(function(){initNavTree('scc_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>};</div>
 </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/// @brief グラフ g の強連結成分分解を行う</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/// @brief { 各強連結成分の頂点, 強連結成分による分解グラフ, 各頂点の所属する強連結成分の番号 } を返す</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/// @note O(V+E)</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">///@brief グラフ g の強連結成分分解を行う</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">///@brief { 各強連結成分の頂点, 強連結成分による分解グラフ, 各頂点の所属する強連結成分の番号 } を返す</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">///@note O(V+E)</span></div>
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="scc_8hpp.html#a993673a3090740e248cb32eef70da6c2">   14</a></span><a class="code hl_struct" href="struct_scc_info.html">SccInfo</a> <a class="code hl_function" href="scc_8hpp.html#a993673a3090740e248cb32eef70da6c2">SccDecomposition</a>(<span class="keyword">const</span> vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;&amp; g) {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> n=g.size();</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt; g2(n);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j: g[i]) g2[j].push_back(i);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j: g[i]) g2[j].push_back(i);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    vector&lt;<span class="keywordtype">int</span>&gt; order, component(n,-1), seen(n,<span class="keyword">false</span>);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">auto</span> dfs=[&amp;](<span class="keyword">auto</span> dfs, <span class="keywordtype">int</span> now)-&gt; <span class="keywordtype">void</span> {</div>
@@ -138,17 +138,17 @@ $(function(){initNavTree('scc_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt: g2[now]) <span class="keywordflow">if</span>(component[nxt]==-1) dfs2(dfs2,nxt,idx);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    };</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) <span class="keywordflow">if</span>(!seen[i]) dfs(dfs,i);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) <span class="keywordflow">if</span>(!seen[i]) dfs(dfs,i);</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    reverse(order.begin(),order.end());</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    reverse(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(order));</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">int</span> idx=0;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> now:order) <span class="keywordflow">if</span>(component[now]==-1) dfs2(dfs2,now,idx),idx++;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">int</span> n_n=*max_element(component.begin(),component.end())+1;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">int</span> n_n=*max_element(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(component))+1;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt; ret(n_n),ret2(n_n);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) ret[component[i]].push_back(i);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j: g[i]) <span class="keywordflow">if</span>(component[i]!=component[j]) ret2[component[i]].push_back(component[j]);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n_n; i++) sort(ret2[i].begin(),ret2[i].end()), ret2[i].erase(unique(ret2[i].begin(),ret2[i].end()),ret2[i].end());</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) ret[component[i]].push_back(i);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j: g[i]) <span class="keywordflow">if</span>(component[i]!=component[j]) ret2[component[i]].push_back(component[j]);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n_n) sort(ret2[i].begin(),ret2[i].end()), ret2[i].erase(unique(ret2[i].begin(),ret2[i].end()),ret2[i].end());</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">return</span> {ret,ret2,component};</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
@@ -158,6 +158,8 @@ $(function(){initNavTree('scc_8hpp_source.html',''); initResizable(true); });
 <div class="ttc" id="astruct_scc_info_html_a5106bee5a84bbcf9509ab8e40cd4571b"><div class="ttname"><a href="struct_scc_info.html#a5106bee5a84bbcf9509ab8e40cd4571b">SccInfo::graph_decomposed</a></div><div class="ttdeci">vector&lt; vector&lt; int &gt; &gt; graph_decomposed</div><div class="ttdoc">強連結成分による分解グラフ</div><div class="ttdef"><b>Definition</b> <a href="#l00007">scc.hpp:7</a></div></div>
 <div class="ttc" id="astruct_scc_info_html_a71f087c7b3080751a006e996af77b670"><div class="ttname"><a href="struct_scc_info.html#a71f087c7b3080751a006e996af77b670">SccInfo::group</a></div><div class="ttdeci">vector&lt; int &gt; group</div><div class="ttdoc">各頂点の所属する強連結成分の番号</div><div class="ttdef"><b>Definition</b> <a href="#l00008">scc.hpp:8</a></div></div>
 <div class="ttc" id="astruct_scc_info_html_a8fbcd2879f72c40480582752878bc371"><div class="ttname"><a href="struct_scc_info.html#a8fbcd2879f72c40480582752878bc371">SccInfo::members</a></div><div class="ttdeci">vector&lt; vector&lt; int &gt; &gt; members</div><div class="ttdoc">各強連結成分の頂点</div><div class="ttdef"><b>Definition</b> <a href="#l00006">scc.hpp:6</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a9064c572b2b33295a5ca0950d4f8737e"><div class="ttname"><a href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a></div><div class="ttdeci">#define all(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

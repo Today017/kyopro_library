@@ -107,9 +107,9 @@ $(function(){initNavTree('inversion__number_8hpp_source.html',''); initResizable
 <div class="contents">
 <a href="inversion__number_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @brief 転倒数</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 配列 v の転倒数を求める</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @note O(N log(N))</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">///@brief 転倒数</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief 配列 v の転倒数を求める</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@note O(N log(N))</span></div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="inversion__number_8hpp.html#a4a691c80d5c3c829a4a2f3d7a4dc3c14">    6</a></span>ll <a class="code hl_function" href="inversion__number_8hpp.html#a4a691c80d5c3c829a4a2f3d7a4dc3c14">InversionNumber</a>(<span class="keyword">const</span> vector&lt;<span class="keywordtype">int</span>&gt;&amp; v) {</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">//座圧する必要がない代わりに空間がΘ(N log(N)) どっちがいいんだろうね</span></div>
@@ -117,24 +117,26 @@ $(function(){initNavTree('inversion__number_8hpp_source.html',''); initResizable
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">auto</span> Merge=[&amp;](<span class="keyword">const</span> vector&lt;<span class="keywordtype">int</span>&gt;&amp; a, <span class="keyword">const</span> vector&lt;<span class="keywordtype">int</span>&gt;&amp; b) {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordtype">int</span> n=a.size();</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordtype">int</span> r=0;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> l=0; l&lt;n; l++) {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(l,n) {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keywordflow">while</span>(r&lt;n &amp;&amp; b[r]&lt;a[l]) r++;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            ret+=r;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        }</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        vector&lt;<span class="keywordtype">int</span>&gt; c(2*n);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        merge(a.begin(),a.end(),b.begin(),b.end(),c.begin());</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        merge(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(a),<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(b),c.begin());</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">return</span> c;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    };</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">int</span> n=v.size(),n2=1;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">while</span>(n2&lt;n) n2&lt;&lt;=1;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt; node(n2&lt;&lt;1,vector&lt;<span class="keywordtype">int</span>&gt;(1,INF));</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) node[i+n2][0]=v[i];</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=n2-1; i&gt;0; i--) node[i]=Merge(node[i&lt;&lt;1],node[i&lt;&lt;1|1]);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) node[i+n2].pop_back();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=n2; i&gt;0; i--) node[i]=Merge(node[i&lt;&lt;1],node[i&lt;&lt;1|1]);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
 </div>
 <div class="ttc" id="ainversion__number_8hpp_html_a4a691c80d5c3c829a4a2f3d7a4dc3c14"><div class="ttname"><a href="inversion__number_8hpp.html#a4a691c80d5c3c829a4a2f3d7a4dc3c14">InversionNumber</a></div><div class="ttdeci">ll InversionNumber(const vector&lt; int &gt; &amp;v)</div><div class="ttdoc">転倒数</div><div class="ttdef"><b>Definition</b> <a href="#l00006">inversion_number.hpp:6</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a9064c572b2b33295a5ca0950d4f8737e"><div class="ttname"><a href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a></div><div class="ttdeci">#define all(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

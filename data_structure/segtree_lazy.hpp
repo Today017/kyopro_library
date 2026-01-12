@@ -1,17 +1,17 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-/// @brief 遅延評価セグメント木
-/// @tparam Monoid モノイド
-/// @tparam Operator 作用素
-/// @tparam mapping （モノイドの元，作用素の元）→モノイドの元を返す関数
+///@brief 遅延評価セグメント木
+///@tparam Monoid モノイド
+///@tparam Operator 作用素
+///@tparam mapping （モノイドの元，作用素の元）→モノイドの元を返す関数
 template<typename Monoid, typename Operator, auto mapping>
 struct SegTreeLazy {
     using MonoidType=typename Monoid::Type;
     using OperatorType=typename Operator::Type;
     SegTreeLazy()=default;
 
-    /// @brief 要素数 n の遅延セグ木を構築する
+    ///@brief 要素数 n の遅延セグ木を構築する
     SegTreeLazy(int n) {
         this->n=n;
         dat=vector<MonoidType>(n<<1,Monoid::id());
@@ -19,17 +19,17 @@ struct SegTreeLazy {
         indices.reserve(100); cand.reserve(100); cand_l.reserve(100); cand_r.reserve(100);
     }
 
-    /// @brief 配列 v から遅延セグ木を構築する
+    ///@brief 配列 v から遅延セグ木を構築する
     SegTreeLazy(const vector<MonoidType>& v) {
         this->n=v.size();
         dat=vector<MonoidType>(n<<1,Monoid::id());
         lazy=vector<OperatorType>(n<<1,Operator::id());
-        for(int i=0; i<n; i++) dat[i+n]=v[i];
+        rep(i,n) dat[i+n]=v[i];
         for(int i=n-1; i>0; i--) dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
         indices.reserve(100); cand.reserve(100); cand_l.reserve(100); cand_r.reserve(100);
     }
 
-    /// @brief i 番目の要素を x に更新する
+    ///@brief i 番目の要素を x に更新する
     void set(int i, MonoidType x) {
         generate_indices(i,i+1);
         pushdown();
@@ -38,7 +38,7 @@ struct SegTreeLazy {
         while(i>>=1) dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
     }
 
-    /// @brief 区間 [l, r) に x を作用させる
+    ///@brief 区間 [l, r) に x を作用させる
     void apply(int l, int r, OperatorType x) {
         if(l==r) return;
         generate_indices(l,r);
@@ -60,7 +60,7 @@ struct SegTreeLazy {
         pushup();
     }
 
-    /// @brief 区間 [l, r) のモノイド積を返す
+    ///@brief 区間 [l, r) のモノイド積を返す
     MonoidType fold(int l, int r) {
         if(l==r) return Monoid::id();
         generate_indices(l,r);
@@ -75,9 +75,9 @@ struct SegTreeLazy {
         return Monoid::op(retl,retr);
     }
 
-    /// @brief 区間 [l, x) のモノイド積が f を満たすような最大の x >= l を返す
-    /// @attention `f(Monoid::id())=true` が成り立つ必要がある
-    /// @note O(log(N))
+    ///@brief 区間 [l, x) のモノイド積が f を満たすような最大の x >= l を返す
+    ///@attention `f(Monoid::id())=true` が成り立つ必要がある
+    ///@note O(log(N))
     template<typename F>
     int find_right(int l, F f) {
         assert(f(Monoid::id()));
@@ -93,8 +93,8 @@ struct SegTreeLazy {
             l>>=1; r>>=1;
         }
         cand=cand_l;
-        reverse(cand_r.begin(),cand_r.end());
-        cand.insert(cand.end(),cand_r.begin(),cand_r.end());
+        reverse(all(cand_r));
+        cand.insert(cand.end(),all(cand_r));
         MonoidType val=Monoid::id();
         for(int i:cand) {
             if(f(Monoid::op(val,dat[i]))) {
@@ -114,9 +114,9 @@ struct SegTreeLazy {
         return n;
     }
 
-    /// @brief 区間 [x, r) のモノイド積が f を満たすような最小の x<=r を返す
-    /// @attention `f(Monoid::id())=true` が成り立つ必要がある
-    /// @note O(log(N))
+    ///@brief 区間 [x, r) のモノイド積が f を満たすような最小の x<=r を返す
+    ///@attention `f(Monoid::id())=true` が成り立つ必要がある
+    ///@note O(log(N))
     template<typename F>
     int find_left(int r, F f) {
         assert(f(Monoid::id()));
@@ -132,8 +132,8 @@ struct SegTreeLazy {
             l>>=1; r>>=1;
         }
         cand=cand_r;
-        reverse(cand_l.begin(),cand_l.end());
-        cand.insert(cand.end(),cand_l.begin(),cand_l.end());
+        reverse(all(cand_l));
+        cand.insert(cand.end(),all(cand_l));
         MonoidType val=Monoid::id();
         for(int i:cand) {
             if(f(Monoid::op(dat[i],val))) {
@@ -191,7 +191,7 @@ private:
         }
     }
     void pushup() {
-        for(int j=0; j<(int)indices.size(); j++) {
+        rep(j,(int)indices.size()) {
             int i=indices[j];
             dat[i]=Monoid::op(dat[i<<1],dat[i<<1|1]);
         }
@@ -202,26 +202,26 @@ private:
 #include"../../kyopro_library/others/operator.hpp"
 
 namespace RangeQuery {
-    /// @brief 区間更新 / 区間min
-    /// @tparam max_value 最大値
-    /// @tparam not_exist 存在しない値
+    ///@brief 区間更新 / 区間min
+    ///@tparam max_value 最大値
+    ///@tparam not_exist 存在しない値
     template<typename T, T max_value, T not_exist>
     struct ApplyUpdate_GetMin {
         static T mapping(const T& a, const T& b) { return b==not_exist?a:b; }
         using Type=struct SegTreeLazy<Monoid::Min<T,max_value>,Operator::Update<T,not_exist>,mapping>;
     };
 
-    /// @brief 区間更新 / 区間max
-    /// @tparam min_value 最小値
-    /// @tparam not_exist 存在しない値
+    ///@brief 区間更新 / 区間max
+    ///@tparam min_value 最小値
+    ///@tparam not_exist 存在しない値
     template<typename T, T min_value, T not_exist>
     struct ApplyUpdate_GetMax {
         static T mapping(const T& a, const T& b) { return b==not_exist?a:b; }
         using Type=struct SegTreeLazy<Monoid::Max<T,min_value>,Operator::Update<T,not_exist>,mapping>;
     };
 
-    /// @brief 区間更新 / 区間和
-    /// @tparam not_exist 存在しない値
+    ///@brief 区間更新 / 区間和
+    ///@tparam not_exist 存在しない値
     template<typename T, T not_exist>
     struct ApplyUpdate_GetSum {
         using S=typename Monoid::SumPair<T>::Type;
@@ -229,21 +229,21 @@ namespace RangeQuery {
         using Type=struct SegTreeLazy<Monoid::SumPair<T>,Operator::Update<T,not_exist>,mapping>;
     };
 
-    /// @brief 区間加算 / 区間min
+    ///@brief 区間加算 / 区間min
     template<typename T, T max_value>
     struct ApplyAdd_GetMin {
         static T mapping(const T& a, const T& b) { return a+b; }
         using Type=struct SegTreeLazy<Monoid::Min<T,max_value>,Operator::Add<T>,mapping>;
     };
 
-    /// @brief 区間加算 / 区間max
+    ///@brief 区間加算 / 区間max
     template<typename T, T min_value>
     struct ApplyAdd_GetMax {
         static T mapping(const T& a, const T& b) { return a+b; }
         using Type=struct SegTreeLazy<Monoid::Max<T,min_value>,Operator::Add<T>,mapping>;
     };
 
-    /// @brief 区間加算 / 区間和
+    ///@brief 区間加算 / 区間和
     template<typename T>
     struct ApplyAdd_GetSum {
         using S=typename Monoid::SumPair<T>::Type;

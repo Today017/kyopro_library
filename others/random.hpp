@@ -2,17 +2,17 @@
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/others/xor128.hpp"
 
-/// @brief ランダムテストケース生成
+///@brief ランダムテストケース生成
 namespace Rand {
-    /// @brief 0 以上 n 未満のランダムな整数を返す
+    ///@brief 0 以上 n 未満のランダムな整数を返す
     template<typename T>
     T RandomInt(T n) { return Xor128(n); }
 
-    /// @brief [l, r) の範囲からランダムな整数を返す
+    ///@brief [l, r) の範囲からランダムな整数を返す
     template<typename T>
     T RandomInt(T l, T r) { return Xor128(l,r); }
 
-    /// @brief 配列 a からランダムな要素を取得し、削除する
+    ///@brief 配列 a からランダムな要素を取得し、削除する
     template<typename T>
     T GetRandomElement(vector<T>& a) {
         const int n=a.size();
@@ -23,15 +23,15 @@ namespace Rand {
         return ret;
     }
 
-    /// @brief 長さ n の [lo, hi) の要素からなるランダムな数列を返す
-    /// @param no_dup false の場合、重複要素を許容する
+    ///@brief 長さ n の [lo, hi) の要素からなるランダムな数列を返す
+    ///@param no_dup false の場合、重複要素を許容する
     template<typename T>
     vector<T>RandomArray(int n, T lo, T hi, bool no_dup=false) {
         vector<T>ret(n);
-        if(!no_dup) for(int i=0; i<n; i++) ret[i]=RandomInt(lo,hi);
+        if(!no_dup) rep(i,n) ret[i]=RandomInt(lo,hi);
         else {
             set<T> st;
-            for(int i=0; i<n; i++) {
+            rep(i,n) {
                 int r=RandomInt(lo,hi);
                 while(st.count(r)) r=RandomInt(lo,hi);
                 ret[i]=r;
@@ -41,22 +41,22 @@ namespace Rand {
         return ret;
     }
 
-    /// @brief ランダムなアルファベット文字列を返す
-    /// @param lower 小文字
+    ///@brief ランダムなアルファベット文字列を返す
+    ///@param lower 小文字
     string RandomAlphabet(int n, bool lower=true) {
         string ret;
-        for(int i=0; i<n; i++) {
+        rep(i,n) {
             int idx=RandomInt(26);
             ret.push_back(char((lower?'a':'A')+idx));
         }
         return ret;
     }
 
-    /// @brief 文字列 s の要素からなるランダムな文字列を返す
+    ///@brief 文字列 s の要素からなるランダムな文字列を返す
     string RandomString(int n, string s) {
         string ret;
         int m=s.size();
-        for(int i=0; i<n; i++) {
+        rep(i,n) {
             int idx=RandomInt(m);
             ret.push_back(s[idx]);
         }
@@ -122,7 +122,7 @@ namespace Rand {
 
     vector<pair<int,int>> RandomUndirectedGraph(int n, int m, bool connected=true) {
         vector<pair<int,int>> edges;
-        for(int i=0; i<n; i++) for(int j=i+1; j<n; j++) edges.push_back(make_pair(i+1,j+1));
+        rep(i,n) for(int j=i+1; j<n; j++) edges.push_back(make_pair(i+1,j+1));
         int ed=edges.size();
         if(!connected) {
             vector<pair<int,int>> ret;
@@ -135,7 +135,7 @@ namespace Rand {
                 ret.clear();
                 vector<int> idxs=RandomArray<int>(m,0,ed,true),parent(n);
                 vector<vector<int>> sets(n);
-                for(int i=0; i<n; i++) {
+                rep(i,n) {
                     parent[i]=i;
                     sets[i].push_back(i);
                 }
@@ -153,7 +153,7 @@ namespace Rand {
                     }
                 }
                 bool ok=true;
-                for(int i=0; i<n; i++) if(parent[i]!=parent[0]) {
+                rep(i,n) if(parent[i]!=parent[0]) {
                     ok=false;
                     break;
                 }

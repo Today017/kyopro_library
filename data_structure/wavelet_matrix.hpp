@@ -148,9 +148,9 @@ private:
     }
 };
 
-/// @brief Wavelet Matrix
-/// @ref https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix
-/// @ref https://miti-7.hatenablog.com/entry/2019/02/01/152131
+///@brief Wavelet Matrix
+///@ref https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix
+///@ref https://miti-7.hatenablog.com/entry/2019/02/01/152131
 struct WaveletMatrix{
     static const ull NOTFOUND=SuccinctBitVector::NOTFOUND;
 
@@ -164,12 +164,12 @@ private:
     ull bit_size;
 
 public:
-    /// @brief コンストラクタ
-    /// @brief a から Wavelet Matrix を構築する
+    ///@brief コンストラクタ
+    ///@brief a から Wavelet Matrix を構築する
     WaveletMatrix(const vector<ull>&a) {
         assert(a.size()>0);
         size=a.size();
-        maximum_element=*max_element(a.begin(),a.end())+1;
+        maximum_element=*max_element(all(a))+1;
         bit_size=get_num_of_bit(maximum_element);
         if(bit_size==0) bit_size=1;
         for(ull i=0; i<bit_size; ++i) {
@@ -210,8 +210,8 @@ public:
         for(int i=v.size()-1; i>=0; --i) this->begin_alphabet[v.at(i)]=i;
     }
 
-    /// @brief a[pos] を返す
-    /// @note O(log σ)
+    ///@brief a[pos] を返す
+    ///@note O(log σ)
     ull access(ull pos) {
         if(pos>=this->size) return NOTFOUND;
         ull c=0;
@@ -224,9 +224,9 @@ public:
         return c;
     }
 
-    /// @brief rank 番目の c の位置 +1 を返す
-    /// @brief rank は 1-indexed
-    /// @note O(log σ)
+    ///@brief rank 番目の c の位置 +1 を返す
+    ///@brief rank は 1-indexed
+    ///@note O(log σ)
     ull select(ull c, ull rank) {
         assert(rank>0);
         if(c>=maximum_element) return NOTFOUND;
@@ -240,21 +240,21 @@ public:
         return index;
     }
 
-    /// @brief 区間 [l, r) で最大のインデックスを返す
-    /// @note O(log σ)
+    ///@brief 区間 [l, r) で最大のインデックスを返す
+    ///@note O(log σ)
     ull max_range(ull begin_pos, ull end_pos) {
         return quantile_range(begin_pos,end_pos,end_pos-begin_pos-1);
     }
 
-    /// @brief 区間 [l, r) で最小のインデックスを返す
-    /// @note O(log σ)
+    ///@brief 区間 [l, r) で最小のインデックスを返す
+    ///@note O(log σ)
     ull min_range(ull begin_pos, ull end_pos) {
         return quantile_range(begin_pos,end_pos,0);
     }
 
-    /// @brief 区間 [l, r) で k 番目に小さい値のインデックスを返す
-    /// @brief k は 0-indexed
-    /// @note O(log σ)
+    ///@brief 区間 [l, r) で k 番目に小さい値のインデックスを返す
+    ///@brief k は 0-indexed
+    ///@note O(log σ)
     ull quantile_range(ull begin_pos, ull end_pos, ull k) {
         if((end_pos>size||begin_pos>=end_pos)||(k>=end_pos-begin_pos)) return NOTFOUND;
         ull val=0;
@@ -283,8 +283,8 @@ public:
         return select(val,rank)-1;
     }
 
-    /// @brief 区間 [0, pos) の c の数	
-    /// @note O(log σ)
+    ///@brief 区間 [0, pos) の c の数	
+    ///@note O(log σ)
     ull rank(ull c, ull pos) {
         assert(pos<size);
         if(c>=maximum_element) return 0;
@@ -298,8 +298,8 @@ public:
         return pos-begin_pos;
     }
 
-    /// @brief 区間 [l, r) の [min_c, max_c) に入る値の個数
-    /// @note O(log σ)
+    ///@brief 区間 [l, r) の [min_c, max_c) に入る値の個数
+    ///@note O(log σ)
     ull range_freq(ull begin_pos, ull end_pos, ull min_c, ull max_c) {
         if((end_pos>size||begin_pos>=end_pos) || (min_c>=max_c)||min_c>=maximum_element) {
             return 0;
@@ -309,22 +309,22 @@ public:
         return get<1>(maxi_t)-get<1>(mini_t);
     }
 
-    /// @brief 区間 [l, r) の c より小さい値の数
-    /// @note O(log σ)
+    ///@brief 区間 [l, r) の c より小さい値の数
+    ///@note O(log σ)
     ull rank_less_than(ull c, ull begin, ull end) {
         auto t=rank_all(c,begin,end);
         return get<1>(t);
     }
     
-    /// @brief 区間 [l, r) の c より大きい値の数
-    /// @note O(log σ)
+    ///@brief 区間 [l, r) の c より大きい値の数
+    ///@note O(log σ)
     ull rank_more_than(ull c, ull begin, ull end) {
         auto t=rank_all(c,begin,end);
         return get<2>(t);
     }
 
-    /// @brief 区間 [l, r) の (c と同じ値の数, c より小さい値の数, c より大きい値の数)
-    /// @note O(log σ)
+    ///@brief 区間 [l, r) の (c と同じ値の数, c より小さい値の数, c より大きい値の数)
+    ///@note O(log σ)
     tuple<ull,ull,ull>rank_all(const ull c, ull begin, ull end) {
         assert(end<=size);
         const ull num=end-begin;
@@ -351,8 +351,8 @@ public:
         return make_tuple(rank,rank_less_than,rank_more_than);
     }
 
-    /// @brief 区間 [l, r) で出現回数が多い順に k 個の (値, 頻度) を返す
-    /// @note O(log σ)
+    ///@brief 区間 [l, r) で出現回数が多い順に k 個の (値, 頻度) を返す
+    ///@note O(log σ)
     vector<pair<ull,ull>>topk(ull begin,ull end,ull k) {
         ull s=begin,e=end;
         assert(s<e);
@@ -385,14 +385,14 @@ public:
         return result;
     };
 
-    /// @brief 区間 [l, r) で [x, y) に入る値の総和
-    /// @note O(log σ)
+    ///@brief 区間 [l, r) で [x, y) に入る値の総和
+    ///@note O(log σ)
     ull range_sum(const ull begin,const ull end,const ull x,const ull y) {
         return range_sum(begin,end,0,0,x,y);
     }
 
-    /// @brief 区間 [l, r) で [x, y) に入る値の最大値
-    /// @note O(log σ)
+    ///@brief 区間 [l, r) で [x, y) に入る値の最大値
+    ///@note O(log σ)
     ull prev_value(const ull begin_pos,const ull end_pos,const ull x,ull y) {
         assert(end_pos<=size);
         if(x>=y or y==0)return NOTFOUND;
@@ -434,8 +434,8 @@ public:
         return NOTFOUND;
     }
 
-    /// @brief 区間 [l, r) で [x, y) に入る値の最大値
-    /// @note O(log σ)
+    ///@brief 区間 [l, r) で [x, y) に入る値の最大値
+    ///@note O(log σ)
     ull next_value(const ull begin_pos,const ull end_pos,const ull x,const ull y) {
         assert(end_pos<=size);
         if(x>=y or y==0)return NOTFOUND;
@@ -475,7 +475,7 @@ public:
         return NOTFOUND;
     }
 
-    /// @brief 区間 [l1, r1) [l2, r2) に共通して出現する要素を返す
+    ///@brief 区間 [l1, r1) [l2, r2) に共通して出現する要素を返す
     vector<tuple<ull,ull,ull>>intersect(ull _s1,ull _e1,ull _s2,ull _e2) {
         assert(_s1<_e1);
         assert(_s2<_e2);

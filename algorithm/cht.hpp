@@ -1,16 +1,16 @@
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/algorithm/binary_search.hpp"
 
-/// @brief Convex Hull Trick
-/// @ref verify: https://judge.yosupo.jp/submission/291811
-/// @ref https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf
-/// @tparam Min true のとき最小値を管理する
+///@brief Convex Hull Trick
+///@ref verify: https://judge.yosupo.jp/submission/291811
+///@ref https://hcpc-hokudai.github.io/archive/algorithm_convex_hull_trick_001.pdf
+///@tparam Min true のとき最小値を管理する
 template<typename T=ll, bool MIN=true>
 struct CHT {
     CHT()=default;
 
-    /// @brief 直線 ax + b を追加する
-    /// @note O(log(N))
+    ///@brief 直線 ax + b を追加する
+    ///@note O(log(N))
     void add(T a, T b) {
         if(!MIN) a*=-1, b*=-1;
 
@@ -39,8 +39,8 @@ struct CHT {
         }
     }
 
-    /// @brief x に対する直線群の最小値を求める
-    /// @note O((log(N))^2)
+    ///@brief x に対する直線群の最小値を求める
+    ///@note O((log(N))^2)
     T get(T x) {
         auto [a,b]=*lines.lower_bound(BinarySearch<T>(lines.begin()->first,lines.rbegin()->first+1,[&](T m) {
             auto it=lines.lower_bound(m);

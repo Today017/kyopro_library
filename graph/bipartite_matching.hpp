@@ -1,14 +1,14 @@
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/graph/flow/max_flow.hpp"
 
-/// @brief 二部グラフの最大マッチングを返す
-/// @note O(E*sqrt(V))
-/// @attention G は二部グラフであること
+///@brief 二部グラフの最大マッチングを返す
+///@note O(E*sqrt(V))
+///@attention G は二部グラフであること
 vector<pair<int,int>> BipartiteMatching(const vector<vector<int>>& g) {
     int n=g.size();
     MaxFlow mxf(n+2);
     int s=n,t=n+1;
-    for(int i=0; i<n; i++) {
+    rep(i,n) {
         for(int j:g[i]) mxf.add_edge(i,j,1);
         mxf.add_edge(s,i,1);
         mxf.add_edge(i,t,1);
@@ -27,22 +27,22 @@ vector<pair<int,int>> BipartiteMatching(const vector<vector<int>>& g) {
     return ret;
 }
 
-/// @brief 二部グラフのパラメータ
+///@brief 二部グラフのパラメータ
 struct BiInfo {
     int max_matching; ///< 最大マッチング
     int min_edge_cover; ///< 最小辺被覆
     int max_independent_set; ///< 最大独立集合
     int min_vertex_cover; ///< 最小頂点被覆
-    /// @note min_edge_cover=-1 のときは孤立点がある
+    ///@note min_edge_cover=-1 のときは孤立点がある
 };
 
-/// @brief 二部グラフのパラメータを求める
-/// @note O(E*sqrt(V))
-/// @attention G は二部グラフであること
+///@brief 二部グラフのパラメータを求める
+///@note O(E*sqrt(V))
+///@attention G は二部グラフであること
 BiInfo GetBiInfo(const vector<vector<int>>& g) {
     int n=g.size();
     int isolation=0;
-    for(int i=0; i<n; i++) if(g[i].size()==0) isolation++;
+    rep(i,n) if(g[i].size()==0) isolation++;
 
     BiInfo ret;
     int m=BipartiteMatching(g).size();

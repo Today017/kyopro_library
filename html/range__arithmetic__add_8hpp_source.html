@@ -107,12 +107,12 @@ $(function(){initNavTree('range__arithmetic__add_8hpp_source.html',''); initResi
 <div class="contents">
 <a href="range__arithmetic__add_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @brief 区間等差数列加算（オフライン）</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 長さ n の数列に対する区間等差数列加算クエリを処理する</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @brief クエリは `(l, r, start, step)` の形式で与える</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @note O(N)</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// @ref verify: https://mojacoder.app/users/Today03/problems/range_arithmetic_add</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/// @ref verify: https://atcoder.jp/contests/abc407/tasks/abc407_f</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">///@brief 区間等差数列加算（オフライン）</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief 長さ n の数列に対する区間等差数列加算クエリを処理する</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@brief クエリは `(l, r, start, step)` の形式で与える</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@note O(N)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">///@ref verify: https://mojacoder.app/users/Today03/problems/range_arithmetic_add</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">///@ref verify: https://atcoder.jp/contests/abc407/tasks/abc407_f</span></div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="range__arithmetic__add_8hpp.html#a878841d58971a7673e451fa226485e48">    9</a></span><a class="code hl_function" href="range__arithmetic__add_8hpp.html#a878841d58971a7673e451fa226485e48">vector</a>&lt;<a class="code hl_function" href="range__arithmetic__add_8hpp.html#a878841d58971a7673e451fa226485e48">ll</a>&gt; <a class="code hl_function" href="range__arithmetic__add_8hpp.html#a878841d58971a7673e451fa226485e48">RangeArithmeticAdd</a>(<span class="keywordtype">int</span> n, vector&lt;tuple&lt;ll,ll,ll,ll&gt;&gt; query) {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    vector&lt;ll&gt; i1(n+10),i2(n+10);</div>
@@ -123,16 +123,17 @@ $(function(){initNavTree('range__arithmetic__add_8hpp_source.html',''); initResi
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        i2[l]+=start; i2[r]-=start;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n+5; i++) i1[i+1]+=i1[i], i2[i+1]+=i2[i];</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n+5) i1[i+1]+=i1[i], i2[i+1]+=i2[i];</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    vector&lt;ll&gt; ret(n);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n-1; i++) ret[i+1]=ret[i]+i1[i+1];</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) ret[i]+=i2[i];</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n-1) ret[i+1]=ret[i]+i1[i+1];</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) ret[i]+=i2[i];</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 </div>
 <div class="ttc" id="arange__arithmetic__add_8hpp_html_a878841d58971a7673e451fa226485e48"><div class="ttname"><a href="range__arithmetic__add_8hpp.html#a878841d58971a7673e451fa226485e48">RangeArithmeticAdd</a></div><div class="ttdeci">vector&lt; ll &gt; RangeArithmeticAdd(int n, vector&lt; tuple&lt; ll, ll, ll, ll &gt; &gt; query)</div><div class="ttdoc">区間等差数列加算（オフライン）</div><div class="ttdef"><b>Definition</b> <a href="#l00009">range_arithmetic_add.hpp:9</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

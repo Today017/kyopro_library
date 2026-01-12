@@ -2,8 +2,8 @@ var searchData=
 [
   ['sccinfo_0',['SccInfo',['../struct_scc_info.html',1,'']]],
   ['segment_1',['Segment',['../struct_geometry_1_1_segment.html',1,'Geometry']]],
-  ['segmenttree2d_2',['SegmentTree2D',['../struct_segment_tree2_d.html',1,'']]],
-  ['segtree_3',['SegTree',['../struct_seg_tree.html',1,'']]],
+  ['segtree_2',['SegTree',['../struct_seg_tree.html',1,'']]],
+  ['segtree2d_3',['SegTree2D',['../struct_seg_tree2_d.html',1,'']]],
   ['segtree_3c_20monoid_3a_3amax_3c_20t_2c_20min_5fvalue_20_3e_20_3e_4',['SegTree&lt; Monoid::Max&lt; T, min_value &gt; &gt;',['../struct_seg_tree.html',1,'']]],
   ['segtree_3c_20monoid_3a_3amin_3c_20t_2c_20max_5fvalue_20_3e_20_3e_5',['SegTree&lt; Monoid::Min&lt; T, max_value &gt; &gt;',['../struct_seg_tree.html',1,'']]],
   ['segtree_3c_20monoid_3a_3asum_3c_20t_20_3e_20_3e_6',['SegTree&lt; Monoid::Sum&lt; T &gt; &gt;',['../struct_seg_tree.html',1,'']]],

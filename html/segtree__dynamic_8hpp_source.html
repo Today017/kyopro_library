@@ -107,13 +107,13 @@ $(function(){initNavTree('segtree__dynamic_8hpp_source.html',''); initResizable(
 <div class="contents">
 <a href="segtree__dynamic_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @brief 動的セグメント木</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">///@brief 動的セグメント木</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Monoid&gt;</div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_seg_tree_dynamic.html">    5</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_seg_tree_dynamic.html">SegTreeDynamic</a> {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_seg_tree_dynamic.html#a227357d02ccd09e86117b2bdae1b70e3">    6</a></span>    <span class="keyword">using</span> Type=<span class="keyword">typename</span> Monoid::Type;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="comment">/// @brief サイズ mx で構築する</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="comment">///@brief サイズ mx で構築する</span></div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_seg_tree_dynamic.html#a59a06ec2a8d6964629a6a789a6d50c6e">    9</a></span>    <a class="code hl_function" href="struct_seg_tree_dynamic.html#a59a06ec2a8d6964629a6a789a6d50c6e">SegTreeDynamic</a>(ll mx=1e9, <span class="keywordtype">int</span> q=5e5) {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keyword">this</span>-&gt;mx=mx;</div>
@@ -123,7 +123,7 @@ $(function(){initNavTree('segtree__dynamic_8hpp_source.html',''); initResizable(
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
 </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">/// @brief i 番目の要素を v に変える</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">///@brief i 番目の要素を v に変える</span></div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_seg_tree_dynamic.html#aabe5d1774f4bd10f1d1d23de51c14969">   17</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_seg_tree_dynamic.html#aabe5d1774f4bd10f1d1d23de51c14969">set</a>(ll i, Type v) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        ll left=0, right=mx, cur=0;</div>
@@ -161,7 +161,7 @@ $(function(){initNavTree('segtree__dynamic_8hpp_source.html',''); initResizable(
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
 </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">/// @brief 区間 [l, r) のモノイド積を返す</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">///@brief 区間 [l, r) のモノイド積を返す</span></div>
 <div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_seg_tree_dynamic.html#a94bcb75b9656636184cf16e39aad8a51">   53</a></span>    Type <a class="code hl_function" href="struct_seg_tree_dynamic.html#a94bcb75b9656636184cf16e39aad8a51">fold</a>(ll l, ll r, <span class="keywordtype">int</span> idx, ll left, ll right) {</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">if</span>(right&lt;l || left&gt;r) <span class="keywordflow">return</span> Monoid::id();</div>
@@ -202,17 +202,17 @@ $(function(){initNavTree('segtree__dynamic_8hpp_source.html',''); initResizable(
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/others/monoid.hpp&quot;</span></div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">/// @brief 区間クエリ</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">///@brief 区間クエリ</span></div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="namespace_range_query.html">RangeQuery</a> {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">/// @brief 1点変更 / 区間 min</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">///@brief 1点変更 / 区間 min</span></div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, T max_value=<a class="code hl_variable" href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a>&gt;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_min_dynamic.html#a33a90e5acb47e9f3ff9a86d3a0c0089f">   94</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_min_dynamic.html">MinDynamic</a> { <span class="keyword">using</span> <a class="code hl_struct" href="struct_range_query_1_1_min_dynamic.html">Type</a>=<span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_min_dynamic.html">SegTreeDynamic</a>&lt;<a class="code hl_struct" href="struct_range_query_1_1_min_dynamic.html">Monoid</a>::<a class="code hl_struct" href="struct_range_query_1_1_min_dynamic.html">Min</a>&lt;<a class="code hl_struct" href="struct_range_query_1_1_min_dynamic.html">T</a>,<a class="code hl_struct" href="struct_range_query_1_1_min_dynamic.html">max_value</a>&gt;&gt;; };</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="comment">/// @brief 1点変更 / 区間 max</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="comment">///@brief 1点変更 / 区間 max</span></div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, T min_value=-<a class="code hl_variable" href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a>&gt;</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_max_dynamic.html#a3e636d48607365b24b60234a1fb32a34">   98</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_max_dynamic.html">MaxDynamic</a> { <span class="keyword">using</span> <a class="code hl_struct" href="struct_range_query_1_1_max_dynamic.html">Type</a>=<span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_max_dynamic.html">SegTreeDynamic</a>&lt;<a class="code hl_struct" href="struct_range_query_1_1_max_dynamic.html">Monoid</a>::<a class="code hl_struct" href="struct_range_query_1_1_max_dynamic.html">Max</a>&lt;<a class="code hl_struct" href="struct_range_query_1_1_max_dynamic.html">T</a>,<a class="code hl_struct" href="struct_range_query_1_1_max_dynamic.html">min_value</a>&gt;&gt;; };</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="comment">/// @brief 1点変更 / 区間和</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="comment">///@brief 1点変更 / 区間和</span></div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_sum_dynamic.html#af67269cbfabefd01a04c8322da8aac8c">  102</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_sum_dynamic.html">SumDynamic</a> { <span class="keyword">using</span> Type=<span class="keyword">struct</span> <a class="code hl_struct" href="struct_seg_tree_dynamic.html">SegTreeDynamic</a>&lt;<a class="code hl_namespace" href="namespace_monoid.html">Monoid</a>::<a class="code hl_struct" href="struct_monoid_1_1_sum.html">Sum</a>&lt;T&gt;&gt;; };</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
@@ -228,8 +228,8 @@ $(function(){initNavTree('segtree__dynamic_8hpp_source.html',''); initResizable(
 <div class="ttc" id="astruct_seg_tree_dynamic_html_aa257624ddaf92d127067a1d950c2c65c"><div class="ttname"><a href="struct_seg_tree_dynamic.html#aa257624ddaf92d127067a1d950c2c65c">SegTreeDynamic::operator[]</a></div><div class="ttdeci">Type operator[](ll i)</div><div class="ttdef"><b>Definition</b> <a href="#l00070">segtree_dynamic.hpp:70</a></div></div>
 <div class="ttc" id="astruct_seg_tree_dynamic_html_aabe5d1774f4bd10f1d1d23de51c14969"><div class="ttname"><a href="struct_seg_tree_dynamic.html#aabe5d1774f4bd10f1d1d23de51c14969">SegTreeDynamic::set</a></div><div class="ttdeci">void set(ll i, Type v)</div><div class="ttdoc">i 番目の要素を v に変える</div><div class="ttdef"><b>Definition</b> <a href="#l00017">segtree_dynamic.hpp:17</a></div></div>
 <div class="ttc" id="astruct_seg_tree_dynamic_html_aae80e1181ba66952873e2cfa9b0865f9"><div class="ttname"><a href="struct_seg_tree_dynamic.html#aae80e1181ba66952873e2cfa9b0865f9">SegTreeDynamic::fold</a></div><div class="ttdeci">Type fold(ll l, ll r)</div><div class="ttdef"><b>Definition</b> <a href="#l00068">segtree_dynamic.hpp:68</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a14c9dbab105f1b8b8182a022d73e610c"><div class="ttname"><a href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a></div><div class="ttdeci">const int INF</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00008">template.hpp:8</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a9064c572b2b33295a5ca0950d4f8737e"><div class="ttname"><a href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a></div><div class="ttdeci">#define all(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00005">template.hpp:5</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a14c9dbab105f1b8b8182a022d73e610c"><div class="ttname"><a href="template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c">INF</a></div><div class="ttdeci">const int INF</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00009">template.hpp:9</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a9064c572b2b33295a5ca0950d4f8737e"><div class="ttname"><a href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a></div><div class="ttdeci">#define all(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

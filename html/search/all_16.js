@@ -5,5 +5,7 @@ var searchData=
   ['warshallfloyd_2',['WarshallFloyd',['../warshall__floyd_8hpp.html#a2ccd6fa6bbd63f7c6da2f3ec88a2595e',1,'warshall_floyd.hpp']]],
   ['wavelet_5fmatrix_2ehpp_3',['wavelet_matrix.hpp',['../wavelet__matrix_8hpp.html',1,'']]],
   ['waveletmatrix_4',['WaveletMatrix',['../struct_wavelet_matrix.html',1,'WaveletMatrix'],['../struct_wavelet_matrix.html#a3509863e3953b3e85960f176483ea314',1,'WaveletMatrix::WaveletMatrix()']]],
-  ['weight_5',['weight',['../struct_dsu_potentialized.html#a338b6c5662ba80ae991ca456020b2012',1,'DsuPotentialized']]]
+  ['weight_5',['weight',['../struct_dsu_potentialized.html#a338b6c5662ba80ae991ca456020b2012',1,'DsuPotentialized']]],
+  ['weigraph_6',['weigraph',['../namespace_util.html#a868748582c2cb070793cc0f86befb637',1,'Util']]],
+  ['writevec_7',['WriteVec',['../namespace_util.html#aba395e6c995747c607931ac0fdccde22',1,'Util']]]
 ];

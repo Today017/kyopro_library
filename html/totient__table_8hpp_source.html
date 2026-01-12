@@ -107,26 +107,27 @@ $(function(){initNavTree('totient__table_8hpp_source.html',''); initResizable(tr
 <div class="contents">
 <a href="totient__table_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @brief オイラーのtotient関数を前計算する</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief totient(0) ... totient(n) を前計算する</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @note O(n log(log(n)))</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @ref https://qiita.com/drken/items/3beb679e54266f20ab63</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// @ref https://manabitimes.jp/math/667</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/// @brief totient(i) = i 以下であって、i と互いに素な数の個数</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/// @brief 公式: totient(n) = n * Π(1 - 1/p) (p は n の素因数)</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/// @brief 公式: totient(n)totient(m) = totient(nm) (n と m が互いに素)</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/// @brief 公式: Σ(d | n) totient(d) = n</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/// @brief 公式: a^totient(m) ≡ 1 (mod m) (a と m が互いに素)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">///@brief オイラーのtotient関数を前計算する</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief totient(0) ... totient(n) を前計算する</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@note O(n log(log(n)))</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@ref https://qiita.com/drken/items/3beb679e54266f20ab63</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">///@ref https://manabitimes.jp/math/667</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">///@brief totient(i) = i 以下であって、i と互いに素な数の個数</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">///@brief 公式: totient(n) = n * Π(1 - 1/p) (p は n の素因数)</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">///@brief 公式: totient(n)totient(m) = totient(nm) (n と m が互いに素)</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">///@brief 公式: Σ(d | n) totient(d) = n</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">///@brief 公式: a^totient(m) ≡ 1 (mod m) (a と m が互いに素)</span></div>
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="totient__table_8hpp.html#ae6b1647dc3f81700983b731c4648c017">   13</a></span><a class="code hl_function" href="totient__table_8hpp.html#ae6b1647dc3f81700983b731c4648c017">vector</a>&lt;<a class="code hl_function" href="totient__table_8hpp.html#ae6b1647dc3f81700983b731c4648c017">ll</a>&gt; <a class="code hl_function" href="totient__table_8hpp.html#ae6b1647dc3f81700983b731c4648c017">TotientTable</a>(ll n) {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    vector&lt;ll&gt; ret(n+1);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    iota(ret.begin(),ret.end(),0);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    iota(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(ret),0);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">for</span>(ll i=2; i&lt;=n; i++) <span class="keywordflow">if</span>(ret[i]==i) <span class="keywordflow">for</span>(ll j=i; j&lt;=n; j+=i) ret[j]=ret[j]/i*(i-1);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 </div>
+<div class="ttc" id="atemplate_8hpp_html_a9064c572b2b33295a5ca0950d4f8737e"><div class="ttname"><a href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a></div><div class="ttdeci">#define all(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
 <div class="ttc" id="atotient__table_8hpp_html_ae6b1647dc3f81700983b731c4648c017"><div class="ttname"><a href="totient__table_8hpp.html#ae6b1647dc3f81700983b731c4648c017">TotientTable</a></div><div class="ttdeci">vector&lt; ll &gt; TotientTable(ll n)</div><div class="ttdoc">オイラーのtotient関数を前計算する</div><div class="ttdef"><b>Definition</b> <a href="#l00013">totient_table.hpp:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

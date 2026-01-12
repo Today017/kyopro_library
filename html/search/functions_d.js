@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['next_0',['next',['../struct_doubling.html#a0ba294fda4333aa6d26311da82eae634',1,'Doubling::next()'],['../struct_doubling_fold.html#afd50a59ab1f2ab56d585b7896e444e65',1,'DoublingFold::next()']]],
+  ['next_0',['next',['../struct_doubling.html#a0ba294fda4333aa6d26311da82eae634',1,'Doubling']]],
   ['next_5fvalue_1',['next_value',['../struct_wavelet_matrix.html#a50331fad103e7d41e3183888cf89c0c9',1,'WaveletMatrix']]],
   ['node_2',['Node',['../struct_trie_1_1_node.html#a728ce03d23b6c54246b5a40cb170db97',1,'Trie::Node']]],
   ['norm_3',['norm',['../struct_geometry_1_1_point.html#a81f8b8ce71c902bb0207d058920e6ef3',1,'Geometry::Point']]],

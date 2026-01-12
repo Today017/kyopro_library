@@ -118,7 +118,7 @@ $(function(){initNavTree('fps_8hpp.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 名前空間</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html">FPS</a></td></tr>
-<tr class="memdesc:namespace_f_p_s"><td class="mdescLeft">&#160;</td><td class="mdescRight">形式的冪級数 <a href="https://potato167.github.io/po167_library">https://potato167.github.io/po167_library</a> <br /></td></tr>
+<tr class="memdesc:namespace_f_p_s"><td class="mdescLeft">&#160;</td><td class="mdescRight">形式的冪級数 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s_1_1_internal.html">FPS::Internal</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,8 +126,10 @@ $(function(){initNavTree('fps_8hpp.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 型定義</h2></td></tr>
 <tr class="memitem:ad8b88df5de375d471bb026ee55969eed" id="r_ad8b88df5de375d471bb026ee55969eed"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a> = vector&lt;<a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a>&gt;</td></tr>
+<tr class="memdesc:ad8b88df5de375d471bb026ee55969eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式  <br /></td></tr>
 <tr class="separator:ad8b88df5de375d471bb026ee55969eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef60117f609fb8c7e99d61c5861218ac" id="r_aef60117f609fb8c7e99d61c5861218ac"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef60117f609fb8c7e99d61c5861218ac">PolySparse</a> = vector&lt;pair&lt;int,<a class="el" href="modint_8hpp.html#a8be746e3dd283ea2f2c0e96ba064724d">Mod998</a>&gt;&gt;</td></tr>
+<tr class="memdesc:aef60117f609fb8c7e99d61c5861218ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">疎な多項式（(次数, 係数)の配列）  <br /></td></tr>
 <tr class="separator:aef60117f609fb8c7e99d61c5861218ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -153,12 +155,12 @@ $(function(){initNavTree('fps_8hpp.html',''); initResizable(true); });
 <tr class="memitem:ad369b64ca0c5df9fa1189c3488be8a33" id="r_ad369b64ca0c5df9fa1189c3488be8a33"><td class="memItemLeft" align="right" valign="top">pair&lt; <a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a>, <a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#ad369b64ca0c5df9fa1189c3488be8a33">FPS::Div</a> (<a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a> f, <a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a> g)</td></tr>
 <tr class="memdesc:ad369b64ca0c5df9fa1189c3488be8a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g について、<code>f = gq + r</code> なる q, r を返す  <br /></td></tr>
 <tr class="separator:ad369b64ca0c5df9fa1189c3488be8a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab494e4143b9f44d9d27089c831c43f8c" id="r_ab494e4143b9f44d9d27089c831c43f8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#ab494e4143b9f44d9d27089c831c43f8c">FPS::MulSparse</a> (<a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a> f, <a class="el" href="#aef60117f609fb8c7e99d61c5861218ac">PolySparse</a> g)</td></tr>
-<tr class="memdesc:ab494e4143b9f44d9d27089c831c43f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g の積を返す（ただし、g は疎な多項式として与える）  <br /></td></tr>
-<tr class="separator:ab494e4143b9f44d9d27089c831c43f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae277afcb60e0c2bc75c0c73285a548da" id="r_ae277afcb60e0c2bc75c0c73285a548da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#ae277afcb60e0c2bc75c0c73285a548da">FPS::DivSparse</a> (<a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a> f, <a class="el" href="#aef60117f609fb8c7e99d61c5861218ac">PolySparse</a> g)</td></tr>
-<tr class="memdesc:ae277afcb60e0c2bc75c0c73285a548da"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g に対し、 f / g を返す（ただし、g は疎な多項式として与える）  <br /></td></tr>
-<tr class="separator:ae277afcb60e0c2bc75c0c73285a548da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf556b613ce5327532b3d9e1510e0aa3" id="r_aaf556b613ce5327532b3d9e1510e0aa3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#aaf556b613ce5327532b3d9e1510e0aa3">FPS::MulSparse</a> (<a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a> f, <a class="el" href="#aef60117f609fb8c7e99d61c5861218ac">PolySparse</a> g, bool extend=false)</td></tr>
+<tr class="memdesc:aaf556b613ce5327532b3d9e1510e0aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g の積を返す（ただし、g は疎な多項式として与える）  <br /></td></tr>
+<tr class="separator:aaf556b613ce5327532b3d9e1510e0aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ec435a8432d421efa52a303de34b24d" id="r_a1ec435a8432d421efa52a303de34b24d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s.html#a1ec435a8432d421efa52a303de34b24d">FPS::DivSparse</a> (<a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a> f, <a class="el" href="#aef60117f609fb8c7e99d61c5861218ac">PolySparse</a> g, bool extend=false)</td></tr>
+<tr class="memdesc:a1ec435a8432d421efa52a303de34b24d"><td class="mdescLeft">&#160;</td><td class="mdescRight">多項式 f, g に対し、 f / g を返す（ただし、g は疎な多項式として与える）  <br /></td></tr>
+<tr class="separator:a1ec435a8432d421efa52a303de34b24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a803bdeda914115ffd70db88823d0b392" id="r_a803bdeda914115ffd70db88823d0b392"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s_1_1_internal.html#a803bdeda914115ffd70db88823d0b392">FPS::Internal::CyclicConvolution</a> (<a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a> f, <a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a> g)</td></tr>
 <tr class="separator:a803bdeda914115ffd70db88823d0b392"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d84c10d28050856dcf3ab79a01cea4e" id="r_a8d84c10d28050856dcf3ab79a01cea4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_p_s_1_1_internal.html#a8d84c10d28050856dcf3ab79a01cea4e">FPS::Internal::Extend</a> (<a class="el" href="#ad8b88df5de375d471bb026ee55969eed">Poly</a> &amp;v)</td></tr>
@@ -198,6 +200,8 @@ $(function(){initNavTree('fps_8hpp.html',''); initResizable(true); });
       </table>
 </div><div class="memdoc">
 
+<p>多項式 </p>
+
 <p class="definition"> <a class="el" href="fps_8hpp_source.html">fps.hpp</a> の <a class="el" href="fps_8hpp_source.html#l00006">6</a> 行目に定義があります。</p>
 
 </div>
@@ -213,6 +217,8 @@ $(function(){initNavTree('fps_8hpp.html',''); initResizable(true); });
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>疎な多項式（(次数, 係数)の配列） </p>
 
 <p class="definition"> <a class="el" href="fps_8hpp_source.html">fps.hpp</a> の <a class="el" href="fps_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
 

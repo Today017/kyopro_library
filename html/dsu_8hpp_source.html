@@ -108,14 +108,14 @@ $(function(){initNavTree('dsu_8hpp_source.html',''); initResizable(true); });
 <a href="dsu_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Disjoint Set Union</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief Disjoint Set Union</span></div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_d_s_u.html">    5</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_d_s_u.html">DSU</a> {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#a2037e5dac19248a4e5f2f70133fdea12">    6</a></span>    <a class="code hl_function" href="struct_d_s_u.html#a2037e5dac19248a4e5f2f70133fdea12">DSU</a>()=<span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#abbae2d8b88cba33b50386cbbf229685a">    8</a></span>    <a class="code hl_function" href="struct_d_s_u.html#abbae2d8b88cba33b50386cbbf229685a">DSU</a>(<span class="keywordtype">int</span> n) {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        par=vector&lt;<span class="keywordtype">int</span>&gt;(n); iota(par.begin(),par.end(),0);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        par=vector&lt;<span class="keywordtype">int</span>&gt;(n); iota(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(par),0);</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        sz=vector&lt;<span class="keywordtype">int</span>&gt;(n,1);</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        forest_count=n;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    }</div>
@@ -149,8 +149,8 @@ $(function(){initNavTree('dsu_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#a02f80e51a2682fc4465030afd4ae13f0">   34</a></span>    <a class="code hl_function" href="struct_d_s_u.html#a02f80e51a2682fc4465030afd4ae13f0">vector</a>&lt;<a class="code hl_function" href="struct_d_s_u.html#a02f80e51a2682fc4465030afd4ae13f0">vector</a>&lt;<span class="keywordtype">int</span>&gt;&gt; <a class="code hl_function" href="struct_d_s_u.html#a02f80e51a2682fc4465030afd4ae13f0">groups</a>() {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordtype">int</span> n=par.size();</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt; ret(n);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) ret[find(i)].push_back(i);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        ret.erase(remove_if(ret.begin(),ret.end(),[&amp;](<span class="keyword">const</span> vector&lt;<span class="keywordtype">int</span>&gt;&amp; v) { <span class="keywordflow">return</span> v.empty(); }),ret.end());</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) ret[find(i)].push_back(i);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        ret.erase(remove_if(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(ret),[&amp;](<span class="keyword">const</span> vector&lt;<span class="keywordtype">int</span>&gt;&amp; v) { <span class="keywordflow">return</span> v.empty(); }),ret.end());</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
 </div>
@@ -169,6 +169,8 @@ $(function(){initNavTree('dsu_8hpp_source.html',''); initResizable(true); });
 <div class="ttc" id="astruct_d_s_u_html_abbae2d8b88cba33b50386cbbf229685a"><div class="ttname"><a href="struct_d_s_u.html#abbae2d8b88cba33b50386cbbf229685a">DSU::DSU</a></div><div class="ttdeci">DSU(int n)</div><div class="ttdef"><b>Definition</b> <a href="#l00008">dsu.hpp:8</a></div></div>
 <div class="ttc" id="astruct_d_s_u_html_ad3a04e676273604d56db0344795cd693"><div class="ttname"><a href="struct_d_s_u.html#ad3a04e676273604d56db0344795cd693">DSU::same</a></div><div class="ttdeci">bool same(int x, int y)</div><div class="ttdef"><b>Definition</b> <a href="#l00030">dsu.hpp:30</a></div></div>
 <div class="ttc" id="astruct_d_s_u_html_ae15ca5c12804826f13632d23443e36e8"><div class="ttname"><a href="struct_d_s_u.html#ae15ca5c12804826f13632d23443e36e8">DSU::size</a></div><div class="ttdeci">int size(int x)</div><div class="ttdef"><b>Definition</b> <a href="#l00028">dsu.hpp:28</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a9064c572b2b33295a5ca0950d4f8737e"><div class="ttname"><a href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a></div><div class="ttdeci">#define all(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

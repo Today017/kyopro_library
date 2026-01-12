@@ -108,9 +108,9 @@ $(function(){initNavTree('binary__search_8hpp_source.html',''); initResizable(tr
 <a href="binary__search_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 二分探索</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @details 条件 judge を満たす ok と ng の境界を二分探索によって求める。</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @note O(log(|ok - ng|) * f)</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief 二分探索</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@details 条件 judge を満たす ok と ng の境界を二分探索によって求める。</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@note O(log(|ok - ng|) * f)</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Judge&gt;</div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="binary__search_8hpp.html#ac51e21ede218b1fc3ce5beca36a6fc30">    8</a></span>T <a class="code hl_function" href="binary__search_8hpp.html#ac51e21ede218b1fc3ce5beca36a6fc30">BinarySearch</a>(T ok, T ng, Judge judge) {</div>
@@ -123,9 +123,9 @@ $(function(){initNavTree('binary__search_8hpp_source.html',''); initResizable(tr
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
 </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/// @brief 回数指定二分探索</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/// @details 条件 judge を満たす ok と ng の境界を二分探索によって求める。</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/// @note O(iter * f)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">///@brief 回数指定二分探索</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">///@details 条件 judge を満たす ok と ng の境界を二分探索によって求める。</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">///@note O(iter * f)</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Judge&gt;</div>
 <div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="binary__search_8hpp.html#aa10292c755723d3eca2daec700f835dd">   21</a></span>T <a class="code hl_function" href="binary__search_8hpp.html#aa10292c755723d3eca2daec700f835dd">BinarySearchIteration</a>(T ok, T ng, Judge judge, <span class="keywordtype">int</span> iter=100) {</div>
@@ -138,11 +138,11 @@ $(function(){initNavTree('binary__search_8hpp_source.html',''); initResizable(tr
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
 </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/// @brief 単調性の確認</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/// @details 関数 judge が単調性を満たすか否かを確認する</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">/// @param start 開始要素</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/// @param step 探索幅</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/// @param iter 探索回数</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">///@brief 単調性の確認</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">///@details 関数 judge が単調性を満たすか否かを確認する</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">///@param start 開始要素</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">///@param step 探索幅</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">///@param iter 探索回数</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Judge&gt;</div>
 <div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="binary__search_8hpp.html#ad882a3759569b5eac90be8983df7bd54">   36</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="binary__search_8hpp.html#ad882a3759569b5eac90be8983df7bd54">CheckMonotonicity</a>(T start, T step, ll iter, Judge judge) {</div>

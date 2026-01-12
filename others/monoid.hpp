@@ -1,10 +1,10 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-/// @brief モノイド
+///@brief モノイド
 namespace Monoid {
-    /// @brief Minモノイド
-    /// @tparam max_value 単位元
+    ///@brief Minモノイド
+    ///@tparam max_value 単位元
     template<typename T, T max_value=INF>
     struct Min {
         using Type=T;
@@ -12,8 +12,8 @@ namespace Monoid {
         static Type op(const Type& a, const Type& b) { return min(a,b); }
     };
 
-    /// @brief Maxモノイド
-    /// @tparam min_value 単位元
+    ///@brief Maxモノイド
+    ///@tparam min_value 単位元
     template<typename T, T min_value=-INF>
     struct Max {
         using Type=T;
@@ -21,7 +21,7 @@ namespace Monoid {
         static Type op(const Type& a, const Type& b) { return max(a,b); }
     };
 
-    /// @brief 和
+    ///@brief 和
     template<typename T>
     struct Sum {
         using Type=T;
@@ -29,7 +29,7 @@ namespace Monoid {
         static Type op(const Type& a, const Type& b) { return a+b; }
     };
 
-    /// @brief （和，区間の長さ）
+    ///@brief （和，区間の長さ）
     template<typename T>
     struct SumPair {
         using Type=pair<T,int>;

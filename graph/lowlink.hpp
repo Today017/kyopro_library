@@ -1,13 +1,13 @@
 #include"../../kyopro_library/template.hpp"
 
-/// @brief 橋と関節点の情報
+///@brief 橋と関節点の情報
 struct BridgeInfo {
     vector<pair<int,int>> bridge; ///< 橋
     vector<int> articulation; ///< 関節点
 };
 
-/// @brief Low Link のアルゴリズムによりグラフGの橋と関節点を求める
-/// @note O(V+E)
+///@brief Low Link のアルゴリズムによりグラフGの橋と関節点を求める
+///@note O(V+E)
 BridgeInfo LowLink(const vector<vector<int>>& g) {
     int n=g.size();
     vector<int> ord(n,-1), low(n,-1), articulation,seen(n,false);
@@ -32,8 +32,8 @@ BridgeInfo LowLink(const vector<vector<int>>& g) {
     };
 
     int cnt=0;
-    for(int i=0; i<n; i++) if(!seen[i]) dfs(dfs,i,-1,cnt);
-    sort(bridge.begin(),bridge.end());
-    sort(articulation.begin(),articulation.end());
+    rep(i,n) if(!seen[i]) dfs(dfs,i,-1,cnt);
+    sort(all(bridge));
+    sort(all(articulation));
     return {bridge,articulation};
 }

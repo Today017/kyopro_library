@@ -12,8 +12,8 @@
  * このとき、nCr(mod p) = Π[k=0~N]n[k]Cr[k]
  */
 struct CombinationLucas {
-    /// @brief Lucas の定理を用いて二項係数を計算するための前計算をする
-    /// @note O(mod)
+    ///@brief Lucas の定理を用いて二項係数を計算するための前計算をする
+    ///@note O(mod)
     CombinationLucas(int mod) {
         this->mod=mod;
         fact=vector<ll>(mod); fact[0]=1;
@@ -23,8 +23,8 @@ struct CombinationLucas {
         for(int i=mod-2; i>=0; i--) factinv[i]=factinv[i+1]*(i+1)%mod;
     }
 
-    /// @brief nCr mod を返す
-    /// @note O(log(n))
+    ///@brief nCr mod を返す
+    ///@note O(log(n))
     ll comb(int n, int r) {
         if(r==0 || r==n) return 1;
         return calc(n%mod,r%mod)*comb(n/mod,r/mod)%mod;

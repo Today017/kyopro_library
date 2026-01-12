@@ -1,6 +1,6 @@
 #include"../../kyopro_library/template.hpp"
 
-/// @brief 実行時に mod を変更できる ModInt
+///@brief 実行時に mod を変更できる ModInt
 struct ModIntDynamic {
     ll value;
     static ll mod;

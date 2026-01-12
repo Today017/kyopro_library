@@ -90,11 +90,11 @@ public:
     ///@note O(文字列の長さの総和)
     void build(bool heavy = true) {
         correct.resize(this->size());
-        for (int i = 0; i < this->size(); i++) {
+        rep(i,this->size()) {
             correct[i] = (int)this->nodes[i].accept.size();
         }
         queue<int> que;
-        for (int i = 0; i <= char_size; i++) {
+        for(int i=0; i<=char_size; i++) {
             if (~this->nodes[0].nxt[i]) {
                 this->nodes[this->nodes[0].nxt[i]].nxt[FAIL] = 0;
                 que.emplace(this->nodes[0].nxt[i]);
@@ -107,7 +107,7 @@ public:
             int fail = now.nxt[FAIL];
             correct[que.front()] += correct[fail];
             que.pop();
-            for (int i = 0; i < char_size; i++) {
+            rep(i,char_size) {
                 if (~now.nxt[i]) {
                     this->nodes[now.nxt[i]].nxt[FAIL] = this->nodes[fail].nxt[i];
                     if (heavy) {

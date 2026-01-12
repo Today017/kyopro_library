@@ -127,12 +127,9 @@ $(function(){initNavTree('struct_doubling_fold.html',''); initResizable(true); }
 <tr class="memitem:a19e2e532bbcdba1946150f2cdefd1b86" id="r_a19e2e532bbcdba1946150f2cdefd1b86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19e2e532bbcdba1946150f2cdefd1b86">DoublingFold</a> (const vector&lt; int &gt; &amp;p, const vector&lt; <a class="el" href="#a2fac53adf611f062e7c40d5f28a398b8">Type</a> &gt; &amp;v)</td></tr>
 <tr class="memdesc:a19e2e532bbcdba1946150f2cdefd1b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <br /></td></tr>
 <tr class="separator:a19e2e532bbcdba1946150f2cdefd1b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8351c3419c2041117f47e80436506010" id="r_a8351c3419c2041117f47e80436506010"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a2fac53adf611f062e7c40d5f28a398b8">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8351c3419c2041117f47e80436506010">fold</a> (int start, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> k)</td></tr>
-<tr class="memdesc:a8351c3419c2041117f47e80436506010"><td class="mdescLeft">&#160;</td><td class="mdescRight">モノイド積  <br /></td></tr>
-<tr class="separator:a8351c3419c2041117f47e80436506010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd50a59ab1f2ab56d585b7896e444e65" id="r_afd50a59ab1f2ab56d585b7896e444e65"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd50a59ab1f2ab56d585b7896e444e65">next</a> (int start, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> k)</td></tr>
-<tr class="memdesc:afd50a59ab1f2ab56d585b7896e444e65"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点 start から k 回遷移した先の頂点を返す  <br /></td></tr>
-<tr class="separator:afd50a59ab1f2ab56d585b7896e444e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf20b1ea5f2a57bc63861010e828eb2e" id="r_abf20b1ea5f2a57bc63861010e828eb2e"><td class="memItemLeft" align="right" valign="top">pair&lt; int, <a class="el" href="#a2fac53adf611f062e7c40d5f28a398b8">Type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf20b1ea5f2a57bc63861010e828eb2e">fold</a> (int start, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> k)</td></tr>
+<tr class="memdesc:abf20b1ea5f2a57bc63861010e828eb2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">(遷移先, モノイド積) を返す  <br /></td></tr>
+<tr class="separator:abf20b1ea5f2a57bc63861010e828eb2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Monoid, int Log&gt;<br />
@@ -237,8 +234,8 @@ template&lt;typename Monoid, int Log&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a8351c3419c2041117f47e80436506010" name="a8351c3419c2041117f47e80436506010"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8351c3419c2041117f47e80436506010">&#9670;&#160;</a></span>fold()</h2>
+<a id="abf20b1ea5f2a57bc63861010e828eb2e" name="abf20b1ea5f2a57bc63861010e828eb2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf20b1ea5f2a57bc63861010e828eb2e">&#9670;&#160;</a></span>fold()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +246,7 @@ template&lt;typename Monoid, int Log&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a2fac53adf611f062e7c40d5f28a398b8">Type</a> <a class="el" href="struct_doubling_fold.html">DoublingFold</a>&lt; Monoid, Log &gt;::fold </td>
+          <td class="memname">pair&lt; int, <a class="el" href="#a2fac53adf611f062e7c40d5f28a398b8">Type</a> &gt; <a class="el" href="struct_doubling_fold.html">DoublingFold</a>&lt; Monoid, Log &gt;::fold </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
         </tr>
@@ -266,46 +263,10 @@ template&lt;typename Monoid, int Log&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>モノイド積 </p>
-<p>頂点 start から k 回遷移したときのモノイド積を返す </p><dl class="section note"><dt>覚え書き</dt><dd>O(Log) </dd></dl>
+<p>(遷移先, モノイド積) を返す </p>
+<p>頂点 start から k 回遷移したときの頂点とモノイド積の組を返す </p><dl class="section note"><dt>覚え書き</dt><dd>O(Log) </dd></dl>
 
 <p class="definition"> <a class="el" href="doubling__fold_8hpp_source.html">doubling_fold.hpp</a> の <a class="el" href="doubling__fold_8hpp_source.html#l00029">29</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a id="afd50a59ab1f2ab56d585b7896e444e65" name="afd50a59ab1f2ab56d585b7896e444e65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd50a59ab1f2ab56d585b7896e444e65">&#9670;&#160;</a></span>next()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Monoid, int Log&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="struct_doubling_fold.html">DoublingFold</a>&lt; Monoid, Log &gt;::next </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>k</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>頂点 start から k 回遷移した先の頂点を返す </p>
-<dl class="section note"><dt>覚え書き</dt><dd>O(Log) </dd></dl>
-
-<p class="definition"> <a class="el" href="doubling__fold_8hpp_source.html">doubling_fold.hpp</a> の <a class="el" href="doubling__fold_8hpp_source.html#l00040">40</a> 行目に定義があります。</p>
 
 </div>
 </div>

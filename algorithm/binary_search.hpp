@@ -1,9 +1,9 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-/// @brief 二分探索
-/// @details 条件 judge を満たす ok と ng の境界を二分探索によって求める。
-/// @note O(log(|ok - ng|) * f)
+///@brief 二分探索
+///@details 条件 judge を満たす ok と ng の境界を二分探索によって求める。
+///@note O(log(|ok - ng|) * f)
 template<typename T, typename Judge>
 T BinarySearch(T ok, T ng, Judge judge) {
     while(abs(ok-ng)>1) {
@@ -14,9 +14,9 @@ T BinarySearch(T ok, T ng, Judge judge) {
     return ok;
 }
 
-/// @brief 回数指定二分探索
-/// @details 条件 judge を満たす ok と ng の境界を二分探索によって求める。
-/// @note O(iter * f)
+///@brief 回数指定二分探索
+///@details 条件 judge を満たす ok と ng の境界を二分探索によって求める。
+///@note O(iter * f)
 template<typename T, typename Judge>
 T BinarySearchIteration(T ok, T ng, Judge judge, int iter=100) {
     while(iter--) {
@@ -27,11 +27,11 @@ T BinarySearchIteration(T ok, T ng, Judge judge, int iter=100) {
     return ok;
 }
 
-/// @brief 単調性の確認
-/// @details 関数 judge が単調性を満たすか否かを確認する
-/// @param start 開始要素
-/// @param step 探索幅
-/// @param iter 探索回数
+///@brief 単調性の確認
+///@details 関数 judge が単調性を満たすか否かを確認する
+///@param start 開始要素
+///@param step 探索幅
+///@param iter 探索回数
 template<typename T, typename Judge>
 bool CheckMonotonicity(T start, T step, ll iter, Judge judge) {
     cerr<<"[ ";

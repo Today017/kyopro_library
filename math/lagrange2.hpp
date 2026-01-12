@@ -5,9 +5,9 @@
 template<typename T>
 vector<T>lagrangePolynomial(vector<T>x,vector<T>y){
 	int n=x.size()-1;
-	for(int i=0;i<=n;i++){
+	for(int i=0; i<=n; i++){
 		T t=1;
-		for(int j=0;j<=n;j++){
+		for(int j=0; j<=n; j++){
 			if(i!=j)t*=x[i]-x[j];
 		}
 		y[i]/=t;
@@ -23,9 +23,9 @@ vector<T>lagrangePolynomial(vector<T>x,vector<T>y){
 	}
 	//戻すDP
 	vector<T>ret(n+1);
-	for(int i=0;i<=n;i++){
+	for(int i=0; i<=n; i++){
 		if(x[i]==T(0)){
-			for(int j=0;j<=n;j++)ret[j]+=dp[j+1]*y[i];
+			for(int j=0; j<=n; j++)ret[j]+=dp[j+1]*y[i];
 		}else{
 			T inv=x[i].inv();
 			ret[0]+=-dp[0]*inv*y[i];

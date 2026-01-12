@@ -10,8 +10,6 @@ var dir_b8d8e9e6d882cbdac7436f7026baf609 =
     [ "merge_sort_tree.hpp", "merge__sort__tree_8hpp.html", "merge__sort__tree_8hpp" ],
     [ "multiset.hpp", "multiset_8hpp.html", "multiset_8hpp" ],
     [ "offset_vector.hpp", "offset__vector_8hpp.html", "offset__vector_8hpp" ],
-    [ "range_max.hpp", "range__max_8hpp.html", "range__max_8hpp" ],
-    [ "range_min.hpp", "range__min_8hpp.html", "range__min_8hpp" ],
     [ "range_set.hpp", "range__set_8hpp.html", "range__set_8hpp" ],
     [ "segtree.hpp", "segtree_8hpp.html", "segtree_8hpp" ],
     [ "segtree_2d.hpp", "segtree__2d_8hpp.html", "segtree__2d_8hpp" ],

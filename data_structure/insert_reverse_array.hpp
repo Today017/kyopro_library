@@ -10,12 +10,12 @@ namespace InsertableReversibleArrayImpl {
         inline Ptr make_tree()const { return nullptr; }
         int size(Ptr t)const { return count(t); }
         Ptr merge(Ptr l, Ptr r) {
-            if(!l||!r) return l?l:r;
+            if(!l || !r) return l?l:r;
             if(int((rng()*(l->cnt+r->cnt))>>32)<l->cnt) {
                 push(l);
                 l->r=merge(l->r,r);
                 return update(l);
-            }else {
+            } else {
                 push(r);
                 r->l=merge(l,r->l);
                 return update(r);
@@ -60,7 +60,7 @@ namespace InsertableReversibleArrayImpl {
     protected:
         static uint64_t rng() {
             static uint64_t x_=88172645463325252ULL;
-            return x_^=x_<<7,x_^=x_>>9,x_&0xFFFFFFFFull;
+            return x_^=x_<<7, x_^=x_>>9, x_&0xFFFFFFFFull;
         }
         inline int count(const Ptr t) const  { return t?t->cnt:0; }
         virtual void push(Ptr)=0;
@@ -74,7 +74,7 @@ namespace InsertableReversibleArrayImpl {
         E lazy;
         int cnt;
         bool rev;
-        LazyReversibleRBSTNode(const T& t=T(), const E& e=E()):l(),r(),key(t),sum(t),lazy(e),cnt(1),rev(false) {}
+        LazyReversibleRBSTNode(const T& t=T(), const E& e=E()): l(),r(),key(t),sum(t),lazy(e),cnt(1),rev(false) {}
     };
 
     template<typename T, typename E, T(*f)(T,T), T(*g)(T,E), E(*h)(E,E), T(*ts)(T)>
@@ -117,19 +117,19 @@ namespace InsertableReversibleArrayImpl {
             push(t);
             t->cnt=1;
             t->sum=t->key;
-            if(t->l)t->cnt+=t->l->cnt,t->sum=f(t->l->sum,t->sum);
-            if(t->r)t->cnt+=t->r->cnt,t->sum=f(t->sum,t->r->sum);
+            if(t->l) t->cnt+=t->l->cnt,t->sum=f(t->l->sum,t->sum);
+            if(t->r) t->cnt+=t->r->cnt,t->sum=f(t->sum,t->r->sum);
             return t;
         }
         void push(Ptr t)override {
             if(t->rev) {
-                if(t->l)toggle(t->l);
-                if(t->r)toggle(t->r);
+                if(t->l) toggle(t->l);
+                if(t->r) toggle(t->r);
                 t->rev=false;
             }
             if(t->lazy!=E()) {
-                if(t->l)propagate(t->l,t->lazy);
-                if(t->r)propagate(t->r,t->lazy);
+                if(t->l) propagate(t->l,t->lazy);
+                if(t->r) propagate(t->r,t->lazy);
                 t->lazy=E();
             }
         }
@@ -145,9 +145,9 @@ namespace InsertableReversibleArrayImpl {
     T e(T a) { return a; }
 } // namespace InsertableReversibleArrayImpl
 
-/// @file insert_reverse_array.hpp
-/// @brief 挿入・削除・区間反転可能な配列
-/// @ref https://nyaannyaan.github.io/library/rbst/lazy-reversible-rbst.hpp.html
+///@file insert_reverse_array.hpp
+///@brief 挿入・削除・区間反転可能な配列
+///@ref https://nyaannyaan.github.io/library/rbst/lazy-reversible-rbst.hpp.html
 template<typename T>
 struct InsertableReversibleArray {
     using node=InsertableReversibleArrayImpl::LazyReversibleRBSTNode<T,T>;
@@ -180,34 +180,34 @@ struct InsertableReversibleArray {
         _size=init.size();
     }
 
-    /// @brief i 番目に x を挿入する
+    ///@brief i 番目に x を挿入する
     void insert(int k, T x) {
         assert(0<=k&&k<=_size);
         _size++;
         rbst.insert(root,k,x);
     }
 
-    /// @brief i 番目を削除する
+    ///@brief i 番目を削除する
     void erase(int k) {
         assert(0<=k&&k<_size);
         _size--;
         rbst.erase(root,k);
     }
 
-    /// @brief i 番目の要素を取得する
+    ///@brief i 番目の要素を取得する
     T get(int k) {
         assert(0<=k&&k<_size);
         return rbst.fold(root,k,k+1);
     }
 
-    /// @brief i 番目の要素を x に変更する
+    ///@brief i 番目の要素を x に変更する
     void set(int k, T x) {
         assert(0<=k&&k<_size);
         erase(k);
         insert(k,x);
     }
 
-    /// @brief 区間 [l, r) の要素を反転する
+    ///@brief 区間 [l, r) の要素を反転する
     void reverse(int l, int r) {
         assert(0<=l&&l<=r&&r<=_size);
         rbst.reverse(root,l,r);

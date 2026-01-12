@@ -107,13 +107,13 @@ $(function(){initNavTree('factors_8hpp_source.html',''); initResizable(true); })
 <div class="contents">
 <a href="factors_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @brief エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法）</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @ref https://osak.jp/diary/diary_201310.html#20131017</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @ref https://qiita.com/drken/items/3beb679e54266f20ab63 </span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">///@brief エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法）</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@ref https://osak.jp/diary/diary_201310.html#20131017</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@ref https://qiita.com/drken/items/3beb679e54266f20ab63 </span></div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_factors.html">    6</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_factors.html">Factors</a> {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">/// @brief 前計算</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="comment">/// @note O(n log(log(n)))</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">///@brief 前計算</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="comment">///@note O(n log(log(n)))</span></div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_factors.html#a219a3cb166153a020f2fc3d83b9a9e57">    9</a></span>    <a class="code hl_function" href="struct_factors.html#a219a3cb166153a020f2fc3d83b9a9e57">Factors</a>(<span class="keywordtype">int</span> n) {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        mx=n;</div>
@@ -132,8 +132,8 @@ $(function(){initNavTree('factors_8hpp_source.html',''); initResizable(true); })
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
 </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">/// @brief n を素因数分解する</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">/// @note O(log(n))</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">///@brief n を素因数分解する</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">///@note O(log(n))</span></div>
 <div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_factors.html#a9c62b3d154c3d164110ce5365d978732">   27</a></span>    <a class="code hl_function" href="struct_factors.html#a9c62b3d154c3d164110ce5365d978732">vector</a>&lt;<a class="code hl_function" href="struct_factors.html#a9c62b3d154c3d164110ce5365d978732">pair</a>&lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;&gt; <a class="code hl_function" href="struct_factors.html#a9c62b3d154c3d164110ce5365d978732">get_prime_factors</a>(<span class="keywordtype">int</span> n) {</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">if</span>(prime_factors[n].size()==0) {</div>
@@ -152,8 +152,8 @@ $(function(){initNavTree('factors_8hpp_source.html',''); initResizable(true); })
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
 </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">/// @brief n の約数を返す</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">/// @note O(d(n))</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">///@brief n の約数を返す</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">///@note O(d(n))</span></div>
 <div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="struct_factors.html#a5a2919bdbde2dbbba26d1c94b5a917c1">   45</a></span>    <a class="code hl_function" href="struct_factors.html#a5a2919bdbde2dbbba26d1c94b5a917c1">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_function" href="struct_factors.html#a5a2919bdbde2dbbba26d1c94b5a917c1">get_divisors</a>(<span class="keywordtype">int</span> n) {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span>(divisors[n].size()==0) {</div>
@@ -184,7 +184,7 @@ $(function(){initNavTree('factors_8hpp_source.html',''); initResizable(true); })
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    vector&lt;vector&lt;pair&lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;&gt;&gt; prime_factors;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
 </div>
-<div class="ttc" id="astruct_factors_html"><div class="ttname"><a href="struct_factors.html">Factors</a></div><div class="ttdoc">エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法） https://osak.jp/diary/diary_201310.html#20131017 https://qiita....</div><div class="ttdef"><b>Definition</b> <a href="#l00006">factors.hpp:6</a></div></div>
+<div class="ttc" id="astruct_factors_html"><div class="ttname"><a href="struct_factors.html">Factors</a></div><div class="ttdoc">エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法）</div><div class="ttdef"><b>Definition</b> <a href="#l00006">factors.hpp:6</a></div></div>
 <div class="ttc" id="astruct_factors_html_a219a3cb166153a020f2fc3d83b9a9e57"><div class="ttname"><a href="struct_factors.html#a219a3cb166153a020f2fc3d83b9a9e57">Factors::Factors</a></div><div class="ttdeci">Factors(int n)</div><div class="ttdoc">前計算</div><div class="ttdef"><b>Definition</b> <a href="#l00009">factors.hpp:9</a></div></div>
 <div class="ttc" id="astruct_factors_html_a5a2919bdbde2dbbba26d1c94b5a917c1"><div class="ttname"><a href="struct_factors.html#a5a2919bdbde2dbbba26d1c94b5a917c1">Factors::get_divisors</a></div><div class="ttdeci">vector&lt; int &gt; get_divisors(int n)</div><div class="ttdoc">n の約数を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00045">factors.hpp:45</a></div></div>
 <div class="ttc" id="astruct_factors_html_a9c62b3d154c3d164110ce5365d978732"><div class="ttname"><a href="struct_factors.html#a9c62b3d154c3d164110ce5365d978732">Factors::get_prime_factors</a></div><div class="ttdeci">vector&lt; pair&lt; int, int &gt; &gt; get_prime_factors(int n)</div><div class="ttdoc">n を素因数分解する</div><div class="ttdef"><b>Definition</b> <a href="#l00027">factors.hpp:27</a></div></div>

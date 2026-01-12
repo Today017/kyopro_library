@@ -109,7 +109,7 @@ $(function(){initNavTree('struct_bezout_identity.html',''); initResizable(true);
 </div><!--header-->
 <div class="contents">
 
-<p>一次不定方程式 ax+by=c を解く verify: <a href="https://atcoder.jp/contests/abc340/submissions/62495050">https://atcoder.jp/contests/abc340/submissions/62495050</a>  
+<p>一次不定方程式 ax+by=c を解く  
  <a href="#details">[詳解]</a></p>
 
 <p><code>#include &quot;<a class="el" href="bezout__identity_8hpp_source.html">bezout_identity.hpp</a>&quot;</code></p>
@@ -127,8 +127,8 @@ $(function(){initNavTree('struct_bezout_identity.html',''); initResizable(true);
 <tr class="separator:a2ca29bd9549c45e4419bda0b842f02c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>一次不定方程式 ax+by=c を解く verify: <a href="https://atcoder.jp/contests/abc340/submissions/62495050">https://atcoder.jp/contests/abc340/submissions/62495050</a> </p>
-<p>g=gcd(a,b) とする。extGCD(a,b) によって、ax'+by'=g を解く。 両辺を c/g 倍し x=x'<em>(c/g),y=y'</em>(c/g) とすると、ax+by=c を満たす。c が g で割り切れない場合、解は存在しない。 ax+by=c の両辺を g で割ると、(a/g)*x + (b/g)*y = c/g となる。方程式の一般解を X,Y とおくと、(a/g)*(X-x) + (b/g)*(Y-y) = 0 を満たす。 a/g と b/g は互いに素なので X-x は b/g の倍数であり、X=(b/g)*t+x となる。 これを再代入すると、Y=-(a/g)*t+y を得る。 </p>
+<div class="textblock"><p>一次不定方程式 ax+by=c を解く </p>
+<p>verify: <a href="https://atcoder.jp/contests/abc340/submissions/62495050">https://atcoder.jp/contests/abc340/submissions/62495050</a> g=gcd(a,b) とする。extGCD(a,b) によって、ax'+by'=g を解く。 両辺を c/g 倍し x=x'<em>(c/g),y=y'</em>(c/g) とすると、ax+by=c を満たす。c が g で割り切れない場合、解は存在しない。 ax+by=c の両辺を g で割ると、(a/g)*x + (b/g)*y = c/g となる。方程式の一般解を X,Y とおくと、(a/g)*(X-x) + (b/g)*(Y-y) = 0 を満たす。 a/g と b/g は互いに素なので X-x は b/g の倍数であり、X=(b/g)*t+x となる。 これを再代入すると、Y=-(a/g)*t+y を得る。 </p>
 
 <p class="definition"> <a class="el" href="bezout__identity_8hpp_source.html">bezout_identity.hpp</a> の <a class="el" href="bezout__identity_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>

@@ -17,7 +17,7 @@ pair<bool,vector<ll>> BellmanFord(const vector<vector<pair<int,ll>>>& g, int sta
     int i=0;
     for(; i<n; i++) {
         bool update=false;
-        for(int j=0; j<n; j++) {
+        rep(j,n) {
             for(auto [nxt,cost]: g[j]) {
                 if(dst[j]!=INFL && dst[j]+cost<dst[nxt]) {
                     dst[nxt]=dst[j]+cost;

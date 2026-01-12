@@ -1,14 +1,14 @@
 #include "../../kyopro_library/template.hpp"
 
-/// @brief スパーステーブル（Disjoint）
-/// @tparam Semigroup 半群（結合則が成り立つこと）
+///@brief スパーステーブル（Disjoint）
+///@tparam Semigroup 半群（結合則が成り立つこと）
 template<typename Semigroup>
 struct SparseTableDisjoint {
     using Type=typename Semigroup::Type;
     SparseTableDisjoint()=default;
 
-    /// @brief 配列 v からDisjoint Sparse Tableを構築する
-    /// @note O(N log(N))
+    ///@brief 配列 v からDisjoint Sparse Tableを構築する
+    ///@note O(N log(N))
     SparseTableDisjoint(const vector<Type>& v) {
         n=v.size();
         dat=vector<vector<Type>>(__lg(n)+1,vector<Type>(n));
@@ -26,8 +26,8 @@ struct SparseTableDisjoint {
         }
     }
 
-    /// @brief 区間 [l, r) の半群積を返す
-    /// @note O(1)
+    ///@brief 区間 [l, r) の半群積を返す
+    ///@note O(1)
     Type fold(int l, int r) {
         r--;
         if(l==r) return dat[0][l];
@@ -35,10 +35,10 @@ struct SparseTableDisjoint {
         return Semigroup::op(dat[i][l],dat[i][r]);
     }
 
-    /// @brief i 番目の要素を返す
+    ///@brief i 番目の要素を返す
     Type operator[](int i) const { return fold(i,i+1); }
 
-    /// @brief 配列のサイズを返す
+    ///@brief 配列のサイズを返す
     int size() { return n; }
 
 private:

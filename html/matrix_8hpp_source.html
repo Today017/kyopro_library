@@ -112,29 +112,28 @@ $(function(){initNavTree('matrix_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="matrix_8hpp.html#a1e820ec4e269e7cf0c6335efe8851469">    4</a></span><a class="code hl_function" href="matrix_8hpp.html#a1e820ec4e269e7cf0c6335efe8851469">vector</a>&lt;<a class="code hl_function" href="matrix_8hpp.html#a1e820ec4e269e7cf0c6335efe8851469">vector</a>&lt;<a class="code hl_function" href="matrix_8hpp.html#a1e820ec4e269e7cf0c6335efe8851469">T</a>&gt;&gt; <a class="code hl_function" href="matrix_8hpp.html#a1e820ec4e269e7cf0c6335efe8851469">MatMul</a>(<span class="keyword">const</span> vector&lt;vector&lt;T&gt;&gt;&amp; A, <span class="keyword">const</span> vector&lt;vector&lt;T&gt;&gt;&amp; B) {</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="keywordtype">int</span> N=A.size();</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    vector&lt;vector&lt;T&gt;&gt; ret(N,vector&lt;T&gt;(N));</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;N; i++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;N; j++) <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=0; k&lt;N; k++) {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        ret[i][j]+=A[i][k]*B[k][j];</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    }</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,N) <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(j,N) <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(k,N) ret[i][j]+=A[i][k]*B[k][j];</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
 </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712">   14</a></span><a class="code hl_function" href="matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712">vector</a>&lt;<a class="code hl_function" href="matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712">vector</a>&lt;<a class="code hl_function" href="matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712">T</a>&gt;&gt; <a class="code hl_function" href="matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712">MatPow</a>(vector&lt;vector&lt;T&gt;&gt; A, ll b) {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> N=A.size();</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    vector&lt;vector&lt;T&gt;&gt; ret(N,vector&lt;T&gt;(N));</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;N; i++) ret[i][i]=1;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">while</span>(b) {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">if</span>(b&amp;1) ret=MatMul(ret,A);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        A=MatMul(A,A);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        b&gt;&gt;=1;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712">   12</a></span><a class="code hl_function" href="matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712">vector</a>&lt;<a class="code hl_function" href="matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712">vector</a>&lt;<a class="code hl_function" href="matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712">T</a>&gt;&gt; <a class="code hl_function" href="matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712">MatPow</a>(vector&lt;vector&lt;T&gt;&gt; A, ll b) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> N=A.size();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    vector&lt;vector&lt;T&gt;&gt; ret(N,vector&lt;T&gt;(N));</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,N) ret[i][i]=1;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">while</span>(b) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">if</span>(b&amp;1) ret=MatMul(ret,A);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        A=MatMul(A,A);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        b&gt;&gt;=1;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
 </div>
 <div class="ttc" id="amatrix_8hpp_html_a1e820ec4e269e7cf0c6335efe8851469"><div class="ttname"><a href="matrix_8hpp.html#a1e820ec4e269e7cf0c6335efe8851469">MatMul</a></div><div class="ttdeci">vector&lt; vector&lt; T &gt; &gt; MatMul(const vector&lt; vector&lt; T &gt; &gt; &amp;A, const vector&lt; vector&lt; T &gt; &gt; &amp;B)</div><div class="ttdef"><b>Definition</b> <a href="#l00004">matrix.hpp:4</a></div></div>
-<div class="ttc" id="amatrix_8hpp_html_a67bc9347d04f3e91eaedc7b89a629712"><div class="ttname"><a href="matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712">MatPow</a></div><div class="ttdeci">vector&lt; vector&lt; T &gt; &gt; MatPow(vector&lt; vector&lt; T &gt; &gt; A, ll b)</div><div class="ttdef"><b>Definition</b> <a href="#l00014">matrix.hpp:14</a></div></div>
+<div class="ttc" id="amatrix_8hpp_html_a67bc9347d04f3e91eaedc7b89a629712"><div class="ttname"><a href="matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712">MatPow</a></div><div class="ttdeci">vector&lt; vector&lt; T &gt; &gt; MatPow(vector&lt; vector&lt; T &gt; &gt; A, ll b)</div><div class="ttdef"><b>Definition</b> <a href="#l00012">matrix.hpp:12</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

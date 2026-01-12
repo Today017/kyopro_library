@@ -107,10 +107,10 @@ $(function(){initNavTree('sqrt__tree_8hpp_source.html',''); initResizable(true);
 <div class="contents">
 <a href="sqrt__tree_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @brief 更新 O(1) クエリ O(sqrt(N)) の改造版セグ木</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Mo&#39;s Algorithmとの相性が良い</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @note モノイドではなくアーベル群が乗る（モノイドや群の場合、更新が Θ(√N) でメリットがない）</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @ref https://atcoder.jp/contests/abc405/submissions/65704867</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">///@brief 更新 O(1) クエリ O(sqrt(N)) の改造版セグ木</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief Mo&#39;s Algorithmとの相性が良い</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@note モノイドではなくアーベル群が乗る（モノイドや群の場合、更新が Θ(√N) でメリットがない）</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@ref https://atcoder.jp/contests/abc405/submissions/65704867</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Abel&gt;</div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_sqrt_tree.html">    8</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_sqrt_tree.html">SqrtTree</a> {</div>
@@ -128,7 +128,7 @@ $(function(){initNavTree('sqrt__tree_8hpp_source.html',''); initResizable(true);
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
 </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">/// @brief 配列 v で初期化する</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">///@brief 配列 v で初期化する</span></div>
 <div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_sqrt_tree.html#a8628edad00e39182bd82bb2fd04add3d">   22</a></span>    <a class="code hl_function" href="struct_sqrt_tree.html#a8628edad00e39182bd82bb2fd04add3d">SqrtTree</a>(<span class="keyword">const</span> vector&lt;Type&gt;&amp; v) {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">this</span>-&gt;n=v.size();</div>
@@ -136,7 +136,7 @@ $(function(){initNavTree('sqrt__tree_8hpp_source.html',''); initResizable(true);
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">while</span>(rn*rn&lt;n) rn++;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        dat.assign(rn,Abel::id());</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        dat2=v;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;rn; i++) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,rn) {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=i*rn; j&lt;min((i+1)*rn,n); j++) {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                dat[i]=Abel::op(dat[i],dat2[j]);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                dat2_inv[j]=Abel::inv(dat2[j]);</div>
@@ -145,7 +145,7 @@ $(function(){initNavTree('sqrt__tree_8hpp_source.html',''); initResizable(true);
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
 </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">/// @brief 配列 v とその逆元 v_inv で初期化する</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">///@brief 配列 v とその逆元 v_inv で初期化する</span></div>
 <div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="struct_sqrt_tree.html#a1a36223247e599446425fdb14c14e941">   37</a></span>    <a class="code hl_function" href="struct_sqrt_tree.html#a1a36223247e599446425fdb14c14e941">SqrtTree</a>(<span class="keyword">const</span> vector&lt;Type&gt;&amp; v, <span class="keyword">const</span> vector&lt;Type&gt;&amp; v_inv) {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">this</span>-&gt;n=v.size();</div>
@@ -154,7 +154,7 @@ $(function(){initNavTree('sqrt__tree_8hpp_source.html',''); initResizable(true);
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        dat.assign(rn,Abel::id());</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        dat2=v;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        dat2_inv=v_inv;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;rn; i++) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,rn) {</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=i*rn; j&lt;min((i+1)*rn,n); j++) {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                dat[i]=Abel::op(dat[i],dat2[j]);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            }</div>
@@ -162,8 +162,8 @@ $(function(){initNavTree('sqrt__tree_8hpp_source.html',''); initResizable(true);
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
 </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">/// @brief i 番目の要素を x に更新する</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">/// @note O(f) （f : 逆元を求めるのにかかる計算量）</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">///@brief i 番目の要素を x に更新する</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">///@note O(f) （f : 逆元を求めるのにかかる計算量）</span></div>
 <div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_sqrt_tree.html#a3842c3c8ecc681bab6867d2e34979669">   53</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_sqrt_tree.html#a3842c3c8ecc681bab6867d2e34979669">set</a>(<span class="keywordtype">int</span> i, Type x) {</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordtype">int</span> j=i/rn;</div>
@@ -174,7 +174,7 @@ $(function(){initNavTree('sqrt__tree_8hpp_source.html',''); initResizable(true);
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
 </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">/// @brief i 番目の要素を x に更新し、その逆元を x_inv に更新する</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">///@brief i 番目の要素を x に更新し、その逆元を x_inv に更新する</span></div>
 <div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="struct_sqrt_tree.html#a7c3e46e49b2b52b2fbf432ed0220a3e6">   62</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_sqrt_tree.html#a7c3e46e49b2b52b2fbf432ed0220a3e6">set</a>(<span class="keywordtype">int</span> i, Type x, Type x_inv) {</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordtype">int</span> j=i/rn;</div>
@@ -185,8 +185,8 @@ $(function(){initNavTree('sqrt__tree_8hpp_source.html',''); initResizable(true);
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
 </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">/// @brief 区間 [l, r) の群積を返す</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">/// @note O(√N)</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">///@brief 区間 [l, r) の群積を返す</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">///@note O(√N)</span></div>
 <div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="struct_sqrt_tree.html#a14f3772f850e992950cde4b07af50bee">   72</a></span>    Type <a class="code hl_function" href="struct_sqrt_tree.html#a14f3772f850e992950cde4b07af50bee">fold</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r) {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        Type ret=Abel::id();</div>
@@ -221,6 +221,7 @@ $(function(){initNavTree('sqrt__tree_8hpp_source.html',''); initResizable(true);
 <div class="ttc" id="astruct_sqrt_tree_html_a9f5050f5c479d4714b05a200625ca3fe"><div class="ttname"><a href="struct_sqrt_tree.html#a9f5050f5c479d4714b05a200625ca3fe">SqrtTree::size</a></div><div class="ttdeci">int size() const</div><div class="ttdef"><b>Definition</b> <a href="#l00087">sqrt_tree.hpp:87</a></div></div>
 <div class="ttc" id="astruct_sqrt_tree_html_ab0fbb1c94e236f7e18f8bf06ef6427b9"><div class="ttname"><a href="struct_sqrt_tree.html#ab0fbb1c94e236f7e18f8bf06ef6427b9">SqrtTree::SqrtTree</a></div><div class="ttdeci">SqrtTree()=default</div></div>
 <div class="ttc" id="astruct_sqrt_tree_html_ae0a29057985de7b015ad1150826067fe"><div class="ttname"><a href="struct_sqrt_tree.html#ae0a29057985de7b015ad1150826067fe">SqrtTree::SqrtTree</a></div><div class="ttdeci">SqrtTree(int n)</div><div class="ttdef"><b>Definition</b> <a href="#l00012">sqrt_tree.hpp:12</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -109,14 +109,14 @@ $(function(){initNavTree('diameter_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../../kyopro_library/graph/shortest_path/dijkstra.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../../kyopro_library/graph/shortest_path/bfs.hpp&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @brief 重み付き木 g の直径を求める</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @return 直径上の頂点の配列と端点間の距離のペア</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@brief 重み付き木 g の直径を求める</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@return 直径上の頂点の配列と端点間の距離のペア</span></div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="diameter_8hpp.html#a4407e8a83e2783d775723d0a505b4bb9">    7</a></span><a class="code hl_function" href="diameter_8hpp.html#a4407e8a83e2783d775723d0a505b4bb9">pair</a>&lt;<a class="code hl_function" href="diameter_8hpp.html#a4407e8a83e2783d775723d0a505b4bb9">vector</a>&lt;<span class="keywordtype">int</span>&gt;,<a class="code hl_function" href="diameter_8hpp.html#a4407e8a83e2783d775723d0a505b4bb9">ll</a>&gt; <a class="code hl_function" href="diameter_8hpp.html#a4407e8a83e2783d775723d0a505b4bb9">TreeDiameter</a>(<span class="keyword">const</span> vector&lt;vector&lt;pair&lt;<span class="keywordtype">int</span>,ll&gt;&gt;&gt;&amp; g) {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    vector&lt;ll&gt; dist=Dijkstra(g);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">int</span> s=max_element(dist.begin(),dist.end())-dist.begin();</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">int</span> s=max_element(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(dist))-dist.begin();</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    dist=Dijkstra(g,s);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">int</span> t=max_element(dist.begin(),dist.end())-dist.begin();</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">int</span> t=max_element(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(dist))-dist.begin();</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    vector&lt;<span class="keywordtype">int</span>&gt; path;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> now=t;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">while</span>(now!=s) {</div>
@@ -134,14 +134,14 @@ $(function(){initNavTree('diameter_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">/// @brief 木 g の直径を求める</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/// @return 直径上の頂点の配列と端点間の距離のペア</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">///@brief 木 g の直径を求める</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">///@return 直径上の頂点の配列と端点間の距離のペア</span></div>
 <div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="diameter_8hpp.html#af1d7249b07f643576bdb1d1e0e49a8bc">   30</a></span><a class="code hl_function" href="diameter_8hpp.html#a4407e8a83e2783d775723d0a505b4bb9">pair</a>&lt;<a class="code hl_function" href="diameter_8hpp.html#a4407e8a83e2783d775723d0a505b4bb9">vector</a>&lt;<span class="keywordtype">int</span>&gt;,<span class="keywordtype">int</span>&gt; <a class="code hl_function" href="diameter_8hpp.html#a4407e8a83e2783d775723d0a505b4bb9">TreeDiameter</a>(<span class="keyword">const</span> vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;&amp; g) {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    vector&lt;ll&gt; dist=BFS(g);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">int</span> s=max_element(dist.begin(),dist.end())-dist.begin();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">int</span> s=max_element(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(dist))-dist.begin();</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    dist=BFS(g,s);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">int</span> t=max_element(dist.begin(),dist.end())-dist.begin();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">int</span> t=max_element(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(dist))-dist.begin();</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    vector&lt;<span class="keywordtype">int</span>&gt; path;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">int</span> now=t;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">while</span>(now!=s) {</div>
@@ -159,6 +159,7 @@ $(function(){initNavTree('diameter_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
 </div>
 <div class="ttc" id="adiameter_8hpp_html_a4407e8a83e2783d775723d0a505b4bb9"><div class="ttname"><a href="diameter_8hpp.html#a4407e8a83e2783d775723d0a505b4bb9">TreeDiameter</a></div><div class="ttdeci">pair&lt; vector&lt; int &gt;, ll &gt; TreeDiameter(const vector&lt; vector&lt; pair&lt; int, ll &gt; &gt; &gt; &amp;g)</div><div class="ttdoc">重み付き木 g の直径を求める</div><div class="ttdef"><b>Definition</b> <a href="#l00007">diameter.hpp:7</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a9064c572b2b33295a5ca0950d4f8737e"><div class="ttname"><a href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a></div><div class="ttdeci">#define all(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

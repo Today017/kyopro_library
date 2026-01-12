@@ -1,12 +1,12 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-/// @brief Disjoint Set Union
+///@brief Disjoint Set Union
 struct DSU {
     DSU()=default;
 
     DSU(int n) {
-        par=vector<int>(n); iota(par.begin(),par.end(),0);
+        par=vector<int>(n); iota(all(par),0);
         sz=vector<int>(n,1);
         forest_count=n;
     }
@@ -34,8 +34,8 @@ struct DSU {
     vector<vector<int>> groups() {
         int n=par.size();
         vector<vector<int>> ret(n);
-        for(int i=0; i<n; i++) ret[find(i)].push_back(i);
-        ret.erase(remove_if(ret.begin(),ret.end(),[&](const vector<int>& v) { return v.empty(); }),ret.end());
+        rep(i,n) ret[find(i)].push_back(i);
+        ret.erase(remove_if(all(ret),[&](const vector<int>& v) { return v.empty(); }),ret.end());
         return ret;
     }
 

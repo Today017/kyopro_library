@@ -125,7 +125,7 @@ $(function(){initNavTree('bellman__ford_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> i=0;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">for</span>(; i&lt;n; i++) {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">bool</span> update=<span class="keyword">false</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;n; j++) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(j,n) {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span> [nxt,cost]: g[j]) {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                <span class="keywordflow">if</span>(dst[j]!=INFL &amp;&amp; dst[j]+cost&lt;dst[nxt]) {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                    dst[nxt]=dst[j]+cost;</div>
@@ -139,6 +139,7 @@ $(function(){initNavTree('bellman__ford_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 </div>
 <div class="ttc" id="abellman__ford_8hpp_html_a3878431f3954690e66291b5f25881651"><div class="ttname"><a href="bellman__ford_8hpp.html#a3878431f3954690e66291b5f25881651">BellmanFord</a></div><div class="ttdeci">pair&lt; bool, vector&lt; ll &gt; &gt; BellmanFord(const vector&lt; vector&lt; pair&lt; int, ll &gt; &gt; &gt; &amp;g, int start)</div><div class="ttdoc">ベルマンフォード法</div><div class="ttdef"><b>Definition</b> <a href="#l00014">bellman_ford.hpp:14</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

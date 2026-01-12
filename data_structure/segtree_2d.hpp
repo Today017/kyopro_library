@@ -1,19 +1,19 @@
 #include"../../kyopro_library/template.hpp"
 
 template<typename Monoid>
-struct SegmentTree2D {
+struct SegTree2D {
     using Type=Monoid::Type;
 
-    SegmentTree2D()=default;
+    SegTree2D()=default;
 
-    /// @brief サイズ h * w の２次元セグメント木を構築する
-    SegmentTree2D(int h, int w) {
+    ///@brief サイズ h * w の２次元セグメント木を構築する
+    SegTree2D(int h, int w) {
         this->h=h; this->w=w;
         dat=vector<vector<Type>>(this->h*2,vector<Type>(this->w*2,Monoid::id()));
     }
 
-    /// @brief 位置 (x, y) の要素を v に更新する
-    /// @note O(log(h) log(w))
+    ///@brief 位置 (x, y) の要素を v に更新する
+    ///@note O(log(h) log(w))
     void set(int x, int y, Type v) {
         x+=h; y+=w;
         dat[x][y]=v;
@@ -24,8 +24,8 @@ struct SegmentTree2D {
         }
     }
 
-    /// @brief 矩形領域 [l, r) × [u, d) のモノイド積を返す
-    /// @note O(log(h) log(w))
+    ///@brief 矩形領域 [l, r) × [u, d) のモノイド積を返す
+    ///@note O(log(h) log(w))
     Type fold(int l, int r, int u, int d) {
         Type ret=Monoid::id();
         l+=h; r+=h; u+=w; d+=w;

@@ -1,7 +1,7 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-/// @brief ModInt
+///@brief ModInt
 template<ll MOD>
 struct ModInt {
     ModInt(ll x=0){ value=(x>=0?x%MOD:MOD-(-x)%MOD); }

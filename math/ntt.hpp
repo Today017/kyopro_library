@@ -2,7 +2,7 @@
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/others/modcal.hpp"
 
-/// @brief NTT Friendly 素数用 NTT 構造体
+///@brief NTT Friendly 素数用 NTT 構造体
 template<ll MOD, ll primitive_root>
 class NTT {
     int divide_max,n;
@@ -24,7 +24,7 @@ class NTT {
         if(p&1) swap(a,tmp);
         if(inv) {
             int inv_sz=ModInv(n,MOD);
-            for(int i=0; i<n; i++) (a[i]*=inv_sz)%=MOD;
+            rep(i,n) (a[i]*=inv_sz)%=MOD;
         }
     }
 
@@ -42,18 +42,18 @@ public:
         }
     }
 
-    /// @brief a, b の畳み込み mod M を求める
+    ///@brief a, b の畳み込み mod M を求める
     vector<ll> convolve(vector<ll> a, vector<ll> b) {
         n=1;
         while(n+1<a.size()+b.size()) n<<=1;
         tmp=vector<ll>(n); 
 
         vector<ll> fa(n), fb(n);
-        for(int i=0; i<a.size(); i++) fa[i]=a[i];
-        for(int i=0; i<b.size(); i++) fb[i]=b[i];
+        rep(i,a.size()) fa[i]=a[i];
+        rep(i,b.size()) fb[i]=b[i];
 
         ntt(fa); ntt(fb);
-        for(int i=0; i<n; i++) (fa[i]*=fb[i])%=MOD;
+        rep(i,n) (fa[i]*=fb[i])%=MOD;
         ntt(fa,true);
 
         while(fa.size()+1>a.size()+b.size()) fa.pop_back();

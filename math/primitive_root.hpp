@@ -4,9 +4,9 @@
 #include"../../kyopro_library/math/prime_factorize.hpp"
 #include"../../kyopro_library/others/xor128.hpp"
 
-/// @brief n の原始根を求める
-/// @ref https://37zigen.com/primitive-root/
-/// @ref verify: https://judge.yosupo.jp/problem/primitive_root
+///@brief n の原始根を求める
+///@ref https://37zigen.com/primitive-root/
+///@ref verify: https://judge.yosupo.jp/problem/primitive_root
 ll PrimitiveRoot(ll n) {
     if(!PrimalityTest(n)) return -1;
     if(n==2) return 1;

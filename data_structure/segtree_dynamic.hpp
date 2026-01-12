@@ -1,11 +1,11 @@
 #include"../../kyopro_library/template.hpp"
 
-/// @brief 動的セグメント木
+///@brief 動的セグメント木
 template<typename Monoid>
 struct SegTreeDynamic {
     using Type=typename Monoid::Type;
 
-    /// @brief サイズ mx で構築する
+    ///@brief サイズ mx で構築する
     SegTreeDynamic(ll mx=1e9, int q=5e5) {
         this->mx=mx;
         node.reserve(q);
@@ -13,7 +13,7 @@ struct SegTreeDynamic {
         route.reserve(100);
     }
 
-    /// @brief i 番目の要素を v に変える
+    ///@brief i 番目の要素を v に変える
     void set(ll i, Type v) {
         ll left=0, right=mx, cur=0;
         route.clear();
@@ -49,7 +49,7 @@ struct SegTreeDynamic {
         }
     }
 
-    /// @brief 区間 [l, r) のモノイド積を返す
+    ///@brief 区間 [l, r) のモノイド積を返す
     Type fold(ll l, ll r, int idx, ll left, ll right) {
         if(right<l || left>r) return Monoid::id();
         if(l<=left && right<=r) return node[idx].value;
@@ -87,17 +87,17 @@ private:
 
 #include"../../kyopro_library/others/monoid.hpp"
 
-/// @brief 区間クエリ
+///@brief 区間クエリ
 namespace RangeQuery {
-    /// @brief 1点変更 / 区間 min
+    ///@brief 1点変更 / 区間 min
     template<typename T, T max_value=INF>
     struct MinDynamic { using Type=struct SegTreeDynamic<Monoid::Min<T,max_value>>; };
 
-    /// @brief 1点変更 / 区間 max
+    ///@brief 1点変更 / 区間 max
     template<typename T, T min_value=-INF>
     struct MaxDynamic { using Type=struct SegTreeDynamic<Monoid::Max<T,min_value>>; };
 
-    /// @brief 1点変更 / 区間和
+    ///@brief 1点変更 / 区間和
     template<typename T>
     struct SumDynamic { using Type=struct SegTreeDynamic<Monoid::Sum<T>>; };
 }

@@ -107,16 +107,16 @@ $(function(){initNavTree('sparse__table__disjoint_8hpp_source.html',''); initRes
 <div class="contents">
 <a href="sparse__table__disjoint_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @brief スパーステーブル（Disjoint）</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @tparam Semigroup 半群（結合則が成り立つこと）</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">///@brief スパーステーブル（Disjoint）</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@tparam Semigroup 半群（結合則が成り立つこと）</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Semigroup&gt;</div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_sparse_table_disjoint.html">    6</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_sparse_table_disjoint.html">SparseTableDisjoint</a> {</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_sparse_table_disjoint.html#a57c52b4b8bdc6bc40f230c7313a7dc38">    7</a></span>    <span class="keyword">using</span> Type=<span class="keyword">typename</span> Semigroup::Type;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_sparse_table_disjoint.html#adc3bde9f28ff2430266ca1536c1afd25">    8</a></span>    <a class="code hl_function" href="struct_sparse_table_disjoint.html#adc3bde9f28ff2430266ca1536c1afd25">SparseTableDisjoint</a>()=<span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">/// @brief 配列 v からDisjoint Sparse Tableを構築する</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">/// @note O(N log(N))</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">///@brief 配列 v からDisjoint Sparse Tableを構築する</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">///@note O(N log(N))</span></div>
 <div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_sparse_table_disjoint.html#a48075adf65cef80776b5c5ad914240d5">   12</a></span>    <a class="code hl_function" href="struct_sparse_table_disjoint.html#a48075adf65cef80776b5c5ad914240d5">SparseTableDisjoint</a>(<span class="keyword">const</span> vector&lt;Type&gt;&amp; v) {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        n=v.size();</div>
@@ -136,8 +136,8 @@ $(function(){initNavTree('sparse__table__disjoint_8hpp_source.html',''); initRes
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
 </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">/// @brief 区間 [l, r) の半群積を返す</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">/// @note O(1)</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">///@brief 区間 [l, r) の半群積を返す</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">///@note O(1)</span></div>
 <div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_sparse_table_disjoint.html#aa984a0d78a9e15251a151cbb8953d10e">   31</a></span>    Type <a class="code hl_function" href="struct_sparse_table_disjoint.html#aa984a0d78a9e15251a151cbb8953d10e">fold</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r) {</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        r--;</div>
@@ -147,10 +147,10 @@ $(function(){initNavTree('sparse__table__disjoint_8hpp_source.html',''); initRes
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
 </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">/// @brief i 番目の要素を返す</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">///@brief i 番目の要素を返す</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_sparse_table_disjoint.html#abace0a4798ea72d6d063b68b4b218ff1">   39</a></span>    Type <a class="code hl_function" href="struct_sparse_table_disjoint.html#abace0a4798ea72d6d063b68b4b218ff1">operator</a>[](<span class="keywordtype">int</span> i) <span class="keyword">const</span> { <span class="keywordflow">return</span> <a class="code hl_function" href="struct_sparse_table_disjoint.html#aa984a0d78a9e15251a151cbb8953d10e">fold</a><a class="code hl_function" href="struct_sparse_table_disjoint.html#aa984a0d78a9e15251a151cbb8953d10e">(</a>i<a class="code hl_function" href="struct_sparse_table_disjoint.html#aa984a0d78a9e15251a151cbb8953d10e">,</a>i+1<a class="code hl_function" href="struct_sparse_table_disjoint.html#aa984a0d78a9e15251a151cbb8953d10e">)</a>; }</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">/// @brief 配列のサイズを返す</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">///@brief 配列のサイズを返す</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_sparse_table_disjoint.html#a0b726f6dedf26f0b28affebff1e0674d">   42</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_sparse_table_disjoint.html#a0b726f6dedf26f0b28affebff1e0674d">size</a>() { <span class="keywordflow">return</span> n; }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span>:</div>

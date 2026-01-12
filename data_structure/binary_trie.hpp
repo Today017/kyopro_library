@@ -1,45 +1,45 @@
 #include"../../kyopro_library/template.hpp"
 
-/// @brief Binary Trie
+///@brief Binary Trie
 template<typename T=uint32_t, int Log=32>
 struct BinaryTrie {
     BinaryTrie() { root=nullptr; }
 
-    /// @brief BinaryTrie のサイズを返す
+    ///@brief BinaryTrie のサイズを返す
     int size() const {
         if(root==nullptr) return 0;
         return root->size;
     }
 
-    /// @brief x を t 個挿入する
+    ///@brief x を t 個挿入する
     void insert(T x, int t=1) { root=insert(root,x,Log-1,t); }
 
-    /// @brief x を min(count(x), t) 個削除する
+    ///@brief x を min(count(x), t) 個削除する
     void erase(T x, int t=1) {
         t=min(t,count(x));
         if(t==0) return;
         root=erase(root,x,Log-1,t);
     }
 
-    /// @brief 要素全体に x を xor する
+    ///@brief 要素全体に x を xor する
     void apply_xor(T x) { if(root!=nullptr) root->lazy^=x; }
 
-    /// @brief 最大値を返す
+    ///@brief 最大値を返す
     T max() { return get_min(root,~0,Log-1); }
 
-    /// @brief 最小値を返す
+    ///@brief 最小値を返す
     T min() { return get_min(root,0,Log-1); }
 
-    /// @brief k(0-indexed) 番目に小さい要素を返す
+    ///@brief k(0-indexed) 番目に小さい要素を返す
     T kth_min(int k) {
         assert(0<=k&&k<size());
         return get(root,k,Log-1);
     }
 
-    /// @brief x 以上の最小の要素が何番目に小さいかを返す
+    ///@brief x 以上の最小の要素が何番目に小さいかを返す
     int lower_bound(T x) { return count_lower(root,x,Log-1); }
 
-    /// @brief x がいくつ含まれているかを返す
+    ///@brief x がいくつ含まれているかを返す
     int count(T x) {
         if(root==nullptr)return 0;
         Node*v=root;

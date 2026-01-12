@@ -21,7 +21,7 @@ ostream& operator<<(ostream& os, lll x) {
 	if(x==0) return os<<'0';
 	string s;
 	while(x>0) s+=x%10+'0', x/=10;
-    reverse(s.begin(),s.end());
+    reverse(all(s));
 	return os<<s;
 }
 

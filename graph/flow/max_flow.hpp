@@ -1,9 +1,9 @@
 #pragma once
 #include "../../../kyopro_library/template.hpp"
 
-/// @brief 最大流
+///@brief 最大流
 struct MaxFlow {
-    /// @brief 辺構造体
+    ///@brief 辺構造体
     struct Edge {
         int from; ///< 始点
         int to; ///< 終点
@@ -17,7 +17,7 @@ struct MaxFlow {
     MaxFlow(int n): graph(n), level(n), iter(n) {}
     MaxFlow()=default;
 
-    /// @brief 容量 cap の辺を追加する
+    ///@brief 容量 cap の辺を追加する
     void add_edge(int from, int to, ll cap) {
         graph[from].push_back(Edge(from,to,cap,graph[to].size(),false));
         graph[to].push_back(Edge(to,from,0,graph[from].size()-1,true));
@@ -27,11 +27,11 @@ private:
     vector<vector<Edge>> graph;
     vector<int> level,iter;
     void bfs(int s) {
-        fill(level.begin(),level.end(),-1); level[s]=0;
+        fill(all(level),-1); level[s]=0;
         queue<int> que; que.push(s);
         while(!que.empty()) {
             int v=que.front(); que.pop();
-            for(auto &e: graph[v]) {
+            for(auto& e: graph[v]) {
                 if(e.cap>0 && level[e.to]<0) {
                     level[e.to]=level[v]+1;
                     que.push(e.to);
@@ -56,21 +56,21 @@ private:
     }
 
 public:
-    /// @brief s から t への最大流を求める
-    /// @note O(V^2 E)
+    ///@brief s から t への最大流を求める
+    ///@note O(V^2 E)
     ll flow(int s, int t) {
         ll ret=0;
         while(true) {
             bfs(s);
             if(level[t]==-1) return ret;
-            fill(iter.begin(),iter.end(),0);
+            fill(all(iter),0);
             ll f;
             while((f=dfs(s,t,INFL))>0) ret+=f;
         }
     }
 
-    /// @brief 直前に流したフローから最小カットを復元する
-    /// @brief 始点 v から到達可能か否か
+    ///@brief 直前に流したフローから最小カットを復元する
+    ///@brief 始点 v から到達可能か否か
     vector<int> mincut(int v=0) {
         vector<int> ret(graph.size()); ret[v]=true;
         queue<int> que; que.push(v);
@@ -86,10 +86,10 @@ public:
         return ret;
     }
 
-    /// @brief 直前に流したフローの辺の情報を返す
+    ///@brief 直前に流したフローの辺の情報を返す
     vector<Edge> get_edges() {
         vector<Edge> ret;
-        for(int i=0; i<graph.size(); i++) for(auto &e: graph[i]) if(!e.isrev) ret.push_back(e);
+        rep(i,graph.size()) for(auto &e: graph[i]) if(!e.isrev) ret.push_back(e);
         return ret;
     }
 };

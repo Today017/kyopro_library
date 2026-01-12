@@ -17,9 +17,9 @@ tuple<ll,ll,ll> ExtGcd(ll a, ll b) {
     return {g,t-(b/a)*s,s};
 }
 
-/// @brief mod 逆元
-/// @brief a^(-1) (mod m)
-/// @note gcd(a,m)=1 でない場合、-1 を返す。
+///@brief mod 逆元
+///@brief a^(-1) (mod m)
+///@note gcd(a,m)=1 でない場合、-1 を返す。
 ll ModInvGcd(ll a, ll m) {
     // ax = 1 (mod m) <-> ax+my = 1 (mod m)
     auto [g,x,y]=ExtGcd(a,m);

@@ -107,9 +107,9 @@ $(function(){initNavTree('erasable__pq_8hpp_source.html',''); initResizable(true
 <div class="contents">
 <a href="erasable__pq_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @brief 削除可能な優先度付きキュー</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @tparam MAX trueのとき、最大値を返す</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @tparam NONE 空のときに返す値</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">///@brief 削除可能な優先度付きキュー</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@tparam MAX trueのとき、最大値を返す</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@tparam NONE 空のときに返す値</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keywordtype">bool</span> MAX=<span class="keyword">true</span>, T NONE=-INF&gt;</div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_erasable_p_q.html">    7</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_erasable_p_q.html">ErasablePQ</a> {</div>
@@ -118,7 +118,7 @@ $(function(){initNavTree('erasable__pq_8hpp_source.html',''); initResizable(true
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_erasable_p_q.html#a4dd8d7420b532d360babdb12b1d87d51">   11</a></span>    <a class="code hl_function" href="struct_erasable_p_q.html#a4dd8d7420b532d360babdb12b1d87d51">ErasablePQ</a>() { <a class="code hl_variable" href="struct_erasable_p_q.html#acd41f882e0e6cd2ab92c456ed4c981a0">siz</a>=0; }</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">/// @brief x を追加する</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">///@brief x を追加する</span></div>
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_erasable_p_q.html#a6be426dc1cc8681f58173211cddfd6bb">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_erasable_p_q.html#a6be426dc1cc8681f58173211cddfd6bb">push</a>(<span class="keywordtype">int</span> x) {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span>(!MAX) x=-x;</div>
@@ -127,7 +127,7 @@ $(function(){initNavTree('erasable__pq_8hpp_source.html',''); initResizable(true
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
 </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">/// @brief x を削除する</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">///@brief x を削除する</span></div>
 <div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_erasable_p_q.html#ad612ab6f57208c6e4fb1e4c1834e53b8">   21</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_erasable_p_q.html#ad612ab6f57208c6e4fb1e4c1834e53b8">erase</a>(<span class="keywordtype">int</span> x) {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">if</span>(!MAX) x=-x;</div>
@@ -136,7 +136,7 @@ $(function(){initNavTree('erasable__pq_8hpp_source.html',''); initResizable(true
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
 </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">/// @brief 最大値を返す</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">///@brief 最大値を返す</span></div>
 <div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_erasable_p_q.html#a685f9e151e55a3e8e785191eab91af51">   28</a></span>    T <a class="code hl_function" href="struct_erasable_p_q.html#a685f9e151e55a3e8e785191eab91af51">top</a>() {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">while</span>(!pq.empty()) {</div>

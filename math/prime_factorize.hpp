@@ -2,10 +2,10 @@
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/math/primality_test.hpp"
 
-/// @brief ポラードのロー法で n を素因数分解する
-/// @note O(N^(1/4))
-/// @ref https://qiita.com/t_fuki/items/7cd50de54d3c5d063b4a
-/// @ref verify: https://algo-method.com/tasks/553
+///@brief ポラードのロー法で n を素因数分解する
+///@note O(N^(1/4))
+///@ref https://qiita.com/t_fuki/items/7cd50de54d3c5d063b4a
+///@ref verify: https://algo-method.com/tasks/553
 vector<pair<ll,ll>> PrimeFactorize(ll n) {
     using lll=__int128_t;
     if(PrimalityTest(n)) return {{n,1}};
@@ -24,7 +24,7 @@ vector<pair<ll,ll>> PrimeFactorize(ll n) {
                 while(k<r*3/4) y=f(y),k++;
                 while(k<r&&g==1) {
                     ys=y;
-                    for(int i=0; i<min(m,r-k); i++) y=f(y), q=q*_abs(x-y)%n;
+                    rep(i,min(m,r-k)) y=f(y), q=q*_abs(x-y)%n;
                     g=_gcd(q,n); k+=m;
                 }
                 k=r; r*=2;
@@ -63,6 +63,6 @@ vector<pair<ll,ll>> PrimeFactorize(ll n) {
     if(n>1) mp[n]=1;
     vector<pair<ll,ll>> ret;
     for(auto p: mp) ret.push_back(p);
-    sort(ret.begin(),ret.end());
+    sort(all(ret));
     return ret;
 }

@@ -1,14 +1,14 @@
 #include"../../kyopro_library/template.hpp"
 
-/// @brief グラフ g をトポロジカルソートする
-/// @note グラフにサイクルがある場合は空の配列を返す
-/// @note O(V+E)
+///@brief グラフ g をトポロジカルソートする
+///@note グラフにサイクルがある場合は空の配列を返す
+///@note O(V+E)
 vector<int> TopologicalSort(const vector<vector<int>>& g) {
     int n=g.size();
     vector<int> indeg(n);
-    for(int i=0; i<n; i++) for(int nxt:g[i]) indeg[nxt]++;
+    rep(i,n) for(int nxt:g[i]) indeg[nxt]++;
     queue<int> que;
-    for(int i=0; i<n; i++) if(indeg[i]==0) que.push(i);
+    rep(i,n) if(indeg[i]==0) que.push(i);
     vector<int> ret;
 
     while(!que.empty()) {

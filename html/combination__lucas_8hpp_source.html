@@ -120,8 +120,8 @@ $(function(){initNavTree('combination__lucas_8hpp_source.html',''); initResizabl
 <div class="line"><span class="lineno">   13</span><span class="comment"> */</span></div>
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_combination_lucas.html">   14</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_combination_lucas.html">CombinationLucas</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">/// @brief Lucas の定理を用いて二項係数を計算するための前計算をする</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">/// @note O(mod)</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">///@brief Lucas の定理を用いて二項係数を計算するための前計算をする</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">///@note O(mod)</span></div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_combination_lucas.html#a0c46e2850894c0d5690bffc81047ddd8">   17</a></span>    <a class="code hl_function" href="struct_combination_lucas.html#a0c46e2850894c0d5690bffc81047ddd8">CombinationLucas</a>(<span class="keywordtype">int</span> mod) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">this</span>-&gt;mod=mod;</div>
@@ -133,8 +133,8 @@ $(function(){initNavTree('combination__lucas_8hpp_source.html',''); initResizabl
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
 </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">/// @brief nCr mod を返す</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">/// @note O(log(n))</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">///@brief nCr mod を返す</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">///@note O(log(n))</span></div>
 <div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">   28</a></span>    ll <a class="code hl_function" href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">comb</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> r) {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">if</span>(r==0 || r==n) <span class="keywordflow">return</span> 1;</div>

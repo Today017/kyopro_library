@@ -113,9 +113,9 @@ $(function(){initNavTree('lagrange2_8hpp_source.html',''); initResizable(true); 
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="lagrange2_8hpp.html#ac7cffccc1d987126f4dc4cb1177d13c6">    6</a></span><a class="code hl_function" href="lagrange2_8hpp.html#ac7cffccc1d987126f4dc4cb1177d13c6">vector</a>&lt;<a class="code hl_function" href="lagrange2_8hpp.html#ac7cffccc1d987126f4dc4cb1177d13c6">T</a>&gt;<a class="code hl_function" href="lagrange2_8hpp.html#ac7cffccc1d987126f4dc4cb1177d13c6">lagrangePolynomial</a>(vector&lt;T&gt;x,vector&lt;T&gt;y){</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordtype">int</span> n=x.size()-1;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;=n;i++){</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;=n; i++){</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        T t=1;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;=n;j++){</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;=n; j++){</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            <span class="keywordflow">if</span>(i!=j)t*=x[i]-x[j];</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        }</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        y[i]/=t;</div>
@@ -131,9 +131,9 @@ $(function(){initNavTree('lagrange2_8hpp_source.html',''); initResizable(true); 
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">//戻すDP</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    vector&lt;T&gt;ret(n+1);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;=n;i++){</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;=n; i++){</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">if</span>(x[i]==T(0)){</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;=n;j++)ret[j]+=dp[j+1]*y[i];</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;=n; j++)ret[j]+=dp[j+1]*y[i];</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }<span class="keywordflow">else</span>{</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            T inv=x[i].inv();</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            ret[0]+=-dp[0]*inv*y[i];</div>

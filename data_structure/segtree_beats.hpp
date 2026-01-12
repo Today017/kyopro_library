@@ -1,7 +1,7 @@
 #include "../../kyopro_library/template.hpp"
 
-/// @brief Segment Tree Beats!
-/// @ref https://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp
+///@brief Segment Tree Beats!
+///@ref https://nyaannyaan.github.io/library/segment-tree/segment-tree-beats.hpp
 struct AngelBeats {
 private:
     struct alignas(32) Node {
@@ -23,19 +23,19 @@ public:
         }
         for (ll i = n - 1; i; --i) update(i);
     }
-    /// @brief [l, r) に対し、v[i] <- min(v[i], x)
+    ///@brief [l, r) に対し、v[i] <- min(v[i], x)
     void range_chmin(int l, int r, ll x) { inner_apply<1>(l, r, x); }
-    /// @brief [l, r) に対し、v[i] <- max(v[i], x)
+    ///@brief [l, r) に対し、v[i] <- max(v[i], x)
     void range_chmax(int l, int r, ll x) { inner_apply<2>(l, r, x); }
-    /// @brief [l, r) に対し、v[i] <- v[i] + x
+    ///@brief [l, r) に対し、v[i] <- v[i] + x
     void range_add(int l, int r, ll x) { inner_apply<3>(l, r, x); }
-    /// @brief [l, r) に対し、v[i] <- x
+    ///@brief [l, r) に対し、v[i] <- x
     void range_update(int l, int r, ll x) { inner_apply<4>(l, r, x); }
-    /// @brief min[l, r)(v[i]) を返す
+    ///@brief min[l, r)(v[i]) を返す
     ll range_min(int l, int r) { return inner_fold<1>(l, r); }
-    /// @brief max[l, r)(v[i]) を返す
+    ///@brief max[l, r)(v[i]) を返す
     ll range_max(int l, int r) { return inner_fold<2>(l, r); }
-    /// @brief sum[l, r)(v[i]) を返す
+    ///@brief sum[l, r)(v[i]) を返す
     ll range_sum(int l, int r) { return inner_fold<3>(l, r); }
     
     int size() { return n; }

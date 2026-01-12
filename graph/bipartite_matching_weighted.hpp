@@ -1,7 +1,7 @@
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/graph/flow/min_cost_flow.hpp"
 
-/// @brief 重み付き最大二部マッチング（重み最大化）
+///@brief 重み付き最大二部マッチング（重み最大化）
 template<bool MAX>
 struct BipartiteMatchingWeighted {
     MinCostFlow mcf;
@@ -9,7 +9,7 @@ struct BipartiteMatchingWeighted {
     BipartiteMatchingWeighted(int n): mcf(n+2), start(n), goal(n+1) {}
     vector<int> left,right;
 
-    /// @brief 左側の頂点 u と右側の頂点 v に重み w の辺を追加する
+    ///@brief 左側の頂点 u と右側の頂点 v に重み w の辺を追加する
     void add_edge(int u, int v, ll w) {
         left.push_back(u);
         right.push_back(v);
@@ -17,17 +17,17 @@ struct BipartiteMatchingWeighted {
         mcf.add_edge(u,v,1,w);
     }
 
-    /// @brief 頂点 u を左側に追加する
+    ///@brief 頂点 u を左側に追加する
     void add_left(int u) { left.push_back(u); }
 
-    /// @brief 頂点 v を右側に追加する
+    ///@brief 頂点 v を右側に追加する
     void add_right(int v) { right.push_back(v); }
 
-    /// @brief 重み付き最大二部マッチング問題を解く
-    /// @brief `ret[i] := i 組のマッチングが成立しているときの重み`
+    ///@brief 重み付き最大二部マッチング問題を解く
+    ///@brief `ret[i] := i 組のマッチングが成立しているときの重み`
     vector<ll> solve() {
-        sort(left.begin(),left.end()); left.erase(unique(left.begin(),left.end()),left.end());
-        sort(right.begin(),right.end()); right.erase(unique(right.begin(),right.end()),right.end());
+        sort(all(left)); left.erase(unique(all(left)),left.end());
+        sort(all(right)); right.erase(unique(all(right)),right.end());
         for(int u: left) mcf.add_edge(start,u,1,0);
         for(int v: right) mcf.add_edge(v,goal,1,0);
 

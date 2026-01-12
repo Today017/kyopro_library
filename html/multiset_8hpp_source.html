@@ -107,7 +107,7 @@ $(function(){initNavTree('multiset_8hpp_source.html',''); initResizable(true); }
 <div class="contents">
 <a href="multiset_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @brief std::multiset ラッパー</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">///@brief std::multiset ラッパー</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_multi_set.html">    5</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_multi_set.html">MultiSet</a>:<a class="code hl_struct" href="struct_multi_set.html">multiset</a>&lt;<a class="code hl_struct" href="struct_multi_set.html">T</a>&gt; {</div>
@@ -115,15 +115,15 @@ $(function(){initNavTree('multiset_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">    7</a></span>    T <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_multi_set.html#ae1683508411d44c542872827503b2881">    8</a></span>    <a class="code hl_function" href="struct_multi_set.html#ae1683508411d44c542872827503b2881">MultiSet</a>()=<span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">/// @brief コンストラクタ</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">/// @param not_found 指定の値が見つからなかったときに返す値</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">///@brief コンストラクタ</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">///@param not_found 指定の値が見つからなかったときに返す値</span></div>
 <div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a99a83ecab866565566687d8aae71d018">   12</a></span>    <a class="code hl_function" href="struct_multi_set.html#a99a83ecab866565566687d8aae71d018">MultiSet</a>(T not_found=-1) {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keyword">this</span><a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">-&gt;</a><a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>=not_found;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
 </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">/// @brief 最小値を返す</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">///@brief 最小値を返す</span></div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a588b67e05193fb2068526aa9d07a2145">   17</a></span>    T <a class="code hl_function" href="struct_multi_set.html#a588b67e05193fb2068526aa9d07a2145">min</a>() {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">if</span>(<span class="keyword">this</span>-&gt;empty())<span class="keywordflow">return</span> <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
@@ -131,7 +131,7 @@ $(function(){initNavTree('multiset_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
 </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">/// @brief 最大値を返す</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">///@brief 最大値を返す</span></div>
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_multi_set.html#ad78f6fac05a65bd05a34586b51a9eaee">   23</a></span>    T <a class="code hl_function" href="struct_multi_set.html#ad78f6fac05a65bd05a34586b51a9eaee">max</a>() {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(<span class="keyword">this</span>-&gt;empty()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
@@ -139,7 +139,7 @@ $(function(){initNavTree('multiset_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
 </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">/// @brief 最小値を返し、削除する</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">///@brief 最小値を返し、削除する</span></div>
 <div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_multi_set.html#aa815da7cdf344ceccb71ee35c9bf6410">   29</a></span>    T <a class="code hl_function" href="struct_multi_set.html#aa815da7cdf344ceccb71ee35c9bf6410">pop_min</a>() {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">if</span>(<span class="keyword">this</span>-&gt;empty()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
@@ -150,7 +150,7 @@ $(function(){initNavTree('multiset_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
 </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">/// @brief 最大値を返し、削除する</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">///@brief 最大値を返し、削除する</span></div>
 <div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a5cce4f369b39c156138ed1ef9b736d35">   38</a></span>    T <a class="code hl_function" href="struct_multi_set.html#a5cce4f369b39c156138ed1ef9b736d35">pop_max</a>() {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">if</span>(<span class="keyword">this</span>-&gt;empty()) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_multi_set.html#a2eacbed44c86db543002092ebc3bea36">not_found</a>;</div>
@@ -161,15 +161,15 @@ $(function(){initNavTree('multiset_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
 </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">/// @brief x が含まれているか否かを返す</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">///@brief x が含まれているか否かを返す</span></div>
 <div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a203a2028c468bb813bd14c8d79a3b9ea">   47</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_multi_set.html#a203a2028c468bb813bd14c8d79a3b9ea">contains</a>(T x) {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span> <span class="keyword">this</span>-&gt;find(x)!=<span class="keyword">this</span>-&gt;end();</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
 </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">/// @brief x を削除する</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">/// @brief x が含まれていたか否かを返す</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">///@brief x を削除する</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">///@brief x が含まれていたか否かを返す</span></div>
 <div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a0fd57998bffa9ea644ed55c5681df35b">   53</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_multi_set.html#a0fd57998bffa9ea644ed55c5681df35b">discard</a>(T x) {</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">auto</span> itr=<span class="keyword">this</span>-&gt;find(x);</div>
@@ -180,7 +180,7 @@ $(function(){initNavTree('multiset_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
 </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">/// @brief x より大きい最小の値を返す</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">///@brief x より大きい最小の値を返す</span></div>
 <div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="struct_multi_set.html#ac5ea12f9b549bf8c218976e440e3dcba">   62</a></span>    T <a class="code hl_function" href="struct_multi_set.html#ac5ea12f9b549bf8c218976e440e3dcba">gt</a>(T x) {</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">auto</span> itr=<span class="keyword">this</span>-&gt;upper_bound(x);</div>
@@ -189,7 +189,7 @@ $(function(){initNavTree('multiset_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
 </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">/// @brief x 以上の最小の値を返す</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">///@brief x 以上の最小の値を返す</span></div>
 <div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="struct_multi_set.html#af5f4fdc603110941a5ae08f4a067aa73">   69</a></span>    T <a class="code hl_function" href="struct_multi_set.html#af5f4fdc603110941a5ae08f4a067aa73">ge</a>(T x) {</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">auto</span> itr=<span class="keyword">this</span>-&gt;lower_bound(x);</div>
@@ -198,7 +198,7 @@ $(function(){initNavTree('multiset_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
 </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">/// @brief x 以下の最大の値を返す</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">///@brief x 以下の最大の値を返す</span></div>
 <div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="struct_multi_set.html#ae68cdae0ceec4d6cc7909270947e1380">   76</a></span>    T <a class="code hl_function" href="struct_multi_set.html#ae68cdae0ceec4d6cc7909270947e1380">le</a>(T x) {</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keyword">auto</span> itr=<span class="keyword">this</span>-&gt;upper_bound(x);</div>
@@ -207,7 +207,7 @@ $(function(){initNavTree('multiset_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
 </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="comment">/// @brief x 未満最大の値を返す</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="comment">///@brief x 未満最大の値を返す</span></div>
 <div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="struct_multi_set.html#a04ddcfd58ef65bb94b814f8f8e6afa0a">   83</a></span>    T <a class="code hl_function" href="struct_multi_set.html#a04ddcfd58ef65bb94b814f8f8e6afa0a">lt</a>(T x) {</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keyword">auto</span> itr=<span class="keyword">this</span>-&gt;lower_bound(x);</div>
@@ -216,7 +216,7 @@ $(function(){initNavTree('multiset_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
 </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">/// @brief x の個数を返す</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">///@brief x の個数を返す</span></div>
 <div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="struct_multi_set.html#aec0db35536a9fcd9da1d1e35273f0337">   90</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_multi_set.html#aec0db35536a9fcd9da1d1e35273f0337">count</a>(T x) {</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">return</span> cnt[x];</div>

@@ -1,9 +1,9 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 
-/// @brief 作用素
+///@brief 作用素
 namespace Operator {
-    /// @brief 更新
+    ///@brief 更新
     template<typename T, T not_exist>
     struct Update {
         using Type=T;
@@ -11,7 +11,7 @@ namespace Operator {
         static Type op(const Type& a, const Type& b) { return b==id() ? a : b; }
     };
 
-    /// @brief 加算
+    ///@brief 加算
     template<typename T>
     struct Add {
         using Type=T;

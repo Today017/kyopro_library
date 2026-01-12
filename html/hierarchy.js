@@ -70,8 +70,6 @@ var hierarchy =
     [ "Trie< char_size, margin >::Node", "struct_trie_1_1_node.html", null ],
     [ "NTT< MOD, primitive_root >", "class_n_t_t.html", null ],
     [ "Geometry::Point", "struct_geometry_1_1_point.html", null ],
-    [ "RangeMax", "struct_range_max.html", null ],
-    [ "RangeMin", "struct_range_min.html", null ],
     [ "RangeSet", "struct_range_set.html", null ],
     [ "InsertableReversibleArrayImpl::RBSTBase< Node >", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html", null ],
     [ "InsertableReversibleArrayImpl::RBSTBase< LazyReversibleRBSTNode< T, E > >", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html", [
@@ -83,8 +81,8 @@ var hierarchy =
     [ "RollingHash", "struct_rolling_hash.html", null ],
     [ "RollingHash2D", "struct_rolling_hash2_d.html", null ],
     [ "SccInfo", "struct_scc_info.html", null ],
-    [ "SegmentTree2D< Monoid >", "struct_segment_tree2_d.html", null ],
     [ "SegTree< Monoid >", "struct_seg_tree.html", null ],
+    [ "SegTree2D< Monoid >", "struct_seg_tree2_d.html", null ],
     [ "SegTreeAct< Operator >", "struct_seg_tree_act.html", null ],
     [ "SegTreeDynamic< Monoid >", "struct_seg_tree_dynamic.html", null ],
     [ "SegTreeLazy< Monoid, Operator, mapping >", "struct_seg_tree_lazy.html", null ],

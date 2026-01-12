@@ -1,7 +1,7 @@
 #include "../../../kyopro_library/template.hpp"
 
-/// @brief HL分解
-/// @ref 解説:https://hcpc-hokudai.github.io/archive/graph_tree_001.pdf
+///@brief HL分解
+///@ref 解説:https://hcpc-hokudai.github.io/archive/graph_tree_001.pdf
 struct HLD {
     HLD(int n) { resize(n); }
     void add_edge(int a, int b) { g[a].push_back(b),g[b].push_back(a); }
@@ -12,7 +12,7 @@ struct HLD {
         build(root);
     }
 
-    /// @brief 頂点 u, v を結ぶパスをHL分解後の辺の列にして返す
+    ///@brief 頂点 u, v を結ぶパスをHL分解後の辺の列にして返す
     /**
      * @brief
      * `[f, l, r]` として、次を表す。
@@ -36,7 +36,7 @@ struct HLD {
         return ret;
     }
 
-    /// @brief 頂点 u, v のLCAを返す
+    ///@brief 頂点 u, v のLCAを返す
     int lca(int u, int v) {
         while(head[u]!=head[v]) {
             if(dep[head[u]]>dep[head[v]]) u=par[head[u]];
@@ -45,10 +45,10 @@ struct HLD {
         return dep[u]<dep[v] ? u:v;
     }
 
-    /// @brief 頂点vのHL分解後の列での位置を返す
+    ///@brief 頂点vのHL分解後の列での位置を返す
     int at(int v) { return pos[v]; }
 
-    /// @brief HL分解後の列で、頂点vの部分木に対応する区間を返す
+    ///@brief HL分解後の列で、頂点vの部分木に対応する区間を返す
     pair<int,int> subtree(int v) { return {pos[v],pos2[v]}; }
 
 private:

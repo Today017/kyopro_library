@@ -108,7 +108,7 @@ $(function(){initNavTree('timer_8hpp_source.html',''); initResizable(true); });
 <a href="timer_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief タイマー</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief タイマー</span></div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_timer.html">    5</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_timer.html">Timer</a> {</div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
@@ -118,7 +118,7 @@ $(function(){initNavTree('timer_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    }</div>
 </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">/// @brief 今の時間 msec を返す</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">///@brief 今の時間 msec を返す</span></div>
 <div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_timer.html#a5c3f4e738e89aa4731317ecd41211cec">   12</a></span>    <span class="keyword">inline</span> ll <a class="code hl_function" href="struct_timer.html#a5c3f4e738e89aa4731317ecd41211cec">get</a>() <span class="keyword">const</span> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keyword">auto</span> now=chrono::high_resolution_clock::now();</div>
@@ -126,7 +126,7 @@ $(function(){initNavTree('timer_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
 </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">/// @brief 今が制限時間内であるかを返す</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">///@brief 今が制限時間内であるかを返す</span></div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_timer.html#a6cacc7853a92453b3c0d2814f6122cc5">   18</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_timer.html#a6cacc7853a92453b3c0d2814f6122cc5">check</a>() <span class="keyword">const</span> {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">return</span> chrono::high_resolution_clock::now()&lt;time_limit;</div>

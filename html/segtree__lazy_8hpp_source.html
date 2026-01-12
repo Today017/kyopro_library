@@ -108,10 +108,10 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <a href="segtree__lazy_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 遅延評価セグメント木</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @tparam Monoid モノイド</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @tparam Operator 作用素</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// @tparam mapping （モノイドの元，作用素の元）→モノイドの元を返す関数</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief 遅延評価セグメント木</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@tparam Monoid モノイド</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@tparam Operator 作用素</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">///@tparam mapping （モノイドの元，作用素の元）→モノイドの元を返す関数</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Monoid, <span class="keyword">typename</span> Operator, <span class="keyword">auto</span> mapping&gt;</div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_seg_tree_lazy.html">    9</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_seg_tree_lazy.html">SegTreeLazy</a> {</div>
@@ -119,7 +119,7 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_seg_tree_lazy.html#a85ccbd9400631857c24066af7f230c18">   11</a></span>    <span class="keyword">using</span> OperatorType=<span class="keyword">typename</span> Operator::Type;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_seg_tree_lazy.html#ad7fdb9653e028ff01ed90da72d1570dd">   12</a></span>    <a class="code hl_function" href="struct_seg_tree_lazy.html#ad7fdb9653e028ff01ed90da72d1570dd">SegTreeLazy</a>()=<span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">/// @brief 要素数 n の遅延セグ木を構築する</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">///@brief 要素数 n の遅延セグ木を構築する</span></div>
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_seg_tree_lazy.html#ae01e57c4f628819bbf6f08691e4b77e7">   15</a></span>    <a class="code hl_function" href="struct_seg_tree_lazy.html#ae01e57c4f628819bbf6f08691e4b77e7">SegTreeLazy</a>(<span class="keywordtype">int</span> n) {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">this</span>-&gt;n=n;</div>
@@ -129,19 +129,19 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
 </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">/// @brief 配列 v から遅延セグ木を構築する</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">///@brief 配列 v から遅延セグ木を構築する</span></div>
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_seg_tree_lazy.html#a2d23d454ba4728c7c0ba4b1a67bc01b7">   23</a></span>    <a class="code hl_function" href="struct_seg_tree_lazy.html#a2d23d454ba4728c7c0ba4b1a67bc01b7">SegTreeLazy</a>(<span class="keyword">const</span> vector&lt;MonoidType&gt;&amp; v) {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">this</span>-&gt;n=v.size();</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        dat=vector&lt;MonoidType&gt;(n&lt;&lt;1,Monoid::id());</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        lazy=vector&lt;OperatorType&gt;(n&lt;&lt;1,Operator::id());</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;n; i++) dat[i+n]=v[i];</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) dat[i+n]=v[i];</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=n-1; i&gt;0; i--) dat[i]=Monoid::op(dat[i&lt;&lt;1],dat[i&lt;&lt;1|1]);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        indices.reserve(100); cand.reserve(100); cand_l.reserve(100); cand_r.reserve(100);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
 </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">/// @brief i 番目の要素を x に更新する</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">///@brief i 番目の要素を x に更新する</span></div>
 <div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_seg_tree_lazy.html#ad0b49b3ff4b8c6b57c733449ffdf5b85">   33</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_seg_tree_lazy.html#ad0b49b3ff4b8c6b57c733449ffdf5b85">set</a>(<span class="keywordtype">int</span> i, MonoidType x) {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        generate_indices(i,i+1);</div>
@@ -152,7 +152,7 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
 </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">/// @brief 区間 [l, r) に x を作用させる</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">///@brief 区間 [l, r) に x を作用させる</span></div>
 <div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_seg_tree_lazy.html#a3d2684a4b4fbc1995a2d1790eba427a3">   42</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_seg_tree_lazy.html#a3d2684a4b4fbc1995a2d1790eba427a3">apply</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, OperatorType x) {</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span>(l==r) <span class="keywordflow">return</span>;</div>
@@ -176,7 +176,7 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
 </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">/// @brief 区間 [l, r) のモノイド積を返す</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">///@brief 区間 [l, r) のモノイド積を返す</span></div>
 <div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="struct_seg_tree_lazy.html#a7f424f5acb8639d9ec9f5b42005dd567">   64</a></span>    MonoidType <a class="code hl_function" href="struct_seg_tree_lazy.html#a7f424f5acb8639d9ec9f5b42005dd567">fold</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r) {</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">if</span>(l==r) <span class="keywordflow">return</span> Monoid::id();</div>
@@ -193,9 +193,9 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
 </div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">/// @brief 区間 [l, x) のモノイド積が f を満たすような最大の x &gt;= l を返す</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment">/// @attention `f(Monoid::id())=true` が成り立つ必要がある</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="comment">/// @note O(log(N))</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">///@brief 区間 [l, x) のモノイド積が f を満たすような最大の x &gt;= l を返す</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment">///@attention `f(Monoid::id())=true` が成り立つ必要がある</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="comment">///@note O(log(N))</span></div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> F&gt;</div>
 <div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="struct_seg_tree_lazy.html#abf01c743ea6b8648ab8fbb5590de0065">   82</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_seg_tree_lazy.html#abf01c743ea6b8648ab8fbb5590de0065">find_right</a>(<span class="keywordtype">int</span> l, F f) {</div>
@@ -212,8 +212,8 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            l&gt;&gt;=1; r&gt;&gt;=1;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        cand=cand_l;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        reverse(cand_r.begin(),cand_r.end());</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        cand.insert(cand.end(),cand_r.begin(),cand_r.end());</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        reverse(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(cand_r));</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        cand.insert(cand.end(),<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(cand_r));</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        MonoidType val=Monoid::id();</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i:cand) {</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keywordflow">if</span>(f(Monoid::op(val,dat[i]))) {</div>
@@ -234,9 +234,9 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
 </div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="comment">/// @brief 区間 [x, r) のモノイド積が f を満たすような最小の x&lt;=r を返す</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="comment">/// @attention `f(Monoid::id())=true` が成り立つ必要がある</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="comment">/// @note O(log(N))</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="comment">///@brief 区間 [x, r) のモノイド積が f を満たすような最小の x&lt;=r を返す</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="comment">///@attention `f(Monoid::id())=true` が成り立つ必要がある</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="comment">///@note O(log(N))</span></div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> F&gt;</div>
 <div class="foldopen" id="foldopen00121" data-start="{" data-end="}">
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="struct_seg_tree_lazy.html#a96ee12dc05c4296b4176ea1a91564558">  121</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_seg_tree_lazy.html#a96ee12dc05c4296b4176ea1a91564558">find_left</a>(<span class="keywordtype">int</span> r, F f) {</div>
@@ -253,8 +253,8 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            l&gt;&gt;=1; r&gt;&gt;=1;</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        }</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        cand=cand_r;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        reverse(cand_l.begin(),cand_l.end());</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        cand.insert(cand.end(),cand_l.begin(),cand_l.end());</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        reverse(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(cand_l));</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        cand.insert(cand.end(),<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(cand_l));</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        MonoidType val=Monoid::id();</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i:cand) {</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            <span class="keywordflow">if</span>(f(Monoid::op(dat[i],val))) {</div>
@@ -313,7 +313,7 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        }</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    }</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordtype">void</span> pushup() {</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;(<span class="keywordtype">int</span>)indices.size(); j++) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(j,(<span class="keywordtype">int</span>)indices.size()) {</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            <span class="keywordtype">int</span> i=indices[j];</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            dat[i]=Monoid::op(dat[i&lt;&lt;1],dat[i&lt;&lt;1|1]);</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        }</div>
@@ -325,9 +325,9 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/others/operator.hpp&quot;</span></div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="namespace_range_query.html">RangeQuery</a> {</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="comment">/// @brief 区間更新 / 区間min</span></div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="comment">/// @tparam max_value 最大値</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="comment">/// @tparam not_exist 存在しない値</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="comment">///@brief 区間更新 / 区間min</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="comment">///@tparam max_value 最大値</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="comment">///@tparam not_exist 存在しない値</span></div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, T max_value, T not_exist&gt;</div>
 <div class="foldopen" id="foldopen00209" data-start="{" data-end="};">
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_apply_update___get_min.html">  209</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_apply_update___get_min.html">ApplyUpdate_GetMin</a> {</div>
@@ -336,9 +336,9 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    };</div>
 </div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="comment">/// @brief 区間更新 / 区間max</span></div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="comment">/// @tparam min_value 最小値</span></div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="comment">/// @tparam not_exist 存在しない値</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="comment">///@brief 区間更新 / 区間max</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="comment">///@tparam min_value 最小値</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="comment">///@tparam not_exist 存在しない値</span></div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, T min_value, T not_exist&gt;</div>
 <div class="foldopen" id="foldopen00218" data-start="{" data-end="};">
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_apply_update___get_max.html">  218</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_apply_update___get_max.html">ApplyUpdate_GetMax</a> {</div>
@@ -347,8 +347,8 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    };</div>
 </div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="comment">/// @brief 区間更新 / 区間和</span></div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="comment">/// @tparam not_exist 存在しない値</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="comment">///@brief 区間更新 / 区間和</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="comment">///@tparam not_exist 存在しない値</span></div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, T not_exist&gt;</div>
 <div class="foldopen" id="foldopen00226" data-start="{" data-end="};">
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_apply_update___get_sum.html">  226</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_apply_update___get_sum.html">ApplyUpdate_GetSum</a> {</div>
@@ -358,7 +358,7 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    };</div>
 </div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="comment">/// @brief 区間加算 / 区間min</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="comment">///@brief 区間加算 / 区間min</span></div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, T max_value&gt;</div>
 <div class="foldopen" id="foldopen00234" data-start="{" data-end="};">
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_apply_add___get_min.html">  234</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_apply_add___get_min.html">ApplyAdd_GetMin</a> {</div>
@@ -367,7 +367,7 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    };</div>
 </div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="comment">/// @brief 区間加算 / 区間max</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="comment">///@brief 区間加算 / 区間max</span></div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, T min_value&gt;</div>
 <div class="foldopen" id="foldopen00241" data-start="{" data-end="};">
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_apply_add___get_max.html">  241</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_apply_add___get_max.html">ApplyAdd_GetMax</a> {</div>
@@ -376,7 +376,7 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    };</div>
 </div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="comment">/// @brief 区間加算 / 区間和</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="comment">///@brief 区間加算 / 区間和</span></div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00248" data-start="{" data-end="};">
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_apply_add___get_sum.html">  248</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_apply_add___get_sum.html">ApplyAdd_GetSum</a> {</div>
@@ -412,6 +412,8 @@ $(function(){initNavTree('segtree__lazy_8hpp_source.html',''); initResizable(tru
 <div class="ttc" id="astruct_seg_tree_lazy_html_ad0b49b3ff4b8c6b57c733449ffdf5b85"><div class="ttname"><a href="struct_seg_tree_lazy.html#ad0b49b3ff4b8c6b57c733449ffdf5b85">SegTreeLazy::set</a></div><div class="ttdeci">void set(int i, MonoidType x)</div><div class="ttdoc">i 番目の要素を x に更新する</div><div class="ttdef"><b>Definition</b> <a href="#l00033">segtree_lazy.hpp:33</a></div></div>
 <div class="ttc" id="astruct_seg_tree_lazy_html_ad7fdb9653e028ff01ed90da72d1570dd"><div class="ttname"><a href="struct_seg_tree_lazy.html#ad7fdb9653e028ff01ed90da72d1570dd">SegTreeLazy::SegTreeLazy</a></div><div class="ttdeci">SegTreeLazy()=default</div></div>
 <div class="ttc" id="astruct_seg_tree_lazy_html_ae01e57c4f628819bbf6f08691e4b77e7"><div class="ttname"><a href="struct_seg_tree_lazy.html#ae01e57c4f628819bbf6f08691e4b77e7">SegTreeLazy::SegTreeLazy</a></div><div class="ttdeci">SegTreeLazy(int n)</div><div class="ttdoc">要素数 n の遅延セグ木を構築する</div><div class="ttdef"><b>Definition</b> <a href="#l00015">segtree_lazy.hpp:15</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_a9064c572b2b33295a5ca0950d4f8737e"><div class="ttname"><a href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a></div><div class="ttdeci">#define all(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
+<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

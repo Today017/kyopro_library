@@ -1,8 +1,8 @@
 #include "../../kyopro_library/template.hpp"
 #include "../../kyopro_library/string/rolling_hash.hpp"
 
-/// @brief Rolling-Hash-2D
-/// @attention 未verify
+///@brief Rolling-Hash-2D
+///@attention 未verify
 struct RollingHash2D {
     RollingHash2D()=default;
     vector<vector<Hash>> hash;
