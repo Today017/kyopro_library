@@ -8,7 +8,7 @@ using PolySparse=vector<pair<int,Mod998>>; ///< 疎な多項式（(次数, 係�
 
 ///@brief 形式的冪級数
 ///@ref https://potato167.github.io/po167_library
-namespace FPS {
+namespace Fps {
     ///@brief 多項式 f, g の和を返す
     Poly Add(const Poly& a, const Poly& b) {
         Poly res(max(a.size(),b.size()));

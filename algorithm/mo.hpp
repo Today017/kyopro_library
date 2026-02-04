@@ -4,10 +4,7 @@
 ///@ref https://ei1333.hateblo.jp/entry/2017/09/11/211011
 struct Mo {
     ///@brief コンストラクタ
-    Mo(int n) {
-        this->n=n;
-        q=0;
-    }
+    Mo(int n): n(n), q(0) {}
 
     ///@brief クエリ [l, r) を追加する
     void add(int l, int r) {

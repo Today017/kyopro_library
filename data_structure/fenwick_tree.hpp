@@ -4,20 +4,16 @@
 ///@brief フェニック木
 struct FenwickTree {
     FenwickTree()=default;
-    FenwickTree(int n) {
-        this->n=n;
-        dat=vector<ll>(n,0);
-    }
+    FenwickTree(int n): dat(n) {}
     void add(int i, ll x) {
         i++;
-        while(i<=n) dat[i-1]+=x, i+=i&-i;
+        while(i<=dat.size()) dat[i-1]+=x, i+=i&-i;
     }
     ll sum(int l, int r) { return sum(r)-sum(l); }
     ll operator[](int i) { return sum(i,i+1); }
-    int size() { return n; }
+    int size() { return dat.size(); }
 
 private:
-    int n;
     vector<ll> dat;
     ll sum(int r) {
         ll ret=0;

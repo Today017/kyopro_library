@@ -33,7 +33,7 @@ Mod998 BostanMori(Poly num, Poly den, ll n) {
         Poly den_neg=den;
         rep(i,den_neg.size()) if(i%2==1) den_neg[i]=-den_neg[i];
 
-        Poly f2=FPS::Mul(num,den_neg), g2=FPS::Mul(den,den_neg);
+        Poly f2=Fps::Mul(num,den_neg), g2=Fps::Mul(den,den_neg);
         Poly num2, den2;
         for(int i=n%2; i<f2.size(); i+=2) num2.push_back(f2[i]);
         for(int i=0; i<g2.size(); i+=2) den2.push_back(g2[i]);
@@ -52,7 +52,7 @@ Mod998 LinearRecurrence(vector<Mod998> a, vector<Mod998> c, ll k) {
     rep(i,n) dnm[i+1]=-c[i];
     a.resize(n,0);
     auto num=Convolve998(dnm,a); if(num.size()>n) num.resize(n);
-    return FPS::BostanMori(k,num,dnm);
+    return Fps::BostanMori(k,num,dnm);
 }
 
 Mod998 BMBM(const vector<Mod998> &s, ll n) {

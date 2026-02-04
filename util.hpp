@@ -12,6 +12,10 @@ namespace Util {
     template<typename T>
     using min_pq=priority_queue<T,vector<T>,greater<T>>;
 
+    #define rep2(i,a,b) for(ll i=a; i<b; i++)
+    #define per2(i,a,b) for(ll i=(b)-1; i>=a; i--)
+    #define each(a,v) for(auto&& a: v)
+
     auto Min(const auto& v) { return *min_element(all(v)); }
     auto Max(const auto& v) { return *max_element(all(v)); }
     auto Sum(const auto& v) { return reduce(all(v)); }
@@ -19,7 +23,6 @@ namespace Util {
     void Uniq(auto& v) { sort(all(v)); v.erase(unique(all(v)),v.end()); }
     void Inc(auto& a) { for(auto& x: a) x++; }
     void Dec(auto& a) { for(auto& x: a) x--; }
-    #define each(a,v) for(auto&& a: v)
 
     const string YesNo(bool f) { return f?"Yes":"No"; }
     const string YESNO(bool f) { return f?"YES":"NO"; }

@@ -27,6 +27,7 @@ struct DsuRollback {
             return false;
         }
         if(sz[x]<sz[y]) swap(x,y);
+        //履歴をスタックに積んでおく
         history.push_back({x,y,sz[x],sz[y]});
         par[y]=x; sz[x]+=sz[y];
         forest_count--;
@@ -36,9 +37,9 @@ struct DsuRollback {
     ///@brief 最後に行った連結操作を取り消す
     void undo() {
         if(history.empty()) return;
-        auto[x,y,szx,szy]=history.back();
+        auto [x,y,szx,szy]=history.back();
         history.pop_back();
-        if(y==-1)return;
+        if(y==-1) return;
         par[y]=y; sz[x]=szx; sz[y]=szy;
     }
 

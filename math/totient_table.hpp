@@ -6,10 +6,10 @@
 ///@ref https://qiita.com/drken/items/3beb679e54266f20ab63
 ///@ref https://manabitimes.jp/math/667
 ///@brief totient(i) = i 以下であって、i と互いに素な数の個数
-///@brief 公式: totient(n) = n * Π(1 - 1/p) (p は n の素因数)
-///@brief 公式: totient(n)totient(m) = totient(nm) (n と m が互いに素)
-///@brief 公式: Σ(d | n) totient(d) = n
-///@brief 公式: a^totient(m) ≡ 1 (mod m) (a と m が互いに素)
+///@details 公式: totient(n) = n * Π(1 - 1/p) (p は n の素因数)
+///@details 公式: totient(n)totient(m) = totient(nm) (n と m が互いに素)
+///@details 公式: Σ(d | n) totient(d) = n
+///@details 公式: a^totient(m) ≡ 1 (mod m) (a と m が互いに素)
 vector<ll> TotientTable(ll n) {
     vector<ll> ret(n+1);
     iota(all(ret),0);

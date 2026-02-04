@@ -12,17 +12,17 @@ vector<T> LagrangePolynomial(vector<T> x, vector<T> y){
 
     vector<vector<T>> g(n2*2,{1});
     rep(i,n) g[n2+i]={-x[i],1};
-    for(ll i=n2-1; i>0; i--) g[i]=FPS::Mul(g[i<<1],g[i<<1|1]);
+    for(ll i=n2-1; i>0; i--) g[i]=Fps::Mul(g[i<<1],g[i<<1|1]);
 
     vector<T> prod=g[1];
-    vector<T> diff=FPS::Differential(prod), eval=MultipointEvaluate(diff,x);
+    vector<T> diff=Fps::Differential(prod), eval=MultipointEvaluate(diff,x);
 
     using P=pair<vector<T>,vector<T>>;//first/second
     vector<P> g2(n2*2,{{0},{1}});
     rep(i,n) g2[n2+i]={{y[i]},{-eval[i]*x[i],eval[i]}};
     auto merge=[](P l, P r)-> P {
-        vector<T> tmp1=FPS::Mul(l.first,r.second),tmp2=FPS::Mul(l.second,r.first);
-        return {FPS::Add(tmp1,tmp2),FPS::Mul(l.second,r.second)};
+        vector<T> tmp1=Fps::Mul(l.first,r.second),tmp2=Fps::Mul(l.second,r.first);
+        return {Fps::Add(tmp1,tmp2),Fps::Mul(l.second,r.second)};
     };
     for(ll i=n2-1; i>0; i--) g2[i]=merge(g2[i<<1],g2[i<<1|1]);
 

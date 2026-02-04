@@ -14,7 +14,7 @@ struct Hash {
     static vector<vector<ll>> inv,pow;
     static const vector<ll> mod;
     static bool flag;
-    static array<array<ll,HASH_PRIME>,256> num;
+    static array<array<ll,HASH_PRIME>,HASH_C> num;
 
     Type value;
 
