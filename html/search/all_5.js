@@ -13,7 +13,7 @@ var searchData=
   ['execute_10',['execute',['../struct_mo.html#a0be4c837e4b343af9e1b35fb1114d500',1,'Mo::execute()'],['../struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6',1,'DynamicConnectivity::execute()']]],
   ['exist_11',['exist',['../struct_trie_node.html#a2a054fb209d09a86fa0897cf697b0925',1,'TrieNode']]],
   ['exout_12',['Exout',['../util_8hpp.html#a89912a984cd95ee5cd8a10af6a7e1291',1,'util.hpp']]],
-  ['exp_13',['Exp',['../namespace_f_p_s.html#a21b613533c7540e269253f6ef0c3b76e',1,'FPS']]],
+  ['exp_13',['Exp',['../namespace_fps.html#a472042a9536c963ff3f6d91c608f65e9',1,'Fps']]],
   ['exp_14',['exp',['../namespaceexp.html',1,'']]],
   ['exp_2epy_15',['exp.py',['../exp_8py.html',1,'']]],
   ['exp_5fahc_16',['exp_AHC',['../namespaceexp___a_h_c.html',1,'']]],
@@ -22,7 +22,7 @@ var searchData=
   ['expand_5flibrary_19',['expand_library',['../classexp_1_1_expander.html#af05497a07fe982476fec1a6b7e221f67',1,'exp.Expander.expand_library()'],['../classexp___a_h_c_1_1_expander.html#a3acdb0ba487cfef451ee66eb598b8185',1,'exp_AHC.Expander.expand_library()']]],
   ['expander_20',['Expander',['../classexp_1_1_expander.html',1,'exp.Expander'],['../classexp___a_h_c_1_1_expander.html',1,'exp_AHC.Expander']]],
   ['expander_21',['expander',['../namespaceexp.html#a026091473c04f1255fbe54365b41c194',1,'exp.expander'],['../namespaceexp___a_h_c.html#a5148e3153d23a86619ee6e2c4f73ce75',1,'exp_AHC.expander']]],
-  ['extend_22',['Extend',['../namespace_f_p_s_1_1_internal.html#a8d84c10d28050856dcf3ab79a01cea4e',1,'FPS::Internal']]],
+  ['extend_22',['Extend',['../namespace_fps_1_1_internal.html#a04a05e57cee9644ee1a81e28cf8546b7',1,'Fps::Internal']]],
   ['extgcd_23',['ExtGcd',['../extgcd_8hpp.html#a1bbcc665326a2e27d9817bcc3b8b1d91',1,'extgcd.hpp']]],
   ['extgcd_2ehpp_24',['extgcd.hpp',['../extgcd_8hpp.html',1,'']]]
 ];

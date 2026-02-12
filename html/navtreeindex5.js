@@ -1,5 +1,8 @@
 var NAVTREEINDEX5 =
 {
+"struct_range_query_1_1_apply_update___get_min.html":[1,0,12,6],
+"struct_range_query_1_1_apply_update___get_min.html":[2,0,7,6],
+"struct_range_query_1_1_apply_update___get_min.html#a94be51ee0f22e55e1cd5b3fb3ba03f84":[1,0,12,6,0],
 "struct_range_query_1_1_apply_update___get_min.html#a94be51ee0f22e55e1cd5b3fb3ba03f84":[2,0,7,6,0],
 "struct_range_query_1_1_apply_update___get_sum.html":[1,0,12,7],
 "struct_range_query_1_1_apply_update___get_sum.html":[2,0,7,7],
@@ -246,8 +249,5 @@ var NAVTREEINDEX5 =
 "template_8hpp.html#afc28855f97302d38207feabfda45fc97":[3,0,12,0],
 "template_8hpp_source.html":[3,0,12],
 "timer_8hpp.html":[3,0,7,13],
-"timer_8hpp_source.html":[3,0,7,13],
-"topological__sort_8hpp.html":[3,0,3,12],
-"topological__sort_8hpp.html#aa2349361ab4557650966e703dd97fb1c":[3,0,3,12,0],
-"topological__sort_8hpp_source.html":[3,0,3,12]
+"timer_8hpp_source.html":[3,0,7,13]
 };

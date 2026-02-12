@@ -8,7 +8,8 @@ var NAVTREEINDEX0 =
 "all_8hpp_source.html":[3,0,9],
 "annotated.html":[2,0],
 "argsort_8hpp.html":[3,0,2,0],
-"argsort_8hpp.html#ac20d24c447d3ca9e1a45ad9f9eb2c98c":[3,0,2,0,0],
+"argsort_8hpp.html#a152df68a3606d9492d2e25947f89f444":[3,0,2,0,1],
+"argsort_8hpp.html#a946bec4476a1c7b95f764301a0273b26":[3,0,2,0,0],
 "argsort_8hpp_source.html":[3,0,2,0],
 "arithmetic__sum_8hpp.html":[3,0,7,1],
 "arithmetic__sum_8hpp.html#af4f7eae51c564f55d72d097581d9867a":[3,0,7,1,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "geo_8hpp.html":[3,0,2,2],
 "geo_8hpp_source.html":[3,0,2,2],
 "globals.html":[3,1,0],
-"globals_defs.html":[3,1,4],
-"globals_func.html":[3,1,1]
+"globals_defs.html":[3,1,4]
 };

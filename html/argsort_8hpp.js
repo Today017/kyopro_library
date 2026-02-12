@@ -1,4 +1,5 @@
 var argsort_8hpp =
 [
-    [ "argsort", "argsort_8hpp.html#ac20d24c447d3ca9e1a45ad9f9eb2c98c", null ]
+    [ "ArgSign", "argsort_8hpp.html#a946bec4476a1c7b95f764301a0273b26", null ],
+    [ "ArgComp", "argsort_8hpp.html#a152df68a3606d9492d2e25947f89f444", null ]
 ];

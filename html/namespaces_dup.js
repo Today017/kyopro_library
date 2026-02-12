@@ -15,6 +15,7 @@ var namespaces_dup =
       [ "IsPowerOfTwo", "namespace_bit.html#a40cfacaf824921dc87de6a5297491fde", null ],
       [ "Mask", "namespace_bit.html#acd8e1799dd385e69d34df3bea530b920", null ],
       [ "HasBit", "namespace_bit.html#a0af6dce857ec8aa6cef9e6ac1d4410e6", null ],
+      [ "Subset", "namespace_bit.html#a42f78a3c67e388fa5e76b56b720633c7", null ],
       [ "ToBinary", "namespace_bit.html#ab14c175590d01b3c7a01971de3218c7a", null ]
     ] ],
     [ "compress", "namespacecompress.html", [
@@ -26,7 +27,7 @@ var namespaces_dup =
     ] ],
     [ "exp", "namespaceexp.html", "namespaceexp" ],
     [ "exp_AHC", "namespaceexp___a_h_c.html", "namespaceexp___a_h_c" ],
-    [ "FPS", "namespace_f_p_s.html", "namespace_f_p_s" ],
+    [ "Fps", "namespace_fps.html", "namespace_fps" ],
     [ "Geometry", "namespace_geometry.html", "namespace_geometry" ],
     [ "InsertableReversibleArrayImpl", "namespace_insertable_reversible_array_impl.html", "namespace_insertable_reversible_array_impl" ],
     [ "mod_reconstruct", "namespacemod__reconstruct.html", [

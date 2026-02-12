@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"namespace_zeta_mobius.html":[1,0,15],
+"namespace_zeta_mobius.html#a2411a0dca9b8ae8e8a4ce4e36683c98c":[1,0,15,3],
+"namespace_zeta_mobius.html#a482f4f29cbbd38287bd6dfa4fa3752bc":[1,0,15,1],
 "namespace_zeta_mobius.html#a96b8a2e447ea6c66bf33a8a0e39e4fcc":[1,0,15,0],
 "namespace_zeta_mobius.html#acdbe2642fe5208a44eb861ad2e0666bf":[1,0,15,2],
 "namespace_zeta_mobius_div_mul.html":[1,0,16],
@@ -246,8 +249,5 @@ var NAVTREEINDEX2 =
 "struct_doubling.html":[2,0,20],
 "struct_doubling.html#a0ba294fda4333aa6d26311da82eae634":[2,0,20,2],
 "struct_doubling.html#a46485f72c05162559825a3c1db231229":[2,0,20,1],
-"struct_doubling.html#aad11ee1d4c52c049dd5d984df8a81136":[2,0,20,0],
-"struct_doubling_fold.html":[2,0,21],
-"struct_doubling_fold.html#a04df85dc1028af6ecca7e1d00d60b4ed":[2,0,21,1],
-"struct_doubling_fold.html#a19e2e532bbcdba1946150f2cdefd1b86":[2,0,21,2]
+"struct_doubling.html#aad11ee1d4c52c049dd5d984df8a81136":[2,0,20,0]
 };

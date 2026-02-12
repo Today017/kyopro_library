@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"struct_doubling_fold.html":[2,0,21],
+"struct_doubling_fold.html#a04df85dc1028af6ecca7e1d00d60b4ed":[2,0,21,1],
+"struct_doubling_fold.html#a19e2e532bbcdba1946150f2cdefd1b86":[2,0,21,2],
 "struct_doubling_fold.html#a2fac53adf611f062e7c40d5f28a398b8":[2,0,21,0],
 "struct_doubling_fold.html#abf20b1ea5f2a57bc63861010e828eb2e":[2,0,21,3],
 "struct_dsu_base_semigroup.html":[2,0,23],
@@ -246,8 +249,5 @@ var NAVTREEINDEX3 =
 "struct_insertable_reversible_array.html#a977a1f5a620ffec62755a1ca3b0f328b":[2,0,38,5],
 "struct_insertable_reversible_array.html#a99106d441b1b34f3aa108ebcf0c4f3ea":[2,0,38,12],
 "struct_insertable_reversible_array.html#a9a9bb97370a02d5d5d63a4aa29d648d7":[2,0,38,7],
-"struct_insertable_reversible_array.html#aa2087eb079b25efc16b6c5a6356a9299":[2,0,38,2],
-"struct_insertable_reversible_array.html#ab2b765916173504d440af42e3df58868":[2,0,38,6],
-"struct_insertable_reversible_array.html#ac4f64c428a0301ab54e833b321c09534":[2,0,38,0],
-"struct_insertable_reversible_array.html#af25d43b4b88fd782a8c45c3616d50054":[2,0,38,10]
+"struct_insertable_reversible_array.html#aa2087eb079b25efc16b6c5a6356a9299":[2,0,38,2]
 };

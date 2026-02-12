@@ -120,17 +120,17 @@ $(function(){initNavTree('lagrange_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    vector&lt;vector&lt;T&gt;&gt; g(n2*2,{1});</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) g[n2+i]={-x[i],1};</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">for</span>(ll i=n2-1; i&gt;0; i--) g[i]=FPS::Mul(g[i&lt;&lt;1],g[i&lt;&lt;1|1]);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">for</span>(ll i=n2-1; i&gt;0; i--) g[i]=Fps::Mul(g[i&lt;&lt;1],g[i&lt;&lt;1|1]);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    vector&lt;T&gt; prod=g[1];</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    vector&lt;T&gt; diff=FPS::Differential(prod), eval=MultipointEvaluate(diff,x);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    vector&lt;T&gt; diff=Fps::Differential(prod), eval=MultipointEvaluate(diff,x);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">using</span> P=pair&lt;vector&lt;T&gt;,vector&lt;T&gt;&gt;;<span class="comment">//first/second</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    vector&lt;P&gt; g2(n2*2,{{0},{1}});</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) g2[n2+i]={{y[i]},{-eval[i]*x[i],eval[i]}};</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">auto</span> merge=[](P l, P r)-&gt; P {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        vector&lt;T&gt; tmp1=FPS::Mul(l.first,r.second),tmp2=FPS::Mul(l.second,r.first);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> {FPS::Add(tmp1,tmp2),FPS::Mul(l.second,r.second)};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        vector&lt;T&gt; tmp1=Fps::Mul(l.first,r.second),tmp2=Fps::Mul(l.second,r.first);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> {Fps::Add(tmp1,tmp2),Fps::Mul(l.second,r.second)};</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    };</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">for</span>(ll i=n2-1; i&gt;0; i--) g2[i]=merge(g2[i&lt;&lt;1],g2[i&lt;&lt;1|1]);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>

@@ -13,5 +13,6 @@ var bit_8hpp =
     [ "Bit::IsPowerOfTwo", "namespace_bit.html#a40cfacaf824921dc87de6a5297491fde", null ],
     [ "Bit::Mask", "namespace_bit.html#acd8e1799dd385e69d34df3bea530b920", null ],
     [ "Bit::HasBit", "namespace_bit.html#a0af6dce857ec8aa6cef9e6ac1d4410e6", null ],
+    [ "Bit::Subset", "namespace_bit.html#a42f78a3c67e388fa5e76b56b720633c7", null ],
     [ "Bit::ToBinary", "namespace_bit.html#ab14c175590d01b3c7a01971de3218c7a", null ]
 ];

@@ -18,7 +18,7 @@ var searchData=
   ['linearrecurrence_15',['LinearRecurrence',['../bmbm_8hpp.html#a3e6bd9535e7e5bdbf40b09da87bc1501',1,'bmbm.hpp']]],
   ['lislength_16',['LisLength',['../lis_8hpp.html#a8be9178d199989b0528e38aef91af0fe',1,'lis.hpp']]],
   ['lob_17',['Lob',['../namespace_util.html#ad8d7c4890e94ff51d8e93fca901cd482',1,'Util']]],
-  ['log_18',['Log',['../namespace_f_p_s.html#a02cdfe61361c58438a6409d8e66caec4',1,'FPS']]],
+  ['log_18',['Log',['../namespace_fps.html#aaa724f619897b1849c3f76d83ddf5dd3',1,'Fps']]],
   ['lowbit_19',['LowBit',['../namespace_bit.html#af393abef4ae81565dcf932bceafec533',1,'Bit::LowBit(int n)'],['../namespace_bit.html#adfb65c7d7cafdb482df24671d93f7a74',1,'Bit::LowBit(ll n)']]],
   ['lower_5fbound_20',['lower_bound',['../struct_binary_trie.html#a89a91b195e0f2f46ecf75b0e40745189',1,'BinaryTrie']]],
   ['lowlink_21',['LowLink',['../lowlink_8hpp.html#af6e453f0c2a7fabe7daa8df205eba892',1,'lowlink.hpp']]],

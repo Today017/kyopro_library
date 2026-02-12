@@ -6,5 +6,5 @@ var searchData=
   ['pq_3',['pq',['../struct_erasable_p_q.html#a494599e42a46e0066cbeb6d74e02e3e2',1,'ErasablePQ']]],
   ['pq2_4',['pq2',['../struct_erasable_p_q.html#a41c8a6702dc77636e148117e2c554b30',1,'ErasablePQ']]],
   ['primes_5',['primes',['../namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9',1,'ZetaMobiusDivMul']]],
-  ['primitive_5froot_6',['PRIMITIVE_ROOT',['../namespace_f_p_s_1_1_internal.html#a6a11775bfc541034bc1c1fb2df90752c',1,'FPS::Internal']]]
+  ['primitive_5froot_6',['PRIMITIVE_ROOT',['../namespace_fps_1_1_internal.html#a9c9896ada9956d98e2cc9b1b27399bba',1,'Fps::Internal']]]
 ];
