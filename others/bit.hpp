@@ -35,13 +35,21 @@ namespace Bit {
     ///@brief 2のべき乗か否かを返す
     bool IsPowerOfTwo(int n) { return n && (n&-n)==n; }
 
-    ///@brief 0~n-1 ビットを立てたビットマスクを返す
+    ///@brief 0~n-1ビットを立てたビットマスクを返す
     ll Mask(int n) { return (1LL<<n)-1; }
 
     ///@brief iビット目が立っているか否かを返す
     bool HasBit(ll n,int i) { return (n>>i&1); }
 
-    ///@brief 整数　ｎ の2進表現を返す
+    ///@brief sの部分集合を返す
+    vector<int> Subset(int s) {
+        vector<int> ret;
+        int t=s;
+        do { ret.push_back(t); --t&=s; } while(t!=s);
+        return ret;
+    }
+
+    ///@brief 整数nの2進表現を返す
     ///@param len ビット数
     ///@param rev 反転するか否か
     string ToBinary(ll n,int len=32,bool rev=false) {
