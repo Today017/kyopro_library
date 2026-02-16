@@ -67,6 +67,7 @@ var hierarchy =
     [ "multiset", null, [
       [ "MultiSet< T >", "struct_multi_set.html", null ]
     ] ],
+    [ "Namori", "struct_namori.html", null ],
     [ "Trie< char_size, margin >::Node", "struct_trie_1_1_node.html", null ],
     [ "NTT< MOD, primitive_root >", "class_n_t_t.html", null ],
     [ "Geometry::Point", "struct_geometry_1_1_point.html", null ],

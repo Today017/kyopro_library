@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"globals.html":[3,1,0],
+"globals_defs.html":[3,1,4],
 "globals_func.html":[3,1,1],
 "globals_type.html":[3,1,3],
 "globals_vars.html":[3,1,2],
@@ -55,9 +57,9 @@ var NAVTREEINDEX1 =
 "lis_8hpp.html":[3,0,0,5],
 "lis_8hpp.html#a8be9178d199989b0528e38aef91af0fe":[3,0,0,5,0],
 "lis_8hpp_source.html":[3,0,0,5],
-"lowlink_8hpp.html":[3,0,3,9],
-"lowlink_8hpp.html#af6e453f0c2a7fabe7daa8df205eba892":[3,0,3,9,1],
-"lowlink_8hpp_source.html":[3,0,3,9],
+"lowlink_8hpp.html":[3,0,3,10],
+"lowlink_8hpp.html#af6e453f0c2a7fabe7daa8df205eba892":[3,0,3,10,1],
+"lowlink_8hpp_source.html":[3,0,3,10],
 "matrix_8hpp.html":[3,0,5,13],
 "matrix_8hpp.html#a1e820ec4e269e7cf0c6335efe8851469":[3,0,5,13,0],
 "matrix_8hpp.html#a67bc9347d04f3e91eaedc7b89a629712":[3,0,5,13,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "namespace_util.html#af3d475556cc033f77ec35e7983bfea10":[1,0,14,3],
 "namespace_util.html#af53779f64d9df67490a7ae2daa3999f0":[1,0,14,41],
 "namespace_util.html#af8c380c90444a911d238fce4f005498a":[1,0,14,1],
-"namespace_util.html#af92477a90d324df718a1bc9f03287377":[1,0,14,29],
-"namespace_util.html#afff1580898281d69f261d5470a9aeded":[1,0,14,27],
-"namespace_util.html#afffc1cbd088897eb458b9caa9aa52394":[1,0,14,42]
+"namespace_util.html#af92477a90d324df718a1bc9f03287377":[1,0,14,29]
 };

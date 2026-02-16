@@ -109,7 +109,7 @@ $(function(){initNavTree('struct_factors.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
-<p>エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法）  
+<p>エラトステネスの篩を利用した高速な素因数分解・約数列挙  
  <a href="#details">[詳解]</a></p>
 
 <p><code>#include &quot;<a class="el" href="factors_8hpp_source.html">factors.hpp</a>&quot;</code></p>
@@ -119,15 +119,15 @@ $(function(){initNavTree('struct_factors.html',''); initResizable(true); });
 <tr class="memitem:a219a3cb166153a020f2fc3d83b9a9e57" id="r_a219a3cb166153a020f2fc3d83b9a9e57"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a219a3cb166153a020f2fc3d83b9a9e57">Factors</a> (int n)</td></tr>
 <tr class="memdesc:a219a3cb166153a020f2fc3d83b9a9e57"><td class="mdescLeft">&#160;</td><td class="mdescRight">前計算  <br /></td></tr>
 <tr class="separator:a219a3cb166153a020f2fc3d83b9a9e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c62b3d154c3d164110ce5365d978732" id="r_a9c62b3d154c3d164110ce5365d978732"><td class="memItemLeft" align="right" valign="top">vector&lt; pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c62b3d154c3d164110ce5365d978732">get_prime_factors</a> (int n)</td></tr>
-<tr class="memdesc:a9c62b3d154c3d164110ce5365d978732"><td class="mdescLeft">&#160;</td><td class="mdescRight">n を素因数分解する  <br /></td></tr>
-<tr class="separator:a9c62b3d154c3d164110ce5365d978732"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a2919bdbde2dbbba26d1c94b5a917c1" id="r_a5a2919bdbde2dbbba26d1c94b5a917c1"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a2919bdbde2dbbba26d1c94b5a917c1">get_divisors</a> (int n)</td></tr>
-<tr class="memdesc:a5a2919bdbde2dbbba26d1c94b5a917c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">n の約数を返す  <br /></td></tr>
-<tr class="separator:a5a2919bdbde2dbbba26d1c94b5a917c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9cb22db067082dff2bd28989f217b63" id="r_af9cb22db067082dff2bd28989f217b63"><td class="memItemLeft" align="right" valign="top">vector&lt; pair&lt; int, int &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9cb22db067082dff2bd28989f217b63">get_prime_factors</a> (int n)</td></tr>
+<tr class="memdesc:af9cb22db067082dff2bd28989f217b63"><td class="mdescLeft">&#160;</td><td class="mdescRight">n を素因数分解する  <br /></td></tr>
+<tr class="separator:af9cb22db067082dff2bd28989f217b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5d4b177df181311a561d2adf82ef773" id="r_ac5d4b177df181311a561d2adf82ef773"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5d4b177df181311a561d2adf82ef773">get_divisors</a> (int n)</td></tr>
+<tr class="memdesc:ac5d4b177df181311a561d2adf82ef773"><td class="mdescLeft">&#160;</td><td class="mdescRight">n の約数を返す  <br /></td></tr>
+<tr class="separator:ac5d4b177df181311a561d2adf82ef773"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>エラトステネスの篩を利用した高速な素因数分解・約数列挙（Osa_k 法） </p>
+<div class="textblock"><p>エラトステネスの篩を利用した高速な素因数分解・約数列挙 </p>
 <p><a href="https://osak.jp/diary/diary_201310.html#20131017">https://osak.jp/diary/diary_201310.html#20131017</a> <a href="https://qiita.com/drken/items/3beb679e54266f20ab63">https://qiita.com/drken/items/3beb679e54266f20ab63</a> </p>
 
 <p class="definition"> <a class="el" href="factors_8hpp_source.html">factors.hpp</a> の <a class="el" href="factors_8hpp_source.html#l00006">6</a> 行目に定義があります。</p>
@@ -163,8 +163,8 @@ $(function(){initNavTree('struct_factors.html',''); initResizable(true); });
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a9c62b3d154c3d164110ce5365d978732" name="a9c62b3d154c3d164110ce5365d978732"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c62b3d154c3d164110ce5365d978732">&#9670;&#160;</a></span>get_prime_factors()</h2>
+<a id="af9cb22db067082dff2bd28989f217b63" name="af9cb22db067082dff2bd28989f217b63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9cb22db067082dff2bd28989f217b63">&#9670;&#160;</a></span>get_prime_factors()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -173,7 +173,7 @@ $(function(){initNavTree('struct_factors.html',''); initResizable(true); });
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; pair&lt; int, int &gt; &gt; Factors::get_prime_factors </td>
+          <td class="memname">vector&lt; pair&lt; int, int &gt; &gt; &amp; Factors::get_prime_factors </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
           <td></td>
@@ -193,8 +193,8 @@ $(function(){initNavTree('struct_factors.html',''); initResizable(true); });
 
 </div>
 </div>
-<a id="a5a2919bdbde2dbbba26d1c94b5a917c1" name="a5a2919bdbde2dbbba26d1c94b5a917c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a2919bdbde2dbbba26d1c94b5a917c1">&#9670;&#160;</a></span>get_divisors()</h2>
+<a id="ac5d4b177df181311a561d2adf82ef773" name="ac5d4b177df181311a561d2adf82ef773"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5d4b177df181311a561d2adf82ef773">&#9670;&#160;</a></span>get_divisors()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,7 +203,7 @@ $(function(){initNavTree('struct_factors.html',''); initResizable(true); });
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; int &gt; Factors::get_divisors </td>
+          <td class="memname">vector&lt; int &gt; &amp; Factors::get_divisors </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
           <td></td>

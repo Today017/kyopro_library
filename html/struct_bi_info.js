@@ -1,7 +1,7 @@
 var struct_bi_info =
 [
-    [ "max_matching", "struct_bi_info.html#a1dcdc34950c9b5d1da1722947a1bc5a8", null ],
-    [ "min_edge_cover", "struct_bi_info.html#a5abd51537fbadf9591f5b7ffbba56c61", null ],
-    [ "max_independent_set", "struct_bi_info.html#a55dc89a0de093ae7e4e17ed1a93356f7", null ],
-    [ "min_vertex_cover", "struct_bi_info.html#a6a8d383b96380447ef6f9dc284f0e527", null ]
+    [ "max_matching", "struct_bi_info.html#a0743f51b3e19b3cec53b30738d5857ae", null ],
+    [ "min_edge_cover", "struct_bi_info.html#ad86c50e1129b764f75a177a1715352b4", null ],
+    [ "max_independent_set", "struct_bi_info.html#a98709eb00cc08ae6826a5ee6bd92be7a", null ],
+    [ "min_vertex_cover", "struct_bi_info.html#ad55b6ba42f341b288adb31f764bdb729", null ]
 ];

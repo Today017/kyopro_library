@@ -1,5 +1,10 @@
 var NAVTREEINDEX3 =
 {
+"struct_d_s_u.html#ae15ca5c12804826f13632d23443e36e8":[2,0,22,4],
+"struct_doubling.html":[2,0,20],
+"struct_doubling.html#a0ba294fda4333aa6d26311da82eae634":[2,0,20,2],
+"struct_doubling.html#a46485f72c05162559825a3c1db231229":[2,0,20,1],
+"struct_doubling.html#aad11ee1d4c52c049dd5d984df8a81136":[2,0,20,0],
 "struct_doubling_fold.html":[2,0,21],
 "struct_doubling_fold.html#a04df85dc1028af6ecca7e1d00d60b4ed":[2,0,21,1],
 "struct_doubling_fold.html#a19e2e532bbcdba1946150f2cdefd1b86":[2,0,21,2],
@@ -63,8 +68,8 @@ var NAVTREEINDEX3 =
 "struct_euler_tour_info.html#ae1846e8d91a37203742a1d7fc9b8daea":[2,0,29,0],
 "struct_factors.html":[2,0,30],
 "struct_factors.html#a219a3cb166153a020f2fc3d83b9a9e57":[2,0,30,0],
-"struct_factors.html#a5a2919bdbde2dbbba26d1c94b5a917c1":[2,0,30,2],
-"struct_factors.html#a9c62b3d154c3d164110ce5365d978732":[2,0,30,1],
+"struct_factors.html#ac5d4b177df181311a561d2adf82ef773":[2,0,30,2],
+"struct_factors.html#af9cb22db067082dff2bd28989f217b63":[2,0,30,1],
 "struct_fenwick_tree.html":[2,0,31],
 "struct_fenwick_tree.html#a1427e094b397dfdb49e44e55386150cf":[2,0,31,1],
 "struct_fenwick_tree.html#a55174570559f877cd9ed2791a669985d":[2,0,31,2],
@@ -244,10 +249,5 @@ var NAVTREEINDEX3 =
 "struct_insertable_reversible_array.html#a41d2ed956f4a37eaac47a015597e2948":[2,0,38,9],
 "struct_insertable_reversible_array.html#a5d95b6579130721eb3575f2a8452d834":[2,0,38,1],
 "struct_insertable_reversible_array.html#a5e4dd28311e225c1e1f9ec9968139e2f":[2,0,38,8],
-"struct_insertable_reversible_array.html#a693dd53064f16c54821043eb12258c95":[2,0,38,13],
-"struct_insertable_reversible_array.html#a8b180eeb6d7a237eb7abedb5975c42ab":[2,0,38,3],
-"struct_insertable_reversible_array.html#a977a1f5a620ffec62755a1ca3b0f328b":[2,0,38,5],
-"struct_insertable_reversible_array.html#a99106d441b1b34f3aa108ebcf0c4f3ea":[2,0,38,12],
-"struct_insertable_reversible_array.html#a9a9bb97370a02d5d5d63a4aa29d648d7":[2,0,38,7],
-"struct_insertable_reversible_array.html#aa2087eb079b25efc16b6c5a6356a9299":[2,0,38,2]
+"struct_insertable_reversible_array.html#a693dd53064f16c54821043eb12258c95":[2,0,38,13]
 };

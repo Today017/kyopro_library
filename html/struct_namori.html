@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Kyopro Library: BiInfo 構造体</title>
+<title>Kyopro Library: Namori 構造体</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,7 +76,7 @@ $(function() { codefold.init(0); });
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('struct_bi_info.html',''); initResizable(true); });
+$(function(){initNavTree('struct_namori.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -104,117 +104,101 @@ $(function(){initNavTree('struct_bi_info.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">公開変数類</a> &#124;
-<a href="struct_bi_info-members.html">全メンバ一覧</a>  </div>
-  <div class="headertitle"><div class="title">BiInfo 構造体</div></div>
+<a href="struct_namori-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">Namori 構造体</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>二部グラフのパラメータ  
- <a href="#details">[詳解]</a></p>
-
-<p><code>#include &quot;<a class="el" href="bipartite_8hpp_source.html">bipartite.hpp</a>&quot;</code></p>
+<p><code>#include &quot;<a class="el" href="namori_8hpp_source.html">namori.hpp</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 公開変数類</h2></td></tr>
-<tr class="memitem:a0743f51b3e19b3cec53b30738d5857ae" id="r_a0743f51b3e19b3cec53b30738d5857ae"><td class="memItemLeft" align="right" valign="top">vector&lt; pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0743f51b3e19b3cec53b30738d5857ae">max_matching</a></td></tr>
-<tr class="memdesc:a0743f51b3e19b3cec53b30738d5857ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大マッチング  <br /></td></tr>
-<tr class="separator:a0743f51b3e19b3cec53b30738d5857ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad86c50e1129b764f75a177a1715352b4" id="r_ad86c50e1129b764f75a177a1715352b4"><td class="memItemLeft" align="right" valign="top">vector&lt; pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad86c50e1129b764f75a177a1715352b4">min_edge_cover</a></td></tr>
-<tr class="memdesc:ad86c50e1129b764f75a177a1715352b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小辺被覆  <br /></td></tr>
-<tr class="separator:ad86c50e1129b764f75a177a1715352b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98709eb00cc08ae6826a5ee6bd92be7a" id="r_a98709eb00cc08ae6826a5ee6bd92be7a"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98709eb00cc08ae6826a5ee6bd92be7a">max_independent_set</a></td></tr>
-<tr class="memdesc:a98709eb00cc08ae6826a5ee6bd92be7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大独立集合  <br /></td></tr>
-<tr class="separator:a98709eb00cc08ae6826a5ee6bd92be7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad55b6ba42f341b288adb31f764bdb729" id="r_ad55b6ba42f341b288adb31f764bdb729"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad55b6ba42f341b288adb31f764bdb729">min_vertex_cover</a></td></tr>
-<tr class="memdesc:ad55b6ba42f341b288adb31f764bdb729"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小頂点被覆  <br /></td></tr>
-<tr class="separator:ad55b6ba42f341b288adb31f764bdb729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c43ca27038ae61546b5b6746565f16" id="r_af9c43ca27038ae61546b5b6746565f16"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9c43ca27038ae61546b5b6746565f16">cycle</a></td></tr>
+<tr class="separator:af9c43ca27038ae61546b5b6746565f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeba4aa660210a619f3f14afe96841e1c" id="r_aeba4aa660210a619f3f14afe96841e1c"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; vector&lt; int &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeba4aa660210a619f3f14afe96841e1c">trees</a></td></tr>
+<tr class="separator:aeba4aa660210a619f3f14afe96841e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3da3ebc5e4cad333885eaa8ab095556a" id="r_a3da3ebc5e4cad333885eaa8ab095556a"><td class="memItemLeft" align="right" valign="top">vector&lt; pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3da3ebc5e4cad333885eaa8ab095556a">orig_to_comp</a></td></tr>
+<tr class="separator:a3da3ebc5e4cad333885eaa8ab095556a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9da6111d50838a28b8ae3f0d435b0ea4" id="r_a9da6111d50838a28b8ae3f0d435b0ea4"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9da6111d50838a28b8ae3f0d435b0ea4">comp_to_orig</a></td></tr>
+<tr class="separator:a9da6111d50838a28b8ae3f0d435b0ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>二部グラフのパラメータ </p>
-
-<p class="definition"> <a class="el" href="bipartite_8hpp_source.html">bipartite.hpp</a> の <a class="el" href="bipartite_8hpp_source.html#l00006">6</a> 行目に定義があります。</p>
+<div class="textblock">
+<p class="definition"> <a class="el" href="namori_8hpp_source.html">namori.hpp</a> の <a class="el" href="namori_8hpp_source.html#l00003">3</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">メンバ詳解</h2>
-<a id="a0743f51b3e19b3cec53b30738d5857ae" name="a0743f51b3e19b3cec53b30738d5857ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0743f51b3e19b3cec53b30738d5857ae">&#9670;&#160;</a></span>max_matching</h2>
+<a id="af9c43ca27038ae61546b5b6746565f16" name="af9c43ca27038ae61546b5b6746565f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9c43ca27038ae61546b5b6746565f16">&#9670;&#160;</a></span>cycle</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;pair&lt;int,int&gt; &gt; BiInfo::max_matching</td>
+          <td class="memname">vector&lt;int&gt; Namori::cycle</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>最大マッチング </p>
-
-<p class="definition"> <a class="el" href="bipartite_8hpp_source.html">bipartite.hpp</a> の <a class="el" href="bipartite_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="namori_8hpp_source.html">namori.hpp</a> の <a class="el" href="namori_8hpp_source.html#l00005">5</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="ad86c50e1129b764f75a177a1715352b4" name="ad86c50e1129b764f75a177a1715352b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad86c50e1129b764f75a177a1715352b4">&#9670;&#160;</a></span>min_edge_cover</h2>
+<a id="aeba4aa660210a619f3f14afe96841e1c" name="aeba4aa660210a619f3f14afe96841e1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeba4aa660210a619f3f14afe96841e1c">&#9670;&#160;</a></span>trees</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;pair&lt;int,int&gt; &gt; BiInfo::min_edge_cover</td>
+          <td class="memname">vector&lt;vector&lt;vector&lt;int&gt; &gt; &gt; Namori::trees</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>最小辺被覆 </p>
-
-<p class="definition"> <a class="el" href="bipartite_8hpp_source.html">bipartite.hpp</a> の <a class="el" href="bipartite_8hpp_source.html#l00008">8</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="namori_8hpp_source.html">namori.hpp</a> の <a class="el" href="namori_8hpp_source.html#l00008">8</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="a98709eb00cc08ae6826a5ee6bd92be7a" name="a98709eb00cc08ae6826a5ee6bd92be7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98709eb00cc08ae6826a5ee6bd92be7a">&#9670;&#160;</a></span>max_independent_set</h2>
+<a id="a3da3ebc5e4cad333885eaa8ab095556a" name="a3da3ebc5e4cad333885eaa8ab095556a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3da3ebc5e4cad333885eaa8ab095556a">&#9670;&#160;</a></span>orig_to_comp</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;int&gt; BiInfo::max_independent_set</td>
+          <td class="memname">vector&lt;pair&lt;int, int&gt; &gt; Namori::orig_to_comp</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>最大独立集合 </p>
-
-<p class="definition"> <a class="el" href="bipartite_8hpp_source.html">bipartite.hpp</a> の <a class="el" href="bipartite_8hpp_source.html#l00009">9</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="namori_8hpp_source.html">namori.hpp</a> の <a class="el" href="namori_8hpp_source.html#l00010">10</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="ad55b6ba42f341b288adb31f764bdb729" name="ad55b6ba42f341b288adb31f764bdb729"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad55b6ba42f341b288adb31f764bdb729">&#9670;&#160;</a></span>min_vertex_cover</h2>
+<a id="a9da6111d50838a28b8ae3f0d435b0ea4" name="a9da6111d50838a28b8ae3f0d435b0ea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9da6111d50838a28b8ae3f0d435b0ea4">&#9670;&#160;</a></span>comp_to_orig</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;int&gt; BiInfo::min_vertex_cover</td>
+          <td class="memname">vector&lt;vector&lt;int&gt; &gt; Namori::comp_to_orig</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>最小頂点被覆 </p>
-
-<p class="definition"> <a class="el" href="bipartite_8hpp_source.html">bipartite.hpp</a> の <a class="el" href="bipartite_8hpp_source.html#l00010">10</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="namori_8hpp_source.html">namori.hpp</a> の <a class="el" href="namori_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <hr/>この構造体詳解は次のファイルから抽出されました:<ul>
-<li>graph/<a class="el" href="bipartite_8hpp_source.html">bipartite.hpp</a></li>
+<li>graph/<a class="el" href="namori_8hpp_source.html">namori.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="struct_bi_info.html">BiInfo</a></li>
+    <li class="navelem"><a class="el" href="struct_namori.html">Namori</a></li>
     <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

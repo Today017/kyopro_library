@@ -89,6 +89,7 @@ var annotated_dup =
     [ "ModIntDynamic", "struct_mod_int_dynamic.html", "struct_mod_int_dynamic" ],
     [ "MoyasuUmeru", "struct_moyasu_umeru.html", "struct_moyasu_umeru" ],
     [ "MultiSet", "struct_multi_set.html", "struct_multi_set" ],
+    [ "Namori", "struct_namori.html", "struct_namori" ],
     [ "NTT", "class_n_t_t.html", "class_n_t_t" ],
     [ "OffsetVector", "struct_offset_vector.html", "struct_offset_vector" ],
     [ "RangeSet", "struct_range_set.html", "struct_range_set" ],

@@ -34,6 +34,7 @@ var searchData=
   ['opts_31',['opts',['../namespaceexp.html#af5467e23d5923b5ea7b58da3818d6032',1,'exp.opts'],['../namespaceexp___a_h_c.html#a5b862bf4d73db06f61fbea47eb4191ab',1,'exp_AHC.opts']]],
   ['orientation_32',['Orientation',['../namespace_geometry.html#ac6833944045520a63bc44de0c261aa7a',1,'Geometry']]],
   ['orientationtostring_33',['orientationToString',['../namespace_geometry.html#a9bb98900b14f9cd763b7c5e958a868c8',1,'Geometry']]],
-  ['out_34',['out',['../struct_euler_tour_info.html#a25c6e724649f7a2709554ee0155eae2c',1,'EulerTourInfo']]],
-  ['output_35',['output',['../namespaceexp.html#a80b38345271e0f6e927b85f23c8941d0',1,'exp.output'],['../namespaceexp___a_h_c.html#a457a0d581f95d86a9f477df462790829',1,'exp_AHC.output']]]
+  ['orig_5fto_5fcomp_34',['orig_to_comp',['../struct_namori.html#a3da3ebc5e4cad333885eaa8ab095556a',1,'Namori']]],
+  ['out_35',['out',['../struct_euler_tour_info.html#a25c6e724649f7a2709554ee0155eae2c',1,'EulerTourInfo']]],
+  ['output_36',['output',['../namespaceexp.html#a80b38345271e0f6e927b85f23c8941d0',1,'exp.output'],['../namespaceexp___a_h_c.html#a457a0d581f95d86a9f477df462790829',1,'exp_AHC.output']]]
 ];
