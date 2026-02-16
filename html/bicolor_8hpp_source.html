@@ -110,16 +110,16 @@ $(function(){initNavTree('bicolor_8hpp_source.html',''); initResizable(true); })
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">///@brief 二部グラフに対し、01の色分けをする</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief 二部グラフでない場合は空の配列を返す</span></div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="bicolor_8hpp.html#a733be0ab8c019937504ebb6cf3003377">    5</a></span><a class="code hl_function" href="bicolor_8hpp.html#a733be0ab8c019937504ebb6cf3003377">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_function" href="bicolor_8hpp.html#a733be0ab8c019937504ebb6cf3003377">BiColorize</a>(<span class="keyword">const</span> vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;&amp; g) {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keywordtype">int</span> n=g.size();</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    vector&lt;<span class="keywordtype">int</span>&gt; col(n,-1);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="bicolor_8hpp.html#a62790acb6bf7ab5d14f2ecb38cbbea4f">    5</a></span><a class="code hl_function" href="bicolor_8hpp.html#a62790acb6bf7ab5d14f2ecb38cbbea4f">vector</a>&lt;<span class="keywordtype">int</span>&gt; <a class="code hl_function" href="bicolor_8hpp.html#a62790acb6bf7ab5d14f2ecb38cbbea4f">BiColorize</a>(<span class="keyword">const</span> vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;&amp; G) {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keywordtype">int</span> N=G.size();</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    vector&lt;<span class="keywordtype">int</span>&gt; col(N,-1);</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    queue&lt;<span class="keywordtype">int</span>&gt; que;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,n) <span class="keywordflow">if</span>(col[i]==-1) {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,N) <span class="keywordflow">if</span>(col[i]==-1) {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        col[i]=0;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        que.push(i);</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">while</span>(!que.empty()) {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keywordtype">int</span> now=que.front(); que.pop();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt: g[now]) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt: G[now]) {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                <span class="keywordtype">int</span> c=col[now]^1;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                <span class="keywordflow">if</span>(col[nxt]==-1) {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                    col[nxt]=c;</div>
@@ -133,7 +133,7 @@ $(function(){initNavTree('bicolor_8hpp_source.html',''); initResizable(true); })
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> col;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 </div>
-<div class="ttc" id="abicolor_8hpp_html_a733be0ab8c019937504ebb6cf3003377"><div class="ttname"><a href="bicolor_8hpp.html#a733be0ab8c019937504ebb6cf3003377">BiColorize</a></div><div class="ttdeci">vector&lt; int &gt; BiColorize(const vector&lt; vector&lt; int &gt; &gt; &amp;g)</div><div class="ttdoc">二部グラフに対し、01の色分けをする</div><div class="ttdef"><b>Definition</b> <a href="#l00005">bicolor.hpp:5</a></div></div>
+<div class="ttc" id="abicolor_8hpp_html_a62790acb6bf7ab5d14f2ecb38cbbea4f"><div class="ttname"><a href="bicolor_8hpp.html#a62790acb6bf7ab5d14f2ecb38cbbea4f">BiColorize</a></div><div class="ttdeci">vector&lt; int &gt; BiColorize(const vector&lt; vector&lt; int &gt; &gt; &amp;G)</div><div class="ttdoc">二部グラフに対し、01の色分けをする</div><div class="ttdef"><b>Definition</b> <a href="#l00005">bicolor.hpp:5</a></div></div>
 <div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

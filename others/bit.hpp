@@ -52,9 +52,9 @@ namespace Bit {
     ///@brief 整数nの2進表現を返す
     ///@param len ビット数
     ///@param rev 反転するか否か
-    string ToBinary(ll n,int len=32,bool rev=false) {
+    string ToBinary(ll n, int len=32, bool rev=false) {
         string ret;
-        rep(i,len) ret+=HasBit(n,rev?len-1-i:i)?'1':'0';
+        rep(i,len) ret+=(HasBit(n,rev? len-1-i: i)? '1': '0');
         return ret;
     }
 }

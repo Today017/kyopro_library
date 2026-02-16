@@ -6,7 +6,7 @@ var searchData=
   ['betweenincrement_3',['BetweenIncrement',['../namespace_ring.html#abd2be741ee7adfd0fad8590991e231bd',1,'Ring']]],
   ['bezoutidentity_4',['BezoutIdentity',['../struct_bezout_identity.html#ae6269715a6bae60bc5ce0b4bfae2618e',1,'BezoutIdentity']]],
   ['bfs_5',['BFS',['../bfs_8hpp.html#a8d9a7a9c3e6fbf8515158da29f0f7657',1,'bfs.hpp']]],
-  ['bicolorize_6',['BiColorize',['../bicolor_8hpp.html#a733be0ab8c019937504ebb6cf3003377',1,'bicolor.hpp']]],
+  ['bicolorize_6',['BiColorize',['../bicolor_8hpp.html#a62790acb6bf7ab5d14f2ecb38cbbea4f',1,'bicolor.hpp']]],
   ['binarysearch_7',['BinarySearch',['../binary__search_8hpp.html#ac51e21ede218b1fc3ce5beca36a6fc30',1,'binary_search.hpp']]],
   ['binarysearchiteration_8',['BinarySearchIteration',['../binary__search_8hpp.html#aa10292c755723d3eca2daec700f835dd',1,'binary_search.hpp']]],
   ['binarytrie_9',['BinaryTrie',['../struct_binary_trie.html#a6d72a8971d396ba065b3aaac8ec97f88',1,'BinaryTrie']]],

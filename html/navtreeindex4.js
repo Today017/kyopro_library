@@ -1,5 +1,11 @@
 var NAVTREEINDEX4 =
 {
+"struct_insertable_reversible_array.html#a2411bea8ef1cf9692bbaf7df9b83a210":[2,0,38,4],
+"struct_insertable_reversible_array.html#a2d03db862b342d40e310d96e3730f1c8":[2,0,38,11],
+"struct_insertable_reversible_array.html#a41d2ed956f4a37eaac47a015597e2948":[2,0,38,9],
+"struct_insertable_reversible_array.html#a5d95b6579130721eb3575f2a8452d834":[2,0,38,1],
+"struct_insertable_reversible_array.html#a5e4dd28311e225c1e1f9ec9968139e2f":[2,0,38,8],
+"struct_insertable_reversible_array.html#a693dd53064f16c54821043eb12258c95":[2,0,38,13],
 "struct_insertable_reversible_array.html#a8b180eeb6d7a237eb7abedb5975c42ab":[2,0,38,3],
 "struct_insertable_reversible_array.html#a977a1f5a620ffec62755a1ca3b0f328b":[2,0,38,5],
 "struct_insertable_reversible_array.html#a99106d441b1b34f3aa108ebcf0c4f3ea":[2,0,38,12],
@@ -243,11 +249,5 @@ var NAVTREEINDEX4 =
 "struct_range_query_1_1_apply_add___get_max.html#a9c9ed3a7147c3df91c9349cccdca8a04":[1,0,12,1,0],
 "struct_range_query_1_1_apply_add___get_max.html#a9c9ed3a7147c3df91c9349cccdca8a04":[2,0,7,1,0],
 "struct_range_query_1_1_apply_add___get_min.html":[1,0,12,2],
-"struct_range_query_1_1_apply_add___get_min.html":[2,0,7,2],
-"struct_range_query_1_1_apply_add___get_min.html#a3b525a16b3466cfe2a4a3732bd016112":[1,0,12,2,0],
-"struct_range_query_1_1_apply_add___get_min.html#a3b525a16b3466cfe2a4a3732bd016112":[2,0,7,2,0],
-"struct_range_query_1_1_apply_add___get_sum.html":[1,0,12,3],
-"struct_range_query_1_1_apply_add___get_sum.html":[2,0,7,3],
-"struct_range_query_1_1_apply_add___get_sum.html#aabaabec75582f39b00bcf0c18801193c":[1,0,12,3,0],
-"struct_range_query_1_1_apply_add___get_sum.html#aabaabec75582f39b00bcf0c18801193c":[2,0,7,3,0]
+"struct_range_query_1_1_apply_add___get_min.html":[2,0,7,2]
 };

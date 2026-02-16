@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Kyopro Library: math/primality_test.hpp ファイル</title>
+<title>Kyopro Library: algorithm/range_cover.hpp ファイル</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,7 +76,7 @@ $(function() { codefold.init(0); });
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('primality__test_8hpp.html',''); initResizable(true); });
+$(function(){initNavTree('range__cover_8hpp.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -104,40 +104,44 @@ $(function(){initNavTree('primality__test_8hpp.html',''); initResizable(true); }
 <div class="header">
   <div class="summary">
 <a href="#func-members">関数</a>  </div>
-  <div class="headertitle"><div class="title">primality_test.hpp ファイル</div></div>
+  <div class="headertitle"><div class="title">range_cover.hpp ファイル</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../kyopro_library/template.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="modcal_8hpp_source.html">../../kyopro_library/others/modcal.hpp</a>&quot;</code><br />
 </div>
-<p><a href="primality__test_8hpp_source.html">[ソースコード]</a></p>
+<p><a href="range__cover_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:a4b37480abb43bbcac29ee38e1202da2d" id="r_a4b37480abb43bbcac29ee38e1202da2d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b37480abb43bbcac29ee38e1202da2d">PrimalityTest</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> N)</td></tr>
-<tr class="memdesc:a4b37480abb43bbcac29ee38e1202da2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ミラーラビン素数判定法によりNが素数であるかを判定する  <br /></td></tr>
-<tr class="separator:a4b37480abb43bbcac29ee38e1202da2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf11ced3d4be107ee553d3d1b6080af1" id="r_aaf11ced3d4be107ee553d3d1b6080af1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf11ced3d4be107ee553d3d1b6080af1">RangeCover</a> (vector&lt; pair&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; &gt; LR, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> M)</td></tr>
+<tr class="memdesc:aaf11ced3d4be107ee553d3d1b6080af1"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間被覆問題  <br /></td></tr>
+<tr class="separator:aaf11ced3d4be107ee553d3d1b6080af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a4b37480abb43bbcac29ee38e1202da2d" name="a4b37480abb43bbcac29ee38e1202da2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b37480abb43bbcac29ee38e1202da2d">&#9670;&#160;</a></span>PrimalityTest()</h2>
+<a id="aaf11ced3d4be107ee553d3d1b6080af1" name="aaf11ced3d4be107ee553d3d1b6080af1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf11ced3d4be107ee553d3d1b6080af1">&#9670;&#160;</a></span>RangeCover()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool PrimalityTest </td>
+          <td class="memname">int RangeCover </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>N</em></span></td><td>)</td>
+          <td class="paramtype">vector&lt; pair&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>LR</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>M</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>ミラーラビン素数判定法によりNが素数であるかを判定する </p>
-<dl class="section note"><dt>覚え書き</dt><dd>O(k log^3 N) <a href="https://drken1215.hatenablog.com/entry/2023/05/23/233000">https://drken1215.hatenablog.com/entry/2023/05/23/233000</a> verify: <a href="https://judge.yosupo.jp/problem/primality_test">https://judge.yosupo.jp/problem/primality_test</a> </dd></dl>
+<p>区間被覆問題 </p>
+<p>与えられた区間から選んで[0,M)を覆うような最小個数を求める</p>
+<p>不可能な場合は-1を返す </p><dl class="section note"><dt>覚え書き</dt><dd>O(N log(N)) <a href="https://atcoder.jp/contests/awc0006/tasks/awc0006_d">https://atcoder.jp/contests/awc0006/tasks/awc0006_d</a> </dd></dl>
 
-<p class="definition"> <a class="el" href="primality__test_8hpp_source.html">primality_test.hpp</a> の <a class="el" href="primality__test_8hpp_source.html#l00009">9</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="range__cover_8hpp_source.html">range_cover.hpp</a> の <a class="el" href="range__cover_8hpp_source.html#l00008">8</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -146,7 +150,7 @@ $(function(){initNavTree('primality__test_8hpp.html',''); initResizable(true); }
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_296d53ceaeaa7e099814a6def439fe8a.html">math</a></li><li class="navelem"><a class="el" href="primality__test_8hpp.html">primality_test.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_692f640cc74363071c5c0e14282656e9.html">algorithm</a></li><li class="navelem"><a class="el" href="range__cover_8hpp.html">range_cover.hpp</a></li>
     <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

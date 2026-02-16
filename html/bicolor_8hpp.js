@@ -1,4 +1,4 @@
 var bicolor_8hpp =
 [
-    [ "BiColorize", "bicolor_8hpp.html#a733be0ab8c019937504ebb6cf3003377", null ]
+    [ "BiColorize", "bicolor_8hpp.html#a62790acb6bf7ab5d14f2ecb38cbbea4f", null ]
 ];

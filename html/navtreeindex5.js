@@ -1,5 +1,11 @@
 var NAVTREEINDEX5 =
 {
+"struct_range_query_1_1_apply_add___get_min.html#a3b525a16b3466cfe2a4a3732bd016112":[1,0,12,2,0],
+"struct_range_query_1_1_apply_add___get_min.html#a3b525a16b3466cfe2a4a3732bd016112":[2,0,7,2,0],
+"struct_range_query_1_1_apply_add___get_sum.html":[1,0,12,3],
+"struct_range_query_1_1_apply_add___get_sum.html":[2,0,7,3],
+"struct_range_query_1_1_apply_add___get_sum.html#aabaabec75582f39b00bcf0c18801193c":[1,0,12,3,0],
+"struct_range_query_1_1_apply_add___get_sum.html#aabaabec75582f39b00bcf0c18801193c":[2,0,7,3,0],
 "struct_range_query_1_1_apply_add___get_sum.html#ad71b55b90d25ce8caf078e71213d819a":[1,0,12,3,1],
 "struct_range_query_1_1_apply_add___get_sum.html#ad71b55b90d25ce8caf078e71213d819a":[2,0,7,3,1],
 "struct_range_query_1_1_apply_update.html":[1,0,12,4],
@@ -243,11 +249,5 @@ var NAVTREEINDEX5 =
 "struct_wavelet_matrix.html#ab6da004ddc73ce3283c091c306832688":[2,0,73,6],
 "struct_wavelet_matrix.html#ac307c703867bfbc709256f78167484b3":[2,0,73,8],
 "struct_wavelet_matrix.html#aca169731a469969acb7685e9f338172a":[2,0,73,13],
-"suffix__array_8hpp.html":[3,0,8,5],
-"suffix__array_8hpp.html#ad1cb88d8e4dd7a69c7b14fc31276cd3f":[3,0,8,5,0],
-"suffix__array_8hpp_source.html":[3,0,8,5],
-"template_8hpp.html":[3,0,12],
-"template_8hpp.html#a03e896b87233163e2dc3399c65cdfc2d":[3,0,12,4],
-"template_8hpp.html#a14c9dbab105f1b8b8182a022d73e610c":[3,0,12,8],
-"template_8hpp.html#a1a2591211a97d625958a9e554c16cb31":[3,0,12,1]
+"suffix__array_8hpp.html":[3,0,8,5]
 };

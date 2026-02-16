@@ -1,5 +1,6 @@
 var dir_692f640cc74363071c5c0e14282656e9 =
 [
+    [ "assign_points_to_ranges.hpp", "assign__points__to__ranges_8hpp.html", "assign__points__to__ranges_8hpp" ],
     [ "binary_search.hpp", "binary__search_8hpp.html", "binary__search_8hpp" ],
     [ "cht.hpp", "cht_8hpp.html", "cht_8hpp" ],
     [ "doubling.hpp", "doubling_8hpp.html", "doubling_8hpp" ],
@@ -8,6 +9,7 @@ var dir_692f640cc74363071c5c0e14282656e9 =
     [ "lis.hpp", "lis_8hpp.html", "lis_8hpp" ],
     [ "mo.hpp", "mo_8hpp.html", "mo_8hpp" ],
     [ "range_arithmetic_add.hpp", "range__arithmetic__add_8hpp.html", "range__arithmetic__add_8hpp" ],
+    [ "range_cover.hpp", "range__cover_8hpp.html", "range__cover_8hpp" ],
     [ "zeta_mobius.hpp", "zeta__mobius_8hpp.html", "zeta__mobius_8hpp" ],
     [ "zeta_mobius_div_mul.hpp", "zeta__mobius__div__mul_8hpp.html", "zeta__mobius__div__mul_8hpp" ]
 ];

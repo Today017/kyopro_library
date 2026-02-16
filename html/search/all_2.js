@@ -12,7 +12,7 @@ var searchData=
   ['bfs_9',['BFS',['../bfs_8hpp.html#a8d9a7a9c3e6fbf8515158da29f0f7657',1,'bfs.hpp']]],
   ['bfs_2ehpp_10',['bfs.hpp',['../bfs_8hpp.html',1,'']]],
   ['bicolor_2ehpp_11',['bicolor.hpp',['../bicolor_8hpp.html',1,'']]],
-  ['bicolorize_12',['BiColorize',['../bicolor_8hpp.html#a733be0ab8c019937504ebb6cf3003377',1,'bicolor.hpp']]],
+  ['bicolorize_12',['BiColorize',['../bicolor_8hpp.html#a62790acb6bf7ab5d14f2ecb38cbbea4f',1,'bicolor.hpp']]],
   ['biinfo_13',['BiInfo',['../struct_bi_info.html',1,'']]],
   ['binary_5fsearch_2ehpp_14',['binary_search.hpp',['../binary__search_8hpp.html',1,'']]],
   ['binary_5ftrie_2ehpp_15',['binary_trie.hpp',['../binary__trie_8hpp.html',1,'']]],
