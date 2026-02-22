@@ -21,8 +21,8 @@ ll InversionNumber(const vector<int>& v) {
     int n=v.size(),n2=1;
     while(n2<n) n2<<=1;
     vector<vector<int>> node(n2<<1,vector<int>(1,INF));
-    rep(i,n) node[i+n2].pop_back();
-    for(int i=n2; i>0; i--) node[i]=Merge(node[i<<1],node[i<<1|1]); 
+    rep(i,n) node[i+n2]={v[i]};
+    for(int i=n2-1; i>0; i--) node[i]=Merge(node[i<<1],node[i<<1|1]); 
     return ret;
 }
 
