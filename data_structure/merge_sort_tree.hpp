@@ -8,7 +8,7 @@ struct MergeSortTree {
     ///@brief 配列 v からマージソート木を構築する
     MergeSortTree(const vector<T>& v) {
         n=v.size();
-        mx=*max_element(ALL(v)); mn=*min_element(ALL(v));
+        mx=*max_element(all(v)); mn=*min_element(all(v));
         dat=vector<vector<T>>(n<<1);
         rep(i,n) dat[n+i]={v[i]};
         for(int i=n-1; i>0; i--) merge(all(dat[i<<1]),all(dat[i<<1|1]),back_inserter(dat[i]));
@@ -20,8 +20,14 @@ struct MergeSortTree {
         l+=n; r+=n;
         int ret=0;
         while(l<r) {
-            if(l&1) ret+=LB(dat[l],val), l++;
-            if(r&1) --r, ret+=LB(dat[r],val);
+            if(l&1) {
+                ret+=lower_bound(all(dat[l]),val)-dat[l].begin();
+                l++;
+            }
+            if(r&1) {
+                --r;
+                ret+=lower_bound(all(dat[r]),val)-dat[r].begin();
+            }
             l>>=1; r>>=1;
         }
         return ret;

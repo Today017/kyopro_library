@@ -1,16 +1,15 @@
 #pragma once
 #include"../../../kyopro_library/template.hpp"
 
-///@brief 重みなしグラフ g に対し、頂点 start から各頂点までの最短距離を求める
-///@note O(E+V)
-vector<ll> BFS(const vector<vector<int>>& g, int start=0) {
-    int n=g.size();
-    vector<ll> ret(n,INF); ret[start]=0;
+/// @brief BFS 重みなしグラフに対する最短経路
+vector<ll> BFS(const vector<vector<int>>& G, int start=0) {
+    int N=G.size();
+    vector<ll> ret(N,INF); ret[start]=0;
     queue<int> que; que.push(start);
 
     while(!que.empty()) {
         int now=que.front(); que.pop();
-        for(int nxt: g[now]) if(chmin(ret[nxt],ret[now]+1)) que.push(nxt);
+        for(int nxt: G[now]) if(chmin(ret[nxt],ret[now]+1)) que.push(nxt);
     }
 
     return ret;

@@ -14,7 +14,6 @@ struct Imos2D {
     }
     ll get(int i, int j) { return dat[i][j]; }
 
-private:
     int h,w;
     vector<vector<ll>> dat;
 };

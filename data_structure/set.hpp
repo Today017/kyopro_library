@@ -2,7 +2,7 @@
 
 ///@brief std::set ラッパー
 template<typename T>
-struct Set:set<T> {
+struct Set: set<T> {
     using set<T>::set;
     T not_found;
     Set()=default;
@@ -40,9 +40,7 @@ struct Set:set<T> {
     }
 
     ///@brief x が含まれているか否かを返す
-    bool contains(T x) {
-        return this->find(x)!=this->end();
-    }
+    bool contains(T x) { return this->find(x)!=this->end(); }
 
     ///@brief x を削除する
     ///@brief x が含まれていたか否かを返す

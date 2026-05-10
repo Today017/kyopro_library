@@ -3,6 +3,7 @@
 
 using ull=unsigned long long;
 ///@brief 疑似乱数生成
+
 ull Xor128() {
     static bool flag=false;
     static ull x=123456789,y=362436069,z=521288629,w=88675123;
@@ -15,6 +16,9 @@ ull Xor128() {
     x=y; y=z; z=w;
     return w=(w^(w>>19))^(t^(t>>8));
 }
+
 ll Xor128(ll n) { return Xor128()%n; }
+
 ll Xor128(ll l, ll r) { return Xor128(r-l)+l; }//[l,r)
+
 double Xor128Prob() { return (double)Xor128()/(ULLONG_MAX); }

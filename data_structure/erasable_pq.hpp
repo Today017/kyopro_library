@@ -2,13 +2,12 @@
 
 ///@brief 削除可能な優先度付きキュー
 ///@tparam MAX trueのとき、最大値を返す
-///@tparam NONE 空のときに返す値
-template<typename T, bool MAX=true, T NONE=-INF>
-struct ErasablePQ {
+template<typename T, bool MAX=true>
+struct ErasableHeap {
     priority_queue<T> pq, pq2;
     int siz=0;
 
-    ErasablePQ() { siz=0; }
+    ErasableHeap() { siz=0; }
 
     ///@brief x を追加する
     void push(int x) {
@@ -35,7 +34,9 @@ struct ErasablePQ {
                 return (MAX ? pq.top() : -pq.top());
             }
         }
-
-        return NONE;
+        assert(false);
+        return 0;
     }
+
+    int size() const { return siz; }
 };

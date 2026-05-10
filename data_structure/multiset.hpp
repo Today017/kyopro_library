@@ -2,16 +2,14 @@
 
 ///@brief std::multiset ラッパー
 template<typename T>
-struct MultiSet:multiset<T> {
+struct MultiSet: multiset<T> {
     using multiset<T>::multiset;
     T not_found;
     MultiSet()=default;
 
     ///@brief コンストラクタ
     ///@param not_found 指定の値が見つからなかったときに返す値
-    MultiSet(T not_found=-1) {
-        this->not_found=not_found;
-    }
+    MultiSet(T not_found=-1) { this->not_found=not_found; }
 
     ///@brief 最小値を返す
     T min() {
@@ -44,9 +42,7 @@ struct MultiSet:multiset<T> {
     }  
 
     ///@brief x が含まれているか否かを返す
-    bool contains(T x) {
-        return this->find(x)!=this->end();
-    }
+    bool contains(T x) { return this->find(x)!=this->end(); }
 
     ///@brief x を削除する
     ///@brief x が含まれていたか否かを返す
@@ -87,9 +83,7 @@ struct MultiSet:multiset<T> {
     }
 
     ///@brief x の個数を返す
-    int count(T x) {
-        return cnt[x];
-    }
+    int count(T x) { return cnt[x]; }
 
 private:
     map<T,int> cnt;

@@ -4,66 +4,117 @@
 ///@brief 倍数・約数ゼータ・メビウス変換
 namespace ZetaMobiusDivMul {
     vector<int> primes;
-    void Init(int n=1e6) { primes=PrimeEnumerate(n); }
+    void Init(int N=1e6) { primes=PrimeEnumerate(N); }
 
     ///@brief 倍数高速ゼータ変換
-    ///@brief v'[k] = Σ_{k|d} v[d] なる v' を返す
+    ///@brief V'[k] = Σ_{k|d} V[d] なる V' を返す
     ///@note O(N log(log(N)))
     template<typename Monoid>
-    vector<typename Monoid::Type> MultipleZeta(vector<typename Monoid::Type> v) {
-        int n=v.size()-1;
-        if(primes.size()<n) Init(n);
+    vector<typename Monoid::Type> MultipleZeta(vector<typename Monoid::Type> V) {
+        int N=V.size()-1;
+        if(primes.size()<N) Init(N);
         for(int p: primes) {
-            if(p>n) break;
-            for(int k=n/p; k>0; k--) v[k]=Monoid::op(v[k],v[k*p]);
+            if(p>N) break;
+            for(int k=N/p; k>0; k--) V[k]=Monoid::op(V[k],V[k*p]);
         }
-        return v;
+        return V;
     }
 
     ///@brief 約数高速ゼータ変換
-    ///@brief v'[k] = Σ_{d|k} v[d] なる v' を返す
+    ///@brief V'[k] = Σ_{d|k} V[d] なる V' を返す
     ///@note O(N log(log(N)))
     template<typename Monoid>
-    vector<typename Monoid::Type> DvisorZeta(vector<typename Monoid::Type> v) {
-        int n=v.size()-1;
-        if(primes.size()<n) Init(n);
+    vector<typename Monoid::Type> DivisorZeta(vector<typename Monoid::Type> V) {
+        int N=V.size()-1;
+        if(primes.size()<N) Init(N);
         for(int p: primes) {
-            if(p>n) break;
-            for(int k=1; k*p<=n; k++) v[k*p]=Monoid::op(v[k*p],v[k]);
+            if(p>N) break;
+            for(int k=1; k*p<=N; k++) V[k*p]=Monoid::op(V[k*p],V[k]);
         }
-        return v;
+        return V;
     }
 
     ///@brief 倍数高速メビウス変換
-    ///@brief v'[k] = Σ_{k|d} μ(d) v[d] なる v' を返す
+    ///@brief V'[k] = Σ_{k|d} μ(d) V[d] なる V' を返す
     ///@note 逆変換が必要なので、v は可換群の元である必要がある
     ///@note O(N log(log(N)))
     template<typename Abel>
-    vector<typename Abel::Type> MultipleMobius(vector<typename Abel::Type> v) {
-        int n=v.size()-1;
-        if(primes.size()<n) Init(n);
+    vector<typename Abel::Type> MultipleMobius(vector<typename Abel::Type> V) {
+        int N=V.size()-1;
+        if(primes.size()<N) Init(N);
         for(int p: primes) {
-            if(p>n) break;
-            for(int k=1; k*p<=n; k++) v[k]=Abel::op(v[k],Abel::inv(v[k*p]));
+            if(p>N) break;
+            for(int k=1; k*p<=N; k++) V[k]=Abel::op(V[k],Abel::inv(V[k*p]));
         }
-        return v;
+        return V;
     }
 
     ///@brief 約数高速メビウス変換
-    ///@brief v'[k] = Σ_{d|k} μ(d) v[k/d] なる v' を返す
+    ///@brief V'[k] = Σ_{d|k} μ(d) V[k/d] なる V' を返す
     ///@note 逆変換が必要なので、v は可換群の元である必要がある
     ///@note O(N log(log(N)))
     template<typename Abel>
-    vector<typename Abel::Type> DivisorMobius(vector<typename Abel::Type> v) {
-        int n=v.size()-1;
-        if(primes.size()<n) Init(n);
+    vector<typename Abel::Type> DivisorMobius(vector<typename Abel::Type> V) {
+        int N=V.size()-1;
+        if(primes.size()<N) Init(N);
         for(int p: primes) {
-            if(p>n) break;
-            for(int k=n/p; k>0; k--) v[k*p]=Abel::op(v[k*p],Abel::inv(v[k]));
+            if(p>N) break;
+            for(int k=N/p; k>0; k--) V[k*p]=Abel::op(V[k*p],Abel::inv(V[k]));
         }
-        return v;
+        return V;
     }
 };
 
+namespace ConvolutionDivMul {
+    template<typename Ring>
+    vector<typename Ring::Type> GcdConvolution(
+        vector<typename Ring::Type> A,
+        vector<typename Ring::Type> B
+    ) {
+        using Type=typename Ring::Type;
+        int N=max(A.size(),B.size());
+        if(ZetaMobiusDivMul::primes.size()<N) ZetaMobiusDivMul::Init(N);
+
+        struct Abel {
+            using Type=typename Ring::Type;
+            static Type op(const Type& l, const Type& r) { return Ring::plus(l,r); }
+            static Type inv(const Type& x) { return Ring::inv(x); }
+            static Type id() { return Ring::zero(); }
+        };
+        
+        A=move(ZetaMobiusDivMul::MultipleZeta<Abel>(A));
+        B=move(ZetaMobiusDivMul::MultipleZeta<Abel>(B));
+        rep(i,N) A[i]=Ring::mul(A[i],B[i]);
+        A=move(ZetaMobiusDivMul::MultipleMobius<Abel>(A));
+
+        return A;
+    }
+
+    template<typename Ring>
+    vector<typename Ring::Type> LcmConvolution(
+        vector<typename Ring::Type> A,
+        vector<typename Ring::Type> B
+    ) {
+        using Type=typename Ring::Type;
+        int N=max(A.size(),B.size());
+        if(ZetaMobiusDivMul::primes.size()<N) ZetaMobiusDivMul::Init(N);
+
+        struct Abel {
+            using Type=typename Ring::Type;
+            static Type op(const Type& l, const Type& r) { return Ring::plus(l,r); }
+            static Type inv(const Type& x) { return Ring::inv(x); }
+            static Type id() { return Ring::zero(); }
+        };
+        
+        A=move(ZetaMobiusDivMul::DivisorZeta<Abel>(A));
+        B=move(ZetaMobiusDivMul::DivisorZeta<Abel>(B));
+        rep(i,N) A[i]=Ring::mul(A[i],B[i]);
+        A=move(ZetaMobiusDivMul::DivisorMobius<Abel>(A));
+
+        return A;
+    }
+}
+
 #include"../../kyopro_library/others/monoid.hpp"
 #include"../../kyopro_library/others/abel.hpp"
+#include"../../kyopro_library/others/ring.hpp"

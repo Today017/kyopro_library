@@ -11,7 +11,8 @@ struct MaxFlow {
         ll cap; ///< 容量
         ll flow; ///< 流量
         bool isrev;
-        Edge(int from, int to, ll cap, int rev, bool isrev): from(from), to(to), rev(rev), cap(cap), flow(0), isrev(isrev) {}
+        Edge(int from, int to, ll cap, int rev, bool isrev):
+            from(from), to(to), rev(rev), cap(cap), flow(0), isrev(isrev) {}
     };
 
     MaxFlow(int n): graph(n), level(n), iter(n) {}
@@ -25,7 +26,8 @@ struct MaxFlow {
 
 private:
     vector<vector<Edge>> graph;
-    vector<int> level,iter;
+    vector<int> level, iter;
+
     void bfs(int s) {
         fill(all(level),-1); level[s]=0;
         queue<int> que; que.push(s);
@@ -39,6 +41,7 @@ private:
             }
         }
     }
+
     ll dfs(int v, int t, ll f) {
         if(v==t) return f;
         for(int& i=iter[v]; i<(int)graph[v].size(); i++) {
@@ -76,7 +79,7 @@ public:
         queue<int> que; que.push(v);
         while(!que.empty()) {
             int v=que.front(); que.pop();
-            for(auto& e:graph[v]) {
+            for(auto& e: graph[v]) {
                 if(e.cap>0 && !ret[e.to] /*&& !e.isrev*/) {
                     ret[e.to]=true;
                     que.push(e.to);
@@ -89,7 +92,7 @@ public:
     ///@brief 直前に流したフローの辺の情報を返す
     vector<Edge> get_edges() {
         vector<Edge> ret;
-        rep(i,graph.size()) for(auto &e: graph[i]) if(!e.isrev) ret.push_back(e);
+        rep(i,graph.size()) for(auto& e: graph[i]) if(!e.isrev) ret.push_back(e);
         return ret;
     }
 };

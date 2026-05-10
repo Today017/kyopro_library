@@ -51,6 +51,8 @@ struct SegTreeAct {
         }
     }
 
+    int size() { return n; }
+
 private:
     int n;
     vector<Type> dat;
@@ -64,12 +66,12 @@ private:
     }
 };
 
-#include"../../kyopro_library/others/operator.hpp"
+#include"../../kyopro_library/others/monoid.hpp"
 
 namespace RangeQuery {
     template<typename T>
-    struct ApplyAdd { using Type=struct SegTreeAct<Operator::Add<T>>; };
+    struct ApplyAdd { using Type=struct SegTreeAct<Monoid::Sum<T>>; };
 
     template<typename T, T not_exist>
-    struct ApplyUpdate { using Type=struct SegTreeAct<Operator::Update<T,not_exist>>; };
+    struct ApplyUpdate { using Type=struct SegTreeAct<Monoid::Update<T,not_exist>>; };
 }

@@ -4,7 +4,6 @@
 template<typename T=ll>
 struct Fraction {
     T upper,lower;
-    Fraction()=default;
 
     ///@brief 有理数 a/b を宣言する
     Fraction(T a, T b) {

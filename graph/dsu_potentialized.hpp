@@ -8,11 +8,9 @@ struct DsuPotentialized {
     DsuPotentialized()=default;
 
     ///@brief コンストラクタ
-    DsuPotentialized(int n) {
-        par=vector<int>(n); iota(all(par),0);
-        sz=vector<int>(n,1);
-        diff_weight=vector<Type>(n,Group::id());
-        forest_count=n;
+    DsuPotentialized(int n):
+        par(n), sz(n,1), diff_weight(n,Group::id()), forest_count(n) {
+        iota(all(par),0);
     }
 
     ///@brief 頂点 x を含む連結成分の代表元を返す

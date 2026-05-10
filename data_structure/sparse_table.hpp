@@ -34,3 +34,17 @@ private:
     int n;
     vector<vector<Type>>dat;
 };
+
+#include"../../kyopro_library/others/monoid.hpp"
+
+///@brief 区間クエリ
+namespace RangeQuery {
+    ///@brief 区間min
+    template<typename T, T max_value=INF>
+    struct MinStatic { using Type=struct SparseTable<Monoid::Min<T,max_value>>; };
+
+    ///@brief 区間max
+    template<typename T, T min_value=-INF>
+    struct MaxStatic { using Type=struct SparseTable<Monoid::Max<T,min_value>>; };
+}
+

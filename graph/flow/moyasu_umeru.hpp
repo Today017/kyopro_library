@@ -3,12 +3,7 @@
 
 ///@brief 燃やす埋める
 struct MoyasuUmeru {
-    MoyasuUmeru(int n) {
-        this->n=n;
-        start=n;
-        goal=n+1;
-        mf=MaxFlow(n+2);
-    }
+    MoyasuUmeru(int n): n(n), start(n), goal(n+1), mf(n+2) {}
 
     ///@brief x[i] = 0 のときコスト zero, x[i] = 1 のときコスト one がかかるという条件を追加する
     void add_single(int i, ll zero, ll one) {

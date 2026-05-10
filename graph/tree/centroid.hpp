@@ -11,12 +11,12 @@
  * vector<bool> seen(N);
  * 
  * auto centroid_decomposition = [&](auto self, int root) -> void {
- *     int centroid = TreeCentroid(g, root, seen, sz);
+ *     int centroid = TreeCentroid(G, root, seen, sz);
  *     seen[centroid] = true;
  *
  *     // ここに処理を書く
  * 
- *     for (int nxt : g[centroid]) {
+ *     for (int nxt : G[centroid]) {
  *         if (seen[nxt]) continue;
  *         self(self, nxt);
  *     }
@@ -24,14 +24,14 @@
  * centroid_decomposition(centroid_decomposition, 0);
  * ```
  */
-int TreeCentroid(const vector<vector<int>>& g, int root, vector<int>& seen, vector<int>& sz) {
-    int n=g.size();
-    if(sz.empty()) sz=vector<int>(n);
-    if(seen.empty()) seen=vector<int>(n,false);
+int TreeCentroid(const vector<vector<int>>& G, int root, vector<int>& seen, vector<int>& sz) {
+    int N=G.size();
+    if(sz.empty()) sz=vector<int>(N);
+    if(seen.empty()) seen=vector<int>(N,false);
 
     auto dfs=[&](auto dfs, int now, int pre)-> int {
         sz[now]=1;
-        for(int nxt: g[now]) {
+        for(int nxt: G[now]) {
             if(nxt==pre||seen[nxt]) continue;
             sz[now]+=dfs(dfs,nxt,now);
         }
@@ -43,7 +43,7 @@ int TreeCentroid(const vector<vector<int>>& g, int root, vector<int>& seen, vect
 
     auto dfs2=[&](auto dfs2, int now, int pre)-> void {
         bool ok=(total-sz[now])*2<=total;
-        for(int nxt: g[now]) {
+        for(int nxt: G[now]) {
             if(nxt==pre||seen[nxt]) continue;
             dfs2(dfs2,nxt,now);
             if(sz[nxt]*2>total) ok=false;

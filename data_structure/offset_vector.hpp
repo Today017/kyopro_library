@@ -15,7 +15,7 @@ struct OffsetVector: vector<T> {
         offset=-lo;
     }
 
-    T&operator[](int i) {
+    T& operator[](int i) {
         assert(i+offset>=0);
         return vector<T>::operator[](i+offset);
     }

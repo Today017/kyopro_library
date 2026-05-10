@@ -1,11 +1,11 @@
 #include"../../kyopro_library/others/kth_root.hpp"
 
-ll FractionFloorSum(ll n) {
-    ll r=KthRoot(n,2);
+ll FractionFloorSum(ll N) {
+    ll r=KthRoot(N,2);
 
     ll ret=0;
-    for(ll i=1; i<=r; i++) ret+=((n/i)-(n/(i+1)))*i;
-    for(ll i=1; i<=n/(r+1); i++) ret+=n/i;
+    for(ll i=1; i<=r; i++) ret+=((N/i)-(N/(i+1)))*i;
+    for(ll i=1; i<=N/(r+1); i++) ret+=N/i;
 
     return ret;
 }

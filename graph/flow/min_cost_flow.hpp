@@ -12,10 +12,11 @@ struct MinCostFlow {
         ll cap; ///< 容量
         ll cost; ///< コスト
         bool isrev;
-        Edge(int from, int to, ll cap, ll cost, int rev, bool isrev): from(from), to(to), cap(cap), cost(cost), rev(rev), isrev(isrev) {}
+        Edge(int from, int to, ll cap, ll cost, int rev, bool isrev):
+            from(from), to(to), cap(cap), cost(cost), rev(rev), isrev(isrev) {}
     };
 
-    MinCostFlow(int n) { graph.resize(n); dist.resize(n); pot.resize(n); pv.resize(n); pe.resize(n); }
+    MinCostFlow(int n): graph(n), dist(n), pot(n), pv(n), pe(n) {}
 
     ///@brief s -> t に容量 cap, コスト cost の辺を追加する
     ///@note cost は負でも良い
@@ -29,7 +30,7 @@ struct MinCostFlow {
     ///@note 直前に流した flow による残余であることに注意
     vector<Edge> get_edges() {
         vector<Edge> ret;
-        rep(i,graph.size()) for(auto &e:graph[i]) if(!e.isrev) ret.push_back(e);
+        rep(i,graph.size()) for(auto& e: graph[i]) if(!e.isrev) ret.push_back(e);
         return ret;
     }
 

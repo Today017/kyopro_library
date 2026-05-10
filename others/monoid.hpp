@@ -36,4 +36,11 @@ namespace Monoid {
         static Type id() { return make_pair(T(0),0); }
         static Type op(const Type& a, const Type& b) { return {a.first+b.first,a.second+b.second}; }
     };
+
+    template<typename T, T not_exist>
+    struct Update {
+        using Type=T;
+        static Type id() { return not_exist; }
+        static Type op(const Type& a, const Type& b) { return b==id() ? a : b; }
+    };
 }

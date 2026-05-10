@@ -4,7 +4,7 @@
 ///@brief ModInt
 template<ll MOD>
 struct ModInt {
-    ModInt(ll x=0){ value=(x>=0?x%MOD:MOD-(-x)%MOD); }
+    ModInt(ll x=0){ value=(x>=0? x%MOD: (MOD-(-x)%MOD)%MOD); }
 
     ModInt operator-() const { return ModInt(-value); }
     ModInt operator+() const { return ModInt(*this); }

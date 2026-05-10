@@ -11,14 +11,14 @@
  * @ref https://yukicoder.me/submissions/967952
  * @ref https://mhrb-minase.hatenablog.com/entry/2019/08/20/003915
  */
-pair<bool,vector<ll>> BellmanFord(const vector<vector<pair<int,ll>>>& g, int start) {
-    int n=g.size();
-    vector<ll> dst(n,INFL); dst[start]=0;
+pair<bool,vector<ll>> BellmanFord(const vector<vector<pair<int,ll>>>& G, int start) {
+    int N=G.size();
+    vector<ll> dst(N,INFL); dst[start]=0;
     int i=0;
-    for(; i<n; i++) {
+    for(; i<N; i++) {
         bool update=false;
-        rep(j,n) {
-            for(auto [nxt,cost]: g[j]) {
+        rep(j,N) {
+            for(auto [nxt,cost]: G[j]) {
                 if(dst[j]!=INFL && dst[j]+cost<dst[nxt]) {
                     dst[nxt]=dst[j]+cost;
                     update=true;
@@ -27,5 +27,5 @@ pair<bool,vector<ll>> BellmanFord(const vector<vector<pair<int,ll>>>& g, int sta
         }
         if(!update) break;
     }
-    return {i==n,dst};
+    return {i==N,dst};
 }

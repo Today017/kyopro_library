@@ -1,6 +1,7 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/others/xor128.hpp"
+#include"../../kyopro_library/others/shuffle.hpp"
 
 ///@brief ランダムテストケース生成
 namespace Rand {

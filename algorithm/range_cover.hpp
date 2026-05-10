@@ -5,7 +5,7 @@
 ///@brief 不可能な場合は-1を返す
 ///@note O(N log(N))
 ///@ref https://atcoder.jp/contests/awc0006/tasks/awc0006_d
-int RangeCover(vector<pair<ll,ll>> LR, ll M) {
+int RangeCoverProblem(vector<pair<ll,ll>> LR, ll M) {
     int N=LR.size();
     sort(all(LR));
 

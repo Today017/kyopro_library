@@ -12,22 +12,23 @@ namespace Util {
     template<typename T>
     using min_pq=priority_queue<T,vector<T>,greater<T>>;
 
-    #define rep2(i,a,b) for(ll i=a; i<b; i++)
-    #define per2(i,a,b) for(ll i=(b)-1; i>=a; i--)
-    #define each(a,v) for(auto&& a: v)
-
     auto Min(const auto& v) { return *min_element(all(v)); }
+    int MinIdx(const auto& v) { return min_element(all(v))-v.begin(); }
     auto Max(const auto& v) { return *max_element(all(v)); }
+    int MaxIdx(const auto& v) { return max_element(all(v))-v.begin(); }
     auto Sum(const auto& v) { return reduce(all(v)); }
     int Lob(const auto& v, const auto& x) { return lower_bound(all(v),x)-v.begin(); }
     void Uniq(auto& v) { sort(all(v)); v.erase(unique(all(v)),v.end()); }
+    auto Compress(auto v) {
+        auto w=v; Uniq(w); for(auto& x: v) x=Lob(w,x);
+        return v;
+    }
     void Inc(auto& a) { for(auto& x: a) x++; }
     void Dec(auto& a) { for(auto& x: a) x--; }
 
     const string YesNo(bool f) { return f?"Yes":"No"; }
     const string YESNO(bool f) { return f?"YES":"NO"; }
     const char NL='\n';
-    #define Exout(x) { cout<<(x)<<NL; return; }
 
     template<typename T>
     istream& operator>>(istream& is, vector<vector<T>>& v) { for(auto& x: v) for(auto& y: x) is>>y; return is; }
@@ -38,6 +39,11 @@ namespace Util {
 
     template<typename... T>
     void Read(T&... args) { (cin>>...>>args); }
+
+    #define rep2(i,a,b) for(ll i=a; i<b; i++)
+    #define per2(i,a,b) for(ll i=(b)-1; i>=a; i--)
+    #define each(a,v) for(auto& a: v)
+    #define Exout(x) { cout<<(x)<<NL; return; }
     #define INT(...) int __VA_ARGS__; Util::Read(__VA_ARGS__);
     #define LL(...) ll __VA_ARGS__; Util::Read(__VA_ARGS__);
     #define STR(...) string __VA_ARGS__; Util::Read(__VA_ARGS__);
@@ -47,6 +53,8 @@ namespace Util {
     #define VVL(A,N,M) vector<vector<ll>> A(N,vector<ll>(M)); Util::Read(A);
     #define VI2(A,B,N) vector<int> A(N),B(N); rep(i,N) cin>>A[i]>>B[i];
     #define VL2(A,B,N) vector<ll> A(N),B(N); rep(i,N) cin>>A[i]>>B[i];
+    #define VI3(A,B,C,N) vector<int> A(N),B(N),C(N); rep(i,N) cin>>A[i]>>B[i]>>C[i];
+    #define VL3(A,B,C,N) vector<ll> A(N),B(N),C(N); rep(i,N) cin>>A[i]>>B[i]>>C[i];
     #define VST(A,N) vector<string> A(N); Util::Read(A);
 
     void WriteVec(const auto& v) {
@@ -57,7 +65,7 @@ namespace Util {
     vvi ReadGraph(int N, int M, bool directed=false, bool one_indexed=true) {
         vvi G(N);
         rep(i,M) {
-            INT(a,b);
+            int a,b; cin>>a>>b;
             if(one_indexed) a--, b--;
             G[a].push_back(b);
             if(!directed) G[b].push_back(a);
@@ -68,7 +76,7 @@ namespace Util {
     weigraph ReadWGraph(int N, int M, bool directed=false, int one_indexed=true) {
         weigraph G(N);
         rep(i,M) {
-            INT(a,b); LL(c);
+            int a,b; ll c; cin>>a>>b>>c;
             if(one_indexed) a--, b--;
             G[a].push_back({b,c});
             if(!directed) G[b].push_back({a,c});
@@ -95,8 +103,8 @@ namespace Util {
     }
 
     template<typename T>
-    map<T,vector<int>> CountIdx(const vector<T>& v) {
-        map<T,vector<int>> ret;
+    vector<vector<int>> CountIdx(const vector<T>& v) {
+        vector<vector<int>> ret(Max(v)+1);
         rep(i,v.size()) ret[v[i]].push_back(i);
         return ret;
     }
@@ -117,7 +125,16 @@ namespace Util {
         return ret;
     }
 
-    int Digit(ll n) { int ret=0; while(n) ret++, n/=10; return ret; }
+    int DigitSize(ll n) { int ret=0; while(n) ret++, n/=10; return ret; }
+    vector<int> Digit(ll n) {
+        vector<int> ret;
+        while(n) {
+            ret.push_back(n%10);
+            n/=10;
+        }
+        reverse(all(ret));
+        return ret;
+    }
     ll Ten(int r) { ll ret=1; while(r--) ret*=10; return ret; }
     ll IntPow(ll x, ll r) { ll ret=1; while(r--) ret*=x; return ret; }
 }

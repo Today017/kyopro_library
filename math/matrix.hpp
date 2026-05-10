@@ -1,21 +1,29 @@
 #include"../../kyopro_library/template.hpp"
 
-template<typename T>
-vector<vector<T>> MatMul(const vector<vector<T>>& A, const vector<vector<T>>& B) {
+template<typename Ring>
+vector<vector<typename Ring::Type>> MatMul(
+    const vector<vector<typename Ring::Type>>& A,
+    const vector<vector<typename Ring::Type>>& B
+) {
+    using Type=typename Ring::Type;
     int N=A.size();
-    vector<vector<T>> ret(N,vector<T>(N));
-    rep(i,N) rep(j,N) rep(k,N) ret[i][j]+=A[i][k]*B[k][j];
+    vector<vector<Type>> ret(N,vector<Type>(N,Ring::zero()));
+    rep(i,N) rep(j,N) rep(k,N) ret[i][j]=Ring::plus(ret[i][j],Ring::mul(A[i][k],B[k][j]));
     return ret;
 }
 
-template<typename T>
-vector<vector<T>> MatPow(vector<vector<T>> A, ll b) {
+template<typename Ring>
+vector<vector<typename Ring::Type>> MatPow(
+    vector<vector<typename Ring::Type>> A,
+    ll b
+) {
+    using Type=typename Ring::Type;
     int N=A.size();
-    vector<vector<T>> ret(N,vector<T>(N));
-    rep(i,N) ret[i][i]=1;
+    vector<vector<Type>> ret(N,vector<Type>(N,Ring::zero()));
+    rep(i,N) ret[i][i]=Ring::one();
     while(b) {
-        if(b&1) ret=MatMul(ret,A);
-        A=MatMul(A,A);
+        if(b&1) ret=MatMul<Ring>(ret,A);
+        A=MatMul<Ring>(A,A);
         b>>=1;
     }
     return ret;

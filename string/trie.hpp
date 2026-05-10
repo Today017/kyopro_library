@@ -1,8 +1,10 @@
+#include"../../kyopro_library/template.hpp"
+
 struct Trie {
     struct Node{
         array<int,26> to;
-        int count_of_end=0,count_of_node=0;
-        Node() { fill(ALL(to),-1); }
+        int count_of_end=0, count_of_node=0;
+        Node() { fill(all(to),-1); }
     };
 
     Trie(int len) {
@@ -13,7 +15,7 @@ struct Trie {
 
     void insert(const string& s) {
         int cur=0;
-        for(const char& c:s) {
+        for(const char& c: s) {
             int nxt=nodes[cur].to[c-'a'];
             if(nxt==-1) {
                 nodes[cur].to[c-'a']=nodes.size();
@@ -28,7 +30,7 @@ struct Trie {
 
     int count(const string& s) {
         int cur=0,ret=0;
-        for(const char& c:s) {
+        for(const char& c: s) {
             int nxt=nodes[cur].to[c-'a'];
             if(nxt==-1) return 0;
             cur=nxt;
@@ -38,7 +40,7 @@ struct Trie {
 
     void erase(const string& s) {
         int cur=0;
-        for(const char& c:s) {
+        for(const char& c: s) {
             int nxt=nodes[cur].to[c-'a'];
             if(nxt==-1) return;
             cur=nxt;
