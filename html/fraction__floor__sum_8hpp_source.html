@@ -108,17 +108,17 @@ $(function(){initNavTree('fraction__floor__sum_8hpp_source.html',''); initResiza
 <a href="fraction__floor__sum_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/others/kth_root.hpp&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="foldopen" id="foldopen00003" data-start="{" data-end="}">
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="fraction__floor__sum_8hpp.html#a1fa13377327babb260e83aa2884732d5">    3</a></span>ll <a class="code hl_function" href="fraction__floor__sum_8hpp.html#a1fa13377327babb260e83aa2884732d5">FractionFloorSum</a>(ll n) {</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    ll r=<a class="code hl_function" href="kth__root_8hpp.html#a5b404451d30c6da29b779e653a4c9823">KthRoot</a><a class="code hl_function" href="kth__root_8hpp.html#a5b404451d30c6da29b779e653a4c9823">(</a>n<a class="code hl_function" href="kth__root_8hpp.html#a5b404451d30c6da29b779e653a4c9823">,</a>2<a class="code hl_function" href="kth__root_8hpp.html#a5b404451d30c6da29b779e653a4c9823">)</a>;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="fraction__floor__sum_8hpp.html#aed3bf2afabf22fa235b5b34c488e07fa">    3</a></span>ll <a class="code hl_function" href="fraction__floor__sum_8hpp.html#aed3bf2afabf22fa235b5b34c488e07fa">FractionFloorSum</a>(ll N) {</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    ll r=<a class="code hl_function" href="kth__root_8hpp.html#a5b404451d30c6da29b779e653a4c9823">KthRoot</a><a class="code hl_function" href="kth__root_8hpp.html#a5b404451d30c6da29b779e653a4c9823">(</a>N<a class="code hl_function" href="kth__root_8hpp.html#a5b404451d30c6da29b779e653a4c9823">,</a>2<a class="code hl_function" href="kth__root_8hpp.html#a5b404451d30c6da29b779e653a4c9823">)</a>;</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    ll ret=0;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordflow">for</span>(ll i=1; i&lt;=r; i++) ret+=((n/i)-(n/(i+1)))*i;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">for</span>(ll i=1; i&lt;=n/(r+1); i++) ret+=n/i;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordflow">for</span>(ll i=1; i&lt;=r; i++) ret+=((N/i)-(N/(i+1)))*i;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">for</span>(ll i=1; i&lt;=N/(r+1); i++) ret+=N/i;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
 </div>
-<div class="ttc" id="afraction__floor__sum_8hpp_html_a1fa13377327babb260e83aa2884732d5"><div class="ttname"><a href="fraction__floor__sum_8hpp.html#a1fa13377327babb260e83aa2884732d5">FractionFloorSum</a></div><div class="ttdeci">ll FractionFloorSum(ll n)</div><div class="ttdef"><b>Definition</b> <a href="#l00003">fraction_floor_sum.hpp:3</a></div></div>
+<div class="ttc" id="afraction__floor__sum_8hpp_html_aed3bf2afabf22fa235b5b34c488e07fa"><div class="ttname"><a href="fraction__floor__sum_8hpp.html#aed3bf2afabf22fa235b5b34c488e07fa">FractionFloorSum</a></div><div class="ttdeci">ll FractionFloorSum(ll N)</div><div class="ttdef"><b>Definition</b> <a href="#l00003">fraction_floor_sum.hpp:3</a></div></div>
 <div class="ttc" id="akth__root_8hpp_html_a5b404451d30c6da29b779e653a4c9823"><div class="ttname"><a href="kth__root_8hpp.html#a5b404451d30c6da29b779e653a4c9823">KthRoot</a></div><div class="ttdeci">ll KthRoot(ll n, ll k=2)</div><div class="ttdoc">n　の k 乗根の切り捨てを返す</div><div class="ttdef"><b>Definition</b> <a href="kth__root_8hpp_source.html#l00006">kth_root.hpp:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

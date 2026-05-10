@@ -109,8 +109,10 @@ $(function(){initNavTree('zeta__mobius_8hpp.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../kyopro_library/template.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bit_8hpp_source.html">../../kyopro_library/others/bit.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="monoid_8hpp_source.html">../../kyopro_library/others/monoid.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="abel_8hpp_source.html">../../kyopro_library/others/abel.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ring_8hpp_source.html">../../kyopro_library/others/ring.hpp</a>&quot;</code><br />
 </div>
 <p><a href="zeta__mobius_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
@@ -119,25 +121,36 @@ $(function(){initNavTree('zeta__mobius_8hpp.html',''); initResizable(true); });
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_zeta_mobius.html">ZetaMobius</a></td></tr>
 <tr class="memdesc:namespace_zeta_mobius"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゼータ変換・メビウス変換 <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_convolution_bit.html">ConvolutionBit</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:a96b8a2e447ea6c66bf33a8a0e39e4fcc" id="r_a96b8a2e447ea6c66bf33a8a0e39e4fcc"><td class="memTemplParams" colspan="2">template&lt;typename Monoid&gt; </td></tr>
-<tr class="memitem:a96b8a2e447ea6c66bf33a8a0e39e4fcc"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Monoid::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_zeta_mobius.html#a96b8a2e447ea6c66bf33a8a0e39e4fcc">ZetaMobius::SubsetZeta</a> (vector&lt; typename Monoid::Type &gt; v)</td></tr>
-<tr class="memdesc:a96b8a2e447ea6c66bf33a8a0e39e4fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">高速ゼータ変換（下位集合）  <br /></td></tr>
-<tr class="separator:a96b8a2e447ea6c66bf33a8a0e39e4fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a482f4f29cbbd38287bd6dfa4fa3752bc" id="r_a482f4f29cbbd38287bd6dfa4fa3752bc"><td class="memTemplParams" colspan="2">template&lt;typename Monoid&gt; </td></tr>
-<tr class="memitem:a482f4f29cbbd38287bd6dfa4fa3752bc"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Monoid::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_zeta_mobius.html#a482f4f29cbbd38287bd6dfa4fa3752bc">ZetaMobius::SupersetZeta</a> (vector&lt; typename Monoid::Type &gt; v)</td></tr>
-<tr class="memdesc:a482f4f29cbbd38287bd6dfa4fa3752bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">高速ゼータ変換（上位集合）  <br /></td></tr>
-<tr class="separator:a482f4f29cbbd38287bd6dfa4fa3752bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdbe2642fe5208a44eb861ad2e0666bf" id="r_acdbe2642fe5208a44eb861ad2e0666bf"><td class="memTemplParams" colspan="2">template&lt;typename Abel&gt; </td></tr>
-<tr class="memitem:acdbe2642fe5208a44eb861ad2e0666bf"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Abel::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_zeta_mobius.html#acdbe2642fe5208a44eb861ad2e0666bf">ZetaMobius::SubsetMobius</a> (vector&lt; typename Abel::Type &gt; v)</td></tr>
-<tr class="memdesc:acdbe2642fe5208a44eb861ad2e0666bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">高速メビウス変換（下位集合）  <br /></td></tr>
-<tr class="separator:acdbe2642fe5208a44eb861ad2e0666bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2411a0dca9b8ae8e8a4ce4e36683c98c" id="r_a2411a0dca9b8ae8e8a4ce4e36683c98c"><td class="memTemplParams" colspan="2">template&lt;typename Abel&gt; </td></tr>
-<tr class="memitem:a2411a0dca9b8ae8e8a4ce4e36683c98c"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Abel::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_zeta_mobius.html#a2411a0dca9b8ae8e8a4ce4e36683c98c">ZetaMobius::SupersetMobius</a> (vector&lt; typename Abel::Type &gt; v)</td></tr>
-<tr class="memdesc:a2411a0dca9b8ae8e8a4ce4e36683c98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">高速メビウス変換（上位集合）  <br /></td></tr>
-<tr class="separator:a2411a0dca9b8ae8e8a4ce4e36683c98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66a61fa09104ecb369608a08568a49c1" id="r_a66a61fa09104ecb369608a08568a49c1"><td class="memTemplParams" colspan="2">template&lt;typename Monoid&gt; </td></tr>
+<tr class="memitem:a66a61fa09104ecb369608a08568a49c1"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Monoid::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_zeta_mobius.html#a66a61fa09104ecb369608a08568a49c1">ZetaMobius::SubsetZeta</a> (vector&lt; typename Monoid::Type &gt; V)</td></tr>
+<tr class="memdesc:a66a61fa09104ecb369608a08568a49c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">高速ゼータ変換（下位集合）  <br /></td></tr>
+<tr class="separator:a66a61fa09104ecb369608a08568a49c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae083f266b0f2a42968110e4c02245517" id="r_ae083f266b0f2a42968110e4c02245517"><td class="memTemplParams" colspan="2">template&lt;typename Monoid&gt; </td></tr>
+<tr class="memitem:ae083f266b0f2a42968110e4c02245517"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Monoid::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_zeta_mobius.html#ae083f266b0f2a42968110e4c02245517">ZetaMobius::SupersetZeta</a> (vector&lt; typename Monoid::Type &gt; V)</td></tr>
+<tr class="memdesc:ae083f266b0f2a42968110e4c02245517"><td class="mdescLeft">&#160;</td><td class="mdescRight">高速ゼータ変換（上位集合）  <br /></td></tr>
+<tr class="separator:ae083f266b0f2a42968110e4c02245517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac43347044f995d23dff11802108237e4" id="r_ac43347044f995d23dff11802108237e4"><td class="memTemplParams" colspan="2">template&lt;typename Abel&gt; </td></tr>
+<tr class="memitem:ac43347044f995d23dff11802108237e4"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Abel::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_zeta_mobius.html#ac43347044f995d23dff11802108237e4">ZetaMobius::SubsetMobius</a> (vector&lt; typename Abel::Type &gt; V)</td></tr>
+<tr class="memdesc:ac43347044f995d23dff11802108237e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">高速メビウス変換（下位集合）  <br /></td></tr>
+<tr class="separator:ac43347044f995d23dff11802108237e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f00087cb849bfac06aa0f2977a2b9c8" id="r_a3f00087cb849bfac06aa0f2977a2b9c8"><td class="memTemplParams" colspan="2">template&lt;typename Abel&gt; </td></tr>
+<tr class="memitem:a3f00087cb849bfac06aa0f2977a2b9c8"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Abel::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_zeta_mobius.html#a3f00087cb849bfac06aa0f2977a2b9c8">ZetaMobius::SupersetMobius</a> (vector&lt; typename Abel::Type &gt; V)</td></tr>
+<tr class="memdesc:a3f00087cb849bfac06aa0f2977a2b9c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">高速メビウス変換（上位集合）  <br /></td></tr>
+<tr class="separator:a3f00087cb849bfac06aa0f2977a2b9c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a272c1b453abd54542e995ce0ab1092a7" id="r_a272c1b453abd54542e995ce0ab1092a7"><td class="memTemplParams" colspan="2">template&lt;typename Ring&gt; </td></tr>
+<tr class="memitem:a272c1b453abd54542e995ce0ab1092a7"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Ring::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_convolution_bit.html#a272c1b453abd54542e995ce0ab1092a7">ConvolutionBit::OrConvolution</a> (vector&lt; typename Ring::Type &gt; A, vector&lt; typename Ring::Type &gt; B)</td></tr>
+<tr class="separator:a272c1b453abd54542e995ce0ab1092a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66395053fe1694eba18f21b2cc40d5b2" id="r_a66395053fe1694eba18f21b2cc40d5b2"><td class="memTemplParams" colspan="2">template&lt;typename Ring&gt; </td></tr>
+<tr class="memitem:a66395053fe1694eba18f21b2cc40d5b2"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Ring::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_convolution_bit.html#a66395053fe1694eba18f21b2cc40d5b2">ConvolutionBit::AndConvolution</a> (vector&lt; typename Ring::Type &gt; A, vector&lt; typename Ring::Type &gt; B)</td></tr>
+<tr class="separator:a66395053fe1694eba18f21b2cc40d5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d73147f75221ace066cc9e80850c7e8" id="r_a4d73147f75221ace066cc9e80850c7e8"><td class="memTemplParams" colspan="2">template&lt;typename Ring&gt; </td></tr>
+<tr class="memitem:a4d73147f75221ace066cc9e80850c7e8"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Ring::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_convolution_bit.html#a4d73147f75221ace066cc9e80850c7e8">ConvolutionBit::SubsetConvolution</a> (vector&lt; typename Ring::Type &gt; A, vector&lt; typename Ring::Type &gt; B)</td></tr>
+<tr class="separator:a4d73147f75221ace066cc9e80850c7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,13 +1,18 @@
 var struct_binary_trie =
 [
-    [ "BinaryTrie", "struct_binary_trie.html#a6d72a8971d396ba065b3aaac8ec97f88", null ],
-    [ "size", "struct_binary_trie.html#a8894b19178488ed5a376fc2f62fe774e", null ],
-    [ "insert", "struct_binary_trie.html#a74c72898c1aa1970a149a895b50d533a", null ],
-    [ "erase", "struct_binary_trie.html#ab383a881f8c83b83bd3b2c2978c543ad", null ],
-    [ "apply_xor", "struct_binary_trie.html#a206bee98568661600b0148bfc0f9a902", null ],
-    [ "max", "struct_binary_trie.html#a574e1542d7930e058e8ac8949424063f", null ],
-    [ "min", "struct_binary_trie.html#aa535fa5b5a9c4a43be753790348b940d", null ],
-    [ "kth_min", "struct_binary_trie.html#a2580a67854d4e8fe057c0e2bfcd173bc", null ],
-    [ "lower_bound", "struct_binary_trie.html#a89a91b195e0f2f46ecf75b0e40745189", null ],
-    [ "count", "struct_binary_trie.html#a8414d307e624d792b9e7cf1d498e499d", null ]
+    [ "BinaryTrie", "struct_binary_trie.html#a0be46a05e51377e8db9d1d37aafd519a", null ],
+    [ "reserve", "struct_binary_trie.html#a56539c5b1eef33ddab1234314dfb84f3", null ],
+    [ "apply_xor", "struct_binary_trie.html#a1452cd5063085d918b0bd982724b05e4", null ],
+    [ "insert", "struct_binary_trie.html#aef620c47799f35b4bb0f9504dfa4b030", null ],
+    [ "discard", "struct_binary_trie.html#a56635c5d96c0c7065d9586dc226e0dd7", null ],
+    [ "count", "struct_binary_trie.html#a75a5c7a3171fd253d25ee1273c41c17a", null ],
+    [ "kth_min", "struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966", null ],
+    [ "count_lt", "struct_binary_trie.html#a958b1b567bed8571af1fc158dc2b22ad", null ],
+    [ "min", "struct_binary_trie.html#ad22562b16178630b2a3217a4810e8021", null ],
+    [ "max", "struct_binary_trie.html#ae86596455897140f700d289b123e6003", null ],
+    [ "gt", "struct_binary_trie.html#ac690bb2e1071fce8b05ee6fb9174c77a", null ],
+    [ "ge", "struct_binary_trie.html#a4fac4dd4ca32534dfe8a4b58c9d24ec1", null ],
+    [ "lt", "struct_binary_trie.html#a93a6362e37c890cf19fd6257cf639ad8", null ],
+    [ "le", "struct_binary_trie.html#a37e00fd6bb708acd5027fe333c3bcc0e", null ],
+    [ "size", "struct_binary_trie.html#adcfa96a845fdc58ee1e2faf787c393dd", null ]
 ];

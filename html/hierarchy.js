@@ -1,6 +1,5 @@
 var hierarchy =
 [
-    [ "Operator::Add< T >", "struct_operator_1_1_add.html", null ],
     [ "AngelBeats", "struct_angel_beats.html", null ],
     [ "RangeQuery::ApplyAdd< T >", "struct_range_query_1_1_apply_add.html", null ],
     [ "RangeQuery::ApplyAdd_GetMax< T, min_value >", "struct_range_query_1_1_apply_add___get_max.html", null ],
@@ -13,7 +12,7 @@ var hierarchy =
     [ "ArithmeticProgression", "struct_arithmetic_progression.html", null ],
     [ "BezoutIdentity", "struct_bezout_identity.html", null ],
     [ "BiInfo", "struct_bi_info.html", null ],
-    [ "BinaryTrie< T, Log >", "struct_binary_trie.html", null ],
+    [ "BinaryTrie< Log >", "struct_binary_trie.html", null ],
     [ "BipartiteMatchingWeighted< MAX >", "struct_bipartite_matching_weighted.html", null ],
     [ "BridgeInfo", "struct_bridge_info.html", null ],
     [ "CHT< T, MIN >", "struct_c_h_t.html", null ],
@@ -21,6 +20,7 @@ var hierarchy =
     [ "Comb< T >", "struct_comb.html", null ],
     [ "CombinationLucas", "struct_combination_lucas.html", null ],
     [ "Cumsum2D", "struct_cumsum2_d.html", null ],
+    [ "Deque< T >", "struct_deque.html", null ],
     [ "Doubling< Log >", "struct_doubling.html", null ],
     [ "DoublingFold< Monoid, Log >", "struct_doubling_fold.html", null ],
     [ "DSU", "struct_d_s_u.html", null ],
@@ -31,7 +31,7 @@ var hierarchy =
     [ "DynamicConnectivity", "struct_dynamic_connectivity.html", null ],
     [ "MaxFlow::Edge", "struct_max_flow_1_1_edge.html", null ],
     [ "MinCostFlow::Edge", "struct_min_cost_flow_1_1_edge.html", null ],
-    [ "ErasablePQ< T, MAX, NONE >", "struct_erasable_p_q.html", null ],
+    [ "ErasableHeap< T, MAX >", "struct_erasable_heap.html", null ],
     [ "EulerTourInfo", "struct_euler_tour_info.html", null ],
     [ "exp.Expander", "classexp_1_1_expander.html", null ],
     [ "exp_AHC.Expander", "classexp___a_h_c_1_1_expander.html", null ],
@@ -55,11 +55,15 @@ var hierarchy =
     [ "RangeQuery::Max< T, min_value >", "struct_range_query_1_1_max.html", null ],
     [ "RangeQuery::MaxDynamic< T, min_value >", "struct_range_query_1_1_max_dynamic.html", null ],
     [ "MaxFlow", "struct_max_flow.html", null ],
+    [ "Ring::MaxPlus< T, min_value >", "struct_ring_1_1_max_plus.html", null ],
+    [ "RangeQuery::MaxStatic< T, min_value >", "struct_range_query_1_1_max_static.html", null ],
     [ "MergeSortTree< T >", "struct_merge_sort_tree.html", null ],
     [ "Monoid::Min< T, max_value >", "struct_monoid_1_1_min.html", null ],
     [ "RangeQuery::Min< T, max_value >", "struct_range_query_1_1_min.html", null ],
     [ "MinCostFlow", "struct_min_cost_flow.html", null ],
     [ "RangeQuery::MinDynamic< T, max_value >", "struct_range_query_1_1_min_dynamic.html", null ],
+    [ "Ring::MinPlus< T, max_value >", "struct_ring_1_1_min_plus.html", null ],
+    [ "RangeQuery::MinStatic< T, max_value >", "struct_range_query_1_1_min_static.html", null ],
     [ "Mo", "struct_mo.html", null ],
     [ "ModInt< MOD >", "struct_mod_int.html", null ],
     [ "ModIntDynamic", "struct_mod_int_dynamic.html", null ],
@@ -70,7 +74,10 @@ var hierarchy =
     [ "Namori", "struct_namori.html", null ],
     [ "Trie< char_size, margin >::Node", "struct_trie_1_1_node.html", null ],
     [ "NTT< MOD, primitive_root >", "class_n_t_t.html", null ],
+    [ "Ring::PlusMul< T >", "struct_ring_1_1_plus_mul.html", null ],
     [ "Geometry::Point", "struct_geometry_1_1_point.html", null ],
+    [ "Queue< T >", "struct_queue.html", null ],
+    [ "QueueFoldable< Semigroup >", "struct_queue_foldable.html", null ],
     [ "RangeSet", "struct_range_set.html", null ],
     [ "InsertableReversibleArrayImpl::RBSTBase< Node >", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html", null ],
     [ "InsertableReversibleArrayImpl::RBSTBase< LazyReversibleRBSTNode< T, E > >", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html", [
@@ -79,6 +86,7 @@ var hierarchy =
     [ "InsertableReversibleArrayImpl::RBSTBase< LazyReversibleRBSTNode< T, T > >", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html", [
       [ "InsertableReversibleArrayImpl::LazyReversibleRBST< T, T, InsertableReversibleArrayImpl::op< T >, InsertableReversibleArrayImpl::op< T >, InsertableReversibleArrayImpl::op< T >, InsertableReversibleArrayImpl::e< T > >", "struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html", null ]
     ] ],
+    [ "RMQ< MIN >", "struct_r_m_q.html", null ],
     [ "RollingHash", "struct_rolling_hash.html", null ],
     [ "RollingHash2D", "struct_rolling_hash2_d.html", null ],
     [ "SccInfo", "struct_scc_info.html", null ],
@@ -90,6 +98,7 @@ var hierarchy =
     [ "set", null, [
       [ "Set< T >", "struct_set.html", null ]
     ] ],
+    [ "SlideMin< T, MIN >", "struct_slide_min.html", null ],
     [ "SparseTable< Band >", "struct_sparse_table.html", null ],
     [ "SparseTableDisjoint< Semigroup >", "struct_sparse_table_disjoint.html", null ],
     [ "SqrtTree< Abel >", "struct_sqrt_tree.html", null ],
@@ -110,7 +119,7 @@ var hierarchy =
     ] ],
     [ "TrieNode< char_size >", "struct_trie_node.html", null ],
     [ "TwoSat", "struct_two_sat.html", null ],
-    [ "Operator::Update< T, not_exist >", "struct_operator_1_1_update.html", null ],
+    [ "Monoid::Update< T, not_exist >", "struct_monoid_1_1_update.html", null ],
     [ "vector", null, [
       [ "OffsetVector< T >", "struct_offset_vector.html", null ]
     ] ],

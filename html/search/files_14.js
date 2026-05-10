@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['xor128_2ehpp_0',['xor128.hpp',['../xor128_8hpp.html',1,'']]],
-  ['xor_5fconvolution_2ehpp_1',['xor_convolution.hpp',['../xor__convolution_8hpp.html',1,'']]]
+  ['warshall_5ffloyd_2ehpp_0',['warshall_floyd.hpp',['../warshall__floyd_8hpp.html',1,'']]],
+  ['wavelet_5fmatrix_2ehpp_1',['wavelet_matrix.hpp',['../wavelet__matrix_8hpp.html',1,'']]]
 ];

@@ -25,6 +25,15 @@ var namespaces_dup =
       [ "res", "namespacecompress.html#a54ac03d8200b90f0df7eaef116a6634d", null ],
       [ "a", "namespacecompress.html#ab51c4d79a5d1f1a8a2d46f126ac20894", null ]
     ] ],
+    [ "ConvolutionBit", "namespace_convolution_bit.html", [
+      [ "OrConvolution", "namespace_convolution_bit.html#a272c1b453abd54542e995ce0ab1092a7", null ],
+      [ "AndConvolution", "namespace_convolution_bit.html#a66395053fe1694eba18f21b2cc40d5b2", null ],
+      [ "SubsetConvolution", "namespace_convolution_bit.html#a4d73147f75221ace066cc9e80850c7e8", null ]
+    ] ],
+    [ "ConvolutionDivMul", "namespace_convolution_div_mul.html", [
+      [ "GcdConvolution", "namespace_convolution_div_mul.html#a350e4304a31cd8e184fa759b68c6f0da", null ],
+      [ "LcmConvolution", "namespace_convolution_div_mul.html#a3d2f107a8b2643f3b17d789472b4a596", null ]
+    ] ],
     [ "exp", "namespaceexp.html", "namespaceexp" ],
     [ "exp_AHC", "namespaceexp___a_h_c.html", "namespaceexp___a_h_c" ],
     [ "Fps", "namespace_fps.html", "namespace_fps" ],
@@ -36,7 +45,6 @@ var namespaces_dup =
       [ "main", "namespacemod__reconstruct.html#af05e87c8d03131fac1b74586551c090e", null ]
     ] ],
     [ "Monoid", "namespace_monoid.html", "namespace_monoid" ],
-    [ "Operator", "namespace_operator.html", "namespace_operator" ],
     [ "Rand", "namespace_rand.html", [
       [ "RandomInt", "namespace_rand.html#a3f3facff0ace3326cb57104e9e5caf39", null ],
       [ "RandomInt", "namespace_rand.html#ab29ec34e3353a57d5f50ac9fcab433fb", null ],
@@ -51,12 +59,13 @@ var namespaces_dup =
       [ "RandomUndirectedGraph", "namespace_rand.html#ad64152119bdbb6ccdda81d1e4eb48335", null ]
     ] ],
     [ "RangeQuery", "namespace_range_query.html", "namespace_range_query" ],
-    [ "Ring", "namespace_ring.html", [
-      [ "BetweenIncrement", "namespace_ring.html#abd2be741ee7adfd0fad8590991e231bd", null ],
-      [ "BetweenDecrement", "namespace_ring.html#aa7be4526ac3dbffd587fa2940d69e45f", null ],
-      [ "DistanceMin", "namespace_ring.html#a51b59d6334dd0f6ffed02a0cfd26e69b", null ],
-      [ "DistanceIncrement", "namespace_ring.html#adbb40db1fb017775281f57556a1f3787", null ],
-      [ "DistanceDecrement", "namespace_ring.html#ae9fa707dfac273441785771d1e0d647e", null ]
+    [ "Ring", "namespace_ring.html", "namespace_ring" ],
+    [ "RingOperation", "namespace_ring_operation.html", [
+      [ "BetweenIncrement", "namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880", null ],
+      [ "BetweenDecrement", "namespace_ring_operation.html#abbd2d6898934893b27d5f9efd7ea650f", null ],
+      [ "DistanceMin", "namespace_ring_operation.html#a1a1a27cb0bba9c80fd62cb86792e356a", null ],
+      [ "DistanceIncrement", "namespace_ring_operation.html#a223c526963880591f58768c9c16e87e6", null ],
+      [ "DistanceDecrement", "namespace_ring_operation.html#ac551fcd66538d379128d0f8cf3839842", null ]
     ] ],
     [ "Util", "namespace_util.html", [
       [ "vi", "namespace_util.html#a8230484dbcbff575a90e7d4b89b2614e", null ],
@@ -75,10 +84,13 @@ var namespaces_dup =
       [ "max_pq", "namespace_util.html#aea0ac0b19ce99e34cd083bcfcae3098c", null ],
       [ "min_pq", "namespace_util.html#a485067fa4ab731f75ee5eaed4ce73bd7", null ],
       [ "Min", "namespace_util.html#ac79c7cb6386735c7a5dbf5078fd04d70", null ],
+      [ "MinIdx", "namespace_util.html#afbc73afe312f0203a9f257bd6d22ebd6", null ],
       [ "Max", "namespace_util.html#a641c0e0400b67ff5909e515ee9cd78ee", null ],
+      [ "MaxIdx", "namespace_util.html#a2293832b920731c7a374d204a926e0f1", null ],
       [ "Sum", "namespace_util.html#a38b3bd782752317ac8410b41465f347a", null ],
       [ "Lob", "namespace_util.html#ad8d7c4890e94ff51d8e93fca901cd482", null ],
       [ "Uniq", "namespace_util.html#a21f734e3375915e217176fff824204f3", null ],
+      [ "Compress", "namespace_util.html#ad9b390f44c9bce72480f6640bb32c4ea", null ],
       [ "Inc", "namespace_util.html#a101de889e47626a897c1ef3d9288c2c7", null ],
       [ "Dec", "namespace_util.html#a990ad3fd0dfff3440b872b439b34ed35", null ],
       [ "YesNo", "namespace_util.html#abf0a5fd021ab48cbb5185a311e3c654d", null ],
@@ -93,10 +105,11 @@ var namespaces_dup =
       [ "InRange", "namespace_util.html#a9d4f6e54be29c07b0ba41d4d02206037", null ],
       [ "Inv", "namespace_util.html#a1f04d2550f915d5f1ed8344060067fec", null ],
       [ "Count", "namespace_util.html#a412d524d4c5fb6564335017c2a10c78f", null ],
-      [ "CountIdx", "namespace_util.html#aaee761d29d04be6b191d5b83e3c5edd5", null ],
+      [ "CountIdx", "namespace_util.html#aedf7956d1668d22f6b2f6c7a27693669", null ],
       [ "Rotate90", "namespace_util.html#a6c6148433a2d6fe081becaca82496bc4", null ],
       [ "PrefixSum", "namespace_util.html#a576bca4916bc7460a1fed5f18f8748f9", null ],
-      [ "Digit", "namespace_util.html#a35150ba451efbe7fa67690ab1bff71a9", null ],
+      [ "DigitSize", "namespace_util.html#a3cf6ba8b400f53f3d930319fbd659911", null ],
+      [ "Digit", "namespace_util.html#ade7f3bd7908e58dd527d14071caeda5a", null ],
       [ "Ten", "namespace_util.html#a025a246eede083b2d03673b67b673fc6", null ],
       [ "IntPow", "namespace_util.html#acb7bdd382113f9b1919720869aa320cf", null ],
       [ "NL", "namespace_util.html#a9cf5393e6dd5cb3493a26ab6017b4337", null ],
@@ -104,17 +117,17 @@ var namespaces_dup =
       [ "DY", "namespace_util.html#afffc1cbd088897eb458b9caa9aa52394", null ]
     ] ],
     [ "ZetaMobius", "namespace_zeta_mobius.html", [
-      [ "SubsetZeta", "namespace_zeta_mobius.html#a96b8a2e447ea6c66bf33a8a0e39e4fcc", null ],
-      [ "SupersetZeta", "namespace_zeta_mobius.html#a482f4f29cbbd38287bd6dfa4fa3752bc", null ],
-      [ "SubsetMobius", "namespace_zeta_mobius.html#acdbe2642fe5208a44eb861ad2e0666bf", null ],
-      [ "SupersetMobius", "namespace_zeta_mobius.html#a2411a0dca9b8ae8e8a4ce4e36683c98c", null ]
+      [ "SubsetZeta", "namespace_zeta_mobius.html#a66a61fa09104ecb369608a08568a49c1", null ],
+      [ "SupersetZeta", "namespace_zeta_mobius.html#ae083f266b0f2a42968110e4c02245517", null ],
+      [ "SubsetMobius", "namespace_zeta_mobius.html#ac43347044f995d23dff11802108237e4", null ],
+      [ "SupersetMobius", "namespace_zeta_mobius.html#a3f00087cb849bfac06aa0f2977a2b9c8", null ]
     ] ],
     [ "ZetaMobiusDivMul", "namespace_zeta_mobius_div_mul.html", [
-      [ "Init", "namespace_zeta_mobius_div_mul.html#a60c1e6ce641275a4ee75d229514c1691", null ],
-      [ "MultipleZeta", "namespace_zeta_mobius_div_mul.html#a3464457ced48ed60b5726ff223b31af4", null ],
-      [ "DvisorZeta", "namespace_zeta_mobius_div_mul.html#a3ccdfca3c4527b7da17b4a018ec1204f", null ],
-      [ "MultipleMobius", "namespace_zeta_mobius_div_mul.html#a17972686c127951d7816aef375120758", null ],
-      [ "DivisorMobius", "namespace_zeta_mobius_div_mul.html#afe1e6c2c7d8180ade6e65334eec8368f", null ],
+      [ "Init", "namespace_zeta_mobius_div_mul.html#ae38e16b97a8daa739aa1acb2ef4ad2cb", null ],
+      [ "MultipleZeta", "namespace_zeta_mobius_div_mul.html#a8be0b174cee19f596983d32718aaee19", null ],
+      [ "DivisorZeta", "namespace_zeta_mobius_div_mul.html#a486c03a39284cfd10d169aa18a67e873", null ],
+      [ "MultipleMobius", "namespace_zeta_mobius_div_mul.html#a14117916e9d77d7b1c91f2941099aa45", null ],
+      [ "DivisorMobius", "namespace_zeta_mobius_div_mul.html#a5873725c9582f0bf59b0251e0077fa1e", null ],
       [ "primes", "namespace_zeta_mobius_div_mul.html#a4e3a46951ed6bd40efca93711dc3b6a9", null ]
     ] ]
 ];

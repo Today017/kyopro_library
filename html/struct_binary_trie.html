@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Kyopro Library: BinaryTrie&lt; T, Log &gt; 構造体テンプレート</title>
+<title>Kyopro Library: BinaryTrie&lt; Log &gt; 構造体テンプレート</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,7 +105,7 @@ $(function(){initNavTree('struct_binary_trie.html',''); initResizable(true); });
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
 <a href="struct_binary_trie-members.html">全メンバ一覧</a>  </div>
-  <div class="headertitle"><div class="title">BinaryTrie&lt; T, Log &gt; 構造体テンプレート</div></div>
+  <div class="headertitle"><div class="title">BinaryTrie&lt; Log &gt; 構造体テンプレート</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -116,55 +116,63 @@ $(function(){initNavTree('struct_binary_trie.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a6d72a8971d396ba065b3aaac8ec97f88" id="r_a6d72a8971d396ba065b3aaac8ec97f88"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d72a8971d396ba065b3aaac8ec97f88">BinaryTrie</a> ()</td></tr>
-<tr class="separator:a6d72a8971d396ba065b3aaac8ec97f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8894b19178488ed5a376fc2f62fe774e" id="r_a8894b19178488ed5a376fc2f62fe774e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8894b19178488ed5a376fc2f62fe774e">size</a> () const</td></tr>
-<tr class="memdesc:a8894b19178488ed5a376fc2f62fe774e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_binary_trie.html" title="Binary Trie">BinaryTrie</a> のサイズを返す  <br /></td></tr>
-<tr class="separator:a8894b19178488ed5a376fc2f62fe774e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74c72898c1aa1970a149a895b50d533a" id="r_a74c72898c1aa1970a149a895b50d533a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74c72898c1aa1970a149a895b50d533a">insert</a> (T x, int t=1)</td></tr>
-<tr class="memdesc:a74c72898c1aa1970a149a895b50d533a"><td class="mdescLeft">&#160;</td><td class="mdescRight">x を t 個挿入する  <br /></td></tr>
-<tr class="separator:a74c72898c1aa1970a149a895b50d533a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab383a881f8c83b83bd3b2c2978c543ad" id="r_ab383a881f8c83b83bd3b2c2978c543ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab383a881f8c83b83bd3b2c2978c543ad">erase</a> (T x, int t=1)</td></tr>
-<tr class="memdesc:ab383a881f8c83b83bd3b2c2978c543ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">x を min(count(x), t) 個削除する  <br /></td></tr>
-<tr class="separator:ab383a881f8c83b83bd3b2c2978c543ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a206bee98568661600b0148bfc0f9a902" id="r_a206bee98568661600b0148bfc0f9a902"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a206bee98568661600b0148bfc0f9a902">apply_xor</a> (T x)</td></tr>
-<tr class="memdesc:a206bee98568661600b0148bfc0f9a902"><td class="mdescLeft">&#160;</td><td class="mdescRight">要素全体に x を xor する  <br /></td></tr>
-<tr class="separator:a206bee98568661600b0148bfc0f9a902"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a574e1542d7930e058e8ac8949424063f" id="r_a574e1542d7930e058e8ac8949424063f"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a574e1542d7930e058e8ac8949424063f">max</a> ()</td></tr>
-<tr class="memdesc:a574e1542d7930e058e8ac8949424063f"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大値を返す  <br /></td></tr>
-<tr class="separator:a574e1542d7930e058e8ac8949424063f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa535fa5b5a9c4a43be753790348b940d" id="r_aa535fa5b5a9c4a43be753790348b940d"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa535fa5b5a9c4a43be753790348b940d">min</a> ()</td></tr>
-<tr class="memdesc:aa535fa5b5a9c4a43be753790348b940d"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小値を返す  <br /></td></tr>
-<tr class="separator:aa535fa5b5a9c4a43be753790348b940d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2580a67854d4e8fe057c0e2bfcd173bc" id="r_a2580a67854d4e8fe057c0e2bfcd173bc"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2580a67854d4e8fe057c0e2bfcd173bc">kth_min</a> (int k)</td></tr>
-<tr class="memdesc:a2580a67854d4e8fe057c0e2bfcd173bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">k(0-indexed) 番目に小さい要素を返す  <br /></td></tr>
-<tr class="separator:a2580a67854d4e8fe057c0e2bfcd173bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89a91b195e0f2f46ecf75b0e40745189" id="r_a89a91b195e0f2f46ecf75b0e40745189"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89a91b195e0f2f46ecf75b0e40745189">lower_bound</a> (T x)</td></tr>
-<tr class="memdesc:a89a91b195e0f2f46ecf75b0e40745189"><td class="mdescLeft">&#160;</td><td class="mdescRight">x 以上の最小の要素が何番目に小さいかを返す  <br /></td></tr>
-<tr class="separator:a89a91b195e0f2f46ecf75b0e40745189"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8414d307e624d792b9e7cf1d498e499d" id="r_a8414d307e624d792b9e7cf1d498e499d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8414d307e624d792b9e7cf1d498e499d">count</a> (T x)</td></tr>
-<tr class="memdesc:a8414d307e624d792b9e7cf1d498e499d"><td class="mdescLeft">&#160;</td><td class="mdescRight">x がいくつ含まれているかを返す  <br /></td></tr>
-<tr class="separator:a8414d307e624d792b9e7cf1d498e499d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0be46a05e51377e8db9d1d37aafd519a" id="r_a0be46a05e51377e8db9d1d37aafd519a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0be46a05e51377e8db9d1d37aafd519a">BinaryTrie</a> ()</td></tr>
+<tr class="separator:a0be46a05e51377e8db9d1d37aafd519a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56539c5b1eef33ddab1234314dfb84f3" id="r_a56539c5b1eef33ddab1234314dfb84f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56539c5b1eef33ddab1234314dfb84f3">reserve</a> (int x)</td></tr>
+<tr class="separator:a56539c5b1eef33ddab1234314dfb84f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1452cd5063085d918b0bd982724b05e4" id="r_a1452cd5063085d918b0bd982724b05e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1452cd5063085d918b0bd982724b05e4">apply_xor</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> x)</td></tr>
+<tr class="memdesc:a1452cd5063085d918b0bd982724b05e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">すべての要素vをv xor xで置き換える  <br /></td></tr>
+<tr class="separator:a1452cd5063085d918b0bd982724b05e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef620c47799f35b4bb0f9504dfa4b030" id="r_aef620c47799f35b4bb0f9504dfa4b030"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef620c47799f35b4bb0f9504dfa4b030">insert</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> val, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> k=1)</td></tr>
+<tr class="memdesc:aef620c47799f35b4bb0f9504dfa4b030"><td class="mdescLeft">&#160;</td><td class="mdescRight">valをk個追加する  <br /></td></tr>
+<tr class="separator:aef620c47799f35b4bb0f9504dfa4b030"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56635c5d96c0c7065d9586dc226e0dd7" id="r_a56635c5d96c0c7065d9586dc226e0dd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56635c5d96c0c7065d9586dc226e0dd7">discard</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> val, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> k=1)</td></tr>
+<tr class="memdesc:a56635c5d96c0c7065d9586dc226e0dd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">valをmin(k,count(val)個削除する  <br /></td></tr>
+<tr class="separator:a56635c5d96c0c7065d9586dc226e0dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a5c7a3171fd253d25ee1273c41c17a" id="r_a75a5c7a3171fd253d25ee1273c41c17a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75a5c7a3171fd253d25ee1273c41c17a">count</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> val) const</td></tr>
+<tr class="memdesc:a75a5c7a3171fd253d25ee1273c41c17a"><td class="mdescLeft">&#160;</td><td class="mdescRight">valの個数を返す  <br /></td></tr>
+<tr class="separator:a75a5c7a3171fd253d25ee1273c41c17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c4abe332c8af6688c0b55fed6071966" id="r_a7c4abe332c8af6688c0b55fed6071966"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c4abe332c8af6688c0b55fed6071966">kth_min</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> k) const</td></tr>
+<tr class="memdesc:a7c4abe332c8af6688c0b55fed6071966"><td class="mdescLeft">&#160;</td><td class="mdescRight">0-indexedでk番目に小さい要素を返す  <br /></td></tr>
+<tr class="separator:a7c4abe332c8af6688c0b55fed6071966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a958b1b567bed8571af1fc158dc2b22ad" id="r_a958b1b567bed8571af1fc158dc2b22ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a958b1b567bed8571af1fc158dc2b22ad">count_lt</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> val) const</td></tr>
+<tr class="memdesc:a958b1b567bed8571af1fc158dc2b22ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">valより小さい要素の個数を返す  <br /></td></tr>
+<tr class="separator:a958b1b567bed8571af1fc158dc2b22ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad22562b16178630b2a3217a4810e8021" id="r_ad22562b16178630b2a3217a4810e8021"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad22562b16178630b2a3217a4810e8021">min</a> () const</td></tr>
+<tr class="separator:ad22562b16178630b2a3217a4810e8021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae86596455897140f700d289b123e6003" id="r_ae86596455897140f700d289b123e6003"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae86596455897140f700d289b123e6003">max</a> () const</td></tr>
+<tr class="separator:ae86596455897140f700d289b123e6003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac690bb2e1071fce8b05ee6fb9174c77a" id="r_ac690bb2e1071fce8b05ee6fb9174c77a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac690bb2e1071fce8b05ee6fb9174c77a">gt</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> val) const</td></tr>
+<tr class="separator:ac690bb2e1071fce8b05ee6fb9174c77a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fac4dd4ca32534dfe8a4b58c9d24ec1" id="r_a4fac4dd4ca32534dfe8a4b58c9d24ec1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fac4dd4ca32534dfe8a4b58c9d24ec1">ge</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> val) const</td></tr>
+<tr class="separator:a4fac4dd4ca32534dfe8a4b58c9d24ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a6362e37c890cf19fd6257cf639ad8" id="r_a93a6362e37c890cf19fd6257cf639ad8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93a6362e37c890cf19fd6257cf639ad8">lt</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> val) const</td></tr>
+<tr class="separator:a93a6362e37c890cf19fd6257cf639ad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37e00fd6bb708acd5027fe333c3bcc0e" id="r_a37e00fd6bb708acd5027fe333c3bcc0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37e00fd6bb708acd5027fe333c3bcc0e">le</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> val) const</td></tr>
+<tr class="separator:a37e00fd6bb708acd5027fe333c3bcc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcfa96a845fdc58ee1e2faf787c393dd" id="r_adcfa96a845fdc58ee1e2faf787c393dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcfa96a845fdc58ee1e2faf787c393dd">size</a> () const</td></tr>
+<tr class="separator:adcfa96a845fdc58ee1e2faf787c393dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename T = uint32_t, int Log = 32&gt;<br />
-struct BinaryTrie&lt; T, Log &gt;</div><p>Binary <a class="el" href="struct_trie.html" title="Trie">Trie</a> </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;int Log = 32&gt;<br />
+struct BinaryTrie&lt; Log &gt;</div><p>Binary <a class="el" href="struct_trie.html" title="Trie">Trie</a> </p>
+<p>verify: <a href="https://judge.yosupo.jp/problem/ordered_set">https://judge.yosupo.jp/problem/ordered_set</a> verify: <a href="https://judge.yosupo.jp/problem/set_xor_min">https://judge.yosupo.jp/problem/set_xor_min</a> </p>
 
-<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00005">5</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="a6d72a8971d396ba065b3aaac8ec97f88" name="a6d72a8971d396ba065b3aaac8ec97f88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d72a8971d396ba065b3aaac8ec97f88">&#9670;&#160;</a></span>BinaryTrie()</h2>
+<a id="a0be46a05e51377e8db9d1d37aafd519a" name="a0be46a05e51377e8db9d1d37aafd519a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0be46a05e51377e8db9d1d37aafd519a">&#9670;&#160;</a></span>BinaryTrie()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T = uint32_t, int Log = 32&gt; </div>
+template&lt;int Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; T, Log &gt;<a class="el" href="struct_binary_trie.html">::BinaryTrie</a> </td>
+          <td class="memname"><a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;<a class="el" href="struct_binary_trie.html">::BinaryTrie</a> </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -177,24 +185,250 @@ template&lt;typename T = uint32_t, int Log = 32&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00006">6</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00008">8</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a8894b19178488ed5a376fc2f62fe774e" name="a8894b19178488ed5a376fc2f62fe774e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8894b19178488ed5a376fc2f62fe774e">&#9670;&#160;</a></span>size()</h2>
+<a id="a56539c5b1eef33ddab1234314dfb84f3" name="a56539c5b1eef33ddab1234314dfb84f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56539c5b1eef33ddab1234314dfb84f3">&#9670;&#160;</a></span>reserve()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T = uint32_t, int Log = 32&gt; </div>
+template&lt;int Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; T, Log &gt;::size </td>
+          <td class="memname">void <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::reserve </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00010">10</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1452cd5063085d918b0bd982724b05e4" name="a1452cd5063085d918b0bd982724b05e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1452cd5063085d918b0bd982724b05e4">&#9670;&#160;</a></span>apply_xor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int Log = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::apply_xor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>すべての要素vをv xor xで置き換える </p>
+<dl class="section note"><dt>覚え書き</dt><dd>O(1) </dd></dl>
+
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aef620c47799f35b4bb0f9504dfa4b030" name="aef620c47799f35b4bb0f9504dfa4b030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef620c47799f35b4bb0f9504dfa4b030">&#9670;&#160;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int Log = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>k</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>valをk個追加する </p>
+
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a56635c5d96c0c7065d9586dc226e0dd7" name="a56635c5d96c0c7065d9586dc226e0dd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56635c5d96c0c7065d9586dc226e0dd7">&#9670;&#160;</a></span>discard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int Log = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::discard </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>k</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>valをmin(k,count(val)個削除する </p>
+
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00033">33</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="binary__trie_8hpp_source.html#l00047">count()</a>.</p>
+
+</div>
+</div>
+<a id="a75a5c7a3171fd253d25ee1273c41c17a" name="a75a5c7a3171fd253d25ee1273c41c17a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75a5c7a3171fd253d25ee1273c41c17a">&#9670;&#160;</a></span>count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int Log = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>valの個数を返す </p>
+
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00047">47</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7c4abe332c8af6688c0b55fed6071966" name="a7c4abe332c8af6688c0b55fed6071966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c4abe332c8af6688c0b55fed6071966">&#9670;&#160;</a></span>kth_min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int Log = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::kth_min </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>k</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>0-indexedでk番目に小さい要素を返す </p>
+
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00059">59</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a958b1b567bed8571af1fc158dc2b22ad" name="a958b1b567bed8571af1fc158dc2b22ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a958b1b567bed8571af1fc158dc2b22ad">&#9670;&#160;</a></span>count_lt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int Log = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::count_lt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>valより小さい要素の個数を返す </p>
+
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00078">78</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad22562b16178630b2a3217a4810e8021" name="ad22562b16178630b2a3217a4810e8021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad22562b16178630b2a3217a4810e8021">&#9670;&#160;</a></span>min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int Log = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::min </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -207,131 +441,28 @@ template&lt;typename T = uint32_t, int Log = 32&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="struct_binary_trie.html" title="Binary Trie">BinaryTrie</a> のサイズを返す </p>
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00094">94</a> 行目に定義があります。</p>
 
-<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00009">9</a> 行目に定義があります。</p>
+<p class="reference">参照先 <a class="el" href="binary__trie_8hpp_source.html#l00059">kth_min()</a>.</p>
 
 </div>
 </div>
-<a id="a74c72898c1aa1970a149a895b50d533a" name="a74c72898c1aa1970a149a895b50d533a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74c72898c1aa1970a149a895b50d533a">&#9670;&#160;</a></span>insert()</h2>
+<a id="ae86596455897140f700d289b123e6003" name="ae86596455897140f700d289b123e6003"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae86596455897140f700d289b123e6003">&#9670;&#160;</a></span>max()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T = uint32_t, int Log = 32&gt; </div>
+template&lt;int Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; T, Log &gt;::insert </td>
-          <td>(</td>
-          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>t</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>x を t 個挿入する </p>
-
-<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00015">15</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a id="ab383a881f8c83b83bd3b2c2978c543ad" name="ab383a881f8c83b83bd3b2c2978c543ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab383a881f8c83b83bd3b2c2978c543ad">&#9670;&#160;</a></span>erase()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T = uint32_t, int Log = 32&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; T, Log &gt;::erase </td>
-          <td>(</td>
-          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>t</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>x を min(count(x), t) 個削除する </p>
-
-<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
-
-<p class="reference">参照先 <a class="el" href="binary__trie_8hpp_source.html#l00043">count()</a>, <a class="el" href="binary__trie_8hpp_source.html#l00031">min()</a>.</p>
-
-</div>
-</div>
-<a id="a206bee98568661600b0148bfc0f9a902" name="a206bee98568661600b0148bfc0f9a902"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a206bee98568661600b0148bfc0f9a902">&#9670;&#160;</a></span>apply_xor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T = uint32_t, int Log = 32&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; T, Log &gt;::apply_xor </td>
-          <td>(</td>
-          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>要素全体に x を xor する </p>
-
-<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00025">25</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a id="a574e1542d7930e058e8ac8949424063f" name="a574e1542d7930e058e8ac8949424063f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a574e1542d7930e058e8ac8949424063f">&#9670;&#160;</a></span>max()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T = uint32_t, int Log = 32&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; T, Log &gt;::max </td>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::max </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -341,28 +472,150 @@ template&lt;typename T = uint32_t, int Log = 32&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>最大値を返す </p>
-
-<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00028">28</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00095">95</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="aa535fa5b5a9c4a43be753790348b940d" name="aa535fa5b5a9c4a43be753790348b940d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa535fa5b5a9c4a43be753790348b940d">&#9670;&#160;</a></span>min()</h2>
+<a id="ac690bb2e1071fce8b05ee6fb9174c77a" name="ac690bb2e1071fce8b05ee6fb9174c77a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac690bb2e1071fce8b05ee6fb9174c77a">&#9670;&#160;</a></span>gt()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T = uint32_t, int Log = 32&gt; </div>
+template&lt;int Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; T, Log &gt;::min </td>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::gt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00097">97</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="binary__trie_8hpp_source.html#l00078">count_lt()</a>, <a class="el" href="binary__trie_8hpp_source.html#l00059">kth_min()</a>.</p>
+
+</div>
+</div>
+<a id="a4fac4dd4ca32534dfe8a4b58c9d24ec1" name="a4fac4dd4ca32534dfe8a4b58c9d24ec1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fac4dd4ca32534dfe8a4b58c9d24ec1">&#9670;&#160;</a></span>ge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int Log = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::ge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00102">102</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="binary__trie_8hpp_source.html#l00078">count_lt()</a>, <a class="el" href="binary__trie_8hpp_source.html#l00059">kth_min()</a>.</p>
+
+</div>
+</div>
+<a id="a93a6362e37c890cf19fd6257cf639ad8" name="a93a6362e37c890cf19fd6257cf639ad8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93a6362e37c890cf19fd6257cf639ad8">&#9670;&#160;</a></span>lt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int Log = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::lt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00107">107</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="binary__trie_8hpp_source.html#l00078">count_lt()</a>, <a class="el" href="binary__trie_8hpp_source.html#l00059">kth_min()</a>.</p>
+
+</div>
+</div>
+<a id="a37e00fd6bb708acd5027fe333c3bcc0e" name="a37e00fd6bb708acd5027fe333c3bcc0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37e00fd6bb708acd5027fe333c3bcc0e">&#9670;&#160;</a></span>le()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int Log = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::le </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00112">112</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="binary__trie_8hpp_source.html#l00078">count_lt()</a>, <a class="el" href="binary__trie_8hpp_source.html#l00059">kth_min()</a>.</p>
+
+</div>
+</div>
+<a id="adcfa96a845fdc58ee1e2faf787c393dd" name="adcfa96a845fdc58ee1e2faf787c393dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcfa96a845fdc58ee1e2faf787c393dd">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int Log = 32&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::size </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -372,104 +625,7 @@ template&lt;typename T = uint32_t, int Log = 32&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>最小値を返す </p>
-
-<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00031">31</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a id="a2580a67854d4e8fe057c0e2bfcd173bc" name="a2580a67854d4e8fe057c0e2bfcd173bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2580a67854d4e8fe057c0e2bfcd173bc">&#9670;&#160;</a></span>kth_min()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T = uint32_t, int Log = 32&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; T, Log &gt;::kth_min </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>k</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>k(0-indexed) 番目に小さい要素を返す </p>
-
-<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
-
-<p class="reference">参照先 <a class="el" href="binary__trie_8hpp_source.html#l00009">size()</a>.</p>
-
-</div>
-</div>
-<a id="a89a91b195e0f2f46ecf75b0e40745189" name="a89a91b195e0f2f46ecf75b0e40745189"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89a91b195e0f2f46ecf75b0e40745189">&#9670;&#160;</a></span>lower_bound()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T = uint32_t, int Log = 32&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; T, Log &gt;::lower_bound </td>
-          <td>(</td>
-          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>x 以上の最小の要素が何番目に小さいかを返す </p>
-
-<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00040">40</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a id="a8414d307e624d792b9e7cf1d498e499d" name="a8414d307e624d792b9e7cf1d498e499d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8414d307e624d792b9e7cf1d498e499d">&#9670;&#160;</a></span>count()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T = uint32_t, int Log = 32&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; T, Log &gt;::count </td>
-          <td>(</td>
-          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>x がいくつ含まれているかを返す </p>
-
-<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00043">43</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00117">117</a> 行目に定義があります。</p>
 
 </div>
 </div>

@@ -13,6 +13,7 @@ var dir_12552d7fa429bf94a2e32e5cf39f7e69 =
     [ "lowlink.hpp", "lowlink_8hpp.html", "lowlink_8hpp" ],
     [ "namori.hpp", "namori_8hpp.html", "namori_8hpp" ],
     [ "offline_dynamic_connectivity.hpp", "offline__dynamic__connectivity_8hpp.html", "offline__dynamic__connectivity_8hpp" ],
+    [ "pathcover_dag.hpp", "pathcover__dag_8hpp.html", "pathcover__dag_8hpp" ],
     [ "scc.hpp", "scc_8hpp.html", "scc_8hpp" ],
     [ "topological_sort.hpp", "topological__sort_8hpp.html", "topological__sort_8hpp" ],
     [ "two_sat.hpp", "two__sat_8hpp.html", "two__sat_8hpp" ]

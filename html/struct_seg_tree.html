@@ -105,6 +105,7 @@ $(function(){initNavTree('struct_seg_tree.html',''); initResizable(true); });
   <div class="summary">
 <a href="#pub-types">公開型</a> &#124;
 <a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
 <a href="struct_seg_tree-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle"><div class="title">SegTree&lt; Monoid &gt; 構造体テンプレート</div></div>
 </div><!--header-->
@@ -113,12 +114,14 @@ $(function(){initNavTree('struct_seg_tree.html',''); initResizable(true); });
 <p>セグメント木  
  <a href="#details">[詳解]</a></p>
 
-<p><code>#include &quot;<a class="el" href="segtree_8hpp_source.html">segtree.hpp</a>&quot;</code></p>
+<p><code>#include &quot;<a class="el" href="data__structure_2segtree_8hpp_source.html">segtree.hpp</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 公開型</h2></td></tr>
 <tr class="memitem:aac5a3f0410edaa464604856c1a182460" id="r_aac5a3f0410edaa464604856c1a182460"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac5a3f0410edaa464604856c1a182460">Type</a> = typename Monoid::Type</td></tr>
 <tr class="separator:aac5a3f0410edaa464604856c1a182460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2acbe1764149071c5908d5badac55396" id="r_a2acbe1764149071c5908d5badac55396"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2acbe1764149071c5908d5badac55396">T</a> = hoge</td></tr>
+<tr class="separator:a2acbe1764149071c5908d5badac55396"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
@@ -150,12 +153,27 @@ $(function(){initNavTree('struct_seg_tree.html',''); initResizable(true); });
 <tr class="memitem:a5df8a514cb63bc8845fa4077e183317f" id="r_a5df8a514cb63bc8845fa4077e183317f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5df8a514cb63bc8845fa4077e183317f">size</a> ()</td></tr>
 <tr class="memdesc:a5df8a514cb63bc8845fa4077e183317f"><td class="mdescLeft">&#160;</td><td class="mdescRight">配列のサイズを返す  <br /></td></tr>
 <tr class="separator:a5df8a514cb63bc8845fa4077e183317f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4e7f7d5633af122b8c5a9e77921aa64" id="r_ac4e7f7d5633af122b8c5a9e77921aa64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a2acbe1764149071c5908d5badac55396">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4e7f7d5633af122b8c5a9e77921aa64">op</a> (<a class="el" href="#a2acbe1764149071c5908d5badac55396">T</a> a, <a class="el" href="#a2acbe1764149071c5908d5badac55396">T</a> b)</td></tr>
+<tr class="separator:ac4e7f7d5633af122b8c5a9e77921aa64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67ed41ce9f54eda7c2f3523ee19966d0" id="r_a67ed41ce9f54eda7c2f3523ee19966d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a2acbe1764149071c5908d5badac55396">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67ed41ce9f54eda7c2f3523ee19966d0">id</a> ()</td></tr>
+<tr class="separator:a67ed41ce9f54eda7c2f3523ee19966d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf1bec279e7ef62b88a4b734cd34051d" id="r_acf1bec279e7ef62b88a4b734cd34051d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf1bec279e7ef62b88a4b734cd34051d">SegTree</a> (int n)</td></tr>
+<tr class="separator:acf1bec279e7ef62b88a4b734cd34051d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc6ad821bbde4df199d8299bcb9fa553" id="r_afc6ad821bbde4df199d8299bcb9fa553"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc6ad821bbde4df199d8299bcb9fa553">set</a> (int i, int x)</td></tr>
+<tr class="separator:afc6ad821bbde4df199d8299bcb9fa553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d1c8ae216df0c1d212a6ad01cf1f83e" id="r_a9d1c8ae216df0c1d212a6ad01cf1f83e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a2acbe1764149071c5908d5badac55396">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d1c8ae216df0c1d212a6ad01cf1f83e">fold</a> (int l, int r)</td></tr>
+<tr class="separator:a9d1c8ae216df0c1d212a6ad01cf1f83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:ae0237568a4bed9ae42e744a39b8d90ee" id="r_ae0237568a4bed9ae42e744a39b8d90ee"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="#a2acbe1764149071c5908d5badac55396">T</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0237568a4bed9ae42e744a39b8d90ee">dat</a></td></tr>
+<tr class="separator:ae0237568a4bed9ae42e744a39b8d90ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Monoid&gt;<br />
 struct SegTree&lt; Monoid &gt;</div><p>セグメント木 </p>
 
-<p class="definition"> <a class="el" href="segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="segtree_8hpp_source.html#l00006">6</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="data__structure_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="data__structure_2segtree_8hpp_source.html#l00006">6</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">型定義メンバ詳解</h2>
 <a id="aac5a3f0410edaa464604856c1a182460" name="aac5a3f0410edaa464604856c1a182460"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac5a3f0410edaa464604856c1a182460">&#9670;&#160;</a></span>Type</h2>
@@ -171,13 +189,31 @@ template&lt;typename Monoid&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="segtree_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="data__structure_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="data__structure_2segtree_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2acbe1764149071c5908d5badac55396" name="a2acbe1764149071c5908d5badac55396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2acbe1764149071c5908d5badac55396">&#9670;&#160;</a></span>T</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="struct_seg_tree.html">SegTree</a>&lt; Monoid &gt;::T = hoge</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="misc_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="misc_2segtree_8hpp_source.html#l00002">2</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <h2 class="groupheader">構築子と解体子</h2>
 <a id="a791e801ba68339909a0be6b1b21af32a" name="a791e801ba68339909a0be6b1b21af32a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a791e801ba68339909a0be6b1b21af32a">&#9670;&#160;</a></span>SegTree() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a791e801ba68339909a0be6b1b21af32a">&#9670;&#160;</a></span>SegTree() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,7 +240,7 @@ template&lt;typename Monoid&gt; </div>
 </div>
 </div>
 <a id="acf1bec279e7ef62b88a4b734cd34051d" name="acf1bec279e7ef62b88a4b734cd34051d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf1bec279e7ef62b88a4b734cd34051d">&#9670;&#160;</a></span>SegTree() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acf1bec279e7ef62b88a4b734cd34051d">&#9670;&#160;</a></span>SegTree() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,12 +266,12 @@ template&lt;typename Monoid&gt; </div>
 
 <p>要素数 n のセグ木を構築する </p>
 
-<p class="definition"> <a class="el" href="segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="segtree_8hpp_source.html#l00011">11</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="data__structure_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="data__structure_2segtree_8hpp_source.html#l00011">11</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <a id="a4b1322c2c40ed18503529433425955fe" name="a4b1322c2c40ed18503529433425955fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b1322c2c40ed18503529433425955fe">&#9670;&#160;</a></span>SegTree() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b1322c2c40ed18503529433425955fe">&#9670;&#160;</a></span>SegTree() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,13 +298,42 @@ template&lt;typename Monoid&gt; </div>
 <p>配列 v からセグ木を構築する </p>
 <dl class="section note"><dt>覚え書き</dt><dd>O(N) </dd></dl>
 
-<p class="definition"> <a class="el" href="segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="segtree_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="data__structure_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="data__structure_2segtree_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acf1bec279e7ef62b88a4b734cd34051d" name="acf1bec279e7ef62b88a4b734cd34051d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf1bec279e7ef62b88a4b734cd34051d">&#9670;&#160;</a></span>SegTree() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_seg_tree.html">SegTree</a>&lt; Monoid &gt;<a class="el" href="struct_seg_tree.html">::SegTree</a> </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="misc_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="misc_2segtree_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
 <a id="abffaeb2310c009d4c80189a710a0254d" name="abffaeb2310c009d4c80189a710a0254d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abffaeb2310c009d4c80189a710a0254d">&#9670;&#160;</a></span>set()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abffaeb2310c009d4c80189a710a0254d">&#9670;&#160;</a></span>set() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -299,12 +364,12 @@ template&lt;typename Monoid&gt; </div>
 <p>i 番目の要素を x に変更する </p>
 <dl class="section note"><dt>覚え書き</dt><dd>O(log(N)) </dd></dl>
 
-<p class="definition"> <a class="el" href="segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="segtree_8hpp_source.html#l00029">29</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="data__structure_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="data__structure_2segtree_8hpp_source.html#l00029">29</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <a id="ab9725a4dc2152446887d87195cc88c4d" name="ab9725a4dc2152446887d87195cc88c4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9725a4dc2152446887d87195cc88c4d">&#9670;&#160;</a></span>fold()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9725a4dc2152446887d87195cc88c4d">&#9670;&#160;</a></span>fold() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -335,7 +400,7 @@ template&lt;typename Monoid&gt; </div>
 <p>区間 [l, r) のモノイド積を返す </p>
 <dl class="section note"><dt>覚え書き</dt><dd>O(log(N)) </dd></dl>
 
-<p class="definition"> <a class="el" href="segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="segtree_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="data__structure_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="data__structure_2segtree_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -374,7 +439,7 @@ template&lt;typename F&gt; </div>
 <dl class="section attention"><dt>注意</dt><dd><code>f(Monoid::id())=true</code> が成り立つ必要がある </dd></dl>
 <dl class="section note"><dt>覚え書き</dt><dd>O(log(N)) </dd></dl>
 
-<p class="definition"> <a class="el" href="segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="segtree_8hpp_source.html#l00052">52</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="data__structure_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="data__structure_2segtree_8hpp_source.html#l00052">52</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -413,7 +478,7 @@ template&lt;typename F&gt; </div>
 <dl class="section attention"><dt>注意</dt><dd><code>f(Monoid::id())=true</code> が成り立つ必要がある </dd></dl>
 <dl class="section note"><dt>覚え書き</dt><dd>O(log(N)) </dd></dl>
 
-<p class="definition"> <a class="el" href="segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="segtree_8hpp_source.html#l00088">88</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="data__structure_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="data__structure_2segtree_8hpp_source.html#l00088">88</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -445,7 +510,7 @@ template&lt;typename Monoid&gt; </div>
 <p>i 番目の要素を返す </p>
 <dl class="section note"><dt>覚え書き</dt><dd>O(1) </dd></dl>
 
-<p class="definition"> <a class="el" href="segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="segtree_8hpp_source.html#l00122">122</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="data__structure_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="data__structure_2segtree_8hpp_source.html#l00122">122</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -476,12 +541,160 @@ template&lt;typename Monoid&gt; </div>
 
 <p>配列のサイズを返す </p>
 
-<p class="definition"> <a class="el" href="segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="segtree_8hpp_source.html#l00125">125</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="data__structure_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="data__structure_2segtree_8hpp_source.html#l00125">125</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac4e7f7d5633af122b8c5a9e77921aa64" name="ac4e7f7d5633af122b8c5a9e77921aa64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4e7f7d5633af122b8c5a9e77921aa64">&#9670;&#160;</a></span>op()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a2acbe1764149071c5908d5badac55396">T</a> <a class="el" href="struct_seg_tree.html">SegTree</a>&lt; Monoid &gt;::op </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a2acbe1764149071c5908d5badac55396">T</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a2acbe1764149071c5908d5badac55396">T</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="misc_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="misc_2segtree_8hpp_source.html#l00003">3</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a67ed41ce9f54eda7c2f3523ee19966d0" name="a67ed41ce9f54eda7c2f3523ee19966d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67ed41ce9f54eda7c2f3523ee19966d0">&#9670;&#160;</a></span>id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a2acbe1764149071c5908d5badac55396">T</a> <a class="el" href="struct_seg_tree.html">SegTree</a>&lt; Monoid &gt;::id </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="misc_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="misc_2segtree_8hpp_source.html#l00006">6</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afc6ad821bbde4df199d8299bcb9fa553" name="afc6ad821bbde4df199d8299bcb9fa553"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc6ad821bbde4df199d8299bcb9fa553">&#9670;&#160;</a></span>set() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_seg_tree.html">SegTree</a>&lt; Monoid &gt;::set </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="misc_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="misc_2segtree_8hpp_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9d1c8ae216df0c1d212a6ad01cf1f83e" name="a9d1c8ae216df0c1d212a6ad01cf1f83e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d1c8ae216df0c1d212a6ad01cf1f83e">&#9670;&#160;</a></span>fold() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a2acbe1764149071c5908d5badac55396">T</a> <a class="el" href="struct_seg_tree.html">SegTree</a>&lt; Monoid &gt;::fold </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>l</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>r</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="misc_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="misc_2segtree_8hpp_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ae0237568a4bed9ae42e744a39b8d90ee" name="ae0237568a4bed9ae42e744a39b8d90ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0237568a4bed9ae42e744a39b8d90ee">&#9670;&#160;</a></span>dat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="#a2acbe1764149071c5908d5badac55396">T</a>&gt; <a class="el" href="struct_seg_tree.html">SegTree</a>&lt; Monoid &gt;::dat</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="misc_2segtree_8hpp_source.html">segtree.hpp</a> の <a class="el" href="misc_2segtree_8hpp_source.html#l00011">11</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <hr/>この構造体詳解は次のファイルから抽出されました:<ul>
-<li>data_structure/<a class="el" href="segtree_8hpp_source.html">segtree.hpp</a></li>
+<li>data_structure/<a class="el" href="data__structure_2segtree_8hpp_source.html">segtree.hpp</a></li>
+<li>misc/<a class="el" href="misc_2segtree_8hpp_source.html">segtree.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

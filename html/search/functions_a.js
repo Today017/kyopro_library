@@ -2,7 +2,7 @@ var searchData=
 [
   ['kth_0',['kth',['../struct_merge_sort_tree.html#aac1f911fbf3ef224cfa6c1ef79f59973',1,'MergeSortTree']]],
   ['kth_5fmax_1',['kth_max',['../struct_sorted_multi_tree.html#a73f728a83e21417917a9d35185322dcb',1,'SortedMultiTree::kth_max()'],['../struct_sorted_tree.html#a839cafb83a5b205c87ee456ccdf768f3',1,'SortedTree::kth_max()']]],
-  ['kth_5fmin_2',['kth_min',['../struct_binary_trie.html#a2580a67854d4e8fe057c0e2bfcd173bc',1,'BinaryTrie::kth_min()'],['../struct_sorted_multi_tree.html#a2925d903b778ceea8042accb4b318f4a',1,'SortedMultiTree::kth_min()'],['../struct_sorted_tree.html#a96cd2a474df338aa89296a62ea09c025',1,'SortedTree::kth_min()']]],
+  ['kth_5fmin_2',['kth_min',['../struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966',1,'BinaryTrie::kth_min()'],['../struct_sorted_multi_tree.html#a2925d903b778ceea8042accb4b318f4a',1,'SortedMultiTree::kth_min()'],['../struct_sorted_tree.html#a96cd2a474df338aa89296a62ea09c025',1,'SortedTree::kth_min()']]],
   ['kthlinear_3',['KthLinear',['../namespace_fps.html#a3fc3c19b3347da66b5c22db1eb76da70',1,'Fps']]],
   ['kthroot_4',['KthRoot',['../kth__root_8hpp.html#a5b404451d30c6da29b779e653a4c9823',1,'kth_root.hpp']]]
 ];

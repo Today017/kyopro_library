@@ -1,7 +1,10 @@
 var zeta__mobius_8hpp =
 [
-    [ "ZetaMobius::SubsetZeta", "namespace_zeta_mobius.html#a96b8a2e447ea6c66bf33a8a0e39e4fcc", null ],
-    [ "ZetaMobius::SupersetZeta", "namespace_zeta_mobius.html#a482f4f29cbbd38287bd6dfa4fa3752bc", null ],
-    [ "ZetaMobius::SubsetMobius", "namespace_zeta_mobius.html#acdbe2642fe5208a44eb861ad2e0666bf", null ],
-    [ "ZetaMobius::SupersetMobius", "namespace_zeta_mobius.html#a2411a0dca9b8ae8e8a4ce4e36683c98c", null ]
+    [ "ZetaMobius::SubsetZeta", "namespace_zeta_mobius.html#a66a61fa09104ecb369608a08568a49c1", null ],
+    [ "ZetaMobius::SupersetZeta", "namespace_zeta_mobius.html#ae083f266b0f2a42968110e4c02245517", null ],
+    [ "ZetaMobius::SubsetMobius", "namespace_zeta_mobius.html#ac43347044f995d23dff11802108237e4", null ],
+    [ "ZetaMobius::SupersetMobius", "namespace_zeta_mobius.html#a3f00087cb849bfac06aa0f2977a2b9c8", null ],
+    [ "ConvolutionBit::OrConvolution", "namespace_convolution_bit.html#a272c1b453abd54542e995ce0ab1092a7", null ],
+    [ "ConvolutionBit::AndConvolution", "namespace_convolution_bit.html#a66395053fe1694eba18f21b2cc40d5b2", null ],
+    [ "ConvolutionBit::SubsetConvolution", "namespace_convolution_bit.html#a4d73147f75221ace066cc9e80850c7e8", null ]
 ];

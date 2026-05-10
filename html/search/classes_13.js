@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xor_0',['Xor',['../struct_abel_1_1_xor.html',1,'Abel']]]
+  ['waveletmatrix_0',['WaveletMatrix',['../struct_wavelet_matrix.html',1,'']]]
 ];

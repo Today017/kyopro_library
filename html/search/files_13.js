@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['warshall_5ffloyd_2ehpp_0',['warshall_floyd.hpp',['../warshall__floyd_8hpp.html',1,'']]],
-  ['wavelet_5fmatrix_2ehpp_1',['wavelet_matrix.hpp',['../wavelet__matrix_8hpp.html',1,'']]]
+  ['util_2ehpp_0',['util.hpp',['../string_2util_8hpp.html',1,'(大域名前空間)'],['../util_8hpp.html',1,'(大域名前空間)']]]
 ];

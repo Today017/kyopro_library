@@ -10,8 +10,10 @@ var namespace_range_query =
     [ "ApplyUpdate_GetSum", "struct_range_query_1_1_apply_update___get_sum.html", "struct_range_query_1_1_apply_update___get_sum" ],
     [ "Max", "struct_range_query_1_1_max.html", "struct_range_query_1_1_max" ],
     [ "MaxDynamic", "struct_range_query_1_1_max_dynamic.html", "struct_range_query_1_1_max_dynamic" ],
+    [ "MaxStatic", "struct_range_query_1_1_max_static.html", "struct_range_query_1_1_max_static" ],
     [ "Min", "struct_range_query_1_1_min.html", "struct_range_query_1_1_min" ],
     [ "MinDynamic", "struct_range_query_1_1_min_dynamic.html", "struct_range_query_1_1_min_dynamic" ],
+    [ "MinStatic", "struct_range_query_1_1_min_static.html", "struct_range_query_1_1_min_static" ],
     [ "Sum", "struct_range_query_1_1_sum.html", "struct_range_query_1_1_sum" ],
     [ "SumDynamic", "struct_range_query_1_1_sum_dynamic.html", "struct_range_query_1_1_sum_dynamic" ]
 ];

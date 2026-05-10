@@ -25,11 +25,8 @@ var annotated_dup =
       [ "Max", "struct_monoid_1_1_max.html", "struct_monoid_1_1_max" ],
       [ "Min", "struct_monoid_1_1_min.html", "struct_monoid_1_1_min" ],
       [ "Sum", "struct_monoid_1_1_sum.html", "struct_monoid_1_1_sum" ],
-      [ "SumPair", "struct_monoid_1_1_sum_pair.html", "struct_monoid_1_1_sum_pair" ]
-    ] ],
-    [ "Operator", "namespace_operator.html", [
-      [ "Add", "struct_operator_1_1_add.html", "struct_operator_1_1_add" ],
-      [ "Update", "struct_operator_1_1_update.html", "struct_operator_1_1_update" ]
+      [ "SumPair", "struct_monoid_1_1_sum_pair.html", "struct_monoid_1_1_sum_pair" ],
+      [ "Update", "struct_monoid_1_1_update.html", "struct_monoid_1_1_update" ]
     ] ],
     [ "RangeQuery", "namespace_range_query.html", [
       [ "ApplyAdd", "struct_range_query_1_1_apply_add.html", "struct_range_query_1_1_apply_add" ],
@@ -42,10 +39,17 @@ var annotated_dup =
       [ "ApplyUpdate_GetSum", "struct_range_query_1_1_apply_update___get_sum.html", "struct_range_query_1_1_apply_update___get_sum" ],
       [ "Max", "struct_range_query_1_1_max.html", "struct_range_query_1_1_max" ],
       [ "MaxDynamic", "struct_range_query_1_1_max_dynamic.html", "struct_range_query_1_1_max_dynamic" ],
+      [ "MaxStatic", "struct_range_query_1_1_max_static.html", "struct_range_query_1_1_max_static" ],
       [ "Min", "struct_range_query_1_1_min.html", "struct_range_query_1_1_min" ],
       [ "MinDynamic", "struct_range_query_1_1_min_dynamic.html", "struct_range_query_1_1_min_dynamic" ],
+      [ "MinStatic", "struct_range_query_1_1_min_static.html", "struct_range_query_1_1_min_static" ],
       [ "Sum", "struct_range_query_1_1_sum.html", "struct_range_query_1_1_sum" ],
       [ "SumDynamic", "struct_range_query_1_1_sum_dynamic.html", "struct_range_query_1_1_sum_dynamic" ]
+    ] ],
+    [ "Ring", "namespace_ring.html", [
+      [ "MaxPlus", "struct_ring_1_1_max_plus.html", "struct_ring_1_1_max_plus" ],
+      [ "MinPlus", "struct_ring_1_1_min_plus.html", "struct_ring_1_1_min_plus" ],
+      [ "PlusMul", "struct_ring_1_1_plus_mul.html", "struct_ring_1_1_plus_mul" ]
     ] ],
     [ "AhoCorasick", "struct_aho_corasick.html", "struct_aho_corasick" ],
     [ "AngelBeats", "struct_angel_beats.html", "struct_angel_beats" ],
@@ -59,6 +63,7 @@ var annotated_dup =
     [ "Comb", "struct_comb.html", "struct_comb" ],
     [ "CombinationLucas", "struct_combination_lucas.html", "struct_combination_lucas" ],
     [ "Cumsum2D", "struct_cumsum2_d.html", "struct_cumsum2_d" ],
+    [ "Deque", "struct_deque.html", "struct_deque" ],
     [ "Doubling", "struct_doubling.html", "struct_doubling" ],
     [ "DoublingFold", "struct_doubling_fold.html", "struct_doubling_fold" ],
     [ "DSU", "struct_d_s_u.html", "struct_d_s_u" ],
@@ -67,7 +72,7 @@ var annotated_dup =
     [ "DsuPotentialized", "struct_dsu_potentialized.html", "struct_dsu_potentialized" ],
     [ "DsuRollback", "struct_dsu_rollback.html", "struct_dsu_rollback" ],
     [ "DynamicConnectivity", "struct_dynamic_connectivity.html", "struct_dynamic_connectivity" ],
-    [ "ErasablePQ", "struct_erasable_p_q.html", "struct_erasable_p_q" ],
+    [ "ErasableHeap", "struct_erasable_heap.html", "struct_erasable_heap" ],
     [ "EulerTourInfo", "struct_euler_tour_info.html", "struct_euler_tour_info" ],
     [ "Factors", "struct_factors.html", "struct_factors" ],
     [ "FenwickTree", "struct_fenwick_tree.html", "struct_fenwick_tree" ],
@@ -92,7 +97,10 @@ var annotated_dup =
     [ "Namori", "struct_namori.html", "struct_namori" ],
     [ "NTT", "class_n_t_t.html", "class_n_t_t" ],
     [ "OffsetVector", "struct_offset_vector.html", "struct_offset_vector" ],
+    [ "Queue", "struct_queue.html", "struct_queue" ],
+    [ "QueueFoldable", "struct_queue_foldable.html", "struct_queue_foldable" ],
     [ "RangeSet", "struct_range_set.html", "struct_range_set" ],
+    [ "RMQ", "struct_r_m_q.html", "struct_r_m_q" ],
     [ "RollingHash", "struct_rolling_hash.html", "struct_rolling_hash" ],
     [ "RollingHash2D", "struct_rolling_hash2_d.html", "struct_rolling_hash2_d" ],
     [ "SccInfo", "struct_scc_info.html", "struct_scc_info" ],
@@ -102,6 +110,7 @@ var annotated_dup =
     [ "SegTreeDynamic", "struct_seg_tree_dynamic.html", "struct_seg_tree_dynamic" ],
     [ "SegTreeLazy", "struct_seg_tree_lazy.html", "struct_seg_tree_lazy" ],
     [ "Set", "struct_set.html", "struct_set" ],
+    [ "SlideMin", "struct_slide_min.html", "struct_slide_min" ],
     [ "SortedMultiTree", "struct_sorted_multi_tree.html", "struct_sorted_multi_tree" ],
     [ "SortedTree", "struct_sorted_tree.html", "struct_sorted_tree" ],
     [ "SparseTable", "struct_sparse_table.html", "struct_sparse_table" ],

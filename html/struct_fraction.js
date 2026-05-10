@@ -1,6 +1,5 @@
 var struct_fraction =
 [
-    [ "Fraction", "struct_fraction.html#a55ebf786ffa0532ac299c78c0511e8f9", null ],
     [ "Fraction", "struct_fraction.html#a42f7ffc10b3eb9cb2185656d6ce63162", null ],
     [ "Fraction", "struct_fraction.html#ae6cdaacb37d8687ef6e250b509051af7", null ],
     [ "operator+", "struct_fraction.html#a67ab02dd8a29c567f3ce1e19e4aeb9e5", null ],

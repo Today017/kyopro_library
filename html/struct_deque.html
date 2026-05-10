@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: Deque&lt; T &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('struct_deque.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="struct_deque-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">Deque&lt; T &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="struct_deque.html" title="Deque">Deque</a>  
+ <a href="#details">[詳解]</a></p>
+
+<p><code>#include &quot;<a class="el" href="deque_8hpp_source.html">deque.hpp</a>&quot;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a96336a801b016888bc2e31f97a6e79aa" id="r_a96336a801b016888bc2e31f97a6e79aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96336a801b016888bc2e31f97a6e79aa">Deque</a> (int cap=2)</td></tr>
+<tr class="separator:a96336a801b016888bc2e31f97a6e79aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd058389d43f548ba4fb8c46ca51ea3" id="r_a1fd058389d43f548ba4fb8c46ca51ea3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fd058389d43f548ba4fb8c46ca51ea3">extend</a> ()</td></tr>
+<tr class="separator:a1fd058389d43f548ba4fb8c46ca51ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f2a31003ec0362903266f14bafcdcff" id="r_a7f2a31003ec0362903266f14bafcdcff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f2a31003ec0362903266f14bafcdcff">push_back</a> (const T &amp;x)</td></tr>
+<tr class="separator:a7f2a31003ec0362903266f14bafcdcff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42a1363453cd88437b67051a3a777ae9" id="r_a42a1363453cd88437b67051a3a777ae9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42a1363453cd88437b67051a3a777ae9">push_front</a> (const T &amp;x)</td></tr>
+<tr class="separator:a42a1363453cd88437b67051a3a777ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e1a1df410dce314324203a54844f51e" id="r_a0e1a1df410dce314324203a54844f51e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e1a1df410dce314324203a54844f51e">pop_front</a> ()</td></tr>
+<tr class="separator:a0e1a1df410dce314324203a54844f51e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98c69f46add39db7e5343acff654a50e" id="r_a98c69f46add39db7e5343acff654a50e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98c69f46add39db7e5343acff654a50e">pop_back</a> ()</td></tr>
+<tr class="separator:a98c69f46add39db7e5343acff654a50e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a510c16403e7ead5c438d70ad3a49bfe3" id="r_a510c16403e7ead5c438d70ad3a49bfe3"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a510c16403e7ead5c438d70ad3a49bfe3">operator[]</a> (int i)</td></tr>
+<tr class="separator:a510c16403e7ead5c438d70ad3a49bfe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c97799c1f64f3a75a84de9850a3bf9e" id="r_a9c97799c1f64f3a75a84de9850a3bf9e"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c97799c1f64f3a75a84de9850a3bf9e">operator[]</a> (int i) const</td></tr>
+<tr class="separator:a9c97799c1f64f3a75a84de9850a3bf9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da300befcaf596fa2af79b6c12ca853" id="r_a5da300befcaf596fa2af79b6c12ca853"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5da300befcaf596fa2af79b6c12ca853">front</a> ()</td></tr>
+<tr class="separator:a5da300befcaf596fa2af79b6c12ca853"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a816fabec7f0877388934794ca6751e75" id="r_a816fabec7f0877388934794ca6751e75"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a816fabec7f0877388934794ca6751e75">back</a> ()</td></tr>
+<tr class="separator:a816fabec7f0877388934794ca6751e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9027d018be5719495a216f28b00801e1" id="r_a9027d018be5719495a216f28b00801e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9027d018be5719495a216f28b00801e1">empty</a> () const</td></tr>
+<tr class="separator:a9027d018be5719495a216f28b00801e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f739d419d6d4d89d6eec376a78551f" id="r_a00f739d419d6d4d89d6eec376a78551f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00f739d419d6d4d89d6eec376a78551f">size</a> () const</td></tr>
+<tr class="separator:a00f739d419d6d4d89d6eec376a78551f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+struct Deque&lt; T &gt;</div><p><a class="el" href="struct_deque.html" title="Deque">Deque</a> </p>
+
+<p class="definition"> <a class="el" href="deque_8hpp_source.html">deque.hpp</a> の <a class="el" href="deque_8hpp_source.html#l00005">5</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a96336a801b016888bc2e31f97a6e79aa" name="a96336a801b016888bc2e31f97a6e79aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96336a801b016888bc2e31f97a6e79aa">&#9670;&#160;</a></span>Deque()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_deque.html">Deque</a>&lt; T &gt;<a class="el" href="struct_deque.html">::Deque</a> </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cap</em></span><span class="paramdefsep"> = </span><span class="paramdefval">2</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="deque_8hpp_source.html">deque.hpp</a> の <a class="el" href="deque_8hpp_source.html#l00006">6</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a1fd058389d43f548ba4fb8c46ca51ea3" name="a1fd058389d43f548ba4fb8c46ca51ea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fd058389d43f548ba4fb8c46ca51ea3">&#9670;&#160;</a></span>extend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_deque.html">Deque</a>&lt; T &gt;::extend </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="deque_8hpp_source.html">deque.hpp</a> の <a class="el" href="deque_8hpp_source.html#l00008">8</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7f2a31003ec0362903266f14bafcdcff" name="a7f2a31003ec0362903266f14bafcdcff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f2a31003ec0362903266f14bafcdcff">&#9670;&#160;</a></span>push_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_deque.html">Deque</a>&lt; T &gt;::push_back </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="deque_8hpp_source.html">deque.hpp</a> の <a class="el" href="deque_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="deque_8hpp_source.html#l00008">extend()</a>.</p>
+
+</div>
+</div>
+<a id="a42a1363453cd88437b67051a3a777ae9" name="a42a1363453cd88437b67051a3a777ae9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42a1363453cd88437b67051a3a777ae9">&#9670;&#160;</a></span>push_front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_deque.html">Deque</a>&lt; T &gt;::push_front </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="deque_8hpp_source.html">deque.hpp</a> の <a class="el" href="deque_8hpp_source.html#l00024">24</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="deque_8hpp_source.html#l00008">extend()</a>.</p>
+
+</div>
+</div>
+<a id="a0e1a1df410dce314324203a54844f51e" name="a0e1a1df410dce314324203a54844f51e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e1a1df410dce314324203a54844f51e">&#9670;&#160;</a></span>pop_front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_deque.html">Deque</a>&lt; T &gt;::pop_front </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="deque_8hpp_source.html">deque.hpp</a> の <a class="el" href="deque_8hpp_source.html#l00031">31</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="deque_8hpp_source.html#l00058">empty()</a>.</p>
+
+</div>
+</div>
+<a id="a98c69f46add39db7e5343acff654a50e" name="a98c69f46add39db7e5343acff654a50e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98c69f46add39db7e5343acff654a50e">&#9670;&#160;</a></span>pop_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_deque.html">Deque</a>&lt; T &gt;::pop_back </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="deque_8hpp_source.html">deque.hpp</a> の <a class="el" href="deque_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="deque_8hpp_source.html#l00058">empty()</a>.</p>
+
+</div>
+</div>
+<a id="a510c16403e7ead5c438d70ad3a49bfe3" name="a510c16403e7ead5c438d70ad3a49bfe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a510c16403e7ead5c438d70ad3a49bfe3">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="struct_deque.html">Deque</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="deque_8hpp_source.html">deque.hpp</a> の <a class="el" href="deque_8hpp_source.html#l00043">43</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9c97799c1f64f3a75a84de9850a3bf9e" name="a9c97799c1f64f3a75a84de9850a3bf9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c97799c1f64f3a75a84de9850a3bf9e">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T &amp; <a class="el" href="struct_deque.html">Deque</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="deque_8hpp_source.html">deque.hpp</a> の <a class="el" href="deque_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5da300befcaf596fa2af79b6c12ca853" name="a5da300befcaf596fa2af79b6c12ca853"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5da300befcaf596fa2af79b6c12ca853">&#9670;&#160;</a></span>front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="struct_deque.html">Deque</a>&lt; T &gt;::front </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="deque_8hpp_source.html">deque.hpp</a> の <a class="el" href="deque_8hpp_source.html#l00055">55</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a816fabec7f0877388934794ca6751e75" name="a816fabec7f0877388934794ca6751e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a816fabec7f0877388934794ca6751e75">&#9670;&#160;</a></span>back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="struct_deque.html">Deque</a>&lt; T &gt;::back </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="deque_8hpp_source.html">deque.hpp</a> の <a class="el" href="deque_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9027d018be5719495a216f28b00801e1" name="a9027d018be5719495a216f28b00801e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9027d018be5719495a216f28b00801e1">&#9670;&#160;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="struct_deque.html">Deque</a>&lt; T &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="deque_8hpp_source.html">deque.hpp</a> の <a class="el" href="deque_8hpp_source.html#l00058">58</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a00f739d419d6d4d89d6eec376a78551f" name="a00f739d419d6d4d89d6eec376a78551f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f739d419d6d4d89d6eec376a78551f">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_deque.html">Deque</a>&lt; T &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="deque_8hpp_source.html">deque.hpp</a> の <a class="el" href="deque_8hpp_source.html#l00059">59</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>data_structure/<a class="el" href="deque_8hpp_source.html">deque.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_deque.html">Deque</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

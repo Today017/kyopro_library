@@ -113,31 +113,31 @@ $(function(){initNavTree('matrix_8hpp.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:a1e820ec4e269e7cf0c6335efe8851469" id="r_a1e820ec4e269e7cf0c6335efe8851469"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a1e820ec4e269e7cf0c6335efe8851469"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a1e820ec4e269e7cf0c6335efe8851469">MatMul</a> (const vector&lt; vector&lt; T &gt; &gt; &amp;A, const vector&lt; vector&lt; T &gt; &gt; &amp;B)</td></tr>
-<tr class="separator:a1e820ec4e269e7cf0c6335efe8851469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67bc9347d04f3e91eaedc7b89a629712" id="r_a67bc9347d04f3e91eaedc7b89a629712"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a67bc9347d04f3e91eaedc7b89a629712"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a67bc9347d04f3e91eaedc7b89a629712">MatPow</a> (vector&lt; vector&lt; T &gt; &gt; A, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b)</td></tr>
-<tr class="separator:a67bc9347d04f3e91eaedc7b89a629712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a2befb20c6930bb9216d21cc01d2a88" id="r_a8a2befb20c6930bb9216d21cc01d2a88"><td class="memTemplParams" colspan="2">template&lt;typename Ring&gt; </td></tr>
+<tr class="memitem:a8a2befb20c6930bb9216d21cc01d2a88"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; vector&lt; typename Ring::Type &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8a2befb20c6930bb9216d21cc01d2a88">MatMul</a> (const vector&lt; vector&lt; typename Ring::Type &gt; &gt; &amp;A, const vector&lt; vector&lt; typename Ring::Type &gt; &gt; &amp;B)</td></tr>
+<tr class="separator:a8a2befb20c6930bb9216d21cc01d2a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7354db8b886deee08507a9110d4cd9e9" id="r_a7354db8b886deee08507a9110d4cd9e9"><td class="memTemplParams" colspan="2">template&lt;typename Ring&gt; </td></tr>
+<tr class="memitem:a7354db8b886deee08507a9110d4cd9e9"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; vector&lt; typename Ring::Type &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7354db8b886deee08507a9110d4cd9e9">MatPow</a> (vector&lt; vector&lt; typename Ring::Type &gt; &gt; A, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b)</td></tr>
+<tr class="separator:a7354db8b886deee08507a9110d4cd9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a1e820ec4e269e7cf0c6335efe8851469" name="a1e820ec4e269e7cf0c6335efe8851469"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e820ec4e269e7cf0c6335efe8851469">&#9670;&#160;</a></span>MatMul()</h2>
+<a id="a8a2befb20c6930bb9216d21cc01d2a88" name="a8a2befb20c6930bb9216d21cc01d2a88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a2befb20c6930bb9216d21cc01d2a88">&#9670;&#160;</a></span>MatMul()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename Ring&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; vector&lt; T &gt; &gt; MatMul </td>
+          <td class="memname">vector&lt; vector&lt; typename Ring::Type &gt; &gt; MatMul </td>
           <td>(</td>
-          <td class="paramtype">const vector&lt; vector&lt; T &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+          <td class="paramtype">const vector&lt; vector&lt; typename Ring::Type &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const vector&lt; vector&lt; T &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>B</em></span>&#160;)</td>
+          <td class="paramtype">const vector&lt; vector&lt; typename Ring::Type &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>B</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -146,18 +146,18 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
-<a id="a67bc9347d04f3e91eaedc7b89a629712" name="a67bc9347d04f3e91eaedc7b89a629712"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67bc9347d04f3e91eaedc7b89a629712">&#9670;&#160;</a></span>MatPow()</h2>
+<a id="a7354db8b886deee08507a9110d4cd9e9" name="a7354db8b886deee08507a9110d4cd9e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7354db8b886deee08507a9110d4cd9e9">&#9670;&#160;</a></span>MatPow()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename Ring&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; vector&lt; T &gt; &gt; MatPow </td>
+          <td class="memname">vector&lt; vector&lt; typename Ring::Type &gt; &gt; MatPow </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; vector&lt; T &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+          <td class="paramtype">vector&lt; vector&lt; typename Ring::Type &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -167,7 +167,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a> の <a class="el" href="matrix_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a> の <a class="el" href="matrix_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
 
 </div>
 </div>
