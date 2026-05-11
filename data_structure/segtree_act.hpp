@@ -24,7 +24,7 @@ struct SegTreeAct {
     }
 
     ///@brief k 番目の要素を取得する
-    Type operator[](int k) {
+    Type get(int k) {
         int i=1, l=0, r=n;
         while(i<n) {
             push(i);
@@ -35,6 +35,20 @@ struct SegTreeAct {
         }
         return dat[i];
     }
+
+    void set(int k, Type v) {
+        dat[k+n]=v;
+        int i=1, l=0, r=n;
+        while(i<n) {
+            push(i);
+            int m=(l+r)>>1;
+            i<<=1;
+            if(k<m) r=m;
+            else l=m, i|=1;
+        }
+    }
+
+    Type operator[](int k) { return get(k); }
 
     ///@brief 区間 [l, r) に x を作用させる
     void apply(int l, int r, Type x) {

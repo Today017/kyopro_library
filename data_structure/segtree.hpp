@@ -124,6 +124,8 @@ struct SegTree {
     ///@brief 配列のサイズを返す
     int size() { return n; }
 
+    Type get(int i) { return dat[i+n]; }
+
 private:
     int n;
     vector<Type> dat;

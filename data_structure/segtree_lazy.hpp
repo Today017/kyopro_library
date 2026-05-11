@@ -155,6 +155,7 @@ struct SegTreeLazy {
 
     int size() { return n; }
     MonoidType operator[](int i) { return fold(i,i+1); }
+    MonoidType get(int i) { return fold(i,i+1); }
 
 private:
     int n;
