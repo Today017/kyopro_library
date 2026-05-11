@@ -47,6 +47,7 @@ template<typename T>
 ostream& operator<<(ostream& os, priority_queue<T,vector<T>,greater<T>> a);
 template<typename T, auto N>
 ostream& operator<<(ostream& os, array<T,N> a);
+ostream& operator<<(ostream& os, basic_string<bool> a);
 ostream& operator<<(ostream& os, FenwickTree a);
 template<typename T>
 ostream& operator<<(ostream& os, FenwickTreeAbel<T> a);
@@ -232,6 +233,15 @@ ostream& operator<<(ostream& os, array<T,N> a) {
     for(int i=0; i<N; i++) {
         os<<a[i];
         if(i!=N-1) os<<",";
+    }
+    os<<"]";
+    return os;
+}
+ostream& operator<<(ostream& os, basic_string<bool> a) {
+    os<<"[";
+    for(int i=0; i<a.size(); i++) {
+        os<<(a[i]? "o": "x");
+        if(i+1!=a.size()) os<<",";
     }
     os<<"]";
     return os;
