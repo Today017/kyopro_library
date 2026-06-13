@@ -166,12 +166,17 @@ AhoCorasick&lt; char_size, margin &gt; の継承関係図</div>
 <tr class="inherit_header pub_types_struct_trie"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_struct_trie')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="struct_trie.html">Trie&lt; char_size+1, margin &gt;</a> に属する継承公開型</td></tr>
 <tr class="memitem:a2bcf5b3d7a5d69121c19a33fb6525ae2 inherit pub_types_struct_trie" id="r_a2bcf5b3d7a5d69121c19a33fb6525ae2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a2bcf5b3d7a5d69121c19a33fb6525ae2">Node</a></td></tr>
 <tr class="separator:a2bcf5b3d7a5d69121c19a33fb6525ae2 inherit pub_types_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_struct_trie"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_struct_trie')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="struct_trie.html">Trie&lt; char_size+1, margin &gt;</a> に属する継承公開変数類</td></tr>
+<tr class="memitem:a29ca204f239fed4837d2beb1dd26f4d1 inherit pub_attribs_struct_trie" id="r_a29ca204f239fed4837d2beb1dd26f4d1"><td class="memItemLeft" align="right" valign="top">vector&lt; Node &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#a29ca204f239fed4837d2beb1dd26f4d1">nodes</a></td></tr>
+<tr class="separator:a29ca204f239fed4837d2beb1dd26f4d1 inherit pub_attribs_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5cbac794d4e7d8f466a1f961b9b2bf2 inherit pub_attribs_struct_trie" id="r_ae5cbac794d4e7d8f466a1f961b9b2bf2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trie.html#ae5cbac794d4e7d8f466a1f961b9b2bf2">root</a></td></tr>
+<tr class="separator:ae5cbac794d4e7d8f466a1f961b9b2bf2 inherit pub_attribs_struct_trie"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;int char_size, int margin&gt;<br />
 struct AhoCorasick&lt; char_size, margin &gt;</div><p><a class="el" href="struct_aho_corasick.html" title="AhoCorasick">AhoCorasick</a> </p>
 
-<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00081">81</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00080">80</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">関数詳解</h2>
 <a id="a921f3a1190fbca63510581fd46b6194f" name="a921f3a1190fbca63510581fd46b6194f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a921f3a1190fbca63510581fd46b6194f">&#9670;&#160;</a></span>build()</h2>
@@ -201,7 +206,7 @@ template&lt;int char_size, int margin&gt; </div>
 <p>前計算 オートマトンを構築する </p>
 <dl class="section note"><dt>覚え書き</dt><dd>O(文字列の長さの総和) </dd></dl>
 
-<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00091">91</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00090">90</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -237,7 +242,7 @@ template&lt;int char_size, int margin&gt; </div>
 <p>str の中に出現する全パターンの出現回数を返す </p>
 <dl class="section note"><dt>覚え書き</dt><dd>O(|str|) </dd></dl>
 
-<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00131">131</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00130">130</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -271,9 +276,9 @@ template&lt;int char_size, int margin&gt; </div>
 </div><div class="memdoc">
 
 <p>現在のノード now から文字 c で遷移したときの（見つかったパターンの総数, 次のノード）を返す </p>
-<dl class="section note"><dt>覚え書き</dt><dd>O(1) </dd></dl>
+<dl class="section note"><dt>覚え書き</dt><dd><a class="el" href="io_8hpp.html#ab999edc57efe57ec9ee612335f9622e3">O(1)</a> </dd></dl>
 
-<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00145">145</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00144">144</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -309,7 +314,7 @@ template&lt;int char_size, int margin&gt; </div>
 <p>str に対して move を適用する。（見つかったパターンの総数, 最終ノードを返す） </p>
 <dl class="section note"><dt>覚え書き</dt><dd>O(|str|) </dd></dl>
 
-<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00152">152</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00151">151</a> 行目に定義があります。</p>
 
 </div>
 </div>

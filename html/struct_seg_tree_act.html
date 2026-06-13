@@ -128,8 +128,12 @@ $(function(){initNavTree('struct_seg_tree_act.html',''); initResizable(true); })
 <tr class="memitem:a38d738de89c524ebd52a7c3ea8ff748e" id="r_a38d738de89c524ebd52a7c3ea8ff748e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38d738de89c524ebd52a7c3ea8ff748e">SegTreeAct</a> (vector&lt; <a class="el" href="#add9eb95a27e43c7a432128a7575d1917">Type</a> &gt; &amp;v)</td></tr>
 <tr class="memdesc:a38d738de89c524ebd52a7c3ea8ff748e"><td class="mdescLeft">&#160;</td><td class="mdescRight">配列 v から構築する  <br /></td></tr>
 <tr class="separator:a38d738de89c524ebd52a7c3ea8ff748e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38a2c39faae23653d68b3d24793d96d1" id="r_a38a2c39faae23653d68b3d24793d96d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#add9eb95a27e43c7a432128a7575d1917">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38a2c39faae23653d68b3d24793d96d1">get</a> (int k)</td></tr>
+<tr class="memdesc:a38a2c39faae23653d68b3d24793d96d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">k 番目の要素を取得する  <br /></td></tr>
+<tr class="separator:a38a2c39faae23653d68b3d24793d96d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac58a0d0718de64de21c3340d0affb1ff" id="r_ac58a0d0718de64de21c3340d0affb1ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac58a0d0718de64de21c3340d0affb1ff">set</a> (int k, <a class="el" href="#add9eb95a27e43c7a432128a7575d1917">Type</a> v)</td></tr>
+<tr class="separator:ac58a0d0718de64de21c3340d0affb1ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22ba5399a8164712ad86f5823f153700" id="r_a22ba5399a8164712ad86f5823f153700"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#add9eb95a27e43c7a432128a7575d1917">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22ba5399a8164712ad86f5823f153700">operator[]</a> (int k)</td></tr>
-<tr class="memdesc:a22ba5399a8164712ad86f5823f153700"><td class="mdescLeft">&#160;</td><td class="mdescRight">k 番目の要素を取得する  <br /></td></tr>
 <tr class="separator:a22ba5399a8164712ad86f5823f153700"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa1e40062b2e3cd8771b040b333bf4b6" id="r_aaa1e40062b2e3cd8771b040b333bf4b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa1e40062b2e3cd8771b040b333bf4b6">apply</a> (int l, int r, <a class="el" href="#add9eb95a27e43c7a432128a7575d1917">Type</a> x)</td></tr>
 <tr class="memdesc:aaa1e40062b2e3cd8771b040b333bf4b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">区間 [l, r) に x を作用させる  <br /></td></tr>
@@ -231,6 +235,70 @@ template&lt;typename Operator&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
+<a id="a38a2c39faae23653d68b3d24793d96d1" name="a38a2c39faae23653d68b3d24793d96d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38a2c39faae23653d68b3d24793d96d1">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Operator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#add9eb95a27e43c7a432128a7575d1917">Type</a> <a class="el" href="struct_seg_tree_act.html">SegTreeAct</a>&lt; Operator &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>k</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>k 番目の要素を取得する </p>
+
+<p class="definition"> <a class="el" href="segtree__act_8hpp_source.html">segtree_act.hpp</a> の <a class="el" href="segtree__act_8hpp_source.html#l00027">27</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac58a0d0718de64de21c3340d0affb1ff" name="ac58a0d0718de64de21c3340d0affb1ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac58a0d0718de64de21c3340d0affb1ff">&#9670;&#160;</a></span>set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Operator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_seg_tree_act.html">SegTreeAct</a>&lt; Operator &gt;::set </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>k</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#add9eb95a27e43c7a432128a7575d1917">Type</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="segtree__act_8hpp_source.html">segtree_act.hpp</a> の <a class="el" href="segtree__act_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+
+</div>
+</div>
 <a id="a22ba5399a8164712ad86f5823f153700" name="a22ba5399a8164712ad86f5823f153700"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a22ba5399a8164712ad86f5823f153700">&#9670;&#160;</a></span>operator[]()</h2>
 
@@ -256,9 +324,7 @@ template&lt;typename Operator&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>k 番目の要素を取得する </p>
-
-<p class="definition"> <a class="el" href="segtree__act_8hpp_source.html">segtree_act.hpp</a> の <a class="el" href="segtree__act_8hpp_source.html#l00027">27</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="segtree__act_8hpp_source.html">segtree_act.hpp</a> の <a class="el" href="segtree__act_8hpp_source.html#l00051">51</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -298,7 +364,7 @@ template&lt;typename Operator&gt; </div>
 
 <p>区間 [l, r) に x を作用させる </p>
 
-<p class="definition"> <a class="el" href="segtree__act_8hpp_source.html">segtree_act.hpp</a> の <a class="el" href="segtree__act_8hpp_source.html#l00040">40</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="segtree__act_8hpp_source.html">segtree_act.hpp</a> の <a class="el" href="segtree__act_8hpp_source.html#l00054">54</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -327,7 +393,7 @@ template&lt;typename Operator&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="segtree__act_8hpp_source.html">segtree_act.hpp</a> の <a class="el" href="segtree__act_8hpp_source.html#l00054">54</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="segtree__act_8hpp_source.html">segtree_act.hpp</a> の <a class="el" href="segtree__act_8hpp_source.html#l00068">68</a> 行目に定義があります。</p>
 
 </div>
 </div>

@@ -10,5 +10,7 @@ var struct_trie =
     [ "size", "struct_trie.html#a2736205aba5f7becfab3657a702b3f28", null ],
     [ "insert", "struct_trie.html#a2e85c25c95291e9861fcf1d91c8872c8", null ],
     [ "count", "struct_trie.html#a40d44a4e38493802d00a00335c8a7652", null ],
-    [ "erase", "struct_trie.html#a7c789423652daed7650a77bb796d6447", null ]
+    [ "erase", "struct_trie.html#a7c789423652daed7650a77bb796d6447", null ],
+    [ "nodes", "struct_trie.html#a29ca204f239fed4837d2beb1dd26f4d1", null ],
+    [ "root", "struct_trie.html#ae5cbac794d4e7d8f466a1f961b9b2bf2", null ]
 ];

@@ -110,7 +110,7 @@ $(function(){initNavTree('struct_sqrt_tree.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
-<p>更新 O(1) クエリ O(sqrt(N)) の改造版セグ木  
+<p>更新 <a class="el" href="io_8hpp.html#ab999edc57efe57ec9ee612335f9622e3">O(1)</a> クエリ <a class="el" href="io_8hpp.html#ab999edc57efe57ec9ee612335f9622e3">O(sqrt(N))</a> の改造版セグ木  
  <a href="#details">[詳解]</a></p>
 
 <p><code>#include &quot;<a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a>&quot;</code></p>
@@ -148,10 +148,10 @@ $(function(){initNavTree('struct_sqrt_tree.html',''); initResizable(true); });
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Abel&gt;<br />
-struct SqrtTree&lt; Abel &gt;</div><p>更新 O(1) クエリ O(sqrt(N)) の改造版セグ木 </p>
+struct SqrtTree&lt; Abel &gt;</div><p>更新 <a class="el" href="io_8hpp.html#ab999edc57efe57ec9ee612335f9622e3">O(1)</a> クエリ <a class="el" href="io_8hpp.html#ab999edc57efe57ec9ee612335f9622e3">O(sqrt(N))</a> の改造版セグ木 </p>
 <p><a class="el" href="struct_mo.html" title="Mo&#39;s Algorithm">Mo</a>'s Algorithmとの相性が良い </p><dl class="section note"><dt>覚え書き</dt><dd>モノイドではなくアーベル群が乗る（モノイドや群の場合、更新が Θ(√N) でメリットがない） <a href="https://atcoder.jp/contests/abc405/submissions/65704867">https://atcoder.jp/contests/abc405/submissions/65704867</a> </dd></dl>
 
-<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00008">8</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00009">9</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">型定義メンバ詳解</h2>
 <a id="a46ab9cd6f10fedeb28683788e8f9dff0" name="a46ab9cd6f10fedeb28683788e8f9dff0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a46ab9cd6f10fedeb28683788e8f9dff0">&#9670;&#160;</a></span>Type</h2>
@@ -167,7 +167,7 @@ template&lt;typename Abel&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00009">9</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00010">10</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -224,7 +224,7 @@ template&lt;typename Abel&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -255,7 +255,7 @@ template&lt;typename Abel&gt; </div>
 
 <p>配列 v で初期化する </p>
 
-<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00022">22</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00023">23</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -290,7 +290,7 @@ template&lt;typename Abel&gt; </div>
 
 <p>配列 v とその逆元 v_inv で初期化する </p>
 
-<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00038">38</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -325,9 +325,9 @@ template&lt;typename Abel&gt; </div>
 </div><div class="memdoc">
 
 <p>i 番目の要素を x に更新する </p>
-<dl class="section note"><dt>覚え書き</dt><dd>O(f) （f : 逆元を求めるのにかかる計算量） </dd></dl>
+<dl class="section note"><dt>覚え書き</dt><dd><a class="el" href="io_8hpp.html#ab999edc57efe57ec9ee612335f9622e3">O(f)</a> （f : 逆元を求めるのにかかる計算量） </dd></dl>
 
-<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00053">53</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00054">54</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -367,7 +367,7 @@ template&lt;typename Abel&gt; </div>
 
 <p>i 番目の要素を x に更新し、その逆元を x_inv に更新する </p>
 
-<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00062">62</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00063">63</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -403,7 +403,7 @@ template&lt;typename Abel&gt; </div>
 <p>区間 [l, r) の群積を返す </p>
 <dl class="section note"><dt>覚え書き</dt><dd>O(√N) </dd></dl>
 
-<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00072">72</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00073">73</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -432,7 +432,7 @@ template&lt;typename Abel&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00086">86</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00087">87</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -461,7 +461,7 @@ template&lt;typename Abel&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00087">87</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="sqrt__tree_8hpp_source.html">sqrt_tree.hpp</a> の <a class="el" href="sqrt__tree_8hpp_source.html#l00088">88</a> 行目に定義があります。</p>
 
 </div>
 </div>

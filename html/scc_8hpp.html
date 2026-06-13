@@ -109,32 +109,36 @@ $(function(){initNavTree('scc_8hpp.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../kyopro_library/template.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="graph_8hpp_source.html">../../kyopro_library/graph/graph.hpp</a>&quot;</code><br />
 </div>
 <p><a href="scc_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 クラス</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_scc_info.html">SccInfo</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_scc_info.html">SccInfo&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">強連結成分分解の情報  <a href="struct_scc_info.html#details">[詳解]</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:ab03a7cda739296989054c70e1af25929" id="r_ab03a7cda739296989054c70e1af25929"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_scc_info.html">SccInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab03a7cda739296989054c70e1af25929">SccDecomposition</a> (const vector&lt; vector&lt; int &gt; &gt; &amp;G)</td></tr>
-<tr class="memdesc:ab03a7cda739296989054c70e1af25929"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフ G の強連結成分分解を行う  <br /></td></tr>
-<tr class="separator:ab03a7cda739296989054c70e1af25929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63cda2f2dad343483e25101444780011" id="r_a63cda2f2dad343483e25101444780011"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a63cda2f2dad343483e25101444780011"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_scc_info.html">SccInfo</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a63cda2f2dad343483e25101444780011">SccDecomposition</a> (const <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt; &amp;G)</td></tr>
+<tr class="memdesc:a63cda2f2dad343483e25101444780011"><td class="mdescLeft">&#160;</td><td class="mdescRight">グラフ G の強連結成分分解を行う  <br /></td></tr>
+<tr class="separator:a63cda2f2dad343483e25101444780011"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">関数詳解</h2>
-<a id="ab03a7cda739296989054c70e1af25929" name="ab03a7cda739296989054c70e1af25929"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab03a7cda739296989054c70e1af25929">&#9670;&#160;</a></span>SccDecomposition()</h2>
+<a id="a63cda2f2dad343483e25101444780011" name="a63cda2f2dad343483e25101444780011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63cda2f2dad343483e25101444780011">&#9670;&#160;</a></span>SccDecomposition()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_scc_info.html">SccInfo</a> SccDecomposition </td>
+          <td class="memname"><a class="el" href="struct_scc_info.html">SccInfo</a>&lt; T &gt; SccDecomposition </td>
           <td>(</td>
-          <td class="paramtype">const vector&lt; vector&lt; int &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>G</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>G</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -143,7 +147,7 @@ $(function(){initNavTree('scc_8hpp.html',''); initResizable(true); });
 <p>グラフ G の強連結成分分解を行う </p>
 <p>{ 各強連結成分の頂点, 強連結成分による分解グラフ, 各頂点の所属する強連結成分の番号 } を返す </p><dl class="section note"><dt>覚え書き</dt><dd>O(V+E) </dd></dl>
 
-<p class="definition"> <a class="el" href="scc_8hpp_source.html">scc.hpp</a> の <a class="el" href="scc_8hpp_source.html#l00014">14</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="scc_8hpp_source.html">scc.hpp</a> の <a class="el" href="scc_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
 
 </div>
 </div>

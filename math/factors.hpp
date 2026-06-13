@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 ///@brief エラトステネスの篩を利用した高速な素因数分解・約数列挙
@@ -35,7 +36,7 @@ struct Factors {
 
     ///@brief n の約数を返す
     ///@note O(d(n))
-    vector<int>& get_divisors(int n) {
+    vi& get_divisors(int n) {
         if(divisors[n].size()==0) {
             vector<pair<int,int>> pf=get_prime_factors(n);
             int sz=pf.size();
@@ -57,7 +58,7 @@ struct Factors {
     }
 
 private:
-    vector<int> lpf;
-    vector<vector<int>> divisors;
+    vi lpf;
+    vector<vi> divisors;
     vector<vector<pair<int,int>>> prime_factors;
 };

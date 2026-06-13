@@ -115,9 +115,11 @@ $(function(){initNavTree('matrix_8hpp.html',''); initResizable(true); });
 関数</h2></td></tr>
 <tr class="memitem:a8a2befb20c6930bb9216d21cc01d2a88" id="r_a8a2befb20c6930bb9216d21cc01d2a88"><td class="memTemplParams" colspan="2">template&lt;typename Ring&gt; </td></tr>
 <tr class="memitem:a8a2befb20c6930bb9216d21cc01d2a88"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; vector&lt; typename Ring::Type &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8a2befb20c6930bb9216d21cc01d2a88">MatMul</a> (const vector&lt; vector&lt; typename Ring::Type &gt; &gt; &amp;A, const vector&lt; vector&lt; typename Ring::Type &gt; &gt; &amp;B)</td></tr>
+<tr class="memdesc:a8a2befb20c6930bb9216d21cc01d2a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">行列積  <br /></td></tr>
 <tr class="separator:a8a2befb20c6930bb9216d21cc01d2a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7354db8b886deee08507a9110d4cd9e9" id="r_a7354db8b886deee08507a9110d4cd9e9"><td class="memTemplParams" colspan="2">template&lt;typename Ring&gt; </td></tr>
-<tr class="memitem:a7354db8b886deee08507a9110d4cd9e9"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; vector&lt; typename Ring::Type &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7354db8b886deee08507a9110d4cd9e9">MatPow</a> (vector&lt; vector&lt; typename Ring::Type &gt; &gt; A, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b)</td></tr>
+<tr class="memitem:a7354db8b886deee08507a9110d4cd9e9"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; vector&lt; typename Ring::Type &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7354db8b886deee08507a9110d4cd9e9">MatPow</a> (vector&lt; vector&lt; typename Ring::Type &gt; &gt; A, <a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> b)</td></tr>
+<tr class="memdesc:a7354db8b886deee08507a9110d4cd9e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">行列累乗  <br /></td></tr>
 <tr class="separator:a7354db8b886deee08507a9110d4cd9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">関数詳解</h2>
@@ -142,7 +144,16 @@ template&lt;typename Ring&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a> の <a class="el" href="matrix_8hpp_source.html#l00004">4</a> 行目に定義があります。</p>
+<p>行列積 </p>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname"><a class="el" href="namespace_ring.html" title="環・半環">Ring</a></td><td>演算を行う環・半環 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>覚え書き</dt><dd><a class="el" href="io_8hpp.html#ab999edc57efe57ec9ee612335f9622e3">O(N^3)</a> </dd></dl>
+
+<p class="definition"> <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a> の <a class="el" href="matrix_8hpp_source.html#l00008">8</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -162,12 +173,21 @@ template&lt;typename Ring&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a> の <a class="el" href="matrix_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+<p>行列累乗 </p>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname"><a class="el" href="namespace_ring.html" title="環・半環">Ring</a></td><td>演算を行う環・半環 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>覚え書き</dt><dd><a class="el" href="io_8hpp.html#ab999edc57efe57ec9ee612335f9622e3">O(N^3 log(K))</a> </dd></dl>
+
+<p class="definition"> <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a> の <a class="el" href="matrix_8hpp_source.html#l00023">23</a> 行目に定義があります。</p>
 
 </div>
 </div>

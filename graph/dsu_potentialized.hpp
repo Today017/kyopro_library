@@ -1,3 +1,4 @@
+#pragma once
 #include "../../kyopro_library/template.hpp"
 
 ///@brief ポテンシャル付き DSU
@@ -54,16 +55,16 @@ struct DsuPotentialized {
     int count() { return forest_count; }
 
     ///@brief 各頂点を連結成分に分解する
-    vector<vector<int>> groups() {
+    vector<vi> groups() {
         int n=par.size();
-        vector<vector<int>> ret(n);
+        vector<vi> ret(n);
         rep(i,n) ret[find(i)].push_back(i);
-        ret.erase(remove_if(all(ret),[&](const vector<int>& v) { return v.empty(); }),ret.end());
+        ret.erase(remove_if(all(ret),[&](const vi& v) { return v.empty(); }),ret.end());
         return ret;
     }
 
 private:
-    vector<int> par,sz;
+    vi par,sz;
     vector<Type> diff_weight;
     int forest_count;
 };

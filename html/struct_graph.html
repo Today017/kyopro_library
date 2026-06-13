@@ -1,0 +1,506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: Graph&lt; T &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('struct_graph.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="struct_graph-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">Graph&lt; T &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="graph_8hpp_source.html">graph.hpp</a>&quot;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_graph_1_1_edge.html">Edge</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a1ebe4b1ff74f8d97bad780b98feca69e" id="r_a1ebe4b1ff74f8d97bad780b98feca69e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ebe4b1ff74f8d97bad780b98feca69e">Graph</a> (<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> n)</td></tr>
+<tr class="separator:a1ebe4b1ff74f8d97bad780b98feca69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1654ce9d0e1fdb7ab5cfd94b6799bfee" id="r_a1654ce9d0e1fdb7ab5cfd94b6799bfee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1654ce9d0e1fdb7ab5cfd94b6799bfee">read</a> (<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> m)</td></tr>
+<tr class="separator:a1654ce9d0e1fdb7ab5cfd94b6799bfee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51486dd94700baa468797769355e7c78" id="r_a51486dd94700baa468797769355e7c78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51486dd94700baa468797769355e7c78">add_edge</a> (<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> u, <a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> v, T <a class="el" href="sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2">w</a>=1)</td></tr>
+<tr class="separator:a51486dd94700baa468797769355e7c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c833c45d18170d109d42e867b3ee4d8" id="r_a9c833c45d18170d109d42e867b3ee4d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c833c45d18170d109d42e867b3ee4d8">add_undedge</a> (<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> u, <a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> v, T <a class="el" href="sparse__table__2d_8hpp.html#aac374e320caaadeca4874add33b62af2">w</a>=1)</td></tr>
+<tr class="separator:a9c833c45d18170d109d42e867b3ee4d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51dfb19d17eaaba8f9379b2238f50b3f" id="r_a51dfb19d17eaaba8f9379b2238f50b3f"><td class="memItemLeft" align="right" valign="top">const vector&lt; <a class="el" href="struct_graph_1_1_edge.html">Edge</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51dfb19d17eaaba8f9379b2238f50b3f">next</a> (<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> u) const</td></tr>
+<tr class="separator:a51dfb19d17eaaba8f9379b2238f50b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2cd7a9121a5e562f34cc8b4ef39af13" id="r_aa2cd7a9121a5e562f34cc8b4ef39af13"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="struct_graph_1_1_edge.html">Edge</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2cd7a9121a5e562f34cc8b4ef39af13">next</a> (<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> u)</td></tr>
+<tr class="separator:aa2cd7a9121a5e562f34cc8b4ef39af13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a777780a67f7cff91da656c828e94cc37" id="r_a777780a67f7cff91da656c828e94cc37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a777780a67f7cff91da656c828e94cc37">size</a> () const</td></tr>
+<tr class="separator:a777780a67f7cff91da656c828e94cc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a6c71c802b26a6933fb26a8ef3f33cf4d" id="r_a6c71c802b26a6933fb26a8ef3f33cf4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c71c802b26a6933fb26a8ef3f33cf4d">idxall</a> =0</td></tr>
+<tr class="separator:a6c71c802b26a6933fb26a8ef3f33cf4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa73ea4e45dd4738f242bb4bd459f57e3" id="r_aa73ea4e45dd4738f242bb4bd459f57e3"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; <a class="el" href="struct_graph_1_1_edge.html">Edge</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa73ea4e45dd4738f242bb4bd459f57e3">adj</a></td></tr>
+<tr class="separator:aa73ea4e45dd4738f242bb4bd459f57e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5287ba5a714d4edc344540fcbeb61254" id="r_a5287ba5a714d4edc344540fcbeb61254"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a8bf3ad371864cb45775d8d1fe0b23832">vi</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5287ba5a714d4edc344540fcbeb61254">indeg</a></td></tr>
+<tr class="separator:a5287ba5a714d4edc344540fcbeb61254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa64ca2956938e416f76f97c5fc72390" id="r_afa64ca2956938e416f76f97c5fc72390"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa64ca2956938e416f76f97c5fc72390">weighted</a> =false</td></tr>
+<tr class="separator:afa64ca2956938e416f76f97c5fc72390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afed6e246dbc0725d11d8581d602baf95" id="r_afed6e246dbc0725d11d8581d602baf95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afed6e246dbc0725d11d8581d602baf95">di</a> =false</td></tr>
+<tr class="separator:afed6e246dbc0725d11d8581d602baf95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cbd64edfb24cb324caf8b32b76f86ab" id="r_a5cbd64edfb24cb324caf8b32b76f86ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cbd64edfb24cb324caf8b32b76f86ab">onebased</a> =true</td></tr>
+<tr class="separator:a5cbd64edfb24cb324caf8b32b76f86ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T = ll&gt;<br />
+struct Graph&lt; T &gt;</div>
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00005">5</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a1ebe4b1ff74f8d97bad780b98feca69e" name="a1ebe4b1ff74f8d97bad780b98feca69e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ebe4b1ff74f8d97bad780b98feca69e">&#9670;&#160;</a></span>Graph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_graph.html">Graph</a>&lt; T &gt;<a class="el" href="struct_graph.html">::Graph</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a1654ce9d0e1fdb7ab5cfd94b6799bfee" name="a1654ce9d0e1fdb7ab5cfd94b6799bfee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1654ce9d0e1fdb7ab5cfd94b6799bfee">&#9670;&#160;</a></span>read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt;::read </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a></td>          <td class="paramname"><span class="paramname"><em>m</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="graph_8hpp_source.html#l00028">add_edge()</a>, <a class="el" href="graph_8hpp_source.html#l00033">add_undedge()</a>, <a class="el" href="graph_8hpp_source.html#l00016">di</a>, <a class="el" href="graph_8hpp_source.html#l00016">onebased</a>.</p>
+
+</div>
+</div>
+<a id="a51486dd94700baa468797769355e7c78" name="a51486dd94700baa468797769355e7c78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51486dd94700baa468797769355e7c78">&#9670;&#160;</a></span>add_edge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt;::add_edge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>w</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00028">28</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9c833c45d18170d109d42e867b3ee4d8" name="a9c833c45d18170d109d42e867b3ee4d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c833c45d18170d109d42e867b3ee4d8">&#9670;&#160;</a></span>add_undedge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt;::add_undedge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a></td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>w</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00033">33</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="graph_8hpp_source.html#l00028">add_edge()</a>.</p>
+
+</div>
+</div>
+<a id="a51dfb19d17eaaba8f9379b2238f50b3f" name="a51dfb19d17eaaba8f9379b2238f50b3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51dfb19d17eaaba8f9379b2238f50b3f">&#9670;&#160;</a></span>next() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const vector&lt; <a class="el" href="struct_graph_1_1_edge.html">Edge</a> &gt; &amp; <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt;::next </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa2cd7a9121a5e562f34cc8b4ef39af13" name="aa2cd7a9121a5e562f34cc8b4ef39af13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2cd7a9121a5e562f34cc8b4ef39af13">&#9670;&#160;</a></span>next() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="struct_graph_1_1_edge.html">Edge</a> &gt; &amp; <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt;::next </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a777780a67f7cff91da656c828e94cc37" name="a777780a67f7cff91da656c828e94cc37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a777780a67f7cff91da656c828e94cc37">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00041">41</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a6c71c802b26a6933fb26a8ef3f33cf4d" name="a6c71c802b26a6933fb26a8ef3f33cf4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c71c802b26a6933fb26a8ef3f33cf4d">&#9670;&#160;</a></span>idxall</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt;::idxall =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00010">10</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa73ea4e45dd4738f242bb4bd459f57e3" name="aa73ea4e45dd4738f242bb4bd459f57e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa73ea4e45dd4738f242bb4bd459f57e3">&#9670;&#160;</a></span>adj</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;vector&lt;<a class="el" href="struct_graph_1_1_edge.html">Edge</a>&gt; &gt; <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt;::adj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5287ba5a714d4edc344540fcbeb61254" name="a5287ba5a714d4edc344540fcbeb61254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5287ba5a714d4edc344540fcbeb61254">&#9670;&#160;</a></span>indeg</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="type_8hpp.html#a8bf3ad371864cb45775d8d1fe0b23832">vi</a> <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt;::indeg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00014">14</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afa64ca2956938e416f76f97c5fc72390" name="afa64ca2956938e416f76f97c5fc72390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa64ca2956938e416f76f97c5fc72390">&#9670;&#160;</a></span>weighted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt;::weighted =false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afed6e246dbc0725d11d8581d602baf95" name="afed6e246dbc0725d11d8581d602baf95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afed6e246dbc0725d11d8581d602baf95">&#9670;&#160;</a></span>di</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt;::di =false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5cbd64edfb24cb324caf8b32b76f86ab" name="a5cbd64edfb24cb324caf8b32b76f86ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cbd64edfb24cb324caf8b32b76f86ab">&#9670;&#160;</a></span>onebased</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = ll&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt;::onebased =true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="graph_8hpp_source.html">graph.hpp</a> の <a class="el" href="graph_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>graph/<a class="el" href="graph_8hpp_source.html">graph.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_graph.html">Graph</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,3 +1,4 @@
+#pragma once
 #include "../../../kyopro_library/template.hpp"
 
 ///@brief 辺属性LCA
@@ -11,7 +12,7 @@ struct LcaEdge {
         int n=g.size();
         int k=1;
         while((1<<k)<n) k++;
-        par=vector<vector<int>>(k,vector<int>(n,-1)),dep=vector<int>(n),dat=vector<vector<Type>>(k,vector<Type>(n,Monoid::id()));
+        par=vector<vi>(k,vi(n,-1)),dep=vi(n),dat=vector<vector<Type>>(k,vector<Type>(n,Monoid::id()));
         dfs(g,root,-1);
         rep(i,k-1) rep(j,n) {
             par[i+1][j]=par[i][j]==-1?-1:par[i][par[i][j]];
@@ -38,8 +39,8 @@ struct LcaEdge {
     }
 
 private:
-    vector<vector<int>> par;
-    vector<int> dep;
+    vector<vi> par;
+    vi dep;
     vector<vector<Type>> dat;
     void dfs(const vector<vector<pair<int,Type>>>& g, int now, int pre) {
         par[0][now]=pre; dep[now]=(pre==-1 ? 0 : dep[pre]+1);

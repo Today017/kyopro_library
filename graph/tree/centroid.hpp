@@ -1,3 +1,4 @@
+#pragma once
 #include"../../../kyopro_library/template.hpp"
 
 
@@ -7,7 +8,7 @@
  * @param sz 各頂点の部分木のサイズ
  * 
  * ```cpp
- * vector<int> sz(N);
+ * vi sz(N);
  * vector<bool> seen(N);
  * 
  * auto centroid_decomposition = [&](auto self, int root) -> void {
@@ -24,10 +25,10 @@
  * centroid_decomposition(centroid_decomposition, 0);
  * ```
  */
-int TreeCentroid(const vector<vector<int>>& G, int root, vector<int>& seen, vector<int>& sz) {
+int TreeCentroid(const vector<vi>& G, int root, vi& seen, vi& sz) {
     int N=G.size();
-    if(sz.empty()) sz=vector<int>(N);
-    if(seen.empty()) seen=vector<int>(N,false);
+    if(sz.empty()) sz=vi(N);
+    if(seen.empty()) seen=vi(N,false);
 
     auto dfs=[&](auto dfs, int now, int pre)-> int {
         sz[now]=1;

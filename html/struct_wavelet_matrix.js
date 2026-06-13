@@ -1,6 +1,8 @@
 var struct_wavelet_matrix =
 [
+    [ "WaveletMatrix", "struct_wavelet_matrix.html#a6ce48642a971604ab990fcb587c1de78", null ],
     [ "WaveletMatrix", "struct_wavelet_matrix.html#a3509863e3953b3e85960f176483ea314", null ],
+    [ "build", "struct_wavelet_matrix.html#af59ee7ad087e0728c18c61fc8116839d", null ],
     [ "access", "struct_wavelet_matrix.html#a3a1eefb0414102aeeac72a1f31fc5b8d", null ],
     [ "select", "struct_wavelet_matrix.html#a2b4d0a49f7e6ff7439359beab3ec5c49", null ],
     [ "max_range", "struct_wavelet_matrix.html#a6bc748ebdfcaecf9b5c8659287989390", null ],

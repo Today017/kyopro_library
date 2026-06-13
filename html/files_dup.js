@@ -1,6 +1,7 @@
 var files_dup =
 [
     [ "algorithm", "dir_692f640cc74363071c5c0e14282656e9.html", "dir_692f640cc74363071c5c0e14282656e9" ],
+    [ "base", "dir_e914ee4d4a44400f1fdb170cb4ead18a.html", "dir_e914ee4d4a44400f1fdb170cb4ead18a" ],
     [ "data_structure", "dir_b8d8e9e6d882cbdac7436f7026baf609.html", "dir_b8d8e9e6d882cbdac7436f7026baf609" ],
     [ "geometry", "dir_e3380d2178455503f266746fb14246a5.html", "dir_e3380d2178455503f266746fb14246a5" ],
     [ "graph", "dir_12552d7fa429bf94a2e32e5cf39f7e69.html", "dir_12552d7fa429bf94a2e32e5cf39f7e69" ],
@@ -13,6 +14,6 @@ var files_dup =
     [ "test", "dir_13e138d54eb8818da29c3992edef070a.html", "dir_13e138d54eb8818da29c3992edef070a" ],
     [ "all.hpp", "all_8hpp.html", null ],
     [ "debug.hpp", "debug_8hpp.html", "debug_8hpp" ],
-    [ "util.hpp", "util_8hpp.html", "util_8hpp" ],
-    [ "template.hpp", "template_8hpp.html", "template_8hpp" ]
+    [ "template.hpp", "template_8hpp.html", "template_8hpp" ],
+    [ "utils.hpp", "utils_8hpp.html", null ]
 ];

@@ -105,87 +105,88 @@ $(function(){initNavTree('offline__dynamic__connectivity_8hpp_source.html',''); 
   <div class="headertitle"><div class="title">offline_dynamic_connectivity.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="offline__dynamic__connectivity_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/graph/dsu_rollback.hpp&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief オフラインのDinamic Connectiviy</span></div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html">    5</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_dynamic_connectivity.html">DynamicConnectivity</a>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="comment">///@brief コンストラクタ</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">///@param v 頂点数</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="comment">///@param q クエリ数</span></div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">    9</a></span>    <a class="code hl_function" href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">DynamicConnectivity</a>(<span class="keywordtype">int</span> v, <span class="keywordtype">int</span> q) {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        n=q;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        edges=vector&lt;vector&lt;P&gt;&gt;(2*n);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        dsu=DsuRollback(v);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
+<a href="offline__dynamic__connectivity_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/graph/dsu_rollback.hpp&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@brief オフラインのDinamic Connectiviy</span></div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html">    6</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_dynamic_connectivity.html">DynamicConnectivity</a>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">///@brief コンストラクタ</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="comment">///@param v 頂点数</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">///@param q クエリ数</span></div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">   10</a></span>    <a class="code hl_function" href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">DynamicConnectivity</a>(<span class="keywordtype">int</span> v, <span class="keywordtype">int</span> q) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        n=q;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        edges=vector&lt;vector&lt;P&gt;&gt;(2*n);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        dsu=DsuRollback(v);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">///@brief 時間 time に頂点 u, v を連結する</span></div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a4c2531481116b0b378a98c6ca907d78c">   16</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#a4c2531481116b0b378a98c6ca907d78c">unite</a>(<span class="keywordtype">int</span> time, <span class="keywordtype">int</span> u, <span class="keywordtype">int</span> v) {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        P e=minmax(u,v);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">if</span>(count[e]++==0) appear[e]=time;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">///@brief 時間 time に頂点 u, v を連結する</span></div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a4c2531481116b0b378a98c6ca907d78c">   17</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#a4c2531481116b0b378a98c6ca907d78c">unite</a>(<span class="keywordtype">int</span> time, <span class="keywordtype">int</span> u, <span class="keywordtype">int</span> v) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        P e=minmax(u,v);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">if</span>(count[e]++==0) appear[e]=time;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
 </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">///@brief 時間 time に頂点 u, v を切断する</span></div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#aa4b9840215ff5517d9433b4dbf97272f">   22</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#aa4b9840215ff5517d9433b4dbf97272f">cut</a>(<span class="keywordtype">int</span> time, <span class="keywordtype">int</span> u, <span class="keywordtype">int</span> v) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        P e=minmax(u,v);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(--count[e]==0) period.push_back({{appear[e],time},e});</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">///@brief 時間 time に頂点 u, v を切断する</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#aa4b9840215ff5517d9433b4dbf97272f">   23</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#aa4b9840215ff5517d9433b4dbf97272f">cut</a>(<span class="keywordtype">int</span> time, <span class="keywordtype">int</span> u, <span class="keywordtype">int</span> v) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        P e=minmax(u,v);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">if</span>(--count[e]==0) period.push_back({{appear[e],time},e});</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
 </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">///@brief クエリ処理の前計算を行う</span></div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#aef6dbb8a8163c1aa473f68d4986c5226">   28</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#aef6dbb8a8163c1aa473f68d4986c5226">build</a>() {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [e,val]: count) <span class="keywordflow">if</span>(val&gt;0) period.push_back({{appear[e],n},e});</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [range,e]: period) {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keyword">auto</span> [l,r]=range;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            l+=n; r+=n;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">while</span>(l&lt;r) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <span class="keywordflow">if</span>(l&amp;1) edges[l++].push_back(e);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                <span class="keywordflow">if</span>(r&amp;1) edges[--r].push_back(e);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                l&gt;&gt;=1; r&gt;&gt;=1;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">///@brief クエリ処理の前計算を行う</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#aef6dbb8a8163c1aa473f68d4986c5226">   29</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#aef6dbb8a8163c1aa473f68d4986c5226">build</a>() {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [e,val]: count) <span class="keywordflow">if</span>(val&gt;0) period.push_back({{appear[e],n},e});</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [range,e]: period) {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keyword">auto</span> [l,r]=range;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            l+=n; r+=n;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">while</span>(l&lt;r) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                <span class="keywordflow">if</span>(l&amp;1) edges[l++].push_back(e);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                <span class="keywordflow">if</span>(r&amp;1) edges[--r].push_back(e);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                l&gt;&gt;=1; r&gt;&gt;=1;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
 </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">///@brief クエリ関数 f を処理する</span></div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">   42</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">execute</a>(<span class="keyword">auto</span>&amp; f, <span class="keywordtype">int</span> k=1) {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span>(k&gt;=2*n) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [u,v]: edges[k]) dsu.merge(u,v);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">if</span>(k&lt;n) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            execute(f,k&lt;&lt;1);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            execute(f,k&lt;&lt;1|1);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(0&lt;=k-n &amp;&amp; k-n&lt;n) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordtype">int</span> query_idx=k-n;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            f(query_idx);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [u,v]: edges[k]) dsu.undo();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">///@brief クエリ関数 f を処理する</span></div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">   43</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">execute</a>(<span class="keyword">auto</span>&amp; f, <span class="keywordtype">int</span> k=1) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">if</span>(k&gt;=2*n) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [u,v]: edges[k]) dsu.merge(u,v);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span>(k&lt;n) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            execute(f,k&lt;&lt;1);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            execute(f,k&lt;&lt;1|1);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(0&lt;=k-n &amp;&amp; k-n&lt;n) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordtype">int</span> query_idx=k-n;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            f(query_idx);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> [u,v]: edges[k]) dsu.undo();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
 </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">using</span> <a class="code hl_struct" href="struct_dynamic_connectivity.html">P</a>=<a class="code hl_struct" href="struct_dynamic_connectivity.html">pair</a>&lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_struct" href="struct_dsu_rollback.html">DsuRollback</a> dsu;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">int</span> n;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    vector&lt;vector&lt;P&gt;&gt; edges;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    vector&lt;pair&lt;P,P&gt;&gt; period;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    map&lt;P,<span class="keywordtype">int</span>&gt; count,appear;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">using</span> <a class="code hl_struct" href="struct_dynamic_connectivity.html">P</a>=<a class="code hl_struct" href="struct_dynamic_connectivity.html">pair</a>&lt;<span class="keywordtype">int</span>,<span class="keywordtype">int</span>&gt;;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_struct" href="struct_dsu_rollback.html">DsuRollback</a> dsu;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">int</span> n;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    vector&lt;vector&lt;P&gt;&gt; edges;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    vector&lt;pair&lt;P,P&gt;&gt; period;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    map&lt;P,<span class="keywordtype">int</span>&gt; count,appear;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
 </div>
 <div class="ttc" id="astruct_dsu_rollback_html"><div class="ttname"><a href="struct_dsu_rollback.html">DsuRollback</a></div><div class="ttdoc">ロールバック可能DSU</div><div class="ttdef"><b>Definition</b> <a href="dsu__rollback_8hpp_source.html#l00005">dsu_rollback.hpp:5</a></div></div>
-<div class="ttc" id="astruct_dynamic_connectivity_html"><div class="ttname"><a href="struct_dynamic_connectivity.html">DynamicConnectivity</a></div><div class="ttdoc">オフラインのDinamic Connectiviy</div><div class="ttdef"><b>Definition</b> <a href="#l00005">offline_dynamic_connectivity.hpp:5</a></div></div>
-<div class="ttc" id="astruct_dynamic_connectivity_html_a1693ebcaa78d8bf3058cda0160c1afe6"><div class="ttname"><a href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">DynamicConnectivity::execute</a></div><div class="ttdeci">void execute(auto &amp;f, int k=1)</div><div class="ttdoc">クエリ関数 f を処理する</div><div class="ttdef"><b>Definition</b> <a href="#l00042">offline_dynamic_connectivity.hpp:42</a></div></div>
-<div class="ttc" id="astruct_dynamic_connectivity_html_a4c2531481116b0b378a98c6ca907d78c"><div class="ttname"><a href="struct_dynamic_connectivity.html#a4c2531481116b0b378a98c6ca907d78c">DynamicConnectivity::unite</a></div><div class="ttdeci">void unite(int time, int u, int v)</div><div class="ttdoc">時間 time に頂点 u, v を連結する</div><div class="ttdef"><b>Definition</b> <a href="#l00016">offline_dynamic_connectivity.hpp:16</a></div></div>
-<div class="ttc" id="astruct_dynamic_connectivity_html_a770dc53dd142ee82b63cee5dc0989ed4"><div class="ttname"><a href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">DynamicConnectivity::DynamicConnectivity</a></div><div class="ttdeci">DynamicConnectivity(int v, int q)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition</b> <a href="#l00009">offline_dynamic_connectivity.hpp:9</a></div></div>
-<div class="ttc" id="astruct_dynamic_connectivity_html_aa4b9840215ff5517d9433b4dbf97272f"><div class="ttname"><a href="struct_dynamic_connectivity.html#aa4b9840215ff5517d9433b4dbf97272f">DynamicConnectivity::cut</a></div><div class="ttdeci">void cut(int time, int u, int v)</div><div class="ttdoc">時間 time に頂点 u, v を切断する</div><div class="ttdef"><b>Definition</b> <a href="#l00022">offline_dynamic_connectivity.hpp:22</a></div></div>
-<div class="ttc" id="astruct_dynamic_connectivity_html_aef6dbb8a8163c1aa473f68d4986c5226"><div class="ttname"><a href="struct_dynamic_connectivity.html#aef6dbb8a8163c1aa473f68d4986c5226">DynamicConnectivity::build</a></div><div class="ttdeci">void build()</div><div class="ttdoc">クエリ処理の前計算を行う</div><div class="ttdef"><b>Definition</b> <a href="#l00028">offline_dynamic_connectivity.hpp:28</a></div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html"><div class="ttname"><a href="struct_dynamic_connectivity.html">DynamicConnectivity</a></div><div class="ttdoc">オフラインのDinamic Connectiviy</div><div class="ttdef"><b>Definition</b> <a href="#l00006">offline_dynamic_connectivity.hpp:6</a></div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_a1693ebcaa78d8bf3058cda0160c1afe6"><div class="ttname"><a href="struct_dynamic_connectivity.html#a1693ebcaa78d8bf3058cda0160c1afe6">DynamicConnectivity::execute</a></div><div class="ttdeci">void execute(auto &amp;f, int k=1)</div><div class="ttdoc">クエリ関数 f を処理する</div><div class="ttdef"><b>Definition</b> <a href="#l00043">offline_dynamic_connectivity.hpp:43</a></div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_a4c2531481116b0b378a98c6ca907d78c"><div class="ttname"><a href="struct_dynamic_connectivity.html#a4c2531481116b0b378a98c6ca907d78c">DynamicConnectivity::unite</a></div><div class="ttdeci">void unite(int time, int u, int v)</div><div class="ttdoc">時間 time に頂点 u, v を連結する</div><div class="ttdef"><b>Definition</b> <a href="#l00017">offline_dynamic_connectivity.hpp:17</a></div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_a770dc53dd142ee82b63cee5dc0989ed4"><div class="ttname"><a href="struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4">DynamicConnectivity::DynamicConnectivity</a></div><div class="ttdeci">DynamicConnectivity(int v, int q)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition</b> <a href="#l00010">offline_dynamic_connectivity.hpp:10</a></div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_aa4b9840215ff5517d9433b4dbf97272f"><div class="ttname"><a href="struct_dynamic_connectivity.html#aa4b9840215ff5517d9433b4dbf97272f">DynamicConnectivity::cut</a></div><div class="ttdeci">void cut(int time, int u, int v)</div><div class="ttdoc">時間 time に頂点 u, v を切断する</div><div class="ttdef"><b>Definition</b> <a href="#l00023">offline_dynamic_connectivity.hpp:23</a></div></div>
+<div class="ttc" id="astruct_dynamic_connectivity_html_aef6dbb8a8163c1aa473f68d4986c5226"><div class="ttname"><a href="struct_dynamic_connectivity.html#aef6dbb8a8163c1aa473f68d4986c5226">DynamicConnectivity::build</a></div><div class="ttdeci">void build()</div><div class="ttdoc">クエリ処理の前計算を行う</div><div class="ttdef"><b>Definition</b> <a href="#l00029">offline_dynamic_connectivity.hpp:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

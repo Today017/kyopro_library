@@ -26,9 +26,11 @@ var hierarchy =
     [ "DSU", "struct_d_s_u.html", null ],
     [ "DsuBaseSemigroup", "struct_dsu_base_semigroup.html", null ],
     [ "DsuMerging< Semigroup >", "struct_dsu_merging.html", null ],
+    [ "DsuOnTree", "struct_dsu_on_tree.html", null ],
     [ "DsuPotentialized< Group >", "struct_dsu_potentialized.html", null ],
     [ "DsuRollback", "struct_dsu_rollback.html", null ],
     [ "DynamicConnectivity", "struct_dynamic_connectivity.html", null ],
+    [ "Graph< T >::Edge", "struct_graph_1_1_edge.html", null ],
     [ "MaxFlow::Edge", "struct_max_flow_1_1_edge.html", null ],
     [ "MinCostFlow::Edge", "struct_min_cost_flow_1_1_edge.html", null ],
     [ "ErasableHeap< T, MAX >", "struct_erasable_heap.html", null ],
@@ -36,9 +38,11 @@ var hierarchy =
     [ "exp.Expander", "classexp_1_1_expander.html", null ],
     [ "exp_AHC.Expander", "classexp___a_h_c_1_1_expander.html", null ],
     [ "Factors", "struct_factors.html", null ],
+    [ "FastLCA", "struct_fast_l_c_a.html", null ],
     [ "FenwickTree", "struct_fenwick_tree.html", null ],
     [ "FenwickTreeAbel< Abel >", "struct_fenwick_tree_abel.html", null ],
     [ "Fraction< T >", "struct_fraction.html", null ],
+    [ "Graph< T >", "struct_graph.html", null ],
     [ "GridUtil", "struct_grid_util.html", null ],
     [ "Hash", "struct_hash.html", null ],
     [ "HLD", "struct_h_l_d.html", null ],
@@ -74,6 +78,11 @@ var hierarchy =
     [ "Namori", "struct_namori.html", null ],
     [ "Trie< char_size, margin >::Node", "struct_trie_1_1_node.html", null ],
     [ "NTT< MOD, primitive_root >", "class_n_t_t.html", null ],
+    [ "pair", null, [
+      [ "PR< ii, ii >", "struct_p_r.html", null ],
+      [ "PR< ll, ll >", "struct_p_r.html", null ],
+      [ "PR< T, U >", "struct_p_r.html", null ]
+    ] ],
     [ "Ring::PlusMul< T >", "struct_ring_1_1_plus_mul.html", null ],
     [ "Geometry::Point", "struct_geometry_1_1_point.html", null ],
     [ "Queue< T >", "struct_queue.html", null ],
@@ -89,7 +98,7 @@ var hierarchy =
     [ "RMQ< MIN >", "struct_r_m_q.html", null ],
     [ "RollingHash", "struct_rolling_hash.html", null ],
     [ "RollingHash2D", "struct_rolling_hash2_d.html", null ],
-    [ "SccInfo", "struct_scc_info.html", null ],
+    [ "SccInfo< T >", "struct_scc_info.html", null ],
     [ "SegTree< Monoid >", "struct_seg_tree.html", null ],
     [ "SegTree2D< Monoid >", "struct_seg_tree2_d.html", null ],
     [ "SegTreeAct< Operator >", "struct_seg_tree_act.html", null ],
@@ -118,6 +127,11 @@ var hierarchy =
       [ "AhoCorasick< char_size, margin >", "struct_aho_corasick.html", null ]
     ] ],
     [ "TrieNode< char_size >", "struct_trie_node.html", null ],
+    [ "tuple", null, [
+      [ "TR< ii, ii, ii >", "struct_t_r.html", null ],
+      [ "TR< ll, ll, ll >", "struct_t_r.html", null ],
+      [ "TR< T, U, V >", "struct_t_r.html", null ]
+    ] ],
     [ "TwoSat", "struct_two_sat.html", null ],
     [ "Monoid::Update< T, not_exist >", "struct_monoid_1_1_update.html", null ],
     [ "vector", null, [

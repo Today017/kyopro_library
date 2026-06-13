@@ -1,3 +1,4 @@
+#pragma once
 #include "../../../kyopro_library/template.hpp"
 
 ///@brief HL分解
@@ -6,7 +7,7 @@ struct HLD {
     HLD(int n) { resize(n); }
     void add_edge(int a, int b) { g[a].push_back(b),g[b].push_back(a); }
     void build(int root=0) { dfs1(root),dfs2(root,root); }
-    HLD(const vector<vector<int>>& g, int root=0) {
+    HLD(const vector<vi>& g, int root=0) {
         resize(g.size());
         this->g=g;
         build(root);
@@ -52,10 +53,10 @@ struct HLD {
     pair<int,int> subtree(int v) { return {pos[v],pos2[v]}; }
 
 private:
-    vector<vector<int>> g;
-    vector<int> sz,par,dep,head;
-    vector<int> hld; ///< HLD後の配列
-    vector<int> pos,pos2; ///< hldの逆引き
+    vector<vi> g;
+    vi sz,par,dep,head;
+    vi hld; ///< HLD後の配列
+    vi pos,pos2; ///< hldの逆引き
     void resize(int n) { g.resize(n),sz.resize(n),par.resize(n),dep.resize(n),pos.resize(n),head.resize(n),pos2.resize(n); }
     void dfs1(int now, int pre=-1) {
         par[now]=pre;

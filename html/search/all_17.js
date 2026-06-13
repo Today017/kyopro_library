@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['x_0',['x',['../struct_geometry_1_1_point.html#a4855e61b2b90a91cf1e87fc758d6201b',1,'Geometry::Point']]],
+  ['x_0',['x',['../struct_t_r.html#a81e6c144103241368a3e93939900db9a',1,'TR::x'],['../struct_geometry_1_1_point.html#a4855e61b2b90a91cf1e87fc758d6201b',1,'Geometry::Point::x']]],
   ['xor_1',['Xor',['../struct_abel_1_1_xor.html',1,'Abel']]],
   ['xor128_2',['Xor128',['../xor128_8hpp.html#ae5f1abc0605f565940993209877af05d',1,'Xor128():&#160;xor128.hpp'],['../xor128_8hpp.html#af918dca70549f657c3e1117950ac6dd1',1,'Xor128(ll n):&#160;xor128.hpp'],['../xor128_8hpp.html#a1769a3e4e9794ae293252dc65f5c2425',1,'Xor128(ll l, ll r):&#160;xor128.hpp']]],
   ['xor128_2ehpp_3',['xor128.hpp',['../xor128_8hpp.html',1,'']]],

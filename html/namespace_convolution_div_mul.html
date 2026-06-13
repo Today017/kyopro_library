@@ -107,17 +107,24 @@ $(function(){initNavTree('namespace_convolution_div_mul.html',''); initResizable
   <div class="headertitle"><div class="title">ConvolutionDivMul 名前空間</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>LCM/GCD Convolution  
+<a href="#details">[詳解]</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
 <tr class="memitem:a350e4304a31cd8e184fa759b68c6f0da" id="r_a350e4304a31cd8e184fa759b68c6f0da"><td class="memTemplParams" colspan="2">template&lt;typename Ring&gt; </td></tr>
 <tr class="memitem:a350e4304a31cd8e184fa759b68c6f0da"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Ring::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a350e4304a31cd8e184fa759b68c6f0da">GcdConvolution</a> (vector&lt; typename Ring::Type &gt; A, vector&lt; typename Ring::Type &gt; B)</td></tr>
+<tr class="memdesc:a350e4304a31cd8e184fa759b68c6f0da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gcd Convolution  <br /></td></tr>
 <tr class="separator:a350e4304a31cd8e184fa759b68c6f0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d2f107a8b2643f3b17d789472b4a596" id="r_a3d2f107a8b2643f3b17d789472b4a596"><td class="memTemplParams" colspan="2">template&lt;typename Ring&gt; </td></tr>
 <tr class="memitem:a3d2f107a8b2643f3b17d789472b4a596"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; typename Ring::Type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a3d2f107a8b2643f3b17d789472b4a596">LcmConvolution</a> (vector&lt; typename Ring::Type &gt; A, vector&lt; typename Ring::Type &gt; B)</td></tr>
+<tr class="memdesc:a3d2f107a8b2643f3b17d789472b4a596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lcm Convolution  <br /></td></tr>
 <tr class="separator:a3d2f107a8b2643f3b17d789472b4a596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">関数詳解</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>LCM/GCD Convolution </p>
+</div><h2 class="groupheader">関数詳解</h2>
 <a id="a350e4304a31cd8e184fa759b68c6f0da" name="a350e4304a31cd8e184fa759b68c6f0da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a350e4304a31cd8e184fa759b68c6f0da">&#9670;&#160;</a></span>GcdConvolution()</h2>
 
@@ -139,9 +146,18 @@ template&lt;typename Ring&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="zeta__mobius__div__mul_8hpp_source.html">zeta_mobius_div_mul.hpp</a> の <a class="el" href="zeta__mobius__div__mul_8hpp_source.html#l00070">70</a> 行目に定義があります。</p>
+<p>Gcd Convolution </p>
+<p>C[i] = Σ_{gcd(j,k)=i} A[j]*B[k] </p><dl class="section note"><dt>覚え書き</dt><dd>O(N log(log(N))) </dd></dl>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname"><a class="el" href="namespace_ring.html" title="環・半環">Ring</a></td><td>計算を行う環 </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="reference">参照先 <a class="el" href="zeta__mobius__div__mul_8hpp_source.html#l00007">ZetaMobiusDivMul::Init()</a>, <a class="el" href="zeta__mobius__div__mul_8hpp_source.html#l00006">ZetaMobiusDivMul::primes</a>.</p>
+<p class="definition"> <a class="el" href="zeta__mobius__div__mul_8hpp_source.html">zeta_mobius_div_mul.hpp</a> の <a class="el" href="zeta__mobius__div__mul_8hpp_source.html#l00076">76</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="zeta__mobius__div__mul_8hpp_source.html#l00008">ZetaMobiusDivMul::Init()</a>, <a class="el" href="zeta__mobius__div__mul_8hpp_source.html#l00007">ZetaMobiusDivMul::primes</a>.</p>
 
 </div>
 </div>
@@ -166,9 +182,18 @@ template&lt;typename Ring&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="zeta__mobius__div__mul_8hpp_source.html">zeta_mobius_div_mul.hpp</a> の <a class="el" href="zeta__mobius__div__mul_8hpp_source.html#l00094">94</a> 行目に定義があります。</p>
+<p>Lcm Convolution </p>
+<p>C[i] = Σ_{lcm(j,k)=i} A[j]*B[k] </p><dl class="section note"><dt>覚え書き</dt><dd>O(N log(log(N))) </dd></dl>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname"><a class="el" href="namespace_ring.html" title="環・半環">Ring</a></td><td>計算を行う環 </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="reference">参照先 <a class="el" href="zeta__mobius__div__mul_8hpp_source.html#l00007">ZetaMobiusDivMul::Init()</a>, <a class="el" href="zeta__mobius__div__mul_8hpp_source.html#l00006">ZetaMobiusDivMul::primes</a>.</p>
+<p class="definition"> <a class="el" href="zeta__mobius__div__mul_8hpp_source.html">zeta_mobius_div_mul.hpp</a> の <a class="el" href="zeta__mobius__div__mul_8hpp_source.html#l00104">104</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="zeta__mobius__div__mul_8hpp_source.html#l00008">ZetaMobiusDivMul::Init()</a>, <a class="el" href="zeta__mobius__div__mul_8hpp_source.html#l00007">ZetaMobiusDivMul::primes</a>.</p>
 
 </div>
 </div>

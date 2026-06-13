@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 ///@brief 更新 O(1) クエリ O(sqrt(N)) の改造版セグ木
@@ -26,7 +27,7 @@ struct SqrtTree {
         dat.assign(rn,Abel::id());
         dat2=v;
         rep(i,rn) {
-            for(int j=i*rn; j<min((i+1)*rn,n); j++) {
+            for(int j=i*rn; j<amin((i+1)*rn,n); j++) {
                 dat[i]=Abel::op(dat[i],dat2[j]);
                 dat2_inv[j]=Abel::inv(dat2[j]);
             }
@@ -42,7 +43,7 @@ struct SqrtTree {
         dat2=v;
         dat2_inv=v_inv;
         rep(i,rn) {
-            for(int j=i*rn; j<min((i+1)*rn,n); j++) {
+            for(int j=i*rn; j<amin((i+1)*rn,n); j++) {
                 dat[i]=Abel::op(dat[i],dat2[j]);
             }
         }

@@ -1,9 +1,10 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 ///@brief グリッド操作用関数
 struct GridUtil {
-    const vector<int> dx={0,1,0,-1,1,1,-1,-1};
-    const vector<int> dy={1,0,-1,0,1,-1,1,-1};
+    const vi dx={0,1,0,-1,1,1,-1,-1};
+    const vi dy={1,0,-1,0,1,-1,1,-1};
 
     int H,W;
     GridUtil(int H, int W): H(H),W(W) {}
@@ -39,8 +40,8 @@ struct GridUtil {
         return ret;
     }
 
-    vector<int> around4(int i) {
-        vector<int> ret;
+    vi around4(int i) {
+        vi ret;
         int x=i/W, y=i%W;
         rep(j,4) {
             int nx=x+dx[j], ny=y+dy[j];
@@ -49,8 +50,8 @@ struct GridUtil {
         return ret;
     }
 
-    vector<int> around2(int i) {
-        vector<int> ret;
+    vi around2(int i) {
+        vi ret;
         int x=i/W, y=i%W;
         rep(j,2) {
             int nx=x+dx[j], ny=y+dy[j];
@@ -59,8 +60,8 @@ struct GridUtil {
         return ret;
     }
 
-    vector<int> around8(int i) {
-        vector<int> ret;
+    vi around8(int i) {
+        vi ret;
         int x=i/W, y=i%W;
         rep(j,8) {
             int nx=x+dx[j], ny=y+dy[j];

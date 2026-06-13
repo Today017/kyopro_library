@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/graph/flow/max_flow.hpp"
 #include"../../kyopro_library/graph/bicolor.hpp"
@@ -6,14 +7,14 @@
 struct BiInfo {
     vector<pair<int,int>> max_matching; ///< 最大マッチング
     vector<pair<int,int>> min_edge_cover; ///< 最小辺被覆
-    vector<int> max_independent_set; ///< 最大独立集合
-    vector<int> min_vertex_cover; ///< 最小頂点被覆
+    vi max_independent_set; ///< 最大独立集合
+    vi min_vertex_cover; ///< 最小頂点被覆
 };
 
 ///@brief 二部グラフのパラメータを求める
 ///@note O(E*sqrt(V))
 ///@attention G は二部グラフであること
-BiInfo GetBiInfo(const vector<vector<int>>& G) {
+BiInfo GetBiInfo(const vector<vi>& G) {
     int N=G.size();
 
     BiInfo ret;

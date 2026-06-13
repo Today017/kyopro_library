@@ -113,13 +113,13 @@ $(function(){initNavTree('centroid_8hpp.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:abbcbc7de2935d0a93e96189869d3ca0f" id="r_abbcbc7de2935d0a93e96189869d3ca0f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbcbc7de2935d0a93e96189869d3ca0f">TreeCentroid</a> (const vector&lt; vector&lt; int &gt; &gt; &amp;G, int root, vector&lt; int &gt; &amp;seen, vector&lt; int &gt; &amp;sz)</td></tr>
-<tr class="memdesc:abbcbc7de2935d0a93e96189869d3ca0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">重心分解  <br /></td></tr>
-<tr class="separator:abbcbc7de2935d0a93e96189869d3ca0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29feb8cc4989595f8a16092900f4e770" id="r_a29feb8cc4989595f8a16092900f4e770"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29feb8cc4989595f8a16092900f4e770">TreeCentroid</a> (const vector&lt; <a class="el" href="type_8hpp.html#a8bf3ad371864cb45775d8d1fe0b23832">vi</a> &gt; &amp;G, int root, <a class="el" href="type_8hpp.html#a8bf3ad371864cb45775d8d1fe0b23832">vi</a> &amp;seen, <a class="el" href="type_8hpp.html#a8bf3ad371864cb45775d8d1fe0b23832">vi</a> &amp;sz)</td></tr>
+<tr class="memdesc:a29feb8cc4989595f8a16092900f4e770"><td class="mdescLeft">&#160;</td><td class="mdescRight">重心分解  <br /></td></tr>
+<tr class="separator:a29feb8cc4989595f8a16092900f4e770"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">関数詳解</h2>
-<a id="abbcbc7de2935d0a93e96189869d3ca0f" name="abbcbc7de2935d0a93e96189869d3ca0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbcbc7de2935d0a93e96189869d3ca0f">&#9670;&#160;</a></span>TreeCentroid()</h2>
+<a id="a29feb8cc4989595f8a16092900f4e770" name="a29feb8cc4989595f8a16092900f4e770"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29feb8cc4989595f8a16092900f4e770">&#9670;&#160;</a></span>TreeCentroid()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +127,7 @@ $(function(){initNavTree('centroid_8hpp.html',''); initResizable(true); });
         <tr>
           <td class="memname">int TreeCentroid </td>
           <td>(</td>
-          <td class="paramtype">const vector&lt; vector&lt; int &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
+          <td class="paramtype">const vector&lt; <a class="el" href="type_8hpp.html#a8bf3ad371864cb45775d8d1fe0b23832">vi</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -137,12 +137,12 @@ $(function(){initNavTree('centroid_8hpp.html',''); initResizable(true); });
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">vector&lt; int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>seen</em></span>, </td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a8bf3ad371864cb45775d8d1fe0b23832">vi</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>seen</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">vector&lt; int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>sz</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a8bf3ad371864cb45775d8d1fe0b23832">vi</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>sz</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -155,11 +155,11 @@ $(function(){initNavTree('centroid_8hpp.html',''); initResizable(true); });
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line">vector&lt;int&gt; sz(N);</div>
+<div class="fragment"><div class="line"><a class="code hl_typedef" href="type_8hpp.html#a8bf3ad371864cb45775d8d1fe0b23832">vi</a> sz(N);</div>
 <div class="line">vector&lt;bool&gt; seen(N);</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> centroid_decomposition = [&amp;](<span class="keyword">auto</span> self, <span class="keywordtype">int</span> root) -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line">    <span class="keywordtype">int</span> centroid = <a class="code hl_function" href="#abbcbc7de2935d0a93e96189869d3ca0f">TreeCentroid</a>(G, root, seen, sz);</div>
+<div class="line">    <span class="keywordtype">int</span> centroid = <a class="code hl_function" href="#a29feb8cc4989595f8a16092900f4e770">TreeCentroid</a>(G, root, seen, sz);</div>
 <div class="line">    seen[centroid] = <span class="keyword">true</span>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// ここに処理を書く</span></div>
@@ -170,9 +170,10 @@ $(function(){initNavTree('centroid_8hpp.html',''); initResizable(true); });
 <div class="line">    }</div>
 <div class="line">};</div>
 <div class="line">centroid_decomposition(centroid_decomposition, 0);</div>
-<div class="ttc" id="acentroid_8hpp_html_abbcbc7de2935d0a93e96189869d3ca0f"><div class="ttname"><a href="#abbcbc7de2935d0a93e96189869d3ca0f">TreeCentroid</a></div><div class="ttdeci">int TreeCentroid(const vector&lt; vector&lt; int &gt; &gt; &amp;G, int root, vector&lt; int &gt; &amp;seen, vector&lt; int &gt; &amp;sz)</div><div class="ttdoc">重心分解</div><div class="ttdef"><b>Definition</b> <a href="centroid_8hpp_source.html#l00027">centroid.hpp:27</a></div></div>
+<div class="ttc" id="acentroid_8hpp_html_a29feb8cc4989595f8a16092900f4e770"><div class="ttname"><a href="#a29feb8cc4989595f8a16092900f4e770">TreeCentroid</a></div><div class="ttdeci">int TreeCentroid(const vector&lt; vi &gt; &amp;G, int root, vi &amp;seen, vi &amp;sz)</div><div class="ttdoc">重心分解</div><div class="ttdef"><b>Definition</b> <a href="centroid_8hpp_source.html#l00028">centroid.hpp:28</a></div></div>
+<div class="ttc" id="atype_8hpp_html_a8bf3ad371864cb45775d8d1fe0b23832"><div class="ttname"><a href="type_8hpp.html#a8bf3ad371864cb45775d8d1fe0b23832">vi</a></div><div class="ttdeci">vector&lt; ii &gt; vi</div><div class="ttdef"><b>Definition</b> <a href="type_8hpp_source.html#l00014">type.hpp:14</a></div></div>
 </div><!-- fragment --> 
-<p class="definition"> <a class="el" href="centroid_8hpp_source.html">centroid.hpp</a> の <a class="el" href="centroid_8hpp_source.html#l00027">27</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="centroid_8hpp_source.html">centroid.hpp</a> の <a class="el" href="centroid_8hpp_source.html#l00028">28</a> 行目に定義があります。</p>
 
 </div>
 </div>

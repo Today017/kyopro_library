@@ -1,9 +1,11 @@
 var namespaceexp =
 [
     [ "Expander", "classexp_1_1_expander.html", "classexp_1_1_expander" ],
+    [ "expand_run_top", "namespaceexp.html#a8c28d676574ed4b16a0b1bc5314664c0", null ],
     [ "HEAD", "namespaceexp.html#a6b6bffc9f575cd0e79d0b42f7ec5a3d5", null ],
     [ "CONST", "namespaceexp.html#a608b7d478866fe325b1fc10a0d2f5d11", null ],
     [ "logger", "namespaceexp.html#ada77898509a0b8a75821e97592d32509", null ],
+    [ "MARKER", "namespaceexp.html#a6d084400c3d624b2b7dc1a9f0f9b732b", null ],
     [ "format", "namespaceexp.html#ae5768a59b2ca22024fe965d79f46f0b8", null ],
     [ "datefmt", "namespaceexp.html#acd13cc680f535f17f76a099ea6da8068", null ],
     [ "level", "namespaceexp.html#a49e5fbe4c2e197b7cad902be286a86e2", null ],

@@ -10,6 +10,7 @@ var dir_12552d7fa429bf94a2e32e5cf39f7e69 =
     [ "dsu_merging.hpp", "dsu__merging_8hpp.html", "dsu__merging_8hpp" ],
     [ "dsu_potentialized.hpp", "dsu__potentialized_8hpp.html", "dsu__potentialized_8hpp" ],
     [ "dsu_rollback.hpp", "dsu__rollback_8hpp.html", "dsu__rollback_8hpp" ],
+    [ "graph.hpp", "graph_8hpp.html", "graph_8hpp" ],
     [ "lowlink.hpp", "lowlink_8hpp.html", "lowlink_8hpp" ],
     [ "namori.hpp", "namori_8hpp.html", "namori_8hpp" ],
     [ "offline_dynamic_connectivity.hpp", "offline__dynamic__connectivity_8hpp.html", "offline__dynamic__connectivity_8hpp" ],

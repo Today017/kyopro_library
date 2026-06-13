@@ -1,9 +1,10 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/math/prime_enumerate.hpp"
 
 ///@brief 倍数・約数ゼータ・メビウス変換
 namespace ZetaMobiusDivMul {
-    vector<int> primes;
+    vi primes;
     void Init(int N=1e6) { primes=PrimeEnumerate(N); }
 
     ///@brief 倍数高速ゼータ変換
@@ -65,7 +66,12 @@ namespace ZetaMobiusDivMul {
     }
 };
 
+///@brief LCM/GCD Convolution
 namespace ConvolutionDivMul {
+    ///@brief Gcd Convolution
+    ///@brief C[i] = Σ_{gcd(j,k)=i} A[j]*B[k]
+    ///@note O(N log(log(N)))
+    ///@tparam Ring 計算を行う環
     template<typename Ring>
     vector<typename Ring::Type> GcdConvolution(
         vector<typename Ring::Type> A,
@@ -81,7 +87,7 @@ namespace ConvolutionDivMul {
             static Type inv(const Type& x) { return Ring::inv(x); }
             static Type id() { return Ring::zero(); }
         };
-        
+
         A=move(ZetaMobiusDivMul::MultipleZeta<Abel>(A));
         B=move(ZetaMobiusDivMul::MultipleZeta<Abel>(B));
         rep(i,N) A[i]=Ring::mul(A[i],B[i]);
@@ -90,6 +96,10 @@ namespace ConvolutionDivMul {
         return A;
     }
 
+    ///@brief Lcm Convolution
+    ///@brief C[i] = Σ_{lcm(j,k)=i} A[j]*B[k]
+    ///@note O(N log(log(N)))
+    ///@tparam Ring 計算を行う環
     template<typename Ring>
     vector<typename Ring::Type> LcmConvolution(
         vector<typename Ring::Type> A,
@@ -105,7 +115,7 @@ namespace ConvolutionDivMul {
             static Type inv(const Type& x) { return Ring::inv(x); }
             static Type id() { return Ring::zero(); }
         };
-        
+
         A=move(ZetaMobiusDivMul::DivisorZeta<Abel>(A));
         B=move(ZetaMobiusDivMul::DivisorZeta<Abel>(B));
         rep(i,N) A[i]=Ring::mul(A[i],B[i]);

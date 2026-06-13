@@ -129,7 +129,7 @@ struct SegTree {
 private:
     int n;
     vector<Type> dat;
-    vector<int> cand,cand_l,cand_r;
+    vi cand,cand_l,cand_r;
 };
 
 #include"../../kyopro_library/others/monoid.hpp"

@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/graph/dsu_rollback.hpp"
 

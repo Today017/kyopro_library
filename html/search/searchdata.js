@@ -2,15 +2,15 @@ var indexSectionsWithContent =
 {
   0: "_abcdefghiklmnopqrstuvwxyzスデモ使例各環",
   1: "abcdefghilmnopqrstuwx",
-  2: "abcefgimruz",
+  2: "abcefgimrz",
   3: "abcdefghiklmnopqrstuwxz",
   4: "_abcdefghiklmnopqrstuvwxyz",
-  5: "_abcdefghiklmnoprstuvwxy",
-  6: "blmnoprstuvw",
+  5: "_abcdefghiklmnoprstuvwxyz",
+  6: "bfilmnoprstuv",
   7: "o",
   8: "co",
   9: "o",
-  10: "adegilprsv",
+  10: "adefgilmopqrsv",
   11: "r"
 };
 

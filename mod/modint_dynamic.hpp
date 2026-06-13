@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 ///@brief 実行時に mod を変更できる ModInt

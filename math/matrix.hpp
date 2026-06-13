@@ -1,5 +1,9 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
+///@brief 行列積
+///@tparam Ring 演算を行う環・半環
+///@note O(N^3)
 template<typename Ring>
 vector<vector<typename Ring::Type>> MatMul(
     const vector<vector<typename Ring::Type>>& A,
@@ -12,6 +16,9 @@ vector<vector<typename Ring::Type>> MatMul(
     return ret;
 }
 
+///@brief 行列累乗
+///@tparam Ring 演算を行う環・半環
+///@note O(N^3 log(K))
 template<typename Ring>
 vector<vector<typename Ring::Type>> MatPow(
     vector<vector<typename Ring::Type>> A,

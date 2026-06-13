@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 ///@brief ダブリング（モノイド合成）
@@ -12,10 +13,10 @@ struct DoublingFold {
     ///@param P 各頂点の遷移先
     ///@param V 各頂点の値
     ///@note O(N Log)
-    DoublingFold(const vector<int>& P, const vector<Type>& V) {
+    DoublingFold(const vi& P, const vector<Type>& V) {
         int N=P.size();
         dat=vector<vector<Type>>(Log+1,vector<Type>(N,Monoid::id()));
-        nxt=vector<vector<int>>(Log+1,vector<int>(N));
+        nxt=vector<vi>(Log+1,vi(N));
         rep(i,N) dat[0][i]=V[i], nxt[0][i]=P[i];
         rep(i,Log) rep(j,N) {
             nxt[i+1][j]=nxt[i][nxt[i][j]];
@@ -37,5 +38,5 @@ struct DoublingFold {
 
 private:
     vector<vector<Type>> dat;
-    vector<vector<int>> nxt;
+    vector<vi> nxt;
 };

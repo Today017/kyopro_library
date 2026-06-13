@@ -78,8 +78,8 @@ namespace Rand {
     }
 
     vector<pair<int,int>> RandomTree(int n) {
-        vector<int> a=RandomArray<int>(n-2,1,n+1);
-        vector<int> d(n+1); rep(i,n-2) d[a[i]]++; for(ll i=1; i<=n; i++) d[i]++;
+        auto a=RandomArray<int>(n-2,1,n+1);
+        vi d(n+1); rep(i,n-2) d[a[i]]++; for(ll i=1; i<=n; i++) d[i]++;
         vector<pair<int,int>> ret;
         set<int> pq;
         for(ll i=1; i<=n; i++) if(d[i]==1) pq.insert(i);
@@ -127,15 +127,15 @@ namespace Rand {
         int ed=edges.size();
         if(!connected) {
             vector<pair<int,int>> ret;
-            vector<int> idxs=RandomArray<int>(m,0,ed,true);
+            auto idxs=RandomArray<int>(m,0,ed,true);
             for(int idx:idxs) ret.push_back(edges[idx]);
             return ret;
         } else {
             vector<pair<int,int>> ret;
             while(true) {
                 ret.clear();
-                vector<int> idxs=RandomArray<int>(m,0,ed,true),parent(n);
-                vector<vector<int>> sets(n);
+                auto idxs=RandomArray<int>(m,0,ed,true); vi parent(n);
+                vector<vi> sets(n);
                 rep(i,n) {
                     parent[i]=i;
                     sets[i].push_back(i);

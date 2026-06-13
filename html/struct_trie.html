@@ -106,6 +106,7 @@ $(function(){initNavTree('struct_trie.html',''); initResizable(true); });
 <a href="#nested-classes">クラス</a> &#124;
 <a href="#pub-types">公開型</a> &#124;
 <a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
 <a href="struct_trie-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle"><div class="title">Trie&lt; char_size, margin &gt; 構造体テンプレート</div></div>
 </div><!--header-->
@@ -150,6 +151,13 @@ $(function(){initNavTree('struct_trie.html',''); initResizable(true); });
 <tr class="separator:a40d44a4e38493802d00a00335c8a7652"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c789423652daed7650a77bb796d6447" id="r_a7c789423652daed7650a77bb796d6447"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c789423652daed7650a77bb796d6447">erase</a> (const string &amp;s)</td></tr>
 <tr class="separator:a7c789423652daed7650a77bb796d6447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a29ca204f239fed4837d2beb1dd26f4d1" id="r_a29ca204f239fed4837d2beb1dd26f4d1"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="struct_trie_1_1_node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29ca204f239fed4837d2beb1dd26f4d1">nodes</a></td></tr>
+<tr class="separator:a29ca204f239fed4837d2beb1dd26f4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5cbac794d4e7d8f466a1f961b9b2bf2" id="r_ae5cbac794d4e7d8f466a1f961b9b2bf2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5cbac794d4e7d8f466a1f961b9b2bf2">root</a></td></tr>
+<tr class="separator:ae5cbac794d4e7d8f466a1f961b9b2bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;int char_size, int margin&gt;<br />
@@ -162,7 +170,7 @@ struct Trie&lt; char_size, margin &gt;</div><p><a class="el" href="struct_trie.h
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00020">20</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">型定義メンバ詳解</h2>
 <a id="a2bcf5b3d7a5d69121c19a33fb6525ae2" name="a2bcf5b3d7a5d69121c19a33fb6525ae2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2bcf5b3d7a5d69121c19a33fb6525ae2">&#9670;&#160;</a></span>Node</h2>
@@ -178,7 +186,7 @@ template&lt;int char_size, int margin&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00020">20</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00021">21</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -208,7 +216,9 @@ template&lt;int char_size, int margin&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00027">27</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00026">26</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="aho_8hpp_source.html#l00024">root</a>.</p>
 
 </div>
 </div>
@@ -237,7 +247,7 @@ template&lt;int char_size, int margin&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00010">10</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00011">11</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -270,7 +280,7 @@ template&lt;int char_size, int margin&gt; </div>
 <p>文字列 str を追加する </p>
 <dl class="section note"><dt>覚え書き</dt><dd>O(|str|) </dd></dl>
 
-<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -306,7 +316,7 @@ template&lt;int char_size, int margin&gt; </div>
 <p>strのprefixと一致する文字列のインデックスそれぞれに対してfを実行する </p>
 <dl class="section note"><dt>覚え書き</dt><dd>O(|str| + (見つかった文字列の総数)*|f|) </dd></dl>
 
-<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00068">68</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00067">67</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -337,7 +347,7 @@ template&lt;int char_size, int margin&gt; </div>
 
 <p>文字列の総数 </p>
 
-<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00073">73</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00072">72</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -368,7 +378,7 @@ template&lt;int char_size, int margin&gt; </div>
 
 <p>ノードの総数 </p>
 
-<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00076">76</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00075">75</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -397,7 +407,7 @@ template&lt;int char_size, int margin&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -426,7 +436,7 @@ template&lt;int char_size, int margin&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00031">31</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00032">32</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -455,7 +465,44 @@ template&lt;int char_size, int margin&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00041">41</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00042">42</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a29ca204f239fed4837d2beb1dd26f4d1" name="a29ca204f239fed4837d2beb1dd26f4d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29ca204f239fed4837d2beb1dd26f4d1">&#9670;&#160;</a></span>nodes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int char_size, int margin&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="struct_trie_1_1_node.html">Node</a> &gt; <a class="el" href="struct_trie.html">Trie</a>&lt; char_size, margin &gt;::nodes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00023">23</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae5cbac794d4e7d8f466a1f961b9b2bf2" name="ae5cbac794d4e7d8f466a1f961b9b2bf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5cbac794d4e7d8f466a1f961b9b2bf2">&#9670;&#160;</a></span>root</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int char_size, int margin&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct_trie.html">Trie</a>&lt; char_size, margin &gt;::root</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="aho_8hpp_source.html">aho.hpp</a> の <a class="el" href="aho_8hpp_source.html#l00024">24</a> 行目に定義があります。</p>
 
 </div>
 </div>

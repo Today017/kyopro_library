@@ -1,5 +1,7 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
+///@brief スライドモノイド積
 template<typename Semigroup>
 struct QueueFoldable {
     using Type=typename Semigroup::Type;

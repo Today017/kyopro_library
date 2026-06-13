@@ -1,3 +1,4 @@
+#pragma once
 #ifndef TDY
 #include <bits/allocator.h>
 #pragma GCC optimize("Ofast,unroll-loops")

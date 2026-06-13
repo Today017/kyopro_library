@@ -132,7 +132,7 @@ $(function(){initNavTree('prime__factorize_8hpp_source.html',''); initResizable(
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                <span class="keywordflow">while</span>(k&lt;r*3/4) y=f(y), k++;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                <span class="keywordflow">while</span>(k&lt;r &amp;&amp; g==1) {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                    ys=y;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,min(m,r-k)) y=f(y), q=q*_abs(x-y)%N;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                    <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i,min(m,r-k)) y=f(y), q=q*_abs(x-y)%N;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                    g=_gcd(q,N); k+=m;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                }</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                k=r; r*=2;</div>
@@ -170,14 +170,14 @@ $(function(){initNavTree('prime__factorize_8hpp_source.html',''); initResizable(
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span>(N&gt;1) mp[N]=1;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    vector&lt;pair&lt;ll,ll&gt;&gt; ret; <span class="keywordflow">for</span>(<span class="keyword">auto</span> p: mp) ret.push_back(p);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    sort(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(ret));</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    sort(<a class="code hl_define" href="macro_8hpp.html#a7c9ad46191cf9ac6dbad29df0a0d69c1">all</a>(ret));</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
 </div>
+<div class="ttc" id="amacro_8hpp_html_a30fefd21a95478fd2827fae51ab3b995"><div class="ttname"><a href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a></div><div class="ttdeci">#define rep(...)</div><div class="ttdef"><b>Definition</b> <a href="macro_8hpp_source.html#l00008">macro.hpp:8</a></div></div>
+<div class="ttc" id="amacro_8hpp_html_a7c9ad46191cf9ac6dbad29df0a0d69c1"><div class="ttname"><a href="macro_8hpp.html#a7c9ad46191cf9ac6dbad29df0a0d69c1">all</a></div><div class="ttdeci">#define all(v)</div><div class="ttdef"><b>Definition</b> <a href="macro_8hpp_source.html#l00019">macro.hpp:19</a></div></div>
 <div class="ttc" id="aprimality__test_8hpp_html_a4b37480abb43bbcac29ee38e1202da2d"><div class="ttname"><a href="primality__test_8hpp.html#a4b37480abb43bbcac29ee38e1202da2d">PrimalityTest</a></div><div class="ttdeci">bool PrimalityTest(ll N)</div><div class="ttdoc">ミラーラビン素数判定法によりNが素数であるかを判定する</div><div class="ttdef"><b>Definition</b> <a href="primality__test_8hpp_source.html#l00009">primality_test.hpp:9</a></div></div>
 <div class="ttc" id="aprime__factorize_8hpp_html_ae27e569d4f5b3431f4e63c2a103d6434"><div class="ttname"><a href="prime__factorize_8hpp.html#ae27e569d4f5b3431f4e63c2a103d6434">PrimeFactorize</a></div><div class="ttdeci">vector&lt; pair&lt; ll, ll &gt; &gt; PrimeFactorize(ll N)</div><div class="ttdoc">ポラードのロー法で N を素因数分解する</div><div class="ttdef"><b>Definition</b> <a href="#l00009">prime_factorize.hpp:9</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a9064c572b2b33295a5ca0950d4f8737e"><div class="ttname"><a href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a></div><div class="ttdeci">#define all(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

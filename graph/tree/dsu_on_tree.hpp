@@ -1,9 +1,10 @@
+#pragma once
 #include"../../../kyopro_library/template.hpp"
 
 ///@brief DSU on Tree
 ///@ref https://atcoder.jp/contests/abc454/editorial/19112
 struct DsuOnTree {
-    DsuOnTree(const vector<vector<int>>& g, int root):
+    DsuOnTree(const vector<vi>& g, int root):
         n(g.size()), G(g), heavy(n,-1), root(root) {
         build();
     }
@@ -33,11 +34,11 @@ struct DsuOnTree {
 
 private:
     int n, root;
-    vector<vector<int>> G;
-    vector<int> heavy;
+    vector<vi> G;
+    vi heavy;
 
     void build() {
-        vector<int> ch(n);
+        vi ch(n);
         auto dfs=[&](auto&& dfs, int now, int pre)-> void {
             for(int nxt: G[now]) if(nxt!=pre) {
                 dfs(dfs,nxt,now);

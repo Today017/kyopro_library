@@ -1,3 +1,4 @@
+#pragma once
 ///@brief Trie, Aho-Corasick
 //https://ei1333.github.io/library/string/aho-corasick.hpp に適宜コメントを付けただけです
 
@@ -7,7 +8,7 @@ template <int char_size>
 struct TrieNode {
     int nxt[char_size];///<子どものノードのインデクス, ないなら-1
     int exist;///<このノードをprefixとして持つ文字列の個数
-    vector<int> accept;///<このノードが終点である文字列の個数
+    vi accept;///<このノードが終点である文字列の個数
 
     TrieNode() : exist(0) { memset(nxt, -1, sizeof(nxt)); }
 };
@@ -19,11 +20,9 @@ template <int char_size, int margin>
 struct Trie {
     using Node = TrieNode<char_size>;
 
-private:
     vector<Node> nodes;
     int root;
 
-public:
     Trie() : root(0) { nodes.push_back(Node()); }
 
 private:
@@ -83,7 +82,7 @@ struct AhoCorasick : Trie<char_size + 1, margin> {
 
 private:
     const int FAIL = char_size;
-    vector<int> correct;
+    vi correct;
 
 public:
     ///@brief 前計算 オートマトンを構築する
@@ -113,7 +112,7 @@ public:
                     if (heavy) {
                         auto& u = this->nodes[now.nxt[i]].accept;
                         auto& v = this->nodes[this->nodes[fail].nxt[i]].accept;
-                        vector<int> accept;
+                        vi accept;
                         set_union(begin(u), end(u), begin(v), end(v),
                                 back_inserter(accept));
                         u = accept;

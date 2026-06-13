@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 ll ArgSign(const pair<ll,ll>& p) {

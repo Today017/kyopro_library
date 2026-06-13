@@ -1,14 +1,28 @@
 #pragma once
-#include<bits/stdc++.h>
-using namespace std;
-#define rep(i,n) for(int i=0; i<n; i++)
-#define per(i,n) for(int i=(n)-1; i>=0; i--)
-#define all(x) (x).begin(), (x).end()
-bool chmax(auto& a, auto b) { return a<b ? a=b, 1: 0; }
-bool chmin(auto& a, auto b) { return a>b ? a=b, 1: 0; }
-int lob(auto& v, auto x) { return lower_bound(all(v),x)-v.begin(); }
-void uniq(auto& v) { sort(all(v)), v.erase(unique(all(v)),v.end()); }
-using ll=long long; const int INF=1e9+10; const ll INFL=4e18;
+#include"../kyopro_library/base/include.hpp"
+#include"../kyopro_library/base/macro.hpp"
+#include"../kyopro_library/base/type.hpp"
+#include"../kyopro_library/base/io.hpp"
+#include"../kyopro_library/base/util.hpp"
+
+void run();
+void prep();
+int main() {
+    ios::sync_with_stdio(false); cin.tie(nullptr);
+    cout<<fixed<<setprecision(15);
+    prep();
+#ifdef MULTI
+    int T; cin>>T;
+    for(int t=0; t<T; t++) {
+#ifdef TDY
+        cerr<<"Case: #"<<t+1<<endl;
+#endif
+        run();
+    }
+#else
+    run();
+#endif
+}
 
 #ifdef DEBUG
 #include "./debug.hpp"

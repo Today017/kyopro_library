@@ -116,13 +116,13 @@ $(function(){initNavTree('struct_bezout_identity.html',''); initResizable(true);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:ae6269715a6bae60bc5ce0b4bfae2618e" id="r_ae6269715a6bae60bc5ce0b4bfae2618e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6269715a6bae60bc5ce0b4bfae2618e">BezoutIdentity</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> a, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> b, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> c)</td></tr>
+<tr class="memitem:ae6269715a6bae60bc5ce0b4bfae2618e" id="r_ae6269715a6bae60bc5ce0b4bfae2618e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6269715a6bae60bc5ce0b4bfae2618e">BezoutIdentity</a> (<a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> a, <a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> b, <a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> c)</td></tr>
 <tr class="memdesc:ae6269715a6bae60bc5ce0b4bfae2618e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ax+by=c  <br /></td></tr>
 <tr class="separator:ae6269715a6bae60bc5ce0b4bfae2618e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cf086366016d944941e8100fec64191" id="r_a2cf086366016d944941e8100fec64191"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cf086366016d944941e8100fec64191">build</a> ()</td></tr>
 <tr class="memdesc:a2cf086366016d944941e8100fec64191"><td class="mdescLeft">&#160;</td><td class="mdescRight">解が存在するか否かを返す  <br /></td></tr>
 <tr class="separator:a2cf086366016d944941e8100fec64191"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ca29bd9549c45e4419bda0b842f02c6" id="r_a2ca29bd9549c45e4419bda0b842f02c6"><td class="memItemLeft" align="right" valign="top">pair&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ca29bd9549c45e4419bda0b842f02c6">general_solution</a> (<a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> t=0)</td></tr>
+<tr class="memitem:a2ca29bd9549c45e4419bda0b842f02c6" id="r_a2ca29bd9549c45e4419bda0b842f02c6"><td class="memItemLeft" align="right" valign="top">pair&lt; <a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a>, <a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ca29bd9549c45e4419bda0b842f02c6">general_solution</a> (<a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> t=0)</td></tr>
 <tr class="memdesc:a2ca29bd9549c45e4419bda0b842f02c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">一般解を返す  <br /></td></tr>
 <tr class="separator:a2ca29bd9549c45e4419bda0b842f02c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -130,7 +130,7 @@ $(function(){initNavTree('struct_bezout_identity.html',''); initResizable(true);
 <div class="textblock"><p>一次不定方程式 ax+by=c を解く </p>
 <p>verify: <a href="https://atcoder.jp/contests/abc340/submissions/62495050">https://atcoder.jp/contests/abc340/submissions/62495050</a> g=gcd(a,b) とする。extGCD(a,b) によって、ax'+by'=g を解く。 両辺を c/g 倍し x=x'<em>(c/g),y=y'</em>(c/g) とすると、ax+by=c を満たす。c が g で割り切れない場合、解は存在しない。 ax+by=c の両辺を g で割ると、(a/g)*x + (b/g)*y = c/g となる。方程式の一般解を X,Y とおくと、(a/g)*(X-x) + (b/g)*(Y-y) = 0 を満たす。 a/g と b/g は互いに素なので X-x は b/g の倍数であり、X=(b/g)*t+x となる。 これを再代入すると、Y=-(a/g)*t+y を得る。 </p>
 
-<p class="definition"> <a class="el" href="bezout__identity_8hpp_source.html">bezout_identity.hpp</a> の <a class="el" href="bezout__identity_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="bezout__identity_8hpp_source.html">bezout_identity.hpp</a> の <a class="el" href="bezout__identity_8hpp_source.html#l00014">14</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="ae6269715a6bae60bc5ce0b4bfae2618e" name="ae6269715a6bae60bc5ce0b4bfae2618e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae6269715a6bae60bc5ce0b4bfae2618e">&#9670;&#160;</a></span>BezoutIdentity()</h2>
@@ -144,17 +144,17 @@ $(function(){initNavTree('struct_bezout_identity.html',''); initResizable(true);
         <tr>
           <td class="memname">BezoutIdentity::BezoutIdentity </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -166,7 +166,7 @@ $(function(){initNavTree('struct_bezout_identity.html',''); initResizable(true);
 
 <p>ax+by=c </p>
 
-<p class="definition"> <a class="el" href="bezout__identity_8hpp_source.html">bezout_identity.hpp</a> の <a class="el" href="bezout__identity_8hpp_source.html#l00015">15</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="bezout__identity_8hpp_source.html">bezout_identity.hpp</a> の <a class="el" href="bezout__identity_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -196,7 +196,7 @@ $(function(){initNavTree('struct_bezout_identity.html',''); initResizable(true);
 
 <p>解が存在するか否かを返す </p>
 
-<p class="definition"> <a class="el" href="bezout__identity_8hpp_source.html">bezout_identity.hpp</a> の <a class="el" href="bezout__identity_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="bezout__identity_8hpp_source.html">bezout_identity.hpp</a> の <a class="el" href="bezout__identity_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -210,9 +210,9 @@ $(function(){initNavTree('struct_bezout_identity.html',''); initResizable(true);
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">pair&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a>, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; BezoutIdentity::general_solution </td>
+          <td class="memname">pair&lt; <a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a>, <a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> &gt; BezoutIdentity::general_solution </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a></td>          <td class="paramname"><span class="paramname"><em>t</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>t</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -225,7 +225,7 @@ $(function(){initNavTree('struct_bezout_identity.html',''); initResizable(true);
 
 <p>一般解を返す </p>
 
-<p class="definition"> <a class="el" href="bezout__identity_8hpp_source.html">bezout_identity.hpp</a> の <a class="el" href="bezout__identity_8hpp_source.html#l00029">29</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="bezout__identity_8hpp_source.html">bezout_identity.hpp</a> の <a class="el" href="bezout__identity_8hpp_source.html#l00032">32</a> 行目に定義があります。</p>
 
 </div>
 </div>

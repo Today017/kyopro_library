@@ -1,7 +1,7 @@
 var struct_euler_tour_info =
 [
-    [ "tour", "struct_euler_tour_info.html#ae1846e8d91a37203742a1d7fc9b8daea", null ],
-    [ "depth", "struct_euler_tour_info.html#a6d1320fb7d9db90e504c85f39f94b33f", null ],
-    [ "in", "struct_euler_tour_info.html#a953199c1df21f2b7ff301bb4bd33cb9c", null ],
-    [ "out", "struct_euler_tour_info.html#a25c6e724649f7a2709554ee0155eae2c", null ]
+    [ "tour", "struct_euler_tour_info.html#ad2e1fd9db15c8888bd17bc3bf880afba", null ],
+    [ "depth", "struct_euler_tour_info.html#ad840a1cbef27c5180daaa62507ce908f", null ],
+    [ "in", "struct_euler_tour_info.html#a85408fa216f9355ea2e18d52aa1342fd", null ],
+    [ "out", "struct_euler_tour_info.html#ae9678805e8962411e0b9ad048f2dfcd7", null ]
 ];

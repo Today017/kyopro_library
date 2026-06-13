@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"   
 #include"../../kyopro_library/others/xor128.hpp"
 #include"../../kyopro_library/others/modcal.hpp"

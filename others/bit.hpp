@@ -1,3 +1,4 @@
+#pragma once
 #include "../../kyopro_library/template.hpp"
 
 ///@brief ビット演算
@@ -42,8 +43,8 @@ namespace Bit {
     bool HasBit(ll n,int i) { return (n>>i&1); }
 
     ///@brief sの部分集合を返す
-    vector<int> Subset(int s) {
-        vector<int> ret;
+    vi Subset(int s) {
+        vi ret;
         int t=s;
         do { ret.push_back(t); --t&=s; } while(t!=s);
         return ret;

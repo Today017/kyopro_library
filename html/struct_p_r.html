@@ -1,0 +1,597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kyopro Library: PR&lt; T, U &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Kyopro Library
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('struct_p_r.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="struct_p_r-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">PR&lt; T, U &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="type_8hpp_source.html">type.hpp</a>&quot;</code></p>
+<div class="dynheader">
+PR&lt; T, U &gt; の継承関係図</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="struct_p_r.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ae4c451e8f2b3bba484f422adf7c080c1" id="r_ae4c451e8f2b3bba484f422adf7c080c1"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:ae4c451e8f2b3bba484f422adf7c080c1"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae4c451e8f2b3bba484f422adf7c080c1">PR</a> (Args... args)</td></tr>
+<tr class="separator:ae4c451e8f2b3bba484f422adf7c080c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa15bb48a68382632a13f0300c43cadac" id="r_aa15bb48a68382632a13f0300c43cadac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_p_r.html">PR</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa15bb48a68382632a13f0300c43cadac">operator+=</a> (const <a class="el" href="struct_p_r.html">PR</a> &amp;r)</td></tr>
+<tr class="separator:aa15bb48a68382632a13f0300c43cadac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ce6d6a58a806416bc4971cb57effc1" id="r_a48ce6d6a58a806416bc4971cb57effc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_p_r.html">PR</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48ce6d6a58a806416bc4971cb57effc1">operator-=</a> (const <a class="el" href="struct_p_r.html">PR</a> &amp;r)</td></tr>
+<tr class="separator:a48ce6d6a58a806416bc4971cb57effc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2eefdb747ae1342374d77e24d658c16" id="r_ac2eefdb747ae1342374d77e24d658c16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_p_r.html">PR</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2eefdb747ae1342374d77e24d658c16">operator*=</a> (const <a class="el" href="struct_p_r.html">PR</a> &amp;r)</td></tr>
+<tr class="separator:ac2eefdb747ae1342374d77e24d658c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a188660d48d605b61151eb99ab149dc12" id="r_a188660d48d605b61151eb99ab149dc12"><td class="memTemplParams" colspan="2">template&lt;typename S&gt; </td></tr>
+<tr class="memitem:a188660d48d605b61151eb99ab149dc12"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_p_r.html">PR</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a188660d48d605b61151eb99ab149dc12">operator+=</a> (const S &amp;r)</td></tr>
+<tr class="separator:a188660d48d605b61151eb99ab149dc12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49efe4c3f105033f9dfd79c19e4e96c9" id="r_a49efe4c3f105033f9dfd79c19e4e96c9"><td class="memTemplParams" colspan="2">template&lt;typename S&gt; </td></tr>
+<tr class="memitem:a49efe4c3f105033f9dfd79c19e4e96c9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_p_r.html">PR</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a49efe4c3f105033f9dfd79c19e4e96c9">operator-=</a> (const S &amp;r)</td></tr>
+<tr class="separator:a49efe4c3f105033f9dfd79c19e4e96c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa27d7bb3e4ee50064b4f73babe4a3029" id="r_aa27d7bb3e4ee50064b4f73babe4a3029"><td class="memTemplParams" colspan="2">template&lt;typename S&gt; </td></tr>
+<tr class="memitem:aa27d7bb3e4ee50064b4f73babe4a3029"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_p_r.html">PR</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa27d7bb3e4ee50064b4f73babe4a3029">operator*=</a> (const S &amp;r)</td></tr>
+<tr class="separator:aa27d7bb3e4ee50064b4f73babe4a3029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a746107ae0a9a2b119c08786cd27d4990" id="r_a746107ae0a9a2b119c08786cd27d4990"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_p_r.html">PR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a746107ae0a9a2b119c08786cd27d4990">operator+</a> (const <a class="el" href="struct_p_r.html">PR</a> &amp;r) const</td></tr>
+<tr class="separator:a746107ae0a9a2b119c08786cd27d4990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6654edcd71234ca0ce42a0510e0a7b90" id="r_a6654edcd71234ca0ce42a0510e0a7b90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_p_r.html">PR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6654edcd71234ca0ce42a0510e0a7b90">operator-</a> (const <a class="el" href="struct_p_r.html">PR</a> &amp;r) const</td></tr>
+<tr class="separator:a6654edcd71234ca0ce42a0510e0a7b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06f192064954ce146396c2cb7f5ffb9e" id="r_a06f192064954ce146396c2cb7f5ffb9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_p_r.html">PR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06f192064954ce146396c2cb7f5ffb9e">operator*</a> (const <a class="el" href="struct_p_r.html">PR</a> &amp;r) const</td></tr>
+<tr class="separator:a06f192064954ce146396c2cb7f5ffb9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e1445e2d281da10f296bd6b4abdd887" id="r_a2e1445e2d281da10f296bd6b4abdd887"><td class="memTemplParams" colspan="2">template&lt;typename S&gt; </td></tr>
+<tr class="memitem:a2e1445e2d281da10f296bd6b4abdd887"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_p_r.html">PR</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2e1445e2d281da10f296bd6b4abdd887">operator+</a> (const S &amp;r) const</td></tr>
+<tr class="separator:a2e1445e2d281da10f296bd6b4abdd887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a406b1c1cd51c2af6985c9e93e1d3a0cf" id="r_a406b1c1cd51c2af6985c9e93e1d3a0cf"><td class="memTemplParams" colspan="2">template&lt;typename S&gt; </td></tr>
+<tr class="memitem:a406b1c1cd51c2af6985c9e93e1d3a0cf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_p_r.html">PR</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a406b1c1cd51c2af6985c9e93e1d3a0cf">operator-</a> (const S &amp;r) const</td></tr>
+<tr class="separator:a406b1c1cd51c2af6985c9e93e1d3a0cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adefc05011df2dc1a98b3357ccb15e38f" id="r_adefc05011df2dc1a98b3357ccb15e38f"><td class="memTemplParams" colspan="2">template&lt;typename S&gt; </td></tr>
+<tr class="memitem:adefc05011df2dc1a98b3357ccb15e38f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_p_r.html">PR</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#adefc05011df2dc1a98b3357ccb15e38f">operator*</a> (const S &amp;r) const</td></tr>
+<tr class="separator:adefc05011df2dc1a98b3357ccb15e38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b6132203815cd9fff9d716eebc56e23" id="r_a3b6132203815cd9fff9d716eebc56e23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_p_r.html">PR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b6132203815cd9fff9d716eebc56e23">operator-</a> () const</td></tr>
+<tr class="separator:a3b6132203815cd9fff9d716eebc56e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, typename U&gt;<br />
+struct PR&lt; T, U &gt;</div>
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="ae4c451e8f2b3bba484f422adf7c080c1" name="ae4c451e8f2b3bba484f422adf7c080c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4c451e8f2b3bba484f422adf7c080c1">&#9670;&#160;</a></span>PR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U&gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt;<a class="el" href="struct_p_r.html">::PR</a> </td>
+          <td>(</td>
+          <td class="paramtype">Args...</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aa15bb48a68382632a13f0300c43cadac" name="aa15bb48a68382632a13f0300c43cadac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa15bb48a68382632a13f0300c43cadac">&#9670;&#160;</a></span>operator+=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_p_r.html">PR</a> &amp; <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a48ce6d6a58a806416bc4971cb57effc1" name="a48ce6d6a58a806416bc4971cb57effc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48ce6d6a58a806416bc4971cb57effc1">&#9670;&#160;</a></span>operator-=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_p_r.html">PR</a> &amp; <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac2eefdb747ae1342374d77e24d658c16" name="ac2eefdb747ae1342374d77e24d658c16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2eefdb747ae1342374d77e24d658c16">&#9670;&#160;</a></span>operator*=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_p_r.html">PR</a> &amp; <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00040">40</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a188660d48d605b61151eb99ab149dc12" name="a188660d48d605b61151eb99ab149dc12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a188660d48d605b61151eb99ab149dc12">&#9670;&#160;</a></span>operator+=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U&gt; </div>
+<div class="memtemplate">
+template&lt;typename S&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_p_r.html">PR</a> &amp; <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const S &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00041">41</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a49efe4c3f105033f9dfd79c19e4e96c9" name="a49efe4c3f105033f9dfd79c19e4e96c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49efe4c3f105033f9dfd79c19e4e96c9">&#9670;&#160;</a></span>operator-=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U&gt; </div>
+<div class="memtemplate">
+template&lt;typename S&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_p_r.html">PR</a> &amp; <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const S &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00042">42</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa27d7bb3e4ee50064b4f73babe4a3029" name="aa27d7bb3e4ee50064b4f73babe4a3029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa27d7bb3e4ee50064b4f73babe4a3029">&#9670;&#160;</a></span>operator*=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U&gt; </div>
+<div class="memtemplate">
+template&lt;typename S&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_p_r.html">PR</a> &amp; <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const S &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00043">43</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a746107ae0a9a2b119c08786cd27d4990" name="a746107ae0a9a2b119c08786cd27d4990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a746107ae0a9a2b119c08786cd27d4990">&#9670;&#160;</a></span>operator+() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_p_r.html">PR</a> <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6654edcd71234ca0ce42a0510e0a7b90" name="a6654edcd71234ca0ce42a0510e0a7b90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6654edcd71234ca0ce42a0510e0a7b90">&#9670;&#160;</a></span>operator-() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_p_r.html">PR</a> <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00045">45</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a06f192064954ce146396c2cb7f5ffb9e" name="a06f192064954ce146396c2cb7f5ffb9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06f192064954ce146396c2cb7f5ffb9e">&#9670;&#160;</a></span>operator*() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_p_r.html">PR</a> <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00046">46</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2e1445e2d281da10f296bd6b4abdd887" name="a2e1445e2d281da10f296bd6b4abdd887"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e1445e2d281da10f296bd6b4abdd887">&#9670;&#160;</a></span>operator+() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U&gt; </div>
+<div class="memtemplate">
+template&lt;typename S&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_p_r.html">PR</a> <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const S &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00047">47</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a406b1c1cd51c2af6985c9e93e1d3a0cf" name="a406b1c1cd51c2af6985c9e93e1d3a0cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a406b1c1cd51c2af6985c9e93e1d3a0cf">&#9670;&#160;</a></span>operator-() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U&gt; </div>
+<div class="memtemplate">
+template&lt;typename S&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_p_r.html">PR</a> <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const S &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adefc05011df2dc1a98b3357ccb15e38f" name="adefc05011df2dc1a98b3357ccb15e38f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adefc05011df2dc1a98b3357ccb15e38f">&#9670;&#160;</a></span>operator*() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U&gt; </div>
+<div class="memtemplate">
+template&lt;typename S&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_p_r.html">PR</a> <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const S &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3b6132203815cd9fff9d716eebc56e23" name="a3b6132203815cd9fff9d716eebc56e23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b6132203815cd9fff9d716eebc56e23">&#9670;&#160;</a></span>operator-() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename U&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_p_r.html">PR</a> <a class="el" href="struct_p_r.html">PR</a>&lt; T, U &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="type_8hpp_source.html">type.hpp</a> の <a class="el" href="type_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>base/<a class="el" href="type_8hpp_source.html">type.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_p_r.html">PR</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

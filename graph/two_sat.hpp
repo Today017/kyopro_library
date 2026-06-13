@@ -1,9 +1,10 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/graph/scc.hpp"
 
 ///@brief 2-SAT
 struct TwoSat {
-    TwoSat(int n) { g=vector<vector<int>>(2*n); }
+    TwoSat(int n) { g=vector<vi>(2*n); }
 
     ///@brief 条件 `i==fi || j==fj` を追加
     void add(int i, bool fi, int j, bool fj) {
@@ -30,5 +31,5 @@ struct TwoSat {
     }
 
 private:
-    vector<vector<int>> g;
+    vector<vi> g;
 };

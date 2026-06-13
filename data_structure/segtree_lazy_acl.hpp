@@ -1,3 +1,4 @@
+#pragma once
 #include<atcoder/lazysegtree>
 
 template<typename Monoid, typename Operator, auto mapping>

@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 template<typename Ring, int N>
@@ -22,8 +23,8 @@ array<array<typename Ring::Type,N>,N> MatPow(
     rep(i,N) rep(j,N) ret[i][j]=Ring::zero();
     rep(i,N) ret[i][i]=Ring::one();
     while(b) {
-        if(b&1) ret=MatMul<Ring>(ret,A);
-        A=MatMul<Ring>(A,A);
+        if(b&1) ret=MatMul<Ring,N>(ret,A);
+        A=MatMul<Ring,N>(A,A);
         b>>=1;
     }
     return ret;

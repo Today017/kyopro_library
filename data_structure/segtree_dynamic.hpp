@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 ///@brief 動的セグメント木
@@ -82,7 +83,7 @@ private:
     };
     vector<Node> node;
     ll mx=1e9;
-    vector<int> route;
+    vi route;
 };
 
 #include"../../kyopro_library/others/monoid.hpp"

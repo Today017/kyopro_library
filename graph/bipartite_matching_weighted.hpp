@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/graph/flow/min_cost_flow.hpp"
 
@@ -7,7 +8,7 @@ struct BipartiteMatchingWeighted {
     MinCostFlow mcf;
     int start, goal;
     BipartiteMatchingWeighted(int n): mcf(n+2), start(n), goal(n+1) {}
-    vector<int> left,right;
+    vi left,right;
 
     ///@brief 左側の頂点 u と右側の頂点 v に重み w の辺を追加する
     void add_edge(int u, int v, ll w) {

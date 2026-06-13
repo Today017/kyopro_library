@@ -6,8 +6,8 @@ struct DSU {
     DSU()=default;
 
     DSU(int n) {
-        par=vector<int>(n); iota(all(par),0);
-        sz=vector<int>(n,1);
+        par=vi(n); iota(all(par),0);
+        sz=vi(n,1);
         forest_count=n;
     }
 
@@ -31,15 +31,15 @@ struct DSU {
 
     int count() { return forest_count; }
 
-    vector<vector<int>> groups() {
+    vector<vi> groups() {
         int n=par.size();
-        vector<vector<int>> ret(n);
+        vector<vi> ret(n);
         rep(i,n) ret[find(i)].push_back(i);
-        ret.erase(remove_if(all(ret),[&](const vector<int>& v) { return v.empty(); }),ret.end());
+        ret.erase(remove_if(all(ret),[&](const vi& v) { return v.empty(); }),ret.end());
         return ret;
     }
 
 private:
-    vector<int> par,sz;
+    vi par,sz;
     int forest_count;
 };

@@ -8,6 +8,7 @@ var searchData=
   ['doubling_5ffold_2ehpp_5',['doubling_fold.hpp',['../doubling__fold_8hpp.html',1,'']]],
   ['dsu_2ehpp_6',['dsu.hpp',['../dsu_8hpp.html',1,'']]],
   ['dsu_5fmerging_2ehpp_7',['dsu_merging.hpp',['../dsu__merging_8hpp.html',1,'']]],
-  ['dsu_5fpotentialized_2ehpp_8',['dsu_potentialized.hpp',['../dsu__potentialized_8hpp.html',1,'']]],
-  ['dsu_5frollback_2ehpp_9',['dsu_rollback.hpp',['../dsu__rollback_8hpp.html',1,'']]]
+  ['dsu_5fon_5ftree_2ehpp_8',['dsu_on_tree.hpp',['../dsu__on__tree_8hpp.html',1,'']]],
+  ['dsu_5fpotentialized_2ehpp_9',['dsu_potentialized.hpp',['../dsu__potentialized_8hpp.html',1,'']]],
+  ['dsu_5frollback_2ehpp_10',['dsu_rollback.hpp',['../dsu__rollback_8hpp.html',1,'']]]
 ];

@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/algorithm/binary_search.hpp"
 
@@ -42,14 +43,20 @@ struct CHT {
     ///@brief x に対する直線群の最小値を求める
     ///@note O((log(N))^2)
     T get(T x) {
-        auto [a,b]=*lines.lower_bound(BinarySearch<T>(lines.begin()->first,lines.rbegin()->first+1,[&](T m) {
-            auto it=lines.lower_bound(m);
-            if(it==lines.begin()) return true;
-            if(it==lines.end()) return false;
-            auto [a1,b1]=*prev(it);
-            auto [a2,b2]=*it;
-            return a1*x+b1>a2*x+b2;
-        }));
+        auto [a,b]=*lines.lower_bound(
+            BinarySearch<T>(
+                lines.begin()->first,
+                lines.rbegin()->first+1,
+                [&](T m) {
+                    auto it=lines.lower_bound(m);
+                    if(it==lines.begin()) return true;
+                    if(it==lines.end()) return false;
+                    auto [a1,b1]=*prev(it);
+                    auto [a2,b2]=*it;
+                    return a1*x+b1>a2*x+b2;
+                }
+            )
+        );
         return (a*x+b)*(MIN?1:-1);
     }
 
@@ -61,6 +68,6 @@ private:
         auto [a,b]=*it;
         auto [a1,b1]=*nxt;
         auto [a2,b2]=*prv;
-        return (__int128_t)(a1-a)*(b-b2)<(__int128_t)(a-a2)*(b1-b);
+        return (lll)(a1-a)*(b-b2)<(lll)(a-a2)*(b1-b);
     }
 };

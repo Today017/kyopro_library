@@ -5,34 +5,34 @@
 struct MaxFlow {
     ///@brief 辺構造体
     struct Edge {
-        int from; ///< 始点
-        int to; ///< 終点
-        int rev; ///< 逆辺のインデックス
+        ii from; ///< 始点
+        ii to; ///< 終点
+        ii rev; ///< 逆辺のインデックス
         ll cap; ///< 容量
         ll flow; ///< 流量
         bool isrev;
-        Edge(int from, int to, ll cap, int rev, bool isrev):
+        Edge(ii from, ii to, ll cap, ii rev, bool isrev):
             from(from), to(to), rev(rev), cap(cap), flow(0), isrev(isrev) {}
     };
 
-    MaxFlow(int n): graph(n), level(n), iter(n) {}
+    MaxFlow(ii n): graph(n), level(n), iter(n) {}
     MaxFlow()=default;
 
     ///@brief 容量 cap の辺を追加する
-    void add_edge(int from, int to, ll cap) {
+    void add_edge(ii from, ii to, ll cap) {
         graph[from].push_back(Edge(from,to,cap,graph[to].size(),false));
         graph[to].push_back(Edge(to,from,0,graph[from].size()-1,true));
     }
 
 private:
     vector<vector<Edge>> graph;
-    vector<int> level, iter;
+    vi level, iter;
 
-    void bfs(int s) {
+    void bfs(ii s) {
         fill(all(level),-1); level[s]=0;
-        queue<int> que; que.push(s);
+        queue<ii> que; que.push(s);
         while(!que.empty()) {
-            int v=que.front(); que.pop();
+            ii v=que.front(); que.pop();
             for(auto& e: graph[v]) {
                 if(e.cap>0 && level[e.to]<0) {
                     level[e.to]=level[v]+1;
@@ -42,9 +42,9 @@ private:
         }
     }
 
-    ll dfs(int v, int t, ll f) {
+    ll dfs(ii v, ii t, ll f) {
         if(v==t) return f;
-        for(int& i=iter[v]; i<(int)graph[v].size(); i++) {
+        for(ii& i=iter[v]; i<(ii)graph[v].size(); i++) {
             auto& e=graph[v][i];
             if(e.cap>0 && level[v]<level[e.to]) {
                 ll d=dfs(e.to,t,min(f,e.cap));
@@ -61,7 +61,7 @@ private:
 public:
     ///@brief s から t への最大流を求める
     ///@note O(V^2 E)
-    ll flow(int s, int t) {
+    ll flow(ii s, ii t) {
         ll ret=0;
         while(true) {
             bfs(s);
@@ -74,11 +74,11 @@ public:
 
     ///@brief 直前に流したフローから最小カットを復元する
     ///@brief 始点 v から到達可能か否か
-    vector<int> mincut(int v=0) {
-        vector<int> ret(graph.size()); ret[v]=true;
-        queue<int> que; que.push(v);
+    vi mincut(ii v=0) {
+        vi ret(graph.size()); ret[v]=true;
+        queue<ii> que; que.push(v);
         while(!que.empty()) {
-            int v=que.front(); que.pop();
+            ii v=que.front(); que.pop();
             for(auto& e: graph[v]) {
                 if(e.cap>0 && !ret[e.to] /*&& !e.isrev*/) {
                     ret[e.to]=true;

@@ -18,7 +18,7 @@ T BinarySearch(T ok, T ng, Judge judge) {
 ///@details 条件 judge を満たす ok と ng の境界を二分探索によって求める。
 ///@note O(iter * f)
 template<typename T, typename Judge>
-T BinarySearchIteration(T ok, T ng, Judge judge, int iter=100) {
+T BinarySearchIteration(T ok, T ng, Judge judge, ii iter=100) {
     while(iter--) {
         T mid=(ok+ng)/2;
         if(judge(mid)) ok=mid;
@@ -33,7 +33,7 @@ T BinarySearchIteration(T ok, T ng, Judge judge, int iter=100) {
 ///@param step 探索幅
 ///@param iter 探索回数
 template<typename T, typename Judge>
-bool CheckMonotonicity(T start, T step, ll iter, Judge judge) {
+bool CheckMonotonicity(T start, T step, ii iter, Judge judge) {
     cerr<<"[ ";
     bool pre=false;
     ll cnt=0;
@@ -45,7 +45,7 @@ bool CheckMonotonicity(T start, T step, ll iter, Judge judge) {
     }
     cerr<<" ]\n";
 
-    if(cnt<=1) cerr<<"Is Monotonic\n";
-    else cerr<<"Not Monotonic\n";
+    if(cnt<=1) cerr<<"Is Monotonic"<<NL;
+    else cerr<<"Not Monotonic"<<NL;
     return cnt<=1;
 }

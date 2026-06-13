@@ -1,5 +1,5 @@
 var inversion__number_8hpp =
 [
-    [ "InversionNumber", "inversion__number_8hpp.html#a9a530c3e818bd0cf716d7ec000691b60", null ],
-    [ "InversionNumber2", "inversion__number_8hpp.html#afe4b54568dd877d466545318c939efb0", null ]
+    [ "InversionNumber", "inversion__number_8hpp.html#abaa9b0639f31a52f966a280a85ec40d7", null ],
+    [ "InversionNumber2", "inversion__number_8hpp.html#ae2d71e997437b5c2e8eba69b3879fa50", null ]
 ];

@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 ///@brief F_2 上の連立線形方程式
@@ -13,7 +14,7 @@
 ///@param where ピボットとなる変数を記録するための配列
 ///@return A のランク
 template<int MAX_COL>
-int RowReduction(vector<bitset<MAX_COL>>& a, int col, vector<int>& where) {
+int RowReduction(vector<bitset<MAX_COL>>& a, int col, vi& where) {
     int row=a.size();
     int rank=0;
     rep(c,col-1) {
@@ -49,7 +50,7 @@ int LinearEquation(vector<bitset<MAX_COL>> a, vector<bool> b, int col, vector<bo
         if(b[i]) a2[i][col]=true;
     }
 
-    vector<int> where;
+    vi where;
     int rank=RowReduction<MAX_COL>(a2,col+1,where);
 
     for(int r=rank; r<row; r++) if(a2[r][col]) return false;

@@ -1,5 +1,6 @@
 #pragma once
 #include"../../kyopro_library/template.hpp"
+#include <chrono>
 
 ///@brief タイマー
 struct Timer {

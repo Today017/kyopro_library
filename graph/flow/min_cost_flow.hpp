@@ -77,5 +77,5 @@ struct MinCostFlow {
 private:
     vector<vector<Edge>> graph;
     vector<ll> dist,pot; // 距離, ポテンシャル
-    vector<int> pv,pe;
+    vi pv,pe;
 };

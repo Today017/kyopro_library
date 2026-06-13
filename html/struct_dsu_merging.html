@@ -147,9 +147,9 @@ $(function(){initNavTree('struct_dsu_merging.html',''); initResizable(true); });
 <tr class="memitem:a76200780dde72296276b892b74e6da98" id="r_a76200780dde72296276b892b74e6da98"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76200780dde72296276b892b74e6da98">count</a> () const</td></tr>
 <tr class="memdesc:a76200780dde72296276b892b74e6da98"><td class="mdescLeft">&#160;</td><td class="mdescRight">連結成分の個数を返す  <br /></td></tr>
 <tr class="separator:a76200780dde72296276b892b74e6da98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73a542ada89dfd4febc1766e43204834" id="r_a73a542ada89dfd4febc1766e43204834"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73a542ada89dfd4febc1766e43204834">groups</a> () const</td></tr>
-<tr class="memdesc:a73a542ada89dfd4febc1766e43204834"><td class="mdescLeft">&#160;</td><td class="mdescRight">各頂点を連結成分に分解する  <br /></td></tr>
-<tr class="separator:a73a542ada89dfd4febc1766e43204834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d84f3bb0157a33a95f09ad58a0d7203" id="r_a5d84f3bb0157a33a95f09ad58a0d7203"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="type_8hpp.html#a8bf3ad371864cb45775d8d1fe0b23832">vi</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d84f3bb0157a33a95f09ad58a0d7203">groups</a> () const</td></tr>
+<tr class="memdesc:a5d84f3bb0157a33a95f09ad58a0d7203"><td class="mdescLeft">&#160;</td><td class="mdescRight">各頂点を連結成分に分解する  <br /></td></tr>
+<tr class="separator:a5d84f3bb0157a33a95f09ad58a0d7203"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Semigroup = DsuBaseSemigroup&gt;<br />
@@ -162,7 +162,7 @@ struct DsuMerging&lt; Semigroup &gt;</div><p>値をマージする <a class="el"
 </dl>
 <dl class="section attention"><dt>注意</dt><dd>コンテナを乗せる場合、値渡しで受け取るようにして、最後もreturn move(r)みたいにして返すこと </dd></dl>
 
-<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">型定義メンバ詳解</h2>
 <a id="a31648bc93d4bc29960fe93fff7ca0914" name="a31648bc93d4bc29960fe93fff7ca0914"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a31648bc93d4bc29960fe93fff7ca0914">&#9670;&#160;</a></span>Type</h2>
@@ -178,7 +178,7 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00013">13</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00014">14</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -241,7 +241,7 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
 
 <p>コンストラクタ </p>
 
-<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -274,7 +274,7 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
 <p>頂点 x を含む連結成分の代表元を返す </p>
 <dl class="section note"><dt>覚え書き</dt><dd>O(α(N)) </dd></dl>
 
-<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00027">27</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00028">28</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -310,9 +310,9 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
 <p>頂点 x と y を連結し、true を返す </p>
 <p>既に連結されている場合は false を返す </p><dl class="section note"><dt>覚え書き</dt><dd>O(α(N)) </dd></dl>
 
-<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
 
-<p class="reference">参照先 <a class="el" href="dsu__merging_8hpp_source.html#l00027">find()</a>.</p>
+<p class="reference">参照先 <a class="el" href="dsu__merging_8hpp_source.html#l00028">find()</a>.</p>
 
 </div>
 </div>
@@ -343,7 +343,7 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
 
 <p>頂点 x を含む連結成分の半群積を返す </p>
 
-<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00054">54</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00055">55</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -372,7 +372,7 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00057">57</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -403,7 +403,7 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
 
 <p>頂点 x を含む連結成分のサイズを返す </p>
 
-<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00059">59</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00060">60</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -438,9 +438,9 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
 
 <p>頂点 x と y が同じ連結成分に属するか否かを返す </p>
 
-<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00062">62</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00063">63</a> 行目に定義があります。</p>
 
-<p class="reference">参照先 <a class="el" href="dsu__merging_8hpp_source.html#l00027">find()</a>.</p>
+<p class="reference">参照先 <a class="el" href="dsu__merging_8hpp_source.html#l00028">find()</a>.</p>
 
 </div>
 </div>
@@ -471,12 +471,12 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
 
 <p>連結成分の個数を返す </p>
 
-<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00065">65</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00066">66</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="a73a542ada89dfd4febc1766e43204834" name="a73a542ada89dfd4febc1766e43204834"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73a542ada89dfd4febc1766e43204834">&#9670;&#160;</a></span>groups()</h2>
+<a id="a5d84f3bb0157a33a95f09ad58a0d7203" name="a5d84f3bb0157a33a95f09ad58a0d7203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d84f3bb0157a33a95f09ad58a0d7203">&#9670;&#160;</a></span>groups()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -487,7 +487,7 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; vector&lt; int &gt; &gt; <a class="el" href="struct_dsu_merging.html">DsuMerging</a>&lt; Semigroup &gt;::groups </td>
+          <td class="memname">vector&lt; <a class="el" href="type_8hpp.html#a8bf3ad371864cb45775d8d1fe0b23832">vi</a> &gt; <a class="el" href="struct_dsu_merging.html">DsuMerging</a>&lt; Semigroup &gt;::groups </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -502,7 +502,7 @@ template&lt;typename Semigroup = DsuBaseSemigroup&gt; </div>
 
 <p>各頂点を連結成分に分解する </p>
 
-<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00068">68</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dsu__merging_8hpp_source.html">dsu_merging.hpp</a> の <a class="el" href="dsu__merging_8hpp_source.html#l00069">69</a> 行目に定義があります。</p>
 
 </div>
 </div>

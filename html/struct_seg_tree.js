@@ -12,6 +12,7 @@ var struct_seg_tree =
     [ "find_left", "struct_seg_tree.html#a42e25bc5f3c27da146721b6bc9099893", null ],
     [ "operator[]", "struct_seg_tree.html#abaaec86084bfc4f3ea884347097d2277", null ],
     [ "size", "struct_seg_tree.html#a5df8a514cb63bc8845fa4077e183317f", null ],
+    [ "get", "struct_seg_tree.html#a3a6396ec3b855aeef035d925fa497879", null ],
     [ "op", "struct_seg_tree.html#ac4e7f7d5633af122b8c5a9e77921aa64", null ],
     [ "id", "struct_seg_tree.html#a67ed41ce9f54eda7c2f3523ee19966d0", null ],
     [ "set", "struct_seg_tree.html#afc6ad821bbde4df199d8299bcb9fa553", null ],

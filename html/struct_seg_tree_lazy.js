@@ -11,5 +11,6 @@ var struct_seg_tree_lazy =
     [ "find_right", "struct_seg_tree_lazy.html#abf01c743ea6b8648ab8fbb5590de0065", null ],
     [ "find_left", "struct_seg_tree_lazy.html#a96ee12dc05c4296b4176ea1a91564558", null ],
     [ "size", "struct_seg_tree_lazy.html#ad04a20cae43ac18270ee7b1b509c51f9", null ],
-    [ "operator[]", "struct_seg_tree_lazy.html#abc1293d5bcbb6b175fc749044e0c2c52", null ]
+    [ "operator[]", "struct_seg_tree_lazy.html#abc1293d5bcbb6b175fc749044e0c2c52", null ],
+    [ "get", "struct_seg_tree_lazy.html#a18eee6a7fa218e487932c96feec1b937", null ]
 ];

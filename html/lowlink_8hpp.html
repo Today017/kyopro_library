@@ -109,6 +109,7 @@ $(function(){initNavTree('lowlink_8hpp.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../kyopro_library/template.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="graph_8hpp_source.html">../../kyopro_library/graph/graph.hpp</a>&quot;</code><br />
 </div>
 <p><a href="lowlink_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
@@ -120,21 +121,24 @@ $(function(){initNavTree('lowlink_8hpp.html',''); initResizable(true); });
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:af6e453f0c2a7fabe7daa8df205eba892" id="r_af6e453f0c2a7fabe7daa8df205eba892"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_bridge_info.html">BridgeInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6e453f0c2a7fabe7daa8df205eba892">LowLink</a> (const vector&lt; vector&lt; int &gt; &gt; &amp;g)</td></tr>
-<tr class="memdesc:af6e453f0c2a7fabe7daa8df205eba892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low Link のアルゴリズムによりグラフGの橋と関節点を求める  <br /></td></tr>
-<tr class="separator:af6e453f0c2a7fabe7daa8df205eba892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae03292b8eddcd9e26966a6c7e31cd5f1" id="r_ae03292b8eddcd9e26966a6c7e31cd5f1"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:ae03292b8eddcd9e26966a6c7e31cd5f1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_bridge_info.html">BridgeInfo</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae03292b8eddcd9e26966a6c7e31cd5f1">LowLink</a> (const <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt; &amp;G)</td></tr>
+<tr class="memdesc:ae03292b8eddcd9e26966a6c7e31cd5f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low Link のアルゴリズムによりグラフGの橋と関節点を求める  <br /></td></tr>
+<tr class="separator:ae03292b8eddcd9e26966a6c7e31cd5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">関数詳解</h2>
-<a id="af6e453f0c2a7fabe7daa8df205eba892" name="af6e453f0c2a7fabe7daa8df205eba892"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6e453f0c2a7fabe7daa8df205eba892">&#9670;&#160;</a></span>LowLink()</h2>
+<a id="ae03292b8eddcd9e26966a6c7e31cd5f1" name="ae03292b8eddcd9e26966a6c7e31cd5f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae03292b8eddcd9e26966a6c7e31cd5f1">&#9670;&#160;</a></span>LowLink()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="struct_bridge_info.html">BridgeInfo</a> LowLink </td>
           <td>(</td>
-          <td class="paramtype">const vector&lt; vector&lt; int &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>G</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -143,7 +147,7 @@ $(function(){initNavTree('lowlink_8hpp.html',''); initResizable(true); });
 <p>Low Link のアルゴリズムによりグラフGの橋と関節点を求める </p>
 <dl class="section note"><dt>覚え書き</dt><dd>O(V+E) </dd></dl>
 
-<p class="definition"> <a class="el" href="lowlink_8hpp_source.html">lowlink.hpp</a> の <a class="el" href="lowlink_8hpp_source.html#l00011">11</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="lowlink_8hpp_source.html">lowlink.hpp</a> の <a class="el" href="lowlink_8hpp_source.html#l00015">15</a> 行目に定義があります。</p>
 
 </div>
 </div>

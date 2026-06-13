@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 ///@brief 二項係数・階乗計算
@@ -41,6 +42,20 @@ struct Comb {
 
     ///@brief n 番目のカタラン数を返す
     T cataran(ll n) { return fac[2*n]*finv[n+1]*finv[n]; }
+
+    ///@brief O(r)で二項係数を計算する。nが大きいとき用
+    T combslow(ll n, ll r) {
+        if(n<0 || r<0 || n-r<0) return 0;
+        if(r>(n-r)) return combslow(n,n-r);
+        T ret=1;
+        for(ll i=n; i>n-r; i--) ret*=i;
+        ret*=finv[r];
+        return ret;
+    }
+
+    T makegroup_0ok(ll ball, ll group) { return comb(ball+group-1,group-1); }
+
+    T makegroup_0ng(ll ball, ll group) { return comb(ball-1,group-1); }
 
 private:
     vector<T> fac,finv;

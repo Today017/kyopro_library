@@ -1,3 +1,4 @@
+#pragma once
 #include "../../kyopro_library/template.hpp"
 
 ///@brief 区間 [l1, r1) と [l2, r2) が交差しているか否かを返す

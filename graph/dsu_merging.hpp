@@ -1,3 +1,4 @@
+#pragma once
 #include "../../kyopro_library/template.hpp"
 
 struct DsuBaseSemigroup {
@@ -16,8 +17,8 @@ struct DsuMerging {
     ///@brief コンストラクタ
     DsuMerging(int n, const vector<Type>& v) {
         assert(n==v.size());
-        par=vector<int>(n); iota(all(par),0);
-        sz=vector<int>(n,1);
+        par=vi(n); iota(all(par),0);
+        sz=vi(n,1);
         dat=v;
         forest_count=n;
     }
@@ -65,16 +66,16 @@ struct DsuMerging {
     int count() const { return forest_count; }
 
     ///@brief 各頂点を連結成分に分解する
-    vector<vector<int>> groups() const {
+    vector<vi> groups() const {
         int n=par.size();
-        vector<vector<int>> ret(n);
+        vector<vi> ret(n);
         rep(i,n) ret[find(i)].push_back(i);
-        ret.erase(remove_if(all(ret),[&](const vector<int>& v) { return v.empty(); }),ret.end());
+        ret.erase(remove_if(all(ret),[&](const vi& v) { return v.empty(); }),ret.end());
         return ret;
     }
 
 private:
-    vector<int> par,sz;
+    vi par,sz;
     vector<Type> dat;
     int forest_count;
 };

@@ -108,26 +108,30 @@ $(function(){initNavTree('dijkstra_8hpp.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="template_8hpp_source.html">../../../kyopro_library/template.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="graph_8hpp_source.html">../../../kyopro_library/graph/graph.hpp</a>&quot;</code><br />
 </div>
 <p><a href="dijkstra_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:ae83c0576ec0e306a5464dd9cda3f3976" id="r_ae83c0576ec0e306a5464dd9cda3f3976"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae83c0576ec0e306a5464dd9cda3f3976">Dijkstra</a> (const vector&lt; vector&lt; pair&lt; int, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; &gt; &gt; &amp;G, int start=0)</td></tr>
-<tr class="memdesc:ae83c0576ec0e306a5464dd9cda3f3976"><td class="mdescLeft">&#160;</td><td class="mdescRight">ダイクストラ法  <br /></td></tr>
-<tr class="separator:ae83c0576ec0e306a5464dd9cda3f3976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31e7d717209778592e8f50b2ac0f55bb" id="r_a31e7d717209778592e8f50b2ac0f55bb"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a31e7d717209778592e8f50b2ac0f55bb"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a31e7d717209778592e8f50b2ac0f55bb">Dijkstra</a> (const <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt; &amp;G, int start=0)</td></tr>
+<tr class="memdesc:a31e7d717209778592e8f50b2ac0f55bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">ダイクストラ法  <br /></td></tr>
+<tr class="separator:a31e7d717209778592e8f50b2ac0f55bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">関数詳解</h2>
-<a id="ae83c0576ec0e306a5464dd9cda3f3976" name="ae83c0576ec0e306a5464dd9cda3f3976"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae83c0576ec0e306a5464dd9cda3f3976">&#9670;&#160;</a></span>Dijkstra()</h2>
+<a id="a31e7d717209778592e8f50b2ac0f55bb" name="a31e7d717209778592e8f50b2ac0f55bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31e7d717209778592e8f50b2ac0f55bb">&#9670;&#160;</a></span>Dijkstra()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; Dijkstra </td>
+          <td class="memname">vector&lt; T &gt; Dijkstra </td>
           <td>(</td>
-          <td class="paramtype">const vector&lt; vector&lt; pair&lt; int, <a class="el" href="template_8hpp.html#adcb0b6ef4cd780a895c7089c0191cd62">ll</a> &gt; &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="struct_graph.html">Graph</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -138,9 +142,9 @@ $(function(){initNavTree('dijkstra_8hpp.html',''); initResizable(true); });
 </div><div class="memdoc">
 
 <p>ダイクストラ法 </p>
-<p>重み付きグラフ G に対し、頂点 start から各頂点までの最短距離を求める </p><dl class="section note"><dt>覚え書き</dt><dd>O(E log V) </dd></dl>
+<p>重み付きグラフ G に対し、頂点 start から各頂点までの最短距離を求める </p><dl class="section note"><dt>覚え書き</dt><dd><a class="el" href="io_8hpp.html#ab999edc57efe57ec9ee612335f9622e3">O(E log V)</a> </dd></dl>
 
-<p class="definition"> <a class="el" href="dijkstra_8hpp_source.html">dijkstra.hpp</a> の <a class="el" href="dijkstra_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="dijkstra_8hpp_source.html">dijkstra.hpp</a> の <a class="el" href="dijkstra_8hpp_source.html#l00009">9</a> 行目に定義があります。</p>
 
 </div>
 </div>

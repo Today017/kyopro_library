@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 #include <ext/pb_ds/assoc_container.hpp>

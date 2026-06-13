@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 #include"../../kyopro_library/math/extgcd.hpp"
 
@@ -17,7 +18,9 @@ struct BezoutIdentity {
     ///@brief 解が存在するか否かを返す
     bool build() {
         auto [tmpg,tmpx,tmpy]=ExtGcd(abs(a),abs(b));
+        if(g==0) g=1;
         if(c%g!=0) return false;
+        print_line;
         g=tmpg; X=tmpx; Y=tmpy;
         if(a<0) X=-X;
         if(b<0) Y=-Y;

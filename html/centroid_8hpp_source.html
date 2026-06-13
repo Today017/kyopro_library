@@ -105,65 +105,66 @@ $(function(){initNavTree('centroid_8hpp_source.html',''); initResizable(true); }
   <div class="headertitle"><div class="title">centroid.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="centroid_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<a href="centroid_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">    5</span><span class="comment"> * @brief 重心分解</span></div>
-<div class="line"><span class="lineno">    6</span><span class="comment"> * @param seen 探索済みフラグ</span></div>
-<div class="line"><span class="lineno">    7</span><span class="comment"> * @param sz 各頂点の部分木のサイズ</span></div>
-<div class="line"><span class="lineno">    8</span><span class="comment"> * </span></div>
-<div class="line"><span class="lineno">    9</span><span class="comment"> * ```cpp</span></div>
-<div class="line"><span class="lineno">   10</span><span class="comment"> * vector&lt;int&gt; sz(N);</span></div>
-<div class="line"><span class="lineno">   11</span><span class="comment"> * vector&lt;bool&gt; seen(N);</span></div>
-<div class="line"><span class="lineno">   12</span><span class="comment"> * </span></div>
-<div class="line"><span class="lineno">   13</span><span class="comment"> * auto centroid_decomposition = [&amp;](auto self, int root) -&gt; void {</span></div>
-<div class="line"><span class="lineno">   14</span><span class="comment"> *     int centroid = TreeCentroid(G, root, seen, sz);</span></div>
-<div class="line"><span class="lineno">   15</span><span class="comment"> *     seen[centroid] = true;</span></div>
-<div class="line"><span class="lineno">   16</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">   17</span><span class="comment"> *     // ここに処理を書く</span></div>
-<div class="line"><span class="lineno">   18</span><span class="comment"> * </span></div>
-<div class="line"><span class="lineno">   19</span><span class="comment"> *     for (int nxt : G[centroid]) {</span></div>
-<div class="line"><span class="lineno">   20</span><span class="comment"> *         if (seen[nxt]) continue;</span></div>
-<div class="line"><span class="lineno">   21</span><span class="comment"> *         self(self, nxt);</span></div>
-<div class="line"><span class="lineno">   22</span><span class="comment"> *     }</span></div>
-<div class="line"><span class="lineno">   23</span><span class="comment"> * };</span></div>
-<div class="line"><span class="lineno">   24</span><span class="comment"> * centroid_decomposition(centroid_decomposition, 0);</span></div>
-<div class="line"><span class="lineno">   25</span><span class="comment"> * ```</span></div>
-<div class="line"><span class="lineno">   26</span><span class="comment"> */</span></div>
-<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="centroid_8hpp.html#abbcbc7de2935d0a93e96189869d3ca0f">   27</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="centroid_8hpp.html#abbcbc7de2935d0a93e96189869d3ca0f">TreeCentroid</a>(<span class="keyword">const</span> vector&lt;vector&lt;<span class="keywordtype">int</span>&gt;&gt;&amp; G, <span class="keywordtype">int</span> root, vector&lt;<span class="keywordtype">int</span>&gt;&amp; seen, vector&lt;<span class="keywordtype">int</span>&gt;&amp; sz) {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">int</span> N=G.size();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span>(sz.empty()) sz=vector&lt;<span class="keywordtype">int</span>&gt;(N);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span>(seen.empty()) seen=vector&lt;<span class="keywordtype">int</span>&gt;(N,<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">auto</span> dfs=[&amp;](<span class="keyword">auto</span> dfs, <span class="keywordtype">int</span> now, <span class="keywordtype">int</span> pre)-&gt; <span class="keywordtype">int</span> {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        sz[now]=1;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt: G[now]) {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordflow">if</span>(nxt==pre||seen[nxt]) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            sz[now]+=dfs(dfs,nxt,now);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span> sz[now];</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    };</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">int</span> total=dfs(dfs,root,-1);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">int</span> centroid=root;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">auto</span> dfs2=[&amp;](<span class="keyword">auto</span> dfs2, <span class="keywordtype">int</span> now, <span class="keywordtype">int</span> pre)-&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordtype">bool</span> ok=(total-sz[now])*2&lt;=total;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt: G[now]) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">if</span>(nxt==pre||seen[nxt]) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            dfs2(dfs2,nxt,now);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordflow">if</span>(sz[nxt]*2&gt;total) ok=<span class="keyword">false</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">if</span>(ok) centroid=now;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    };</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    dfs2(dfs2,root,-1);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> centroid;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">    6</span><span class="comment"> * @brief 重心分解</span></div>
+<div class="line"><span class="lineno">    7</span><span class="comment"> * @param seen 探索済みフラグ</span></div>
+<div class="line"><span class="lineno">    8</span><span class="comment"> * @param sz 各頂点の部分木のサイズ</span></div>
+<div class="line"><span class="lineno">    9</span><span class="comment"> * </span></div>
+<div class="line"><span class="lineno">   10</span><span class="comment"> * ```cpp</span></div>
+<div class="line"><span class="lineno">   11</span><span class="comment"> * vi sz(N);</span></div>
+<div class="line"><span class="lineno">   12</span><span class="comment"> * vector&lt;bool&gt; seen(N);</span></div>
+<div class="line"><span class="lineno">   13</span><span class="comment"> * </span></div>
+<div class="line"><span class="lineno">   14</span><span class="comment"> * auto centroid_decomposition = [&amp;](auto self, int root) -&gt; void {</span></div>
+<div class="line"><span class="lineno">   15</span><span class="comment"> *     int centroid = TreeCentroid(G, root, seen, sz);</span></div>
+<div class="line"><span class="lineno">   16</span><span class="comment"> *     seen[centroid] = true;</span></div>
+<div class="line"><span class="lineno">   17</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">   18</span><span class="comment"> *     // ここに処理を書く</span></div>
+<div class="line"><span class="lineno">   19</span><span class="comment"> * </span></div>
+<div class="line"><span class="lineno">   20</span><span class="comment"> *     for (int nxt : G[centroid]) {</span></div>
+<div class="line"><span class="lineno">   21</span><span class="comment"> *         if (seen[nxt]) continue;</span></div>
+<div class="line"><span class="lineno">   22</span><span class="comment"> *         self(self, nxt);</span></div>
+<div class="line"><span class="lineno">   23</span><span class="comment"> *     }</span></div>
+<div class="line"><span class="lineno">   24</span><span class="comment"> * };</span></div>
+<div class="line"><span class="lineno">   25</span><span class="comment"> * centroid_decomposition(centroid_decomposition, 0);</span></div>
+<div class="line"><span class="lineno">   26</span><span class="comment"> * ```</span></div>
+<div class="line"><span class="lineno">   27</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="centroid_8hpp.html#a29feb8cc4989595f8a16092900f4e770">   28</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="centroid_8hpp.html#a29feb8cc4989595f8a16092900f4e770">TreeCentroid</a>(<span class="keyword">const</span> vector&lt;vi&gt;&amp; G, <span class="keywordtype">int</span> root, vi&amp; seen, vi&amp; sz) {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">int</span> N=G.size();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span>(sz.empty()) sz=vi(N);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span>(seen.empty()) seen=vi(N,<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">auto</span> dfs=[&amp;](<span class="keyword">auto</span> dfs, <span class="keywordtype">int</span> now, <span class="keywordtype">int</span> pre)-&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        sz[now]=1;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt: G[now]) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordflow">if</span>(nxt==pre||seen[nxt]) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            sz[now]+=dfs(dfs,nxt,now);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> sz[now];</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    };</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">int</span> total=dfs(dfs,root,-1);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">int</span> centroid=root;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">auto</span> dfs2=[&amp;](<span class="keyword">auto</span> dfs2, <span class="keywordtype">int</span> now, <span class="keywordtype">int</span> pre)-&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">bool</span> ok=(total-sz[now])*2&lt;=total;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> nxt: G[now]) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">if</span>(nxt==pre||seen[nxt]) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            dfs2(dfs2,nxt,now);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordflow">if</span>(sz[nxt]*2&gt;total) ok=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">if</span>(ok) centroid=now;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    };</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    dfs2(dfs2,root,-1);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">return</span> centroid;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
 </div>
-<div class="ttc" id="acentroid_8hpp_html_abbcbc7de2935d0a93e96189869d3ca0f"><div class="ttname"><a href="centroid_8hpp.html#abbcbc7de2935d0a93e96189869d3ca0f">TreeCentroid</a></div><div class="ttdeci">int TreeCentroid(const vector&lt; vector&lt; int &gt; &gt; &amp;G, int root, vector&lt; int &gt; &amp;seen, vector&lt; int &gt; &amp;sz)</div><div class="ttdoc">重心分解</div><div class="ttdef"><b>Definition</b> <a href="#l00027">centroid.hpp:27</a></div></div>
+<div class="ttc" id="acentroid_8hpp_html_a29feb8cc4989595f8a16092900f4e770"><div class="ttname"><a href="centroid_8hpp.html#a29feb8cc4989595f8a16092900f4e770">TreeCentroid</a></div><div class="ttdeci">int TreeCentroid(const vector&lt; vi &gt; &amp;G, int root, vi &amp;seen, vi &amp;sz)</div><div class="ttdoc">重心分解</div><div class="ttdef"><b>Definition</b> <a href="#l00028">centroid.hpp:28</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

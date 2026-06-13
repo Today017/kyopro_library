@@ -105,80 +105,81 @@ $(function(){initNavTree('trie_8hpp_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">trie.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="trie_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">struct</span> Trie {</div>
-<div class="foldopen" id="foldopen00004" data-start="{" data-end="};">
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="struct_trie_1_1_node.html">    4</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_trie_1_1_node.html">Node</a>{</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_trie_1_1_node.html#a393f00431c9012b917e570e58aab9ce6">    5</a></span>        <a class="code hl_variable" href="struct_trie_1_1_node.html#a393f00431c9012b917e570e58aab9ce6">array</a>&lt;<span class="keywordtype">int</span>,26&gt; <a class="code hl_variable" href="struct_trie_1_1_node.html#a393f00431c9012b917e570e58aab9ce6">to</a>;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_trie_1_1_node.html#a9eed81534f65273598c55109665529fc">    6</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_trie_1_1_node.html#a9eed81534f65273598c55109665529fc">count_of_end</a>=0, <a class="code hl_variable" href="struct_trie_1_1_node.html#a0b849aa7a82facfb191ffe3021d5074a">count_of_node</a>=0;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_trie_1_1_node.html#a728ce03d23b6c54246b5a40cb170db97">    7</a></span>        <a class="code hl_function" href="struct_trie_1_1_node.html#a728ce03d23b6c54246b5a40cb170db97">Node</a>() { fill(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(to),-1); }</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    };</div>
+<a href="trie_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">struct</span> Trie {</div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_trie_1_1_node.html">    5</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_trie_1_1_node.html">Node</a>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_trie_1_1_node.html#a393f00431c9012b917e570e58aab9ce6">    6</a></span>        <a class="code hl_variable" href="struct_trie_1_1_node.html#a393f00431c9012b917e570e58aab9ce6">array</a>&lt;<span class="keywordtype">int</span>,26&gt; <a class="code hl_variable" href="struct_trie_1_1_node.html#a393f00431c9012b917e570e58aab9ce6">to</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_trie_1_1_node.html#a9eed81534f65273598c55109665529fc">    7</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_trie_1_1_node.html#a9eed81534f65273598c55109665529fc">count_of_end</a>=0, <a class="code hl_variable" href="struct_trie_1_1_node.html#a0b849aa7a82facfb191ffe3021d5074a">count_of_node</a>=0;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_trie_1_1_node.html#a728ce03d23b6c54246b5a40cb170db97">    8</a></span>        <a class="code hl_function" href="struct_trie_1_1_node.html#a728ce03d23b6c54246b5a40cb170db97">Node</a>() { fill(<a class="code hl_define" href="macro_8hpp.html#a7c9ad46191cf9ac6dbad29df0a0d69c1">all</a>(to),-1); }</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    };</div>
 </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_trie.html#a429455cabb2d0928fa120e94e4038f2b">   10</a></span>    <a class="code hl_function" href="struct_trie.html#a429455cabb2d0928fa120e94e4038f2b">Trie</a>(<span class="keywordtype">int</span> len) {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        nodes.reserve(len);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <a class="code hl_struct" href="struct_trie_1_1_node.html">Node</a> root;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        nodes.push_back(root);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_trie.html#a429455cabb2d0928fa120e94e4038f2b">   11</a></span>    <a class="code hl_function" href="struct_trie.html#a429455cabb2d0928fa120e94e4038f2b">Trie</a>(<span class="keywordtype">int</span> len) {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        nodes.reserve(len);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <a class="code hl_struct" href="struct_trie_1_1_node.html">Node</a> root;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        nodes.push_back(root);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
 </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_trie.html#a2e85c25c95291e9861fcf1d91c8872c8">   16</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_trie.html#a2e85c25c95291e9861fcf1d91c8872c8">insert</a>(<span class="keyword">const</span> string&amp; s) {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">int</span> cur=0;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keywordtype">char</span>&amp; c: s) {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <span class="keywordtype">int</span> nxt=nodes[cur].to[c-<span class="stringliteral">&#39;a&#39;</span>];</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="keywordflow">if</span>(nxt==-1) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                nodes[cur].to[c-<span class="stringliteral">&#39;a&#39;</span>]=nodes.size();</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                nxt=nodes.size();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                nodes.push_back(Node());</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            }</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            cur=nxt;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            nodes[cur].count_of_node++;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        nodes[cur].count_of_end++;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_trie.html#a2e85c25c95291e9861fcf1d91c8872c8">   17</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_trie.html#a2e85c25c95291e9861fcf1d91c8872c8">insert</a>(<span class="keyword">const</span> string&amp; s) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordtype">int</span> cur=0;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keywordtype">char</span>&amp; c: s) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="keywordtype">int</span> nxt=nodes[cur].to[c-<span class="stringliteral">&#39;a&#39;</span>];</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keywordflow">if</span>(nxt==-1) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                nodes[cur].to[c-<span class="stringliteral">&#39;a&#39;</span>]=nodes.size();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                nxt=nodes.size();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                nodes.push_back(Node());</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            cur=nxt;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            nodes[cur].count_of_node++;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        nodes[cur].count_of_end++;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_trie.html#a40d44a4e38493802d00a00335c8a7652">   31</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_trie.html#a40d44a4e38493802d00a00335c8a7652">count</a>(<span class="keyword">const</span> string&amp; s) {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordtype">int</span> cur=0,ret=0;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keywordtype">char</span>&amp; c: s) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordtype">int</span> nxt=nodes[cur].to[c-<span class="stringliteral">&#39;a&#39;</span>];</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordflow">if</span>(nxt==-1) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            cur=nxt;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            ret=nodes[cur].count_of_end;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_trie.html#a40d44a4e38493802d00a00335c8a7652">   32</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_trie.html#a40d44a4e38493802d00a00335c8a7652">count</a>(<span class="keyword">const</span> string&amp; s) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">int</span> cur=0,ret=0;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keywordtype">char</span>&amp; c: s) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordtype">int</span> nxt=nodes[cur].to[c-<span class="stringliteral">&#39;a&#39;</span>];</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordflow">if</span>(nxt==-1) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            cur=nxt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            ret=nodes[cur].count_of_end;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
 </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_trie.html#a7c789423652daed7650a77bb796d6447">   41</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_trie.html#a7c789423652daed7650a77bb796d6447">erase</a>(<span class="keyword">const</span> string&amp; s) {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">int</span> cur=0;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keywordtype">char</span>&amp; c: s) {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keywordtype">int</span> nxt=nodes[cur].to[c-<span class="stringliteral">&#39;a&#39;</span>];</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">if</span>(nxt==-1) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            cur=nxt;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            nodes[cur].count_of_node--;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        nodes[cur].count_of_end--;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_trie.html#a7c789423652daed7650a77bb796d6447">   42</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_trie.html#a7c789423652daed7650a77bb796d6447">erase</a>(<span class="keyword">const</span> string&amp; s) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">int</span> cur=0;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keywordtype">char</span>&amp; c: s) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordtype">int</span> nxt=nodes[cur].to[c-<span class="stringliteral">&#39;a&#39;</span>];</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">if</span>(nxt==-1) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            cur=nxt;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            nodes[cur].count_of_node--;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        nodes[cur].count_of_end--;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    vector&lt;Node&gt; nodes;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
-<div class="ttc" id="astruct_trie_1_1_node_html"><div class="ttname"><a href="struct_trie_1_1_node.html">Trie::Node</a></div><div class="ttdef"><b>Definition</b> <a href="#l00004">trie.hpp:4</a></div></div>
-<div class="ttc" id="astruct_trie_1_1_node_html_a0b849aa7a82facfb191ffe3021d5074a"><div class="ttname"><a href="struct_trie_1_1_node.html#a0b849aa7a82facfb191ffe3021d5074a">Trie::Node::count_of_node</a></div><div class="ttdeci">int count_of_node</div><div class="ttdef"><b>Definition</b> <a href="#l00006">trie.hpp:6</a></div></div>
-<div class="ttc" id="astruct_trie_1_1_node_html_a393f00431c9012b917e570e58aab9ce6"><div class="ttname"><a href="struct_trie_1_1_node.html#a393f00431c9012b917e570e58aab9ce6">Trie::Node::to</a></div><div class="ttdeci">array&lt; int, 26 &gt; to</div><div class="ttdef"><b>Definition</b> <a href="#l00005">trie.hpp:5</a></div></div>
-<div class="ttc" id="astruct_trie_1_1_node_html_a728ce03d23b6c54246b5a40cb170db97"><div class="ttname"><a href="struct_trie_1_1_node.html#a728ce03d23b6c54246b5a40cb170db97">Trie::Node::Node</a></div><div class="ttdeci">Node()</div><div class="ttdef"><b>Definition</b> <a href="#l00007">trie.hpp:7</a></div></div>
-<div class="ttc" id="astruct_trie_1_1_node_html_a9eed81534f65273598c55109665529fc"><div class="ttname"><a href="struct_trie_1_1_node.html#a9eed81534f65273598c55109665529fc">Trie::Node::count_of_end</a></div><div class="ttdeci">int count_of_end</div><div class="ttdef"><b>Definition</b> <a href="#l00006">trie.hpp:6</a></div></div>
-<div class="ttc" id="astruct_trie_html_a2e85c25c95291e9861fcf1d91c8872c8"><div class="ttname"><a href="struct_trie.html#a2e85c25c95291e9861fcf1d91c8872c8">Trie::insert</a></div><div class="ttdeci">void insert(const string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="#l00016">trie.hpp:16</a></div></div>
-<div class="ttc" id="astruct_trie_html_a40d44a4e38493802d00a00335c8a7652"><div class="ttname"><a href="struct_trie.html#a40d44a4e38493802d00a00335c8a7652">Trie::count</a></div><div class="ttdeci">int count(const string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="#l00031">trie.hpp:31</a></div></div>
-<div class="ttc" id="astruct_trie_html_a429455cabb2d0928fa120e94e4038f2b"><div class="ttname"><a href="struct_trie.html#a429455cabb2d0928fa120e94e4038f2b">Trie::Trie</a></div><div class="ttdeci">Trie(int len)</div><div class="ttdef"><b>Definition</b> <a href="#l00010">trie.hpp:10</a></div></div>
-<div class="ttc" id="astruct_trie_html_a7c789423652daed7650a77bb796d6447"><div class="ttname"><a href="struct_trie.html#a7c789423652daed7650a77bb796d6447">Trie::erase</a></div><div class="ttdeci">void erase(const string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="#l00041">trie.hpp:41</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a9064c572b2b33295a5ca0950d4f8737e"><div class="ttname"><a href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a></div><div class="ttdeci">#define all(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    vector&lt;Node&gt; nodes;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
+<div class="ttc" id="amacro_8hpp_html_a7c9ad46191cf9ac6dbad29df0a0d69c1"><div class="ttname"><a href="macro_8hpp.html#a7c9ad46191cf9ac6dbad29df0a0d69c1">all</a></div><div class="ttdeci">#define all(v)</div><div class="ttdef"><b>Definition</b> <a href="macro_8hpp_source.html#l00019">macro.hpp:19</a></div></div>
+<div class="ttc" id="astruct_trie_1_1_node_html"><div class="ttname"><a href="struct_trie_1_1_node.html">Trie::Node</a></div><div class="ttdef"><b>Definition</b> <a href="#l00005">trie.hpp:5</a></div></div>
+<div class="ttc" id="astruct_trie_1_1_node_html_a0b849aa7a82facfb191ffe3021d5074a"><div class="ttname"><a href="struct_trie_1_1_node.html#a0b849aa7a82facfb191ffe3021d5074a">Trie::Node::count_of_node</a></div><div class="ttdeci">int count_of_node</div><div class="ttdef"><b>Definition</b> <a href="#l00007">trie.hpp:7</a></div></div>
+<div class="ttc" id="astruct_trie_1_1_node_html_a393f00431c9012b917e570e58aab9ce6"><div class="ttname"><a href="struct_trie_1_1_node.html#a393f00431c9012b917e570e58aab9ce6">Trie::Node::to</a></div><div class="ttdeci">array&lt; int, 26 &gt; to</div><div class="ttdef"><b>Definition</b> <a href="#l00006">trie.hpp:6</a></div></div>
+<div class="ttc" id="astruct_trie_1_1_node_html_a728ce03d23b6c54246b5a40cb170db97"><div class="ttname"><a href="struct_trie_1_1_node.html#a728ce03d23b6c54246b5a40cb170db97">Trie::Node::Node</a></div><div class="ttdeci">Node()</div><div class="ttdef"><b>Definition</b> <a href="#l00008">trie.hpp:8</a></div></div>
+<div class="ttc" id="astruct_trie_1_1_node_html_a9eed81534f65273598c55109665529fc"><div class="ttname"><a href="struct_trie_1_1_node.html#a9eed81534f65273598c55109665529fc">Trie::Node::count_of_end</a></div><div class="ttdeci">int count_of_end</div><div class="ttdef"><b>Definition</b> <a href="#l00007">trie.hpp:7</a></div></div>
+<div class="ttc" id="astruct_trie_html_a2e85c25c95291e9861fcf1d91c8872c8"><div class="ttname"><a href="struct_trie.html#a2e85c25c95291e9861fcf1d91c8872c8">Trie::insert</a></div><div class="ttdeci">void insert(const string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="#l00017">trie.hpp:17</a></div></div>
+<div class="ttc" id="astruct_trie_html_a40d44a4e38493802d00a00335c8a7652"><div class="ttname"><a href="struct_trie.html#a40d44a4e38493802d00a00335c8a7652">Trie::count</a></div><div class="ttdeci">int count(const string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="#l00032">trie.hpp:32</a></div></div>
+<div class="ttc" id="astruct_trie_html_a429455cabb2d0928fa120e94e4038f2b"><div class="ttname"><a href="struct_trie.html#a429455cabb2d0928fa120e94e4038f2b">Trie::Trie</a></div><div class="ttdeci">Trie(int len)</div><div class="ttdef"><b>Definition</b> <a href="#l00011">trie.hpp:11</a></div></div>
+<div class="ttc" id="astruct_trie_html_a7c789423652daed7650a77bb796d6447"><div class="ttname"><a href="struct_trie.html#a7c789423652daed7650a77bb796d6447">Trie::erase</a></div><div class="ttdeci">void erase(const string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="#l00042">trie.hpp:42</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

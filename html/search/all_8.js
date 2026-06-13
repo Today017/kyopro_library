@@ -11,6 +11,6 @@ var searchData=
   ['haveintersection_8',['HaveIntersection',['../intersect_8hpp.html#a1ca6c04197a2f233b02d6f453dcb9858',1,'intersect.hpp']]],
   ['head_9',['HEAD',['../namespaceexp.html#a6b6bffc9f575cd0e79d0b42f7ec5a3d5',1,'exp.HEAD'],['../namespaceexp___a_h_c.html#a1fa3fa2d43ea82ba06dce2ab903b6914',1,'exp_AHC.HEAD']]],
   ['help_10',['help',['../namespaceexp.html#a202e10976c2a57e8aa3206c2097060ca',1,'exp.help'],['../namespaceexp___a_h_c.html#a288be580909793668e78f56c6cfedf2b',1,'exp_AHC.help']]],
-  ['hld_11',['HLD',['../struct_h_l_d.html',1,'HLD'],['../struct_h_l_d.html#a4ded5ea491751676f93bb08121e85e7a',1,'HLD::HLD(int n)'],['../struct_h_l_d.html#a841236b6384bbab50fed3174075e469d',1,'HLD::HLD(const vector&lt; vector&lt; int &gt; &gt; &amp;g, int root=0)']]],
+  ['hld_11',['HLD',['../struct_h_l_d.html',1,'HLD'],['../struct_h_l_d.html#a4ded5ea491751676f93bb08121e85e7a',1,'HLD::HLD(int n)'],['../struct_h_l_d.html#aaaf7756b121edbbc870433a62f3e2b98',1,'HLD::HLD(const vector&lt; vi &gt; &amp;g, int root=0)']]],
   ['hld_2ehpp_12',['hld.hpp',['../hld_8hpp.html',1,'']]]
 ];

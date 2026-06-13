@@ -1,3 +1,4 @@
+#pragma once
 struct SegTree {
     using T=hoge;
     T op(T a, T b) {

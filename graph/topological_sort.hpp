@@ -1,21 +1,24 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
+#include"../../kyopro_library/graph/graph.hpp"
 
 ///@brief グラフ G をトポロジカルソートする
 ///@note グラフにサイクルがある場合は空の配列を返す
 ///@note O(V+E)
-vector<int> TopologicalSort(const vector<vector<int>>& G) {
-    int N=G.size();
-    vector<int> indeg(N);
-    rep(i,N) for(int nxt: G[i]) indeg[nxt]++;
-    queue<int> que;
+template<typename T>
+vi TopologicalSort(const Graph<T>& G) {
+    ii N=G.size();
+    vi indeg(N);
+    rep(i,N) for(auto e: G.next(i)) indeg[e.to]++;
+    queue<ii> que;
     rep(i,N) if(indeg[i]==0) que.push(i);
-    vector<int> ret;
+    vi ret;
 
     while(!que.empty()) {
-        int now=que.front(); que.pop();
-        for(int nxt: G[now]) {
-            indeg[nxt]--;
-            if(indeg[nxt]==0) que.push(nxt);
+        ii now=pick(que);
+        for(auto e: G.next(now)) {
+            indeg[e.to]--;
+            if(indeg[e.to]==0) que.push(e.to);
         }
         ret.push_back(now);
     }

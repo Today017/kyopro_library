@@ -161,7 +161,7 @@ private:
     int n;
     vector<MonoidType> dat;
     vector<OperatorType> lazy;
-    vector<int> indices, cand, cand_l, cand_r;
+    vi indices, cand, cand_l, cand_r;
     void generate_indices(int l, int r) {
         indices.clear();
         l+=n; r+=n;

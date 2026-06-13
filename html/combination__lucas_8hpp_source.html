@@ -105,55 +105,56 @@ $(function(){initNavTree('combination__lucas_8hpp_source.html',''); initResizabl
   <div class="headertitle"><div class="title">combination_lucas.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="combination__lucas_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/others/modcal.hpp&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">    5</span><span class="comment"> * @brief Lucas の定理を用いた二項係数計算用ライブラリ</span></div>
-<div class="line"><span class="lineno">    6</span><span class="comment"> * @details</span></div>
-<div class="line"><span class="lineno">    7</span><span class="comment"> * Lucas の定理</span></div>
-<div class="line"><span class="lineno">    8</span><span class="comment"> * p を素数とし、n, r を非負整数とする。</span></div>
-<div class="line"><span class="lineno">    9</span><span class="comment"> * また、n = n[k]p^k + n[k-1]p^(k-1) + ... + n[1]p + n[0],</span></div>
-<div class="line"><span class="lineno">   10</span><span class="comment"> * r = r[k]p^k + r[k-1]p^(k-1) + ... + r[1]p + r[0] とする。</span></div>
-<div class="line"><span class="lineno">   11</span><span class="comment"> * </span></div>
-<div class="line"><span class="lineno">   12</span><span class="comment"> * このとき、nCr(mod p) = Π[k=0~N]n[k]Cr[k]</span></div>
-<div class="line"><span class="lineno">   13</span><span class="comment"> */</span></div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_combination_lucas.html">   14</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_combination_lucas.html">CombinationLucas</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">///@brief Lucas の定理を用いて二項係数を計算するための前計算をする</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">///@note O(mod)</span></div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_combination_lucas.html#a0c46e2850894c0d5690bffc81047ddd8">   17</a></span>    <a class="code hl_function" href="struct_combination_lucas.html#a0c46e2850894c0d5690bffc81047ddd8">CombinationLucas</a>(<span class="keywordtype">int</span> mod) {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">this</span>-&gt;mod=mod;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        fact=vector&lt;ll&gt;(mod); fact[0]=1;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        factinv=vector&lt;ll&gt;(mod);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;mod; i++) fact[i]=fact[i-1]*i%mod;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        factinv[mod-1]=ModInv(fact[mod-1],mod);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=mod-2; i&gt;=0; i--) factinv[i]=factinv[i+1]*(i+1)%mod;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<a href="combination__lucas_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/others/modcal.hpp&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">    6</span><span class="comment"> * @brief Lucas の定理を用いた二項係数計算用ライブラリ</span></div>
+<div class="line"><span class="lineno">    7</span><span class="comment"> * @details</span></div>
+<div class="line"><span class="lineno">    8</span><span class="comment"> * Lucas の定理</span></div>
+<div class="line"><span class="lineno">    9</span><span class="comment"> * p を素数とし、n, r を非負整数とする。</span></div>
+<div class="line"><span class="lineno">   10</span><span class="comment"> * また、n = n[k]p^k + n[k-1]p^(k-1) + ... + n[1]p + n[0],</span></div>
+<div class="line"><span class="lineno">   11</span><span class="comment"> * r = r[k]p^k + r[k-1]p^(k-1) + ... + r[1]p + r[0] とする。</span></div>
+<div class="line"><span class="lineno">   12</span><span class="comment"> * </span></div>
+<div class="line"><span class="lineno">   13</span><span class="comment"> * このとき、nCr(mod p) = Π[k=0~N]n[k]Cr[k]</span></div>
+<div class="line"><span class="lineno">   14</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_combination_lucas.html">   15</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_combination_lucas.html">CombinationLucas</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">///@brief Lucas の定理を用いて二項係数を計算するための前計算をする</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">///@note O(mod)</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_combination_lucas.html#a0c46e2850894c0d5690bffc81047ddd8">   18</a></span>    <a class="code hl_function" href="struct_combination_lucas.html#a0c46e2850894c0d5690bffc81047ddd8">CombinationLucas</a>(<span class="keywordtype">int</span> mod) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">this</span>-&gt;mod=mod;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        fact=vector&lt;ll&gt;(mod); fact[0]=1;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        factinv=vector&lt;ll&gt;(mod);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1; i&lt;mod; i++) fact[i]=fact[i-1]*i%mod;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        factinv[mod-1]=ModInv(fact[mod-1],mod);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=mod-2; i&gt;=0; i--) factinv[i]=factinv[i+1]*(i+1)%mod;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
 </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">///@brief nCr mod を返す</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">///@note O(log(n))</span></div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">   28</a></span>    ll <a class="code hl_function" href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">comb</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> r) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">if</span>(r==0 || r==n) <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">return</span> calc(n%mod,r%mod)*<a class="code hl_function" href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">comb</a><a class="code hl_function" href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">(</a>n/mod<a class="code hl_function" href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">,</a>r/mod<a class="code hl_function" href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">)</a>%mod;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">///@brief nCr mod を返す</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">///@note O(log(n))</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">   29</a></span>    ll <a class="code hl_function" href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">comb</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> r) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">if</span>(r==0 || r==n) <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">return</span> calc(n%mod,r%mod)*<a class="code hl_function" href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">comb</a><a class="code hl_function" href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">(</a>n/mod<a class="code hl_function" href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">,</a>r/mod<a class="code hl_function" href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">)</a>%mod;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
 </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    vector&lt;ll&gt; fact,factinv;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">int</span> mod;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    ll calc(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> r) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">if</span>(n&lt;r || r&lt;0 || n&lt;0) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span> fact[n]*factinv[r]%mod*factinv[n-r]%mod;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    vector&lt;ll&gt; fact,factinv;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">int</span> mod;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    ll calc(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> r) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">if</span>(n&lt;r || r&lt;0 || n&lt;0) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> fact[n]*factinv[r]%mod*factinv[n-r]%mod;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
 </div>
-<div class="ttc" id="astruct_combination_lucas_html"><div class="ttname"><a href="struct_combination_lucas.html">CombinationLucas</a></div><div class="ttdoc">Lucas の定理を用いた二項係数計算用ライブラリ</div><div class="ttdef"><b>Definition</b> <a href="#l00014">combination_lucas.hpp:14</a></div></div>
-<div class="ttc" id="astruct_combination_lucas_html_a0c46e2850894c0d5690bffc81047ddd8"><div class="ttname"><a href="struct_combination_lucas.html#a0c46e2850894c0d5690bffc81047ddd8">CombinationLucas::CombinationLucas</a></div><div class="ttdeci">CombinationLucas(int mod)</div><div class="ttdoc">Lucas の定理を用いて二項係数を計算するための前計算をする</div><div class="ttdef"><b>Definition</b> <a href="#l00017">combination_lucas.hpp:17</a></div></div>
-<div class="ttc" id="astruct_combination_lucas_html_a5f1804272f10fc0e69792ea54e172e2b"><div class="ttname"><a href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">CombinationLucas::comb</a></div><div class="ttdeci">ll comb(int n, int r)</div><div class="ttdoc">nCr mod を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00028">combination_lucas.hpp:28</a></div></div>
+<div class="ttc" id="astruct_combination_lucas_html"><div class="ttname"><a href="struct_combination_lucas.html">CombinationLucas</a></div><div class="ttdoc">Lucas の定理を用いた二項係数計算用ライブラリ</div><div class="ttdef"><b>Definition</b> <a href="#l00015">combination_lucas.hpp:15</a></div></div>
+<div class="ttc" id="astruct_combination_lucas_html_a0c46e2850894c0d5690bffc81047ddd8"><div class="ttname"><a href="struct_combination_lucas.html#a0c46e2850894c0d5690bffc81047ddd8">CombinationLucas::CombinationLucas</a></div><div class="ttdeci">CombinationLucas(int mod)</div><div class="ttdoc">Lucas の定理を用いて二項係数を計算するための前計算をする</div><div class="ttdef"><b>Definition</b> <a href="#l00018">combination_lucas.hpp:18</a></div></div>
+<div class="ttc" id="astruct_combination_lucas_html_a5f1804272f10fc0e69792ea54e172e2b"><div class="ttname"><a href="struct_combination_lucas.html#a5f1804272f10fc0e69792ea54e172e2b">CombinationLucas::comb</a></div><div class="ttdeci">ll comb(int n, int r)</div><div class="ttdoc">nCr mod を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00029">combination_lucas.hpp:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

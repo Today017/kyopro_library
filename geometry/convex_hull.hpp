@@ -1,3 +1,4 @@
+#pragma once
 #include "../../kyopro_library/template.hpp"
 
 vector<pair<ll,ll>> ConvexHull(vector<pair<ll,ll>> P) {

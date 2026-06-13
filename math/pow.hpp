@@ -1,16 +1,19 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
+///@brief モノイドの繰返し2乗法
+///@note O(F log(K))
 template<typename Monoid>
 typename Monoid::Type MonoidPow(
     typename Monoid::Type X,
-    ll N
+    ll K
 ) {
     using Type=typename Monoid::Type;
     Type ret=Monoid::id();
-    while(N) {
-        if(N&1) ret=Monoid::op(ret,X);
+    while(K) {
+        if(K&1) ret=Monoid::op(ret,X);
         X=Monoid::op(X,X);
-        N>>=1;
+        K>>=1;
     }
     return ret;
 }

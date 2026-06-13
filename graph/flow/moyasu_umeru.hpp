@@ -1,3 +1,4 @@
+#pragma once
 #include"../../../kyopro_library/template.hpp"
 #include"../../../kyopro_library/graph/flow/max_flow.hpp"
 
@@ -38,10 +39,10 @@ struct MoyasuUmeru {
 
     ///@brief 解を復元する
     ///@attention `solve()` を実行した後に使うこと
-    vector<int> fukugen() {
+    vi fukugen() {
         auto ret=mf.mincut(start);
         ret.pop_back(); ret.pop_back();
-        for(int& x: ret) x^=1;
+        for(ll& x: ret) x^=1;
         return ret;
     }
 

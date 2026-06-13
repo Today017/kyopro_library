@@ -1,5 +1,6 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
-#include"../../kyopro_library/others/bit.hpp"
+//#include"../../kyopro_library/others/bit.hpp"
 
 ///@brief ゼータ変換・メビウス変換
 namespace ZetaMobius {
@@ -54,6 +55,7 @@ namespace ZetaMobius {
     }
 }
 
+///@brief 畳み込み
 namespace ConvolutionBit {
     template<typename Ring>
     vector<typename Ring::Type> OrConvolution(
@@ -69,7 +71,7 @@ namespace ConvolutionBit {
             static Type inv(const Type& x) { return Ring::inv(x); }
             static Type id() { return Ring::zero(); }
         };
-        
+
         A=move(ZetaMobius::SubsetZeta<Abel>(A));
         B=move(ZetaMobius::SubsetZeta<Abel>(B));
         rep(i,N) A[i]=Ring::mul(A[i],B[i]);
@@ -92,7 +94,7 @@ namespace ConvolutionBit {
             static Type inv(const Type& x) { return Ring::inv(x); }
             static Type id() { return Ring::zero(); }
         };
-        
+
         A=move(ZetaMobius::SupersetZeta<Abel>(A));
         B=move(ZetaMobius::SupersetZeta<Abel>(B));
         rep(i,N) A[i]=Ring::mul(A[i],B[i]);

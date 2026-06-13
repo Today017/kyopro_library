@@ -153,6 +153,8 @@ $(function(){initNavTree('struct_seg_tree_lazy.html',''); initResizable(true); }
 <tr class="separator:ad04a20cae43ac18270ee7b1b509c51f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc1293d5bcbb6b175fc749044e0c2c52" id="r_abc1293d5bcbb6b175fc749044e0c2c52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ab20ca57d57ff4a47c60f50ef5a1265e4">MonoidType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc1293d5bcbb6b175fc749044e0c2c52">operator[]</a> (int i)</td></tr>
 <tr class="separator:abc1293d5bcbb6b175fc749044e0c2c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18eee6a7fa218e487932c96feec1b937" id="r_a18eee6a7fa218e487932c96feec1b937"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ab20ca57d57ff4a47c60f50ef5a1265e4">MonoidType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18eee6a7fa218e487932c96feec1b937">get</a> (int i)</td></tr>
+<tr class="separator:a18eee6a7fa218e487932c96feec1b937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Monoid, typename Operator, auto mapping&gt;<br />
@@ -438,7 +440,7 @@ template&lt;typename F&gt; </div>
 
 <p>区間 [l, x) のモノイド積が f を満たすような最大の x &gt;= l を返す </p>
 <dl class="section attention"><dt>注意</dt><dd><code>f(Monoid::id())=true</code> が成り立つ必要がある </dd></dl>
-<dl class="section note"><dt>覚え書き</dt><dd>O(log(N)) </dd></dl>
+<dl class="section note"><dt>覚え書き</dt><dd><a class="el" href="io_8hpp.html#ab999edc57efe57ec9ee612335f9622e3">O(log(N))</a> </dd></dl>
 
 <p class="definition"> <a class="el" href="segtree__lazy_8hpp_source.html">segtree_lazy.hpp</a> の <a class="el" href="segtree__lazy_8hpp_source.html#l00082">82</a> 行目に定義があります。</p>
 
@@ -477,7 +479,7 @@ template&lt;typename F&gt; </div>
 
 <p>区間 [x, r) のモノイド積が f を満たすような最小の x&lt;=r を返す </p>
 <dl class="section attention"><dt>注意</dt><dd><code>f(Monoid::id())=true</code> が成り立つ必要がある </dd></dl>
-<dl class="section note"><dt>覚え書き</dt><dd>O(log(N)) </dd></dl>
+<dl class="section note"><dt>覚え書き</dt><dd><a class="el" href="io_8hpp.html#ab999edc57efe57ec9ee612335f9622e3">O(log(N))</a> </dd></dl>
 
 <p class="definition"> <a class="el" href="segtree__lazy_8hpp_source.html">segtree_lazy.hpp</a> の <a class="el" href="segtree__lazy_8hpp_source.html#l00121">121</a> 行目に定義があります。</p>
 
@@ -538,6 +540,35 @@ template&lt;typename Monoid, typename Operator, auto mapping&gt; </div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="segtree__lazy_8hpp_source.html">segtree_lazy.hpp</a> の <a class="el" href="segtree__lazy_8hpp_source.html#l00157">157</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a18eee6a7fa218e487932c96feec1b937" name="a18eee6a7fa218e487932c96feec1b937"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18eee6a7fa218e487932c96feec1b937">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Monoid, typename Operator, auto mapping&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ab20ca57d57ff4a47c60f50ef5a1265e4">MonoidType</a> <a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; Monoid, Operator, mapping &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="segtree__lazy_8hpp_source.html">segtree_lazy.hpp</a> の <a class="el" href="segtree__lazy_8hpp_source.html#l00158">158</a> 行目に定義があります。</p>
 
 </div>
 </div>

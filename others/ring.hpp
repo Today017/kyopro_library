@@ -1,11 +1,13 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
+///@brief 環・半環
 namespace Ring {
     template<typename T>
     struct PlusMul {
         using Type=T;
         static Type plus(const Type& l, const Type& r) { return l+r; }
-        static Type inv(const Type& x) { return -x; };
+        static Type inv(const Type& x) { return -x; }
         static Type mul(const Type& l, const Type& r) { return l*r; }
         static Type zero() { return 0; }
         static Type one() { return 1; }

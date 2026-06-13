@@ -105,31 +105,33 @@ $(function(){initNavTree('lis_8hpp_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">lis.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="lis_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">///@brief LIS</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief 配列 V の最長増加部分列の長さを返す</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@param strict `true` のとき狭義単調増加</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@note O(N log(N))</span></div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="lis_8hpp.html#a3336f3a1ba3fd9c8262933159522be41">    7</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="lis_8hpp.html#a3336f3a1ba3fd9c8262933159522be41">LisLength</a>(vector&lt;<span class="keywordtype">int</span>&gt;&amp; V, <span class="keywordtype">bool</span> strict=<span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">int</span> N=V.size();</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    vector&lt;<span class="keywordtype">int</span>&gt; dp(N,INF);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,N) {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordtype">int</span> idx=(</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            strict?</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            lower_bound(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(dp),V[i]):</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            upper_bound(<a class="code hl_define" href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a>(dp),V[i])</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        )-dp.begin();</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        dp[idx]=V[i];</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_define" href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a>(i,N) <span class="keywordflow">if</span>(dp[i]==INF) <span class="keywordflow">return</span> i;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">return</span> N;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<a href="lis_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief LIS</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@brief 配列 V の最長増加部分列の長さを返す</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@param strict `true` のとき狭義単調増加</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">///@note O(N log(N))</span></div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="lis_8hpp.html#ae768e0e9461d6aa5e57e5092cd91bbfb">    8</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="lis_8hpp.html#ae768e0e9461d6aa5e57e5092cd91bbfb">LisLength</a>(vi&amp; V, <span class="keywordtype">bool</span> strict=<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">int</span> N=V.size();</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    vi dp(N,<a class="code hl_variable" href="type_8hpp.html#ab3b9a48569ad55cf3509741732ffd642">INF</a>);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i,N) {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">int</span> idx=(</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            strict?</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            lower_bound(<a class="code hl_define" href="macro_8hpp.html#a7c9ad46191cf9ac6dbad29df0a0d69c1">all</a>(dp),V[i]):</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            upper_bound(<a class="code hl_define" href="macro_8hpp.html#a7c9ad46191cf9ac6dbad29df0a0d69c1">all</a>(dp),V[i])</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        )-dp.begin();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        dp[idx]=V[i];</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i,N) <span class="keywordflow">if</span>(dp[i]==<a class="code hl_variable" href="type_8hpp.html#ab3b9a48569ad55cf3509741732ffd642">INF</a>) <span class="keywordflow">return</span> i;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span> N;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
 </div>
-<div class="ttc" id="alis_8hpp_html_a3336f3a1ba3fd9c8262933159522be41"><div class="ttname"><a href="lis_8hpp.html#a3336f3a1ba3fd9c8262933159522be41">LisLength</a></div><div class="ttdeci">int LisLength(vector&lt; int &gt; &amp;V, bool strict=true)</div><div class="ttdoc">LIS</div><div class="ttdef"><b>Definition</b> <a href="#l00007">lis.hpp:7</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_a9064c572b2b33295a5ca0950d4f8737e"><div class="ttname"><a href="template_8hpp.html#a9064c572b2b33295a5ca0950d4f8737e">all</a></div><div class="ttdeci">#define all(x)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00006">template.hpp:6</a></div></div>
-<div class="ttc" id="atemplate_8hpp_html_afc28855f97302d38207feabfda45fc97"><div class="ttname"><a href="template_8hpp.html#afc28855f97302d38207feabfda45fc97">rep</a></div><div class="ttdeci">#define rep(i, n)</div><div class="ttdef"><b>Definition</b> <a href="template_8hpp_source.html#l00004">template.hpp:4</a></div></div>
+<div class="ttc" id="alis_8hpp_html_ae768e0e9461d6aa5e57e5092cd91bbfb"><div class="ttname"><a href="lis_8hpp.html#ae768e0e9461d6aa5e57e5092cd91bbfb">LisLength</a></div><div class="ttdeci">int LisLength(vi &amp;V, bool strict=true)</div><div class="ttdoc">LIS</div><div class="ttdef"><b>Definition</b> <a href="#l00008">lis.hpp:8</a></div></div>
+<div class="ttc" id="amacro_8hpp_html_a30fefd21a95478fd2827fae51ab3b995"><div class="ttname"><a href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a></div><div class="ttdeci">#define rep(...)</div><div class="ttdef"><b>Definition</b> <a href="macro_8hpp_source.html#l00008">macro.hpp:8</a></div></div>
+<div class="ttc" id="amacro_8hpp_html_a7c9ad46191cf9ac6dbad29df0a0d69c1"><div class="ttname"><a href="macro_8hpp.html#a7c9ad46191cf9ac6dbad29df0a0d69c1">all</a></div><div class="ttdeci">#define all(v)</div><div class="ttdef"><b>Definition</b> <a href="macro_8hpp_source.html#l00019">macro.hpp:19</a></div></div>
+<div class="ttc" id="atype_8hpp_html_ab3b9a48569ad55cf3509741732ffd642"><div class="ttname"><a href="type_8hpp.html#ab3b9a48569ad55cf3509741732ffd642">INF</a></div><div class="ttdeci">const i32 INF</div><div class="ttdef"><b>Definition</b> <a href="type_8hpp_source.html#l00071">type.hpp:71</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

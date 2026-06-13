@@ -1,3 +1,4 @@
+#pragma once
 //https://atcoder.jp/contests/practice2
 #include "../../kyopro_library/template.hpp"
 

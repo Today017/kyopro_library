@@ -1,5 +1,5 @@
 var diameter_8hpp =
 [
-    [ "TreeDiameter", "diameter_8hpp.html#a4407e8a83e2783d775723d0a505b4bb9", null ],
-    [ "TreeDiameter", "diameter_8hpp.html#af1d7249b07f643576bdb1d1e0e49a8bc", null ]
+    [ "TreeDiameter", "diameter_8hpp.html#a637a426d8fb932db2e959566c307b4a8", null ],
+    [ "TreeDiameterDij", "diameter_8hpp.html#affcc13b3cb6ee542ec010749dde909b8", null ]
 ];

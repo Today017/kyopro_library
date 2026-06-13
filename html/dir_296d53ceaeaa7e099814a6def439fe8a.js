@@ -25,6 +25,7 @@ var dir_296d53ceaeaa7e099814a6def439fe8a =
     [ "prime_enumerate.hpp", "prime__enumerate_8hpp.html", "prime__enumerate_8hpp" ],
     [ "prime_factorize.hpp", "prime__factorize_8hpp.html", "prime__factorize_8hpp" ],
     [ "primitive_root.hpp", "primitive__root_8hpp.html", "primitive__root_8hpp" ],
+    [ "throne.hpp", "throne_8hpp.html", "throne_8hpp" ],
     [ "totient.hpp", "totient_8hpp.html", "totient_8hpp" ],
     [ "totient_table.hpp", "totient__table_8hpp.html", "totient__table_8hpp" ],
     [ "xor_convolution.hpp", "xor__convolution_8hpp.html", "xor__convolution_8hpp" ]

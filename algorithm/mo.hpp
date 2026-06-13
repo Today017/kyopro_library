@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 ///@brief Mo's Algorithm
@@ -22,7 +23,7 @@ struct Mo {
     ///@note O(N sqrt(Q))
     template<typename F1, typename F2, typename F3, typename F4, typename F5>
     void execute(F1&& add_left, F2&& add_right, F3&& del_left, F4&& del_right, F5&& out) {
-        vector<int> qi(Q); iota(all(qi),0);
+        vi qi(Q); iota(all(qi),0);
 
         // https://nyaannyaan.github.io/library/misc/mo.hpp.html
         const int wid=max<int>(1,1.0*N/max<double>(1.0,sqrt(Q*2.0/3.0)));
@@ -44,5 +45,5 @@ struct Mo {
 
 private:
     int N,Q;
-    vector<int> ls,rs;
+    vi ls,rs;
 };

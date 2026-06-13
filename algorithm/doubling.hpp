@@ -1,3 +1,4 @@
+#pragma once
 #include"../../kyopro_library/template.hpp"
 
 ///@brief ダブリング
@@ -9,9 +10,9 @@ struct Doubling {
     ///@brief コンストラクタ
     ///@param V 各頂点からの遷移先
     ///@note O(N Log)
-    Doubling(const vector<int>& V) {
+    Doubling(const vi& V) {
         int n=V.size();
-        nxt=vector<vector<int>>(Log+1,vector<int>(n));
+        nxt=vector<vi>(Log+1,vi(n));
         rep(i,n) nxt[0][i]=V[i];
         rep(i,Log) rep(j,n) nxt[i+1][j]=nxt[i][nxt[i][j]];
     }
@@ -24,5 +25,5 @@ struct Doubling {
     }
 
 private:
-    vector<vector<int>> nxt;
+    vector<vi> nxt;
 };

@@ -128,7 +128,7 @@ $(function(){initNavTree('binary__search_8hpp_source.html',''); initResizable(tr
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">///@note O(iter * f)</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Judge&gt;</div>
 <div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="binary__search_8hpp.html#aa10292c755723d3eca2daec700f835dd">   21</a></span>T <a class="code hl_function" href="binary__search_8hpp.html#aa10292c755723d3eca2daec700f835dd">BinarySearchIteration</a>(T ok, T ng, Judge judge, <span class="keywordtype">int</span> iter=100) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="binary__search_8hpp.html#a28357c7906e31cb5aba8c423dc06dc72">   21</a></span>T <a class="code hl_function" href="binary__search_8hpp.html#a28357c7906e31cb5aba8c423dc06dc72">BinarySearchIteration</a>(T ok, T ng, Judge judge, ii iter=100) {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">while</span>(iter--) {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        T mid=(ok+ng)/2;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(judge(mid)) ok=mid;</div>
@@ -145,7 +145,7 @@ $(function(){initNavTree('binary__search_8hpp_source.html',''); initResizable(tr
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">///@param iter 探索回数</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Judge&gt;</div>
 <div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="binary__search_8hpp.html#ad882a3759569b5eac90be8983df7bd54">   36</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="binary__search_8hpp.html#ad882a3759569b5eac90be8983df7bd54">CheckMonotonicity</a>(T start, T step, ll iter, Judge judge) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="binary__search_8hpp.html#ae388e0f3a6541ba38c7317713cc0201d">   36</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="binary__search_8hpp.html#ae388e0f3a6541ba38c7317713cc0201d">CheckMonotonicity</a>(T start, T step, ii iter, Judge judge) {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    cerr&lt;&lt;<span class="stringliteral">&quot;[ &quot;</span>;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> pre=<span class="keyword">false</span>;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    ll cnt=0;</div>
@@ -157,14 +157,14 @@ $(function(){initNavTree('binary__search_8hpp_source.html',''); initResizable(tr
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    cerr&lt;&lt;<span class="stringliteral">&quot; ]\n&quot;</span>;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span>(cnt&lt;=1) cerr&lt;&lt;<span class="stringliteral">&quot;Is Monotonic\n&quot;</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">else</span> cerr&lt;&lt;<span class="stringliteral">&quot;Not Monotonic\n&quot;</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span>(cnt&lt;=1) cerr&lt;&lt;<span class="stringliteral">&quot;Is Monotonic&quot;</span>&lt;&lt;NL;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">else</span> cerr&lt;&lt;<span class="stringliteral">&quot;Not Monotonic&quot;</span>&lt;&lt;NL;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">return</span> cnt&lt;=1;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
 </div>
-<div class="ttc" id="abinary__search_8hpp_html_aa10292c755723d3eca2daec700f835dd"><div class="ttname"><a href="binary__search_8hpp.html#aa10292c755723d3eca2daec700f835dd">BinarySearchIteration</a></div><div class="ttdeci">T BinarySearchIteration(T ok, T ng, Judge judge, int iter=100)</div><div class="ttdoc">回数指定二分探索</div><div class="ttdef"><b>Definition</b> <a href="#l00021">binary_search.hpp:21</a></div></div>
+<div class="ttc" id="abinary__search_8hpp_html_a28357c7906e31cb5aba8c423dc06dc72"><div class="ttname"><a href="binary__search_8hpp.html#a28357c7906e31cb5aba8c423dc06dc72">BinarySearchIteration</a></div><div class="ttdeci">T BinarySearchIteration(T ok, T ng, Judge judge, ii iter=100)</div><div class="ttdoc">回数指定二分探索</div><div class="ttdef"><b>Definition</b> <a href="#l00021">binary_search.hpp:21</a></div></div>
 <div class="ttc" id="abinary__search_8hpp_html_ac51e21ede218b1fc3ce5beca36a6fc30"><div class="ttname"><a href="binary__search_8hpp.html#ac51e21ede218b1fc3ce5beca36a6fc30">BinarySearch</a></div><div class="ttdeci">T BinarySearch(T ok, T ng, Judge judge)</div><div class="ttdoc">二分探索</div><div class="ttdef"><b>Definition</b> <a href="#l00008">binary_search.hpp:8</a></div></div>
-<div class="ttc" id="abinary__search_8hpp_html_ad882a3759569b5eac90be8983df7bd54"><div class="ttname"><a href="binary__search_8hpp.html#ad882a3759569b5eac90be8983df7bd54">CheckMonotonicity</a></div><div class="ttdeci">bool CheckMonotonicity(T start, T step, ll iter, Judge judge)</div><div class="ttdoc">単調性の確認</div><div class="ttdef"><b>Definition</b> <a href="#l00036">binary_search.hpp:36</a></div></div>
+<div class="ttc" id="abinary__search_8hpp_html_ae388e0f3a6541ba38c7317713cc0201d"><div class="ttname"><a href="binary__search_8hpp.html#ae388e0f3a6541ba38c7317713cc0201d">CheckMonotonicity</a></div><div class="ttdeci">bool CheckMonotonicity(T start, T step, ii iter, Judge judge)</div><div class="ttdoc">単調性の確認</div><div class="ttdef"><b>Definition</b> <a href="#l00036">binary_search.hpp:36</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
