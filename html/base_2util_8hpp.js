@@ -46,6 +46,8 @@ var base_2util_8hpp =
     [ "mkpmin", "base_2util_8hpp.html#a569ccdd00f51d5bcad38f31f74cbeaad", null ],
     [ "mkiota", "base_2util_8hpp.html#a508313146eb6f4cdb794842e6814cac2", null ],
     [ "mkrev", "base_2util_8hpp.html#ab39bbce2d61270296b95684e9ef83618", null ],
+    [ "mkinv", "base_2util_8hpp.html#a25aab097a9e2023e20bcbc8deb032a0b", null ],
+    [ "mkinvmap", "base_2util_8hpp.html#a36e3bf063bb3b7a1cd5d5aad325f6eb4", null ],
     [ "argsort", "base_2util_8hpp.html#ab29b70495c6447120e757e6fa09a0894", null ],
     [ "digsiz", "base_2util_8hpp.html#ab6cae12f0d80a3248f59339c713d0d46", null ],
     [ "digits", "base_2util_8hpp.html#a08149b2e903e15280258fa2a92be54dc", null ],
