@@ -149,6 +149,23 @@ V<T> mkrev(V<T> A) {
 }
 
 template<typename T>
+vi mkinv(V<T> A) {
+    int n=siz(A);
+    if(maxv(A)!=n) compress(A);
+    vi ret(n);
+    for(int i=0; i<n; i++) ret[A[i]]=i;
+    return ret;
+}
+
+template<typename T>
+vvi mkinvmap(V<T> A) {
+    int n=siz(A);
+    vvi ret(n);
+    for(int i=0; i<n; i++) ret[A[i]].push_back(i);
+    return ret;
+}
+
+template<typename T>
 vi argsort(const V<T>& A) {
     vi idx=mkiota(siz(A));
     sort(idx.begin(),idx.end(),[&](ii i, ii j) {
