@@ -1,11 +1,12 @@
 #pragma once
-#include"../../kyopro_library/template.hpp"
+#include "../../kyopro_library/template.hpp"
 
+/// @brief トライ木
 struct Trie {
-    struct Node{
-        array<int,26> to;
-        int count_of_end=0, count_of_node=0;
-        Node() { fill(all(to),-1); }
+    struct Node {
+        array<int, 26> to;
+        int count_of_end = 0, count_of_node = 0;
+        Node() { fill(all(to), -1); }
     };
 
     Trie(int len) {
@@ -15,36 +16,37 @@ struct Trie {
     }
 
     void insert(const string& s) {
-        int cur=0;
-        for(const char& c: s) {
-            int nxt=nodes[cur].to[c-'a'];
-            if(nxt==-1) {
-                nodes[cur].to[c-'a']=nodes.size();
-                nxt=nodes.size();
+        int cur = 0;
+        for(const char& c : s) {
+            int nxt = nodes[cur].to[c - 'a'];
+            if(nxt == -1) {
+                nodes[cur].to[c - 'a'] = nodes.size();
+                nxt = nodes.size();
                 nodes.push_back(Node());
             }
-            cur=nxt;
+            cur = nxt;
             nodes[cur].count_of_node++;
         }
         nodes[cur].count_of_end++;
     }
 
     int count(const string& s) {
-        int cur=0,ret=0;
-        for(const char& c: s) {
-            int nxt=nodes[cur].to[c-'a'];
-            if(nxt==-1) return 0;
-            cur=nxt;
-            ret=nodes[cur].count_of_end;
+        int cur = 0, ret = 0;
+        for(const char& c : s) {
+            int nxt = nodes[cur].to[c - 'a'];
+            if(nxt == -1) return 0;
+            cur = nxt;
+            ret = nodes[cur].count_of_end;
         }
+        return ret;
     }
 
     void erase(const string& s) {
-        int cur=0;
-        for(const char& c: s) {
-            int nxt=nodes[cur].to[c-'a'];
-            if(nxt==-1) return;
-            cur=nxt;
+        int cur = 0;
+        for(const char& c : s) {
+            int nxt = nodes[cur].to[c - 'a'];
+            if(nxt == -1) return;
+            cur = nxt;
             nodes[cur].count_of_node--;
         }
         nodes[cur].count_of_end--;

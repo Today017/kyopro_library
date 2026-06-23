@@ -112,9 +112,9 @@ auto mkinsert(const auto& a, ii idx, auto v) {
     return b;
 }
 
-auto mkerase(const auto& a, ii idx, auto v) {
+auto mkerase(const auto& a, ii idx) {
     auto b = a;
-    erasev(a, idx);
+    erasev(b, idx);
     return b;
 }
 
