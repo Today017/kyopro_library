@@ -35,3 +35,12 @@ vector<vector<typename Ring::Type>> MatPow(
     }
     return ret;
 }
+
+///@brief 単位行列
+template<typename Ring>
+vector<vector<typename Ring::Type>> MatId(ii N) {
+    using Type=typename Ring::Type;
+    vector<vector<Type>> ret(N,vector<Type>(N,Ring::zero()));
+    rep(i,N) ret[i][i]=Ring::one();
+    return ret;
+}

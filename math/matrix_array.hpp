@@ -29,3 +29,13 @@ array<array<typename Ring::Type,N>,N> MatPow(
     }
     return ret;
 }
+
+///@brief 単位行列
+template<typename Ring, int N>
+array<array<typename Ring::Type,N>,N> MatId() {
+    using Type=typename Ring::Type;
+    array<array<Type,N>,N> ret;
+    rep(i,N) rep(j,N) ret[i][j]=Ring::zero();
+    rep(i,N) ret[i][i]=Ring::one();
+    return ret;
+}
