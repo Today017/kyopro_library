@@ -30,7 +30,6 @@ template<class... T> void input(T&... a) { (cin>>...>>a); }
 template<class T> void input_index(T& a) { a--; }
 template<class T, class... Ts> void input_index(T& a, Ts&... b) { a--; input_index(b...); }
 
-#ifndef DEBUG
 template<typename T1, typename T2>
 ostream& operator<<(ostream& os, const pair<T1,T2>& p) {
     os<<p.fi<<' '<<p.se;
@@ -69,7 +68,7 @@ ostream& operator<<(ostream& os, const vector<vector<vector<T>>>& a) {
             }
             os<<NL;
         }
-        os<<NL;
+        if(i!=I-1) os<<NL;
     }
     return os;
 }
@@ -82,7 +81,7 @@ ostream& operator<<(ostream& os, const vector<vector<T>>& a) {
             os<<a[i][j];
             if(j!=J-1) os<<' ';
         }
-        cout<<NL;
+        if(i!=I-1) cout<<NL;
     }
     return os;
 }
@@ -95,6 +94,8 @@ ostream& operator<<(ostream& os, const vector<T>& a) {
     }
     return os;
 }
+
+#ifndef DEBUG
 template<typename T>
 ostream& operator<<(ostream& os, const set<T>& a) {
     for(auto itr=a.begin(); itr!=a.end(); itr++) {

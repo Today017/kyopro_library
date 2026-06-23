@@ -12,8 +12,8 @@
 #include "../kyopro_library/data_structure/multiset.hpp"
 #include "../kyopro_library/data_structure/deque.hpp"
 #include "../kyopro_library/data_structure/queue.hpp"
-#include "../kyopro_library/data_structure/sorted_multitree.hpp"
-#include "../kyopro_library/data_structure/sorted_tree.hpp"
+// #include "../kyopro_library/data_structure/sorted_multitree.hpp"
+// #include "../kyopro_library/data_structure/sorted_tree.hpp"
 #include "../kyopro_library/data_structure/fenwick_tree.hpp"
 #include "../kyopro_library/data_structure/segtree.hpp"
 #include "../kyopro_library/data_structure/segtree_lazy.hpp"
@@ -35,6 +35,7 @@
 #include "../kyopro_library/math/primality_test.hpp"
 #include "../kyopro_library/math/prime_enumerate.hpp"
 #include "../kyopro_library/math/prime_factorize.hpp"
+#include "../kyopro_library/math/divisors.hpp"
 
 #include "../kyopro_library/mod/modint.hpp"
 #include "../kyopro_library/mod/combination.hpp"

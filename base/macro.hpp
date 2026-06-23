@@ -8,18 +8,18 @@
 #define rep(...) rep_overload(__VA_ARGS__, rep4, rep3, rep2, rep1)(__VA_ARGS__)
 
 #define per1(n) for (ii i = (n) - 1; i >= 0; i--)
-#define per2(i, n) for (ii i = (n); i >= 0; i--)
+#define per2(i, n) for (ii i = (n)-1; i >= 0; i--)
 #define per3(i, a, b) for (ii i = (b) - 1; i >= (a); i--)
 #define per4(i, a, b, c) for (ii i = (b) - 1; i >= (a); i -= (c))
 #define per_overload(a, b, c, d, e, ...) e
-#define per(...) rep_overload(__VA_ARGS__, rep4, rep3, rep2, rep1)(__VA_ARGS__)
+#define per(...) per_overload(__VA_ARGS__, per4, per3, per2, per1)(__VA_ARGS__)
 
 #define fore(x, a) for (auto &x : a)
 
 #define all(v) (v).begin(), (v).end()
 #define rall(v) (v).rbegin(), (v).rend()
 
-#define QYN(q, a, b) (q ? a : b)
+#define QYN(q, a, b) ((q) ? (a) : (b))
 
 #define pb push_back
 #define eb emplace_back
@@ -73,17 +73,29 @@
 #define STR(...)                                                               \
     string __VA_ARGS__;                                                        \
     input(__VA_ARGS__);
+#define CHR(...) \
+    char __VA_ARGS__; \
+    input(__VA_ARGS__);
+#define LD(...) \
+    ld __VA_ARGS__; \
+    input(__VA_ARGS__);
 #define VI(A, N)                                                               \
     vector<ii> A(N);                                                           \
     input(A);
 #define VVI(A, N, M)                                                           \
-    vector<vector<ii>> A(N, vector<int>(M));                                   \
+    vector<vector<ii>> A(N, vector<ii>(M));                                    \
     input(A);
 #define VL(A, N)                                                               \
     vector<ll> A(N);                                                           \
     input(A);
 #define VVL(A, N, M)                                                           \
     vector<vector<ll>> A(N, vector<ll>(M));                                    \
+    input(A);
+#define VPI(A, N) \
+    vpi A(N); \
+    input(A);
+#define VTI(A, N) \
+    vti A(N); \
     input(A);
 #define VI2(A, B, N)                                                           \
     vector<ii> A(N), B(N);                                                     \
@@ -104,4 +116,4 @@
 #define IN3(A, B, C) rep(i, siz(A)) cin >> A[i] >> B[i] >> C[i];
 #define IN4(A, B, C, D) rep(i, siz(A)) cin >> A[i] >> B[i] >> C[i] >> D[i];
 #define IN5(A, B, C, D, E)                                                     \
-    rep(i, siz(B)) cin >> A[i] >> B[i] >> C[i] >> D[i] >> E[i];
+    rep(i, siz(A)) cin >> A[i] >> B[i] >> C[i] >> D[i] >> E[i];

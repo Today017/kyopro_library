@@ -1,9 +1,11 @@
 #pragma once
 #include "../../kyopro_library/base/include.hpp"
 
+using i16=short;
 using i32=int;
 using i64=long long;
 using i128=__int128_t;
+using u16=unsigned short;
 using u32=unsigned int;
 using u64=unsigned long long;
 using u128=__uint128_t;
@@ -16,7 +18,8 @@ using vl=vector<ll>; using vvl=vector<vector<ll>>; using vvvl=vector<vector<vect
 using ii3=array<ii,3>; using ii4=array<ii,4>; using ii5=array<ii,5>;
 using lll=i128; using ulll=u128; constexpr lll operator ""_lll(ull x) { return static_cast<lll>(x); }
 using ld=f80;
-using vst=vector<string>;
+using str=string;
+using vstr=vector<str>;
 
 template<typename T> using V=vector<T>;
 template<typename T> using VV=vector<vector<T>>;
