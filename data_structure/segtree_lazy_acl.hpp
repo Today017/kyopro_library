@@ -1,13 +1,14 @@
 #pragma once
-#include<atcoder/lazysegtree>
+#include <atcoder/lazysegtree>
 
-template<typename Monoid, typename Operator, auto mapping>
+/// @brief 遅延評価セグメント木（ACL lazy_segtree ラッパー）
+template <typename Monoid, typename Operator, auto mapping>
 auto LsgFactory(auto v) {
-    auto op=[&](auto a, auto b) {
-        return Operator::op(b,a);
+    auto op = [&](auto a, auto b) {
+        return Operator::op(b, a);
     };
-    auto mapping2=[&](auto f, auto x) {
-        return mapping(x,f);
+    auto mapping2 = [&](auto f, auto x) {
+        return mapping(x, f);
     };
     return atcoder::lazy_segtree<
         typename Monoid::Type,
@@ -16,6 +17,5 @@ auto LsgFactory(auto v) {
         typename Operator::Type,
         mapping2,
         op,
-        Operator::id
-    >(v);
+        Operator::id>(v);
 }

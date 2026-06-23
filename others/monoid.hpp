@@ -1,46 +1,46 @@
 #pragma once
-#include"../../kyopro_library/template.hpp"
+#include "../../kyopro_library/template.hpp"
 
-///@brief モノイド
+/// @brief モノイド
 namespace Monoid {
-    ///@brief Minモノイド
-    ///@tparam max_value 単位元
-    template<typename T, T max_value=INF>
+    /// @brief Minモノイド
+    /// @tparam max_value 単位元
+    template <typename T, T max_value = INF>
     struct Min {
-        using Type=T;
+        using Type = T;
         static Type id() { return max_value; }
-        static Type op(const Type& a, const Type& b) { return min(a,b); }
+        static Type op(const Type& a, const Type& b) { return min(a, b); }
     };
 
-    ///@brief Maxモノイド
-    ///@tparam min_value 単位元
-    template<typename T, T min_value=-INF>
+    /// @brief Maxモノイド
+    /// @tparam min_value 単位元
+    template <typename T, T min_value = -INF>
     struct Max {
-        using Type=T;
+        using Type = T;
         static Type id() { return min_value; }
-        static Type op(const Type& a, const Type& b) { return max(a,b); }
+        static Type op(const Type& a, const Type& b) { return max(a, b); }
     };
 
-    ///@brief 和
-    template<typename T>
+    /// @brief 和
+    template <typename T>
     struct Sum {
-        using Type=T;
+        using Type = T;
         static Type id() { return 0; }
-        static Type op(const Type& a, const Type& b) { return a+b; }
+        static Type op(const Type& a, const Type& b) { return a + b; }
     };
 
-    ///@brief （和，区間の長さ）
-    template<typename T>
+    /// @brief （和，区間の長さ）
+    template <typename T>
     struct SumPair {
-        using Type=pair<T,int>;
-        static Type id() { return make_pair(T(0),0); }
-        static Type op(const Type& a, const Type& b) { return {a.first+b.first,a.second+b.second}; }
+        using Type = pair<T, int>;
+        static Type id() { return make_pair(T(0), 0); }
+        static Type op(const Type& a, const Type& b) { return {a.first + b.first, a.second + b.second}; }
     };
 
-    template<typename T, T not_exist>
+    template <typename T, T not_exist>
     struct Update {
-        using Type=T;
+        using Type = T;
         static Type id() { return not_exist; }
-        static Type op(const Type& a, const Type& b) { return b==id() ? a : b; }
+        static Type op(const Type& a, const Type& b) { return b == id() ? a : b; }
     };
-}
+}  // namespace Monoid

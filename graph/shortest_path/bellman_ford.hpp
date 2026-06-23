@@ -1,5 +1,5 @@
 #pragma once
-#include"../../../kyopro_library/template.hpp"
+#include "../../../kyopro_library/template.hpp"
 
 /**
  * @brief ベルマンフォード法
@@ -12,21 +12,22 @@
  * @ref https://yukicoder.me/submissions/967952
  * @ref https://mhrb-minase.hatenablog.com/entry/2019/08/20/003915
  */
-pair<bool,vector<ll>> BellmanFord(const vector<vector<pair<int,ll>>>& G, int start) {
-    int N=G.size();
-    vector<ll> dst(N,INFL); dst[start]=0;
-    int i=0;
-    for(; i<N; i++) {
-        bool update=false;
-        rep(j,N) {
-            for(auto [nxt,cost]: G[j]) {
-                if(dst[j]!=INFL && dst[j]+cost<dst[nxt]) {
-                    dst[nxt]=dst[j]+cost;
-                    update=true;
+pair<bool, vector<ll>> BellmanFord(const vector<vector<pair<int, ll>>>& G, int start) {
+    int N = G.size();
+    vector<ll> dst(N, INFL);
+    dst[start] = 0;
+    int i = 0;
+    for(; i < N; i++) {
+        bool update = false;
+        rep(j, N) {
+            for(auto [nxt, cost] : G[j]) {
+                if(dst[j] != INFL && dst[j] + cost < dst[nxt]) {
+                    dst[nxt] = dst[j] + cost;
+                    update = true;
                 }
             }
         }
         if(!update) break;
     }
-    return {i==N,dst};
+    return {i == N, dst};
 }
