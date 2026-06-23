@@ -79,6 +79,5 @@ var searchData=
   ['sumpair_76',['SumPair',['../struct_monoid_1_1_sum_pair.html',1,'Monoid']]],
   ['sumv_77',['sumv',['../base_2util_8hpp.html#abfc72007018535e881e952bc251dfb0a',1,'util.hpp']]],
   ['supersetmobius_78',['SupersetMobius',['../namespace_zeta_mobius.html#a3f00087cb849bfac06aa0f2977a2b9c8',1,'ZetaMobius']]],
-  ['supersetzeta_79',['SupersetZeta',['../namespace_zeta_mobius.html#ae083f266b0f2a42968110e4c02245517',1,'ZetaMobius']]],
-  ['symbols_80',['symbols',['../namespacecompress.html#a30b635f18c81637d3c1d613b8be0e223',1,'compress']]]
+  ['supersetzeta_79',['SupersetZeta',['../namespace_zeta_mobius.html#ae083f266b0f2a42968110e4c02245517',1,'ZetaMobius']]]
 ];

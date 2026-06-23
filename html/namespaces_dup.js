@@ -18,13 +18,6 @@ var namespaces_dup =
       [ "Subset", "namespace_bit.html#a5a6f14ec688eae47fae89306fec1e1d7", null ],
       [ "ToBinary", "namespace_bit.html#aecd7d91031d3f526a0e0a3f15cdf4e62", null ]
     ] ],
-    [ "compress", "namespacecompress.html", [
-      [ "symbols", "namespacecompress.html#a30b635f18c81637d3c1d613b8be0e223", null ],
-      [ "code", "namespacecompress.html#aea3e350d16ae2d80ffde6053a6d3dcb3", null ],
-      [ "line", "namespacecompress.html#a8e7877c3a20b124f013d1fda1eb05465", null ],
-      [ "res", "namespacecompress.html#a54ac03d8200b90f0df7eaef116a6634d", null ],
-      [ "a", "namespacecompress.html#ab51c4d79a5d1f1a8a2d46f126ac20894", null ]
-    ] ],
     [ "ConvolutionBit", "namespace_convolution_bit.html", [
       [ "OrConvolution", "namespace_convolution_bit.html#a272c1b453abd54542e995ce0ab1092a7", null ],
       [ "AndConvolution", "namespace_convolution_bit.html#a66395053fe1694eba18f21b2cc40d5b2", null ],
@@ -76,6 +69,7 @@ var namespaces_dup =
       [ "DistanceIncrement", "namespace_ring_operation.html#a223c526963880591f58768c9c16e87e6", null ],
       [ "DistanceDecrement", "namespace_ring_operation.html#ac551fcd66538d379128d0f8cf3839842", null ]
     ] ],
+    [ "TdyDebug", "namespace_tdy_debug.html", "namespace_tdy_debug" ],
     [ "ZetaMobius", "namespace_zeta_mobius.html", [
       [ "SubsetZeta", "namespace_zeta_mobius.html#a66a61fa09104ecb369608a08568a49c1", null ],
       [ "SupersetZeta", "namespace_zeta_mobius.html#ae083f266b0f2a42968110e4c02245517", null ],

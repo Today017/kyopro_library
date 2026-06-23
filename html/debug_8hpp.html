@@ -103,6 +103,8 @@ $(function(){initNavTree('debug_8hpp.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#concepts">Concepts</a> &#124;
 <a href="#define-members">マクロ定義</a> &#124;
 <a href="#func-members">関数</a>  </div>
   <div class="headertitle"><div class="title">debug.hpp ファイル</div></div>
@@ -122,6 +124,16 @@ $(function(){initNavTree('debug_8hpp.html',''); initResizable(true); });
 </div>
 <p><a href="debug_8hpp_source.html">[ソースコード]</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html">TdyDebug</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
+Concepts</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="concept_tdy_debug_1_1_iterable.html">TdyDebug::Iterable</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 マクロ定義</h2></td></tr>
 <tr class="memitem:a03e896b87233163e2dc3399c65cdfc2d" id="r_a03e896b87233163e2dc3399c65cdfc2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03e896b87233163e2dc3399c65cdfc2d">print_line</a>&#160;&#160;&#160;cerr &lt;&lt; &quot;--------------------&quot; &lt;&lt; __LINE__ &lt;&lt; &quot;--------------------&quot; &lt;&lt; endl;</td></tr>
@@ -133,6 +145,55 @@ $(function(){initNavTree('debug_8hpp.html',''); initResizable(true); });
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 関数</h2></td></tr>
+<tr class="memitem:a52f0bcd3138a5db9ed7f11d54232adaf" id="r_a52f0bcd3138a5db9ed7f11d54232adaf"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a52f0bcd3138a5db9ed7f11d54232adaf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#a52f0bcd3138a5db9ed7f11d54232adaf">TdyDebug::dmp</a> (ostream &amp;os, const T &amp;x)</td></tr>
+<tr class="separator:a52f0bcd3138a5db9ed7f11d54232adaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a638a8d43794ce3f0b972d0844de75583" id="r_a638a8d43794ce3f0b972d0844de75583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#a638a8d43794ce3f0b972d0844de75583">TdyDebug::dmp</a> (ostream &amp;os, const string &amp;s)</td></tr>
+<tr class="separator:a638a8d43794ce3f0b972d0844de75583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab45f009e9bca475ed8cd3a3cdcbdf258" id="r_ab45f009e9bca475ed8cd3a3cdcbdf258"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#ab45f009e9bca475ed8cd3a3cdcbdf258">TdyDebug::dmp</a> (ostream &amp;os, const basic_string&lt; bool &gt; &amp;a)</td></tr>
+<tr class="separator:ab45f009e9bca475ed8cd3a3cdcbdf258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a963017a553ad759d08954ee7a609ecce" id="r_a963017a553ad759d08954ee7a609ecce"><td class="memTemplParams" colspan="2">template&lt;typename A, typename B&gt; </td></tr>
+<tr class="memitem:a963017a553ad759d08954ee7a609ecce"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#a963017a553ad759d08954ee7a609ecce">TdyDebug::dmp</a> (ostream &amp;os, const pair&lt; A, B &gt; &amp;p)</td></tr>
+<tr class="separator:a963017a553ad759d08954ee7a609ecce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8916a6aca71ccac98582cb3ff3a939d" id="r_ad8916a6aca71ccac98582cb3ff3a939d"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:ad8916a6aca71ccac98582cb3ff3a939d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#ad8916a6aca71ccac98582cb3ff3a939d">TdyDebug::dmp</a> (ostream &amp;os, const tuple&lt; Ts... &gt; &amp;t)</td></tr>
+<tr class="separator:ad8916a6aca71ccac98582cb3ff3a939d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a6670a0368b2df18a4d63d2c65aa551" id="r_a2a6670a0368b2df18a4d63d2c65aa551"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a2a6670a0368b2df18a4d63d2c65aa551"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#a2a6670a0368b2df18a4d63d2c65aa551">TdyDebug::dmp</a> (ostream &amp;os, queue&lt; T &gt; a)</td></tr>
+<tr class="separator:a2a6670a0368b2df18a4d63d2c65aa551"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacf562045fe513ed77659fa3581a1ea2" id="r_aacf562045fe513ed77659fa3581a1ea2"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:aacf562045fe513ed77659fa3581a1ea2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#aacf562045fe513ed77659fa3581a1ea2">TdyDebug::dmp</a> (ostream &amp;os, priority_queue&lt; T &gt; a)</td></tr>
+<tr class="separator:aacf562045fe513ed77659fa3581a1ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a156a0c1ae2efaa33a7d39ea453fd5a98" id="r_a156a0c1ae2efaa33a7d39ea453fd5a98"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a156a0c1ae2efaa33a7d39ea453fd5a98"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#a156a0c1ae2efaa33a7d39ea453fd5a98">TdyDebug::dmp</a> (ostream &amp;os, priority_queue&lt; T, vector&lt; T &gt;, greater&lt; T &gt; &gt; a)</td></tr>
+<tr class="separator:a156a0c1ae2efaa33a7d39ea453fd5a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90d360e9f7cc143c7867386bd313a4bd" id="r_a90d360e9f7cc143c7867386bd313a4bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#a90d360e9f7cc143c7867386bd313a4bd">TdyDebug::dmp</a> (ostream &amp;os, atcoder::modint998244353 a)</td></tr>
+<tr class="separator:a90d360e9f7cc143c7867386bd313a4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9f19334bce9b3d38b1a2d58f199f8ef" id="r_aa9f19334bce9b3d38b1a2d58f199f8ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#aa9f19334bce9b3d38b1a2d58f199f8ef">TdyDebug::dmp</a> (ostream &amp;os, atcoder::modint1000000007 a)</td></tr>
+<tr class="separator:aa9f19334bce9b3d38b1a2d58f199f8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80796ae7095619c2c421d0e08aabaccb" id="r_a80796ae7095619c2c421d0e08aabaccb"><td class="memTemplParams" colspan="2">template&lt;typename T, T(*)(T, T) op, T(*)() e&gt; </td></tr>
+<tr class="memitem:a80796ae7095619c2c421d0e08aabaccb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#a80796ae7095619c2c421d0e08aabaccb">TdyDebug::dmp</a> (ostream &amp;os, atcoder::segtree&lt; T, op, e &gt; a)</td></tr>
+<tr class="separator:a80796ae7095619c2c421d0e08aabaccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d9aa2097db20a5bb319ad1a4541ebeb" id="r_a4d9aa2097db20a5bb319ad1a4541ebeb"><td class="memTemplParams" colspan="2">template&lt;typename T, T(*)(T, T) op, T(*)() e, typename F, T(*)(F, T) mapping, F(*)(F, F) composition, F(*)() id&gt; </td></tr>
+<tr class="memitem:a4d9aa2097db20a5bb319ad1a4541ebeb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#a4d9aa2097db20a5bb319ad1a4541ebeb">TdyDebug::dmp</a> (ostream &amp;os, atcoder::lazy_segtree&lt; T, op, e, F, mapping, composition, id &gt; a)</td></tr>
+<tr class="separator:a4d9aa2097db20a5bb319ad1a4541ebeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32f0267e91265dcd825b539d4dad3a86" id="r_a32f0267e91265dcd825b539d4dad3a86"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a32f0267e91265dcd825b539d4dad3a86"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#a32f0267e91265dcd825b539d4dad3a86">TdyDebug::dmp</a> (ostream &amp;os, atcoder::fenwick_tree&lt; T &gt; a)</td></tr>
+<tr class="separator:a32f0267e91265dcd825b539d4dad3a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a539f02566c1bad8b27c259941a19a2a4" id="r_a539f02566c1bad8b27c259941a19a2a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#a539f02566c1bad8b27c259941a19a2a4">TdyDebug::dmp</a> (ostream &amp;os, <a class="el" href="struct_fenwick_tree.html">FenwickTree</a> a)</td></tr>
+<tr class="separator:a539f02566c1bad8b27c259941a19a2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4320dd42cc5d47f110d5bdb6f4b81544" id="r_a4320dd42cc5d47f110d5bdb6f4b81544"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a4320dd42cc5d47f110d5bdb6f4b81544"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#a4320dd42cc5d47f110d5bdb6f4b81544">TdyDebug::dmp</a> (ostream &amp;os, <a class="el" href="struct_fenwick_tree_abel.html">FenwickTreeAbel</a>&lt; T &gt; a)</td></tr>
+<tr class="separator:a4320dd42cc5d47f110d5bdb6f4b81544"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1ab56e7f42fc9ef3867d1b7a07958da" id="r_ad1ab56e7f42fc9ef3867d1b7a07958da"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:ad1ab56e7f42fc9ef3867d1b7a07958da"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#ad1ab56e7f42fc9ef3867d1b7a07958da">TdyDebug::dmp</a> (ostream &amp;os, <a class="el" href="struct_seg_tree.html">SegTree</a>&lt; T &gt; a)</td></tr>
+<tr class="separator:ad1ab56e7f42fc9ef3867d1b7a07958da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba392d094839ff15191fe7d31b21f21a" id="r_aba392d094839ff15191fe7d31b21f21a"><td class="memTemplParams" colspan="2">template&lt;typename T, typename U, auto M&gt; </td></tr>
+<tr class="memitem:aba392d094839ff15191fe7d31b21f21a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#aba392d094839ff15191fe7d31b21f21a">TdyDebug::dmp</a> (ostream &amp;os, <a class="el" href="struct_seg_tree_lazy.html">SegTreeLazy</a>&lt; T, U, M &gt; a)</td></tr>
+<tr class="separator:aba392d094839ff15191fe7d31b21f21a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a595d34a23f461cfa6830cbf03ec0a092" id="r_a595d34a23f461cfa6830cbf03ec0a092"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a595d34a23f461cfa6830cbf03ec0a092"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_tdy_debug.html#a595d34a23f461cfa6830cbf03ec0a092">TdyDebug::dmp</a> (ostream &amp;os, <a class="el" href="struct_seg_tree_act.html">SegTreeAct</a>&lt; T &gt; a)</td></tr>
+<tr class="separator:a595d34a23f461cfa6830cbf03ec0a092"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a966f60e90ba58ad164d45a0ed1614116" id="r_a966f60e90ba58ad164d45a0ed1614116"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:a966f60e90ba58ad164d45a0ed1614116"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a966f60e90ba58ad164d45a0ed1614116">DebugPrint</a> (int i, T name)</td></tr>
 <tr class="separator:a966f60e90ba58ad164d45a0ed1614116"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,7 +214,7 @@ $(function(){initNavTree('debug_8hpp.html',''); initResizable(true); });
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="debug_8hpp_source.html">debug.hpp</a> の <a class="el" href="debug_8hpp_source.html#l00317">317</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="debug_8hpp_source.html">debug.hpp</a> の <a class="el" href="debug_8hpp_source.html#l00229">229</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -172,9 +233,9 @@ $(function(){initNavTree('debug_8hpp.html',''); initResizable(true); });
       </table>
 </div><div class="memdoc">
 <b>値:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a966f60e90ba58ad164d45a0ed1614116">DebugPrint</a>(0, #__VA_ARGS__, __VA_ARGS__)</div>
-<div class="ttc" id="adebug_8hpp_html_a966f60e90ba58ad164d45a0ed1614116"><div class="ttname"><a href="#a966f60e90ba58ad164d45a0ed1614116">DebugPrint</a></div><div class="ttdeci">void DebugPrint(int i, T name)</div><div class="ttdef"><b>Definition</b> <a href="debug_8hpp_source.html#l00322">debug.hpp:322</a></div></div>
+<div class="ttc" id="adebug_8hpp_html_a966f60e90ba58ad164d45a0ed1614116"><div class="ttname"><a href="#a966f60e90ba58ad164d45a0ed1614116">DebugPrint</a></div><div class="ttdeci">void DebugPrint(int i, T name)</div><div class="ttdef"><b>Definition</b> <a href="debug_8hpp_source.html#l00234">debug.hpp:234</a></div></div>
 </div><!-- fragment -->
-<p class="definition"> <a class="el" href="debug_8hpp_source.html">debug.hpp</a> の <a class="el" href="debug_8hpp_source.html#l00318">318</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="debug_8hpp_source.html">debug.hpp</a> の <a class="el" href="debug_8hpp_source.html#l00230">230</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -194,7 +255,7 @@ $(function(){initNavTree('debug_8hpp.html',''); initResizable(true); });
 </div><div class="memdoc">
 <b>値:</b><div class="fragment"><div class="line"><span class="preprocessor">#VariableName</span></div>
 </div><!-- fragment -->
-<p class="definition"> <a class="el" href="debug_8hpp_source.html">debug.hpp</a> の <a class="el" href="debug_8hpp_source.html#l00319">319</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="debug_8hpp_source.html">debug.hpp</a> の <a class="el" href="debug_8hpp_source.html#l00231">231</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -220,7 +281,7 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="debug_8hpp_source.html">debug.hpp</a> の <a class="el" href="debug_8hpp_source.html#l00322">322</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="debug_8hpp_source.html">debug.hpp</a> の <a class="el" href="debug_8hpp_source.html#l00234">234</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -255,7 +316,7 @@ template&lt;typename T1, typename T2, typename... T3&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="debug_8hpp_source.html">debug.hpp</a> の <a class="el" href="debug_8hpp_source.html#l00324">324</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="debug_8hpp_source.html">debug.hpp</a> の <a class="el" href="debug_8hpp_source.html#l00236">236</a> 行目に定義があります。</p>
 
 </div>
 </div>

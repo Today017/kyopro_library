@@ -102,7 +102,6 @@ ostream& operator<<(ostream& os, const vector<T>& a) {
     return os;
 }
 
-#ifndef DEBUG
 template <typename T>
 ostream& operator<<(ostream& os, const set<T>& a) {
     for(auto itr = a.begin(); itr != a.end(); itr++) {
@@ -162,7 +161,6 @@ ostream& operator<<(ostream& os, array<T, N> a) {
     }
     return os;
 }
-#endif
 
 template <class T, class... Ts>
 void put(const T& a, const Ts&... b) {

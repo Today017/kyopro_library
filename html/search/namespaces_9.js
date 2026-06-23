@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['zetamobius_0',['ZetaMobius',['../namespace_zeta_mobius.html',1,'']]],
-  ['zetamobiusdivmul_1',['ZetaMobiusDivMul',['../namespace_zeta_mobius_div_mul.html',1,'']]]
+  ['tdydebug_0',['TdyDebug',['../namespace_tdy_debug.html',1,'']]]
 ];

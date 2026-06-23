@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Kyopro Library: kyopro_tools ディレクトリリファレンス</title>
+<title>Kyopro Library: TdyDebug::Iterable Concept Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,7 +76,7 @@ $(function() { codefold.init(0); });
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('dir_ae1eec7a8c80a4acd2a65eb080b75f58.html',''); initResizable(true); });
+$(function(){initNavTree('concept_tdy_debug_1_1_iterable.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -102,25 +102,27 @@ $(function(){initNavTree('dir_ae1eec7a8c80a4acd2a65eb080b75f58.html',''); initRe
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">kyopro_tools ディレクトリリファレンス</div></div>
+  <div class="headertitle"><div class="title">TdyDebug::Iterable Concept Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-ファイル</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="exp_8py_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exp_8py.html">exp.py</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="exp___a_h_c_8py_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exp___a_h_c_8py.html">exp_AHC.py</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="mod__reconstruct_8py_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mod__reconstruct_8py.html">mod_reconstruct.py</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-</div><!-- contents -->
+
+<p><code>#include &quot;<a class="el" href="debug_8hpp_source.html">debug.hpp</a>&quot;</code></p>
+<h2 class="groupheader">Concept definition</h2>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="concept_tdy_debug_1_1_iterable.html">TdyDebug::Iterable</a> =  <span class="keyword">requires</span>(<span class="keyword">const</span> T&amp; a) {</div>
+<div class="line">        std::begin(a);</div>
+<div class="line">        std::end(a);</div>
+<div class="line">    }</div>
+<div class="ttc" id="aconcept_tdy_debug_1_1_iterable_html"><div class="ttname"><a href="concept_tdy_debug_1_1_iterable.html">TdyDebug::Iterable</a></div><div class="ttdef"><b>Definition</b> <a href="debug_8hpp_source.html#l00022">debug.hpp:22</a></div></div>
+</div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="debug_8hpp_source.html">debug.hpp</a> の <a class="el" href="debug_8hpp_source.html#l00022">22</a> 行目に定義があります。</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ae1eec7a8c80a4acd2a65eb080b75f58.html">kyopro_tools</a></li>
+    <li class="navelem"><a class="el" href="namespace_tdy_debug.html">TdyDebug</a></li><li class="navelem"><a class="el" href="concept_tdy_debug_1_1_iterable.html">Iterable</a></li>
     <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

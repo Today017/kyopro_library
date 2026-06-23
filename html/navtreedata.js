@@ -37,6 +37,7 @@ var NAVTREE =
         [ "列挙値", "namespacemembers_eval.html", null ]
       ] ]
     ] ],
+    [ "Concepts", "concepts.html", "concepts" ],
     [ "クラス", "annotated.html", [
       [ "クラス一覧", "annotated.html", "annotated_dup" ],
       [ "クラス階層", "hierarchy.html", "hierarchy" ],
@@ -64,13 +65,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "abel_8hpp.html",
-"fps_8hpp_source.html",
-"max__flow_8hpp_source.html",
-"primitive__root_8hpp_source.html",
-"struct_dynamic_connectivity.html#a4c2531481116b0b378a98c6ca907d78c",
-"struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a2ac842d27b458b66c5b113307dfe28ea",
-"struct_range_query_1_1_apply_add.html#adb033ef396b3657d1535ab3ad99d50fe",
-"struct_t_r.html#a8e607b5f83ffad78bdcb07647587a984"
+"fps_8hpp.html#acf4ada7be75cddfc49fad537f19a4729",
+"max__flow_8hpp.html",
+"pow_8hpp.html",
+"struct_dsu_rollback.html",
+"struct_insertable_reversible_array.html#a8b180eeb6d7a237eb7abedb5975c42ab",
+"struct_queue.html#a67d5e094f07f44dcadd6811f69d18690",
+"struct_succinct_bit_vector.html#a48146af946417824ba1079eca73670c7"
 ];
 
 var SYNCONMSG = 'クリックで同期表示が無効になります';

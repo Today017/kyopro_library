@@ -7,6 +7,5 @@ var searchData=
   ['st_4',['st',['../struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390',1,'FastLCA']]],
   ['start_5',['start',['../struct_bipartite_matching_weighted.html#ac9612cd09d524524d30346fb0da84ce3',1,'BipartiteMatchingWeighted::start'],['../struct_arithmetic_progression.html#a11989c11fe03b3043b66aa42a6186f02',1,'ArithmeticProgression::start']]],
   ['step_6',['step',['../struct_arithmetic_progression.html#a9f43fabcce1fd4d75762729df498b4ea',1,'ArithmeticProgression']]],
-  ['sum_7',['sum',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node.html#a9fb15c1ba67e63480fb1053209a781e2',1,'InsertableReversibleArrayImpl::LazyReversibleRBSTNode']]],
-  ['symbols_8',['symbols',['../namespacecompress.html#a30b635f18c81637d3c1d613b8be0e223',1,'compress']]]
+  ['sum_7',['sum',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node.html#a9fb15c1ba67e63480fb1053209a781e2',1,'InsertableReversibleArrayImpl::LazyReversibleRBSTNode']]]
 ];

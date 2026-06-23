@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a_0',['a',['../struct_geometry_1_1_line.html#a1ef5574c3171eec95872ef4e4e4f170d',1,'Geometry::Line::a'],['../namespacecompress.html#ab51c4d79a5d1f1a8a2d46f126ac20894',1,'compress.a']]],
+  ['a_0',['a',['../struct_geometry_1_1_line.html#a1ef5574c3171eec95872ef4e4e4f170d',1,'Geometry::Line']]],
   ['abel_1',['Abel',['../namespace_abel.html',1,'']]],
   ['abel_2ehpp_2',['abel.hpp',['../abel_8hpp.html',1,'']]],
   ['abs_3',['abs',['../struct_geometry_1_1_point.html#a8472d95742274c7339e1f227729f8f39',1,'Geometry::Point']]],
