@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# 引数が足りない場合のチェック
+if [ $# -lt 1 ]; then
+    echo "Usage: $0 <filename>"
+    exit 1
+fi
+
+FILENAME=$1
+TARGET="${FILENAME}.cpp"
+
+# メイン部分のロジック構築
+{
+cat << EOF
+//#define MULTI
+#include<kyopro_library/template.hpp>
+//#include<kyopro_library/utils.hpp>
+//------>8------------------------------------------->8------
+/*
+*/
+
+void run() {
+}
+
+void prep() {}
+EOF
+} > "$TARGET"
+
+echo "Generated: $TARGET"

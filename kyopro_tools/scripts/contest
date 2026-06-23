@@ -1,8 +1,13 @@
 #!/bin/bash
 
-rm *.cpp
-rm ./esc/*.cpp
+# 新しいコンテストに向けて手元のファイルを整理する。
+#   残す : 補助スクリプト・設定、kp 関連 (kp, online-judge-tools.md)、
+#          code / z で始まるファイル (code.cpp, z.cpp, zz.cpp, z01.cpp など)
+#   消す : それ以外の解答ファイル・生成物、./samples/ 以下
 
+HERE=$(pwd)
+
+# 削除しないもの（インフラ・設定・補助スクリプト・kp 関連）
 EXCLUDE=(
     ".devcontainer"
     ".vscode"
@@ -14,38 +19,37 @@ EXCLUDE=(
     "cmp"
     "copy"
     "test"
+    "rand"
+    "check"
     "compress"
     "makefile"
     "Dockerfile"
+    "compile_flags.txt"
+    "file"
+    "kp"
+    "online-judge-tools.md"
 )
 
-HERE=$(pwd)
+# kp が取得したサンプルを削除（ディレクトリごと。kp -d で再生成される）
+rm -rf "$HERE/samples"
 
-for file in $(ls $HERE); do
+# esc/ の解答アーカイブを削除（code / z で始まるファイルは残す）
+for f in "$HERE"/esc/*.cpp; do
+    [[ -e "$f" ]] || continue
+    case "$(basename "$f")" in
+        code*|z*) ;;          # 残す（code / z で始まるファイル）
+        *)        rm -f "$f" ;;
+    esac
+done
+
+# ルート直下を整理：EXCLUDE にも code* / z* にも該当しないものを削除
+for file in $(ls "$HERE"); do
+    case "$file" in
+        code*|z*) continue ;; # code / z で始まるファイルは残す
+    esac
     if [[ ! " ${EXCLUDE[@]} " =~ " ${file} " ]]; then
-        rm -rf $file
+        rm -rf "$HERE/$file"
     fi
 done
 
-touch a.cpp
-echo "#include<kyopro_library/template.hpp>
-//----------------------------------------------------------
-
-void solve() {
-}
-
-int main() {
-    ios::sync_with_stdio(false); cin.tie(nullptr);
-    cout<<fixed<<setprecision(15);
-    int T=1;
-    //cin>>T;
-    while(T--) solve();
-}" > a.cpp
-touch b.cpp
-touch c.cpp
-touch d.cpp
-touch e.cpp
-cp a.cpp b.cpp
-cp a.cpp c.cpp
-cp a.cpp d.cpp
-cp a.cpp e.cpp
+clear

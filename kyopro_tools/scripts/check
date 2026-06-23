@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# ./check <solve> <generate>
+# rand の簡易版（RE 発見用）。generate が生成した入力を solve に与え、
+# 異常終了（非ゼロ終了 / シグナル）するまでループし続ける。
+# 異常終了したら入力とエラー内容を表示して終了。
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 <solve> <generate>"
+    exit 1
+fi
+
+SOLVE="${1%.cpp}.cpp"
+GEN="${2%.cpp}.cpp"
+
+TMP=$(mktemp -d)
+trap 'rm -rf "$TMP"' EXIT
+
+# コンパイル（cmp と同じコマンド）
+compile() {
+    if [ ! -f "$1" ]; then
+        echo -e "${RED}Error: $1 not found.${NC}"
+        exit 1
+    fi
+    if ! g++ "$1" -std=c++20 -I. -O2 -D_GLIBCXX_DEBUG -Wall -Wextra -DTDY -o "$2"; then
+        echo -e "${RED}Compilation failed ($1).${NC}"
+        exit 1
+    fi
+}
+
+compile "$SOLVE" "$TMP/solve"
+compile "$GEN"   "$TMP/generate"
+echo -e "${GREEN}Compilation succeeded.${NC}"
+
+count=0
+while true; do
+    count=$((count + 1))
+    "$TMP/generate" > "$TMP/input.txt"
+    "$TMP/solve" < "$TMP/input.txt" > "$TMP/solve.txt" 2> "$TMP/error.txt"
+    status=$?
+
+    if [ $status -eq 0 ]; then
+        echo -ne "Case $count OK!\r"
+    else
+        echo
+        reason="exit code $status"
+        if [ $status -gt 128 ]; then
+            case $((status - 128)) in
+                6)  reason="SIGABRT (assertion / _GLIBCXX_DEBUG)" ;;
+                8)  reason="SIGFPE (division by zero など)" ;;
+                11) reason="SIGSEGV (segmentation fault)" ;;
+                *)  reason="signal $((status - 128))" ;;
+            esac
+        fi
+        echo -e "${RED}Case $count Runtime Error! ($reason)${NC}"
+        echo -e "${GREEN}--- Input ---${NC}"
+        cat "$TMP/input.txt"
+        echo -e "${RED}--- Error ---${NC}"
+        cat "$TMP/error.txt"
+        exit 1
+    fi
+done

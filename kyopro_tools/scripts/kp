@@ -1,0 +1,618 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+kp - 自作 online-judge-tools (AtCoder / Codeforces 対応)
+
+使い方:
+  kp -d <コンテストURL>      コンテスト全問のサンプルを ./samples/<問題番号>/ に保存
+  kp -d <問題URL> [保存名]   その問題のサンプルを ./samples/<保存名>/ に保存
+                             （保存名を省略すると code。z など任意の名前を指定可）
+  kp <問題番号>              <問題番号>.cpp を ./cmp でコンパイルし、
+                             ./samples/<問題番号>/ の入力例で実行して出力例と比較
+  kp <問題番号> t            ./cmp <問題番号> t（-DDEBUG 付き）でコンパイルして
+                             同様にサンプルで実行・比較
+
+環境変数:
+  KP_FIREFOX_PROFILE  使用する Firefox プロファイル（ディレクトリ名 or 絶対パス）
+  KP_USER_AGENT       送信する User-Agent を上書き
+  KP_TIMEOUT          サンプル実行のタイムアウト秒数（既定: 10）
+"""
+
+# ===========================================================================
+# 仕様メモ — 詳細仕様の記録（元仕様: online-judge-tools.md）
+# ===========================================================================
+#
+# ■ 目的
+#   競技プログラミング用の自作 online-judge-tools。コンテスト/問題ページから
+#   サンプル入出力をスクレイピングで取得し、手元の C++ 解答を全サンプルで
+#   自動テスト（コンパイル → 実行 → 出力例と比較）する CLI。
+#   対応ジャッジ: AtCoder / Codeforces。
+#
+# ■ 3つの機能
+#   機能1: kp -d <コンテストURL>
+#          コンテスト全問のサンプルを ./samples/<問題番号>/ に保存。
+#   機能2: kp -d <問題URL> [保存名]
+#          個別問題のサンプルを ./samples/<保存名>/ に保存（保存名の既定は code）。
+#          保存名は code / z など任意。<保存名>.cpp で解き `kp <保存名>` でテスト。
+#   機能3: kp <問題番号>
+#          <問題番号>.cpp を ./cmp でコンパイルし、./samples/<問題番号>/ の
+#          各入力例で実行して出力例と比較する。
+#
+# ■ 対応 URL とコンテスト/問題の判定
+#   AtCoder    コンテスト : https://atcoder.jp/contests/<contest>     (/tasks 付きも可)
+#   AtCoder    問題       : https://atcoder.jp/contests/<contest>/tasks/<task>
+#   Codeforces コンテスト : https://codeforces.com/contest/<id>
+#   Codeforces 問題       : https://codeforces.com/contest/<id>/problem/<idx>
+#   判定: URL が AtCoder なら "/tasks/" を、Codeforces なら "/problem/" を
+#         含むとき「問題」、含まないとき「コンテスト」とみなす。
+#
+# ■ 問題番号（フォルダ名）の決め方
+#   - コンテストページの表示記号を小文字化して使う。
+#       AtCoder    例: a, b, c, ..., g, ex
+#       Codeforces 例: a, b, c1, c2, ..., f1, f2  （1〜3文字程度）
+#   - 個別問題（機能2）の保存名は既定 code。z など任意の名前を指定できる。
+#     code / z で始まる名前は ./contest のクリーンアップで保護される。
+#   - 機能3 の引数も小文字化して扱う（`kp F2` も `kp f2` も可）。
+#
+# ■ ファイル配置・命名規則
+#   - サンプル  : ./samples/<問題番号>/ に 1.in / 1.out, 2.in / 2.out, ...
+#                 （1 始まりの連番。再ダウンロード時は既存の *.in/*.out を
+#                   消してから書き直す＝上書き）。
+#   - 解答      : リポジトリ直下の <問題番号>.cpp（機能2 は code.cpp）。
+#                 kp -d 時に同梱の ./file <問題番号> を呼んでひな形を生成する。
+#                 既に <問題番号>.cpp が存在する場合は上書きせず保護する。
+#   - コンパイル: 既存の ./cmp スクリプトに委譲する。./cmp は <問題番号>.cpp を
+#                 g++ -std=c++20 等でビルドし、バイナリ ./a を生成する。
+#                 kp はその ./a を実行する。
+#
+# ■ 出力比較ルール
+#   各行の行末空白を無視し、末尾の空行も無視して一致を判定する
+#   （競プロで一般的な緩い比較）。浮動小数点の誤差許容は行わない。
+#
+# ■ 判定結果（verdict）
+#   AC  : 出力が出力例と一致。
+#   WA  : 不一致。input / expected / got を表示。
+#   RE  : プロセスの終了コードが 0 以外（負値はシグナル番号）。stderr も表示。
+#   TLE : 実行が KP_TIMEOUT 秒（既定10秒）を超過。
+#   全ケース AC なら終了コード 0、それ以外は 1。
+#
+# ■ ログイン（クッキー）の扱い
+#   AtCoder / Codeforces とも、コンテスト開催中は問題ページの閲覧に
+#   ログインが必要。そこでホスト Mac の Firefox の cookies.sqlite
+#   （非暗号化 SQLite なので標準ライブラリ sqlite3 で直接読める）から
+#   ログイン済みクッキーを流用する。
+#   - Firefox プロファイルは複数あり得るため、セッションクッキーの
+#     最終アクセス日時が最も新しいプロファイルを自動選択する。
+#       セッションクッキー: AtCoder    = REVEL_SESSION
+#                           Codeforces = cf_clearance / X-User-Sha1
+#   - cookies.sqlite は Firefox 起動中ロックされ得るので、WAL ごと
+#     一時ディレクトリへコピーしてから読む。
+#   - Codeforces は Cloudflare 対策のため、cf_clearance を取得した
+#     ブラウザと一致する User-Agent が必須。Firefox.app の Info.plist から
+#     バージョンを読み取り、Firefox の UA を詐称する。
+#   - クッキーが取れなくても、公開済み（コンテスト終了後）の問題は取得可能。
+#
+# ■ 実行環境
+#   - ダウンロード(kp -d)     : ホスト Mac で実行する想定。
+#       requests / beautifulsoup4 が必要（ダウンロードでしか使わないため
+#       遅延 import）。Firefox のクッキー・Info.plist に依存する。
+#   - テスト実行(kp <問題番号>) : Python 標準ライブラリのみで動作。
+#       `make bash` で入る Docker（ubuntu, python3 + g++ 同梱）内でも
+#       追加インストール不要で動く。
+#
+# ■ 環境変数
+#   KP_FIREFOX_PROFILE : 使う Firefox プロファイル（ディレクトリ名 or 絶対パス）。
+#                        未指定なら最終アクセスの新しいものを自動選択。
+#   KP_USER_AGENT      : 送信する User-Agent を上書き。
+#   KP_TIMEOUT         : サンプル実行のタイムアウト秒数（既定: 10）。
+#
+# ■ 連続アクセスへの配慮
+#   コンテスト全問取得時は、各問題ページ取得の間に 1 秒の待機を入れる。
+#
+# ■ 既知の制約
+#   - 開催前・未公開・インタラクティブ問題はサンプルを取得できない。
+#   - 対応言語は C++ のみ（<問題番号>.cpp が前提）。
+#   - cf_clearance は失効し得る。Cloudflare に阻まれた場合は Firefox で
+#     Codeforces を開き直すと回復する。
+# ===========================================================================
+
+import os
+import re
+import sys
+import time
+import shutil
+import sqlite3
+import plistlib
+import tempfile
+import subprocess
+from pathlib import Path
+from urllib.parse import urljoin
+
+# requests / beautifulsoup4 はダウンロード機能(kp -d)でのみ使う。
+# テスト実行(kp <問題番号>)は標準ライブラリだけで動くよう import は遅延させる。
+requests = None
+BeautifulSoup = None
+
+RED = '\033[0;31m'
+GREEN = '\033[0;32m'
+YELLOW = '\033[0;33m'
+CYAN = '\033[0;36m'
+NC = '\033[0m'
+
+SAMPLES_DIR = Path('samples')
+TIMEOUT = float(os.environ.get('KP_TIMEOUT', '10'))
+FF_PROFILES = Path.home() / 'Library/Application Support/Firefox/Profiles'
+
+
+def info(msg):
+    print(f"{CYAN}{msg}{NC}")
+
+
+def ok(msg):
+    print(f"{GREEN}{msg}{NC}")
+
+
+def warn(msg):
+    print(f"{YELLOW}{msg}{NC}")
+
+
+def die(msg):
+    print(f"{RED}{msg}{NC}", file=sys.stderr)
+    sys.exit(1)
+
+
+def _require_scraping_libs():
+    """ダウンロード機能で使う requests / bs4 を遅延 import する。"""
+    global requests, BeautifulSoup
+    if requests is not None:
+        return
+    try:
+        import requests
+        from bs4 import BeautifulSoup
+    except ImportError:
+        die("ダウンロード機能には requests / beautifulsoup4 が必要です:\n"
+            "  pip3 install requests beautifulsoup4")
+
+
+# --------------------------------------------------------------------------
+# Firefox クッキー読み込み（cookies.sqlite は非暗号化なので直接読む）
+# --------------------------------------------------------------------------
+
+def _query(db_path, sql, params=()):
+    """cookies.sqlite を WAL ごと一時コピーして読み出す（Firefox 起動中でも安全）。"""
+    tmpdir = tempfile.mkdtemp(prefix='kp_ff_')
+    dst = Path(tmpdir) / 'cookies.sqlite'
+    try:
+        for suffix in ('', '-wal', '-shm'):
+            src = Path(str(db_path) + suffix)
+            if src.exists():
+                shutil.copy2(src, Path(str(dst) + suffix))
+        con = sqlite3.connect(str(dst))
+        rows = con.execute(sql, params).fetchall()
+        con.close()
+        return rows
+    except (sqlite3.Error, OSError):
+        return []
+    finally:
+        shutil.rmtree(tmpdir, ignore_errors=True)
+
+
+def _pick_profile(host_like, session_names):
+    """セッションクッキーの最終アクセスが最も新しいプロファイルを選ぶ。"""
+    override = os.environ.get('KP_FIREFOX_PROFILE')
+    if override:
+        p = Path(override)
+        if not p.is_absolute():
+            p = FF_PROFILES / override
+        db = p / 'cookies.sqlite'
+        return db if db.exists() else None
+
+    if not FF_PROFILES.exists():
+        return None
+
+    placeholders = ','.join('?' * len(session_names))
+    best = None
+    for prof in sorted(FF_PROFILES.iterdir()):
+        db = prof / 'cookies.sqlite'
+        if not db.exists():
+            continue
+        rows = _query(
+            db,
+            f"SELECT MAX(lastAccessed) FROM moz_cookies "
+            f"WHERE host LIKE ? AND name IN ({placeholders})",
+            (host_like, *session_names),
+        )
+        ts = rows[0][0] if rows and rows[0][0] is not None else None
+        if ts is None:
+            # セッションクッキーが無ければドメイン全体の最終アクセスで代用
+            rows = _query(
+                db,
+                "SELECT MAX(lastAccessed) FROM moz_cookies WHERE host LIKE ?",
+                (host_like,),
+            )
+            ts = rows[0][0] if rows and rows[0][0] is not None else None
+        if ts is None:
+            continue
+        if best is None or ts > best[0]:
+            best = (ts, db)
+    return best[1] if best else None
+
+
+def firefox_cookies(host_like, session_names):
+    db = _pick_profile(host_like, session_names)
+    if db is None:
+        warn("Firefox のログイン済みクッキーが見つかりませんでした"
+             "（公開済みの問題なら取得できます）")
+        return {}
+    rows = _query(
+        db,
+        "SELECT name, value FROM moz_cookies WHERE host LIKE ?",
+        (host_like,),
+    )
+    return {name: value for name, value in rows}
+
+
+def firefox_user_agent():
+    ua = os.environ.get('KP_USER_AGENT')
+    if ua:
+        return ua
+    version = '128.0'
+    plist = Path('/Applications/Firefox.app/Contents/Info.plist')
+    if plist.exists():
+        try:
+            with open(plist, 'rb') as f:
+                version = plistlib.load(f).get('CFBundleShortVersionString',
+                                               version)
+        except Exception:
+            pass
+    major = version.split('.')[0]
+    return (f"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:{major}.0) "
+            f"Gecko/20100101 Firefox/{major}.0")
+
+
+# --------------------------------------------------------------------------
+# HTTP
+# --------------------------------------------------------------------------
+
+def make_session(site):
+    session = requests.Session()
+    session.headers.update({
+        'User-Agent': firefox_user_agent(),
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'ja,en-US;q=0.7,en;q=0.3',
+    })
+    if site == 'atcoder':
+        cookies = firefox_cookies('%atcoder.jp', ['REVEL_SESSION'])
+    else:
+        cookies = firefox_cookies('%codeforces.com',
+                                  ['cf_clearance', 'X-User-Sha1'])
+    for name, value in cookies.items():
+        session.cookies.set(name, value)
+    return session
+
+
+def fetch(session, url):
+    try:
+        resp = session.get(url, timeout=25)
+    except requests.RequestException as e:
+        die(f"取得に失敗しました: {url}\n{e}")
+    if 'Just a moment' in resp.text or 'cf-browser-verification' in resp.text:
+        die("Cloudflare のチェックに阻まれました。Firefox で Codeforces を"
+            "一度開いて cf_clearance を更新してから再実行してください。")
+    if resp.status_code != 200:
+        hint = ""
+        if resp.status_code in (403, 404):
+            hint = "\n（コンテスト開催中は Firefox でログイン済みである必要があります）"
+        die(f"HTTP {resp.status_code}: {url}{hint}")
+    return resp.text
+
+
+# --------------------------------------------------------------------------
+# サンプル抽出
+# --------------------------------------------------------------------------
+
+def _clean(text):
+    """改行コードを正規化し、前後の余分な改行を落として末尾に \\n を1つ付ける。"""
+    text = text.replace('\r\n', '\n').replace('\r', '\n')
+    return text.strip('\n') + '\n'
+
+
+def _atcoder_extract(span):
+    """言語ブロック内の <h3> 見出しから Sample Input/Output の <pre> を拾う。"""
+    samples = {}
+    for h3 in span.find_all('h3'):
+        title = h3.get_text()
+        m_in = re.search(r'(?:Sample Input|入力例)\s*(\d+)', title)
+        m_out = re.search(r'(?:Sample Output|出力例)\s*(\d+)', title)
+        if m_in:
+            pre = h3.find_next('pre')
+            if pre is not None:
+                samples.setdefault(int(m_in.group(1)), {})['in'] = \
+                    _clean(pre.get_text())
+        elif m_out:
+            pre = h3.find_next('pre')
+            if pre is not None:
+                samples.setdefault(int(m_out.group(1)), {})['out'] = \
+                    _clean(pre.get_text())
+    return {n: v for n, v in samples.items() if 'in' in v and 'out' in v}
+
+
+def atcoder_samples(html):
+    soup = BeautifulSoup(html, 'html.parser')
+    stmt = soup.select_one('#task-statement')
+    if stmt is None:
+        return {}
+    # 英語ブロック優先（無ければ日本語、最後に全体）。重複取得を避ける。
+    for span in (stmt.select_one('.lang-en'),
+                 stmt.select_one('.lang-ja'),
+                 stmt):
+        if span is None:
+            continue
+        result = _atcoder_extract(span)
+        if result:
+            return result
+    return {}
+
+
+def _cf_pre_text(pre):
+    """Codeforces の <pre>。新形式は1行=1<div>、旧形式は <br> 区切り。"""
+    divs = pre.find_all('div', recursive=False)
+    if divs:
+        return _clean('\n'.join(d.get_text() for d in divs))
+    for br in pre.find_all('br'):
+        br.replace_with('\n')
+    return _clean(pre.get_text())
+
+
+def codeforces_samples(html):
+    soup = BeautifulSoup(html, 'html.parser')
+    samples = {}
+    n = 0
+    for block in soup.select('.sample-test'):
+        inputs = block.select('.input pre')
+        outputs = block.select('.output pre')
+        for inp, out in zip(inputs, outputs):
+            n += 1
+            samples[n] = {'in': _cf_pre_text(inp), 'out': _cf_pre_text(out)}
+    return samples
+
+
+# --------------------------------------------------------------------------
+# コンテストの問題一覧
+# --------------------------------------------------------------------------
+
+def atcoder_contest_problems(html, base_url):
+    soup = BeautifulSoup(html, 'html.parser')
+    problems, seen = [], set()
+    for tr in soup.select('tbody tr'):
+        a = tr.find('a', href=True)
+        if a is None or '/tasks/' not in a['href']:
+            continue
+        url = urljoin(base_url, a['href'])
+        if url in seen:
+            continue
+        seen.add(url)
+        problems.append((a.get_text(strip=True), url))
+    return problems
+
+
+def codeforces_contest_problems(html, base_url):
+    soup = BeautifulSoup(html, 'html.parser')
+    problems, seen = [], set()
+    for a in soup.select('table.problems td.id a[href]'):
+        url = urljoin(base_url, a['href'])
+        if url in seen:
+            continue
+        seen.add(url)
+        problems.append((a.get_text(strip=True), url))
+    return problems
+
+
+# --------------------------------------------------------------------------
+# 保存
+# --------------------------------------------------------------------------
+
+def write_samples(label, samples):
+    # 命名規則: ./samples/<問題番号(小文字)>/ に 1.in/1.out, 2.in/2.out, ...
+    # （1 始まり連番）。再ダウンロード時は既存の *.in/*.out を消して上書きする。
+    dest = SAMPLES_DIR / label.lower()
+    dest.mkdir(parents=True, exist_ok=True)
+    for old in list(dest.glob('*.in')) + list(dest.glob('*.out')):
+        old.unlink()
+    for i in sorted(samples):
+        (dest / f"{i}.in").write_text(samples[i]['in'], encoding='utf-8')
+        (dest / f"{i}.out").write_text(samples[i]['out'], encoding='utf-8')
+    return dest, len(samples)
+
+
+def generate_cpp(name):
+    """./file <name> で <name>.cpp を生成する。既存の .cpp は保護する。"""
+    target = f"{name}.cpp"
+    if os.path.exists(target):
+        return
+    file_script = Path(__file__).resolve().parent / 'file'
+    if not file_script.exists():
+        warn(f"  {file_script} が見つかりません（.cpp の自動生成をスキップ）")
+        return
+    result = subprocess.run([str(file_script), name],
+                            capture_output=True, text=True)
+    if result.returncode != 0:
+        warn(f"  ./file {name} に失敗: {result.stderr.strip()}")
+        return
+    ok(f"  {target} を生成しました")
+
+
+# --------------------------------------------------------------------------
+# ダウンロード
+# --------------------------------------------------------------------------
+
+def download(url, save_name='code'):
+    _require_scraping_libs()
+    url = url.strip()
+    # URL 判定: AtCoder は "/tasks/"、Codeforces は "/problem/" を含めば
+    # 個別問題、含まなければコンテスト（全問ダウンロード）とみなす。
+    if 'atcoder.jp' in url:
+        site, is_problem = 'atcoder', '/tasks/' in url
+    elif 'codeforces.com' in url:
+        site, is_problem = 'codeforces', '/problem/' in url
+    else:
+        die("AtCoder / Codeforces の URL を指定してください")
+
+    session = make_session(site)
+    parse = atcoder_samples if site == 'atcoder' else codeforces_samples
+
+    if is_problem:
+        info(f"問題ページを取得中: {url}")
+        samples = parse(fetch(session, url))
+        if not samples:
+            warn("サンプルが見つかりませんでした"
+                 "（インタラクティブ問題 / 未公開 / 要ログイン の可能性）")
+            return
+        dest, n = write_samples(save_name, samples)
+        ok(f"{n} 個のサンプルを {dest}/ に保存しました")
+        generate_cpp(save_name)
+        return
+
+    # コンテスト全問
+    base = url.rstrip('/')
+    if site == 'atcoder' and not base.endswith('/tasks'):
+        base += '/tasks'
+    info(f"コンテストの問題一覧を取得中: {base}")
+    html = fetch(session, base)
+    lister = (atcoder_contest_problems if site == 'atcoder'
+              else codeforces_contest_problems)
+    problems = lister(html, base)
+    if not problems:
+        die("問題が見つかりませんでした（URL / ログイン状態を確認してください）")
+
+    info(f"{len(problems)} 問: " + ', '.join(lbl for lbl, _ in problems))
+    saved = 0
+    for label, purl in problems:
+        time.sleep(1)  # 連続アクセスを控える
+        samples = parse(fetch(session, purl))
+        if not samples:
+            warn(f"  {label}: サンプルなし（スキップ）")
+            continue
+        dest, n = write_samples(label, samples)
+        ok(f"  {label}: {n} サンプル -> {dest}/")
+        generate_cpp(label.lower())
+        saved += 1
+    ok(f"完了: {saved}/{len(problems)} 問を保存しました")
+
+
+# --------------------------------------------------------------------------
+# サンプル実行・比較
+# --------------------------------------------------------------------------
+
+def normalize(text):
+    """行末・末尾の空白を無視するための正規化。"""
+    lines = [ln.rstrip() for ln in
+             text.replace('\r\n', '\n').replace('\r', '\n').split('\n')]
+    while lines and lines[-1] == '':
+        lines.pop()
+    return '\n'.join(lines)
+
+
+def _dump(stdin_text, expected, actual, stderr=None):
+    print(f"{CYAN}--- input ---{NC}")
+    print(stdin_text.rstrip('\n'))
+    print(f"{GREEN}--- expected ---{NC}")
+    print(expected.rstrip('\n'))
+    print(f"{RED}--- got ---{NC}")
+    print(actual.rstrip('\n'))
+    if stderr:
+        print(f"{YELLOW}--- stderr ---{NC}")
+        print(stderr.rstrip('\n'))
+    print('-' * 40)
+
+
+def run_test(problem, debug=False):
+    src = f"{problem}.cpp"
+    if not os.path.exists(src):
+        die(f"{src} が見つかりません")
+    sdir = SAMPLES_DIR / problem
+    if not sdir.is_dir():
+        die(f"{sdir}/ がありません。先に kp -d でサンプルを取得してください")
+    cases = sorted(sdir.glob('*.in'),
+                   key=lambda p: int(re.sub(r'\D', '', p.stem) or 0))
+    if not cases:
+        die(f"{sdir}/ にサンプル(*.in)がありません")
+
+    # コンパイルは既存の ./cmp に委譲（出力バイナリは ./a）。
+    # debug=True のときは `./cmp <問題番号> t`（-DDEBUG 付き）でビルドする。
+    if not os.path.exists('./cmp'):
+        die("./cmp が見つかりません")
+    cmp_cmd = ['./cmp', problem] + (['t'] if debug else [])
+    if subprocess.run(cmp_cmd).returncode != 0:
+        sys.exit(1)
+
+    # 各ケースを実行して判定する（AC / WA / RE / TLE）。
+    # 比較は normalize() による行末・末尾空白を無視した緩い一致判定。
+    passed = 0
+    for inp in cases:
+        name = inp.stem
+        stdin_text = inp.read_text(encoding='utf-8')
+        expected_file = sdir / f"{name}.out"
+        expected = (expected_file.read_text(encoding='utf-8')
+                    if expected_file.exists() else '')
+        try:
+            proc = subprocess.run(['./a'], input=stdin_text,
+                                  capture_output=True, text=True,
+                                  timeout=TIMEOUT)
+        except subprocess.TimeoutExpired:
+            print(f"{RED}[TLE]{NC} sample {name}  ({TIMEOUT:g}s 超過)")
+            _dump(stdin_text, expected, '(タイムアウト)')
+            continue
+        # debug ビルド(t)のときは debug(...) が cerr に吐く内容を毎回表示する。
+        if debug and proc.stderr.strip():
+            print(f"{YELLOW}--- debug (sample {name}) ---{NC}")
+            print(proc.stderr.rstrip('\n'))
+            print('-' * 40)
+        if proc.returncode != 0:
+            print(f"{RED}[RE] {NC} sample {name}  (exit {proc.returncode})")
+            # debug 表示で stderr を既に出した場合は重複させない。
+            _dump(stdin_text, expected, proc.stdout,
+                  None if debug else proc.stderr)
+            continue
+        if normalize(proc.stdout) == normalize(expected):
+            print(f"{GREEN}[AC] {NC} sample {name}")
+            passed += 1
+        else:
+            print(f"{RED}[WA] {NC} sample {name}")
+            _dump(stdin_text, expected, proc.stdout)
+
+    total = len(cases)
+    print()
+    if passed == total:
+        ok(f"全 {total} ケース AC")
+    else:
+        # die() は stderr のため、stdout の各ケース出力との順序が崩れる。
+        # サマリは stdout に出してから終了コードだけ立てる。
+        print(f"{RED}{passed}/{total} ケース AC（{total - passed} 件失敗）{NC}")
+        sys.stdout.flush()
+        sys.exit(1)
+
+
+# --------------------------------------------------------------------------
+
+def main():
+    args = sys.argv[1:]
+    if not args or args[0] in ('-h', '--help'):
+        print(__doc__.strip())
+        return
+    if args[0] == '-d':
+        if len(args) < 2:
+            die("URL を指定してください: kp -d <URL> [保存名]")
+        # 個別問題の保存名（機能2）。省略時は code。
+        download(args[1], args[2].lower() if len(args) > 2 else 'code')
+    else:
+        # 第2引数が t のとき ./cmp <問題番号> t（-DDEBUG 付き）でビルドする。
+        debug = len(args) > 1 and args[1].lower() == 't'
+        run_test(args[0].lower(), debug=debug)
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        sys.exit(130)

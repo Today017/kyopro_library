@@ -52,23 +52,23 @@ T=$L
 
 
 
-
 # コンパイル 
 if [ $L -gt 0 ]; then
-    rm ./random_test/*.txt
-    g++ "$GENERATE_FILE" -o ./random_test/generate_testcase -std=c++20 -O2 -I.
+    echo -e "\033[32mCompiling test files...\033[0m"
+    rm ./random_test/*
+    g++ "$GENERATE_FILE" -o ./random_test/generate_testcase -std=c++20 -O2 -I. -DTDY
     if [ $? -ne 0 ]; then
         echo -e "\033[31mCompilation failed ($GENERATE_FILE)\033[0m"
         exit 1
     fi
-    g++ "$NAIVE_FILE" -o ./random_test/naive -std=c++20 -O2 -I.
+    g++ "$NAIVE_FILE" -o ./random_test/naive -std=c++20 -O2 -I. -DTDY
     if [ $? -ne 0 ]; then
         echo -e "\033[31mCompilation failed ($NAIVE_FILE)\033[0m"
         exit 1
     fi
 fi
 
-g++ "$SOLUTION_FILE" -o ./random_test/solution -std=c++20 -O2 -I.
+g++ "$SOLUTION_FILE" -o ./random_test/solution -std=c++20 -O2 -I. -DTDY
 if [ $? -ne 0 ]; then
     echo -e "\033[31mCompilation failed ($SOLUTION_FILE)\033[0m"
     exit 1
@@ -79,6 +79,7 @@ echo -e "\033[32mCompilation succeeded.\033[0m"
 if [ $L -gt 0 ]; then
     # テストケースの生成
     for i in $(seq 0 $((T-1))); do
+        echo -ne "Generating testcases... $(($i+1))/$L\r"
         ./random_test/generate_testcase > "./random_test/input${i}.txt"
     done
     echo -e "\033[32mGenerated testcases!\033[0m"

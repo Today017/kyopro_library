@@ -5,11 +5,7 @@ git clone https://github.com/Today017/kyopro_library.git
 cp ./kyopro_library/kyopro_tools/scripts/* .
 cp -r ./kyopro_library/kyopro_tools/settings/. .
 
-chmod +x test
-chmod +x cmp
-chmod +x copy
-chmod +x contest
-chmod +x test
+chmod +x cmp copy contest test check rand file kp
 
 mkdir random_test
 touch random_test/generate.cpp
@@ -19,4 +15,4 @@ mkdir esc
 
 git clone https://github.com/Today017/ac-library.git
 cp -r ac-library/atcoder .
-mv ac-library atcoder/
+rm -rf ac-library

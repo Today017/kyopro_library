@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# ./rand <solve> <naive> <generate>
+# generate が生成した入力を solve と naive に与え、出力を比較する。
+# 不一致が見つかるまでループし続ける。
+#   一致   : "Case <n> OK!" のみ表示（同じ行を上書き）
+#   不一致 : 入力・naive の出力・solve の出力を表示して終了
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+if [ $# -lt 3 ]; then
+    echo "Usage: $0 <solve> <naive> <generate>"
+    exit 1
+fi
+
+SOLVE="${1%.cpp}.cpp"
+NAIVE="${2%.cpp}.cpp"
+GEN="${3%.cpp}.cpp"
+
+TMP=$(mktemp -d)
+trap 'rm -rf "$TMP"' EXIT
+
+# コンパイル（cmp と同じコマンド）
+compile() {
+    if [ ! -f "$1" ]; then
+        echo -e "${RED}Error: $1 not found.${NC}"
+        exit 1
+    fi
+    if ! g++ "$1" -std=c++20 -I. -O2 -D_GLIBCXX_DEBUG -Wall -Wextra -DTDY -o "$2"; then
+        echo -e "${RED}Compilation failed ($1).${NC}"
+        exit 1
+    fi
+}
+
+compile "$SOLVE" "$TMP/solve"
+compile "$NAIVE" "$TMP/naive"
+compile "$GEN"   "$TMP/generate"
+echo -e "${GREEN}Compilation succeeded.${NC}"
+
+count=0
+while true; do
+    count=$((count + 1))
+    "$TMP/generate" > "$TMP/input.txt"
+    "$TMP/solve" < "$TMP/input.txt" > "$TMP/solve.txt"
+    "$TMP/naive" < "$TMP/input.txt" > "$TMP/naive.txt"
+
+    if diff "$TMP/solve.txt" "$TMP/naive.txt" > /dev/null; then
+        echo -ne "Case $count OK!\r"
+    else
+        echo
+        echo -e "${RED}Case $count Failed!${NC}"
+        echo -e "${GREEN}--- Input ---${NC}"
+        cat "$TMP/input.txt"
+        echo -e "${GREEN}--- Naive output ---${NC}"
+        cat "$TMP/naive.txt"
+        echo -e "${RED}--- Solve output ---${NC}"
+        cat "$TMP/solve.txt"
+        exit 1
+    fi
+done
