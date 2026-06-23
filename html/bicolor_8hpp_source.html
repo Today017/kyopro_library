@@ -106,39 +106,40 @@ $(function(){initNavTree('bicolor_8hpp_source.html',''); initResizable(true); })
 </div><!--header-->
 <div class="contents">
 <a href="bicolor_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/graph/graph.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/graph/graph.hpp&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@brief 二部グラフに対し、01の色分けをする</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@brief 二部グラフでない場合は空の配列を返す</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @brief 二部グラフに対し、01の色分けをする</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @brief 二部グラフでない場合は空の配列を返す</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="bicolor_8hpp.html#a77dab27692ebab06d4d68dcc5d4a1d75">    8</a></span><a class="code hl_function" href="bicolor_8hpp.html#a77dab27692ebab06d4d68dcc5d4a1d75">vi</a> <a class="code hl_function" href="bicolor_8hpp.html#a77dab27692ebab06d4d68dcc5d4a1d75">BiColorize</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_graph.html">Graph</a>&lt;T&gt;&amp; G) {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">int</span> N=G.size();</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    vi col(N,-1);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">int</span> N = G.size();</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    vi col(N, -1);</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    queue&lt;<span class="keywordtype">int</span>&gt; que;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i,N) <span class="keywordflow">if</span>(col[i]==-1) {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        col[i]=0;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i, N) <span class="keywordflow">if</span>(col[i] == -1) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        col[i] = 0;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        que.push(i);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">while</span>(!que.empty()) {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keywordtype">int</span> now=que.front(); que.pop();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span> e: G.next(now)) {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                <span class="keywordtype">int</span> c=col[now]^1;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                <span class="keywordflow">if</span>(col[e.to]==-1) {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                    col[e.to]=c;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                    que.push(e.to);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(col[e.to]!=c) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                }</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">return</span> col;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keywordtype">int</span> now = que.front();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            que.pop();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span> e : G.next(now)) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                <span class="keywordtype">int</span> c = col[now] ^ 1;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                <span class="keywordflow">if</span>(col[e.to] == -1) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                    col[e.to] = c;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                    que.push(e.to);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(col[e.to] != c) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">return</span> col;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 </div>
 <div class="ttc" id="abicolor_8hpp_html_a77dab27692ebab06d4d68dcc5d4a1d75"><div class="ttname"><a href="bicolor_8hpp.html#a77dab27692ebab06d4d68dcc5d4a1d75">BiColorize</a></div><div class="ttdeci">vi BiColorize(const Graph&lt; T &gt; &amp;G)</div><div class="ttdoc">二部グラフに対し、01の色分けをする</div><div class="ttdef"><b>Definition</b> <a href="#l00008">bicolor.hpp:8</a></div></div>
 <div class="ttc" id="amacro_8hpp_html_a30fefd21a95478fd2827fae51ab3b995"><div class="ttname"><a href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a></div><div class="ttdeci">#define rep(...)</div><div class="ttdef"><b>Definition</b> <a href="macro_8hpp_source.html#l00008">macro.hpp:8</a></div></div>
-<div class="ttc" id="astruct_graph_html"><div class="ttname"><a href="struct_graph.html">Graph</a></div><div class="ttdef"><b>Definition</b> <a href="graph_8hpp_source.html#l00005">graph.hpp:5</a></div></div>
+<div class="ttc" id="astruct_graph_html"><div class="ttname"><a href="struct_graph.html">Graph</a></div><div class="ttdoc">グラフ（隣接リスト）</div><div class="ttdef"><b>Definition</b> <a href="graph_8hpp_source.html#l00006">graph.hpp:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

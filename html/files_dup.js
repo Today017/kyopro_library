@@ -7,7 +7,6 @@ var files_dup =
     [ "graph", "dir_12552d7fa429bf94a2e32e5cf39f7e69.html", "dir_12552d7fa429bf94a2e32e5cf39f7e69" ],
     [ "kyopro_tools", "dir_ae1eec7a8c80a4acd2a65eb080b75f58.html", "dir_ae1eec7a8c80a4acd2a65eb080b75f58" ],
     [ "math", "dir_296d53ceaeaa7e099814a6def439fe8a.html", "dir_296d53ceaeaa7e099814a6def439fe8a" ],
-    [ "misc", "dir_a52f4d3d586a58b02f3a4ddf0a992157.html", "dir_a52f4d3d586a58b02f3a4ddf0a992157" ],
     [ "mod", "dir_d41ce877eb409a4791b288730010abe2.html", "dir_d41ce877eb409a4791b288730010abe2" ],
     [ "others", "dir_9510827d0b234b3cc54b29892f217477.html", "dir_9510827d0b234b3cc54b29892f217477" ],
     [ "string", "dir_76cf5d2c64440c8b33b2b96569e4a2eb.html", "dir_76cf5d2c64440c8b33b2b96569e4a2eb" ],

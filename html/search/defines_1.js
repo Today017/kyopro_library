@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['debug_0',['debug',['../debug_8hpp.html#a86ee3ff44c537d94ccbabf941a613688',1,'debug:&#160;debug.hpp'],['../template_8hpp.html#a86ee3ff44c537d94ccbabf941a613688',1,'debug:&#160;template.hpp']]]
+  ['chr_0',['CHR',['../macro_8hpp.html#aee88bc44e5b7e8dfac1f8d5f4354cffe',1,'macro.hpp']]]
 ];

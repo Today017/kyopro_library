@@ -2,6 +2,7 @@ var struct_multi_set =
 [
     [ "MultiSet", "struct_multi_set.html#ae1683508411d44c542872827503b2881", null ],
     [ "MultiSet", "struct_multi_set.html#a99a83ecab866565566687d8aae71d018", null ],
+    [ "insert", "struct_multi_set.html#ae5eec96a72f4f2e3d397d54176e52d31", null ],
     [ "min", "struct_multi_set.html#a588b67e05193fb2068526aa9d07a2145", null ],
     [ "max", "struct_multi_set.html#ad78f6fac05a65bd05a34586b51a9eaee", null ],
     [ "pop_min", "struct_multi_set.html#aa815da7cdf344ceccb71ee35c9bf6410", null ],

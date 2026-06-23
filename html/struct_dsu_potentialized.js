@@ -1,6 +1,6 @@
 var struct_dsu_potentialized =
 [
-    [ "Type", "struct_dsu_potentialized.html#a6a50de8f7bc8099eeeff22de2e98a3bb", null ],
+    [ "Type", "struct_dsu_potentialized.html#af03a9666641c77ce459c3235b2c632b6", null ],
     [ "DsuPotentialized", "struct_dsu_potentialized.html#a2e7c6c09a18844667a4f0f7c0ddebe1d", null ],
     [ "DsuPotentialized", "struct_dsu_potentialized.html#a8c36a02bd95351413d537dabdcdd40b1", null ],
     [ "find", "struct_dsu_potentialized.html#a8c3159f334ce50adad836e3cdbc996f9", null ],

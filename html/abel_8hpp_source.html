@@ -106,33 +106,33 @@ $(function(){initNavTree('abel_8hpp_source.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <a href="abel_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief 可換群</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 可換群</span></div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespace_abel.html">    5</a></span><span class="keyword">namespace</span> <a class="code hl_namespace" href="namespace_abel.html">Abel</a> {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="comment">///@brief 和</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="comment">/// @brief 和</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_abel_1_1_sum.html">    8</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_abel_1_1_sum.html">Sum</a> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_abel_1_1_sum.html#a4ed8ba11a72b72fdf8f0f269fcd0970b">    9</a></span>        <span class="keyword">using</span> Type=T;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_abel_1_1_sum.html#ad25fd5b94c1f19ec29c42390582fc0ee">    9</a></span>        <span class="keyword">using</span> Type = T;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_abel_1_1_sum.html#a3adf3ea50f0f359934a70b29bb7bb308">   10</a></span>        <span class="keyword">static</span> Type <a class="code hl_function" href="struct_abel_1_1_sum.html#a3adf3ea50f0f359934a70b29bb7bb308">id</a>() { <span class="keywordflow">return</span> T(0); }</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_abel_1_1_sum.html#a4d621d28d591f425dd4b77e366cc6832">   11</a></span>        <span class="keyword">static</span> Type <a class="code hl_function" href="struct_abel_1_1_sum.html#a4d621d28d591f425dd4b77e366cc6832">op</a>(<span class="keyword">const</span> Type&amp; a, <span class="keyword">const</span> Type&amp; b) { <span class="keywordflow">return</span> a+b; }</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_abel_1_1_sum.html#a4d621d28d591f425dd4b77e366cc6832">   11</a></span>        <span class="keyword">static</span> Type <a class="code hl_function" href="struct_abel_1_1_sum.html#a4d621d28d591f425dd4b77e366cc6832">op</a>(<span class="keyword">const</span> Type&amp; a, <span class="keyword">const</span> Type&amp; b) { <span class="keywordflow">return</span> a + b; }</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_abel_1_1_sum.html#af923d298d1515593755bf20697cc0252">   12</a></span>        <span class="keyword">static</span> Type <a class="code hl_function" href="struct_abel_1_1_sum.html#af923d298d1515593755bf20697cc0252">inv</a>(<span class="keyword">const</span> Type&amp; x) { <span class="keywordflow">return</span> -x; }</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    };</div>
 </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">///@brief XOR</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">/// @brief XOR</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_abel_1_1_xor.html">   17</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_abel_1_1_xor.html">Xor</a> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_abel_1_1_xor.html#a06e18c99932d5d4bf2442f05d5a5688e">   18</a></span>        <span class="keyword">using</span> Type=T;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_abel_1_1_xor.html#aea8a0bf6d5eda7724b4b3796c8cb4fcb">   18</a></span>        <span class="keyword">using</span> Type = T;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_abel_1_1_xor.html#ab5e6fe608d99cbb7fbefb8f413ba9509">   19</a></span>        <span class="keyword">static</span> Type <a class="code hl_function" href="struct_abel_1_1_xor.html#ab5e6fe608d99cbb7fbefb8f413ba9509">id</a>() { <span class="keywordflow">return</span> T(0); }</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_abel_1_1_xor.html#a1b96ec871eac5d18d549f42605501d63">   20</a></span>        <span class="keyword">static</span> Type <a class="code hl_function" href="struct_abel_1_1_xor.html#a1b96ec871eac5d18d549f42605501d63">op</a>(<span class="keyword">const</span> Type&amp; a, <span class="keyword">const</span> Type&amp; b) { <span class="keywordflow">return</span> a^b; }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_abel_1_1_xor.html#a1b96ec871eac5d18d549f42605501d63">   20</a></span>        <span class="keyword">static</span> Type <a class="code hl_function" href="struct_abel_1_1_xor.html#a1b96ec871eac5d18d549f42605501d63">op</a>(<span class="keyword">const</span> Type&amp; a, <span class="keyword">const</span> Type&amp; b) { <span class="keywordflow">return</span> a ^ b; }</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_abel_1_1_xor.html#a139adead748ebb2dd62ca58569ce355f">   21</a></span>        <span class="keyword">static</span> Type <a class="code hl_function" href="struct_abel_1_1_xor.html#a139adead748ebb2dd62ca58569ce355f">inv</a>(<span class="keyword">const</span> Type&amp; x) { <span class="keywordflow">return</span> x; }</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    };</div>
 </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}  <span class="comment">// namespace Abel</span></div>
 </div>
 <div class="ttc" id="anamespace_abel_html"><div class="ttname"><a href="namespace_abel.html">Abel</a></div><div class="ttdoc">可換群</div><div class="ttdef"><b>Definition</b> <a href="#l00005">abel.hpp:5</a></div></div>
 <div class="ttc" id="astruct_abel_1_1_sum_html"><div class="ttname"><a href="struct_abel_1_1_sum.html">Abel::Sum</a></div><div class="ttdoc">和</div><div class="ttdef"><b>Definition</b> <a href="#l00008">abel.hpp:8</a></div></div>

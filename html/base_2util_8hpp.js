@@ -1,5 +1,6 @@
 var base_2util_8hpp =
 [
+    [ "siz", "base_2util_8hpp.html#aa14c485a6b50e880a819397fc4b3c4a0", null ],
     [ "amin", "base_2util_8hpp.html#a4c26d87ccb1f6c6b5a319e85755cb754", null ],
     [ "amax", "base_2util_8hpp.html#a4b66a535293652d82e24d078e18d33f6", null ],
     [ "chmin", "base_2util_8hpp.html#af2a848e1af69ab8c10973145293b3f69", null ],
@@ -15,11 +16,15 @@ var base_2util_8hpp =
     [ "find_last", "base_2util_8hpp.html#aa84da95dae345fdb1f47fe0d306ac0fb", null ],
     [ "unique", "base_2util_8hpp.html#aaf82ad5ee6ac6e89ee29d13b66b0ad29", null ],
     [ "compress", "base_2util_8hpp.html#a8c9938a93fb9d9b6aa93d13639512d47", null ],
-    [ "siz", "base_2util_8hpp.html#aa14c485a6b50e880a819397fc4b3c4a0", null ],
     [ "decv", "base_2util_8hpp.html#ae07ce7fa946f8b3000df0196a4660f2e", null ],
     [ "incv", "base_2util_8hpp.html#a55faa433923226ab8c0df1f4b3b5192d", null ],
     [ "insertv", "base_2util_8hpp.html#a74d163c5717a3e724a469df87da0f848", null ],
     [ "erasev", "base_2util_8hpp.html#a7fa9e4baf2bfe0774a93583b32291363", null ],
+    [ "rotatebackv", "base_2util_8hpp.html#a8932cc43cb148e14681a41601cd4eb23", null ],
+    [ "rotatefrontv", "base_2util_8hpp.html#a68e988fb972dc6a66ca7bdcaa631b6bd", null ],
+    [ "mkinsert", "base_2util_8hpp.html#ac58e02c4e3c7035ed919ac74104167b0", null ],
+    [ "mkerase", "base_2util_8hpp.html#a8a1e56ec7d133b6459ff8b6b5089de3e", null ],
+    [ "mkpush", "base_2util_8hpp.html#a14a114819fd2e7c9ee91991c2cba50b6", null ],
     [ "zip", "base_2util_8hpp.html#adc8a06e0fee585606e8144d53cd8d4e9", null ],
     [ "zip", "base_2util_8hpp.html#aa239a08dcf93bd8461a8613ef553068e", null ],
     [ "unzip", "base_2util_8hpp.html#a27d74f91e6dd7d9daef0af5e550d5f44", null ],

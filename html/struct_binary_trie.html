@@ -109,7 +109,7 @@ $(function(){initNavTree('struct_binary_trie.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
-<p>Binary <a class="el" href="struct_trie.html" title="Trie">Trie</a>  
+<p>Binary <a class="el" href="struct_trie.html" title="Trie">Trie</a> verify: <a href="https://judge.yosupo.jp/problem/ordered_set">https://judge.yosupo.jp/problem/ordered_set</a> verify: <a href="https://judge.yosupo.jp/problem/set_xor_min">https://judge.yosupo.jp/problem/set_xor_min</a>  
  <a href="#details">[詳解]</a></p>
 
 <p><code>#include &quot;<a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a>&quot;</code></p>
@@ -118,45 +118,44 @@ $(function(){initNavTree('struct_binary_trie.html',''); initResizable(true); });
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:a0be46a05e51377e8db9d1d37aafd519a" id="r_a0be46a05e51377e8db9d1d37aafd519a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0be46a05e51377e8db9d1d37aafd519a">BinaryTrie</a> ()</td></tr>
 <tr class="separator:a0be46a05e51377e8db9d1d37aafd519a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afff41083106e354b06b366e85a852131" id="r_afff41083106e354b06b366e85a852131"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afff41083106e354b06b366e85a852131">reserve</a> (<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> x)</td></tr>
+<tr class="memitem:afff41083106e354b06b366e85a852131" id="r_afff41083106e354b06b366e85a852131"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afff41083106e354b06b366e85a852131">reserve</a> (<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> x)</td></tr>
 <tr class="separator:afff41083106e354b06b366e85a852131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1452cd5063085d918b0bd982724b05e4" id="r_a1452cd5063085d918b0bd982724b05e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1452cd5063085d918b0bd982724b05e4">apply_xor</a> (<a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> x)</td></tr>
+<tr class="memitem:a1452cd5063085d918b0bd982724b05e4" id="r_a1452cd5063085d918b0bd982724b05e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1452cd5063085d918b0bd982724b05e4">apply_xor</a> (<a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> x)</td></tr>
 <tr class="memdesc:a1452cd5063085d918b0bd982724b05e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">すべての要素vをv xor xで置き換える  <br /></td></tr>
 <tr class="separator:a1452cd5063085d918b0bd982724b05e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef620c47799f35b4bb0f9504dfa4b030" id="r_aef620c47799f35b4bb0f9504dfa4b030"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef620c47799f35b4bb0f9504dfa4b030">insert</a> (<a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> val, <a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> k=1)</td></tr>
+<tr class="memitem:aef620c47799f35b4bb0f9504dfa4b030" id="r_aef620c47799f35b4bb0f9504dfa4b030"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef620c47799f35b4bb0f9504dfa4b030">insert</a> (<a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> val, <a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> k=1)</td></tr>
 <tr class="memdesc:aef620c47799f35b4bb0f9504dfa4b030"><td class="mdescLeft">&#160;</td><td class="mdescRight">valをk個追加する  <br /></td></tr>
 <tr class="separator:aef620c47799f35b4bb0f9504dfa4b030"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56635c5d96c0c7065d9586dc226e0dd7" id="r_a56635c5d96c0c7065d9586dc226e0dd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56635c5d96c0c7065d9586dc226e0dd7">discard</a> (<a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> val, <a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> k=1)</td></tr>
+<tr class="memitem:a56635c5d96c0c7065d9586dc226e0dd7" id="r_a56635c5d96c0c7065d9586dc226e0dd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56635c5d96c0c7065d9586dc226e0dd7">discard</a> (<a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> val, <a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> k=1)</td></tr>
 <tr class="memdesc:a56635c5d96c0c7065d9586dc226e0dd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">valをmin(k,count(val)個削除する  <br /></td></tr>
 <tr class="separator:a56635c5d96c0c7065d9586dc226e0dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75a5c7a3171fd253d25ee1273c41c17a" id="r_a75a5c7a3171fd253d25ee1273c41c17a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75a5c7a3171fd253d25ee1273c41c17a">count</a> (<a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> val) const</td></tr>
+<tr class="memitem:a75a5c7a3171fd253d25ee1273c41c17a" id="r_a75a5c7a3171fd253d25ee1273c41c17a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75a5c7a3171fd253d25ee1273c41c17a">count</a> (<a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> val) const</td></tr>
 <tr class="memdesc:a75a5c7a3171fd253d25ee1273c41c17a"><td class="mdescLeft">&#160;</td><td class="mdescRight">valの個数を返す  <br /></td></tr>
 <tr class="separator:a75a5c7a3171fd253d25ee1273c41c17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c4abe332c8af6688c0b55fed6071966" id="r_a7c4abe332c8af6688c0b55fed6071966"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c4abe332c8af6688c0b55fed6071966">kth_min</a> (<a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> k) const</td></tr>
+<tr class="memitem:a7c4abe332c8af6688c0b55fed6071966" id="r_a7c4abe332c8af6688c0b55fed6071966"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c4abe332c8af6688c0b55fed6071966">kth_min</a> (<a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> k) const</td></tr>
 <tr class="memdesc:a7c4abe332c8af6688c0b55fed6071966"><td class="mdescLeft">&#160;</td><td class="mdescRight">0-indexedでk番目に小さい要素を返す  <br /></td></tr>
 <tr class="separator:a7c4abe332c8af6688c0b55fed6071966"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ae39ed709c49da542909cec59f19672" id="r_a2ae39ed709c49da542909cec59f19672"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ae39ed709c49da542909cec59f19672">count_lt</a> (<a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> val) const</td></tr>
+<tr class="memitem:a2ae39ed709c49da542909cec59f19672" id="r_a2ae39ed709c49da542909cec59f19672"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ae39ed709c49da542909cec59f19672">count_lt</a> (<a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> val) const</td></tr>
 <tr class="memdesc:a2ae39ed709c49da542909cec59f19672"><td class="mdescLeft">&#160;</td><td class="mdescRight">valより小さい要素の個数を返す  <br /></td></tr>
 <tr class="separator:a2ae39ed709c49da542909cec59f19672"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad22562b16178630b2a3217a4810e8021" id="r_ad22562b16178630b2a3217a4810e8021"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad22562b16178630b2a3217a4810e8021">min</a> () const</td></tr>
+<tr class="memitem:ad22562b16178630b2a3217a4810e8021" id="r_ad22562b16178630b2a3217a4810e8021"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad22562b16178630b2a3217a4810e8021">min</a> () const</td></tr>
 <tr class="separator:ad22562b16178630b2a3217a4810e8021"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae86596455897140f700d289b123e6003" id="r_ae86596455897140f700d289b123e6003"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae86596455897140f700d289b123e6003">max</a> () const</td></tr>
+<tr class="memitem:ae86596455897140f700d289b123e6003" id="r_ae86596455897140f700d289b123e6003"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae86596455897140f700d289b123e6003">max</a> () const</td></tr>
 <tr class="separator:ae86596455897140f700d289b123e6003"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac690bb2e1071fce8b05ee6fb9174c77a" id="r_ac690bb2e1071fce8b05ee6fb9174c77a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac690bb2e1071fce8b05ee6fb9174c77a">gt</a> (<a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> val) const</td></tr>
+<tr class="memitem:ac690bb2e1071fce8b05ee6fb9174c77a" id="r_ac690bb2e1071fce8b05ee6fb9174c77a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac690bb2e1071fce8b05ee6fb9174c77a">gt</a> (<a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> val) const</td></tr>
 <tr class="separator:ac690bb2e1071fce8b05ee6fb9174c77a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fac4dd4ca32534dfe8a4b58c9d24ec1" id="r_a4fac4dd4ca32534dfe8a4b58c9d24ec1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fac4dd4ca32534dfe8a4b58c9d24ec1">ge</a> (<a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> val) const</td></tr>
+<tr class="memitem:a4fac4dd4ca32534dfe8a4b58c9d24ec1" id="r_a4fac4dd4ca32534dfe8a4b58c9d24ec1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fac4dd4ca32534dfe8a4b58c9d24ec1">ge</a> (<a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> val) const</td></tr>
 <tr class="separator:a4fac4dd4ca32534dfe8a4b58c9d24ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93a6362e37c890cf19fd6257cf639ad8" id="r_a93a6362e37c890cf19fd6257cf639ad8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93a6362e37c890cf19fd6257cf639ad8">lt</a> (<a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> val) const</td></tr>
+<tr class="memitem:a93a6362e37c890cf19fd6257cf639ad8" id="r_a93a6362e37c890cf19fd6257cf639ad8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93a6362e37c890cf19fd6257cf639ad8">lt</a> (<a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> val) const</td></tr>
 <tr class="separator:a93a6362e37c890cf19fd6257cf639ad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37e00fd6bb708acd5027fe333c3bcc0e" id="r_a37e00fd6bb708acd5027fe333c3bcc0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37e00fd6bb708acd5027fe333c3bcc0e">le</a> (<a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> val) const</td></tr>
+<tr class="memitem:a37e00fd6bb708acd5027fe333c3bcc0e" id="r_a37e00fd6bb708acd5027fe333c3bcc0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37e00fd6bb708acd5027fe333c3bcc0e">le</a> (<a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> val) const</td></tr>
 <tr class="separator:a37e00fd6bb708acd5027fe333c3bcc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2978907aec5fba9ca07adf226a1c2492" id="r_a2978907aec5fba9ca07adf226a1c2492"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2978907aec5fba9ca07adf226a1c2492">size</a> () const</td></tr>
+<tr class="memitem:a2978907aec5fba9ca07adf226a1c2492" id="r_a2978907aec5fba9ca07adf226a1c2492"><td class="memItemLeft" align="right" valign="top"><a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2978907aec5fba9ca07adf226a1c2492">size</a> () const</td></tr>
 <tr class="separator:a2978907aec5fba9ca07adf226a1c2492"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt;<br />
-struct BinaryTrie&lt; Log &gt;</div><p>Binary <a class="el" href="struct_trie.html" title="Trie">Trie</a> </p>
-<p>verify: <a href="https://judge.yosupo.jp/problem/ordered_set">https://judge.yosupo.jp/problem/ordered_set</a> verify: <a href="https://judge.yosupo.jp/problem/set_xor_min">https://judge.yosupo.jp/problem/set_xor_min</a> </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt;<br />
+struct BinaryTrie&lt; Log &gt;</div><p>Binary <a class="el" href="struct_trie.html" title="Trie">Trie</a> verify: <a href="https://judge.yosupo.jp/problem/ordered_set">https://judge.yosupo.jp/problem/ordered_set</a> verify: <a href="https://judge.yosupo.jp/problem/set_xor_min">https://judge.yosupo.jp/problem/set_xor_min</a> </p>
 
 <p class="definition"> <a class="el" href="binary__trie_8hpp_source.html">binary_trie.hpp</a> の <a class="el" href="binary__trie_8hpp_source.html#l00008">8</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
@@ -166,7 +165,7 @@ struct BinaryTrie&lt; Log &gt;</div><p>Binary <a class="el" href="struct_trie.ht
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -196,7 +195,7 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -204,7 +203,7 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
         <tr>
           <td class="memname">void <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::reserve </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -225,7 +224,7 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -233,7 +232,7 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
         <tr>
           <td class="memname">void <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::apply_xor </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -257,7 +256,7 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -265,12 +264,12 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
         <tr>
           <td class="memname">void <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::insert </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>k</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a></td>          <td class="paramname"><span class="paramname"><em>k</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -292,7 +291,7 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -300,12 +299,12 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
         <tr>
           <td class="memname">void <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::discard </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>k</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a></td>          <td class="paramname"><span class="paramname"><em>k</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -329,15 +328,15 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::count </td>
+          <td class="memname"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::count </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -360,15 +359,15 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::kth_min </td>
+          <td class="memname"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::kth_min </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>k</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a></td>          <td class="paramname"><span class="paramname"><em>k</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -391,15 +390,15 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::count_lt </td>
+          <td class="memname"><a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::count_lt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -422,13 +421,13 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::min </td>
+          <td class="memname"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::min </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -453,13 +452,13 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::max </td>
+          <td class="memname"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::max </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -482,15 +481,15 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::gt </td>
+          <td class="memname"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::gt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -513,15 +512,15 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::ge </td>
+          <td class="memname"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::ge </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -544,15 +543,15 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::lt </td>
+          <td class="memname"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::lt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -575,15 +574,15 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::le </td>
+          <td class="memname"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::le </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="type_8hpp.html#a29f3281bf7a571647345c2ecdae69e78">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="type_8hpp.html#afa7ede5e2661c3768f08b70fc8a441be">ll</a></td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -606,13 +605,13 @@ template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> Log = 32&gt; </div>
+template&lt;<a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> Log = 32&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="type_8hpp.html#a07f3bce5b89baa5a7430984f50fc5d60">ii</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::size </td>
+          <td class="memname"><a class="el" href="type_8hpp.html#a92e4fc7fc939d1879b508889d35f6575">ii</a> <a class="el" href="struct_binary_trie.html">BinaryTrie</a>&lt; Log &gt;::size </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>

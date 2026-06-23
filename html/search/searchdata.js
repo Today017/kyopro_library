@@ -1,6 +1,6 @@
 var indexSectionsWithContent =
 {
-  0: "_abcdefghiklmnopqrstuvwxyzスデモ使例各環",
+  0: "_abcdefghiklmnopqrstuvwxyzのス使環",
   1: "abcdefghilmnopqrstuwx",
   2: "abcefgimrz",
   3: "abcdefghiklmnopqrstuwxz",
@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "o",
   8: "co",
   9: "o",
-  10: "adefgilmopqrsv",
+  10: "acdefgilmopqrsv",
   11: "r"
 };
 

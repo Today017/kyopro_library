@@ -14,7 +14,7 @@ var dir_b8d8e9e6d882cbdac7436f7026baf609 =
     [ "queue.hpp", "queue_8hpp.html", "queue_8hpp" ],
     [ "queue_foldable.hpp", "queue__foldable_8hpp.html", "queue__foldable_8hpp" ],
     [ "range_set.hpp", "range__set_8hpp.html", "range__set_8hpp" ],
-    [ "segtree.hpp", "data__structure_2segtree_8hpp.html", "data__structure_2segtree_8hpp" ],
+    [ "segtree.hpp", "segtree_8hpp.html", "segtree_8hpp" ],
     [ "segtree_2d.hpp", "segtree__2d_8hpp.html", "segtree__2d_8hpp" ],
     [ "segtree_act.hpp", "segtree__act_8hpp.html", "segtree__act_8hpp" ],
     [ "segtree_beats.hpp", "segtree__beats_8hpp.html", "segtree__beats_8hpp" ],

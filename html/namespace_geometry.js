@@ -4,7 +4,7 @@ var namespace_geometry =
     [ "Line", "struct_geometry_1_1_line.html", "struct_geometry_1_1_line" ],
     [ "Point", "struct_geometry_1_1_point.html", "struct_geometry_1_1_point" ],
     [ "Segment", "struct_geometry_1_1_segment.html", "struct_geometry_1_1_segment" ],
-    [ "Real", "namespace_geometry.html#aa4fd942614eba4a1561c5a22278a1bcc", null ],
+    [ "Real", "namespace_geometry.html#a8f02e18a6db163cf3d442073f6d5da4e", null ],
     [ "Orientation", "namespace_geometry.html#ac6833944045520a63bc44de0c261aa7a", [
       [ "COUNTER_CLOCKWISE", "namespace_geometry.html#ac6833944045520a63bc44de0c261aa7aa9ee68053af2b51d26deccd98f7581852", null ],
       [ "CLOCKWISE", "namespace_geometry.html#ac6833944045520a63bc44de0c261aa7aafeb0cf07471b0c303bf376921b7ee74d", null ],

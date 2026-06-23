@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parity_0',['Parity',['../namespace_bit.html#a39936fdc1d9e615dd4cffc483c1dca8c',1,'Bit::Parity(int n)'],['../namespace_bit.html#a7d701e06b98bd3273126ccb3bb8bba5b',1,'Bit::Parity(ll n)']]],
+  ['parity_0',['Parity',['../namespace_bit.html#a9177e5e6a38a141a17cdf81ea65092e3',1,'Bit::Parity(i32 n)'],['../namespace_bit.html#ac22cf3d4340dd40a418ce943507fba8e',1,'Bit::Parity(i64 n)']]],
   ['path_1',['path',['../struct_h_l_d.html#af5c1751760a5d34be274c54acd9f60c3',1,'HLD']]],
   ['pathcoverdag_2',['PathCoverDag',['../pathcover__dag_8hpp.html#a027272e215b6c2793d98ff8437cf3076',1,'pathcover_dag.hpp']]],
   ['perm_3',['perm',['../struct_comb.html#a23364a601f99ca8fdafd05c4cd56aefa',1,'Comb']]],
@@ -16,7 +16,7 @@ var searchData=
   ['pop_5ffront_13',['pop_front',['../struct_deque.html#a0e1a1df410dce314324203a54844f51e',1,'Deque']]],
   ['pop_5fmax_14',['pop_max',['../struct_multi_set.html#a5cce4f369b39c156138ed1ef9b736d35',1,'MultiSet::pop_max()'],['../struct_set.html#a5a23b8d407841f11cff0d6a19f4a9faf',1,'Set::pop_max()'],['../struct_sorted_multi_tree.html#a8c295dcfe5327e9219f013dc159ab1f0',1,'SortedMultiTree::pop_max()'],['../struct_sorted_tree.html#a01cb57e4a4d3ff57cdb82b3e59950d70',1,'SortedTree::pop_max()']]],
   ['pop_5fmin_15',['pop_min',['../struct_multi_set.html#aa815da7cdf344ceccb71ee35c9bf6410',1,'MultiSet::pop_min()'],['../struct_set.html#a77887906e2020e72f3d99af29e98db67',1,'Set::pop_min()'],['../struct_sorted_multi_tree.html#a57e225a43a6ffe8a2c40f792375d04bc',1,'SortedMultiTree::pop_min()'],['../struct_sorted_tree.html#a84629459ef11cd98378fd7b231c331a4',1,'SortedTree::pop_min()']]],
-  ['popcount_16',['PopCount',['../namespace_bit.html#a1c596333431a2b9557848add9aaec912',1,'Bit::PopCount(int n)'],['../namespace_bit.html#a72c1df96643f535ccb12e866f1022726',1,'Bit::PopCount(ll n)']]],
+  ['popcount_16',['PopCount',['../namespace_bit.html#a8262a7db612453e6a6b282c18c984906',1,'Bit::PopCount(i32 n)'],['../namespace_bit.html#aa738baec48dafe88b3d9a635ed20a5eb',1,'Bit::PopCount(i64 n)']]],
   ['pos_17',['pos',['../struct_grid_util.html#ab79570ff7662c251c1f1b6c8bd5cd686',1,'GridUtil']]],
   ['pow_18',['Pow',['../namespace_fps.html#a00862720817fca20306c0e13057f3741',1,'Fps']]],
   ['pow_19',['pow',['../struct_mod_int.html#ad51ec271b27d8b4ffee3af3a25be2d5b',1,'ModInt::pow()'],['../struct_mod_int_dynamic.html#a8db76526aacca836f703254dbc208cf9',1,'ModIntDynamic::pow()']]],
@@ -29,7 +29,7 @@ var searchData=
   ['primitiveroot_26',['PrimitiveRoot',['../primitive__root_8hpp.html#adec91ba45a107da3aa0f218785b8df98',1,'primitive_root.hpp']]],
   ['projection_27',['projection',['../namespace_geometry.html#a350e7c66a3052218fb10273521646a5a',1,'Geometry::projection(const Point &amp;p1, const Point &amp;p2, const Point &amp;p)'],['../namespace_geometry.html#a6459f2465325d059e045db0c357253a0',1,'Geometry::projection(const Line &amp;l, const Point &amp;p)']]],
   ['propagate_28',['propagate',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#af0ac4721b9dbe26f52dda5cc875ed584',1,'InsertableReversibleArrayImpl::LazyReversibleRBST']]],
-  ['push_29',['push',['../struct_erasable_heap.html#a8a9f59982bbc53542c0166eb22d4ccd4',1,'ErasableHeap::push()'],['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#ae6287f00bdcec7ba70119cf3eabed5c8',1,'InsertableReversibleArrayImpl::RBSTBase::push()'],['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#ac8db7d48192fd143cf9c100bc8ca1a04',1,'InsertableReversibleArrayImpl::LazyReversibleRBST::push()'],['../struct_queue.html#a10e62d56b49ec01e1ae96c408c269e35',1,'Queue::push()'],['../struct_queue_foldable.html#a922751c9769cd7860869a76146b40fd8',1,'QueueFoldable::push()'],['../struct_slide_min.html#a583f5a2036c1c69c3501312654ee84d3',1,'SlideMin::push()']]],
+  ['push_29',['push',['../struct_erasable_heap.html#a14cd3d233eed85739c1e7076a4834c44',1,'ErasableHeap::push()'],['../struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html#ae6287f00bdcec7ba70119cf3eabed5c8',1,'InsertableReversibleArrayImpl::RBSTBase::push()'],['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#ac8db7d48192fd143cf9c100bc8ca1a04',1,'InsertableReversibleArrayImpl::LazyReversibleRBST::push()'],['../struct_queue.html#a10e62d56b49ec01e1ae96c408c269e35',1,'Queue::push()'],['../struct_queue_foldable.html#a922751c9769cd7860869a76146b40fd8',1,'QueueFoldable::push()'],['../struct_slide_min.html#a583f5a2036c1c69c3501312654ee84d3',1,'SlideMin::push()']]],
   ['push_5fback_30',['push_back',['../struct_deque.html#a7f2a31003ec0362903266f14bafcdcff',1,'Deque']]],
   ['push_5ffront_31',['push_front',['../struct_deque.html#a42a1363453cd88437b67051a3a777ae9',1,'Deque']]],
   ['put_32',['put',['../io_8hpp.html#a20e23966f62a6f1e3a5965d30125dab2',1,'io.hpp']]]

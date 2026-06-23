@@ -106,20 +106,22 @@ $(function(){initNavTree('throne_8hpp_source.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <a href="throne_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/others/modcal.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/others/modcal.hpp&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@brief Ai=B (mod M) なる最小のiを求める</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@brief 存在しないときは-1</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @brief Ai=B (mod M) なる最小のiを求める</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @brief 存在しないときは-1</span></div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="throne_8hpp.html#a4e6c9b9368a369ca3a14c53332f13b90">    7</a></span>ll <a class="code hl_function" href="throne_8hpp.html#a4e6c9b9368a369ca3a14c53332f13b90">Throne</a>(ll A, ll B, ll M) {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    ll g=gcd(A,M);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">if</span>(B%g) <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    A/=g; B/=g; M/=g;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    ll ret=<a class="code hl_function" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">ModInv</a><a class="code hl_function" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">(</a>A<a class="code hl_function" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">,</a>M<a class="code hl_function" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">)</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    (ret*=B)%=M;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    ll g = gcd(A, M);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">if</span>(B % g) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    A /= g;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    B /= g;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    M /= g;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    ll ret = <a class="code hl_function" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">ModInv</a><a class="code hl_function" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">(</a>A<a class="code hl_function" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">,</a> M<a class="code hl_function" href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">)</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    (ret *= B) %= M;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
 </div>
 <div class="ttc" id="amodcal_8hpp_html_a8fbaf043a7918c3ee026482c69f79bdc"><div class="ttname"><a href="modcal_8hpp.html#a8fbaf043a7918c3ee026482c69f79bdc">ModInv</a></div><div class="ttdeci">ll ModInv(ll a, ll m)</div><div class="ttdoc">x^(-1) (mod m) を返す</div><div class="ttdef"><b>Definition</b> <a href="modcal_8hpp_source.html#l00018">modcal.hpp:18</a></div></div>
 <div class="ttc" id="athrone_8hpp_html_a4e6c9b9368a369ca3a14c53332f13b90"><div class="ttname"><a href="throne_8hpp.html#a4e6c9b9368a369ca3a14c53332f13b90">Throne</a></div><div class="ttdeci">ll Throne(ll A, ll B, ll M)</div><div class="ttdoc">Ai=B (mod M) なる最小のiを求める</div><div class="ttdef"><b>Definition</b> <a href="#l00007">throne.hpp:7</a></div></div>

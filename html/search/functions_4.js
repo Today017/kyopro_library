@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['debugprint_0',['DebugPrint',['../debug_8hpp.html#a966f60e90ba58ad164d45a0ed1614116',1,'DebugPrint(int i, T name):&#160;debug.hpp'],['../debug_8hpp.html#ab71b4c038f1f1744888de17e8c17507f',1,'DebugPrint(int i, const T1 &amp;name, const T2 &amp;a, const T3 &amp;...b):&#160;debug.hpp']]],
+  ['debugprint_0',['DebugPrint',['../debug_8hpp.html#a966f60e90ba58ad164d45a0ed1614116',1,'DebugPrint(int i, T name):&#160;debug.hpp'],['../debug_8hpp.html#a9b283b025a06b2a10e221274c3954c69',1,'DebugPrint(int i, const T1 &amp;name, const T2 &amp;a, const T3 &amp;... b):&#160;debug.hpp']]],
   ['decompnamori_1',['DecompNamori',['../namori_8hpp.html#aa9b33b2788e36c2fa043625c59cc824f',1,'namori.hpp']]],
   ['decv_2',['decv',['../base_2util_8hpp.html#ae07ce7fa946f8b3000df0196a4660f2e',1,'util.hpp']]],
   ['deque_3',['Deque',['../struct_deque.html#a96336a801b016888bc2e31f97a6e79aa',1,'Deque']]],
@@ -20,15 +20,16 @@ var searchData=
   ['distinct_17',['Distinct',['../namespace_gen.html#ac2936fac1938677f614657c170e3e9d9',1,'Gen']]],
   ['div_18',['Div',['../namespace_fps.html#abb81a2b0bbde6863b3a835fb83da12fd',1,'Fps']]],
   ['divisormobius_19',['DivisorMobius',['../namespace_zeta_mobius_div_mul.html#a5873725c9582f0bf59b0251e0077fa1e',1,'ZetaMobiusDivMul']]],
-  ['divisorzeta_20',['DivisorZeta',['../namespace_zeta_mobius_div_mul.html#a486c03a39284cfd10d169aa18a67e873',1,'ZetaMobiusDivMul']]],
-  ['divsparse_21',['DivSparse',['../namespace_fps.html#a9485d4559f1eb5789680a4a9466edc2c',1,'Fps']]],
-  ['dot_22',['dot',['../struct_geometry_1_1_point.html#ab17c1525afa5688443c09963ce5512bf',1,'Geometry::Point']]],
-  ['doubling_23',['Doubling',['../struct_doubling.html#aad11ee1d4c52c049dd5d984df8a81136',1,'Doubling::Doubling()=default'],['../struct_doubling.html#a4764af9414d9017683827cbcb942b02b',1,'Doubling::Doubling(const vi &amp;V)']]],
-  ['doublingfold_24',['DoublingFold',['../struct_doubling_fold.html#a04df85dc1028af6ecca7e1d00d60b4ed',1,'DoublingFold::DoublingFold()=default'],['../struct_doubling_fold.html#a1c81fc02ca4d3a0f25a0cf4f55eb6487',1,'DoublingFold::DoublingFold(const vi &amp;P, const vector&lt; Type &gt; &amp;V)']]],
-  ['dsu_25',['DSU',['../struct_d_s_u.html#a2037e5dac19248a4e5f2f70133fdea12',1,'DSU::DSU()=default'],['../struct_d_s_u.html#abbae2d8b88cba33b50386cbbf229685a',1,'DSU::DSU(int n)']]],
-  ['dsumerging_26',['DsuMerging',['../struct_dsu_merging.html#a6e06d3c3b50471bd58ea808d9b63ad77',1,'DsuMerging::DsuMerging()=default'],['../struct_dsu_merging.html#a176fb90f26e3696383392e94d7491cdb',1,'DsuMerging::DsuMerging(int n, const vector&lt; Type &gt; &amp;v)']]],
-  ['dsuontree_27',['DsuOnTree',['../struct_dsu_on_tree.html#adb60881490b6b0974bb36aee95748574',1,'DsuOnTree']]],
-  ['dsupotentialized_28',['DsuPotentialized',['../struct_dsu_potentialized.html#a2e7c6c09a18844667a4f0f7c0ddebe1d',1,'DsuPotentialized::DsuPotentialized()=default'],['../struct_dsu_potentialized.html#a8c36a02bd95351413d537dabdcdd40b1',1,'DsuPotentialized::DsuPotentialized(int n)']]],
-  ['dsurollback_29',['DsuRollback',['../struct_dsu_rollback.html#a11aa0e4a2cd2660619a17e0dd828c22a',1,'DsuRollback::DsuRollback()=default'],['../struct_dsu_rollback.html#ad42c892c309ec0aa491c70bec3d58779',1,'DsuRollback::DsuRollback(int n)']]],
-  ['dynamicconnectivity_30',['DynamicConnectivity',['../struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4',1,'DynamicConnectivity']]]
+  ['divisors_20',['Divisors',['../divisors_8hpp.html#a5e97d8b25069507aacaa70a216bc9208',1,'divisors.hpp']]],
+  ['divisorzeta_21',['DivisorZeta',['../namespace_zeta_mobius_div_mul.html#a486c03a39284cfd10d169aa18a67e873',1,'ZetaMobiusDivMul']]],
+  ['divsparse_22',['DivSparse',['../namespace_fps.html#a9485d4559f1eb5789680a4a9466edc2c',1,'Fps']]],
+  ['dot_23',['dot',['../struct_geometry_1_1_point.html#ab17c1525afa5688443c09963ce5512bf',1,'Geometry::Point']]],
+  ['doubling_24',['Doubling',['../struct_doubling.html#aad11ee1d4c52c049dd5d984df8a81136',1,'Doubling::Doubling()=default'],['../struct_doubling.html#a4764af9414d9017683827cbcb942b02b',1,'Doubling::Doubling(const vi &amp;V)']]],
+  ['doublingfold_25',['DoublingFold',['../struct_doubling_fold.html#a04df85dc1028af6ecca7e1d00d60b4ed',1,'DoublingFold::DoublingFold()=default'],['../struct_doubling_fold.html#a1c81fc02ca4d3a0f25a0cf4f55eb6487',1,'DoublingFold::DoublingFold(const vi &amp;P, const vector&lt; Type &gt; &amp;V)']]],
+  ['dsu_26',['DSU',['../struct_d_s_u.html#a2037e5dac19248a4e5f2f70133fdea12',1,'DSU::DSU()=default'],['../struct_d_s_u.html#abbae2d8b88cba33b50386cbbf229685a',1,'DSU::DSU(int n)']]],
+  ['dsumerging_27',['DsuMerging',['../struct_dsu_merging.html#a6e06d3c3b50471bd58ea808d9b63ad77',1,'DsuMerging::DsuMerging()=default'],['../struct_dsu_merging.html#a176fb90f26e3696383392e94d7491cdb',1,'DsuMerging::DsuMerging(int n, const vector&lt; Type &gt; &amp;v)']]],
+  ['dsuontree_28',['DsuOnTree',['../struct_dsu_on_tree.html#adb60881490b6b0974bb36aee95748574',1,'DsuOnTree']]],
+  ['dsupotentialized_29',['DsuPotentialized',['../struct_dsu_potentialized.html#a2e7c6c09a18844667a4f0f7c0ddebe1d',1,'DsuPotentialized::DsuPotentialized()=default'],['../struct_dsu_potentialized.html#a8c36a02bd95351413d537dabdcdd40b1',1,'DsuPotentialized::DsuPotentialized(int n)']]],
+  ['dsurollback_30',['DsuRollback',['../struct_dsu_rollback.html#a11aa0e4a2cd2660619a17e0dd828c22a',1,'DsuRollback::DsuRollback()=default'],['../struct_dsu_rollback.html#ad42c892c309ec0aa491c70bec3d58779',1,'DsuRollback::DsuRollback(int n)']]],
+  ['dynamicconnectivity_31',['DynamicConnectivity',['../struct_dynamic_connectivity.html#a770dc53dd142ee82b63cee5dc0989ed4',1,'DynamicConnectivity']]]
 ];

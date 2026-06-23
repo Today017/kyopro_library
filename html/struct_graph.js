@@ -2,7 +2,10 @@ var struct_graph =
 [
     [ "Edge", "struct_graph_1_1_edge.html", "struct_graph_1_1_edge" ],
     [ "Graph", "struct_graph.html#a1ebe4b1ff74f8d97bad780b98feca69e", null ],
-    [ "read", "struct_graph.html#a1654ce9d0e1fdb7ab5cfd94b6799bfee", null ],
+    [ "set_weighted", "struct_graph.html#a70132bdcc3dfaaf1df85105ffe417b48", null ],
+    [ "set_directed", "struct_graph.html#a3cf18cf28717e589a818ccc454b7face", null ],
+    [ "set_onebased", "struct_graph.html#ae7355599d335cbd260538ce2b05a2c58", null ],
+    [ "input", "struct_graph.html#abccbf7e50cd0999da3508b4533df594d", null ],
     [ "add_edge", "struct_graph.html#a51486dd94700baa468797769355e7c78", null ],
     [ "add_undedge", "struct_graph.html#a9c833c45d18170d109d42e867b3ee4d8", null ],
     [ "next", "struct_graph.html#a51dfb19d17eaaba8f9379b2238f50b3f", null ],

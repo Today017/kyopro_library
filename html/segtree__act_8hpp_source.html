@@ -106,121 +106,133 @@ $(function(){initNavTree('segtree__act_8hpp_source.html',''); initResizable(true
 </div><!--header-->
 <div class="contents">
 <a href="segtree__act_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief 区間作用一点取得型セグメント木</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@tparam Operator 作用素（モノイド）</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@ref verify: https://judge.yosupo.jp/problem/range_affine_point_get</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">///@ref verify: https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_D</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Operator&gt;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 区間作用一点取得型セグメント木</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @tparam Operator 作用素（モノイド）</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @ref verify: https://judge.yosupo.jp/problem/range_affine_point_get</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// @ref verify: https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_D</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Operator&gt;</div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html">    9</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_seg_tree_act.html">SegTreeAct</a> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#add9eb95a27e43c7a432128a7575d1917">   10</a></span>    <span class="keyword">using</span> Type=<span class="keyword">typename</span> Operator::Type;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#af998836235a3476772bd733ad93211c6">   10</a></span>    <span class="keyword">using</span> Type = <span class="keyword">typename</span> Operator::Type;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">///@brief 要素数 n で構築する</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">/// @brief 要素数 n で構築する</span></div>
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#a25aa81da6459c988602378398206cbc0">   13</a></span>    <a class="code hl_function" href="struct_seg_tree_act.html#a25aa81da6459c988602378398206cbc0">SegTreeAct</a>(<span class="keywordtype">int</span> z) {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        n=1; <span class="keywordflow">while</span>(n&lt;z) n*=2;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        dat.resize(n*2,Operator::id());</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        n = 1;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">while</span>(n &lt; z) n *= 2;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        dat.resize(n * 2, Operator::id());</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
 </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">///@brief 配列 v から構築する</span></div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#a38d738de89c524ebd52a7c3ea8ff748e">   19</a></span>    <a class="code hl_struct" href="struct_seg_tree_act.html">SegTreeAct</a>(vector&lt;Type&gt;&amp; v) {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordtype">int</span> <a class="code hl_struct" href="struct_seg_tree_act.html">z</a>=<a class="code hl_struct" href="struct_seg_tree_act.html">v</a>.<a class="code hl_struct" href="struct_seg_tree_act.html">size</a>();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        n=1; <span class="keywordflow">while</span>(<a class="code hl_struct" href="struct_seg_tree_act.html">n</a>&lt;<a class="code hl_struct" href="struct_seg_tree_act.html">z</a>) <a class="code hl_struct" href="struct_seg_tree_act.html">n</a>*=2;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_struct" href="struct_seg_tree_act.html">dat</a>.<a class="code hl_struct" href="struct_seg_tree_act.html">resize</a>(<a class="code hl_struct" href="struct_seg_tree_act.html">n</a>*2,<a class="code hl_struct" href="struct_seg_tree_act.html">Operator</a>::<a class="code hl_struct" href="struct_seg_tree_act.html">id</a>());</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(<a class="code hl_struct" href="struct_seg_tree_act.html">i</a>,<a class="code hl_struct" href="struct_seg_tree_act.html">z</a>) <a class="code hl_struct" href="struct_seg_tree_act.html">dat</a>[<a class="code hl_struct" href="struct_seg_tree_act.html">i</a>+<a class="code hl_struct" href="struct_seg_tree_act.html">n</a>]=<a class="code hl_struct" href="struct_seg_tree_act.html">v</a>[<a class="code hl_struct" href="struct_seg_tree_act.html">i</a>];</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">/// @brief 配列 v から構築する</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#a38d738de89c524ebd52a7c3ea8ff748e">   20</a></span>    <a class="code hl_struct" href="struct_seg_tree_act.html">SegTreeAct</a>(vector&lt;Type&gt;&amp; v) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">int</span> <a class="code hl_struct" href="struct_seg_tree_act.html">z</a> = <a class="code hl_struct" href="struct_seg_tree_act.html">v</a>.<a class="code hl_struct" href="struct_seg_tree_act.html">size</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        n = 1;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">while</span>(<a class="code hl_struct" href="struct_seg_tree_act.html">n</a> &lt; <a class="code hl_struct" href="struct_seg_tree_act.html">z</a>) <a class="code hl_struct" href="struct_seg_tree_act.html">n</a> *= 2;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_struct" href="struct_seg_tree_act.html">dat</a>.<a class="code hl_struct" href="struct_seg_tree_act.html">resize</a>(<a class="code hl_struct" href="struct_seg_tree_act.html">n</a> * 2, <a class="code hl_struct" href="struct_seg_tree_act.html">Operator</a>::<a class="code hl_struct" href="struct_seg_tree_act.html">id</a>());</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(<a class="code hl_struct" href="struct_seg_tree_act.html">i</a>, <a class="code hl_struct" href="struct_seg_tree_act.html">z</a>) <a class="code hl_struct" href="struct_seg_tree_act.html">dat</a>[<a class="code hl_struct" href="struct_seg_tree_act.html">i</a> + <a class="code hl_struct" href="struct_seg_tree_act.html">n</a>] = <a class="code hl_struct" href="struct_seg_tree_act.html">v</a>[<a class="code hl_struct" href="struct_seg_tree_act.html">i</a>];</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
 </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">///@brief k 番目の要素を取得する</span></div>
-<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#a38a2c39faae23653d68b3d24793d96d1">   27</a></span>    <a class="code hl_function" href="struct_seg_tree_act.html#a38a2c39faae23653d68b3d24793d96d1">Type</a> <a class="code hl_function" href="struct_seg_tree_act.html#a38a2c39faae23653d68b3d24793d96d1">get</a>(<span class="keywordtype">int</span> k) {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">int</span> i=1, l=0, r=n;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">while</span>(i&lt;n) {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            push(i);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keywordtype">int</span> m=(l+r)&gt;&gt;1;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            i&lt;&lt;=1;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">if</span>(k&lt;m) r=m;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">else</span> l=m, i|=1;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">return</span> dat[i];</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">/// @brief k 番目の要素を取得する</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#a38a2c39faae23653d68b3d24793d96d1">   29</a></span>    <a class="code hl_function" href="struct_seg_tree_act.html#a38a2c39faae23653d68b3d24793d96d1">Type</a> <a class="code hl_function" href="struct_seg_tree_act.html#a38a2c39faae23653d68b3d24793d96d1">get</a>(<span class="keywordtype">int</span> k) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">int</span> i = 1, l = 0, r = n;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">while</span>(i &lt; n) {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            push(i);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordtype">int</span> m = (l + r) &gt;&gt; 1;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            i &lt;&lt;= 1;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordflow">if</span>(k &lt; m) r = m;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordflow">else</span> l = m, i |= 1;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span> dat[i];</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
 </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#ac58a0d0718de64de21c3340d0affb1ff">   39</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_seg_tree_act.html#ac58a0d0718de64de21c3340d0affb1ff">set</a>(<span class="keywordtype">int</span> k, Type v) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        dat[k+n]=v;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">int</span> i=1, l=0, r=n;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">while</span>(i&lt;n) {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            push(i);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keywordtype">int</span> m=(l+r)&gt;&gt;1;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            i&lt;&lt;=1;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">if</span>(k&lt;m) r=m;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">else</span> l=m, i|=1;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#ac58a0d0718de64de21c3340d0affb1ff">   41</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_seg_tree_act.html#ac58a0d0718de64de21c3340d0affb1ff">set</a>(<span class="keywordtype">int</span> k, Type v) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">int</span> i = 1, l = 0, r = n;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">while</span>(i &lt; n) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            push(i);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordtype">int</span> m = (l + r) &gt;&gt; 1;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            i &lt;&lt;= 1;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">if</span>(k &lt; m) r = m;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">else</span> l = m, i |= 1;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        dat[k + n] = v;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
 </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#a22ba5399a8164712ad86f5823f153700">   51</a></span>    <a class="code hl_function" href="struct_seg_tree_act.html#a22ba5399a8164712ad86f5823f153700">Type</a> <a class="code hl_function" href="struct_seg_tree_act.html#a22ba5399a8164712ad86f5823f153700">operator</a>[](<span class="keywordtype">int</span> k) { <span class="keywordflow">return</span> get(k); }</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">///@brief 区間 [l, r) に x を作用させる</span></div>
-<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#aaa1e40062b2e3cd8771b040b333bf4b6">   54</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_seg_tree_act.html#aaa1e40062b2e3cd8771b040b333bf4b6">apply</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, Type x) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        l+=n; r+=n;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordtype">int</span> h=__lg(n);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=h; i&gt;=1; i--) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            push(l&gt;&gt;i);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            push((r-1)&gt;&gt;i);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">while</span>(l&lt;r) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">if</span>(l&amp;1) dat[l]=Operator::op(dat[l],x), l++;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordflow">if</span>(r&amp;1) --r, dat[r]=Operator::op(dat[r],x);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            l&gt;&gt;=1; r&gt;&gt;=1;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#a22ba5399a8164712ad86f5823f153700">   53</a></span>    <a class="code hl_function" href="struct_seg_tree_act.html#a22ba5399a8164712ad86f5823f153700">Type</a> <a class="code hl_function" href="struct_seg_tree_act.html#a22ba5399a8164712ad86f5823f153700">operator</a>[](<span class="keywordtype">int</span> k) { <span class="keywordflow">return</span> get(k); }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">/// @brief 区間 [l, r) に x を作用させる</span></div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#aaa1e40062b2e3cd8771b040b333bf4b6">   56</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_seg_tree_act.html#aaa1e40062b2e3cd8771b040b333bf4b6">apply</a>(<span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r, Type x) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        l += n;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        r += n;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordtype">int</span> h = __lg(n);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = h; i &gt;= 1; i--) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            push(l &gt;&gt; i);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            push((r - 1) &gt;&gt; i);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">while</span>(l &lt; r) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">if</span>(l &amp; 1) dat[l] = Operator::op(dat[l], x), l++;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">if</span>(r &amp; 1) --r, dat[r] = Operator::op(dat[r], x);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            l &gt;&gt;= 1;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            r &gt;&gt;= 1;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
 </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#a65ae90607938a0a78f5f909de772933f">   68</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_seg_tree_act.html#a65ae90607938a0a78f5f909de772933f">size</a>() { <span class="keywordflow">return</span> n; }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">int</span> n;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    vector&lt;Type&gt; dat;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="struct_seg_tree_act.html#a65ae90607938a0a78f5f909de772933f">   72</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_seg_tree_act.html#a65ae90607938a0a78f5f909de772933f">size</a>() { <span class="keywordflow">return</span> n; }</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> push(<span class="keywordtype">int</span> i) {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">if</span>(i&lt;n) {</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            dat[i&lt;&lt;1]=Operator::op(dat[i&lt;&lt;1],dat[i]);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            dat[i&lt;&lt;1|1]=Operator::op(dat[i&lt;&lt;1|1],dat[i]);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            dat[i]=Operator::id();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">int</span> n;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    vector&lt;Type&gt; dat;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span> push(<span class="keywordtype">int</span> i) {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">if</span>(i &lt; n) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            dat[i &lt;&lt; 1] = Operator::op(dat[i &lt;&lt; 1], dat[i]);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            dat[i &lt;&lt; 1 | 1] = Operator::op(dat[i &lt;&lt; 1 | 1], dat[i]);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            dat[i] = Operator::id();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
 </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/others/monoid.hpp&quot;</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="namespace_range_query.html">RangeQuery</a> {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_apply_add.html#a9bc9faf8644d7514a37308a6f547dfcb">   87</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_apply_add.html">ApplyAdd</a> { <span class="keyword">using</span> Type=<span class="keyword">struct</span> <a class="code hl_struct" href="struct_seg_tree_act.html">SegTreeAct</a>&lt;<a class="code hl_namespace" href="namespace_monoid.html">Monoid</a>::<a class="code hl_struct" href="struct_monoid_1_1_sum.html">Sum</a>&lt;T&gt;&gt;; };</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/others/monoid.hpp&quot;</span></div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, T not_exist&gt;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_apply_update.html#a081c94c8357748a79a8e4caa6e2bd1fb">   90</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_apply_update.html">ApplyUpdate</a> { <span class="keyword">using</span> <a class="code hl_struct" href="struct_range_query_1_1_apply_update.html">Type</a>=<span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_apply_update.html">SegTreeAct</a>&lt;<a class="code hl_struct" href="struct_range_query_1_1_apply_update.html">Monoid</a>::<a class="code hl_struct" href="struct_range_query_1_1_apply_update.html">Update</a>&lt;<a class="code hl_struct" href="struct_range_query_1_1_apply_update.html">T</a>,<a class="code hl_struct" href="struct_range_query_1_1_apply_update.html">not_exist</a>&gt;&gt;; };</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="namespace_range_query.html">RangeQuery</a> {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="};">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_apply_add.html">   91</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_apply_add.html">ApplyAdd</a> {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_apply_add.html#adb033ef396b3657d1535ab3ad99d50fe">   92</a></span>        <span class="keyword">using</span> Type = <span class="keyword">struct</span> <a class="code hl_struct" href="struct_seg_tree_act.html">SegTreeAct</a>&lt;<a class="code hl_namespace" href="namespace_monoid.html">Monoid</a>::<a class="code hl_struct" href="struct_monoid_1_1_sum.html">Sum</a>&lt;T&gt;&gt;;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    };</div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, T not_exist&gt;</div>
+<div class="foldopen" id="foldopen00096" data-start="{" data-end="};">
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_apply_update.html">   96</a></span>    <span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_apply_update.html">ApplyUpdate</a> {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="struct_range_query_1_1_apply_update.html#a2f5934faa2bdafaf5b75e93b1580d110">   97</a></span>        <span class="keyword">using</span> <a class="code hl_struct" href="struct_range_query_1_1_apply_update.html">Type</a> = <span class="keyword">struct</span> <a class="code hl_struct" href="struct_range_query_1_1_apply_update.html">SegTreeAct</a>&lt;<a class="code hl_struct" href="struct_range_query_1_1_apply_update.html">Monoid</a>::<a class="code hl_struct" href="struct_range_query_1_1_apply_update.html">Update</a>&lt;<a class="code hl_struct" href="struct_range_query_1_1_apply_update.html">T</a>, <a class="code hl_struct" href="struct_range_query_1_1_apply_update.html">not_exist</a>&gt;&gt;;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    };</div>
+</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}  <span class="comment">// namespace RangeQuery</span></div>
 <div class="ttc" id="amacro_8hpp_html_a30fefd21a95478fd2827fae51ab3b995"><div class="ttname"><a href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a></div><div class="ttdeci">#define rep(...)</div><div class="ttdef"><b>Definition</b> <a href="macro_8hpp_source.html#l00008">macro.hpp:8</a></div></div>
 <div class="ttc" id="anamespace_monoid_html"><div class="ttname"><a href="namespace_monoid.html">Monoid</a></div><div class="ttdoc">モノイド</div><div class="ttdef"><b>Definition</b> <a href="monoid_8hpp_source.html#l00005">monoid.hpp:5</a></div></div>
-<div class="ttc" id="anamespace_range_query_html"><div class="ttname"><a href="namespace_range_query.html">RangeQuery</a></div><div class="ttdoc">区間クエリ</div><div class="ttdef"><b>Definition</b> <a href="data__structure_2segtree_8hpp_source.html#l00138">segtree.hpp:138</a></div></div>
+<div class="ttc" id="anamespace_range_query_html"><div class="ttname"><a href="namespace_range_query.html">RangeQuery</a></div><div class="ttdoc">区間クエリ</div><div class="ttdef"><b>Definition</b> <a href="segtree_8hpp_source.html#l00148">segtree.hpp:148</a></div></div>
 <div class="ttc" id="astruct_monoid_1_1_sum_html"><div class="ttname"><a href="struct_monoid_1_1_sum.html">Monoid::Sum</a></div><div class="ttdoc">和</div><div class="ttdef"><b>Definition</b> <a href="monoid_8hpp_source.html#l00026">monoid.hpp:26</a></div></div>
-<div class="ttc" id="astruct_range_query_1_1_apply_add_html"><div class="ttname"><a href="struct_range_query_1_1_apply_add.html">RangeQuery::ApplyAdd</a></div><div class="ttdef"><b>Definition</b> <a href="#l00087">segtree_act.hpp:87</a></div></div>
-<div class="ttc" id="astruct_range_query_1_1_apply_update_html"><div class="ttname"><a href="struct_range_query_1_1_apply_update.html">RangeQuery::ApplyUpdate</a></div><div class="ttdef"><b>Definition</b> <a href="#l00090">segtree_act.hpp:90</a></div></div>
+<div class="ttc" id="astruct_range_query_1_1_apply_add_html"><div class="ttname"><a href="struct_range_query_1_1_apply_add.html">RangeQuery::ApplyAdd</a></div><div class="ttdef"><b>Definition</b> <a href="#l00091">segtree_act.hpp:91</a></div></div>
+<div class="ttc" id="astruct_range_query_1_1_apply_update_html"><div class="ttname"><a href="struct_range_query_1_1_apply_update.html">RangeQuery::ApplyUpdate</a></div><div class="ttdef"><b>Definition</b> <a href="#l00096">segtree_act.hpp:96</a></div></div>
 <div class="ttc" id="astruct_seg_tree_act_html"><div class="ttname"><a href="struct_seg_tree_act.html">SegTreeAct</a></div><div class="ttdoc">区間作用一点取得型セグメント木</div><div class="ttdef"><b>Definition</b> <a href="#l00009">segtree_act.hpp:9</a></div></div>
-<div class="ttc" id="astruct_seg_tree_act_html_a22ba5399a8164712ad86f5823f153700"><div class="ttname"><a href="struct_seg_tree_act.html#a22ba5399a8164712ad86f5823f153700">SegTreeAct::operator[]</a></div><div class="ttdeci">Type operator[](int k)</div><div class="ttdef"><b>Definition</b> <a href="#l00051">segtree_act.hpp:51</a></div></div>
+<div class="ttc" id="astruct_seg_tree_act_html_a22ba5399a8164712ad86f5823f153700"><div class="ttname"><a href="struct_seg_tree_act.html#a22ba5399a8164712ad86f5823f153700">SegTreeAct::operator[]</a></div><div class="ttdeci">Type operator[](int k)</div><div class="ttdef"><b>Definition</b> <a href="#l00053">segtree_act.hpp:53</a></div></div>
 <div class="ttc" id="astruct_seg_tree_act_html_a25aa81da6459c988602378398206cbc0"><div class="ttname"><a href="struct_seg_tree_act.html#a25aa81da6459c988602378398206cbc0">SegTreeAct::SegTreeAct</a></div><div class="ttdeci">SegTreeAct(int z)</div><div class="ttdoc">要素数 n で構築する</div><div class="ttdef"><b>Definition</b> <a href="#l00013">segtree_act.hpp:13</a></div></div>
-<div class="ttc" id="astruct_seg_tree_act_html_a38a2c39faae23653d68b3d24793d96d1"><div class="ttname"><a href="struct_seg_tree_act.html#a38a2c39faae23653d68b3d24793d96d1">SegTreeAct::get</a></div><div class="ttdeci">Type get(int k)</div><div class="ttdoc">k 番目の要素を取得する</div><div class="ttdef"><b>Definition</b> <a href="#l00027">segtree_act.hpp:27</a></div></div>
-<div class="ttc" id="astruct_seg_tree_act_html_a65ae90607938a0a78f5f909de772933f"><div class="ttname"><a href="struct_seg_tree_act.html#a65ae90607938a0a78f5f909de772933f">SegTreeAct::size</a></div><div class="ttdeci">int size()</div><div class="ttdef"><b>Definition</b> <a href="#l00068">segtree_act.hpp:68</a></div></div>
-<div class="ttc" id="astruct_seg_tree_act_html_aaa1e40062b2e3cd8771b040b333bf4b6"><div class="ttname"><a href="struct_seg_tree_act.html#aaa1e40062b2e3cd8771b040b333bf4b6">SegTreeAct::apply</a></div><div class="ttdeci">void apply(int l, int r, Type x)</div><div class="ttdoc">区間 [l, r) に x を作用させる</div><div class="ttdef"><b>Definition</b> <a href="#l00054">segtree_act.hpp:54</a></div></div>
-<div class="ttc" id="astruct_seg_tree_act_html_ac58a0d0718de64de21c3340d0affb1ff"><div class="ttname"><a href="struct_seg_tree_act.html#ac58a0d0718de64de21c3340d0affb1ff">SegTreeAct::set</a></div><div class="ttdeci">void set(int k, Type v)</div><div class="ttdef"><b>Definition</b> <a href="#l00039">segtree_act.hpp:39</a></div></div>
+<div class="ttc" id="astruct_seg_tree_act_html_a38a2c39faae23653d68b3d24793d96d1"><div class="ttname"><a href="struct_seg_tree_act.html#a38a2c39faae23653d68b3d24793d96d1">SegTreeAct::get</a></div><div class="ttdeci">Type get(int k)</div><div class="ttdoc">k 番目の要素を取得する</div><div class="ttdef"><b>Definition</b> <a href="#l00029">segtree_act.hpp:29</a></div></div>
+<div class="ttc" id="astruct_seg_tree_act_html_a65ae90607938a0a78f5f909de772933f"><div class="ttname"><a href="struct_seg_tree_act.html#a65ae90607938a0a78f5f909de772933f">SegTreeAct::size</a></div><div class="ttdeci">int size()</div><div class="ttdef"><b>Definition</b> <a href="#l00072">segtree_act.hpp:72</a></div></div>
+<div class="ttc" id="astruct_seg_tree_act_html_aaa1e40062b2e3cd8771b040b333bf4b6"><div class="ttname"><a href="struct_seg_tree_act.html#aaa1e40062b2e3cd8771b040b333bf4b6">SegTreeAct::apply</a></div><div class="ttdeci">void apply(int l, int r, Type x)</div><div class="ttdoc">区間 [l, r) に x を作用させる</div><div class="ttdef"><b>Definition</b> <a href="#l00056">segtree_act.hpp:56</a></div></div>
+<div class="ttc" id="astruct_seg_tree_act_html_ac58a0d0718de64de21c3340d0affb1ff"><div class="ttname"><a href="struct_seg_tree_act.html#ac58a0d0718de64de21c3340d0affb1ff">SegTreeAct::set</a></div><div class="ttdeci">void set(int k, Type v)</div><div class="ttdef"><b>Definition</b> <a href="#l00041">segtree_act.hpp:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

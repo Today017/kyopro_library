@@ -1,6 +1,6 @@
 var struct_seg_tree_act =
 [
-    [ "Type", "struct_seg_tree_act.html#add9eb95a27e43c7a432128a7575d1917", null ],
+    [ "Type", "struct_seg_tree_act.html#af998836235a3476772bd733ad93211c6", null ],
     [ "SegTreeAct", "struct_seg_tree_act.html#a25aa81da6459c988602378398206cbc0", null ],
     [ "SegTreeAct", "struct_seg_tree_act.html#a38d738de89c524ebd52a7c3ea8ff748e", null ],
     [ "get", "struct_seg_tree_act.html#a38a2c39faae23653d68b3d24793d96d1", null ],

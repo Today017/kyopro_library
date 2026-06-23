@@ -106,71 +106,74 @@ $(function(){initNavTree('dsu_8hpp_source.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <a href="dsu_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief Disjoint Set Union</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Disjoint Set Union</span></div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="struct_d_s_u.html">    5</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_d_s_u.html">DSU</a> {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#a2037e5dac19248a4e5f2f70133fdea12">    6</a></span>    <a class="code hl_function" href="struct_d_s_u.html#a2037e5dac19248a4e5f2f70133fdea12">DSU</a>()=<span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#a2037e5dac19248a4e5f2f70133fdea12">    6</a></span>    <a class="code hl_function" href="struct_d_s_u.html#a2037e5dac19248a4e5f2f70133fdea12">DSU</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#abbae2d8b88cba33b50386cbbf229685a">    8</a></span>    <a class="code hl_function" href="struct_d_s_u.html#abbae2d8b88cba33b50386cbbf229685a">DSU</a>(<span class="keywordtype">int</span> n) {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        par=vi(n); iota(<a class="code hl_define" href="macro_8hpp.html#a7c9ad46191cf9ac6dbad29df0a0d69c1">all</a>(par),0);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        sz=vi(n,1);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        forest_count=n;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    }</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        par = vi(n);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        iota(<a class="code hl_define" href="macro_8hpp.html#a7c9ad46191cf9ac6dbad29df0a0d69c1">all</a>(par), 0);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        sz = vi(n, 1);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        forest_count = n;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
 </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">   14</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">find</a>(<span class="keywordtype">int</span> x) {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span>(par[x]==x) <span class="keywordflow">return</span> x;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">return</span> par[x]=find(par[x]);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">   15</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">find</a>(<span class="keywordtype">int</span> x) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">if</span>(par[x] == x) <span class="keywordflow">return</span> x;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">return</span> par[x] = find(par[x]);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
 </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#a81af0a8861251cc70ae491c6249e672d">   19</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_d_s_u.html#a81af0a8861251cc70ae491c6249e672d">merge</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        x=<a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">find</a><a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">(</a>x<a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">)</a>; y=<a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">find</a><a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">(</a>y<a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">)</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">if</span>(x==y) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">if</span>(sz[x]&lt;sz[y]) swap(x,y);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        par[y]=x; sz[x]+=sz[y];</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        forest_count--;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#a81af0a8861251cc70ae491c6249e672d">   20</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_d_s_u.html#a81af0a8861251cc70ae491c6249e672d">merge</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        x = <a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">find</a><a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">(</a>x<a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">)</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        y = <a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">find</a><a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">(</a>y<a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">)</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span>(x == y) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(sz[x] &lt; sz[y]) swap(x, y);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        par[y] = x;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        sz[x] += sz[y];</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        forest_count--;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
 </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#ae15ca5c12804826f13632d23443e36e8">   28</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_d_s_u.html#ae15ca5c12804826f13632d23443e36e8">size</a>(<span class="keywordtype">int</span> x) { <span class="keywordflow">return</span> sz[find(x)]; }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#ad3a04e676273604d56db0344795cd693">   30</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_d_s_u.html#ad3a04e676273604d56db0344795cd693">same</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) { <span class="keywordflow">return</span> <a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">find</a><a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">(</a>x<a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">)</a>==<a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">find</a><a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">(</a>y<a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">)</a>; }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#a042d4bb179819d69d53f2b96e23b099e">   32</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_d_s_u.html#a042d4bb179819d69d53f2b96e23b099e">count</a>() { <span class="keywordflow">return</span> forest_count; }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#a6aeff905458daf2f10fa96c68ff7f18d">   34</a></span>    <a class="code hl_function" href="struct_d_s_u.html#a6aeff905458daf2f10fa96c68ff7f18d">vector</a>&lt;<a class="code hl_function" href="struct_d_s_u.html#a6aeff905458daf2f10fa96c68ff7f18d">vi</a>&gt; <a class="code hl_function" href="struct_d_s_u.html#a6aeff905458daf2f10fa96c68ff7f18d">groups</a>() {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordtype">int</span> n=par.size();</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        vector&lt;vi&gt; ret(n);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i,n) ret[find(i)].push_back(i);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        ret.erase(remove_if(<a class="code hl_define" href="macro_8hpp.html#a7c9ad46191cf9ac6dbad29df0a0d69c1">all</a>(ret),[&amp;](<span class="keyword">const</span> vi&amp; v) { <span class="keywordflow">return</span> v.empty(); }),ret.end());</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#ae15ca5c12804826f13632d23443e36e8">   31</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_d_s_u.html#ae15ca5c12804826f13632d23443e36e8">size</a>(<span class="keywordtype">int</span> x) { <span class="keywordflow">return</span> sz[find(x)]; }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#ad3a04e676273604d56db0344795cd693">   33</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_d_s_u.html#ad3a04e676273604d56db0344795cd693">same</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) { <span class="keywordflow">return</span> <a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">find</a><a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">(</a>x<a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">)</a> == <a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">find</a><a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">(</a>y<a class="code hl_function" href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">)</a>; }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#a042d4bb179819d69d53f2b96e23b099e">   35</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_d_s_u.html#a042d4bb179819d69d53f2b96e23b099e">count</a>() { <span class="keywordflow">return</span> forest_count; }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="struct_d_s_u.html#a6aeff905458daf2f10fa96c68ff7f18d">   37</a></span>    <a class="code hl_function" href="struct_d_s_u.html#a6aeff905458daf2f10fa96c68ff7f18d">vector</a>&lt;<a class="code hl_function" href="struct_d_s_u.html#a6aeff905458daf2f10fa96c68ff7f18d">vi</a>&gt; <a class="code hl_function" href="struct_d_s_u.html#a6aeff905458daf2f10fa96c68ff7f18d">groups</a>() {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">int</span> n = par.size();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        vector&lt;vi&gt; ret(n);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i, n) ret[find(i)].push_back(i);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        ret.erase(remove_if(<a class="code hl_define" href="macro_8hpp.html#a7c9ad46191cf9ac6dbad29df0a0d69c1">all</a>(ret), [&amp;](<span class="keyword">const</span> vi&amp; v) { <span class="keywordflow">return</span> v.empty(); }), ret.end());</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
 </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    vi par,sz;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> forest_count;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    vi par, sz;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">int</span> forest_count;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
 </div>
 <div class="ttc" id="amacro_8hpp_html_a30fefd21a95478fd2827fae51ab3b995"><div class="ttname"><a href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a></div><div class="ttdeci">#define rep(...)</div><div class="ttdef"><b>Definition</b> <a href="macro_8hpp_source.html#l00008">macro.hpp:8</a></div></div>
 <div class="ttc" id="amacro_8hpp_html_a7c9ad46191cf9ac6dbad29df0a0d69c1"><div class="ttname"><a href="macro_8hpp.html#a7c9ad46191cf9ac6dbad29df0a0d69c1">all</a></div><div class="ttdeci">#define all(v)</div><div class="ttdef"><b>Definition</b> <a href="macro_8hpp_source.html#l00019">macro.hpp:19</a></div></div>
 <div class="ttc" id="astruct_d_s_u_html"><div class="ttname"><a href="struct_d_s_u.html">DSU</a></div><div class="ttdoc">Disjoint Set Union</div><div class="ttdef"><b>Definition</b> <a href="#l00005">dsu.hpp:5</a></div></div>
-<div class="ttc" id="astruct_d_s_u_html_a042d4bb179819d69d53f2b96e23b099e"><div class="ttname"><a href="struct_d_s_u.html#a042d4bb179819d69d53f2b96e23b099e">DSU::count</a></div><div class="ttdeci">int count()</div><div class="ttdef"><b>Definition</b> <a href="#l00032">dsu.hpp:32</a></div></div>
+<div class="ttc" id="astruct_d_s_u_html_a042d4bb179819d69d53f2b96e23b099e"><div class="ttname"><a href="struct_d_s_u.html#a042d4bb179819d69d53f2b96e23b099e">DSU::count</a></div><div class="ttdeci">int count()</div><div class="ttdef"><b>Definition</b> <a href="#l00035">dsu.hpp:35</a></div></div>
 <div class="ttc" id="astruct_d_s_u_html_a2037e5dac19248a4e5f2f70133fdea12"><div class="ttname"><a href="struct_d_s_u.html#a2037e5dac19248a4e5f2f70133fdea12">DSU::DSU</a></div><div class="ttdeci">DSU()=default</div></div>
-<div class="ttc" id="astruct_d_s_u_html_a6aeff905458daf2f10fa96c68ff7f18d"><div class="ttname"><a href="struct_d_s_u.html#a6aeff905458daf2f10fa96c68ff7f18d">DSU::groups</a></div><div class="ttdeci">vector&lt; vi &gt; groups()</div><div class="ttdef"><b>Definition</b> <a href="#l00034">dsu.hpp:34</a></div></div>
-<div class="ttc" id="astruct_d_s_u_html_a70d8917e08a86dd49446ce8263f675a3"><div class="ttname"><a href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">DSU::find</a></div><div class="ttdeci">int find(int x)</div><div class="ttdef"><b>Definition</b> <a href="#l00014">dsu.hpp:14</a></div></div>
-<div class="ttc" id="astruct_d_s_u_html_a81af0a8861251cc70ae491c6249e672d"><div class="ttname"><a href="struct_d_s_u.html#a81af0a8861251cc70ae491c6249e672d">DSU::merge</a></div><div class="ttdeci">bool merge(int x, int y)</div><div class="ttdef"><b>Definition</b> <a href="#l00019">dsu.hpp:19</a></div></div>
+<div class="ttc" id="astruct_d_s_u_html_a6aeff905458daf2f10fa96c68ff7f18d"><div class="ttname"><a href="struct_d_s_u.html#a6aeff905458daf2f10fa96c68ff7f18d">DSU::groups</a></div><div class="ttdeci">vector&lt; vi &gt; groups()</div><div class="ttdef"><b>Definition</b> <a href="#l00037">dsu.hpp:37</a></div></div>
+<div class="ttc" id="astruct_d_s_u_html_a70d8917e08a86dd49446ce8263f675a3"><div class="ttname"><a href="struct_d_s_u.html#a70d8917e08a86dd49446ce8263f675a3">DSU::find</a></div><div class="ttdeci">int find(int x)</div><div class="ttdef"><b>Definition</b> <a href="#l00015">dsu.hpp:15</a></div></div>
+<div class="ttc" id="astruct_d_s_u_html_a81af0a8861251cc70ae491c6249e672d"><div class="ttname"><a href="struct_d_s_u.html#a81af0a8861251cc70ae491c6249e672d">DSU::merge</a></div><div class="ttdeci">bool merge(int x, int y)</div><div class="ttdef"><b>Definition</b> <a href="#l00020">dsu.hpp:20</a></div></div>
 <div class="ttc" id="astruct_d_s_u_html_abbae2d8b88cba33b50386cbbf229685a"><div class="ttname"><a href="struct_d_s_u.html#abbae2d8b88cba33b50386cbbf229685a">DSU::DSU</a></div><div class="ttdeci">DSU(int n)</div><div class="ttdef"><b>Definition</b> <a href="#l00008">dsu.hpp:8</a></div></div>
-<div class="ttc" id="astruct_d_s_u_html_ad3a04e676273604d56db0344795cd693"><div class="ttname"><a href="struct_d_s_u.html#ad3a04e676273604d56db0344795cd693">DSU::same</a></div><div class="ttdeci">bool same(int x, int y)</div><div class="ttdef"><b>Definition</b> <a href="#l00030">dsu.hpp:30</a></div></div>
-<div class="ttc" id="astruct_d_s_u_html_ae15ca5c12804826f13632d23443e36e8"><div class="ttname"><a href="struct_d_s_u.html#ae15ca5c12804826f13632d23443e36e8">DSU::size</a></div><div class="ttdeci">int size(int x)</div><div class="ttdef"><b>Definition</b> <a href="#l00028">dsu.hpp:28</a></div></div>
+<div class="ttc" id="astruct_d_s_u_html_ad3a04e676273604d56db0344795cd693"><div class="ttname"><a href="struct_d_s_u.html#ad3a04e676273604d56db0344795cd693">DSU::same</a></div><div class="ttdeci">bool same(int x, int y)</div><div class="ttdef"><b>Definition</b> <a href="#l00033">dsu.hpp:33</a></div></div>
+<div class="ttc" id="astruct_d_s_u_html_ae15ca5c12804826f13632d23443e36e8"><div class="ttname"><a href="struct_d_s_u.html#ae15ca5c12804826f13632d23443e36e8">DSU::size</a></div><div class="ttdeci">int size(int x)</div><div class="ttdef"><b>Definition</b> <a href="#l00031">dsu.hpp:31</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

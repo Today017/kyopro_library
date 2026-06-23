@@ -1,7 +1,7 @@
 var searchData=
 [
   ['scc_2ehpp_0',['scc.hpp',['../scc_8hpp.html',1,'']]],
-  ['segtree_2ehpp_1',['segtree.hpp',['../data__structure_2segtree_8hpp.html',1,'(大域名前空間)'],['../misc_2segtree_8hpp.html',1,'(大域名前空間)']]],
+  ['segtree_2ehpp_1',['segtree.hpp',['../segtree_8hpp.html',1,'']]],
   ['segtree_5f2d_2ehpp_2',['segtree_2d.hpp',['../segtree__2d_8hpp.html',1,'']]],
   ['segtree_5fact_2ehpp_3',['segtree_act.hpp',['../segtree__act_8hpp.html',1,'']]],
   ['segtree_5fbeats_2ehpp_4',['segtree_beats.hpp',['../segtree__beats_8hpp.html',1,'']]],

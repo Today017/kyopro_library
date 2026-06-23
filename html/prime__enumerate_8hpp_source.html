@@ -106,19 +106,19 @@ $(function(){initNavTree('prime__enumerate_8hpp_source.html',''); initResizable(
 </div><!--header-->
 <div class="contents">
 <a href="prime__enumerate_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief 素数列挙</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@details n 以下の素数の配列を返す</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@note O(n log(log(n)))</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 素数列挙</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @details n 以下の素数の配列を返す</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @note O(n log(log(n)))</span></div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="prime__enumerate_8hpp.html#a39570ebc9b90a2fba37edd4319b41377">    7</a></span><a class="code hl_function" href="prime__enumerate_8hpp.html#a39570ebc9b90a2fba37edd4319b41377">vi</a> <a class="code hl_function" href="prime__enumerate_8hpp.html#a39570ebc9b90a2fba37edd4319b41377">PrimeEnumerate</a>(<span class="keywordtype">int</span> n) {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    vi prime, is_prime(n+1,<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    is_prime[0]=is_prime[1]=<span class="keyword">false</span>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=2; i&lt;=n; i++) {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    vi prime, is_prime(n + 1, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    is_prime[0] = is_prime[1] = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 2; i &lt;= n; i++) {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordflow">if</span>(is_prime[i]) {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            prime.push_back(i);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=2*i; j&lt;=n; j+=i) is_prime[j]=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 2 * i; j &lt;= n; j += i) is_prime[j] = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        }</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">return</span> prime;</div>

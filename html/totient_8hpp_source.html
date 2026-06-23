@@ -106,22 +106,23 @@ $(function(){initNavTree('totient_8hpp_source.html',''); initResizable(true); })
 </div><!--header-->
 <div class="contents">
 <a href="totient_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief オイラーのtotient関数</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@brief n 以下で n と互いに素な自然数の個数を返す。</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@note O(sqrt(N))</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief オイラーのtotient関数</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @brief n 以下で n と互いに素な自然数の個数を返す。</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @note O(sqrt(N))</span></div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="totient_8hpp.html#a56f751b8859fdd976f4812d1e01eac32">    7</a></span>ll <a class="code hl_function" href="totient_8hpp.html#a56f751b8859fdd976f4812d1e01eac32">Totient</a>(ll n) {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="comment">// totient(n) = n * (1-1/p1) * (1-1/p2) * ... * (1-1/pk) (p1,p2,...,pk は n の素因数)</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    ll ret=n;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">for</span>(ll i=2; i*i&lt;=n; i++) <span class="keywordflow">if</span>(n%i==0) {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        ret-=ret/i;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">while</span>(n%i==0) n/=i;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">if</span>(n&gt;1) ret-=ret/n;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    ll ret = n;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">for</span>(ll i = 2; i * i &lt;= n; i++)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordflow">if</span>(n % i == 0) {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            ret -= ret / i;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keywordflow">while</span>(n % i == 0) n /= i;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">if</span>(n &gt; 1) ret -= ret / n;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
 </div>
 <div class="ttc" id="atotient_8hpp_html_a56f751b8859fdd976f4812d1e01eac32"><div class="ttname"><a href="totient_8hpp.html#a56f751b8859fdd976f4812d1e01eac32">Totient</a></div><div class="ttdeci">ll Totient(ll n)</div><div class="ttdoc">オイラーのtotient関数</div><div class="ttdef"><b>Definition</b> <a href="#l00007">totient.hpp:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

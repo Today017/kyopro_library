@@ -1,7 +1,7 @@
 var struct_insertable_reversible_array =
 [
-    [ "node", "struct_insertable_reversible_array.html#ac4f64c428a0301ab54e833b321c09534", null ],
-    [ "node_ptr", "struct_insertable_reversible_array.html#a5d95b6579130721eb3575f2a8452d834", null ],
+    [ "node", "struct_insertable_reversible_array.html#ab1cf8ba464495734358ed89a0150c7a5", null ],
+    [ "node_ptr", "struct_insertable_reversible_array.html#a7353efe26e9788a63b45bc2cb7ef4554", null ],
     [ "InsertableReversibleArray", "struct_insertable_reversible_array.html#aa2087eb079b25efc16b6c5a6356a9299", null ],
     [ "InsertableReversibleArray", "struct_insertable_reversible_array.html#a8b180eeb6d7a237eb7abedb5975c42ab", null ],
     [ "InsertableReversibleArray", "struct_insertable_reversible_array.html#a2411bea8ef1cf9692bbaf7df9b83a210", null ],

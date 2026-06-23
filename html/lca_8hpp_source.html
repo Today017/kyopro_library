@@ -106,157 +106,161 @@ $(function(){initNavTree('lca_8hpp_source.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <a href="lca_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief LCA</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@ref verify: https://onlinejudge.u-aizu.ac.jp/status/users/Today03/submissions/1/GRL_5_C/judge/10572843/C++17</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief LCA</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @ref verify: https://onlinejudge.u-aizu.ac.jp/status/users/Today03/submissions/1/GRL_5_C/judge/10572843/C++17</span></div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_l_c_a.html">    6</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_l_c_a.html">LCA</a> {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#a4ac08a83bbc8108118eeaaee8f254d31">    7</a></span>    <a class="code hl_function" href="struct_l_c_a.html#a4ac08a83bbc8108118eeaaee8f254d31">LCA</a>()=<span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#a4ac08a83bbc8108118eeaaee8f254d31">    7</a></span>    <a class="code hl_function" href="struct_l_c_a.html#a4ac08a83bbc8108118eeaaee8f254d31">LCA</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#acf951faf112b414b518108a0c211a348">    9</a></span>    <a class="code hl_function" href="struct_l_c_a.html#acf951faf112b414b518108a0c211a348">LCA</a>(<span class="keyword">const</span> vector&lt;vi&gt;&amp; g, ii root=0) {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        ii n=g.size(), k=1;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordflow">while</span>((1&lt;&lt;k)&lt;n) k++;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        par=vector&lt;vi&gt;(k,vi(n,-1)),dep=vi(n);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        dfs(g,root,-1);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i,k-1) <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(j,n) par[i+1][j]=(par[i][j]==-1?-1:par[i][par[i][j]]);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#acf951faf112b414b518108a0c211a348">    9</a></span>    <a class="code hl_function" href="struct_l_c_a.html#acf951faf112b414b518108a0c211a348">LCA</a>(<span class="keyword">const</span> vector&lt;vi&gt;&amp; g, ii root = 0) {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        ii n = g.size(), k = 1;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordflow">while</span>((1 &lt;&lt; k) &lt; n) k++;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        par = vector&lt;vi&gt;(k, vi(n, -1)), dep = vi(n);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        dfs(g, root, -1);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i, k - 1) <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(j, n) par[i + 1][j] = (par[i][j] == -1 ? -1 : par[i][par[i][j]]);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
 </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#aa8c40ec272ba7de085dbed04146d10be">   17</a></span>    ii <a class="code hl_function" href="struct_l_c_a.html#aa8c40ec272ba7de085dbed04146d10be">lca</a>(ii u, ii v) {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">if</span>(dep[u]&lt;dep[v]) swap(u,v);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        ii k=par.size();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i,k) <span class="keywordflow">if</span>((dep[u]-dep[v])&gt;&gt;i&amp;1) u=par[i][u];</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">if</span>(u==v) <span class="keywordflow">return</span> u;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">for</span>(ii i=k-1; i&gt;=0; i--) <span class="keywordflow">if</span>(par[i][u]!=par[i][v]) u=par[i][u], v=par[i][v];</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">return</span> par[0][u];</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">if</span>(dep[u] &lt; dep[v]) swap(u, v);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        ii k = par.size();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i, k) <span class="keywordflow">if</span>((dep[u] - dep[v]) &gt;&gt; i &amp; 1) u = par[i][u];</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">if</span>(u == v) <span class="keywordflow">return</span> u;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">for</span>(ii i = k - 1; i &gt;= 0; i--)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keywordflow">if</span>(par[i][u] != par[i][v]) u = par[i][u], v = par[i][v];</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span> par[0][u];</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
 </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">   26</a></span>    ii <a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">distance</a>(ii u, ii v) { <span class="keywordflow">return</span> dep[u]+dep[v]-2*dep[lca(u,v)]; }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#a8bb73835c6c392b5e603a15bc9ca52b5">   28</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_l_c_a.html#a8bb73835c6c392b5e603a15bc9ca52b5">is_on_path</a>(ii u, ii v, ii x) { <span class="keywordflow">return</span> <a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">distance</a><a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">(</a>u<a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">,</a>x<a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">)</a>+<a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">distance</a><a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">(</a>x<a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">,</a>v<a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">)</a>==<a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">distance</a><a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">(</a>u<a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">,</a>v<a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">)</a>; }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#a1a1dce421dcb03335f45949338063dc1">   30</a></span>    ii <a class="code hl_function" href="struct_l_c_a.html#a1a1dce421dcb03335f45949338063dc1">climb</a>(ii u, ii d) {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        ii k=par.size();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">for</span>(ii i=k-1; i&gt;=0; i--) <span class="keywordflow">if</span>(d&gt;&gt;i&amp;1) u=par[i][u];</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">return</span> u;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">   27</a></span>    ii <a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">distance</a>(ii u, ii v) { <span class="keywordflow">return</span> dep[u] + dep[v] - 2 * dep[lca(u, v)]; }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#a8bb73835c6c392b5e603a15bc9ca52b5">   29</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_l_c_a.html#a8bb73835c6c392b5e603a15bc9ca52b5">is_on_path</a>(ii u, ii v, ii x) { <span class="keywordflow">return</span> <a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">distance</a><a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">(</a>u<a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">,</a> x<a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">)</a> + <a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">distance</a><a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">(</a>x<a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">,</a> v<a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">)</a> == <a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">distance</a><a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">(</a>u<a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">,</a> v<a class="code hl_function" href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">)</a>; }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#a1a1dce421dcb03335f45949338063dc1">   31</a></span>    ii <a class="code hl_function" href="struct_l_c_a.html#a1a1dce421dcb03335f45949338063dc1">climb</a>(ii u, ii d) {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        ii k = par.size();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">for</span>(ii i = k - 1; i &gt;= 0; i--)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">if</span>(d &gt;&gt; i &amp; 1) u = par[i][u];</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">return</span> u;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#af46ada881e3226e11c81b948d79c69db">   36</a></span>    <a class="code hl_variable" href="struct_l_c_a.html#af46ada881e3226e11c81b948d79c69db">vector</a>&lt;<a class="code hl_variable" href="struct_l_c_a.html#af46ada881e3226e11c81b948d79c69db">vi</a>&gt; <a class="code hl_variable" href="struct_l_c_a.html#af46ada881e3226e11c81b948d79c69db">par</a>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#a862310cda71aeb6269675d764393213f">   37</a></span>    <a class="code hl_variable" href="struct_l_c_a.html#a862310cda71aeb6269675d764393213f">vi</a> <a class="code hl_variable" href="struct_l_c_a.html#a862310cda71aeb6269675d764393213f">dep</a>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> dfs(<span class="keyword">const</span> vector&lt;vi&gt;&amp; g, ii now, ii pre) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        par[0][now]=pre; dep[now]=(pre==-1 ? 0 : dep[pre]+1);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">for</span>(ii nxt: g[now]) <span class="keywordflow">if</span>(nxt!=pre) dfs(g,nxt,now);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#af46ada881e3226e11c81b948d79c69db">   38</a></span>    <a class="code hl_variable" href="struct_l_c_a.html#af46ada881e3226e11c81b948d79c69db">vector</a>&lt;<a class="code hl_variable" href="struct_l_c_a.html#af46ada881e3226e11c81b948d79c69db">vi</a>&gt; <a class="code hl_variable" href="struct_l_c_a.html#af46ada881e3226e11c81b948d79c69db">par</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_l_c_a.html#a862310cda71aeb6269675d764393213f">   39</a></span>    <a class="code hl_variable" href="struct_l_c_a.html#a862310cda71aeb6269675d764393213f">vi</a> <a class="code hl_variable" href="struct_l_c_a.html#a862310cda71aeb6269675d764393213f">dep</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> dfs(<span class="keyword">const</span> vector&lt;vi&gt;&amp; g, ii now, ii pre) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        par[0][now] = pre;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        dep[now] = (pre == -1 ? 0 : dep[pre] + 1);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">for</span>(ii nxt : g[now])</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">if</span>(nxt != pre) dfs(g, nxt, now);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">//https://atcoder.jp/contests/abc460/submissions/76302152</span></div>
-<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html">   47</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_fast_l_c_a.html">FastLCA</a> {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#a7902a2234e918a688189f04120b6b153">   48</a></span>    ii <a class="code hl_variable" href="struct_fast_l_c_a.html#a7902a2234e918a688189f04120b6b153">n</a>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#a89b518bb43288c5c9023fe8ff623a2b5">   49</a></span>    <a class="code hl_variable" href="struct_fast_l_c_a.html#a89b518bb43288c5c9023fe8ff623a2b5">vi</a> <a class="code hl_variable" href="struct_fast_l_c_a.html#a89b518bb43288c5c9023fe8ff623a2b5">depth</a>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#ad99c8815900402cd9c1c573e69bf7c41">   50</a></span>    <a class="code hl_variable" href="struct_fast_l_c_a.html#ad99c8815900402cd9c1c573e69bf7c41">vi</a> <a class="code hl_variable" href="struct_fast_l_c_a.html#ad99c8815900402cd9c1c573e69bf7c41">first_visit</a>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">// st[i][j] : 長さ 2^i の区間における {深さ, 頂点番号} の最小値</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">   52</a></span>    <a class="code hl_variable" href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">vector</a>&lt;<a class="code hl_variable" href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">vector</a>&lt;<a class="code hl_variable" href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">pair</a>&lt;<a class="code hl_variable" href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">ii</a>, <a class="code hl_variable" href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">ii</a>&gt;&gt;&gt; <a class="code hl_variable" href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">st</a>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#abaf2ac7a3a8ab04ffca2eb46bfe97b8d">   53</a></span>    <a class="code hl_variable" href="struct_fast_l_c_a.html#abaf2ac7a3a8ab04ffca2eb46bfe97b8d">vi</a> <a class="code hl_variable" href="struct_fast_l_c_a.html#abaf2ac7a3a8ab04ffca2eb46bfe97b8d">log_table</a>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#a7150e3fb98b94ec264d24f3ff5c0b9f4">   54</a></span>    <a class="code hl_function" href="struct_fast_l_c_a.html#a7150e3fb98b94ec264d24f3ff5c0b9f4">FastLCA</a>()=<span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="comment">// adj は 0-indexed の隣接リスト、root は根の頂点番号</span></div>
-<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#a591a9bdb5ded5dddfd8d24a52c8f153e">   57</a></span>    <a class="code hl_function" href="struct_fast_l_c_a.html#a591a9bdb5ded5dddfd8d24a52c8f153e">FastLCA</a>(<span class="keyword">const</span> vector&lt;vi&gt;&amp; adj, ii root = 0) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_variable" href="struct_fast_l_c_a.html#a7902a2234e918a688189f04120b6b153">n</a> = adj.size();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        depth.assign(n, 0);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        first_visit.assign(n, -1);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        vector&lt;pair&lt;ii, ii&gt;&gt; euler_tour;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        euler_tour.reserve(2 * <a class="code hl_variable" href="struct_fast_l_c_a.html#a7902a2234e918a688189f04120b6b153">n</a>);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="comment">// オイラーツアーの構築</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">auto</span> dfs = [&amp;](<span class="keyword">auto</span>&amp; self, ii u, ii p, ii d) -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            first_visit[u] = euler_tour.size();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            euler_tour.push_back({d, u});</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            depth[u] = d;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">for</span> (ii v : adj[u]) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <span class="keywordflow">if</span> (v != p) {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                    self(self, v, u, d + 1);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                    <span class="comment">// 子から戻ってきたときにも追加</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    euler_tour.push_back({d, u});</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                }</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        };</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        dfs(dfs, root, -1, 0);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        ii m = euler_tour.size();</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="comment">// Sparse Table 用の対数テーブル事前計算</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        log_table.assign(m + 1, 0);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">for</span> (ii i = 2; i &lt;= m; i++) {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            log_table[i] = log_table[i &gt;&gt; 1] + 1;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="comment">// Sparse Table の構築</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        ii k = log_table[m] + 1;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        st.assign(k, vector&lt;pair&lt;ii, ii&gt;&gt;(m));</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">for</span> (ii i = 0; i &lt; m; i++) {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            st[0][i] = euler_tour[i];</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordflow">for</span> (ii j = 1; j &lt; k; j++) {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">for</span> (ii i = 0; i + (1 &lt;&lt; j) &lt;= m; i++) {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                st[j][i] = min(st[j - 1][i], st[j - 1][i + (1 &lt;&lt; (j - 1))]);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">// https://atcoder.jp/contests/abc460/submissions/76302152</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="};">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html">   51</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_fast_l_c_a.html">FastLCA</a> {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#a7902a2234e918a688189f04120b6b153">   52</a></span>    ii <a class="code hl_variable" href="struct_fast_l_c_a.html#a7902a2234e918a688189f04120b6b153">n</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#a89b518bb43288c5c9023fe8ff623a2b5">   53</a></span>    <a class="code hl_variable" href="struct_fast_l_c_a.html#a89b518bb43288c5c9023fe8ff623a2b5">vi</a> <a class="code hl_variable" href="struct_fast_l_c_a.html#a89b518bb43288c5c9023fe8ff623a2b5">depth</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#ad99c8815900402cd9c1c573e69bf7c41">   54</a></span>    <a class="code hl_variable" href="struct_fast_l_c_a.html#ad99c8815900402cd9c1c573e69bf7c41">vi</a> <a class="code hl_variable" href="struct_fast_l_c_a.html#ad99c8815900402cd9c1c573e69bf7c41">first_visit</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">// st[i][j] : 長さ 2^i の区間における {深さ, 頂点番号} の最小値</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">   56</a></span>    <a class="code hl_variable" href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">vector</a>&lt;<a class="code hl_variable" href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">vector</a>&lt;<a class="code hl_variable" href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">pair</a>&lt;<a class="code hl_variable" href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">ii</a>, <a class="code hl_variable" href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">ii</a>&gt;&gt;&gt; <a class="code hl_variable" href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">st</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#abaf2ac7a3a8ab04ffca2eb46bfe97b8d">   57</a></span>    <a class="code hl_variable" href="struct_fast_l_c_a.html#abaf2ac7a3a8ab04ffca2eb46bfe97b8d">vi</a> <a class="code hl_variable" href="struct_fast_l_c_a.html#abaf2ac7a3a8ab04ffca2eb46bfe97b8d">log_table</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#a7150e3fb98b94ec264d24f3ff5c0b9f4">   58</a></span>    <a class="code hl_function" href="struct_fast_l_c_a.html#a7150e3fb98b94ec264d24f3ff5c0b9f4">FastLCA</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">// adj は 0-indexed の隣接リスト、root は根の頂点番号</span></div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#a591a9bdb5ded5dddfd8d24a52c8f153e">   61</a></span>    <a class="code hl_function" href="struct_fast_l_c_a.html#a591a9bdb5ded5dddfd8d24a52c8f153e">FastLCA</a>(<span class="keyword">const</span> vector&lt;vi&gt;&amp; adj, ii root = 0) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_variable" href="struct_fast_l_c_a.html#a7902a2234e918a688189f04120b6b153">n</a> = adj.size();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        depth.assign(n, 0);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        first_visit.assign(n, -1);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        vector&lt;pair&lt;ii, ii&gt;&gt; euler_tour;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        euler_tour.reserve(2 * <a class="code hl_variable" href="struct_fast_l_c_a.html#a7902a2234e918a688189f04120b6b153">n</a>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="comment">// オイラーツアーの構築</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keyword">auto</span> dfs = [&amp;](<span class="keyword">auto</span>&amp; self, ii u, ii p, ii d) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            first_visit[u] = euler_tour.size();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            euler_tour.push_back({d, u});</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            depth[u] = d;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">for</span>(ii v : adj[u]) {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keywordflow">if</span>(v != p) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                    self(self, v, u, d + 1);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                    <span class="comment">// 子から戻ってきたときにも追加</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                    euler_tour.push_back({d, u});</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        };</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        dfs(dfs, root, -1, 0);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        ii m = euler_tour.size();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="comment">// Sparse Table 用の対数テーブル事前計算</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        log_table.assign(m + 1, 0);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">for</span>(ii i = 2; i &lt;= m; i++) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            log_table[i] = log_table[i &gt;&gt; 1] + 1;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="comment">// Sparse Table の構築</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        ii k = log_table[m] + 1;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        st.assign(k, vector&lt;pair&lt;ii, ii&gt;&gt;(m));</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordflow">for</span>(ii i = 0; i &lt; m; i++) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            st[0][i] = euler_tour[i];</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">for</span>(ii j = 1; j &lt; k; j++) {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordflow">for</span>(ii i = 0; i + (1 &lt;&lt; j) &lt;= m; i++) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                st[j][i] = min(st[j - 1][i], st[j - 1][i + (1 &lt;&lt; (j - 1))]);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
 </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">// u と v の LCA を O(1) で取得</span></div>
-<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#a42addf365b4f6f40695f461c3edce956">  102</a></span>    ii <a class="code hl_function" href="struct_fast_l_c_a.html#a42addf365b4f6f40695f461c3edce956">lca</a>(ii u, ii v) <span class="keyword">const</span> {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        ii l = first_visit[u];</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        ii r = first_visit[v];</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">if</span> (l &gt; r) swap(l, r);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        ii j = log_table[r - l + 1];</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="comment">// 2つの区間の最小値を取る (区間は被っていてもよい性質を利用)</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">return</span> min(st[j][l], st[j][r - (1 &lt;&lt; j) + 1]).second;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="comment">// u と v の LCA を O(1) で取得</span></div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#a42addf365b4f6f40695f461c3edce956">  106</a></span>    ii <a class="code hl_function" href="struct_fast_l_c_a.html#a42addf365b4f6f40695f461c3edce956">lca</a>(ii u, ii v) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        ii l = first_visit[u];</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        ii r = first_visit[v];</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">if</span>(l &gt; r) swap(l, r);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        ii j = log_table[r - l + 1];</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="comment">// 2つの区間の最小値を取る (区間は被っていてもよい性質を利用)</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">return</span> min(st[j][l], st[j][r - (1 &lt;&lt; j) + 1]).second;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
 </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="comment">// u と v の距離を O(1) で取得</span></div>
-<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#aa8b13b6ccd96e731a728567ed7fef8a1">  113</a></span>    ii <a class="code hl_function" href="struct_fast_l_c_a.html#aa8b13b6ccd96e731a728567ed7fef8a1">dist</a>(ii u, ii v) <span class="keyword">const</span> {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">return</span> depth[u] + depth[v] - 2 * depth[lca(u, v)];</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">// u と v の距離を O(1) で取得</span></div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="struct_fast_l_c_a.html#aa8b13b6ccd96e731a728567ed7fef8a1">  117</a></span>    ii <a class="code hl_function" href="struct_fast_l_c_a.html#aa8b13b6ccd96e731a728567ed7fef8a1">dist</a>(ii u, ii v) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">return</span> depth[u] + depth[v] - 2 * depth[lca(u, v)];</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
 </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>};</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>};</div>
 </div>
 <div class="ttc" id="amacro_8hpp_html_a30fefd21a95478fd2827fae51ab3b995"><div class="ttname"><a href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a></div><div class="ttdeci">#define rep(...)</div><div class="ttdef"><b>Definition</b> <a href="macro_8hpp_source.html#l00008">macro.hpp:8</a></div></div>
-<div class="ttc" id="astruct_fast_l_c_a_html"><div class="ttname"><a href="struct_fast_l_c_a.html">FastLCA</a></div><div class="ttdef"><b>Definition</b> <a href="#l00047">lca.hpp:47</a></div></div>
-<div class="ttc" id="astruct_fast_l_c_a_html_a273b763056d0f194b38d4e34d0b59390"><div class="ttname"><a href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">FastLCA::st</a></div><div class="ttdeci">vector&lt; vector&lt; pair&lt; ii, ii &gt; &gt; &gt; st</div><div class="ttdef"><b>Definition</b> <a href="#l00052">lca.hpp:52</a></div></div>
-<div class="ttc" id="astruct_fast_l_c_a_html_a42addf365b4f6f40695f461c3edce956"><div class="ttname"><a href="struct_fast_l_c_a.html#a42addf365b4f6f40695f461c3edce956">FastLCA::lca</a></div><div class="ttdeci">ii lca(ii u, ii v) const</div><div class="ttdef"><b>Definition</b> <a href="#l00102">lca.hpp:102</a></div></div>
-<div class="ttc" id="astruct_fast_l_c_a_html_a591a9bdb5ded5dddfd8d24a52c8f153e"><div class="ttname"><a href="struct_fast_l_c_a.html#a591a9bdb5ded5dddfd8d24a52c8f153e">FastLCA::FastLCA</a></div><div class="ttdeci">FastLCA(const vector&lt; vi &gt; &amp;adj, ii root=0)</div><div class="ttdef"><b>Definition</b> <a href="#l00057">lca.hpp:57</a></div></div>
+<div class="ttc" id="astruct_fast_l_c_a_html"><div class="ttname"><a href="struct_fast_l_c_a.html">FastLCA</a></div><div class="ttdef"><b>Definition</b> <a href="#l00051">lca.hpp:51</a></div></div>
+<div class="ttc" id="astruct_fast_l_c_a_html_a273b763056d0f194b38d4e34d0b59390"><div class="ttname"><a href="struct_fast_l_c_a.html#a273b763056d0f194b38d4e34d0b59390">FastLCA::st</a></div><div class="ttdeci">vector&lt; vector&lt; pair&lt; ii, ii &gt; &gt; &gt; st</div><div class="ttdef"><b>Definition</b> <a href="#l00056">lca.hpp:56</a></div></div>
+<div class="ttc" id="astruct_fast_l_c_a_html_a42addf365b4f6f40695f461c3edce956"><div class="ttname"><a href="struct_fast_l_c_a.html#a42addf365b4f6f40695f461c3edce956">FastLCA::lca</a></div><div class="ttdeci">ii lca(ii u, ii v) const</div><div class="ttdef"><b>Definition</b> <a href="#l00106">lca.hpp:106</a></div></div>
+<div class="ttc" id="astruct_fast_l_c_a_html_a591a9bdb5ded5dddfd8d24a52c8f153e"><div class="ttname"><a href="struct_fast_l_c_a.html#a591a9bdb5ded5dddfd8d24a52c8f153e">FastLCA::FastLCA</a></div><div class="ttdeci">FastLCA(const vector&lt; vi &gt; &amp;adj, ii root=0)</div><div class="ttdef"><b>Definition</b> <a href="#l00061">lca.hpp:61</a></div></div>
 <div class="ttc" id="astruct_fast_l_c_a_html_a7150e3fb98b94ec264d24f3ff5c0b9f4"><div class="ttname"><a href="struct_fast_l_c_a.html#a7150e3fb98b94ec264d24f3ff5c0b9f4">FastLCA::FastLCA</a></div><div class="ttdeci">FastLCA()=default</div></div>
-<div class="ttc" id="astruct_fast_l_c_a_html_a7902a2234e918a688189f04120b6b153"><div class="ttname"><a href="struct_fast_l_c_a.html#a7902a2234e918a688189f04120b6b153">FastLCA::n</a></div><div class="ttdeci">ii n</div><div class="ttdef"><b>Definition</b> <a href="#l00048">lca.hpp:48</a></div></div>
-<div class="ttc" id="astruct_fast_l_c_a_html_a89b518bb43288c5c9023fe8ff623a2b5"><div class="ttname"><a href="struct_fast_l_c_a.html#a89b518bb43288c5c9023fe8ff623a2b5">FastLCA::depth</a></div><div class="ttdeci">vi depth</div><div class="ttdef"><b>Definition</b> <a href="#l00049">lca.hpp:49</a></div></div>
-<div class="ttc" id="astruct_fast_l_c_a_html_aa8b13b6ccd96e731a728567ed7fef8a1"><div class="ttname"><a href="struct_fast_l_c_a.html#aa8b13b6ccd96e731a728567ed7fef8a1">FastLCA::dist</a></div><div class="ttdeci">ii dist(ii u, ii v) const</div><div class="ttdef"><b>Definition</b> <a href="#l00113">lca.hpp:113</a></div></div>
-<div class="ttc" id="astruct_fast_l_c_a_html_abaf2ac7a3a8ab04ffca2eb46bfe97b8d"><div class="ttname"><a href="struct_fast_l_c_a.html#abaf2ac7a3a8ab04ffca2eb46bfe97b8d">FastLCA::log_table</a></div><div class="ttdeci">vi log_table</div><div class="ttdef"><b>Definition</b> <a href="#l00053">lca.hpp:53</a></div></div>
-<div class="ttc" id="astruct_fast_l_c_a_html_ad99c8815900402cd9c1c573e69bf7c41"><div class="ttname"><a href="struct_fast_l_c_a.html#ad99c8815900402cd9c1c573e69bf7c41">FastLCA::first_visit</a></div><div class="ttdeci">vi first_visit</div><div class="ttdef"><b>Definition</b> <a href="#l00050">lca.hpp:50</a></div></div>
-<div class="ttc" id="astruct_l_c_a_html"><div class="ttname"><a href="struct_l_c_a.html">LCA</a></div><div class="ttdoc">LCA</div><div class="ttdef"><b>Definition</b> <a href="#l00006">lca.hpp:6</a></div></div>
-<div class="ttc" id="astruct_l_c_a_html_a1a1dce421dcb03335f45949338063dc1"><div class="ttname"><a href="struct_l_c_a.html#a1a1dce421dcb03335f45949338063dc1">LCA::climb</a></div><div class="ttdeci">ii climb(ii u, ii d)</div><div class="ttdef"><b>Definition</b> <a href="#l00030">lca.hpp:30</a></div></div>
+<div class="ttc" id="astruct_fast_l_c_a_html_a7902a2234e918a688189f04120b6b153"><div class="ttname"><a href="struct_fast_l_c_a.html#a7902a2234e918a688189f04120b6b153">FastLCA::n</a></div><div class="ttdeci">ii n</div><div class="ttdef"><b>Definition</b> <a href="#l00052">lca.hpp:52</a></div></div>
+<div class="ttc" id="astruct_fast_l_c_a_html_a89b518bb43288c5c9023fe8ff623a2b5"><div class="ttname"><a href="struct_fast_l_c_a.html#a89b518bb43288c5c9023fe8ff623a2b5">FastLCA::depth</a></div><div class="ttdeci">vi depth</div><div class="ttdef"><b>Definition</b> <a href="#l00053">lca.hpp:53</a></div></div>
+<div class="ttc" id="astruct_fast_l_c_a_html_aa8b13b6ccd96e731a728567ed7fef8a1"><div class="ttname"><a href="struct_fast_l_c_a.html#aa8b13b6ccd96e731a728567ed7fef8a1">FastLCA::dist</a></div><div class="ttdeci">ii dist(ii u, ii v) const</div><div class="ttdef"><b>Definition</b> <a href="#l00117">lca.hpp:117</a></div></div>
+<div class="ttc" id="astruct_fast_l_c_a_html_abaf2ac7a3a8ab04ffca2eb46bfe97b8d"><div class="ttname"><a href="struct_fast_l_c_a.html#abaf2ac7a3a8ab04ffca2eb46bfe97b8d">FastLCA::log_table</a></div><div class="ttdeci">vi log_table</div><div class="ttdef"><b>Definition</b> <a href="#l00057">lca.hpp:57</a></div></div>
+<div class="ttc" id="astruct_fast_l_c_a_html_ad99c8815900402cd9c1c573e69bf7c41"><div class="ttname"><a href="struct_fast_l_c_a.html#ad99c8815900402cd9c1c573e69bf7c41">FastLCA::first_visit</a></div><div class="ttdeci">vi first_visit</div><div class="ttdef"><b>Definition</b> <a href="#l00054">lca.hpp:54</a></div></div>
+<div class="ttc" id="astruct_l_c_a_html"><div class="ttname"><a href="struct_l_c_a.html">LCA</a></div><div class="ttdoc">LCA verify: https://onlinejudge.u-aizu.ac.jp/status/users/Today03/submissions/1/GRL_5_C/judge/1057284...</div><div class="ttdef"><b>Definition</b> <a href="#l00006">lca.hpp:6</a></div></div>
+<div class="ttc" id="astruct_l_c_a_html_a1a1dce421dcb03335f45949338063dc1"><div class="ttname"><a href="struct_l_c_a.html#a1a1dce421dcb03335f45949338063dc1">LCA::climb</a></div><div class="ttdeci">ii climb(ii u, ii d)</div><div class="ttdef"><b>Definition</b> <a href="#l00031">lca.hpp:31</a></div></div>
 <div class="ttc" id="astruct_l_c_a_html_a4ac08a83bbc8108118eeaaee8f254d31"><div class="ttname"><a href="struct_l_c_a.html#a4ac08a83bbc8108118eeaaee8f254d31">LCA::LCA</a></div><div class="ttdeci">LCA()=default</div></div>
-<div class="ttc" id="astruct_l_c_a_html_a862310cda71aeb6269675d764393213f"><div class="ttname"><a href="struct_l_c_a.html#a862310cda71aeb6269675d764393213f">LCA::dep</a></div><div class="ttdeci">vi dep</div><div class="ttdef"><b>Definition</b> <a href="#l00037">lca.hpp:37</a></div></div>
-<div class="ttc" id="astruct_l_c_a_html_a8bb73835c6c392b5e603a15bc9ca52b5"><div class="ttname"><a href="struct_l_c_a.html#a8bb73835c6c392b5e603a15bc9ca52b5">LCA::is_on_path</a></div><div class="ttdeci">bool is_on_path(ii u, ii v, ii x)</div><div class="ttdef"><b>Definition</b> <a href="#l00028">lca.hpp:28</a></div></div>
+<div class="ttc" id="astruct_l_c_a_html_a862310cda71aeb6269675d764393213f"><div class="ttname"><a href="struct_l_c_a.html#a862310cda71aeb6269675d764393213f">LCA::dep</a></div><div class="ttdeci">vi dep</div><div class="ttdef"><b>Definition</b> <a href="#l00039">lca.hpp:39</a></div></div>
+<div class="ttc" id="astruct_l_c_a_html_a8bb73835c6c392b5e603a15bc9ca52b5"><div class="ttname"><a href="struct_l_c_a.html#a8bb73835c6c392b5e603a15bc9ca52b5">LCA::is_on_path</a></div><div class="ttdeci">bool is_on_path(ii u, ii v, ii x)</div><div class="ttdef"><b>Definition</b> <a href="#l00029">lca.hpp:29</a></div></div>
 <div class="ttc" id="astruct_l_c_a_html_aa8c40ec272ba7de085dbed04146d10be"><div class="ttname"><a href="struct_l_c_a.html#aa8c40ec272ba7de085dbed04146d10be">LCA::lca</a></div><div class="ttdeci">ii lca(ii u, ii v)</div><div class="ttdef"><b>Definition</b> <a href="#l00017">lca.hpp:17</a></div></div>
 <div class="ttc" id="astruct_l_c_a_html_acf951faf112b414b518108a0c211a348"><div class="ttname"><a href="struct_l_c_a.html#acf951faf112b414b518108a0c211a348">LCA::LCA</a></div><div class="ttdeci">LCA(const vector&lt; vi &gt; &amp;g, ii root=0)</div><div class="ttdef"><b>Definition</b> <a href="#l00009">lca.hpp:9</a></div></div>
-<div class="ttc" id="astruct_l_c_a_html_ad18c04513d9e98cb6cb8b69d6d8a6337"><div class="ttname"><a href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">LCA::distance</a></div><div class="ttdeci">ii distance(ii u, ii v)</div><div class="ttdef"><b>Definition</b> <a href="#l00026">lca.hpp:26</a></div></div>
-<div class="ttc" id="astruct_l_c_a_html_af46ada881e3226e11c81b948d79c69db"><div class="ttname"><a href="struct_l_c_a.html#af46ada881e3226e11c81b948d79c69db">LCA::par</a></div><div class="ttdeci">vector&lt; vi &gt; par</div><div class="ttdef"><b>Definition</b> <a href="#l00036">lca.hpp:36</a></div></div>
+<div class="ttc" id="astruct_l_c_a_html_ad18c04513d9e98cb6cb8b69d6d8a6337"><div class="ttname"><a href="struct_l_c_a.html#ad18c04513d9e98cb6cb8b69d6d8a6337">LCA::distance</a></div><div class="ttdeci">ii distance(ii u, ii v)</div><div class="ttdef"><b>Definition</b> <a href="#l00027">lca.hpp:27</a></div></div>
+<div class="ttc" id="astruct_l_c_a_html_af46ada881e3226e11c81b948d79c69db"><div class="ttname"><a href="struct_l_c_a.html#af46ada881e3226e11c81b948d79c69db">LCA::par</a></div><div class="ttdeci">vector&lt; vi &gt; par</div><div class="ttdef"><b>Definition</b> <a href="#l00038">lca.hpp:38</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

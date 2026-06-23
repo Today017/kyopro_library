@@ -106,24 +106,29 @@ $(function(){initNavTree('queue_8hpp_source.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <a href="queue_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief Simple Queue</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Simple Queue</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_queue.html">    6</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_queue.html">Queue</a> {</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_queue.html#af73bb29c868f7b37f369c668f114bd9f">    7</a></span>    <a class="code hl_function" href="struct_queue.html#af73bb29c868f7b37f369c668f114bd9f">Queue</a>() {}</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_queue.html#a10e62d56b49ec01e1ae96c408c269e35">    8</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_queue.html#a10e62d56b49ec01e1ae96c408c269e35">push</a>(<span class="keyword">const</span> T&amp; x) { dat.push_back(x); }</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_queue.html#abeee018138cbb5226e5352a5788e23bd">    9</a></span>    T <a class="code hl_function" href="struct_queue.html#abeee018138cbb5226e5352a5788e23bd">pop</a>() { <span class="keywordflow">return</span> dat[cur++]; }</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_queue.html#ae725ac8696b74e70f24a0f372314e220">   10</a></span>    T&amp; <a class="code hl_function" href="struct_queue.html#ae725ac8696b74e70f24a0f372314e220">front</a>() { <span class="keywordflow">return</span> dat[cur]; }</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_queue.html#a67d5e094f07f44dcadd6811f69d18690">   11</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_queue.html#a67d5e094f07f44dcadd6811f69d18690">size</a>() { <span class="keywordflow">return</span> dat.size()-cur; }</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_queue.html#a5530ceb38c44db1c9642f84fa7f36c07">   12</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_queue.html#a5530ceb38c44db1c9642f84fa7f36c07">empty</a>() { <span class="keywordflow">return</span> cur==dat.size(); }</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_queue.html#acb12e3d108397a77e412d43cdd0b2836">   13</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_queue.html#acb12e3d108397a77e412d43cdd0b2836">clear</a>() { dat.clear(); cur=0; }</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    vector&lt;T&gt; dat;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> cur=0;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>};</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_queue.html#a67d5e094f07f44dcadd6811f69d18690">   11</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_queue.html#a67d5e094f07f44dcadd6811f69d18690">size</a>() { <span class="keywordflow">return</span> dat.size() - cur; }</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_queue.html#a5530ceb38c44db1c9642f84fa7f36c07">   12</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_queue.html#a5530ceb38c44db1c9642f84fa7f36c07">empty</a>() { <span class="keywordflow">return</span> cur == dat.size(); }</div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_queue.html#acb12e3d108397a77e412d43cdd0b2836">   13</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_queue.html#acb12e3d108397a77e412d43cdd0b2836">clear</a>() {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        dat.clear();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        cur = 0;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
+</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    vector&lt;T&gt; dat;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">int</span> cur = 0;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
 </div>
 <div class="ttc" id="astruct_queue_html"><div class="ttname"><a href="struct_queue.html">Queue</a></div><div class="ttdoc">Simple Queue</div><div class="ttdef"><b>Definition</b> <a href="#l00006">queue.hpp:6</a></div></div>
 <div class="ttc" id="astruct_queue_html_a10e62d56b49ec01e1ae96c408c269e35"><div class="ttname"><a href="struct_queue.html#a10e62d56b49ec01e1ae96c408c269e35">Queue::push</a></div><div class="ttdeci">void push(const T &amp;x)</div><div class="ttdef"><b>Definition</b> <a href="#l00008">queue.hpp:8</a></div></div>

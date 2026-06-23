@@ -8,7 +8,5 @@ var struct_comb =
     [ "factinv", "struct_comb.html#ae7da039c0809fe6098e655b0957690a1", null ],
     [ "operator()", "struct_comb.html#aeaabd710b8c3740e3720a2f1542f4482", null ],
     [ "cataran", "struct_comb.html#a04e54cb9483d9efa7db9b7a6f55b5664", null ],
-    [ "combslow", "struct_comb.html#a58401a2684b9c19b888cce9ed574ae1d", null ],
-    [ "makegroup_0ok", "struct_comb.html#a61fb0d17198539584fabc545919740f4", null ],
-    [ "makegroup_0ng", "struct_comb.html#a7da848ce344bb52cd1552f0463a21860", null ]
+    [ "combslow", "struct_comb.html#a58401a2684b9c19b888cce9ed574ae1d", null ]
 ];

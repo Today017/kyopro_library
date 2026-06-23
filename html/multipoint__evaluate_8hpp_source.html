@@ -106,30 +106,30 @@ $(function(){initNavTree('multipoint__evaluate_8hpp_source.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 <a href="multipoint__evaluate_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/math/fps.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/math/fps.hpp&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@brief n 次多項式 f について、n 個の点 x[i] における f(x[i]) を返す</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@note O(n (log(n))^2)</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @brief n 次多項式 f について、n 個の点 x[i] における f(x[i]) を返す</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @note O(n (log(n))^2)</span></div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="multipoint__evaluate_8hpp.html#a15318bf248e53b3ce5a596112120997f">    7</a></span><a class="code hl_function" href="multipoint__evaluate_8hpp.html#a15318bf248e53b3ce5a596112120997f">Poly</a> <a class="code hl_function" href="multipoint__evaluate_8hpp.html#a15318bf248e53b3ce5a596112120997f">MultipointEvaluate</a>(Poly f, Poly x) {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">int</span> n=x.size();</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">if</span>(n==0) <span class="keywordflow">return</span>{};</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">if</span>(n==1) {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        Mod998 ret=0, tmp=1;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">for</span>(Mod998 a: f) ret+=a*tmp, tmp*=x[0];</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">int</span> n = x.size();</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">if</span>(n == 0) <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">if</span>(n == 1) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        Mod998 ret = 0, tmp = 1;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">for</span>(Mod998 a : f) ret += a * tmp, tmp *= x[0];</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">return</span> {ret};</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> n2=1;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">while</span>(n2&lt;n) n2&lt;&lt;=1;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    vector&lt;Poly&gt; g(n2*2,{1});</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i,n) g[n2+i]={-x[i],1};</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">for</span>(ll i=n2-1; i&gt;0; i--) g[i]=Fps::Mul(g[i&lt;&lt;1],g[i&lt;&lt;1|1]);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> n2 = 1;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">while</span>(n2 &lt; n) n2 &lt;&lt;= 1;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    vector&lt;Poly&gt; g(n2 * 2, {1});</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i, n) g[n2 + i] = {-x[i], 1};</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">for</span>(ll i = n2 - 1; i &gt; 0; i--) g[i] = Fps::Mul(g[i &lt;&lt; 1], g[i &lt;&lt; 1 | 1]);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    g[1]=Fps::Div(f,g[1]).second;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=2; i&lt;n2+n; i++) g[i]=Fps::Div(g[i&gt;&gt;1],g[i]).second;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    g[1] = Fps::Div(f, g[1]).second;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 2; i &lt; n2 + n; i++) g[i] = Fps::Div(g[i &gt;&gt; 1], g[i]).second;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Poly ret(n);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i,n) ret[i]=g[n2+i][0];</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i, n) ret[i] = g[n2 + i][0];</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 </div>

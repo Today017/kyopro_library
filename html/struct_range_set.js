@@ -5,5 +5,5 @@ var struct_range_set =
     [ "erase", "struct_range_set.html#aa6a90f2356f53c19b2234c10f6002fa2", null ],
     [ "is_covered", "struct_range_set.html#ae210a109dde6a0646562b2970f9c7447", null ],
     [ "covering_range", "struct_range_set.html#a1c12858463c77800b9b903a426e55e13", null ],
-    [ "dat", "struct_range_set.html#afd64d053f60f24ea602e0d98461f60ba", null ]
+    [ "dat", "struct_range_set.html#aba5d9428daec2894dac9d2302426d112", null ]
 ];

@@ -7,7 +7,7 @@ var searchData=
   ['included_4',['included',['../classexp_1_1_expander.html#a18d84a660ac3b120ae72ae7c3af47b57',1,'exp.Expander.included'],['../classexp___a_h_c_1_1_expander.html#a2e602d36bc1ed17bcd2b31bb17128fef',1,'exp_AHC.Expander.included']]],
   ['indeg_5',['indeg',['../struct_graph.html#a5287ba5a714d4edc344540fcbeb61254',1,'Graph']]],
   ['inf_6',['INF',['../type_8hpp.html#ab3b9a48569ad55cf3509741732ffd642',1,'type.hpp']]],
-  ['inf_7',['inf',['../struct_r_m_q.html#a00eb7106e3197b387f0ce45e206f99bb',1,'RMQ::inf'],['../type_8hpp.html#a99cdfe526f37d7ed119181c560b87a2e',1,'inf:&#160;type.hpp']]],
+  ['inf_7',['inf',['../type_8hpp.html#a99cdfe526f37d7ed119181c560b87a2e',1,'type.hpp']]],
   ['inf_3c_20f64_20_3e_8',['inf&lt; f64 &gt;',['../type_8hpp.html#a9341f9b01850bd447944d926faee6817',1,'type.hpp']]],
   ['inf_3c_20f80_20_3e_9',['inf&lt; f80 &gt;',['../type_8hpp.html#ab742b9053a9e64aa98589ec61b74639d',1,'type.hpp']]],
   ['inf_3c_20i128_20_3e_10',['inf&lt; i128 &gt;',['../type_8hpp.html#a6b876f7e82e12718035e92d6a2992a30',1,'type.hpp']]],

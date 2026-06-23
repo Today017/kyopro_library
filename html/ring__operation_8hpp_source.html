@@ -106,55 +106,55 @@ $(function(){initNavTree('ring__operation_8hpp_source.html',''); initResizable(t
 </div><!--header-->
 <div class="contents">
 <a href="ring__operation_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief 円環上での計算</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 円環上での計算</span></div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespace_ring_operation.html">    5</a></span><span class="keyword">namespace</span> <a class="code hl_namespace" href="namespace_ring_operation.html">RingOperation</a> {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="comment">///@brief 円環上で p1-&gt;p2 に+方向に移動する際に target を通過するかを判定する。</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">///@ref verify: https://atcoder.jp/contests/abc367/tasks/abc367_a</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="comment">/// @brief 円環上で p1-&gt;p2 に+方向に移動する際に target を通過するかを判定する。</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">/// @ref verify: https://atcoder.jp/contests/abc367/tasks/abc367_a</span></div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880">    8</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880">BetweenIncrement</a>(ll p1, ll p2, ll target) {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keywordflow">if</span>(p1==p2) <span class="keywordflow">return</span> p1==target;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">return</span> (target-p2)*(p2-p1)*(p1-target)&gt;=0;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keywordflow">if</span>(p1 == p2) <span class="keywordflow">return</span> p1 == target;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">return</span> (target - p2) * (p2 - p1) * (p1 - target) &gt;= 0;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
 </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">///@brief 円環上で p1-&gt;p2 に-方向に移動する際に target を通過するかを判定する。</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">/// @brief 円環上で p1-&gt;p2 に-方向に移動する際に target を通過するかを判定する。</span></div>
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespace_ring_operation.html#abbd2d6898934893b27d5f9efd7ea650f">   14</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespace_ring_operation.html#abbd2d6898934893b27d5f9efd7ea650f">BetweenDecrement</a>(ll p1, ll p2, ll target) {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        swap(p1,p2);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880">BetweenIncrement</a><a class="code hl_function" href="namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880">(</a>p1<a class="code hl_function" href="namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880">,</a>p2<a class="code hl_function" href="namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880">,</a>target<a class="code hl_function" href="namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880">)</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        swap(p1, p2);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880">BetweenIncrement</a><a class="code hl_function" href="namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880">(</a>p1<a class="code hl_function" href="namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880">,</a> p2<a class="code hl_function" href="namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880">,</a> target<a class="code hl_function" href="namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880">)</a>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
 </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">///@brief サイズ n の円環上で p1-&gt;p2 に移動する距離を返す。</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">/// @brief サイズ n の円環上で p1-&gt;p2 に移動する距離を返す。</span></div>
 <div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespace_ring_operation.html#a1a1a27cb0bba9c80fd62cb86792e356a">   20</a></span>    ll <a class="code hl_function" href="namespace_ring_operation.html#a1a1a27cb0bba9c80fd62cb86792e356a">DistanceMin</a>(ll p1, ll p2, ll n) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">if</span>(p1&gt;p2) swap(p1,p2);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">return</span> min(p2-p1,n-(p2-p1));</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">if</span>(p1 &gt; p2) swap(p1, p2);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">return</span> min(p2 - p1, n - (p2 - p1));</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
 </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">///@brief サイズ n の円環上で p1-&gt;p2 に+方向に移動する距離を返す。</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">/// @brief サイズ n の円環上で p1-&gt;p2 に+方向に移動する距離を返す。</span></div>
 <div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespace_ring_operation.html#a223c526963880591f58768c9c16e87e6">   26</a></span>    ll <a class="code hl_function" href="namespace_ring_operation.html#a223c526963880591f58768c9c16e87e6">DistanceIncrement</a>(ll p1, ll p2, ll n) {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">return</span> p1&lt;p2 ? p2-p1 : (n+p2-p1)%n;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">return</span> p1 &lt; p2 ? p2 - p1 : (n + p2 - p1) % n;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
 </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">///@brief サイズ n の円環上で p1-&gt;p2 に-方向に移動する距離を返す。</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">/// @brief サイズ n の円環上で p1-&gt;p2 に-方向に移動する距離を返す。</span></div>
 <div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="namespace_ring_operation.html#ac551fcd66538d379128d0f8cf3839842">   31</a></span>    ll <a class="code hl_function" href="namespace_ring_operation.html#ac551fcd66538d379128d0f8cf3839842">DistanceDecrement</a>(ll p1, ll p2, ll n) {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">return</span> p1&gt;p2 ? p1-p2 : (n+p1-p2)%n;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">return</span> p1 &gt; p2 ? p1 - p2 : (n + p1 - p2) % n;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
 </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}  <span class="comment">// namespace RingOperation</span></div>
 </div>
 <div class="ttc" id="anamespace_ring_operation_html"><div class="ttname"><a href="namespace_ring_operation.html">RingOperation</a></div><div class="ttdoc">円環上での計算</div><div class="ttdef"><b>Definition</b> <a href="#l00005">ring_operation.hpp:5</a></div></div>
 <div class="ttc" id="anamespace_ring_operation_html_a1a1a27cb0bba9c80fd62cb86792e356a"><div class="ttname"><a href="namespace_ring_operation.html#a1a1a27cb0bba9c80fd62cb86792e356a">RingOperation::DistanceMin</a></div><div class="ttdeci">ll DistanceMin(ll p1, ll p2, ll n)</div><div class="ttdoc">サイズ n の円環上で p1-&gt;p2 に移動する距離を返す。</div><div class="ttdef"><b>Definition</b> <a href="#l00020">ring_operation.hpp:20</a></div></div>
 <div class="ttc" id="anamespace_ring_operation_html_a223c526963880591f58768c9c16e87e6"><div class="ttname"><a href="namespace_ring_operation.html#a223c526963880591f58768c9c16e87e6">RingOperation::DistanceIncrement</a></div><div class="ttdeci">ll DistanceIncrement(ll p1, ll p2, ll n)</div><div class="ttdoc">サイズ n の円環上で p1-&gt;p2 に+方向に移動する距離を返す。</div><div class="ttdef"><b>Definition</b> <a href="#l00026">ring_operation.hpp:26</a></div></div>
-<div class="ttc" id="anamespace_ring_operation_html_a749528f540c620d9e9805d3dca518880"><div class="ttname"><a href="namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880">RingOperation::BetweenIncrement</a></div><div class="ttdeci">bool BetweenIncrement(ll p1, ll p2, ll target)</div><div class="ttdoc">円環上で p1-&gt;p2 に+方向に移動する際に target を通過するかを判定する。</div><div class="ttdef"><b>Definition</b> <a href="#l00008">ring_operation.hpp:8</a></div></div>
+<div class="ttc" id="anamespace_ring_operation_html_a749528f540c620d9e9805d3dca518880"><div class="ttname"><a href="namespace_ring_operation.html#a749528f540c620d9e9805d3dca518880">RingOperation::BetweenIncrement</a></div><div class="ttdeci">bool BetweenIncrement(ll p1, ll p2, ll target)</div><div class="ttdoc">円環上で p1-&gt;p2 に+方向に移動する際に target を通過するかを判定する。 verify: https://atcoder.jp/contests/abc367/tasks/abc367_a</div><div class="ttdef"><b>Definition</b> <a href="#l00008">ring_operation.hpp:8</a></div></div>
 <div class="ttc" id="anamespace_ring_operation_html_abbd2d6898934893b27d5f9efd7ea650f"><div class="ttname"><a href="namespace_ring_operation.html#abbd2d6898934893b27d5f9efd7ea650f">RingOperation::BetweenDecrement</a></div><div class="ttdeci">bool BetweenDecrement(ll p1, ll p2, ll target)</div><div class="ttdoc">円環上で p1-&gt;p2 に-方向に移動する際に target を通過するかを判定する。</div><div class="ttdef"><b>Definition</b> <a href="#l00014">ring_operation.hpp:14</a></div></div>
 <div class="ttc" id="anamespace_ring_operation_html_ac551fcd66538d379128d0f8cf3839842"><div class="ttname"><a href="namespace_ring_operation.html#ac551fcd66538d379128d0f8cf3839842">RingOperation::DistanceDecrement</a></div><div class="ttdeci">ll DistanceDecrement(ll p1, ll p2, ll n)</div><div class="ttdoc">サイズ n の円環上で p1-&gt;p2 に-方向に移動する距離を返す。</div><div class="ttdef"><b>Definition</b> <a href="#l00031">ring_operation.hpp:31</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

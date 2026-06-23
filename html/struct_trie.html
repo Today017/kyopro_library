@@ -131,10 +131,10 @@ $(function(){initNavTree('struct_trie.html',''); initResizable(true); });
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:a844916c8e6d928d55732da260bcb9a5b" id="r_a844916c8e6d928d55732da260bcb9a5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a844916c8e6d928d55732da260bcb9a5b">Trie</a> ()</td></tr>
 <tr class="separator:a844916c8e6d928d55732da260bcb9a5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84a50a07bdf16902309a80dbd7e9dc56" id="r_a84a50a07bdf16902309a80dbd7e9dc56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84a50a07bdf16902309a80dbd7e9dc56">add</a> (const string &amp;str)</td></tr>
+<tr class="memitem:a84a50a07bdf16902309a80dbd7e9dc56" id="r_a84a50a07bdf16902309a80dbd7e9dc56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84a50a07bdf16902309a80dbd7e9dc56">add</a> (const string &amp;<a class="el" href="type_8hpp.html#a75c65bb8b308ce623807c93d7911a795">str</a>)</td></tr>
 <tr class="memdesc:a84a50a07bdf16902309a80dbd7e9dc56"><td class="mdescLeft">&#160;</td><td class="mdescRight">文字列 str を追加する  <br /></td></tr>
 <tr class="separator:a84a50a07bdf16902309a80dbd7e9dc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6576d73cd9883d5cc1b2027c8737e8fd" id="r_a6576d73cd9883d5cc1b2027c8737e8fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6576d73cd9883d5cc1b2027c8737e8fd">query</a> (const string &amp;str, const function&lt; void(int)&gt; &amp;f)</td></tr>
+<tr class="memitem:a6576d73cd9883d5cc1b2027c8737e8fd" id="r_a6576d73cd9883d5cc1b2027c8737e8fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6576d73cd9883d5cc1b2027c8737e8fd">query</a> (const string &amp;<a class="el" href="type_8hpp.html#a75c65bb8b308ce623807c93d7911a795">str</a>, const function&lt; void(int)&gt; &amp;f)</td></tr>
 <tr class="memdesc:a6576d73cd9883d5cc1b2027c8737e8fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">strのprefixと一致する文字列のインデックスそれぞれに対してfを実行する  <br /></td></tr>
 <tr class="separator:a6576d73cd9883d5cc1b2027c8737e8fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88d68957a2eb05ff202b0ce99e6f9349" id="r_a88d68957a2eb05ff202b0ce99e6f9349"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88d68957a2eb05ff202b0ce99e6f9349">count</a> () const</td></tr>
@@ -162,6 +162,7 @@ $(function(){initNavTree('struct_trie.html',''); initResizable(true); });
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;int char_size, int margin&gt;<br />
 struct Trie&lt; char_size, margin &gt;</div><p><a class="el" href="struct_trie.html" title="Trie">Trie</a> </p>
+<p>トライ木</p>
 <dl class="tparams"><dt>テンプレート引数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">char_size</td><td>アルファベットのサイズ </td></tr>
@@ -247,7 +248,7 @@ template&lt;int char_size, int margin&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00011">11</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -407,7 +408,7 @@ template&lt;int char_size, int margin&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00017">17</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00018">18</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -436,7 +437,7 @@ template&lt;int char_size, int margin&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00032">32</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00033">33</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -465,7 +466,7 @@ template&lt;int char_size, int margin&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00042">42</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="trie_8hpp_source.html">trie.hpp</a> の <a class="el" href="trie_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
 
 </div>
 </div>

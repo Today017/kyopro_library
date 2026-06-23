@@ -106,100 +106,101 @@ $(function(){initNavTree('deque_8hpp_source.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <a href="deque_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief Deque</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Deque</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_deque.html">    6</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_deque.html">Deque</a> {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_deque.html#a96336a801b016888bc2e31f97a6e79aa">    7</a></span>    <a class="code hl_function" href="struct_deque.html#a96336a801b016888bc2e31f97a6e79aa">Deque</a>(<span class="keywordtype">int</span> cap=2): head(0), tail(0), sz(0), cap(cap), <a class="code hl_function" href="struct_deque.html#a96336a801b016888bc2e31f97a6e79aa">dat</a>(<a class="code hl_function" href="struct_deque.html#a96336a801b016888bc2e31f97a6e79aa">cap</a>) {}</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_deque.html#a96336a801b016888bc2e31f97a6e79aa">    7</a></span>    <a class="code hl_function" href="struct_deque.html#a96336a801b016888bc2e31f97a6e79aa">Deque</a>(<span class="keywordtype">int</span> cap = 2) : head(0), tail(0), sz(0), cap(cap), <a class="code hl_function" href="struct_deque.html#a96336a801b016888bc2e31f97a6e79aa">dat</a>(<a class="code hl_function" href="struct_deque.html#a96336a801b016888bc2e31f97a6e79aa">cap</a>) {}</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">    9</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">extend</a>() {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordtype">int</span> ncap=cap*2;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordtype">int</span> ncap = cap * 2;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        vector&lt;T&gt; ndat(ncap);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i,sz) ndat[i]=(*<span class="keyword">this</span>)[i];</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        dat=move(ndat);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        head=0; tail=sz;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        cap=ncap;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i, sz) ndat[i] = (*<span class="keyword">this</span>)[i];</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        dat = move(ndat);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        head = 0;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        tail = sz;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        cap = ncap;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
 </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_deque.html#a7f2a31003ec0362903266f14bafcdcff">   18</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_deque.html#a7f2a31003ec0362903266f14bafcdcff">push_back</a>(<span class="keyword">const</span> T&amp; x) {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">if</span>(sz==cap) <a class="code hl_function" href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">extend</a><a class="code hl_function" href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">(</a><a class="code hl_function" href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">)</a>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        dat[tail]=x;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        tail=(tail+1==cap)? 0: tail+1;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        sz++;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_deque.html#a7f2a31003ec0362903266f14bafcdcff">   19</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_deque.html#a7f2a31003ec0362903266f14bafcdcff">push_back</a>(<span class="keyword">const</span> T&amp; x) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">if</span>(sz == cap) <a class="code hl_function" href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">extend</a><a class="code hl_function" href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">(</a><a class="code hl_function" href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">)</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        dat[tail] = x;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        tail = (tail + 1 == cap) ? 0 : tail + 1;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        sz++;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
 </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_deque.html#a42a1363453cd88437b67051a3a777ae9">   25</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_deque.html#a42a1363453cd88437b67051a3a777ae9">push_front</a>(<span class="keyword">const</span> T&amp; x) {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">if</span>(sz==cap) <a class="code hl_function" href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">extend</a><a class="code hl_function" href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">(</a><a class="code hl_function" href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">)</a>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        head=(head==0)? cap-1: head-1;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        dat[head]=x;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        sz++;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_deque.html#a42a1363453cd88437b67051a3a777ae9">   26</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_deque.html#a42a1363453cd88437b67051a3a777ae9">push_front</a>(<span class="keyword">const</span> T&amp; x) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">if</span>(sz == cap) <a class="code hl_function" href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">extend</a><a class="code hl_function" href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">(</a><a class="code hl_function" href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">)</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        head = (head == 0) ? cap - 1 : head - 1;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        dat[head] = x;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        sz++;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
 </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_deque.html#a0e1a1df410dce314324203a54844f51e">   32</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_deque.html#a0e1a1df410dce314324203a54844f51e">pop_front</a>() {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        assert(!<a class="code hl_function" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">empty</a><a class="code hl_function" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">(</a><a class="code hl_function" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">)</a>);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        head=(head+1==cap)? 0: head+1;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        sz--;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_deque.html#a0e1a1df410dce314324203a54844f51e">   33</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_deque.html#a0e1a1df410dce314324203a54844f51e">pop_front</a>() {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        assert(!<a class="code hl_function" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">empty</a><a class="code hl_function" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">(</a><a class="code hl_function" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">)</a>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        head = (head + 1 == cap) ? 0 : head + 1;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        sz--;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
 </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_deque.html#a98c69f46add39db7e5343acff654a50e">   38</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_deque.html#a98c69f46add39db7e5343acff654a50e">pop_back</a>() {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        assert(!<a class="code hl_function" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">empty</a><a class="code hl_function" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">(</a><a class="code hl_function" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">)</a>);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        tail=(tail==0)? cap-1: tail-1;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        sz--;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_deque.html#a98c69f46add39db7e5343acff654a50e">   39</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_deque.html#a98c69f46add39db7e5343acff654a50e">pop_back</a>() {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        assert(!<a class="code hl_function" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">empty</a><a class="code hl_function" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">(</a><a class="code hl_function" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">)</a>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        tail = (tail == 0) ? cap - 1 : tail - 1;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        sz--;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
 </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct_deque.html#a510c16403e7ead5c438d70ad3a49bfe3">   44</a></span>    T&amp; <a class="code hl_function" href="struct_deque.html#a510c16403e7ead5c438d70ad3a49bfe3">operator</a>[](<span class="keywordtype">int</span> i) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordtype">int</span> idx=head+i;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span>(idx&gt;=cap) idx-=cap;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span> dat[idx];</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="struct_deque.html#a510c16403e7ead5c438d70ad3a49bfe3">   45</a></span>    T&amp; <a class="code hl_function" href="struct_deque.html#a510c16403e7ead5c438d70ad3a49bfe3">operator</a>[](<span class="keywordtype">int</span> i) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">int</span> idx = head + i;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">if</span>(idx &gt;= cap) idx -= cap;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span> dat[idx];</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_deque.html#a9c97799c1f64f3a75a84de9850a3bf9e">   50</a></span>    <span class="keyword">const</span> T&amp; <a class="code hl_function" href="struct_deque.html#a9c97799c1f64f3a75a84de9850a3bf9e">operator</a>[](<span class="keywordtype">int</span> i) <span class="keyword">const</span> {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordtype">int</span> idx=head+i;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">if</span>(idx&gt;=cap) idx-=cap;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">return</span> dat[idx];</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_deque.html#a9c97799c1f64f3a75a84de9850a3bf9e">   51</a></span>    <span class="keyword">const</span> T&amp; <a class="code hl_function" href="struct_deque.html#a9c97799c1f64f3a75a84de9850a3bf9e">operator</a>[](<span class="keywordtype">int</span> i) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordtype">int</span> idx = head + i;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span>(idx &gt;= cap) idx -= cap;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">return</span> dat[idx];</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="struct_deque.html#a5da300befcaf596fa2af79b6c12ca853">   56</a></span>    T&amp; <a class="code hl_function" href="struct_deque.html#a5da300befcaf596fa2af79b6c12ca853">front</a>() { <span class="keywordflow">return</span> dat[head]; }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="struct_deque.html#a816fabec7f0877388934794ca6751e75">   57</a></span>    T&amp; <a class="code hl_function" href="struct_deque.html#a816fabec7f0877388934794ca6751e75">back</a>() { <span class="keywordflow">return</span> dat[(tail==0)? cap-1: tail-1]; }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">   59</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">empty</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> sz==0; }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="struct_deque.html#a00f739d419d6d4d89d6eec376a78551f">   60</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_deque.html#a00f739d419d6d4d89d6eec376a78551f">size</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> sz; }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    vector&lt;T&gt; dat;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">int</span> head, tail, sz, cap;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="struct_deque.html#a5da300befcaf596fa2af79b6c12ca853">   57</a></span>    T&amp; <a class="code hl_function" href="struct_deque.html#a5da300befcaf596fa2af79b6c12ca853">front</a>() { <span class="keywordflow">return</span> dat[head]; }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="struct_deque.html#a816fabec7f0877388934794ca6751e75">   58</a></span>    T&amp; <a class="code hl_function" href="struct_deque.html#a816fabec7f0877388934794ca6751e75">back</a>() { <span class="keywordflow">return</span> dat[(tail == 0) ? cap - 1 : tail - 1]; }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">   60</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_deque.html#a9027d018be5719495a216f28b00801e1">empty</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> sz == 0; }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="struct_deque.html#a00f739d419d6d4d89d6eec376a78551f">   61</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="struct_deque.html#a00f739d419d6d4d89d6eec376a78551f">size</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> sz; }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    vector&lt;T&gt; dat;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">int</span> head, tail, sz, cap;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
 </div>
 <div class="ttc" id="amacro_8hpp_html_a30fefd21a95478fd2827fae51ab3b995"><div class="ttname"><a href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a></div><div class="ttdeci">#define rep(...)</div><div class="ttdef"><b>Definition</b> <a href="macro_8hpp_source.html#l00008">macro.hpp:8</a></div></div>
 <div class="ttc" id="astruct_deque_html"><div class="ttname"><a href="struct_deque.html">Deque</a></div><div class="ttdoc">Deque</div><div class="ttdef"><b>Definition</b> <a href="#l00006">deque.hpp:6</a></div></div>
-<div class="ttc" id="astruct_deque_html_a00f739d419d6d4d89d6eec376a78551f"><div class="ttname"><a href="struct_deque.html#a00f739d419d6d4d89d6eec376a78551f">Deque::size</a></div><div class="ttdeci">int size() const</div><div class="ttdef"><b>Definition</b> <a href="#l00060">deque.hpp:60</a></div></div>
-<div class="ttc" id="astruct_deque_html_a0e1a1df410dce314324203a54844f51e"><div class="ttname"><a href="struct_deque.html#a0e1a1df410dce314324203a54844f51e">Deque::pop_front</a></div><div class="ttdeci">void pop_front()</div><div class="ttdef"><b>Definition</b> <a href="#l00032">deque.hpp:32</a></div></div>
+<div class="ttc" id="astruct_deque_html_a00f739d419d6d4d89d6eec376a78551f"><div class="ttname"><a href="struct_deque.html#a00f739d419d6d4d89d6eec376a78551f">Deque::size</a></div><div class="ttdeci">int size() const</div><div class="ttdef"><b>Definition</b> <a href="#l00061">deque.hpp:61</a></div></div>
+<div class="ttc" id="astruct_deque_html_a0e1a1df410dce314324203a54844f51e"><div class="ttname"><a href="struct_deque.html#a0e1a1df410dce314324203a54844f51e">Deque::pop_front</a></div><div class="ttdeci">void pop_front()</div><div class="ttdef"><b>Definition</b> <a href="#l00033">deque.hpp:33</a></div></div>
 <div class="ttc" id="astruct_deque_html_a1fd058389d43f548ba4fb8c46ca51ea3"><div class="ttname"><a href="struct_deque.html#a1fd058389d43f548ba4fb8c46ca51ea3">Deque::extend</a></div><div class="ttdeci">void extend()</div><div class="ttdef"><b>Definition</b> <a href="#l00009">deque.hpp:9</a></div></div>
-<div class="ttc" id="astruct_deque_html_a42a1363453cd88437b67051a3a777ae9"><div class="ttname"><a href="struct_deque.html#a42a1363453cd88437b67051a3a777ae9">Deque::push_front</a></div><div class="ttdeci">void push_front(const T &amp;x)</div><div class="ttdef"><b>Definition</b> <a href="#l00025">deque.hpp:25</a></div></div>
-<div class="ttc" id="astruct_deque_html_a510c16403e7ead5c438d70ad3a49bfe3"><div class="ttname"><a href="struct_deque.html#a510c16403e7ead5c438d70ad3a49bfe3">Deque::operator[]</a></div><div class="ttdeci">T &amp; operator[](int i)</div><div class="ttdef"><b>Definition</b> <a href="#l00044">deque.hpp:44</a></div></div>
-<div class="ttc" id="astruct_deque_html_a5da300befcaf596fa2af79b6c12ca853"><div class="ttname"><a href="struct_deque.html#a5da300befcaf596fa2af79b6c12ca853">Deque::front</a></div><div class="ttdeci">T &amp; front()</div><div class="ttdef"><b>Definition</b> <a href="#l00056">deque.hpp:56</a></div></div>
-<div class="ttc" id="astruct_deque_html_a7f2a31003ec0362903266f14bafcdcff"><div class="ttname"><a href="struct_deque.html#a7f2a31003ec0362903266f14bafcdcff">Deque::push_back</a></div><div class="ttdeci">void push_back(const T &amp;x)</div><div class="ttdef"><b>Definition</b> <a href="#l00018">deque.hpp:18</a></div></div>
-<div class="ttc" id="astruct_deque_html_a816fabec7f0877388934794ca6751e75"><div class="ttname"><a href="struct_deque.html#a816fabec7f0877388934794ca6751e75">Deque::back</a></div><div class="ttdeci">T &amp; back()</div><div class="ttdef"><b>Definition</b> <a href="#l00057">deque.hpp:57</a></div></div>
-<div class="ttc" id="astruct_deque_html_a9027d018be5719495a216f28b00801e1"><div class="ttname"><a href="struct_deque.html#a9027d018be5719495a216f28b00801e1">Deque::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition</b> <a href="#l00059">deque.hpp:59</a></div></div>
+<div class="ttc" id="astruct_deque_html_a42a1363453cd88437b67051a3a777ae9"><div class="ttname"><a href="struct_deque.html#a42a1363453cd88437b67051a3a777ae9">Deque::push_front</a></div><div class="ttdeci">void push_front(const T &amp;x)</div><div class="ttdef"><b>Definition</b> <a href="#l00026">deque.hpp:26</a></div></div>
+<div class="ttc" id="astruct_deque_html_a510c16403e7ead5c438d70ad3a49bfe3"><div class="ttname"><a href="struct_deque.html#a510c16403e7ead5c438d70ad3a49bfe3">Deque::operator[]</a></div><div class="ttdeci">T &amp; operator[](int i)</div><div class="ttdef"><b>Definition</b> <a href="#l00045">deque.hpp:45</a></div></div>
+<div class="ttc" id="astruct_deque_html_a5da300befcaf596fa2af79b6c12ca853"><div class="ttname"><a href="struct_deque.html#a5da300befcaf596fa2af79b6c12ca853">Deque::front</a></div><div class="ttdeci">T &amp; front()</div><div class="ttdef"><b>Definition</b> <a href="#l00057">deque.hpp:57</a></div></div>
+<div class="ttc" id="astruct_deque_html_a7f2a31003ec0362903266f14bafcdcff"><div class="ttname"><a href="struct_deque.html#a7f2a31003ec0362903266f14bafcdcff">Deque::push_back</a></div><div class="ttdeci">void push_back(const T &amp;x)</div><div class="ttdef"><b>Definition</b> <a href="#l00019">deque.hpp:19</a></div></div>
+<div class="ttc" id="astruct_deque_html_a816fabec7f0877388934794ca6751e75"><div class="ttname"><a href="struct_deque.html#a816fabec7f0877388934794ca6751e75">Deque::back</a></div><div class="ttdeci">T &amp; back()</div><div class="ttdef"><b>Definition</b> <a href="#l00058">deque.hpp:58</a></div></div>
+<div class="ttc" id="astruct_deque_html_a9027d018be5719495a216f28b00801e1"><div class="ttname"><a href="struct_deque.html#a9027d018be5719495a216f28b00801e1">Deque::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition</b> <a href="#l00060">deque.hpp:60</a></div></div>
 <div class="ttc" id="astruct_deque_html_a96336a801b016888bc2e31f97a6e79aa"><div class="ttname"><a href="struct_deque.html#a96336a801b016888bc2e31f97a6e79aa">Deque::Deque</a></div><div class="ttdeci">Deque(int cap=2)</div><div class="ttdef"><b>Definition</b> <a href="#l00007">deque.hpp:7</a></div></div>
-<div class="ttc" id="astruct_deque_html_a98c69f46add39db7e5343acff654a50e"><div class="ttname"><a href="struct_deque.html#a98c69f46add39db7e5343acff654a50e">Deque::pop_back</a></div><div class="ttdeci">void pop_back()</div><div class="ttdef"><b>Definition</b> <a href="#l00038">deque.hpp:38</a></div></div>
-<div class="ttc" id="astruct_deque_html_a9c97799c1f64f3a75a84de9850a3bf9e"><div class="ttname"><a href="struct_deque.html#a9c97799c1f64f3a75a84de9850a3bf9e">Deque::operator[]</a></div><div class="ttdeci">const T &amp; operator[](int i) const</div><div class="ttdef"><b>Definition</b> <a href="#l00050">deque.hpp:50</a></div></div>
+<div class="ttc" id="astruct_deque_html_a98c69f46add39db7e5343acff654a50e"><div class="ttname"><a href="struct_deque.html#a98c69f46add39db7e5343acff654a50e">Deque::pop_back</a></div><div class="ttdeci">void pop_back()</div><div class="ttdef"><b>Definition</b> <a href="#l00039">deque.hpp:39</a></div></div>
+<div class="ttc" id="astruct_deque_html_a9c97799c1f64f3a75a84de9850a3bf9e"><div class="ttname"><a href="struct_deque.html#a9c97799c1f64f3a75a84de9850a3bf9e">Deque::operator[]</a></div><div class="ttdeci">const T &amp; operator[](int i) const</div><div class="ttdef"><b>Definition</b> <a href="#l00051">deque.hpp:51</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

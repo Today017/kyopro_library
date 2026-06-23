@@ -95,7 +95,6 @@ var hierarchy =
     [ "InsertableReversibleArrayImpl::RBSTBase< LazyReversibleRBSTNode< T, T > >", "struct_insertable_reversible_array_impl_1_1_r_b_s_t_base.html", [
       [ "InsertableReversibleArrayImpl::LazyReversibleRBST< T, T, InsertableReversibleArrayImpl::op< T >, InsertableReversibleArrayImpl::op< T >, InsertableReversibleArrayImpl::op< T >, InsertableReversibleArrayImpl::e< T > >", "struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html", null ]
     ] ],
-    [ "RMQ< MIN >", "struct_r_m_q.html", null ],
     [ "RollingHash", "struct_rolling_hash.html", null ],
     [ "RollingHash2D", "struct_rolling_hash2_d.html", null ],
     [ "SccInfo< T >", "struct_scc_info.html", null ],

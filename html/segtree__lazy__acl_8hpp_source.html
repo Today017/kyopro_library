@@ -106,29 +106,29 @@ $(function(){initNavTree('segtree__lazy__acl_8hpp_source.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 <a href="segtree__lazy__acl_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&lt;</span><span class="preprocessor">atcoder</span><span class="preprocessor">/</span><span class="preprocessor">lazysegtree</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">atcoder</span><span class="preprocessor">/</span><span class="preprocessor">lazysegtree</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Monoid, <span class="keyword">typename</span> Operator, <span class="keyword">auto</span> mapping&gt;</div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="segtree__lazy__acl_8hpp.html#a802e8c0d9a52f8e43e874e84dc06f4f0">    5</a></span><span class="keyword">auto</span> <a class="code hl_function" href="segtree__lazy__acl_8hpp.html#a802e8c0d9a52f8e43e874e84dc06f4f0">LsgFactory</a>(<span class="keyword">auto</span> v) {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keyword">auto</span> op=[&amp;](<span class="keyword">auto</span> a, <span class="keyword">auto</span> b) {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        <span class="keywordflow">return</span> Operator::op(b,a);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    };</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">auto</span> mapping2=[&amp;](<span class="keyword">auto</span> f, <span class="keyword">auto</span> x) {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">return</span> mapping(x,f);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    };</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">return</span> atcoder::lazy_segtree&lt;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keyword">typename</span> Monoid::Type,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        Monoid::op,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        Monoid::id,</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">typename</span> Operator::Type,</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        mapping2,</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        op,</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        Operator::id</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    &gt;(v);</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 遅延評価セグメント木（ACL lazy_segtree ラッパー）</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Monoid, <span class="keyword">typename</span> Operator, <span class="keyword">auto</span> mapping&gt;</div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="segtree__lazy__acl_8hpp.html#a802e8c0d9a52f8e43e874e84dc06f4f0">    6</a></span><span class="keyword">auto</span> <a class="code hl_function" href="segtree__lazy__acl_8hpp.html#a802e8c0d9a52f8e43e874e84dc06f4f0">LsgFactory</a>(<span class="keyword">auto</span> v) {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">auto</span> op = [&amp;](<span class="keyword">auto</span> a, <span class="keyword">auto</span> b) {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        <span class="keywordflow">return</span> Operator::op(b, a);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    };</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">auto</span> mapping2 = [&amp;](<span class="keyword">auto</span> f, <span class="keyword">auto</span> x) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keywordflow">return</span> mapping(x, f);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    };</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">return</span> atcoder::lazy_segtree&lt;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">typename</span> Monoid::Type,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        Monoid::op,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        Monoid::id,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keyword">typename</span> Operator::Type,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        mapping2,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        op,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        Operator::id&gt;(v);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
 </div>
-<div class="ttc" id="asegtree__lazy__acl_8hpp_html_a802e8c0d9a52f8e43e874e84dc06f4f0"><div class="ttname"><a href="segtree__lazy__acl_8hpp.html#a802e8c0d9a52f8e43e874e84dc06f4f0">LsgFactory</a></div><div class="ttdeci">auto LsgFactory(auto v)</div><div class="ttdef"><b>Definition</b> <a href="#l00005">segtree_lazy_acl.hpp:5</a></div></div>
+<div class="ttc" id="asegtree__lazy__acl_8hpp_html_a802e8c0d9a52f8e43e874e84dc06f4f0"><div class="ttname"><a href="segtree__lazy__acl_8hpp.html#a802e8c0d9a52f8e43e874e84dc06f4f0">LsgFactory</a></div><div class="ttdeci">auto LsgFactory(auto v)</div><div class="ttdoc">遅延評価セグメント木（ACL lazy_segtree ラッパー）</div><div class="ttdef"><b>Definition</b> <a href="#l00006">segtree_lazy_acl.hpp:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

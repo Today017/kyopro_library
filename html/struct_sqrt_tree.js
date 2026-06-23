@@ -1,6 +1,6 @@
 var struct_sqrt_tree =
 [
-    [ "Type", "struct_sqrt_tree.html#a46ab9cd6f10fedeb28683788e8f9dff0", null ],
+    [ "Type", "struct_sqrt_tree.html#ac975f5ad8c90eede962007916b7cc2eb", null ],
     [ "SqrtTree", "struct_sqrt_tree.html#ab0fbb1c94e236f7e18f8bf06ef6427b9", null ],
     [ "SqrtTree", "struct_sqrt_tree.html#ae0a29057985de7b015ad1150826067fe", null ],
     [ "SqrtTree", "struct_sqrt_tree.html#a8628edad00e39182bd82bb2fd04add3d", null ],

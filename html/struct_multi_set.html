@@ -128,6 +128,9 @@ MultiSet&lt; T &gt; の継承関係図</div>
 <tr class="memitem:a99a83ecab866565566687d8aae71d018" id="r_a99a83ecab866565566687d8aae71d018"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99a83ecab866565566687d8aae71d018">MultiSet</a> (T <a class="el" href="#a2eacbed44c86db543002092ebc3bea36">not_found</a>=-1)</td></tr>
 <tr class="memdesc:a99a83ecab866565566687d8aae71d018"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <br /></td></tr>
 <tr class="separator:a99a83ecab866565566687d8aae71d018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5eec96a72f4f2e3d397d54176e52d31" id="r_ae5eec96a72f4f2e3d397d54176e52d31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5eec96a72f4f2e3d397d54176e52d31">insert</a> (T x)</td></tr>
+<tr class="memdesc:ae5eec96a72f4f2e3d397d54176e52d31"><td class="mdescLeft">&#160;</td><td class="mdescRight">値を挿入する  <br /></td></tr>
+<tr class="separator:ae5eec96a72f4f2e3d397d54176e52d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a588b67e05193fb2068526aa9d07a2145" id="r_a588b67e05193fb2068526aa9d07a2145"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a588b67e05193fb2068526aa9d07a2145">min</a> ()</td></tr>
 <tr class="memdesc:a588b67e05193fb2068526aa9d07a2145"><td class="mdescLeft">&#160;</td><td class="mdescRight">最小値を返す  <br /></td></tr>
 <tr class="separator:a588b67e05193fb2068526aa9d07a2145"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,6 +243,39 @@ template&lt;typename T&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
+<a id="ae5eec96a72f4f2e3d397d54176e52d31" name="ae5eec96a72f4f2e3d397d54176e52d31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5eec96a72f4f2e3d397d54176e52d31">&#9670;&#160;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="struct_multi_set.html">MultiSet</a>&lt; T &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>値を挿入する </p>
+
+<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="multiset_8hpp_source.html#l00016">insert()</a>.</p>
+
+</div>
+</div>
 <a id="a588b67e05193fb2068526aa9d07a2145" name="a588b67e05193fb2068526aa9d07a2145"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a588b67e05193fb2068526aa9d07a2145">&#9670;&#160;</a></span>min()</h2>
 
@@ -267,7 +303,7 @@ template&lt;typename T&gt; </div>
 
 <p>最小値を返す </p>
 
-<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00022">22</a> 行目に定義があります。</p>
 
 <p class="reference">参照先 <a class="el" href="multiset_8hpp_source.html#l00008">not_found</a>.</p>
 
@@ -300,7 +336,7 @@ template&lt;typename T&gt; </div>
 
 <p>最大値を返す </p>
 
-<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00022">22</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00028">28</a> 行目に定義があります。</p>
 
 <p class="reference">参照先 <a class="el" href="multiset_8hpp_source.html#l00008">not_found</a>.</p>
 
@@ -333,9 +369,9 @@ template&lt;typename T&gt; </div>
 
 <p>最小値を返し、削除する </p>
 
-<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00028">28</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
 
-<p class="reference">参照先 <a class="el" href="multiset_8hpp_source.html#l00016">min()</a>, <a class="el" href="multiset_8hpp_source.html#l00008">not_found</a>.</p>
+<p class="reference">参照先 <a class="el" href="multiset_8hpp_source.html#l00022">min()</a>, <a class="el" href="multiset_8hpp_source.html#l00008">not_found</a>.</p>
 
 </div>
 </div>
@@ -366,9 +402,9 @@ template&lt;typename T&gt; </div>
 
 <p>最大値を返し、削除する </p>
 
-<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00043">43</a> 行目に定義があります。</p>
 
-<p class="reference">参照先 <a class="el" href="multiset_8hpp_source.html#l00022">max()</a>, <a class="el" href="multiset_8hpp_source.html#l00008">not_found</a>.</p>
+<p class="reference">参照先 <a class="el" href="multiset_8hpp_source.html#l00028">max()</a>, <a class="el" href="multiset_8hpp_source.html#l00008">not_found</a>.</p>
 
 </div>
 </div>
@@ -399,7 +435,7 @@ template&lt;typename T&gt; </div>
 
 <p>x が含まれているか否かを返す </p>
 
-<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00046">46</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00052">52</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -431,7 +467,7 @@ template&lt;typename T&gt; </div>
 <p>x を削除する </p>
 <p>x が含まれていたか否かを返す </p>
 
-<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -462,7 +498,7 @@ template&lt;typename T&gt; </div>
 
 <p>x より大きい最小の値を返す </p>
 
-<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00059">59</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00065">65</a> 行目に定義があります。</p>
 
 <p class="reference">参照先 <a class="el" href="multiset_8hpp_source.html#l00008">not_found</a>.</p>
 
@@ -495,7 +531,7 @@ template&lt;typename T&gt; </div>
 
 <p>x 以上の最小の値を返す </p>
 
-<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00066">66</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00072">72</a> 行目に定義があります。</p>
 
 <p class="reference">参照先 <a class="el" href="multiset_8hpp_source.html#l00008">not_found</a>.</p>
 
@@ -528,7 +564,7 @@ template&lt;typename T&gt; </div>
 
 <p>x 以下の最大の値を返す </p>
 
-<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00073">73</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00079">79</a> 行目に定義があります。</p>
 
 <p class="reference">参照先 <a class="el" href="multiset_8hpp_source.html#l00008">not_found</a>.</p>
 
@@ -561,7 +597,7 @@ template&lt;typename T&gt; </div>
 
 <p>x 未満最大の値を返す </p>
 
-<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00080">80</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00086">86</a> 行目に定義があります。</p>
 
 <p class="reference">参照先 <a class="el" href="multiset_8hpp_source.html#l00008">not_found</a>.</p>
 
@@ -594,7 +630,7 @@ template&lt;typename T&gt; </div>
 
 <p>x の個数を返す </p>
 
-<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00087">87</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="multiset_8hpp_source.html">multiset.hpp</a> の <a class="el" href="multiset_8hpp_source.html#l00093">93</a> 行目に定義があります。</p>
 
 </div>
 </div>

@@ -104,7 +104,6 @@ var annotated_dup =
     [ "Queue", "struct_queue.html", "struct_queue" ],
     [ "QueueFoldable", "struct_queue_foldable.html", "struct_queue_foldable" ],
     [ "RangeSet", "struct_range_set.html", "struct_range_set" ],
-    [ "RMQ", "struct_r_m_q.html", "struct_r_m_q" ],
     [ "RollingHash", "struct_rolling_hash.html", "struct_rolling_hash" ],
     [ "RollingHash2D", "struct_rolling_hash2_d.html", "struct_rolling_hash2_d" ],
     [ "SccInfo", "struct_scc_info.html", "struct_scc_info" ],

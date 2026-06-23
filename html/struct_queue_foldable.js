@@ -1,6 +1,6 @@
 var struct_queue_foldable =
 [
-    [ "Type", "struct_queue_foldable.html#a155b48c5e74cf4dc5adac0ec512f0d99", null ],
+    [ "Type", "struct_queue_foldable.html#ab023d0ca25aacbebdb5a4a6c5c4169d8", null ],
     [ "push", "struct_queue_foldable.html#a922751c9769cd7860869a76146b40fd8", null ],
     [ "pop", "struct_queue_foldable.html#ab8a7c38d5fbe077a9a0ecdb90d134aad", null ],
     [ "empty", "struct_queue_foldable.html#a2dc61945c99c3fbef581df8224016ef3", null ],

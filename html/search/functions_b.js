@@ -1,7 +1,7 @@
 var searchData=
 [
   ['lagrangepolynomial_0',['LagrangePolynomial',['../lagrange_8hpp.html#a50261df3c197ae7a34013b771fd1ddb6',1,'lagrange.hpp']]],
-  ['lagrangepolynomial_1',['lagrangePolynomial',['../lagrange2_8hpp.html#ac7cffccc1d987126f4dc4cb1177d13c6',1,'lagrange2.hpp']]],
+  ['lagrangepolynomial_1',['lagrangePolynomial',['../lagrange2_8hpp.html#a744f2b1c03dcc153c3acc92b71db60d2',1,'lagrange2.hpp']]],
   ['lazyreversiblerbst_2',['LazyReversibleRBST',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t.html#a6b57cd7c8c2abdf621c86e76aa2f5a58',1,'InsertableReversibleArrayImpl::LazyReversibleRBST']]],
   ['lazyreversiblerbstnode_3',['LazyReversibleRBSTNode',['../struct_insertable_reversible_array_impl_1_1_lazy_reversible_r_b_s_t_node.html#a0d205c9909ffba7b009dc9e50a372a76',1,'InsertableReversibleArrayImpl::LazyReversibleRBSTNode']]],
   ['lca_4',['LCA',['../struct_l_c_a.html#a4ac08a83bbc8108118eeaaee8f254d31',1,'LCA::LCA()=default'],['../struct_l_c_a.html#acf951faf112b414b518108a0c211a348',1,'LCA::LCA(const vector&lt; vi &gt; &amp;g, ii root=0)']]],
@@ -21,7 +21,7 @@ var searchData=
   ['lislength_18',['LisLength',['../lis_8hpp.html#ae768e0e9461d6aa5e57e5092cd91bbfb',1,'lis.hpp']]],
   ['lob_19',['lob',['../base_2util_8hpp.html#a948a5c4d54f731b2f0aa1a23bcf32c75',1,'util.hpp']]],
   ['log_20',['Log',['../namespace_fps.html#aaa724f619897b1849c3f76d83ddf5dd3',1,'Fps']]],
-  ['lowbit_21',['LowBit',['../namespace_bit.html#af393abef4ae81565dcf932bceafec533',1,'Bit::LowBit(int n)'],['../namespace_bit.html#adfb65c7d7cafdb482df24671d93f7a74',1,'Bit::LowBit(ll n)']]],
+  ['lowbit_21',['LowBit',['../namespace_bit.html#aef95236e63dff73277f3e41a6e58a944',1,'Bit::LowBit(i32 n)'],['../namespace_bit.html#a52437b5be67beabb2be1ba7e29fdce2a',1,'Bit::LowBit(i64 n)']]],
   ['lowlink_22',['LowLink',['../lowlink_8hpp.html#ae03292b8eddcd9e26966a6c7e31cd5f1',1,'lowlink.hpp']]],
   ['lsgfactory_23',['LsgFactory',['../segtree__lazy__acl_8hpp.html#a802e8c0d9a52f8e43e874e84dc06f4f0',1,'segtree_lazy_acl.hpp']]],
   ['lt_24',['lt',['../struct_binary_trie.html#a93a6362e37c890cf19fd6257cf639ad8',1,'BinaryTrie::lt()'],['../struct_multi_set.html#a04ddcfd58ef65bb94b814f8f8e6afa0a',1,'MultiSet::lt()'],['../struct_set.html#a08ba7ca11b7433208e0c8ad341964542',1,'Set::lt()'],['../struct_sorted_multi_tree.html#a563ca712d94965facf1e69b881440a32',1,'SortedMultiTree::lt()'],['../struct_sorted_tree.html#ae7d73da4b7b5193f42825117545f1840',1,'SortedTree::lt()']]]

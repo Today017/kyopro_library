@@ -106,7 +106,7 @@ $(function(){initNavTree('bellman__ford_8hpp_source.html',''); initResizable(tru
 </div><!--header-->
 <div class="contents">
 <a href="bellman__ford_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/**</span></div>
 <div class="line"><span class="lineno">    5</span><span class="comment"> * @brief ベルマンフォード法</span></div>
@@ -120,24 +120,25 @@ $(function(){initNavTree('bellman__ford_8hpp_source.html',''); initResizable(tru
 <div class="line"><span class="lineno">   13</span><span class="comment"> * @ref https://mhrb-minase.hatenablog.com/entry/2019/08/20/003915</span></div>
 <div class="line"><span class="lineno">   14</span><span class="comment"> */</span></div>
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="bellman__ford_8hpp.html#a711b90c85a7b9508f765d0be1fef72ba">   15</a></span><a class="code hl_function" href="bellman__ford_8hpp.html#a711b90c85a7b9508f765d0be1fef72ba">pair</a>&lt;<span class="keywordtype">bool</span>,<a class="code hl_function" href="bellman__ford_8hpp.html#a711b90c85a7b9508f765d0be1fef72ba">vector</a>&lt;<a class="code hl_function" href="bellman__ford_8hpp.html#a711b90c85a7b9508f765d0be1fef72ba">ll</a>&gt;&gt; <a class="code hl_function" href="bellman__ford_8hpp.html#a711b90c85a7b9508f765d0be1fef72ba">BellmanFord</a>(<span class="keyword">const</span> vector&lt;vector&lt;pair&lt;<span class="keywordtype">int</span>,ll&gt;&gt;&gt;&amp; G, <span class="keywordtype">int</span> start) {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">int</span> N=G.size();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    vector&lt;ll&gt; dst(N,INFL); dst[start]=0;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">int</span> i=0;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">for</span>(; i&lt;N; i++) {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordtype">bool</span> update=<span class="keyword">false</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(j,N) {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span> [nxt,cost]: G[j]) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                <span class="keywordflow">if</span>(dst[j]!=INFL &amp;&amp; dst[j]+cost&lt;dst[nxt]) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                    dst[nxt]=dst[j]+cost;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                    update=<span class="keyword">true</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">if</span>(!update) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> {i==N,dst};</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="bellman__ford_8hpp.html#a711b90c85a7b9508f765d0be1fef72ba">   15</a></span><a class="code hl_function" href="bellman__ford_8hpp.html#a711b90c85a7b9508f765d0be1fef72ba">pair</a>&lt;<span class="keywordtype">bool</span>, <a class="code hl_function" href="bellman__ford_8hpp.html#a711b90c85a7b9508f765d0be1fef72ba">vector</a>&lt;<a class="code hl_function" href="bellman__ford_8hpp.html#a711b90c85a7b9508f765d0be1fef72ba">ll</a>&gt;&gt; <a class="code hl_function" href="bellman__ford_8hpp.html#a711b90c85a7b9508f765d0be1fef72ba">BellmanFord</a>(<span class="keyword">const</span> vector&lt;vector&lt;pair&lt;<span class="keywordtype">int</span>, ll&gt;&gt;&gt;&amp; G, <span class="keywordtype">int</span> start) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">int</span> N = G.size();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    vector&lt;ll&gt; dst(N, INFL);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    dst[start] = 0;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">for</span>(; i &lt; N; i++) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">bool</span> update = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(j, N) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span> [nxt, cost] : G[j]) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                <span class="keywordflow">if</span>(dst[j] != INFL &amp;&amp; dst[j] + cost &lt; dst[nxt]) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                    dst[nxt] = dst[j] + cost;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                    update = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">if</span>(!update) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> {i == N, dst};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
 </div>
 <div class="ttc" id="abellman__ford_8hpp_html_a711b90c85a7b9508f765d0be1fef72ba"><div class="ttname"><a href="bellman__ford_8hpp.html#a711b90c85a7b9508f765d0be1fef72ba">BellmanFord</a></div><div class="ttdeci">pair&lt; bool, vector&lt; ll &gt; &gt; BellmanFord(const vector&lt; vector&lt; pair&lt; int, ll &gt; &gt; &gt; &amp;G, int start)</div><div class="ttdoc">ベルマンフォード法</div><div class="ttdef"><b>Definition</b> <a href="#l00015">bellman_ford.hpp:15</a></div></div>
 <div class="ttc" id="amacro_8hpp_html_a30fefd21a95478fd2827fae51ab3b995"><div class="ttname"><a href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a></div><div class="ttdeci">#define rep(...)</div><div class="ttdef"><b>Definition</b> <a href="macro_8hpp_source.html#l00008">macro.hpp:8</a></div></div>

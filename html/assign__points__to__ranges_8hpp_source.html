@@ -106,20 +106,20 @@ $(function(){initNavTree('assign__points__to__ranges_8hpp_source.html',''); init
 </div><!--header-->
 <div class="contents">
 <a href="assign__points__to__ranges_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief 区間スケジューリングの応用（区間と1点のマッチング）</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@brief 与えられる区間列に対し、[0,M)の点を被りの無いように割り当てられるかを判定する</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@note O((N+M) log M)</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">///@ref https://atcoder.jp/contests/awc0004/tasks/awc0004_d</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief 区間スケジューリングの応用（区間と1点のマッチング）</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @brief 与えられる区間列に対し、[0,M)の点を被りの無いように割り当てられるかを判定する</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @note O((N+M) log M)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// @ref https://atcoder.jp/contests/awc0004/tasks/awc0004_d</span></div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="assign__points__to__ranges_8hpp.html#ab816ba5864b372398fa324bf967cb1d5">    8</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="assign__points__to__ranges_8hpp.html#ab816ba5864b372398fa324bf967cb1d5">AssignPointsToRanges</a>(vpi LR, ii M) {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    vvi rs(M);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> [l,r]: LR) rs[l].push_back(r);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> [l, r] : LR) rs[l].push_back(r);</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    min_pq&lt;ii&gt; pq;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(x,M) {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">for</span>(ii r: rs[x]) pq.push(r);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">if</span>(!pq.empty() &amp;&amp; pq.top()&lt;=x) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(x, M) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">for</span>(ii r : rs[x]) pq.push(r);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">if</span>(!pq.empty() &amp;&amp; pq.top() &lt;= x) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">if</span>(!pq.empty()) pq.pop();</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">return</span> pq.empty();</div>

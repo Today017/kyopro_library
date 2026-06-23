@@ -1,7 +1,7 @@
 var fps_8hpp =
 [
-    [ "Poly", "fps_8hpp.html#ad8b88df5de375d471bb026ee55969eed", null ],
-    [ "PolySparse", "fps_8hpp.html#aef60117f609fb8c7e99d61c5861218ac", null ],
+    [ "Poly", "fps_8hpp.html#acf4ada7be75cddfc49fad537f19a4729", null ],
+    [ "PolySparse", "fps_8hpp.html#a13f3b3768f3cebb8e8605d48aae8e2a6", null ],
     [ "Fps::Add", "namespace_fps.html#a3f1d872f371c0019632bc632f0a24ff2", null ],
     [ "Fps::Sub", "namespace_fps.html#ab4248e0506942af4028ebb79c9a63ad4", null ],
     [ "Fps::Mul", "namespace_fps.html#afa9aa0412688b76380b31baed289e70c", null ],

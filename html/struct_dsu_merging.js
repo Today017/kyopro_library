@@ -1,6 +1,6 @@
 var struct_dsu_merging =
 [
-    [ "Type", "struct_dsu_merging.html#a31648bc93d4bc29960fe93fff7ca0914", null ],
+    [ "Type", "struct_dsu_merging.html#a03cc3cdd855df2a1760611685be7f6b3", null ],
     [ "DsuMerging", "struct_dsu_merging.html#a6e06d3c3b50471bd58ea808d9b63ad77", null ],
     [ "DsuMerging", "struct_dsu_merging.html#a176fb90f26e3696383392e94d7491cdb", null ],
     [ "find", "struct_dsu_merging.html#afcf8fd363d1d2348869c0e43df04199d", null ],

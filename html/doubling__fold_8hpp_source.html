@@ -106,43 +106,43 @@ $(function(){initNavTree('doubling__fold_8hpp_source.html',''); initResizable(tr
 </div><!--header-->
 <div class="contents">
 <a href="doubling__fold_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief ダブリング（モノイド合成）</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@tparam Monoid 合成するモノイド</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@tparam Log ダブリングの深さ</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Monoid, <span class="keywordtype">int</span> Log&gt;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief ダブリング（モノイド合成）</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @tparam Monoid 合成するモノイド</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @tparam Log ダブリングの深さ</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Monoid, ii Log&gt;</div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_doubling_fold.html">    8</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_doubling_fold.html">DoublingFold</a> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_doubling_fold.html#a2fac53adf611f062e7c40d5f28a398b8">    9</a></span>    <span class="keyword">using</span> Type=<span class="keyword">typename</span> Monoid::Type;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_doubling_fold.html#a04df85dc1028af6ecca7e1d00d60b4ed">   10</a></span>    <a class="code hl_function" href="struct_doubling_fold.html#a04df85dc1028af6ecca7e1d00d60b4ed">DoublingFold</a>()=<span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_doubling_fold.html#ac656d8d6e7b015cd66bc1d2e57a9e207">    9</a></span>    <span class="keyword">using</span> Type = <span class="keyword">typename</span> Monoid::Type;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_doubling_fold.html#a04df85dc1028af6ecca7e1d00d60b4ed">   10</a></span>    <a class="code hl_function" href="struct_doubling_fold.html#a04df85dc1028af6ecca7e1d00d60b4ed">DoublingFold</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">///@brief コンストラクタ</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">///@param P 各頂点の遷移先</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">///@param V 各頂点の値</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">///@note O(N Log)</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">/// @brief コンストラクタ</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">/// @param P 各頂点の遷移先</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">/// @param V 各頂点の値</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">/// @note O(N Log)</span></div>
 <div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_doubling_fold.html#a1c81fc02ca4d3a0f25a0cf4f55eb6487">   16</a></span>    <a class="code hl_function" href="struct_doubling_fold.html#a1c81fc02ca4d3a0f25a0cf4f55eb6487">DoublingFold</a>(<span class="keyword">const</span> vi&amp; P, <span class="keyword">const</span> vector&lt;Type&gt;&amp; V) {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">int</span> N=P.size();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        dat=vector&lt;vector&lt;Type&gt;&gt;(Log+1,vector&lt;Type&gt;(N,Monoid::id()));</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        nxt=vector&lt;vi&gt;(Log+1,vi(N));</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i,N) dat[0][i]=V[i], nxt[0][i]=P[i];</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i,Log) <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(j,N) {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            nxt[i+1][j]=nxt[i][nxt[i][j]];</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            dat[i+1][j]=Monoid::op(dat[i][j],dat[i][nxt[i][j]]);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        ii N = P.size();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        dat = vector&lt;vector&lt;Type&gt;&gt;(Log + 1, vector&lt;Type&gt;(N, Monoid::id()));</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        nxt = vector&lt;vi&gt;(Log + 1, vi(N));</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i, N) dat[0][i] = V[i], nxt[0][i] = P[i];</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(i, Log) <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(j, N) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            nxt[i + 1][j] = nxt[i][nxt[i][j]];</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            dat[i + 1][j] = Monoid::op(dat[i][j], dat[i][nxt[i][j]]);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        }</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
 </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">///@brief (遷移先, モノイド積) を返す</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">///@brief 頂点 start から K 回遷移したときの頂点とモノイド積の組を返す</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">///@note O(Log)</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">/// @brief (遷移先, モノイド積) を返す</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">/// @brief 頂点 start から K 回遷移したときの頂点とモノイド積の組を返す</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">/// @note O(Log)</span></div>
 <div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_doubling_fold.html#a81f3b3cb47aa53f7fba020f95340d659">   30</a></span>    <a class="code hl_function" href="struct_doubling_fold.html#a81f3b3cb47aa53f7fba020f95340d659">pair</a>&lt;<span class="keywordtype">int</span>, <a class="code hl_function" href="struct_doubling_fold.html#a81f3b3cb47aa53f7fba020f95340d659">Type</a>&gt; <a class="code hl_function" href="struct_doubling_fold.html#a81f3b3cb47aa53f7fba020f95340d659">fold</a>(<span class="keywordtype">int</span> start, ll K) {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        Type ret= Monoid::id();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(b,Log+1) <span class="keywordflow">if</span>(K&gt;&gt;b&amp;1) {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            ret=Monoid::op(ret,dat[b][start]);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            start=nxt[b][start];</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_doubling_fold.html#a91499181b57fcbf47d6035395c5d20bd">   30</a></span>    <a class="code hl_function" href="struct_doubling_fold.html#a91499181b57fcbf47d6035395c5d20bd">pair</a>&lt;<a class="code hl_function" href="struct_doubling_fold.html#a91499181b57fcbf47d6035395c5d20bd">ii</a>, <a class="code hl_function" href="struct_doubling_fold.html#a91499181b57fcbf47d6035395c5d20bd">Type</a>&gt; <a class="code hl_function" href="struct_doubling_fold.html#a91499181b57fcbf47d6035395c5d20bd">fold</a>(ii start, ll K) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        Type ret = Monoid::id();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_define" href="macro_8hpp.html#a30fefd21a95478fd2827fae51ab3b995">rep</a>(b, Log + 1) <span class="keywordflow">if</span>(K &gt;&gt; b &amp; 1) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            ret = Monoid::op(ret, dat[b][start]);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            start = nxt[b][start];</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">return</span> {start, ret};</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
@@ -157,7 +157,7 @@ $(function(){initNavTree('doubling__fold_8hpp_source.html',''); initResizable(tr
 <div class="ttc" id="astruct_doubling_fold_html"><div class="ttname"><a href="struct_doubling_fold.html">DoublingFold</a></div><div class="ttdoc">ダブリング（モノイド合成）</div><div class="ttdef"><b>Definition</b> <a href="#l00008">doubling_fold.hpp:8</a></div></div>
 <div class="ttc" id="astruct_doubling_fold_html_a04df85dc1028af6ecca7e1d00d60b4ed"><div class="ttname"><a href="struct_doubling_fold.html#a04df85dc1028af6ecca7e1d00d60b4ed">DoublingFold::DoublingFold</a></div><div class="ttdeci">DoublingFold()=default</div></div>
 <div class="ttc" id="astruct_doubling_fold_html_a1c81fc02ca4d3a0f25a0cf4f55eb6487"><div class="ttname"><a href="struct_doubling_fold.html#a1c81fc02ca4d3a0f25a0cf4f55eb6487">DoublingFold::DoublingFold</a></div><div class="ttdeci">DoublingFold(const vi &amp;P, const vector&lt; Type &gt; &amp;V)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition</b> <a href="#l00016">doubling_fold.hpp:16</a></div></div>
-<div class="ttc" id="astruct_doubling_fold_html_a81f3b3cb47aa53f7fba020f95340d659"><div class="ttname"><a href="struct_doubling_fold.html#a81f3b3cb47aa53f7fba020f95340d659">DoublingFold::fold</a></div><div class="ttdeci">pair&lt; int, Type &gt; fold(int start, ll K)</div><div class="ttdoc">(遷移先, モノイド積) を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00030">doubling_fold.hpp:30</a></div></div>
+<div class="ttc" id="astruct_doubling_fold_html_a91499181b57fcbf47d6035395c5d20bd"><div class="ttname"><a href="struct_doubling_fold.html#a91499181b57fcbf47d6035395c5d20bd">DoublingFold::fold</a></div><div class="ttdeci">pair&lt; ii, Type &gt; fold(ii start, ll K)</div><div class="ttdoc">(遷移先, モノイド積) を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00030">doubling_fold.hpp:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

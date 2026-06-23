@@ -7,8 +7,7 @@ var searchData=
   ['readme_2emd_4',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
   ['ring_2ehpp_5',['ring.hpp',['../ring_8hpp.html',1,'']]],
   ['ring_5foperation_2ehpp_6',['ring_operation.hpp',['../ring__operation_8hpp.html',1,'']]],
-  ['rmq_2ehpp_7',['rmq.hpp',['../rmq_8hpp.html',1,'']]],
-  ['rolling_5fhash_2ehpp_8',['rolling_hash.hpp',['../rolling__hash_8hpp.html',1,'']]],
-  ['rolling_5fhash_5f2d_2ehpp_9',['rolling_hash_2d.hpp',['../rolling__hash__2d_8hpp.html',1,'']]],
-  ['run_5flength_5fencoding_2ehpp_10',['run_length_encoding.hpp',['../run__length__encoding_8hpp.html',1,'']]]
+  ['rolling_5fhash_2ehpp_7',['rolling_hash.hpp',['../rolling__hash_8hpp.html',1,'']]],
+  ['rolling_5fhash_5f2d_2ehpp_8',['rolling_hash_2d.hpp',['../rolling__hash__2d_8hpp.html',1,'']]],
+  ['run_5flength_5fencoding_2ehpp_9',['run_length_encoding.hpp',['../run__length__encoding_8hpp.html',1,'']]]
 ];

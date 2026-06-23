@@ -273,9 +273,9 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>};</div>
 </div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment">///@brief Wavelet Matrix</span></div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment">///@ref https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix</span></div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment">///@ref https://miti-7.hatenablog.com/entry/2019/02/01/152131</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment">/// @brief Wavelet Matrix</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment">/// @ref https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment">/// @ref https://miti-7.hatenablog.com/entry/2019/02/01/152131</span></div>
 <div class="foldopen" id="foldopen00156" data-start="{" data-end="};">
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html">  156</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_wavelet_matrix.html">WaveletMatrix</a> {</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#ad09fa0edc4214cc70e466ceb92e3de90">  157</a></span>    <span class="keyword">static</span> <span class="keyword">const</span> ull <a class="code hl_variable" href="struct_wavelet_matrix.html#ad09fa0edc4214cc70e466ceb92e3de90">NOTFOUND</a> = <a class="code hl_struct" href="struct_succinct_bit_vector.html">SuccinctBitVector</a><a class="code hl_variable" href="struct_succinct_bit_vector.html#a8d705cf2ab85758d338e6fd0977274b2">::</a><a class="code hl_variable" href="struct_succinct_bit_vector.html#a8d705cf2ab85758d338e6fd0977274b2">NOTFOUND</a>;</div>
@@ -299,8 +299,8 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    }</div>
 </div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="comment">///@brief コンストラクタ</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="comment">///@brief a から Wavelet Matrix を構築する</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="comment">/// @brief コンストラクタ</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="comment">/// @brief a から Wavelet Matrix を構築する</span></div>
 <div class="foldopen" id="foldopen00178" data-start="{" data-end="}">
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#a3509863e3953b3e85960f176483ea314">  178</a></span>    <a class="code hl_function" href="struct_wavelet_matrix.html#a3509863e3953b3e85960f176483ea314">WaveletMatrix</a>(<span class="keyword">const</span> vector&lt;ull&gt;&amp; a) {</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        build(a);</div>
@@ -353,8 +353,8 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    }</div>
 </div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="comment">///@brief a[pos] を返す</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="comment">///@note O(log σ)</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="comment">/// @brief a[pos] を返す</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="comment">/// @note O(log σ)</span></div>
 <div class="foldopen" id="foldopen00228" data-start="{" data-end="}">
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#a3a1eefb0414102aeeac72a1f31fc5b8d">  228</a></span>    ull <a class="code hl_function" href="struct_wavelet_matrix.html#a3a1eefb0414102aeeac72a1f31fc5b8d">access</a>(ull pos) {</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keywordflow">if</span>(pos &gt;= <span class="keyword">this</span>-&gt;size) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_wavelet_matrix.html#ad09fa0edc4214cc70e466ceb92e3de90">NOTFOUND</a>;</div>
@@ -369,9 +369,9 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    }</div>
 </div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="comment">///@brief rank 番目の c の位置 +1 を返す</span></div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="comment">///@brief rank は 1-indexed</span></div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="comment">///@note O(log σ)</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="comment">/// @brief rank 番目の c の位置 +1 を返す</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="comment">/// @brief rank は 1-indexed</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="comment">/// @note O(log σ)</span></div>
 <div class="foldopen" id="foldopen00243" data-start="{" data-end="}">
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#a2b4d0a49f7e6ff7439359beab3ec5c49">  243</a></span>    ull <a class="code hl_function" href="struct_wavelet_matrix.html#a2b4d0a49f7e6ff7439359beab3ec5c49">select</a>(ull c, ull rank) {</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        assert(rank &gt; 0);</div>
@@ -387,25 +387,25 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    }</div>
 </div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="comment">///@brief 区間 [l, r) で最大のインデックスを返す</span></div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="comment">///@note O(log σ)</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="comment">/// @brief 区間 [l, r) で最大のインデックスを返す</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="comment">/// @note O(log σ)</span></div>
 <div class="foldopen" id="foldopen00258" data-start="{" data-end="}">
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#a6bc748ebdfcaecf9b5c8659287989390">  258</a></span>    ull <a class="code hl_function" href="struct_wavelet_matrix.html#a6bc748ebdfcaecf9b5c8659287989390">max_range</a>(ull begin_pos, ull end_pos) {</div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_wavelet_matrix.html#a32c9df866b15491fe51cbbda0378b614">quantile_range</a><a class="code hl_function" href="struct_wavelet_matrix.html#a32c9df866b15491fe51cbbda0378b614">(</a>begin_pos<a class="code hl_function" href="struct_wavelet_matrix.html#a32c9df866b15491fe51cbbda0378b614">,</a> end_pos<a class="code hl_function" href="struct_wavelet_matrix.html#a32c9df866b15491fe51cbbda0378b614">,</a> end_pos - begin_pos - 1<a class="code hl_function" href="struct_wavelet_matrix.html#a32c9df866b15491fe51cbbda0378b614">)</a>;</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    }</div>
 </div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="comment">///@brief 区間 [l, r) で最小のインデックスを返す</span></div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="comment">///@note O(log σ)</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="comment">/// @brief 区間 [l, r) で最小のインデックスを返す</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="comment">/// @note O(log σ)</span></div>
 <div class="foldopen" id="foldopen00264" data-start="{" data-end="}">
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#a928a5cdef4bbb6e505ccc3cd868bb00a">  264</a></span>    ull <a class="code hl_function" href="struct_wavelet_matrix.html#a928a5cdef4bbb6e505ccc3cd868bb00a">min_range</a>(ull begin_pos, ull end_pos) {</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_wavelet_matrix.html#a32c9df866b15491fe51cbbda0378b614">quantile_range</a><a class="code hl_function" href="struct_wavelet_matrix.html#a32c9df866b15491fe51cbbda0378b614">(</a>begin_pos<a class="code hl_function" href="struct_wavelet_matrix.html#a32c9df866b15491fe51cbbda0378b614">,</a> end_pos<a class="code hl_function" href="struct_wavelet_matrix.html#a32c9df866b15491fe51cbbda0378b614">,</a> 0<a class="code hl_function" href="struct_wavelet_matrix.html#a32c9df866b15491fe51cbbda0378b614">)</a>;</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    }</div>
 </div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <span class="comment">///@brief 区間 [l, r) で k 番目に小さい値のインデックスを返す</span></div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <span class="comment">///@brief k は 0-indexed</span></div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="comment">///@note O(log σ)</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <span class="comment">/// @brief 区間 [l, r) で k 番目に小さい値のインデックスを返す</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <span class="comment">/// @brief k は 0-indexed</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="comment">/// @note O(log σ)</span></div>
 <div class="foldopen" id="foldopen00271" data-start="{" data-end="}">
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#a32c9df866b15491fe51cbbda0378b614">  271</a></span>    ull <a class="code hl_function" href="struct_wavelet_matrix.html#a32c9df866b15491fe51cbbda0378b614">quantile_range</a>(ull begin_pos, ull end_pos, ull k) {</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <span class="keywordflow">if</span>((end_pos &gt; size || begin_pos &gt;= end_pos) || (k &gt;= end_pos - begin_pos)) <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_wavelet_matrix.html#ad09fa0edc4214cc70e466ceb92e3de90">NOTFOUND</a>;</div>
@@ -436,8 +436,8 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    }</div>
 </div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <span class="comment">///@brief 区間 [0, pos) の c の数</span></div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="comment">///@note O(log σ)</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <span class="comment">/// @brief 区間 [0, pos) の c の数</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="comment">/// @note O(log σ)</span></div>
 <div class="foldopen" id="foldopen00301" data-start="{" data-end="}">
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#ab6da004ddc73ce3283c091c306832688">  301</a></span>    ull <a class="code hl_function" href="struct_wavelet_matrix.html#ab6da004ddc73ce3283c091c306832688">rank</a>(ull c, ull pos) {</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        assert(pos &lt; size);</div>
@@ -453,8 +453,8 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    }</div>
 </div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    <span class="comment">///@brief 区間 [l, r) の [min_c, max_c) に入る値の個数</span></div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    <span class="comment">///@note O(log σ)</span></div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    <span class="comment">/// @brief 区間 [l, r) の [min_c, max_c) に入る値の個数</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    <span class="comment">/// @note O(log σ)</span></div>
 <div class="foldopen" id="foldopen00316" data-start="{" data-end="}">
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#a13f19575cd1606bc3f4bb631276a4c4f">  316</a></span>    ull <a class="code hl_function" href="struct_wavelet_matrix.html#a13f19575cd1606bc3f4bb631276a4c4f">range_freq</a>(ull begin_pos, ull end_pos, ull min_c, ull max_c) {</div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        <span class="keywordflow">if</span>((end_pos &gt; size || begin_pos &gt;= end_pos) || (min_c &gt;= max_c) || min_c &gt;= maximum_element) {</div>
@@ -466,8 +466,8 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    }</div>
 </div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    <span class="comment">///@brief 区間 [l, r) の c より小さい値の数</span></div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="comment">///@note O(log σ)</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    <span class="comment">/// @brief 区間 [l, r) の c より小さい値の数</span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="comment">/// @note O(log σ)</span></div>
 <div class="foldopen" id="foldopen00327" data-start="{" data-end="}">
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#ac307c703867bfbc709256f78167484b3">  327</a></span>    ull <a class="code hl_function" href="struct_wavelet_matrix.html#ac307c703867bfbc709256f78167484b3">rank_less_than</a>(ull c, ull begin, ull end) {</div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        <span class="keyword">auto</span> t = rank_all(c, begin, end);</div>
@@ -475,8 +475,8 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    }</div>
 </div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    <span class="comment">///@brief 区間 [l, r) の c より大きい値の数</span></div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    <span class="comment">///@note O(log σ)</span></div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    <span class="comment">/// @brief 区間 [l, r) の c より大きい値の数</span></div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    <span class="comment">/// @note O(log σ)</span></div>
 <div class="foldopen" id="foldopen00334" data-start="{" data-end="}">
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#a139b3097b57944221f74b2e76748df10">  334</a></span>    ull <a class="code hl_function" href="struct_wavelet_matrix.html#a139b3097b57944221f74b2e76748df10">rank_more_than</a>(ull c, ull begin, ull end) {</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        <span class="keyword">auto</span> t = rank_all(c, begin, end);</div>
@@ -484,8 +484,8 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    }</div>
 </div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    <span class="comment">///@brief 区間 [l, r) の (c と同じ値の数, c より小さい値の数, c より大きい値の数)</span></div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    <span class="comment">///@note O(log σ)</span></div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    <span class="comment">/// @brief 区間 [l, r) の (c と同じ値の数, c より小さい値の数, c より大きい値の数)</span></div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    <span class="comment">/// @note O(log σ)</span></div>
 <div class="foldopen" id="foldopen00341" data-start="{" data-end="}">
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#aa4e70eeb91a042f7bd8cb723f46c5bbe">  341</a></span>    <a class="code hl_function" href="struct_wavelet_matrix.html#aa4e70eeb91a042f7bd8cb723f46c5bbe">tuple</a>&lt;<a class="code hl_function" href="struct_wavelet_matrix.html#aa4e70eeb91a042f7bd8cb723f46c5bbe">ull</a>, <a class="code hl_function" href="struct_wavelet_matrix.html#aa4e70eeb91a042f7bd8cb723f46c5bbe">ull</a>, <a class="code hl_function" href="struct_wavelet_matrix.html#aa4e70eeb91a042f7bd8cb723f46c5bbe">ull</a>&gt; <a class="code hl_function" href="struct_wavelet_matrix.html#aa4e70eeb91a042f7bd8cb723f46c5bbe">rank_all</a>(<span class="keyword">const</span> ull c, ull begin, ull end) {</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        assert(end &lt;= size);</div>
@@ -514,8 +514,8 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    }</div>
 </div>
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span> </div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>    <span class="comment">///@brief 区間 [l, r) で出現回数が多い順に k 個の (値, 頻度) を返す</span></div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    <span class="comment">///@note O(log σ)</span></div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>    <span class="comment">/// @brief 区間 [l, r) で出現回数が多い順に k 個の (値, 頻度) を返す</span></div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    <span class="comment">/// @note O(log σ)</span></div>
 <div class="foldopen" id="foldopen00369" data-start="{" data-end="}">
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#a384b3825c4706d9979fa468ae6fc81d8">  369</a></span>    <a class="code hl_function" href="struct_wavelet_matrix.html#a384b3825c4706d9979fa468ae6fc81d8">vector</a>&lt;<a class="code hl_function" href="struct_wavelet_matrix.html#a384b3825c4706d9979fa468ae6fc81d8">pair</a>&lt;<a class="code hl_function" href="struct_wavelet_matrix.html#a384b3825c4706d9979fa468ae6fc81d8">ull</a>, <a class="code hl_function" href="struct_wavelet_matrix.html#a384b3825c4706d9979fa468ae6fc81d8">ull</a>&gt;&gt; <a class="code hl_function" href="struct_wavelet_matrix.html#a384b3825c4706d9979fa468ae6fc81d8">topk</a>(ull begin, ull end, ull k) {</div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>        ull s = begin, e = end;</div>
@@ -550,16 +550,16 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>    };</div>
 </div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span> </div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>    <span class="comment">///@brief 区間 [l, r) で [x, y) に入る値の総和</span></div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>    <span class="comment">///@note O(log σ)</span></div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>    <span class="comment">/// @brief 区間 [l, r) で [x, y) に入る値の総和</span></div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>    <span class="comment">/// @note O(log σ)</span></div>
 <div class="foldopen" id="foldopen00403" data-start="{" data-end="}">
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#a1e85b0b321d873479991f2f2bfee863f">  403</a></span>    ull <a class="code hl_function" href="struct_wavelet_matrix.html#a1e85b0b321d873479991f2f2bfee863f">range_sum</a>(<span class="keyword">const</span> ull begin, <span class="keyword">const</span> ull end, <span class="keyword">const</span> ull x, <span class="keyword">const</span> ull y) {</div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>        <span class="keywordflow">return</span> range_sum(begin, end, 0, 0, x, y);</div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>    }</div>
 </div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span> </div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    <span class="comment">///@brief 区間 [l, r) で [x, y) に入る値の最大値</span></div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>    <span class="comment">///@note O(log σ)</span></div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    <span class="comment">/// @brief 区間 [l, r) で [x, y) に入る値の最大値</span></div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>    <span class="comment">/// @note O(log σ)</span></div>
 <div class="foldopen" id="foldopen00409" data-start="{" data-end="}">
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#aca169731a469969acb7685e9f338172a">  409</a></span>    ull <a class="code hl_function" href="struct_wavelet_matrix.html#aca169731a469969acb7685e9f338172a">prev_value</a>(<span class="keyword">const</span> ull begin_pos, <span class="keyword">const</span> ull end_pos, <span class="keyword">const</span> ull x, ull y) {</div>
 <div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>        assert(end_pos &lt;= size);</div>
@@ -603,8 +603,8 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>    }</div>
 </div>
 <div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span> </div>
-<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>    <span class="comment">///@brief 区間 [l, r) で [x, y) に入る値の最大値</span></div>
-<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    <span class="comment">///@note O(log σ)</span></div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>    <span class="comment">/// @brief 区間 [l, r) で [x, y) に入る値の最大値</span></div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    <span class="comment">/// @note O(log σ)</span></div>
 <div class="foldopen" id="foldopen00452" data-start="{" data-end="}">
 <div class="line"><a id="l00452" name="l00452"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#a50331fad103e7d41e3183888cf89c0c9">  452</a></span>    ull <a class="code hl_function" href="struct_wavelet_matrix.html#a50331fad103e7d41e3183888cf89c0c9">next_value</a>(<span class="keyword">const</span> ull begin_pos, <span class="keyword">const</span> ull end_pos, <span class="keyword">const</span> ull x, <span class="keyword">const</span> ull y) {</div>
 <div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>        assert(end_pos &lt;= size);</div>
@@ -646,7 +646,7 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>    }</div>
 </div>
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span> </div>
-<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>    <span class="comment">///@brief 区間 [l1, r1) [l2, r2) に共通して出現する要素を返す</span></div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>    <span class="comment">/// @brief 区間 [l1, r1) [l2, r2) に共通して出現する要素を返す</span></div>
 <div class="foldopen" id="foldopen00492" data-start="{" data-end="}">
 <div class="line"><a id="l00492" name="l00492"></a><span class="lineno"><a class="line" href="struct_wavelet_matrix.html#a0aa4dc733c0b2ddaaae4fa274fc739a9">  492</a></span>    <a class="code hl_function" href="struct_wavelet_matrix.html#a0aa4dc733c0b2ddaaae4fa274fc739a9">vector</a>&lt;<a class="code hl_function" href="struct_wavelet_matrix.html#a0aa4dc733c0b2ddaaae4fa274fc739a9">tuple</a>&lt;<a class="code hl_function" href="struct_wavelet_matrix.html#a0aa4dc733c0b2ddaaae4fa274fc739a9">ull</a>, <a class="code hl_function" href="struct_wavelet_matrix.html#a0aa4dc733c0b2ddaaae4fa274fc739a9">ull</a>, <a class="code hl_function" href="struct_wavelet_matrix.html#a0aa4dc733c0b2ddaaae4fa274fc739a9">ull</a>&gt;&gt; <a class="code hl_function" href="struct_wavelet_matrix.html#a0aa4dc733c0b2ddaaae4fa274fc739a9">intersect</a>(ull _s1, ull _e1, ull _s2, ull _e2) {</div>
 <div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>        assert(_s1 &lt; _e1);</div>
@@ -715,7 +715,7 @@ $(function(){initNavTree('wavelet__matrix_8hpp_source.html',''); initResizable(t
 <div class="ttc" id="astruct_succinct_bit_vector_html_aafee3472a9c2b616aeddccbceafe455b"><div class="ttname"><a href="struct_succinct_bit_vector.html#aafee3472a9c2b616aeddccbceafe455b">SuccinctBitVector::build</a></div><div class="ttdeci">void build()</div><div class="ttdef"><b>Definition</b> <a href="#l00040">wavelet_matrix.hpp:40</a></div></div>
 <div class="ttc" id="astruct_succinct_bit_vector_html_ac384d026ac86d26b1607148cf4efcba7"><div class="ttname"><a href="struct_succinct_bit_vector.html#ac384d026ac86d26b1607148cf4efcba7">SuccinctBitVector::access</a></div><div class="ttdeci">ull access(const ull pos)</div><div class="ttdef"><b>Definition</b> <a href="#l00034">wavelet_matrix.hpp:34</a></div></div>
 <div class="ttc" id="astruct_succinct_bit_vector_html_ac8f4deffcbc0e8635ec3e8a6a145c1a3"><div class="ttname"><a href="struct_succinct_bit_vector.html#ac8f4deffcbc0e8635ec3e8a6a145c1a3">SuccinctBitVector::select</a></div><div class="ttdeci">ull select(const ull bit, const ull rank)</div><div class="ttdef"><b>Definition</b> <a href="#l00055">wavelet_matrix.hpp:55</a></div></div>
-<div class="ttc" id="astruct_wavelet_matrix_html"><div class="ttname"><a href="struct_wavelet_matrix.html">WaveletMatrix</a></div><div class="ttdoc">Wavelet Matrix</div><div class="ttdef"><b>Definition</b> <a href="#l00156">wavelet_matrix.hpp:156</a></div></div>
+<div class="ttc" id="astruct_wavelet_matrix_html"><div class="ttname"><a href="struct_wavelet_matrix.html">WaveletMatrix</a></div><div class="ttdoc">Wavelet Matrix https://github.com/MitI-7/WaveletMatrix/tree/master/WaveletMatrix https://miti-7....</div><div class="ttdef"><b>Definition</b> <a href="#l00156">wavelet_matrix.hpp:156</a></div></div>
 <div class="ttc" id="astruct_wavelet_matrix_html_a0aa4dc733c0b2ddaaae4fa274fc739a9"><div class="ttname"><a href="struct_wavelet_matrix.html#a0aa4dc733c0b2ddaaae4fa274fc739a9">WaveletMatrix::intersect</a></div><div class="ttdeci">vector&lt; tuple&lt; ull, ull, ull &gt; &gt; intersect(ull _s1, ull _e1, ull _s2, ull _e2)</div><div class="ttdoc">区間 [l1, r1) [l2, r2) に共通して出現する要素を返す</div><div class="ttdef"><b>Definition</b> <a href="#l00492">wavelet_matrix.hpp:492</a></div></div>
 <div class="ttc" id="astruct_wavelet_matrix_html_a139b3097b57944221f74b2e76748df10"><div class="ttname"><a href="struct_wavelet_matrix.html#a139b3097b57944221f74b2e76748df10">WaveletMatrix::rank_more_than</a></div><div class="ttdeci">ull rank_more_than(ull c, ull begin, ull end)</div><div class="ttdoc">区間 [l, r) の c より大きい値の数</div><div class="ttdef"><b>Definition</b> <a href="#l00334">wavelet_matrix.hpp:334</a></div></div>
 <div class="ttc" id="astruct_wavelet_matrix_html_a13f19575cd1606bc3f4bb631276a4c4f"><div class="ttname"><a href="struct_wavelet_matrix.html#a13f19575cd1606bc3f4bb631276a4c4f">WaveletMatrix::range_freq</a></div><div class="ttdeci">ull range_freq(ull begin_pos, ull end_pos, ull min_c, ull max_c)</div><div class="ttdoc">区間 [l, r) の [min_c, max_c) に入る値の個数</div><div class="ttdef"><b>Definition</b> <a href="#l00316">wavelet_matrix.hpp:316</a></div></div>

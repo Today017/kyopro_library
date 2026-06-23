@@ -110,7 +110,7 @@ $(function(){initNavTree('debug_8hpp.html',''); initResizable(true); });
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="fenwick__tree_8hpp_source.html">../kyopro_library/data_structure/fenwick_tree.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="fenwick__tree__abel_8hpp_source.html">../kyopro_library/data_structure/fenwick_tree_abel.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="data__structure_2segtree_8hpp_source.html">../kyopro_library/data_structure/segtree.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="segtree_8hpp_source.html">../kyopro_library/data_structure/segtree.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="segtree__lazy_8hpp_source.html">../kyopro_library/data_structure/segtree_lazy.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="segtree__act_8hpp_source.html">../kyopro_library/data_structure/segtree_act.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="dsu_8hpp_source.html">../kyopro_library/graph/dsu.hpp</a>&quot;</code><br />
@@ -124,7 +124,7 @@ $(function(){initNavTree('debug_8hpp.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 マクロ定義</h2></td></tr>
-<tr class="memitem:a03e896b87233163e2dc3399c65cdfc2d" id="r_a03e896b87233163e2dc3399c65cdfc2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03e896b87233163e2dc3399c65cdfc2d">print_line</a>&#160;&#160;&#160;cerr&lt;&lt;&quot;--------------------&quot;&lt;&lt;__LINE__&lt;&lt;&quot;--------------------&quot;&lt;&lt;endl;</td></tr>
+<tr class="memitem:a03e896b87233163e2dc3399c65cdfc2d" id="r_a03e896b87233163e2dc3399c65cdfc2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03e896b87233163e2dc3399c65cdfc2d">print_line</a>&#160;&#160;&#160;cerr &lt;&lt; &quot;--------------------&quot; &lt;&lt; __LINE__ &lt;&lt; &quot;--------------------&quot; &lt;&lt; endl;</td></tr>
 <tr class="separator:a03e896b87233163e2dc3399c65cdfc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86ee3ff44c537d94ccbabf941a613688" id="r_a86ee3ff44c537d94ccbabf941a613688"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86ee3ff44c537d94ccbabf941a613688">debug</a>(...)</td></tr>
 <tr class="separator:a86ee3ff44c537d94ccbabf941a613688"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,9 +136,9 @@ $(function(){initNavTree('debug_8hpp.html',''); initResizable(true); });
 <tr class="memitem:a966f60e90ba58ad164d45a0ed1614116" id="r_a966f60e90ba58ad164d45a0ed1614116"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:a966f60e90ba58ad164d45a0ed1614116"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a966f60e90ba58ad164d45a0ed1614116">DebugPrint</a> (int i, T name)</td></tr>
 <tr class="separator:a966f60e90ba58ad164d45a0ed1614116"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab71b4c038f1f1744888de17e8c17507f" id="r_ab71b4c038f1f1744888de17e8c17507f"><td class="memTemplParams" colspan="2">template&lt;typename T1, typename T2, typename... T3&gt; </td></tr>
-<tr class="memitem:ab71b4c038f1f1744888de17e8c17507f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab71b4c038f1f1744888de17e8c17507f">DebugPrint</a> (int i, const T1 &amp;name, const T2 &amp;a, const T3 &amp;...b)</td></tr>
-<tr class="separator:ab71b4c038f1f1744888de17e8c17507f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b283b025a06b2a10e221274c3954c69" id="r_a9b283b025a06b2a10e221274c3954c69"><td class="memTemplParams" colspan="2">template&lt;typename T1, typename T2, typename... T3&gt; </td></tr>
+<tr class="memitem:a9b283b025a06b2a10e221274c3954c69"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9b283b025a06b2a10e221274c3954c69">DebugPrint</a> (int i, const T1 &amp;name, const T2 &amp;a, const T3 &amp;... b)</td></tr>
+<tr class="separator:a9b283b025a06b2a10e221274c3954c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">マクロ定義詳解</h2>
 <a id="a03e896b87233163e2dc3399c65cdfc2d" name="a03e896b87233163e2dc3399c65cdfc2d"></a>
@@ -148,7 +148,7 @@ $(function(){initNavTree('debug_8hpp.html',''); initResizable(true); });
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define print_line&#160;&#160;&#160;cerr&lt;&lt;&quot;--------------------&quot;&lt;&lt;__LINE__&lt;&lt;&quot;--------------------&quot;&lt;&lt;endl;</td>
+          <td class="memname">#define print_line&#160;&#160;&#160;cerr &lt;&lt; &quot;--------------------&quot; &lt;&lt; __LINE__ &lt;&lt; &quot;--------------------&quot; &lt;&lt; endl;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -171,7 +171,7 @@ $(function(){initNavTree('debug_8hpp.html',''); initResizable(true); });
         </tr>
       </table>
 </div><div class="memdoc">
-<b>値:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a966f60e90ba58ad164d45a0ed1614116">DebugPrint</a>(0,#__VA_ARGS__,__VA_ARGS__)</div>
+<b>値:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#a966f60e90ba58ad164d45a0ed1614116">DebugPrint</a>(0, #__VA_ARGS__, __VA_ARGS__)</div>
 <div class="ttc" id="adebug_8hpp_html_a966f60e90ba58ad164d45a0ed1614116"><div class="ttname"><a href="#a966f60e90ba58ad164d45a0ed1614116">DebugPrint</a></div><div class="ttdeci">void DebugPrint(int i, T name)</div><div class="ttdef"><b>Definition</b> <a href="debug_8hpp_source.html#l00322">debug.hpp:322</a></div></div>
 </div><!-- fragment -->
 <p class="definition"> <a class="el" href="debug_8hpp_source.html">debug.hpp</a> の <a class="el" href="debug_8hpp_source.html#l00318">318</a> 行目に定義があります。</p>
@@ -224,8 +224,8 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
-<a id="ab71b4c038f1f1744888de17e8c17507f" name="ab71b4c038f1f1744888de17e8c17507f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab71b4c038f1f1744888de17e8c17507f">&#9670;&#160;</a></span>DebugPrint() <span class="overload">[2/2]</span></h2>
+<a id="a9b283b025a06b2a10e221274c3954c69" name="a9b283b025a06b2a10e221274c3954c69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b283b025a06b2a10e221274c3954c69">&#9670;&#160;</a></span>DebugPrint() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

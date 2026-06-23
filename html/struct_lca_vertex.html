@@ -110,34 +110,33 @@ $(function(){initNavTree('struct_lca_vertex.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
-<p>頂点属性 <a class="el" href="struct_l_c_a.html" title="LCA">LCA</a>  
+<p>頂点属性 <a class="el" href="struct_l_c_a.html" title="LCA verify: https://onlinejudge.u-aizu.ac.jp/status/users/Today03/submissions/1/GRL_5_C/judge/1057284...">LCA</a> verify: <a href="https://onlinejudge.u-aizu.ac.jp/solutions/problem/3372/review/10572853/Today03/C++17">https://onlinejudge.u-aizu.ac.jp/solutions/problem/3372/review/10572853/Today03/C++17</a>  
  <a href="#details">[詳解]</a></p>
 
 <p><code>#include &quot;<a class="el" href="lca__vertex_8hpp_source.html">lca_vertex.hpp</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 公開型</h2></td></tr>
-<tr class="memitem:a125d5a6d04529671f85be9326630ae0e" id="r_a125d5a6d04529671f85be9326630ae0e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a125d5a6d04529671f85be9326630ae0e">Type</a> = typename Monoid::Type</td></tr>
-<tr class="separator:a125d5a6d04529671f85be9326630ae0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e8526dd234dbfcd7bdaf475fc262847" id="r_a0e8526dd234dbfcd7bdaf475fc262847"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e8526dd234dbfcd7bdaf475fc262847">Type</a> = typename Monoid::Type</td></tr>
+<tr class="separator:a0e8526dd234dbfcd7bdaf475fc262847"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a1d92276f2b6a4d71e3a41c9f6435ef5b" id="r_a1d92276f2b6a4d71e3a41c9f6435ef5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d92276f2b6a4d71e3a41c9f6435ef5b">LcaVertex</a> (const vector&lt; <a class="el" href="type_8hpp.html#a8bf3ad371864cb45775d8d1fe0b23832">vi</a> &gt; &amp;g, const vector&lt; <a class="el" href="#a125d5a6d04529671f85be9326630ae0e">Type</a> &gt; &amp;v, int root=0)</td></tr>
+<tr class="memitem:a1d92276f2b6a4d71e3a41c9f6435ef5b" id="r_a1d92276f2b6a4d71e3a41c9f6435ef5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d92276f2b6a4d71e3a41c9f6435ef5b">LcaVertex</a> (const vector&lt; <a class="el" href="type_8hpp.html#a1d075353827ae01c95a097266601a0f2">vi</a> &gt; &amp;g, const vector&lt; <a class="el" href="#a0e8526dd234dbfcd7bdaf475fc262847">Type</a> &gt; &amp;v, int root=0)</td></tr>
 <tr class="memdesc:a1d92276f2b6a4d71e3a41c9f6435ef5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <br /></td></tr>
 <tr class="separator:a1d92276f2b6a4d71e3a41c9f6435ef5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e4f860220eedd9b1bc9eee332e033ca" id="r_a0e4f860220eedd9b1bc9eee332e033ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a125d5a6d04529671f85be9326630ae0e">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e4f860220eedd9b1bc9eee332e033ca">fold</a> (int u, int v)</td></tr>
+<tr class="memitem:a0e4f860220eedd9b1bc9eee332e033ca" id="r_a0e4f860220eedd9b1bc9eee332e033ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a0e8526dd234dbfcd7bdaf475fc262847">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e4f860220eedd9b1bc9eee332e033ca">fold</a> (int u, int v)</td></tr>
 <tr class="memdesc:a0e4f860220eedd9b1bc9eee332e033ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">パス u-v のモノイド積を返す  <br /></td></tr>
 <tr class="separator:a0e4f860220eedd9b1bc9eee332e033ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Monoid&gt;<br />
-struct LcaVertex&lt; Monoid &gt;</div><p>頂点属性 <a class="el" href="struct_l_c_a.html" title="LCA">LCA</a> </p>
-<p>verify: <a href="https://onlinejudge.u-aizu.ac.jp/solutions/problem/3372/review/10572853/Today03/C++17">https://onlinejudge.u-aizu.ac.jp/solutions/problem/3372/review/10572853/Today03/C++17</a> </p>
+struct LcaVertex&lt; Monoid &gt;</div><p>頂点属性 <a class="el" href="struct_l_c_a.html" title="LCA verify: https://onlinejudge.u-aizu.ac.jp/status/users/Today03/submissions/1/GRL_5_C/judge/1057284...">LCA</a> verify: <a href="https://onlinejudge.u-aizu.ac.jp/solutions/problem/3372/review/10572853/Today03/C++17">https://onlinejudge.u-aizu.ac.jp/solutions/problem/3372/review/10572853/Today03/C++17</a> </p>
 
 <p class="definition"> <a class="el" href="lca__vertex_8hpp_source.html">lca_vertex.hpp</a> の <a class="el" href="lca__vertex_8hpp_source.html#l00007">7</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">型定義メンバ詳解</h2>
-<a id="a125d5a6d04529671f85be9326630ae0e" name="a125d5a6d04529671f85be9326630ae0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a125d5a6d04529671f85be9326630ae0e">&#9670;&#160;</a></span>Type</h2>
+<a id="a0e8526dd234dbfcd7bdaf475fc262847" name="a0e8526dd234dbfcd7bdaf475fc262847"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e8526dd234dbfcd7bdaf475fc262847">&#9670;&#160;</a></span>Type</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,12 +168,12 @@ template&lt;typename Monoid&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="struct_lca_vertex.html">LcaVertex</a>&lt; Monoid &gt;<a class="el" href="struct_lca_vertex.html">::LcaVertex</a> </td>
           <td>(</td>
-          <td class="paramtype">const vector&lt; <a class="el" href="type_8hpp.html#a8bf3ad371864cb45775d8d1fe0b23832">vi</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+          <td class="paramtype">const vector&lt; <a class="el" href="type_8hpp.html#a1d075353827ae01c95a097266601a0f2">vi</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const vector&lt; <a class="el" href="#a125d5a6d04529671f85be9326630ae0e">Type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+          <td class="paramtype">const vector&lt; <a class="el" href="#a0e8526dd234dbfcd7bdaf475fc262847">Type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -214,7 +213,7 @@ template&lt;typename Monoid&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a125d5a6d04529671f85be9326630ae0e">Type</a> <a class="el" href="struct_lca_vertex.html">LcaVertex</a>&lt; Monoid &gt;::fold </td>
+          <td class="memname"><a class="el" href="#a0e8526dd234dbfcd7bdaf475fc262847">Type</a> <a class="el" href="struct_lca_vertex.html">LcaVertex</a>&lt; Monoid &gt;::fold </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
         </tr>

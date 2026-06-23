@@ -4,7 +4,7 @@ var geo_8hpp =
     [ "Geometry::Line", "struct_geometry_1_1_line.html", "struct_geometry_1_1_line" ],
     [ "Geometry::Segment", "struct_geometry_1_1_segment.html", "struct_geometry_1_1_segment" ],
     [ "Geometry::Circle", "struct_geometry_1_1_circle.html", "struct_geometry_1_1_circle" ],
-    [ "Geometry::Real", "namespace_geometry.html#aa4fd942614eba4a1561c5a22278a1bcc", null ],
+    [ "Geometry::Real", "namespace_geometry.html#a8f02e18a6db163cf3d442073f6d5da4e", null ],
     [ "Geometry::Orientation", "namespace_geometry.html#ac6833944045520a63bc44de0c261aa7a", [
       [ "Geometry::COUNTER_CLOCKWISE", "namespace_geometry.html#ac6833944045520a63bc44de0c261aa7aa9ee68053af2b51d26deccd98f7581852", null ],
       [ "Geometry::CLOCKWISE", "namespace_geometry.html#ac6833944045520a63bc44de0c261aa7aafeb0cf07471b0c303bf376921b7ee74d", null ],

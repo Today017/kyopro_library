@@ -106,138 +106,138 @@ $(function(){initNavTree('binary__trie_8hpp_source.html',''); initResizable(true
 </div><!--header-->
 <div class="contents">
 <a href="binary__trie_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span><span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../../kyopro_library/template.hpp&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">///@brief Binary Trie</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///@ref verify: https://judge.yosupo.jp/problem/ordered_set</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">///@ref verify: https://judge.yosupo.jp/problem/set_xor_min</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">template</span>&lt;ii Log=32&gt;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @brief Binary Trie</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/// @ref verify: https://judge.yosupo.jp/problem/ordered_set</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @ref verify: https://judge.yosupo.jp/problem/set_xor_min</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">template</span> &lt;ii Log = 32&gt;</div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_binary_trie.html">    8</a></span><span class="keyword">struct</span> <a class="code hl_struct" href="struct_binary_trie.html">BinaryTrie</a> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#a0be46a05e51377e8db9d1d37aafd519a">    9</a></span>    <a class="code hl_function" href="struct_binary_trie.html#a0be46a05e51377e8db9d1d37aafd519a">BinaryTrie</a>(): <a class="code hl_function" href="struct_binary_trie.html#a0be46a05e51377e8db9d1d37aafd519a">nodes</a>(1), lazy_xor(0), siz(0) {}</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#a0be46a05e51377e8db9d1d37aafd519a">    9</a></span>    <a class="code hl_function" href="struct_binary_trie.html#a0be46a05e51377e8db9d1d37aafd519a">BinaryTrie</a>() : <a class="code hl_function" href="struct_binary_trie.html#a0be46a05e51377e8db9d1d37aafd519a">nodes</a>(1), lazy_xor(0), siz(0) {}</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#afff41083106e354b06b366e85a852131">   11</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_binary_trie.html#afff41083106e354b06b366e85a852131">reserve</a>(ii x) { nodes.reserve(x); }</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">///@brief すべての要素vをv xor xで置き換える</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">///@note O(1)</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#a1452cd5063085d918b0bd982724b05e4">   15</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_binary_trie.html#a1452cd5063085d918b0bd982724b05e4">apply_xor</a>(ll x) { lazy_xor^=x; }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">/// @brief すべての要素vをv xor xで置き換える</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">/// @note O(1)</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#a1452cd5063085d918b0bd982724b05e4">   15</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_binary_trie.html#a1452cd5063085d918b0bd982724b05e4">apply_xor</a>(ll x) { lazy_xor ^= x; }</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">///@brief valをk個追加する</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">/// @brief valをk個追加する</span></div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#aef620c47799f35b4bb0f9504dfa4b030">   18</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_binary_trie.html#aef620c47799f35b4bb0f9504dfa4b030">insert</a>(ll val, ll k=1) {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        siz+=k;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        ii idx=0;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        val^=lazy_xor;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_define" href="macro_8hpp.html#a25d221b92dc733a9138968af208b1252">per</a>(i,Log) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            ii lr=val&gt;&gt;i&amp;1;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">if</span>(nodes[idx].ch[lr]==-1) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                nodes[idx].ch[lr]=nodes.size();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#aef620c47799f35b4bb0f9504dfa4b030">   18</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_binary_trie.html#aef620c47799f35b4bb0f9504dfa4b030">insert</a>(ll val, ll k = 1) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        siz += k;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        ii idx = 0;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        val ^= lazy_xor;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_define" href="macro_8hpp.html#a25d221b92dc733a9138968af208b1252">per</a>(i, Log) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            ii lr = val &gt;&gt; i &amp; 1;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">if</span>(nodes[idx].ch[lr] == -1) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                nodes[idx].ch[lr] = nodes.size();</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                nodes.push_back(Node());</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            idx=nodes[idx].ch[lr];</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            nodes[idx].count+=k;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            idx = nodes[idx].ch[lr];</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            nodes[idx].count += k;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        }</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
 </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">///@brief valをmin(k,count(val)個削除する</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">/// @brief valをmin(k,count(val)個削除する</span></div>
 <div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#a56635c5d96c0c7065d9586dc226e0dd7">   34</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_binary_trie.html#a56635c5d96c0c7065d9586dc226e0dd7">discard</a>(ll val, ll k=1) {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        chmin(k,<a class="code hl_function" href="struct_binary_trie.html#a75a5c7a3171fd253d25ee1273c41c17a">count</a><a class="code hl_function" href="struct_binary_trie.html#a75a5c7a3171fd253d25ee1273c41c17a">(</a>val<a class="code hl_function" href="struct_binary_trie.html#a75a5c7a3171fd253d25ee1273c41c17a">)</a>);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        siz-=k;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        ii idx=0;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        val^=lazy_xor;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_define" href="macro_8hpp.html#a25d221b92dc733a9138968af208b1252">per</a>(i,Log) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            ii lr=val&gt;&gt;i&amp;1;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">if</span>(nodes[idx].ch[lr]==-1 || nodes[nodes[idx].ch[lr]].count==0) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            idx=nodes[idx].ch[lr];</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            nodes[idx].count-=k;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#a56635c5d96c0c7065d9586dc226e0dd7">   34</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_binary_trie.html#a56635c5d96c0c7065d9586dc226e0dd7">discard</a>(ll val, ll k = 1) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        chmin(k, <a class="code hl_function" href="struct_binary_trie.html#a75a5c7a3171fd253d25ee1273c41c17a">count</a><a class="code hl_function" href="struct_binary_trie.html#a75a5c7a3171fd253d25ee1273c41c17a">(</a>val<a class="code hl_function" href="struct_binary_trie.html#a75a5c7a3171fd253d25ee1273c41c17a">)</a>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        siz -= k;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        ii idx = 0;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        val ^= lazy_xor;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_define" href="macro_8hpp.html#a25d221b92dc733a9138968af208b1252">per</a>(i, Log) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            ii lr = val &gt;&gt; i &amp; 1;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">if</span>(nodes[idx].ch[lr] == -1 || nodes[nodes[idx].ch[lr]].count == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            idx = nodes[idx].ch[lr];</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            nodes[idx].count -= k;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
 </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">///@brief valの個数を返す</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">/// @brief valの個数を返す</span></div>
 <div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#a75a5c7a3171fd253d25ee1273c41c17a">   48</a></span>    ll <a class="code hl_function" href="struct_binary_trie.html#a75a5c7a3171fd253d25ee1273c41c17a">count</a>(ll val) <span class="keyword">const</span> {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        ii idx=0;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        val^=lazy_xor;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_define" href="macro_8hpp.html#a25d221b92dc733a9138968af208b1252">per</a>(i,Log) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            ii lr=val&gt;&gt;i&amp;1;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keywordflow">if</span>(nodes[idx].ch[lr]==-1 || nodes[nodes[idx].ch[lr]].count==0) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            idx=nodes[idx].ch[lr];</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        ii idx = 0;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        val ^= lazy_xor;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_define" href="macro_8hpp.html#a25d221b92dc733a9138968af208b1252">per</a>(i, Log) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            ii lr = val &gt;&gt; i &amp; 1;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keywordflow">if</span>(nodes[idx].ch[lr] == -1 || nodes[nodes[idx].ch[lr]].count == 0) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            idx = nodes[idx].ch[lr];</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">return</span> nodes[idx].count;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
 </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">///@brief 0-indexedでk番目に小さい要素を返す</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">/// @brief 0-indexedでk番目に小さい要素を返す</span></div>
 <div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">   60</a></span>    ll <a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">kth_min</a>(ll k) <span class="keyword">const</span> {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span>(k&gt;=siz) <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        ii idx=0;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        ll ret=0;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_define" href="macro_8hpp.html#a25d221b92dc733a9138968af208b1252">per</a>(i,Log) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            ii lr=lazy_xor&gt;&gt;i&amp;1;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            ii lch=nodes[idx].ch[lr];</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            ii lcnt=(lch==-1)? 0: nodes[lch].count;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">if</span>(k&lt;lcnt) idx=lch;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span>(k &gt;= siz) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        ii idx = 0;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        ll ret = 0;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_define" href="macro_8hpp.html#a25d221b92dc733a9138968af208b1252">per</a>(i, Log) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            ii lr = lazy_xor &gt;&gt; i &amp; 1;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            ii lch = nodes[idx].ch[lr];</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            ii lcnt = (lch == -1) ? 0 : nodes[lch].count;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">if</span>(k &lt; lcnt) idx = lch;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                k-=lcnt;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                idx=nodes[idx].ch[lr^1];</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                ret|=1ll&lt;&lt;i;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                k -= lcnt;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                idx = nodes[idx].ch[lr ^ 1];</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                ret |= 1ll &lt;&lt; i;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            }</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
 </div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">///@brief valより小さい要素の個数を返す</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">/// @brief valより小さい要素の個数を返す</span></div>
 <div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">   79</a></span>    ii <a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">count_lt</a>(ll val) <span class="keyword">const</span> {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        ii idx=0;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        ll ret=0;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_define" href="macro_8hpp.html#a25d221b92dc733a9138968af208b1252">per</a>(i,Log) {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            ii lr=(val^lazy_xor)&gt;&gt;i&amp;1;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            ii l=lazy_xor&gt;&gt;i&amp;1;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        ii idx = 0;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        ll ret = 0;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_define" href="macro_8hpp.html#a25d221b92dc733a9138968af208b1252">per</a>(i, Log) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            ii lr = (val ^ lazy_xor) &gt;&gt; i &amp; 1;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            ii l = lazy_xor &gt;&gt; i &amp; 1;</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keywordflow">if</span>(lr) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                ii lch=nodes[idx].ch[l];</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <span class="keywordflow">if</span>(lch!=-1) ret+=nodes[lch].count;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                ii lch = nodes[idx].ch[l];</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <span class="keywordflow">if</span>(lch != -1) ret += nodes[lch].count;</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            idx=nodes[idx].ch[lr^l];</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">if</span>(idx==-1 || nodes[idx].count==0) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            idx = nodes[idx].ch[lr ^ l];</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">if</span>(idx == -1 || nodes[idx].count == 0) <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        }</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
 </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#ad22562b16178630b2a3217a4810e8021">   95</a></span>    ll <a class="code hl_function" href="struct_binary_trie.html#ad22562b16178630b2a3217a4810e8021">min</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> <a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">kth_min</a><a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">(</a>0<a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">)</a>; }</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#ae86596455897140f700d289b123e6003">   96</a></span>    ll <a class="code hl_function" href="struct_binary_trie.html#ae86596455897140f700d289b123e6003">max</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> kth_min(nodes[0].count-1); }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#ae86596455897140f700d289b123e6003">   96</a></span>    ll <a class="code hl_function" href="struct_binary_trie.html#ae86596455897140f700d289b123e6003">max</a>() <span class="keyword">const</span> { <span class="keywordflow">return</span> kth_min(nodes[0].count - 1); }</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
 <div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#ac690bb2e1071fce8b05ee6fb9174c77a">   98</a></span>    ll <a class="code hl_function" href="struct_binary_trie.html#ac690bb2e1071fce8b05ee6fb9174c77a">gt</a>(ll val) <span class="keyword">const</span> {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        ll cnt=<a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">count_lt</a><a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">(</a>val+1<a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">)</a>;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">return</span> cnt&lt;siz? <a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">kth_min</a><a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">(</a>cnt<a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">)</a>: -1;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        ll cnt = <a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">count_lt</a><a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">(</a>val + 1<a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">)</a>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">return</span> cnt &lt; siz ? <a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">kth_min</a><a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">(</a>cnt<a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">)</a> : -1;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
 </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
 <div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#a4fac4dd4ca32534dfe8a4b58c9d24ec1">  103</a></span>    ll <a class="code hl_function" href="struct_binary_trie.html#a4fac4dd4ca32534dfe8a4b58c9d24ec1">ge</a>(ll val) <span class="keyword">const</span> {</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        ll cnt=<a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">count_lt</a><a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">(</a>val<a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">)</a>;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">return</span> cnt&lt;siz? <a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">kth_min</a><a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">(</a>cnt<a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">)</a>: -1;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        ll cnt = <a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">count_lt</a><a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">(</a>val<a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">)</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">return</span> cnt &lt; siz ? <a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">kth_min</a><a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">(</a>cnt<a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">)</a> : -1;</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
 </div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
 <div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#a93a6362e37c890cf19fd6257cf639ad8">  108</a></span>    ll <a class="code hl_function" href="struct_binary_trie.html#a93a6362e37c890cf19fd6257cf639ad8">lt</a>(ll val) <span class="keyword">const</span> {</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        ll cnt=<a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">count_lt</a><a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">(</a>val<a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">)</a>;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">return</span> cnt&gt;0? <a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">kth_min</a><a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">(</a>cnt-1<a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">)</a>: -1;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        ll cnt = <a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">count_lt</a><a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">(</a>val<a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">)</a>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">return</span> cnt &gt; 0 ? <a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">kth_min</a><a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">(</a>cnt - 1<a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">)</a> : -1;</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
 </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
 <div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="struct_binary_trie.html#a37e00fd6bb708acd5027fe333c3bcc0e">  113</a></span>    ll <a class="code hl_function" href="struct_binary_trie.html#a37e00fd6bb708acd5027fe333c3bcc0e">le</a>(ll val) <span class="keyword">const</span> {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        ll cnt=<a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">count_lt</a><a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">(</a>val+1<a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">)</a>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">return</span> cnt&gt;0? <a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">kth_min</a><a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">(</a>cnt-1<a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">)</a>: -1;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        ll cnt = <a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">count_lt</a><a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">(</a>val + 1<a class="code hl_function" href="struct_binary_trie.html#a2ae39ed709c49da542909cec59f19672">)</a>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">return</span> cnt &gt; 0 ? <a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">kth_min</a><a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">(</a>cnt - 1<a class="code hl_function" href="struct_binary_trie.html#a7c4abe332c8af6688c0b55fed6071966">)</a> : -1;</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
 </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
@@ -245,9 +245,9 @@ $(function(){initNavTree('binary__trie_8hpp_source.html',''); initResizable(true
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keyword">struct</span> Node {</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        array&lt;ii,2&gt; ch;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        array&lt;ii, 2&gt; ch;</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        ll count;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        Node(): ch({-1,-1}), count(0) {}</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        Node() : ch({-1, -1}), count(0) {}</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    };</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    vector&lt;Node&gt; nodes;</div>
@@ -256,7 +256,7 @@ $(function(){initNavTree('binary__trie_8hpp_source.html',''); initResizable(true
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>};</div>
 </div>
 <div class="ttc" id="amacro_8hpp_html_a25d221b92dc733a9138968af208b1252"><div class="ttname"><a href="macro_8hpp.html#a25d221b92dc733a9138968af208b1252">per</a></div><div class="ttdeci">#define per(...)</div><div class="ttdef"><b>Definition</b> <a href="macro_8hpp_source.html#l00015">macro.hpp:15</a></div></div>
-<div class="ttc" id="astruct_binary_trie_html"><div class="ttname"><a href="struct_binary_trie.html">BinaryTrie</a></div><div class="ttdoc">Binary Trie</div><div class="ttdef"><b>Definition</b> <a href="#l00008">binary_trie.hpp:8</a></div></div>
+<div class="ttc" id="astruct_binary_trie_html"><div class="ttname"><a href="struct_binary_trie.html">BinaryTrie</a></div><div class="ttdoc">Binary Trie verify: https://judge.yosupo.jp/problem/ordered_set verify: https://judge....</div><div class="ttdef"><b>Definition</b> <a href="#l00008">binary_trie.hpp:8</a></div></div>
 <div class="ttc" id="astruct_binary_trie_html_a0be46a05e51377e8db9d1d37aafd519a"><div class="ttname"><a href="struct_binary_trie.html#a0be46a05e51377e8db9d1d37aafd519a">BinaryTrie::BinaryTrie</a></div><div class="ttdeci">BinaryTrie()</div><div class="ttdef"><b>Definition</b> <a href="#l00009">binary_trie.hpp:9</a></div></div>
 <div class="ttc" id="astruct_binary_trie_html_a1452cd5063085d918b0bd982724b05e4"><div class="ttname"><a href="struct_binary_trie.html#a1452cd5063085d918b0bd982724b05e4">BinaryTrie::apply_xor</a></div><div class="ttdeci">void apply_xor(ll x)</div><div class="ttdoc">すべての要素vをv xor xで置き換える</div><div class="ttdef"><b>Definition</b> <a href="#l00015">binary_trie.hpp:15</a></div></div>
 <div class="ttc" id="astruct_binary_trie_html_a2978907aec5fba9ca07adf226a1c2492"><div class="ttname"><a href="struct_binary_trie.html#a2978907aec5fba9ca07adf226a1c2492">BinaryTrie::size</a></div><div class="ttdeci">ii size() const</div><div class="ttdef"><b>Definition</b> <a href="#l00118">binary_trie.hpp:118</a></div></div>
